@@ -4,6 +4,7 @@ import { hasAo3Meta, romanticPairings } from "./ao3";
 import { MODELS, type ModelId, RefusalError, analyzeWork, estimateTokens, excerptExplicit } from "./analyze";
 import { type ExtractedWork, extractFile } from "./extract";
 import { runPatterns } from "./heuristic/run";
+import { splitParagraphs } from "./text";
 import { addLabel, calibrationLines, clearLabels, type Label, labelKey, loadLabels, parseLabels, saveLabels, summarize } from "./calibration";
 import { testSkeletons } from "./testgen";
 import { FLAG_REASONS, type FlagKind, type FlagReason, type FlaggedScene, type MissedScene, REASONS_FOR, buildReport, reasonLabel } from "./report";
@@ -305,7 +306,7 @@ function refreshReport() {
 }
 
 /** Vibe factors the reader ticked as worth showing Claude, by vibe id and factor number, with any problems they named. */
-interface PickedFactor { line: string; reasons: FlagReason[]; note: string }
+interface PickedFactor { line: string; reasons: FlagReason[]; note: string; context?: string; span?: number }
 const pickedFactors = new Map<string, Map<number, PickedFactor>>();
 const vibeSpec = new Map<string, VibeRating | DynamicRating>();
 
@@ -321,7 +322,8 @@ function vibeExtra(id: string, v: VibeRating | DynamicRating): string[] {
     ...picked.map((p) => {
       const problems = p.reasons.length ? ` ⟶ What is wrong with this factor: ${p.reasons.map(reasonLabel).join("; ")}` : "";
       const note = p.note.trim() ? ` ⟶ My explanation: ${p.note.trim()}` : "";
-      return `Factor I'm pointing at: ${p.line}${problems}${note}`;
+      const around = p.context ? ` ⟶ Around it (${p.span} paragraph${p.span === 1 ? "" : "s"} either side): ${p.context.replace(/\s+/g, " ")}` : "";
+      return `Factor I'm pointing at: ${p.line}${problems}${note}${around}`;
     }),
   ];
 }
@@ -422,6 +424,36 @@ function unmarkRight(id: string) {
   refreshReport();
 }
 
+// ── More context around a line, chosen per item ──
+const CONTEXT_SPANS: [number, string][] = [[0, "Context in the report: as shown"], [1, "1 paragraph either side"], [2, "2 paragraphs either side"], [4, "4 paragraphs either side"], [8, "8 paragraphs either side"]];
+const storyCache = new WeakMap<ExtractedWork, string[]>();
+/** The paragraphs around a sentence, found in the uploaded text: `span` paragraphs before and after the one that holds it. */
+function wideContext(evidence: string, span: number): string | undefined {
+  if (!current || !span || !evidence) return undefined;
+  let paras = storyCache.get(current);
+  if (!paras) { paras = splitParagraphs(current.text); storyCache.set(current, paras); }
+  const norm = (x: string) => x.replace(/\s+/g, " ").trim();
+  const needle = norm(evidence.replace(/^[“"‘]+|[”"’…]+$/g, "")).slice(0, 70);
+  if (needle.length < 8) return undefined;
+  const at = paras.findIndex((q) => norm(q).includes(needle));
+  if (at < 0) return undefined;
+  const text = paras.slice(Math.max(0, at - span), at + span + 1).map((q) => q.trim()).join(" ¶ ");
+  return text.length > 6000 ? `${text.slice(0, 5999)}…` : text;
+}
+/** A picker for how much surrounding text the report carries; null when the line can't be found in the text. */
+function contextPicker(evidence: string, initial = 0) {
+  const sel = el("select", "ctx-pick");
+  for (const [n, label] of CONTEXT_SPANS) { const o = el("option", undefined, label); o.value = String(n); sel.append(o); }
+  sel.value = String(initial);
+  sel.title = "Include more of the surrounding text in the copied report";
+  const wrap = el("label", "flag-opt ctx-opt");
+  wrap.append(sel);
+  const note = el("span", "hint", "");
+  wrap.append(" ", note);
+  sel.addEventListener("change", () => { note.textContent = Number(sel.value) && !wideContext(evidence, Number(sel.value)) ? "couldn’t find this line in the text, so the shown context is kept" : ""; });
+  return { wrap, span: () => Number(sel.value) || 0 };
+}
+
 /** The "Report a mistake" and "Looks right" buttons on a scene, hint or vibe rating, and the little form the first opens. */
 type FlagSpec = Omit<FlaggedScene, "reasons" | "note" | "included">;
 function flagControl(li: HTMLElement, spec: FlagSpec) {
@@ -463,6 +495,8 @@ function flagControl(li: HTMLElement, spec: FlagSpec) {
     label.append(cb, ` ${r.label}`);
     form.append(label);
   }
+  const picker = spec.evidence ? contextPicker(spec.evidence, flagged.get(id)?.span ?? 0) : undefined;
+  if (picker) form.append(picker.wrap);
   const note = el("textarea");
   note.rows = 2;
   note.placeholder = kind === "vibe" ? "What looks off? (e.g. “Cas tops in every scene, so Total top fits better”)" : "Why is it wrong? (e.g. “his husband” is Dracula, who is the one fucking Jack)";
@@ -484,7 +518,9 @@ function flagControl(li: HTMLElement, spec: FlagSpec) {
   form.addEventListener("submit", (e) => {
     e.preventDefault();
     const reasons = [...ticks].filter(([, cb]) => cb.checked).map(([k]) => k);
-    flagged.set(id, { ...spec, extra: vibeSpec.get(id) ? vibeExtra(id, vibeSpec.get(id)!) : spec.extra, kind, reasons, note: note.value, included: flagged.get(id)?.included ?? true });
+    const span = picker?.span() ?? 0;
+    const wide = span ? wideContext(spec.evidence, span) : undefined;
+    flagged.set(id, { ...spec, extra: vibeSpec.get(id) ? vibeExtra(id, vibeSpec.get(id)!) : spec.extra, kind, reasons, note: note.value, included: flagged.get(id)?.included ?? true, ...(wide ? { context: wide, span } : { span: undefined }) });
     li.classList.add("flagged");
     form.hidden = true;
     add.textContent = "Update report";
@@ -966,9 +1002,10 @@ function renderVibe(
     vibeSpec.set(vid, v);
     const vspec: FlagSpec = { id: vid, kind: "vibe", pairing, card: opts.key, top: v.name, bottom: "", act: v.label, confidence: v.confidence.score, extra: vibeExtra(vid, v), evidence: "" };
     // Tick a factor to send it with the report, and say what's wrong with it; either starts a report item for this rating.
-    const setFactor = (idx: number, f: VibeFactor, on: boolean, reasons: FlagReason[] = [], note = "") => {
+    const setFactor = (idx: number, f: VibeFactor, on: boolean, reasons: FlagReason[] = [], note = "", span = pickedFactors.get(vid)?.get(idx)?.span ?? 0) => {
       const m = pickedFactors.get(vid) ?? new Map<number, PickedFactor>();
-      if (on) m.set(idx, { line: factorLine(f), reasons, note }); else m.delete(idx);
+      const wide = span && f.source ? wideContext(f.source, span) : undefined;
+      if (on) m.set(idx, { line: factorLine(f), reasons, note, ...(wide ? { context: wide, span } : {}) }); else m.delete(idx);
       pickedFactors.set(vid, m);
       const prior = flagged.get(vid);
       if (prior) flagged.set(vid, { ...prior, extra: vibeExtra(vid, v) });
@@ -1020,6 +1057,8 @@ function renderVibe(
             lab.append(box, ` ${r.label}`);
             form.append(lab);
           }
+          const fpick = f.source ? contextPicker(f.source, prior?.span ?? 0) : undefined;
+          if (fpick) form.append(fpick.wrap);
           const note = el("textarea");
           note.rows = 2;
           note.value = prior?.note ?? "";
@@ -1036,7 +1075,7 @@ function renderVibe(
             const reasons = [...ticks].filter(([, x]) => x.checked).map(([k]) => k);
             cb.checked = true;
             if (rightItems.delete(fid)) paintF();
-            setFactor(idx, f, true, reasons, note.value);
+            setFactor(idx, f, true, reasons, note.value, fpick?.span() ?? 0);
             form.hidden = true;
           });
           // Ticking or unticking the box keeps any problems already named.
