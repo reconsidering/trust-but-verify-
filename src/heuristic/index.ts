@@ -802,7 +802,7 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
       // "Fuck me, it's cold" / "Well, fuck me" / "fuck me sideways": an exclamation, not a request.
       if (/^fuck me$/.test(m[0]) && exasperated(lower, m.index!, around)) continue;
       // One line can match several phrasings of the same request ("I want you to fuck me").
-      const key = `${d.cat}:${d.role}:${d.act}`;
+      const key = `${d.cat}:${d.role}:${d.kind}`;
       if (seen.has(key)) continue;
       seen.add(key);
       const before = lower.slice(Math.max(0, m.index - 30), m.index);

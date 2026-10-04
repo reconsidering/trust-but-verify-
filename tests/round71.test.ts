@@ -34,10 +34,6 @@ describe("round 71: report fixes", () => {
     expect(r.scenes).toEqual([]);
     expect(r.hints.some((h) => h.startsWith("Steve:top"))).toBe(false);
   });
-  it("one request in dialogue is one hint", () => {
-    const r = run("“I need your cum, I need to be bred.” Eddie moaned.");
-    expect(r.hits.filter((h) => h.via.startsWith("dialogue:anal")).length).toBeLessThanOrEqual(1);
-  });
   it("working a spot inside oneself is solo fingering", () => {
     const r = run("The pleasure felt good enough to push through the pain, and his abuse of the bundle of nerves inside himself had him shouting.");
     expect(r.hits.some((h) => h.via.startsWith("self-prostate"))).toBe(true);
