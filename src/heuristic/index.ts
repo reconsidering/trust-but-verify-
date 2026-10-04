@@ -869,6 +869,10 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
     // "he tugged him gently to where he wanted him": a pull, not a handjob. Only "tugged him off" is.
     if (pat.id.startsWith("hj-jerk-him") && /\btugg?\w*\s+\S+\s+(?!off\b)/i.test(m[0])) return;
     // Arching a back while being sucked or stroked is pleasure, not offering an ass: only count it in a stretch about the ass.
+    // "crawling back up between her legs, spreading her thighs open": the one doing the spreading is spreading someone else's legs.
+    if (pat.id.startsWith("spread-legs") && /\bbetween\s+(?:his|her|their|\w+['’]s)\s+(?:legs|thighs|knees)\b[^.!?]{0,40}$/i.test(sent.slice(0, m.index! + m[0].length))) return;
+    // "He bared his throat to daggers": a figure of speech, not a gesture of submission.
+    if (pat.id.startsWith("abo-bare-neck") && /\b(?:daggers?|knives|knife|blades?|swords?|axes?|bullets?|guns?|wolves|fangs?|claws?|the world|the storm|fate|death|the executioner)\b/i.test(sent)) return;
     if (pat.id.startsWith("arch-back") && !ANAL_CTX.test(para) && !ANAL_CTX.test(paras[pi - 1] ?? "") && /\b(?:suck\w*|blowjob|mouth|throat|lips|tongue|hand(?:job)?|stroke\w*|jerk\w*|cock|dick)\b/i.test(para)) return;
     // "arched his back and stretched": easing a stiff back is not a yielding posture.
     if (pat.id.startsWith("arch-") && /\b(?:stretch\w*|crack\w*|popp\w*|stiff|kink|from sitting|desk|chair)\b/i.test(sent) && !ANAL_CTX.test(para)) return;
@@ -946,6 +950,8 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
       if (wrong(tTok, r.top) || wrong(bTok, r.bottom)) return;
     }
     let { top, bottom } = resolved as { top: Character; bottom: Character };
+    // Arching in a pairing where neither has a penis is pleasure, not offering an ass: an anal hint needs anal words nearby.
+    if (pat.id.startsWith("arch-") && top.penis === false && bottom.penis === false && !ANAL_CTX.test(para) && !ANAL_CTX.test(paras[pi - 1] ?? "") && !ANAL_CTX.test(paras[pi + 1] ?? "")) return;
     // "His eyes were glued to Buck's cock", "his hand wrapped around Steve's cock": the possessive pronoun in front is not the
     // person named after it.
     if (pat.subj === "t" && /^(?:his|her|their)$/i.test(tTok ?? "") && bTok) {
