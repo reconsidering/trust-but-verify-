@@ -239,6 +239,22 @@ function reportText(): string {
   });
 }
 
+/** Shows on each line whether it is in the report: the report itself sits far down the page, so the line has to say so. */
+function syncFlagUi() {
+  document.querySelectorAll<HTMLElement>("[data-flag]").forEach((li) => {
+    const on = flagged.has(li.dataset.flag ?? "");
+    li.classList.toggle("flagged", on);
+    const b = li.querySelector<HTMLElement>(":scope > .flag-btn");
+    if (b) b.textContent = on ? "Reported ✓ (edit)" : "Report a mistake";
+  });
+  document.querySelectorAll<HTMLElement>("li.factor[data-fvid]").forEach((fi) => {
+    const m = pickedFactors.get(fi.dataset.fvid ?? "")?.get(Number(fi.dataset.fidx));
+    fi.classList.toggle("reported", !!m);
+    const b = fi.querySelector<HTMLElement>(".flag-btn");
+    if (b) b.textContent = m ? "Reported ✓ (edit)" : "What's wrong with this?";
+  });
+}
+
 function refreshReport() {
   const n = [...flagged.values()].filter((f) => f.included !== false).length + missedScenes.length;
   const nr = rightItems.size;
@@ -261,6 +277,8 @@ function refreshReport() {
     rm.type = "button";
     rm.addEventListener("click", () => { flagged.delete(f.id); refreshReport(); document.querySelector(`[data-flag="${CSS.escape(f.id)}"]`)?.classList.remove("flagged"); });
     li.append(" ", rm);
+    // The factors picked on a rating, so adding one visibly adds something.
+    if (f.extra?.length) { const xs = el("ul", "report-extra"); for (const x of f.extra) xs.append(el("li", undefined, x)); li.append(xs); }
     els.reportList.append(li);
   }
   for (const f of rightItems.values()) {
@@ -283,6 +301,7 @@ function refreshReport() {
     els.reportList.append(li);
   });
   els.reportPreview.textContent = n || nr || els.reportGeneral.value.trim() ? reportText() : "";
+  syncFlagUi();
 }
 
 /** Vibe factors the reader ticked as worth showing Claude, by vibe id and factor number, with any problems they named. */
@@ -973,6 +992,8 @@ function renderVibe(
         const fl = el("ul", "factor-list");
         for (const { idx, f } of group) {
           const fi = el("li", `factor factor-${f.role}`);
+          fi.dataset.fvid = vid;
+          fi.dataset.fidx = String(idx);
           const label = el("label");
           const cb = el("input");
           cb.type = "checkbox";
