@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { type Ao3Meta, emptyMeta } from "../src/ao3";
+import { buildReport } from "../src/report";
 import { type AuditHit, analyzeWithPatterns } from "../src/heuristic";
 
 const META: Ao3Meta = { ...emptyMeta(), rating: "Explicit", categories: ["M/M"], fandoms: ["Original Work"], relationships: ["Steve Harrington/Eddie Munson"], characters: ["Steve Harrington", "Eddie Munson"], freeforms: [] };
@@ -37,5 +38,15 @@ describe("round 71: report fixes", () => {
   it("working a spot inside oneself is solo fingering", () => {
     const r = run("The pleasure felt good enough to push through the pain, and his abuse of the bundle of nerves inside himself had him shouting.");
     expect(r.hits.some((h) => h.via.startsWith("self-prostate"))).toBe(true);
+  });
+});
+
+describe("report: wider context", () => {
+  it("prints how many paragraphs either side the reader asked for", () => {
+    const text = buildReport({
+      source: "patterns", summaries: [], missed: [], general: "", right: [],
+      flags: [{ id: "a", kind: "hint", pairing: "A/B", card: "anal", top: "A", bottom: "top (wanted)", act: "x", evidence: "He pushed in.", context: "One. ¶ He pushed in. ¶ Three.", span: 1, reasons: [], note: "" }],
+    });
+    expect(text).toContain("Around it (1 paragraph either side): One. ¶ He pushed in. ¶ Three.");
   });
 });

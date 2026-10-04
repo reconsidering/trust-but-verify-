@@ -69,6 +69,8 @@ export interface FlaggedScene {
   pattern?: string;
   evidence: string;
   context?: string;
+  /** Paragraphs of extra context the reader asked for on each side (0 or missing: the context shown). */
+  span?: number;
   reasons: FlagReason[];
   note: string;
 }
@@ -125,7 +127,7 @@ function describeItem(out: string[], f: FlaggedScene, n: number, right: boolean)
   for (const x of f.extra ?? []) out.push(`- ${x}`);
   if (f.pattern) out.push(`- Pattern: ${f.pattern}`);
   if (f.evidence) out.push(`- Sentence: “${f.evidence}”`);
-  if (f.context && f.context !== f.evidence) out.push(`- Around it: ${f.context.replace(/\s+/g, " ")}`);
+  if (f.context && f.context !== f.evidence) out.push(`- Around it${f.span ? ` (${f.span} paragraph${f.span === 1 ? "" : "s"} either side)` : ""}: ${f.context.replace(/\s+/g, " ")}`);
   if (!right) out.push(`- What is wrong: ${f.reasons.length ? f.reasons.map(reasonLabel).join("; ") : "(nothing ticked)"}`);
   if (f.note.trim()) out.push(`- ${right ? "My note" : "My explanation"}: ${f.note.trim()}`);
 }
