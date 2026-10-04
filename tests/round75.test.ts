@@ -53,3 +53,25 @@ describe("round 75b: a tongue inside someone's mouth is a kiss", () => {
     expect(run("Eddie’s tongue swept inside of Steve’s tight hole, taking everything he could.").rim).toEqual(["Eddie>Steve"]);
   });
 });
+
+describe("round 75c: more Sugar Alpha forms", () => {
+  const D = (t: string) => {
+    const a = analyzeWithPatterns(lead + t, { ...META, characters: ["Derek Hale", "Stiles Stilinski"], relationships: ["Derek Hale/Stiles Stilinski"] }, { quiet: true });
+    const p = a.pairings[0];
+    const f = (k: "anal" | "blowjob" | "rimming") => p[k].instances.map((x) => `${x.top.split(" ")[0]}>${x.bottom.split(" ")[0]}`);
+    return { anal: f("anal"), blow: f("blowjob") };
+  };
+  it("lining up at a hole is penetration by the one lining up", () => {
+    expect(D("Derek lines himself up with Stiles’ hole, and the head of his cock makes Stiles roll his eyes back.").anal).toEqual(["Derek>Stiles"]);
+  });
+  it("thrusts and aim as a possessive subject", () => {
+    expect(D("Derek’s thrusts grow sharper, each one grinding Stiles against the hard edge of the bench.").anal).toEqual(["Derek>Stiles"]);
+    expect(D("Derek’s cock is the perfect size, targeting that toe-curling spot inside him with every thrust.").anal).toEqual(["Derek>Stiles"]);
+  });
+  it("a cock that never leaves the hole", () => {
+    expect(D("Derek flips Stiles onto his hands and knees in one move, his cock never leaving Stiles’ hole.").anal).toEqual(["Derek>Stiles"]);
+  });
+  it("swallowing the tip of a cock", () => {
+    expect(D("Stiles arched off the bed. Derek swallows the tip of Stiles’ soft cock, sucking on the last drops of his orgasm.").blow).toEqual(["Stiles>Derek"]);
+  });
+});

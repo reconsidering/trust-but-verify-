@@ -58,7 +58,7 @@ export interface CompiledPattern extends PatternDef {
 }
 
 const PENIS_ADJ =
-  "hypersensitive|oversensitive|sensitive|hot|eager|desperate|needy|heavy|hard|thick|aching|leaking|throbbing|swollen|heavy|wet|slick|stiff|big|long|huge|rigid|straining|twitching|flushed|full|whole|fat|enormous|massive|monstrous|giant|gigantic|immense|wide|broad|tremendous|colossal|veiny|dripping|weeping|pretty|perfect|lubed|slicked|neglected|own|entire|impressive|spit-slick|spit-slicked|knotted|swelling|cut|uncut|red|angry|caged|locked|oversized|intrusive";
+  "hypersensitive|oversensitive|sensitive|hot|eager|desperate|needy|heavy|hard|thick|aching|leaking|throbbing|swollen|heavy|wet|slick|stiff|big|long|huge|rigid|straining|twitching|flushed|full|whole|fat|enormous|massive|monstrous|giant|gigantic|immense|wide|broad|tremendous|colossal|veiny|dripping|weeping|pretty|perfect|lubed|slicked|neglected|own|entire|impressive|spit-slick|spit-slicked|knotted|swelling|cut|uncut|red|angry|caged|locked|oversized|intrusive|soft|limp|spent|softening|half-hard|flaccid";
 const ASS_ADJ =
   "puckered|winking|trembling|spasming|fucked-out|well-used|tender|velvety|silky|tiny|furled|tight|slick|wet|loose|puffy|stretched|sensitive|twitching|fluttering|clenching|quivering|eager|needy|empty|furled|pink|swollen|little|perfect|lubed|slicked|gaping|greedy|virgin|own|pretty|spit-slick|spit-slicked|dry|sloppy|abused|used|sore|hot|warm|soft|willing|waiting|untouched|clenched|aching|messy|loosened|hungry|raw|open|opened|leaking|dripping|sticky|cum-filled|come-filled|filled|overstimulated|reddened|red|smooth|hairless|pert|round|flushed|gaping|stuffed|bruised|marked|claimed|hot";
 const MOUTH_ADJ = "hot|wet|warm|open|eager|pretty|soft|swollen|perfect|waiting|willing|own|sweet|tight|filthy|slack|stretched|talented|clever|sinful|greedy";
@@ -1162,6 +1162,67 @@ export const PATTERNS: PatternDef[] = [
     subj: "t",
     weight: 0.7,
     src: `\\b{T:poss}\\s+(?:desire|need|urge|hunger|craving)\\s+to\\s+(?:fuck|push|thrust|slide|sink|bury|plunge)\\w*\\s+(?:\\w+\\s+)?(?:into|inside)\\s+{B:poss}\\s+(?:body|ass|arse|hole)\\b`,
+  },
+  {
+    // "He lines himself up with Stiles' hole", "lined up his cock against his entrance"
+    id: "lines-up-hole",
+    cat: "anal",
+    act: "anal sex",
+    subj: "t",
+    weight: 0.8,
+    needsCtx: true,
+    src: `\\b{T}\\s+{aux}lin(?:es|ed|ing)\\s+(?:(?:himself|his\\s+(?:[\\w-]+\\s+)?(?:cock|dick|length|head))\\s+up|up\\s+(?:himself|his\\s+(?:[\\w-]+\\s+)?(?:cock|dick|length|head)))\\s+(?:with|against|to|at)\\s+{B:ass}`,
+  },
+  {
+    // "his cock never leaving Stiles' hole"
+    id: "cock-never-leaving",
+    cat: "anal",
+    act: "anal sex",
+    subj: "t",
+    weight: 0.8,
+    needsCtx: true,
+    src: `\\b{T:poss}\\s+(?:[\\w-]+\\s+)?(?:cock|dick|length|shaft)\\s+never\\s+(?:leav|slid|slipp|stay|remain)\\w*\\s+(?:in\\s+|inside\\s+)?{B:ass}`,
+  },
+  {
+    // "Derek's thrusts grow sharper, … each one grinding Stiles against the bench"
+    id: "possessive-thrusts-grinding",
+    cat: "anal",
+    act: "anal sex",
+    subj: "t",
+    weight: 0.6,
+    needsCtx: true,
+    src: `\\b{T:poss}\\s+(?:[\\w-]+\\s+)?thrusts?\\s+[^.!?]{0,80}?\\b(?:grinding|pushing|driving|pressing|pinning|jolting|shoving|slamming|rocking)\\s+{B}\\b`,
+  },
+  {
+    // "Derek's cock … targeting that spot inside him", "Derek's aim … hitting that spot inside of him"
+    id: "hits-spot-inside",
+    cat: "anal",
+    act: "anal sex",
+    subj: "t",
+    weight: 0.8,
+    needsCtx: true,
+    src: `\\b{T:poss}\\s+(?:[\\w-]+\\s+)?(?:cock|dick|aim|thrusts?|length)\\s+[^.!?]{0,80}?\\b(?:targeting|hitting|finding|nudging|brushing|grazing|striking)\\s+(?:that|the|his)\\s+(?:[\\w-]+\\s+)?(?:[\\w-]+\\s+)?(?:spot|prostate)\\s+(?:deep\\s+)?inside\\s+(?:of\\s+)?{B}\\b`,
+  },
+  {
+    // "Derek swallows the tip of his soft cock"
+    id: "swallows-tip",
+    cat: "oral",
+    act: "blowjob",
+    subj: "b",
+    weight: 0.8,
+    needsCtx: true,
+    src: `\\b{B}\\s+{aux}swallow(?:s|ed|ing)?\\s+the\\s+(?:[\\w-]+\\s+)?(?:tip|head|crown)\\s+of\\s+{T:penis}`,
+  },
+  {
+    // "Derek's finger traces Stiles' hole, tapping against the entrance"; "his hand slides between Stiles' legs to his hole"
+    id: "finger-at-entrance",
+    cat: "anal",
+    act: "touching the hole",
+    subj: "t",
+    weight: 0.4,
+    needsCtx: true,
+    signal: { kind: "touch", actorRole: "top" },
+    src: `\\b{T:poss}\\s+(?:fingers?|thumb|hand)\\s+(?:(?:trac|circl|rubb?|press|tapp?|brush|glid|ghost|swirl)\\w*\\s+(?:\\w+\\s+){0,2}?{B:ass}|(?:slid|slip|glid|trail|travel|mov)\\w*\\s+(?:down\\s+)?between\\s+[\\w’'-]+\\s+(?:legs|thighs|cheeks)\\s+(?:to|and finds?|finding)\\s+{B:ass})`,
   },
   {
     // "Derek's warm tongue teases the pucker of his rim", "his tongue traces her entrance"
@@ -3663,6 +3724,7 @@ export const DIALOGUE: DialogueDef[] = [
   // omegaverse knots: "Knot me, Alpha", "Every time I knot you", "you're wrapped around my knot", "Bite me while my knot's still coming inside you"
   { cat: "anal", act: "anal sex", role: "bottom", kind: "said", weight: 0.9, re: /(?:^|[.!?,]\s*|please,?\s+)knot me\b|\b(?:want|need|give me|take|put|begging for|beg for|ready for)\s+(?:your|that|his)\s+knot\b|\byour knot (?:in|inside) me\b/ },
   { cat: "anal", act: "anal sex", role: "top", kind: "said", weight: 0.9, re: /\b(?:i(?:'ll| will|'m going to| want to| wanna)?\s+)?(?:knot|breed)\s+you\b|\b(?:around|on|stuck on|hanging off|wrapped around|taking|take|taken) my knot\b|\bmy knot(?:['’]s| is)?\s+(?:still\s+)?(?:coming\s+)?(?:in|inside|locked)\b/ },
+  { cat: "anal", act: "anal sex", role: "top", kind: "said", weight: 0.5, re: /\b(?:work|put|slide|push|sink|bury)\s+my\s+knot\s+(?:in|inside|into)\s+(?:of\s+)?you\b/ },
   { cat: "oral", act: "blowjob", role: "top", kind: "said", weight: 0.9, re: /\b(?:clean|polish|lick|worship|suck)\s+(?:up\s+)?my\s+(?:cock|dick|knot)\b/ },
   { cat: "anal", act: "anal sex", role: "top", kind: "said", weight: 0.8, re: /\byou(?:'re| are| feel| felt| were)\s+(?:so\s+|fucking\s+|still\s+|always\s+|perfect\s+and\s+)*tight\b|\byou feel (?:so )?(?:good|amazing|perfect|incredible|fucking good)? ?around me\b|\b(?:clench|squeez|tighten)\w* (?:around|on) me\b|(?<!\b(?:i|i'll|i’ll|i will|i'd|i’d|we|we'll|we’ll|i can|i could|i'd rather|i’d rather|i guess i'll|i guess i’ll|can|could|will|would|to|gonna|can't|can’t)\s+)\btake (?:it(?=\s*(?:[,.!?]|$|\s+(?:all|deep|like|for me|baby|sweetheart|good|so well)\b))|my (?:cock|dick|knot)\b)/ },
   { cat: "anal", act: "anal sex", role: "bottom", kind: "said", weight: 0.8, re: /\byou(?:'re| are| feel| felt)\s+(?:so\s+|fucking\s+)*(?:big|huge|deep|thick)\b|\b(?:i'm|i’m|i am|i feel|feel|feels|i'm just)\s+so (?:full|deep)\b|^\W*so (?:full|deep)\b|\bso full of (?:you|your)\b|\bstretch(?:ing)? me\b|\b(?:need|want|crave)\s+(?:your|that)\s+(?:cock|dick|knot)\b(?!\s+in my mouth)/ },
