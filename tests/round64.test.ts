@@ -34,3 +34,21 @@ describe("fixes from the Starving gods report", () => {
     expect(run("Dean lay back, naked, stroking his own cock slowly while Castiel watched, hard.", "Dean Winchester").p?.solo?.instances.length).toBeGreaterThan(0);
   });
 });
+
+describe("fixes from the third review round", () => {
+  const fm = { ...M(), categories: ["F/F"], relationships: ["Glinda/Elphaba"], characters: ["Glinda", "Elphaba"] } as Ao3Meta;
+  const hitsOf = (t: string, meta: Ao3Meta, pre: string) => { const hits: AuditHit[] = []; analyzeWithPatterns(pre + t, meta, { quiet: true, audit: (h) => hits.push(h) }); return hits; };
+  const ff = "Glinda and Elphaba were in bed, naked and kissing, wet and aching. Glinda kissed Elphaba. Elphaba kissed Glinda back, moaning. ".repeat(2) + "\n\n";
+  it("an arched back between two women is not an anal hint", () => {
+    expect(hitsOf("Glinda’s breath hitched, her spine arched, her fists clutched the sheets.", fm, ff).filter((h) => h.via.startsWith("arch-"))).toHaveLength(0);
+  });
+  it("…but arching toward an ass still is, in a pairing with a penis", () => {
+    expect(run("Dean arched his back, pushing his ass up toward Castiel, naked and hard.", "Dean Winchester").hits.some((h) => h.via.startsWith("arch-"))).toBe(true);
+  });
+  it("spreading her partner’s thighs from between her legs is not offering herself", () => {
+    expect(hitsOf("“Shh,” Glinda whispered, crawling back up between her legs, spreading her thighs open slowly. “Let me.”", fm, ff).filter((h) => h.via.startsWith("spread-legs"))).toHaveLength(0);
+  });
+  it("‘bared his throat to daggers’ is a metaphor", () => {
+    expect(run("He bared his throat to daggers; he could not say why he bled.").hits.filter((h) => h.via.startsWith("abo-bare-neck"))).toHaveLength(0);
+  });
+});

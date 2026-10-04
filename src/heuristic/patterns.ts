@@ -560,7 +560,7 @@ export const PATTERNS: PatternDef[] = [
     act: "fingering",
     subj: "t",
     weight: 1,
-    src: `\\b{T}\\s+{aux}(?:finger(?:s|ed|ing)?|finger-?fuck(?:s|ed|ing)?|finger fuck(?:s|ed|ing)?|finger-?bang(?:s|ed|ing)?)\\s+{B:ass}`,
+    src: `\\b{T}\\s+{aux}(?:finger(?:s|ed|ing)?|finger-?fuck(?:s|ed|ing)?|finger fuck(?:s|ed|ing)?|finger-?bang(?:s|ed|ing)?)\\s+(?:the\\s+(?:outer\\s+)?(?:rim|edge|entrance|opening)\\s+of\\s+)?{B:ass}`,
   },
   {
     id: "fingers-into",
@@ -568,7 +568,7 @@ export const PATTERNS: PatternDef[] = [
     act: "fingering",
     subj: "t",
     weight: 1,
-    src: `\\b{T}\\s+{aux}(?:push|slid|slide|slip|eas|press|work|crook|curl|sink|sank|thrust|add|scissor|twist|insert|wiggl|drove|driv|guid|teas|circl|rub)\\w*\\s+(?:(?:a|one|two|three|four|another|the|{x's}|first|second|third|slick|lubed|wet|long|thick|blunt|slender|slim|thin|gloved|calloused|single|index|middle)\\s+){0,3}${FINGERS}\\s+(?:(?:back|deep(?:er)?|slowly|all the way|further|carefully|gently|in|up|down)\\s+)*(?:in(?:to|side)?(?:\\s+of)?|past|through|around|against|over|at)\\s+{B:ass}(?!-?\\s*cheeks?\\b)`,
+    src: `\\b{T}\\s+{aux}(?:push|slid|slide|slip|eas|press|work|crook|curl|sink|sank|thrust|add|scissor|twist|insert|wiggl|drove|driv|guid|teas|circl|rub|stuck|stick|shov)\\w*\\s+(?:(?:a|one|two|three|four|another|the|{x's}|first|second|third|slick|lubed|wet|long|thick|blunt|slender|slim|thin|gloved|calloused|single|index|middle)\\s+){0,3}${FINGERS}\\s+(?:(?:back|deep(?:er)?|slowly|all the way|further|carefully|gently|in|up|down)\\s+)*(?:in(?:to|side)?(?:\\s+of)?|past|through|around|against|over|at)\\s+{B:ass}(?!-?\\s*cheeks?\\b)`,
   },
   {
     id: "fingers-inside",
@@ -856,7 +856,7 @@ export const PATTERNS: PatternDef[] = [
     act: "blowjob",
     subj: "t",
     weight: 0.9,
-    src: `\\b{T}\\s+{aux}(?:fed|feeds|feed|feeding|guid(?:e|es|ed|ing)|push(?:es|ed|ing)?|press(?:es|ed|ing)?|slid|slide|slides|sliding|slip|slips|slipped|slipping)\\s+(?:{x's}\\s+{PENIS}|${SELF})\\s+(?:(?:\\w+)\\s+){0,2}?(?:in(?:to)?|between|past|to|against)\\s+{B:mouthReq}`,
+    src: `\\b{T}\\s+{aux}(?:fed|feeds|feed|feeding|guid(?:e|es|ed|ing)|push(?:es|ed|ing)?|press(?:es|ed|ing)?|slid|slide|slides|sliding|slip|slips|slipped|slipping|shov(?:e|es|ed|ing)|stuck|stick(?:s|ing)?|jam(?:s|med|ming)?|forc(?:e|es|ed|ing)|ram(?:s|med|ming)?)\\s+(?:{x's}\\s+{PENIS}|${SELF})\\s+(?:(?:\\w+)\\s+){0,2}?(?:in(?:to)?|between|past|to|against)\\s+{B:mouthReq}`,
   },
   {
     id: "fed-him",
@@ -1896,6 +1896,53 @@ export const PATTERNS: PatternDef[] = [
     weight: 1,
     needsCtx: true,
     src: `\\b{T}\\s+{aux}(?:push|press|slid|slide|slip|work|eas|insert|guid|fed|feed|sink|sank|shov|nudg|pump|fuck|drove|drive|thrust|stuff|ram)\\w*\\s+(?:(?:a|an|the|his|her|their|that|this|one|another|my|your)\\s+)?(?:[\\w-]+\\s+){0,2}?(?:dildo|vibrator|vibe|butt\\s*plug|plug|beads|wand|bullet|toy|strap-?on|strap)\\s+(?:(?:slowly|deep(?:er)?|all the way|gently|carefully|roughly|further|back|firmly|easily)\\s+)*(?:in(?:to)?|inside|up)\\s+{B:ass}`,
+  },
+  {
+    // "the first press of Cas's lubed finger to his hole", "the first touch of Cas's finger to his hole"
+    id: "finger-noun-to-hole",
+    cat: "anal",
+    kw: "fingers?",
+    act: "fingering",
+    subj: "t",
+    weight: 0.8,
+    needsCtx: true,
+    src: `\\b(?:press|touch|brush|slide|push|slip|glide|tease)\\s+of\\s+{T:poss}\\s+(?:[\\w-]+\\s+){0,2}?fingers?\\s+(?:to|at|against|into|inside)\\s+{B:ass}`,
+  },
+  {
+    // "the throb and pulse of the vibrator inside him", "the plug inside him"
+    id: "toy-inside-him",
+    cat: "anal",
+    kw: "vibrator|dildo|plug|toy|vibe",
+    act: "toy inside",
+    subj: "b",
+    weight: 0.7,
+    needsCtx: true,
+    signal: { kind: "prep", actorRole: "bottom" },
+    src: `\\b(?:the|a|that|his|her)\\s+(?:[\\w-]+\\s+){0,2}?(?:vibrator|vibe|dildo|butt\\s*plug|plug|toy)\\s+(?:\\w+\\s+){0,2}?(?:inside|in|up|within)\\s+{B}(?![\\w-])(?!\\s+(?:the|a|an|his|her|their)\\b)`,
+  },
+  {
+    // "a plug in your ass", "the plug wedged against his prostate", "a vibrating plug up my ass"
+    id: "plug-in-ass",
+    cat: "anal",
+    kw: "plug",
+    act: "wearing a plug",
+    subj: "b",
+    weight: 0.7,
+    needsCtx: true,
+    signal: { kind: "prep", actorRole: "bottom" },
+    src: `\\b(?:a|the|that|his|her|their)\\s+(?:[\\w-]+\\s+){0,2}?(?:butt\\s*)?plug\\s+(?:\\w+\\s+){0,3}?(?:in|inside|up|against|pressing against|pressed against)\\s+{B:poss}\\s+(?:ass|arse|hole|prostate|butt)\\b`,
+  },
+  {
+    // "pulled the dildo out", "took out the plug", "pulled the plug out of him": the one doing it is the top
+    id: "toy-removed",
+    cat: "anal",
+    kw: "dildo|plug|vibrator|toy",
+    act: "taking a toy out",
+    subj: "t",
+    weight: 0.5,
+    needsCtx: true,
+    signal: { kind: "touch", actorRole: "top" },
+    src: `\\b{T}\\s+{aux}(?:pull|took|take|slid|slip|eas|draw|drew|remov|work)\\w*\\s+(?:out\\s+)?(?:the\\s+|a\\s+|his\\s+|that\\s+)?(?:[\\w-]+\\s+){0,2}?(?:dildo|butt\\s*plug|plug|vibrator|toy)\\s+(?:\\w+\\s+){0,2}?(?:out|free|from)\\b`,
   },
   {
     // "pressed the vibrator against Dean's hole", "teased the plug at her entrance"
@@ -3056,7 +3103,7 @@ export const PATTERNS: PatternDef[] = [
     weight: 0.8,
     needsCtx: true,
     signal: { kind: "handjob", actorRole: "top" },
-    src: `\\b{T}\\s+{aux}(?:jerk|strok|pump|tugg?)\\w*\\s+{B}\\s+(?:off|slowly|loosely|lazily|tightly|firmly|faster|hard|gently|steadily)\\b(?!\\s+with\\s+(?:his|her|their)\\s+(?:hole|ass|body|mouth|throat))`,
+    src: `\\b{T}\\s+{aux}(?:jerk|strok|pump|tugg?)\\w*\\s+{B}\\s+(?:off|slowly|loosely|lazily|tightly|firmly|faster|hard|gently|steadily|to\\s+(?:full\\s+)?(?:hardness|completion|orgasm|climax)|through\\s+(?:it|his)|and)\\b(?!\\s+with\\s+(?:his|her|their)\\s+(?:hole|ass|body|mouth|throat))`,
   },
   {
     // "Eddie blushed", "Steve stammered": flustered, a yielding cue on the everyday-dynamic axis (needs the partner nearby)
@@ -3128,6 +3175,54 @@ export const PATTERNS: PatternDef[] = [
     weight: 0.6,
     signal: { kind: "behavior", actorRole: "top" },
     src: `\\b{T}\\s+{aux}(?:(?:unlock|undid|undo|unclip|remov|took)\\w*\\s+(?:the\\s+|his\\s+|her\\s+|{B:poss}\\s+)(?:\\w+\\s+)?(?:cock[- ]?cage|chastity(?:\\s+(?:cage|device|belt|tube))?|cage)|(?:held|kept|had|dangled|pocketed|twirled|tucked)\\s+(?:the\\s+|a\\s+|his\\s+|her\\s+)?(?:\\w+\\s+){0,2}?key\\s+(?:to|for|of)\\s+{B:poss}\\s+(?:\\w+\\s+)?(?:cock[- ]?cage|chastity(?:\\s+(?:cage|device|belt|tube))?|cage))(?![\\w-])`,
+  },
+  {
+    // "got to work securing the cage around his dick", "began locking the cage onto Dean"
+    id: "chastity-lock-on-ing",
+    cat: "vibe",
+    chastity: true,
+    kw: "cage|chastity",
+    act: "locking a chastity device on their partner",
+    subj: "t",
+    weight: 0.7,
+    signal: { kind: "behavior", actorRole: "top" },
+    src: `\\b{T}\\s+(?:\\w+\\s+){0,3}?(?:secur|lock|snapp|clipp|fasten|fitt|click)ing\\s+(?:the\\s+|a\\s+|his\\s+|her\\s+)?(?:\\w+\\s+){0,2}?(?:cock[- ]?cage|chastity(?:\\s+(?:cage|device|belt|tube))?|cage)\\s+(?:on|onto|around|over)\\s+{B:poss}\\s+(?:\\w+\\s+)?(?:cock|dick|prick|length|shaft)\\b`,
+  },
+  {
+    // "got to work freeing Dean from the cage", "freed Dean from his cage"
+    id: "chastity-keyholder-free",
+    cat: "vibe",
+    chastity: true,
+    kw: "cage|chastity",
+    act: "freeing their partner from a chastity device",
+    subj: "t",
+    weight: 0.6,
+    signal: { kind: "behavior", actorRole: "top" },
+    src: `\\b{T}\\s+(?:\\w+\\s+){0,3}?(?:fre(?:e|ed|es|eing)|releas(?:e|ed|es|ing)|unlock(?:ed|s|ing)?)\\s+{B}\\s+from\\s+(?:the\\s+|his\\s+|her\\s+|a\\s+)?(?:\\w+\\s+)?(?:cock[- ]?cage|chastity(?:\\s+(?:cage|device|belt|tube))?|cage)\\b`,
+  },
+  {
+    // "pulled the key to the cage from his pocket": the keyholder, no one else named
+    id: "chastity-keyholder-key",
+    cat: "vibe",
+    chastity: true,
+    kw: "key",
+    act: "holding the key to a chastity device",
+    subj: "t",
+    weight: 0.6,
+    signal: { kind: "behavior", actorRole: "top" },
+    src: `\\b{T}\\s+{aux}(?:pull|took|take|fish|produc|retriev|dug|dig|dangl|twirl|roll|held|hold|kept|keep|pocket)\\w*\\s+(?:out\\s+)?(?:the\\s+|a\\s+|his\\s+|her\\s+)?(?:\\w+\\s+){0,2}?key\\s+(?:to|for|of)\\s+(?:the\\s+|his\\s+|her\\s+|{B:poss}\\s+)?(?:\\w+\\s+)?(?:cock[- ]?cage|chastity(?:\\s+(?:cage|device|belt|tube))?|cage)\\b`,
+  },
+  {
+    // "tapped the cage", "ran a finger over the cage": the keyholder toying with it
+    id: "chastity-keyholder-tap",
+    cat: "vibe",
+    chastity: true,
+    kw: "cage",
+    act: "toying with a chastity device",
+    subj: "t",
+    weight: 0.4,
+    signal: { kind: "behavior", actorRole: "top" },
+    src: `\\b{T}\\s+{aux}(?:tap|flick|rap|stroke|trac|toy|pla)\\w*\\s+(?:with\\s+)?(?:a\\s+finger\\s+)?(?:over\\s+|on\\s+|at\\s+)?(?:the\\s+|his\\s+)?(?:\\w+\\s+)?(?:cock[- ]?cage|chastity(?:\\s+(?:cage|device|belt|tube))?|cage)\\b`,
   },
   {
     // "Castiel was locked in a cage", "Castiel wore the chastity device", "Castiel's cock strained against the cage": the wearer

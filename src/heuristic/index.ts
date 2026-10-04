@@ -22,7 +22,7 @@ import { ANAL_NEAR_RE, ANIMAL_NEAR, DANGER, DESIRE, DESIRE_LEAD, DESIRE_TAIL, FA
 import { AddressBook } from "./address";
 import { reliabilityOf } from "./reliability";
 import { babyNear, featuresOf, trustOf } from "./learned";
-import { Ctx, groupValue, pronoun, resolvePair, stripPoss } from "./resolve";
+import { Ctx, groupValue, pronoun, readSlot, resolvePair, stripPoss } from "./resolve";
 import { PairTags, buildAct, buildDynamic, buildManual, buildSolo, buildVaginal, buildVibes, plural, soloIsAnal, tagsFor } from "./builders";
 
 // ───────────── main analysis ─────────────
@@ -239,6 +239,60 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
   })();
   // A chastity device or cock cage in the tags (male-only works): being locked up reads as submission, holding the key as control.
   const isChastity = /chastity|cock[- ]?cage|\bkey ?holder|\bcaged\b/i.test(meta.freeforms.join(" | ")) && (meta.categories.length === 0 || meta.categories.includes("M/M"));
+  // Who wears the device, where the tags say: "Cas puts Dean in a cock cage", "Caged Dean", "Dean in chastity", else the one tagged as the sub.
+  const chastityWearer: Character | undefined = !isChastity ? undefined : (() => {
+    const find = (n: string) => cast.byAlias.get(n.trim()) ?? cast.byAlias.get(n.trim().split(/\s+/)[0]) ?? cast.chars.find((c) => c.aliases.some((al) => n.toLowerCase().includes(al.toLowerCase())));
+    for (const f of meta.freeforms) {
+      const m = /\b(?:puts?|put|locks?|keeps?|has|makes?)\s+(.+?)\s+in\s+(?:a\s+|the\s+)?(?:cock[- ]?cage|chastity|cage)/i.exec(f) ?? /^(?:caged|chastity|cock[- ]?caged)\s*!?\s+(.+)$/i.exec(f) ?? /^(.+?)\s+(?:in|wearing|wears|is wearing)\s+(?:a\s+)?(?:cock[- ]?cage|chastity(?:\s+(?:cage|device|belt))?)$/i.exec(f);
+      const c = m && find(m[1]);
+      if (c) return c;
+    }
+    const subs = tags.dynamics.filter((d) => d.lean === "bottom").map((d) => d.char);
+    const doms = tags.dynamics.filter((d) => d.lean === "top").map((d) => d.char);
+    return subs.length === 1 && doms.every((d) => d !== subs[0]) ? subs[0] : undefined;
+  })();
+  /** A character's tagged partner (first pairing that includes them), so "Sam's wedding" in a sentence doesn't make Sam Dean's partner. */
+  const tagPartner = (c: Character): Character | undefined => {
+    const pr = cast.pairings.find((x) => x.includes(c));
+    return pr ? (pr[0] === c ? pr[1] : pr[0]) : ctx.partnerOf(c);
+  };
+  const CAGE_RE = /\b(?:cock[- ]?cages?|chastity(?:\s+(?:cage|device|belt|tube))?|(?:the|a|his|that|this|newly|tight|metal|steel|plastic|small|little)\s+(?:\w+\s+){0,2}?cage|caged|uncaged)\b/i;
+  const NOT_CAGE = /\b(?:bird|rib|animal|lion|hamster|golden|mental|ribcage)\s*cage|\bcage\s+(?:match|fight)|damp cage|cage of (?:his|her|their|\w+['’]s)\b/i;
+  const CAGE_BODY = /\b(?:cock|dick|prick|balls?|erection|plug|key|lock\w*|unlock\w*|ring|hard|strain\w*|tight\w*|throb\w*|twitch\w*|release|denial|wear\w*|wore|worn|chastity|caged|free\w*|secur\w*|put|placed|around|cock[- ]?cage)\b/i;
+  /** A sentence about the device: the one who wears it reads as the bottom, whoever the pronouns point at. */
+  function chastityScan(sent: string, original: string, pi: number) {
+    if (!chastityWearer || !CAGE_RE.test(sent) || NOT_CAGE.test(sent)) return;
+    if (!/cock[- ]?cage|chastity|caged/i.test(sent) && !CAGE_BODY.test(sent)) return;
+    // Fetching, ordering or setting down the device says nothing about who is wearing it right now.
+    if (/\b(?:key|box|ordered?|ordering|bought|buy|amazon|package|arrived|cart|clattered|came\b|set\s+(?:the\s+)?\w*\s*down)\b/i.test(sent) && !/\b(?:wearing|wore|worn|strain\w*|tight\w*|twitch\w*|caged)\b/i.test(sent)) return;
+    const w = chastityWearer;
+    const other = tagPartner(w);
+    if (!other) return;
+    for (const [id, cat, kind, act, weight] of [
+      ["chastity-wearer", "vibe", "behavior", "wearing a chastity device", 0.5],
+      ["chastity-wearer-anal", "anal", "touch", "wearing a chastity device (hints anal bottom)", 0.4],
+      ["chastity-wearer-oral", "oral", "touch", "wearing a chastity device (hints oral bottom)", 0.4],
+    ] as const) {
+      if (desires.some((d) => d.via === id && d.sentence === original)) continue;
+      desires.push({ via: id, cat, act, who: w, partner: other, role: "bottom", wants: true, kind, weight, para: pi, sentence: original, basis: "named" });
+    }
+  }
+  // A plug in the tags' sub (or the chastity wearer): "a plug in your ass", "the vibrations of the plug stopped", "the base of the plug".
+  const plugWearer: Character | undefined = chastityWearer ?? (() => {
+    const subs = tags.dynamics.filter((d) => d.lean === "bottom").map((d) => d.char);
+    const doms = tags.dynamics.filter((d) => d.lean === "top").map((d) => d.char);
+    return subs.length === 1 && doms.every((d) => d !== subs[0]) ? subs[0] : undefined;
+  })();
+  const PLUG_WORN = /\b(?:butt\s*plugs?|(?:vibrating|the|that|a|his|my|your)\s+(?:\w+\s+)?plug)\b(?![\s-]*(?:socket|in\b|hole|cap))/i;
+  const PLUG_BODY = /\b(?:ass|arse|hole|prostate|vibrat\w*|wedged|pressing|stopped|inside|wearing|wore|worn|base of|sitting|stretch\w*|full|shift\w*|cage)\b/i;
+  function plugScan(sent: string, original: string, pi: number) {
+    if (!plugWearer || !PLUG_WORN.test(sent) || !PLUG_BODY.test(sent) || /\b(?:power|electric|spark|bath|sink|tub|drain)\s+plug|plug\s+(?:in|into)\s+(?:the\s+)?(?:wall|socket|outlet|phone|charger)/i.test(sent)) return;
+    // Taking one out or setting it down is someone else's hand, not the wearer's state.
+    if (/\b(?:take|took|taking|pull|pulled|remov\w*|set|put)\s+(?:the\s+|a\s+|that\s+)?(?:\w+\s+)?plug\s+(?:out|down|away|aside)\b|\bplug\s+out\b/i.test(sent)) return;
+    const other = tagPartner(plugWearer);
+    if (!other || desires.some((d) => d.via === "plug-worn" && d.sentence === original)) return;
+    desires.push({ via: "plug-worn", cat: "anal", act: "wearing a plug", who: plugWearer, partner: other, role: "bottom", wants: true, kind: "prep", weight: 0.6, para: pi, sentence: original, basis: "named" });
+  }
   scan();
   if (ctx.learnFromVotes()) scan();
 
@@ -322,12 +376,15 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
       const subj = firstEntity(sent);
       if (subj) ctx.lastSubject = subj;
 
+      chastityScan(sent, original, pi);
+      plugScan(sent, original, pi);
       {
         const penisy = PENIS_CTX.test(sent);
         gateSeen.fill(0);
         for (const pat of patterns) {
           if (pat.abo && !isAbo) continue;
           if (pat.chastity && !isChastity) continue;
+          if (pat.chastity && chastityWearer && pat.id.startsWith("chastity-wearer")) continue;
           if (pat.needsCtx && !sexy) continue;
           if (pat.needsPenis && !penisy) continue;
           // Many patterns share a gate (and each has an elided twin): test the sentence against each distinct gate once.
@@ -370,6 +427,8 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
       lastQPrev = lastQ;
       lastQ = q;
       const speaker = (continues ? paraSpeaker : undefined) ?? attributeSpeaker(para, mp, q, paraSpeaker, lastQPrev) ?? paraSpeaker ?? (mp.trim().length < 6 && prevSpeaker ? ctx.partnerOf(prevSpeaker) : undefined);
+      chastityScan(q.text, `“${q.text.trim()}”`, pi);
+      plugScan(q.text, `“${q.text.trim()}”`, pi);
       if (!speaker) continue;
       paraSpeaker = speaker;
       if (continues || attribExplicit) addressBook.record(speaker, ctx.partnerOf(speaker), q.text, pi, q.text, isNameWord);
@@ -610,6 +669,23 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
   function scanDialogue(line: string, speaker: Character, pi: number, around: { animal?: boolean; explicit?: boolean; sexy: boolean; oral?: boolean; after: string; before: string }) {
     const lower = line.toLowerCase().replace(/’/g, "'");
     const seen = new Set<string>();
+    // "I'm going to cage you now", "As long as you're wearing that cage, you're mine", "There's a cage around my dick": the one speaking
+    // is the keyholder when they say "you", the wearer when they say "my".
+    if (chastityWearer && /\b(?:cock[- ]?cage|chastity|(?:the|that|this|a|your|my)\s+cage|cage\s+(?:you|him|your|around|on))\b/.test(lower) && !NOT_CAGE.test(lower)) {
+      const wearer = chastityWearer;
+      const holder = tagPartner(wearer);
+      const note = (who: Character, partner: Character | undefined, role: Role, via: string, act: string, cat: Cat = "vibe", kind: Desire["kind"] = "behavior", weight = 0.5) => {
+        if (!partner || desires.some((d) => d.via === via && d.who === who && d.sentence === `“${line.trim()}”`)) return;
+        desires.push({ via, cat, act, who, partner, role, wants: true, kind, weight, para: pi, sentence: `“${line.trim()}”`, basis: "named", guessed: around.explicit === false ? true : undefined });
+      };
+      if (speaker === wearer && /\b(?:my|me|i)\b/.test(lower)) {
+        note(wearer, holder, "bottom", "chastity-wearer", "wearing a chastity device");
+        note(wearer, holder, "bottom", "chastity-wearer-anal", "wearing a chastity device (hints anal bottom)", "anal", "touch", 0.4);
+        note(wearer, holder, "bottom", "chastity-wearer-oral", "wearing a chastity device (hints oral bottom)", "oral", "touch", 0.4);
+      } else if (speaker === holder && /\b(?:you|your)\b/.test(lower)) {
+        note(holder, wearer, "top", "chastity-keyholder", "controlling a chastity device");
+      }
+    }
     // Generic "take it" / "you're so tight" talk is oral when the line itself mentions a mouth ("swallow me down") or the
     // scene around it is oral and not anal.
     const oralLine = ORAL_LINE_RE.test(lower) || !!around.oral;
@@ -721,6 +797,30 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
     desires.push({ via: "history", cat, act: "past experience with others", who, partner, role, wants: true, kind: "history", weight: 0.8, para: pi, sentence });
   }
 
+  /**
+   * One person in a plain narrated act is identifiable and the other is not ("eating Stiles out" with the eater unresolved, "he took me
+   * deep" with the narrator the one sucked, "the twink gagged on Jordan's length"). The act can't be placed between two people, but the
+   * identifiable one's role is clear, so it counts as a hint for them.
+   */
+  function oneSided(pat: CompiledPattern, m: RegExpMatchArray, tTok: string | undefined, bTok: string | undefined, sent: string, original: string, pi: number) {
+    if (pat.signal || (pat.cat !== "anal" && pat.cat !== "oral")) return;
+    const ts = readSlot(tTok, cast, ctx), bs = readSlot(bTok, cast, ctx);
+    const known = ts?.char && !bs?.char ? { c: ts.char, role: "top" as Role } : bs?.char && !ts?.char ? { c: bs.char, role: "bottom" as Role } : undefined;
+    if (!known) return;
+    // Only plain statements: nothing negated, wished for, imagined, conditional or remembered in the sentence.
+    if (NEG.test(sent) || /\b(?:want\w*|wish\w*|imagin\w*|fantas\w*|if|would|could|might|maybe|perhaps|never|used to|remember\w*|dream\w*|hope\w*|need\w*|let me|going to|gonna|beg\w*|almost|nearly|able to|getting to|get to|focus\w*|promis\w*|about to|ready to|tr(?:y|ies|ied|ying)|tempt\w*|so close to|threat\w*|ask\w*|plan\w*|decid\w*|ache\w* to|itch\w*|long\w* to|sound\w* like|as if|like he)\b/i.test(sent)) return;
+    // The sentence must be about the body part, not fingers in a mouth or a kiss.
+    if (pat.cat === "oral" && !/\b(?:cock|dick|prick|length|shaft|erection|balls|throat|clit|pussy|cunt|hole|rim)\b/i.test(sent)) return;
+    if (pat.cat === "oral" && /\bsuck\w*\s+(?:\w+\s+){0,3}?(?:fingers?|thumbs?|nipples?|lip|tongue|neck|skin|bruise)\b/i.test(sent)) return;
+    if (pat.cat === "anal" && !/\b(?:cock|dick|prick|ass|hole|rim|prostate|fuck\w*|rid(?:e|es|ing)|inside|thrust\w*|fill\w*|plug|dildo|fingers?|sliding|slid|pound\w*|stretch\w*)\b/i.test(sent)) return;
+    if (known.c === cast.secondPerson && known.c.name === "Reader") return;
+    const partner = tagPartner(known.c);
+    if (!partner || partner === known.c) return;
+    const via = `${pat.id.replace(/~elided$/, "")}~one-sided`;
+    if (desires.some((d) => d.via === via && d.sentence === original && d.who === known.c)) return;
+    desires.push({ via, cat: pat.cat, act: `${pat.act} (partner unclear)`, who: known.c, partner, role: known.role, wants: true, kind: "touch", weight: 0.5 * Math.min(1, pat.weight), para: pi, sentence: original, basis: "named" });
+  }
+
   function handleMatch(
     pat: CompiledPattern,
     m: RegExpMatchArray,
@@ -762,7 +862,7 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
         if (/^(?:it|this|that|the|a|an|one|another|something)\b/i.test(lastClause) && /\b\w+(?:s|ed)\b/.test(lastClause)) return;
         subjChar = elidedSubject(before, sent.slice(m.index!));
       }
-      if (!subjChar) return;
+      if (!subjChar) { oneSided(pat, m, tTok, bTok, sent, original, pi); return; }
     }
     // "Dean could feel his cock pulse in his mouth": what someone feels, tastes or sees belongs to the other person.
     if (!pat.elided && !subjChar && pat.subj === "t" && /^(?:his|her|their)$/i.test(tTok ?? "")) {
@@ -789,7 +889,7 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
     // who isn't in the cast can't be credited as the person before.
     if (pat.elided && new RegExp(`(?:^|(?:[,;]|\\b(?:and|but|while|as|then|yet|so))\\s+)(?:(?:Mr|Mrs|Ms|Miss|Dr)\\.?\\s+)?([A-Z][a-z]+(?:\\s+[A-Z][a-z]+)?)(?:,[^,.;]{2,50},)?\\s*$`).test(sent.slice(0, m.index!))) {
       const named = new RegExp(`(?:^|(?:[,;]|\\b(?:and|but|while|as|then|yet|so))\\s+)(?:(?:Mr|Mrs|Ms|Miss|Dr)\\.?\\s+)?([A-Z][a-z]+(?:\\s+[A-Z][a-z]+)?)(?:,[^,.;]{2,50},)?\\s*$`).exec(sent.slice(0, m.index!))![1];
-      if (!cast.byAlias.get(named) && !cast.byAlias.get(named.split(" ")[0]) && !/^(?:Then|Now|Still|Instead|Maybe|Perhaps|God|Please|Fuck|Jesus|Christ|Just|Again|Next|Later|Soon|Once|Yes|No|Oh|Okay|Ok|Fine|Good|Hell|Shit|Damn|He|She|They|It|We|You|I|His|Her|Their|The|A|An|This|That|There|Some|Another)$/.test(named) && !/ly$/.test(named)) return;
+      if (!cast.byAlias.get(named) && !cast.byAlias.get(named.split(" ")[0]) && !/^(?:Then|Now|Still|Instead|Maybe|Perhaps|God|Please|Fuck|Jesus|Christ|Just|Again|Next|Later|Soon|Once|Yes|No|Oh|Okay|Ok|Fine|Good|Hell|Shit|Damn|He|She|They|It|We|You|I|His|Her|Their|The|A|An|This|That|There|Some|Another)$/.test(named) && !/ly$/.test(named)) { oneSided(pat, m, tTok, bTok, sent, original, pi); return; }
     }
     // "before Eustace placed a hand on his back and guided him out": the left-out subject is Eustace, whoever he is, when no one
     // in the cast (or a he / she) comes between his name and the verb.
@@ -798,7 +898,7 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
       const o = /(?:^|[,;]\s*|\b(?:and|but|while|as|then|yet|so|before|after|when|until)\s+)(?:(?:Mr|Mrs|Ms|Miss|Dr)\.?\s+)?([A-Z][a-z]+(?:\s+[A-Z][a-z]+)?)\s+((?:[\w'’-]+\s+){1,8}?)(?:and|,)\s*$/.exec(lead);
       if (o && !cast.byAlias.get(o[1]) && !cast.byAlias.get(o[1].split(" ")[0]) && !/ly$/.test(o[1]) &&
           !/^(?:Then|Now|Still|Instead|Maybe|Perhaps|God|Please|Fuck|Jesus|Christ|Just|Again|Next|Later|Soon|Once|Yes|No|Oh|Okay|Ok|Fine|Good|Hell|Shit|Damn|But|And|When|While|As|After|Before|If|So|Yet|Until|He|She|They|It|We|You|I|His|Her|Their|The|A|An|This|That|There|Some|Another)$/.test(o[1]) &&
-          !new RegExp(`\\b(?:${NAMES})\\b|\\b(?:he|she|they|I|we|you)\\b`, "i").test(o[2])) return;
+          !new RegExp(`\\b(?:${NAMES})\\b|\\b(?:he|she|they|I|we|you)\\b`, "i").test(o[2])) { oneSided(pat, m, tTok, bTok, sent, original, pi); return; }
     }
     // "The twink did as he was told and gagged on Jordan's length", "The bottom boy's roommates wouldn't hear him plead as he got fucked":
     // a generic label for someone who isn't in the cast is that stranger, not whichever character came before. Authors who keep
@@ -806,7 +906,7 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
     if (pat.elided || /^(?:he|him|she|her)$/i.test(tTok ?? "") || /^(?:he|him|she|her)$/i.test(bTok ?? "")) {
       const g = new RegExp(`(?:^|[,;]\\s*|\\b(?:and|but|as|while|then|when|before|after)\\s+)the\\s+(twink|twunk|bottom boy|bottom|slut|whore|virgin|newbie|stranger|brat|slave|plaything|boy toy|hooker|escort|jock)(?:['’]s)?\\b(?![^.!?]*\\b(?:${NAMES})\\b[^.!?]*$)`, "i").exec(sent.slice(0, m.index! + (/^\s*(?:and\b|,)\s*/.exec(m[0])?.[0].length ?? 0)));
       if (g && !cast.byAlias.get(g[1]) && !new RegExp(`\\b(?:${NAMES})\\b`).test(sent.slice(g.index! + g[0].length, m.index!)) &&
-          (paras.join(" ").match(new RegExp(`\\bthe ${g[1]}\\b`, "gi")) ?? []).length < 5) return;
+          (paras.join(" ").match(new RegExp(`\\bthe ${g[1]}\\b`, "gi")) ?? []).length < 5) { oneSided(pat, m, tTok, bTok, sent, original, pi); return; }
     }
     // "Greg frowned. He pushed Dean against the wall": the he after a clause whose subject is someone outside the cast is that person,
     // and so is a left-out subject in a sentence that someone outside the cast starts.
@@ -819,7 +919,7 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
       const at = para.indexOf(sent);
       const prevSent = at > 0 ? para.slice(Math.max(0, at - 240), at).trim().split(/(?<=[.!?”])\s+/).pop() ?? "" : "";
       const cur = startOf(sent);
-      if (cur === "out" || (cur === "pron" && /[.!?”]$/.test(prevSent) && startOf(prevSent) === "out")) return;
+      if (cur === "out" || (cur === "pron" && /[.!?”]$/.test(prevSent) && startOf(prevSent) === "out")) { oneSided(pat, m, tTok, bTok, sent, original, pi); return; }
     }
     // "He knew his whole focus was on serving him; … as he was getting railed": the he who serves is the one being taken, but the
     // last-named subject is the one served, so the pronoun can't be trusted.
@@ -828,7 +928,7 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
     if (!pat.elided && /^(?:he|she)$/i.test(pat.subj === "t" ? tTok ?? "" : bTok ?? "")) {
       const o = /\b([A-Z][a-z]+)\s+(?:[\w'’-]+\s+){0,3}?(?:as|while|when|and|but|before|after)\s+$/.exec(sent.slice(0, m.index!));
       if (o && !cast.byAlias.get(o[1]) && !/ly$/.test(o[1]) && !/^(?:Then|Now|Still|Instead|Maybe|Perhaps|God|Please|Just|Again|Next|Later|Soon|Once|Yes|No|Oh|But|And|When|While|As|After|Before|If|So|Yet|Until|The|His|Her|Their|It|This|That|There)$/.test(o[1]) &&
-          !new RegExp(`\\b(?:${NAMES})\\b|\\b(?:he|she|they|I|we|you)\\b`, "i").test(sent.slice(o.index! + o[1].length, m.index!))) return;
+          !new RegExp(`\\b(?:${NAMES})\\b|\\b(?:he|she|they|I|we|you)\\b`, "i").test(sent.slice(o.index! + o[1].length, m.index!))) { oneSided(pat, m, tTok, bTok, sent, original, pi); return; }
     }
     // "…looks at him like she wants to pull him into a hug and feed him soup": the left-out subject is the "she" before it, and
     // nobody in this cast is a she.
@@ -836,7 +936,7 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
       const pr = [...sent.slice(0, m.index!).matchAll(/\b(?:she|he)\b(?!['’])/gi)].pop();
       if (pr && !/[.!?]\s+\S/.test(sent.slice(pr.index! + 3, m.index!))) {
         const g: Gender = /^she$/i.test(pr[0]) ? "f" : "m";
-        if (!cast.chars.some((c) => Ctx.compatible(c, g))) return;
+        if (!cast.chars.some((c) => Ctx.compatible(c, g))) { oneSided(pat, m, tTok, bTok, sent, original, pi); return; }
       }
     }
     // "Steve never sucked Eddie off, taking him deep": a participle carries on the negated verb before it.
@@ -869,6 +969,10 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
     // "he tugged him gently to where he wanted him": a pull, not a handjob. Only "tugged him off" is.
     if (pat.id.startsWith("hj-jerk-him") && /\btugg?\w*\s+\S+\s+(?!off\b)/i.test(m[0])) return;
     // Arching a back while being sucked or stroked is pleasure, not offering an ass: only count it in a stretch about the ass.
+    // "crawling back up between her legs, spreading her thighs open": the one doing the spreading is spreading someone else's legs.
+    if (pat.id.startsWith("spread-legs") && /\bbetween\s+(?:his|her|their|\w+['’]s)\s+(?:legs|thighs|knees)\b[^.!?]{0,40}$/i.test(sent.slice(0, m.index! + m[0].length))) return;
+    // "He bared his throat to daggers": a figure of speech, not a gesture of submission.
+    if (pat.id.startsWith("abo-bare-neck") && /\b(?:daggers?|knives|knife|blades?|swords?|axes?|bullets?|guns?|wolves|fangs?|claws?|the world|the storm|fate|death|the executioner)\b/i.test(sent)) return;
     if (pat.id.startsWith("arch-back") && !ANAL_CTX.test(para) && !ANAL_CTX.test(paras[pi - 1] ?? "") && /\b(?:suck\w*|blowjob|mouth|throat|lips|tongue|hand(?:job)?|stroke\w*|jerk\w*|cock|dick)\b/i.test(para)) return;
     // "arched his back and stretched": easing a stiff back is not a yielding posture.
     if (pat.id.startsWith("arch-") && /\b(?:stretch\w*|crack\w*|popp\w*|stiff|kink|from sitting|desk|chair)\b/i.test(sent) && !ANAL_CTX.test(para)) return;
@@ -936,7 +1040,7 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
     if (causative && !subjChar && nearSubj && !(pat.subj === "t" ? bTok : tTok)) subjChar = nearSubj;
     const resolved = asked ? { ...asked, basis: "pronoun" as Basis } : resolvePair(tTok, bTok, pat.subj, cast, ctx, subjChar, nearSubj);
     ctx.coSubjects.clear();
-    if (!resolved) return;
+    if (!resolved) { oneSided(pat, m, tTok, bTok, sent, original, pi); return; }
     {
       // "She" or "her" can't be a man (and "he"/"him" can't be a woman): the pronoun meant someone outside the pair.
       const wrong = (tok: string | undefined, c: Character | undefined) =>
@@ -946,6 +1050,8 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
       if (wrong(tTok, r.top) || wrong(bTok, r.bottom)) return;
     }
     let { top, bottom } = resolved as { top: Character; bottom: Character };
+    // Arching in a pairing where neither has a penis is pleasure, not offering an ass: an anal hint needs anal words nearby.
+    if (pat.id.startsWith("arch-") && top.penis === false && bottom.penis === false && !ANAL_CTX.test(para) && !ANAL_CTX.test(paras[pi - 1] ?? "") && !ANAL_CTX.test(paras[pi + 1] ?? "")) return;
     // "His eyes were glued to Buck's cock", "his hand wrapped around Steve's cock": the possessive pronoun in front is not the
     // person named after it.
     if (pat.subj === "t" && /^(?:his|her|their)$/i.test(tTok ?? "") && bTok) {
@@ -1125,6 +1231,8 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
       [top, bottom] = [owner, other];
       act = "fingering";
     }
+    // "he liked the drag of Cas inside him, slamming against his prostate": the one slamming is the one inside him, not the "he".
+    if (pat.id.startsWith("prostate") && pat.elided && /\b(?:inside|in)\s+(?:him|her|them)\s*,\s*$/i.test(sent.slice(0, m.index!) + (/^\s*,\s*/.exec(m[0])?.[0] ?? ""))) return;
     // "the fingers he presses inside himself": his own hand in his own ass, which the solo card covers, not one partner fingering the other.
     if (pat.id.startsWith("pushed-in") && /\b(?:inside|into|in)$/i.test(matchText) && /^\s+(?:himself|herself|themselves)\b/i.test(sent.slice(m.index! + m[0].length))) return;
     // "Alex shudders and presses in harder" while kissing: not penetration.
@@ -1299,6 +1407,12 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
     // "thrust forward into Eddie, who moaned as Steve hit the back of his throat": a mouth, not an ass.
     if (cat === "anal" && /\b(?:throat|mouth)\b/i.test(sent) && !ANAL_CTX.test(sent) && !FINGER_CTX.test(sent) && !/\b(?:could swear|swear|felt like|feels like|feeling like|as if|as though|kiss\w*|lips?|nips?|nibbl\w*|tongue)\b/i.test(sent) &&
         (/\b(?:back of (?:his|her|their) throat|down (?:his|her|their) throat|in(?:to)? (?:his|her|their|\w+['’]s) mouth)\b/i.test(sent) || /\b(?:cock|dick|length)\b[^.!?]{0,20}\bin(?:to)? (?:his|her|their) throat\b/i.test(sent))) {
+      cat = "oral";
+      act = "blowjob (face-fucking)";
+    }
+    // "Open up." Dean opened his mouth and Cas easily slid inside": into a mouth, so a blowjob, not an anal scene.
+    if (cat === "anal" && /^(?:pushed-in|push-into|slid|penis-inside|bottomed-out)/.test(pat.id) && !ANAL_CTX.test(sent) && !FINGER_CTX.test(sent) &&
+        (/\b(?:open(?:ed|s|ing)?|part(?:ed|s|ing)?)\s+(?:up\s+)?(?:his|her|their|wide|your)?\s*(?:mouth|lips|jaw)\b/i.test(sent.slice(0, m.index! + m[0].length)) || (/\bopen up\b/i.test(para) && /\b(?:mouth|lips|throat)\b/i.test(`${paras[pi - 1] ?? ""} ${para}`)))) {
       cat = "oral";
       act = "blowjob (face-fucking)";
     }
@@ -1581,6 +1695,8 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
   }
 
   const narratedTexts = detectTexts(paras, cast).messages.filter((m) => m.how === "narrated" && !texting.rewritten.has(m.para));
+  // A one-sided hint is only for sentences that couldn't be placed between two people.
+  for (let k = desires.length - 1; k >= 0; k--) if (desires[k].via?.endsWith("~one-sided") && acts.some((x) => x.sentence === desires[k].sentence)) desires.splice(k, 1);
   for (const d of desires) if (!d.context) d.context = contextFor(paras, d.para, d.sentence);
   const where = (pi: number) => chapters[pi] || `~${Math.round((pi / Math.max(1, paras.length)) * 100)}% through`;
   const pairKey = (a: Character, b: Character) => [a.name, b.name].sort().join("\u0000");
