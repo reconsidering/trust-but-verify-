@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 // Add a mistake report's "looks right" items to tests/right-set/<fic>.json.
 //   node scripts/import-right-set.mjs report.md|looks-right-<fic>.json   fold a report, or the page's saved file, in (right marks add or confirm; wrong marks dispute)
+//   node scripts/import-right-set.mjs --fixed <fic> [why]   the reported mistakes were fixed: stop counting them against their patterns
 //   node scripts/import-right-set.mjs --retire <fic> <hash> [why]   stop enforcing one reading (a deliberate fix, or your own mistake)
 // The report is the text copied from the page. Only hashes and names are stored, never the fic's text.
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
@@ -22,7 +23,19 @@ if (args[0] === "--retire") {
   console.log(`retired ${hit.length} entr${hit.length === 1 ? "y" : "ies"}`);
   process.exit(0);
 }
-if (!args[0]) { console.error("usage: import-right-set.mjs report.md | --retire <fic> <hash> [why]"); process.exit(2); }
+if (args[0] === "--fixed") {
+  // The mistakes reported in this fic have been fixed in the engine, so they no longer happen and must not keep counting against the pattern.
+  const [, fic, ...why] = args;
+  const file = join(dir, `${fic}.json`);
+  if (!existsSync(file)) { console.error(`no ${file}`); process.exit(2); }
+  const set = JSON.parse(readFileSync(file, "utf8"));
+  let n = 0;
+  for (const e of set.negatives ?? []) if (!e.retired) { e.retired = why.join(" ") || "fixed"; n++; }
+  writeFileSync(file, JSON.stringify(set, null, 1) + "\n");
+  console.log(`marked ${n} reported mistakes as fixed`);
+  process.exit(0);
+}
+if (!args[0]) { console.error("usage: import-right-set.mjs report.md | --fixed <fic> [why] | --retire <fic> <hash> [why]"); process.exit(2); }
 const raw = readFileSync(args[0], "utf8");
 // Either the mistake report text, or the file the page's "Save looks-right set" button downloads.
 const parsed = args[0].endsWith(".json") ? JSON.parse(raw) : parseReport(raw);
