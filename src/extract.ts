@@ -135,7 +135,24 @@ export function joinPdfPages(pages: string[]): string {
     text += !/[.!?:;"”’)\]*—-]\s*$/.test(text) && /^[a-z]/.test(page) ? "\n" : "\n\n";
     text += page;
   }
-  return text.replace(/([A-Za-z])-\n(?=[a-z])/g, "$1");
+  return unwrapLines(text.replace(/([A-Za-z])-\n(?=[a-z])/g, "$1"));
+}
+
+/**
+ * Printed lines wrapped inside a sentence ("…pressing him against\nthe wall") are joined back with a space, so a phrase or a quotation is not cut
+ * in two. A line break after the end of a sentence stays only when that line stops well short of the usual line length, which is how a
+ * paragraph ends in a PDF with no blank lines between paragraphs; a full line that happens to end on a full stop is just a wrap.
+ */
+export function unwrapLines(text: string): string {
+  const lens = text.split("\n").map((l) => l.length).filter((n) => n > 20).sort((x, y) => x - y);
+  const usual = lens.length ? lens[Math.floor(lens.length * 0.9)] : 0;
+  return text.replace(/([^\n]*[^\n])\n(?=[^\n])/g, (m, line: string, offset: number) => {
+    const next = text[offset + m.length] ?? "";
+    const last = line[line.length - 1];
+    const endsSentence = /[.!?…"”’)\]*—:]/.test(last);
+    const short = usual > 0 && line.length < usual * 0.8;
+    return !endsSentence || /[a-z]/.test(next) || !short ? `${line} ` : m;
+  });
 }
 /**
  * A PDF whose fonts have no text map comes out as private-use characters, "(cid:12)" codes, or words run together. Reading such text finds almost

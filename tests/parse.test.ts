@@ -3,7 +3,7 @@ import { join } from "node:path";
 import { describe, expect, it } from "vitest";
 import { countWords, romanticPairings } from "../src/ao3";
 import { excerptExplicit } from "../src/analyze";
-import { extractFromHtml, extractFromText, joinPdfPages, joinPdfTextItems, pdfTextProblem } from "../src/extract";
+import { extractFromHtml, extractFromText, joinPdfPages, joinPdfTextItems, pdfTextProblem, unwrapLines } from "../src/extract";
 
 const fixture = (name: string) => readFileSync(join(__dirname, "fixtures", name), "utf8");
 
@@ -113,7 +113,7 @@ describe("PDF clean-up", () => {
     expect(out).not.toMatch(/\n\d\n|\n\d$/);
   });
   it("rejoins a word hyphenated at a line end and a sentence split over a page break", () => {
-    expect(joinPdfPages(["He thrust into the pleasure-\nable heat and Stiles", "gasped for him.\n\nThen it was over."])).toBe("He thrust into the pleasureable heat and Stiles\ngasped for him.\n\nThen it was over.");
+    expect(joinPdfPages(["He thrust into the pleasure-\nable heat and Stiles", "gasped for him.\n\nThen it was over."])).toBe("He thrust into the pleasureable heat and Stiles gasped for him.\n\nThen it was over.");
   });
 });
 
@@ -126,6 +126,20 @@ describe("pdfTextProblem", () => {
     expect(pdfTextProblem(prose.replace(/e/g, "\uE012"))).toMatch(/fonts/);
     expect(pdfTextProblem(prose.repeat(4).replace(/ /g, "").replace(/(.{40})/g, "$1 "))).toMatch(/run together/);
     expect(pdfTextProblem("zx qv kj ".repeat(100))).toMatch(/English prose/);
+  });
+});
+
+describe("unwrapLines", () => {
+  it("joins lines wrapped inside a sentence or a quotation", () => {
+    expect(unwrapLines("Derek pressed him against\nthe wall and “fuck\nme,” Stiles said.")).toBe("Derek pressed him against the wall and “fuck me,” Stiles said.");
+  });
+  it("joins a full line that happens to end on a full stop", () => {
+    const text = "A long first line that runs right across the page and stops here.\nThen the same sentence group goes on across the page for a good while yet.\nShort end.";
+    expect(unwrapLines(text)).toBe("A long first line that runs right across the page and stops here. Then the same sentence group goes on across the page for a good while yet. Short end.");
+  });
+  it("keeps a break after a short last line of a paragraph and blank lines", () => {
+    const body = "A long first line that runs right across the page and carries on to the end\n";
+    expect(unwrapLines(`${body}${body}Short end.\nNext paragraph starts here and runs a good way\n\nNew one.`)).toBe(`${body.trim()} ${body.trim()} Short end.\nNext paragraph starts here and runs a good way\n\nNew one.`);
   });
 });
 
