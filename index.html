@@ -56,6 +56,24 @@
           <p id="notes" class="notes" hidden></p>
         </section>
 
+        <section id="grade" class="panel" hidden>
+          <div class="roles-head">
+            <h3>Writing grade</h3>
+            <span class="source-badge">Novel Grader · on this page</span>
+          </div>
+          <div class="grade-settings">
+            <label class="field"><span>Style profile</span><select id="grade-profile"></select></label>
+            <label class="field"><span>Mistakes in character speech</span><select id="grade-dialogue"></select></label>
+            <label class="field"><span>Narration</span><select id="grade-voice"></select></label>
+          </div>
+          <p id="grade-status" class="hint"></p>
+          <div id="grade-body" hidden>
+            <p class="grade-overall"><span id="grade-letter" class="grade-letter"></span> <span id="grade-score" class="grade-score"></span></p>
+            <ul id="grade-cats" class="grade-cats"></ul>
+            <p class="hint"><a href="https://reconsidering.github.io/novelgrading/" target="_blank" rel="noopener">Open Novel Grader</a> for every flagged passage. The story is graded in this browser and isn’t sent anywhere.</p>
+          </div>
+        </section>
+
         <section id="report" class="panel">
           <div class="roles-head">
             <h3>Report a mistake <span id="report-count" class="pill">none yet</span></h3>

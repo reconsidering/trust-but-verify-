@@ -3,6 +3,7 @@ import Anthropic from "@anthropic-ai/sdk";
 import { hasAo3Meta, romanticPairings } from "./ao3";
 import { MODELS, type ModelId, RefusalError, analyzeWork, estimateTokens, excerptExplicit } from "./analyze";
 import { type ExtractedWork, extractFile, pdfTextProblem } from "./extract";
+import { DEFAULT_GRADE_OPTIONS, DIALOGUE_MODES, GRADE_PROFILES, type GradeSummary, VOICES, gradeText } from "./grade";
 import { runPatterns } from "./heuristic/run";
 import { splitParagraphs } from "./text";
 import { addLabel, calibrationLines, clearLabels, type Label, labelKey, loadLabels, parseLabels, saveLabels, summarize } from "./calibration";
@@ -197,7 +198,85 @@ async function handleFile(file: File) {
     .catch((err) => {
       if (current === work) showError(`Pattern analysis failed: ${err instanceof Error ? err.message : String(err)}`);
     });
+  void runGrade(work);
   if (els.autoRun.checked && els.apiKey.value.trim()) void runAnalysis();
+}
+
+// ---- writing grade (Novel Grader's engine, run on this page) ----
+const gradeEls = {
+  panel: $("grade"),
+  status: $("grade-status"),
+  body: $("grade-body"),
+  letter: $("grade-letter"),
+  score: $("grade-score"),
+  cats: $("grade-cats"),
+  profile: $<HTMLSelectElement>("grade-profile"),
+  dialogue: $<HTMLSelectElement>("grade-dialogue"),
+  voice: $<HTMLSelectElement>("grade-voice"),
+};
+
+// The three grading settings are remembered in this browser; romance is the default style profile.
+function fillSelect(sel: HTMLSelectElement, options: [string, string][], key: string, fallback: string) {
+  sel.replaceChildren(...options.map(([value, label]) => new Option(label, value)));
+  let saved: string | null = null;
+  try { saved = localStorage.getItem(`grade-${key}`); } catch { /* storage blocked */ }
+  sel.value = options.some(([v]) => v === saved) ? (saved as string) : fallback;
+  sel.addEventListener("change", () => {
+    try { localStorage.setItem(`grade-${key}`, sel.value); } catch { /* storage blocked */ }
+    if (current) void runGrade(current);
+  });
+}
+fillSelect(gradeEls.profile, GRADE_PROFILES, "profile", DEFAULT_GRADE_OPTIONS.profile);
+fillSelect(gradeEls.dialogue, DIALOGUE_MODES, "dialogue", DEFAULT_GRADE_OPTIONS.dlgMode);
+fillSelect(gradeEls.voice, VOICES, "voice", DEFAULT_GRADE_OPTIONS.voice);
+let gradeRun = 0;
+
+async function runGrade(work: ExtractedWork) {
+  gradeEls.panel.hidden = false;
+  gradeEls.body.hidden = true;
+  gradeEls.status.hidden = false;
+  gradeEls.status.textContent = "Grading the writing…";
+  const run = ++gradeRun;
+  const live = () => current === work && run === gradeRun;
+  try {
+    const summary = await gradeText(work.text, {
+      profile: gradeEls.profile.value,
+      dlgMode: gradeEls.dialogue.value,
+      voice: gradeEls.voice.value,
+      onProgress: (p) => { if (live()) gradeEls.status.textContent = `Grading the writing… ${Math.round(p * 100)}%`; },
+    });
+    if (live()) renderGrade(summary);
+  } catch (err) {
+    if (!live()) return;
+    gradeEls.status.hidden = false;
+    gradeEls.status.textContent = `Couldn’t grade the writing (${err instanceof Error ? err.message : String(err)}). The rest of the analysis is unaffected.`;
+  }
+}
+
+function renderGrade(g: GradeSummary) {
+  gradeEls.status.hidden = true;
+  gradeEls.body.hidden = false;
+  gradeEls.letter.textContent = g.letter || "–";
+  gradeEls.score.textContent = g.overall == null ? "" : `${Math.round(g.overall)} / 100${g.profile ? ` · ${g.profile}` : ""}`;
+  gradeEls.cats.replaceChildren(
+    ...g.categories
+      .filter((c) => c.score != null)
+      .map((c) => {
+        const li = document.createElement("li");
+        const name = document.createElement("span");
+        name.textContent = c.name;
+        const bar = document.createElement("span");
+        bar.className = "bar";
+        const fill = document.createElement("span");
+        fill.style.width = `${Math.max(0, Math.min(100, c.score!))}%`;
+        bar.append(fill);
+        const num = document.createElement("span");
+        num.className = "num";
+        num.textContent = String(Math.round(c.score!));
+        li.append(name, bar, num);
+        return li;
+      }),
+  );
 }
 
 // ---- mistake report ----
