@@ -389,7 +389,7 @@ AO3_DIR=ao3-samples npx vitest run tests/gold-eval.test.ts                      
 
 ### The "looks right" set
 
-Readings you mark "Looks right" in a mistake report can be kept as a locked set so a later change can't quietly undo them:
+Readings you mark "Looks right" in a mistake report can be kept (the report panel's **Save looks-right set** button downloads them as a small file with no story text; hand that file to Claude, or run the import below on it) as a locked set so a later change can't quietly undo them:
 
 ```
 node scripts/import-right-set.mjs report.md           # fold a pasted report in (tests/right-set/<fic>.json: hashes and names, never fic text)

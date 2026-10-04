@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 // Add a mistake report's "looks right" items to tests/right-set/<fic>.json.
-//   node scripts/import-right-set.mjs report.md            fold the report in (right marks add or confirm; wrong marks dispute)
+//   node scripts/import-right-set.mjs report.md|looks-right-<fic>.json   fold a report, or the page's saved file, in (right marks add or confirm; wrong marks dispute)
 //   node scripts/import-right-set.mjs --retire <fic> <hash> [why]   stop enforcing one reading (a deliberate fix, or your own mistake)
 // The report is the text copied from the page. Only hashes and names are stored, never the fic's text.
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
@@ -23,7 +23,9 @@ if (args[0] === "--retire") {
   process.exit(0);
 }
 if (!args[0]) { console.error("usage: import-right-set.mjs report.md | --retire <fic> <hash> [why]"); process.exit(2); }
-const parsed = parseReport(readFileSync(args[0], "utf8"));
+const raw = readFileSync(args[0], "utf8");
+// Either the mistake report text, or the file the page's "Save looks-right set" button downloads.
+const parsed = args[0].endsWith(".json") ? JSON.parse(raw) : parseReport(raw);
 if (!parsed.slug) { console.error("no “- Title:” line found in the report"); process.exit(2); }
 const file = join(dir, `${parsed.slug}.json`);
 const set = existsSync(file) ? JSON.parse(readFileSync(file, "utf8")) : { entries: [] };

@@ -9,6 +9,8 @@ import { join } from "node:path";
 import { describe, expect, it } from "vitest";
 import { type RightEntry, type RightSet, baseVia, hashKey, mergeReport, parseReport, slugOf, strengthOf } from "../scripts/right-set.mjs";
 import { extractFromHtml } from "../src/extract";
+import { hashKey as pageHash, rightSetFile, slugOf as pageSlug } from "../src/rightset";
+import type { FlaggedScene } from "../src/report";
 import { analyzeWithPatterns } from "../src/heuristic";
 import type { PairingResult } from "../src/types";
 
@@ -88,6 +90,37 @@ describe("right-set: reading a report and weighing it", () => {
   it("normalises pattern names and fic titles", () => {
     expect(baseVia("push-into~elided")).toBe("push-into");
     expect(slugOf("Prince, Prisoner, Puppy, Parent")).toBe("prince-prisoner-puppy-parent");
+  });
+});
+
+describe("right-set: the page’s Save looks-right set button", () => {
+  const f = (over: Partial<FlaggedScene>): FlaggedScene => ({ id: "x", kind: "scene", pairing: "Alex Smith/Sam Jones", card: "anal", top: "Alex Smith", bottom: "Sam Jones", act: "anal sex", pattern: "push-into~elided", evidence: "Alex pushed into Sam, groaning.", confidence: 0.9, reasons: [], note: "", ...over });
+  it("keys sentences exactly as the importer does", () => {
+    expect(pageHash("Alex pushed into Sam, groaning.")).toBe(hashKey("Alex pushed into Sam, groaning."));
+    expect(pageSlug("Prince, Prisoner, Puppy, Parent")).toBe(slugOf("Prince, Prisoner, Puppy, Parent"));
+  });
+  it("saves scenes, hints and solo lines by hash and name, and leaves out lines it cannot find again", () => {
+    const file = rightSetFile("Made Up Story", [
+      f({}),
+      f({ id: "h", kind: "hint", top: "Sam Jones", bottom: "bottom (touch)", pattern: "thrust-back", evidence: "Sam pushed back against him.", confidence: 0.29 }),
+      f({ id: "n", kind: "hint", top: "Alex Smith", bottom: "NOT top (hypothetical)", pattern: "fuck", evidence: "Alex never would." }),
+      f({ id: "s", kind: "hint", card: "solo", top: "Sam Jones", bottom: "", pattern: "self-toy", evidence: "Sam worked a toy in alone." }),
+      f({ id: "t", kind: "hint", card: "tagcheck", evidence: "A tag line." }),
+      f({ id: "v", kind: "vibe", card: "anal", evidence: "" }),
+    ], [f({ id: "w", evidence: "Alex began to press forward, slowly." })]);
+    expect(file.slug).toBe("made-up-story");
+    expect(file.right.map((e) => [e.kind, e.card, e.via])).toEqual([["scene", "anal", "push-into"], ["hint", "anal", "thrust-back"], ["hint", "anal", "fuck"], ["solo", "solo", "self-toy"]]);
+    expect(file.right[2]).toMatchObject({ who: "Alex Smith", role: "top", wants: false });
+    expect(file.right[0]).toMatchObject({ conf: 90, h: hashKey("Alex pushed into Sam, groaning.") });
+    expect(JSON.stringify(file)).not.toContain("pushed into Sam");
+    expect(file.wrong).toHaveLength(1);
+  });
+  it("the saved file merges like a report: a wrong mark on the same sentence disputes the reading", () => {
+    const set: Partial<RightSet> = {};
+    mergeReport(set, rightSetFile("Made Up Story", [f({})], []) as never, "2026-10-05");
+    expect(strengthOf(set.entries![0] as RightEntry)).toBe("strong");
+    mergeReport(set, rightSetFile("Made Up Story", [], [f({})]) as never, "2026-10-09");
+    expect(strengthOf(set.entries![0] as RightEntry)).toBe("disputed");
   });
 });
 
