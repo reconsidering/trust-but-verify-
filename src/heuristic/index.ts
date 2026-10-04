@@ -9,7 +9,7 @@ import { type Analysis, type Desire, type PairingResult, type Role } from "../ty
 import { tagPriors } from "./ao3-prior";
 import { type Character, type Gender, buildCast } from "./characters";
 import { ANAL_CTX, type Cat, VULVA_CTX, type CompiledPattern, DIALOGUE, type DialogueDef, EPITHET_TOKEN, FINGER_CTX, PATTERNS, PENIS_CTX, SEX_CTX, compilePatterns } from "./patterns";
-import { EPITHET, learnEpithets } from "./epithets";
+import { EPITHET, canonEpithet, learnEpithets } from "./epithets";
 import { readTags } from "./tags";
 import { noteContext } from "./notes";
 import { checkTags } from "./tagcheck";
@@ -105,7 +105,7 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
   // Who is on the page besides the cast: names that keep turning up as the subject of a sentence ("Sam smiled", "Greg had pulled") but
   // aren't cast members, and stand-ins for strangers ("the waiter", "the twink"). A he or a left-out subject right after one of
   // these is that person, not whichever lead was named before.
-  const STRANGER_LABELS = "twink|twunk|bottom boy|slut|whore|virgin|newbie|stranger|brat|plaything|boy toy|hooker|escort|jock|waiter|waitress|bartender|barista|doctor|nurse|cop|officer|guard|driver|clerk|neighbou?r|landlord|teacher|bouncer|stripper|dancer|client|customer|cashier|receptionist";
+  const STRANGER_LABELS = "twink|twunk|bottom boy|slut|whore|virgin|newbie|stranger|brat|plaything|boy toy|hooker|escort|jock|waiter|waitress|bartender|barista|doctor|nurse|cop|officer|guard|driver|clerk|neighbou?r|landlord|teacher|bouncer|stripper|dancer|client|customer|cashier|receptionist|priest|priestess|healer|physician|surgeon|medic|monk|nun|servant|soldier|merchant|courtier";
   const outsiderNames = (() => {
     const counts = new Map<string, number>();
     const subj = /(?:^|[.!?”"]\s+|[,;]\s*(?:and|but|then|while|as)\s+)([A-Z][a-z]{2,})\s+(?:[a-z]{2,}(?:ed|s)|was|had|did|said|asked|would|could|will|looked|laughed|smiled|grinned)\b/gm;
@@ -802,7 +802,7 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
       // "Fuck me, it's cold" / "Well, fuck me" / "fuck me sideways": an exclamation, not a request.
       if (/^fuck me$/.test(m[0]) && exasperated(lower, m.index!, around)) continue;
       // One line can match several phrasings of the same request ("I want you to fuck me").
-      const key = `${d.cat}:${d.role}:${d.kind}`;
+      const key = `${d.cat}:${d.role}:${d.act}`;
       if (seen.has(key)) continue;
       seen.add(key);
       const before = lower.slice(Math.max(0, m.index - 30), m.index);
@@ -894,10 +894,12 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
    * deep" with the narrator the one sucked, "the twink gagged on Jordan's length"). The act can't be placed between two people, but the
    * identifiable one's role is clear, so it counts as a hint for them.
    */
-  function oneSided(pat: CompiledPattern, m: RegExpMatchArray, tTok: string | undefined, bTok: string | undefined, sent: string, original: string, pi: number) {
+  function oneSided(pat: CompiledPattern, m: RegExpMatchArray, tTok: string | undefined, bTok: string | undefined, sent: string, original: string, pi: number, actorOutside = false) {
     if (pat.signal || (pat.cat !== "anal" && pat.cat !== "oral")) return;
     const ts = readSlot(tTok, cast, ctx), bs = readSlot(bTok, cast, ctx);
-    const known = ts?.char && !bs?.char ? { c: ts.char, role: "top" as Role } : bs?.char && !ts?.char ? { c: bs.char, role: "bottom" as Role } : undefined;
+    // When the sentence opens on someone outside the cast, they are the actor, whoever the left-out subject slot guessed.
+    const known = actorOutside ? (bs?.char ? { c: bs.char, role: "bottom" as Role } : undefined)
+      : ts?.char && !bs?.char ? { c: ts.char, role: "top" as Role } : bs?.char && !ts?.char ? { c: bs.char, role: "bottom" as Role } : undefined;
     if (!known) return;
     // Only plain statements: nothing negated, wished for, imagined, conditional or remembered in the sentence.
     if (NEG.test(sent) || /\b(?:want\w*|wish\w*|imagin\w*|fantas\w*|if|would|could|might|maybe|perhaps|never|used to|remember\w*|dream\w*|hope\w*|need\w*|let me|going to|gonna|beg\w*|almost|nearly|able to|getting to|get to|focus\w*|promis\w*|about to|ready to|tr(?:y|ies|ied|ying)|tempt\w*|so close to|threat\w*|ask\w*|plan\w*|decid\w*|ache\w* to|itch\w*|long\w* to|sound\w* like|as if|like he)\b/i.test(sent)) return;
@@ -1013,15 +1015,23 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
     // "Greg frowned. He pushed Dean against the wall": the he after a clause whose subject is someone outside the cast is that person,
     // and so is a left-out subject in a sentence that someone outside the cast starts.
     if (pat.elided || /^(?:he|him|she|her|his|their|them)$/i.test(tTok ?? "") || /^(?:he|him|she|her|his|their|them)$/i.test(bTok ?? "")) {
-      const startOf = (s: string): "out" | "cast" | "pron" | undefined => {
-        const sm = new RegExp(`^\\W*(?:(?:[Aa]nd|[Bb]ut|[Tt]hen|[Ss]o|[Ww]hen|[Ww]hile|[Aa]s|[Aa]fter|[Bb]efore)\\s+)?(?:(?<cast>${NAMES})|(?<out>${outsiderNames.length ? outsiderNames.join("|") : "(?!)"})|(?<lab>[Tt]he (?:${STRANGER_LABELS}))|(?<pron>[Hh]e|[Ss]he))(?!['’])\\b\\s+[a-z]`).exec(s);
+      // "The priest pushed two fingers into Dean": a role noun nobody has been shown to stand for (a learned "the prince" is a cast
+      // member) is someone else once it is back in the sentence.
+      const stranger = new RegExp(`^[Tt]he (?:${STRANGER_LABELS})$`);
+      const bare = (s: string) => s.replace(/Epithet(\d+)/g, (w, n: string) => {
+        const t = ctx.epiTable[Number(n)];
+        return t && stranger.test(t) && !canonEpithet(t).keys.some((k) => ctx.epithets.has(k)) ? t : w;
+      });
+      const startOf = (s0: string): "out" | "cast" | "pron" | undefined => {
+        const s = bare(s0);
+        const sm = new RegExp(`^\\W*(?:(?:[Aa]nd|[Bb]ut|[Tt]hen|[Ss]o|[Ww]hen|[Ww]hile|[Aa]s|[Aa]fter|[Bb]efore)\\s+)?(?:[A-Z]?\\w+ly,?\\s+)?(?:(?<cast>${NAMES})|(?<out>${outsiderNames.length ? outsiderNames.join("|") : "(?!)"})|(?<lab>[Tt]he (?:${STRANGER_LABELS}))|(?<pron>[Hh]e|[Ss]he))(?!['’])\\b\\s+[a-z]`).exec(s);
         const g = sm?.groups;
         return !g ? undefined : g.cast ? "cast" : g.pron ? "pron" : "out";
       };
       const at = para.indexOf(sent);
       const prevSent = at > 0 ? para.slice(Math.max(0, at - 240), at).trim().split(/(?<=[.!?”])\s+/).pop() ?? "" : "";
       const cur = startOf(sent);
-      if (cur === "out" || (cur === "pron" && /[.!?”]$/.test(prevSent) && startOf(prevSent) === "out")) { oneSided(pat, m, tTok, bTok, sent, original, pi); return; }
+      if (cur === "out" || (cur === "pron" && /[.!?”]$/.test(prevSent) && startOf(prevSent) === "out")) { oneSided(pat, m, tTok, bTok, sent, original, pi, pat.subj === "t"); return; }
     }
     // "He knew his whole focus was on serving him; … as he was getting railed": the he who serves is the one being taken, but the
     // last-named subject is the one served, so the pronoun can't be trusted.
@@ -1312,6 +1322,9 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
     // "spreads his legs to wipe them": he is cleaning someone, not offering himself.
     if (/^spread-(?:their-)?legs/.test(pat.id) && /^\s*(?:and\s+)?to\s+(?:wipe|clean|dry|wash|towel|inspect|examine|check|look|see)\b/i.test(after)) return;
     if (pat.id.startsWith("spread-their-legs") && [pi - 1, pi, pi + 1].some((i) => !!paras[i] && /\b(?:kneel\w*|drops? to his knees|mouth|lick\w*|nuzzl\w*|suck\w*|tongue)\b/i.test(paras[i]) && !/\b(?:hole|lube[ds]?|ass\b|arse|fingers?|prostate)\b/i.test(paras[i]))) return;
+    // "squeezed Dean's cheeks tighter, forcing him to open his mouth": cheeks with no ass word and a mouth or face in the sentence are a face.
+    if ((pat.id.startsWith("grab-ass") || pat.id === "hands-on-ass") && /cheeks\b/.test(matchText) && !/\b(?:ass|arse|butt|bum|backside|behind)\b/i.test(matchText) &&
+        /\b(?:mouth|lips?|jaws?|face|chin|tongue|teeth|open (?:his|her|their) mouth|tears?|eyes)\b/i.test(sent)) return;
     // "Eddie smacked his cheeks to wake himself up": "cheeks" with no ass word needs a sex scene around it.
     if ((pat.id.startsWith("grab-ass") || pat.id === "hands-on-ass") && /cheeks\b/.test(matchText) && !/\b(?:ass|arse|butt|bum|backside|behind)\b/i.test(matchText) &&
         ![pi - 2, pi - 1, pi, pi + 1].some((i) => !!paras[i] && (PENIS_CTX.test(paras[i]) || /\b(?:ass|arse|butt|hole|naked|undress\w*|moan\w*|lube\w*|condom|erection|aroused|thrust\w*|kiss\w*|bed)\b/i.test(paras[i])))) return;
@@ -1608,15 +1621,17 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
     const negated = !ifNot && !doubleNeg && !notWithout && !pretence && (NEG.test(aux) || NEG.test(negWindow) || NEG.test(negWindow.slice(-14) + matchText.slice(0, 8)) || /\b(?:never|refus(?:ed|es|e|ing) to|declin(?:ed|es|e|ing) to)\b/i.test(matchText));
     let kind: Desire["kind"] | "act" = "act";
     if (fantasyPara || FANTASY.test(window) || STRONG_FANTASY.test(prefix)) kind = "fantasy";
-    else if (DESIRE_LEAD.test(sent) || DESIRE.test(window) || DESIRE_TAIL.test(window) || DESIRE.test(aux) || DESIRE.test(m.groups?.lead ?? "")) kind = "wanted";
+    else if (DESIRE_LEAD.test(sent) || DESIRE.test(window.replace(/\b(?:that|which|what it|it)\s+(?:want|need)(?:ed|s)?\s+to\b/gi, " ")) || DESIRE_TAIL.test(window) || DESIRE.test(aux) || DESIRE.test(m.groups?.lead ?? "")) kind = "wanted";
     else if (/\b(?:want|need|wish|hope|long|crave)\w*\b[^.!?]*\b(?:and|but)\s+(?:then\s+)?(?:have|let|make|get)\s*$/i.test(prefix)) kind = "wanted";
     else if (/\b(?:want|need|wish|hope|long|crave)\w*\s+(?:\w+\s+){0,3}?to\b[^.!?]*\band\s+\w*(?:\s+\w*){0,2}$/i.test(prefix + matchText.slice(0, 14))) kind = "wanted";
     else if (HABIT_AUX.test(aux) && (pat.id === "bottomed-for" || pat.id === "topped")) kind = "identity";
+    // "A routine was established, Dean would take Cas every morning": a would in a described routine is something that happened, not a maybe.
+    else if (/^\s*would\b/i.test(aux) && /\b(?:routine|every (?:day|night|morning|evening|afternoon|time)|each (?:day|night|morning|evening|afternoon|time)|daily|nightly|usually|always|often|whenever|during those (?:\w+ )?(?:days|nights|weeks)|those (?:\w+ )?(?:days|nights|weeks)|most (?:days|nights|mornings))\b/i.test(para.slice(Math.max(0, para.indexOf(sent) - 220), para.indexOf(sent) + sent.length)) && !DESIRE.test(window) && !negated) kind = "act";
     else if (
       !pretence &&
       !/\bas (?:if|though)\s+(?:he|she|they)\s+(?:wasn['’]t|weren['’]t|was not|were not|hadn['’]t been|had not been)\s+(?:the\s+(?:man|guy|one|person|boy|woman|girl)|Epithet\d+)\s+(?:who|that)\b/i.test(prefix) &&
       !(/\bas (?:if|though)\s*$/i.test(prefix) && /\b(?:isn['’]t|wasn['’]t|aren['’]t|weren['’]t|is not|was not|were not|not)\b[^.!?]*\benough\b/i.test(sent.slice(m.index!))) &&
-      ((HYPO_AUX.test(aux) && !/\bcould\s+(?:\w+\s+)?(?:taste|feel|smell|hear|see)\b/i.test(prefix.slice(-25) + matchText.slice(0, 30))) || (pat.cat === "anal" && /\bcan\s*$/i.test(aux) && /^(?:fuck|take|pound|ride|have|bend|breed|ravish)/i.test(matchText.replace(/^.*?\bcan\s+/i, ""))) || HYPO_MATCH.test(prefix.slice(-25) + matchText) || /\b(?:can|could|would|should)\s+(?:just\s+)?\w+\b[^.!?]*\band\s*\w*$/i.test(prefix + matchText.slice(0, 6)) || HYPO_WINDOW.test(window) || HYPO_SENT.test(prefix) || (/\bthan\s+(?:it\s+was\s+|it's\s+)?$/i.test(prefix) && /^to\b/i.test(matchText)) || /\bthan\s+(?:it\s+was\s+|it's\s+)?to\s*$/i.test(prefix) || /\b(?:like|as if|as though)\s+(?:he|she|they|I)(?:['’]s|['’]d|\s+(?:is|was|were|are|had|has|would))?\s*$/i.test(prefix) || (/\b(?:like|as if|as though)\s*$/i.test(prefix) && /^(?:he|she|they|I)\b/.test(matchText)) ||
+      ((HYPO_AUX.test(aux) && !/\bcould\s+(?:\w+\s+)?(?:taste|feel|smell|hear|see)\b/i.test(prefix.slice(-25) + matchText.slice(0, 30))) || (pat.cat === "anal" && /\bcan\s*$/i.test(aux) && /^(?:fuck|take|pound|ride|have|bend|breed|ravish)/i.test(matchText.replace(/^.*?\bcan\s+/i, ""))) || HYPO_MATCH.test(prefix.slice(-25) + matchText) || /\b(?:can|could|would|should)\s+(?:just\s+)?\w+\b[^.!?]*\band\s*\w*$/i.test(prefix + matchText.slice(0, 6)) || HYPO_WINDOW.test(window.replace(/\b(?:not|never|un)\s*able to (?:wait|resist|hold|stop|help|stand|take|bear|keep|contain|control|stay)\w*/gi, " ")) || HYPO_SENT.test(prefix) || (/\bthan\s+(?:it\s+was\s+|it's\s+)?$/i.test(prefix) && /^to\b/i.test(matchText)) || /\bthan\s+(?:it\s+was\s+|it's\s+)?to\s*$/i.test(prefix) || /\b(?:like|as if|as though)\s+(?:he|she|they|I)(?:['’]s|['’]d|\s+(?:is|was|were|are|had|has|would))?\s*$/i.test(prefix) || (/\b(?:like|as if|as though)\s*$/i.test(prefix) && /^(?:he|she|they|I)\b/.test(matchText)) ||
       (/\bso\s*$/i.test(window) && /\b(?:can|could|might|may|will|would)\b/i.test(aux)) ||
       /\b(?:would|could|might)\s+(?:want|like|love|wish|prefer|enjoy|rather|fit)\b[^.!?;]{0,70}?\b(?:as|while|when|if|so)\s+(?:[\w'’]+\s+)?$/i.test(prefix))
     ) kind = "hypothetical";

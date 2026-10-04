@@ -1478,6 +1478,27 @@ export const PATTERNS: PatternDef[] = [
     src: `\\b{B}\\s+{aux}(?:push|slid|slide|slip|press|thrust|sink|sank|eas|insert|add|crook|curl|scissor|work|fuck|rock|guid|feed|fed)\\w*\\s+(?:(?:a|one|two|three|four|another|the|his|her|my|their|a second|a third)\\s+)?(?:own\\s+)?(?:[\\w-]+\\s+){0,2}?(?:fingers?|digits?|dildo|toy|vibrator|vibe|plug)\\s+(?:\\w+\\s+){0,2}?(?:into|inside|in)\\s+${SELF}`,
   },
   {
+    // "massaging the bundle of nerves inside himself", "his abuse of his prostate inside himself"
+    id: "self-prostate",
+    cat: "anal",
+    act: "fingering himself",
+    subj: "b",
+    weight: 0.6,
+    needsCtx: true,
+    signal: { kind: "solo", actorRole: "bottom" },
+    src: `\\b{B}\\s+{aux}(?:[\\w-]+\\s+){0,3}?(?:massag|rubb|press|strok|pound|abus|stimulat|brush|nudg)\\w*\\s+(?:\\w+\\s+){0,3}?(?:prostate|bundle of nerves|sweet spot)\\s+(?:\\w+\\s+){0,2}?(?:inside|in|within)\\s+${SELF}`,
+  },
+  {
+    id: "self-prostate-noun",
+    cat: "anal",
+    act: "fingering himself",
+    subj: "b",
+    weight: 0.55,
+    needsCtx: true,
+    signal: { kind: "solo", actorRole: "bottom" },
+    src: `\\b{B:poss}\\s+(?:\\w+\\s+){0,2}?(?:abuse|massaging|rubbing|pounding|stimulation|teasing|assault)\\s+of\\s+(?:the|his)\\s+(?:\\w+\\s+){0,2}?(?:prostate|bundle of nerves|sweet spot)\\s+(?:\\w+\\s+){0,2}?(?:inside|in|within)\\s+${SELF}`,
+  },
+  {
     // "fucks himself on the dildo", "rides the plug", "sank down onto the toy"
     id: "self-toy",
     cat: "anal",
