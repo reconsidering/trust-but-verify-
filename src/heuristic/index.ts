@@ -7,7 +7,7 @@
 import { type Ao3Meta, romanticPairings } from "../ao3";
 import { type Analysis, type Desire, type PairingResult, type Role } from "../types";
 import { tagPriors } from "./ao3-prior";
-import { type Character, type Gender, buildCast } from "./characters";
+import { type Character, type Gender, buildCast, escapeRe } from "./characters";
 import { ANAL_CTX, type Cat, VULVA_CTX, type CompiledPattern, DIALOGUE, type DialogueDef, EPITHET_TOKEN, FINGER_CTX, PATTERNS, PENIS_CTX, SEX_CTX, compilePatterns } from "./patterns";
 import { EPITHET, canonEpithet, learnEpithets } from "./epithets";
 import { readTags } from "./tags";
@@ -348,9 +348,15 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
     if (/\bcaged\b/i.test(sent) && !/cock[- ]?cage|chastity|(?:the|a|his|this|that)\s+(?:[\w-]+\s+){0,2}?cage/i.test(sent) && !/cock|dick|balls?|prick|erection|lock|key|plug/i.test(sent)) return;
     // Fetching, ordering or setting down the device says nothing about who is wearing it right now.
     if (/\b(?:key|box|ordered?|ordering|bought|buy|amazon|package|arrived|cart|clattered|came\b|set\s+(?:the\s+)?\w*\s*down)\b/i.test(sent) && !/\b(?:wearing|wore|worn|strain\w*|tight\w*|twitch\w*|caged)\b/i.test(sent)) return;
+    // Taking the device off, or fumbling with its lock, is not wearing it: "tossing his cage aside", "fumbling with the lock to his cage".
+    if (/\b(?:unlock\w*|unlatch\w*|remov\w*|took off|take off|taking off|taken off|toss\w*|threw|throw\w*|fumbl\w*|fiddl\w*)\b[^.!?]{0,50}\b(?:cage|lock|key)\b|\b(?:cage|lock)\b[^.!?]{0,30}\b(?:off|aside|away|removed|unlocked|came off|slid off|slipped off)\b|\block\s+out of\b|\bremoval\b/i.test(sent)) return;
     const w = chastityWearer;
     const other = tagPartner(w);
     if (!other) return;
+    // "He leaned down and wrapped his warm mouth around the cage": the partner is sucking the wearer's caged cock, a blowjob (rare, but it happens).
+    if (/\b(?:mouth|lips?|tongue)\b[^.!?]{0,40}\b(?:around|over|on|against|along|through)\s+(?:the|his|that)\s+(?:[\w-]+\s+){0,2}?cage\b|\b(?:lick|suck|kiss|mouth)\w*\s+(?:at\s+|on\s+|over\s+|through\s+)?(?:the|his|that)\s+(?:[\w-]+\s+){0,2}?cage\b/i.test(sent) && !acts.some((a) => a.via === "mouth-on-cage" && a.sentence === original)) {
+      acts.push({ via: "mouth-on-cage", cat: "oral", act: "blowjob", top: w, bottom: other, weight: 0.7, basis: "named", para: pi, sentence: original, context: contextAround(paras[pi] ?? "", original) });
+    }
     for (const [id, cat, kind, act, weight] of [
       ["chastity-wearer", "vibe", "behavior", "wearing a chastity device", 0.5],
       ["chastity-wearer-anal", "anal", "touch", "wearing a chastity device (hints anal bottom)", 0.4],
@@ -433,6 +439,7 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
     else if (dreamRun) dreamRun--;
     const sexy = SEX_CTX.test(`${paras[pi - 1] ?? ""} ${para} ${paras[pi + 1] ?? ""}`);
 
+    let lastLead: Character | undefined;
     for (const [s0, s1] of sentenceSpans(mp)) {
       // Swap epithets for short tokens once, instead of every pattern carrying the whole epithet list.
       const epiTable: string[] = [];
@@ -461,6 +468,15 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
       }
       const subj = firstEntity(sent);
       if (subj) ctx.lastSubject = subj;
+      // "Steve was nodding … as he let Eddie abuse his prostate. As he spread his thighs and asked for more.": a fragment that opens on
+      // "As / While / And he" carries on the sentence before, so its he is that sentence's subject, not whoever acted last.
+      {
+        const lead = new RegExp(`^\\W*(${NAMES})\\b`).exec(sent);
+        const frag = /^\W*(?:As|While|When|And|Then|Before|After)\s+(he|she)\b/.exec(sent);
+        if (frag && lastLead && Ctx.compatible(lastLead, frag[1].toLowerCase() === "she" ? "f" : "m")) ctx.lastSubject = lastLead;
+        const lc = lead ? cast.byAlias.get(lead[1]) : undefined;
+        lastLead = lc && lc !== cast.secondPerson ? lc : frag ? lastLead : undefined;
+      }
 
       chastityScan(sent, original, pi);
       plugScan(sent, original, pi);
@@ -937,6 +953,9 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
     ctx.cutoff = m.index! + m[0].length;
     const tTok = groupValue(m.groups, "t");
     const bTok = groupValue(m.groups, "b");
+    // "Honestly, fuck Seraphine and fuck Eddie.": a bare "fuck" opening the sentence (or following another) in front of a name is a curse.
+    if (pat.id.replace(/~elided$/, "") === "fuck" && /^\W*(?:and\s+)?fuck\b/i.test(m[0]) &&
+        /^\W*(?:(?:honestly|well|oh|ugh|fine|great|yeah|and|but|so|god|christ|shit|damn|okay|ok),?\s+)*(?:fuck\b[^.!?]*?(?:\band)?\s*)?$/i.test(sent.slice(0, m.index!).replace(/[“"][^”"]*[”"]/g, " "))) return;
     let subjChar: Character | undefined;
     // "Cas chuckled as he bottomed the dildo out": a top seating a toy, not a bottom.
     if (/\bbottom(?:ed|ing|s)\s+(?:the\s+|a\s+|his\s+|her\s+)?(?:\w+\s+)?(?:dildo|toy|plug|vibrator|vibe|strap\S*|beads)\b/i.test(sent.slice(m.index!))) return;
@@ -1325,6 +1344,14 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
     // "squeezed Dean's cheeks tighter, forcing him to open his mouth": cheeks with no ass word and a mouth or face in the sentence are a face.
     if ((pat.id.startsWith("grab-ass") || pat.id === "hands-on-ass") && /cheeks\b/.test(matchText) && !/\b(?:ass|arse|butt|bum|backside|behind)\b/i.test(matchText) &&
         /\b(?:mouth|lips?|jaws?|face|chin|tongue|teeth|open (?:his|her|their) mouth|tears?|eyes)\b/i.test(sent)) return;
+    // "Eddie decided to be Eddie. He kept working the vibe (a pink one he'd chosen for Steve) inside him": a toy inside a "him" who is not the
+    // subject, with the other person named alongside, is being used on that person, not on the subject.
+    if ((pat.id.replace(/~elided$/, "") === "self-toy" || pat.id.replace(/~elided$/, "") === "wearing-plug") && /\b(?:inside|in|into)\s+(?:him|her|them)\b(?!self)/i.test(sent.slice(m.index!)) && !REFLEXIVE.test(sent)) {
+      const at0 = para.indexOf(sent);
+      const near = sent + " " + (at0 > 0 ? para.slice(Math.max(0, at0 - 240), at0) : "");
+      const named = cast.chars.filter((c) => c !== cast.secondPerson && c.aliases.some((a) => new RegExp(`\\b${escapeRe(a)}\\b`).test(near)));
+      if (named.length >= 2) return;
+    }
     // "Eddie smacked his cheeks to wake himself up": "cheeks" with no ass word needs a sex scene around it.
     if ((pat.id.startsWith("grab-ass") || pat.id === "hands-on-ass") && /cheeks\b/.test(matchText) && !/\b(?:ass|arse|butt|bum|backside|behind)\b/i.test(matchText) &&
         ![pi - 2, pi - 1, pi, pi + 1].some((i) => !!paras[i] && (PENIS_CTX.test(paras[i]) || /\b(?:ass|arse|butt|hole|naked|undress\w*|moan\w*|lube\w*|condom|erection|aroused|thrust\w*|kiss\w*|bed)\b/i.test(paras[i])))) return;
@@ -1609,6 +1636,8 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
     // "as though he hasn't just been fucked into a new realm": he looks untouched, and has been. The negation is the pretence.
     // "like he's never been fucked before, which is absurdly untrue": the author says the opposite of the simile.
     const pretence = /\bas\s+(?:if|though)\s+(?:he|she|they|\w+)\s+(?:hasn['’]t|hadn['’]t|has not|had not)\s+(?:just\s+|only\s+|even\s+)*(?:been\s+)?$/i.test(prefix.slice(-60)) ||
+      // "Sweet and chaste. Like he wasn't finger fucking Steve into oblivion.": the simile pretends it isn't happening, so it is.
+      /(?:^|[.!?,]\s*)(?:as\s+(?:if|though)|like)\s+(?:he|she|they|\w+)\s+(?:wasn['’]t|weren['’]t|isn['’]t|aren['’]t|hadn['’]t|didn['’]t|wasn['’]t just)\s+(?:(?:just|actually|even|really|currently)\s+)*$/i.test((aux.trim() && matchText.includes(aux.trim()) ? prefix + matchText.slice(0, matchText.indexOf(aux.trim()) + aux.trim().length) : prefix + " " + aux).trimEnd().slice(-70) + " ") ||
       /\bnever\s+been\b[^.!?]{0,40}\bwhich\s+(?:is|was)\s+(?:\w+ly\s+)?(?:untrue|false|a lie|not true|laughable|ridiculous|absurd)/i.test(sent);
     const ifNot = /\bif\s+(?:[\w'’-]+\s+){0,2}(?:doesn['’]t|don['’]t|didn['’]t|won['’]t|hadn['’]t|isn['’]t|wasn['’]t)\s*$/i.test(window) || (/\bif\s+(?:[\w'’-]+\s+){0,2}$/i.test(window) && NEG.test(aux));
     // "tried not to suppress the urge to pull out and snap back in": not resisting a wish means having it.
