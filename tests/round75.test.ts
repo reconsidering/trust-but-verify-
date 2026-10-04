@@ -105,3 +105,15 @@ describe("progress reporting", () => {
     expect(seen.every((f, i) => f < 1 && (i === 0 || f >= seen[i - 1]))).toBe(true);
   });
 });
+
+describe("round 75e: something swallowing people up is not a blowjob", () => {
+  it("water, darkness and the like swallowing someone whole", () => {
+    const r = (t: string) => analyzeWithPatterns(lead + t, META, { quiet: true }).pairings[0].blowjob.instances.length;
+    expect(r("Steve kept his eyes off the kids, as if the deep green water was going to swallow them whole, and Eddie (the little dick) just laughed.")).toBe(0);
+    expect(r("The dark in the cellar looked ready to swallow a man whole, so Eddie stayed close to Steve.")).toBe(0);
+  });
+  it("still reads a person swallowing someone down", () => {
+    const r = analyzeWithPatterns(lead + "Steve swallowed Eddie down to the root and Eddie shouted.", META, { quiet: true }).pairings[0].blowjob.instances.map((x) => `${x.top.split(" ")[0]}>${x.bottom.split(" ")[0]}`);
+    expect(r).toEqual(["Eddie>Steve"]);
+  });
+});

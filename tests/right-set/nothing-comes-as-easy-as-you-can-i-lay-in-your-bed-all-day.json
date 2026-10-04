@@ -1,0 +1,109 @@
+{
+ "entries": [
+  {
+   "kind": "hint",
+   "card": "anal",
+   "pairing": "Steve Harrington/Eddie Munson",
+   "who": "Eddie Munson",
+   "role": "top",
+   "wants": true,
+   "via": "dialogue:checking out an ass",
+   "h": "226a0f12",
+   "conf": 26,
+   "marks": {
+    "right": 1,
+    "wrong": 0
+   },
+   "seen": [
+    "2026-10-04"
+   ]
+  },
+  {
+   "kind": "hint",
+   "card": "anal",
+   "pairing": "Steve Harrington/Eddie Munson",
+   "who": "Steve Harrington",
+   "role": "bottom",
+   "wants": true,
+   "via": "ogle-crotch",
+   "h": "f5a7b73",
+   "conf": 58,
+   "marks": {
+    "right": 1,
+    "wrong": 0
+   },
+   "seen": [
+    "2026-10-04"
+   ]
+  },
+  {
+   "kind": "hint",
+   "card": "blowjob",
+   "pairing": "Steve Harrington/Eddie Munson",
+   "who": "Steve Harrington",
+   "role": "bottom",
+   "wants": true,
+   "via": "ogle-crotch-oral",
+   "h": "f5a7b73",
+   "conf": 58,
+   "marks": {
+    "right": 1,
+    "wrong": 0
+   },
+   "seen": [
+    "2026-10-04"
+   ]
+  },
+  {
+   "kind": "scene",
+   "card": "blowjob",
+   "pairing": "Steve Harrington/Eddie Munson",
+   "top": "Eddie Munson",
+   "bottom": "Steve Harrington",
+   "via": "lips-around",
+   "h": "f9d23570",
+   "conf": 83,
+   "marks": {
+    "right": 1,
+    "wrong": 0
+   },
+   "seen": [
+    "2026-10-04"
+   ]
+  }
+ ],
+ "fic": "nothing-comes-as-easy-as-you-can-i-lay-in-your-bed-all-day",
+ "title": "Nothing comes as easy as you (can I lay in your bed all day?)",
+ "negatives": [
+  {
+   "kind": "hint",
+   "card": "blowjob",
+   "pairing": "Steve Harrington/Eddie Munson",
+   "who": "Steve Harrington",
+   "role": "bottom",
+   "wants": true,
+   "via": "knelt-before",
+   "h": "6273eb30",
+   "conf": 50,
+   "misread": true,
+   "seen": [
+    "2026-10-04"
+   ]
+  },
+  {
+   "kind": "scene",
+   "card": "blowjob",
+   "pairing": "Steve Harrington/Eddie Munson",
+   "top": "Eddie Munson",
+   "bottom": "Steve Harrington",
+   "via": "swallowed-down",
+   "h": "d39c97e2",
+   "conf": 60,
+   "misread": true,
+   "seen": [
+    "2026-10-04"
+   ],
+   "retired": "fixed: water swallowing people is not a blowjob"
+  }
+ ]
+}

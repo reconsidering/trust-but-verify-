@@ -1423,6 +1423,8 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
     if (pat.id.startsWith("pushed-in") && /\b(?:inside|into|in)$/i.test(matchText) && /^\s+(?:himself|herself|themselves)\b/i.test(sent.slice(m.index! + m[0].length))) return;
     // "Alex shudders and presses in harder" while kissing: not penetration.
     if (pat.id.startsWith("pushed-in") && /\bkiss/i.test(sent) && !ANAL_CTX.test(sent)) return;
+    // "the bright blue water was going to swallow them whole": something that isn't a person swallowing people up, not a blowjob.
+    if (pat.id.startsWith("swallowed-down") && /\b(?:water|waves?|sea|ocean|lake|river|pool|darkness|dark|night|shadows?|fog|mist|smoke|earth|ground|crowd|city|abyss|void|flames?|fire|storm|monster|beast|whale|snake|dragon|forest|woods|cave|mouth of)\b[^.!?]{0,50}$/i.test(sent.slice(0, m.index! + matchText.length))) return;
     // "swept his tongue inside of him" with a bare pronoun or name, while mouths are kissing: a kiss, not rimming.
     if (pat.id === "tongue-inside-him" && !/\b(?:ass|arse|hole|rim|crack|cheeks|entrance|pucker|cavity|opening)\b/i.test(matchText) &&
       /\b(?:mouths?|lips|kiss\w*|tongues?\s+(?:to|with)|suck\w*\s+on\s+[\w'’]+\s+tongue|against\s+(?:the|his|her)\s+\w+)\b/i.test(para)) return;
