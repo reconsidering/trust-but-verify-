@@ -1,13 +1,13 @@
 // @vitest-environment jsdom
 import { afterEach, describe, expect, it, vi } from "vitest";
-import { extractEngine, gradeText, resetEngineCache, summarize, textForGrading } from "../src/grade";
+import { DEFAULT_GRADE_OPTIONS, GRADE_PROFILES, extractEngine, gradeText, resetEngineCache, summarize, textForGrading } from "../src/grade";
 
 const ENGINE = `/*GRADER-START*/
 const Grader = (() => {
   function analyze(text, opts = {}) {
     if (opts.onProgress) opts.onProgress(1);
     const words = (text.match(/\\w+/g) || []).length;
-    return { overall: words > 3 ? 88.4 : 20, letter: words > 3 ? "B+" : "F", profile: "General fiction",
+    return { overall: words > 3 ? 88.4 : 20, letter: words > 3 ? "B+" : "F", profile: opts.profile + "/" + opts.dlgMode + "/" + opts.voice,
       cats: [{ id: "words", name: "Word choice & variety", score: 90 }, { id: "dialogue", name: "Dialogue", score: null }] };
   }
   return { analyze };
@@ -50,6 +50,14 @@ describe("Novel Grader engine", () => {
     expect(progress).toEqual([1]);
     expect((await gradeText("tiny")).letter).toBe("F");
     expect(fetchMock).toHaveBeenCalledTimes(1);
+  });
+
+  it("passes the chosen profile, speech and narration settings to the engine; romance is the default", async () => {
+    vi.stubGlobal("fetch", vi.fn(async () => ({ ok: true, status: 200, text: async () => PAGE })));
+    expect(DEFAULT_GRADE_OPTIONS.profile).toBe("romance");
+    expect(GRADE_PROFILES[0][0]).toBe("romance");
+    expect((await gradeText("One two three four five.", { ...DEFAULT_GRADE_OPTIONS })).profile).toBe("romance/reduce/standard");
+    expect((await gradeText("One two three four five.", { profile: "fantasy", dlgMode: "ignore", voice: "stylized" })).profile).toBe("fantasy/ignore/stylized");
   });
 
   it("explains when the markers have moved or the page won’t load", async () => {

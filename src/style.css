@@ -377,3 +377,5 @@ footer { margin-top: 32px; color: var(--muted); font-size: 0.85rem; text-align: 
 .grade-cats .bar { height: 8px; border-radius: 999px; background: var(--border); overflow: hidden; }
 .grade-cats .bar > span { display: block; height: 100%; background: var(--ok); }
 .grade-cats .num { color: var(--muted); text-align: right; font-variant-numeric: tabular-nums; }
+.grade-settings { display: flex; flex-wrap: wrap; gap: 8px 16px; margin: 0 0 12px; }
+.grade-settings .field { margin: 0; min-width: 180px; flex: 1 1 180px; }
