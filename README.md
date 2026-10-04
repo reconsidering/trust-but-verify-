@@ -397,6 +397,8 @@ AO3_DIR=ao3-samples npx vitest run tests/right-set.test.ts   # replay them; writ
 node scripts/import-right-set.mjs --retire <fic> <hash> why  # stop enforcing one reading
 ```
 
+The set also feeds the context model (`tests/learn.test.ts`): a "looks right" reading is a positive example and a reading reported wrong because it was *misread* (wrong person, not a sex act, a wish, and so on, but not "counted twice" or "too strong") is a negative one. Where a report and the audit review disagree about the same hit, neither is used. The model is only retrained (`WRITE_LEARNED=1`) when the set has grown enough to matter.
+
 People get things wrong, so a mark is weighed, not trusted outright. **Strong** (marked right in two reports, or a scene the engine itself put at 70%+) fails the test when it changes. **Single** (marked right once) is only listed in the report. **Disputed** (the same sentence is also listed as wrong in any report) and **retired** (a deliberate fix, or a mark you now disagree with) are skipped. `RIGHT_SET_STRICT=1` fails on any change. When a strong reading changes on purpose, retire it with the hash from the failure.
 
 ## Deploying

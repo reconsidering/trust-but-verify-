@@ -8,7 +8,7 @@ import { splitParagraphs } from "./text";
 import { addLabel, calibrationLines, clearLabels, type Label, labelKey, loadLabels, parseLabels, saveLabels, summarize } from "./calibration";
 import { testSkeletons } from "./testgen";
 import { rightSetFile, slugOf } from "./rightset";
-import { FLAG_REASONS, type FlagKind, type FlagReason, type FlaggedScene, type MissedScene, REASONS_FOR, buildReport, reasonLabel } from "./report";
+import { FLAG_REASONS, type FlagKind, type FlagReason, type FlaggedScene, type MissedScene, REASONS_FOR, WRONG_REASONS, buildReport, reasonLabel } from "./report";
 import { type ActKind, ROLE_WORDS } from "./roles";
 import type { ActResult, Analysis, Desire, DynamicRating, Instance, ManualResult, OthersResult, RoleOdds, SoloResult, TagCheck, VaginalResult, VibeFactor, VibeRating } from "./types";
 
@@ -334,7 +334,6 @@ function vibeExtra(id: string, v: VibeRating | DynamicRating): string[] {
 // ── Marking items right or wrong, to check the confidence numbers ──
 let labels: Label[] = loadLabels();
 /** Reasons that mean the item itself was misread (not just counted too strongly or twice). */
-const WRONG_REASONS = new Set<FlagReason>(["wrong_top", "wrong_bottom", "swapped", "wrong_person", "wrong_speaker", "wrong_pronoun", "wrong_people", "wrong_act", "not_sex", "not_sexual_context", "figurative", "solo", "hypothetical", "negated"]);
 const labelable = (spec: { kind?: FlagKind; card: string; confidence?: number }) =>
   spec.confidence !== undefined && (spec.kind === "scene" || spec.kind === "hint" || spec.kind === undefined) && !["solo", "manual", "tagcheck", "vibe", "dynamic"].includes(spec.card);
 function recordLabel(spec: { kind?: FlagKind; card: string; confidence?: number; evidence: string }, right: boolean) {

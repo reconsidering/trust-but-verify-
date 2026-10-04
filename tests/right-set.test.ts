@@ -7,10 +7,10 @@
 import { existsSync, readFileSync, readdirSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { describe, expect, it } from "vitest";
-import { type RightEntry, type RightSet, baseVia, hashKey, mergeReport, parseReport, slugOf, strengthOf } from "../scripts/right-set.mjs";
+import { MISREAD_LABELS, type RightEntry, type RightSet, baseVia, hashKey, mergeReport, parseReport, slugOf, strengthOf } from "../scripts/right-set.mjs";
 import { extractFromHtml } from "../src/extract";
 import { hashKey as pageHash, rightSetFile, slugOf as pageSlug } from "../src/rightset";
-import type { FlaggedScene } from "../src/report";
+import { FLAG_REASONS, type FlaggedScene, WRONG_REASONS } from "../src/report";
 import { analyzeWithPatterns } from "../src/heuristic";
 import type { PairingResult } from "../src/types";
 
@@ -90,6 +90,51 @@ describe("right-set: reading a report and weighing it", () => {
   it("normalises pattern names and fic titles", () => {
     expect(baseVia("push-into~elided")).toBe("push-into");
     expect(slugOf("Prince, Prisoner, Puppy, Parent")).toBe("prince-prisoner-puppy-parent");
+  });
+});
+
+describe("right-set: wrong marks as negative examples for the context model", () => {
+  const WRONG_REPORT = `## The work
+- Title: Made Up Story
+
+## Things I think are wrong (3)
+
+### 1. Alex Smith/Sam Jones · anal hint
+- Shown as: **Alex Smith** points toward top (wanted) · anal sex
+- Pattern: push-into
+- Sentence: “Alex reached for the lamp.”
+- What is wrong: Not a sex act, or not that kind of cue, at all
+
+### 2. Alex Smith/Sam Jones · anal hint
+- Shown as: **Sam Jones** points toward bottom (touch) · pushing back
+- Pattern: thrust-back
+- Sentence: “Sam shoved the door.”
+- What is wrong: Counted more than once
+
+### 3. Alex Smith/Sam Jones · anal hint
+- Shown as: **Sam Jones** points toward bottom (touch) · pushing back
+- Pattern: thrust-back
+- Sentence: “Sam leaned on the wall.”
+- What is wrong: Something else (explain below)
+
+## Things I checked that look right (0)
+
+## How well the confidence has matched so far
+`;
+  it("the misread reasons here match the ones the page uses", () => {
+    expect(MISREAD_LABELS.slice().sort()).toEqual(FLAG_REASONS.filter((r) => WRONG_REASONS.has(r.key)).map((r) => r.label).sort());
+  });
+  it("only a reading reported wrong because it was misread becomes a negative", () => {
+    const set: Partial<RightSet> = {};
+    mergeReport(set, parseReport(WRONG_REPORT), "2026-10-05");
+    expect(set.negatives).toHaveLength(1);
+    expect(set.negatives![0]).toMatchObject({ via: "push-into", misread: true });
+  });
+  it("the page’s file marks misreads from the ticked reasons", () => {
+    const f = (reasons: FlaggedScene["reasons"]): FlaggedScene => ({ id: "x", kind: "hint", pairing: "A/B", card: "anal", top: "Alex Smith", bottom: "top (wanted)", act: "x", pattern: "push-into", evidence: "Alex reached for the lamp.", reasons, note: "" });
+    expect(rightSetFile("T", [], [f(["not_sex"])]).wrong[0].misread).toBe(true);
+    expect(rightSetFile("T", [], [f(["duplicate"])]).wrong[0].misread).toBe(false);
+    expect(rightSetFile("T", [], [f([])]).wrong[0].misread).toBe(false);
   });
 });
 

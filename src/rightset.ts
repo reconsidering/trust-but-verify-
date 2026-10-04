@@ -1,6 +1,6 @@
 // The file the "Save looks-right set" button downloads: the readings marked right (and the ones reported wrong, so a reading that is
 // both can be set aside), as hashes and names only, never the fic's text. scripts/import-right-set.mjs folds it into tests/right-set.
-import type { FlaggedScene } from "./report";
+import { type FlaggedScene, WRONG_REASONS } from "./report";
 
 /** Same key as scripts/right-set.mjs: letters only, lower case, first 60, hashed. */
 export function hashKey(s: string): string {
@@ -25,6 +25,8 @@ export interface SavedEntry {
   role?: string;
   wants?: boolean;
   conf?: number;
+  /** On a reported-wrong line: the reasons say the reading itself was wrong (not just counted twice or too strongly), so it can teach the model. */
+  misread?: boolean;
 }
 
 /** One saved reading, or undefined for lines that cannot be found again (tag checks, vibe ratings, manual lines). */
@@ -44,6 +46,7 @@ export function savedEntry(f: FlaggedScene): SavedEntry | undefined {
 }
 
 export function rightSetFile(title: string, right: FlaggedScene[], wrong: FlaggedScene[]) {
-  const pick = (xs: FlaggedScene[]) => xs.map(savedEntry).filter((x): x is SavedEntry => !!x);
-  return { title, slug: slugOf(title), right: pick(right), wrong: pick(wrong) };
+  const pick = (xs: FlaggedScene[], side: "right" | "wrong") =>
+    xs.flatMap((f) => { const e = savedEntry(f); return e ? [side === "wrong" ? { ...e, misread: f.reasons.some((r) => WRONG_REASONS.has(r)) } : e] : []; });
+  return { title, slug: slugOf(title), right: pick(right, "right"), wrong: pick(wrong, "wrong") };
 }

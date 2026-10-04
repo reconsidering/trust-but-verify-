@@ -6,6 +6,7 @@
 import { existsSync, readFileSync, readdirSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { describe, expect, it } from "vitest";
+import { type RightSet, baseVia, hashKey, slugOf, strengthOf } from "../scripts/right-set.mjs";
 import { extractFromHtml } from "../src/extract";
 import { analyzeWithPatterns } from "../src/heuristic";
 import { FEATURES, MODEL, probability } from "../src/heuristic/learned";
@@ -22,6 +23,27 @@ function loadLabels(): Map<string, "ok" | "wrong"> {
   for (const f of readdirSync(labelDir).filter((x) => x.endsWith(".json")).sort()) {
     const { labels } = JSON.parse(readFileSync(join(labelDir, f), "utf8")) as { labels: Record<string, "ok" | "wrong" | "unclear"> };
     for (const [k, v] of Object.entries(labels)) if (v !== "unclear") out.set(k, v);
+  }
+  return out;
+}
+
+/**
+ * Readings from mistake reports (tests/right-set): "looks right" is a positive, a reading reported wrong because it was misread is a negative.
+ * Keyed by pattern and sentence like the audit labels, and only for the fic they came from. A reading marked both ways, a disputed or retired
+ * one, and anything reported wrong for a reason other than a misreading (counted twice, too strong) teaches nothing and is left out.
+ */
+function rightSetLabels(): Map<string, Map<string, "ok" | "wrong">> {
+  const out = new Map<string, Map<string, "ok" | "wrong">>();
+  const dirp = join(__dirname, "right-set");
+  if (!existsSync(dirp)) return out;
+  for (const f of readdirSync(dirp).filter((x) => x.endsWith(".json"))) {
+    const set = JSON.parse(readFileSync(join(dirp, f), "utf8")) as RightSet;
+    const m = new Map<string, "ok" | "wrong">();
+    const k = (e: { via?: string; h: string }) => `${baseVia(e.via ?? "")}#${e.h}`;
+    const rightKeys = new Set(set.entries.map(k));
+    for (const e of set.entries) { const st = strengthOf(e); if (st === "strong" || st === "single") m.set(k(e), "ok"); }
+    for (const n of set.negatives ?? []) if (n.misread && !rightKeys.has(k(n)) && !n.retired) m.set(k(n), "wrong");
+    out.set(set.fic, m);
   }
   return out;
 }
@@ -109,25 +131,36 @@ describe.skipIf(!dir)("context model", () => {
     let rows: Row[] = [];
     const seen = new Set<string>();
     const missing: Record<string, string> = {};
+    let reportNote = "";
     const cache = process.env.ROWS_CACHE;
     if (cache && existsSync(cache)) rows = JSON.parse(readFileSync(cache, "utf8"));
-    else for (const f of readdirSync(dir!).filter((x) => x.endsWith(".html")).sort()) {
-      const work = extractFromHtml(readFileSync(join(dir!, f), "utf8"));
-      analyzeWithPatterns(work.text, work.meta, {
-        quiet: true,
-        audit: (h) => {
-          const key = `${h.via}#${hash(h.sentence).toString(16)}`;
-          const lab = labels.get(key);
-          if (!h.f) { if (lab) missing[key] = h.kind; return; }
-          if (!lab || seen.has(key)) return;
-          seen.add(key);
-          rows.push({ key, id: h.via, f: h.f, y: lab === "ok" ? 1 : 0 });
-        },
-      });
+    else {
+      const reported = rightSetLabels();
+      let fromReports = 0, clashes = 0;
+      for (const f of readdirSync(dir!).filter((x) => x.endsWith(".html")).sort()) {
+        const work = extractFromHtml(readFileSync(join(dir!, f), "utf8"));
+        const rs = reported.get(slugOf(work.meta.title ?? ""));
+        analyzeWithPatterns(work.text, work.meta, {
+          quiet: true,
+          audit: (h) => {
+            const key = `${h.via}#${hash(h.sentence).toString(16)}`;
+            let lab = labels.get(key);
+            const fromReport = rs?.get(`${baseVia(h.via)}#${hashKey(h.sentence)}`);
+            // People get things wrong: where the audit review and a report disagree, neither is used.
+            if (lab && fromReport && lab !== fromReport) { clashes++; if (!seen.has(key)) seen.add(key); return; }
+            if (!lab && fromReport) { lab = fromReport; if (h.f && !seen.has(key)) fromReports++; }
+            if (!h.f) { if (lab) missing[key] = h.kind; return; }
+            if (!lab || seen.has(key)) return;
+            seen.add(key);
+            rows.push({ key, id: h.via, f: h.f, y: lab === "ok" ? 1 : 0 });
+          },
+        });
+      }
+      reportNote = `${fromReports} of them come from mistake reports (tests/right-set); ${clashes} were left out because a report and the audit review disagreed.`;
     }
     if (cache && !existsSync(cache)) writeFileSync(cache, JSON.stringify(rows));
     if (process.env.MISSING_OUT) writeFileSync(process.env.MISSING_OUT, JSON.stringify(missing));
-    const lines: string[] = ["# Context model", "", `${rows.length} labelled hits found again in the samples (of ${labels.size} labels); ${rows.filter((r) => !r.y).length} wrong.`, ""];
+    const lines: string[] = ["# Context model", "", `${rows.length} labelled hits found again in the samples (of ${labels.size} labels); ${rows.filter((r) => !r.y).length} wrong.`, ...(reportNote ? [reportNote] : []), ""];
     expect(rows.length).toBeGreaterThan(200);
 
     const designs = (set: Row[], pre: (id: string, r?: Row) => number) => set.map((r) => [logit(clampP(pre(r.id, r))), ...r.f]);

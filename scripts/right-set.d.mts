@@ -14,8 +14,10 @@ export interface RightEntry {
   seen?: string[];
   disputedOn?: string[];
   retired?: boolean | string;
+  misread?: boolean;
 }
-export interface RightSet { fic: string; title: string; entries: RightEntry[] }
+export interface RightSet { fic: string; title: string; entries: RightEntry[]; negatives?: RightEntry[] }
+export const MISREAD_LABELS: string[];
 export function normKey(s: string): string;
 export function hashKey(s: string): string;
 export function slugOf(title: string): string;

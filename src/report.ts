@@ -30,6 +30,9 @@ export const FLAG_REASONS = [
   { key: "other", label: "Something else (explain below)" },
 ] as const;
 
+/** Reasons that mean the item itself was misread (not just counted too strongly or twice): the ones that make it a wrong reading to learn from. */
+export const WRONG_REASONS = new Set<FlagReason>(["wrong_top", "wrong_bottom", "swapped", "wrong_person", "wrong_speaker", "wrong_pronoun", "wrong_people", "wrong_act", "not_sex", "not_sexual_context", "figurative", "solo", "hypothetical", "negated"]);
+
 export type FlagKind = "scene" | "hint" | "vibe" | "factor";
 
 /** Which boxes make sense for what is being reported. */

@@ -5,6 +5,24 @@
 // 70%+ when it was marked, is "strong" and fails the test when it changes. A sentence that any report also lists as wrong is "disputed"
 // and is never enforced. A reading whose change is deliberate (a fix, or the owner's own mistake) is retired, not deleted.
 
+/** The reason labels (src/report.ts FLAG_REASONS) that say the reading itself was wrong. tests/right-set.test.ts checks this list against WRONG_REASONS. */
+export const MISREAD_LABELS = [
+  "Wrong character is flagged as topping / doing it",
+  "Wrong character is flagged as bottoming / receiving",
+  "Roles are reversed (top and bottom swapped)",
+  "Credited to the wrong character",
+  "Wrong speaker: someone else said this line",
+  "A pronoun (he / him / his) points at the wrong person",
+  "Wrong people (someone outside this pairing)",
+  "Wrong sexual act is flagged (e.g. oral shown as anal)",
+  "Not a sex act, or not that kind of cue, at all",
+  "An everyday action, not in a sexual scene",
+  "Figure of speech, idiom or joke, not literal",
+  "Solo or reflexive act (himself, his own…) shown as a scene with the partner",
+  "A wish, fantasy or \"what if\", not something that happens",
+  "Negated or refused (didn't, wouldn't, never)",
+];
+
 /** Normalise a sentence to a short stable key: letters only, lower case, the first 60. */
 export function normKey(s) {
   return String(s).toLowerCase().replace(/[^a-z]+/g, "").slice(0, 60);
@@ -64,6 +82,7 @@ export function parseReport(md) {
         entry = { kind: "scene", card, pairing, top: tm[1], bottom: tm[2], via: baseVia(via), h: hashKey(sentence) };
       }
       if (conf) entry.conf = Number(conf);
+      if (side === "wrong") entry.misread = MISREAD_LABELS.some((l) => (field("What is wrong") ?? "").includes(l));
       entry.side = side;
       out.push(entry);
     }
@@ -96,6 +115,14 @@ export function mergeReport(set, parsed, date) {
   // A sentence listed as wrong in any report puts every right-marked reading of it in doubt.
   for (const it of parsed.wrong) {
     for (const e of bySentence(it.h)) { if (!(e.disputedOn ?? []).includes(date)) { e.marks.wrong++; e.disputedOn = [...(e.disputedOn ?? []), date]; disputed++; } }
+  }
+  // Reported wrong because the reading itself was off: a negative example for the context model (tests/learn.test.ts).
+  set.negatives ??= [];
+  const negIds = new Set(set.negatives.map(idOf));
+  for (const it of parsed.wrong) {
+    if (!it.misread) continue;
+    const { side, ...rest } = it;
+    if (!negIds.has(idOf(rest))) { set.negatives.push({ ...rest, seen: [date] }); negIds.add(idOf(rest)); }
   }
   // The other way round: a right mark on a sentence already disputed keeps it disputed.
   const wrongHashes = new Set(parsed.wrong.map((w) => w.h));
