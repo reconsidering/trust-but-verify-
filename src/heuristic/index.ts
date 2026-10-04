@@ -96,6 +96,8 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
     const from = <T extends { tag: string }>(x: T): T => ({ ...x, tag: `${x.tag} (from notes)` });
     for (const r of nt.roles) if (!tags.roles.some((o) => o.char === r.char && o.role === r.role)) tags.roles.push(from(r));
     for (const d of nt.dynamics) if (!tags.dynamics.some((o) => o.char === d.char && o.lean === d.lean)) tags.dynamics.push(from(d));
+    for (const t of nt.dynamicTags) if (!tags.dynamicTags.some((o) => norm(o) === norm(t))) tags.dynamicTags.push(`${t} (from notes)`);
+    for (const t of nt.switching) if (!tags.switching.some((o) => norm(o) === norm(t))) tags.switching.push(`${t} (from notes)`);
   }
   const allTags = [...meta.freeforms, ...noteTags];
   const NAMES = cast.aliasPattern || "(?!)";
@@ -247,7 +249,7 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
 
   const bodyCtxCache = new Map<number, boolean>();
   // Two passes when epithets are in play: the first learns which character "the blond" usually is.
-  const pov = detectPov(paras, (p) => CHAPTER_RE.test(p), cast, meta.freeforms);
+  const pov = detectPov(paras, (p) => CHAPTER_RE.test(p), cast, allTags);
   // An omegaverse work: alpha/beta/omega in the tags, or the words all through the text. Only there do bared throats,
   // scenting and the alpha voice mean dominance and submission.
   const isAbo = (() => {
@@ -257,7 +259,7 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
     return (all.match(/\balphas?\b/gi) ?? []).length >= 8 && (all.match(/\bomegas?\b/gi) ?? []).length >= 4;
   })();
   // A chastity device or cock cage in the tags (male-only works): being locked up reads as submission, holding the key as control.
-  const isChastity = (/chastity|cock[- ]?cage|\bkey ?holder|\bcaged\b/i.test(meta.freeforms.join(" | ")) || noteCtx.cage) && (meta.categories.length === 0 || meta.categories.includes("M/M"));
+  const isChastity = (/chastity|cock[- ]?cage|\bkey ?hold|\bcaged\b/i.test(meta.freeforms.join(" | ")) || noteCtx.cage) && (meta.categories.length === 0 || meta.categories.includes("M/M"));
   // Who wears a device (cage, collar): named in a tag ("Cas puts Dean in a cock cage", "Collared Steve"), else the one tagged as the sub,
   // else a lone "Bottom X", else the one the device is attached to most often in the text ("Peter's erection … the cage", "Telemachus' neck").
   const findNamed = (n: string) => cast.byAlias.get(n.trim()) ?? cast.byAlias.get(n.trim().split(/\s+/)[0]) ?? cast.chars.find((c) => c.aliases.some((al) => n.toLowerCase().includes(al.toLowerCase())));
@@ -307,7 +309,7 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
   const COLLAR_RE = /\b(?:collars?|collared|leash(?:es|ed)?)\b/i;
   const NOT_COLLAR = /\b(?:shirt|jacket|coat|button\w*|cologne|polo|dress|blouse|uniform|suit|sweater|hoodie|starch\w*|turtle\w*)\b|\bby\s+(?:his|her|their|the|[A-Z][\w-]*['’]s)\s+collar\b|\bcollar\s+of\s+(?:his|her|their|the)\s+(?:shirt|jacket|coat|dress)|\bcollar\s*bone/i;
   const collarMentions = paras.reduce((n, p) => n + (COLLAR_RE.test(p) && !NOT_COLLAR.test(p) ? 1 : 0), 0);
-  const isCollar = (/\bcollar|\bleash|pet ?play|master\/pet|owner\/pet/i.test(meta.freeforms.join(" | ")) || noteCtx.collar || collarMentions >= 8) && (meta.categories.length === 0 || meta.categories.includes("M/M"));
+  const isCollar = (/\bcollar|\bleash|\bchoker|pet ?play|(?:pup|puppy|kitten) play|human pet|master\/pet|owner\/pet/i.test(meta.freeforms.join(" | ")) || noteCtx.collar || collarMentions >= 8) && (meta.categories.length === 0 || meta.categories.includes("M/M"));
   const collarWearer: Character | undefined = !isCollar ? undefined : deviceWearer(
     [/^(?:collared|leashed)\s*!?\s+(.+)$/i, /^(.+?)\s+(?:in|wearing|wears|is wearing)\s+(?:a\s+)?(?:collar|leash)$/i, /\b(?:puts?|put|keeps?|has)\s+(.+?)\s+(?:in|on)\s+(?:a\s+)?(?:collar|leash)/i],
     /\b(?:collars?|collared|leash(?:es|ed)?)\b/i,
