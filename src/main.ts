@@ -7,7 +7,8 @@ import { runPatterns } from "./heuristic/run";
 import { splitParagraphs } from "./text";
 import { addLabel, calibrationLines, clearLabels, type Label, labelKey, loadLabels, parseLabels, saveLabels, summarize } from "./calibration";
 import { testSkeletons } from "./testgen";
-import { FLAG_REASONS, type FlagKind, type FlagReason, type FlaggedScene, type MissedScene, REASONS_FOR, buildReport, reasonLabel } from "./report";
+import { rightSetFile, slugOf } from "./rightset";
+import { FLAG_REASONS, type FlagKind, type FlagReason, type FlaggedScene, type MissedScene, REASONS_FOR, WRONG_REASONS, buildReport, reasonLabel } from "./report";
 import { type ActKind, ROLE_WORDS } from "./roles";
 import type { ActResult, Analysis, Desire, DynamicRating, Instance, ManualResult, OthersResult, RoleOdds, SoloResult, TagCheck, VaginalResult, VibeFactor, VibeRating } from "./types";
 
@@ -50,6 +51,7 @@ const els = {
   reportCopy: $<HTMLButtonElement>("report-copy"),
   reportClear: $<HTMLButtonElement>("report-clear"),
   reportTests: $<HTMLButtonElement>("report-tests"),
+  reportSave: $<HTMLButtonElement>("report-save-right"),
   reportPreview: $("report-preview"),
 };
 
@@ -263,6 +265,7 @@ function refreshReport() {
   els.reportCopy.disabled = !n && !nr && !els.reportGeneral.value.trim();
   els.reportClear.disabled = !n && !nr;
   els.reportTests.disabled = !n && !nr;
+  els.reportSave.disabled = !nr;
   els.reportList.replaceChildren();
   for (const f of flagged.values()) {
     const li = el("li");
@@ -331,7 +334,6 @@ function vibeExtra(id: string, v: VibeRating | DynamicRating): string[] {
 // ── Marking items right or wrong, to check the confidence numbers ──
 let labels: Label[] = loadLabels();
 /** Reasons that mean the item itself was misread (not just counted too strongly or twice). */
-const WRONG_REASONS = new Set<FlagReason>(["wrong_top", "wrong_bottom", "swapped", "wrong_person", "wrong_speaker", "wrong_pronoun", "wrong_people", "wrong_act", "not_sex", "not_sexual_context", "figurative", "solo", "hypothetical", "negated"]);
 const labelable = (spec: { kind?: FlagKind; card: string; confidence?: number }) =>
   spec.confidence !== undefined && (spec.kind === "scene" || spec.kind === "hint" || spec.kind === undefined) && !["solo", "manual", "tagcheck", "vibe", "dynamic"].includes(spec.card);
 function recordLabel(spec: { kind?: FlagKind; card: string; confidence?: number; evidence: string }, right: boolean) {
@@ -584,6 +586,18 @@ els.reportCopy.addEventListener("click", async () => {
     els.reportCopy.textContent = "Select the text below";
   }
   setTimeout(() => { els.reportCopy.textContent = "Copy report for Claude"; }, 2500);
+});
+
+els.reportSave.addEventListener("click", () => {
+  const title = current?.meta.title ?? "untitled";
+  const file = rightSetFile(title, [...rightItems.values()], [...flagged.values()]);
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(new Blob([JSON.stringify(file, null, 1)], { type: "application/json" }));
+  a.download = `looks-right-${slugOf(title) || "fic"}.json`;
+  a.click();
+  setTimeout(() => URL.revokeObjectURL(a.href), 1000);
+  els.reportSave.textContent = `Saved ${file.right.length}`;
+  setTimeout(() => { els.reportSave.textContent = "Save looks-right set"; }, 2500);
 });
 
 els.reportTests.addEventListener("click", async () => {

@@ -1,9 +1,10 @@
 // Turns the labelled audit samples (tests/labels/*.json) into the per-pattern reliability table the engine uses
 // (src/heuristic/reliability.ts), and fails when the committed table no longer matches the labels.
 //   WRITE_RELIABILITY=1 npx vitest run tests/reliability.test.ts     rewrites the table
-import { readFileSync, readdirSync, writeFileSync } from "node:fs";
+import { existsSync, readFileSync, readdirSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { describe, expect, it } from "vitest";
+import { type RightSet, baseVia, strengthOf } from "../scripts/right-set.mjs";
 import { PRECISION, RELIABILITY, reliabilityOf } from "../src/heuristic/reliability";
 
 const PRIOR_MEAN = 0.9;
@@ -22,6 +23,25 @@ export function countLabels(): Map<string, { ok: number; wrong: number }> {
       const c = counts.get(id) ?? { ok: 0, wrong: 0 };
       c[label]++;
       counts.set(id, c);
+    }
+  }
+  // Mistake reports (tests/right-set): a "looks right" reading counts as right; one reported wrong because it was misread counts as wrong.
+  // Disputed or retired readings, and anything marked both ways, are left out so one mistaken mark cannot move a pattern.
+  const setDir = join(__dirname, "right-set");
+  if (existsSync(setDir)) {
+    for (const f of readdirSync(setDir).filter((x) => x.endsWith(".json")).sort()) {
+      const set = JSON.parse(readFileSync(join(setDir, f), "utf8")) as RightSet;
+      const k = (e: { via?: string; h: string }) => `${baseVia(e.via ?? "")}#${e.h}`;
+      const rightKeys = new Set(set.entries.map(k));
+      const bump = (via: string | undefined, label: "ok" | "wrong") => {
+        const id = baseVia(via ?? "");
+        if (!id) return;
+        const c = counts.get(id) ?? { ok: 0, wrong: 0 };
+        c[label]++;
+        counts.set(id, c);
+      };
+      for (const e of set.entries) { const st = strengthOf(e); if (st === "strong" || st === "single") bump(e.via, "ok"); }
+      for (const n of set.negatives ?? []) if (n.misread && !rightKeys.has(k(n)) && !n.retired) bump(n.via, "wrong");
     }
   }
   return counts;

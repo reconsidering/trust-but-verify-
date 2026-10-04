@@ -387,6 +387,20 @@ AO3_DIR=ao3-samples npx vitest run tests/gold-eval.test.ts                      
   each paragraph, never the fic's own text; if the engine's paragraph splitting changes, the hash lets a file shift itself.
   The report gives verdict accuracy, scene recall and precision, POV and text-sender accuracy. `GOLD_STRICT=1` fails on any miss.
 
+### The "looks right" set
+
+Readings you mark "Looks right" in a mistake report can be kept (the report panel's **Save looks-right set** button downloads them as a small file with no story text; hand that file to Claude, or run the import below on it) as a locked set so a later change can't quietly undo them:
+
+```
+node scripts/import-right-set.mjs report.md           # fold a pasted report in (tests/right-set/<fic>.json: hashes and names, never fic text)
+AO3_DIR=ao3-samples npx vitest run tests/right-set.test.ts   # replay them; writes RIGHT_SET_REPORT.md
+node scripts/import-right-set.mjs --retire <fic> <hash> why  # stop enforcing one reading
+```
+
+The set also feeds the context model (`tests/learn.test.ts`): a "looks right" reading is a positive example and a reading reported wrong because it was *misread* (wrong person, not a sex act, a wish, and so on, but not "counted twice" or "too strong") is a negative one. Where a report and the audit review disagree about the same hit, neither is used. The per-pattern reliability table (`tests/reliability.test.ts`) counts the same readings, by pattern, so it needs no fic files. The model and the table are only regenerated (`WRITE_LEARNED=1`, `WRITE_RELIABILITY=1`) when the set has grown enough to matter. A hit that was both reviewed in the audit and marked in a report is counted twice; smoothing keeps that small.
+
+People get things wrong, so a mark is weighed, not trusted outright. **Strong** (marked right in two reports, or a scene the engine itself put at 70%+) fails the test when it changes. **Single** (marked right once) is only listed in the report. **Disputed** (the same sentence is also listed as wrong in any report) and **retired** (a deliberate fix, or a mark you now disagree with) are skipped. `RIGHT_SET_STRICT=1` fails on any change. When a strong reading changes on purpose, retire it with the hash from the failure.
+
 ## Deploying
 
 `.github/workflows/deploy.yml` builds and publishes to GitHub Pages on every push to `main`. Turn it on once in
