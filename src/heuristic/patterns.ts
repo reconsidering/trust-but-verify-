@@ -1155,6 +1155,15 @@ export const PATTERNS: PatternDef[] = [
     src: `\\b{T}\\s+{aux}(?:push|press|work|fuck|thrust|delv|wriggl|slid|slip|dip|curl|eas|spear|drove|plung|sank|sink|circl|teas|flick|swirl|run|ran|drag|lap|prob)\\w*\\s+(?:his|her|their|my|your)\\s+tongue\\s+(?:\\w+\\s+){0,2}?(?:in(?:to|side)?|past|against|over|across|at|around|along)\\s+{B:ass}`,
   },
   {
+    // "until Cregan's desire to fuck into Jace's body is too strong to delay": the one whose desire it is leans top.
+    id: "desire-to-fuck-into",
+    cat: "anal",
+    act: "anal sex",
+    subj: "t",
+    weight: 0.7,
+    src: `\\b{T:poss}\\s+(?:desire|need|urge|hunger|craving)\\s+to\\s+(?:fuck|push|thrust|slide|sink|bury|plunge)\\w*\\s+(?:\\w+\\s+)?(?:into|inside)\\s+{B:poss}\\s+(?:body|ass|arse|hole)\\b`,
+  },
+  {
     id: "tongue-in-hole",
     cat: "oral",
     act: "rimming",
