@@ -152,7 +152,8 @@ export class Ctx {
       near.find((c) => paired.has(c)) ??
       near[0] ??
       [...paired].find(ok) ??
-      this.cast.pairings.flat().find(ok)
+      // Someone with tagged partners never falls back on a stranger from another pairing (Sam is not Dean's partner).
+      (paired.size ? undefined : this.cast.pairings.flat().find(ok))
     );
   }
 

@@ -21,6 +21,16 @@ export const CANON_RAW = `
   Meg Masters | f | Meg
   Jo Harvelle | f | Jo
   Ellen Harvelle | f | Ellen
+  Pamela Barnes | f | Pam; Pamela
+  Jessica Moore | f | Jess; Jessica
+  Mary Winchester | f | Mary
+  John Winchester | m | John
+  Donna Hanscum | f | Donna
+  Jody Mills | f | Jody
+  Garth Fitzgerald IV | m | Garth
+  Bela Talbot | f | Bela
+  Anna Milton | f | Anna
+  Kevin Tran | m | Kevin
 
 @ harry-potter | harry potter|hogwarts|fantastic beasts
   Harry Potter | m | Harry
