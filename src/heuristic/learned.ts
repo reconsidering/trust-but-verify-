@@ -91,7 +91,7 @@ export function trustOf(id: string, f: number[]): number {
 
 export const MODEL: { enabled: boolean; bias: number; prior: number; weights: number[] } = {
   enabled: true,
-  bias: 1.5834,
-  prior: 0.6398,
-  weights: [0.2731, 0.3199, 0.4152, 0.1689, -0.1978, -0.0978, 0.0944, -0.1402, -0.0614, -0.8627, 1.0660, 0.5037, -0.2015, -0.2097, 0.0245],
+  bias: 1.8371,
+  prior: 0.6104,
+  weights: [0.3498, 0.2696, 0.3700, 0.0517, -0.2906, -0.1430, 0.0827, -0.1695, -0.0674, -0.8692, 1.1041, 0.4445, -0.2151, -0.0975, 0.0226],
 };

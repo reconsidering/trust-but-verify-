@@ -116,6 +116,7 @@ export function mergeReport(set, parsed, date) {
   const who = (e) => String(e.who ?? e.top ?? "").split(/\s+/)[0].toLowerCase();
   const same = (a, b) => a.h === b.h && a.card === b.card && baseVia(a.via) === baseVia(b.via) && who(a) === who(b);
   for (const it of parsed.wrong) {
+    if (!it.misread) continue; // "counted twice" or "something else" does not say the reading itself is wrong
     for (const e of set.entries) if (same(e, it) && !(e.disputedOn ?? []).includes(date)) { e.marks.wrong++; e.disputedOn = [...(e.disputedOn ?? []), date]; disputed++; }
   }
   // Every reading reported wrong is kept (so a later right mark on it is caught); only those marked `misread` (the reasons say the reading itself
@@ -127,7 +128,7 @@ export function mergeReport(set, parsed, date) {
     if (!negIds.has(idOf(rest))) { set.negatives.push({ ...rest, seen: [date] }); negIds.add(idOf(rest)); }
   }
   // The other way round: a right mark on a reading already reported wrong keeps it disputed.
-  for (const it of parsed.right) for (const e of set.entries) if (same(e, it) && (set.negatives ?? []).some((n) => same(n, it)) && !(e.disputedOn ?? []).includes(date)) { e.marks.wrong++; e.disputedOn = [...(e.disputedOn ?? []), date]; }
+  for (const it of parsed.right) for (const e of set.entries) if (same(e, it) && (set.negatives ?? []).some((n) => n.misread && same(n, it)) && !(e.disputedOn ?? []).includes(date)) { e.marks.wrong++; e.disputedOn = [...(e.disputedOn ?? []), date]; }
   return { added, confirmed, disputed };
 }
 

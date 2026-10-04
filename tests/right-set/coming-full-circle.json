@@ -513,7 +513,8 @@
    "misread": true,
    "seen": [
     "2026-10-04"
-   ]
+   ],
+   "retired": "fixed in the Coming Full Circle report fixes"
   },
   {
    "kind": "hint",
@@ -528,7 +529,8 @@
    "misread": true,
    "seen": [
     "2026-10-04"
-   ]
+   ],
+   "retired": "fixed in the Coming Full Circle report fixes"
   },
   {
    "kind": "hint",
@@ -543,7 +545,8 @@
    "misread": true,
    "seen": [
     "2026-10-04"
-   ]
+   ],
+   "retired": "fixed in the Coming Full Circle report fixes"
   },
   {
    "kind": "hint",
@@ -558,7 +561,8 @@
    "misread": true,
    "seen": [
     "2026-10-04"
-   ]
+   ],
+   "retired": "fixed in the Coming Full Circle report fixes"
   },
   {
    "kind": "hint",
@@ -573,7 +577,8 @@
    "misread": true,
    "seen": [
     "2026-10-04"
-   ]
+   ],
+   "retired": "fixed in the Coming Full Circle report fixes"
   },
   {
    "kind": "hint",
@@ -588,7 +593,8 @@
    "misread": false,
    "seen": [
     "2026-10-04"
-   ]
+   ],
+   "retired": "fixed in the Coming Full Circle report fixes"
   },
   {
    "kind": "hint",
@@ -603,7 +609,8 @@
    "misread": false,
    "seen": [
     "2026-10-04"
-   ]
+   ],
+   "retired": "fixed in the Coming Full Circle report fixes"
   },
   {
    "kind": "hint",
@@ -618,7 +625,8 @@
    "misread": false,
    "seen": [
     "2026-10-04"
-   ]
+   ],
+   "retired": "fixed in the Coming Full Circle report fixes"
   },
   {
    "kind": "hint",
@@ -633,7 +641,8 @@
    "misread": false,
    "seen": [
     "2026-10-04"
-   ]
+   ],
+   "retired": "fixed in the Coming Full Circle report fixes"
   },
   {
    "kind": "solo",
@@ -645,7 +654,8 @@
    "misread": true,
    "seen": [
     "2026-10-04"
-   ]
+   ],
+   "retired": "fixed in the Coming Full Circle report fixes"
   }
  ]
 }

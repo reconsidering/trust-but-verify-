@@ -32,7 +32,7 @@ const REPORT = `# Trust (Tags) But Verify — mistake report
 - confidence 40% · Chapter 1
 - Pattern: push-into
 - Sentence: “Alex began to press forward, slowly.”
-- What is wrong: Something else (explain below)
+- What is wrong: Not a sex act, or not that kind of cue, at all
 
 ## Things I checked that look right (3)
 
@@ -155,6 +155,31 @@ describe("right-set: wrong marks as negative examples for the context model", ()
     mergeReport(set, parseReport(rep), "2026-10-05");
     expect(strengthOf(set.entries![0] as RightEntry)).toBe("single");
   });
+  it("a reading reported wrong only for being counted twice is not put in doubt", () => {
+    const rep = `## The work
+- Title: Made Up Story
+
+## Things I think are wrong (1)
+
+### 1. Alex Smith/Sam Jones · anal hint
+- Shown as: **Sam Jones** points toward bottom (stated) · anal sex
+- Pattern: dialogue:anal sex
+- Sentence: “I want it so much, Alex, please do it.”
+- What is wrong: Counted more than once
+
+## Things I checked that look right (1)
+
+### 1. Alex Smith/Sam Jones · anal hint
+- Shown as: **Sam Jones** points toward bottom (said) · anal sex
+- Pattern: dialogue:anal sex
+- Sentence: “I want it so much, Alex, please do it.”
+
+## How well the confidence has matched so far
+`;
+    const set: Partial<RightSet> = {};
+    mergeReport(set, parseReport(rep), "2026-10-05");
+    expect(strengthOf(set.entries![0] as RightEntry)).toBe("single");
+  });
   it("the page’s file marks misreads from the ticked reasons", () => {
     const f = (reasons: FlaggedScene["reasons"]): FlaggedScene => ({ id: "x", kind: "hint", pairing: "A/B", card: "anal", top: "Alex Smith", bottom: "top (wanted)", act: "x", pattern: "push-into", evidence: "Alex reached for the lamp.", reasons, note: "" });
     expect(rightSetFile("T", [], [f(["not_sex"])]).wrong[0].misread).toBe(true);
@@ -189,7 +214,7 @@ describe("right-set: the page’s Save looks-right set button", () => {
     const set: Partial<RightSet> = {};
     mergeReport(set, rightSetFile("Made Up Story", [f({})], []) as never, "2026-10-05");
     expect(strengthOf(set.entries![0] as RightEntry)).toBe("strong");
-    mergeReport(set, rightSetFile("Made Up Story", [], [f({})]) as never, "2026-10-09");
+    mergeReport(set, rightSetFile("Made Up Story", [], [f({ reasons: ["not_sex"] })]) as never, "2026-10-09");
     expect(strengthOf(set.entries![0] as RightEntry)).toBe("disputed");
   });
 });
@@ -233,7 +258,7 @@ describe.skipIf(!dir)("right-set: replay against the sample fics", () => {
         } else if (e.kind === "solo") {
           for (const i of p.solo?.instances ?? []) { if (hashKey(i.evidence) !== e.h) continue; seen = true; if (first(i.who) === first(e.who)) ok = true; }
         }
-        if (!seen) tally.stale++;
+        if (!seen) { tally.stale++; lines.push(`- [not found again] ${e.kind} ${e.card} · ${e.who ?? `${e.top} / ${e.bottom}`} ${e.role ?? ""} · ${e.via} · hash ${e.h}`); }
         else if (ok) tally.ok++;
         else {
           tally.changed++;
@@ -245,5 +270,5 @@ describe.skipIf(!dir)("right-set: replay against the sample fics", () => {
     }
     writeFileSync(join(dir!, "RIGHT_SET_REPORT.md"), report.join("\n"));
     expect(failures, "A reading you marked right (strong) has changed. If the change is deliberate or you now disagree, retire it with scripts/import-right-set.mjs --retire.").toEqual([]);
-  });
+  }, 900_000);
 });
