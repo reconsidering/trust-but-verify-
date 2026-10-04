@@ -1916,7 +1916,6 @@ export const PATTERNS: PatternDef[] = [
     act: "toy inside",
     subj: "b",
     weight: 0.7,
-    needsCtx: true,
     signal: { kind: "prep", actorRole: "bottom" },
     src: `\\b(?:the|a|that|his|her)\\s+(?:[\\w-]+\\s+){0,2}?(?:vibrator|vibe|dildo|butt\\s*plug|plug|toy)\\s+(?:\\w+\\s+){0,2}?(?:inside|in|up|within)\\s+{B}(?![\\w-])(?!\\s+(?:the|a|an|his|her|their)\\b)`,
   },
@@ -1928,7 +1927,6 @@ export const PATTERNS: PatternDef[] = [
     act: "wearing a plug",
     subj: "b",
     weight: 0.7,
-    needsCtx: true,
     signal: { kind: "prep", actorRole: "bottom" },
     src: `\\b(?:a|the|that|his|her|their)\\s+(?:[\\w-]+\\s+){0,2}?(?:butt\\s*)?plug\\s+(?:\\w+\\s+){0,3}?(?:in|inside|up|against|pressing against|pressed against)\\s+{B:poss}\\s+(?:ass|arse|hole|prostate|butt)\\b`,
   },
@@ -1943,6 +1941,80 @@ export const PATTERNS: PatternDef[] = [
     needsCtx: true,
     signal: { kind: "touch", actorRole: "top" },
     src: `\\b{T}\\s+{aux}(?:pull|took|take|slid|slip|eas|draw|drew|remov|work)\\w*\\s+(?:out\\s+)?(?:the\\s+|a\\s+|his\\s+|that\\s+)?(?:[\\w-]+\\s+){0,2}?(?:dildo|butt\\s*plug|plug|vibrator|toy)\\s+(?:\\w+\\s+){0,2}?(?:out|free|from)\\b`,
+  },
+  {
+    // "Eddie's hands working a vibe into his hole", "Cas's fingers easing the plug into him"
+    id: "toy-hands-working",
+    cat: "anal",
+    kw: "vibe|vibrator|dildo|plug|toy|beads",
+    act: "anal sex (toy)",
+    subj: "t",
+    weight: 0.9,
+    src: `\\b{T:poss}\\s+(?:[\\w-]+\\s+){0,1}?hands?\\s+(?:[\\w-]+\\s+){0,2}?(?:work|push|press|slid|eas|guid|sink|slip|shov)\\w*\\s+(?:a\\s+|the\\s+|his\\s+|that\\s+)?(?:[\\w-]+\\s+){0,2}?(?:vibe|vibrator|dildo|butt\\s*plug|plug|beads|toy)\\s+(?:in|into|inside)\\s+{B:ass}`,
+  },
+  {
+    // "pressed the vibe in fully", "shoving the plug back in": a toy placed, the target left out
+    id: "toy-in-bare",
+    cat: "anal",
+    kw: "vibe|vibrator|dildo|plug|toy|beads",
+    act: "anal sex (toy)",
+    subj: "t",
+    weight: 0.8,
+    src: `\\b{T}\\s+{aux}(?:push|press|slid|slide|slip|work|eas|insert|shov|nudg|stuff|ram)\\w*\\s+(?:the\\s+|a\\s+|that\\s+|his\\s+)?(?:[\\w-]+\\s+){0,2}?(?:vibe|vibrator|dildo|butt\\s*plug|plug|beads|toy)\\s+(?:back\\s+)?(?:in|inside)(?:\\s+(?:fully|completely|all\\s+the\\s+way|deep|slowly|again|firmly))?(?![\\w-]|\\s+(?:the|a|an|his|her|their|him|her|them|my|your|himself|herself|themselves|myself|yourself)\\b)`,
+  },
+  {
+    // "his hips lazily thrust forward to create a bulge in Peter's cheek": face-fucking
+    id: "thrust-bulge-cheek",
+    cat: "oral",
+    kw: "bulge",
+    act: "face-fucking",
+    subj: "t",
+    weight: 0.8,
+    src: `\\b{T:poss}\\s+hips\\s+(?:\\w+\\s+){0,2}?thrust\\w*\\s+(?:\\w+\\s+){0,2}?(?:to\\s+)?(?:create|make|form|leave)\\s+(?:a\\s+)?bulge\\s+in\\s+{B:poss}\\s+(?:cheek|throat|mouth)`,
+  },
+  {
+    // "it was only Wade's cock Peter had to ride", "ride Wade's cock": the one riding is the bottom
+    id: "ride-cock-had-to",
+    cat: "anal",
+    kw: "ride",
+    act: "anal sex (riding)",
+    subj: "b",
+    weight: 0.9,
+    needsCtx: true,
+    src: `\\b{T:poss}\\s+(?:[\\w-]+\\s+){0,1}?(?:cock|dick|prick|length)\\s+{B}\\s+(?:had\\s+to|got\\s+to|wanted\\s+to|would|could)\\s+rid(?:e|ing)\\b`,
+  },
+  {
+    // "gave a couple extra thrusts after he finished": the one thrusting is the top
+    id: "extra-thrusts",
+    cat: "anal",
+    kw: "thrusts",
+    act: "thrusting",
+    subj: "t",
+    weight: 0.6,
+    needsCtx: true,
+    src: `\\b{T}\\s+{aux}(?:gave|give|gives|made|makes|make)\\s+(?:a\\s+)?(?:couple|few|several|some|two|three)\\s+(?:more\\s+|extra\\s+|last\\s+)?(?:shallow\\s+|deep\\s+|lazy\\s+)?thrusts\\b`,
+  },
+  {
+    // "his daily exercise of being pounded into by Antinous"
+    id: "pounded-into-by",
+    cat: "anal",
+    kw: "pounded|fucked|taken",
+    act: "anal sex",
+    subj: "b",
+    weight: 0.9,
+    needsCtx: true,
+    src: `\\b{B}\\s+{aux}(?:was|were|is|being|been|get|gets|got|getting)\\s+(?:\\w+ly\\s+)?(?:pound|slamm?|fuck|rail|drill|ravish|plow)\\w*\\s+(?:into\\s+)?by\\s+{T}`,
+  },
+  {
+    // "of being pounded into by Antinous": the object form of the above, with the one done to left out
+    id: "being-pounded-into-by",
+    cat: "anal",
+    kw: "pounded|fucked|railed",
+    act: "anal sex",
+    subj: "t",
+    weight: 0.8,
+    needsCtx: true,
+    src: `\\b(?:being|getting|get|got)\\s+(?:pound|slamm?|fuck|rail|drill|ravish|plow)\\w*\\s+(?:into\\s+)?by\\s+{T}\\b`,
   },
   {
     // "pressed the vibrator against Dean's hole", "teased the plug at her entrance"
