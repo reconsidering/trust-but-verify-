@@ -24,7 +24,7 @@ import { AddressBook } from "./address";
 import { reliabilityOf } from "./reliability";
 import { babyNear, featuresOf, trustOf } from "./learned";
 import { Ctx, groupValue, pronoun, readSlot, resolvePair, stripPoss } from "./resolve";
-import { PairTags, buildAct, buildDynamic, buildManual, buildSolo, buildVaginal, buildVibes, plural, soloIsAnal, tagsFor } from "./builders";
+import { PairTags, buildAct, buildDynamic, buildManual, buildOthers, buildSolo, buildVaginal, buildVibes, plural, soloIsAnal, tagsFor } from "./builders";
 
 // ───────────── main analysis ─────────────
 
@@ -884,7 +884,7 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
   /** "…without being fucked open by older men": past experience with other people, a hint about this person's role. */
   function addHistory(cat: Cat, act: string, who: Character, role: Role, partner: Character, sentence: string, pi: number) {
     if (cat === "vaginal") return;
-    desires.push({ via: "history", cat, act: "past experience with others", who, partner, role, wants: true, kind: "history", weight: 0.8, para: pi, sentence });
+    desires.push({ via: "history", cat, act: "past experience with others", who, partner, role, wants: true, kind: "history", weight: 0.8, para: pi, sentence, other: { label: "someone else (in the past)", kind: "unnamed" } });
   }
 
   /**
@@ -908,7 +908,17 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
     if (!partner || partner === known.c) return;
     const via = `${pat.id.replace(/~elided$/, "")}~one-sided`;
     if (desires.some((d) => d.via === via && d.sentence === original && d.who === known.c)) return;
-    desires.push({ via, cat: pat.cat, act: `${pat.act} (partner unclear)`, who: known.c, partner, role: known.role, wants: true, kind: "touch", weight: 0.5 * Math.min(1, pat.weight), para: pi, sentence: original, basis: "named" });
+    // Who the other person was, as far as the sentence says: the outsider's name in the unresolved slot, else the nearest outsider name or
+    // stranger label before the match, else no one in particular.
+    const otherTok = known.role === "top" ? bTok : tTok;
+    const stripP = (t: string) => t.replace(/['’]s?$/, "");
+    const before = sent.slice(0, m.index!);
+    const cands: { at: number; label: string; kind: "named" | "stranger" }[] = [];
+    if (otherTok && /^[A-Z]/.test(stripP(otherTok)) && !cast.byAlias.get(stripP(otherTok)) && !/^Epithet\d+$/.test(stripP(otherTok))) cands.push({ at: Infinity, label: stripP(otherTok), kind: "named" });
+    if (outsiderNames.length) for (const om of before.matchAll(new RegExp(`\\b(${outsiderNames.join("|")})\\b`, "g"))) cands.push({ at: om.index!, label: om[1], kind: "named" });
+    for (const lm of before.matchAll(new RegExp(`\\b[Tt]he (${STRANGER_LABELS})\\b`, "g"))) cands.push({ at: lm.index!, label: `the ${lm[1]}`, kind: "stranger" });
+    const nearest = cands.sort((x, y) => y.at - x.at)[0];
+    desires.push({ via, cat: pat.cat, act: `${pat.act} (partner unclear)`, who: known.c, partner, role: known.role, wants: true, kind: "touch", weight: 0.5 * Math.min(1, pat.weight), para: pi, sentence: original, basis: "named", other: nearest ? { label: nearest.label, kind: nearest.kind } : { label: "an unnamed partner", kind: "unnamed" } });
   }
 
   function handleMatch(
@@ -1843,7 +1853,8 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
     const vibeCombined = buildVibes(pair, pActs, pDes, pairTags, meta, where, true);
     const solo = buildSolo(pair, soloDes, where);
     const manual = buildManual(pair, manualDes, where);
-    results.push({ pairing: `${members[0].name}/${members[1].name}`, anal, oral, blowjob, rimming, cunnilingus, vaginal, solo, manual, vibe, vibeCombined, dynamic, weight, key });
+    const others = buildOthers(pair, allPairDes, where);
+    results.push({ pairing: `${members[0].name}/${members[1].name}`, anal, oral, blowjob, rimming, cunnilingus, vaginal, solo, manual, others, vibe, vibeCombined, dynamic, weight, key });
   }
   results.sort((a, b) => b.weight - a.weight);
 

@@ -8,7 +8,7 @@ import { addLabel, calibrationLines, clearLabels, type Label, labelKey, loadLabe
 import { testSkeletons } from "./testgen";
 import { FLAG_REASONS, type FlagKind, type FlagReason, type FlaggedScene, type MissedScene, REASONS_FOR, buildReport, reasonLabel } from "./report";
 import { type ActKind, ROLE_WORDS } from "./roles";
-import type { ActResult, Analysis, Desire, DynamicRating, Instance, ManualResult, RoleOdds, SoloResult, TagCheck, VaginalResult, VibeFactor, VibeRating } from "./types";
+import type { ActResult, Analysis, Desire, DynamicRating, Instance, ManualResult, OthersResult, RoleOdds, SoloResult, TagCheck, VaginalResult, VibeFactor, VibeRating } from "./types";
 
 const $ = <T extends HTMLElement = HTMLElement>(id: string) => document.getElementById(id) as T;
 
@@ -860,6 +860,40 @@ function renderManual(v: ManualResult, pairing: string, source: string): HTMLEle
   return card;
 }
 
+/** Moments with someone outside the cast: the cast member's role is clear, the other person isn't a cast member. */
+function renderOthers(v: OthersResult, pairing: string, source: string): HTMLElement {
+  const card = el("article", "card act verdict-one_way others");
+  const head = el("div", "act-head");
+  head.append(el("h4", undefined, "Scenes with others"), el("span", "badge one_way", `${v.instances.length} found`));
+  card.append(head, el("p", "summary", v.summary));
+  card.append(el("p", "hint", "These aren’t counted as scenes between the pair. Each is a weak hint about the cast member’s role (or a past experience the text only mentions). Named partners are minor characters the cast list doesn’t include; strangers and unnamed partners are told apart by where in the story they appear."));
+  // One group per partner: a named one is the same person throughout, a stranger or unnamed one only within a stretch of the story.
+  const groups = new Map<string, { label: string; where?: string; items: { i: OthersResult["instances"][number]; n: number }[] }>();
+  v.instances.forEach((i, n) => {
+    const scoped = i.other.kind !== "named";
+    const k = scoped ? `${i.other.label}@${i.where}` : i.other.label;
+    const g = groups.get(k) ?? { label: i.other.label, where: scoped ? i.where : undefined, items: [] };
+    g.items.push({ i, n });
+    groups.set(k, g);
+  });
+  for (const g of groups.values()) {
+    const det = el("details", "instances");
+    det.append(el("summary", undefined, `${g.label}${g.where ? ` · ${g.where}` : ""} · ${g.items.length} moment${g.items.length === 1 ? "" : "s"}`));
+    const ul = el("ul");
+    for (const { i, n } of g.items) {
+      const li = el("li");
+      li.append(el("strong", undefined, i.who), ` (${i.role}) · ${i.act}${i.kind === "history" ? "" : ` · with ${i.other.label}`}`);
+      if (i.where) li.append(el("span", "where", ` · ${i.where}`));
+      if (i.evidence) li.append(el("div", "evidence", i.evidence));
+      flagControl(li, { id: `${source}|${pairing}|others|${n}`, kind: "hint", pairing, card: "others", top: `${i.who} (${i.role})`, bottom: i.other.label, act: i.act, where: i.where, pattern: i.via, evidence: i.evidence, context: i.context });
+      ul.append(li);
+    }
+    det.append(ul);
+    card.append(det);
+  }
+  return card;
+}
+
 /** Solo acts: masturbation, self-fingering and toys on oneself, per person. */
 function renderSolo(v: SoloResult, pairing: string, source: string): HTMLElement {
   const card = el("article", "card act verdict-one_way");
@@ -1071,6 +1105,7 @@ function renderAnalysis(a: Analysis, target: HTMLElement, notesEl: HTMLElement, 
     if (p.vaginal.applicable) grid.append(renderVaginal(p.vaginal, p.pairing, a.source));
     if (p.solo?.occurs) grid.append(renderSolo(p.solo, p.pairing, a.source));
     if (p.manual?.occurs) grid.append(renderManual(p.manual, p.pairing, a.source));
+    if (p.others?.occurs) grid.append(renderOthers(p.others, p.pairing, a.source));
     block.append(grid);
     target.append(block);
   }

@@ -121,6 +121,35 @@ export interface SoloAct {
   context?: string;
 }
 
+/** Someone outside the cast in an act with a cast member: a named minor character, a stranger label ("the twink"), or no one the text names. */
+export interface OtherPartner {
+  label: string;
+  kind: "named" | "stranger" | "unnamed";
+}
+
+/** One moment with someone outside the cast. The cast member's role is clear; the other person is not a cast member. */
+export interface OtherScene {
+  /** The cast member. */
+  who: string;
+  role: Role;
+  act: string;
+  other: OtherPartner;
+  /** An act in the story, or a past experience the text only mentions. */
+  kind: "scene" | "history";
+  evidence: string;
+  context?: string;
+  where: string;
+  via?: string;
+}
+
+export interface OthersResult {
+  occurs: boolean;
+  summary: string;
+  /** Who the cast members were with, one entry per partner (unnamed ones per stretch of the story). */
+  partners: { label: string; kind: OtherPartner["kind"]; where?: string; count: number }[];
+  instances: OtherScene[];
+}
+
 /** Text messages between characters (chat-log lines or narrated texting). */
 export interface TextingResult {
   occurs: boolean;
@@ -183,6 +212,8 @@ export interface PairingResult {
   solo?: SoloResult;
   /** Handjobs and frottage between the pair. */
   manual?: ManualResult;
+  /** Moments with someone outside the cast (a minor named character, a stranger, someone unnamed). Weak hints, shown on their own. */
+  others?: OthersResult;
   /** Overall vibe for each partner, from every kind of evidence. */
   vibe?: VibeRating[];
   /** The same vibe with everyday-dynamic cues folded in at tier 6, as before the two-axis display (the "single vibe" view). */
