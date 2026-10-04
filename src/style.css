@@ -364,3 +364,6 @@ footer { margin-top: 32px; color: var(--muted); font-size: 0.85rem; text-align: 
 .display-opts { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin: 4px 0 12px; }
 .seg { font: inherit; font-size: 0.85rem; padding: 3px 10px; border: 1px solid var(--border); background: transparent; color: var(--text); border-radius: 999px; cursor: pointer; }
 .seg.on { background: var(--accent); border-color: var(--accent); color: var(--surface); }
+
+.ctx-preview { margin-top: 4px; max-height: 14em; overflow: auto; white-space: pre-wrap; font-size: 0.85em; padding: 6px 8px; border-left: 3px solid var(--line, #ccc); background: var(--panel-alt, rgba(127,127,127,0.08)); }
+.ctx-preview[hidden] { display: none; }

@@ -441,16 +441,26 @@ function wideContext(evidence: string, span: number): string | undefined {
   return text.length > 6000 ? `${text.slice(0, 5999)}…` : text;
 }
 /** A picker for how much surrounding text the report carries; null when the line can't be found in the text. */
-function contextPicker(evidence: string, initial = 0) {
+function contextPicker(evidence: string, initial = 0, shown = "") {
   const sel = el("select", "ctx-pick");
   for (const [n, label] of CONTEXT_SPANS) { const o = el("option", undefined, label); o.value = String(n); sel.append(o); }
   sel.value = String(initial);
   sel.title = "Include more of the surrounding text in the copied report";
-  const wrap = el("label", "flag-opt ctx-opt");
-  wrap.append(sel);
+  const wrap = el("div", "flag-opt ctx-opt");
   const note = el("span", "hint", "");
-  wrap.append(" ", note);
-  sel.addEventListener("change", () => { note.textContent = Number(sel.value) && !wideContext(evidence, Number(sel.value)) ? "couldn’t find this line in the text, so the shown context is kept" : ""; });
+  const preview = el("div", "ctx-preview");
+  wrap.append(sel, " ", note, preview);
+  // What the report will carry for the chosen setting, so the reader can see it before adding.
+  const paint = () => {
+    const n = Number(sel.value);
+    const wide = n ? wideContext(evidence, n) : undefined;
+    note.textContent = n && !wide ? "couldn’t find this line in the text, so the shown context is kept" : "";
+    const text = wide ?? shown;
+    preview.textContent = text ? text.replace(/ ¶ /g, "\n\n") : "";
+    preview.hidden = !text;
+  };
+  sel.addEventListener("change", paint);
+  paint();
   return { wrap, span: () => Number(sel.value) || 0 };
 }
 
@@ -495,7 +505,7 @@ function flagControl(li: HTMLElement, spec: FlagSpec) {
     label.append(cb, ` ${r.label}`);
     form.append(label);
   }
-  const picker = spec.evidence ? contextPicker(spec.evidence, flagged.get(id)?.span ?? 0) : undefined;
+  const picker = spec.evidence ? contextPicker(spec.evidence, flagged.get(id)?.span ?? 0, spec.context ?? "") : undefined;
   if (picker) form.append(picker.wrap);
   const note = el("textarea");
   note.rows = 2;
@@ -1057,7 +1067,7 @@ function renderVibe(
             lab.append(box, ` ${r.label}`);
             form.append(lab);
           }
-          const fpick = f.source ? contextPicker(f.source, prior?.span ?? 0) : undefined;
+          const fpick = f.source ? contextPicker(f.source, prior?.span ?? 0, "") : undefined;
           if (fpick) form.append(fpick.wrap);
           const note = el("textarea");
           note.rows = 2;
