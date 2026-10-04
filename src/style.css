@@ -379,3 +379,5 @@ footer { margin-top: 32px; color: var(--muted); font-size: 0.85rem; text-align: 
 .grade-cats .num { color: var(--muted); text-align: right; font-variant-numeric: tabular-nums; }
 .grade-settings { display: flex; flex-wrap: wrap; gap: 8px 16px; margin: 0 0 12px; }
 .grade-settings .field { margin: 0; min-width: 180px; flex: 1 1 180px; }
+.read-progress { width: min(260px, 60%); height: 10px; vertical-align: middle; accent-color: var(--accent); }
+.read-pct { color: var(--muted); font-variant-numeric: tabular-nums; }

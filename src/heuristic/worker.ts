@@ -5,7 +5,7 @@ import { analyzeWithPatterns } from "./index";
 self.onmessage = (e: MessageEvent<{ id: number; text: string; meta: Ao3Meta }>) => {
   const { id, text, meta } = e.data;
   try {
-    self.postMessage({ id, result: analyzeWithPatterns(text, meta) });
+    self.postMessage({ id, result: analyzeWithPatterns(text, meta, { onProgress: (p) => self.postMessage({ id, progress: p }) }) });
   } catch (err) {
     self.postMessage({ id, error: err instanceof Error ? err.message : String(err) });
   }

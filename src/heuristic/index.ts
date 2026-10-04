@@ -48,6 +48,8 @@ export interface PatternOptions {
   audit?: (hit: AuditHit) => void;
   /** Called once with what the engine worked from: its paragraphs, the point of view at each, and the texts it found (for the gold-label eval). */
   debug?: (d: { paras: string[]; pov: (string | undefined)[]; texts: { para: number; from?: string; to?: string }[] }) => void;
+  /** Called now and then with how far through the paragraphs the engine is (0 to 1), for a progress bar. */
+  onProgress?: (fraction: number) => void;
 }
 
 export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOptions = {}): Analysis {
@@ -403,6 +405,7 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
   ctx.reset();
   let dreamRun = 0;
   for (let pi = 0; pi < paras.length; pi++) {
+    if (opts.onProgress && pi % 25 === 0) opts.onProgress(pi / paras.length);
     const para = paras[pi];
     const { masked: mp, quotes } = masked[pi];
     if (para.length < 120 && CHAPTER_RE.test(para)) {
