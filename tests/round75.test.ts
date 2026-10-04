@@ -44,3 +44,12 @@ describe("round 75: acts the Sugar Alpha report showed were missed", () => {
     expect(run("Steve’s stomach was in knots, and he tugged at the knot of his tie.").hits.filter((h) => /knot/.test(h.via))).toEqual([]);
   });
 });
+
+describe("round 75b: a tongue inside someone's mouth is a kiss", () => {
+  it("is not rimming when the paragraph is about mouths", () => {
+    expect(run("Steve made urgent sounds against Eddie as the brutal man swept his tongue inside of him. Eddie sucked on Steve’s tongue as if it sustained him.").rim).toEqual([]);
+  });
+  it("is still rimming with a hole in the sentence", () => {
+    expect(run("Eddie’s tongue swept inside of Steve’s tight hole, taking everything he could.").rim).toEqual(["Eddie>Steve"]);
+  });
+});
