@@ -11,6 +11,7 @@ import { type Character, type Gender, buildCast } from "./characters";
 import { ANAL_CTX, type Cat, VULVA_CTX, type CompiledPattern, DIALOGUE, type DialogueDef, EPITHET_TOKEN, FINGER_CTX, PATTERNS, PENIS_CTX, SEX_CTX, compilePatterns } from "./patterns";
 import { EPITHET, learnEpithets } from "./epithets";
 import { readTags } from "./tags";
+import { noteContext } from "./notes";
 import { checkTags } from "./tagcheck";
 import { type TextingMap, detectTexts, looksLikeChat, looksLikeMessage, summarizeTexts } from "./texting";
 import { detectPov, POV_SENTENCE } from "./pov";
@@ -81,10 +82,22 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
   const masked = paras.map((p) => maskQuotes(p, singleQuotes));
   const narration = masked.map((m) => m.masked).join("\n");
 
-  const cast = buildCast(meta, narration, paras.join("\n"));
+  // "Background Clint Barton/Bucky Barnes", "Past Dean/Lisa": the qualifier isn't part of anyone's name.
+  const castMeta = { ...meta, relationships: meta.relationships.map((r) => r.replace(/^(?:background|past|brief|minor|implied|mentioned|one-sided|unrequited|ex|pre)[\s-]+/i, "")) };
+  const cast = buildCast(castMeta, narration, paras.join("\n"));
   const tags = readTags(meta.freeforms, cast);
-  const patterns = compilePatterns(PATTERNS, cast.aliasPattern);
-  const gateSeen = new Uint8Array(patterns.reduce((m, p) => Math.max(m, (p.gateId ?? -1) + 1), 0));
+  // The author's summary and notes: explicit statements ("Top Eddie", "Steve is the sub", "Dean in a cock cage") read like tags, shown
+  // as "(from notes)" and skipped when a tag already says the same; cage and collar words switch the device scans on.
+  const noteCtx = noteContext(meta);
+  const norm = (x: string) => x.toLowerCase().replace(/[^a-z]/g, "");
+  const noteTags = noteCtx.tags.filter((t) => !meta.freeforms.some((f) => norm(f) === norm(t)));
+  if (noteTags.length) {
+    const nt = readTags(noteTags, cast);
+    const from = <T extends { tag: string }>(x: T): T => ({ ...x, tag: `${x.tag} (from notes)` });
+    for (const r of nt.roles) if (!tags.roles.some((o) => o.char === r.char && o.role === r.role)) tags.roles.push(from(r));
+    for (const d of nt.dynamics) if (!tags.dynamics.some((o) => o.char === d.char && o.lean === d.lean)) tags.dynamics.push(from(d));
+  }
+  const allTags = [...meta.freeforms, ...noteTags];
   const NAMES = cast.aliasPattern || "(?!)";
   const nameRe = new RegExp(`\\b(?:${NAMES})(?:['’]s)?\\b`, "g");
   // Who is on the page besides the cast: names that keep turning up as the subject of a sentence ("Sam smiled", "Greg had pulled") but
@@ -102,8 +115,14 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
     // …and an outsider is a minor character: if the name comes up about as often as the cast does, it's a lead the cast missed.
     const castMentions = (narration.match(nameRe) ?? []).length / Math.max(1, cast.chars.length);
     const mentions = (n: string) => (narration.match(new RegExp(`\\b${n}\\b`, "g")) ?? []).length;
-    return [...counts].filter(([n, c]) => c >= 3 && !SKIP.test(n) && !PRON.test(n) && !new RegExp(`\\b${n.toLowerCase()}\\b`).test(narration) && mentions(n) < 0.3 * castMentions).map(([n]) => n);
+    // A name the author's own summary or notes mention needs one fewer appearance.
+    const noted = new Set([meta.summary, meta.notes, meta.endNotes, ...(meta.chapterNotes ?? [])].join(" ").match(/\b[A-Z][a-z]{2,}\b/g) ?? []);
+    return [...counts].filter(([n, c]) => c >= (noted.has(n) ? 2 : 3) && !SKIP.test(n) && !PRON.test(n) && !new RegExp(`\\b${n.toLowerCase()}\\b`).test(narration) && mentions(n) < 0.3 * castMentions).map(([n]) => n);
   })();
+  // Outsiders can stand in either slot of an act pattern: the match is kept, the outsider side can't be resolved, and the one-sided
+  // fallback credits whichever side is a cast member ("Kleon's mouth wrapped around his cock" still tells us about the one whose cock it is).
+  const patterns = compilePatterns(PATTERNS, [cast.aliasPattern, ...outsiderNames].filter(Boolean).join("|"));
+  const gateSeen = new Uint8Array(patterns.reduce((m, p) => Math.max(m, (p.gateId ?? -1) + 1), 0));
   const subjectRe = new RegExp(`(?:^|[\\s(—–-])((?:${NAMES}|${EPITHET_TOKEN})(?:['’]s)?|[Hh]e|[Ss]he|[Tt]hey|I|[Hh]is|[Hh]er|[Tt]heir|[Mm]y)\\b`);
   const epithetRe = new RegExp(EPITHET, "g");
   const ING_NOUNS =
@@ -238,7 +257,7 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
     return (all.match(/\balphas?\b/gi) ?? []).length >= 8 && (all.match(/\bomegas?\b/gi) ?? []).length >= 4;
   })();
   // A chastity device or cock cage in the tags (male-only works): being locked up reads as submission, holding the key as control.
-  const isChastity = /chastity|cock[- ]?cage|\bkey ?holder|\bcaged\b/i.test(meta.freeforms.join(" | ")) && (meta.categories.length === 0 || meta.categories.includes("M/M"));
+  const isChastity = (/chastity|cock[- ]?cage|\bkey ?holder|\bcaged\b/i.test(meta.freeforms.join(" | ")) || noteCtx.cage) && (meta.categories.length === 0 || meta.categories.includes("M/M"));
   // Who wears a device (cage, collar): named in a tag ("Cas puts Dean in a cock cage", "Collared Steve"), else the one tagged as the sub,
   // else a lone "Bottom X", else the one the device is attached to most often in the text ("Peter's erection … the cage", "Telemachus' neck").
   const findNamed = (n: string) => cast.byAlias.get(n.trim()) ?? cast.byAlias.get(n.trim().split(/\s+/)[0]) ?? cast.chars.find((c) => c.aliases.some((al) => n.toLowerCase().includes(al.toLowerCase())));
@@ -251,7 +270,7 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
     return bots.length === 1 && !sw.has(bots[0]) ? bots[0] : undefined;
   })();
   function deviceWearer(tagRes: RegExp[], devRe: RegExp, partRe: string): Character | undefined {
-    for (const f of meta.freeforms) for (const re of tagRes) {
+    for (const f of allTags) for (const re of tagRes) {
       const m = re.exec(f);
       const c = m && findNamed(m[1]);
       if (c) return c;
@@ -288,7 +307,7 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
   const COLLAR_RE = /\b(?:collars?|collared|leash(?:es|ed)?)\b/i;
   const NOT_COLLAR = /\b(?:shirt|jacket|coat|button\w*|cologne|polo|dress|blouse|uniform|suit|sweater|hoodie|starch\w*|turtle\w*)\b|\bby\s+(?:his|her|their|the|[A-Z][\w-]*['’]s)\s+collar\b|\bcollar\s+of\s+(?:his|her|their|the)\s+(?:shirt|jacket|coat|dress)|\bcollar\s*bone/i;
   const collarMentions = paras.reduce((n, p) => n + (COLLAR_RE.test(p) && !NOT_COLLAR.test(p) ? 1 : 0), 0);
-  const isCollar = (/\bcollar|\bleash|pet ?play|master\/pet|owner\/pet/i.test(meta.freeforms.join(" | ")) || collarMentions >= 8) && (meta.categories.length === 0 || meta.categories.includes("M/M"));
+  const isCollar = (/\bcollar|\bleash|pet ?play|master\/pet|owner\/pet/i.test(meta.freeforms.join(" | ")) || noteCtx.collar || collarMentions >= 8) && (meta.categories.length === 0 || meta.categories.includes("M/M"));
   const collarWearer: Character | undefined = !isCollar ? undefined : deviceWearer(
     [/^(?:collared|leashed)\s*!?\s+(.+)$/i, /^(.+?)\s+(?:in|wearing|wears|is wearing)\s+(?:a\s+)?(?:collar|leash)$/i, /\b(?:puts?|put|keeps?|has)\s+(.+?)\s+(?:in|on)\s+(?:a\s+)?(?:collar|leash)/i],
     /\b(?:collars?|collared|leash(?:es|ed)?)\b/i,
@@ -974,16 +993,16 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
     // "The twink did as he was told and gagged on Jordan's length", "The bottom boy's roommates wouldn't hear him plead as he got fucked":
     // a generic label for someone who isn't in the cast is that stranger, not whichever character came before. Authors who keep
     // calling one of the leads "the twink" use it often, so only a label that turns up a few times is left alone.
-    if (pat.elided || /^(?:he|him|she|her)$/i.test(tTok ?? "") || /^(?:he|him|she|her)$/i.test(bTok ?? "")) {
+    if (pat.elided || /^(?:he|him|she|her|his|their|them)$/i.test(tTok ?? "") || /^(?:he|him|she|her|his|their|them)$/i.test(bTok ?? "")) {
       const g = new RegExp(`(?:^|[,;]\\s*|\\b(?:and|but|as|while|then|when|before|after)\\s+)the\\s+(twink|twunk|bottom boy|bottom|slut|whore|virgin|newbie|stranger|brat|slave|plaything|boy toy|hooker|escort|jock)(?:['’]s)?\\b(?![^.!?]*\\b(?:${NAMES})\\b[^.!?]*$)`, "i").exec(sent.slice(0, m.index! + (/^\s*(?:and\b|,)\s*/.exec(m[0])?.[0].length ?? 0)));
       if (g && !cast.byAlias.get(g[1]) && !new RegExp(`\\b(?:${NAMES})\\b`).test(sent.slice(g.index! + g[0].length, m.index!)) &&
           (paras.join(" ").match(new RegExp(`\\bthe ${g[1]}\\b`, "gi")) ?? []).length < 5) { oneSided(pat, m, tTok, bTok, sent, original, pi); return; }
     }
     // "Greg frowned. He pushed Dean against the wall": the he after a clause whose subject is someone outside the cast is that person,
     // and so is a left-out subject in a sentence that someone outside the cast starts.
-    if (pat.elided || /^(?:he|him|she|her)$/i.test(tTok ?? "") || /^(?:he|him|she|her)$/i.test(bTok ?? "")) {
+    if (pat.elided || /^(?:he|him|she|her|his|their|them)$/i.test(tTok ?? "") || /^(?:he|him|she|her|his|their|them)$/i.test(bTok ?? "")) {
       const startOf = (s: string): "out" | "cast" | "pron" | undefined => {
-        const sm = new RegExp(`^\\W*(?:(?:and|but|then|so|when|while|as|after|before)\\s+)?(?:(?<cast>${NAMES})|(?<out>${outsiderNames.length ? outsiderNames.join("|") : "(?!)"})|(?<lab>[Tt]he (?:${STRANGER_LABELS}))|(?<pron>[Hh]e|[Ss]he))(?!['’])\\b\\s+[a-z]`).exec(s);
+        const sm = new RegExp(`^\\W*(?:(?:[Aa]nd|[Bb]ut|[Tt]hen|[Ss]o|[Ww]hen|[Ww]hile|[Aa]s|[Aa]fter|[Bb]efore)\\s+)?(?:(?<cast>${NAMES})|(?<out>${outsiderNames.length ? outsiderNames.join("|") : "(?!)"})|(?<lab>[Tt]he (?:${STRANGER_LABELS}))|(?<pron>[Hh]e|[Ss]he))(?!['’])\\b\\s+[a-z]`).exec(s);
         const g = sm?.groups;
         return !g ? undefined : g.cast ? "cast" : g.pron ? "pron" : "out";
       };
