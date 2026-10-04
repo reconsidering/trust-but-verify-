@@ -1160,7 +1160,8 @@ export const PATTERNS: PatternDef[] = [
     act: "rimming",
     subj: "t",
     weight: 1,
-    src: `\\b{T:poss}\\s+(?:tongue|mouth|lips|face)\\s+(?:\\w+\\s+){0,3}?(?:in|into|inside|against|on|at|over|between|across|buried in|pressed to|around)\\s+{B:rimReq}`,
+    // "Hank's tongue, hot and wet, licked over Ethan's hole": a set-off description may sit between the tongue and the verb.
+    src: `\\b{T:poss}\\s+(?:tongue|mouth|lips|face)(?:,\\s+(?:[\\w-]+\\s+){0,5}[\\w-]+,)?\\s+(?:\\w+\\s+){0,3}?(?:in|into|inside|against|on|at|over|between|across|buried in|pressed to|around)\\s+{B:rimReq}`,
   },
   {
     id: "tongue-verbs-hole",

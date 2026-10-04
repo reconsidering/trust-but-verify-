@@ -7,7 +7,7 @@
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
-import { mergeReport, parseReport, strengthOf } from "./right-set.mjs";
+import { mergeReport, parseReport, slugOf, strengthOf } from "./right-set.mjs";
 
 const dir = join(dirname(fileURLToPath(import.meta.url)), "..", "tests", "right-set");
 mkdirSync(dir, { recursive: true });
@@ -17,7 +17,7 @@ if (args[0] === "--retire") {
   const file = join(dir, `${fic}.json`);
   if (!existsSync(file)) { console.error(`no ${file}`); process.exit(2); }
   const set = JSON.parse(readFileSync(file, "utf8"));
-  const hit = set.entries.filter((e) => e.h === hash);
+  const hit = [...set.entries, ...(set.negatives ?? [])].filter((e) => e.h === hash);
   hit.forEach((e) => { e.retired = why.join(" ") || true; });
   writeFileSync(file, JSON.stringify(set, null, 1) + "\n");
   console.log(`retired ${hit.length} entr${hit.length === 1 ? "y" : "ies"}`);
@@ -35,10 +35,14 @@ if (args[0] === "--fixed") {
   console.log(`marked ${n} reported mistakes as fixed`);
   process.exit(0);
 }
-if (!args[0]) { console.error("usage: import-right-set.mjs report.md | --fixed <fic> [why] | --retire <fic> <hash> [why]"); process.exit(2); }
+if (!args[0]) { console.error("usage: import-right-set.mjs report.md [--title Name] | --fixed <fic> [why] | --retire <fic> <hash> [why]"); process.exit(2); }
 const raw = readFileSync(args[0], "utf8");
 // Either the mistake report text, or the file the page's "Save looks-right set" button downloads.
+// A report copied from a plain-text or PDF upload has no “- Title:” line: --title "Name" supplies it.
+const ti = args.indexOf("--title");
+const titleArg = ti >= 0 ? args.splice(ti, 2)[1] : "";
 const parsed = args[0].endsWith(".json") ? JSON.parse(raw) : parseReport(raw);
+if (titleArg) { parsed.title = titleArg; parsed.slug = slugOf(titleArg); }
 if (!parsed.slug) { console.error("no “- Title:” line found in the report"); process.exit(2); }
 const file = join(dir, `${parsed.slug}.json`);
 const set = existsSync(file) ? JSON.parse(readFileSync(file, "utf8")) : { entries: [] };

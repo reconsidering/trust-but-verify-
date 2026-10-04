@@ -45,3 +45,11 @@ describe("round 72: report fixes (Coming Full Circle)", () => {
     expect(r.hits.filter((h) => h.via === "chastity-wearer").length).toBe(2);
   });
 });
+
+describe("round 73: report fixes (Ethan and Hank)", () => {
+  it("a set-off description between the tongue and the verb still makes it rimming by the named person", () => {
+    const r = run("“Yeah,” Steve agreed, his voice cracking. Then he leaned in and Eddie let out a surprised gasp as Steve’s tongue, hot and wet, licked over Eddie’s hole.");
+    expect(r.p.rimming.instances.map((x) => `${x.top.split(" ")[0]}>${x.bottom.split(" ")[0]}`)).toEqual(["Steve>Eddie"]);
+    expect(r.p.rimming.desires.some((d) => (d.via ?? "").includes("one-sided"))).toBe(false);
+  });
+});
