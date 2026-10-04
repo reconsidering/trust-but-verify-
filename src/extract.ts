@@ -63,25 +63,112 @@ export interface PdfTextItem {
   hasEOL?: boolean;
   transform?: number[];
   height?: number;
+  width?: number;
+}
+
+const LIGATURES: Record<string, string> = { "\uFB00": "ff", "\uFB01": "fi", "\uFB02": "fl", "\uFB03": "ffi", "\uFB04": "ffl", "\uFB05": "st", "\uFB06": "st" };
+
+/** Characters a PDF font can hand back that no pattern would ever match: ligatures, soft hyphens, zero-width marks, no-break spaces. */
+export function cleanPdfString(s: string): string {
+  return s
+    .replace(/[\uFB00-\uFB06]/g, (c) => LIGATURES[c])
+    .replace(/[\u00AD\u200B-\u200D\u2060\uFEFF]/g, "")
+    .replace(/[\u00A0\u2007\u202F]/g, " ");
 }
 
 export function joinPdfTextItems(items: PdfTextItem[]): string {
   let text = "";
   let previousLine: { y?: number; height?: number } | undefined;
-  for (const item of items) {
+  let prevEnd: number | undefined;
+  let prevHeight: number | undefined;
+  for (const raw of items) {
+    const item = { ...raw, str: cleanPdfString(raw.str) };
+    const x = item.transform?.[4];
     if (previousLine) {
       const y = item.transform?.[5];
       const gap = y !== undefined && previousLine.y !== undefined ? Math.abs(previousLine.y - y) : 0;
       const lineHeight = Math.max(1, ((previousLine.height ?? item.height ?? 10) + (item.height ?? previousLine.height ?? 10)) / 2);
       text += gap > Math.max(4, lineHeight * 1.55) ? "\n\n" : "\n";
-    } else if (text && !/\s$/.test(text)) {
-      text += " ";
+    } else if (text && !/\s$/.test(text) && !/^\s/.test(item.str)) {
+      // Two pieces on one printed line: a space between them unless they touch (a font change or ligature in the middle of a word).
+      const touching = x !== undefined && prevEnd !== undefined && prevHeight !== undefined && x - prevEnd < Math.max(0.5, prevHeight * 0.12);
+      if (!touching) text += " ";
     }
 
     text += item.str;
+    prevEnd = x !== undefined && item.width !== undefined ? x + item.width : undefined;
+    prevHeight = item.height;
     previousLine = item.hasEOL ? { y: item.transform?.[5], height: item.height } : undefined;
   }
   return text.trim();
+}
+
+/**
+ * The pages of a PDF put back into one text: running headers, footers and page numbers are dropped (they would otherwise land in the middle of
+ * a sentence), a word hyphenated at the end of a printed line is rejoined, and a paragraph that runs over a page break stays one paragraph.
+ */
+export function joinPdfPages(pages: string[]): string {
+  const lines = pages.map((p) => p.split("\n"));
+  const norm = (l: string) => l.trim().replace(/\d+/g, "#").toLowerCase();
+  const edge = new Map<string, number>();
+  for (const ls of lines) {
+    const nonEmpty = ls.filter((l) => l.trim());
+    const seen = new Set([...nonEmpty.slice(0, 2), ...nonEmpty.slice(-2)].map(norm));
+    for (const k of seen) if (k) edge.set(k, (edge.get(k) ?? 0) + 1);
+  }
+  const repeated = (l: string) => pages.length >= 4 && (edge.get(norm(l)) ?? 0) >= Math.max(3, pages.length * 0.3) && l.trim().length < 120;
+  const pageNumber = /^\s*(?:page\s+)?\d{1,4}(?:\s*(?:\/|of)\s*\d{1,4})?\s*$/i;
+  const cleaned = lines.map((ls) => {
+    const out = [...ls];
+    const first = out.findIndex((l) => l.trim());
+    for (let i = first; i >= 0 && i < Math.min(out.length, first + 2); i++) if (out[i].trim() && (repeated(out[i]) || pageNumber.test(out[i]))) out[i] = "";
+    let last = out.length - 1;
+    while (last >= 0 && !out[last].trim()) last--;
+    for (let i = last; i >= 0 && i > last - 2; i--) if (out[i].trim() && (repeated(out[i]) || pageNumber.test(out[i]))) out[i] = "";
+    return out.join("\n").trim();
+  });
+  let text = "";
+  for (const page of cleaned) {
+    if (!page) continue;
+    if (!text) { text = page; continue; }
+    // A page that ends mid-sentence and a next page that starts lower-case: one paragraph.
+    text += !/[.!?:;"”’)\]*—-]\s*$/.test(text) && /^[a-z]/.test(page) ? "\n" : "\n\n";
+    text += page;
+  }
+  return unwrapLines(text.replace(/([A-Za-z])-\n(?=[a-z])/g, "$1"));
+}
+
+/**
+ * Printed lines wrapped inside a sentence ("…pressing him against\nthe wall") are joined back with a space, so a phrase or a quotation is not cut
+ * in two. A line break after the end of a sentence stays only when that line stops well short of the usual line length, which is how a
+ * paragraph ends in a PDF with no blank lines between paragraphs; a full line that happens to end on a full stop is just a wrap.
+ */
+export function unwrapLines(text: string): string {
+  const lens = text.split("\n").map((l) => l.length).filter((n) => n > 20).sort((x, y) => x - y);
+  const usual = lens.length ? lens[Math.floor(lens.length * 0.9)] : 0;
+  return text.replace(/([^\n]*[^\n])\n(?=[^\n])/g, (m, line: string, offset: number) => {
+    const next = text[offset + m.length] ?? "";
+    const last = line[line.length - 1];
+    const endsSentence = /[.!?…"”’)\]*—:]/.test(last);
+    const short = usual > 0 && line.length < usual * 0.8;
+    return !endsSentence || /[a-z]/.test(next) || !short ? `${line} ` : m;
+  });
+}
+/**
+ * A PDF whose fonts have no text map comes out as private-use characters, "(cid:12)" codes, or words run together. Reading such text finds almost
+ * nothing, so say so rather than showing an empty result. Returns a short description of the problem, or undefined when the text looks fine.
+ */
+export function pdfTextProblem(text: string): string | undefined {
+  const sample = text.slice(0, 200000);
+  const tokens = sample.split(/\s+/).filter(Boolean);
+  if (tokens.length < 50) return undefined;
+  const odd = (sample.match(/[\uE000-\uF8FF\uFFFD]|\(cid:\d+\)/g) ?? []).length;
+  if (odd / sample.length > 0.01) return "its fonts don't map back to letters";
+  const long = tokens.filter((t) => t.replace(/[^\p{L}]/gu, "").length > 22).length;
+  if (long / tokens.length > 0.04) return "its words are run together without spaces";
+  const common = tokens.filter((t) => /^(?:the|and|to|of|a|in|he|his|was|it|you|that|with|him|her|she)$/i.test(t)).length;
+  if (common / tokens.length < 0.08) return "it doesn't look like English prose";
+  return undefined;
 }
 
 /** Story text from AO3's chapter containers, skipping summaries and author notes. */
@@ -209,7 +296,7 @@ async function extractFromPdf(data: ArrayBuffer): Promise<ExtractedWork> {
     );
     pages.push(joinPdfTextItems(textItems));
   }
-  const work = extractFromText(pages.join("\n\n"));
+  const work = extractFromText(joinPdfPages(pages));
   return { ...work, format: "pdf" };
 }
 
