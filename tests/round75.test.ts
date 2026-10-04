@@ -75,3 +75,23 @@ describe("round 75c: more Sugar Alpha forms", () => {
     expect(D("Stiles arched off the bed. Derek swallows the tip of Stiles’ soft cock, sucking on the last drops of his orgasm.").blow).toEqual(["Stiles>Derek"]);
   });
 });
+
+describe("round 75d: prostate and the spot", () => {
+  const P = (t: string) => {
+    const a = analyzeWithPatterns(lead + t, { ...META, characters: ["Derek Hale", "Stiles Stilinski"], relationships: ["Derek Hale/Stiles Stilinski"] }, { quiet: true });
+    const p = a.pairings[0];
+    return p.anal.instances.map((x) => `${x.act}:${x.top.split(" ")[0]}>${x.bottom.split(" ")[0]}`);
+  };
+  it("finding the spot inside someone is penetration", () => {
+    expect(P("Derek finds that spot deep inside Stiles and Stiles cries out.")).toEqual(["anal sex:Derek>Stiles"]);
+  });
+  it("fingers on the prostate are fingering by the finger’s owner", () => {
+    expect(P("Derek’s fingers crook against Stiles’ prostate and Stiles shudders.")[0]).toMatch(/^fingering:Derek>Stiles/);
+  });
+  it("a cock dragging over the prostate is anal", () => {
+    expect(P("Derek’s cock drags over Stiles’ prostate with every thrust.")[0]).toMatch(/^anal sex:Derek>Stiles/);
+  });
+  it("is not read from a doctor’s exam", () => {
+    expect(P("The doctor said the prostate exam was routine and Stiles found that spot on the wall.")).toEqual([]);
+  });
+});

@@ -1225,6 +1225,48 @@ export const PATTERNS: PatternDef[] = [
     src: `\\b{T:poss}\\s+(?:fingers?|thumb|hand)\\s+(?:(?:trac|circl|rubb?|press|tapp?|brush|glid|ghost|swirl)\\w*\\s+(?:\\w+\\s+){0,2}?{B:ass}|(?:slid|slip|glid|trail|travel|mov)\\w*\\s+(?:down\\s+)?between\\s+[\\w’'-]+\\s+(?:legs|thighs|cheeks)\\s+(?:to|and finds?|finding)\\s+{B:ass})`,
   },
   {
+    // "Derek finds that spot deep inside him", "angled for the bundle of nerves inside Stiles"
+    id: "finds-spot",
+    cat: "anal",
+    act: "anal sex",
+    subj: "t",
+    weight: 0.8,
+    needsCtx: true,
+    src: `\\b{T}\\s+{aux}(?:(?:\\w+ly|just|finally|then|again|easily|exactly)\\s+){0,2}?(?:find|found|hit|brush|nail|graz|nudg|strok|rubb?|press|massag|crook|curl|tap|circl|strik|drag|grind|ground|catch|caught|angl)\\w*\\s+(?:for\\s+)?(?:that|the|his|a)\\s+(?:[\\w-]+\\s+){0,2}?(?:spot|bundle of nerves|sweet spot)\\s+(?:deep\\s+)?(?:inside|within)\\s+(?:of\\s+)?{B}\\b`,
+  },
+  {
+    // "Derek's fingers find his prostate", "his fingers crook against that spot inside Stiles"
+    id: "fingers-find-prostate",
+    cat: "anal",
+    act: "fingering",
+    subj: "t",
+    weight: 0.8,
+    needsCtx: true,
+    src: `\\b{T:poss}\\s+(?:[\\w-]+\\s+)?(?:fingers?|thumb|digits?)\\s+(?:\\w+ly\\s+)?(?:find|found|hit|brush|nail|graz|nudg|strok|rubb?|press|massag|crook|curl|tap|circl|strik|drag|grind|ground|catch|caught|angl)\\w*\\s+(?:\\w+\\s+){0,2}?(?:(?:{B:poss}|the|that)\\s+(?:[\\w-]+\\s+)?(?:prostate|spot|bundle of nerves)|(?:that|the)\\s+(?:[\\w-]+\\s+)?(?:spot|bundle of nerves)\\s+(?:deep\\s+)?inside\\s+(?:of\\s+)?{B}\\b)`,
+  },
+  {
+    // "Derek's cock drags over his prostate", "the head of his cock grinding against Stiles' prostate"
+    id: "cock-on-prostate",
+    cat: "anal",
+    act: "anal sex",
+    subj: "t",
+    weight: 0.8,
+    needsCtx: true,
+    src: `\\b{T:poss}\\s+(?:[\\w-]+\\s+)?(?:cock|dick|length|shaft|head)\\s+(?:\\w+ly\\s+)?(?:find|found|hit|brush|nail|graz|nudg|strok|rubb?|press|massag|crook|curl|tap|circl|strik|drag|grind|ground|catch|caught|angl)\\w*\\s+(?:(?:against|over|across|on|into)\\s+)?{B:poss}\\s+(?:[\\w-]+\\s+)?prostate`,
+  },
+  {
+    // "knows exactly where to press", a skilled hand inside someone
+    id: "knows-where-to-press",
+    cat: "anal",
+    act: "prostate play",
+    subj: "t",
+    weight: 0.4,
+    needsCtx: true,
+    signal: { kind: "touch", actorRole: "top" },
+    needs: /\b(?:hole|inside|fingers?|prostate|spot|thrust\w*|cock|dick)\b/i,
+    src: `\\b{T}\\s+{aux}knows?\\s+exactly\\s+where\\s+to\\s+(?:press|touch|rub|hit|curl|crook|stroke|aim)`,
+  },
+  {
     // "Derek's warm tongue teases the pucker of his rim", "his tongue traces her entrance"
     id: "tongue-teases-hole",
     cat: "oral",
