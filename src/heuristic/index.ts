@@ -435,7 +435,7 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
     // "All the times he imagined this, and the real thing is so much more" is the reverse of a fantasy.
     const fantasyPara = (FANTASY_PARA.test(mp.slice(0, 160)) && !/\b(?:the real (?:thing|deal)|for real|in real life|really happening|(?:this|it|that) is real)\b/i.test(mp.slice(0, 260))) || (dreamRun > 0 && !WAKE.test(mp.slice(0, 160)) && !SCENE_BREAK.test(para));
     if (WAKE.test(mp) || SCENE_BREAK.test(para)) dreamRun = 0;
-    else if (/(?<!\b(?:not|never|no)\s|n['’]t\s)\b(?:(?<!\blike a (?:[\w'’]+ )?)dream(?:ed|t|s|ing)?(?![-‐ ]like\b| come true)|daydream\w*|fantasi[sz](?:ed|es|ing))\b/i.test(mp)) dreamRun = 2;
+    else if (/(?<!\b(?:not|never|no)\s|n['’]t\s|\b(?:would|could|might|never)(?:['’]ve| have)\s)\b(?:(?<!\blike a (?:[\w'’]+ )?)dream(?:ed|t|s|ing)?(?![-‐ ]like\b| come true)|daydream\w*|fantasi[sz](?:ed|es|ing))\b/i.test(mp)) dreamRun = 2;
     else if (dreamRun) dreamRun--;
     const sexy = SEX_CTX.test(`${paras[pi - 1] ?? ""} ${para} ${paras[pi + 1] ?? ""}`);
 

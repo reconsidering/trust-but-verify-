@@ -224,7 +224,12 @@ describe.skipIf(!dir)("right-set: replay against the sample fics", () => {
     const files = existsSync(setDir) ? readdirSync(setDir).filter((f) => f.endsWith(".json")) : [];
     const bySlug = new Map<string, string>();
     for (const f of readdirSync(dir!).filter((x) => x.endsWith(".html"))) {
-      try { bySlug.set(slugOf(extractFromHtml(readFileSync(join(dir!, f), "utf8")).meta.title ?? ""), join(dir!, f)); } catch { /* not a fic */ }
+      try {
+        // A fic is found by its title, or by its file name when the download has no title ("ethan.html" for a book saved from a PDF).
+        const title = extractFromHtml(readFileSync(join(dir!, f), "utf8")).meta.title ?? "";
+        if (title) bySlug.set(slugOf(title), join(dir!, f));
+        bySlug.set(slugOf(f.replace(/\.html$/, "")), join(dir!, f));
+      } catch { /* not a fic */ }
     }
     const report: string[] = ["# Right-set report", ""];
     let failures: string[] = [];

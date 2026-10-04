@@ -96,11 +96,51 @@ function storyWordCount(roots: ParentNode[]): number | undefined {
   return parts.reduce((n, el) => n + countWords(elementText(el)), 0);
 }
 
+/**
+ * A book saved as HTML by pdf2htmlEX: one absolutely positioned div per printed line, so the usual block-by-block reading cuts every sentence at
+ * the end of a printed line. The lines are joined back up here, and a new paragraph starts where a line is indented further than the page's
+ * usual left edge (the first line of a paragraph) or is a chapter heading.
+ */
+export function textFromPdf2htmlEx(doc: Document): string | undefined {
+  const pages = doc.querySelectorAll(".pf");
+  if (pages.length < 3 || !doc.querySelector(".pf .t")) return undefined;
+  const css = [...doc.querySelectorAll("style")].map((el) => el.textContent ?? "").join("\n");
+  const left = new Map<string, number>();
+  for (const m of css.matchAll(/\.(x[0-9a-f]+)\{left:(-?[\d.]+)px;?\}/g)) left.set(m[1], parseFloat(m[2]));
+  const lines: { text: string; x: number; edge: number }[] = [];
+  pages.forEach((page) => {
+    const here: { text: string; x: number }[] = [];
+    page.querySelectorAll(".t").forEach((el) => {
+      const text = (el.textContent ?? "").replace(/\s+/g, " ").trim();
+      if (!text || /^OceanofPDF\s*\.com$/i.test(text)) return;
+      const cls = [...el.classList].find((c) => /^x[0-9a-f]+$/.test(c));
+      here.push({ text, x: cls ? left.get(cls) ?? 0 : 0 });
+    });
+    // The page's usual left edge is its most common one (odd and even pages differ a little).
+    const counts = new Map<number, number>();
+    for (const l of here) counts.set(Math.round(l.x), (counts.get(Math.round(l.x)) ?? 0) + 1);
+    const edge = here.length ? [...counts].sort((a, b) => b[1] - a[1])[0][0] : 0;
+    for (const l of here) lines.push({ ...l, edge });
+  });
+  if (lines.length < 50) return undefined;
+  const heading = /^(?:chapter|prologue|epilogue|part)\b.{0,30}$/i;
+  const out: string[] = [];
+  let cur = "";
+  const flush = () => { if (cur) out.push(cur); cur = ""; };
+  for (const l of lines) {
+    if (heading.test(l.text)) { flush(); out.push(l.text); continue; }
+    if (cur && l.x > l.edge + 8) flush();
+    cur = cur ? `${cur} ${l.text}` : l.text;
+  }
+  flush();
+  return out.join("\n\n").replace(/ +([’'])\s?(?=s\b)/g, "$1");
+}
+
 export function extractFromHtml(html: string): ExtractedWork {
   const doc = new DOMParser().parseFromString(html, "text/html");
   const meta = mergeMeta(parseAo3FromDom(doc), parseAo3FromText(elementText(doc.body)));
   const chapters = doc.querySelector("#chapters");
-  const text = chapters ? storyTextFromHtml(doc)! : elementText(doc.body);
+  const text = chapters ? storyTextFromHtml(doc)! : textFromPdf2htmlEx(doc) ?? elementText(doc.body);
   return {
     format: "html",
     text,
