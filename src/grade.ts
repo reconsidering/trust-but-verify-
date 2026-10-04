@@ -6,6 +6,21 @@ export const GRADER_URL = "https://reconsidering.github.io/novelgrading/";
 const START = "/*GRADER-START*/";
 const END = "/*GRADER-END*/";
 
+export const GRADE_PROFILES: [string, string][] = [
+  ["romance", "Romance"],
+  ["general", "General fiction"],
+  ["literary", "Literary"],
+  ["thriller", "Thriller / mystery / crime"],
+  ["horror", "Horror"],
+  ["fantasy", "Fantasy / science fiction"],
+  ["historical", "Historical"],
+  ["ya", "Young adult"],
+  ["mg", "Middle grade"],
+];
+export const DIALOGUE_MODES: [string, string][] = [["reduce", "Count lightly"], ["full", "Count fully"], ["ignore", "Don’t count"]];
+export const VOICES: [string, string][] = [["standard", "Standard"], ["stylized", "Stylized voice or first person"]];
+export const DEFAULT_GRADE_OPTIONS = { profile: "romance", dlgMode: "reduce", voice: "standard" };
+
 export interface GradeCategory {
   id: string;
   name: string;
