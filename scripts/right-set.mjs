@@ -69,7 +69,7 @@ export function parseReport(md) {
       const via = field("Pattern");
       let entry;
       if (card === "solo") {
-        const who = /by \*\*(.+?)\*\*/.exec(shown)?.[1];
+        const who = /^- Shown as a solo act by \*\*(.+?)\*\*/m.exec(block)?.[1] ?? /by \*\*(.+?)\*\*/.exec(shown)?.[1];
         if (!who) continue;
         entry = { kind: "solo", card, pairing, who, via: via ?? "", h: hashKey(sentence) };
       } else if (hint) {
@@ -100,7 +100,6 @@ export function mergeReport(set, parsed, date) {
   set.title = parsed.title;
   set.entries ??= [];
   const byId = new Map(set.entries.map((e) => [idOf(e), e]));
-  const bySentence = (h) => set.entries.filter((e) => e.h === h);
   let added = 0, confirmed = 0, disputed = 0;
   for (const it of parsed.right) {
     const { side, ...rest } = it;
@@ -112,21 +111,23 @@ export function mergeReport(set, parsed, date) {
       set.entries.push(e); byId.set(idOf(e), e); added++;
     }
   }
-  // A sentence listed as wrong in any report puts every right-marked reading of it in doubt.
+  // The same reading listed as wrong in any report (same sentence, act, pattern and person) puts a right mark on it in doubt.
+  // A different reading of the same sentence does not: "He kept working the vibe inside him" can be wrong for Eddie and right for Steve.
+  const who = (e) => String(e.who ?? e.top ?? "").split(/\s+/)[0].toLowerCase();
+  const same = (a, b) => a.h === b.h && a.card === b.card && baseVia(a.via) === baseVia(b.via) && who(a) === who(b);
   for (const it of parsed.wrong) {
-    for (const e of bySentence(it.h)) { if (!(e.disputedOn ?? []).includes(date)) { e.marks.wrong++; e.disputedOn = [...(e.disputedOn ?? []), date]; disputed++; } }
+    for (const e of set.entries) if (same(e, it) && !(e.disputedOn ?? []).includes(date)) { e.marks.wrong++; e.disputedOn = [...(e.disputedOn ?? []), date]; disputed++; }
   }
-  // Reported wrong because the reading itself was off: a negative example for the context model (tests/learn.test.ts).
+  // Every reading reported wrong is kept (so a later right mark on it is caught); only those marked `misread` (the reasons say the reading itself
+  // was off) teach the context model and the reliability table.
   set.negatives ??= [];
   const negIds = new Set(set.negatives.map(idOf));
   for (const it of parsed.wrong) {
-    if (!it.misread) continue;
     const { side, ...rest } = it;
     if (!negIds.has(idOf(rest))) { set.negatives.push({ ...rest, seen: [date] }); negIds.add(idOf(rest)); }
   }
-  // The other way round: a right mark on a sentence already disputed keeps it disputed.
-  const wrongHashes = new Set(parsed.wrong.map((w) => w.h));
-  for (const e of set.entries) if (wrongHashes.has(e.h) && !(e.disputedOn ?? []).includes(date)) { e.marks.wrong++; e.disputedOn = [...(e.disputedOn ?? []), date]; }
+  // The other way round: a right mark on a reading already reported wrong keeps it disputed.
+  for (const it of parsed.right) for (const e of set.entries) if (same(e, it) && (set.negatives ?? []).some((n) => same(n, it)) && !(e.disputedOn ?? []).includes(date)) { e.marks.wrong++; e.disputedOn = [...(e.disputedOn ?? []), date]; }
   return { added, confirmed, disputed };
 }
 

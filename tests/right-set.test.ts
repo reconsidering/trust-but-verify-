@@ -124,11 +124,36 @@ describe("right-set: wrong marks as negative examples for the context model", ()
   it("the misread reasons here match the ones the page uses", () => {
     expect(MISREAD_LABELS.slice().sort()).toEqual(FLAG_REASONS.filter((r) => WRONG_REASONS.has(r.key)).map((r) => r.label).sort());
   });
-  it("only a reading reported wrong because it was misread becomes a negative", () => {
+  it("only a reading reported wrong because it was misread teaches the model", () => {
     const set: Partial<RightSet> = {};
     mergeReport(set, parseReport(WRONG_REPORT), "2026-10-05");
-    expect(set.negatives).toHaveLength(1);
-    expect(set.negatives![0]).toMatchObject({ via: "push-into", misread: true });
+    expect(set.negatives).toHaveLength(3); // all kept, so a later right mark on one is caught
+    expect(set.negatives!.filter((n) => n.misread).map((n) => n.via)).toEqual(["push-into"]);
+  });
+  it("a different reading of a sentence reported wrong is not put in doubt", () => {
+    const rep = `## The work
+- Title: Made Up Story
+
+## Things I think are wrong (1)
+
+### 1. Alex Smith/Sam Jones · anal hint
+- Shown as: **Alex Smith** points toward bottom (solo) · using a toy on himself
+- Pattern: self-toy
+- Sentence: “He kept working the toy inside him slowly.”
+- What is wrong: Credited to the wrong character
+
+## Things I checked that look right (1)
+
+### 1. Alex Smith/Sam Jones · anal hint
+- Shown as: **Sam Jones** points toward bottom (prep) · wearing a plug
+- Pattern: plug-worn
+- Sentence: “He kept working the toy inside him slowly.”
+
+## How well the confidence has matched so far
+`;
+    const set: Partial<RightSet> = {};
+    mergeReport(set, parseReport(rep), "2026-10-05");
+    expect(strengthOf(set.entries![0] as RightEntry)).toBe("single");
   });
   it("the page’s file marks misreads from the ticked reasons", () => {
     const f = (reasons: FlaggedScene["reasons"]): FlaggedScene => ({ id: "x", kind: "hint", pairing: "A/B", card: "anal", top: "Alex Smith", bottom: "top (wanted)", act: "x", pattern: "push-into", evidence: "Alex reached for the lamp.", reasons, note: "" });
