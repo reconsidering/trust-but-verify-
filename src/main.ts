@@ -2,7 +2,7 @@ import "./style.css";
 import Anthropic from "@anthropic-ai/sdk";
 import { hasAo3Meta, romanticPairings } from "./ao3";
 import { MODELS, type ModelId, RefusalError, analyzeWork, estimateTokens, excerptExplicit } from "./analyze";
-import { type ExtractedWork, extractFile } from "./extract";
+import { type ExtractedWork, extractFile, pdfTextProblem } from "./extract";
 import { runPatterns } from "./heuristic/run";
 import { splitParagraphs } from "./text";
 import { addLabel, calibrationLines, clearLabels, type Label, labelKey, loadLabels, parseLabels, saveLabels, summarize } from "./calibration";
@@ -173,6 +173,10 @@ async function handleFile(file: File) {
     return;
   }
   renderMeta(current, file.name);
+  if (current.format === "pdf") {
+    const problem = pdfTextProblem(current.text);
+    if (problem) showError(`The text in this PDF looks unreadable (${problem}), so few acts will be found. Try the HTML or EPUB download from AO3 instead.`);
+  }
   // A new fic starts a new report: nothing marked wrong or right for the last one carries over.
   flagged.clear();
   rightItems.clear();

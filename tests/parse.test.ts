@@ -3,7 +3,7 @@ import { join } from "node:path";
 import { describe, expect, it } from "vitest";
 import { countWords, romanticPairings } from "../src/ao3";
 import { excerptExplicit } from "../src/analyze";
-import { extractFromHtml, extractFromText, joinPdfTextItems } from "../src/extract";
+import { extractFromHtml, extractFromText, joinPdfPages, joinPdfTextItems, pdfTextProblem } from "../src/extract";
 
 const fixture = (name: string) => readFileSync(join(__dirname, "fixtures", name), "utf8");
 
@@ -93,6 +93,39 @@ describe("PDF text layout", () => {
       item("onto a second line.", 686, true),
       item("A new paragraph starts here.", 660, true),
     ])).toBe("This paragraph wraps\nonto a second line.\n\nA new paragraph starts here.");
+  });
+});
+
+describe("PDF clean-up", () => {
+  const item = (str: string, x: number, y: number, width: number, hasEOL = false) => ({ str, hasEOL, transform: [1, 0, 0, 1, x, y], height: 10, width });
+  it("turns ligatures and soft hyphens back into plain letters", () => {
+    expect(joinPdfTextItems([item("his \uFB01ngers sl\u00ADid \uFB02at", 10, 700, 100, true)])).toBe("his fingers slid flat");
+  });
+  it("does not put a space inside a word split across two pieces", () => {
+    expect(joinPdfTextItems([item("Derek’s ", 10, 700, 40), item("\uFB01", 50, 700, 5), item("ngers", 55, 700, 25, true)])).toBe("Derek’s fingers");
+    expect(joinPdfTextItems([item("Derek", 10, 700, 30), item("thrusts", 50, 700, 35, true)])).toBe("Derek thrusts");
+  });
+  it("drops running headers, footers and page numbers", () => {
+    const pages = Array.from({ length: 6 }, (_, i) => `Sugar Alpha\n${["Derek grinned","Stiles laughed","Isaac frowned","Peter waited","The club hummed","Rain fell"][i]} at the door.\nA ${["red","blue","green","grey","gold","pink"][i]} light came on.\n${i + 1}`);
+    const out = joinPdfPages(pages);
+    expect(out).not.toContain("Sugar Alpha");
+    expect(out).toContain("Peter waited at the door.");
+    expect(out).not.toMatch(/\n\d\n|\n\d$/);
+  });
+  it("rejoins a word hyphenated at a line end and a sentence split over a page break", () => {
+    expect(joinPdfPages(["He thrust into the pleasure-\nable heat and Stiles", "gasped for him.\n\nThen it was over."])).toBe("He thrust into the pleasureable heat and Stiles\ngasped for him.\n\nThen it was over.");
+  });
+});
+
+describe("pdfTextProblem", () => {
+  const prose = "He said that it was the best thing she had seen, and she told him to go to the door with his hat in the rain. ".repeat(20);
+  it("accepts ordinary prose", () => {
+    expect(pdfTextProblem(prose)).toBeUndefined();
+  });
+  it("flags unmapped fonts, run-together words and non-prose", () => {
+    expect(pdfTextProblem(prose.replace(/e/g, "\uE012"))).toMatch(/fonts/);
+    expect(pdfTextProblem(prose.repeat(4).replace(/ /g, "").replace(/(.{40})/g, "$1 "))).toMatch(/run together/);
+    expect(pdfTextProblem("zx qv kj ".repeat(100))).toMatch(/English prose/);
   });
 });
 
