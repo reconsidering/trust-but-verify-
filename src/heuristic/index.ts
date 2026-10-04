@@ -336,8 +336,13 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
       ["chastity-wearer-oral", "oral", "touch", "wearing a chastity device (hints oral bottom)", 0.4],
     ] as const) {
       if (desires.some((d) => d.via === id && d.sentence === original)) continue;
-      // Wearing the device is one fact repeated through a scene: the body-part hints count once a paragraph and only so many times a work.
-      if (cat !== "vibe" && (desires.some((d) => d.via === id && d.para === pi) || desires.filter((d) => d.via === id).length >= 8)) continue;
+      // The body-part hints count once a paragraph, and only where that part of the body is in the scene: anal words (ass, hole, plug, fingers,
+      // lube…) or mouth words nearby. A cage at a party or in a shower is a power-dynamic hint, not a claim about anal or oral sex.
+      if (cat !== "vibe") {
+        if (desires.some((d) => d.via === id && d.para === pi)) continue;
+        const near = `${sent} ${paras[pi - 1] ?? ""} ${paras[pi] ?? ""} ${paras[pi + 1] ?? ""}`;
+        if (cat === "anal" ? !(ANAL_NEAR_RE.test(near) || ANAL_CTX.test(near) || FINGER_CTX.test(near) || /\bplug\b/i.test(near)) : !ORAL_NEAR_RE.test(near)) continue;
+      }
       desires.push({ via: id, cat, act, who: w, partner: other, role: "bottom", wants: true, kind, weight, para: pi, sentence: original, basis: "named" });
     }
   }
@@ -737,7 +742,11 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
       const holder = tagPartner(wearer);
       const note = (who: Character, partner: Character | undefined, role: Role, via: string, act: string, cat: Cat = "vibe", kind: Desire["kind"] = "behavior", weight = 0.5) => {
         if (!partner || desires.some((d) => d.via === via && d.who === who && d.sentence === `“${line.trim()}”`)) return;
-        if (cat !== "vibe" && (desires.some((d) => d.via === via && d.para === pi) || desires.filter((d) => d.via === via).length >= 8)) return;
+        if (cat !== "vibe") {
+          if (desires.some((d) => d.via === via && d.para === pi)) return;
+          const near = `${line} ${paras[pi - 1] ?? ""} ${paras[pi] ?? ""} ${paras[pi + 1] ?? ""}`;
+          if (cat === "anal" ? !(ANAL_NEAR_RE.test(near) || ANAL_CTX.test(near) || FINGER_CTX.test(near) || /\bplug\b/i.test(near)) : !ORAL_NEAR_RE.test(near)) return;
+        }
         desires.push({ via, cat, act, who, partner, role, wants: true, kind, weight, para: pi, sentence: `“${line.trim()}”`, basis: "named", guessed: around.explicit === false ? true : undefined });
       };
       if (speaker === wearer && /\b(?:my|me|i)\b/.test(lower)) {
