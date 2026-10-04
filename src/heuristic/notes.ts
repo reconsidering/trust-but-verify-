@@ -36,7 +36,7 @@ const KEYWORD_TAGS: [RegExp, string][] = [
   [/\bmaster\/pet\b|\bowner\/pet\b/i, "Master/Pet"],
   [/\bpet play\b|\bpuppy play\b|\bpup play\b|\bkitten play\b/i, "Pet Play"],
   [/\borgasm (?:denial|control)\b|\btease and denial\b/i, "Orgasm Denial"],
-  [/\bswitching (?:roles|dynamic)\b|\b(?:both|they) switch\b/i, "Switching"],
+  [/\bswitch(?:ing)? (?:roles?|dynamics?|top|bottom)\b|\b(?:both|they|all|everyone)(?: of them)?(?: are| \w+)? switch(?:es)?\b|\b(?:both|they|all)(?: of them)?(?: are|'re)? (?:vers|versatile)\b|\bversatile (?:top|bottom|boys|pair|couple|dynamic|relationship)s?\b|\bvers\/vers\b/i, "Switching"],
 ];
 /** "in a cock cage", "wearing a chastity device": the wearer is the closest name before it ("Steve spends the whole story in a cock cage"). */
 const CAGE_PHRASE = /\b(?:in|wearing|wears|is wearing|locked in|gets locked in)\s+(?:a\s+|the\s+)?(?:cock[- ]?cage|chastity(?:\s+(?:cage|device|belt))?)/g;
@@ -64,7 +64,7 @@ export function noteContext(meta: Pick<Ao3Meta, "summary" | "notes" | "endNotes"
   for (const m of text.matchAll(NAME_VERBS)) if (ok(m[1])) add(`${clean(m[1])} is a ${m[2] === "bottoms" ? "bottom" : m[2] === "tops" ? "top" : "switch"}`);
   for (const m of text.matchAll(POV_OF)) { const n = m[1] ?? m[2]; if (ok(n)) add(`${clean(n)} POV`); }
   if (POV_ALT.test(text)) add("Alternating POV");
-  const negated = (re: RegExp) => new RegExp(`\\b(?:no|without|not|zero)\\s+(?:\\w+\\s+){0,2}?${re.source}`, "i").test(text);
+  const negated = (re: RegExp) => new RegExp(`\\b(?:no|without|not|zero)\\s+(?:\\w+\\s+){0,2}?(?:${re.source})`, "i").test(text);
   for (const [re, label] of KEYWORD_TAGS) if (re.test(text) && !negated(re)) add(label);
   const cageRe = /\b(?:cock[- ]?cages?|chastity(?: (?:cage|device|belt))?|caged cock|key ?hold(?:er|ing)|male chastity)\b/i;
   const collarRe = /\b(?:collars?|collared|leash(?:es|ed)?|pet play|puppy play|pup play|kitten play|human pet)\b(?!\s*bone)/i;

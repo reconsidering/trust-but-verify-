@@ -76,9 +76,17 @@ export function readTags(freeforms: string[], cast: Cast): TagInfo {
     const tag = raw.trim();
     const t = tag.toLowerCase();
 
-    if (/^(?:switching|switch(?:ing)? roles?|versatile|vers|top\/bottom switch|bottoming from the top|topping from the bottom)$/.test(t)) {
-      if (t === "switching" || t.startsWith("switch") || t.startsWith("vers")) info.switching.push(tag);
+    if (/^(?:(?:(?:both|all|they|everyone)\s+(?:are\s+)?)?(?:switch(?:es|ing)?|vers(?:atile)?|verse)(?:\s+(?:roles?|dynamics?|top|bottom|tops?\/bottoms?|pair|couple|relationship|boys|characters|both))?|(?:switch(?:ing)?|versatile|vers)\s+(?:top|bottom)(?:\s*\/\s*(?:top|bottom))?|(?:switch(?:ing)?|versatile)\s*\/\s*(?:switch(?:ing)?|versatile)|vers\s*\/\s*vers|top\/bottom switch(?:ing)?|top\s*\/\s*bottom\s+(?:switching|versatile)|role\s*switch(?:ing)?|bottoming from the top|topping from the bottom)$/.test(t)) {
+      if (!/from the/.test(t) || /^(?:bottoming|topping)/.test(t)) info.switching.push(tag);
       continue;
+    }
+    // "Versatile Steve/Eddie", "Switch Steve/Eddie": the word applies to both names.
+    {
+      const vm = tag.match(/^(switch(?:ing)?|vers(?:atile)?)\s*!?\s+(.+?)\s*\/\s*(.+)$/i);
+      if (vm) {
+        const cs = [findChar(vm[2]), findChar(vm[3])].filter((c): c is Character => !!c);
+        if (cs.length) { for (const char of cs) info.roles.push({ char, role: "switch", tag }); continue; }
+      }
     }
     // "Top Castiel/Bottom Dean Winchester" is two role tags in one.
     const parts = /^(?:power |service |pillow |dom |sub |dominant |submissive )?(?:bottoming|topping|bottom|top|switch|vers)\b.*\/\s*(?:power |service |pillow |dom |sub |dominant |submissive )?(?:bottoming|topping|bottom|top|switch|vers)\b/i.test(tag)

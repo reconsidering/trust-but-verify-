@@ -35,3 +35,26 @@ describe("wider tag vocabulary", () => {
     expect(out.map((c) => c.tag)).toEqual(expect.arrayContaining(["Spreader Bar", "Puppy Play"]));
   });
 });
+
+describe("vers / versatile / switch in tags and notes", () => {
+  const cast = (() => {
+    const steve = { name: "Steve Harrington", aliases: ["Steve"] }, eddie = { name: "Eddie Munson", aliases: ["Eddie"] };
+    const byAlias = new Map<string, unknown>([["Steve", steve], ["Steve Harrington", steve], ["Eddie", eddie], ["Eddie Munson", eddie]]);
+    return { byAlias, aliasPattern: "Steve Harrington|Eddie Munson|Steve|Eddie", chars: [steve, eddie] } as never;
+  })();
+  it("generic switching tags in many spellings", () => {
+    for (const t of ["Switch", "Versatile", "Vers", "Both Switch", "Switching Dynamic", "Versatile Top/Bottom", "Vers/Vers", "Top/Bottom Switching", "Switch Top/Bottom"])
+      expect(readTags([t], cast).switching, t).toEqual([t]);
+  });
+  it("named forms, including one word for a pair", () => {
+    expect(readTags(["Switch Steve", "Vers!Eddie"], cast).roles.map((r) => r.role)).toEqual(["switch", "switch"]);
+    expect(readTags(["Versatile Steve/Eddie"], cast).roles).toHaveLength(2);
+    expect(readTags(["Steve is vers"], cast).roles[0]?.role).toBe("switch");
+  });
+  it("notes: generic and named", () => {
+    expect(noteContext({ summary: "Both of them are versatile." }).tags).toContain("Switching");
+    expect(noteContext({ summary: "They switch roles a lot." }).tags).toContain("Switching");
+    expect(noteContext({ summary: "Bucky switches. Vers Sam." }).tags).toEqual(expect.arrayContaining(["Bucky is a switch", "Vers Sam"]));
+    expect(noteContext({ summary: "Not versatile, no switching roles." }).tags).not.toContain("Switching");
+  });
+});
