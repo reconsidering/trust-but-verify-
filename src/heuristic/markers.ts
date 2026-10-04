@@ -49,7 +49,7 @@ export const HYPO_WINDOW = /\b(?:unless|capable of|able to|would have|meant to|i
 export const ORAL_NEAR_RE = /\b(?:mouth|throat|gag\w*|choke[sd]?|lips|tongue|suck\w*|swallow\w*|blow\w*|deepthroat\w*|skull)\b/i;
 export const ORAL_LINE_RE = /\b(?:swallow\w*|suck\w*|throat|gag\w*|choke|mouth|lips|tongue|blow\w*)\b/i;
 export const ANAL_NEAR_RE = /\b(?:ass|arse|hole|asshole|inside him|inside me|inside you|prostate|rim|entrance|stretch\w*|lube[ds]?|slick\w*)\b/i;
-export const HYPO_SENT = /^\W*(?:[\w'’]+[,!]\s+)?(?:(?:will|would|could|should|can|shall)\s+(?:he|she|they)\b|maybe|perhaps)\b[^.!?]*?\b(?:would|could|might|['’]d)\b/i;
+export const HYPO_SENT = /^\W*(?:[\w'’]+[,!]\s+)?(?:(?:will|would|could|should|can|shall)\s+(?:he|she|they)\b|maybe|mayhaps?|perhaps)\b[^.!?]*?\b(?:would|could|might|['’]d)\b/i;
 /** Sentences where "was fucked / screwed" is really about sex (anatomy, how, or sex words). */
 export const IDIOM_SAFE = /\b(?:cock|dick|prick|ass|arse|hole|claim\w*|alphas?|omegas?|mate[ds]?|mating|cunt|pussy|clit\w*|vagina|cunny|slick|wet|dripping|womb|heat|rut|bred|breed\w*|inside|thrust\w*|knot\w*|lube[ds]?|prostate|come|cum|bed|mattress|sheets?|moan\w*|gasp\w*|whimper\w*|beg\w*|hard|deep(?:ly)?|slow(?:ly)?|senseless|raw|open|into|against|until|over the|on (?:his|her|their|the)\b|all night|good and proper)\b/i;
 /** In the matched words themselves: "is going to knot", "can just fuck", "would have let". */
@@ -60,10 +60,13 @@ export const HYPO_AUX = /\b(?:would|could|will|might|should|shall|going|gonna|['
 export const HABIT_AUX = /\b(?:always|usually|never|often|typically|rarely|only|used)\b/i;
 /** Fantasy markers strong enough to cover the whole rest of the sentence ("the vision he'd clung to, which included…"). */
 export const STRONG_FANTASY =
-  /(?<!\b(?:not|never|no)\s|n['’]t\s)\b(?:imagin(?:ed|es|ing)|fantasi[sz](?:ed|es|ing)|daydream\w*|(?<!\blike a (?:[\w'’]+ )?)dream(?:ed|t|s|ing)?(?![-‐ ]like\b| come true)|(?:the|a|this|that) vision (?:of|he|she|they|I|that|which)|fantas(?:y|ies)\s+(?:of|about))\b/i;
+  /(?<!\b(?:not|never|no)\s|n['’]t\s|\b(?:would|could|might|never)(?:['’]ve| have)\s)\b(?:imagin(?:ed|es|ing)|fantasi[sz](?:ed|es|ing)|daydream\w*|(?<!\blike a (?:[\w'’]+ )?)dream(?:ed|t|s|ing)?(?![-‐ ]like\b| come true)|(?:the|a|this|that) vision (?:of|he|she|they|I|that|which)|fantas(?:y|ies)\s+(?:of|about))\b/i;
 export const SCENE_BREAK = /^\s*(?:\*+|x{3,}|~+|-{3,}|—+|#+|o+0+o+|\* \* \*)\s*$/i;
-export const FANTASY_PARA = /(?<!\b(?:not|never|no)\s|n['’]t\s)\b(?:(?<!\blike a (?:[\w'’]+ )?)dream(?:ed|t|s|ing)?(?![-‐ ]like\b| come true)|fantasi[sz](?:ed|ing|es)|fantasy|daydream\w*|imagin(?:ed|es|ing))\b/i;
+export const FANTASY_PARA = /(?<!\bthan\s+(?:he|she|they|i|we|you|anyone)(?:['’]d| had| could| would)?\s)(?<!\b(?:not|never|no)\s|n['’]t\s|\b(?:would|could|might|never)(?:['’]ve| have)\s)\b(?:(?<!\blike a (?:[\w'’]+ )?)dream(?:ed|t|s|ing)?(?![-‐ ]like\b| come true)|fantasi[sz](?:ed|ing|es)|fantasy|daydream\w*|imagin(?:ed|es|ing))\b/i;
 
 export const SAY =
   "texted|sexted|typed|messaged|said|says|say|asked|asks|begged|begs|whispered|whispers|murmured|murmurs|moaned|moans|groaned|groans|gasped|gasps|panted|pants|breathed|breathes|growled|growls|hissed|hisses|whined|whines|pleaded|pleads|demanded|demands|ordered|orders|told|tells|mumbled|mumbles|muttered|mutters|replied|replies|answered|answers|added|adds|choked out|managed|grunted|grunts|purred|purrs|rasped|rasps|sighed|sighs|laughed|laughs|snapped|snaps|teased|teases|urged|urges|insisted|insists|admitted|admits|confessed|confesses|sobbed|sobs|cried|cries|whimpered|whimpers|husked|drawled|offered|suggested|blurted|croaked|keened|ground out|bit out|gritted out|continued|promised|warned|commanded|instructed|repeated|agreed|protested|swore|cursed|chuckled|smirked|grinned|smiled|hummed|crooned|coaxed|praised|soothed|groused|whispered against|murmured against|chuckles|smirks|snorted|scoffed|huffed|grins|rumbled|rumbles|snarled|snarls|croons|continues|explains|explained|goes on|went on|offers|warns|(?:rush|hurri|hasten|struggl|tri|manag|began|start)\\w* to (?:answer|reply|respond|say|speak|beg|plead|ask|tell|explain)";
 
+
+/** Two cocks held or pressed together: frottage, so a "you're so big" over it is not about anal sex. */
+export const FROTTAGE = /\bcocks?\b[^.!?]{0,60}\b(?:together|pressed)\b|\bencircle\w* (?:them|both)\b|\bpushing their cocks\b|\bbetween (?:both|their|his) (?:palms|hands|fists)\b/i;

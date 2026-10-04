@@ -138,7 +138,8 @@ const NATIONS: [adj: string, nouns: string[], countries: string[]][] = [
 
 const NATIONALITY: Descriptor[] = NATIONS.map(([adj, nouns]) => ({
   key: `nat:${adj.toLowerCase()}`,
-  alone: [adj],
+  // "the northern lord" / "the northern wolf" is a title or a region, not a nationality that picks one of two people out.
+  alone: /^(?:Southern|Northern)$/.test(adj) ? [] : [adj],
   nouns,
 }));
 

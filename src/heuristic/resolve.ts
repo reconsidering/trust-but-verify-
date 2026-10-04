@@ -67,6 +67,18 @@ export class Ctx {
     }
     const cacheKey = keys[0] ?? tok.toLowerCase();
     if (this.sentence.has(cacheKey)) return this.sentence.get(cacheKey);
+    // "The northern wolf … the young prince": when the sentence already has someone else, by name or by an epithet we know, a new epithet is the other one.
+    {
+      const known = new Set<Character>(this.sentMentions.map((m) => m.c));
+      this.epiTable.forEach((text) => {
+        if (text === tok) return;
+        for (const k of canonEpithet(text).keys) { const c = this.epithets.get(k); if (c) { known.add(c); break; } }
+      });
+      if (known.size === 1) {
+        const other = this.partnerOf([...known][0], gender);
+        if (other) { this.sentence.set(cacheKey, other); return other; }
+      }
+    }
     const c = this.lastSubject ? this.partnerOf(this.lastSubject, gender) : this.recent.find((r) => Ctx.compatible(r, gender));
     this.sentence.set(cacheKey, c);
     // "The other man" is always relative, so it never becomes a fixed mapping.

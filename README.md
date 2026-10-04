@@ -395,6 +395,7 @@ Readings you mark "Looks right" in a mistake report can be kept (the report pane
 node scripts/import-right-set.mjs report.md           # fold a pasted report in (tests/right-set/<fic>.json: hashes and names, never fic text)
 AO3_DIR=ao3-samples npx vitest run tests/right-set.test.ts   # replay them; writes RIGHT_SET_REPORT.md
 node scripts/import-right-set.mjs --retire <fic> <hash> why  # stop enforcing one reading
+node scripts/import-right-set.mjs --fixed <fic> why           # the mistakes in that fic were fixed: stop counting them against their patterns
 ```
 
 The set also feeds the context model (`tests/learn.test.ts`): a "looks right" reading is a positive example and a reading reported wrong because it was *misread* (wrong person, not a sex act, a wish, and so on, but not "counted twice" or "too strong") is a negative one. Where a report and the audit review disagree about the same hit, neither is used. The per-pattern reliability table (`tests/reliability.test.ts`) counts the same readings, by pattern, so it needs no fic files. The model and the table are only regenerated (`WRITE_LEARNED=1`, `WRITE_RELIABILITY=1`) when the set has grown enough to matter. A hit that was both reviewed in the audit and marked in a report is counted twice; smoothing keeps that small.

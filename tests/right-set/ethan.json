@@ -1,0 +1,108 @@
+{
+ "entries": [
+  {
+   "kind": "hint",
+   "card": "blowjob",
+   "pairing": "Ethan Barnes/Hank",
+   "who": "Ethan Barnes",
+   "role": "bottom",
+   "wants": true,
+   "via": "lips-around",
+   "h": "b637d4cd",
+   "conf": 60,
+   "marks": {
+    "right": 1,
+    "wrong": 0
+   },
+   "seen": [
+    "2026-10-04"
+   ]
+  },
+  {
+   "kind": "scene",
+   "card": "blowjob",
+   "pairing": "Ethan Barnes/Hank",
+   "top": "Hank",
+   "bottom": "Ethan Barnes",
+   "via": "licked-shaft",
+   "h": "eee25546",
+   "conf": 36,
+   "marks": {
+    "right": 1,
+    "wrong": 0
+   },
+   "seen": [
+    "2026-10-04"
+   ]
+  },
+  {
+   "kind": "scene",
+   "card": "blowjob",
+   "pairing": "Ethan Barnes/Hank",
+   "top": "Ethan Barnes",
+   "bottom": "Hank",
+   "via": "lips-around",
+   "h": "68d2ab60",
+   "conf": 78,
+   "marks": {
+    "right": 1,
+    "wrong": 0
+   },
+   "seen": [
+    "2026-10-04"
+   ]
+  },
+  {
+   "kind": "scene",
+   "card": "anal",
+   "pairing": "Ethan Barnes/Hank",
+   "top": "Hank",
+   "bottom": "Ethan Barnes",
+   "via": "fuck",
+   "h": "dce02b36",
+   "conf": 75,
+   "marks": {
+    "right": 1,
+    "wrong": 0
+   },
+   "seen": [
+    "2026-10-04"
+   ]
+  }
+ ],
+ "fic": "ethan",
+ "title": "Ethan",
+ "negatives": [
+  {
+   "kind": "hint",
+   "card": "rimming",
+   "pairing": "Ethan Barnes/Hank",
+   "who": "Ethan Barnes",
+   "role": "bottom",
+   "wants": true,
+   "via": "licked-hole",
+   "h": "8d76ba4b",
+   "conf": 50,
+   "misread": false,
+   "seen": [
+    "2026-10-04"
+   ],
+   "retired": "fixed: tongue-in-hole now allows a set-off description"
+  },
+  {
+   "kind": "hint",
+   "card": "anal",
+   "pairing": "Ethan Barnes/Hank",
+   "who": "Hank",
+   "role": "top",
+   "wants": true,
+   "via": "push-into",
+   "h": "becbb207",
+   "conf": 40,
+   "misread": true,
+   "seen": [
+    "2026-10-04"
+   ]
+  }
+ ]
+}
