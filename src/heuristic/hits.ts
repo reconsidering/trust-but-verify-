@@ -41,6 +41,8 @@ export interface DesireHit {
   sentence: string;
   /** The passage around the sentence (filled in once all hits are found, for mistake reports). */
   context?: string;
+  /** Who the other person was, when this hint is about a moment with someone outside the cast. */
+  other?: { label: string; kind: "named" | "stranger" | "unnamed" };
   /** A solo act worded with “himself” / “his own”: certainly the actor’s own body, no partner in it. */
   reflexive?: boolean;
   /** How the people in the sentence were found (names, pronouns, inference). */

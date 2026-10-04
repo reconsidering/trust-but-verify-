@@ -13,6 +13,11 @@ export interface Ao3Meta {
   categories: string[];
   words?: number;
   chapters?: string;
+  /** The author's summary, notes and end notes, and any chapter summaries or notes. Context clues only; never scanned as story. */
+  summary?: string;
+  notes?: string;
+  endNotes?: string;
+  chapterNotes?: string[];
 }
 
 export function emptyMeta(): Ao3Meta {
@@ -84,6 +89,23 @@ export function parseAo3FromDom(doc: Document): Ao3Meta {
     }
   }
 
+  // The preface and afterword put each block under a small heading: <p>Summary</p><blockquote class="userstuff">…
+  const blockAfter = (head: Element): string => {
+    let n = head.nextElementSibling;
+    while (n && !["blockquote", "p", "h2", "h3"].includes(n.tagName.toLowerCase())) n = n.nextElementSibling;
+    return n && n.tagName.toLowerCase() === "blockquote" ? (n.textContent ?? "").replace(/\s+/g, " ").trim() : "";
+  };
+  const blocks = (re: RegExp) =>
+    Array.from(doc.querySelectorAll("p"))
+      .filter((el) => re.test((el.textContent ?? "").trim()) && !el.closest("blockquote"))
+      .map(blockAfter)
+      .filter(Boolean);
+  meta.summary = blocks(/^Summary$/i)[0];
+  meta.notes = blocks(/^Notes$/i).join(" ") || undefined;
+  meta.endNotes = blocks(/^End Notes$/i).join(" ") || undefined;
+  const chapterNotes = blocks(/^Chapter (?:Summary|Notes|End Notes)$/i);
+  if (chapterNotes.length) meta.chapterNotes = chapterNotes;
+
   const workLink = doc.querySelector<HTMLAnchorElement>('a[href*="archiveofourown.org/works/"]');
   if (workLink) meta.url = workLink.getAttribute("href") ?? undefined;
   const author = doc.querySelector('a[rel="author"]');
@@ -144,6 +166,10 @@ export function mergeMeta(a: Ao3Meta, b: Ao3Meta): Ao3Meta {
     categories: a.categories.length ? a.categories : b.categories,
     words: a.words ?? b.words,
     chapters: a.chapters ?? b.chapters,
+    summary: a.summary ?? b.summary,
+    notes: a.notes ?? b.notes,
+    endNotes: a.endNotes ?? b.endNotes,
+    chapterNotes: a.chapterNotes ?? b.chapterNotes,
   };
 }
 

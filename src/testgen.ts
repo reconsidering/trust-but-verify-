@@ -16,6 +16,12 @@ function expectation(f: FlaggedScene): { title: string; assertion: string } {
     const dir = r.has("vibe_too_top") ? "not lean as far toward top" : r.has("vibe_too_bottom") ? "not lean as far toward bottom" : "have a different confidence";
     return { title: `${f.top}: rating should ${dir}`, assertion: `// Assert on pairings[0].${f.card === "dynamic" ? "dynamic" : "vibe"} for ${q(f.top)} (it was ${q(f.act)}); fill in the label or score this should be.\n    expect(rating(r, ${q(f.top)}).label).not.toBe(${q(f.act)});` };
   }
+  if (kind === "hint" && f.card === "others") {
+    return {
+      title: `${top} with ${bottom} (outside the cast) is read correctly`,
+      assertion: `// Assert on pairings[0].others.instances: who is the cast member, their role, and other.label / other.kind (named, stranger or unnamed).\n    // If it should not be there at all: expect(pairings[0].others?.occurs ?? false).toBe(false);`,
+    };
+  }
   if (r.has("swapped")) return { title: `${bottom} is the top and ${top} the bottom, not the reverse`, assertion: `expect(roles(r, ${q(f.card)})).toEqual({ top: ${q(bottom)}, bottom: ${q(top)} });` };
   if (r.has("wrong_top") || r.has("wrong_bottom") || r.has("wrong_person") || r.has("wrong_speaker") || r.has("wrong_pronoun")) {
     return { title: `credits the right character (not ${top} → ${bottom})`, assertion: `// Fill in who it should be:\n    expect(roles(r, ${q(f.card)})).toEqual({ top: "TODO", bottom: "TODO" });` };

@@ -15,7 +15,9 @@ describe("chastity device / cock cage tags (m/m)", () => {
   it("the one who locks the cage on is the controlling one", () => {
     const h = hitsFor("Dean snapped the cage onto Castiel's cock and smiled.", TAGS);
     expect(h.length).toBeGreaterThan(0);
-    expect(h.every((x) => x.via.startsWith("chastity-lock-on"))).toBe(true);
+    expect(h.some((x) => x.via.startsWith("chastity-lock-on") && x.a.startsWith("Dean"))).toBe(true);
+    // and the one the cage goes on, named by the text, is the wearer
+    expect(h.filter((x) => x.via.startsWith("chastity-wearer")).every((x) => x.a.startsWith("Castiel"))).toBe(true);
   });
   it("‘locked Castiel's cock in a cage’ and ‘put Castiel in a cage’ are read", () => {
     expect(hitsFor("Dean locked Castiel's cock in a cage that night.", ["Cock Cage"]).length).toBeGreaterThan(0);

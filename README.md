@@ -367,6 +367,11 @@ AO3_DIR=ao3-samples npx vitest run tests/gold-eval.test.ts                      
   `tests/labels/*.json` by `AO3_DIR=ao3-samples npx vitest run tests/learn.test.ts` (add `WRITE_LEARNED=1` to write the model);
   the report in `LEARN_REPORT.md` gives held-out log loss and AUC against the pattern record alone, and the model is switched on only if
   it wins. On the first training: log loss 0.161 to 0.141, AUC 0.66 to 0.77.
+- **Scenes with others.** When a plain narrated act can't be placed between two people but one of them is a cast member, that
+  person's role is kept as a weak hint (`~one-sided`). If the text points at someone outside the pair (a minor named character the
+  cast list doesn't include, or a stranger label like "the twink", or a past partner), the moment also appears on a "Scenes with
+  others" card with a report/looks-right button. Named partners are the same person throughout; strangers and unnamed ones are told
+  apart by where in the story they appear. An unresolved "he" with no sign of an outsider stays a hint and is not listed.
 - **Review queue.** `AO3_DIR=ao3-samples npx vitest run tests/review-queue.test.ts` picks the unlabelled hits where a wrong
   reading would move a result most (chance it is wrong × its share of the evidence behind its verdict × how close that verdict is
   to flipping; `QUEUE_RANK=unsure` ranks by the model's doubt alone), at most three per pattern, plus a few it trusts most, with the paragraph around each, into `REVIEW_QUEUE.json`.

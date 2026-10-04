@@ -1,5 +1,5 @@
 import { type Ao3Meta } from "../ao3";
-import { type ActResult, type Confidence, type Desire, type Instance, type DynamicRating, type ManualAct, type ManualResult, type Role, type SoloAct, type SoloResult, type VaginalResult, type VibeRating, confidenceLabel } from "../types";
+import { type ActResult, type Confidence, type Desire, type Instance, type DynamicRating, type ManualAct, type ManualResult, type OtherScene, type OthersResult, type Role, type SoloAct, type SoloResult, type VaginalResult, type VibeRating, confidenceLabel } from "../types";
 import { rateDynamic, rateVibe, type VibeItem } from "../vibe";
 import { tagPriors } from "./ao3-prior";
 import { type Character } from "./characters";
@@ -24,6 +24,51 @@ export function soloLabel(d: { act: string; kind: string; sentence: string }): s
   if (d.kind === "masturbation") return "Masturbation";
   if (/toy|dildo|plug|vibrator|ride|rode/i.test(d.act) || SOLO_TOY.test(d.sentence)) return "Toy on self";
   return "Self-fingering";
+}
+
+/**
+ * Moments with someone outside the cast: a role hint for the cast member (the engine could place them, not the other person), or a
+ * past experience the text mentions. Unnamed and stranger-labelled partners are told apart by where in the story they appear, since
+ * "the twink" in chapter 2 and in chapter 9 are not the same person.
+ */
+export function buildOthers(pair: [Character, Character], hits: DesireHit[], where: (pi: number) => string): OthersResult {
+  const seen = new Set<string>();
+  const instances: OtherScene[] = [];
+  for (const d of hits) {
+    if (!d.other || !d.wants || !pair.includes(d.who)) continue;
+    // Only where the text points at someone outside the pair: a named minor character, a stranger label, or a past partner. An unresolved
+    // "he" with no such sign is most likely the other lead, so it stays a weak hint and is not listed as a scene with someone else.
+    if (d.other.kind === "unnamed" && d.kind !== "history") continue;
+    const key = `${d.who.name}\u0000${d.para}\u0000${d.sentence}`;
+    if (seen.has(key)) continue;
+    seen.add(key);
+    const past = d.kind === "history";
+    instances.push({
+      who: d.who.name,
+      role: d.role,
+      act: past ? `past experience (${d.cat === "oral" ? "oral" : "anal"})` : d.act.replace(/\s*\(partner unclear\)$/, ""),
+      other: d.other,
+      kind: past ? "history" : "scene",
+      evidence: truncate(d.sentence),
+      context: d.context,
+      where: where(d.para),
+      via: d.via,
+    });
+  }
+  const partners = new Map<string, { label: string; kind: OtherScene["other"]["kind"]; where?: string; count: number }>();
+  for (const i of instances) {
+    const scoped = i.other.kind !== "named";
+    const k = scoped ? `${i.other.label}@${i.where}` : i.other.label;
+    const p = partners.get(k) ?? { label: i.other.label, kind: i.other.kind, where: scoped ? i.where : undefined, count: 0 };
+    p.count++;
+    partners.set(k, p);
+  }
+  const list = [...partners.values()];
+  const named = list.filter((p) => p.kind === "named");
+  const summary = !instances.length
+    ? ""
+    : `${plural(instances.length, "moment")} with someone outside the cast${named.length ? ` (${named.map((p) => p.label).join(", ")})` : ""}${list.length > named.length ? `, ${plural(list.length - named.length, "stranger or unnamed partner")}` : ""}. The cast member's role is clear; the other person isn't in the cast.`;
+  return { occurs: instances.length > 0, summary, partners: list, instances };
 }
 
 export function buildSolo(pair: [Character, Character], hits: DesireHit[], where: (pi: number) => string): SoloResult {
