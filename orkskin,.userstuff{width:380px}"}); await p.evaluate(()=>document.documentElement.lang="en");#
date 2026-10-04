@@ -1,0 +1,1 @@
+await p.goto("file:///home/user/topbottom/ao3-samples/sugar-alpha.html"); if (process.argv[3]) await p.addStyleTag({content:"html{hyphens:auto;-webkit-hyphens:auto} body,p,div{hyphens:auto;text-align:justify;font-size:11pt} 
