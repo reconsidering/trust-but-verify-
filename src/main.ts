@@ -115,6 +115,7 @@ els.autoRun.addEventListener("change", () => store.set("tb.autoRun", els.autoRun
 // ---- file intake ----
 
 let current: ExtractedWork | null = null;
+let readProgress: ((fraction: number) => void) | undefined;
 let inflight: AbortController | null = null;
 
 function showError(msg: string | null) {
@@ -189,7 +190,7 @@ async function handleFile(file: File) {
   refreshReport();
   // Pattern analysis runs in a background worker; long explicit fics can take a few seconds.
   const work = current;
-  runPatterns(work.text, work.meta)
+  runPatterns(work.text, work.meta, (f) => { if (current === work) readProgress?.(f); })
     .then((result) => {
       if (current !== work) return;
       renderAnalysis(result, els.roleResults, els.notes);
@@ -733,8 +734,18 @@ function renderMeta(work: ExtractedWork, filename: string) {
   if (!hasAo3Meta(meta)) els.otherPairings.textContent = "No AO3 tags in this file.";
 
   const reading = el("p", "hint");
-  reading.append(el("span", "spinner"), "Reading the fic…");
+  const bar = document.createElement("progress");
+  bar.className = "read-progress";
+  bar.max = 1;
+  bar.value = 0;
+  const pct = el("span", "read-pct");
+  pct.textContent = "0%";
+  reading.append("Reading the fic… ", bar, " ", pct);
   els.roleResults.replaceChildren(reading);
+  readProgress = (f) => {
+    bar.value = f;
+    pct.textContent = `${Math.round(f * 100)}%`;
+  };
   els.notes.hidden = true;
   els.claudeResults.replaceChildren();
   els.claudeNotes.hidden = true;

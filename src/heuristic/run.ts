@@ -6,15 +6,16 @@ import PatternWorker from "./worker?worker";
 
 let worker: Worker | undefined;
 let nextId = 0;
-const pending = new Map<number, { resolve: (a: Analysis) => void; reject: (e: Error) => void }>();
+const pending = new Map<number, { resolve: (a: Analysis) => void; reject: (e: Error) => void; onProgress?: (fraction: number) => void }>();
 
 function getWorker(): Worker | undefined {
   if (worker) return worker;
   try {
     worker = new PatternWorker();
-    worker.onmessage = (e: MessageEvent<{ id: number; result?: Analysis; error?: string }>) => {
+    worker.onmessage = (e: MessageEvent<{ id: number; result?: Analysis; error?: string; progress?: number }>) => {
       const p = pending.get(e.data.id);
       if (!p) return;
+      if (e.data.progress !== undefined) return p.onProgress?.(e.data.progress);
       pending.delete(e.data.id);
       if (e.data.result) p.resolve(e.data.result);
       else p.reject(new Error(e.data.error ?? "Pattern analysis failed"));
@@ -31,12 +32,12 @@ function getWorker(): Worker | undefined {
   }
 }
 
-export function runPatterns(text: string, meta: Ao3Meta): Promise<Analysis> {
+export function runPatterns(text: string, meta: Ao3Meta, onProgress?: (fraction: number) => void): Promise<Analysis> {
   const w = getWorker();
-  if (!w) return Promise.resolve(analyzeWithPatterns(text, meta));
+  if (!w) return Promise.resolve(analyzeWithPatterns(text, meta, { onProgress }));
   const id = ++nextId;
   return new Promise((resolve, reject) => {
-    pending.set(id, { resolve, reject });
+    pending.set(id, { resolve, reject, onProgress });
     w.postMessage({ id, text, meta });
-  }).catch(() => analyzeWithPatterns(text, meta)) as Promise<Analysis>;
+  }).catch(() => analyzeWithPatterns(text, meta, { onProgress })) as Promise<Analysis>;
 }

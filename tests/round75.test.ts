@@ -95,3 +95,13 @@ describe("round 75d: prostate and the spot", () => {
     expect(P("The doctor said the prostate exam was routine and Stiles found that spot on the wall.")).toEqual([]);
   });
 });
+
+describe("progress reporting", () => {
+  it("reports how far through the paragraphs the engine is, rising and below 1", () => {
+    const seen: number[] = [];
+    analyzeWithPatterns((lead + "Steve and Eddie talked.\n\n").repeat(30), META, { quiet: true, onProgress: (f) => seen.push(f) });
+    expect(seen.length).toBeGreaterThan(1);
+    expect(seen[0]).toBe(0);
+    expect(seen.every((f, i) => f < 1 && (i === 0 || f >= seen[i - 1]))).toBe(true);
+  });
+});
