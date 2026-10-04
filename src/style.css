@@ -367,3 +367,13 @@ footer { margin-top: 32px; color: var(--muted); font-size: 0.85rem; text-align: 
 
 .ctx-preview { margin-top: 4px; max-height: 14em; overflow: auto; white-space: pre-wrap; font-size: 0.85em; padding: 6px 8px; border-left: 3px solid var(--line, #ccc); background: var(--panel-alt, rgba(127,127,127,0.08)); }
 .ctx-preview[hidden] { display: none; }
+
+/* ---- writing grade ---- */
+.grade-overall { margin: 4px 0 12px; display: flex; align-items: baseline; gap: 12px; }
+.grade-letter { font-size: 2.4rem; font-weight: 700; color: var(--accent); line-height: 1; }
+.grade-score { font-size: 1.1rem; color: var(--muted); }
+.grade-cats { list-style: none; margin: 0 0 12px; padding: 0; display: grid; gap: 6px; }
+.grade-cats li { display: grid; grid-template-columns: minmax(120px, 200px) 1fr 3ch; align-items: center; gap: 10px; font-size: 0.9rem; }
+.grade-cats .bar { height: 8px; border-radius: 999px; background: var(--border); overflow: hidden; }
+.grade-cats .bar > span { display: block; height: 100%; background: var(--ok); }
+.grade-cats .num { color: var(--muted); text-align: right; font-variant-numeric: tabular-nums; }
