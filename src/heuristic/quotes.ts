@@ -7,8 +7,11 @@ export interface Quote {
 }
 
 /** Replace dialogue with spaces (same length) so narration patterns don't fire on speech. */
-export function maskQuotes(p: string, singleQuotes: boolean): { masked: string; quotes: Quote[] } {
+export function maskQuotes(p0: string, singleQuotes: boolean): { masked: string; quotes: Quote[] } {
   const quotes: Quote[] = [];
+  // “Wh—“ the air is knocked out of him…: an opening mark typed where a closing one belongs (a “ right after a word or dash and before a space can't
+  // open anything) would otherwise swallow the rest of the paragraph as speech. Same length, so every offset stays valid.
+  const p = singleQuotes ? p0 : p0.replace(/(?<=[\p{L}\p{N}.,!?…—–-])“(?=\s)/gu, "”");
   const re = singleQuotes
     ? /(^|[\s(—–-])‘((?:[^’]|’(?=\p{L}))*)’(?=[\s,.;:!?—–)-]|$)/gu
     : // Straight and curly quotes are interchangeable: many fics open with " and close with ” (autocorrect).
