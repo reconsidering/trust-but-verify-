@@ -50,7 +50,7 @@ export interface PatternDef {
 export interface CompiledPattern extends PatternDef {
   re: RegExp;
   /** Cheap pre-check: the sentence must contain one of the pattern's verbs/nouns. */
-  gate?: RegExp;
+  gate?: { source: string; test: (sentence: string) => boolean };
   /** Patterns with the same gate share an id, so a sentence is tested against each distinct gate only once. */
   gateId?: number;
   /** The subject isn't in the match; it's the nearest subject earlier in the sentence. */
@@ -132,6 +132,61 @@ function deriveGate(src: string): string | undefined {
     const words = leadingWords(body);
     return words ? [...words].join("|") : undefined;
   }
+}
+
+/**
+ * A fallback gate for a pattern with no verb group to read one off: the longest literal word (4+ letters) that sits at the top level of the
+ * pattern, outside any group, placeholder or alternation, and so must appear in any sentence it can match. "{T} {aux}lin(?:es|ed)\\s+..." → "lin"
+ * is too short to help, but "...\\s+(?:the\\s+)?hilt" → "hilt" is.
+ */
+function deriveLiteralGate(src: string): string | undefined {
+  if (topLevelAlts(src).length > 1) return undefined;
+  let best = "";
+  let depth = 0;
+  let i = 0;
+  while (i < src.length) {
+    const ch = src[i];
+    if (ch === "\\") { i += 2; continue; }
+    if (ch === "{") { const j = src.indexOf("}", i); i = j < 0 ? src.length : j + 1; continue; }
+    if (ch === "(") { depth++; i++; continue; }
+    if (ch === ")") { depth--; i++; continue; }
+    if (depth === 0 && /[A-Za-z]/.test(ch)) {
+      let j = i;
+      while (j < src.length && /[A-Za-z]/.test(src[j])) j++;
+      let word = src.slice(i, j);
+      const next = src.slice(j, j + 2);
+      // A quantifier on the last letter makes it optional, so only the part before it is certain.
+      if (next[0] === "?" || next[0] === "*" || next === "{0") word = word.slice(0, -1);
+      if (word.length > best.length) best = word;
+      i = j;
+      continue;
+    }
+    i++;
+  }
+  return best.length >= 4 ? best.toLowerCase() : undefined;
+}
+
+/**
+ * A gate is a list of literal words, any one of which must be in the sentence. Plain words are looked for with includes() on a lower-cased copy
+ * of the sentence (kept for the next gate, since a sentence is tested against hundreds of gates), which is much cheaper than a regex per gate.
+ */
+let gateLastIn = "";
+let gateLastLower = "";
+function makeGate(words: string): { source: string; test: (sentence: string) => boolean } {
+  const source = `(?:${words})`;
+  if (/^[a-z0-9 '’-]+(?:\|[a-z0-9 '’-]+)*$/i.test(words)) {
+    const stems = words.toLowerCase().split("|");
+    return {
+      source,
+      test: (sentence) => {
+        if (sentence !== gateLastIn) { gateLastIn = sentence; gateLastLower = sentence.toLowerCase(); }
+        for (const st of stems) if (gateLastLower.includes(st)) return true;
+        return false;
+      },
+    };
+  }
+  const re = new RegExp(source, "i");
+  return { source, test: (sentence) => re.test(sentence) };
 }
 
 /** The literal each alternative must start with ("fuck(?:s|ed)?" → "fuck"); undefined if any can't be pinned down. */
@@ -291,8 +346,8 @@ export function compilePatterns(defs: PatternDef[], aliasPattern: string): Compi
     const finalSrc = def.src.startsWith("\\b{T:penisReq}")
       ? `(?<!\\b(?:tease|teases|teasing|teased|stroke|strokes|stroking|stroked|cup|cups|cupping|cupped|grab|grabs|grabbing|grabbed|squeeze|squeezes|squeezing|squeezed|touch|touches|touching|touched|lick|licks|licking|licked|suck|sucks|sucking|sucked|fondle|fondles|fondling|fondled|palm|palms|palming|palmed|grip|grips|gripping|gripped|hold|holds|holding|held|kiss|kisses|kissing|kissed|tug|tugs|tugging|tugged|pump|pumps|pumping|pumped|jerk|jerks|jerking|jerked|rub|rubs|rubbing|rubbed|wrap|around|over|on|at|to)\\s+)${src}`
       : src;
-    const gateWords = def.kw ?? MANUAL_GATES[def.id] ?? deriveGate(def.src);
-    const gate = gateWords ? new RegExp(`(?:${gateWords})`, "i") : undefined;
+    const gateWords = def.kw ?? MANUAL_GATES[def.id] ?? deriveGate(def.src) ?? deriveLiteralGate(def.src);
+    const gate = gateWords ? makeGate(gateWords) : undefined;
     let gateId: number | undefined;
     if (gate) {
       gateId = gateIds.get(gate.source);
@@ -1222,7 +1277,7 @@ export const PATTERNS: PatternDef[] = [
     weight: 0.4,
     needsCtx: true,
     signal: { kind: "touch", actorRole: "top" },
-    src: `\\b{T:poss}\\s+(?:fingers?|thumb|hand)\\s+(?:(?:trac|circl|rubb?|press|tapp?|brush|glid|ghost|swirl)\\w*\\s+(?:\\w+\\s+){0,2}?{B:ass}|(?:slid|slip|glid|trail|travel|mov)\\w*\\s+(?:down\\s+)?between\\s+[\\w’'-]+\\s+(?:legs|thighs|cheeks)\\s+(?:to|and finds?|finding)\\s+{B:ass})`,
+    src: `\\b{T:poss}\\s+(?:fingers?|thumb|hand)\\s+(?:(?:trac|circl|rubb?|press|tapp?|brush|glid|ghost|swirl)\\w*\\s+(?:\\w+\\s+){0,2}?{B:poss}\\s+(?:[\\w-]+\\s+)?(?:hole|entrance|rim|opening|pucker|asshole|ass|cheeks)\\b|(?:slid|slip|glid|trail|travel|mov)\\w*\\s+(?:down\\s+)?between\\s+[\\w’'-]+\\s+(?:legs|thighs|cheeks)\\s+(?:to|and finds?|finding)\\s+{B:poss}\\s+(?:[\\w-]+\\s+)?(?:hole|entrance|rim|opening|pucker|asshole|ass|cheeks)\\b)`,
   },
   {
     // "Derek finds that spot deep inside him", "angled for the bundle of nerves inside Stiles"
@@ -1232,7 +1287,7 @@ export const PATTERNS: PatternDef[] = [
     subj: "t",
     weight: 0.8,
     needsCtx: true,
-    src: `\\b{T}\\s+{aux}(?:(?:\\w+ly|just|finally|then|again|easily|exactly)\\s+){0,2}?(?:find|found|hit|brush|nail|graz|nudg|strok|rubb?|press|massag|crook|curl|tap|circl|strik|drag|grind|ground|catch|caught|angl)\\w*\\s+(?:for\\s+)?(?:that|the|his|a)\\s+(?:[\\w-]+\\s+){0,2}?(?:spot|bundle of nerves|sweet spot)\\s+(?:deep\\s+)?(?:inside|within)\\s+(?:of\\s+)?{B}\\b`,
+    src: `\\b{T}\\s+{aux}(?:(?:\\w+ly|just|finally|then|again|easily|exactly)\\s+){0,2}?(?:find|found|hit|brush|nail|graz|nudg|strok|rubb?|press|massag|crook|curl|tap|circl|strik|drag|grind|ground|catch|caught|angl|batter|pummel|hammer|pound|slam|assault|ram|jab|bump|punch)\\w*\\s+(?:for\\s+)?(?:that|the|his|a)\\s+(?:[\\w-]+\\s+){0,2}?(?:spot|bundle of nerves|sweet spot)\\s+(?:deep\\s+)?(?:inside|within)\\s+(?:of\\s+)?{B}\\b`,
   },
   {
     // "Derek's fingers find his prostate", "his fingers crook against that spot inside Stiles"
@@ -1242,7 +1297,7 @@ export const PATTERNS: PatternDef[] = [
     subj: "t",
     weight: 0.8,
     needsCtx: true,
-    src: `\\b{T:poss}\\s+(?:[\\w-]+\\s+)?(?:fingers?|thumb|digits?)\\s+(?:\\w+ly\\s+)?(?:find|found|hit|brush|nail|graz|nudg|strok|rubb?|press|massag|crook|curl|tap|circl|strik|drag|grind|ground|catch|caught|angl)\\w*\\s+(?:\\w+\\s+){0,2}?(?:(?:{B:poss}|the|that)\\s+(?:[\\w-]+\\s+)?(?:prostate|spot|bundle of nerves)|(?:that|the)\\s+(?:[\\w-]+\\s+)?(?:spot|bundle of nerves)\\s+(?:deep\\s+)?inside\\s+(?:of\\s+)?{B}\\b)`,
+    src: `\\b{T:poss}\\s+(?:[\\w-]+\\s+)?(?:fingers?|thumb|digits?)\\s+(?:\\w+ly\\s+)?(?:find|found|hit|brush|nail|graz|nudg|strok|rubb?|press|massag|crook|curl|tap|circl|strik|drag|grind|ground|catch|caught|angl|batter|pummel|hammer|pound|slam|assault|ram|jab|bump|punch)\\w*\\s+(?:\\w+\\s+){0,2}?(?:(?:{B:poss}|the|that)\\s+(?:[\\w-]+\\s+)?(?:prostate|spot|bundle of nerves)|(?:that|the)\\s+(?:[\\w-]+\\s+)?(?:spot|bundle of nerves)\\s+(?:deep\\s+)?inside\\s+(?:of\\s+)?{B}\\b)`,
   },
   {
     // "Derek's cock drags over his prostate", "the head of his cock grinding against Stiles' prostate"
@@ -1252,7 +1307,7 @@ export const PATTERNS: PatternDef[] = [
     subj: "t",
     weight: 0.8,
     needsCtx: true,
-    src: `\\b{T:poss}\\s+(?:[\\w-]+\\s+)?(?:cock|dick|length|shaft|head)\\s+(?:\\w+ly\\s+)?(?:find|found|hit|brush|nail|graz|nudg|strok|rubb?|press|massag|crook|curl|tap|circl|strik|drag|grind|ground|catch|caught|angl)\\w*\\s+(?:(?:against|over|across|on|into)\\s+)?{B:poss}\\s+(?:[\\w-]+\\s+)?prostate`,
+    src: `\\b{T:poss}\\s+(?:[\\w-]+\\s+)?(?:cock|dick|length|shaft|head)\\s+(?:\\w+ly\\s+)?(?:find|found|hit|brush|nail|graz|nudg|strok|rubb?|press|massag|crook|curl|tap|circl|strik|drag|grind|ground|catch|caught|angl|batter|pummel|hammer|pound|slam|assault|ram|jab|bump|punch)\\w*\\s+(?:(?:against|over|across|on|into)\\s+)?{B:poss}\\s+(?:[\\w-]+\\s+)?prostate`,
   },
   {
     // "knows exactly where to press", a skilled hand inside someone
@@ -1265,6 +1320,76 @@ export const PATTERNS: PatternDef[] = [
     signal: { kind: "touch", actorRole: "top" },
     needs: /\b(?:hole|inside|fingers?|prostate|spot|thrust\w*|cock|dick)\b/i,
     src: `\\b{T}\\s+{aux}knows?\\s+exactly\\s+where\\s+to\\s+(?:press|touch|rub|hit|curl|crook|stroke|aim)`,
+  },
+  {
+    // "as he drives his dick in and out of him", "pumping his hips in and out of Stiles"
+    id: "drives-in-and-out",
+    cat: "anal",
+    act: "anal sex",
+    subj: "t",
+    weight: 0.9,
+    needsCtx: true,
+    src: `\\b{T}\\s+{aux}(?:drive|drives|drove|driving|pump|pumps|pumped|pumping|slam|slams|slammed|slamming|thrust|thrusts|thrusting|work|works|worked|working|move|moves|moved|moving)\\s+(?:his\\s+)?(?:[\\w-]+\\s+)?(?:cock|dick|length|hips)\\s+in\\s+and\\s+out\\s+of\\s+{B}\\b`,
+  },
+  {
+    // "Negan slides to the hilt, filling Carl up"
+    id: "slides-to-hilt-filling",
+    cat: "anal",
+    act: "anal sex",
+    subj: "t",
+    weight: 0.9,
+    needsCtx: true,
+    src: `\\b{T}\\s+{aux}(?:slides?|slid|sinks?|sank|pushes|pushed|bottoms?|buries|buried|sheathes?|sheathed)\\s+(?:in\\s+)?(?:all the way\\s+)?(?:to\\s+|up to\\s+)?(?:the\\s+)?(?:hilt|root),?\\s+(?:filling|stretching|stuffing|claiming|splitting|opening)\\s+{B}\\b`,
+  },
+  {
+    // "Negan gives him a couple of half-hearted thrusts"
+    id: "gives-thrusts",
+    cat: "anal",
+    act: "anal sex",
+    subj: "t",
+    weight: 0.7,
+    needsCtx: true,
+    src: `\\b{T}\\s+{aux}give(?:s|n)?\\s+{B}\\s+(?:a\\s+|some\\s+)?(?:couple of\\s+|few\\s+|handful of\\s+)?(?:[\\w-]+\\s+){0,2}?thrusts?\\b`,
+  },
+  {
+    // "Negan's thrusts stutter to a halt", "his thrusts grow sloppy"
+    id: "thrusts-falter",
+    cat: "anal",
+    act: "anal sex",
+    subj: "t",
+    weight: 0.6,
+    needsCtx: true,
+    src: `\\b{T:poss}\\s+(?:[\\w-]+\\s+)?thrusts?\\s+(?:stutter|falter|slow|stop|still|quicken|speed|stumble|grow|turn|become|lose|go|get)\\w*\\b`,
+  },
+  {
+    // "his rim stretches and Negan slides in", "Carl's rim gapes"
+    id: "rim-stretches-around",
+    cat: "anal",
+    act: "anal sex",
+    subj: "b",
+    weight: 0.5,
+    needsCtx: true,
+    src: `\\b{B:poss}\\s+(?:rim|hole|entrance)\\s+(?:gapes?|gaped|gaping|flutters?|clenches?|clenched|clenching)[,\\s]+(?:and\\s+)?(?:(?:clench|flutter)\\w*\\s+)?(?:around|at|on)\\s+(?:the\\s+)?(?:sudden\\s+)?(?:emptiness|nothing|air|absence)\\b`,
+  },
+  {
+    // "his entire body seizing around the hard length of Negan's dick"
+    id: "body-seizes-around-length",
+    cat: "anal",
+    act: "anal sex",
+    subj: "b",
+    weight: 0.8,
+    needsCtx: true,
+    src: `\\b{B:poss}\\s+(?:entire\\s+|whole\\s+)?(?:body|rim|hole|insides?|walls)\\s+(?:seiz|clench|clamp|tighten|flutter|spasm|squeez|grip|contract|pulse|throb)\\w*\\s+(?:around|on)\\s+(?:the\\s+)?(?:[\\w-]+\\s+){0,2}?(?:length|girth|shaft)\\s+of\\s+{T:penis}`,
+  },
+  {
+    // "Negan starts to move again, and Carl lets himself be used, a soft and pliant body for Negan to fuck into"
+    id: "moves-and-used",
+    cat: "anal",
+    act: "anal sex",
+    subj: "t",
+    weight: 0.8,
+    needsCtx: true,
+    src: `\\ba\\s+(?:[\\w-]+\\s+(?:and\\s+)?){0,2}body\\s+for\\s+{T}\\s+to\\s+(?:fuck|use|take|pound|breed)\\s+(?:into|and)?\\b`,
   },
   {
     // "Derek's warm tongue teases the pucker of his rim", "his tongue traces her entrance"
@@ -3767,6 +3892,8 @@ export const DIALOGUE: DialogueDef[] = [
   { cat: "anal", act: "anal sex", role: "bottom", kind: "said", weight: 0.9, re: /(?:^|[.!?,]\s*|please,?\s+)knot me\b|\b(?:want|need|give me|take|put|begging for|beg for|ready for)\s+(?:your|that|his)\s+knot\b|\byour knot (?:in|inside) me\b/ },
   { cat: "anal", act: "anal sex", role: "top", kind: "said", weight: 0.9, re: /\b(?:i(?:'ll| will|'m going to| want to| wanna)?\s+)?(?:knot|breed)\s+you\b|\b(?:around|on|stuck on|hanging off|wrapped around|taking|take|taken) my knot\b|\bmy knot(?:['’]s| is)?\s+(?:still\s+)?(?:coming\s+)?(?:in|inside|locked)\b/ },
   { cat: "anal", act: "anal sex", role: "top", kind: "said", weight: 0.5, re: /\b(?:work|put|slide|push|sink|bury)\s+my\s+knot\s+(?:in|inside|into)\s+(?:of\s+)?you\b/ },
+  { cat: "anal", act: "anal sex", role: "top", kind: "said", weight: 0.7, re: /\b(?:make yourself )?come on my (?:cock|dick)\b|\b(?:should|needs? to|gotta|has to) be fed (?:dick|cock)\b|\b(?:hole|ass)\b[^.!?]{0,40}\b(?:crying|leaking|dripping|full of|messy with)\s+my\s+(?:come|cum)\b/i },
+  { cat: "anal", act: "anal sex", role: "top", kind: "said", weight: 0.5, re: /\bget(?:ting)? you (?:fuckin['’g]*\s+)?pregnant\b|\bbreed(?:ing)? you\b/i },
   { cat: "oral", act: "blowjob", role: "top", kind: "said", weight: 0.9, re: /\b(?:clean|polish|lick|worship|suck)\s+(?:up\s+)?my\s+(?:cock|dick|knot)\b/ },
   { cat: "anal", act: "anal sex", role: "top", kind: "said", weight: 0.8, re: /\byou(?:'re| are| feel| felt| were)\s+(?:so\s+|fucking\s+|still\s+|always\s+|perfect\s+and\s+)*tight\b|\byou feel (?:so )?(?:good|amazing|perfect|incredible|fucking good)? ?around me\b|\b(?:clench|squeez|tighten)\w* (?:around|on) me\b|(?<!\b(?:i|i'll|i’ll|i will|i'd|i’d|we|we'll|we’ll|i can|i could|i'd rather|i’d rather|i guess i'll|i guess i’ll|can|could|will|would|to|gonna|can't|can’t)\s+)\btake (?:it(?=\s*(?:[,.!?]|$|\s+(?:all|deep|like|for me|baby|sweetheart|good|so well)\b))|my (?:cock|dick|knot)\b)/ },
   { cat: "anal", act: "anal sex", role: "bottom", kind: "said", weight: 0.8, re: /\byou(?:'re| are| feel| felt)\s+(?:so\s+|fucking\s+)*(?:big|huge|deep|thick)\b|\b(?:i'm|i’m|i am|i feel|feel|feels|i'm just)\s+so (?:full|deep)\b|^\W*so (?:full|deep)\b|\bso full of (?:you|your)\b|\bstretch(?:ing)? me\b|\b(?:need|want|crave)\s+(?:your|that)\s+(?:cock|dick|knot)\b(?!\s+in my mouth)/ },

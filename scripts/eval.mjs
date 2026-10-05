@@ -1,12 +1,14 @@
 #!/usr/bin/env node
 // Run the sample-fic evaluation in parallel and merge the results.
-//   npm run eval -- [dir=ao3-samples] [--jobs N] [--force] [--only name,name]
+//   npm run eval -- [dir=ao3-samples] [--jobs N] [--force] [--quick] [--only name,name]
+// Results are kept per engine version (<dir>/.eval/<version>/), so going back to a version already run (a baseline) costs nothing.
+// --quick skips the "blind" pass (no tags) and runs only the tagged one: about half the time, for a fast before/after check.
 // Splits the fics into N shards (longest first, by the time they took last run, else file size) and runs one vitest process
 // per shard. A fic is skipped when its result file was made by the same engine source and the same fic file (--force to
 // redo). Writes <dir>/REPORT.md (same text as before) and <dir>/eval.json (structured, for scripts/eval-compare.mjs).
 import { spawn } from "node:child_process";
 import { createHash } from "node:crypto";
-import { existsSync, mkdirSync, readFileSync, readdirSync, statSync, rmSync } from "node:fs";
+import { existsSync, mkdirSync, readFileSync, readdirSync, statSync, rmSync, writeFileSync } from "node:fs";
 import { cpus } from "node:os";
 import { join, resolve } from "node:path";
 import { mergeEval, readResults } from "./eval-merge.mjs";
@@ -24,8 +26,17 @@ const sha = (b) => createHash("sha1").update(b).digest("hex").slice(0, 16);
 const walk = (d) => readdirSync(d, { withFileTypes: true }).flatMap((e) => (e.isDirectory() ? walk(join(d, e.name)) : e.name.endsWith(".ts") ? [join(d, e.name)] : []));
 const engineKey = sha(walk("src").sort().map((f) => readFileSync(f)).reduce((h, b) => h + sha(b), ""));
 
-const outDir = join(dir, ".eval");
+const quick = flag("quick");
+const version = `${engineKey}${quick ? "-quick" : ""}`;
+const evalRoot = join(dir, ".eval");
+const outDir = join(evalRoot, version);
 mkdirSync(outDir, { recursive: true });
+// Old layout: one result file per fic straight in .eval. Drop those, and keep only the six most recent versions.
+if (existsSync(evalRoot)) {
+  for (const f of readdirSync(evalRoot)) if (f.endsWith(".json") && !f.startsWith("v-")) rmSync(join(evalRoot, f), { force: true });
+  const versions = readdirSync(evalRoot, { withFileTypes: true }).filter((e) => e.isDirectory()).map((e) => ({ n: e.name, t: statSync(join(evalRoot, e.name)).mtimeMs })).sort((a, b) => b.t - a.t);
+  for (const v of versions.slice(6)) { rmSync(join(evalRoot, v.n), { recursive: true, force: true }); rmSync(join(evalRoot, `v-${v.n}.json`), { force: true }); }
+}
 const files = readdirSync(dir).filter((f) => f.endsWith(".html")).map((f) => f.replace(/\.html$/, "")).filter((n) => !only || only.includes(n)).sort();
 const prev = new Map(readResults(outDir).map((r) => [r.file, r]));
 const keys = Object.fromEntries(files.map((n) => [n, `${engineKey}:${sha(readFileSync(join(dir, `${n}.html`)))}`]));
@@ -45,7 +56,7 @@ if (todo.length) {
   const run = (s, i) =>
     new Promise((ok) => {
       const p = spawn("npx", ["vitest", "run", "tests/ao3-eval.test.ts", "--reporter=dot"], {
-        env: { ...process.env, AO3_DIR: dir, EVAL_OUT: outDir, EVAL_FILES: s.names.join(","), EVAL_KEYS: JSON.stringify(keys) },
+        env: { ...process.env, AO3_DIR: dir, EVAL_OUT: outDir, EVAL_FILES: s.names.join(","), EVAL_KEYS: JSON.stringify(keys), ...(quick ? { EVAL_QUICK: "1" } : {}) },
         stdio: ["ignore", "pipe", "pipe"],
       });
       let log = "";
@@ -58,5 +69,7 @@ if (todo.length) {
   if (codes.some(Boolean)) { mergeEval(outDir, dir); process.exit(1); }
 }
 const results = mergeEval(outDir, dir);
+// The merged result for this engine version, kept so a later comparison can use it without running anything.
+writeFileSync(join(evalRoot, `v-${version}.json`), readFileSync(join(dir, "eval.json")));
 const slow = [...results].sort((a, b) => b.ms.blind + b.ms.tagged - (a.ms.blind + a.ms.tagged)).slice(0, 3);
 console.log(`wrote ${join(dir, "REPORT.md")} and eval.json (${results.length} fics). Slowest: ${slow.map((r) => `${r.file} ${((r.ms.blind + r.ms.tagged) / 1000).toFixed(0)}s`).join(", ")}`);

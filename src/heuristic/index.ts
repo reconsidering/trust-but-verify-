@@ -732,6 +732,19 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
     // '"…," he heard Cas' voice': the voice's owner said it.
     const heard = new RegExp(`^[,.!?—–\\s]*(?:[Hh]e|[Ss]he|[Tt]hey|I)\\s+(?:\\w+\\s+)?(?:heard|hears|recognized|recognised)\\s+((?:${NAMES}))(?:['’]s?)?\\s+(?:\\w+\\s+)?voice`).exec(after);
     if (heard) { attribExplicit = true; return cast.byAlias.get(heard[1]); }
+    // "Carl can hear how breathless he sounds, “I can see it”": what someone hears is the other person's voice.
+    const hearing = new RegExp(`(${NAMES})\\s+(?:can |could )?(?:hear|hears|heard)\\s+[^"“.!?]{0,60}[,:]\\s*["“‘]?\\s*$`).exec(before);
+    if (hearing) {
+      const listener = cast.byAlias.get(stripPoss(hearing[1]));
+      const talker = listener && ctx.partnerOf(listener);
+      if (talker) { attribExplicit = true; return talker; }
+    }
+    // "…but Negan still isn't done. “Little hole like yours…”", "Relentlessly, Negan keeps going, “I’d pull out…”": the named person carries on talking.
+    const carryOn = new RegExp(`(${NAMES})\\s+(?:still\\s+|just\\s+|already\\s+)?(?:isn['’]t done|isn['’]t finished|keeps going|keeps talking|continues|goes on|is (?:already )?speaking again|speaks again)[^"“]{0,30}$`).exec(before);
+    if (carryOn) {
+      const who = cast.byAlias.get(stripPoss(carryOn[1]));
+      if (who) { attribExplicit = true; return who; }
+    }
     const a1 = new RegExp(`^[,.!?—–\\s]*((?:${NAMES})|[Hh]e|[Ss]he|[Tt]hey|I)\\s+(?:\\w+ly\\s+)?(?:${SAY})\\b`).exec(after);
     if (a1) {
       attribExplicit = true;
@@ -1423,6 +1436,16 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
     if (pat.id.startsWith("pushed-in") && /\b(?:inside|into|in)$/i.test(matchText) && /^\s+(?:himself|herself|themselves)\b/i.test(sent.slice(m.index! + m[0].length))) return;
     // "Alex shudders and presses in harder" while kissing: not penetration.
     if (pat.id.startsWith("pushed-in") && /\bkiss/i.test(sent) && !ANAL_CTX.test(sent)) return;
+    // "the bright blue water was going to swallow them whole": something that isn't a person swallowing people up, not a blowjob.
+    if (pat.id.startsWith("swallowed-down") && /\b(?:water|waves?|sea|ocean|lake|river|pool|darkness|dark|night|shadows?|fog|mist|smoke|earth|ground|crowd|city|abyss|void|flames?|fire|storm|monster|beast|whale|snake|dragon|forest|woods|cave|mouth of)\b[^.!?]{0,50}$/i.test(sent.slice(0, m.index! + matchText.length))) return;
+    // "the tip of his digits grazing his prostate": his … his is most often the same person (a hand on himself), so it says nothing about a partner.
+    if (pat.id === "fingers-find-prostate" && /^(?:his|her|their)$/i.test(tTok ?? "") && /^(?:his|her|their|the|that)$/i.test(bTok ?? "") && !/\binside\s+(?:of\s+)?\w+\s*$/i.test(matchText)) return;
+    // "slipping in and out of his sleeves", "in and out of consciousness": moving through something that isn't a body.
+    if (pat.id.startsWith("pushed-in") && /^\s*(?:and|or)\s+out\s+of\s+(?:(?:his|her|their|my|your|the|an?|[\w'’]+['’]s)\s+)?(?:sleeves?|clothes|clothing|pockets?|jacket|shirt|sweater|hoodie|coat|shoes?|boots?|room|bed|house|car|truck|shadows?|memories|mind|thoughts|consciousness|sleep|focus|view|sight|traffic|town|lane)\b/i.test(after)) return;
+    // "He still presses his face down against Cas' shoulder": a face hidden in someone's neck or shoulder, not a head pushed toward a cock.
+    if (pat.id === "pushed-head-down" && (/^\s*(?:against|into|on|in)\s+(?:[\w'’]+\s+)?(?:shoulder|chest|neck|pillow|mattress|hands?|arms?|sleeve|collar|hair|back|steering|table|desk|wall)\b/i.test(after) || (/^(?:press|tug)/i.test(matchText.replace(/^\S+\s+/, "")) && /^(?:his|her|their)$/i.test(bTok ?? "") && !/\b(?:crotch|cock|dick|groin|lap|erection|bulge|length|prick|shaft|between)\b/i.test(sent)))) return;
+    // "How does he open himself up and expose Jack to something like this?": opening up emotionally, not fingering.
+    if (pat.id === "self-finger" && /\bopen\w*\s+(?:himself|herself|themselves|myself|yourself)\s+up\b/i.test(matchText) && (/\b(?:expose|vulnerab\w*|emotion\w*|feelings?|let\s+\w+\s+in|to\s+(?:something|someone|anyone|anything|hurt|pain))\b/i.test(sent) || /^\W*(?:how|why|what|can|could|would|should)\b[^.!]*\?\s*$/i.test(sent) || !ANAL_CTX.test(sent) && !FINGER_CTX.test(sent) && !/\b(?:lube\w*|hole|rim|ass|fingers?|slick\w*|stretch\w*|prep\w*)\b/i.test(sent))) return;
     // "swept his tongue inside of him" with a bare pronoun or name, while mouths are kissing: a kiss, not rimming.
     if (pat.id === "tongue-inside-him" && !/\b(?:ass|arse|hole|rim|crack|cheeks|entrance|pucker|cavity|opening)\b/i.test(matchText) &&
       /\b(?:mouths?|lips|kiss\w*|tongues?\s+(?:to|with)|suck\w*\s+on\s+[\w'’]+\s+tongue|against\s+(?:the|his|her)\s+\w+)\b/i.test(para)) return;
