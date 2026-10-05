@@ -1,0 +1,22 @@
+#!/bin/sh
+# Before a push that changes the engine (src/), run the full regression over the sample fics and stop if any verdict changed.
+#   Skipped when: src/ is unchanged against origin/main, there is no ao3-samples folder (they are local-only), or SKIP_REGRESS=1.
+#   A verdict change that is intended: review it, then push again with REGRESS_ACK=1.
+# Installed by `npm install` / `npm ci` (the "prepare" script points core.hooksPath here).
+[ "$SKIP_REGRESS" = "1" ] && exit 0
+[ -d ao3-samples ] || exit 0
+git rev-parse --verify -q origin/main >/dev/null || exit 0
+[ -z "$(git diff --name-only origin/main...HEAD -- src)" ] && exit 0
+echo "pre-push: src/ changed, running the full regression (npm run regress -- --full)…"
+out=$(npm run --silent regress -- --full --all 2>&1)
+status=$?
+echo "$out" | tail -25
+if [ $status -ne 0 ]; then
+  if [ "$REGRESS_ACK" = "1" ]; then
+    echo "pre-push: verdicts changed, pushing anyway because REGRESS_ACK=1."
+    exit 0
+  fi
+  echo "pre-push: a verdict changed on the sample fics (see above). If that is intended, push again with REGRESS_ACK=1; to skip the check, SKIP_REGRESS=1." >&2
+  exit 1
+fi
+exit 0
