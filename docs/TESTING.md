@@ -1,5 +1,7 @@
 # How a change is checked
 
+**New session?** The sample fics are not in the repository. Upload your `ao3-samples.zip` and run `npm run setup-fics -- <zip>` (unzips into `ao3-samples/` and reads every fic once, about 6 minutes, so later runs are cached).
+
 Two different questions, two different tools, and a fast loop for working on one fic. Where things live in the engine: `docs/ENGINE_MAP.md`.
 
 ## While you work on one fic — the fast loop (about 1–2 min)

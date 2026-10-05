@@ -14,7 +14,8 @@
     "check": "node scripts/check.mjs",
     "regen": "node scripts/regen.mjs",
     "trace": "node scripts/trace.mjs",
-    "dive": "node scripts/dive.mjs"
+    "dive": "node scripts/dive.mjs",
+    "setup-fics": "node scripts/setup-fics.mjs"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.131.0",
