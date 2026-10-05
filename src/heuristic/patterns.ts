@@ -1704,6 +1704,196 @@ export const PATTERNS: PatternDef[] = [
     src: `\\b{T}\\s+{aux}(?:squeez|stroke|strok|grip|fist|tease|massag|rub|cup|clamp|work|palm)\\w*\\s+(?:{B:poss}\\s+)?(?:[\\w-]+\\s+)?knot\\b|\\b{T:poss}\\s+hand\\s+(?:[\\w, -]{0,20}?)(?:along|around|on|over)\\s+{B:poss}\\s+(?:[\\w-]+\\s+)?knot\\b`,
   },
   {
+    // "Steve took Eddie back into his hand, pumping slowly", "took them both in hand"
+    id: "dd2-hj-took-in-hand",
+    cat: "vibe",
+    act: "handjob",
+    subj: "t",
+    weight: 0.8,
+    needsCtx: true,
+    signal: { kind: "handjob", actorRole: "top" },
+    src: `\\b{T}\\s+{aux}(?:took|take|takes|taking)\\s+(?:{B}|him|them(?:\\s+both)?)\\s+(?:back\\s+)?(?:in(?:to)?\\s+(?:his|her|their)?\\s*hands?)\\b`,
+  },
+  {
+    // "lazily stroking Steve inside his underwear", "feeling him through his jeans"
+    id: "dd2-hj-through-clothes",
+    cat: "vibe",
+    act: "handjob",
+    subj: "t",
+    weight: 0.7,
+    needsCtx: true,
+    signal: { kind: "handjob", actorRole: "top" },
+    src: `\\b{T}\\s+{aux}(?:continued\\s+)?(?:\\w+ly\\s+)?(?:strok|feel|fondl|palm|cupp?|grop|rubb?)\\w*\\s+{B}\\s+(?:inside|through|over|in)\\s+(?:his|her|their)\\s+(?:underwear|boxers|jeans|pants|briefs|trousers|shorts)\\b`,
+  },
+  {
+    // "Steve rubbed over his dick", "rubbed his thumb over Eddie's cock"
+    id: "dd2-hj-rubbed-over",
+    cat: "vibe",
+    act: "handjob",
+    subj: "t",
+    weight: 0.7,
+    needsCtx: true,
+    signal: { kind: "handjob", actorRole: "top" },
+    src: `\\b{T}\\s+{aux}(?:rubb?|stroked?|squeez|cupp?|palm)\\w*\\s+(?:over|against|at)\\s+{B:poss}\\s+(?:[\\w-]+\\s+)?(?:cock|dick|prick|erection|hard-?on)\\b`,
+  },
+  {
+    // "a hand to Dean's dick as he squeezed it"
+    id: "dd2-hj-hand-to-dick",
+    cat: "vibe",
+    act: "handjob",
+    subj: "t",
+    weight: 0.65,
+    needsCtx: true,
+    signal: { kind: "handjob", actorRole: "top" },
+    src: `\\b{T}\\s+{aux}[^.!?]{0,40}?\\bhand\\s+(?:to|on|at|around)\\s+{B:poss}\\s+(?:dick|cock|prick|length)\\b`,
+  },
+  {
+    // "his fist rolled over the head of Eddie's dick", "Cas's thumb rubbed over his slit"
+    id: "dd2-hj-thumb-over-head",
+    cat: "vibe",
+    act: "handjob",
+    subj: "t",
+    weight: 0.8,
+    needsCtx: true,
+    signal: { kind: "handjob", actorRole: "top" },
+    src: `\\b{T:poss}\\s+(?:fist|hand|thumb|fingers?|palm)\\s+(?:rolled|rubbed|swiped|circled|brushed|glided|slid|ran|traced|smeared|worked)\\s+(?:over|across|around|along)\\s+(?:the\\s+(?:head|tip|crown|slit)\\s+of\\s+{B:poss}\\s+(?:cock|dick|prick)|{B:poss}\\s+(?:slit|head|tip|crown|cock|dick|shaft))\\b`,
+  },
+  {
+    // "stroked him with a slick, lubed hand"
+    id: "dd2-hj-lubed-hand",
+    cat: "vibe",
+    act: "handjob",
+    subj: "t",
+    weight: 0.75,
+    needsCtx: true,
+    signal: { kind: "handjob", actorRole: "top" },
+    src: `\\b{T}\\s+{aux}(?:strok|jerk|pump|work)\\w*\\s+{B}\\s+with\\s+(?:a|an|his|her|one)\\s+(?:[\\w-]+,?\\s+){0,2}(?:slick|slippery|lubed|lubricated|greased|wet)(?:,?\\s+[\\w-]+)?\\s+hand\\b`,
+  },
+  {
+    // "suddenly rolling his hips against Eddie's ass"
+    id: "dd2-frot-rolled-hips",
+    cat: "vibe",
+    act: "frottage",
+    subj: "t",
+    weight: 0.7,
+    needsCtx: true,
+    signal: { kind: "handjob", actorRole: "top" },
+    src: `\\b{T}\\s+{aux}roll\\w*\\s+(?:his\\s+)?hips\\s+(?:up\\s+|forward\\s+)?(?:against|into)\\s+{B:poss}\\s+(?:ass|thigh|hip|hips|groin|crotch|lap|stomach)\\b`,
+  },
+  {
+    // "pressed his knee into Steve's groin", "slotted his leg in between Steve's"
+    id: "dd2-frot-knee-groin",
+    cat: "vibe",
+    act: "frottage",
+    subj: "t",
+    weight: 0.7,
+    needsCtx: true,
+    signal: { kind: "handjob", actorRole: "top" },
+    src: `\\b{T}\\s+{aux}(?:press|push|slot|slid|slide|shov|wedg|work|fit)\\w*\\s+(?:his\\s+)?(?:knee|thigh|leg)\\s+(?:in\\s+)?(?:between\\s+{B:poss}|into\\s+{B:poss}\\s+(?:groin|crotch|lap)|against\\s+{B:poss}\\s+(?:groin|crotch|cock|dick))`,
+  },
+  {
+    // "Cas's hips grinded down, his pants dragging against his erection"
+    id: "dd2-frot-hips-ground-down",
+    cat: "vibe",
+    act: "frottage",
+    subj: "t",
+    weight: 0.65,
+    needsCtx: true,
+    signal: { kind: "handjob", actorRole: "top" },
+    src: `\\b{T:poss}\\s+hips\\s+(?:ground|grinded|grind|rolled|pressed)\\s+down\\b`,
+  },
+  {
+    // "Cas's tongue was suddenly licking a stripe up his shaft"
+    id: "dd2-licks-stripe-shaft",
+    cat: "oral",
+    act: "blowjob",
+    subj: "b",
+    weight: 0.85,
+    needsCtx: true,
+    src: `\\b{B:poss}\\s+tongue\\s+(?:was\\s+)?(?:suddenly\\s+)?(?:lick|drag|trac|swip)\\w*\\s+(?:a\\s+)?(?:long\\s+|wet\\s+|slow\\s+)?(?:stripe|line|path)\\s+up\\s+{T:poss}\\s+(?:shaft|length|cock|dick)\\b`,
+  },
+  {
+    // "he had another man's cock in his mouth for the first time"
+    id: "dd2-cock-in-mouth",
+    cat: "oral",
+    act: "blowjob",
+    subj: "b",
+    weight: 0.85,
+    needsCtx: true,
+    src: `\\b{B}\\s+{aux}(?:had|has|have|got|felt)\\s+(?:another\\s+man['’]s\\s+|a\\s+|{T:poss}\\s+)(?:[\\w-]+\\s+){0,2}(?:cock|dick|prick)\\s+in\\s+(?:his|her)\\s+mouth\\b`,
+  },
+  {
+    // "Dracula made wet filthy sounds between Jack's legs"
+    id: "dd2-sounds-between-legs",
+    cat: "oral",
+    act: "blowjob",
+    subj: "b",
+    weight: 0.7,
+    needsCtx: true,
+    src: `\\b{B}\\s+{aux}made\\s+(?:[\\w-]+\\s+){1,3}sounds\\s+between\\s+{T:poss}\\s+(?:legs|thighs)\\b`,
+  },
+  {
+    // "Eddie's hand wrapped around Steve before taking him into his mouth"
+    id: "dd2-before-taking-into-mouth",
+    cat: "oral",
+    act: "blowjob",
+    subj: "b",
+    weight: 0.8,
+    needsCtx: true,
+    src: `\\b{B:poss}\\s+(?:hand|hands|lips|mouth)\\b[^.!?]{0,60}?\\bbefore\\s+tak(?:ing|es)\\s+{T}\\s+(?:all of him\\s+|all the way\\s+|deep\\s+)?(?:in|into)\\s+(?:his|her|their)\\s+mouth\\b`,
+  },
+  {
+    // "Eddie licking a long, slow strip up his length"
+    id: "dd2-licking-strip-up-length",
+    cat: "oral",
+    act: "blowjob",
+    subj: "b",
+    weight: 0.85,
+    needsCtx: true,
+    src: `\\b{B}\\s+{aux}lick\\w*\\s+(?:a\\s+)?(?:[\\w-]+,?\\s+){0,3}?(?:strip|stripe|line|path)\\s+up\\s+(?:{T:poss}|his|her)\\s+(?:length|shaft|cock|dick)\\b`,
+  },
+  {
+    // "his Dom shoved a finger into his ass", "inserted two fingers into his sub's hole", "add a second finger"
+    id: "dd2-finger-shoved-into",
+    cat: "anal",
+    act: "fingering",
+    subj: "t",
+    weight: 0.8,
+    needsCtx: true,
+    src: `\\b{T}\\s+{aux}(?:shov|insert|stick|add|sheath|bur(?:y|ied)|jam|thrust)\\w*\\s+(?:a\\s+|another\\s+|one\\s+|two\\s+|three\\s+|his\\s+)?(?:second\\s+|third\\s+|[\\w-]+\\s+){0,2}?fingers?\\b(?:\\s+(?:in|inside|into)\\s+{B:ass})?`,
+  },
+  {
+    // "Cas pulled out of him gently"
+    id: "dd2-pulled-out-of-him",
+    cat: "anal",
+    act: "anal sex",
+    subj: "t",
+    weight: 0.8,
+    needsCtx: true,
+    src: `\\b{T}\\s+{aux}(?:pull|slid|slip|withdr[ae]w|eas)\\w*\\s+(?:gently\\s+|slowly\\s+|carefully\\s+)?out\\s+of\\s+{B}\\b(?!['’]s\\s+(?:mouth|hand|hair|grip|arms?)|\\s+(?:mouth|hands?)\\b)`,
+  },
+  {
+    // "twitching and clenching around the huge cock moving inside of him"
+    id: "dd2-clenching-around-cock",
+    cat: "anal",
+    act: "anal sex",
+    subj: "b",
+    weight: 0.85,
+    needsCtx: true,
+    src: `\\b{B}\\s+{aux}(?:\\w+\\s+and\\s+)?clench\\w*\\s+around\\s+(?:the\\s+|his\\s+|{T:poss}\\s+)(?:[\\w-]+\\s+){0,2}(?:cock|prick|dick|knot)\\b`,
+  },
+  {
+    // "he reached down to take his cock in hand"
+    id: "dd2-mast-take-in-hand",
+    cat: "vibe",
+    act: "masturbation",
+    subj: "b",
+    weight: 0.7,
+    needsCtx: true,
+    signal: { kind: "masturbation", actorRole: "bottom" },
+    src: `\\b{B}\\s+{aux}(?:reached\\s+down\\s+)?(?:and\\s+|to\\s+)?(?:took|take|takes|wrapp?ed?\\s+a\\s+hand\\s+around)\\s+(?:his|her)\\s+(?:own\\s+)?(?:cock|dick|prick|length)(?:\\s+in(?:to)?\\s+(?:his|her)?\\s*hand)?\\b`,
+  },
+  {
     // "Derek's warm tongue teases the pucker of his rim", "his tongue traces her entrance"
     id: "tongue-teases-hole",
     cat: "oral",
@@ -4214,8 +4404,8 @@ export const DIALOGUE: DialogueDef[] = [
   { cat: "oral", act: "blowjob", role: "top", kind: "said", weight: 0.8, re: /\byour mouth (?:feels|is|was|felt) (?:so )?(?:good|amazing|perfect|incredible|hot|fucking good)\b|\b(?:suck|swallow) (?:it|harder|deeper)\b/ },
   // anal — compliments as signals: an ass suggests the speaker tops, a cock that they bottom
   { cat: "anal", act: "checking out an ass", role: "top", kind: "ogling", re: /\b(?:nice|great|fantastic|gorgeous|perfect|amazing|fine|hot|sexy|incredible|unreal|cute|pretty|tight|fucking) (?:little )?(?:ass|arse|butt|bum)\b|\byour (?:ass|arse|butt) (?:is|looks)\b/ },
-  { cat: "anal", act: "checking out a cock", role: "bottom", kind: "ogling", re: /(?<!\b(?:this|my|that|his|want|wanted|inside)\s(?:\w+\s)?)\b(?:nice|great|gorgeous|perfect|amazing|big|huge|thick|beautiful|pretty|fucking) (?:fucking )?(?:cock|dick)\b(?!\s+(?:inside|in|up|into|deep|down|in\s+you))|\byour (?:cock|dick) (?:is|looks|feels)\b/ },
-  { cat: "oral", act: "checking out a cock", role: "bottom", kind: "ogling", re: /(?<!\b(?:this|my|that|his|want|wanted|inside)\s(?:\w+\s)?)\b(?:nice|great|gorgeous|perfect|amazing|big|huge|thick|beautiful|pretty|fucking) (?:fucking )?(?:cock|dick)\b(?!\s+(?:inside|in|up|into|deep|down|in\s+you))|\byour (?:cock|dick) (?:is|looks|feels)\b/ },
+  { cat: "anal", act: "checking out a cock", role: "bottom", kind: "ogling", re: /(?<!\b(?:this|my|that|his|want|wanted|inside)\s(?:\w+\s)?)\b(?:nice|great|gorgeous|perfect|amazing|big|huge|thick|beautiful|pretty|fucking) (?:fucking )?(?:cock|dick)\b(?!\s+(?:inside|in|up|into|deep|down|in\s+you))|\byour (?:cock|dick) (?:is(?!\s+mine)|looks|feels)\b/ },
+  { cat: "oral", act: "checking out a cock", role: "bottom", kind: "ogling", re: /(?<!\b(?:this|my|that|his|want|wanted|inside)\s(?:\w+\s)?)\b(?:nice|great|gorgeous|perfect|amazing|big|huge|thick|beautiful|pretty|fucking) (?:fucking )?(?:cock|dick)\b(?!\s+(?:inside|in|up|into|deep|down|in\s+you))|\byour (?:cock|dick) (?:is(?!\s+mine)|looks|feels)\b/ },
   // oral — speaker top (getting sucked, or eating ass)
   // Offering your mouth to be used: bottom-coded whoever's cock it is (oral hints don't feed the vibe, so this is a vibe cue).
   { cat: "vibe", act: "asking to be fed a cock", role: "bottom", kind: "said", weight: 0.8, re: /\bfeed (?:it|that|your (?:cock|dick)) to me\b|\bfeed me (?:your|that) (?:cock|dick)\b|\b(?:fill|use) my (?:mouth|throat)\b|\bfuck my (?:mouth|throat|face)\b|\bput it in my mouth\b/ },
