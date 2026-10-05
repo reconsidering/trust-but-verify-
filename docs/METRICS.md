@@ -14,3 +14,8 @@ labels), so compare the *gap* between the two columns more than the absolute val
 ## Reading the Oct 5 row
 
 The drop from Oct 4 comes from the label mix, not from the model getting worse. The audit labels alone, on fics the model has not seen: log loss 0.212 → 0.189, AUC 0.569 → 0.719. The 318 weighted deep-dive labels are mostly the hard cases (61 wrong, 19%): the pattern record does worse than chance on them (AUC 0.40) and the context model does not help (log loss 0.585 → 0.599). Of the wrong hits, 19% fall among the 10% least-trusted by the pattern record and 23% with context (chance is 10%): the model nudges mistakes toward the front of the queue, but only a little.
+
+## Tried and dropped: surface features for wrong-person and hint mistakes (Oct 5)
+
+Seven extra features were recorded on every hit and scored on unseen fics: pronoun count in the sentence, a spoken line, distinct cast members nearby, the actor not named earlier in the paragraph, a same-gender pair, first-person words, and hint-vs-act. They did not help: log loss 0.2523 → 0.2519, AUC 0.612 → 0.618, wrong hits among the 10% least-trusted 23% → 22%, and nothing on the deep-dive labels (AUC 0.49 → 0.51). Surface wording around a hit does not tell the model that the *person* was resolved wrongly. The next thing to try is features from how the engine chose the person (elided subject, last subject, point of view, learned epithet, address book), which needs hooks inside the engine.
+
