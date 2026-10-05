@@ -732,6 +732,19 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
     // '"…," he heard Cas' voice': the voice's owner said it.
     const heard = new RegExp(`^[,.!?—–\\s]*(?:[Hh]e|[Ss]he|[Tt]hey|I)\\s+(?:\\w+\\s+)?(?:heard|hears|recognized|recognised)\\s+((?:${NAMES}))(?:['’]s?)?\\s+(?:\\w+\\s+)?voice`).exec(after);
     if (heard) { attribExplicit = true; return cast.byAlias.get(heard[1]); }
+    // "Carl can hear how breathless he sounds, “I can see it”": what someone hears is the other person's voice.
+    const hearing = new RegExp(`(${NAMES})\\s+(?:can |could )?(?:hear|hears|heard)\\s+[^"“.!?]{0,60}[,:]\\s*["“‘]?\\s*$`).exec(before);
+    if (hearing) {
+      const listener = cast.byAlias.get(stripPoss(hearing[1]));
+      const talker = listener && ctx.partnerOf(listener);
+      if (talker) { attribExplicit = true; return talker; }
+    }
+    // "…but Negan still isn't done. “Little hole like yours…”", "Relentlessly, Negan keeps going, “I’d pull out…”": the named person carries on talking.
+    const carryOn = new RegExp(`(${NAMES})\\s+(?:still\\s+|just\\s+|already\\s+)?(?:isn['’]t done|isn['’]t finished|keeps going|keeps talking|continues|goes on|is (?:already )?speaking again|speaks again)[^"“]{0,30}$`).exec(before);
+    if (carryOn) {
+      const who = cast.byAlias.get(stripPoss(carryOn[1]));
+      if (who) { attribExplicit = true; return who; }
+    }
     const a1 = new RegExp(`^[,.!?—–\\s]*((?:${NAMES})|[Hh]e|[Ss]he|[Tt]hey|I)\\s+(?:\\w+ly\\s+)?(?:${SAY})\\b`).exec(after);
     if (a1) {
       attribExplicit = true;
@@ -1425,6 +1438,8 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
     if (pat.id.startsWith("pushed-in") && /\bkiss/i.test(sent) && !ANAL_CTX.test(sent)) return;
     // "the bright blue water was going to swallow them whole": something that isn't a person swallowing people up, not a blowjob.
     if (pat.id.startsWith("swallowed-down") && /\b(?:water|waves?|sea|ocean|lake|river|pool|darkness|dark|night|shadows?|fog|mist|smoke|earth|ground|crowd|city|abyss|void|flames?|fire|storm|monster|beast|whale|snake|dragon|forest|woods|cave|mouth of)\b[^.!?]{0,50}$/i.test(sent.slice(0, m.index! + matchText.length))) return;
+    // "the tip of his digits grazing his prostate": his … his is most often the same person (a hand on himself), so it says nothing about a partner.
+    if (pat.id === "fingers-find-prostate" && /^(?:his|her|their)$/i.test(tTok ?? "") && /^(?:his|her|their|the|that)$/i.test(bTok ?? "") && !/\binside\s+(?:of\s+)?\w+\s*$/i.test(matchText)) return;
     // "swept his tongue inside of him" with a bare pronoun or name, while mouths are kissing: a kiss, not rimming.
     if (pat.id === "tongue-inside-him" && !/\b(?:ass|arse|hole|rim|crack|cheeks|entrance|pucker|cavity|opening)\b/i.test(matchText) &&
       /\b(?:mouths?|lips|kiss\w*|tongues?\s+(?:to|with)|suck\w*\s+on\s+[\w'’]+\s+tongue|against\s+(?:the|his|her)\s+\w+)\b/i.test(para)) return;
