@@ -43,3 +43,6 @@ When `--hits` shows a change you judge **correct**, record it so the next change
 Over time more of the diff becomes something `check` can answer by itself.
 
 Run `npm run regress -- --hits --all` before pushing a change to `src/`. The optional pre-push hook (`.githooks/pre-push`) does the same.
+
+## Is the context model getting better? — `docs/METRICS.md`
+`npm run regen` retrains the model and adds one row (held-out log loss and AUC, with and without the context, plus how many labelled hits) to `docs/METRICS.md`. Commit that file with `learned.ts` and `reliability.ts`. Rows are not added by the GitHub reliability workflow, which can't retrain the model.

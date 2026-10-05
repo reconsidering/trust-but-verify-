@@ -38,6 +38,7 @@ A small web app: drop in an AO3 download (PDF, EPUB, HTML, or TXT) and it tells 
 | Where things live in the code, and traps to avoid | [docs/ENGINE_MAP.md](docs/ENGINE_MAP.md) |
 | How a change is checked (`check`, `regress`, `dive`, `trace`, `regen`) | [docs/TESTING.md](docs/TESTING.md) |
 | What each kind of test evidence is (gold, right-set, reliability, context model, audit) | [docs/EVALUATION.md](docs/EVALUATION.md) |
+| How the context model's accuracy (log loss, AUC) has changed over time | [docs/METRICS.md](docs/METRICS.md) |
 
 ## Privacy and how it runs
 
