@@ -1894,6 +1894,198 @@ export const PATTERNS: PatternDef[] = [
     src: `\\b{B}\\s+{aux}(?:reached\\s+down\\s+)?(?:and\\s+|to\\s+)?(?:took|take|takes|wrapp?ed?\\s+a\\s+hand\\s+around)\\s+(?:his|her)\\s+(?:own\\s+)?(?:cock|dick|prick|length)(?:\\s+in(?:to)?\\s+(?:his|her)?\\s*hand)?\\b`,
   },
   {
+    // "licks a teasing circle around that fluttering rim", "flicks over his hole", "swirled his tongue over the rim"
+    id: "dd3-licks-at-hole",
+    cat: "oral",
+    act: "rimming",
+    subj: "t",
+    weight: 0.85,
+    needsCtx: true,
+    src: `\\b{T}\\s+{aux}(?:(?:lick|lap|kiss|nuzzl|tongu|suck|worship|mouth)\\w*|(?:flick|swirl|teas|circl|trac|press|drag|run|ran)\\w*\\s+(?:his|her|their)\\s+tongue)\\s+(?:(?!(?:as|while|and|then|but|rubs?|rubbing|fingers?|thumbs?|cocks?|plugs?)\\b)[\\w-]+\\s+){0,4}?(?:at|over|around|across|along|on|to)\\s+(?:{B:poss}|the|that|those|his|her|their)\\s+(?:[\\w-]+\\s+){0,3}?(?:hole|rim|pucker|furl|entrance|opening)\\b(?!\\s+of\\s+(?:the|a)\\s+(?:glass|cup|mug|bowl|bottle|jar|pot|bucket))`,
+  },
+  {
+    // "He licks the rim"
+    id: "dd3-licks-the-rim",
+    cat: "oral",
+    act: "rimming",
+    subj: "t",
+    weight: 0.85,
+    needsCtx: true,
+    src: `\\b{T}\\s+{aux}(?:lick|lap|kiss|suck|nuzzl|flick|swirl|worship)\\w*\\s+(?:the|that|those)\\s+(?:[\\w-]+\\s+){0,3}?(?:rim|pucker|furl)\\b(?!\\s+of\\b)`,
+  },
+  {
+    // "a warm tongue sweeps over his hole", "Castiel's tongue tries to pierce through his entrance", "his tongue moved to touch Dean's rim"
+    id: "dd3-tongue-sweeps-hole",
+    cat: "oral",
+    act: "rimming",
+    subj: "t",
+    weight: 0.85,
+    needsCtx: true,
+    src: `\\b{T:poss}\\s+(?:[\\w-]+\\s+){0,2}?tongue\\s+(?:\\w+ly\\s+)?(?:tries\\s+to\\s+|trying\\s+to\\s+|moves?\\s+to\\s+|moved\\s+to\\s+|begins?\\s+to\\s+|began\\s+to\\s+)?(?:sweep|pierc|touch|ghost|breach|dart|part|spear|stab|swipe|rake|stroke|penetrat|invad|enter|flick|lick|trac)\\w*\\s+(?:(?:through|over|across|at|into|inside|around)\\s+)?(?:{B:poss}|the|that|those|his|her|their)\\s+(?:[\\w-]+\\s+){0,3}?(?:hole|rim|pucker|furl|entrance|opening)\\b(?!\\s+of\\s+(?:the|a)\\s+(?:glass|cup|mug|bowl|bottle|jar|pot|bucket))`,
+  },
+  {
+    // "Cas penetrates his leaking hole with his tongue", "pleasing my hole with his mouth"
+    id: "dd3-penetrates-with-tongue",
+    cat: "oral",
+    act: "rimming",
+    subj: "t",
+    weight: 0.85,
+    needsCtx: true,
+    src: `\\b{T}\\s+{aux}(?:penetrat|breach|enter|invad|spear|pierc|pleas|worship|work|tease|lav|probe|explor|fuck|open|loosen|trac|circl|swirl|flick|lick|lap|stroke|rub|press|prod)\\w*\\s+(?:{B:poss}|the|that|those|his|her|their)\\s+(?:[\\w-]+\\s+){0,3}?(?:hole|rim|pucker|furl|entrance|opening)\\b(?!\\s+of\\s+(?:the|a)\\s+(?:glass|cup|mug|bowl|bottle|jar|pot|bucket))\\s+with\\s+(?:the\\s+tip\\s+of\\s+)?(?:his|her|their)\\s+(?:tongue|mouth)\\b`,
+  },
+  {
+    // "pressing his mouth back to Aerion's hole", "a kiss to the fluttering pink of Dean's rim"
+    id: "dd3-mouth-to-hole",
+    cat: "oral",
+    act: "rimming",
+    subj: "t",
+    weight: 0.8,
+    needsCtx: true,
+    src: `\\b{T}\\s+{aux}(?:press|put|plant|place|bring|lower|return)\\w*\\s+(?:(?:his|her|their)\\s+(?:mouth|lips|face)|(?:a|one|another|the)\\s+(?:[\\w-]+\\s+){0,2}?kiss)\\s+(?:back\\s+)?(?:to|on|against|onto|at)\\s+(?:the\\s+(?:[\\w-]+\\s+){0,3}?of\\s+)?(?:{B:poss}|the|that|those|his|her|their)\\s+(?:[\\w-]+\\s+){0,3}?(?:hole|rim|pucker|furl|entrance|opening)\\b(?!\\s+of\\s+(?:the|a)\\s+(?:glass|cup|mug|bowl|bottle|jar|pot|bucket))`,
+  },
+  {
+    // "licks between his cheeks"
+    id: "dd3-licks-between-cheeks",
+    cat: "oral",
+    act: "rimming",
+    subj: "t",
+    weight: 0.8,
+    needsCtx: true,
+    src: `\\b{T}\\s+{aux}(?:lick|lap|kiss|nuzzl|tongu|bur)\\w*\\s+(?:[\\w-]+\\s+){0,3}?between\\s+(?:{B:poss}|his|her|their)\\s+(?:ass\\s+)?cheeks\\b`,
+  },
+  {
+    // "It's Cas, licking at his hole like he wants nothing more"
+    id: "dd3-appositive-licking",
+    cat: "oral",
+    act: "rimming",
+    subj: "t",
+    weight: 0.8,
+    needsCtx: true,
+    src: `\\b{T},?\\s+(?:licking|lapping|sucking|kissing|tonguing|nuzzling|eating)\\s+(?:at\\s+|on\\s+)?(?:{B:poss}|the|that|those|his|her|their)\\s+(?:[\\w-]+\\s+){0,3}?(?:hole|rim|pucker|furl|entrance|opening)\\b(?!\\s+of\\s+(?:the|a)\\s+(?:glass|cup|mug|bowl|bottle|jar|pot|bucket))`,
+  },
+  {
+    // "as he redoubled his efforts, fucking his tongue slickly in and out"
+    id: "dd3-tongue-fucking-in-out",
+    cat: "oral",
+    act: "rimming",
+    subj: "t",
+    weight: 0.75,
+    needsCtx: true,
+    src: `\\b{T}\\s+{aux}[^.!?]{0,80}?,\\s+(?:fucking|thrusting|working|pumping)\\s+(?:his|her|their)\\s+tongue\\s+(?:\\w+ly\\s+)?in\\s+and\\s+out\\b`,
+  },
+  {
+    // "I got lost eating him out"
+    id: "dd3-lost-eating-out",
+    cat: "oral",
+    act: "rimming",
+    subj: "t",
+    weight: 0.8,
+    needsCtx: true,
+    src: `\\b{T}\\s+{aux}(?:got|get|gets|was|grew|were)\\s+lost\\s+(?:in\\s+)?eating\\s+(?:him|her|you|them)\\s+out\\b`,
+  },
+  {
+    // "his thrusts somehow get deeper", "the strength of Alex's thrusts"
+    id: "dd3-thrusts-deeper",
+    cat: "anal",
+    act: "anal sex",
+    subj: "t",
+    weight: 0.75,
+    needsCtx: true,
+    src: `\\b(?:{T:poss}\\s+thrusts?\\s+(?:somehow\\s+)?(?:get|got|grow|grew|become|became|deepen)\\w*\\s+(?:deeper|harder|faster|rougher|slower)|(?:the\\s+)?(?:strength|force|power|depth|rhythm)\\s+of\\s+{T:poss}\\s+thrusts)\\b(?!\\s+and\\s+(?:his|her|their)\\s+(?:fist|hand|hands))`,
+  },
+  {
+    // "he lets go into the depths of Henry's ass"
+    id: "dd3-lets-go-into-depths",
+    cat: "anal",
+    act: "anal sex",
+    subj: "t",
+    weight: 0.85,
+    needsCtx: true,
+    src: `\\b{T}\\s+{aux}(?:let|lets|letting)\\s+go\\s+(?:deep\\s+)?(?:in|into|inside)\\s+(?:the\\s+depths\\s+of\\s+)?{B:ass}`,
+  },
+  {
+    // "securely impaling Peter once more"
+    id: "dd3-impaling",
+    cat: "anal",
+    act: "anal sex",
+    subj: "t",
+    weight: 0.8,
+    needsCtx: true,
+    src: `\\b{T}\\s+{aux}[^.!?]{0,60}?\\bimpal\\w+\\s+{B}\\b(?!\\s+on\\s+(?:a|the)\\s+(?:sword|spear|stake|pole))`,
+  },
+  {
+    // "his own spend frothing at Peter's entrance"
+    id: "dd3-spend-at-entrance",
+    cat: "anal",
+    act: "anal sex",
+    subj: "t",
+    weight: 0.8,
+    needsCtx: true,
+    src: `\\b{T:poss}\\s+(?:own\\s+)?(?:spend|come|cum|seed)\\s+(?:\\w+\\s+)?(?:froth|leak|drip|ooz|spill|pool|seep|dribbl)\\w*\\s+(?:at|from|out of|down)\\s+{B:poss}\\s+(?:entrance|hole|rim)\\b`,
+  },
+  {
+    // "pressing with one finger and quickly slipping a second"
+    id: "dd3-slipping-second",
+    cat: "anal",
+    act: "fingering",
+    subj: "t",
+    weight: 0.75,
+    needsCtx: true,
+    src: `\\b{T}\\s+{aux}[^.!?]{0,100}?\\b(?:slipp|slid|add|push|work|press)\\w*\\s+(?:in\\s+)?(?:a|another|the)\\s+(?:second|third)(?:\\s+(?:one|finger))?\\b`,
+  },
+  {
+    // "he crooks the digit up towards Henry's navel"
+    id: "dd3-crooks-digit",
+    cat: "anal",
+    act: "fingering",
+    subj: "t",
+    weight: 0.75,
+    needsCtx: true,
+    src: `\\b{T}\\s+{aux}(?:crook|curl)\\w*\\s+(?:the|his|a)\\s+(?:digit|finger|fingers)\\s+up\\b`,
+  },
+  {
+    // "he strokes Alex in harmony with his heart"
+    id: "dd3-hj-strokes-in-time",
+    cat: "vibe",
+    act: "handjob",
+    subj: "t",
+    weight: 0.7,
+    needsCtx: true,
+    signal: { kind: "handjob", actorRole: "top" },
+    src: `\\b{T}\\s+{aux}strok\\w+\\s+{B}\\s+in\\s+(?:harmony|time|rhythm|tandem)\\b`,
+  },
+  {
+    // "fingers messily applying lube to his erection"
+    id: "dd3-hj-applying-lube",
+    cat: "vibe",
+    act: "handjob",
+    subj: "t",
+    weight: 0.75,
+    needsCtx: true,
+    signal: { kind: "handjob", actorRole: "top" },
+    src: `\\b{T:poss}\\s+fingers\\s+(?:are\\s+|were\\s+)?[^.!?]{0,40}?apply\\w*\\s+lube\\s+to\\s+{B:poss}\\s+(?:erection|cock|dick|length)\\b`,
+  },
+  {
+    // "dragging his tongue along the side of his prick"
+    id: "dd3-tongue-along-length",
+    cat: "oral",
+    act: "blowjob",
+    subj: "b",
+    weight: 0.85,
+    needsCtx: true,
+    src: `\\b{B}\\s+{aux}[^.!?]{0,50}?\\bdrag\\w*\\s+(?:his|her)\\s+tongue\\s+(?:and\\s+\\w+\\s+)?(?:along|up|over)\\s+(?:the\\s+(?:side|length)\\s+of\\s+)?{T:poss}\\s+(?:prick|cock|dick|shaft|length)\\b`,
+  },
+  {
+    // "using only his tongue and throat to bring Alex to orgasm"
+    id: "dd3-tongue-and-throat",
+    cat: "oral",
+    act: "blowjob",
+    subj: "b",
+    weight: 0.8,
+    needsCtx: true,
+    src: `\\b{B}\\s+{aux}[^.!?]{0,60}?using\\s+only\\s+(?:his|her)\\s+tongue\\s+and\\s+throat\\s+to\\s+bring\\s+{T}\\b`,
+  },
+  {
     // "Derek's warm tongue teases the pucker of his rim", "his tongue traces her entrance"
     id: "tongue-teases-hole",
     cat: "oral",
@@ -4383,6 +4575,7 @@ export const DIALOGUE: DialogueDef[] = [
   // anal — speaker top
   { cat: "anal", act: "anal sex", role: "top", kind: "said", re: new RegExp(`\\b${WANT}\\s+(?:to\\s+)?(?:fuck|breed|knot|be inside|be in|get inside|get in|peg|bend you over and fuck)\\s+you\\b(?!\\s+(?:up|over)\\b)`) },
   { cat: "anal", act: "anal sex", role: "top", kind: "said", re: /(?:^|[.!?,]\s*|please,?\s+|now,?\s+|c'mon,?\s+|come on,?\s+)ride me\b/ },
+  { cat: "anal", act: "anal sex", role: "top", kind: "said", re: /\b(?:i['’]d|i would|i['’]ll|i will|i['’]m gonna|i['’]m going to|gonna)\s+(?:come|cum)\s+(?:deep\s+)?inside\s+you\b/ },
   { cat: "anal", act: "anal sex", role: "top", kind: "said", weight: 0.8, re: /\b(?:i'd|i would|i'll|i will|i'm gonna|i want to|i wanna) (?:have|get|bend|put) you (?:on the bed |on your back |on your knees |on your stomach |right )?(?:bent over|on your knees|on your back|on your stomach|spread out|face-down|face down)\b/ },
   { cat: "anal", act: "anal sex", role: "top", kind: "said", re: /\b(?:if anyone(?:'s| is) (?:going to|gonna) bottom|whoever bottoms),? it(?:'s| is| will be|'ll be) you\b/ },
   { cat: "anal", act: "anal sex", role: "top", kind: "said", re: new RegExp(`\\b${WANT}\\s+(?:to\\s+)?(?:come|cum)\\s+(?:in(?:side)?)\\s+you\\b`) },

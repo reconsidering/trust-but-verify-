@@ -47,6 +47,10 @@ export const HYPO_WINDOW = /\b(?:unless|capable of|able to|would have|meant to|i
 /** "Yeah, maybe Dunk would stop his snide comments and stuff his mouth…": the whole sentence is a what-if. */
 /** Mouth words near a line of dialogue / in the line itself, and anal words that override the oral reading. */
 export const ORAL_NEAR_RE = /\b(?:mouth|throat|gag\w*|choke[sd]?|lips|tongue|suck\w*|swallow\w*|blow\w*|deepthroat\w*|skull)\b/i;
+/** Narration that is about oral sex, not just a kiss: sucking, swallowing, gagging, a blowjob, or a mouth/throat next to a cock. */
+export const ORAL_SCENE_RE = /\b(?:suck\w*|swallow\w*|gag\w*|choke[sd]?|deep-?throat\w*|blow\s?jobs?|blows?\s+(?:him|you|me|her)|(?:cock|dick|length|shaft|balls)\b[^.!?]{0,40}\b(?:mouth|lips|tongue|throat)|(?:mouth|lips|tongue|throat)\b[^.!?]{0,40}\b(?:cock|dick|length|shaft|balls))\b/i;
+/** A line that is about anal sex or a hole, so a surrounding oral scene must not turn it into an oral cue. */
+export const ANAL_LINE_RE = /\b(?:fuck(?:s|ed|ing)?\s+(?:you|me|him|her|them)|knot\w*|ass|arse|hole|cunt|pussy|inside|rid(?:e|ing)|thrust\w*|pound\w*|stretch\w*|breed\w*)\b/i;
 export const ORAL_LINE_RE = /\b(?:swallow\w*|suck\w*|throat|gag\w*|choke|mouth|lips|tongue|blow\w*)\b/i;
 export const ANAL_NEAR_RE = /\b(?:ass|arse|hole|asshole|inside him|inside me|inside you|prostate|rim|entrance|stretch\w*|lube[ds]?|slick\w*)\b/i;
 export const HYPO_SENT = /^\W*(?:[\w'’]+[,!]\s+)?(?:(?:will|would|could|should|can|shall)\s+(?:he|she|they)\b|maybe|mayhaps?|perhaps)\b[^.!?]*?\b(?:would|could|might|['’]d)\b/i;
