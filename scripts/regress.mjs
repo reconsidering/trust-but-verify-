@@ -1,11 +1,13 @@
 #!/usr/bin/env node
 // Did this change alter any verdict on the sample fics? One command instead of two eval runs and a compare.
-//   npm run regress -- [--base <git ref>] [--quick] [--jobs N] [dir=ao3-samples] [--all]
+//   npm run regress -- [--full] [--base <git ref>] [--quick] [--jobs N] [dir=ao3-samples] [--all]
+// Two tiers. The default is the fast set (every fic except the 10 slowest, which are about half the time; fics from reports kept in
+// tests/right-set are always in). Run --full, all fics, once before pushing.
 // The baseline is the git ref (default: HEAD when src/ has uncommitted changes, else origin/main) built in a throwaway worktree. Its results
 // are kept per engine version (<dir>/.eval/), so a baseline you have already run costs nothing; only the working tree is run each time.
 // --quick runs only the tagged pass (about half the time). Exit status 1 when a verdict changed.
 import { execFileSync, spawnSync } from "node:child_process";
-import { cpSync, existsSync, mkdtempSync, readFileSync, readdirSync, rmSync, symlinkSync } from "node:fs";
+import { cpSync, existsSync, mkdtempSync, readFileSync, readdirSync, rmSync, symlinkSync, writeFileSync } from "node:fs";
 import { createHash } from "node:crypto";
 import { tmpdir } from "node:os";
 import { join, resolve } from "node:path";
@@ -19,7 +21,25 @@ const git = (...a) => execFileSync("git", a, { encoding: "utf8" }).trim();
 const dirty = git("status", "--porcelain", "--", "src").length > 0;
 const base = opt("base") ?? (dirty ? "HEAD" : "origin/main");
 const sha = (b) => createHash("sha1").update(b).digest("hex").slice(0, 16);
-const evalArgs = (extra = []) => [dir, ...(quick ? ["--quick"] : []), ...(opt("jobs") ? ["--jobs", opt("jobs")] : []), ...extra];
+const full = flag("full");
+const FAST_SKIP = 10;
+// Fast set: all fics but the slowest ones (by the last recorded time, else file size), keeping any fic a right-set report came from.
+const names = readdirSync(dir).filter((f) => f.endsWith(".html")).map((f) => f.replace(/\.html$/, "")).sort();
+const timeOf = (() => {
+  const ms = new Map();
+  const evalRoot = join(dir, ".eval");
+  if (existsSync(evalRoot)) for (const f of readdirSync(evalRoot).filter((f) => f.startsWith("v-") && f.endsWith(".json"))) {
+    try { for (const r of JSON.parse(readFileSync(join(evalRoot, f), "utf8")).fics) ms.set(r.file, Math.max(ms.get(r.file) ?? 0, (r.ms?.tagged ?? 0) + (r.ms?.blind ?? 0))); } catch { /* skip a bad file */ }
+  }
+  return (n) => ms.get(n) ?? readFileSync(join(dir, `${n}.html`)).length / 100;
+})();
+const rightSlugs = existsSync("tests/right-set") ? readdirSync("tests/right-set").filter((f) => f.endsWith(".json")).map((f) => f.replace(/\.json$/, "")) : [];
+const fromReport = (n) => rightSlugs.some((r) => r === n || r.includes(n) || n.includes(r));
+const slowest = new Set([...names].sort((a, b) => timeOf(b) - timeOf(a)).slice(0, FAST_SKIP).filter((n) => !fromReport(n)));
+const fastSet = names.filter((n) => !slowest.has(n));
+const only = full ? undefined : fastSet;
+if (!full) console.log(`fast set: ${fastSet.length} of ${names.length} fics (left out: ${[...slowest].join(", ")}). Use --full before pushing.`);
+const evalArgs = (extra = []) => [dir, ...(quick ? ["--quick"] : []), ...(only ? ["--only", only.join(",")] : []), ...(opt("jobs") ? ["--jobs", opt("jobs")] : []), ...extra];
 
 // The engine version of the baseline, worked out the same way scripts/eval.mjs does it, from the files at that ref.
 const files = git("ls-tree", "-r", "--name-only", base, "--", "src").split("\n").filter((f) => f.endsWith(".ts")).sort();
@@ -52,5 +72,13 @@ run(process.cwd());
 const walk = (d) => readdirSync(d, { withFileTypes: true }).flatMap((e) => (e.isDirectory() ? walk(join(d, e.name)) : e.name.endsWith(".ts") ? [join(d, e.name)] : []));
 const nowKey = sha(walk("src").sort().map((f) => readFileSync(f)).reduce((h, b) => h + sha(b), ""));
 const nowJson = join(dir, ".eval", `v-${nowKey}${quick ? "-quick" : ""}.json`);
-const cmp = spawnSync("node", ["scripts/eval-compare.mjs", baseJson, nowJson, ...(flag("all") ? ["--all"] : [])], { stdio: "inherit" });
+// Results for other fics may sit in the same version folder from earlier runs: compare only the fics in this tier.
+const tierOnly = (path) => {
+  if (!only) return path;
+  const j = JSON.parse(readFileSync(path, "utf8"));
+  const out = join(mkdtempSync(join(tmpdir(), "regress-cmp-")), "eval.json");
+  writeFileSync(out, JSON.stringify({ ...j, fics: j.fics.filter((f) => only.includes(f.file)) }));
+  return out;
+};
+const cmp = spawnSync("node", ["scripts/eval-compare.mjs", tierOnly(baseJson), tierOnly(nowJson), ...(flag("all") ? ["--all"] : [])], { stdio: "inherit" });
 process.exit(cmp.status ?? 1);
