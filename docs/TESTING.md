@@ -1,6 +1,6 @@
 # How a change is checked
 
-Two different questions, two different tools, and a fast loop for working on one fic.
+Two different questions, two different tools, and a fast loop for working on one fic. Where things live in the engine: `docs/ENGINE_MAP.md`.
 
 ## While you work on one fic — the fast loop (about 1–2 min)
 - `npm run check -- --only belonging,werecompeer` runs the unit suite, the build, and the gold and right-set runs for just those fics (a part of a name is enough). Its gold totals are shown but not compared with the baseline.
@@ -11,9 +11,9 @@ Two different questions, two different tools, and a fast loop for working on one
 
 ## A deep dive on one fic — `npm run dive`
 Steps (everything goes to `ao3-samples/.dive/<fic>/`, local like the fics; details at the top of `scripts/dive.mjs`):
-1. `npm run dive -- pack <fic>` reads the fic with the base engine (`--base`, default `origin/main`) and writes the readings in chunks of 50 to judge, the sexual-looking paragraphs the engine missed, the numbered full text in ~1000-paragraph ranges, and `prompts.md` with a ready-made prompt for each chunk.
+1. `npm run dive -- pack <fic>` (remembers the base commit in `base.json`, so later steps compare against the same one) reads the fic with the base engine (`--base`, default `origin/main`) and writes the readings in chunks of 50 to judge, the sexual-looking paragraphs the engine missed, the numbered full text in ~1000-paragraph ranges, and `prompts.md` with a ready-made prompt for each chunk.
 2. Give each prompt to a subagent (in parallel). They write `A<n>-labels.json`, `B<n>-labels.json` and `inv<n>.json` into the same folder.
-3. Fix the engine; after each change `npm run dive -- eval <fic>` (about 40 s) prints precision before and after, right readings kept or lost, wrong ones gone or still there, new readings, recall on the missed paragraphs and on the inventoried scenes.
+3. Fix the engine; after each change `npm run dive -- eval <fic>` (about 40 s; `--full` lists every reading, the file `eval.md` always does) groups the wrong readings by pattern and prints precision before and after, right readings kept or lost, wrong ones gone or still there, new readings, recall on the missed paragraphs and on the inventoried scenes.
 4. `npm run dive -- import <fic>` adds the judged readings to `tests/right-set` at weight 0.9 (source `claude`; weak cues the owner has ruled on are left undecided), and `npm run dive -- gold <fic> --pairing "A/B" --top A --bottom B` writes `tests/gold/<fic>.json` from the inventories (only scenes the engine reports now: a regression guard, not a recall measure).
 5. Then the full `npm run check` and `npm run regress -- --hits --all` once, and a PR. Regenerate the generated files separately (below).
 
@@ -31,7 +31,7 @@ Steps (everything goes to `ao3-samples/.dive/<fic>/`, local like the fics; detai
 ## What else did it change? — `npm run regress` (all fics, about 4 min)
 - Compares the working tree with a baseline (HEAD when `src/` is dirty, else `origin/main`, or `--base <ref>`) over **all** the sample fics.
 - It finds changes nobody has labelled. It cannot say whether a change is right.
-- `--hits` lists every reading that appeared or disappeared, with the sentence. **Read those.** In the last six engine versions, 23 of 52 fics changed at least once and the changes are spread over many fics, so a subset (`--fast`) is not a safe check. A reduced corpus (only paragraphs near hits) found 44-73% of the real differences and invented others.
+- `--hits` prints a short summary per fic: how many readings disappeared, appeared, or moved to the other person, grouped by pattern, with up to 2 examples each. Every moved reading goes to `ao3-samples/.eval/regress-hits.txt` (`--hits-file` changes it); `--full` prints them all. **Read the summary, then open the file for any pattern you don't understand.** In the last six engine versions, 23 of 52 fics changed at least once and the changes are spread over many fics, so a subset (`--fast`) is not a safe check. A reduced corpus (only paragraphs near hits) found 44-73% of the real differences and invented others.
 - Results are kept per engine version (`ao3-samples/.eval/`), so the baseline runs once and an unchanged tree is free.
 
 ## Closing the loop

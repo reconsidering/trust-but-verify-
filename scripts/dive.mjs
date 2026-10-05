@@ -1,13 +1,13 @@
 #!/usr/bin/env node
 // A deep dive into one fic, as steps. Everything it writes goes to ao3-samples/.dive/<fic>/ (local only, like the fics themselves).
 //
-//   npm run dive -- pack <fic> [--base <git ref>]     read the fic with the BASE engine (default origin/main) and write what a labeller needs:
+//   npm run dive -- pack <fic> [--base <git ref>]     read the fic with the BASE engine (default origin/main; the commit is remembered in base.json so eval and import keep comparing against the engine the labels were made with) and write what a labeller needs:
 //        A<n>.md   the engine's readings in chunks of 50, to judge right / wrong / wrong_person / unsure
 //        B<n>.md   sexual-looking paragraphs the engine said nothing about, in chunks of 50, to say whether an act is there
 //        fulltext.txt + inv ranges   the whole fic by numbered paragraph, in ~1000-paragraph ranges, for an independent inventory of every scene
 //        prompts.md  a ready-made prompt for each chunk. Give each to a subagent; each writes A<n>-labels.json, B<n>-labels.json or inv<n>.json here.
-//   npm run dive -- eval <fic> [--base <git ref>]     merge the labels and compare the base engine with the working tree: wrong readings gone / still
-//        there, right readings kept / lost, new readings, recall on the paragraphs it missed, recall on the inventoried scenes. Writes eval.md.
+//   npm run dive -- eval <fic> [--base <git ref>] [--full]     merge the labels and compare the base engine with the working tree: wrong readings gone / still
+//        there, right readings kept / lost, new readings, recall on the paragraphs it missed, recall on the inventoried scenes. Prints the problems GROUPED BY PATTERN (biggest first) and writes every reading to eval.md; --full prints them all.
 //   npm run dive -- import <fic> [--weight 0.9]       add the judged readings to tests/right-set (weighted, source "claude"). Weak cues the owner has
 //        ruled on (a smack, arching, fingers in a mouth) are left undecided, not wrong; see WEAK_CUES.
 //   npm run dive -- gold <fic> --pairing "A/B" --top "A" --bottom "B" [--blowjob] [--note "…"]
@@ -35,7 +35,9 @@ if (!step || !fic || !["pack", "eval", "import", "gold"].includes(step)) {
 const samples = resolve(process.env.AO3_DIR ?? "ao3-samples");
 const out = join(samples, ".dive", fic);
 mkdirSync(out, { recursive: true });
-const base = opt("base", "origin/main");
+// The labels refer to the readings of the engine they were packed with, so after `pack` the base is pinned to that commit (base.json) and eval keeps using it.
+const pinned = existsSync(join(out, "base.json")) ? JSON.parse(readFileSync(join(out, "base.json"), "utf8")).sha : undefined;
+const base = opt("base", step === "pack" ? "origin/main" : pinned ?? "origin/main");
 const sha = (b) => createHash("sha1").update(b).digest("hex").slice(0, 12);
 
 // ── reading the fic with an engine ────────────────────────────────────────────────────────────────────────────────
@@ -83,6 +85,7 @@ const loadLabels = () => {
 // ── pack ──────────────────────────────────────────────────────────────────────────────────────────────────────────
 const STRONG = /\b(?:cock|dick|prick|erection|hard-?on|balls|hole|rim|entrance|ass|arse|prostate|thrust\w*|fuck\w*|knot\w*|lube\w*|slick\w*|condom|orgasm\w*|cum|come|came|coming|moan\w*|blowjob|suck\w*|swallow\w*|lick\w*|tongue|nipples?|naked|straddl\w*|ride|riding|grind\w*|stroke\w*|jerk\w*|spread|inside him|inside me|fingers?|bite|bit|scent|sweat\w*|gasp\w*|pant\w*)\b/gi;
 function doPack() {
+  writeFileSync(join(out, "base.json"), JSON.stringify({ ref: base, sha: execFileSync("git", ["rev-parse", base], { encoding: "utf8" }).trim() }));
   const d = baseReadings();
   const { paras, readings } = d;
   writeFileSync(join(out, "paras.json"), JSON.stringify(paras));
@@ -150,9 +153,27 @@ function doEval() {
   say(`labelled ${A.length} of ${old.length}: right ${c.right}, wrong ${c.wrong}, wrong person ${c.wrong_person}, unsure ${c.unsure}.`);
   say(`precision before: ${decided ? ((100 * c.right) / decided).toFixed(1) : "n/a"}% of the ${decided} decided readings`);
   say(`after: ${kept.length} right readings kept, ${lost.length} lost; ${gone.length} wrong ones gone, ${stay.length} still there → ${kept.length + stay.length ? ((100 * kept.length) / (kept.length + stay.length)).toFixed(1) : "n/a"}% (not counting ${now.filter((r) => !oldKeys.has(keyOf(r))).length} new readings nobody has judged)`);
-  say(`\nRIGHT READINGS LOST (a lost right reading is often the same cue moved to the right person; check):\n${lost.join("\n") || "none"}`);
-  say(`\nWRONG READINGS STILL THERE:\n${stay.join("\n") || "none"}`);
-  say(`\nNEW READINGS (not judged):\n${now.filter((r) => !oldKeys.has(keyOf(r))).map((r) => `${r.kind} ${r.card} ${whoOf(r)} ${r.via} :: ${clip(String(r.ev ?? ""), 90)}`).join("\n") || "none"}`);
+  // The same pattern and sentence now credited to someone else: a right reading that moved, not one that was lost.
+  const nowBySentence = new Map(now.map((r) => [`${String(r.via).replace(/~elided$/, "")}|${r.card}|${hashKey(r.ev ?? "")}`, r]));
+  const movedTo = (row) => nowBySentence.get(`${String(row.r.via).replace(/~elided$/, "")}|${row.r.card}|${hashKey(row.r.ev ?? "")}`);
+  const baseVia = (v) => String(v).replace(/~elided$/, "");
+  const grouped = (rows, extra = () => "") => {
+    const m = new Map();
+    for (const row of rows) m.set(baseVia(row.r.via), [...(m.get(baseVia(row.r.via)) ?? []), row]);
+    return [...m].sort((a, b) => b[1].length - a[1].length).map(([via, rs]) => `  ${via} ×${rs.length}: ${rs.slice(0, 6).map((x) => x.id).join(" ")}${rs.length > 6 ? " …" : ""} — ${rs[0].note.slice(0, 70)}${extra(rs)}`).join("\n");
+  };
+  const asRows = (xs) => xs.map((x) => { const m = /^R(\d+) (\S+) (.*?) :: (.*)$/.exec(x); const id = `R${m[1]}`; return { id, r: old[Number(m[1]) - 1], note: m[4], verdict: m[2] }; });
+  const lostRows = asRows(lost), stayRows = asRows(stay);
+  const reallyLost = lostRows.filter((x) => !movedTo(x)), movedRows = lostRows.filter((x) => movedTo(x));
+  say(`\nRIGHT READINGS LOST: ${reallyLost.length} (+ ${movedRows.length} that only moved to another person, usually fine)\n${reallyLost.length ? grouped(reallyLost) : "  none"}`);
+  say(`\nWRONG READINGS STILL THERE: ${stayRows.length}${stayRows.length ? " (by pattern, biggest first: fix the top ones first)" : ""}\n${stayRows.length ? grouped(stayRows) : "  none"}`);
+  const newOnes = now.filter((r) => !oldKeys.has(keyOf(r)));
+  const newBy = new Map();
+  for (const r of newOnes) newBy.set(baseVia(r.via), [...(newBy.get(baseVia(r.via)) ?? []), r]);
+  say(`\nNEW READINGS (not judged): ${newOnes.length}\n${[...newBy].sort((a, b) => b[1].length - a[1].length).map(([via, rs]) => `  ${via} ×${rs.length}: ${whoOf(rs[0])} :: ${clip(String(rs[0].ev ?? ""), 80)}`).join("\n") || "  none"}`);
+  // Everything, for reading when a group needs a closer look.
+  lines.push("\n--- every reading ---", ...lost.map((x) => `LOST ${x}`), ...stay.map((x) => `STILL WRONG ${x}`), ...newOnes.map((r) => `NEW ${r.kind} ${r.card} ${whoOf(r)} ${r.via} :: ${clip(String(r.ev ?? ""), 120)}`));
+  if (flag("full")) { console.log("\n--- every reading ---"); for (const x of lines.slice(lines.indexOf("--- every reading ---") + 1)) console.log(x); }
   // Recall on the paragraphs the engine said nothing about.
   if (B.length) {
     const idx = readJson("index.json").B, paraOf = new Map(idx.map((x) => [x.id, x.para]));
