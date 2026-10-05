@@ -1,12 +1,13 @@
 #!/usr/bin/env node
 // Did this change alter any verdict on the sample fics? One command instead of two eval runs and a compare.
-//   npm run regress -- [--base <git ref>] [--hits] [--all] [--quick] [--jobs N] [--fast] [dir=ao3-samples]
+//   npm run regress -- [--base <git ref>] [--hits] [--all] [--quick] [--jobs N] [--fast] [--only name,name] [dir=ao3-samples]
 // Compares the working tree with a baseline over ALL the sample fics. It finds unlabelled changes; it cannot say whether a change is right, so
 // read what moved (--hits lists each reading that appeared or disappeared) and, for ones you judge correct, add them to tests/gold.
 // Per-change checks that DO say right/wrong (units, gold labels, right-set) are `npm run check`.
 // --fast skips the 10 slowest fics: NOT a safe check (changes land in all kinds of fics, big ones included); only for a quick look.
 // The baseline is the git ref (default: HEAD when src/ has uncommitted changes, else origin/main) built in a throwaway worktree. Its results
 // are kept per engine version (<dir>/.eval/), so a baseline you have already run costs nothing; only the working tree is run each time.
+// --only name,name compares just those fics (exact file names): the fast loop while working on one fic; run the full thing before committing.
 // --quick runs only the tagged pass (about half the time). Exit status 1 when a verdict changed.
 import { execFileSync, spawnSync } from "node:child_process";
 import { cpSync, existsSync, mkdtempSync, readFileSync, readdirSync, rmSync, symlinkSync, writeFileSync } from "node:fs";
@@ -17,7 +18,7 @@ import { join, resolve } from "node:path";
 const args = process.argv.slice(2);
 const flag = (n) => args.includes(`--${n}`);
 const opt = (n) => { const i = args.indexOf(`--${n}`); return i >= 0 ? args[i + 1] : undefined; };
-const dir = resolve(args.filter((a, i) => !a.startsWith("--") && !(i > 0 && ["--base", "--jobs"].includes(args[i - 1])))[0] ?? "ao3-samples");
+const dir = resolve(args.filter((a, i) => !a.startsWith("--") && !(i > 0 && ["--base", "--jobs", "--only"].includes(args[i - 1])))[0] ?? "ao3-samples");
 const quick = flag("quick");
 const git = (...a) => execFileSync("git", a, { encoding: "utf8" }).trim();
 const dirty = git("status", "--porcelain", "--", "src").length > 0;
@@ -39,8 +40,10 @@ const rightSlugs = existsSync("tests/right-set") ? readdirSync("tests/right-set"
 const fromReport = (n) => rightSlugs.some((r) => r === n || r.includes(n) || n.includes(r));
 const slowest = new Set([...names].sort((a, b) => timeOf(b) - timeOf(a)).slice(0, FAST_SKIP).filter((n) => !fromReport(n)));
 const fastSet = names.filter((n) => !slowest.has(n));
-const only = full ? undefined : fastSet;
-if (!full) console.log(`FAST SET, NOT A SAFE CHECK: ${fastSet.length} of ${names.length} fics (left out: ${[...slowest].join(", ")}).`);
+const onlyArg = opt("only")?.split(",").filter(Boolean);
+const only = onlyArg ?? (full ? undefined : fastSet);
+if (onlyArg) { const bad = onlyArg.filter((n) => !names.includes(n)); if (bad.length) { console.error(`No such fic in ${dir}: ${bad.join(", ")}`); process.exit(2); } console.log(`ONLY ${onlyArg.join(", ")}: not a full check.`); }
+else if (!full) console.log(`FAST SET, NOT A SAFE CHECK: ${fastSet.length} of ${names.length} fics (left out: ${[...slowest].join(", ")}).`);
 const evalArgs = (extra = []) => [dir, ...(quick ? ["--quick"] : []), ...(only ? ["--only", only.join(",")] : []), ...(opt("jobs") ? ["--jobs", opt("jobs")] : []), ...extra];
 
 // The engine version of the baseline, worked out the same way scripts/eval.mjs does it, from the files at that ref.
@@ -53,7 +56,8 @@ const run = (cwd) => {
   if (r.status) { console.error("eval failed"); process.exit(r.status); }
 };
 
-if (existsSync(baseJson)) console.log(`baseline ${base} (engine ${baseKey.slice(0, 8)}): already run, reusing it`);
+const baseHasAll = existsSync(baseJson) && (!only || (() => { try { const have = new Set(JSON.parse(readFileSync(baseJson, "utf8")).fics.map((f) => f.file)); return only.every((n) => have.has(n)); } catch { return false; } })());
+if (baseHasAll) console.log(`baseline ${base} (engine ${baseKey.slice(0, 8)}): already run, reusing it`);
 else {
   console.log(`baseline ${base} (engine ${baseKey.slice(0, 8)}): running it in a temporary copy`);
   const tmp = mkdtempSync(join(tmpdir(), "regress-"));

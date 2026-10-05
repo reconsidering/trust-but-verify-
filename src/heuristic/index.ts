@@ -48,6 +48,8 @@ export interface PatternOptions {
   audit?: (hit: AuditHit) => void;
   /** Called once with what the engine worked from: its paragraphs, the point of view at each, and the texts it found (for the gold-label eval). */
   debug?: (d: { paras: string[]; pov: (string | undefined)[]; texts: { para: number; from?: string; to?: string }[] }) => void;
+  /** Called for every pattern match once the people in it have been worked out, before the guards run (for `npm run trace`): who the engine made top and bottom and what it was going on. */
+  trace?: (e: { para: number; via: string; match: string; sentence: string; tToken?: string; bToken?: string; top?: string; bottom?: string; basis?: string; elidedSubject?: string; clauseSubject?: string; lastSubject?: string; pov?: string }) => void;
   /** Called now and then with how far through the paragraphs the engine is (0 to 1), for a progress bar. */
   onProgress?: (fraction: number) => void;
 }
@@ -1420,6 +1422,7 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
     if (causative && !subjChar && nearSubj && !(pat.subj === "t" ? bTok : tTok)) subjChar = nearSubj;
     const resolved = asked ? { ...asked, basis: "pronoun" as Basis } : resolvePair(tTok, bTok, pat.subj, cast, ctx, subjChar, nearSubj);
     ctx.coSubjects.clear();
+    opts.trace?.({ para: pi, via: pat.id, match: m[0], sentence: original, tToken: tTok, bToken: bTok, top: resolved?.top?.name, bottom: resolved?.bottom?.name, basis: resolved?.basis, elidedSubject: subjChar?.name, clauseSubject: nearSubj?.name, lastSubject: ctx.lastSubject?.name, pov: ctx.povNow?.name });
     if (!resolved) { oneSided(pat, m, tTok, bTok, sent, original, pi); return; }
     {
       // "She" or "her" can't be a man (and "he"/"him" can't be a woman): the pronoun meant someone outside the pair.

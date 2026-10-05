@@ -1,0 +1,24 @@
+#!/usr/bin/env node
+// Regenerate the two files that are made from the labels: src/heuristic/reliability.ts (per-pattern precision) and src/heuristic/learned.ts
+// (the context model). Do it once after a batch of label or pattern PRs has merged, not inside every PR: the files change on every label import,
+// so PRs that carry them conflict with each other.
+//   npm run regen -- [--reliability-only] [dir=ao3-samples]
+// The model needs the local sample fics (ao3-samples) and takes about 9 minutes; the reliability table needs only tests/right-set (a few seconds).
+import { spawnSync } from "node:child_process";
+import { existsSync } from "node:fs";
+import { resolve } from "node:path";
+
+const args = process.argv.slice(2);
+const dir = resolve(args.filter((a) => !a.startsWith("--"))[0] ?? "ao3-samples");
+const run = (label, env, files) => {
+  console.log(`${label}…`);
+  const t0 = Date.now();
+  const r = spawnSync("npx", ["vitest", "run", ...files, "--no-isolate"], { stdio: "inherit", env: { ...process.env, ...env } });
+  if (r.status) { console.error(`${label} failed`); process.exit(r.status); }
+  console.log(`${label} done in ${Math.round((Date.now() - t0) / 1000)}s`);
+};
+run("reliability table", { WRITE_RELIABILITY: "1" }, ["tests/reliability.test.ts"]);
+if (args.includes("--reliability-only")) process.exit(0);
+if (!existsSync(dir)) { console.error(`No sample folder at ${dir}: the context model needs it (or pass --reliability-only).`); process.exit(2); }
+run("context model", { AO3_DIR: dir, WRITE_LEARNED: "1" }, ["tests/learn.test.ts"]);
+console.log("Regenerated. Run `npm run check`, then commit src/heuristic/reliability.ts and learned.ts on their own.");
