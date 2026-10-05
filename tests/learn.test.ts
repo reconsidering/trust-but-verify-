@@ -117,6 +117,15 @@ function solve(A: number[][], b: number[]): number[] {
 }
 
 const clampP = (p: number) => Math.min(0.995, Math.max(0.005, p));
+/** Optional per-row trust (a label made by an unverified pass counts for less); omitted = every row counts 1. */
+const W = (ws: number[] | undefined, i: number) => (ws ? ws[i] : 1);
+const wlogloss = (ps: number[], ys: number[], ws?: number[]) => { let s = 0, t = 0; for (let i = 0; i < ps.length; i++) { const w = W(ws, i); s -= w * (ys[i] ? Math.log(clampP(ps[i])) : Math.log(1 - clampP(ps[i]))); t += w; } return s / t; };
+const wbrier = (ps: number[], ys: number[], ws?: number[]) => { let s = 0, t = 0; for (let i = 0; i < ps.length; i++) { const w = W(ws, i); s += w * (ps[i] - ys[i]) ** 2; t += w; } return s / t; };
+function wauc(ps: number[], ys: number[], ws?: number[]): number {
+  let win = 0, tot = 0;
+  for (let i = 0; i < ps.length; i++) if (ys[i] === 1) for (let j = 0; j < ps.length; j++) if (ys[j] === 0) { const w = W(ws, i) * W(ws, j); tot += w; win += w * (ps[i] > ps[j] ? 1 : ps[i] === ps[j] ? 0.5 : 0); }
+  return tot ? win / tot : NaN;
+}
 const logloss = (ps: number[], ys: number[]) => -ps.reduce((s, p, i) => s + (ys[i] ? Math.log(clampP(p)) : Math.log(1 - clampP(p))), 0) / ps.length;
 const brier = (ps: number[], ys: number[]) => ps.reduce((s, p, i) => s + (p - ys[i]) ** 2, 0) / ps.length;
 function auc(ps: number[], ys: number[]): number {
@@ -172,9 +181,9 @@ describe.skipIf(!dir)("context model", () => {
     //  - at random (the original: hits from the same fic can sit on both sides, which flatters the model; kept so the history in docs/METRICS.md stays comparable);
     //  - by fic (every hit of a fic is held out together, so the score is for fics the model has not seen: the honest one).
     const K = 5, lambda = Number(process.env.LAMBDA ?? 8);
-    type Pred = { pb: number[]; pm: number[]; ys: number[]; src: string[] };
+    type Pred = { pb: number[]; pm: number[]; ys: number[]; src: string[]; ws: number[] };
     const cv = (fold: (r: Row) => number): Pred => {
-      const out: Pred = { pb: [], pm: [], ys: [], src: [] };
+      const out: Pred = { pb: [], pm: [], ys: [], src: [], ws: [] };
       const testOnly = process.env.LEARN_TEST_ON?.split(","); // a diagnostic: train on every row, score only rows from these sources
       for (let k = 0; k < K; k++) {
         const train = rows.filter((r) => fold(r) !== k), test = rows.filter((r) => fold(r) === k && (!testOnly || testOnly.includes(r.src ?? "audit")));
@@ -187,7 +196,7 @@ describe.skipIf(!dir)("context model", () => {
           const x = [logit(clampP(base)), ...r.f];
           let z = w[0];
           for (let i = 0; i < x.length; i++) z += w[i + 1] * x[i];
-          out.pb.push(base); out.pm.push(sig(z)); out.ys.push(r.y); out.src.push(r.src ?? "audit");
+          out.pb.push(base); out.pm.push(sig(z)); out.ys.push(r.y); out.src.push(r.src ?? "audit"); out.ws.push(r.wt ?? 1);
         }
       }
       return out;
@@ -195,11 +204,11 @@ describe.skipIf(!dir)("context model", () => {
     const rnd = cv((r) => hash(r.key) % K);
     const unseen = cv((r) => hash(r.fic ?? r.key) % K);
     const { pb, pm, ys } = rnd;
-    const row = (name: string, ps: number[], y: number[]) => `| ${name} | ${logloss(ps, y).toFixed(4)} | ${brier(ps, y).toFixed(4)} | ${auc(ps, y).toFixed(3)} |`;
+    const row = (name: string, ps: number[], y: number[], w?: number[]) => `| ${name} | ${wlogloss(ps, y, w).toFixed(4)} | ${wbrier(ps, y, w).toFixed(4)} | ${wauc(ps, y, w).toFixed(3)} |`;
     const rep = (name: string, ps: number[]) => row(name, ps, ys);
     lines.push(`Held-out (${K}-fold, ridge ${lambda}):`, "", "| | log loss | Brier | AUC |", "|---|---|---|---|", rep("pattern record only", pb), rep("pattern record + context", pm), "");
     // Fics the model has not seen, and the same split by where each label came from.
-    lines.push("Held-out by fic (every hit of a fic held out together; fics the model has not seen):", "", "| | log loss | Brier | AUC |", "|---|---|---|---|", row("unseen fics: pattern record only", unseen.pb, unseen.ys), row("unseen fics: pattern record + context", unseen.pm, unseen.ys), "");
+    lines.push("Held-out by fic (every hit of a fic held out together; fics the model has not seen):", "", "| | log loss | Brier | AUC |", "|---|---|---|---|", row("unseen fics: pattern record only", unseen.pb, unseen.ys, unseen.ws), row("unseen fics: pattern record + context", unseen.pm, unseen.ys, unseen.ws), "", "(The unseen-fics rows count each label by how far it is trusted: the owner's own marks 1, a Claude pass less. The random-split rows above count every label 1, as in earlier reports.)", "");
     lines.push("By label source (unseen fics):", "", "| source | hits (wrong) | log loss: record → +context | AUC: record → +context |", "|---|---|---|---|");
     for (const src of ["audit", "report", "weighted"]) {
       const ix = unseen.src.map((x, i) => (x === src ? i : -1)).filter((i) => i >= 0);
@@ -218,7 +227,7 @@ describe.skipIf(!dir)("context model", () => {
     };
     lines.push(`Wrong hits among the 10% least-trusted (unseen fics): ${(100 * caught(unseen.pb, unseen.ys)).toFixed(0)}% by the pattern record alone, ${(100 * caught(unseen.pm, unseen.ys)).toFixed(0)}% with context (10% would be chance).`, "");
     const better = logloss(pm, ys) < logloss(pb, ys) - 0.002 && auc(pm, ys) > auc(pb, ys);
-    if (logloss(unseen.pm, unseen.ys) >= logloss(unseen.pb, unseen.ys)) lines.push("WARNING: on fics the model has not seen, the context does not lower log loss.", "");
+    if (wlogloss(unseen.pm, unseen.ys, unseen.ws) >= wlogloss(unseen.pb, unseen.ys, unseen.ws)) lines.push("WARNING: on fics the model has not seen, the context does not lower log loss.", "");
 
     // Final model on everything.
     const precAll = precisions(rows);
