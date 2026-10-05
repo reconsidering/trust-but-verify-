@@ -173,7 +173,8 @@ describe.skipIf(!dir)("context model", () => {
     const fold = (r: Row) => hash(r.key) % K;
     const pb: number[] = [], pm: number[] = [], ys: number[] = [];
     for (let k = 0; k < K; k++) {
-      const train = rows.filter((r) => fold(r) !== k), test = rows.filter((r) => fold(r) === k);
+      const testOnly = process.env.LEARN_TEST_ON?.split(","); // a diagnostic: train on every row, score only rows from these sources
+      const train = rows.filter((r) => fold(r) !== k), test = rows.filter((r) => fold(r) === k && (!testOnly || testOnly.includes(r.src ?? "audit")));
       const prec = precisions(train);
       // Inside training, each row's own label is left out of its pattern's precision.
       const Xtr = train.map((r) => [logit(clampP(precisions(train, r)(r.id))), ...r.f]);
