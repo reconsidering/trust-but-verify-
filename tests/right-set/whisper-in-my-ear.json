@@ -165,7 +165,8 @@
    "source": "claude",
    "seen": [
     "2026-10-05"
-   ]
+   ],
+   "retired": "owner judged this right in the blind spot-check 2026-10-05"
   },
   {
    "kind": "scene",
@@ -181,7 +182,8 @@
    "source": "claude",
    "seen": [
     "2026-10-05"
-   ]
+   ],
+   "retired": "owner judged this right in the blind spot-check 2026-10-05"
   }
  ]
 }

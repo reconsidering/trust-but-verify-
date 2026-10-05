@@ -38,7 +38,8 @@
    },
    "seen": [
     "2026-10-05"
-   ]
+   ],
+   "retired": "owner judged this wrong in the blind spot-check 2026-10-05"
   },
   {
    "kind": "hint",
@@ -130,10 +131,9 @@
    "via": "pushed-in",
    "h": "bed29da3",
    "conf": 65,
-   "weight": 0.85,
-   "source": "claude",
+   "source": "owner",
    "marks": {
-    "right": 1,
+    "right": 2,
     "wrong": 0
    },
    "seen": [
@@ -254,7 +254,8 @@
    "source": "claude",
    "seen": [
     "2026-10-05"
-   ]
+   ],
+   "retired": "owner judged this right in the blind spot-check 2026-10-05"
   },
   {
    "kind": "hint",
@@ -272,7 +273,8 @@
    "source": "claude",
    "seen": [
     "2026-10-05"
-   ]
+   ],
+   "retired": "owner judged this right in the blind spot-check 2026-10-05"
   },
   {
    "kind": "solo",
@@ -302,6 +304,23 @@
    "gone": false,
    "weight": 0.3,
    "source": "claude",
+   "seen": [
+    "2026-10-05"
+   ],
+   "retired": "owner judged this right in the blind spot-check 2026-10-05"
+  },
+  {
+   "kind": "hint",
+   "card": "anal",
+   "pairing": "Castiel/Dean Winchester",
+   "who": "Dean Winchester",
+   "role": "bottom",
+   "wants": true,
+   "via": "thrust-back",
+   "h": "fa1c0819",
+   "conf": 37,
+   "misread": true,
+   "source": "owner",
    "seen": [
     "2026-10-05"
    ]

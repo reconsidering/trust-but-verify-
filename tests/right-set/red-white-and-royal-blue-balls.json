@@ -10,10 +10,9 @@
    "via": "sinks-to-floor",
    "h": "6d2d89b4",
    "conf": 22,
-   "weight": 0.85,
-   "source": "claude",
+   "source": "owner",
    "marks": {
-    "right": 1,
+    "right": 2,
     "wrong": 0
    },
    "seen": [
@@ -84,10 +83,9 @@
    "via": "swallowed-down",
    "h": "a7832583",
    "conf": 85,
-   "weight": 0.85,
-   "source": "claude",
+   "source": "owner",
    "marks": {
-    "right": 1,
+    "right": 2,
     "wrong": 0
    },
    "seen": [
@@ -223,7 +221,8 @@
    "source": "claude",
    "seen": [
     "2026-10-05"
-   ]
+   ],
+   "retired": "owner judged this right in the blind spot-check 2026-10-05"
   }
  ]
 }

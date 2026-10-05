@@ -90,10 +90,9 @@
    "via": "spread-legs",
    "h": "cc495053",
    "conf": 25,
-   "weight": 0.85,
-   "source": "claude",
+   "source": "owner",
    "marks": {
-    "right": 1,
+    "right": 2,
     "wrong": 0
    },
    "seen": [
@@ -250,10 +249,9 @@
    "via": "arch-back",
    "h": "74d87dc3",
    "conf": 23,
-   "weight": 0.85,
-   "source": "claude",
+   "source": "owner",
    "marks": {
-    "right": 1,
+    "right": 2,
     "wrong": 0
    },
    "seen": [
@@ -358,7 +356,8 @@
    },
    "seen": [
     "2026-10-05"
-   ]
+   ],
+   "retired": "owner judged this wrong in the blind spot-check 2026-10-05"
   },
   {
    "kind": "hint",
@@ -618,7 +617,8 @@
    },
    "seen": [
     "2026-10-05"
-   ]
+   ],
+   "retired": "owner judged this wrong in the blind spot-check 2026-10-05"
   },
   {
    "kind": "hint",
@@ -872,10 +872,9 @@
    "via": "dd-cock-between-lips",
    "h": "10a1e5ee",
    "conf": 95,
-   "weight": 0.85,
-   "source": "claude",
+   "source": "owner",
    "marks": {
-    "right": 1,
+    "right": 2,
     "wrong": 0
    },
    "seen": [
@@ -952,8 +951,7 @@
    "conf": 57,
    "misread": true,
    "gone": false,
-   "weight": 0.3,
-   "source": "claude",
+   "source": "owner",
    "seen": [
     "2026-10-05"
    ]
@@ -1028,7 +1026,8 @@
    "source": "claude",
    "seen": [
     "2026-10-05"
-   ]
+   ],
+   "retired": "owner judged this right in the blind spot-check 2026-10-05"
   },
   {
    "kind": "hint",
@@ -1094,7 +1093,8 @@
    "source": "claude",
    "seen": [
     "2026-10-05"
-   ]
+   ],
+   "retired": "owner judged this right in the blind spot-check 2026-10-05"
   },
   {
    "kind": "scene",
@@ -1144,7 +1144,8 @@
    "source": "claude",
    "seen": [
     "2026-10-05"
-   ]
+   ],
+   "retired": "owner judged this right in the blind spot-check 2026-10-05"
   },
   {
    "kind": "scene",
@@ -1156,8 +1157,7 @@
    "h": "c8af6673",
    "misread": true,
    "gone": false,
-   "weight": 0.3,
-   "source": "claude",
+   "source": "owner",
    "seen": [
     "2026-10-05"
    ]
@@ -1175,6 +1175,39 @@
    "gone": true,
    "weight": 0.3,
    "source": "claude",
+   "seen": [
+    "2026-10-05"
+   ],
+   "retired": "owner judged this right in the blind spot-check 2026-10-05"
+  },
+  {
+   "kind": "hint",
+   "card": "anal",
+   "pairing": "Steve Harrington/Eddie Munson",
+   "who": "Steve Harrington",
+   "role": "bottom",
+   "wants": true,
+   "via": "body-sore-ass",
+   "h": "85a9f79",
+   "conf": 35,
+   "misread": true,
+   "source": "owner",
+   "seen": [
+    "2026-10-05"
+   ]
+  },
+  {
+   "kind": "hint",
+   "card": "blowjob",
+   "pairing": "Steve Harrington/Eddie Munson",
+   "who": "Eddie Munson",
+   "role": "bottom",
+   "wants": true,
+   "via": "cum-in-throat",
+   "h": "25d18c96",
+   "conf": 22,
+   "misread": true,
+   "source": "owner",
    "seen": [
     "2026-10-05"
    ]
