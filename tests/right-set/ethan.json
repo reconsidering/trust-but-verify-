@@ -11,11 +11,12 @@
    "h": "b637d4cd",
    "conf": 60,
    "marks": {
-    "right": 1,
+    "right": 2,
     "wrong": 0
    },
    "seen": [
-    "2026-10-04"
+    "2026-10-04",
+    "2026-10-05"
    ]
   },
   {
@@ -28,11 +29,12 @@
    "h": "eee25546",
    "conf": 36,
    "marks": {
-    "right": 1,
+    "right": 2,
     "wrong": 0
    },
    "seen": [
-    "2026-10-04"
+    "2026-10-04",
+    "2026-10-05"
    ]
   },
   {
@@ -45,11 +47,12 @@
    "h": "68d2ab60",
    "conf": 78,
    "marks": {
-    "right": 1,
+    "right": 2,
     "wrong": 0
    },
    "seen": [
-    "2026-10-04"
+    "2026-10-04",
+    "2026-10-05"
    ]
   },
   {
@@ -62,11 +65,47 @@
    "h": "dce02b36",
    "conf": 75,
    "marks": {
+    "right": 2,
+    "wrong": 0
+   },
+   "seen": [
+    "2026-10-04",
+    "2026-10-05"
+   ]
+  },
+  {
+   "kind": "scene",
+   "card": "rimming",
+   "pairing": "Ethan Barnes/Hank",
+   "top": "Hank",
+   "bottom": "Ethan Barnes",
+   "via": "tongue-in-hole",
+   "h": "8d76ba4b",
+   "conf": 85,
+   "marks": {
     "right": 1,
     "wrong": 0
    },
    "seen": [
-    "2026-10-04"
+    "2026-10-05"
+   ]
+  },
+  {
+   "kind": "hint",
+   "card": "blowjob",
+   "pairing": "Ethan Barnes/Hank",
+   "who": "Ethan Barnes",
+   "role": "bottom",
+   "wants": true,
+   "via": "dialogue:blowjob",
+   "h": "82325409",
+   "conf": 78,
+   "marks": {
+    "right": 1,
+    "wrong": 0
+   },
+   "seen": [
+    "2026-10-05"
    ]
   }
  ],
@@ -102,7 +141,8 @@
    "misread": true,
    "seen": [
     "2026-10-04"
-   ]
+   ],
+   "retired": "courage buried deep inside him is a feeling, guarded in the deep-dive pass"
   }
  ]
 }

@@ -1549,6 +1549,8 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
       // "grinding himself down on Eddie's leg": rubbing on someone, not a solo act.
       if (/^mast-himself/.test(pat.id) && /\b(?:grind\w*|rutt?\w*|hump\w*|rubb?\w*|rock\w*)\s+himself\s+(?:down\s+)?(?:on|against|into|onto)\s+(?:\w+['’]s|him|her|his)\b/i.test(matchText + sent.slice((m.index ?? 0) + m[0].length, (m.index ?? 0) + m[0].length + 40))) return;
     }
+    // "if only Hank could find the courage, buried deep inside him": a feeling is what is buried, not a cock.
+    if (pat.elided && /^(?:push-into|pushed-in|inside|buried|lodged)/.test(pat.id) && /\b(?:courage|feelings?|fears?|desires?|love|hope|truth|doubts?|secrets?|pain|grief|guilt|anger|shame|memories|memory|resentment|longing|worry|worries|panic|regret|loneliness|joy|rage|ache|nerve|bravery|confidence|strength|part of (?:him|himself|her|herself))\b[\s,—–-]*$/i.test(sent.slice(0, m.index))) return;
     // "swept his tongue inside of him" with a bare pronoun or name, while mouths are kissing: a kiss, not rimming.
     if (pat.id === "tongue-inside-him" && !/\b(?:ass|arse|hole|rim|crack|cheeks|entrance|pucker|cavity|opening)\b/i.test(matchText) &&
       /\b(?:mouths?|lips|kiss\w*|tongues?\s+(?:to|with)|suck\w*\s+on\s+[\w'’]+\s+tongue|against\s+(?:the|his|her)\s+\w+)\b/i.test(para)) return;
