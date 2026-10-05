@@ -7,7 +7,7 @@
 import { existsSync, readFileSync, readdirSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { describe, expect, it } from "vitest";
-import { MISREAD_LABELS, type RightEntry, type RightSet, baseVia, hashKey, mergeReport, parseReport, slugOf, strengthOf } from "../scripts/right-set.mjs";
+import { MISREAD_LABELS, type RightEntry, type RightSet, allowedWeightedChanges, baseVia, hashKey, mergeReport, parseReport, slugOf, strengthOf, weightOf } from "../scripts/right-set.mjs";
 import { extractFromHtml } from "../src/extract";
 import { hashKey as pageHash, rightSetFile, slugOf as pageSlug } from "../src/rightset";
 import { FLAG_REASONS, type FlaggedScene, WRONG_REASONS } from "../src/report";
@@ -188,6 +188,66 @@ describe("right-set: wrong marks as negative examples for the context model", ()
   });
 });
 
+describe("right-set: labels from an unverified pass carry a weight", () => {
+  const rep = `## The work
+- Title: Made Up Story
+
+## Things I checked that look right (1)
+
+### 1. Alex Smith/Sam Jones · anal
+- Shown as: **Alex Smith** tops (top), **Sam Jones** bottoms (bottom) · anal sex
+- scene confidence 85%
+- Pattern: push-into
+- Sentence: “Alex pushed into Sam, groaning.”
+
+## Things I think are wrong (1)
+
+### 1. Alex Smith/Sam Jones · anal hint
+- Shown as: **Sam Jones** points toward top (touch) · anal sex
+- Pattern: thrust-back
+- Sentence: “Sam pushed back against the wall.”
+- What is wrong: Not a sex act, or not that kind of cue, at all
+
+## How well the confidence has matched so far
+`;
+  it("stores the weight and source, never calls such an entry strong (even at 85% confidence), and weights the negatives too", () => {
+    const set: Partial<RightSet> = {};
+    mergeReport(set, parseReport(rep), "2026-10-05", { weight: 0.9, source: "claude" });
+    expect(set.entries![0]).toMatchObject({ weight: 0.9, source: "claude" });
+    expect(set.negatives![0]).toMatchObject({ weight: 0.9, misread: true });
+    expect(weightOf(set.entries![0] as RightEntry)).toBe(0.9);
+    expect(strengthOf(set.entries![0] as RightEntry)).toBe("weighted");
+    expect(strengthOf({ ...(set.entries![0] as RightEntry), weight: undefined })).toBe("strong");
+  });
+  it("a second unverified pass adds nothing; the owner confirming makes the entry theirs, at full weight", () => {
+    const set: Partial<RightSet> = {};
+    mergeReport(set, parseReport(rep), "2026-10-05", { weight: 0.9, source: "claude" });
+    mergeReport(set, parseReport(rep), "2026-10-06", { weight: 0.9, source: "claude" });
+    expect(set.entries![0].marks.right).toBe(1);
+    mergeReport(set, parseReport(rep), "2026-10-07");
+    expect(set.entries![0].weight).toBeUndefined();
+    expect(set.entries![0].source).toBe("owner");
+    expect(strengthOf(set.entries![0] as RightEntry)).toBe("strong");
+  });
+  it("an unverified wrong mark cannot overturn something the owner marked right", () => {
+    const set: Partial<RightSet> = {};
+    mergeReport(set, parseReport(rep), "2026-10-05");
+    const flip = rep
+      .replace(/## Things I checked that look right \(1\)[\s\S]*?## Things I think are wrong \(1\)/, "## Things I think are wrong (1)")
+      .replace("Sam pushed back against the wall.", "Alex pushed into Sam, groaning.")
+      .replace("**Sam Jones** points toward top (touch) · anal sex", "**Alex Smith** tops (top), **Sam Jones** bottoms (bottom) · anal sex")
+      .replace("anal hint", "anal")
+      .replace("thrust-back", "push-into");
+    mergeReport(set, parseReport(flip), "2026-10-06", { weight: 0.9, source: "claude" });
+    expect(strengthOf(set.entries![0] as RightEntry)).not.toBe("disputed");
+  });
+  it("label noise sets how many unverified readings may change before a set fails", () => {
+    expect(allowedWeightedChanges(40, 0.9)).toBe(6);
+    expect(allowedWeightedChanges(40, 0.95)).toBe(4);
+    expect(allowedWeightedChanges(4, 0.9)).toBe(2);
+  });
+});
+
 describe("right-set: the page’s Save looks-right set button", () => {
   const f = (over: Partial<FlaggedScene>): FlaggedScene => ({ id: "x", kind: "scene", pairing: "Alex Smith/Sam Jones", card: "anal", top: "Alex Smith", bottom: "Sam Jones", act: "anal sex", pattern: "push-into~elided", evidence: "Alex pushed into Sam, groaning.", confidence: 0.9, reasons: [], note: "", ...over });
   it("keys sentences exactly as the importer does", () => {
@@ -246,6 +306,8 @@ describe.skipIf(!dir)("right-set: replay against the sample fics", () => {
       const pairingOf = (name: string): PairingResult | undefined => { const [x, y] = name.split("/"); return a.pairings.find((p) => p.pairing.toLowerCase().includes(first(x)) && p.pairing.toLowerCase().includes(first(y))); };
       const tally = { ok: 0, changed: 0, stale: 0, skipped: 0 };
       const lines: string[] = [];
+      // Readings from an unverified pass (weight below 1) are reported one by one but only fail the set in bulk, when more of them have changed than label noise explains.
+      const weighted = { seen: 0, changed: 0, trust: 0 };
       for (const e of set.entries) {
         const strength = strengthOf(e);
         if (strength === "disputed" || strength === "retired") { tally.skipped++; continue; }
@@ -268,12 +330,18 @@ describe.skipIf(!dir)("right-set: replay against the sample fics", () => {
           for (const i of p.solo?.instances ?? []) { if (hashKey(i.evidence) !== e.h) continue; seen = true; if (first(i.who) === first(e.who)) ok = true; }
         }
         if (!seen) { tally.stale++; lines.push(`- [not found again] ${e.kind} ${e.card} · ${e.who ?? `${e.top} / ${e.bottom}`} ${e.role ?? ""} · ${e.via} · hash ${e.h}`); }
-        else if (ok) tally.ok++;
+        else if (ok) { tally.ok++; if (strength === "weighted") { weighted.seen++; weighted.trust += weightOf(e); } }
         else {
           tally.changed++;
-          lines.push(`- [${strength}] ${e.kind} ${e.card} · ${e.who ?? `${e.top} / ${e.bottom}`} ${e.role ?? ""} · ${e.via} · hash ${e.h}`);
+          if (strength === "weighted") { weighted.seen++; weighted.changed++; weighted.trust += weightOf(e); }
+          lines.push(`- [${strength}${strength === "weighted" ? ` ${weightOf(e)}` : ""}] ${e.kind} ${e.card} · ${e.who ?? `${e.top} / ${e.bottom}`} ${e.role ?? ""} · ${e.via} · hash ${e.h}`);
           if (strength === "strong" || strict) failures.push(`${set.fic}: ${e.kind} ${e.card} ${e.via} (hash ${e.h})`);
         }
+      }
+      if (weighted.seen) {
+        const allowed = allowedWeightedChanges(weighted.seen, weighted.trust / weighted.seen);
+        if (weighted.changed > allowed) failures.push(`${set.fic}: ${weighted.changed} of ${weighted.seen} unverified readings changed (label noise explains up to ${allowed})`);
+        lines.push(`- unverified readings (weight ${(weighted.trust / weighted.seen).toFixed(2)}): ${weighted.changed} of ${weighted.seen} changed; up to ${allowed} allowed`);
       }
       report.push(`## ${set.title}`, `${tally.ok} unchanged, ${tally.changed} changed, ${tally.stale} not found again, ${tally.skipped} ignored (disputed or retired)`, "", ...lines, "");
     }

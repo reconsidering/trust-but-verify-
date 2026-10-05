@@ -95,7 +95,9 @@ const idOf = (e) => [e.kind, e.card, e.h, e.who ?? e.top ?? "", e.role ?? e.bott
 export { idOf };
 
 /** Fold a parsed report into a stored set (an object {fic, title, entries}). Returns counts. */
-export function mergeReport(set, parsed, date) {
+export function mergeReport(set, parsed, date, opts = {}) {
+  const weight = typeof opts.weight === "number" && opts.weight > 0 && opts.weight < 1 ? opts.weight : undefined;
+  const stamp = weight === undefined ? {} : { weight, source: opts.source ?? "unverified" };
   set.fic = parsed.slug;
   set.title = parsed.title;
   set.entries ??= [];
@@ -105,9 +107,13 @@ export function mergeReport(set, parsed, date) {
     const { side, ...rest } = it;
     const have = byId.get(idOf(rest));
     if (have) {
-      if (!(have.seen ?? []).includes(date)) { have.marks.right++; have.seen = [...(have.seen ?? []), date]; confirmed++; }
+      if (!(have.seen ?? []).includes(date)) {
+        // The owner confirming an entry that came from an unverified pass makes it theirs: full weight. Another unverified pass adds nothing.
+        if (weight === undefined) { delete have.weight; have.source = "owner"; have.marks.right++; confirmed++; }
+        have.seen = [...(have.seen ?? []), date];
+      }
     } else {
-      const e = { ...rest, marks: { right: 1, wrong: 0 }, seen: [date] };
+      const e = { ...rest, ...stamp, marks: { right: 1, wrong: 0 }, seen: [date] };
       set.entries.push(e); byId.set(idOf(e), e); added++;
     }
   }
@@ -117,7 +123,8 @@ export function mergeReport(set, parsed, date) {
   const same = (a, b) => a.h === b.h && a.card === b.card && baseVia(a.via) === baseVia(b.via) && who(a) === who(b);
   for (const it of parsed.wrong) {
     if (!it.misread) continue; // "counted twice" or "something else" does not say the reading itself is wrong
-    for (const e of set.entries) if (same(e, it) && !(e.disputedOn ?? []).includes(date)) { e.marks.wrong++; e.disputedOn = [...(e.disputedOn ?? []), date]; disputed++; }
+    // An unverified pass cannot overturn something the owner marked right.
+    for (const e of set.entries) if (same(e, it) && !(e.disputedOn ?? []).includes(date) && !(weight !== undefined && weightOf(e) === 1)) { e.marks.wrong++; e.disputedOn = [...(e.disputedOn ?? []), date]; disputed++; }
   }
   // Every reading reported wrong is kept (so a later right mark on it is caught); only those marked `misread` (the reasons say the reading itself
   // was off) teach the context model and the reliability table.
@@ -125,17 +132,27 @@ export function mergeReport(set, parsed, date) {
   const negIds = new Set(set.negatives.map(idOf));
   for (const it of parsed.wrong) {
     const { side, ...rest } = it;
-    if (!negIds.has(idOf(rest))) { set.negatives.push({ ...rest, seen: [date] }); negIds.add(idOf(rest)); }
+    if (!negIds.has(idOf(rest))) { set.negatives.push({ ...rest, ...stamp, seen: [date] }); negIds.add(idOf(rest)); }
   }
   // The other way round: a right mark on a reading already reported wrong keeps it disputed.
   for (const it of parsed.right) for (const e of set.entries) if (same(e, it) && (set.negatives ?? []).some((n) => n.misread && same(n, it)) && !(e.disputedOn ?? []).includes(date)) { e.marks.wrong++; e.disputedOn = [...(e.disputedOn ?? []), date]; }
   return { added, confirmed, disputed };
 }
 
-/** strong: enforced hard; single: reported only; disputed / retired: ignored. */
+/** strong: enforced hard; single: reported only; weighted: reported, and enforced only in bulk; disputed / retired: ignored. */
+/** How far a label can be trusted, 0-1. The owner's own marks are 1 (no field); an automated or second-hand pass stores a lower number, e.g. 0.9. */
+export const weightOf = (e) => (typeof e.weight === "number" && e.weight > 0 && e.weight < 1 ? e.weight : 1);
+
+/** How many unverified readings in one set may change before it counts as a regression: the label noise (1 minus their mean weight), plus 5 points of margin, never fewer than 2. */
+export function allowedWeightedChanges(n, meanWeight) {
+  return Math.max(2, Math.floor(n * (1 - meanWeight + 0.05) + 1e-9));
+}
+
 export function strengthOf(e) {
   if (e.retired) return "retired";
   if ((e.marks?.wrong ?? 0) > 0) return "disputed";
+  // A label that is not fully trusted never fails the check by itself (see tests/right-set.test.ts): it is reported, and counted in bulk.
+  if (weightOf(e) < 1) return "weighted";
   if ((e.marks?.right ?? 0) >= 2) return "strong";
   if (e.kind === "scene" && (e.conf ?? 0) >= 70) return "strong";
   return "single";
