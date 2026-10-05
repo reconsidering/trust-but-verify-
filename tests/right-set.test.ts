@@ -4,7 +4,7 @@
 // engine itself put at 70%+) fails the test when it changes; a "single" one is only listed in RIGHT_SET_REPORT.md; a disputed one (the same
 // sentence is also listed as wrong) or a retired one is skipped. RIGHT_SET_STRICT=1 fails on any change. Retire a reading you now disagree with:
 //   node scripts/import-right-set.mjs --retire <fic> <hash> why
-import { existsSync, readFileSync, readdirSync, writeFileSync } from "node:fs";
+import { existsSync, mkdirSync, readFileSync, readdirSync, renameSync, statSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { describe, expect, it } from "vitest";
 import { MISREAD_LABELS, type RightEntry, type RightSet, allowedWeightedChanges, baseVia, hashKey, mergeReport, parseReport, slugOf, strengthOf, weightOf } from "../scripts/right-set.mjs";
@@ -286,13 +286,24 @@ describe.skipIf(!dir)("right-set: replay against the sample fics", () => {
   it("keeps the readings you checked", () => {
     const files = existsSync(setDir) ? readdirSync(setDir).filter((f) => f.endsWith(".json")) : [];
     const bySlug = new Map<string, string>();
+    // Reading every fic's title through the DOM took a minute and gigabytes in each shard, so titles are cached by file size and date.
+    const titleFile = join(dir!, ".eval", "titles.json");
+    let titles: Record<string, string> = {};
+    try { titles = JSON.parse(readFileSync(titleFile, "utf8")); } catch { /* no cache yet */ }
+    let fresh = false;
     for (const f of readdirSync(dir!).filter((x) => x.endsWith(".html"))) {
       try {
         // A fic is found by its title, or by its file name when the download has no title ("ethan.html" for a book saved from a PDF).
-        const title = extractFromHtml(readFileSync(join(dir!, f), "utf8")).meta.title ?? "";
+        const st = statSync(join(dir!, f));
+        const key = `${f}:${st.size}:${Math.round(st.mtimeMs)}`;
+        if (!(key in titles)) { titles[key] = extractFromHtml(readFileSync(join(dir!, f), "utf8")).meta.title ?? ""; fresh = true; }
+        const title = titles[key];
         if (title) bySlug.set(slugOf(title), join(dir!, f));
         bySlug.set(slugOf(f.replace(/\.html$/, "")), join(dir!, f));
       } catch { /* not a fic */ }
+    }
+    if (fresh) {
+      try { mkdirSync(join(dir!, ".eval"), { recursive: true }); const tmp = `${titleFile}.${process.pid}`; writeFileSync(tmp, JSON.stringify(titles)); renameSync(tmp, titleFile); } catch { /* cache is optional */ }
     }
     const report: string[] = ["# Right-set report", ""];
     let failures: string[] = [];
