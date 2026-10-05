@@ -19,6 +19,8 @@ export interface ActHit {
   shaky?: string;
   /** The text around the sentence, so a reader (or Claude) can check the reading. */
   context?: string;
+  /** Both people were only pronouns ("he slips his cock inside of him"): which is which was a guess, so the work's firm scenes can settle it. */
+  pronouns?: boolean;
   /** The pattern that produced it (for the audit report). */
   via?: string;
   /** Context features (learned.ts), kept for the audit and the model's training. */

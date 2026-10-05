@@ -156,9 +156,10 @@ export class Ctx {
     if (last && ok(last) && this.sentMentions.some((m) => m.c === last)) return last;
     const inSentence = this.sentMentions.find((m) => m.at < this.cutoff && ok(m.c));
     if (inSentence) return inSentence.c;
-    // Mid-scene, "him" is whoever x was just having sex with, not whoever last spoke.
-    if (last && ok(last) && this.recent.slice(0, 6).includes(last)) return last;
     const paired = new Set(this.cast.pairings.filter((p) => p.includes(x)).map((p) => (p[0] === x ? p[1] : p[0])));
+    // Mid-scene, "him" is whoever x was just having sex with, not whoever last spoke. Not an untagged bystander (the pack's
+    // second, who fetches the balm), someone who is in none of the pairings, once x has partners: one stray reading of him as a partner must not stick.
+    if (last && ok(last) && this.recent.slice(0, 6).includes(last) && (!paired.size || paired.has(last) || this.cast.pairings.some((p) => p.includes(last)))) return last;
     const near = this.recent.slice(0, 6).filter(ok);
     return (
       near.find((c) => paired.has(c)) ??

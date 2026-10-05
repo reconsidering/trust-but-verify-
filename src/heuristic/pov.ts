@@ -137,9 +137,11 @@ export function detectPov(paras: string[], isChapterHead: (p: string) => boolean
     // Untagged close third on one character: every section that reports anyone's experience reports the same one's, and the
     // other of the pair never leads one. That is that character's point of view throughout.
     const ranked = [...pairChars].sort((a, b) => (led.get(b) ?? 0) - (led.get(a) ?? 0));
-    if (!autoLimited && clear >= 4 && ranked.length >= 2 && (led.get(ranked[0]) ?? 0) === clear && !(led.get(ranked[1]) ?? 0)) {
+    // Three clear sections are enough when the work as a whole is lopsided: twelve of one's felt moments against none of the other's.
+    if (!autoLimited && clear >= 3 && ranked.length >= 2 && (led.get(ranked[0]) ?? 0) === clear && !(led.get(ranked[1]) ?? 0)) {
       const all = paras.slice(0);
-      if (experience(ranked[1], all) * 4 <= experience(ranked[0], all)) autoSole = ranked[0];
+      const lead = experience(ranked[0], all);
+      if (experience(ranked[1], all) * 4 <= lead && (clear >= 4 || lead >= 10)) autoSole = ranked[0];
     }
   }
   const limited = alternating || autoLimited;
