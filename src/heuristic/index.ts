@@ -581,10 +581,16 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
             if (gateSeen[g] === 2) continue;
           }
           if (pat.needs && !pat.needs.test(sent)) continue;
+          // The same matches as sent.matchAll(pat.re), without a copy of the regex for each of the hundreds of patterns tried on each sentence; all are
+          // found before any is handled, as matchAll did, because handling a match can run other patterns.
           pat.re.lastIndex = 0;
-          for (const m of sent.matchAll(pat.re)) {
-            handleMatch(pat, m, sent, original, pi, fantasyPara, para);
+          let found: RegExpExecArray[] | undefined;
+          for (let m = pat.re.exec(sent); m; m = pat.re.exec(sent)) {
+            (found ??= []).push(m);
+            if (m[0] === "") pat.re.lastIndex += pat.re.unicode && /[\ud800-\udbff]/.test(sent[pat.re.lastIndex] ?? "") ? 2 : 1;
           }
+          pat.re.lastIndex = 0;
+          if (found) for (const m of found) handleMatch(pat, m, sent, original, pi, fantasyPara, para);
         }
       }
 

@@ -10,17 +10,19 @@
 // with --only (a part of a name is enough: --only belonging,werecompeer). Run the full check once before you commit.
 // The other half is `npm run regress`: it finds changes nobody has labelled, and you read what moved.
 import { spawn } from "node:child_process";
-import { existsSync, mkdirSync, readFileSync, readdirSync, writeFileSync } from "node:fs";
+import { existsSync, mkdirSync, readFileSync, readdirSync, statSync, writeFileSync } from "node:fs";
 import { cpus, totalmem } from "node:os";
 import { join, resolve } from "node:path";
 
 const args = process.argv.slice(2);
 const flag = (n) => args.includes(`--${n}`);
 const opt = (n) => { const i = args.indexOf(`--${n}`); return i >= 0 ? args[i + 1] : undefined; };
-const dir = resolve(args.filter((a, i) => !a.startsWith("--") && !(i > 0 && ["--jobs", "--only"].includes(args[i - 1])))[0] ?? "ao3-samples");
-// The longest fics take about 4 GB to read each, so the number of jobs is also capped by memory (one job per 6 GB); --jobs overrides it.
-const memJobs = Math.max(2, Math.floor(totalmem() / 2 ** 30 / 6) + 1);
+const dir = resolve(args.filter((a, i) => !a.startsWith("--") && !(i > 0 && ["--jobs", "--only", "--heap"].includes(args[i - 1])))[0] ?? "ao3-samples");
+// Reading even the longest fic takes about 1.3 GB (measured, scripts/profile.mjs), and a shard replays several fics one after another, so the
+// number of jobs is capped by memory at one per 3 GB (the unit suite counts as one); --jobs overrides it.
+const memJobs = Math.max(2, Math.floor(totalmem() / 2 ** 30 / 3));
 const jobs = Math.max(2, Number(opt("jobs") ?? Math.min(cpus().length, memJobs)));
+const heapMb = Number(opt("heap") ?? 3000); // per shard: makes V8 collect garbage between fics instead of growing to several GB
 const hasSamples = existsSync(dir);
 const outDir = join(dir, ".check");
 if (hasSamples) mkdirSync(outDir, { recursive: true });
@@ -41,25 +43,49 @@ const wanted = (n) => !onlyNames || onlyNames.some((o) => squash(n).includes(squ
 const quickMode = flag("quick") || !!onlyNames;
 const goldFics = existsSync("tests/gold") ? readdirSync("tests/gold").filter((f) => f.endsWith(".json")).map((f) => JSON.parse(readFileSync(join("tests/gold", f), "utf8")).fic).filter(wanted) : [];
 const sets = existsSync("tests/right-set") ? readdirSync("tests/right-set").filter((f) => f.endsWith(".json")).map((f) => f.replace(/\.json$/, "")).filter(wanted) : [];
-const shardCount = hasSamples && (!quickMode || goldFics.length + sets.length) ? Math.max(1, Math.min(jobs - 1, quickMode ? goldFics.length + sets.length : Infinity)) : 0;
-const shards = Array.from({ length: shardCount }, () => ({ gold: [], sets: [] }));
-goldFics.forEach((g, i) => shards[i % shardCount].gold.push(g));
-sets.forEach((s, i) => shards[(i + goldFics.length) % shardCount].sets.push(s));
+const shardCount = hasSamples && (!quickMode || goldFics.length + sets.length) ? Math.max(1, Math.min(jobs, quickMode ? goldFics.length + sets.length : Infinity)) : 0;
+const shards = Array.from({ length: shardCount }, () => ({ gold: [], sets: [], load: 0 }));
+// Biggest first onto the least-loaded shard; a fic's cost is its file size (a set is matched to its fic by name, else the median size).
+const sizes = hasSamples ? readdirSync(dir).filter((f) => f.endsWith(".html")).map((f) => [squash(f.replace(/\.html$/, "")), statSync(join(dir, f)).size]) : [];
+// Time is better than size when an earlier eval recorded it (<dir>/.eval/v-*.json).
+const recorded = new Map();
+const evalRoot = join(dir, ".eval");
+if (hasSamples && existsSync(evalRoot)) for (const f of readdirSync(evalRoot).filter((f) => f.startsWith("v-") && f.endsWith(".json"))) {
+  try { for (const r of JSON.parse(readFileSync(join(evalRoot, f), "utf8")).fics) recorded.set(squash(r.file), Math.max(recorded.get(squash(r.file)) ?? 0, (r.ms?.tagged ?? 0) * 1e4)); } catch { /* skip a bad file */ }
+}
+const median = sizes.map((x) => x[1]).sort((a, b) => a - b)[sizes.length >> 1] ?? 1;
+const costOf = (n) => recorded.get(squash(n)) ?? (sizes.find((x) => x[0] === squash(n)) ?? sizes.find((x) => x[0].includes(squash(n)) || squash(n).includes(x[0])))?.[1] ?? median;
+const ficOfSet = (slug) => { try { return JSON.parse(readFileSync(join("tests/right-set", `${slug}.json`), "utf8")).fic ?? slug; } catch { return slug; } };
+for (const j of [...goldFics.map((n) => ({ n, kind: "gold" })), ...sets.map((n) => ({ n, kind: "sets" }))].map((j) => ({ ...j, cost: costOf(j.kind === "sets" ? ficOfSet(j.n) : j.n) })).sort((a, b) => b.cost - a.cost)) {
+  const sh = shards.reduce((a, b) => (b.load < a.load ? b : a));
+  sh[j.kind].push(j.n);
+  sh.load += j.cost;
+}
 
 const tasks = [run("unit suite", "npx", ["vitest", "run", "--no-isolate", "--reporter=dot"], { AO3_DIR: "", PERF_BUDGET_MS: "30000" })];
+const shardTask = (s, i, heap) => run(`gold + right-set ${i + 1}/${shardCount}`, "npx", ["vitest", "run", "tests/gold-eval.test.ts", "tests/right-set.test.ts", "--reporter=dot", "--no-file-parallelism"], {
+  AO3_DIR: dir,
+  NODE_OPTIONS: `--max-old-space-size=${heap}`,
+  GOLD_ONLY: s.gold.join(",") || "none",
+  RIGHTSET_ONLY: s.sets.join(",") || "none",
+  GOLD_REPORT_FILE: join(outDir, `gold-${i}.md`),
+  GOLD_TOTALS_FILE: join(outDir, `gold-${i}.json`),
+  RIGHTSET_REPORT_FILE: join(outDir, `rightset-${i}.md`),
+});
 shards.forEach((s, i) => {
   if (!s.gold.length && !s.sets.length) return;
-  tasks.push(run(`gold + right-set ${i + 1}/${shardCount}`, "npx", ["vitest", "run", "tests/gold-eval.test.ts", "tests/right-set.test.ts", "--reporter=dot", "--no-file-parallelism"], {
-    AO3_DIR: dir,
-    GOLD_ONLY: s.gold.join(",") || "none",
-    RIGHTSET_ONLY: s.sets.join(",") || "none",
-    GOLD_REPORT_FILE: join(outDir, `gold-${i}.md`),
-    GOLD_TOTALS_FILE: join(outDir, `gold-${i}.json`),
-    RIGHTSET_REPORT_FILE: join(outDir, `rightset-${i}.md`),
-  }));
+  tasks.push(shardTask(s, i, heapMb));
 });
 const t0 = Date.now();
 const results = await Promise.all(tasks);
+// A shard that ran out of memory (not one whose test failed) is run again on its own with a bigger heap, once the others are done.
+for (let k = 0; k < results.length; k++) {
+  const m = /^gold \+ right-set (\d+)\//.exec(results[k].label);
+  if (m && results[k].code && /OOMErrorHandler|heap out of memory|SIGKILL|SIGABRT/.test(results[k].log)) {
+    console.log(`${results[k].label} ran out of memory; running it again alone with a bigger heap`);
+    results[k] = await shardTask(shards[Number(m[1]) - 1], Number(m[1]) - 1, 8000);
+  }
+}
 results.push(await run("build", "npm", ["run", "build"]));
 let failed = false;
 for (const r of results) {
