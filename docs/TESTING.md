@@ -1,6 +1,16 @@
 # How a change is checked
 
-Two different questions, two different tools.
+Two different questions, two different tools, and a fast loop for working on one fic.
+
+## While you work on one fic — the fast loop (about 1–2 min)
+- `npm run check -- --only belonging,werecompeer` runs the unit suite, the build, and the gold and right-set runs for just those fics (a part of a name is enough). Its gold totals are shown but not compared with the baseline.
+- `npm run regress -- --only belonging --hits` compares just that fic (exact file name) with the baseline.
+- `npm run trace -- <fic> "<pattern regex>" [fromPara] [toPara]` shows why a reading came out as it did: each match, who the engine first made top and bottom, the subjects it was going on (elided, clause, last, point of view), and which readings survived the guards. Use it instead of patching trace lines into a bundle.
+- The unit suite includes `tests/smoke.test.ts`: speed on long quotes and sentences, a woman in an M/F pair, the alpha/omega tag rule, and a shared term of address. They are the mistakes that used to cost a full regression run to find.
+- Run the full `check` and `regress` once before you commit, not after every fix.
+
+## Generated files — `npm run regen`
+`src/heuristic/reliability.ts` (per-pattern precision) and `learned.ts` (the context model) are made from the labels. They change on every label import, so PRs that carry them conflict with each other. **Do not regenerate them inside a label or fix PR.** The unit suite only *warns* when `reliability.ts` is behind the labels (`STRICT_GENERATED=1` makes it fail). After a batch of PRs has merged, run `npm run regen` (about 9 minutes; `--reliability-only` takes seconds), run `npm run check`, and commit the two files on their own.
 
 ## Is this change right? — `npm run check` (about 100 s, every change)
 - The unit suite (`--no-isolate`, so jsdom is built once per worker) and the build.

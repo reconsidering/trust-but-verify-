@@ -1,11 +1,13 @@
 #!/usr/bin/env node
 // The checks that say whether a change is RIGHT, run on every change.
-//   npm run check -- [--accept] [--jobs N] [dir=ao3-samples]
+//   npm run check -- [--accept] [--jobs N] [--quick] [--only name,name] [dir=ao3-samples]
 //   1. the unit suite and the build,
 //   2. the gold labels (tests/gold: hand-checked verdicts, scenes, point of view, text senders), scored against the last accepted totals,
 //   3. the right-set replay (the readings you marked right in mistake reports; a "strong" one that changed fails).
 // The gold and right-set runs are spread over the other cores, a few fics each. Without the sample fics (they are local only) only 1 runs.
 // --accept records this run's gold totals as the new baseline (after you have judged any drop to be a deliberate, correct change).
+// --quick is the fast inner loop while you work on one fic: the unit suite and the build, plus the gold and right-set runs only for the fics named
+// with --only (a part of a name is enough: --only belonging,werecompeer). Run the full check once before you commit.
 // The other half is `npm run regress`: it finds changes nobody has labelled, and you read what moved.
 import { spawn } from "node:child_process";
 import { existsSync, mkdirSync, readFileSync, readdirSync, writeFileSync } from "node:fs";
@@ -15,7 +17,7 @@ import { join, resolve } from "node:path";
 const args = process.argv.slice(2);
 const flag = (n) => args.includes(`--${n}`);
 const opt = (n) => { const i = args.indexOf(`--${n}`); return i >= 0 ? args[i + 1] : undefined; };
-const dir = resolve(args.filter((a, i) => !a.startsWith("--") && !(i > 0 && args[i - 1] === "--jobs"))[0] ?? "ao3-samples");
+const dir = resolve(args.filter((a, i) => !a.startsWith("--") && !(i > 0 && ["--jobs", "--only"].includes(args[i - 1])))[0] ?? "ao3-samples");
 // The longest fics take about 4 GB to read each, so the number of jobs is also capped by memory (one job per 6 GB); --jobs overrides it.
 const memJobs = Math.max(2, Math.floor(totalmem() / 2 ** 30 / 6) + 1);
 const jobs = Math.max(2, Number(opt("jobs") ?? Math.min(cpus().length, memJobs)));
@@ -33,9 +35,13 @@ const run = (label, cmd, cmdArgs, env = {}) =>
     p.on("close", (code) => ok({ label, code: code ?? 1, log, secs: Math.round((Date.now() - t0) / 1000) }));
   });
 
-const goldFics = existsSync("tests/gold") ? readdirSync("tests/gold").filter((f) => f.endsWith(".json")).map((f) => JSON.parse(readFileSync(join("tests/gold", f), "utf8")).fic) : [];
-const sets = existsSync("tests/right-set") ? readdirSync("tests/right-set").filter((f) => f.endsWith(".json")).map((f) => f.replace(/\.json$/, "")) : [];
-const shardCount = hasSamples ? Math.max(1, jobs - 1) : 0;
+const onlyNames = opt("only")?.split(",").filter(Boolean);
+const squash = (x) => x.toLowerCase().replace(/[^a-z0-9]/g, "");
+const wanted = (n) => !onlyNames || onlyNames.some((o) => squash(n).includes(squash(o)) || squash(o).includes(squash(n)));
+const quickMode = flag("quick") || !!onlyNames;
+const goldFics = existsSync("tests/gold") ? readdirSync("tests/gold").filter((f) => f.endsWith(".json")).map((f) => JSON.parse(readFileSync(join("tests/gold", f), "utf8")).fic).filter(wanted) : [];
+const sets = existsSync("tests/right-set") ? readdirSync("tests/right-set").filter((f) => f.endsWith(".json")).map((f) => f.replace(/\.json$/, "")).filter(wanted) : [];
+const shardCount = hasSamples && (!quickMode || goldFics.length + sets.length) ? Math.max(1, Math.min(jobs - 1, quickMode ? goldFics.length + sets.length : Infinity)) : 0;
 const shards = Array.from({ length: shardCount }, () => ({ gold: [], sets: [] }));
 goldFics.forEach((g, i) => shards[i % shardCount].gold.push(g));
 sets.forEach((s, i) => shards[(i + goldFics.length) % shardCount].sets.push(s));
@@ -61,8 +67,13 @@ for (const r of results) {
   if (r.code) { failed = true; console.log(r.log.split("\n").filter((l) => /FAIL|×|Error|expected|error/.test(l)).slice(0, 14).join("\n")); }
 }
 
-// Gold totals against the last accepted ones.
-if (hasSamples) {
+// Gold totals against the last accepted ones (a quick run covers only some fics, so its totals are shown but not compared or saved).
+if (hasSamples && quickMode) {
+  const keys = ["verdictOk", "verdicts", "sceneRight", "sceneFlipped", "sceneMissed", "falsePos"];
+  const tot = Object.fromEntries(keys.map((k) => [k, 0]));
+  for (let i = 0; i < shardCount; i++) { const f = join(outDir, `gold-${i}.json`); if (existsSync(f)) { const t = JSON.parse(readFileSync(f, "utf8")); for (const k of keys) tot[k] += t[k] ?? 0; } }
+  console.log(`\nquick run (${onlyNames ? `only ${onlyNames.join(", ")}` : "unit suite only"}): gold verdicts ${tot.verdictOk}/${tot.verdicts}, scenes right ${tot.sceneRight} (flipped ${tot.sceneFlipped}, missed ${tot.sceneMissed}), false positives ${tot.falsePos}. Not compared with the baseline: run the full check before committing.`);
+} else if (hasSamples) {
   const keys = ["verdictOk", "verdicts", "sceneRight", "sceneFlipped", "sceneMissed", "falsePos", "reported", "povOk", "povN", "textOk", "textN"];
   const tot = Object.fromEntries(keys.map((k) => [k, 0]));
   for (let i = 0; i < shardCount; i++) {
