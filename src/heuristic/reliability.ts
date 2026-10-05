@@ -156,7 +156,7 @@ export const PRECISION: Record<string, number> = {
   "fuck": 0.953,
   "fucked-mouth": 0.978,
   "full-of": 0.943,
-  "gave-head": 0.943,
+  "gave-head": 0.95,
   "grab-ass": 0.986,
   "grind-ass-back": 0.96,
   "grind-cock-on-ass": 0.92,

@@ -50,7 +50,7 @@ export interface PatternDef {
 export interface CompiledPattern extends PatternDef {
   re: RegExp;
   /** Cheap pre-check: the sentence must contain one of the pattern's verbs/nouns. */
-  gate?: RegExp;
+  gate?: { source: string; test: (sentence: string) => boolean };
   /** Patterns with the same gate share an id, so a sentence is tested against each distinct gate only once. */
   gateId?: number;
   /** The subject isn't in the match; it's the nearest subject earlier in the sentence. */
@@ -132,6 +132,61 @@ function deriveGate(src: string): string | undefined {
     const words = leadingWords(body);
     return words ? [...words].join("|") : undefined;
   }
+}
+
+/**
+ * A fallback gate for a pattern with no verb group to read one off: the longest literal word (4+ letters) that sits at the top level of the
+ * pattern, outside any group, placeholder or alternation, and so must appear in any sentence it can match. "{T} {aux}lin(?:es|ed)\\s+..." → "lin"
+ * is too short to help, but "...\\s+(?:the\\s+)?hilt" → "hilt" is.
+ */
+function deriveLiteralGate(src: string): string | undefined {
+  if (topLevelAlts(src).length > 1) return undefined;
+  let best = "";
+  let depth = 0;
+  let i = 0;
+  while (i < src.length) {
+    const ch = src[i];
+    if (ch === "\\") { i += 2; continue; }
+    if (ch === "{") { const j = src.indexOf("}", i); i = j < 0 ? src.length : j + 1; continue; }
+    if (ch === "(") { depth++; i++; continue; }
+    if (ch === ")") { depth--; i++; continue; }
+    if (depth === 0 && /[A-Za-z]/.test(ch)) {
+      let j = i;
+      while (j < src.length && /[A-Za-z]/.test(src[j])) j++;
+      let word = src.slice(i, j);
+      const next = src.slice(j, j + 2);
+      // A quantifier on the last letter makes it optional, so only the part before it is certain.
+      if (next[0] === "?" || next[0] === "*" || next === "{0") word = word.slice(0, -1);
+      if (word.length > best.length) best = word;
+      i = j;
+      continue;
+    }
+    i++;
+  }
+  return best.length >= 4 ? best.toLowerCase() : undefined;
+}
+
+/**
+ * A gate is a list of literal words, any one of which must be in the sentence. Plain words are looked for with includes() on a lower-cased copy
+ * of the sentence (kept for the next gate, since a sentence is tested against hundreds of gates), which is much cheaper than a regex per gate.
+ */
+let gateLastIn = "";
+let gateLastLower = "";
+function makeGate(words: string): { source: string; test: (sentence: string) => boolean } {
+  const source = `(?:${words})`;
+  if (/^[a-z0-9 '’-]+(?:\|[a-z0-9 '’-]+)*$/i.test(words)) {
+    const stems = words.toLowerCase().split("|");
+    return {
+      source,
+      test: (sentence) => {
+        if (sentence !== gateLastIn) { gateLastIn = sentence; gateLastLower = sentence.toLowerCase(); }
+        for (const st of stems) if (gateLastLower.includes(st)) return true;
+        return false;
+      },
+    };
+  }
+  const re = new RegExp(source, "i");
+  return { source, test: (sentence) => re.test(sentence) };
 }
 
 /** The literal each alternative must start with ("fuck(?:s|ed)?" → "fuck"); undefined if any can't be pinned down. */
@@ -291,8 +346,8 @@ export function compilePatterns(defs: PatternDef[], aliasPattern: string): Compi
     const finalSrc = def.src.startsWith("\\b{T:penisReq}")
       ? `(?<!\\b(?:tease|teases|teasing|teased|stroke|strokes|stroking|stroked|cup|cups|cupping|cupped|grab|grabs|grabbing|grabbed|squeeze|squeezes|squeezing|squeezed|touch|touches|touching|touched|lick|licks|licking|licked|suck|sucks|sucking|sucked|fondle|fondles|fondling|fondled|palm|palms|palming|palmed|grip|grips|gripping|gripped|hold|holds|holding|held|kiss|kisses|kissing|kissed|tug|tugs|tugging|tugged|pump|pumps|pumping|pumped|jerk|jerks|jerking|jerked|rub|rubs|rubbing|rubbed|wrap|around|over|on|at|to)\\s+)${src}`
       : src;
-    const gateWords = def.kw ?? MANUAL_GATES[def.id] ?? deriveGate(def.src);
-    const gate = gateWords ? new RegExp(`(?:${gateWords})`, "i") : undefined;
+    const gateWords = def.kw ?? MANUAL_GATES[def.id] ?? deriveGate(def.src) ?? deriveLiteralGate(def.src);
+    const gate = gateWords ? makeGate(gateWords) : undefined;
     let gateId: number | undefined;
     if (gate) {
       gateId = gateIds.get(gate.source);
@@ -1222,7 +1277,7 @@ export const PATTERNS: PatternDef[] = [
     weight: 0.4,
     needsCtx: true,
     signal: { kind: "touch", actorRole: "top" },
-    src: `\\b{T:poss}\\s+(?:fingers?|thumb|hand)\\s+(?:(?:trac|circl|rubb?|press|tapp?|brush|glid|ghost|swirl)\\w*\\s+(?:\\w+\\s+){0,2}?{B:ass}|(?:slid|slip|glid|trail|travel|mov)\\w*\\s+(?:down\\s+)?between\\s+[\\w’'-]+\\s+(?:legs|thighs|cheeks)\\s+(?:to|and finds?|finding)\\s+{B:ass})`,
+    src: `\\b{T:poss}\\s+(?:fingers?|thumb|hand)\\s+(?:(?:trac|circl|rubb?|press|tapp?|brush|glid|ghost|swirl)\\w*\\s+(?:\\w+\\s+){0,2}?{B:poss}\\s+(?:[\\w-]+\\s+)?(?:hole|entrance|rim|opening|pucker|asshole|ass|cheeks)\\b|(?:slid|slip|glid|trail|travel|mov)\\w*\\s+(?:down\\s+)?between\\s+[\\w’'-]+\\s+(?:legs|thighs|cheeks)\\s+(?:to|and finds?|finding)\\s+{B:poss}\\s+(?:[\\w-]+\\s+)?(?:hole|entrance|rim|opening|pucker|asshole|ass|cheeks)\\b)`,
   },
   {
     // "Derek finds that spot deep inside him", "angled for the bundle of nerves inside Stiles"

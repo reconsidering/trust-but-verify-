@@ -146,6 +146,18 @@ export function applyCanon(cast: CastMember[], fandoms: CanonFandom[], text: str
     }
   }
 
+  // "Castiel" and "Claire Novak" both reach the canon Castiel (whose nicknames include "Novak"): the one whose own name is the canon name is him,
+  // and a name that only got there through a shared surname or nickname is somebody else, not the same character.
+  {
+    const by = new Map<CanonChar, CastMember[]>();
+    for (const [m, c] of known) by.set(c, [...(by.get(c) ?? []), m]);
+    for (const [c, ms] of by) {
+      if (ms.length < 2) continue;
+      const exact = ms.filter((m) => variants(m.name).some((k) => c.keys.has(k)));
+      if (exact.length === 1) for (const m of ms) if (m !== exact[0]) known.delete(m);
+    }
+  }
+
   // The same character under two names. Names guessed from the text are always merged. Two separately tagged names
   // ("Tom Riddle" and "Voldemort" can be two ages of one man) stay apart, unless the text hardly uses one of them: then
   // it is only a second tag for the same person ("Galinda Upland" tagged beside "Glinda the Good", but the text says Glinda).

@@ -43,7 +43,8 @@ describe.skipIf(!dir)("AO3 evaluation", () => {
       const work = extractFromHtml(readFileSync(join(dir!, f), "utf8"));
       const t0 = performance.now();
       const blind = { ...emptyMeta() }; // no tags, no rating, no relationships
-      const a = analyzeWithPatterns(work.text, blind, { quiet: true });
+      // EVAL_QUICK: skip the blind pass (about half the time) for a fast before/after check.
+      const a = process.env.EVAL_QUICK ? analyzeWithPatterns("", blind, { quiet: true }) : analyzeWithPatterns(work.text, blind, { quiet: true });
       const t1 = performance.now();
       out.push(`## ${f} (${work.meta.words ?? work.countedWords} words)`);
       out.push("### Blind result");
