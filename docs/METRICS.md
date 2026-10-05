@@ -10,6 +10,7 @@ labels), so compare the *gap* between the two columns more than the absolute val
 | 2026-10-03 | not recorded | 0.161 → 0.141 | 0.66 → 0.77 | not recorded | not recorded | 10edb44 |
 | 2026-10-04 | 1,486 (78) | 0.196 → 0.164 | 0.706 → 0.824 | not recorded | not recorded | 055197b |
 | 2026-10-05 | 1,856 (133) | 0.2654 → 0.2473 | 0.555 → 0.645 | 0.2686 → 0.2523 | 0.536 → 0.612 | ac0f469 |
+| 2026-10-05 | 1,857 (123) | 0.2478 → 0.2361 | 0.568 → 0.646 | 0.2096 → 0.1914 | 0.563 → 0.676 | c144b6b |
 
 ## Reading the Oct 5 row
 
@@ -24,4 +25,3 @@ Seven extra features were recorded on every hit and scored on unseen fics: prono
 Claude's labels are not equally good in both directions. Of the readings Claude called **right**, the owner agreed with 48 of 57 (84%). Of the readings Claude called **wrong**, the owner agreed with only 10 of 37 (27%); the other 27 were judged fine. The disagreements are spread over many patterns and fics, mostly narrated acts, so Claude was too ready to call a reading wrong. (Six readings were marked not sure.) So Claude-made labels are now stored at weight 0.85 when right and 0.3 when wrong (`npm run dive -- import --weight 0.85 --weight-wrong 0.3`), and the 662 existing ones were migrated.
 
 The context model and the pattern record learn from the weights, but they were *scored* with every label counting 1, so the noisy "wrong" labels still counted in full as ground truth. The unseen-fics rows are now scored with each label counted by its trust. With the new weights, on fics the model has not seen: log loss 0.2091 → 0.1889 and AUC 0.555 → 0.681 (record alone → with context), against 0.2686 → 0.2523 and 0.536 → 0.612 before; wrong hits among the 10% least-trusted 16% → 25%.
-
