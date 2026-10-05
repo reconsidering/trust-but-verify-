@@ -931,10 +931,9 @@
    "via": "lined-up",
    "h": "c187e500",
    "conf": 39,
-   "weight": 0.85,
-   "source": "claude",
+   "source": "owner",
    "marks": {
-    "right": 1,
+    "right": 2,
     "wrong": 0
    },
    "seen": [

@@ -206,10 +206,9 @@
    "via": "pushed-in",
    "h": "69364e6b",
    "conf": 34,
-   "weight": 0.85,
-   "source": "claude",
+   "source": "owner",
    "marks": {
-    "right": 1,
+    "right": 2,
     "wrong": 0
    },
    "seen": [
@@ -301,10 +300,9 @@
    "via": "dd3-thrusts-deeper",
    "h": "1b4d464e",
    "conf": 39,
-   "weight": 0.85,
-   "source": "claude",
+   "source": "owner",
    "marks": {
-    "right": 1,
+    "right": 2,
     "wrong": 0
    },
    "seen": [
@@ -328,7 +326,8 @@
    },
    "seen": [
     "2026-10-05"
-   ]
+   ],
+   "retired": "owner judged this wrong in the blind spot-check 2026-10-05"
   },
   {
    "kind": "scene",
@@ -382,6 +381,21 @@
    "gone": false,
    "weight": 0.3,
    "source": "claude",
+   "seen": [
+    "2026-10-05"
+   ]
+  },
+  {
+   "kind": "scene",
+   "card": "anal",
+   "pairing": "Alex Claremont-Diaz/Henry Fox-Mountchristen-Windsor",
+   "top": "Henry Fox-Mountchristen-Windsor",
+   "bottom": "Alex Claremont-Diaz",
+   "via": "cum-enters",
+   "h": "97e61042",
+   "conf": 18,
+   "misread": true,
+   "source": "owner",
    "seen": [
     "2026-10-05"
    ]

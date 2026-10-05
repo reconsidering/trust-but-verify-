@@ -18,7 +18,8 @@
    },
    "seen": [
     "2026-10-05"
-   ]
+   ],
+   "retired": "owner judged this wrong in the blind spot-check 2026-10-05"
   },
   {
    "kind": "hint",
@@ -490,10 +491,9 @@
    "via": "bent-over-furniture",
    "h": "5c477f2d",
    "conf": 33,
-   "weight": 0.85,
-   "source": "claude",
+   "source": "owner",
    "marks": {
-    "right": 1,
+    "right": 2,
     "wrong": 0
    },
    "seen": [
@@ -650,10 +650,9 @@
    "via": "spread-legs",
    "h": "275bf9ef",
    "conf": 33,
-   "weight": 0.85,
-   "source": "claude",
+   "source": "owner",
    "marks": {
-    "right": 1,
+    "right": 2,
     "wrong": 0
    },
    "seen": [
@@ -976,10 +975,9 @@
    "via": "penis-fills",
    "h": "f3430ad5",
    "conf": 74,
-   "weight": 0.85,
-   "source": "claude",
+   "source": "owner",
    "marks": {
-    "right": 1,
+    "right": 2,
     "wrong": 0
    },
    "seen": [
@@ -995,10 +993,9 @@
    "via": "dd3-licks-between-cheeks",
    "h": "6cede7a5",
    "conf": 67,
-   "weight": 0.85,
-   "source": "claude",
+   "source": "owner",
    "marks": {
-    "right": 1,
+    "right": 2,
     "wrong": 0
    },
    "seen": [
@@ -1339,7 +1336,8 @@
    "source": "claude",
    "seen": [
     "2026-10-05"
-   ]
+   ],
+   "retired": "owner judged this right in the blind spot-check 2026-10-05"
   },
   {
    "kind": "scene",
@@ -1470,6 +1468,22 @@
    "gone": true,
    "weight": 0.3,
    "source": "claude",
+   "seen": [
+    "2026-10-05"
+   ]
+  },
+  {
+   "kind": "hint",
+   "card": "anal",
+   "pairing": "Derek Hale/Stiles Stilinski",
+   "who": "Stiles Stilinski",
+   "role": "bottom",
+   "wants": true,
+   "via": "be-fucked",
+   "h": "92add07f",
+   "conf": 30,
+   "misread": true,
+   "source": "owner",
    "seen": [
     "2026-10-05"
    ]

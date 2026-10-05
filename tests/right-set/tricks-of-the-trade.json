@@ -210,10 +210,9 @@
    "via": "plug-in-ass",
    "h": "2ee1bf86",
    "conf": 26,
-   "weight": 0.85,
-   "source": "claude",
+   "source": "owner",
    "marks": {
-    "right": 1,
+    "right": 2,
     "wrong": 0
    },
    "seen": [
@@ -393,10 +392,9 @@
    "via": "grab-ass",
    "h": "25fdeec8",
    "conf": 43,
-   "weight": 0.85,
-   "source": "claude",
+   "source": "owner",
    "marks": {
-    "right": 1,
+    "right": 2,
     "wrong": 0
    },
    "seen": [
@@ -533,10 +531,9 @@
    "via": "slicked-self",
    "h": "34982c4c",
    "conf": 27,
-   "weight": 0.85,
-   "source": "claude",
+   "source": "owner",
    "marks": {
-    "right": 1,
+    "right": 2,
     "wrong": 0
    },
    "seen": [
@@ -581,7 +578,8 @@
    },
    "seen": [
     "2026-10-05"
-   ]
+   ],
+   "retired": "owner judged this wrong in the blind spot-check 2026-10-05"
   },
   {
    "kind": "hint",
@@ -630,10 +628,9 @@
    "who": "Castiel",
    "via": "mast-himself",
    "h": "c8e342e1",
-   "weight": 0.85,
-   "source": "claude",
+   "source": "owner",
    "marks": {
-    "right": 1,
+    "right": 2,
     "wrong": 0
    },
    "seen": [
@@ -664,10 +661,9 @@
    "who": "Castiel",
    "via": "self-finger",
    "h": "42230061",
-   "weight": 0.85,
-   "source": "claude",
+   "source": "owner",
    "marks": {
-    "right": 1,
+    "right": 2,
     "wrong": 0
    },
    "seen": [
@@ -733,10 +729,9 @@
    "bottom": "Dean Winchester",
    "via": "fingers-inside",
    "h": "fd98e30b",
-   "weight": 0.85,
-   "source": "claude",
+   "source": "owner",
    "marks": {
-    "right": 1,
+    "right": 2,
     "wrong": 0
    },
    "seen": [
@@ -844,10 +839,9 @@
    "via": "fed-cock",
    "h": "5f8c9328",
    "conf": 80,
-   "weight": 0.85,
-   "source": "claude",
+   "source": "owner",
    "marks": {
-    "right": 1,
+    "right": 2,
     "wrong": 0
    },
    "seen": [
@@ -937,10 +931,9 @@
    "bottom": "Dean Winchester",
    "via": "fingered",
    "h": "701e8fd4",
-   "weight": 0.85,
-   "source": "claude",
+   "source": "owner",
    "marks": {
-    "right": 1,
+    "right": 2,
     "wrong": 0
    },
    "seen": [
@@ -1224,7 +1217,8 @@
    "source": "claude",
    "seen": [
     "2026-10-05"
-   ]
+   ],
+   "retired": "owner judged this right in the blind spot-check 2026-10-05"
   },
   {
    "kind": "hint",
@@ -1256,8 +1250,7 @@
    "conf": 37,
    "misread": true,
    "gone": false,
-   "weight": 0.3,
-   "source": "claude",
+   "source": "owner",
    "seen": [
     "2026-10-05"
    ]
@@ -1278,7 +1271,8 @@
    "source": "claude",
    "seen": [
     "2026-10-05"
-   ]
+   ],
+   "retired": "owner judged this right in the blind spot-check 2026-10-05"
   },
   {
    "kind": "hint",
@@ -1346,8 +1340,7 @@
    "conf": 72,
    "misread": true,
    "gone": false,
-   "weight": 0.3,
-   "source": "claude",
+   "source": "owner",
    "seen": [
     "2026-10-05"
    ]
@@ -1401,7 +1394,8 @@
    "source": "claude",
    "seen": [
     "2026-10-05"
-   ]
+   ],
+   "retired": "owner judged this right in the blind spot-check 2026-10-05"
   },
   {
    "kind": "solo",
@@ -1500,7 +1494,8 @@
    "source": "claude",
    "seen": [
     "2026-10-05"
-   ]
+   ],
+   "retired": "owner judged this right in the blind spot-check 2026-10-05"
   },
   {
    "kind": "scene",
@@ -1533,7 +1528,8 @@
    "source": "claude",
    "seen": [
     "2026-10-05"
-   ]
+   ],
+   "retired": "owner judged this right in the blind spot-check 2026-10-05"
   },
   {
    "kind": "scene",
@@ -1549,7 +1545,8 @@
    "source": "claude",
    "seen": [
     "2026-10-05"
-   ]
+   ],
+   "retired": "owner judged this right in the blind spot-check 2026-10-05"
   },
   {
    "kind": "scene",
@@ -1617,7 +1614,8 @@
    "source": "claude",
    "seen": [
     "2026-10-05"
-   ]
+   ],
+   "retired": "owner judged this right in the blind spot-check 2026-10-05"
   },
   {
    "kind": "scene",
@@ -1650,7 +1648,8 @@
    "source": "claude",
    "seen": [
     "2026-10-05"
-   ]
+   ],
+   "retired": "owner judged this right in the blind spot-check 2026-10-05"
   },
   {
    "kind": "scene",
@@ -1665,6 +1664,23 @@
    "gone": false,
    "weight": 0.3,
    "source": "claude",
+   "seen": [
+    "2026-10-05"
+   ],
+   "retired": "owner judged this right in the blind spot-check 2026-10-05"
+  },
+  {
+   "kind": "hint",
+   "card": "blowjob",
+   "pairing": "Castiel/Dean Winchester",
+   "who": "Castiel",
+   "role": "bottom",
+   "wants": true,
+   "via": "sinks-to-floor",
+   "h": "c502ff1a",
+   "conf": 32,
+   "misread": true,
+   "source": "owner",
    "seen": [
     "2026-10-05"
    ]
