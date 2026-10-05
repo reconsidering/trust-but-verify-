@@ -188,6 +188,7 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
   let priorAddress = new AddressBook();
   let acts: ActHit[] = [];
   let ambiguousHoles = 0;
+  let curParaIdx = -1;
   let defaultedAnal = 0;
   /** For each bottom, how many sentences clearly said anal vs vaginal. */
   const holeVotes = new Map<Character, { anal: number; vaginal: number }>();
@@ -407,6 +408,7 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
   for (let pi = 0; pi < paras.length; pi++) {
     if (opts.onProgress && pi % 25 === 0) opts.onProgress(pi / paras.length);
     const para = paras[pi];
+    curParaIdx = pi;
     const { masked: mp, quotes } = masked[pi];
     if (para.length < 120 && CHAPTER_RE.test(para)) {
       chapter = para.length > 60 ? para.slice(0, 60) + "…" : para;
@@ -772,6 +774,20 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
     // so the new line is the other person's turn.
     const tagOfPrev = !!b1 && (!before.slice(0, b1.index!).trim() || /\s{2,}$/.test(before.slice(0, b1.index!)) || /["”’]\s*$/.test(before.slice(0, b1.index!)));
     if (b1 && !tagOfPrev) { attribExplicit = true; return resolve(b1[1]); }
+    // "“We don’t have to,” Spencer murmured. “Hell, no. I want you inside me.”": an answer straight after the other one's tagged line is theirs to give.
+    if (b1 && tagOfPrev && /^\s*["“‘]?\s*(?:hell,?\s+)?(?:no|nah|nope)\b/i.test(para.slice(q.start, q.start + 20)) &&
+        /\?|\b(?:don['’]t have to|you can|if you (?:need|want|like)|we can|do you|are you|want to|need to)\b/i.test(prevQ?.text ?? before.slice(0, b1.index!))) {
+      const prevWho = resolve(b1[1]);
+      const other = prevWho && ctx.partnerOf(prevWho);
+      if (other) { attribExplicit = true; return other; }
+    }
+    // "“Want you to fuck me. You bring stuff?” ¶ “Yep.” Spencer didn’t seem in any hurry": the beat after the reply names who replied, so the line before it was the other one's.
+    if (!para.slice(q.end).trim() && curParaIdx >= 0) {
+      const nm = new RegExp(`^\\s*["“‘][^"”’]{0,80}["”’]\\s+(${NAMES})\\b`).exec(paras[curParaIdx + 1] ?? "");
+      const replier = nm ? cast.byAlias.get(stripPoss(nm[1])) : undefined;
+      const other = replier && ctx.partnerOf(replier);
+      if (other) { attribExplicit = true; return other; }
+    }
 
     // “I’m going to take the plug out now.” Dean’s breath hitched…: the narration right after the line is the listener's
     // reaction, so the speaker is the other one.
@@ -811,6 +827,8 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
   }
 
   function scanDialogue(line: string, speaker: Character, pi: number, around: { animal?: boolean; explicit?: boolean; sexy: boolean; oral?: boolean; frot?: boolean; after: string; before: string }) {
+    // "It's just three little words. ‘Please fuck me’.", "say ‘fuck me’ for me": words he is asking the other to say, not his own.
+    line = line.replace(/(\b(?:words[.:,]?|say|says|repeat|beg|ask|whisper|tell\s+me)\s*(?:[^.!?‘']{0,30})?)[‘'][^’']{3,70}[’']/gi, "$1 …");
     const lower = line.toLowerCase().replace(/’/g, "'");
     const seen = new Set<string>();
     // "I'm going to cage you now", "As long as you're wearing that cage, you're mine", "There's a cage around my dick": the one speaking
@@ -1483,6 +1501,8 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
     if (pat.id.startsWith("inside") && /\bin\s+(?:his|her|their|my|your)\s+(?:own\s+)?body\b/i.test(matchText) && !/\binside\b/i.test(matchText)) return;
     // "exhaled, grounding himself": steadying oneself, not grinding.
     if (pat.id.startsWith("mast-himself") && /\bground(?:ing|ed|s)\s+(?:himself|herself|themself|themselves)\b(?!\s+(?:against|on|onto|into|down|in|back|up against|over))/i.test(matchText + sent.slice(m.index! + matchText.length, m.index! + matchText.length + 14))) return;
+    // "He lubed himself up, … and worked two fingers in, stretching himself": getting himself ready to be fucked, not slicking up a cock.
+    if (pat.id.startsWith("slicked-self") && !/\b(?:cock|dick|length|shaft|condom)\b/i.test(matchText) && /\b(?:fingers?\s+(?:in|inside)|stretch\w*\s+(?:himself|herself|themself)|open\w*\s+(?:himself|herself|themself)|(?:his|her|their)\s+(?:hole|entrance|rim))\b/i.test(sent.slice(m.index! + matchText.length))) return;
     // "swept his tongue inside of him" with a bare pronoun or name, while mouths are kissing: a kiss, not rimming.
     if (pat.id === "tongue-inside-him" && !/\b(?:ass|arse|hole|rim|crack|cheeks|entrance|pucker|cavity|opening)\b/i.test(matchText) &&
       /\b(?:mouths?|lips|kiss\w*|tongues?\s+(?:to|with)|suck\w*\s+on\s+[\w'’]+\s+tongue|against\s+(?:the|his|her)\s+\w+)\b/i.test(para)) return;
@@ -1771,7 +1791,9 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
     // "Eddie's cock never slid between his lips": a never inside the match, between the subject and the verb.
     // "doesn't hesitate to slide down", "doesn't resist the temptation": a denial of holding back, so it happens.
     const noHold = (x: string) => x.replace(/\b(?:does|did|do|could|can|would)(?:n['’]t| not)\s+(?:even\s+)?(?:hesitate|resist|refuse|falter|waver|delay|hold back|think twice|stop|help)\b/gi, " ");
-    const negated = !ifNot && !doubleNeg && !notWithout && !pretence && (NEG.test(noHold(aux)) || NEG.test(noHold(negWindow)) || NEG.test(noHold(negWindow.slice(-14) + matchText.slice(0, 8))) || /\b(?:never|refus(?:ed|es|e|ing) to|declin(?:ed|es|e|ing) to)\b/i.test(pat.id === "cock-never-leaving" ? matchText.replace(/\bnever\s+(?=leav)/i, "") : matchText));
+    // "The problem wasn't only that he wanted to fuck Bacon": "not only / not just" adds to a fact, it doesn't deny it.
+    const notOnly = /\b(?:wasn['’]t|isn['’]t|weren['’]t|aren['’]t|not|n['’]t)\s+(?:only|just|merely|simply|solely|even)\b/i.test(`${negWindow} ${aux}`);
+    const negated = !ifNot && !doubleNeg && !notWithout && !pretence && !notOnly && (NEG.test(noHold(aux)) || NEG.test(noHold(negWindow)) || NEG.test(noHold(negWindow.slice(-14) + matchText.slice(0, 8))) || /\b(?:never|refus(?:ed|es|e|ing) to|declin(?:ed|es|e|ing) to)\b/i.test(pat.id === "cock-never-leaving" ? matchText.replace(/\bnever\s+(?=leav)/i, "") : matchText));
     let kind: Desire["kind"] | "act" = "act";
     if (fantasyPara || FANTASY.test(window) || STRONG_FANTASY.test(prefix)) kind = "fantasy";
     else if (DESIRE_LEAD.test(sent) || DESIRE.test(window.replace(/\b(?:that|which|what it|it)\s+(?:want|need)(?:ed|s)?\s+to\b/gi, " ").replace(/\b(?:does|did|do)(?:n['’]t| not)\s+(?:even\s+)?resist\s+the\s+(?:temptation|urge|impulse)\b(?:\s+(?:he|she|they)\s+(?:has|have|had|feels?|felt))?/gi, " ")) || DESIRE_TAIL.test(window) || DESIRE.test(aux) || DESIRE.test(m.groups?.lead ?? "")) kind = "wanted";

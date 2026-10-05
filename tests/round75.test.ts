@@ -242,3 +242,51 @@ describe("round 79: the Steve and Eddie report (Chapters 4, 5 and 8)", () => {
     expect(d && `${d.who.split(" ")[0]}:${d.role}`).toBe("Stiles:bottom");
   });
 });
+
+describe("round 80: the Spencer and Del report", () => {
+  const SB = { ...META, fandoms: [], characters: ["Spencer Bryant", "Del"], relationships: [], freeforms: [] };
+  const lead3 = "Spencer and Del were in bed, naked and kissing, hard and aching. Del kissed Spencer. Spencer kissed Del back, moaning. ".repeat(4) + "\n\n";
+  const hitsOf = (t: string, meta = SB) => {
+    const hits: AuditHit[] = [];
+    const a = analyzeWithPatterns(lead3 + t, meta, { quiet: true, audit: (h) => hits.push(h) });
+    return { a, hits };
+  };
+  const dlg = (hits: AuditHit[]) => hits.filter((h) => h.via.startsWith("dialogue")).map((h) => `${h.a.split(" ")[0]}>${h.b?.split(" ")[0]}`);
+  it("“stretched out next to him” is a position, not a loose body", () => {
+    expect(hitsOf("Del stretched out next to him for a deep kiss. He wanted to remember how soft his sighs, how hard his body was stretched out next to Spencer.").hits.filter((h) => h.via.startsWith("body-sore"))).toEqual([]);
+    expect(hitsOf("Afterwards his ass was sore and stretched, and Del winced.").hits.some((h) => h.via.startsWith("body-sore"))).toBe(true);
+  });
+  it("a request that ends a paragraph belongs to the one who is NOT named in the reply’s beat", () => {
+    const t = "“I am,” Del said as Spencer kissed a hot trail down his stomach. His rhythm had him on edge far too soon. “Want you to fuck me. You bring stuff?”\n\n“Yep.” Spencer didn’t seem in any hurry to go get it, licking up and down Del’s shaft.";
+    expect(dlg(hitsOf(t).hits)).toEqual(["Del>Spencer"]);
+  });
+  it("an answer right after the other one’s tagged line is theirs", () => {
+    const t = "“We don’t have to... You can sleep if you need,” Spencer murmured. “Hell, no. I want you inside me.” He forced himself more awake. “Get the lube.”";
+    expect(dlg(hitsOf(t).hits)).toContain("Del>Spencer");
+  });
+  it("the same speaker carrying on after a tag keeps the line (please / yes are not answers)", () => {
+    const t = "“Like this,” Del moans. “Please, please fuck me, sir, please fuck me because I belong to you.”";
+    expect(dlg(hitsOf(t).hits)).toEqual(["Del>Spencer"]);
+  });
+  it("words one asks the other to say are not one’s own wish", () => {
+    const t = "“Come on, Spencer. Don’t say you don’t want it,” Del leans in close. “It’s just three little words. ‘Please fuck me’.”";
+    expect(dlg(hitsOf(t).hits)).toEqual([]);
+  });
+  it("“wasn’t only that he wanted to” still counts the want", () => {
+    const r = hitsOf("Del laughed. Spencer shut the door. The problem wasn’t only that he wanted to fuck Del. He wanted to talk more.").hits.filter((h) => h.via === "fuck");
+    expect(r.length).toBeGreaterThan(0);
+    expect(r.every((h) => h.kind !== undefined)).toBe(true);
+  });
+  it("lubing himself up and stretching himself is prep for being fucked, not slicking a cock", () => {
+    const r = hitsOf("Spencer held out his hand. He lubed himself up, eyeing Del’s cock, and worked two fingers in, stretching himself.").hits;
+    expect(r.filter((h) => h.via.startsWith("slicked-self"))).toEqual([]);
+    expect(r.some((h) => h.via.startsWith("self-finger"))).toBe(true);
+  });
+  it("a call sign beside a name (“be Del … instead of Bacon”) is one person", () => {
+    const meta = { ...SB, characters: ["Spencer Bryant", "Del", "Bacon"] };
+    const text = "It was part of taking care of him, giving him the space to be Del, the man, instead of Bacon, the always-on SEAL.\n\nBacon laughed. Spencer kissed Bacon hard. Bacon moaned and Spencer pushed his cock into Bacon’s ass, fucking Bacon slowly.";
+    const a = hitsOf(text, meta).a;
+    expect(a.pairings.length).toBe(1);
+    expect(a.pairings[0].pairing).not.toMatch(/Bacon/);
+  });
+});

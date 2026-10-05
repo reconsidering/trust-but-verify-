@@ -315,6 +315,15 @@ export function buildCast(meta: Ao3Meta, narration: string, fullText = narration
   const guessed = !names.length;
   if (guessed) names = guessNames(fullText);
   const chars = makeChars(names);
+  // "to be Del, the man, instead of Bacon, the always-on SEAL": one person under two names (a call sign beside a name).
+  for (const [, n1, n2] of fullText.matchAll(/\b(?:be|being|become|becoming|as)\s+([A-Z][a-z]+)(?:,\s+(?:the|a)\s+[^,.]{1,25},)?\s+(?:instead of|rather than)\s+([A-Z][a-z]+)\b/g)) {
+    const a = chars.find((c) => c.name === n1 || c.name.split(" ")[0] === n1);
+    const b = chars.find((c) => c.name === n2 || c.name.split(" ")[0] === n2);
+    if (a && b && a !== b) {
+      for (const al of [b.name, ...b.aliases]) if (!a.aliases.includes(al)) a.aliases.push(al);
+      chars.splice(chars.indexOf(b), 1);
+    }
+  }
   // Guessed names carry their nickname in quotes for alias building; show them without it.
   if (guessed) for (const c of chars) c.name = c.name.replace(/\s*"[^"]+"/, "");
   // Known characters of the fandom this is in: their other names ("Cas", "Damianos", "Deadpool") and genders.

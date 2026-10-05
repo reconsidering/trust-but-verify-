@@ -2660,7 +2660,7 @@ export const PATTERNS: PatternDef[] = [
     weight: 0.8,
     needsCtx: true,
     signal: { kind: "body", actorRole: "bottom" },
-    src: `\\b{B:assReq}\\s+{aux}(?:was|were|felt|feels|ached|throbbed|burned|stung|hurt)\\s+(?:\\w+\\s+){0,2}?(?:sore|raw|tender|stretched|used|loose|open|empty|aching|achy|well-fucked|fucked-out|wrecked)(?![\\w-])`,
+    src: `\\b{B:assReq}\\s+{aux}(?:was|were|felt|feels|ached|throbbed|burned|stung|hurt)\\s+(?:\\w+\\s+){0,2}?(?:sore|raw|tender|stretched|used|loose|open|empty|aching|achy|well-fucked|fucked-out|wrecked)(?![\\w-])(?!\\s+(?:out|across|over|thin|taut|beside|next to))`,
   },
   {
     // "still slightly sore from being stretched open", "aching from being fucked"
