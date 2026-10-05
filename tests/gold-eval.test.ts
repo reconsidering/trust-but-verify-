@@ -14,6 +14,8 @@ import type { Instance, PairingResult } from "../src/types";
 
 const dir = process.env.AO3_DIR;
 const strict = !!process.env.GOLD_STRICT;
+// Sharding for scripts/check.mjs: GOLD_ONLY=a,b limits the run to those fics; GOLD_REPORT_FILE and GOLD_TOTALS_FILE say where to write.
+const only = process.env.GOLD_ONLY?.split(",").filter(Boolean);
 export const paraHash = (s: string) => { let h = 2166136261; for (let i = 0; i < s.length; i++) h = Math.imul(h ^ s.charCodeAt(i), 16777619); return (h >>> 0).toString(16); };
 
 type ActKey = "anal" | "blowjob" | "rimming" | "cunnilingus";
@@ -39,6 +41,7 @@ describe.skipIf(!dir)("gold labels", () => {
     const totals = { verdictOk: 0, verdicts: 0, sceneRight: 0, sceneFlipped: 0, sceneMissed: 0, falsePos: 0, reported: 0, povOk: 0, povN: 0, textOk: 0, textN: 0, stale: 0 };
     for (const gf of goldFiles) {
       const gold = JSON.parse(readFileSync(join(__dirname, "gold", gf), "utf8")) as Gold;
+      if (only && !only.includes(gold.fic)) continue;
       const path = join(dir!, `${gold.fic}.html`);
       if (!existsSync(path)) { report.push(`## ${gold.fic}: skipped (no ${gold.fic}.html in AO3_DIR)`, ""); continue; }
       const work = extractFromHtml(readFileSync(path, "utf8"));
@@ -125,7 +128,8 @@ describe.skipIf(!dir)("gold labels", () => {
       `- POV: ${totals.povOk}/${totals.povN} (${pct(totals.povOk, totals.povN)})`,
       `- Text senders: ${totals.textOk}/${totals.textN} (${pct(totals.textOk, totals.textN)})`,
       `- Stale paragraph numbers that couldn't be relocated: ${totals.stale}`, "");
-    writeFileSync(join(dir!, "GOLD_REPORT.md"), report.join("\n"));
+    writeFileSync(process.env.GOLD_REPORT_FILE ?? join(dir!, "GOLD_REPORT.md"), report.join("\n"));
+    if (process.env.GOLD_TOTALS_FILE) writeFileSync(process.env.GOLD_TOTALS_FILE, JSON.stringify(totals));
     console.log(report.slice(0, 10).join("\n"));
     if (strict) {
       expect(totals.verdictOk).toBe(totals.verdicts);

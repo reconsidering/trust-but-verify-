@@ -57,7 +57,8 @@ describe.skipIf(!dir)("AO3 evaluation", () => {
       }
       if (a.notes) out.push(`Notes: ${a.notes}`);
       // Same text with its real AO3 tags (what the website does).
-      const tagged = analyzeWithPatterns(work.text, work.meta, { quiet: true });
+      const hits: string[] = [];
+      const tagged = analyzeWithPatterns(work.text, work.meta, { quiet: true, audit: (h) => hits.push(`${h.via}|${h.a}>${h.b ?? ""}|${h.kind}|${h.para}|${String(h.sentence).slice(0, 110)}`) });
       const t2 = performance.now();
       out.push("### With tags");
       for (const p of tagged.pairings.slice(0, 3)) out.push(`- **${p.pairing}** anal: ${fmtAct(p.anal)} · ${fmtOral(p)}${p.vaginal.applicable ? ` · vaginal: ${p.vaginal.occurs ? "yes" : "no"}` : ""}`);
@@ -76,6 +77,7 @@ describe.skipIf(!dir)("AO3 evaluation", () => {
           ms: { blind: Math.round(t1 - t0), tagged: Math.round(t2 - t1) },
           blind: a.pairings.slice(0, 2).map(struct),
           tagged: tagged.pairings.slice(0, 3).map(struct),
+          hits,
           text: out.join("\n"),
         }),
       );

@@ -1,8 +1,10 @@
 #!/usr/bin/env node
 // Did this change alter any verdict on the sample fics? One command instead of two eval runs and a compare.
-//   npm run regress -- [--full] [--base <git ref>] [--quick] [--jobs N] [dir=ao3-samples] [--all]
-// Two tiers. The default is the fast set (every fic except the 10 slowest, which are about half the time; fics from reports kept in
-// tests/right-set are always in). Run --full, all fics, once before pushing.
+//   npm run regress -- [--base <git ref>] [--hits] [--all] [--quick] [--jobs N] [--fast] [dir=ao3-samples]
+// Compares the working tree with a baseline over ALL the sample fics. It finds unlabelled changes; it cannot say whether a change is right, so
+// read what moved (--hits lists each reading that appeared or disappeared) and, for ones you judge correct, add them to tests/gold.
+// Per-change checks that DO say right/wrong (units, gold labels, right-set) are `npm run check`.
+// --fast skips the 10 slowest fics: NOT a safe check (changes land in all kinds of fics, big ones included); only for a quick look.
 // The baseline is the git ref (default: HEAD when src/ has uncommitted changes, else origin/main) built in a throwaway worktree. Its results
 // are kept per engine version (<dir>/.eval/), so a baseline you have already run costs nothing; only the working tree is run each time.
 // --quick runs only the tagged pass (about half the time). Exit status 1 when a verdict changed.
@@ -21,7 +23,7 @@ const git = (...a) => execFileSync("git", a, { encoding: "utf8" }).trim();
 const dirty = git("status", "--porcelain", "--", "src").length > 0;
 const base = opt("base") ?? (dirty ? "HEAD" : "origin/main");
 const sha = (b) => createHash("sha1").update(b).digest("hex").slice(0, 16);
-const full = flag("full");
+const full = !flag("fast");
 const FAST_SKIP = 10;
 // Fast set: all fics but the slowest ones (by the last recorded time, else file size), keeping any fic a right-set report came from.
 const names = readdirSync(dir).filter((f) => f.endsWith(".html")).map((f) => f.replace(/\.html$/, "")).sort();
@@ -38,7 +40,7 @@ const fromReport = (n) => rightSlugs.some((r) => r === n || r.includes(n) || n.i
 const slowest = new Set([...names].sort((a, b) => timeOf(b) - timeOf(a)).slice(0, FAST_SKIP).filter((n) => !fromReport(n)));
 const fastSet = names.filter((n) => !slowest.has(n));
 const only = full ? undefined : fastSet;
-if (!full) console.log(`fast set: ${fastSet.length} of ${names.length} fics (left out: ${[...slowest].join(", ")}). Use --full before pushing.`);
+if (!full) console.log(`FAST SET, NOT A SAFE CHECK: ${fastSet.length} of ${names.length} fics (left out: ${[...slowest].join(", ")}).`);
 const evalArgs = (extra = []) => [dir, ...(quick ? ["--quick"] : []), ...(only ? ["--only", only.join(",")] : []), ...(opt("jobs") ? ["--jobs", opt("jobs")] : []), ...extra];
 
 // The engine version of the baseline, worked out the same way scripts/eval.mjs does it, from the files at that ref.
@@ -80,5 +82,5 @@ const tierOnly = (path) => {
   writeFileSync(out, JSON.stringify({ ...j, fics: j.fics.filter((f) => only.includes(f.file)) }));
   return out;
 };
-const cmp = spawnSync("node", ["scripts/eval-compare.mjs", tierOnly(baseJson), tierOnly(nowJson), ...(flag("all") ? ["--all"] : [])], { stdio: "inherit" });
+const cmp = spawnSync("node", ["scripts/eval-compare.mjs", tierOnly(baseJson), tierOnly(nowJson), ...(flag("all") ? ["--all"] : []), ...(flag("hits") ? ["--hits"] : [])], { stdio: "inherit" });
 process.exit(cmp.status ?? 1);
