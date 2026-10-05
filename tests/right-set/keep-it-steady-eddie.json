@@ -1,0 +1,136 @@
+{
+ "entries": [
+  {
+   "kind": "hint",
+   "card": "anal",
+   "pairing": "Steve Harrington/Eddie Munson",
+   "who": "Eddie Munson",
+   "role": "top",
+   "wants": true,
+   "via": "grab-ass",
+   "h": "eabc5cd2",
+   "conf": 60,
+   "weight": 0.9,
+   "source": "claude",
+   "marks": {
+    "right": 1,
+    "wrong": 0
+   },
+   "seen": [
+    "2026-10-05"
+   ]
+  },
+  {
+   "kind": "hint",
+   "card": "anal",
+   "pairing": "Steve Harrington/Eddie Munson",
+   "who": "Steve Harrington",
+   "role": "bottom",
+   "wants": true,
+   "via": "thrust-back",
+   "h": "631b1211",
+   "conf": 36,
+   "weight": 0.9,
+   "source": "claude",
+   "marks": {
+    "right": 1,
+    "wrong": 0
+   },
+   "seen": [
+    "2026-10-05"
+   ]
+  }
+ ],
+ "fic": "keep-it-steady-eddie",
+ "title": "Keep it Steady, Eddie",
+ "negatives": [
+  {
+   "kind": "hint",
+   "card": "anal",
+   "pairing": "Steve Harrington/Eddie Munson",
+   "who": "Steve Harrington",
+   "role": "bottom",
+   "wants": true,
+   "via": "eyes-on-crotch",
+   "h": "b6126ae0",
+   "conf": 64,
+   "misread": true,
+   "gone": false,
+   "weight": 0.9,
+   "source": "claude",
+   "seen": [
+    "2026-10-05"
+   ]
+  },
+  {
+   "kind": "hint",
+   "card": "anal",
+   "pairing": "Steve Harrington/Eddie Munson",
+   "who": "Eddie Munson",
+   "role": "top",
+   "wants": true,
+   "via": "hand-in-pants-poss",
+   "h": "4466a6f9",
+   "conf": 55,
+   "misread": true,
+   "gone": false,
+   "weight": 0.9,
+   "source": "claude",
+   "seen": [
+    "2026-10-05"
+   ]
+  },
+  {
+   "kind": "hint",
+   "card": "blowjob",
+   "pairing": "Steve Harrington/Eddie Munson",
+   "who": "Steve Harrington",
+   "role": "bottom",
+   "wants": true,
+   "via": "eyes-on-crotch-oral",
+   "h": "b6126ae0",
+   "conf": 55,
+   "misread": true,
+   "gone": false,
+   "weight": 0.9,
+   "source": "claude",
+   "seen": [
+    "2026-10-05"
+   ]
+  },
+  {
+   "kind": "scene",
+   "card": "blowjob",
+   "pairing": "Steve Harrington/Eddie Munson",
+   "top": "Eddie Munson",
+   "bottom": "Steve Harrington",
+   "via": "took-in-mouth",
+   "h": "513debdc",
+   "conf": 85,
+   "misread": true,
+   "gone": false,
+   "weight": 0.9,
+   "source": "claude",
+   "seen": [
+    "2026-10-05"
+   ]
+  },
+  {
+   "kind": "scene",
+   "card": "blowjob",
+   "pairing": "Steve Harrington/Eddie Munson",
+   "top": "Steve Harrington",
+   "bottom": "Eddie Munson",
+   "via": "dd2-licking-strip-up-length",
+   "h": "5aa57206",
+   "conf": 72,
+   "misread": true,
+   "gone": false,
+   "weight": 0.9,
+   "source": "claude",
+   "seen": [
+    "2026-10-05"
+   ]
+  }
+ ]
+}
