@@ -1,12 +1,13 @@
 #!/usr/bin/env node
 // Did this change alter any verdict on the sample fics? One command instead of two eval runs and a compare.
-//   npm run regress -- [--base <git ref>] [--hits] [--all] [--quick] [--jobs N] [--fast] [--only name,name] [dir=ao3-samples]
+//   npm run regress -- [--base <git ref>] [--hits] [--full] [--all] [--quick] [--jobs N] [--fast] [--only name,name] [dir=ao3-samples]
 // Compares the working tree with a baseline over ALL the sample fics. It finds unlabelled changes; it cannot say whether a change is right, so
 // read what moved (--hits lists each reading that appeared or disappeared) and, for ones you judge correct, add them to tests/gold.
 // Per-change checks that DO say right/wrong (units, gold labels, right-set) are `npm run check`.
 // --fast skips the 10 slowest fics: NOT a safe check (changes land in all kinds of fics, big ones included); only for a quick look.
 // The baseline is the git ref (default: HEAD when src/ has uncommitted changes, else origin/main) built in a throwaway worktree. Its results
 // are kept per engine version (<dir>/.eval/), so a baseline you have already run costs nothing; only the working tree is run each time.
+// --hits prints a short summary per fic and writes every moved reading to ao3-samples/.eval/regress-hits.txt; --full prints them all.
 // --only name,name compares just those fics (exact file names): the fast loop while working on one fic; run the full thing before committing.
 // --quick runs only the tagged pass (about half the time). Exit status 1 when a verdict changed.
 import { execFileSync, spawnSync } from "node:child_process";
@@ -86,5 +87,5 @@ const tierOnly = (path) => {
   writeFileSync(out, JSON.stringify({ ...j, fics: j.fics.filter((f) => only.includes(f.file)) }));
   return out;
 };
-const cmp = spawnSync("node", ["scripts/eval-compare.mjs", tierOnly(baseJson), tierOnly(nowJson), ...(flag("all") ? ["--all"] : []), ...(flag("hits") ? ["--hits"] : [])], { stdio: "inherit" });
+const cmp = spawnSync("node", ["scripts/eval-compare.mjs", tierOnly(baseJson), tierOnly(nowJson), ...(flag("all") ? ["--all"] : []), ...(flag("hits") ? ["--hits", "--hits-file", join(dir, ".eval", "regress-hits.txt")] : []), ...(flag("full") ? ["--full"] : [])], { stdio: "inherit" });
 process.exit(cmp.status ?? 1);
