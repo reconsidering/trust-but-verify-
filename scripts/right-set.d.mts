@@ -15,6 +15,9 @@ export interface RightEntry {
   disputedOn?: string[];
   retired?: boolean | string;
   misread?: boolean;
+  /** Below 1 for labels from an unverified pass; absent = the owner's own mark (1). */
+  weight?: number;
+  source?: string;
 }
 export interface RightSet { fic: string; title: string; entries: RightEntry[]; negatives?: RightEntry[] }
 export const MISREAD_LABELS: string[];
@@ -24,5 +27,7 @@ export function slugOf(title: string): string;
 export function baseVia(v: string): string;
 export function idOf(e: Partial<RightEntry>): string;
 export function parseReport(md: string): { title: string; slug: string; right: (Omit<RightEntry, "marks"> & { side: string })[]; wrong: (Omit<RightEntry, "marks"> & { side: string })[] };
-export function mergeReport(set: Partial<RightSet>, parsed: ReturnType<typeof parseReport>, date: string): { added: number; confirmed: number; disputed: number };
-export function strengthOf(e: RightEntry): "strong" | "single" | "disputed" | "retired";
+export function mergeReport(set: Partial<RightSet>, parsed: ReturnType<typeof parseReport>, date: string, opts?: { weight?: number; source?: string }): { added: number; confirmed: number; disputed: number };
+export function strengthOf(e: RightEntry): "strong" | "single" | "weighted" | "disputed" | "retired";
+export function weightOf(e: Partial<RightEntry>): number;
+export function allowedWeightedChanges(n: number, meanWeight: number): number;

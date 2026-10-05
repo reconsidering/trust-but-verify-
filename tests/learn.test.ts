@@ -6,7 +6,7 @@
 import { existsSync, readFileSync, readdirSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { describe, expect, it } from "vitest";
-import { type RightSet, baseVia, hashKey, slugOf, strengthOf } from "../scripts/right-set.mjs";
+import { type RightSet, baseVia, hashKey, slugOf, strengthOf, weightOf } from "../scripts/right-set.mjs";
 import { extractFromHtml } from "../src/extract";
 import { analyzeWithPatterns } from "../src/heuristic";
 import { FEATURES, MODEL, probability } from "../src/heuristic/learned";
@@ -16,7 +16,8 @@ const labelDir = join(__dirname, "labels");
 const hash = (s: string) => { let h = 2166136261; for (let i = 0; i < s.length; i++) h = Math.imul(h ^ s.charCodeAt(i), 16777619); return h >>> 0; };
 const PRIOR_MEAN = 0.9, PRIOR_STRENGTH = 4;
 
-type Row = { key: string; id: string; f: number[]; y: number };
+/** `wt` is how far the label is trusted (1 for the owner's own marks; less for an unverified pass). */
+type Row = { key: string; id: string; f: number[]; y: number; wt: number };
 
 function loadLabels(): Map<string, "ok" | "wrong"> {
   const out = new Map<string, "ok" | "wrong">();
@@ -32,17 +33,17 @@ function loadLabels(): Map<string, "ok" | "wrong"> {
  * Keyed by pattern and sentence like the audit labels, and only for the fic they came from. A reading marked both ways, a disputed or retired
  * one, and anything reported wrong for a reason other than a misreading (counted twice, too strong) teaches nothing and is left out.
  */
-function rightSetLabels(): Map<string, Map<string, "ok" | "wrong">> {
-  const out = new Map<string, Map<string, "ok" | "wrong">>();
+function rightSetLabels(): Map<string, Map<string, { lab: "ok" | "wrong"; wt: number }>> {
+  const out = new Map<string, Map<string, { lab: "ok" | "wrong"; wt: number }>>();
   const dirp = join(__dirname, "right-set");
   if (!existsSync(dirp)) return out;
   for (const f of readdirSync(dirp).filter((x) => x.endsWith(".json"))) {
     const set = JSON.parse(readFileSync(join(dirp, f), "utf8")) as RightSet;
-    const m = new Map<string, "ok" | "wrong">();
+    const m = new Map<string, { lab: "ok" | "wrong"; wt: number }>();
     const k = (e: { via?: string; h: string }) => `${baseVia(e.via ?? "")}#${e.h}`;
     const rightKeys = new Set(set.entries.map(k));
-    for (const e of set.entries) { const st = strengthOf(e); if (st === "strong" || st === "single") m.set(k(e), "ok"); }
-    for (const n of set.negatives ?? []) if (n.misread && !rightKeys.has(k(n)) && !n.retired) m.set(k(n), "wrong");
+    for (const e of set.entries) { const st = strengthOf(e); if (st === "strong" || st === "single" || st === "weighted") m.set(k(e), { lab: "ok", wt: weightOf(e) }); }
+    for (const n of set.negatives ?? []) if (n.misread && !rightKeys.has(k(n)) && !n.retired) m.set(k(n), { lab: "wrong", wt: weightOf(n) });
     out.set(set.fic, m);
   }
   return out;
@@ -58,14 +59,14 @@ function precisions(rows: Row[], skip?: Row): (id: string) => number {
   for (const r of rows) {
     if (r === skip) continue;
     const v = c.get(baseId(r.id)) ?? [0, 0];
-    v[0] += r.y; v[1] += 1;
+    const q = r.wt ?? 1; v[0] += r.y * q; v[1] += q;
     c.set(baseId(r.id), v);
   }
   return (id) => { const [ok, n] = c.get(baseId(id)) ?? [0, 0]; return (ok + PRIOR_MEAN * PRIOR_STRENGTH) / (n + PRIOR_STRENGTH); };
 }
 
 /** Ridge logistic regression by Newton steps. x rows are [logit(precision), ...features]; returns [bias, ...weights]. */
-function fit(X: number[][], y: number[], lambda: number): number[] {
+function fit(X: number[][], y: number[], lambda: number, wt: number[] = []): number[] {
   const d = X[0].length + 1;
   const w = new Array(d).fill(0);
   w[1] = 1; // start by trusting the pattern record as it is
@@ -76,10 +77,10 @@ function fit(X: number[][], y: number[], lambda: number): number[] {
       const x = [1, ...X[n]];
       let z = 0;
       for (let k = 0; k < d; k++) z += w[k] * x[k];
-      const p = sig(z);
+      const p = sig(z), q = wt[n] ?? 1;
       for (let k = 0; k < d; k++) {
-        g[k] += (p - y[n]) * x[k];
-        for (let l = 0; l < d; l++) H[k][l] += p * (1 - p) * x[k] * x[l];
+        g[k] += q * (p - y[n]) * x[k];
+        for (let l = 0; l < d; l++) H[k][l] += q * p * (1 - p) * x[k] * x[l];
       }
     }
     // Ridge on everything except the intercept and the pattern-record coefficient (which is shrunk toward 1).
@@ -145,14 +146,15 @@ describe.skipIf(!dir)("context model", () => {
           audit: (h) => {
             const key = `${h.via}#${hash(h.sentence).toString(16)}`;
             let lab = labels.get(key);
-            const fromReport = rs?.get(`${baseVia(h.via)}#${hashKey(h.sentence)}`);
+            const rep = rs?.get(`${baseVia(h.via)}#${hashKey(h.sentence)}`);
+            const fromReport = rep?.lab;
             // People get things wrong: where the audit review and a report disagree, neither is used.
             if (lab && fromReport && lab !== fromReport) { clashes++; if (!seen.has(key)) seen.add(key); return; }
             if (!lab && fromReport) { lab = fromReport; if (h.f && !seen.has(key)) fromReports++; }
             if (!h.f) { if (lab) missing[key] = h.kind; return; }
             if (!lab || seen.has(key)) return;
             seen.add(key);
-            rows.push({ key, id: h.via, f: h.f, y: lab === "ok" ? 1 : 0 });
+            rows.push({ key, id: h.via, f: h.f, y: lab === "ok" ? 1 : 0, wt: !labels.get(key) && rep ? rep.wt : 1 });
           },
         });
       }
@@ -173,7 +175,7 @@ describe.skipIf(!dir)("context model", () => {
       const prec = precisions(train);
       // Inside training, each row's own label is left out of its pattern's precision.
       const Xtr = train.map((r) => [logit(clampP(precisions(train, r)(r.id))), ...r.f]);
-      const w = fit(Xtr, train.map((r) => r.y), lambda);
+      const w = fit(Xtr, train.map((r) => r.y), lambda, train.map((r) => r.wt ?? 1));
       for (const r of test) {
         const base = prec(r.id);
         const x = [logit(clampP(base)), ...r.f];
@@ -189,7 +191,7 @@ describe.skipIf(!dir)("context model", () => {
     // Final model on everything.
     const precAll = precisions(rows);
     const Xall = rows.map((r) => [logit(clampP(precisions(rows, r)(r.id))), ...r.f]);
-    const wAll = fit(Xall, rows.map((r) => r.y), lambda);
+    const wAll = fit(Xall, rows.map((r) => r.y), lambda, rows.map((r) => r.wt ?? 1));
     lines.push("Weights:", "", `- bias ${wAll[0].toFixed(3)}, pattern record ${wAll[1].toFixed(3)}`, ...FEATURES.map((n, i) => `- ${n}: ${wAll[i + 2].toFixed(3)}`), "", `Switch on: ${better ? "yes" : "no"} (needs lower held-out log loss and higher AUC).`);
     // What it would do to the wrong rows: share of wrong hits trusted below 0.8, vs right hits.
     const mult = (r: Row) => Math.max(0.4, Math.min(1, probability(precAll(r.id), r.f, { enabled: true, bias: wAll[0], prior: wAll[1], weights: wAll.slice(2) }) / 0.9));
