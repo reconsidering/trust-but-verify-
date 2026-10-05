@@ -2,10 +2,10 @@
 // Regenerate the two files that are made from the labels: src/heuristic/reliability.ts (per-pattern precision) and src/heuristic/learned.ts
 // (the context model). Do it once after a batch of label or pattern PRs has merged, not inside every PR: the files change on every label import,
 // so PRs that carry them conflict with each other.
-//   npm run regen -- [--reliability-only] [dir=ao3-samples]
+//   npm run regen -- [--reliability-only | --model-only] [dir=ao3-samples]   (--model-only: just the context model, when the reliability workflow's PR has the table)
 // The model needs the local sample fics (ao3-samples) and takes about 9 minutes; the reliability table needs only tests/right-set (a few seconds).
 import { spawnSync } from "node:child_process";
-import { appendFileSync, existsSync, readFileSync } from "node:fs";
+import { existsSync, readFileSync, writeFileSync } from "node:fs";
 import { execFileSync } from "node:child_process";
 import { resolve } from "node:path";
 
@@ -18,7 +18,7 @@ const run = (label, env, files) => {
   if (r.status) { console.error(`${label} failed`); process.exit(r.status); }
   console.log(`${label} done in ${Math.round((Date.now() - t0) / 1000)}s`);
 };
-run("reliability table", { WRITE_RELIABILITY: "1" }, ["tests/reliability.test.ts"]);
+if (!args.includes("--model-only")) run("reliability table", { WRITE_RELIABILITY: "1" }, ["tests/reliability.test.ts"]);
 if (args.includes("--reliability-only")) process.exit(0);
 if (!existsSync(dir)) { console.error(`No sample folder at ${dir}: the context model needs it (or pass --reliability-only).`); process.exit(2); }
 run("context model", { AO3_DIR: dir, WRITE_LEARNED: "1" }, ["tests/learn.test.ts"]);
@@ -32,7 +32,13 @@ try {
     const sha = execFileSync("git", ["rev-parse", "--short", "HEAD"], { encoding: "utf8" }).trim();
     const n = Number(hits[1]).toLocaleString("en-US");
     const un = unseen.length === 2 ? `${unseen[0][1]} → ${unseen[1][1]} | ${unseen[0][2]} → ${unseen[1][2]}` : "not recorded | not recorded";
-    appendFileSync("docs/METRICS.md", `| ${new Date().toISOString().slice(0, 10)} | ${n} (${hits[2]}) | ${rows[0][1]} → ${rows[1][1]} | ${rows[0][2]} → ${rows[1][2]} | ${un} | ${sha} |\n`);
+    const line = `| ${new Date().toISOString().slice(0, 10)} | ${n} (${hits[2]}) | ${rows[0][1]} → ${rows[1][1]} | ${rows[0][2]} → ${rows[1][2]} | ${un} | ${sha} |`;
+    // After the last row of the table at the top, not at the end of the file (which has notes).
+    const lines = readFileSync("docs/METRICS.md", "utf8").split("\n");
+    let at = lines.length;
+    lines.forEach((l, i) => { if (/^\| 20\d\d-/.test(l)) at = i + 1; });
+    lines.splice(at, 0, line);
+    writeFileSync("docs/METRICS.md", lines.join("\n"));
     console.log("Added a row to docs/METRICS.md.");
   }
 } catch (e) { console.log(`(could not update docs/METRICS.md: ${e.message})`); }
