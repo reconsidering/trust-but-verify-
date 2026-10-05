@@ -214,3 +214,31 @@ describe("round 78: the Strawberry Mama report", () => {
     expect(r.desires.some((d) => d.startsWith("penis-inside:Derek:top"))).toBe(true);
   });
 });
+
+describe("round 79: the Steve and Eddie report (Chapters 4, 5 and 8)", () => {
+  const dsLead2 = "Stiles and Derek were in bed, naked and kissing, hard and aching. Derek kissed Stiles. Stiles kissed Derek back, moaning. ".repeat(4) + "\n\n";
+  const SD = { ...META, fandoms: ["Teen Wolf"], characters: ["Derek Hale", "Stiles Stilinski"], relationships: ["Derek Hale/Stiles Stilinski"], freeforms: [] };
+  const go = (t: string) => {
+    const hits: AuditHit[] = [];
+    const a = analyzeWithPatterns(dsLead2 + t, SD, { quiet: true, audit: (h) => hits.push(h) });
+    return { a, hits, p: a.pairings[0] };
+  };
+  it("pushing inside after unlocking a door is a door", () => {
+    const r = go("Derek drove home, his stomach in knots. He climbs the steps, fingers trembling as he unlocks the door.\n\nHe pushes inside. Shuts the door and exhales, drags both hands down his face.");
+    expect(r.hits.filter((h) => h.via.startsWith("pushed-in"))).toEqual([]);
+    expect(r.p.anal.instances.length).toBe(0);
+  });
+  it("“isn’t fully in his body” is a mind, not a cock", () => {
+    const r = go("Stiles just lets it happen, his fingers curled loosely around Derek’s wrist. Like he isn't fully in his body yet and needs something to keep him here.");
+    expect(r.hits.filter((h) => h.via === "inside")).toEqual([]);
+  });
+  it("“grounding himself” is steadying, not masturbating, but jerking himself off still is", () => {
+    expect(go("He rested his forearms on the cool metal and exhaled, grounding himself.").p.solo?.occurs).toBe(false);
+    expect(go("He jerked himself off, panting, eyes shut, his hand slick around his cock.").p.solo?.occurs).toBe(true);
+  });
+  it("“still the man from fucking into his mouth”: the one kept from it is the one doing it", () => {
+    const r = go("Stiles plunged his lips over the entire length, his mouth struggling to hold it. He had to move his hand to Derek’s thigh so he could still the man from fucking into his mouth.");
+    const d = (r.p.oral.desires ?? []).find((x) => x.via?.startsWith("fucked-mouth"));
+    expect(d && `${d.who.split(" ")[0]}:${d.role}`).toBe("Stiles:bottom");
+  });
+});

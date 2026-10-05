@@ -73,7 +73,7 @@ export const PRECISION: Record<string, number> = {
   "bend-over": 0.95,
   "bent-over-furniture": 0.767,
   "between-thighs-licked": 0.72,
-  "bobbed-head": 0.967,
+  "bobbed-head": 0.969,
   "bobs-slowly": 0.92,
   "body-clench-empty": 0.964,
   "body-felt-empty": 0.933,

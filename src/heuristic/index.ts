@@ -1060,6 +1060,14 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
         if (other) subjChar = other;
       }
     }
+    // "so he could still the man from fucking into his mouth": the one kept from doing it is the one doing it, not the sentence's subject.
+    if (pat.elided) {
+      const fm = new RegExp(`\\b(?:stop|stopped|stopping|still|stilled|stilling|keep|kept|keeping|prevent|prevented|preventing|hold|held|holding|restrain|restrained)\\s+(?:(?:the|that)\\s+(?:man|guy|boy|other\\s+\\w+)|Epithet\\d+|him|her|them|(${NAMES}))\\s+from\\s*$`, "i").exec(sent.slice(0, m.index) + (/^\W*from\b/i.exec(m[0])?.[0] ?? ""));
+      if (fm) {
+        const who = fm[1] ? cast.byAlias.get(stripPoss(fm[1])) : subjChar && ctx.partnerOf(subjChar);
+        if (who) subjChar = who;
+      }
+    }
     // "He'd let him spread him open and shove his dick inside him": whose dick? The one who is let, not the one letting.
     if (!pat.elided && !subjChar && pat.subj === "t" && /^(?:his|her|their)$/i.test(tTok ?? "")) {
       const lm = new RegExp(`(${NAMES}|[Hh]e|[Ss]he|[Tt]hey)(?:['’]d| would| will| could| can)?\\s+(?:let|lets|allow|allows|allowed)\\s+(${NAMES}|him|her|them)\\b[^.!?“”]{0,80}$`).exec(sent.slice(0, m.index));
@@ -1464,6 +1472,17 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
     if (pat.id === "self-finger" && /\bopen\w*\s+(?:himself|herself|themselves|myself|yourself)\s+up\b/i.test(matchText) && (/\b(?:expose|vulnerab\w*|emotion\w*|feelings?|let\s+\w+\s+in|to\s+(?:something|someone|anyone|anything|hurt|pain))\b/i.test(sent) || /^\W*(?:how|why|what|can|could|would|should)\b[^.!]*\?\s*$/i.test(sent) || !ANAL_CTX.test(sent) && !FINGER_CTX.test(sent) && !/\b(?:lube\w*|hole|rim|ass|fingers?|slick\w*|stretch\w*|prep\w*)\b/i.test(sent))) return;
     // "Carl watched him reach down to take himself out of his sweatpants": a man handling himself, not someone bending over.
     if (pat.id.startsWith("ogle-bend-over") && /\b(?:reach\w*|bend\w*|lean\w*|bent|stretch\w*)\s+down\s+(?:and\s+|to\s+)?(?:take|took|pull|pulled|slip|slipped|free|freed|fish|fished|get|got|palm|palmed|grab|grabbed|wrap|wrapped|undo|undid|unzip|unzipped|tug|tugged|shove|shoved|push|pushed)\w*\s+(?:himself|herself|his\s+(?:cock|dick|pants|sweatpants|jeans|boxers|underwear)|out\s+of)/i.test(sent.slice(m.index!))) return;
+    // "He climbs the steps and unlocks the door. He pushes inside.": a short sentence right after a door is a door, not a body.
+    if (pat.id.startsWith("pushed-in") && sent.trim().length <= 40 && !/\b(?:thrust|fuck|rut|snap|pound|slam)/i.test(matchText)) {
+      const before = para.slice(0, Math.max(0, para.indexOf(sent.trim().slice(0, 20)))).trim();
+      const prevText = before || (pi > 0 ? paras[pi - 1] : "");
+      const prevSent = prevText.split(/(?<=[.!?])\s+/).filter(Boolean).pop() ?? "";
+      if (/\b(?:door|doorway|steps|porch|stairs|threshold|keys?|unlock\w*|knock\w*|apartment|house|hallway|lobby|foyer)\b/i.test(prevSent) && !/\b(?:cock|dick|hole|ass|arse|thrust\w*|lube\w*|prostate|moan\w*|naked|erection|fucked?|stretch\w*)\b/i.test(para)) return;
+    }
+    // "Like he isn't fully in his body yet": a mind not in its body, not a cock inside one.
+    if (pat.id.startsWith("inside") && /\bin\s+(?:his|her|their|my|your)\s+(?:own\s+)?body\b/i.test(matchText) && !/\binside\b/i.test(matchText)) return;
+    // "exhaled, grounding himself": steadying oneself, not grinding.
+    if (pat.id.startsWith("mast-himself") && /\bground(?:ing|ed|s)\s+(?:himself|herself|themself|themselves)\b(?!\s+(?:against|on|onto|into|down|in|back|up against|over))/i.test(matchText + sent.slice(m.index! + matchText.length, m.index! + matchText.length + 14))) return;
     // "swept his tongue inside of him" with a bare pronoun or name, while mouths are kissing: a kiss, not rimming.
     if (pat.id === "tongue-inside-him" && !/\b(?:ass|arse|hole|rim|crack|cheeks|entrance|pucker|cavity|opening)\b/i.test(matchText) &&
       /\b(?:mouths?|lips|kiss\w*|tongues?\s+(?:to|with)|suck\w*\s+on\s+[\w'’]+\s+tongue|against\s+(?:the|his|her)\s+\w+)\b/i.test(para)) return;

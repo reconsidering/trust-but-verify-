@@ -1,0 +1,84 @@
+{
+ "entries": [
+  {
+   "kind": "scene",
+   "card": "blowjob",
+   "pairing": "Eddie Munson/Steve Harrington",
+   "top": "Steve Harrington",
+   "bottom": "Eddie Munson",
+   "via": "bobbed-head",
+   "h": "b555e0bd",
+   "conf": 38,
+   "marks": {
+    "right": 1,
+    "wrong": 0
+   },
+   "seen": [
+    "2026-10-05"
+   ]
+  }
+ ],
+ "fic": "steve-and-eddie-chapters-4-5-8",
+ "title": "Steve and Eddie chapters 4 5 8",
+ "negatives": [
+  {
+   "kind": "scene",
+   "card": "anal",
+   "pairing": "Eddie Munson/Steve Harrington",
+   "top": "Eddie Munson",
+   "bottom": "Steve Harrington",
+   "via": "pushed-in",
+   "h": "56b1a052",
+   "conf": 38,
+   "misread": true,
+   "seen": [
+    "2026-10-05"
+   ],
+   "retired": "fixed: door push, in his body idiom, grounding himself, kept-from-fucking subject"
+  },
+  {
+   "kind": "scene",
+   "card": "anal",
+   "pairing": "Eddie Munson/Steve Harrington",
+   "top": "Steve Harrington",
+   "bottom": "Eddie Munson",
+   "via": "inside",
+   "h": "35aeec9a",
+   "conf": 64,
+   "misread": true,
+   "seen": [
+    "2026-10-05"
+   ],
+   "retired": "fixed: door push, in his body idiom, grounding himself, kept-from-fucking subject"
+  },
+  {
+   "kind": "hint",
+   "card": "blowjob",
+   "pairing": "Eddie Munson/Steve Harrington",
+   "who": "Eddie Munson",
+   "role": "top",
+   "wants": true,
+   "via": "fucked-mouth",
+   "h": "9fccaba9",
+   "conf": 40,
+   "misread": true,
+   "seen": [
+    "2026-10-05"
+   ],
+   "retired": "fixed: door push, in his body idiom, grounding himself, kept-from-fucking subject"
+  },
+  {
+   "kind": "solo",
+   "card": "solo",
+   "pairing": "Eddie Munson/Steve Harrington",
+   "who": "Eddie Munson",
+   "via": "",
+   "h": "81489d0d",
+   "misread": true,
+   "seen": [
+    "2026-10-05"
+   ],
+   "retired": "fixed: door push, in his body idiom, grounding himself, kept-from-fucking subject"
+  }
+ ]
+}
