@@ -27,7 +27,7 @@ export function slugOf(title: string): string;
 export function baseVia(v: string): string;
 export function idOf(e: Partial<RightEntry>): string;
 export function parseReport(md: string): { title: string; slug: string; right: (Omit<RightEntry, "marks"> & { side: string })[]; wrong: (Omit<RightEntry, "marks"> & { side: string })[] };
-export function mergeReport(set: Partial<RightSet>, parsed: ReturnType<typeof parseReport>, date: string, opts?: { weight?: number; source?: string }): { added: number; confirmed: number; disputed: number };
+export function mergeReport(set: Partial<RightSet>, parsed: ReturnType<typeof parseReport>, date: string, opts?: { weight?: number; weightWrong?: number; source?: string }): { added: number; confirmed: number; disputed: number };
 export function strengthOf(e: RightEntry): "strong" | "single" | "weighted" | "disputed" | "retired";
 export function weightOf(e: Partial<RightEntry>): number;
 export function allowedWeightedChanges(n: number, meanWeight: number): number;

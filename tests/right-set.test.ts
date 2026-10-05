@@ -219,6 +219,12 @@ describe("right-set: labels from an unverified pass carry a weight", () => {
     expect(strengthOf(set.entries![0] as RightEntry)).toBe("weighted");
     expect(strengthOf({ ...(set.entries![0] as RightEntry), weight: undefined })).toBe("strong");
   });
+  it("trusts what an unverified pass calls wrong less than what it calls right, when told to", () => {
+    const set: Partial<RightSet> = {};
+    mergeReport(set, parseReport(rep), "2026-10-05", { weight: 0.85, weightWrong: 0.3, source: "claude" });
+    expect(set.entries![0]).toMatchObject({ weight: 0.85, source: "claude" });
+    expect(set.negatives![0]).toMatchObject({ weight: 0.3, source: "claude", misread: true });
+  });
   it("a second unverified pass adds nothing; the owner confirming makes the entry theirs, at full weight", () => {
     const set: Partial<RightSet> = {};
     mergeReport(set, parseReport(rep), "2026-10-05", { weight: 0.9, source: "claude" });

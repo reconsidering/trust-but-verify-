@@ -10,7 +10,7 @@
    "via": "sinks-to-floor",
    "h": "6d2d89b4",
    "conf": 22,
-   "weight": 0.9,
+   "weight": 0.85,
    "source": "claude",
    "marks": {
     "right": 1,
@@ -27,7 +27,7 @@
    "who": "Henry Fox-Mountchristen-Windsor",
    "via": "mast-himself",
    "h": "69ef60c8",
-   "weight": 0.9,
+   "weight": 0.85,
    "source": "claude",
    "marks": {
     "right": 1,
@@ -46,7 +46,7 @@
    "via": "wraps-them-around",
    "h": "5a15097",
    "conf": 44,
-   "weight": 0.9,
+   "weight": 0.85,
    "source": "claude",
    "marks": {
     "right": 1,
@@ -65,7 +65,7 @@
    "via": "mouth-around-him",
    "h": "6b97fff4",
    "conf": 71,
-   "weight": 0.9,
+   "weight": 0.85,
    "source": "claude",
    "marks": {
     "right": 1,
@@ -84,7 +84,7 @@
    "via": "swallowed-down",
    "h": "a7832583",
    "conf": 85,
-   "weight": 0.9,
+   "weight": 0.85,
    "source": "claude",
    "marks": {
     "right": 1,
@@ -103,7 +103,7 @@
    "via": "dd3-tongue-along-length",
    "h": "f411296b",
    "conf": 62,
-   "weight": 0.9,
+   "weight": 0.85,
    "source": "claude",
    "marks": {
     "right": 1,
@@ -122,7 +122,7 @@
    "via": "dd3-tongue-and-throat",
    "h": "7fa5532",
    "conf": 60,
-   "weight": 0.9,
+   "weight": 0.85,
    "source": "claude",
    "marks": {
     "right": 1,
@@ -141,7 +141,7 @@
    "via": "swallowed-down",
    "h": "6d2d89b4",
    "conf": 60,
-   "weight": 0.9,
+   "weight": 0.85,
    "source": "claude",
    "marks": {
     "right": 1,
@@ -159,7 +159,7 @@
    "bottom": "Henry Fox-Mountchristen-Windsor",
    "via": "dd3-crooks-digit",
    "h": "7f67132e",
-   "weight": 0.9,
+   "weight": 0.85,
    "source": "claude",
    "marks": {
     "right": 1,
@@ -185,7 +185,7 @@
    "conf": 15,
    "misread": true,
    "gone": false,
-   "weight": 0.9,
+   "weight": 0.3,
    "source": "claude",
    "seen": [
     "2026-10-05"
@@ -202,7 +202,7 @@
    "conf": 51,
    "misread": true,
    "gone": false,
-   "weight": 0.9,
+   "weight": 0.3,
    "source": "claude",
    "seen": [
     "2026-10-05"
@@ -219,7 +219,7 @@
    "conf": 48,
    "misread": true,
    "gone": false,
-   "weight": 0.9,
+   "weight": 0.3,
    "source": "claude",
    "seen": [
     "2026-10-05"

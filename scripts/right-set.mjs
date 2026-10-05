@@ -98,6 +98,8 @@ export { idOf };
 export function mergeReport(set, parsed, date, opts = {}) {
   const weight = typeof opts.weight === "number" && opts.weight > 0 && opts.weight < 1 ? opts.weight : undefined;
   const stamp = weight === undefined ? {} : { weight, source: opts.source ?? "unverified" };
+  // A reading an unverified pass calls wrong is trusted less than one it calls right (see docs/METRICS.md, the Oct 5 spot-check): its own weight, default the same.
+  const stampWrong = weight === undefined ? {} : { weight: opts.weightWrong ?? weight, source: opts.source ?? "unverified" };
   set.fic = parsed.slug;
   set.title = parsed.title;
   set.entries ??= [];
@@ -132,7 +134,7 @@ export function mergeReport(set, parsed, date, opts = {}) {
   const negIds = new Set(set.negatives.map(idOf));
   for (const it of parsed.wrong) {
     const { side, ...rest } = it;
-    if (!negIds.has(idOf(rest))) { set.negatives.push({ ...rest, ...stamp, seen: [date] }); negIds.add(idOf(rest)); }
+    if (!negIds.has(idOf(rest))) { set.negatives.push({ ...rest, ...stampWrong, seen: [date] }); negIds.add(idOf(rest)); }
   }
   // The other way round: a right mark on a reading already reported wrong keeps it disputed.
   for (const it of parsed.right) for (const e of set.entries) if (same(e, it) && (set.negatives ?? []).some((n) => n.misread && same(n, it)) && !(e.disputedOn ?? []).includes(date)) { e.marks.wrong++; e.disputedOn = [...(e.disputedOn ?? []), date]; }
