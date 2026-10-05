@@ -300,8 +300,8 @@ export function compilePatterns(defs: PatternDef[], aliasPattern: string): Compi
   const counters = { t: 0, b: 0 };
   const g = (role: "t" | "b") => `${role}_${++counters[role]}`;
   const bare = (role: "t" | "b") =>
-    `(?<${g(role)}>(?:${NAMES})(?!['’]s\\b)|[Hh]e|[Ss]he|[Tt]hey|I|[Yy]ou|him|${HER_OBJ}|them|me)(?![\\w'’])`;
-  const objOnly = (role: "t" | "b") => `(?<${g(role)}>(?:${NAMES})(?!['’]s\\b)|him|${HER_OBJ}|them|me|you)(?![\\w'’])`;
+    `(?<${g(role)}>(?:${NAMES})(?!['’]s\\b)|[Hh]e|[Ss]he|[Tt]hey|I|[Yy]ou|him|${HER_OBJ}|them|me)(?![\\w'’]|-\\w)`;
+  const objOnly = (role: "t" | "b") => `(?<${g(role)}>(?:${NAMES})(?!['’]s\\b)|him|${HER_OBJ}|them|me|you)(?![\\w'’]|-\\w)`;
   // "Harry's" and, for names ending in s, "Stiles'".
   const POSS_S = `(?:${NAMES})(?:['’]s|(?<=s)['’](?!\\w))`;
   const poss = (role: "t" | "b") => `(?<${g(role)}>${POSS_S}|[Hh]is|[Hh]er|[Tt]heir|[Mm]y|[Yy]our)`;
@@ -2086,6 +2086,98 @@ export const PATTERNS: PatternDef[] = [
     src: `\\b{B}\\s+{aux}[^.!?]{0,60}?using\\s+only\\s+(?:his|her)\\s+tongue\\s+and\\s+throat\\s+to\\s+bring\\s+{T}\\b`,
   },
   {
+    // "He kisses his way up the shaft"
+    id: "dd4-kisses-up-shaft",
+    cat: "oral",
+    act: "blowjob",
+    subj: "b",
+    weight: 0.85,
+    needsCtx: true,
+    src: `\\b{B}\\s+{aux}(?:kiss|lick|trail|mouth|nuzzl)\\w*\\s+(?:his|her)\\s+way\\s+(?:up|down|along)\\s+(?:the|{T:poss}|his|its)\\s+(?:shaft|length|cock|dick)\\b`,
+  },
+  {
+    // "licking the liquid from its tip"
+    id: "dd4-licks-precome-from-tip",
+    cat: "oral",
+    act: "blowjob",
+    subj: "b",
+    weight: 0.8,
+    needsCtx: true,
+    src: `\\b{B}\\b[^.!?]{0,60}?\\b(?:lick|lap|swip|tast|collect|catch)\\w*\\s+(?:the\\s+)?(?:[\\w-]+\\s+){0,2}?(?:liquid|fluid|precome|pre-come|precum|pre-cum|bead|beads|drop|drops|salt)\\s+(?:from|off|at)\\s+(?:its|the|his|{T:poss})\\s+(?:tip|head|slit|crown)\\b`,
+  },
+  {
+    // "swallows down what he can of Obi-Wan's length"
+    id: "dd4-swallows-what-he-can",
+    cat: "oral",
+    act: "blowjob",
+    subj: "b",
+    weight: 0.9,
+    needsCtx: true,
+    src: `\\b{B}\\s+{aux}swallow\\w*\\s+(?:down\\s+)?(?:what|as much|all)\\b[^.!?]{0,30}?\\bof\\s+{T:poss}\\s+(?:length|cock|dick|shaft)\\b`,
+  },
+  {
+    // "Anakin sucked cock"
+    id: "dd4-sucked-cock",
+    cat: "oral",
+    act: "blowjob",
+    subj: "b",
+    weight: 0.8,
+    needsCtx: true,
+    src: `\\b{B}\\s+{aux}(?:suck|sucks|sucked|sucking)\\s+(?:a\\s+)?cock(?:s)?\\b(?!\\s+(?:in|into)\\s+(?:his|her)\\s+(?:ass|mouth))`,
+  },
+  {
+    // "Anakin can fit most of it in his mouth without choking"
+    id: "dd4-fits-in-mouth",
+    cat: "oral",
+    act: "blowjob",
+    subj: "b",
+    weight: 0.85,
+    needsCtx: true,
+    src: `\\b{B}\\s+{aux}(?:can|could|manages? to|managed to)?\\s*fit\\w*\\s+(?:most|all|half|more|the head|the tip|as much)\\s+of\\s+(?:it|him|{T:poss}\\s+(?:length|cock|dick))\\s+in(?:to)?\\s+(?:his|her)\\s+mouth\\b`,
+  },
+  {
+    // "He guides Anakin further down on his cock"
+    id: "dd4-guides-down-on-cock",
+    cat: "oral",
+    act: "blowjob",
+    subj: "t",
+    weight: 0.9,
+    needsCtx: true,
+    src: `\\b{T}\\s+{aux}guid\\w+\\s+{B}\\s+(?:further\\s+|deeper\\s+|farther\\s+|slowly\\s+)?(?:down\\s+)?on(?:to)?\\s+(?:his|her)\\s+(?:cock|dick|length|shaft)\\b`,
+  },
+  {
+    // "Anakin carefully drags teeth along his shaft"
+    id: "dd4-drags-teeth-along",
+    cat: "oral",
+    act: "blowjob",
+    subj: "b",
+    weight: 0.85,
+    needsCtx: true,
+    src: `\\b{B}\\s+{aux}drag\\w*\\s+(?:his|her)?\\s*teeth\\s+(?:\\w+ly\\s+)?(?:lightly\\s+|gently\\s+)?(?:along|over|against|across)\\s+(?:the\\s+|{T:poss}\\s+)(?:shaft|length|cock|dick|head)\\b`,
+  },
+  {
+    // "drag Anakin's body closer and grind their hips together"
+    id: "dd4-frot-grind-hips-together",
+    cat: "vibe",
+    act: "frottage",
+    subj: "t",
+    weight: 0.75,
+    needsCtx: true,
+    signal: { kind: "handjob", actorRole: "top" },
+    src: `\\b{T}\\s+{aux}[^.!?;]{0,80}?\\bgrind\\w*\\s+their\\s+(?:hips|bodies|cocks|erections)\\s+together\\b`,
+  },
+  {
+    // "reaches down past the band of his pants, drawing his cock out and stroking it"
+    id: "dd4-hj-reaches-past-waistband",
+    cat: "vibe",
+    act: "handjob",
+    subj: "t",
+    weight: 0.85,
+    needsCtx: true,
+    signal: { kind: "handjob", actorRole: "top" },
+    src: `\\b{T}\\s+{aux}reach\\w*\\s+(?:down\\s+)?(?:past|under|beneath|into|inside)\\s+(?:the\\s+)?(?:band|waistband|hem|front)\\s+of\\s+{B:poss}\\s+(?:pants|boxers|jeans|underwear|briefs|shorts|trousers)[^.!?]{0,30}?,\\s*(?:draw|pull|tak|fish|free)\\w*\\s+(?:it|{B:poss}\\s+(?:cock|dick))\\s+out\\b`,
+  },
+  {
     // "Derek's warm tongue teases the pucker of his rim", "his tongue traces her entrance"
     id: "tongue-teases-hole",
     cat: "oral",
@@ -3288,7 +3380,7 @@ export const PATTERNS: PatternDef[] = [
     subj: "b",
     weight: 0.7,
     needsCtx: true,
-    src: `\\b{B:poss}\\s+(?:tongue|mouth|lips)\\s+(?:[\\w,-]+\\s+){0,18}?(?:over|under|along|against|around|on|down)\\s+{T:poss}\\s+(?:balls|sac|dick|cock|shaft|length|crotch)\\b`,
+    src: `\\b{B:poss}\\s+(?:tongue|mouth|lips)\\s+(?:(?!(?:when|while|as|after|before|until|because|though|although|if)\\b)[\\w,-]+\\s+){0,18}?(?:over|under|along|against|around|on|down)\\s+{T:poss}\\s+(?:balls|sac|dick|cock|shaft|length|crotch)\\b`,
   },
   {
     // "Steve's ass strangles his cock", "his hole squeezed around Eddie's cock"
