@@ -44,6 +44,8 @@ export interface AuditHit {
 export interface PatternOptions {
   /** Leave out the "how this works" caveats in notes (for tests). */
   quiet?: boolean;
+  /** Turn off the scene-typing pass (for measuring it). */
+  noSceneTyping?: boolean;
   /** Called once for every act and desire hit with the pattern behind it (for the pattern audit report). */
   audit?: (hit: AuditHit) => void;
   /** Called once with what the engine worked from: its paragraphs, the point of view at each, and the texts it found (for the gold-label eval). */
@@ -2007,6 +2009,29 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
     }
     return true;
   });
+
+  // Scene typing: a weak hint (a glance, kneeling, a touch) is read in the light of the act that is actually happening beside it.
+  //  - It can't contradict the roles of a clear scene in the same or an adjacent paragraph: "Alex is thrusting into Henry" next to a hint that
+  //    Alex bottoms is a pronoun slip, not a second fact.
+  //  - A glance at a crotch or a kneel is a cue for the act it leads to: next to a rimming or a blowjob scene it isn't an anal cue, and next to
+  //    a rimming scene it isn't a blowjob cue.
+  if (!opts.noSceneTyping) {
+    const WEAK_KIND = new Set<string>(["ogling", "touch", "prep", "behavior", "body", "position", "fingers"]);
+    const solid = acts.filter((a) => a.weight >= 0.7 && (a.basis === "named" || a.basis === "pronoun"));
+    const near = (a: ActHit, d: DesireHit, r = 1) => Math.abs(a.para - d.para) <= r;
+    desires = desires.filter((d) => {
+      if (!WEAK_KIND.has(d.kind) || !d.wants || d.via?.startsWith("dialogue")) return true;
+      const sameCat = solid.filter((a) => a.cat === d.cat && near(a, d));
+      // roles contradict a clear scene of the same kind between the same two people
+      if (d.cat !== "vibe" && sameCat.some((a) => (d.role === "bottom" && a.top === d.who && a.bottom !== d.who) || (d.role === "top" && a.bottom === d.who && a.top !== d.who))) return false;
+      // wrong act type: an anal glance/kneel beside an oral scene (and no anal scene close by), a blowjob kneel beside a rimming scene
+      const oralBeside = solid.some((a) => a.cat === "oral" && near(a, d));
+      const analClose = solid.some((a) => a.cat === "anal" && near(a, d, 3));
+      if (d.cat === "anal" && (d.kind === "ogling" || /sinks-to-floor|eyes-on-crotch/.test(d.via ?? "")) && oralBeside && !analClose) return false;
+      if (d.cat === "oral" && /sinks-to-floor|eyes-on-crotch/.test(d.via ?? "") && solid.some((a) => a.cat === "oral" && a.act === "rimming" && near(a, d)) && !solid.some((a) => a.cat === "oral" && a.act === "blowjob" && near(a, d, 2))) return false;
+      return true;
+    });
+  }
 
   // The same hint read by two patterns ("wanted to be full of Cas, wanted Cas spilling down his throat") counts once.
   {
