@@ -17,7 +17,7 @@ const hash = (s: string) => { let h = 2166136261; for (let i = 0; i < s.length; 
 const PRIOR_MEAN = 0.9, PRIOR_STRENGTH = 4;
 
 /** `wt` is how far the label is trusted (1 for the owner's own marks; less for an unverified pass). */
-type Row = { key: string; id: string; f: number[]; y: number; wt: number };
+type Row = { key: string; id: string; f: number[]; y: number; wt: number; src?: "audit" | "report" | "weighted" };
 
 function loadLabels(): Map<string, "ok" | "wrong"> {
   const out = new Map<string, "ok" | "wrong">();
@@ -154,13 +154,15 @@ describe.skipIf(!dir)("context model", () => {
             if (!h.f) { if (lab) missing[key] = h.kind; return; }
             if (!lab || seen.has(key)) return;
             seen.add(key);
-            rows.push({ key, id: h.via, f: h.f, y: lab === "ok" ? 1 : 0, wt: !labels.get(key) && rep ? rep.wt : 1 });
+            rows.push({ key, id: h.via, f: h.f, y: lab === "ok" ? 1 : 0, wt: !labels.get(key) && rep ? rep.wt : 1, src: labels.get(key) ? "audit" : rep && rep.wt < 1 ? "weighted" : "report" });
           },
         });
       }
       reportNote = `${fromReports} of them come from mistake reports (tests/right-set); ${clashes} were left out because a report and the audit review disagreed.`;
     }
     if (cache && !existsSync(cache)) writeFileSync(cache, JSON.stringify(rows));
+    // LEARN_FILTER=audit,report keeps only rows from those sources (a diagnostic: which labels move the held-out numbers).
+    if (process.env.LEARN_FILTER) { const keep = process.env.LEARN_FILTER.split(","); rows = rows.filter((r) => keep.includes(r.src ?? "audit")); }
     if (process.env.MISSING_OUT) writeFileSync(process.env.MISSING_OUT, JSON.stringify(missing));
     const lines: string[] = ["# Context model", "", `${rows.length} labelled hits found again in the samples (of ${labels.size} labels); ${rows.filter((r) => !r.y).length} wrong.`, ...(reportNote ? [reportNote] : []), ""];
     expect(rows.length).toBeGreaterThan(200);
