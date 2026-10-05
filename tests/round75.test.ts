@@ -282,6 +282,10 @@ describe("round 80: the Spencer and Del report", () => {
     expect(r.filter((h) => h.via.startsWith("slicked-self"))).toEqual([]);
     expect(r.some((h) => h.via.startsWith("self-finger"))).toBe(true);
   });
+  it("slicking himself up while his fingers work in tandem is still a top slicking up", () => {
+    const r = hitsOf("Spencer added a third finger and then slicked himself up, pumping his fingers in tandem with his fist.").hits;
+    expect(r.some((h) => h.via.startsWith("slicked-self"))).toBe(true);
+  });
   it("a call sign beside a name (“be Del … instead of Bacon”) is one person", () => {
     const meta = { ...SB, characters: ["Spencer Bryant", "Del", "Bacon"] };
     const text = "It was part of taking care of him, giving him the space to be Del, the man, instead of Bacon, the always-on SEAL.\n\nBacon laughed. Spencer kissed Bacon hard. Bacon moaned and Spencer pushed his cock into Bacon’s ass, fucking Bacon slowly.";

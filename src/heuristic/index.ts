@@ -1502,7 +1502,7 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
     // "exhaled, grounding himself": steadying oneself, not grinding.
     if (pat.id.startsWith("mast-himself") && /\bground(?:ing|ed|s)\s+(?:himself|herself|themself|themselves)\b(?!\s+(?:against|on|onto|into|down|in|back|up against|over))/i.test(matchText + sent.slice(m.index! + matchText.length, m.index! + matchText.length + 14))) return;
     // "He lubed himself up, … and worked two fingers in, stretching himself": getting himself ready to be fucked, not slicking up a cock.
-    if (pat.id.startsWith("slicked-self") && !/\b(?:cock|dick|length|shaft|condom)\b/i.test(matchText) && /\b(?:fingers?\s+(?:in|inside)|stretch\w*\s+(?:himself|herself|themself)|open\w*\s+(?:himself|herself|themself)|(?:his|her|their)\s+(?:hole|entrance|rim))\b/i.test(sent.slice(m.index! + matchText.length))) return;
+    if (pat.id.startsWith("slicked-self") && !/\b(?:cock|dick|length|shaft|condom)\b/i.test(matchText) && /\b(?:fingers?\s+(?:in|inside)(?=\s*(?:[,.;]|$|and\b))|stretch\w*\s+(?:himself|herself|themself)|open\w*\s+(?:himself|herself|themself)|(?:his|her|their)\s+(?:hole|entrance|rim))\b/i.test(sent.slice(m.index! + matchText.length))) return;
     // "swept his tongue inside of him" with a bare pronoun or name, while mouths are kissing: a kiss, not rimming.
     if (pat.id === "tongue-inside-him" && !/\b(?:ass|arse|hole|rim|crack|cheeks|entrance|pucker|cavity|opening)\b/i.test(matchText) &&
       /\b(?:mouths?|lips|kiss\w*|tongues?\s+(?:to|with)|suck\w*\s+on\s+[\w'’]+\s+tongue|against\s+(?:the|his|her)\s+\w+)\b/i.test(para)) return;

@@ -16,6 +16,9 @@ Two different questions, two different tools.
 - Results are kept per engine version (`ao3-samples/.eval/`), so the baseline runs once and an unchanged tree is free.
 
 ## Closing the loop
-When `--hits` shows a change you judge **correct**, add it to the gold set (a scene to `scenes`, a removed false positive to `notScenes`) so the next change is checked against it automatically. Over time more of the diff becomes something `check` can answer by itself.
+When `--hits` shows a change you judge **correct**, record it so the next change is checked against it automatically:
+- a **scene** or verdict: add it to the gold set (`scenes`, or `notScenes` for a removed false positive) in `tests/gold/<fic>.json`;
+- a **hint** (who a line points at, a speaker, a prep/ogling/dialogue cue): gold has no hint labels, so mark it "looks right" on the page (or in a mistake report) and import it with `scripts/import-right-set.mjs`.
+Over time more of the diff becomes something `check` can answer by itself.
 
 Run `npm run regress -- --hits --all` before pushing a change to `src/`. The optional pre-push hook (`.githooks/pre-push`) does the same.
