@@ -187,3 +187,30 @@ describe("round 77: the dumbassery report (a shared surname, and everyday action
     expect(hitsOf("Dean fingered himself open with slick fingers, breathing hard.").hits.some((h) => h.via === "self-finger")).toBe(true);
   });
 });
+
+describe("round 78: the Strawberry Mama report", () => {
+  const SM = { ...META, fandoms: ["Teen Wolf"], characters: ["Derek Hale", "Stiles Stilinski"], relationships: ["Derek Hale/Stiles Stilinski"], freeforms: ["Dom Derek Hale", "Sub Stiles Stilinski"] };
+  const dsLead = "Stiles and Derek were in bed, naked and kissing, hard and aching. Derek kissed Stiles. Stiles kissed Derek back, moaning. ".repeat(5) + "\n\n";
+  const go = (t: string) => {
+    const hits: AuditHit[] = [];
+    const a = analyzeWithPatterns(dsLead + t, SM, { quiet: true, audit: (h) => hits.push(h) });
+    const p = a.pairings[0];
+    return { a, hits, scenes: p.anal.instances.map((x) => `${x.top.split(" ")[0]}>${x.bottom.split(" ")[0]}`), desires: (p.anal.desires ?? []).map((d) => `${d.via}:${d.who.split(" ")[0]}:${d.role}:${d.kind}`) };
+  };
+  it("“let a man he’d met fuck him” is the speaker’s past as a bottom, not as a top", () => {
+    expect(go("It seems obscene that he looks exactly as always when last night he let a man he’d only met two hours before fuck him on the floor.").desires).toEqual(["history:Stiles:bottom:history"]);
+  });
+  it("a pronoun in front of “Behind him, Derek…” is the other person", () => {
+    const text = "Before Stiles can think, Derek’s hand presses on his shoulder and suddenly Stiles is going down.\n\nIt is all a blur, Derek pulling, Stiles pushing. His sneakers clatter, his jeans glide off, his underwear close behind. In a blink he is naked from the waist down as he gets on his hands and knees in front of the tub.\n\nBehind him, Derek works his belt open.";
+    expect(go(text).desires.filter((d) => d.startsWith("hands-and-knees"))).toEqual(["hands-and-knees:Stiles:bottom:prep"]);
+  });
+  it("reaching down to take himself out of his pants is not watching someone bend over", () => {
+    expect(go("Under the covers, Stiles’ hips spasmed when Derek turned the camera around, and Stiles watched him reach down to take himself out of his sweatpants, a veiny hand on a veiny dick.").hits.filter((h) => h.via.startsWith("ogle-bend-over"))).toEqual([]);
+    expect(go("Derek watched Stiles bend over the counter, reaching down for the dropped keys.").hits.some((h) => h.via.startsWith("ogle-bend-over"))).toBe(true);
+  });
+  it("“He’d let him … shove his dick inside him” is a wish, with the other person’s dick", () => {
+    const r = go("Derek starts thrusting, like he could fuck Stiles just like this, up against the fridge. The mental image makes Stiles’ blood loop. He’d let Derek do it. He’d let him spread him open and shove his dick inside him right here.");
+    expect(r.scenes).toEqual([]);
+    expect(r.desires.some((d) => d.startsWith("penis-inside:Derek:top"))).toBe(true);
+  });
+});

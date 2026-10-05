@@ -460,6 +460,13 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
       }
       const original = para.slice(s0, s1).trim();
       ctx.newSentence(epiTable);
+      // The last sentence of a paragraph, and the next paragraph opens "Behind him, Negan works his pants open": the "he" in front is the other one.
+      if (s1 >= mp.trimEnd().length && /^\W*he['’]?s?\b|\b(?:he|she|they)\b/i.test(sent) && !new RegExp(`\\b(?:${NAMES})\\b`).test(sent)) {
+        const behind = new RegExp(`^\\W*(?:Behind|Above|Over|Beside|Next to) (?:him|her|them),?\\s+(${NAMES})\\b`).exec(paras[pi + 1] ?? "");
+        const doer = behind ? cast.byAlias.get(stripPoss(behind[1])) : undefined;
+        const front = doer && ctx.partnerOf(doer);
+        if (front) ctx.lastSubject = front;
+      }
       ctx.sentMentions = [...sent.matchAll(nameRe)]
         .map((m) => ({ c: cast.byAlias.get(stripPoss(m[0]))!, at: m.index! }))
         .filter((m) => !!m.c);
@@ -1053,6 +1060,15 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
         if (other) subjChar = other;
       }
     }
+    // "He'd let him spread him open and shove his dick inside him": whose dick? The one who is let, not the one letting.
+    if (!pat.elided && !subjChar && pat.subj === "t" && /^(?:his|her|their)$/i.test(tTok ?? "")) {
+      const lm = new RegExp(`(${NAMES}|[Hh]e|[Ss]he|[Tt]hey)(?:['’]d| would| will| could| can)?\\s+(?:let|lets|allow|allows|allowed)\\s+(${NAMES}|him|her|them)\\b[^.!?“”]{0,80}$`).exec(sent.slice(0, m.index));
+      if (lm) {
+        const letter = resolveToken(lm[1], sent.slice(m.index!));
+        const target = /^(?:him|her|them)$/i.test(lm[2]) ? (letter && ctx.partnerOf(letter)) : cast.byAlias.get(stripPoss(lm[2]));
+        if (target && target !== letter) subjChar = target;
+      }
+    }
     // "Dracula … sat next to Jack pulling him into his lap": a name right after a preposition is that preposition's object;
     // the -ing verb that follows belongs to the sentence's subject.
     if (!pat.elided && !subjChar) {
@@ -1446,6 +1462,8 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
     if (pat.id === "pushed-head-down" && (/^\s*(?:against|into|on|in)\s+(?:[\w'’]+\s+)?(?:shoulder|chest|neck|pillow|mattress|hands?|arms?|sleeve|collar|hair|back|steering|table|desk|wall)\b/i.test(after) || (/^(?:press|tug)/i.test(matchText.replace(/^\S+\s+/, "")) && /^(?:his|her|their)$/i.test(bTok ?? "") && !/\b(?:crotch|cock|dick|groin|lap|erection|bulge|length|prick|shaft|between)\b/i.test(sent)))) return;
     // "How does he open himself up and expose Jack to something like this?": opening up emotionally, not fingering.
     if (pat.id === "self-finger" && /\bopen\w*\s+(?:himself|herself|themselves|myself|yourself)\s+up\b/i.test(matchText) && (/\b(?:expose|vulnerab\w*|emotion\w*|feelings?|let\s+\w+\s+in|to\s+(?:something|someone|anyone|anything|hurt|pain))\b/i.test(sent) || /^\W*(?:how|why|what|can|could|would|should)\b[^.!]*\?\s*$/i.test(sent) || !ANAL_CTX.test(sent) && !FINGER_CTX.test(sent) && !/\b(?:lube\w*|hole|rim|ass|fingers?|slick\w*|stretch\w*|prep\w*)\b/i.test(sent))) return;
+    // "Carl watched him reach down to take himself out of his sweatpants": a man handling himself, not someone bending over.
+    if (pat.id.startsWith("ogle-bend-over") && /\b(?:reach\w*|bend\w*|lean\w*|bent|stretch\w*)\s+down\s+(?:and\s+|to\s+)?(?:take|took|pull|pulled|slip|slipped|free|freed|fish|fished|get|got|palm|palmed|grab|grabbed|wrap|wrapped|undo|undid|unzip|unzipped|tug|tugged|shove|shoved|push|pushed)\w*\s+(?:himself|herself|his\s+(?:cock|dick|pants|sweatpants|jeans|boxers|underwear)|out\s+of)/i.test(sent.slice(m.index!))) return;
     // "swept his tongue inside of him" with a bare pronoun or name, while mouths are kissing: a kiss, not rimming.
     if (pat.id === "tongue-inside-him" && !/\b(?:ass|arse|hole|rim|crack|cheeks|entrance|pucker|cavity|opening)\b/i.test(matchText) &&
       /\b(?:mouths?|lips|kiss\w*|tongues?\s+(?:to|with)|suck\w*\s+on\s+[\w'’]+\s+tongue|against\s+(?:the|his|her)\s+\w+)\b/i.test(para)) return;
@@ -1486,6 +1504,11 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
       const np = [...pre.matchAll(/\b(?:a|an|some|this|that|one|another)\s+(?:[\w-]+\s+){0,3}(?:guy|man|men|dude|ex|boyfriend|girlfriend|lover|client|stranger|woman|girl|bloke|fellow|sugar daddy|daddy|patron|date|customer)\b/gi)].pop();
       // The relative clause follows the noun directly ("a guy he dated while…"); "this man and as he rides him" is the partner in front of him.
       if (np && !/^this\b/i.test(np[0]) && !nameRe.test(pre.slice(np.index! + np[0].length)) && /^\s*,?\s*(?:(?:that|whom|who)\s+)?(?:he|she|they|who|that|whom)\b/i.test(pre.slice(np.index! + np[0].length))) {
+        // "he let a man he'd only met two hours before fuck him": the man does it to the one who let him, so the sentence's subject is the bottom.
+        if (/\b(?:let|lets|letting|allow|allows|allowed|had|made|make|watched|helped)\s+$/i.test(pre.slice(0, np.index!)) && /\b(?:fuck|fucks|fucked|screw|screwed|pound|pounded|take|took|bang|banged|blow|suck|sucked|top|topped|ravish|use|used)\b/i.test(pre.slice(np.index! + np[0].length)) && pat.subj === "t") {
+          addHistory(cat, act, top, "bottom", bottom, original, pi);
+          return;
+        }
         // Past experience with someone else: the actor's own role is what it points at.
         if (pat.subj === "t") addHistory(cat, act, top, "top", bottom, original, pi);
         else addHistory(cat, act, bottom, "bottom", top, original, pi);
@@ -1742,7 +1765,7 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
       !pretence &&
       !/\bas (?:if|though)\s+(?:he|she|they)\s+(?:wasn['’]t|weren['’]t|was not|were not|hadn['’]t been|had not been)\s+(?:the\s+(?:man|guy|one|person|boy|woman|girl)|Epithet\d+)\s+(?:who|that)\b/i.test(prefix) &&
       !(/\bas (?:if|though)\s*$/i.test(prefix) && /\b(?:isn['’]t|wasn['’]t|aren['’]t|weren['’]t|is not|was not|were not|not)\b[^.!?]*\benough\b/i.test(sent.slice(m.index!))) &&
-      ((HYPO_AUX.test(aux) && !/\bcould\s+(?:\w+\s+)?(?:taste|feel|smell|hear|see)\b/i.test(prefix.slice(-25) + matchText.slice(0, 30))) || (pat.cat === "anal" && /\bcan\s*$/i.test(aux) && /^(?:fuck|take|pound|ride|have|bend|breed|ravish)/i.test(matchText.replace(/^.*?\bcan\s+/i, ""))) || HYPO_MATCH.test(prefix.slice(-25) + matchText) || /\b(?:can|could|would|should)\s+(?:just\s+)?\w+\b[^.!?]*\band\s*\w*$/i.test(prefix + matchText.slice(0, 6)) || HYPO_WINDOW.test(window.replace(/\b(?:not|never|un)\s*able to (?:wait|resist|hold|stop|help|stand|take|bear|keep|contain|control|stay)\w*/gi, " ")) || HYPO_SENT.test(prefix) || (/\bthan\s+(?:it\s+was\s+|it's\s+)?$/i.test(prefix) && /^to\b/i.test(matchText)) || /\bthan\s+(?:it\s+was\s+|it's\s+)?to\s*$/i.test(prefix) || /\b(?:like|as if|as though)\s+(?:he|she|they|I)(?:['’]s|['’]d|\s+(?:is|was|were|are|had|has|would))?\s*$/i.test(prefix) || (/\b(?:like|as if|as though)\s*$/i.test(prefix) && /^(?:he|she|they|I)\b/.test(matchText)) ||
+      ((HYPO_AUX.test(aux) && !/\bcould\s+(?:\w+\s+)?(?:taste|feel|smell|hear|see)\b/i.test(prefix.slice(-25) + matchText.slice(0, 30))) || (pat.cat === "anal" && /\bcan\s*$/i.test(aux) && /^(?:fuck|take|pound|ride|have|bend|breed|ravish)/i.test(matchText.replace(/^.*?\bcan\s+/i, ""))) || HYPO_MATCH.test(prefix.slice(-25) + matchText) || /\b(?:can|could|would|should)\s+(?:just\s+)?\w+\b[^.!?]*\band\s*\w*$/i.test(prefix + matchText.slice(0, 6)) || HYPO_WINDOW.test(window.replace(/\b(?:not|never|un)\s*able to (?:wait|resist|hold|stop|help|stand|take|bear|keep|contain|control|stay)\w*/gi, " ")) || HYPO_SENT.test(prefix) || /^\W*(?:[\w'’]+[,!]\s+)?[\w'’]+(?:['’]d|\s+would)\s+(?:let|allow)\b/i.test(sent) || (/\bthan\s+(?:it\s+was\s+|it's\s+)?$/i.test(prefix) && /^to\b/i.test(matchText)) || /\bthan\s+(?:it\s+was\s+|it's\s+)?to\s*$/i.test(prefix) || /\b(?:like|as if|as though)\s+(?:he|she|they|I)(?:['’]s|['’]d|\s+(?:is|was|were|are|had|has|would))?\s*$/i.test(prefix) || (/\b(?:like|as if|as though)\s*$/i.test(prefix) && /^(?:he|she|they|I)\b/.test(matchText)) ||
       (/\bso\s*$/i.test(window) && /\b(?:can|could|might|may|will|would)\b/i.test(aux)) ||
       /\b(?:would|could|might)\s+(?:want|like|love|wish|prefer|enjoy|rather|fit)\b[^.!?;]{0,70}?\b(?:as|while|when|if|so)\s+(?:[\w'’]+\s+)?$/i.test(prefix))
     ) kind = "hypothetical";
