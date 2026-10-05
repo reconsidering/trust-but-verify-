@@ -133,8 +133,9 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
   const epithetRe = new RegExp(EPITHET, "g");
   const ING_NOUNS =
     "morning|evening|wedding|building|feelings?|clothing|bedding|ceiling|thing|something|nothing|anything|everything|ring|king|wing|string|darling|sibling|stocking|ending|beginning|meaning|warning|painting|drawing|training|meeting|offering|blessing|pudding|earring|upbringing|being|wellbeing|well-being|belongings|surroundings|savings|lodgings|bring";
+  // "Cas rolls his hips against Dean's grinding his cock deep inside him": after a preposition, Dean's is a possessive, not "Dean is".
   const contractionRe = new RegExp(
-    `\\b((?:${NAMES}|${EPITHET_TOKEN})|[Hh]e|[Ss]he)['’]s(?=\\s+(?:(?:\\w+ly|just|still|now|already|been|gonna|going|not|never|always|so|too)\\s+)?(?:(?!(?:${ING_NOUNS})\\b)[a-z]+ing\\b(?!\\s+(?:cock|dick|prick|length|shaft|erection|hard-?on|hole|entrance|rim|ass|arse|body|thighs?|hips?|nipples?|chest|mouth|lips|tongue|fingers?|hands?|heat|walls|muscles?|skin|balls)\\b)|(?:held|buried|seated|sheathed|lodged|inside|deep|balls-deep)\\b|(?:been|gonna|going|not|never|still|already|finally|fully)\\b(?!\\s+(?:[\\w-]+\\s+){0,2}(?:hair|face|eyes?|hands?|fingers?|cock|dick|skin|body|mouth|lips|chest|back|shoulders?|neck|ass|hole|thighs?|hips|arms?|legs?|voice|breath|heart|mind|name|beard|scruff|clothes|shirt)\\b)))`,
+    `(?<!\\b(?:against|with|to|on|onto|of|from|for|by|at|into|toward|towards|over|under|inside|beside|between|around|than|like)\\s)\\b((?:${NAMES}|${EPITHET_TOKEN})|[Hh]e|[Ss]he)['’]s(?=\\s+(?:(?:\\w+ly|just|still|now|already|been|gonna|going|not|never|always|so|too)\\s+)?(?:(?!(?:${ING_NOUNS})\\b)[a-z]+ing\\b(?!\\s+(?:cock|dick|prick|length|shaft|erection|hard-?on|hole|entrance|rim|ass|arse|body|thighs?|hips?|nipples?|chest|mouth|lips|tongue|fingers?|hands?|heat|walls|muscles?|skin|balls)\\b)|(?:held|buried|seated|sheathed|lodged|inside|deep|balls-deep)\\b|(?:been|gonna|going|not|never|still|already|finally|fully)\\b(?!\\s+(?:[\\w-]+\\s+){0,2}(?:hair|face|eyes?|hands?|fingers?|cock|dick|skin|body|mouth|lips|chest|back|shoulders?|neck|ass|hole|thighs?|hips|arms?|legs?|voice|breath|heart|mind|name|beard|scruff|clothes|shirt)\\b)))`,
     "g",
   );
   // Prostate allusions. The owner comes from "inside X" or the possessive in front; otherwise "his".
@@ -401,6 +402,29 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
   scan();
   if (ctx.learnFromVotes()) scan();
   settlePronounPairs();
+  settleAboRoles();
+
+  /**
+   * Alpha/Omega tags that name one of the pair each ("Alpha Castiel", "Omega Dean Winchester"): a reading that puts the alpha at the receiving end and
+   * the omega at the giving end, where nothing in the sentence names who is who, is the pronouns and "his hole" falling on the wrong man. Skipped when
+   * the tags say the roles are reversed or switched.
+   */
+  function settleAboRoles() {
+    const alpha = ctx.epithets.get("noun:alpha"), omega = ctx.epithets.get("noun:omega");
+    if (!alpha || !omega || alpha === omega || !cast.pairings.some((p) => p.includes(alpha) && p.includes(omega))) return;
+    // Tags that give the alpha a bottom or the omega a top ("Bottom Castiel/Top Dean") say the roles go both ways.
+    if (tags.roles.some((r) => (r.char === alpha && r.role !== "top") || (r.char === omega && r.role !== "bottom"))) return;
+    if (/role[ -]?reversal|reverse[d]? roles|bottom alpha|top omega|alpha bottom|omega top|alpha\W+(?:\w+\W+){0,3}bottom|omega\W+(?:\w+\W+){0,3}top|\bswitch|versatile|power bottom/i.test(allTags.join(" | "))) return;
+    for (const a of acts) {
+      if (a.cat !== "anal" || a.basis === "named" || a.top !== omega || a.bottom !== alpha) continue;
+      [a.top, a.bottom] = [a.bottom, a.top];
+    }
+    for (const d of desires) {
+      if (d.cat !== "anal" || d.basis === "named" || d.kind === "solo" || d.kind === "history") continue;
+      if (d.role === "bottom" && d.who === alpha && d.partner === omega) { d.who = omega; d.partner = alpha; }
+      else if (d.role === "top" && d.who === omega && d.partner === alpha) { d.who = alpha; d.partner = omega; }
+    }
+  }
 
   /**
    * "He slips his cock inside of him" names no one, so which is which came from whoever was the subject a sentence earlier. When a work's firm,
@@ -781,7 +805,7 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
     const viaTerm = addressBook.listenerOf(text, isNameWord) ?? priorAddress.listenerOf(text, isNameWord);
     if (viaTerm) return viaTerm;
     // The same for a role the tags give one of them ("Alpha Derek Hale"): "Yes, Alpha." / "Fuck, Der—Alpha." is said to the Alpha.
-    const role = /(?:^|[,.!?—–]\s*|\b(?:yes|no|please|oh|god|fuck|thank you),?\s+)(?:my\s+)?(Alpha|Omega)\s*(?:[,.!?…]|$)|,\s*(?:my\s+)?(Alpha|Omega)\s*(?:[,.!?…]|$)/.exec(text);
+    const role = /(?:^|[,.!?—–]\s*|\b(?:yes|no|please|oh|god|fuck|thank you),?\s+)(?:my\s+)?(Alpha|Omega)\s*(?:[,.!?…]|$)|,\s*(?:my\s+)?(Alpha|Omega)\s*(?:[,.!?…]|$)/i.exec(text);
     return role ? ctx.epithets.get(`noun:${(role[1] ?? role[2]).toLowerCase()}`) : undefined;
   }
 
@@ -1127,7 +1151,7 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
     // not a scene.
     if (pat.cat === "oral" && /\bas\s+[\w-]+\s+as\b[^.!?]{0,60}\b(?:do|does|when|whenever)\b/i.test(sent.slice(0, m.index! + m[0].length))) return;
     // "He takes all of it, feeling the Alpha's surprise that he can take his cock all the way down his throat": someone else's cock, in a mouth.
-    if (basePid === "dd2-mast-take-in-hand" && /^[^.!?]{0,40}\b(?:down|in|into)\s+(?:his|her|their)\s+(?:throat|mouth)\b/i.test(sent.slice(m.index! + m[0].length))) return;
+    if (basePid === "dd2-mast-take-in-hand" && /^[^.!?]{0,40}\b(?:down|in|into|behind|between|past)\s+(?:his|her|their)\s+(?:throat|mouth|lips)\b/i.test(sent.slice(m.index! + m[0].length))) return;
     // "every time he masturbates or has sex": a habit mentioned, not an act.
     if (/^mast-/.test(basePid) && /\b(?:every\s+time|each\s+time|whenever|any\s*time|the\s+next\s+time|next\s+time)\s+(?:that\s+)?$/i.test(sent.slice(0, m.index!))) return;
     // "disobey the rule about touching himself": a rule mentioned, not an act.
@@ -1138,6 +1162,14 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
     if (basePid === "dd5-pushes-finger-in" && /\b(?:mouths?|tongues?|lips|throats?|teeth|hair|ears?|pockets?|wounds?|sleeves?|jackets?|collars?)\b/i.test(sent.slice(Math.max(0, m.index! - 50), m.index! + m[0].length + 70))) return;
     // "Stiles slid his fingers in alone on the bathroom floor": on his own, not with the partner.
     if (basePid === "dd5-pushes-finger-in" && /\b(?:alone|himself|herself|themselves|on (?:his|her|their) own|by (?:himself|herself|themselves)|own fingers)\b/i.test(sent)) return;
+    // "his hole clenches around nothing": emptiness after something was just inside counts; wishing for it, or arousal with nothing before it, does not.
+    if (basePid === "rim-stretches-around" && (/^\s*[^.!?]{0,40}\b(?:wish|want|need|long|ach|beg|crav|yearn|desper|hop)/i.test(sent.slice(m.index! + m[0].length)) || (/\bnothing|\bair\b/i.test(m[0]) && !acts.some((a) => a.cat === "anal" && a.para <= pi && pi - a.para <= 3) && !/\b(?:slip|slid|pull|withdr|eas|slide)\w*\s+out\b/i.test(sent.slice(0, m.index!))))) return;
+    // "Will he open him up or just spear his cock inside him…": a question put as a statement.
+    if (pat.cat === "anal" && /^\W*(?:will|would|does|did|can|could|should|shall)\s+(?:he|she|they|[A-Z][a-z]+)\s+(?:\w+\s+){0,2}\w+\s+(?:him|her|them|[A-Z]\w+)\b[^.!?]*\bor\b/i.test(sent)) return;
+    // "He works himself past Dean's locked open lips": a mouth in the paragraph around it and no ass, so the "pushing back in" is oral.
+    if (basePid.startsWith("pushed-in") && !/\b(?:lips|mouth|throat|gag\w*|jaw)\b/i.test(paras[pi] ?? "") && [pi - 1, pi + 1].some((i) => /\b(?:lips|mouth|throat|gag\w*|jaw)\b/i.test(paras[i] ?? "")) && ![pi - 1, pi, pi + 1].some((i) => ANAL_CTX.test(paras[i] ?? "") || FINGER_CTX.test(paras[i] ?? ""))) return;
+    // "gathered some saliva in his mouth and spat on the prince's hole": spit on a hole, no mouth on it.
+    if (pat.act === "rimming" && /\b(?:spat|spit|spits|spitting|drool\w*|dribbl\w*|saliva)\b/i.test(m[0]) && !/\b(?:lick\w*|lap\w*|tongue-?fuck\w*|kiss\w*|eat\w*|suck\w*)\b/i.test(m[0])) return;
     // "squeeze himself sideways" through a narrow tunnel is not masturbation.
     if (/^mast-/.test(basePid) && /\bsqueez\w*\s+(?:himself|herself|themselves)\s+(?:sideways|through|past|between|into|in|out|under|over|against|along)\b/i.test(m[0] + " " + sent.slice(m.index! + m[0].length, m.index! + m[0].length + 25))) return;
     let subjChar: Character | undefined;
