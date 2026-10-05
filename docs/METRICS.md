@@ -19,3 +19,9 @@ The drop from Oct 4 comes from the label mix, not from the model getting worse. 
 
 Seven extra features were recorded on every hit and scored on unseen fics: pronoun count in the sentence, a spoken line, distinct cast members nearby, the actor not named earlier in the paragraph, a same-gender pair, first-person words, and hint-vs-act. They did not help: log loss 0.2523 → 0.2519, AUC 0.612 → 0.618, wrong hits among the 10% least-trusted 23% → 22%, and nothing on the deep-dive labels (AUC 0.49 → 0.51). Surface wording around a hit does not tell the model that the *person* was resolved wrongly. The next thing to try is features from how the engine chose the person (elided subject, last subject, point of view, learned epithet, address book), which needs hooks inside the engine.
 
+## Spot-check of Claude-made labels (Oct 5, 100 readings judged blind by the owner)
+
+Claude's labels are not equally good in both directions. Of the readings Claude called **right**, the owner agreed with 48 of 57 (84%). Of the readings Claude called **wrong**, the owner agreed with only 10 of 37 (27%); the other 27 were judged fine. The disagreements are spread over many patterns and fics, mostly narrated acts, so Claude was too ready to call a reading wrong. (Six readings were marked not sure.) So Claude-made labels are now stored at weight 0.85 when right and 0.3 when wrong (`npm run dive -- import --weight 0.85 --weight-wrong 0.3`), and the 662 existing ones were migrated.
+
+The context model and the pattern record learn from the weights, but they were *scored* with every label counting 1, so the noisy "wrong" labels still counted in full as ground truth. The unseen-fics rows are now scored with each label counted by its trust. With the new weights, on fics the model has not seen: log loss 0.2091 → 0.1889 and AUC 0.555 → 0.681 (record alone → with context), against 0.2686 → 0.2523 and 0.536 → 0.612 before; wrong hits among the 10% least-trusted 16% → 25%.
+
