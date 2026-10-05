@@ -3380,7 +3380,7 @@ export const PATTERNS: PatternDef[] = [
     subj: "b",
     weight: 0.7,
     needsCtx: true,
-    src: `\\b{B:poss}\\s+(?:tongue|mouth|lips)\\s+(?:(?!(?:when|while|as|after|before|until|because|though|although|if)\\b)[\\w,-]+\\s+){0,18}?(?:over|under|along|against|around|on|down)\\s+{T:poss}\\s+(?:balls|sac|dick|cock|shaft|length|crotch)\\b`,
+    src: `\\b{B:poss}\\s+(?:tongue|mouth|lips)\\s+(?:(?!(?:when|while|after|before|until|because|though|although|if)\\b)[\\w,-]+\\s+){0,18}?(?:over|under|along|against|around|on|down)\\s+{T:poss}\\s+(?:balls|sac|dick|cock|shaft|length|crotch)\\b`,
   },
   {
     // "Steve's ass strangles his cock", "his hole squeezed around Eddie's cock"

@@ -59,4 +59,9 @@ describe("round 85: Negotiation report (Obi-Wan/Anakin)", () => {
     const r = run("He can feel the hard line of the man’s erection through both of their pants as it grinds against his ass and struggles with the urge to rock back into the contact.");
     expect(r.hits.some((h) => /^thrust-back/.test(h.via) && h.a.startsWith("Obi"))).toBe(false);
   });
+  it("‘no need to fuck him’, ‘being able to fuck him’ and ‘what it means to suck him’ are not scenes; a lips-to-cock span may still cross ‘as he worked’", () => {
+    expect(run("There’s no frantic need to fuck into Anakin or perform some hard scene.").anal).toEqual([]);
+    expect(run("He focuses on being able to fuck Anakin good.").anal).toEqual([]);
+    expect(run("Obi-Wan’s tongue moved in all the right places and the heat of his mouth made Anakin moan, which Obi-Wan echoed as he worked around his cock.").blow.length).toBeGreaterThan(0);
+  });
 });
