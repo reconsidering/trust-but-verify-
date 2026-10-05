@@ -1,0 +1,187 @@
+{
+ "entries": [
+  {
+   "kind": "hint",
+   "card": "anal",
+   "pairing": "Alex Claremont-Diaz/Henry Fox-Mountchristen-Windsor",
+   "who": "Alex Claremont-Diaz",
+   "role": "top",
+   "wants": true,
+   "via": "dialogue:anal sex",
+   "h": "c8399826",
+   "conf": 78,
+   "weight": 0.9,
+   "source": "claude",
+   "marks": {
+    "right": 1,
+    "wrong": 0
+   },
+   "seen": [
+    "2026-10-05"
+   ]
+  },
+  {
+   "kind": "solo",
+   "card": "solo",
+   "pairing": "Alex Claremont-Diaz/Henry Fox-Mountchristen-Windsor",
+   "who": "Henry Fox-Mountchristen-Windsor",
+   "via": "mast-himself",
+   "h": "70a8a466",
+   "weight": 0.9,
+   "source": "claude",
+   "marks": {
+    "right": 1,
+    "wrong": 0
+   },
+   "seen": [
+    "2026-10-05"
+   ]
+  },
+  {
+   "kind": "scene",
+   "card": "rimming",
+   "pairing": "Alex Claremont-Diaz/Henry Fox-Mountchristen-Windsor",
+   "top": "Alex Claremont-Diaz",
+   "bottom": "Henry Fox-Mountchristen-Windsor",
+   "via": "licked-hole",
+   "h": "5acc47c0",
+   "conf": 68,
+   "weight": 0.9,
+   "source": "claude",
+   "marks": {
+    "right": 1,
+    "wrong": 0
+   },
+   "seen": [
+    "2026-10-05"
+   ]
+  }
+ ],
+ "fic": "whisper-in-my-ear",
+ "title": "Whisper in my ear",
+ "negatives": [
+  {
+   "kind": "hint",
+   "card": "anal",
+   "pairing": "Alex Claremont-Diaz/Henry Fox-Mountchristen-Windsor",
+   "who": "Alex Claremont-Diaz",
+   "role": "top",
+   "wants": true,
+   "via": "grab-ass",
+   "h": "20d2f7b7",
+   "conf": 44,
+   "misread": true,
+   "gone": false,
+   "weight": 0.9,
+   "source": "claude",
+   "seen": [
+    "2026-10-05"
+   ]
+  },
+  {
+   "kind": "hint",
+   "card": "anal",
+   "pairing": "Alex Claremont-Diaz/Henry Fox-Mountchristen-Windsor",
+   "who": "Alex Claremont-Diaz",
+   "role": "bottom",
+   "wants": true,
+   "via": "ogle-crotch-where",
+   "h": "dace1874",
+   "conf": 36,
+   "misread": true,
+   "gone": false,
+   "weight": 0.9,
+   "source": "claude",
+   "seen": [
+    "2026-10-05"
+   ]
+  },
+  {
+   "kind": "hint",
+   "card": "anal",
+   "pairing": "Alex Claremont-Diaz/Henry Fox-Mountchristen-Windsor",
+   "who": "Henry Fox-Mountchristen-Windsor",
+   "role": "top",
+   "wants": true,
+   "via": "prostate",
+   "h": "41d1b5f3",
+   "conf": 66,
+   "misread": true,
+   "gone": false,
+   "weight": 0.9,
+   "source": "claude",
+   "seen": [
+    "2026-10-05"
+   ]
+  },
+  {
+   "kind": "hint",
+   "card": "blowjob",
+   "pairing": "Alex Claremont-Diaz/Henry Fox-Mountchristen-Windsor",
+   "who": "Alex Claremont-Diaz",
+   "role": "bottom",
+   "wants": true,
+   "via": "dialogue:blowjob",
+   "h": "184bdd60",
+   "conf": 79,
+   "misread": true,
+   "gone": false,
+   "weight": 0.9,
+   "source": "claude",
+   "seen": [
+    "2026-10-05"
+   ]
+  },
+  {
+   "kind": "hint",
+   "card": "blowjob",
+   "pairing": "Alex Claremont-Diaz/Henry Fox-Mountchristen-Windsor",
+   "who": "Alex Claremont-Diaz",
+   "role": "bottom",
+   "wants": true,
+   "via": "sinks-to-floor",
+   "h": "97d05c4c",
+   "conf": 30,
+   "misread": true,
+   "gone": false,
+   "weight": 0.9,
+   "source": "claude",
+   "seen": [
+    "2026-10-05"
+   ]
+  },
+  {
+   "kind": "scene",
+   "card": "blowjob",
+   "pairing": "Alex Claremont-Diaz/Henry Fox-Mountchristen-Windsor",
+   "top": "Henry Fox-Mountchristen-Windsor",
+   "bottom": "Alex Claremont-Diaz",
+   "via": "takes-between-lips",
+   "h": "bf0a482",
+   "conf": 38,
+   "misread": true,
+   "gone": false,
+   "weight": 0.9,
+   "source": "claude",
+   "seen": [
+    "2026-10-05"
+   ]
+  },
+  {
+   "kind": "scene",
+   "card": "anal",
+   "pairing": "Alex Claremont-Diaz/Henry Fox-Mountchristen-Windsor",
+   "top": "Alex Claremont-Diaz",
+   "bottom": "Henry Fox-Mountchristen-Windsor",
+   "via": "adds-finger",
+   "h": "161ae146",
+   "misread": true,
+   "gone": false,
+   "weight": 0.9,
+   "source": "claude",
+   "seen": [
+    "2026-10-05"
+   ]
+  }
+ ]
+}
