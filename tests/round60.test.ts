@@ -37,14 +37,14 @@ describe("chastity device / cock cage tags (m/m)", () => {
   });
 });
 
-describe("wearing a cage also hints at bottoming", () => {
+describe("wearing a cage is a vibe and a tag, not an anal or oral hint", () => {
   const roles = (t: string, cat: "anal" | "oral") => {
     const r = analyzeWithPatterns(lead + t, M(["Cock Cage"]), { quiet: true });
     return r.pairings[0][cat === "anal" ? "anal" : "blowjob"].desires.map((d) => `${d.who.split(" ")[0]}:${d.role}`);
   };
-  it("the wearer is an anal bottom hint and an oral bottom hint", () => {
-    expect(roles("Castiel was locked in a cage all week, whining.", "anal")).toContain("Castiel:bottom");
-    expect(roles("Castiel was locked in a cage all week, whining.", "oral")).toContain("Castiel:bottom");
+  it("the wearer is not an anal or oral hint, even with anal and mouth words in the scene", () => {
+    expect(roles("Castiel was locked in a cage all week, whining.", "anal")).not.toContain("Castiel:bottom");
+    expect(roles("Castiel was locked in a cage all week, whining.", "oral")).not.toContain("Castiel:bottom");
   });
   it("no hint without the tag", () => {
     const r = analyzeWithPatterns(lead + "Castiel was locked in a cage all week, whining.", M(["Rimming"]), { quiet: true });

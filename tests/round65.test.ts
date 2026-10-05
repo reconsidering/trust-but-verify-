@@ -12,9 +12,9 @@ describe("chastity: the tags name the wearer", () => {
     // no anal or mouth words nearby: only the power-dynamic hint
     const plain = run("Cas was massaging his balls gently and his dick was straining against the cage with nowhere to go.");
     expect(new Set(who(plain.hits, "chastity-wearer"))).toEqual(new Set(["chastity-wearer:Dean"]));
-    // with anal and mouth words in the scene, the body-part hints join it
+    // a cage is a power-dynamic vibe and a tag, never an anal or oral hint, even with anal and mouth words in the scene
     const scene = run("Cas pressed a lubed finger to his hole and slid his mouth down his cock, his dick straining against the cage with nowhere to go.");
-    expect(new Set(who(scene.hits, "chastity-wearer"))).toEqual(new Set(["chastity-wearer:Dean", "chastity-wearer-anal:Dean", "chastity-wearer-oral:Dean"]));
+    expect(new Set(who(scene.hits, "chastity-wearer"))).toEqual(new Set(["chastity-wearer:Dean"]));
   });
   it("…not the brother whose wedding it is", () => {
     const { hits } = run("At Sam’s wedding his cock twitched against the cage and he bit his cheek.");

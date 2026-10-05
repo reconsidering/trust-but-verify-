@@ -370,8 +370,6 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
     }
     for (const [id, cat, kind, act, weight] of [
       ["chastity-wearer", "vibe", "behavior", "wearing a chastity device", 0.5],
-      ["chastity-wearer-anal", "anal", "touch", "wearing a chastity device (hints anal bottom)", 0.4],
-      ["chastity-wearer-oral", "oral", "touch", "wearing a chastity device (hints oral bottom)", 0.4],
     ] as const) {
       if (desires.some((d) => d.via === id && d.sentence === original)) continue;
       // The body-part hints count once a paragraph, and only where that part of the body is in the scene: anal words (ass, hole, plug, fingers,
@@ -857,8 +855,6 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
       };
       if (speaker === wearer && /\b(?:my|me|i)\b/.test(lower)) {
         note(wearer, holder, "bottom", "chastity-wearer", "wearing a chastity device");
-        note(wearer, holder, "bottom", "chastity-wearer-anal", "wearing a chastity device (hints anal bottom)", "anal", "touch", 0.4);
-        note(wearer, holder, "bottom", "chastity-wearer-oral", "wearing a chastity device (hints oral bottom)", "oral", "touch", 0.4);
       } else if (speaker === holder && /\b(?:you|your)\b/.test(lower)) {
         note(holder, wearer, "top", "chastity-keyholder", "controlling a chastity device");
       }
