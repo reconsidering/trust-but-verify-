@@ -31,6 +31,12 @@ export function soloLabel(d: { act: string; kind: string; sentence: string }): s
  * past experience the text mentions. Unnamed and stranger-labelled partners are told apart by where in the story they appear, since
  * "the twink" in chapter 2 and in chapter 9 are not the same person.
  */
+/** The confidence and reasons for one line on a card that has no top/bottom count (solo, hands & body play, scenes with others). */
+function lineScore(d: DesireHit): { confidence: number; reasons: string[] } {
+  const s = scoreDesires([d], () => undefined).get(d)!;
+  return { confidence: Math.round(s.conf * 100) / 100, reasons: s.reasons };
+}
+
 export function buildOthers(pair: [Character, Character], hits: DesireHit[], where: (pi: number) => string): OthersResult {
   const seen = new Set<string>();
   const instances: OtherScene[] = [];
@@ -53,6 +59,7 @@ export function buildOthers(pair: [Character, Character], hits: DesireHit[], whe
       context: d.context,
       where: where(d.para),
       via: d.via,
+      ...lineScore(d),
     });
   }
   const partners = new Map<string, { label: string; kind: OtherScene["other"]["kind"]; where?: string; count: number }>();
@@ -79,7 +86,7 @@ export function buildSolo(pair: [Character, Character], hits: DesireHit[], where
     const key = `${d.who.name}\u0000${d.para}\u0000${d.sentence}`;
     if (seen.has(key)) continue;
     seen.add(key);
-    instances.push({ who: d.who.name, act: soloLabel(d), evidence: truncate(d.sentence), where: where(d.para), context: d.context });
+    instances.push({ who: d.who.name, act: soloLabel(d), evidence: truncate(d.sentence), where: where(d.para), context: d.context, via: d.via, ...lineScore(d) });
   }
   const people = pair.map((c) => {
     const mine = instances.filter((i) => i.who === c.name);
@@ -105,7 +112,7 @@ export function buildManual(pair: [Character, Character], hits: DesireHit[], whe
     seen.add(key);
     const mutual = /^(?:mutual|frottage)/i.test(d.act);
     const act = d.act === "frottage" ? "Frottage" : /^thigh/i.test(d.act) ? "Thigh sex" : /^tit/i.test(d.act) ? "Chest sex" : mutual ? "Mutual handjob" : "Handjob";
-    instances.push({ giver: d.who.name, receiver: d.partner.name, act, mutual, evidence: truncate(d.sentence), where: where(d.para), context: d.context });
+    instances.push({ giver: d.who.name, receiver: d.partner.name, act, mutual, evidence: truncate(d.sentence), where: where(d.para), context: d.context, via: d.via, ...lineScore(d) });
   }
   const people = pair.map((c) => ({
     name: c.name,
@@ -360,7 +367,7 @@ export const DESIRE_NOTE: Partial<Record<Desire["kind"], string>> = {
   said: "said outright in dialogue", stated: "a stated preference", identity: "says what they are", wanted: "a stated want",
   history: "something they have done", fantasy: "a fantasy", hypothetical: "a ‘what if’ or conditional", body: "a bodily sign after sex",
   solo: "a solo act", ogling: "a look", touch: "a touch short of sex", prep: "lead-up", fingers: "fingers and mouth", behavior: "everyday behaviour",
-  aftercare: "care or comfort", position: "a position", petname: "a pet name",
+  aftercare: "care or comfort", position: "a position", petname: "a pet name", handjob: "a hand on a cock, or body play", masturbation: "a solo act",
 };
 export const HEDGE = /\b(?:maybe|perhaps|kind of|sort of|almost|might|seemed|as if|as though|probably|supposedly|apparently)\b/i;
 

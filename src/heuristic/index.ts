@@ -435,7 +435,9 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
     const opensWithQuote = (q: Quote) => q === quotes[0] && !new RegExp(`\\b(?:${NAMES})\\b`).test(mp.slice(0, q.start));
     if (quotes.length && opensWithQuote(quotes[0]) && prevSpeaker) {
       const tag = para.slice(quotes[0].end, quotes[0].end + 40);
-      if (new RegExp(`^[,.!?—–\\s]*(?:[Hh]e|[Ss]he|[Tt]hey)\\s+(?:\\w+ly\\s+)?(?:${SAY})\\b`).test(tag)) {
+      // '"You beg so prettily, baby," taking a step back, he drops to his knees': a participle phrase picks the sentence back up, so its "he" is the speaker.
+      const participial = new RegExp(`^[,.!?—–\\s]*[A-Za-z]+ing\\b[^.!?“”"]{0,60}?,\\s*(?:[Hh]e|[Ss]he)\\b`).test(para.slice(quotes[0].end, quotes[0].end + 110));
+      if (participial || new RegExp(`^[,.!?—–\\s]*(?:[Hh]e|[Ss]he|[Tt]hey)\\s+(?:\\w+ly\\s+)?(?:${SAY})\\b`).test(tag)) {
         turnSpeaker = ctx.partnerOf(prevSpeaker);
         turnQuote = quotes[0];
         if (turnSpeaker) ctx.lastSubject = turnSpeaker;
@@ -645,6 +647,11 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
     // "Dean hardly had any warning before he was pushing inside him": the "he" is the other one.
     const warned = new RegExp(`(${NAMES})\\s+(?:(?:hardly|barely|scarcely|never|still)\\s+)?(?:had|has|got|gets|received)\\s+(?:hardly|barely|scarcely|little|no|any|not much|not any|almost no)\\s+(?:\\w+\\s+)?warning\\s+before\\s*$`).exec(prefix);
     if (warned && /^\s*(?:he|she|they)\b/i.test(suffix)) { const w = cast.byAlias.get(warned[1]); const o = w && ctx.partnerOf(w); if (o) return o; }
+    // "He watched as Cas put lube on his fingers and then reached back so he could open himself up": after "watched as Cas", the rest of the sentence is Cas's.
+    {
+      const asClause = new RegExp(`^\\W*(?:he|she)\\s+(?:watched|saw|heard|felt|noticed|let|listened|observed)\\b[^.!?;]*?\\b(?:as|while|when)\\s+(${NAMES}|${EPITHET_TOKEN})\\b([^.!?;]*)$`, "i").exec(prefix);
+      if (asClause && !new RegExp(`\\b(?:${NAMES})\\b`).test(asClause[2])) { const c = resolveToken(asClause[1], asClause[2] + suffix); if (c) return c; }
+    }
     // "Cas’s hand wandered again, cupping his ass": the participle belongs to the hand's owner.
     const handPart = new RegExp(`(?:^|[,;.]|\\b(?:and|as|while|when))\\s*(${NAMES})['’]s?\\s+(?:[\\w-]+\\s+)?(?:hands?|fingers|mouth|lips|tongue|arms?|thumbs?|palms?)\\s+(?:\\w+(?:\\s+|(?=[,;]|$))){1,3}?[,;]?\\s*(?:and\\s+)?$`).exec(prefix);
     if (handPart && /^\W*[A-Za-z]+ing\b/.test(suffix)) return cast.byAlias.get(handPart[1]);
@@ -1544,8 +1551,6 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
       if (pat.id.startsWith("body-sore") && /\b(?:spank\w*|paddl\w*|smack\w*|flogg?\w*|punish\w*|whipp?\w*|caned?|caning|soothing|aftercare|lotion)\b/i.test(para)) return;
       if (pat.id.startsWith("grab-ass") && /\b(?:soothing|soothe|aftercare|lotion|balm|cool(?:ing)?\s+cream)\b/i.test(sent)) return;
       if (/^spread-(?:their-)?legs/.test(pat.id) && /\b(?:wip\w*|wash\w*|clean\w*|lotion|aftercare|towel|shower\w*)\b/i.test(para)) return;
-      // "He watched as Cas put lube on his fingers and reached back to open himself up": the himself is the one he watched.
-      if (/^(?:slicked-self|self-finger|self-prep)/.test(pat.id) && /^\W*(?:he|she)\s+(?:watched|saw|heard|felt|noticed|let)\b[^.!?]*?\b(?:as|while)\s+[A-Z]/.test(sent)) return;
       // "grinding himself down on Eddie's leg": rubbing on someone, not a solo act.
       if (/^mast-himself/.test(pat.id) && /\b(?:grind\w*|rutt?\w*|hump\w*|rubb?\w*|rock\w*)\s+himself\s+(?:down\s+)?(?:on|against|into|onto)\s+(?:\w+['’]s|him|her|his)\b/i.test(matchText + sent.slice((m.index ?? 0) + m[0].length, (m.index ?? 0) + m[0].length + 40))) return;
     }
