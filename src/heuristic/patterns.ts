@@ -3133,7 +3133,7 @@ export const PATTERNS: PatternDef[] = [
     act: "anal sex (toy)",
     subj: "t",
     weight: 0.8,
-    src: `\\b{T}\\s+{aux}(?:push|press|slid|slide|slip|work|eas|insert|shov|nudg|stuff|ram)\\w*\\s+(?:the\\s+|a\\s+|that\\s+|his\\s+)?(?:[\\w-]+\\s+){0,2}?(?:vibe|vibrator|dildo|butt\\s*plug|plug|beads|toy)\\s+(?:back\\s+)?(?:in|inside)(?:\\s+(?:fully|completely|all\\s+the\\s+way|deep|slowly|again|firmly))?(?![\\w-]|\\s+(?:the|a|an|his|her|their|him|her|them|my|your|himself|herself|themselves|myself|yourself)\\b)`,
+    src: `\\b{T}\\s+{aux}(?:push|press|slid|slide|slip|work|eas|insert|shov|nudg|stuff|ram)\\w*\\s+(?:the\\s+|a\\s+|that\\s+|his\\s+)?(?:[\\w-]+\\s+){0,2}?(?:vibe|vibrator|dildo|butt\\s*plug|plug|beads|toy)\\s+(?:back\\s+)?(?:in|inside)(?:\\s+(?:fully|completely|all\\s+the\\s+way|deep|slowly|again|firmly))?(?![\\w-]|\\s+(?:the|a|an|his|her|their|him|her|them|my|your|himself|herself|themselves|myself|yourself|of\\s+(?:him|her|them))\\b)`,
   },
   {
     // "his hips lazily thrust forward to create a bulge in Peter's cheek": face-fucking
@@ -4601,6 +4601,47 @@ export const PATTERNS: PatternDef[] = [
     weight: 0.5,
     signal: { kind: "behavior", actorRole: "top" },
     src: `\\b{T}\\s+{aux}(?:bit|bite|biting|claim\\w*|sank\\s+(?:his|her|their)\\s+teeth\\s+into)\\s+{B:poss}\\s+(?:neck|throat|scent\\s+gland|gland|nape|shoulder)\\b`,
+  },
+  // ───────────── round 86 (WereCompeer): fingering and rimming phrasings that were missed ─────────────
+  {
+    // "Derek’s fingers trail down his backside circling his hole a few times"
+    id: "dd5-fingers-circle-hole",
+    cat: "anal",
+    act: "fingering",
+    subj: "t",
+    weight: 0.6,
+    needsCtx: true,
+    src: `\\b{T:poss}\\s+(?:[\\w-]+\\s+)?${FINGERS}\\s+(?:\\w+\\s+){0,4}?circl\\w*\\s+{B:poss}\\s+(?:hole|entrance|rim)\\b`,
+  },
+  {
+    // "His fingers move in and out of Stiles"
+    id: "dd5-fingers-in-and-out",
+    cat: "anal",
+    act: "fingering",
+    subj: "t",
+    weight: 0.85,
+    needsCtx: true,
+    src: `\\b{T:poss}\\s+(?:[\\w-]+\\s+)?${FINGERS}\\s+(?:\\w+\\s+){0,2}?(?:move|moves|moving|slide|slides|sliding|slip|slips|slipping|work|works|working|thrust|thrusts|thrusting|pump|pumps|pumping)\\s+(?:\\w+\\s+){0,2}?in and out of\\s+{B:ass}`,
+  },
+  {
+    // "Derek pushes his pinky finger inside, twisting it around"
+    id: "dd5-pushes-finger-in",
+    cat: "anal",
+    act: "fingering",
+    subj: "t",
+    weight: 0.8,
+    needsCtx: true,
+    src: `\\b{T}\\s+{aux}(?:push|press|slid|slip|work|eas)\\w*\\s+(?:his\\s+|a\\s+|another\\s+|one\\s+|two\\s+|three\\s+)?(?:[\\w-]+\\s+){0,2}?(?:fingers?|thumb|pinky)\\s+(?:slowly\\s+|carefully\\s+|gently\\s+)?(?:in|inside)\\b(?!\\s+(?:his|her|their|the|a|an|my|your)\\s)`,
+  },
+  {
+    // "He bucks at the feel of Derek’s tongue, licking at his walls"
+    id: "dd5-feel-of-tongue-inside",
+    cat: "oral",
+    act: "rimming",
+    subj: "t",
+    weight: 0.8,
+    needsCtx: true,
+    src: `\\b(?:the\\s+)?feel\\s+of\\s+{T:poss}\\s+(?:tongue|mouth)\\b[^.!?]{0,40}?(?:licking|lapping|probing|plunging|thrusting|fucking|flicking)\\s+(?:at\\s+|into\\s+|inside\\s+)?(?:{B:poss}|his|her|their)\\s+(?:walls|insides|hole|rim|entrance)\\b`,
   },
 ];
 

@@ -40,7 +40,8 @@ export function vocatives(line: string, isName: (w: string) => boolean): string[
   // "Sir, yes sir." / "Baby, come here." / "Yes, baby."
   add(/^(?:(?:yes|no|okay|ok|hey|oh|thanks|thank you|please|sure|fine|well|alright|come on|good morning|goodnight|good night)[,!]?\s+)?([a-zA-Z][\w'-]*(?:\s+[a-zA-Z][\w'-]*){0,2})\s*[,!]/.exec(text)?.[1]);
   // "…, sweetheart." / "Thank you, your highness."
-  add(/,\s*((?:my\s+|your\s+)?[a-zA-Z][\w'-]*(?:\s+[a-zA-Z][\w'-]*){0,2})\s*[.!?…]+\s*$/.exec(text)?.[1]);
+  // A line cut off by its tag ("Fill me, Alpha," he says) ends on the comma.
+  add(/,\s*((?:my\s+|your\s+)?[a-zA-Z][\w'-]*(?:\s+[a-zA-Z][\w'-]*){0,2})\s*[.!?…,]+\s*$/.exec(text)?.[1]);
   // "Hey, babe, listen."
   for (const m of text.matchAll(/,\s*((?:my\s+|your\s+)?[a-zA-Z][\w'-]*(?:\s+[a-zA-Z][\w'-]*){0,2}),\s/g)) add(m[1]);
   return [...new Set(out)];
