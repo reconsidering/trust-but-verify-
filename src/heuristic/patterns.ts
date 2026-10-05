@@ -123,6 +123,12 @@ function deriveGate(src: string): string | undefined {
       if (src[j] === ")" && --depth === 0) break;
     }
     const body = src.slice(i + 3, j);
+    // An optional group ("(?:tries to\\s+)?") guarantees nothing: skip it like the filler below.
+    if (/^[?*]|^\{0/.test(src.slice(j + 1, j + 3))) {
+      i = src.indexOf("(?:", j + 1);
+      if (i < 0) return undefined;
+      continue;
+    }
     // Skip "(?:\w+\s+){0,2}?" style filler and try the next group.
     if (/^\\w\+\\s\+$|^\[\\w-\]\+\\s\+$/.test(body)) {
       i = src.indexOf("(?:", j);
@@ -1390,6 +1396,312 @@ export const PATTERNS: PatternDef[] = [
     weight: 0.8,
     needsCtx: true,
     src: `\\ba\\s+(?:[\\w-]+\\s+(?:and\\s+)?){0,2}body\\s+for\\s+{T}\\s+to\\s+(?:fuck|use|take|pound|breed)\\s+(?:into|and)?\\b`,
+  },
+  {
+    // "his cock slips out of Steve's hole", "his cock drags out of Steve"
+    id: "dd-cock-out-of",
+    cat: "anal",
+    act: "anal sex",
+    subj: "t",
+    weight: 0.85,
+    needsCtx: true,
+    src: `\\b{T:poss}\\s+(?:[\\w-]+\\s+)?(?:cock|dick|length)\\s+(?:drag|drags|dragged|slip|slips|slipped|slid|slide|slides|pull|pulls|pulled|pop|pops|popped)\\w*\\s+(?:out|free)\\s+of\\s+{B:ass}`,
+  },
+  {
+    // "Eddie pulls out, slams back in, hard"
+    id: "dd-pulls-out-slams-in",
+    cat: "anal",
+    act: "anal sex",
+    subj: "t",
+    weight: 0.8,
+    needsCtx: true,
+    src: `\\b{T}\\s+{aux}pull(?:s|ed)?\\s+out,?\\s+(?:and\\s+)?(?:slam|thrust|push|plung|shov|drive|ram|slide|sink)\\w*\\s+(?:back\\s+)?(?:in|inside|into)\\b`,
+  },
+  {
+    // "He shoves his cock deep inside Steve"
+    id: "dd-shoves-cock-deep",
+    cat: "anal",
+    act: "anal sex",
+    subj: "t",
+    weight: 0.9,
+    needsCtx: true,
+    src: `\\b{T}\\s+{aux}(?:shove|shoves|shoved|slam|slams|slammed|drive|drives|drove|ram|rams|rammed|bur(?:y|ies|ied)|sink|sinks|sank|thrust|thrusts)\\s+(?:his|that|the)\\s+(?:[\\w-]+\\s+){0,2}?(?:cock|dick|length)\\s+(?:deep\\s+|deeper\\s+|all the way\\s+|back\\s+)?(?:in|inside|into)\\s+{B}\\b`,
+  },
+  {
+    // "Steve's ass fucking strangles his cock", "his tight little hole massaging Eddie's cock"
+    id: "dd-hole-strangles-cock",
+    cat: "anal",
+    act: "anal sex",
+    subj: "b",
+    weight: 0.85,
+    needsCtx: true,
+    src: `\\b{B:poss}\\s+(?:[\\w-]+\\s+){0,3}?(?:ass|hole|rim|channel)\\s+(?:[\\w-]+\\s+){0,2}?(?:strangl|massag|swallow|squeez|grip|hug|clench|milk|flex|clamp|flutter|pulse|tighten|suck)\\w*\\s+(?:around\\s+|on\\s+)?{T:poss}\\s+(?:[\\w-]+\\s+)?(?:cock|dick|length)\\b`,
+  },
+  {
+    // "Eddie's cock getting massaged by his tight little hole", "Steve's prostate getting stroked by Eddie's cock"
+    id: "dd-cock-massaged-by-hole",
+    cat: "anal",
+    act: "anal sex",
+    subj: "t",
+    weight: 0.9,
+    needsCtx: true,
+    src: `\\b(?:{T:poss}\\s+(?:[\\w-]+\\s+)?(?:cock|dick|length)\\s+(?:getting|being|gets|is|was)\\s+(?:massag|squeez|stroked|milked|gripped|swallowed|strangled|hugged|sucked)\\w*\\s+by\\s+{B:poss}\\s+(?:[\\w-]+\\s+){0,3}?(?:hole|ass|body|rim)|{B:poss}\\s+prostate\\s+(?:getting|being)\\s+(?:stroked|massaged|hit|rubbed|abused|pounded|nudged)\\s+by\\s+{T:poss}\\s+(?:cock|dick|length))`,
+  },
+  {
+    // "the waves of Steve's orgasm flexing around his dick"
+    id: "dd-orgasm-around-dick",
+    cat: "anal",
+    act: "anal sex",
+    subj: "b",
+    weight: 0.8,
+    needsCtx: true,
+    src: `\\b{B:poss}\\s+(?:[\\w-]+\\s+){0,2}?orgasm[^.!?]{0,40}?\\baround\\s+{T:poss}\\s+(?:cock|dick|length)\\b`,
+  },
+  {
+    // "grinding himself onto Eddie's dick", "he sat down further onto Castiel's dick", "tries to bounce on Eddie's dick"
+    id: "dd-grinds-onto-cock",
+    cat: "anal",
+    act: "anal sex",
+    subj: "b",
+    weight: 0.85,
+    needsCtx: true,
+    src: `\\b{B}\\s+{aux}(?:tries to\\s+|starts to\\s+|begins to\\s+)?(?:grind|bounc|rock|lower|sink|slid|sit|sat|settle|work|impal)\\w*\\s+(?:himself\\s+)?(?:down\\s+)?(?:further\\s+|deeper\\s+|slowly\\s+|back\\s+|all the way\\s+)?(?:onto|on|over)\\s+{T:poss}\\s+(?:[\\w-]+\\s+)?(?:cock|dick|length)\\b`,
+  },
+  {
+    // "Eddie fucks it right back into him", "the force of Eddie fucking into him"
+    id: "dd-fucks-into-him",
+    cat: "anal",
+    act: "anal sex",
+    subj: "t",
+    weight: 0.85,
+    needsCtx: true,
+    src: `\\b{T}\\s+{aux}fuck(?:s|ed|ing)?\\s+(?:it\\s+)?(?:right\\s+)?(?:back\\s+)?(?:deep\\s+)?(?:in|into|inside)\\s+{B}\\b`,
+  },
+  {
+    // "keeps emptying hot and thick into Jason's ass"
+    id: "dd-empties-into",
+    cat: "anal",
+    act: "anal sex",
+    subj: "t",
+    weight: 0.85,
+    needsCtx: true,
+    src: `\\b{T}\\s+{aux}(?:keeps\\s+)?(?:empty|emptying|empties|spill|spilling|pump|pumping|pour|pouring|spurt|spurting)\\w*\\s+(?:hot\\s+(?:and\\s+)?(?:thick\\s+)?|deep\\s+)?(?:in|into|inside)\\s+{B:ass}`,
+  },
+  {
+    // "where he's knotted Jason wide"
+    id: "dd-knotted-wide",
+    cat: "anal",
+    act: "anal sex",
+    subj: "t",
+    weight: 0.85,
+    needsCtx: true,
+    src: `\\b{T}['’]s\\s+knotted\\s+{B}\\b`,
+  },
+  {
+    // "slipping his middle finger into Steve's loosened hole"
+    id: "dd-finger-slips-into",
+    cat: "anal",
+    act: "fingering",
+    subj: "t",
+    weight: 0.85,
+    needsCtx: true,
+    src: `\\b{T}\\s+{aux}(?:slip|slid|push|work|press|sink|plung|thrust|ease|slide)\\w*\\s+(?:his\\s+|the\\s+|a\\s+|another\\s+|one\\s+|two\\s+|three\\s+)?(?:[\\w-]+\\s+){0,2}?fingers?\\s+(?:in|inside|into)\\s+{B:ass}`,
+  },
+  {
+    // "a third finger was stretching him open"
+    id: "dd-extra-finger-stretching",
+    cat: "anal",
+    act: "fingering",
+    subj: "b",
+    weight: 0.8,
+    needsCtx: true,
+    src: `\\b(?:another|an additional|a (?:second|third|fourth)|the (?:second|third|fourth))\\s+finger\\s+(?:was\\s+|is\\s+|keeps\\s+)?(?:stretch|open|work|press|slid|slip|push|fill|fuck)\\w*\\s+{B}\\b`,
+  },
+  {
+    // "he takes him into his mouth"
+    id: "dd-takes-into-mouth",
+    cat: "oral",
+    act: "blowjob",
+    subj: "b",
+    weight: 0.9,
+    needsCtx: true,
+    src: `\\b{B}\\s+{aux}(?:take|takes|took|taking)\\s+{T}\\s+(?:all of him\\s+|all the way\\s+|deep\\s+)?(?:in|into)\\s+(?:his|her|their)\\s+mouth\\b`,
+  },
+  {
+    // "lips stretched around Steve's cock"
+    id: "dd-lips-around-cock",
+    cat: "oral",
+    act: "blowjob",
+    subj: "b",
+    weight: 0.95,
+    needsCtx: true,
+    src: `\\b{B:poss}\\s+lips\\s+(?:\\w+\\s+)?(?:stretched|wrapped|sealed|closed|tight|slid|slipped|locked)\\s+(?:around|over|on)\\s+{T:poss}\\s+(?:[\\w-]+\\s+)?(?:cock|dick|shaft|length)\\b`,
+  },
+  {
+    // "Steve's cock twitches, spent, between Eddie's lips"
+    id: "dd-cock-between-lips",
+    cat: "oral",
+    act: "blowjob",
+    subj: "t",
+    weight: 0.9,
+    needsCtx: true,
+    src: `\\b{T:poss}\\s+(?:[\\w-]+\\s+)?(?:cock|dick|length)\\s+(?:twitch|pulse|throb|jerk|slid|slip|rest)\\w*[^.!?]{0,30}?\\bbetween\\s+{B:poss}\\s+lips\\b`,
+  },
+  {
+    // "Eddie laps at his twitching, dripping cock", "He swirls around Steve's cock"
+    id: "dd-laps-at-cock",
+    cat: "oral",
+    act: "blowjob",
+    subj: "b",
+    weight: 0.8,
+    needsCtx: true,
+    src: `\\b{B}\\s+{aux}(?:lap|laps|lapped|lapping|lave|laves|laved|laving|swirl|swirls|swirled|swirling)\\w*\\s+(?:at\\s+|around\\s+|over\\s+|along\\s+)?{T:poss}\\s+(?:[\\w, -]{0,25}?)(?:cock|dick|length|shaft)\\b`,
+  },
+  {
+    // "Eddie can feel it pouring down his throat"
+    id: "dd-throat-pouring",
+    cat: "oral",
+    act: "blowjob",
+    subj: "b",
+    weight: 0.8,
+    needsCtx: true,
+    src: `\\b{B}\\s+(?:can\\s+|could\\s+)?(?:feel|felt|feels)\\s+(?:it|him|his (?:come|cum))\\s+(?:pouring|spurting|spilling|sliding|hot)\\s+down\\s+(?:his|her)\\s+throat`,
+  },
+  {
+    // "Eddie's tongue strong and blunt laves up the length"
+    id: "dd-tongue-laves-length",
+    cat: "oral",
+    act: "blowjob",
+    subj: "b",
+    weight: 0.75,
+    needsCtx: true,
+    src: `\\b{B:poss}\\s+(?:[\\w-]+\\s+){0,3}?tongue\\s+(?:[\\w-]+\\s+){0,2}?(?:laves|licks|drags|slides|runs|glides|traces)\\s+(?:up|along|over|across)\\s+the\\s+(?:length|shaft|underside)\\b`,
+  },
+  {
+    // "He felt Cas push up his length, his mouth hot and lips tight"
+    id: "dd-felt-push-up-length",
+    cat: "oral",
+    act: "blowjob",
+    subj: "t",
+    weight: 0.9,
+    needsCtx: true,
+    src: `\\b{T}\\s+{aux}(?:felt|feels|feel)\\s+{B}\\s+(?:push|slid|slide|sink|take)\\w*\\s+(?:up|down)\\s+(?:his|the)\\s+(?:length|shaft|cock|dick)\\b`,
+  },
+  {
+    // "Cas pulled off, letting him come on his chest"
+    id: "dd-pulled-off-come",
+    cat: "oral",
+    act: "blowjob",
+    subj: "b",
+    weight: 0.9,
+    needsCtx: true,
+    src: `\\b{B}\\s+pull(?:s|ed)\\s+off,?\\s+(?:letting|let)\\s+{T}\\s+(?:come|cum)\\b`,
+  },
+  {
+    // "He licks his first stripe broad from Steve's gooch all the way to his asshole"
+    id: "dd-lick-stripe-to-hole",
+    cat: "oral",
+    act: "rimming",
+    subj: "t",
+    weight: 0.9,
+    needsCtx: true,
+    src: `\\b{T}\\s+{aux}lick\\w*\\s+(?:his\\s+|a\\s+)?(?:first\\s+)?(?:broad\\s+|slow\\s+|flat\\s+)?(?:stripe|line|swipe)\\s+(?:broad\\s+)?from\\s+{B:poss}\\s+(?:[\\w-]+\\s+){0,2}?(?:all the way\\s+)?to\\s+(?:his\\s+)?(?:asshole|hole|rim|entrance)`,
+  },
+  {
+    // "he clenches tight around Eddie's tongue"
+    id: "dd-clenches-around-tongue",
+    cat: "oral",
+    act: "rimming",
+    subj: "b",
+    weight: 0.9,
+    needsCtx: true,
+    src: `\\b{B}\\s+{aux}clench\\w*\\s+(?:tight\\s+)?around\\s+{T:poss}\\s+tongue\\b`,
+  },
+  {
+    // "Sucks on the puffy rim, his tongue teasing at the little furl"
+    id: "dd-sucks-on-rim",
+    cat: "oral",
+    act: "rimming",
+    subj: "t",
+    weight: 0.8,
+    needsCtx: true,
+    src: `\\b{T}\\s+{aux}(?:suck|sucks|sucked|sucking)\\s+(?:on|at)\\s+(?:the\\s+)?(?:puffy\\s+|swollen\\s+|loose\\s+)?(?:rim|furl|pucker)\\b`,
+  },
+  {
+    // "wrapped his fingers around Dean's shaft, giving a few quick pumps", "squeezes his hand around Steve's cock"
+    id: "dd-hj-fingers-around",
+    cat: "vibe",
+    act: "handjob",
+    subj: "t",
+    weight: 0.8,
+    needsCtx: true,
+    signal: { kind: "handjob", actorRole: "top" },
+    src: `\\b{T}\\s+{aux}(?:wrap|curl|close|fist|tighten|clamp|cup|squeeze|slick|wring)\\w*\\s+(?:his\\s+|her\\s+)?(?:fingers|hand|fist|palm)\\s+(?:\\w+\\s+)?(?:around|on|over)\\s+{B:poss}\\s+(?:[\\w-]+\\s+)?(?:cock|dick|shaft|length)\\b`,
+  },
+  {
+    // "He pulled Cas' dick out"
+    id: "dd-hj-pulled-out",
+    cat: "vibe",
+    act: "handjob",
+    subj: "t",
+    weight: 0.75,
+    needsCtx: true,
+    signal: { kind: "handjob", actorRole: "top" },
+    src: `\\b{T}\\s+{aux}(?:pull|pulled|pulls|took|take|fish|fished|free|freed)\\w*\\s+{B:poss}\\s+(?:cock|dick)\\s+out\\b(?!\\s+of\\s+(?:his|her|their|the)\\s+(?:mouth|throat|ass|hole)|[^.!?]{0,40}\\b(?:between|past|into)\\s+(?:[\\w'’]+\\s+)?(?:lips|mouth)\\b|\\s+and\\s+(?:feed|push|guide|press|slide)\\w*)`,
+  },
+  {
+    // "Eddie's fist pumps out another rope", "Dean's fist tightened around them"
+    id: "dd-hj-fist-works",
+    cat: "vibe",
+    act: "handjob",
+    subj: "t",
+    weight: 0.7,
+    needsCtx: true,
+    signal: { kind: "handjob", actorRole: "top" },
+    src: `\\b{T:poss}\\s+(?:fist|hand|fingers)\\s+(?:pump|tighten|clamp|squeez|stroke|work|slick)\\w*\\b[^.!?]{0,40}\\b(?:rope|cock|dick|shaft|length|them|him|it)\\b`,
+  },
+  {
+    // "palm at the bulge in Dean's pants", "dug the heel of his palm against the base of his dick"
+    id: "dd-hj-palm-bulge",
+    cat: "vibe",
+    act: "handjob",
+    subj: "t",
+    weight: 0.75,
+    needsCtx: true,
+    src: `\\b{T}\\s+{aux}(?:reach|dug|press|rub|ground|grind|palm|cup)\\w*\\s+(?:between them\\s+)?(?:to\\s+)?(?:palm\\s+at\\s+|the heel of his palm\\s+(?:against|into)\\s+)(?:the\\s+)?(?:bulge in\\s+{B:poss}\\s+(?:pants|jeans|trousers)|base of\\s+{B:poss}\\s+(?:cock|dick))`,
+  },
+  {
+    // "ruts up into Eddie's knot", "Eddie ruts against the line of Steve's ass", "grinding his knot into Jason's hip"
+    id: "dd-frot-rut-against",
+    cat: "vibe",
+    act: "frottage",
+    subj: "t",
+    weight: 0.75,
+    needsCtx: true,
+    signal: { kind: "handjob", actorRole: "top" },
+    src: `\\b{T}\\s+{aux}(?:rut|ruts|rutted|rutting|grind|grinds|ground|grinding|hump|humps|humped|humping)\\w*\\s+(?:his\\s+(?:knot|cock|dick|hips)\\s+)?(?:up\\s+|down\\s+|forward\\s+)?(?:into|against|on)\\s+{B:poss}\\s+(?:[\\w-]+\\s+){0,2}?(?:knot|cock|dick|thigh|hip|ass|cheeks|stomach|belly|jeans|lap|crotch|line)\\b`,
+  },
+  {
+    // "pressed his hips into him, groaning at the friction"
+    id: "dd-frot-hips-into",
+    cat: "vibe",
+    act: "frottage",
+    subj: "t",
+    weight: 0.7,
+    needsCtx: true,
+    signal: { kind: "handjob", actorRole: "top" },
+    src: `\\b{T}\\s+{aux}press\\w*\\s+(?:his\\s+)?hips\\s+(?:in)?to\\s+{B}\\b`,
+  },
+  {
+    // "Eddie squeezes Jason's knot", "his hand teasing and light along Jason's constrained knot", "hand clamped around his knot"
+    id: "dd-hj-knot",
+    cat: "vibe",
+    act: "handjob",
+    subj: "t",
+    weight: 0.75,
+    needsCtx: true,
+    signal: { kind: "handjob", actorRole: "top" },
+    src: `\\b{T}\\s+{aux}(?:squeez|stroke|strok|grip|fist|tease|massag|rub|cup|clamp|work|palm)\\w*\\s+(?:{B:poss}\\s+)?(?:[\\w-]+\\s+)?knot\\b|\\b{T:poss}\\s+hand\\s+(?:[\\w, -]{0,20}?)(?:along|around|on|over)\\s+{B:poss}\\s+(?:[\\w-]+\\s+)?knot\\b`,
   },
   {
     // "Derek's warm tongue teases the pucker of his rim", "his tongue traces her entrance"
@@ -2660,7 +2972,7 @@ export const PATTERNS: PatternDef[] = [
     weight: 0.8,
     needsCtx: true,
     signal: { kind: "body", actorRole: "bottom" },
-    src: `\\b{B:assReq}\\s+{aux}(?:was|were|felt|feels|ached|throbbed|burned|stung|hurt)\\s+(?:\\w+\\s+){0,2}?(?:sore|raw|tender|stretched|used|loose|open|empty|aching|achy|well-fucked|fucked-out|wrecked)(?![\\w-])`,
+    src: `\\b{B:assReq}\\s+{aux}(?:was|were|felt|feels|ached|throbbed|burned|stung|hurt)\\s+(?:\\w+\\s+){0,2}?(?:sore|raw|tender|stretched|used|loose|open|empty|aching|achy|well-fucked|fucked-out|wrecked)(?![\\w-])(?!\\s+(?:out|across|over|thin|taut|beside|next to))`,
   },
   {
     // "still slightly sore from being stretched open", "aching from being fucked"
@@ -3896,7 +4208,7 @@ export const DIALOGUE: DialogueDef[] = [
   { cat: "anal", act: "anal sex", role: "top", kind: "said", weight: 0.5, re: /\bget(?:ting)? you (?:fuckin['’g]*\s+)?pregnant\b|\bbreed(?:ing)? you\b/i },
   { cat: "oral", act: "blowjob", role: "top", kind: "said", weight: 0.9, re: /\b(?:clean|polish|lick|worship|suck)\s+(?:up\s+)?my\s+(?:cock|dick|knot)\b/ },
   { cat: "anal", act: "anal sex", role: "top", kind: "said", weight: 0.8, re: /\byou(?:'re| are| feel| felt| were)\s+(?:so\s+|fucking\s+|still\s+|always\s+|perfect\s+and\s+)*tight\b|\byou feel (?:so )?(?:good|amazing|perfect|incredible|fucking good)? ?around me\b|\b(?:clench|squeez|tighten)\w* (?:around|on) me\b|(?<!\b(?:i|i'll|i’ll|i will|i'd|i’d|we|we'll|we’ll|i can|i could|i'd rather|i’d rather|i guess i'll|i guess i’ll|can|could|will|would|to|gonna|can't|can’t)\s+)\btake (?:it(?=\s*(?:[,.!?]|$|\s+(?:all|deep|like|for me|baby|sweetheart|good|so well)\b))|my (?:cock|dick|knot)\b)/ },
-  { cat: "anal", act: "anal sex", role: "bottom", kind: "said", weight: 0.8, re: /\byou(?:'re| are| feel| felt)\s+(?:so\s+|fucking\s+)*(?:big|huge|deep|thick)\b|\b(?:i'm|i’m|i am|i feel|feel|feels|i'm just)\s+so (?:full|deep)\b|^\W*so (?:full|deep)\b|\bso full of (?:you|your)\b|\bstretch(?:ing)? me\b|\b(?:need|want|crave)\s+(?:your|that)\s+(?:cock|dick|knot)\b(?!\s+in my mouth)/ },
+  { cat: "anal", act: "anal sex", role: "bottom", kind: "said", weight: 0.8, re: /(?<!\bthink\s)(?<!\bthink that\s)(?<!\bif\s)\byou(?:(?:'re|\s+are)\s+(?:so|fucking|really|too|just so)\s+(?:so\s+|fucking\s+)*|\s+(?:feel|felt)\s+(?:so\s+|fucking\s+)*)(?:big|huge|deep|thick)\b|\b(?:i'm|i’m|i am|i feel|feel|feels|i'm just)\s+so (?:full|deep)\b|^\W*so (?:full|deep)\b|\bso full of (?:you|your)\b|\bstretch(?:ing)? me\b|\b(?:need|want|crave)\s+(?:your|that)\s+(?:cock|dick|knot)\b(?!\s+in my mouth)/ },
   { cat: "anal", act: "anal sex", role: "top", kind: "said", weight: 0.7, re: /(?:^|[.!?,]\s*|now,?\s+|please,?\s+|just\s+)(?:bend over|turn over|on your (?:stomach|hands and knees)|spread (?:your legs|'em|them)|present yourself|show me (?:your|that) (?:hole|ass))\b/ },
   // oral — said during sex
   { cat: "oral", act: "blowjob", role: "top", kind: "said", weight: 0.8, re: /\byour mouth (?:feels|is|was|felt) (?:so )?(?:good|amazing|perfect|incredible|hot|fucking good)\b|\b(?:suck|swallow) (?:it|harder|deeper)\b/ },

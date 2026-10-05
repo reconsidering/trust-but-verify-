@@ -187,3 +187,110 @@ describe("round 77: the dumbassery report (a shared surname, and everyday action
     expect(hitsOf("Dean fingered himself open with slick fingers, breathing hard.").hits.some((h) => h.via === "self-finger")).toBe(true);
   });
 });
+
+describe("round 78: the Strawberry Mama report", () => {
+  const SM = { ...META, fandoms: ["Teen Wolf"], characters: ["Derek Hale", "Stiles Stilinski"], relationships: ["Derek Hale/Stiles Stilinski"], freeforms: ["Dom Derek Hale", "Sub Stiles Stilinski"] };
+  const dsLead = "Stiles and Derek were in bed, naked and kissing, hard and aching. Derek kissed Stiles. Stiles kissed Derek back, moaning. ".repeat(5) + "\n\n";
+  const go = (t: string) => {
+    const hits: AuditHit[] = [];
+    const a = analyzeWithPatterns(dsLead + t, SM, { quiet: true, audit: (h) => hits.push(h) });
+    const p = a.pairings[0];
+    return { a, hits, scenes: p.anal.instances.map((x) => `${x.top.split(" ")[0]}>${x.bottom.split(" ")[0]}`), desires: (p.anal.desires ?? []).map((d) => `${d.via}:${d.who.split(" ")[0]}:${d.role}:${d.kind}`) };
+  };
+  it("“let a man he’d met fuck him” is the speaker’s past as a bottom, not as a top", () => {
+    expect(go("It seems obscene that he looks exactly as always when last night he let a man he’d only met two hours before fuck him on the floor.").desires).toEqual(["history:Stiles:bottom:history"]);
+  });
+  it("a pronoun in front of “Behind him, Derek…” is the other person", () => {
+    const text = "Before Stiles can think, Derek’s hand presses on his shoulder and suddenly Stiles is going down.\n\nIt is all a blur, Derek pulling, Stiles pushing. His sneakers clatter, his jeans glide off, his underwear close behind. In a blink he is naked from the waist down as he gets on his hands and knees in front of the tub.\n\nBehind him, Derek works his belt open.";
+    expect(go(text).desires.filter((d) => d.startsWith("hands-and-knees"))).toEqual(["hands-and-knees:Stiles:bottom:prep"]);
+  });
+  it("reaching down to take himself out of his pants is not watching someone bend over", () => {
+    expect(go("Under the covers, Stiles’ hips spasmed when Derek turned the camera around, and Stiles watched him reach down to take himself out of his sweatpants, a veiny hand on a veiny dick.").hits.filter((h) => h.via.startsWith("ogle-bend-over"))).toEqual([]);
+    expect(go("Derek watched Stiles bend over the counter, reaching down for the dropped keys.").hits.some((h) => h.via.startsWith("ogle-bend-over"))).toBe(true);
+  });
+  it("“He’d let him … shove his dick inside him” is a wish, with the other person’s dick", () => {
+    const r = go("Derek starts thrusting, like he could fuck Stiles just like this, up against the fridge. The mental image makes Stiles’ blood loop. He’d let Derek do it. He’d let him spread him open and shove his dick inside him right here.");
+    expect(r.scenes).toEqual([]);
+    expect(r.desires.some((d) => d.startsWith("penis-inside:Derek:top"))).toBe(true);
+  });
+});
+
+describe("round 79: the Steve and Eddie report (Chapters 4, 5 and 8)", () => {
+  const dsLead2 = "Stiles and Derek were in bed, naked and kissing, hard and aching. Derek kissed Stiles. Stiles kissed Derek back, moaning. ".repeat(4) + "\n\n";
+  const SD = { ...META, fandoms: ["Teen Wolf"], characters: ["Derek Hale", "Stiles Stilinski"], relationships: ["Derek Hale/Stiles Stilinski"], freeforms: [] };
+  const go = (t: string) => {
+    const hits: AuditHit[] = [];
+    const a = analyzeWithPatterns(dsLead2 + t, SD, { quiet: true, audit: (h) => hits.push(h) });
+    return { a, hits, p: a.pairings[0] };
+  };
+  it("pushing inside after unlocking a door is a door", () => {
+    const r = go("Derek drove home, his stomach in knots. He climbs the steps, fingers trembling as he unlocks the door.\n\nHe pushes inside. Shuts the door and exhales, drags both hands down his face.");
+    expect(r.hits.filter((h) => h.via.startsWith("pushed-in"))).toEqual([]);
+    expect(r.p.anal.instances.length).toBe(0);
+  });
+  it("“isn’t fully in his body” is a mind, not a cock", () => {
+    const r = go("Stiles just lets it happen, his fingers curled loosely around Derek’s wrist. Like he isn't fully in his body yet and needs something to keep him here.");
+    expect(r.hits.filter((h) => h.via === "inside")).toEqual([]);
+  });
+  it("“grounding himself” is steadying, not masturbating, but jerking himself off still is", () => {
+    expect(go("He rested his forearms on the cool metal and exhaled, grounding himself.").p.solo?.occurs).toBe(false);
+    expect(go("He jerked himself off, panting, eyes shut, his hand slick around his cock.").p.solo?.occurs).toBe(true);
+  });
+  it("“still the man from fucking into his mouth”: the one kept from it is the one doing it", () => {
+    const r = go("Stiles plunged his lips over the entire length, his mouth struggling to hold it. He had to move his hand to Derek’s thigh so he could still the man from fucking into his mouth.");
+    const d = (r.p.oral.desires ?? []).find((x) => x.via?.startsWith("fucked-mouth"));
+    expect(d && `${d.who.split(" ")[0]}:${d.role}`).toBe("Stiles:bottom");
+  });
+});
+
+describe("round 80: the Spencer and Del report", () => {
+  const SB = { ...META, fandoms: [], characters: ["Spencer Bryant", "Del"], relationships: [], freeforms: [] };
+  const lead3 = "Spencer and Del were in bed, naked and kissing, hard and aching. Del kissed Spencer. Spencer kissed Del back, moaning. ".repeat(4) + "\n\n";
+  const hitsOf = (t: string, meta = SB) => {
+    const hits: AuditHit[] = [];
+    const a = analyzeWithPatterns(lead3 + t, meta, { quiet: true, audit: (h) => hits.push(h) });
+    return { a, hits };
+  };
+  const dlg = (hits: AuditHit[]) => hits.filter((h) => h.via.startsWith("dialogue")).map((h) => `${h.a.split(" ")[0]}>${h.b?.split(" ")[0]}`);
+  it("“stretched out next to him” is a position, not a loose body", () => {
+    expect(hitsOf("Del stretched out next to him for a deep kiss. He wanted to remember how soft his sighs, how hard his body was stretched out next to Spencer.").hits.filter((h) => h.via.startsWith("body-sore"))).toEqual([]);
+    expect(hitsOf("Afterwards his ass was sore and stretched, and Del winced.").hits.some((h) => h.via.startsWith("body-sore"))).toBe(true);
+  });
+  it("a request that ends a paragraph belongs to the one who is NOT named in the reply’s beat", () => {
+    const t = "“I am,” Del said as Spencer kissed a hot trail down his stomach. His rhythm had him on edge far too soon. “Want you to fuck me. You bring stuff?”\n\n“Yep.” Spencer didn’t seem in any hurry to go get it, licking up and down Del’s shaft.";
+    expect(dlg(hitsOf(t).hits)).toEqual(["Del>Spencer"]);
+  });
+  it("an answer right after the other one’s tagged line is theirs", () => {
+    const t = "“We don’t have to... You can sleep if you need,” Spencer murmured. “Hell, no. I want you inside me.” He forced himself more awake. “Get the lube.”";
+    expect(dlg(hitsOf(t).hits)).toContain("Del>Spencer");
+  });
+  it("the same speaker carrying on after a tag keeps the line (please / yes are not answers)", () => {
+    const t = "“Like this,” Del moans. “Please, please fuck me, sir, please fuck me because I belong to you.”";
+    expect(dlg(hitsOf(t).hits)).toEqual(["Del>Spencer"]);
+  });
+  it("words one asks the other to say are not one’s own wish", () => {
+    const t = "“Come on, Spencer. Don’t say you don’t want it,” Del leans in close. “It’s just three little words. ‘Please fuck me’.”";
+    expect(dlg(hitsOf(t).hits)).toEqual([]);
+  });
+  it("“wasn’t only that he wanted to” still counts the want", () => {
+    const r = hitsOf("Del laughed. Spencer shut the door. The problem wasn’t only that he wanted to fuck Del. He wanted to talk more.").hits.filter((h) => h.via === "fuck");
+    expect(r.length).toBeGreaterThan(0);
+    expect(r.every((h) => h.kind !== undefined)).toBe(true);
+  });
+  it("lubing himself up and stretching himself is prep for being fucked, not slicking a cock", () => {
+    const r = hitsOf("Spencer held out his hand. He lubed himself up, eyeing Del’s cock, and worked two fingers in, stretching himself.").hits;
+    expect(r.filter((h) => h.via.startsWith("slicked-self"))).toEqual([]);
+    expect(r.some((h) => h.via.startsWith("self-finger"))).toBe(true);
+  });
+  it("slicking himself up while his fingers work in tandem is still a top slicking up", () => {
+    const r = hitsOf("Spencer added a third finger and then slicked himself up, pumping his fingers in tandem with his fist.").hits;
+    expect(r.some((h) => h.via.startsWith("slicked-self"))).toBe(true);
+  });
+  it("a call sign beside a name (“be Del … instead of Bacon”) is one person", () => {
+    const meta = { ...SB, characters: ["Spencer Bryant", "Del", "Bacon"] };
+    const text = "It was part of taking care of him, giving him the space to be Del, the man, instead of Bacon, the always-on SEAL.\n\nBacon laughed. Spencer kissed Bacon hard. Bacon moaned and Spencer pushed his cock into Bacon’s ass, fucking Bacon slowly.";
+    const a = hitsOf(text, meta).a;
+    expect(a.pairings.length).toBe(1);
+    expect(a.pairings[0].pairing).not.toMatch(/Bacon/);
+  });
+});

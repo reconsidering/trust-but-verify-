@@ -10,7 +10,8 @@
     "test": "vitest run",
     "eval": "node scripts/eval.mjs",
     "eval:compare": "node scripts/eval-compare.mjs",
-    "regress": "node scripts/regress.mjs"
+    "regress": "node scripts/regress.mjs",
+    "check": "node scripts/check.mjs"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.131.0",

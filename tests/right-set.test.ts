@@ -219,6 +219,9 @@ describe("right-set: the page’s Save looks-right set button", () => {
   });
 });
 
+// Sharding for scripts/check.mjs: RIGHTSET_ONLY=slug,slug limits the replay to those sets; RIGHTSET_REPORT_FILE says where to write.
+const onlySets = process.env.RIGHTSET_ONLY?.split(",").filter(Boolean);
+
 describe.skipIf(!dir)("right-set: replay against the sample fics", () => {
   it("keeps the readings you checked", () => {
     const files = existsSync(setDir) ? readdirSync(setDir).filter((f) => f.endsWith(".json")) : [];
@@ -234,6 +237,7 @@ describe.skipIf(!dir)("right-set: replay against the sample fics", () => {
     const report: string[] = ["# Right-set report", ""];
     let failures: string[] = [];
     for (const f of files) {
+      if (onlySets && !onlySets.includes(f.replace(/\.json$/, ""))) continue;
       const set = JSON.parse(readFileSync(join(setDir, f), "utf8")) as RightSet;
       const path = bySlug.get(set.fic);
       if (!path) { report.push(`## ${set.title}: skipped (no sample with this title in AO3_DIR)`, ""); continue; }
@@ -273,7 +277,7 @@ describe.skipIf(!dir)("right-set: replay against the sample fics", () => {
       }
       report.push(`## ${set.title}`, `${tally.ok} unchanged, ${tally.changed} changed, ${tally.stale} not found again, ${tally.skipped} ignored (disputed or retired)`, "", ...lines, "");
     }
-    writeFileSync(join(dir!, "RIGHT_SET_REPORT.md"), report.join("\n"));
+    writeFileSync(process.env.RIGHTSET_REPORT_FILE ?? join(dir!, "RIGHT_SET_REPORT.md"), report.join("\n"));
     expect(failures, "A reading you marked right (strong) has changed. If the change is deliberate or you now disagree, retire it with scripts/import-right-set.mjs --retire.").toEqual([]);
   }, 900_000);
 });
