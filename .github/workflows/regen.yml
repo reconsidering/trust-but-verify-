@@ -1,0 +1,73 @@
+name: Regenerate the reliability table
+
+# src/heuristic/reliability.ts (per-pattern precision) is made from the labels in tests/right-set and tests/labels. It changes on every label
+# import, so label and fix PRs do not carry it; this job regenerates it after REGEN_EVERY merges that touched labels (default 5; set the
+# repository variable REGEN_EVERY to change it) and opens a PR for review. It never pushes to main.
+# The context model (src/heuristic/learned.ts) is NOT done here: it replays the sample fics, which are local only. Run `npm run regen` for that.
+#
+# One-time setup: Settings > Actions > General > "Allow GitHub Actions to create and approve pull requests".
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "tests/right-set/**"
+      - "tests/labels/**"
+  workflow_dispatch:
+    inputs:
+      force:
+        description: "Regenerate now, whatever the merge count"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: regen-reliability
+  cancel-in-progress: false
+
+jobs:
+  regen:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - name: Count label merges since the table was last regenerated
+        id: count
+        env:
+          EVERY: ${{ vars.REGEN_EVERY || '5' }}
+          FORCE: ${{ inputs.force }}
+        run: |
+          last=$(git log -1 --format=%H -- src/heuristic/reliability.ts)
+          n=$(git rev-list --first-parent --count "$last"..HEAD -- tests/right-set tests/labels)
+          echo "merges touching labels since $last: $n (regenerate at $EVERY)"
+          if [ "$n" -ge "$EVERY" ] || [ "$FORCE" = "true" ]; then echo "go=true" >> "$GITHUB_OUTPUT"; fi
+      - run: npm ci
+        if: steps.count.outputs.go == 'true'
+      - name: Regenerate
+        if: steps.count.outputs.go == 'true'
+        run: npm run regen -- --reliability-only
+      - name: Unit suite on the new table
+        if: steps.count.outputs.go == 'true'
+        run: npm test
+      - name: Open a PR with the new table
+        if: steps.count.outputs.go == 'true'
+        uses: peter-evans/create-pull-request@v7
+        with:
+          add-paths: src/heuristic/reliability.ts
+          branch: auto/regen-reliability
+          delete-branch: true
+          commit-message: "Regenerate the reliability table from the current labels"
+          title: "Regenerate the reliability table"
+          body: |
+            Made by the `regen` workflow after enough label merges (or by hand). Only `src/heuristic/reliability.ts` changes; it is a function of the labels in `tests/right-set` and `tests/labels`.
+
+            Before merging, run `npm run check` locally if you want the gold totals confirmed; the unit suite already passed in the workflow.
+            The context model (`learned.ts`) is not regenerated here because it needs the local sample fics: run `npm run regen`.
