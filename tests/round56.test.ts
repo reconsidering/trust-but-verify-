@@ -13,10 +13,9 @@ describe("fixes from the Ethan/Hank report", () => {
     expect(blow("Castiel’s breath came faster almost the moment Dean finally got his mouth on his cock.")).toEqual(["Castiel>Dean"]);
     expect(blow("Dean got his mouth on his cock.")).toEqual(["Castiel>Dean"]);
   });
-  it("‘if only Dean could find the courage, buried deep inside him’ is Dean's wish to top", () => {
+  it("‘if only Dean could find the courage, buried deep inside him’ is a feeling, not a wish to top (a later report overturned the first reading)", () => {
     const { p } = run("Castiel close enough to touch, if only Dean could find the courage, buried deep inside him.");
-    expect(p.anal.desires.some((d) => d.who.startsWith("Dean") && d.role === "top")).toBe(true);
-    expect(p.anal.desires.some((d) => d.who === "Castiel" && d.role === "top")).toBe(false);
+    expect(p.anal.desires.filter((d) => d.who.startsWith("Dean") || d.who === "Castiel")).toHaveLength(0);
   });
   it("‘get himself off the couch’ is standing up, not masturbating; ‘got himself off’ still is", () => {
     expect(run("Dean’s knees were unsteady jelly, but he managed to get himself off the couch, and tug Castiel up, too.").hits.filter((h) => h.via.startsWith("mast-"))).toHaveLength(0);

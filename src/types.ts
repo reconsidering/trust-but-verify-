@@ -119,6 +119,10 @@ export interface SoloAct {
   evidence: string;
   where: string;
   context?: string;
+  /** How sure the engine is that this line says what it was read as (0–1), and why. */
+  confidence?: number;
+  reasons?: string[];
+  via?: string;
 }
 
 /** Someone outside the cast in an act with a cast member: a named minor character, a stranger label ("the twink"), or no one the text names. */
@@ -140,6 +144,9 @@ export interface OtherScene {
   context?: string;
   where: string;
   via?: string;
+  /** How sure the engine is that this line says what it was read as (0–1), and why. */
+  confidence?: number;
+  reasons?: string[];
 }
 
 export interface OthersResult {
@@ -184,6 +191,10 @@ export interface ManualAct {
   evidence: string;
   where: string;
   context?: string;
+  /** How sure the engine is that this line says what it was read as (0–1), and why. */
+  confidence?: number;
+  reasons?: string[];
+  via?: string;
 }
 
 export interface ManualResult {

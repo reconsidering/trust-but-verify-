@@ -419,7 +419,7 @@ function vibeExtra(id: string, v: VibeRating | DynamicRating): string[] {
 let labels: Label[] = loadLabels();
 /** Reasons that mean the item itself was misread (not just counted too strongly or twice). */
 const labelable = (spec: { kind?: FlagKind; card: string; confidence?: number }) =>
-  spec.confidence !== undefined && (spec.kind === "scene" || spec.kind === "hint" || spec.kind === undefined) && !["solo", "manual", "tagcheck", "vibe", "dynamic"].includes(spec.card);
+  spec.confidence !== undefined && (spec.kind === "scene" || spec.kind === "hint" || spec.kind === undefined) && !["tagcheck", "vibe", "dynamic"].includes(spec.card);
 function recordLabel(spec: { kind?: FlagKind; card: string; confidence?: number; evidence: string }, right: boolean) {
   if (!labelable(spec) || !spec.evidence) return;
   const kind = spec.kind === "hint" ? "line" : "scene";
@@ -1011,6 +1011,14 @@ function renderTagCheck(checks: TagCheck[], source: string): HTMLElement {
 }
 
 /** Handjobs and frottage between the pair. */
+/** "72% sure" chip with the reasons as its tooltip. */
+function confChip(confidence: number | undefined, reasons?: string[]): HTMLElement | undefined {
+  if (confidence === undefined) return undefined;
+  const c = el("span", `scene-conf ${confidence >= 0.75 ? "high" : confidence >= 0.5 ? "medium" : "low"}`, `${Math.round(confidence * 100)}% sure`);
+  if (reasons?.length) c.title = reasons.join("; ");
+  return c;
+}
+
 function renderManual(v: ManualResult, pairing: string, source: string): HTMLElement {
   const card = el("article", "card act verdict-one_way");
   const head = el("div", "act-head");
@@ -1024,8 +1032,10 @@ function renderManual(v: ManualResult, pairing: string, source: string): HTMLEle
     const li = el("li");
     li.append(el("strong", undefined, i.mutual ? `${i.giver} & ${i.receiver}` : `${i.giver} → ${i.receiver}`), ` · ${i.act}`);
     if (i.where) li.append(el("span", "where", ` · ${i.where}`));
+    const chip = confChip(i.confidence, i.reasons);
+    if (chip) li.append(chip);
     if (i.evidence) li.append(el("div", "evidence", i.evidence));
-    flagControl(li, { id: `${source}|${pairing}|manual|${n}`, kind: "hint", pairing, card: "manual", top: i.giver, bottom: i.receiver, act: i.act, where: i.where, evidence: i.evidence, context: i.context });
+    flagControl(li, { id: `${source}|${pairing}|manual|${n}`, kind: "hint", pairing, card: "manual", top: i.giver, bottom: i.receiver, act: i.act, confidence: i.confidence, confidenceReasons: i.reasons, where: i.where, pattern: i.via, evidence: i.evidence, context: i.context });
     ul.append(li);
   });
   det.append(ul);
@@ -1057,8 +1067,10 @@ function renderOthers(v: OthersResult, pairing: string, source: string): HTMLEle
       const li = el("li");
       li.append(el("strong", undefined, i.who), ` (${i.role}) · ${i.act}${i.kind === "history" ? "" : ` · with ${i.other.label}`}`);
       if (i.where) li.append(el("span", "where", ` · ${i.where}`));
+      const chip = confChip(i.confidence, i.reasons);
+      if (chip) li.append(chip);
       if (i.evidence) li.append(el("div", "evidence", i.evidence));
-      flagControl(li, { id: `${source}|${pairing}|others|${n}`, kind: "hint", pairing, card: "others", top: `${i.who} (${i.role})`, bottom: i.other.label, act: i.act, where: i.where, pattern: i.via, evidence: i.evidence, context: i.context });
+      flagControl(li, { id: `${source}|${pairing}|others|${n}`, kind: "hint", pairing, card: "others", top: `${i.who} (${i.role})`, bottom: i.other.label, act: i.act, confidence: i.confidence, confidenceReasons: i.reasons, where: i.where, pattern: i.via, evidence: i.evidence, context: i.context });
       ul.append(li);
     }
     det.append(ul);
@@ -1081,8 +1093,10 @@ function renderSolo(v: SoloResult, pairing: string, source: string): HTMLElement
     const li = el("li");
     li.append(el("strong", undefined, i.who), ` · ${i.act}`);
     if (i.where) li.append(el("span", "where", ` · ${i.where}`));
+    const chip = confChip(i.confidence, i.reasons);
+    if (chip) li.append(chip);
     if (i.evidence) li.append(el("div", "evidence", i.evidence));
-    flagControl(li, { id: `${source}|${pairing}|solo|${n}`, kind: "hint", pairing, card: "solo", top: i.who, bottom: "", act: i.act, where: i.where, evidence: i.evidence, context: i.context });
+    flagControl(li, { id: `${source}|${pairing}|solo|${n}`, kind: "hint", pairing, card: "solo", top: i.who, bottom: "", act: i.act, confidence: i.confidence, confidenceReasons: i.reasons, where: i.where, pattern: i.via, evidence: i.evidence, context: i.context });
     ul.append(li);
   });
   det.append(ul);

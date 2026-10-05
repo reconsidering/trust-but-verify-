@@ -50,4 +50,11 @@ describe("round 83: rimming, anal and oral accuracy", () => {
     const k = run("Steve sucked Eddie's cock, swallowing around him.||“You're so tight, I could fuck you all night,” Eddie said.");
     expect(k.hits.filter((h) => /^dialogue:blowjob/.test(h.via))).toEqual([]);
   });
+  it("a feeling ‘buried deep inside him’ is not a cock", () => {
+    expect(run("Steve wanted him close, if only Steve could find the courage, buried deep inside him.").hits.some((h) => /^(?:push-into|inside)/.test(h.via))).toBe(false);
+    expect(run("Eddie was buried deep inside him, groaning.").anal).toEqual(["Eddie>Steve"]);
+  });
+  it("‘now he knew what it was like to fuck him’ is a reflection, not a scene", () => {
+    expect(run("His itch had been scratched. Now Steve knew what it was like to fuck Eddie. He could move on.").anal).toEqual([]);
+  });
 });
