@@ -1,9 +1,14 @@
-name: Regenerate the reliability table
+name: Regenerate the reliability table and the context model
 
-# src/heuristic/reliability.ts (per-pattern precision) is made from the labels in tests/right-set and tests/labels. It changes on every label
-# import, so label and fix PRs do not carry it; this job regenerates it after REGEN_EVERY merges that touched labels (default 5; set the
-# repository variable REGEN_EVERY to change it) and opens a PR for review. It never pushes to main.
-# The context model (src/heuristic/learned.ts) is NOT done here: it replays the sample fics, which are local only. Run `npm run regen` for that.
+# src/heuristic/reliability.ts (per-pattern precision) and src/heuristic/learned.ts (the context model) are made from the labels and from replaying the
+# sample fics through the engine. They change whenever labels or the engine do, so label and fix PRs do not carry them; this job regenerates them after
+# REGEN_EVERY merges that touched labels or the engine (default 5; set the repository variable REGEN_EVERY to change it) and opens a PR for review.
+# It never pushes to main.
+#
+# The reliability table needs only the labels, so it is always regenerated. The context model replays the sample fics, which are not in the repo:
+# if the repository secrets SAMPLES_URL (where to download the encrypted copy), SAMPLES_KEY (its passphrase) and, if the download needs a token,
+# SAMPLES_AUTH are set, the model is regenerated too;
+# otherwise only the table is. Make the encrypted copy with `SAMPLES_KEY=… npm run samples -- pack` (see docs/TESTING.md).
 #
 # One-time setup: Settings > Actions > General > "Allow GitHub Actions to create and approve pull requests".
 
@@ -13,6 +18,9 @@ on:
     paths:
       - "tests/right-set/**"
       - "tests/labels/**"
+      - "src/heuristic/**"
+      - "!src/heuristic/reliability.ts"
+      - "!src/heuristic/learned.ts"
   workflow_dispatch:
     inputs:
       force:
@@ -25,12 +33,13 @@ permissions:
   pull-requests: write
 
 concurrency:
-  group: regen-reliability
+  group: regen
   cancel-in-progress: false
 
 jobs:
   regen:
     runs-on: ubuntu-latest
+    timeout-minutes: 90
     steps:
       - uses: actions/checkout@v4
         with:
@@ -39,35 +48,57 @@ jobs:
         with:
           node-version: 22
           cache: npm
-      - name: Count label merges since the table was last regenerated
+      - name: Count merges since the generated files were last regenerated
         id: count
         env:
           EVERY: ${{ vars.REGEN_EVERY || '5' }}
           FORCE: ${{ inputs.force }}
         run: |
-          last=$(git log -1 --format=%H -- src/heuristic/reliability.ts)
-          n=$(git rev-list --first-parent --count "$last"..HEAD -- tests/right-set tests/labels)
-          echo "merges touching labels since $last: $n (regenerate at $EVERY)"
+          last=$(git log -1 --format=%H -- src/heuristic/reliability.ts src/heuristic/learned.ts)
+          n=$(git rev-list --first-parent --count "$last"..HEAD -- tests/right-set tests/labels src/heuristic ':!src/heuristic/reliability.ts' ':!src/heuristic/learned.ts')
+          echo "merges touching labels or the engine since $last: $n (regenerate at $EVERY)"
           if [ "$n" -ge "$EVERY" ] || [ "$FORCE" = "true" ]; then echo "go=true" >> "$GITHUB_OUTPUT"; fi
       - run: npm ci
         if: steps.count.outputs.go == 'true'
+      - name: Fetch the sample fics (only when the secrets are set)
+        if: steps.count.outputs.go == 'true'
+        id: samples
+        env:
+          SAMPLES_URL: ${{ secrets.SAMPLES_URL }}
+          SAMPLES_KEY: ${{ secrets.SAMPLES_KEY }}
+          SAMPLES_AUTH: ${{ secrets.SAMPLES_AUTH }}
+        run: |
+          if [ -n "$SAMPLES_URL" ] && [ -n "$SAMPLES_KEY" ]; then
+            if [ -n "$SAMPLES_AUTH" ]; then
+              curl -fsSL -H "Authorization: Bearer $SAMPLES_AUTH" -H "Accept: application/octet-stream" "$SAMPLES_URL" -o ao3-samples.enc
+            else
+              curl -fsSL "$SAMPLES_URL" -o ao3-samples.enc
+            fi
+            node scripts/samples.mjs unpack ao3-samples.enc ao3-samples
+            rm ao3-samples.enc
+            echo "have=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "No SAMPLES_URL / SAMPLES_KEY secrets: regenerating the reliability table only."
+          fi
       - name: Regenerate
         if: steps.count.outputs.go == 'true'
-        run: npm run regen -- --reliability-only
-      - name: Unit suite on the new table
+        run: |
+          if [ "${{ steps.samples.outputs.have }}" = "true" ]; then npm run regen; else npm run regen -- --reliability-only; fi
+      - name: Unit suite with the new files
         if: steps.count.outputs.go == 'true'
         run: npm test
-      - name: Open a PR with the new table
+      - name: Open a PR with the new files
         if: steps.count.outputs.go == 'true'
         uses: peter-evans/create-pull-request@v7
         with:
-          add-paths: src/heuristic/reliability.ts
-          branch: auto/regen-reliability
+          add-paths: |
+            src/heuristic/reliability.ts
+            src/heuristic/learned.ts
+          branch: auto/regen
           delete-branch: true
-          commit-message: "Regenerate the reliability table from the current labels"
-          title: "Regenerate the reliability table"
+          commit-message: "Regenerate the reliability table and the context model"
+          title: "Regenerate the reliability table and the context model"
           body: |
-            Made by the `regen` workflow after enough label merges (or by hand). Only `src/heuristic/reliability.ts` changes; it is a function of the labels in `tests/right-set` and `tests/labels`.
+            Made by the `regen` workflow after enough label or engine merges (or by hand). Only `src/heuristic/reliability.ts` and `learned.ts` change; they are functions of the labels, the sample fics and the engine.
 
-            Before merging, run `npm run check` locally if you want the gold totals confirmed; the unit suite already passed in the workflow.
-            The context model (`learned.ts`) is not regenerated here because it needs the local sample fics: run `npm run regen`.
+            If the sample secrets were not set, only the reliability table was regenerated. The unit suite passed in the workflow; run `npm run check` locally if you want the gold totals confirmed before merging.
