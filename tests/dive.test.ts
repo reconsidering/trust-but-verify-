@@ -28,6 +28,6 @@ describe.skipIf(!fic || !process.env.DIVE_OUT)("dive: read a fic", () => {
       for (const i of p.solo?.instances ?? []) readings.push({ kind: "solo", card: "solo", pairing: p.pairing, who: i.who, via: i.via ?? "", ev: i.evidence, act: i.act });
     }
     readings.sort((x, y) => ((x.para as number | undefined) ?? 0) - ((y.para as number | undefined) ?? 0));
-    writeFileSync(process.env.DIVE_OUT!, JSON.stringify({ title: w.meta.title ?? fic, relationships: w.meta.relationships, characters: w.meta.characters, paras, readings }));
+    writeFileSync(process.env.DIVE_OUT!, JSON.stringify({ title: w.meta.title ?? fic, relationships: w.meta.relationships, freeforms: w.meta.freeforms, characters: w.meta.characters, paras, readings }));
   }, 1_200_000);
 });
