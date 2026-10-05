@@ -9,6 +9,14 @@ Two different questions, two different tools, and a fast loop for working on one
 - The unit suite includes `tests/smoke.test.ts`: speed on long quotes and sentences, a woman in an M/F pair, the alpha/omega tag rule, and a shared term of address. They are the mistakes that used to cost a full regression run to find.
 - Run the full `check` and `regress` once before you commit, not after every fix.
 
+## A deep dive on one fic — `npm run dive`
+Steps (everything goes to `ao3-samples/.dive/<fic>/`, local like the fics; details at the top of `scripts/dive.mjs`):
+1. `npm run dive -- pack <fic>` reads the fic with the base engine (`--base`, default `origin/main`) and writes the readings in chunks of 50 to judge, the sexual-looking paragraphs the engine missed, the numbered full text in ~1000-paragraph ranges, and `prompts.md` with a ready-made prompt for each chunk.
+2. Give each prompt to a subagent (in parallel). They write `A<n>-labels.json`, `B<n>-labels.json` and `inv<n>.json` into the same folder.
+3. Fix the engine; after each change `npm run dive -- eval <fic>` (about 40 s) prints precision before and after, right readings kept or lost, wrong ones gone or still there, new readings, recall on the missed paragraphs and on the inventoried scenes.
+4. `npm run dive -- import <fic>` adds the judged readings to `tests/right-set` at weight 0.9 (source `claude`; weak cues the owner has ruled on are left undecided), and `npm run dive -- gold <fic> --pairing "A/B" --top A --bottom B` writes `tests/gold/<fic>.json` from the inventories (only scenes the engine reports now: a regression guard, not a recall measure).
+5. Then the full `npm run check` and `npm run regress -- --hits --all` once, and a PR. Regenerate the generated files separately (below).
+
 ## Generated files — `npm run regen`
 `src/heuristic/reliability.ts` (per-pattern precision) and `learned.ts` (the context model) are made from the labels. They change on every label import, so PRs that carry them conflict with each other. **Do not regenerate them inside a label or fix PR.** A workflow (`.github/workflows/regen.yml`) regenerates `reliability.ts` for you after every `REGEN_EVERY` merges that touched labels (repository variable, default 5; it opens a PR, never pushes to `main`; needs Settings > Actions > General > "Allow GitHub Actions to create and approve pull requests"; you can also run it by hand from the Actions tab with *force*). It can't do `learned.ts`, which replays the sample fics that exist only on your machine, so that one stays a local `npm run regen`. The unit suite only *warns* when `reliability.ts` is behind the labels (`STRICT_GENERATED=1` makes it fail). After a batch of PRs has merged, run `npm run regen` (about 9 minutes; `--reliability-only` takes seconds), run `npm run check`, and commit the two files on their own.
 
