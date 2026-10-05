@@ -27,10 +27,12 @@ try {
   const rep = readFileSync(resolve(dir, "LEARN_REPORT.md"), "utf8");
   const hits = /(\d+) labelled hits found again[^;]*; (\d+) wrong/.exec(rep);
   const rows = [...rep.matchAll(/^\| pattern record(?: only| \+ context) \| ([\d.]+) \| [\d.]+ \| ([\d.]+) \|$/gm)];
+  const unseen = [...rep.matchAll(/^\| unseen fics: pattern record(?: only| \+ context) \| ([\d.]+) \| [\d.]+ \| ([\d.]+) \|$/gm)];
   if (hits && rows.length === 2) {
     const sha = execFileSync("git", ["rev-parse", "--short", "HEAD"], { encoding: "utf8" }).trim();
     const n = Number(hits[1]).toLocaleString("en-US");
-    appendFileSync("docs/METRICS.md", `| ${new Date().toISOString().slice(0, 10)} | ${n} (${hits[2]}) | ${rows[0][1]} → ${rows[1][1]} | ${rows[0][2]} → ${rows[1][2]} | ${sha} |\n`);
+    const un = unseen.length === 2 ? `${unseen[0][1]} → ${unseen[1][1]} | ${unseen[0][2]} → ${unseen[1][2]}` : "not recorded | not recorded";
+    appendFileSync("docs/METRICS.md", `| ${new Date().toISOString().slice(0, 10)} | ${n} (${hits[2]}) | ${rows[0][1]} → ${rows[1][1]} | ${rows[0][2]} → ${rows[1][2]} | ${un} | ${sha} |\n`);
     console.log("Added a row to docs/METRICS.md.");
   }
 } catch (e) { console.log(`(could not update docs/METRICS.md: ${e.message})`); }

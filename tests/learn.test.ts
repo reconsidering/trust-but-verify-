@@ -17,7 +17,7 @@ const hash = (s: string) => { let h = 2166136261; for (let i = 0; i < s.length; 
 const PRIOR_MEAN = 0.9, PRIOR_STRENGTH = 4;
 
 /** `wt` is how far the label is trusted (1 for the owner's own marks; less for an unverified pass). */
-type Row = { key: string; id: string; f: number[]; y: number; wt: number; src?: "audit" | "report" | "weighted" };
+type Row = { key: string; id: string; f: number[]; y: number; wt: number; src?: "audit" | "report" | "weighted"; fic?: string };
 
 function loadLabels(): Map<string, "ok" | "wrong"> {
   const out = new Map<string, "ok" | "wrong">();
@@ -154,7 +154,7 @@ describe.skipIf(!dir)("context model", () => {
             if (!h.f) { if (lab) missing[key] = h.kind; return; }
             if (!lab || seen.has(key)) return;
             seen.add(key);
-            rows.push({ key, id: h.via, f: h.f, y: lab === "ok" ? 1 : 0, wt: !labels.get(key) && rep ? rep.wt : 1, src: labels.get(key) ? "audit" : rep && rep.wt < 1 ? "weighted" : "report" });
+            rows.push({ key, id: h.via, f: h.f, y: lab === "ok" ? 1 : 0, wt: !labels.get(key) && rep ? rep.wt : 1, src: labels.get(key) ? "audit" : rep && rep.wt < 1 ? "weighted" : "report", fic: f });
           },
         });
       }
@@ -168,28 +168,57 @@ describe.skipIf(!dir)("context model", () => {
     expect(rows.length).toBeGreaterThan(200);
 
     const designs = (set: Row[], pre: (id: string, r?: Row) => number) => set.map((r) => [logit(clampP(pre(r.id, r))), ...r.f]);
-    // 5-fold cross-validation; pattern precision for a held-out row comes from the other folds only.
+    // 5-fold cross-validation; pattern precision for a held-out row comes from the other folds only. Two ways to split the rows:
+    //  - at random (the original: hits from the same fic can sit on both sides, which flatters the model; kept so the history in docs/METRICS.md stays comparable);
+    //  - by fic (every hit of a fic is held out together, so the score is for fics the model has not seen: the honest one).
     const K = 5, lambda = Number(process.env.LAMBDA ?? 8);
-    const fold = (r: Row) => hash(r.key) % K;
-    const pb: number[] = [], pm: number[] = [], ys: number[] = [];
-    for (let k = 0; k < K; k++) {
+    type Pred = { pb: number[]; pm: number[]; ys: number[]; src: string[] };
+    const cv = (fold: (r: Row) => number): Pred => {
+      const out: Pred = { pb: [], pm: [], ys: [], src: [] };
       const testOnly = process.env.LEARN_TEST_ON?.split(","); // a diagnostic: train on every row, score only rows from these sources
-      const train = rows.filter((r) => fold(r) !== k), test = rows.filter((r) => fold(r) === k && (!testOnly || testOnly.includes(r.src ?? "audit")));
-      const prec = precisions(train);
-      // Inside training, each row's own label is left out of its pattern's precision.
-      const Xtr = train.map((r) => [logit(clampP(precisions(train, r)(r.id))), ...r.f]);
-      const w = fit(Xtr, train.map((r) => r.y), lambda, train.map((r) => r.wt ?? 1));
-      for (const r of test) {
-        const base = prec(r.id);
-        const x = [logit(clampP(base)), ...r.f];
-        let z = w[0];
-        for (let i = 0; i < x.length; i++) z += w[i + 1] * x[i];
-        pb.push(base); pm.push(sig(z)); ys.push(r.y);
+      for (let k = 0; k < K; k++) {
+        const train = rows.filter((r) => fold(r) !== k), test = rows.filter((r) => fold(r) === k && (!testOnly || testOnly.includes(r.src ?? "audit")));
+        const prec = precisions(train);
+        // Inside training, each row's own label is left out of its pattern's precision.
+        const Xtr = train.map((r) => [logit(clampP(precisions(train, r)(r.id))), ...r.f]);
+        const w = fit(Xtr, train.map((r) => r.y), lambda, train.map((r) => r.wt ?? 1));
+        for (const r of test) {
+          const base = prec(r.id);
+          const x = [logit(clampP(base)), ...r.f];
+          let z = w[0];
+          for (let i = 0; i < x.length; i++) z += w[i + 1] * x[i];
+          out.pb.push(base); out.pm.push(sig(z)); out.ys.push(r.y); out.src.push(r.src ?? "audit");
+        }
       }
-    }
-    const rep = (name: string, ps: number[]) => `| ${name} | ${logloss(ps, ys).toFixed(4)} | ${brier(ps, ys).toFixed(4)} | ${auc(ps, ys).toFixed(3)} |`;
+      return out;
+    };
+    const rnd = cv((r) => hash(r.key) % K);
+    const unseen = cv((r) => hash(r.fic ?? r.key) % K);
+    const { pb, pm, ys } = rnd;
+    const row = (name: string, ps: number[], y: number[]) => `| ${name} | ${logloss(ps, y).toFixed(4)} | ${brier(ps, y).toFixed(4)} | ${auc(ps, y).toFixed(3)} |`;
+    const rep = (name: string, ps: number[]) => row(name, ps, ys);
     lines.push(`Held-out (${K}-fold, ridge ${lambda}):`, "", "| | log loss | Brier | AUC |", "|---|---|---|---|", rep("pattern record only", pb), rep("pattern record + context", pm), "");
+    // Fics the model has not seen, and the same split by where each label came from.
+    lines.push("Held-out by fic (every hit of a fic held out together; fics the model has not seen):", "", "| | log loss | Brier | AUC |", "|---|---|---|---|", row("unseen fics: pattern record only", unseen.pb, unseen.ys), row("unseen fics: pattern record + context", unseen.pm, unseen.ys), "");
+    lines.push("By label source (unseen fics):", "", "| source | hits (wrong) | log loss: record → +context | AUC: record → +context |", "|---|---|---|---|");
+    for (const src of ["audit", "report", "weighted"]) {
+      const ix = unseen.src.map((x, i) => (x === src ? i : -1)).filter((i) => i >= 0);
+      if (!ix.length) continue;
+      const pick = (a: number[]) => ix.map((i) => a[i]);
+      const y = pick(unseen.ys);
+      const a = (ps: number[]) => (y.some((v) => !v) && y.some((v) => v) ? auc(ps, y).toFixed(3) : "n/a");
+      lines.push(`| ${src} | ${ix.length} (${y.filter((v) => !v).length}) | ${logloss(pick(unseen.pb), y).toFixed(3)} → ${logloss(pick(unseen.pm), y).toFixed(3)} | ${a(pick(unseen.pb))} → ${a(pick(unseen.pm))} |`);
+    }
+    lines.push("");
+    // What the model is for: pushing mistakes to the front of the review queue. Of the wrong hits, how many are among the 10% least-trusted hits?
+    const caught = (ps: number[], y: number[]) => {
+      const order = ps.map((p, i) => [p, i] as const).sort((a, b) => a[0] - b[0]);
+      const n = Math.ceil(order.length * 0.1), wrong = y.filter((v) => !v).length;
+      return wrong ? order.slice(0, n).filter(([, i]) => !y[i]).length / wrong : NaN;
+    };
+    lines.push(`Wrong hits among the 10% least-trusted (unseen fics): ${(100 * caught(unseen.pb, unseen.ys)).toFixed(0)}% by the pattern record alone, ${(100 * caught(unseen.pm, unseen.ys)).toFixed(0)}% with context (10% would be chance).`, "");
     const better = logloss(pm, ys) < logloss(pb, ys) - 0.002 && auc(pm, ys) > auc(pb, ys);
+    if (logloss(unseen.pm, unseen.ys) >= logloss(unseen.pb, unseen.ys)) lines.push("WARNING: on fics the model has not seen, the context does not lower log loss.", "");
 
     // Final model on everything.
     const precAll = precisions(rows);
