@@ -9,14 +9,16 @@
 // The other half is `npm run regress`: it finds changes nobody has labelled, and you read what moved.
 import { spawn } from "node:child_process";
 import { existsSync, mkdirSync, readFileSync, readdirSync, writeFileSync } from "node:fs";
-import { cpus } from "node:os";
+import { cpus, totalmem } from "node:os";
 import { join, resolve } from "node:path";
 
 const args = process.argv.slice(2);
 const flag = (n) => args.includes(`--${n}`);
 const opt = (n) => { const i = args.indexOf(`--${n}`); return i >= 0 ? args[i + 1] : undefined; };
 const dir = resolve(args.filter((a, i) => !a.startsWith("--") && !(i > 0 && args[i - 1] === "--jobs"))[0] ?? "ao3-samples");
-const jobs = Math.max(2, Number(opt("jobs") ?? cpus().length));
+// The longest fics take about 4 GB to read each, so the number of jobs is also capped by memory (one job per 6 GB); --jobs overrides it.
+const memJobs = Math.max(2, Math.floor(totalmem() / 2 ** 30 / 6) + 1);
+const jobs = Math.max(2, Number(opt("jobs") ?? Math.min(cpus().length, memJobs)));
 const hasSamples = existsSync(dir);
 const outDir = join(dir, ".check");
 if (hasSamples) mkdirSync(outDir, { recursive: true });
@@ -41,7 +43,7 @@ sets.forEach((s, i) => shards[(i + goldFics.length) % shardCount].sets.push(s));
 const tasks = [run("unit suite", "npx", ["vitest", "run", "--no-isolate", "--reporter=dot"], { AO3_DIR: "", PERF_BUDGET_MS: "30000" })];
 shards.forEach((s, i) => {
   if (!s.gold.length && !s.sets.length) return;
-  tasks.push(run(`gold + right-set ${i + 1}/${shardCount}`, "npx", ["vitest", "run", "tests/gold-eval.test.ts", "tests/right-set.test.ts", "--reporter=dot"], {
+  tasks.push(run(`gold + right-set ${i + 1}/${shardCount}`, "npx", ["vitest", "run", "tests/gold-eval.test.ts", "tests/right-set.test.ts", "--reporter=dot", "--no-file-parallelism"], {
     AO3_DIR: dir,
     GOLD_ONLY: s.gold.join(",") || "none",
     RIGHTSET_ONLY: s.sets.join(",") || "none",

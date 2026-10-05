@@ -4643,6 +4643,27 @@ export const PATTERNS: PatternDef[] = [
     needsCtx: true,
     src: `\\b(?:the\\s+)?feel\\s+of\\s+{T:poss}\\s+(?:tongue|mouth)\\b[^.!?]{0,40}?(?:licking|lapping|probing|plunging|thrusting|fucking|flicking)\\s+(?:at\\s+|into\\s+|inside\\s+)?(?:{B:poss}|his|her|their)\\s+(?:walls|insides|hole|rim|entrance)\\b`,
   },
+  // ───────────── round 87 (Belonging): cock phrasings that were missed ─────────────
+  {
+    // "the alpha slips his cock inside", "Cas pushed his knot in"
+    id: "dd6-slips-cock-inside",
+    cat: "anal",
+    act: "anal sex",
+    subj: "t",
+    weight: 0.85,
+    needsCtx: true,
+    src: `\\b{T}\\s+{aux}(?:slip|slid|slide|push|press|sink|work|eas|shov|thrust|drive|drove|slam|ram|guid|nudg)\\w*\\s+(?:his\\s+|the\\s+)?(?:[\\w-]+\\s+){0,2}?(?:cock|dick|length|knot|erection)\\s+(?:slowly\\s+|carefully\\s+|all the way\\s+|deep\\s+|fully\\s+)?(?:in|inside)\\b(?!\\s+(?:his|her|their|the|a|an|my|your)\\s+(?:mouth|throat|lips|hand|fist|pocket|palm))`,
+  },
+  {
+    // "Cas presses it past his rim once, twice, three times, and cums as it ties"
+    id: "dd6-presses-past-rim",
+    cat: "anal",
+    act: "anal sex",
+    subj: "t",
+    weight: 0.85,
+    needsCtx: true,
+    src: `\\b{T}\\s+{aux}(?:press|push|work|eas|slid|slip|guid|force)\\w*\\s+(?:it|himself|his\\s+(?:cock|knot|length|dick))\\s+(?:slowly\\s+)?(?:past|through|into)\\s+{B:poss}\\s+(?:rim|hole|entrance|opening|ring of muscles?)\\b`,
+  },
 ];
 
 // ───────────── Dialogue: what a speaker asks for or says they want ─────────────
