@@ -38,7 +38,7 @@ const shards = Array.from({ length: shardCount }, () => ({ gold: [], sets: [] })
 goldFics.forEach((g, i) => shards[i % shardCount].gold.push(g));
 sets.forEach((s, i) => shards[(i + goldFics.length) % shardCount].sets.push(s));
 
-const tasks = [run("unit suite", "npx", ["vitest", "run", "--no-isolate", "--reporter=dot"], { AO3_DIR: "" })];
+const tasks = [run("unit suite", "npx", ["vitest", "run", "--no-isolate", "--reporter=dot"], { AO3_DIR: "", PERF_BUDGET_MS: "30000" })];
 shards.forEach((s, i) => {
   if (!s.gold.length && !s.sets.length) return;
   tasks.push(run(`gold + right-set ${i + 1}/${shardCount}`, "npx", ["vitest", "run", "tests/gold-eval.test.ts", "tests/right-set.test.ts", "--reporter=dot"], {
