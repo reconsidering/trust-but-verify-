@@ -9,7 +9,7 @@
 //        prompts.md  a ready-made prompt for each chunk. Give each to a subagent; each writes A<n>-labels.json, B<n>-labels.json or inv<n>.json here.
 //   npm run dive -- eval <fic> [--base <git ref>] [--full]     merge the labels and compare the base engine with the working tree: wrong readings gone / still
 //        there, right readings kept / lost, new readings, recall on the paragraphs it missed, recall on the inventoried scenes. Prints the problems GROUPED BY PATTERN (biggest first) and writes every reading to eval.md; --full prints them all.
-//   npm run dive -- import <fic> [--weight 0.9]       add the judged readings to tests/right-set (weighted, source "claude"). Weak cues the owner has
+//   npm run dive -- import <fic> [--weight 0.85] [--weight-wrong 0.3]   add the judged readings to tests/right-set (weighted, source "claude"; readings it called wrong count less). Weak cues the owner has
 //        ruled on (a smack, arching, fingers in a mouth) are left undecided, not wrong; see WEAK_CUES.
 //   npm run dive -- gold <fic> --pairing "A/B" --top "A" --bottom "B" [--blowjob] [--note "…"]
 //        write tests/gold/<fic>.json from the inventories: the scenes where --top penetrates (or rims) --bottom, only those the engine reports
@@ -214,7 +214,8 @@ const WEAK_CUES = /spank|swat|slap|smack|arch|leg-spreading|kneeling to present|
 function doImport() {
   const base0 = baseReadings(), old = base0.readings, now = nowReadings().readings;
   const { A } = loadLabels();
-  const weight = Number(opt("weight", "0.9"));
+  // Calibrated against 100 readings the owner judged blind (docs/METRICS.md): Claude's "right" held 84% of the time, its "wrong" only 27%.
+  const weight = Number(opt("weight", "0.85")), weightWrong = Number(opt("weight-wrong", "0.3"));
   const right = [], wrong = [], seen = new Set();
   const outItem = (r, via) => {
     const e = r.kind === "scene" ? { kind: "scene", card: r.card, pairing: r.pairing, top: r.top, bottom: r.bottom } : r.kind === "hint" ? { kind: "hint", card: r.card, pairing: r.pairing, who: r.who, role: r.role, wants: r.wants } : { kind: "solo", card: "solo", pairing: r.pairing, who: r.who };
@@ -236,7 +237,7 @@ function doImport() {
   const parsed = { title, slug: slugOf(title), right, wrong };
   const file = join("tests", "right-set", `${parsed.slug}.json`);
   const set = existsSync(file) ? JSON.parse(readFileSync(file, "utf8")) : { entries: [] };
-  const r = mergeReport(set, parsed, new Date().toISOString().slice(0, 10), { weight, source: "claude" });
+  const r = mergeReport(set, parsed, new Date().toISOString().slice(0, 10), { weight, weightWrong, source: "claude" });
   writeFileSync(file, JSON.stringify(set, null, 1) + "\n");
   console.log(`${title}: ${right.length} right and ${wrong.length} wrong readings (${weakSkipped} weak-cue "wrong" labels left undecided); ${r.added} added, ${r.confirmed} confirmed, ${r.disputed} disputed → ${file}`);
 }

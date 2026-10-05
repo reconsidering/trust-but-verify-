@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 // Add a mistake report's "looks right" items to tests/right-set/<fic>.json.
 //   node scripts/import-right-set.mjs report.md|looks-right-<fic>.json   fold a report, or the page's saved file, in (right marks add or confirm; wrong marks dispute)
-//   node scripts/import-right-set.mjs report.md --title "Name" --weight 0.9 --source claude   the labels come from an unverified pass: counted at that weight, checked in bulk
+//   node scripts/import-right-set.mjs report.md --title "Name" --weight 0.85 --weight-wrong 0.3 --source claude   the labels come from an unverified pass: counted at that weight (readings it calls wrong at the lower --weight-wrong), checked in bulk
 //   node scripts/import-right-set.mjs --fixed <fic> [why]   the reported mistakes were fixed: stop counting them against their patterns
 //   node scripts/import-right-set.mjs --retire <fic> <hash> [why]   stop enforcing one reading (a deliberate fix, or your own mistake)
 // The report is the text copied from the page. Only hashes and names are stored, never the fic's text.
@@ -39,6 +39,8 @@ if (args[0] === "--fixed") {
 if (!args[0]) { console.error("usage: import-right-set.mjs report.md [--title Name] [--weight 0.9 --source claude] | --fixed <fic> [why] | --retire <fic> <hash> [why]"); process.exit(2); }
 // --weight 0.9 --source claude: the labels come from an unverified pass (a second reader, or Claude). They teach the reliability table and the context model
 // at that weight and are checked in bulk, not one by one; a later mark of your own makes the entry yours at full weight.
+const wwi = args.indexOf("--weight-wrong");
+const weightWrongArg = wwi >= 0 ? Number(args.splice(wwi, 2)[1]) : undefined;
 const wi = args.indexOf("--weight");
 const weightArg = wi >= 0 ? Number(args.splice(wi, 2)[1]) : undefined;
 const si = args.indexOf("--source");
@@ -55,7 +57,7 @@ if (!parsed.slug) { console.error("no “- Title:” line found in the report");
 const file = join(dir, `${parsed.slug}.json`);
 const set = existsSync(file) ? JSON.parse(readFileSync(file, "utf8")) : { entries: [] };
 const date = new Date().toISOString().slice(0, 10);
-const r = mergeReport(set, parsed, date, { weight: weightArg, source: sourceArg });
+const r = mergeReport(set, parsed, date, { weight: weightArg, weightWrong: weightWrongArg, source: sourceArg });
 writeFileSync(file, JSON.stringify(set, null, 1) + "\n");
 const tally = {};
 for (const e of set.entries) tally[strengthOf(e)] = (tally[strengthOf(e)] ?? 0) + 1;
