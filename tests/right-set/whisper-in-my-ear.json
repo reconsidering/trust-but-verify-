@@ -35,7 +35,8 @@
    },
    "seen": [
     "2026-10-05"
-   ]
+   ],
+   "retired": "owner judged this wrong in a blind spot-check 2026-10-06"
   },
   {
    "kind": "scene",
@@ -76,7 +77,8 @@
    "source": "claude",
    "seen": [
     "2026-10-05"
-   ]
+   ],
+   "retired": "owner judged this right in a blind spot-check 2026-10-06"
   },
   {
    "kind": "hint",
@@ -90,10 +92,10 @@
    "conf": 36,
    "misread": true,
    "gone": false,
-   "weight": 0.3,
-   "source": "claude",
+   "source": "owner",
    "seen": [
-    "2026-10-05"
+    "2026-10-05",
+    "2026-10-06"
    ]
   },
   {
@@ -108,10 +110,10 @@
    "conf": 66,
    "misread": true,
    "gone": false,
-   "weight": 0.3,
-   "source": "claude",
+   "source": "owner",
    "seen": [
-    "2026-10-05"
+    "2026-10-05",
+    "2026-10-06"
    ]
   },
   {
@@ -148,7 +150,8 @@
    "source": "claude",
    "seen": [
     "2026-10-05"
-   ]
+   ],
+   "retired": "owner judged this right in a blind spot-check 2026-10-06"
   },
   {
    "kind": "scene",
@@ -184,6 +187,19 @@
     "2026-10-05"
    ],
    "retired": "owner judged this right in the blind spot-check 2026-10-05"
+  },
+  {
+   "kind": "solo",
+   "card": "solo",
+   "pairing": "Alex Claremont-Diaz/Henry Fox-Mountchristen-Windsor",
+   "who": "Henry Fox-Mountchristen-Windsor",
+   "via": "mast-himself",
+   "h": "70a8a466",
+   "misread": true,
+   "source": "owner",
+   "seen": [
+    "2026-10-06"
+   ]
   }
  ]
 }
