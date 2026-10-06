@@ -46,3 +46,7 @@ Run `npm run regress -- --hits --all` before pushing a change to `src/`. The opt
 
 ## Is the context model getting better? — `docs/METRICS.md`
 `npm run regen` retrains the model and adds one row (held-out log loss and AUC, with and without the context, plus how many labelled hits) to `docs/METRICS.md`. Commit that file with `learned.ts` and `reliability.ts`. Rows are not added by the GitHub reliability workflow, which can't retrain the model.
+
+## Is Claude labelling well? — `npm run spotcheck`
+Claude-made labels are checked by blind spot-checks, round after round. `npm run spotcheck -- next` learns from every answer so far (`tests/spotcheck/rounds.json`: keys, labels and answers, no fic text) which Claude labels not yet checked are most likely to be wrong, and builds the next 100-reading page (`ao3-samples/.spotcheck/round-N/page.html`; 10 of the 100 are random, so the ranking is also tested on readings it did not pick). Publish the page as a private Artifact; it does not show Claude's verdicts. When the owner has answered, `npm run spotcheck -- import <answers dir>` replaces Claude's labels with the owner's in `tests/right-set`, records the round, and prints how often Claude's "right" and "wrong" calls held up (this round, and over all rounds). Then `npm run check`, a PR, and `npm run regen -- --model-only` after merging. Round 1 (the first 100 answers) is in `rounds.json`; the first ranking could predict the owner's disagreements on unseen answers with AUC 0.75.
+
