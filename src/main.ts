@@ -563,18 +563,36 @@ function flagControl(li: HTMLElement, spec: FlagSpec) {
   okBtn.title = "Mark this as looking right: the report lists it as a reading to trust more, not as certainly correct everywhere" + (labelable(spec) ? ", and helps check how well the confidence numbers match" : "");
   // A mark saved from an earlier visit still counts: it shows as marked, so it goes in the report too.
   if (labelable(spec) && !rightItems.has(id) && labels.some((l) => l.key === labelKey(spec.kind === "hint" ? "line" : "scene", spec.card, spec.evidence) && l.right)) rightItems.set(id, { ...spec, reasons: [], note: "" });
+  // How much of the surrounding text the report carries for an item marked right: the same choice as for a mistake, shown while it is marked.
+  const rightPick = spec.evidence ? contextPicker(spec.evidence, rightItems.get(id)?.span ?? 0, spec.context ?? "") : undefined;
+  const rightBox = el("div", "ctx-right");
+  rightBox.hidden = true;
+  if (rightPick) {
+    rightBox.append(el("span", "mini-label", "Context in the report for this one"), rightPick.wrap);
+    rightPick.wrap.querySelector("select")?.addEventListener("change", () => {
+      const cur = rightItems.get(id);
+      if (!cur) return;
+      const span = rightPick.span();
+      const wide = span ? wideContext(spec.evidence, span) : undefined;
+      rightItems.set(id, { ...cur, context: wide ?? spec.context, span: wide ? span : undefined });
+      refreshReport();
+    });
+  }
   const paintRight = () => {
     const on = rightItems.has(id);
     okBtn.textContent = on ? "✓ Marked right" : "✓ Looks right";
     okBtn.setAttribute("aria-pressed", String(on));
     li.classList.toggle("marked-right", on);
+    rightBox.hidden = !on || !rightPick;
   };
   rightPaint.set(id, paintRight);
   okBtn.addEventListener("click", () => {
     if (rightItems.has(id)) { unmarkRight(id); return; }
     // Right and wrong can't both be said of one item: marking it right takes it off the mistake list.
     if (flagged.delete(id)) { li.classList.remove("flagged"); add.textContent = "Add to report"; form.hidden = true; }
-    rightItems.set(id, { ...spec, extra: vibeSpec.get(id) ? vibeExtra(id, vibeSpec.get(id)!) : spec.extra, kind, reasons: [], note: "" });
+    const rSpan = rightPick?.span() ?? 0;
+    const rWide = rSpan ? wideContext(spec.evidence, rSpan) : undefined;
+    rightItems.set(id, { ...spec, extra: vibeSpec.get(id) ? vibeExtra(id, vibeSpec.get(id)!) : spec.extra, kind, reasons: [], note: "", ...(rWide ? { context: rWide, span: rSpan } : {}) });
     recordLabel(spec, true);
     paintRight();
     refreshReport();
@@ -625,7 +643,7 @@ function flagControl(li: HTMLElement, spec: FlagSpec) {
     refreshReport();
   });
   paintRight();
-  li.append(" ", okBtn, " ", btn, form);
+  li.append(" ", okBtn, " ", btn, form, rightBox);
 }
 
 // Remember the last passage the reader selected outside the report panel; opening the form would otherwise clear it.

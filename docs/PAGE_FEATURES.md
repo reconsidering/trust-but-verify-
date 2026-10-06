@@ -49,7 +49,7 @@ read it before sharing.
 
    **Checking the confidence numbers.** Everything that has a “Report a mistake” button (scenes, hint lines, solo and
    hand-play lines, tag checks, vibe and everyday-dynamic ratings, and each factor under a rating) also has a “✓ Looks right”
-   button. Pressing it again undoes it, and marking an item right takes it off the mistake list (and the other way round).
+   button. Pressing it again undoes it, and marking an item right takes it off the mistake list (and the other way round). Once an item is marked right, a "Context in the report for this one" menu appears under it, the same choice as in the mistake form (as shown, or 1, 2, 4 or 8 paragraphs either side), so a reading you checked travels with its passage.
    Items marked right go into the copied report in their own section, “Things I checked that look right”, with the
    note that they deserve more confidence than the rest but are not right in every context, and “Copy test skeletons” turns
    them into tests that a fix should keep passing unless there is a reason.
