@@ -3,8 +3,8 @@ import { extractFromHtml } from "../src/extract";
 import { splitParagraphs } from "../src/text";
 
 export type ReviewSource = { file: string; title: string; sourceSha: string; paragraphSha: string; paragraphCount: number };
-export type ReviewRow = { id: string; key: string; fic: string; para: number; pattern: string; a: string; b?: string; act: string; kind: string; role?: string; claim: string };
-export type ReviewBatch = { schema: "engine-review-batch/v1"; batchId: string; engineCommit: string; sources: ReviewSource[]; rows: ReviewRow[] };
+export type ReviewRow = { id: string; key: string; fic: string; para: number; pattern: string; a: string; b?: string; act: string; kind: string; role?: string; claim: string; gold?: { file: string; hash: string; pairing: string; act: string; verdict: string }; evidence?: { from: number; to: number }[] };
+export type ReviewBatch = { schema: "engine-review-batch/v1" | "engine-gold-review/v1"; batchId: string; engineCommit: string; sources: ReviewSource[]; rows: ReviewRow[] };
 export type ReviewAnswer = { verdict?: "correct" | "wrong" | "uncertain"; errors: string[]; context: string; updatedAt: string };
 
 export const checksum = async (bytes: Uint8Array) => Array.from(new Uint8Array(await crypto.subtle.digest("SHA-256", bytes as Uint8Array<ArrayBuffer>)), (b) => b.toString(16).padStart(2, "0")).join("");

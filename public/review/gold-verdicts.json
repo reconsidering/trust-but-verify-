@@ -1,0 +1,722 @@
+{
+ "schema": "engine-gold-review/v1",
+ "batchId": "gold-ee9f5bfc51a3",
+ "engineCommit": "7b58f70ce1ea06d1f6c01e745da9be410e9c8da3",
+ "sources": [
+  {
+   "file": "a-la-carte.html",
+   "title": "à la carte",
+   "sourceSha": "4d553843dc96b396376426414fd191534045ca3508acb51a1672e0ef3ebc0cca",
+   "paragraphSha": "9db9cf7ac1dd38c785bc3fb13ccfd4a6162208036fa6736a063bca7a413fa7d6",
+   "paragraphCount": 1984
+  },
+  {
+   "file": "angel-without-a-god.html",
+   "title": "angel without a god",
+   "sourceSha": "dae22879912fd019b9219d7cf60c85dd861ae5b83de5660c1b3a9918030a3d95",
+   "paragraphSha": "1d4071086192c11c15f3d12db8d5dc9cc1890517f101dbff22ff1d61aeb4a154",
+   "paragraphCount": 4625
+  },
+  {
+   "file": "belonging.html",
+   "title": "Belonging is Longing is Now",
+   "sourceSha": "d8fe352ab70bc0a8171fea0e069c43d776d3541d741cb74b2b66014ae64e874c",
+   "paragraphSha": "f9bf52ddcb708de72d8df74649d6976fa2ed62ddba1e55df553729ba32589409",
+   "paragraphCount": 5783
+  },
+  {
+   "file": "lightning.html",
+   "title": "Held Up a Lightning Rod (Wonder Why I'm Struck)",
+   "sourceSha": "0a3fe56af1a92ac27ba2da61af1ffb88f11cf6aa44cb91777bb7b97c025f67d7",
+   "paragraphSha": "53578f7dc07a33d29e2ff7074e2292cf37257cf8e0045e06178adfc251bae999",
+   "paragraphCount": 5692
+  },
+  {
+   "file": "prince-prisoner-puppy.html",
+   "title": "Prince, Prisoner, Puppy, Parent",
+   "sourceSha": "cb68b9eaa778291f8ecbe13bcdb59ee9a7d3f0a170fa1ec35347e4663d6714fa",
+   "paragraphSha": "9cd533d1f684a763a828c7145a87d767ffe3b70d60bdcc1e05f76542a1281393",
+   "paragraphCount": 958
+  },
+  {
+   "file": "rushing.html",
+   "title": "Rushing into Things",
+   "sourceSha": "72467682bf42c40db092db18dc3eccd9919fb7bfd6dda69221431195875ea485",
+   "paragraphSha": "65590d6a947f5d33f2d9513c60a50718d66767eae522e7749b97271b5a3ecc96",
+   "paragraphCount": 1998
+  },
+  {
+   "file": "slipfast.html",
+   "title": "slipfast",
+   "sourceSha": "71b92f3b525c233feb648f601e11aba947d49797e1d7159725cfbcf23acfdca5",
+   "paragraphSha": "6d5106c1bc623cd2edc3213771b2e152f88fdb9ba28b1d8ab7c6b746f5a0ba22",
+   "paragraphCount": 1546
+  },
+  {
+   "file": "were-compeer.html",
+   "title": "A WereCompeer",
+   "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+   "paragraphSha": "db8942d563fe592c068945be850d2bc5ed6f9abcf355f4b74bc0962bcd4d71dc",
+   "paragraphCount": 1220
+  }
+ ],
+ "rows": [
+  {
+   "id": "G1",
+   "key": "gold:a-la-carte.json:0#2d58e4f1cf109faa669d923311c63805cd8b63e6916c2265cb7e98fb9e8b2759",
+   "fic": "a-la-carte.html",
+   "para": 444,
+   "pattern": "gold-verdict",
+   "a": "Obi-Wan Kenobi",
+   "b": "Anakin Skywalker",
+   "act": "anal",
+   "kind": "gold-verdict",
+   "claim": "Obi-Wan Kenobi penetrates Anakin Skywalker; the gold verdict says the roles do not switch.",
+   "gold": {
+    "file": "a-la-carte.json",
+    "hash": "2d58e4f1cf109faa669d923311c63805cd8b63e6916c2265cb7e98fb9e8b2759",
+    "pairing": "Obi-Wan Kenobi/Anakin Skywalker",
+    "act": "anal",
+    "verdict": "one_way"
+   },
+   "evidence": [
+    {
+     "from": 444,
+     "to": 454
+    },
+    {
+     "from": 863,
+     "to": 875
+    },
+    {
+     "from": 900,
+     "to": 900
+    },
+    {
+     "from": 1942,
+     "to": 1960
+    }
+   ]
+  },
+  {
+   "id": "G2",
+   "key": "gold:a-la-carte.json:1#2d58e4f1cf109faa669d923311c63805cd8b63e6916c2265cb7e98fb9e8b2759",
+   "fic": "a-la-carte.html",
+   "para": 507,
+   "pattern": "gold-verdict",
+   "a": "Obi-Wan Kenobi",
+   "b": "Anakin Skywalker",
+   "act": "blowjob",
+   "kind": "gold-verdict",
+   "claim": "Obi-Wan Kenobi receives blowjobs from Anakin Skywalker; the gold verdict says the roles do not switch.",
+   "gold": {
+    "file": "a-la-carte.json",
+    "hash": "2d58e4f1cf109faa669d923311c63805cd8b63e6916c2265cb7e98fb9e8b2759",
+    "pairing": "Obi-Wan Kenobi/Anakin Skywalker",
+    "act": "blowjob",
+    "verdict": "one_way"
+   },
+   "evidence": [
+    {
+     "from": 507,
+     "to": 520
+    },
+    {
+     "from": 1974,
+     "to": 1974
+    }
+   ]
+  },
+  {
+   "id": "G3",
+   "key": "gold:a-la-carte.json:2#2d58e4f1cf109faa669d923311c63805cd8b63e6916c2265cb7e98fb9e8b2759",
+   "fic": "a-la-carte.html",
+   "para": 846,
+   "pattern": "gold-verdict",
+   "a": "Obi-Wan Kenobi",
+   "b": "Anakin Skywalker",
+   "act": "rimming",
+   "kind": "gold-verdict",
+   "claim": "Obi-Wan Kenobi rims Anakin Skywalker; the gold verdict says the roles do not switch.",
+   "gold": {
+    "file": "a-la-carte.json",
+    "hash": "2d58e4f1cf109faa669d923311c63805cd8b63e6916c2265cb7e98fb9e8b2759",
+    "pairing": "Obi-Wan Kenobi/Anakin Skywalker",
+    "act": "rimming",
+    "verdict": "one_way"
+   },
+   "evidence": [
+    {
+     "from": 846,
+     "to": 852
+    }
+   ]
+  },
+  {
+   "id": "G4",
+   "key": "gold:angel-without-a-god.json:0#e3c51d5d73e7dcdee982a0520dd5dddc8f448105205758243892fa90dbc10ec6",
+   "fic": "angel-without-a-god.html",
+   "para": 4270,
+   "pattern": "gold-verdict",
+   "a": "Eddie Munson",
+   "b": "Jason Carver",
+   "act": "anal",
+   "kind": "gold-verdict",
+   "claim": "Eddie Munson penetrates Jason Carver; the gold verdict says the roles do not switch.",
+   "gold": {
+    "file": "angel-without-a-god.json",
+    "hash": "e3c51d5d73e7dcdee982a0520dd5dddc8f448105205758243892fa90dbc10ec6",
+    "pairing": "Jason Carver/Eddie Munson",
+    "act": "anal",
+    "verdict": "one_way"
+   },
+   "evidence": [
+    {
+     "from": 4270,
+     "to": 4287
+    },
+    {
+     "from": 4302,
+     "to": 4384
+    }
+   ]
+  },
+  {
+   "id": "G5",
+   "key": "gold:angel-without-a-god.json:1#e3c51d5d73e7dcdee982a0520dd5dddc8f448105205758243892fa90dbc10ec6",
+   "fic": "angel-without-a-god.html",
+   "para": 3357,
+   "pattern": "gold-verdict",
+   "a": "Jason Carver",
+   "b": "Eddie Munson",
+   "act": "blowjob",
+   "kind": "gold-verdict",
+   "claim": "Jason Carver receives blowjobs from Eddie Munson; the gold verdict says the roles do not switch.",
+   "gold": {
+    "file": "angel-without-a-god.json",
+    "hash": "e3c51d5d73e7dcdee982a0520dd5dddc8f448105205758243892fa90dbc10ec6",
+    "pairing": "Jason Carver/Eddie Munson",
+    "act": "blowjob",
+    "verdict": "one_way"
+   },
+   "evidence": [
+    {
+     "from": 3357,
+     "to": 3406
+    }
+   ]
+  },
+  {
+   "id": "G6",
+   "key": "gold:belonging.json:0#9514223ab09dd8f547cb590331465f461fbf1b16ecde2cd56befc4851ba8fec1",
+   "fic": "belonging.html",
+   "para": 679,
+   "pattern": "gold-verdict",
+   "a": "Castiel",
+   "b": "Dean Winchester",
+   "act": "anal",
+   "kind": "gold-verdict",
+   "claim": "Castiel penetrates Dean Winchester; the gold verdict says the roles do not switch.",
+   "gold": {
+    "file": "belonging.json",
+    "hash": "9514223ab09dd8f547cb590331465f461fbf1b16ecde2cd56befc4851ba8fec1",
+    "pairing": "Castiel/Dean Winchester",
+    "act": "anal",
+    "verdict": "one_way"
+   },
+   "evidence": [
+    {
+     "from": 679,
+     "to": 754
+    },
+    {
+     "from": 1192,
+     "to": 1232
+    },
+    {
+     "from": 1453,
+     "to": 1465
+    },
+    {
+     "from": 2095,
+     "to": 2178
+    },
+    {
+     "from": 2950,
+     "to": 3179
+    },
+    {
+     "from": 3415,
+     "to": 3540
+    },
+    {
+     "from": 3833,
+     "to": 3859
+    },
+    {
+     "from": 3859,
+     "to": 3880
+    },
+    {
+     "from": 3963,
+     "to": 4057
+    },
+    {
+     "from": 4113,
+     "to": 4331
+    },
+    {
+     "from": 4438,
+     "to": 4561
+    },
+    {
+     "from": 4646,
+     "to": 4668
+    },
+    {
+     "from": 4677,
+     "to": 4804
+    },
+    {
+     "from": 4938,
+     "to": 5005
+    },
+    {
+     "from": 5007,
+     "to": 5064
+    },
+    {
+     "from": 5308,
+     "to": 5348
+    },
+    {
+     "from": 5361,
+     "to": 5459
+    },
+    {
+     "from": 5459,
+     "to": 5497
+    },
+    {
+     "from": 5528,
+     "to": 5579
+    },
+    {
+     "from": 5581,
+     "to": 5614
+    },
+    {
+     "from": 5617,
+     "to": 5679
+    },
+    {
+     "from": 5680,
+     "to": 5716
+    },
+    {
+     "from": 5780,
+     "to": 5780
+    }
+   ]
+  },
+  {
+   "id": "G7",
+   "key": "gold:lightning.json:0#172d99c8662e127113cb5a7f3690e372c828586a1f152e2b581d61f4d685308e",
+   "fic": "lightning.html",
+   "para": 5436,
+   "pattern": "gold-verdict",
+   "a": "Eddie Diaz",
+   "b": "Evan \"Buck\" Buckley",
+   "act": "anal",
+   "kind": "gold-verdict",
+   "claim": "Eddie Diaz penetrates Evan \"Buck\" Buckley; the gold verdict says the roles do not switch.",
+   "gold": {
+    "file": "lightning.json",
+    "hash": "172d99c8662e127113cb5a7f3690e372c828586a1f152e2b581d61f4d685308e",
+    "pairing": "Evan \"Buck\" Buckley/Eddie Diaz",
+    "act": "anal",
+    "verdict": "one_way"
+   },
+   "evidence": [
+    {
+     "from": 5436,
+     "to": 5481
+    }
+   ]
+  },
+  {
+   "id": "G8",
+   "key": "gold:lightning.json:1#172d99c8662e127113cb5a7f3690e372c828586a1f152e2b581d61f4d685308e",
+   "fic": "lightning.html",
+   "para": 5403,
+   "pattern": "gold-verdict",
+   "a": "Eddie Diaz",
+   "b": "Evan \"Buck\" Buckley",
+   "act": "blowjob",
+   "kind": "gold-verdict",
+   "claim": "Eddie Diaz receives blowjobs from Evan \"Buck\" Buckley; the gold verdict says the roles do not switch.",
+   "gold": {
+    "file": "lightning.json",
+    "hash": "172d99c8662e127113cb5a7f3690e372c828586a1f152e2b581d61f4d685308e",
+    "pairing": "Evan \"Buck\" Buckley/Eddie Diaz",
+    "act": "blowjob",
+    "verdict": "one_way"
+   },
+   "evidence": [
+    {
+     "from": 5403,
+     "to": 5421
+    }
+   ]
+  },
+  {
+   "id": "G9",
+   "key": "gold:prince-prisoner-puppy.json:0#e5ae4792be80121ed19ef8e92c773c97abd344a129f830b3e3ebf9b2be1260ce",
+   "fic": "prince-prisoner-puppy.html",
+   "para": 20,
+   "pattern": "gold-verdict",
+   "a": "Antinous",
+   "b": "Telemachus",
+   "act": "anal",
+   "kind": "gold-verdict",
+   "claim": "Antinous penetrates Telemachus; the gold verdict says the roles do not switch.",
+   "gold": {
+    "file": "prince-prisoner-puppy.json",
+    "hash": "e5ae4792be80121ed19ef8e92c773c97abd344a129f830b3e3ebf9b2be1260ce",
+    "pairing": "Antinous/Telemachus",
+    "act": "anal",
+    "verdict": "one_way"
+   },
+   "evidence": [
+    {
+     "from": 20,
+     "to": 38
+    },
+    {
+     "from": 55,
+     "to": 75
+    },
+    {
+     "from": 103,
+     "to": 117
+    },
+    {
+     "from": 159,
+     "to": 164
+    },
+    {
+     "from": 167,
+     "to": 167
+    },
+    {
+     "from": 265,
+     "to": 276
+    },
+    {
+     "from": 404,
+     "to": 407
+    },
+    {
+     "from": 461,
+     "to": 474
+    },
+    {
+     "from": 498,
+     "to": 508
+    },
+    {
+     "from": 558,
+     "to": 560
+    },
+    {
+     "from": 561,
+     "to": 561
+    },
+    {
+     "from": 591,
+     "to": 594
+    },
+    {
+     "from": 660,
+     "to": 677
+    },
+    {
+     "from": 720,
+     "to": 734
+    }
+   ]
+  },
+  {
+   "id": "G10",
+   "key": "gold:rushing.json:0#ac8c82743cd9c89be3da3563c924eb1e61392d745010cde152a93124947503cd",
+   "fic": "rushing.html",
+   "para": 1148,
+   "pattern": "gold-verdict",
+   "a": "Derek Hale",
+   "b": "Scott McCall",
+   "act": "anal",
+   "kind": "gold-verdict",
+   "claim": "Derek Hale and Scott McCall switch roles for anal penetration.",
+   "gold": {
+    "file": "rushing.json",
+    "hash": "ac8c82743cd9c89be3da3563c924eb1e61392d745010cde152a93124947503cd",
+    "pairing": "Derek Hale/Scott McCall",
+    "act": "anal",
+    "verdict": "switch"
+   },
+   "evidence": [
+    {
+     "from": 1148,
+     "to": 1150
+    },
+    {
+     "from": 1444,
+     "to": 1447
+    },
+    {
+     "from": 1585,
+     "to": 1593
+    }
+   ]
+  },
+  {
+   "id": "G11",
+   "key": "gold:rushing.json:1#ac8c82743cd9c89be3da3563c924eb1e61392d745010cde152a93124947503cd",
+   "fic": "rushing.html",
+   "para": 1159,
+   "pattern": "gold-verdict",
+   "a": "Scott McCall",
+   "b": "Stiles Stilinski",
+   "act": "anal",
+   "kind": "gold-verdict",
+   "claim": "Scott McCall penetrates Stiles Stilinski; the gold verdict says the roles do not switch.",
+   "gold": {
+    "file": "rushing.json",
+    "hash": "ac8c82743cd9c89be3da3563c924eb1e61392d745010cde152a93124947503cd",
+    "pairing": "Scott McCall/Stiles Stilinski",
+    "act": "anal",
+    "verdict": "one_way"
+   },
+   "evidence": [
+    {
+     "from": 1159,
+     "to": 1159
+    }
+   ]
+  },
+  {
+   "id": "G12",
+   "key": "gold:rushing.json:2#ac8c82743cd9c89be3da3563c924eb1e61392d745010cde152a93124947503cd",
+   "fic": "rushing.html",
+   "para": 1984,
+   "pattern": "gold-verdict",
+   "a": "Derek Hale",
+   "b": "Stiles Stilinski",
+   "act": "anal",
+   "kind": "gold-verdict",
+   "claim": "Derek Hale penetrates Stiles Stilinski; the gold verdict says the roles do not switch.",
+   "gold": {
+    "file": "rushing.json",
+    "hash": "ac8c82743cd9c89be3da3563c924eb1e61392d745010cde152a93124947503cd",
+    "pairing": "Derek Hale/Stiles Stilinski",
+    "act": "anal",
+    "verdict": "one_way"
+   },
+   "evidence": [
+    {
+     "from": 1984,
+     "to": 1984
+    }
+   ]
+  },
+  {
+   "id": "G13",
+   "key": "gold:slipfast.json:0#f404344bbc66d6236559f6afa6f9b097bb9df3df5209fc81970e302162f89213",
+   "fic": "slipfast.html",
+   "para": 380,
+   "pattern": "gold-verdict",
+   "a": "Ilya Rozanov",
+   "b": "Shane Hollander",
+   "act": "anal",
+   "kind": "gold-verdict",
+   "claim": "Ilya Rozanov penetrates Shane Hollander; the gold verdict says the roles do not switch.",
+   "gold": {
+    "file": "slipfast.json",
+    "hash": "f404344bbc66d6236559f6afa6f9b097bb9df3df5209fc81970e302162f89213",
+    "pairing": "Shane Hollander/Ilya Rozanov",
+    "act": "anal",
+    "verdict": "one_way"
+   },
+   "evidence": [
+    {
+     "from": 380,
+     "to": 416
+    },
+    {
+     "from": 480,
+     "to": 505
+    }
+   ]
+  },
+  {
+   "id": "G14",
+   "key": "gold:slipfast.json:1#f404344bbc66d6236559f6afa6f9b097bb9df3df5209fc81970e302162f89213",
+   "fic": "slipfast.html",
+   "para": 133,
+   "pattern": "gold-verdict",
+   "a": "Shane Hollander",
+   "b": "Ilya Rozanov",
+   "act": "blowjob",
+   "kind": "gold-verdict",
+   "claim": "Shane Hollander and Ilya Rozanov switch roles for blowjobs.",
+   "gold": {
+    "file": "slipfast.json",
+    "hash": "f404344bbc66d6236559f6afa6f9b097bb9df3df5209fc81970e302162f89213",
+    "pairing": "Shane Hollander/Ilya Rozanov",
+    "act": "blowjob",
+    "verdict": "switch"
+   },
+   "evidence": [
+    {
+     "from": 133,
+     "to": 134
+    },
+    {
+     "from": 147,
+     "to": 147
+    },
+    {
+     "from": 393,
+     "to": 399
+    },
+    {
+     "from": 490,
+     "to": 490
+    },
+    {
+     "from": 569,
+     "to": 571
+    }
+   ]
+  },
+  {
+   "id": "G15",
+   "key": "gold:were-compeer.json:0#190ba19f91cf1ea6b5d1694552baa0818ce180685acc4aa9bd03f0e896403349",
+   "fic": "were-compeer.html",
+   "para": 208,
+   "pattern": "gold-verdict",
+   "a": "Derek Hale",
+   "b": "Stiles Stilinski",
+   "act": "anal",
+   "kind": "gold-verdict",
+   "claim": "Derek Hale penetrates Stiles Stilinski; the gold verdict says the roles do not switch.",
+   "gold": {
+    "file": "were-compeer.json",
+    "hash": "190ba19f91cf1ea6b5d1694552baa0818ce180685acc4aa9bd03f0e896403349",
+    "pairing": "Derek Hale/Stiles Stilinski",
+    "act": "anal",
+    "verdict": "one_way"
+   },
+   "evidence": [
+    {
+     "from": 208,
+     "to": 239
+    },
+    {
+     "from": 241,
+     "to": 249
+    },
+    {
+     "from": 397,
+     "to": 432
+    },
+    {
+     "from": 946,
+     "to": 967
+    },
+    {
+     "from": 976,
+     "to": 986
+    },
+    {
+     "from": 1007,
+     "to": 1013
+    },
+    {
+     "from": 1155,
+     "to": 1169
+    },
+    {
+     "from": 1199,
+     "to": 1205
+    }
+   ]
+  },
+  {
+   "id": "G16",
+   "key": "gold:were-compeer.json:1#190ba19f91cf1ea6b5d1694552baa0818ce180685acc4aa9bd03f0e896403349",
+   "fic": "were-compeer.html",
+   "para": 223,
+   "pattern": "gold-verdict",
+   "a": "Derek Hale",
+   "b": "Stiles Stilinski",
+   "act": "blowjob",
+   "kind": "gold-verdict",
+   "claim": "Derek Hale receives blowjobs from Stiles Stilinski; the gold verdict says the roles do not switch.",
+   "gold": {
+    "file": "were-compeer.json",
+    "hash": "190ba19f91cf1ea6b5d1694552baa0818ce180685acc4aa9bd03f0e896403349",
+    "pairing": "Derek Hale/Stiles Stilinski",
+    "act": "blowjob",
+    "verdict": "one_way"
+   },
+   "evidence": [
+    {
+     "from": 223,
+     "to": 239
+    },
+    {
+     "from": 283,
+     "to": 292
+    },
+    {
+     "from": 556,
+     "to": 610
+    },
+    {
+     "from": 976,
+     "to": 986
+    }
+   ]
+  },
+  {
+   "id": "G17",
+   "key": "gold:were-compeer.json:2#190ba19f91cf1ea6b5d1694552baa0818ce180685acc4aa9bd03f0e896403349",
+   "fic": "were-compeer.html",
+   "para": 556,
+   "pattern": "gold-verdict",
+   "a": "Derek Hale",
+   "b": "Stiles Stilinski",
+   "act": "rimming",
+   "kind": "gold-verdict",
+   "claim": "Derek Hale rims Stiles Stilinski; the gold verdict says the roles do not switch.",
+   "gold": {
+    "file": "were-compeer.json",
+    "hash": "190ba19f91cf1ea6b5d1694552baa0818ce180685acc4aa9bd03f0e896403349",
+    "pairing": "Derek Hale/Stiles Stilinski",
+    "act": "rimming",
+    "verdict": "one_way"
+   },
+   "evidence": [
+    {
+     "from": 556,
+     "to": 610
+    },
+    {
+     "from": 1155,
+     "to": 1169
+    }
+   ]
+  }
+ ]
+}
