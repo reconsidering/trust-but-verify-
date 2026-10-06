@@ -1350,12 +1350,12 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
     // "“Ow!” he yelped as he pulled away and looked at his cock in betrayal": he is looking at his own, hurt, body.
     if (pat.id.startsWith("ogle-crotch") && /\b(?:yelp\w*|winc\w*|flinch\w*|hiss\w*|grimac\w*|ouch|ow)\b/i.test(sent) && /\b(?:his|her)\s+(?:\w+\s+)?(?:dick|cock|penis|erection|hard-?on|crotch|groin)\b/i.test(m[0])) return;
     // "the memory of Dean on his knees with his mouth wrapped around his cock" while jerking off: remembered, not a scene now.
-    if (!pat.signal && /\b(?:memor(?:y|ies)\s+of|remember(?:ed|ing|s)?|recall(?:ed|ing|s)?|reminisc\w+)\b/i.test(sent.slice(Math.max(0, m.index! - 90), m.index!))) return;
+    // It did happen earlier, so it is kept as a weaker, imagined-style reading rather than dropped (see `remembered` where the kind is chosen).
+    const remembered = !pat.signal && /\b(?:memor(?:y|ies)\s+of|remember(?:ed|ing)\s+(?:how|when|the|that|him|her|them|what)|recall(?:ed|ing)\s+(?:how|when|the|that)|reminisc\w+)\b/i.test(sent.slice(Math.max(0, m.index! - 90), m.index!));
     // "Theo rocked himself shamelessly" with the other man inside him is being fucked, and "barely touching himself" with someone's mouth on him is being sucked.
     if (pat.id.startsWith("mast-himself")) {
       if (/\b(?:grind|ground|rock|thrust)\w*\s+(?:himself|herself|themselves|themself)\b/i.test(m[0]) && /\b(?:inside|buried|fucking|fucked|filling|filled|knot\w*|impaled|stretch\w*|thrust\w* into)\b/i.test(`${paras[pi - 1] ?? ""} ${sent}`)) return;
-      const at = para.indexOf(sent);
-      if (/\b(?:in|down|into)\s+(?:your|his|her|their)\s+(?:mouth|throat)\b|\bsuck\w*\b/i.test(at >= 0 ? para.slice(Math.max(0, at - 160), at + original.trim().length) : original)) return;
+      if (/\b(?:in|down|into)\s+(?:your|his|her|their)\s+(?:mouth|throat)\b|\bsuck\w*\b/i.test(original)) return;
     }
     // "a bit sore here and there, as could be expected from getting fucked on the table": the same, with words in between and "getting".
     if (pat.cat === "anal" && !pat.signal && /\b(?:sore|aching|achy|tender|raw)\b[^.!?;]{0,50}?\b(?:from|after)\s+(?:being\s+|getting\s+|having\s+been\s+)(?:stretched|fucked|opened|taken|filled|used|ridden|pounded|bred|knotted|plowed|wrecked)\b/i.test(sent.slice(Math.max(0, m.index! - 90), m.index! + m[0].length))) return;
@@ -2042,6 +2042,7 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
     const negated = !ifNot && !doubleNeg && !notWithout && !pretence && !notOnly && !negElsewhere && (NEG.test(noHold(aux)) || NEG.test(noHold(negWindow)) || NEG.test(noHold(negWindow.slice(-14) + matchText.slice(0, 8))) || /\b(?:never|refus(?:ed|es|e|ing) to|declin(?:ed|es|e|ing) to)\b/i.test(pat.id === "cock-never-leaving" ? matchText.replace(/\bnever\s+(?=leav)/i, "") : matchText));
     let kind: Desire["kind"] | "act" = "act";
     if (fantasyPara || FANTASY.test(window) || STRONG_FANTASY.test(prefix)) kind = "fantasy";
+    else if (remembered && !pat.signal) kind = "hypothetical";
     else if (DESIRE_LEAD.test(sent) || DESIRE.test(window.replace(/\b(?:that|which|what it|it)\s+(?:want|need)(?:ed|s)?\s+to\b/gi, " ").replace(/\b(?:giv\w*|gave|got|get\w*|deliver\w*|provid\w*)\s+(?:(?:him|her|them|you|me)\s+)?(?:exactly\s+|just\s+|only\s+)?(?:what|all)\s+(?:he|she|they|you|I)(?:['’]d)?\s+(?:want|need)(?:ed|s)?\b/gi, " ").replace(/\b(?:does|did|do)(?:n['’]t| not)\s+(?:even\s+)?resist\s+the\s+(?:temptation|urge|impulse)\b(?:\s+(?:he|she|they)\s+(?:has|have|had|feels?|felt))?/gi, " ")) || DESIRE_TAIL.test(window) || DESIRE.test(aux) || DESIRE.test(m.groups?.lead ?? "") || /^(?:want|need|crav)/i.test(m.groups?.lead ?? "")) kind = "wanted";
     else if (/\b(?:want|need|wish|hope|long|crave)\w*\b[^.!?]*\b(?:and|but)\s+(?:then\s+)?(?:have|let|make|get)\s*$/i.test(prefix)) kind = "wanted";
     else if (/\b(?:want|need|wish|hope|long|crave)\w*\s+(?:\w+\s+){0,3}?to\b[^.!?]*\band\s+\w*(?:\s+\w*){0,2}$/i.test(prefix + matchText.slice(0, 14))) kind = "wanted";

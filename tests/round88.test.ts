@@ -28,8 +28,14 @@ describe("round 88: the owner’s notes on spot-check readings", () => {
   it("‘give him what he wanted, sliding inside and bottoming out’ is something that happens", () => {
     expect(run("Theo was a shuddering mess under him and Rhys was quick to give him what he wanted, sliding inside and bottoming out with a groan.").anal).toEqual(["Rhys>Theo"]);
   });
-  it("a memory of an act while jerking off is not a scene", () => {
-    expect(run("With a flick of his wrist and the memory of Theo on his knees with his mouth wrapped around his cock, Rhys was spilling into a wad of paper.").blow).toEqual([]);
+  it("a memory of an act while jerking off is not a scene now, but it is kept as a weaker, imagined-style reading", () => {
+    const r = run("With a flick of his wrist and the memory of Theo on his knees with his mouth wrapped around his cock, Rhys was spilling into a wad of paper.");
+    expect(r.blow).toEqual([]);
+    expect(r.who(/^lips-around/)).toEqual(["Theo:hypothetical"]);
+  });
+  it("…and ‘remember?’ in dialogue is not a memory: the thought of him jerking himself off still counts", () => {
+    const r = run("“We had to be quick, remember?” Theo smirked, and Rhys felt giddy at the thought of Theo jerking himself off.");
+    expect(r.who(/^mast-himself/)).toEqual(["Theo:masturbation"]);
   });
   it("‘his throat pulses around his cock’ after a grip in Theo’s hair is Theo’s throat", () => {
     expect(run("But Rhys has a vice grip in Theo’s hair, keeping him still as his throat pulses around his cock.").blow).toEqual(["Rhys>Theo"]);
