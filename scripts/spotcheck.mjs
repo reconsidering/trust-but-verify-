@@ -2,6 +2,9 @@
 // Blind spot-checks of Claude-made labels, round after round. Each round the tool learns from every answer so far (tests/spotcheck/rounds.json) which of the
 // Claude labels not yet checked are most likely to be wrong, and builds the next page.
 //   npm run spotcheck -- next [--n 100] [--explore 10]   build the next page: ao3-samples/.spotcheck/round-N/page.html (publish it as an Artifact; it does not show Claude's verdicts)
+//   npm run spotcheck -- next --unlabelled [--n 100] [--random 10] [--per 4]   the same for readings NO ONE has labelled yet, ranked by how likely the engine is to be wrong
+//        (its chance of being wrong × how much the verdict depends on it, at most --per per pattern) plus --random random ones: ao3-samples/.spotcheck/unlabelled-N/page.html
+//   npm run spotcheck -- import-unlabelled <answers dir> [--round N] [--date YYYY-MM-DD]   write the owner's answers to tests/labels/spot-DATE.json (the context model and reliability table learn from it)
 //   npm run spotcheck -- import <answers dir> [--round N] [--date YYYY-MM-DD]   take the owner's answers from the page's saved "reviews" collection, replace
 //        Claude's labels with the owner's in tests/right-set, and record the round in tests/spotcheck/rounds.json (keys, labels and answers only: no fic text)
 // Needs the sample fics in ao3-samples/ (the first run of `next` reads them all, about 6 minutes; the readings are then cached until the engine or labels change).
@@ -19,7 +22,7 @@ const dir = resolve(process.env.AO3_DIR ?? "ao3-samples");
 const work = join(dir, ".spotcheck");
 const roundsFile = "tests/spotcheck/rounds.json";
 const readRounds = () => (existsSync(roundsFile) ? JSON.parse(readFileSync(roundsFile, "utf8")).rounds : []);
-if (!["next", "import"].includes(step)) { console.error("usage: npm run spotcheck -- next [--n 100] [--explore 10] | import <answers dir> [--round N]"); process.exit(2); }
+if (!["next", "import", "import-unlabelled"].includes(step)) { console.error("usage: npm run spotcheck -- next [--n 100] [--explore 10] [--unlabelled [--random 10] [--per 4]] | import <answers dir> [--round N] | import-unlabelled <answers dir> [--round N]"); process.exit(2); }
 if (!existsSync(dir)) { console.error(`No sample fics at ${dir}: upload ao3-samples.zip and run npm run setup-fics first.`); process.exit(2); }
 mkdirSync(work, { recursive: true });
 
@@ -37,6 +40,39 @@ function candidates() {
   return JSON.parse(readFileSync(file, "utf8"));
 }
 const pct = (a, b) => (b ? `${Math.round((100 * a) / b)}%` : "n/a");
+
+// Readings nobody has labelled: the review-queue test ranks them, and the page does not show the engine's own estimate.
+const unlabelledDir = (round) => join(work, `unlabelled-${round}`);
+const lastUnlabelled = () => readdirSync(work).map((x) => /^unlabelled-(\d+)$/.exec(x)?.[1]).filter(Boolean).map(Number).sort((a, b) => a - b).at(-1) ?? 0;
+if (step === "next" && args.includes("--unlabelled")) {
+  const n = Number(opt("n", "100")), random = Number(opt("random", "10")), per = opt("per", "4");
+  const round = lastUnlabelled() + 1, out = unlabelledDir(round);
+  mkdirSync(out, { recursive: true });
+  console.log("reading the fics for readings no one has labelled yet (about 6 minutes)…");
+  const r = spawnSync("npx", ["vitest", "run", "tests/review-queue.test.ts", "--reporter=dot", "--testTimeout=1500000", "-t", "lists the hits"], { env: { ...process.env, AO3_DIR: dir, QUEUE_LOW: String(n - random), QUEUE_RANDOM: String(random), QUEUE_HIGH: "0", QUEUE_PER: per }, stdio: ["ignore", "ignore", "inherit"] });
+  if (r.status) process.exit(r.status);
+  const q = JSON.parse(readFileSync(join(dir, "REVIEW_QUEUE.json"), "utf8"));
+  const rows = q.rows.map((x) => ({ ...x, note: "" }));
+  writeFileSync(join(out, "rows.json"), JSON.stringify({ rows }, null, 1));
+  const lede = "Judged without seeing what the engine thinks of itself. For each, is the claim true of the highlighted sentence in its context? The first name in a claim is the person the engine credited with the action. Wrong = the claim is false (or the sentence is not that act at all). Not sure = the context does not settle it.";
+  const b = spawnSync("node", ["scripts/build-review-page.mjs", join(out, "rows.json"), join(out, "page.html"), `Unlabelled Readings ${round}`, lede], { stdio: "inherit" });
+  if (b.status) process.exit(b.status);
+  console.log(`\nUnlabelled set ${round}: ${rows.length} readings from ${q.candidates} not labelled by anyone (${rows.length - random} ranked, ${random} random).\nPage: ${join(out, "page.html")}\nPublish it as an Artifact (private), and when you have answered: npm run spotcheck -- import-unlabelled <answers dir>`);
+  process.exit(0);
+}
+
+if (step === "import-unlabelled") {
+  const answersDir = args[1];
+  if (!answersDir || answersDir.startsWith("--")) { console.error("usage: npm run spotcheck -- import-unlabelled <answers dir> [--round N] [--date YYYY-MM-DD]"); process.exit(2); }
+  const round = Number(opt("round", String(lastUnlabelled())));
+  const rowsFile = join(unlabelledDir(round), "rows.json");
+  if (!round || !existsSync(rowsFile)) { console.error("No unlabelled set built yet: run npm run spotcheck -- next --unlabelled first."); process.exit(2); }
+  const date = opt("date", new Date().toISOString().slice(0, 10));
+  const r = spawnSync("node", ["scripts/import-review-answers.mjs", rowsFile, answersDir, `tests/labels/spot-${date}.json`], { stdio: "inherit" });
+  if (r.status) process.exit(r.status);
+  console.log("Run npm run check, commit tests/labels, and open a PR; retrain with npm run regen -- --model-only after merging.");
+  process.exit(0);
+}
 
 if (step === "next") {
   const n = Number(opt("n", "100")), explore = Number(opt("explore", "10"));

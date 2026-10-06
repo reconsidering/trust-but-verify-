@@ -3,10 +3,12 @@
 // trusts most (to check it isn't missing errors), skipping anything already labelled.
 //   AO3_DIR=ao3-samples npx vitest run tests/review-queue.test.ts --testTimeout=1500000
 // Writes REVIEW_QUEUE.json into AO3_DIR. Build the page with scripts/build-review-page.mjs; bring answers back with
-// scripts/import-review-answers.mjs. QUEUE_LOW and QUEUE_HIGH set how many of each (default 40 and 20).
+// scripts/import-review-answers.mjs. QUEUE_LOW, QUEUE_RANDOM and QUEUE_HIGH set how many of each (default 40, 0 and 20), QUEUE_PER how many per pattern.
+// Readings already in tests/labels or tests/right-set are skipped. `npm run spotcheck -- next --unlabelled` wraps this.
 import { readFileSync, readdirSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { describe, expect, it } from "vitest";
+import { baseVia, hashKey } from "../scripts/right-set.mjs";
 import { extractFromHtml } from "../src/extract";
 import { analyzeWithPatterns } from "../src/heuristic";
 import { probability } from "../src/heuristic/learned";
@@ -20,12 +22,23 @@ const labelled = (): Set<string> => {
   for (const f of readdirSync(d).filter((x) => x.endsWith(".json"))) for (const k of Object.keys(JSON.parse(readFileSync(join(d, f), "utf8")).labels)) out.add(k);
   return out;
 };
+/** Readings already in the right-set (marked right, or noted wrong), whoever made the label: keys like `pattern#hash`. */
+const inRightSet = (): Set<string> => {
+  const out = new Set<string>();
+  const d = join(__dirname, "right-set");
+  for (const f of readdirSync(d).filter((x) => x.endsWith(".json"))) {
+    const set = JSON.parse(readFileSync(join(d, f), "utf8"));
+    for (const e of [...(set.entries ?? []), ...(set.negatives ?? [])]) if (e.h) out.add(`${baseVia(e.via ?? "")}#${e.h}`);
+  }
+  return out;
+};
 const cap = (s: string, n = 700) => (s.length > n ? `${s.slice(0, n - 1)}…` : s);
 
 /** Pick up to `n` rows in order, at most `per` for each pattern. */
 export function pick<T extends { via: string }>(rows: T[], n: number, per: number): T[] {
   const taken = new Map<string, number>();
   const out: T[] = [];
+  if (n <= 0) return out;
   for (const r of rows) {
     const base = r.via.replace(/~elided$/, "");
     if ((taken.get(base) ?? 0) >= per) continue;
@@ -53,7 +66,8 @@ export function verdictImpact(p: number, share: number, confidence: number): num
 describe.skipIf(!dir)("review queue", () => {
   it("lists the hits to label next", () => {
     const done = labelled();
-    type Cand = { impact: number; key: string; via: string; fic: string; para: number; a: string; b?: string; act: string; kind: string; sentence: string; p: number; before: string; at: string; after: string };
+    const known = inRightSet();
+    type Cand = { impact: number; key: string; via: string; fic: string; para: number; a: string; b?: string; act: string; kind: string; sentence: string; role?: string; p: number; before: string; at: string; after: string };
     const cands: Cand[] = [];
     const seen = new Set<string>();
     for (const f of readdirSync(dir!).filter((x) => x.endsWith(".html")).sort()) {
@@ -70,28 +84,31 @@ describe.skipIf(!dir)("review queue", () => {
       };
       const totals = new Map<string, number>();
       for (const h of hits as { f?: number[]; a: string; b?: string; cat: string; kind: string }[]) if (h.f) totals.set(bucketOf(h).id, (totals.get(bucketOf(h).id) ?? 0) + kindWeight(h.kind));
-      for (const h of hits as { via: string; f?: number[]; para: number; a: string; b?: string; cat: string; act: string; kind: string; sentence: string }[]) {
+      for (const h of hits as { via: string; f?: number[]; para: number; a: string; b?: string; cat: string; act: string; kind: string; role?: string; sentence: string }[]) {
         if (!h.f) continue;
         const bk = bucketOf(h);
         const key = `${h.via}#${hash(h.sentence).toString(16)}`;
-        if (done.has(key) || seen.has(key)) continue;
+        if (done.has(key) || seen.has(key) || known.has(`${baseVia(h.via)}#${hashKey(h.sentence)}`)) continue;
         seen.add(key);
         const para = paras[h.para] ?? "";
         const s = h.sentence.trim();
         const at = para.includes(s) ? para.replace(s, `【${s}】`) : `【${para}】`;
-        cands.push({ impact: verdictImpact(probability(precisionOf(h.via), h.f), kindWeight(h.kind) / Math.max(0.001, totals.get(bk.id) ?? 1), bk.conf), key, via: h.via, fic: f.replace(/\.html$/, ""), para: h.para, a: h.a, b: h.b, act: h.act, kind: h.kind, sentence: s, p: probability(precisionOf(h.via), h.f), before: cap(paras[h.para - 1] ?? ""), at: cap(at, 900), after: cap(paras[h.para + 1] ?? "") });
+        cands.push({ impact: verdictImpact(probability(precisionOf(h.via), h.f), kindWeight(h.kind) / Math.max(0.001, totals.get(bk.id) ?? 1), bk.conf), key, via: h.via, fic: f.replace(/\.html$/, ""), para: h.para, a: h.a, b: h.b, act: h.act, kind: h.kind, sentence: s, role: h.role, p: probability(precisionOf(h.via), h.f), before: cap(paras[h.para - 1] ?? ""), at: cap(at, 900), after: cap(paras[h.para + 1] ?? "") });
       }
     }
-    const low = Number(process.env.QUEUE_LOW ?? 40), high = Number(process.env.QUEUE_HIGH ?? 20);
+    // QUEUE_LOW doubtful picks (at most QUEUE_PER per pattern), QUEUE_RANDOM random ones from the rest (to catch what the ranking can't see), QUEUE_HIGH surest ones.
+    const low = Number(process.env.QUEUE_LOW ?? 40), high = Number(process.env.QUEUE_HIGH ?? 20), randoms = Number(process.env.QUEUE_RANDOM ?? 0), per = Number(process.env.QUEUE_PER ?? 3);
     // Default: the hits whose being wrong would move a result most. QUEUE_RANK=unsure goes back to the least-sure first.
     const byImpact = (process.env.QUEUE_RANK ?? "impact") === "impact";
-    const unsure = pick([...cands].sort((x, y) => (byImpact ? y.impact - x.impact : x.p - y.p)), low, 3);
+    const unsure = pick([...cands].sort((x, y) => (byImpact ? y.impact - x.impact : x.p - y.p)), low, per);
     const chosen = new Set(unsure.map((c) => c.key));
+    const random = pick(cands.filter((c) => !chosen.has(c.key)).sort((x, y) => hash(`r${x.key}`) - hash(`r${y.key}`)), randoms, 2);
+    for (const c of random) chosen.add(c.key);
     const sure = pick(cands.filter((c) => !chosen.has(c.key) && c.p >= 0.9).sort((x, y) => hash(x.key) - hash(y.key)), high, 1);
-    const rows = [...unsure, ...sure].map((c, i) => ({
-      n: i + 1, key: c.key, pattern: c.via, fic: c.fic, a: c.a, b: c.b, act: c.act, kind: c.kind,
+    const rows = [...unsure, ...random, ...sure].map((c, i) => ({
+      n: i + 1, key: c.key, pattern: c.via, fic: c.fic, a: c.a, b: c.b, act: c.act, kind: c.kind, role: c.role,
       before: c.before, para: c.at, after: c.after,
-      note: `The model gives this a ${Math.round(c.p * 100)}% chance of being right${i < unsure.length ? (byImpact ? " (one where a mistake would move a result most)" : " (one of the least sure)") : " (one of the surest, as a check)"}.`,
+      note: `The model gives this a ${Math.round(c.p * 100)}% chance of being right${i < unsure.length ? (byImpact ? " (one where a mistake would move a result most)" : " (one of the least sure)") : i < unsure.length + random.length ? " (picked at random)" : " (one of the surest, as a check)"}.`,
     }));
     writeFileSync(join(dir!, "REVIEW_QUEUE.json"), JSON.stringify({ candidates: cands.length, rows }, null, 1));
     expect(rows.length).toBeGreaterThan(0);
@@ -110,5 +127,12 @@ describe.skipIf(!dir)("review queue", () => {
   it("takes at most a few rows per pattern", () => {
     const rows = Array.from({ length: 12 }, (_, i) => ({ via: i < 8 ? "a" : "b~elided", i }));
     expect(pick(rows, 10, 3).map((r) => r.via)).toEqual(["a", "a", "a", "b~elided", "b~elided", "b~elided"]);
+  });
+  it("takes nothing when asked for none", () => {
+    expect(pick([{ via: "a" }], 0, 3)).toEqual([]);
+  });
+  it("can allow four per pattern and treats elided variants as the same pattern", () => {
+    const rows = Array.from({ length: 9 }, (_, i) => ({ via: i % 2 ? "a" : "a~elided", i }));
+    expect(pick(rows, 20, 4)).toHaveLength(4);
   });
 });
