@@ -38,6 +38,7 @@ const cap = (s: string, n = 700) => (s.length > n ? `${s.slice(0, n - 1)}…` : 
 export function pick<T extends { via: string }>(rows: T[], n: number, per: number): T[] {
   const taken = new Map<string, number>();
   const out: T[] = [];
+  if (n <= 0) return out;
   for (const r of rows) {
     const base = r.via.replace(/~elided$/, "");
     if ((taken.get(base) ?? 0) >= per) continue;
@@ -126,6 +127,9 @@ describe.skipIf(!dir)("review queue", () => {
   it("takes at most a few rows per pattern", () => {
     const rows = Array.from({ length: 12 }, (_, i) => ({ via: i < 8 ? "a" : "b~elided", i }));
     expect(pick(rows, 10, 3).map((r) => r.via)).toEqual(["a", "a", "a", "b~elided", "b~elided", "b~elided"]);
+  });
+  it("takes nothing when asked for none", () => {
+    expect(pick([{ via: "a" }], 0, 3)).toEqual([]);
   });
   it("can allow four per pattern and treats elided variants as the same pattern", () => {
     const rows = Array.from({ length: 9 }, (_, i) => ({ via: i % 2 ? "a" : "a~elided", i }));
