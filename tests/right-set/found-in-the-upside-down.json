@@ -80,7 +80,8 @@
    "misread": true,
    "seen": [
     "2026-10-06"
-   ]
+   ],
+   "retired": "Attribution corrected by the owner-review fix; this negative describes the earlier person assignment, not the corrected reading."
   },
   {
    "kind": "scene",
@@ -95,7 +96,8 @@
    "misread": true,
    "seen": [
     "2026-10-06"
-   ]
+   ],
+   "retired": "Attribution corrected by the owner-review fix; this negative describes the earlier person assignment, not the corrected reading."
   },
   {
    "kind": "hint",
@@ -171,7 +173,8 @@
    "misread": true,
    "seen": [
     "2026-10-06"
-   ]
+   ],
+   "retired": "Attribution corrected by the owner-review fix; this negative describes the earlier person assignment, not the corrected reading."
   }
  ]
 }
