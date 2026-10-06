@@ -38,7 +38,8 @@
    },
    "seen": [
     "2026-10-05"
-   ]
+   ],
+   "retired": "owner judged this wrong in a blind spot-check 2026-10-06"
   }
  ],
  "fic": "keep-it-steady-eddie",
@@ -135,6 +136,22 @@
     "2026-10-05"
    ],
    "retired": "owner judged this right in a blind spot-check 2026-10-06"
+  },
+  {
+   "kind": "hint",
+   "card": "anal",
+   "pairing": "Steve Harrington/Eddie Munson",
+   "who": "Steve Harrington",
+   "role": "bottom",
+   "wants": true,
+   "via": "thrust-back",
+   "h": "631b1211",
+   "conf": 36,
+   "misread": true,
+   "source": "owner",
+   "seen": [
+    "2026-10-06"
+   ]
   }
  ]
 }

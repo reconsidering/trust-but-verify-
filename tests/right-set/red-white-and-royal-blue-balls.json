@@ -26,14 +26,14 @@
    "who": "Henry Fox-Mountchristen-Windsor",
    "via": "mast-himself",
    "h": "69ef60c8",
-   "weight": 0.85,
-   "source": "claude",
+   "source": "owner",
    "marks": {
-    "right": 1,
+    "right": 2,
     "wrong": 0
    },
    "seen": [
-    "2026-10-05"
+    "2026-10-05",
+    "2026-10-06"
    ]
   },
   {
@@ -64,14 +64,14 @@
    "via": "mouth-around-him",
    "h": "6b97fff4",
    "conf": 71,
-   "weight": 0.85,
-   "source": "claude",
+   "source": "owner",
    "marks": {
-    "right": 1,
+    "right": 2,
     "wrong": 0
    },
    "seen": [
-    "2026-10-05"
+    "2026-10-05",
+    "2026-10-06"
    ]
   },
   {
@@ -157,14 +157,14 @@
    "bottom": "Henry Fox-Mountchristen-Windsor",
    "via": "dd3-crooks-digit",
    "h": "7f67132e",
-   "weight": 0.85,
-   "source": "claude",
+   "source": "owner",
    "marks": {
-    "right": 1,
+    "right": 2,
     "wrong": 0
    },
    "seen": [
-    "2026-10-05"
+    "2026-10-05",
+    "2026-10-06"
    ]
   }
  ],
