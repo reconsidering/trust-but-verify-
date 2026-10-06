@@ -1,0 +1,51 @@
+# Notes for an AI coding assistant (ChatGPT / Codex, or any other)
+
+This is "Trust (Tags) But Verify": a small web app plus a rule-based text-analysis engine (no AI inside) that reads AO3 fanfiction downloads and
+reports, for adult characters, who tops and bottoms, with a confidence score and the sentences behind it. TypeScript (Vite + Vitest). It analyses
+fiction text with patterns; it does not generate any. Read `README.md`, then `docs/ENGINE_MAP.md` (where things live) and `docs/TESTING.md` (how a
+change is checked). Claude Code (`CLAUDE.md`) also works in this repository, so check for overlap first (see "Working alongside Claude").
+
+## Rules of the project (please follow)
+- **Never quote fic text** in code, tests, docs or comments. Tests use short *paraphrased* sentences with made-up names (see `tests/round88.test.ts`, `tests/round89.test.ts`).
+- Decline fics where minors appear in sexual content.
+- The sample fics (`ao3-samples/`) are **not** in the repository and are never committed. The label files (`tests/right-set`, `tests/gold`, `tests/labels`,
+  `tests/spotcheck`) store paragraph hashes and names only.
+- Do not regenerate `src/heuristic/reliability.ts` or `src/heuristic/learned.ts` inside a fix: they are generated from the labels (`npm run regen`) and need the fics.
+- For blowjobs "top" means the one *being sucked* and "bottom" the one sucking; for rimming "top" is the one doing it.
+- The owner is a beginner with code and GitHub: explain changes in plain language and keep what they must do small. The owner merges pull requests.
+
+## What you can and cannot run
+- Works anywhere: `npm install`, `npm test` (the unit suite, about a minute), `npm run build` (type-check and build), `npm run dev`.
+- Needs the owner's fics (kept on the owner's machine, not here): `npm run check` (gold and right-set runs), `npm run regress` (what else changed across all
+  fics), `npm run dive`, `npm run trace`, `npm run spotcheck`, `npm run regen`. **Without the fics you cannot verify an engine change against real fics.**
+  So for an engine change: keep it small and guarded, add a paraphrased test, run `npm test` and `npm run build`, and say plainly in the pull request that
+  `npm run check` and `npm run regress -- --hits --all --base origin/main` still need to be run (the owner or Claude Code can run them) before merging.
+
+## Working alongside Claude
+- Before starting, look at the open pull requests and branches (`claude`-style names such as `fix-notes`, `weak-patterns`, `retrain-model` are Claude's) and avoid editing
+  the same files at the same time, especially `src/heuristic/index.ts` and `src/heuristic/patterns.ts`.
+- Work on your own branch (for example `chatgpt/<short-topic>`), one topic per pull request, never on `main`. Write the pull request description in plain language:
+  what was wrong, what you changed, how you checked it, and what is left to check.
+
+## How a fix is made (the loop used so far)
+1. A mistake report names a sentence and what is wrong. Work out why the engine read it that way (`src/heuristic/index.ts` `handleMatch` is a long run
+   of guards, each with a quoted-example comment; subject/person logic is in `resolve.ts`, `pov.ts`, `address.ts`; patterns are in `patterns.ts`).
+2. Reproduce it with a paraphrased test (copy the `run()` helper from `tests/round88.test.ts`). Make it fail.
+3. Fix with the narrowest guard or pattern change; keep the comment-with-example style.
+4. `npm test`, `npm run build`; then the owner's (or Claude's) `npm run check` and `npm run regress -- --hits --all --base origin/main`; read every reading that moved.
+
+## Things learned the hard way
+- A regex with nested optional whitespace made fics about 10x slower: use lookbehinds, and keep `tests/smoke.test.ts` passing.
+- Two men share "he/his": a guard that treats "ran his fingers through his hair" as self-touch removes real caring cues unless the sentence has a cue (frustration, fixing it…).
+- A guard that drops an act can hide real flashback scenes; prefer demoting to a weaker reading (kind "hypothetical") when the act really happened.
+- Claim wording on review pages once said the opposite of what the engine meant for readings crediting the *receiver*; wording lives in `scripts/review-claims.mjs`.
+- Widening a regex that decides "this sentence starts with an outsider's name" made sentences starting "Though," look like outsiders: test the regex against ordinary sentence openers.
+
+## Where the numbers are
+`docs/METRICS.md` (the context model's log loss and AUC over time) and `docs/EVALUATION.md` (what each kind of evidence is). Current state: gold 17/17 verdicts,
+scenes right 79 (flipped 0, missed 0); context model on unseen fics AUC about 0.72, log loss about 0.185.
+
+## Open work
+Known engine problems not yet fixed: the "smaller man" epithet flip (prince-prisoner-puppy), "the Dom/the sub" as epithets, a bystander chosen as the
+left-out subject over the pair (were-compeer), anal scenes only picked up as an ogling hint ("the heat of being inside him… thrust"), toy/fingers/cock act typing.
+Ideas ranked by value: verdict-level accuracy on all fics, more missed-scene (recall) checks, spot-checking unlabelled readings, features for how the engine chose the person.
