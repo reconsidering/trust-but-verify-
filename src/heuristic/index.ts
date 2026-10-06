@@ -557,6 +557,13 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
       // character, not whoever it names further on.
       const subj = firstEntity(sent);
       if (subj && !povLed) ctx.lastSubject = subj;
+      // "Sam's hand rests on Lee's back while he moves": an established penetrating actor keeps moving;
+      // the hand's owner is touching his back, not taking over the act.
+      const backContact = new RegExp(`^\\W*(${NAMES})['’]s\\s+hand\\b[^.!?;]{0,90}?\\b(?:on|onto)\\s+(${NAMES})['’]s\\s+back\\b[^.!?;]{0,30}?\\b(?:as|while)\\s+he\\s+moves?\\b`).exec(sent);
+      if (backContact) {
+        const mover = cast.byAlias.get(backContact[2]);
+        if (mover && acts.some((a) => a.top === mover && a.cat === "anal" && a.act !== "fingering" && a.para >= pi - 3 && a.para <= pi)) ctx.lastSubject = mover;
+      }
       // "Steve was nodding … as he let Eddie abuse his prostate. As he spread his thighs and asked for more.": a fragment that opens on
       // "As / While / And he" carries on the sentence before, so its he is that sentence's subject, not whoever acted last.
       {
@@ -660,6 +667,9 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
   function elidedSubject(prefix: string, suffix = "", observe?: (source: PersonOrigin) => void): Character | undefined {
     // A blanked-out quote is a clause boundary: "…," Alex says, choking…
     prefix = prefix.replace(/\s{3,}/g, (x) => `,${" ".repeat(x.length - 1)}`);
+    // "Alex hears Sam's breath catch when he pushes…": the breath and the following he belong to Sam.
+    const breathOwner = new RegExp(`\\b(${NAMES})['’]s\\s+breath\\s+(?:catch|catches|caught|hitch|hitches|hitched)\\s+(?:when|as|while)\\s*$`).exec(prefix);
+    if (breathOwner && /^\s*(?:he|his)\b/i.test(suffix)) { observe?.("clause"); return cast.byAlias.get(breathOwner[1]); }
     // "The northern wolf is a patient man, but … slipping down to the hot springs to jerk off": a sentence that opens on an epithet and names no one
     // else before the left-out subject is about that epithet.
     {
@@ -1036,12 +1046,20 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
         /\bif\b[^.!?;]{2,70},\s*(?:(?:then|and|so)\s+)?(?:i|we|you)\b[^.!?;]{0,30}$/.test(lead) ||
         /\b(?:what if|some ?day|one day|one of these days|next time|sometime|someday|maybe|perhaps|once (?:i|we|you|this)|when(?:ever)? (?:i|we|you) (?:get|got|can|could|finally|win|won|lose|lost|are|am)|i wonder|i bet|imagine|suppose|pretend|if i ever|if we ever|some other time)\b/.test(sentLead);
       const kind = d.kind === "said" && conditional ? "hypothetical" : d.kind;
+      let listener = ctx.partnerOf(speaker);
+      // A named kissing respondent answering an oral offer is its listener, rather than a third person from the last act.
+      if (/\b(?:wanna|want to)\s+fuck\s+my\s+mouth\b/.test(lower)) {
+        const next = paras[pi + 1] ?? "";
+        const response = new RegExp(`^\\W*(${NAMES})\\s+presses\\s+(?:his|her|their)\\s+lips\\s+to\\s+(${NAMES})['’]s\\s+again\\b[^.!?]{0,80}\\badmitt?\\w*\\b`).exec(next);
+        const respondent = response && cast.byAlias.get(response[1]), recipient = response && cast.byAlias.get(response[2]);
+        if (respondent && recipient === speaker && respondent !== speaker) listener = respondent;
+      }
       desires.push({
         via: `dialogue:${d.act}`,
         cat: d.cat,
         act: d.act,
         who: speaker,
-        partner: ctx.partnerOf(speaker),
+        partner: listener,
         role,
         wants: !negated,
         kind,
@@ -1151,6 +1169,20 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
     if (pat.id.replace(/~elided$/, "") === "fuck" && /^\W*(?:and\s+)?fuck\b/i.test(m[0]) &&
         /^\W*(?:(?:honestly|well|oh|ugh|fine|great|yeah|and|but|so|god|christ|shit|damn|okay|ok),?\s+)*(?:fuck\b[^.!?]*?(?:\band)?\s*)?$/i.test(sent.slice(0, m.index!).replace(/[“"][^”"]*[”"]/g, " "))) return;
     const basePid = pat.id.replace(/~(?:elided|one-sided)$/, "");
+    // "Sam's mouth getting to work on Lee's cock": the mouth is working, not an elided penetrating actor.
+    if (basePid === "dd-grinds-onto-cock" && /\b(?:mouth|lips|tongue)\s+getting\s*$/i.test(sent.slice(0, m.index!))) return;
+    // "his prostate as Sam swallows around Alex's cock": the prostate cannot reach across a new finite clause.
+    if (basePid === "hole-around" && /\b(?:as|while|when|and|but)\s+(?:[\w'’]+\s+){1,2}(?:swallow|suck|clench|grip|tighten)\w*\b/i.test(m[0])) return;
+    // "presses a second finger to Alex's lip": adding fingers in a mouth is not anal fingering.
+    if (basePid === "dd3-slipping-second" && /^\s+(?:to|at|against|into|between|past|in)\s+(?:[\w'’]+\s+){0,3}(?:mouth|lips?|tongue|throat|teeth)\b/i.test(sent.slice(m.index! + m[0].length))) return;
+    // A bare "sink into him" / "let Alex in" can describe a kiss, even with sexual words in the previous paragraph.
+    if ((basePid === "let-in" || (basePid === "push-into" && /\b(?:sink|sinks|sank|sunk|sinking)\b/i.test(m[0]))) && !/\b(?:cock|dick|prick|shaft|ass|arse|hole|rim|anus|entrance|dildo|toy|plug)\b/i.test(m[0]) &&
+        (/\b(?:lips?|tongues?|kiss\w*)\b/i.test(sent) || (/\b(?:lips?|tongues?|kiss\w*)\b/i.test(para) && !PENIS_CTX.test(para) && !ANAL_CTX.test(para))) &&
+        !/\b(?:thrust\w*|penetrat\w*|lube\w*|condom|cock|dick|shaft|ass|arse|hole|rim|anus)\b/i.test(sent) && !/\b(?:hips|pelvis|push-pull)\b/i.test(para)) return;
+    // "nudges into Alex, steering him toward the bed": guiding his whole body, not entering it.
+    if (basePid === "push-into" && /\bnudg\w*\s+(?:into|in)\b/i.test(m[0]) && /^\s*,?\s*(?:prodd|steer|guid|usher)\w*\s+(?:him|her|them)\s+(?:toward|towards|to)\b/i.test(sent.slice(m.index! + m[0].length))) return;
+    // "stops tickling, sinking into him": settling together after tickling is not penetration.
+    if (basePid === "push-into" && /\btickl\w*\b/i.test(sent) && !/\b(?:cock|dick|shaft|hole|rim|anus|dildo|toy)\b/i.test(m[0])) return;
     // "Jacaerys rocks back into Cregan's mouth … the lord's tongue delves deeper, licks into Jacaerys": backing onto a tongue is rimming, not a hint
     // of anal sex or of a blowjob. The rimming patterns read the same passage.
     if ((basePid === "thrust-back" || basePid === "fucked-mouth") && /\btongue\b[^.!?]{0,60}\b(?:delv\w*|lick\w*|lav\w*|swirl\w*|push\w*|press\w*)\b[^.!?]{0,40}\b(?:into|inside)\b|\b(?:pucker|rim)\b/i.test(sent)) return;
@@ -1464,7 +1496,67 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
       const named = [...new Set(ctx.sentMentions.filter((x) => x.at < m.index!).map((x) => x.c))];
       if (named.length === 2) held = { top: named[0], bottom: named[1] };
     }
-    const resolved = asked ? { ...asked, basis: "pronoun" as Basis } : held ? { ...held, basis: "pronoun" as Basis } : resolvePair(tTok, bTok, pat.subj, cast, ctx, subjChar, nearSubj, subjOrigin, povBody ? "pov" : watchedChar || causative ? "rule" : clauseOrigin);
+    let bodyPair: { top: Character; bottom: Character } | undefined;
+    // "Sam makes a sound when Alex angles into him. Pulling back, his cock is inside his channel":
+    // the explicit actor in the preceding clause owns the cock, not the subject who reacts.
+    if (basePid === "penis-inside" && /^(?:his|her|their)$/i.test(tTok ?? "") && /^(?:his|her|their)$/i.test(bTok ?? "")) {
+      const before = para.slice(0, Math.max(0, para.indexOf(original))).trim().split(/(?<=[.!?])\s+/).pop() ?? "";
+      const entering = new RegExp(`\\b(${NAMES})\\s+angles?\\s+into\\s+(?:him|her|them)\\b`).exec(before);
+      const actor = entering && cast.byAlias.get(entering[1]), receiver = firstEntity(before);
+      if (actor && receiver && actor !== receiver) bodyPair = { top: actor, bottom: receiver };
+    }
+    // "Alex reaches out, asking May I?" followed by permission and a hand around Sam's cock:
+    // the asker continues the requested touch, not the third person's remembered role.
+    if (basePid === "dd2-hj-hand-to-dick" && /^(?:he|she|they)$/i.test(tTok ?? "")) {
+      const previous = paras[pi - 1] ?? "";
+      const request = new RegExp(`\\b(${NAMES})\\s+reaches?\\s+out\\b[^.!?]{0,80}?["“]May I\\?["”]`, "i").exec(previous);
+      const actor = request && cast.byAlias.get(request[1]), receiver = bTok && cast.byAlias.get(stripPoss(bTok));
+      if (actor && receiver && actor !== receiver && /^\W*["“]Yeah[,!?]?["”]/i.test(para)) bodyPair = { top: actor, bottom: receiver };
+    }
+    // A forehead kiss with two locally named participants continues into the following rubbing sentence.
+    if (/^(?:rut-against-ass|grind-cock-on-ass)$/.test(basePid) && /^(?:he|she|they)$/i.test(tTok ?? "")) {
+      const before = para.slice(0, Math.max(0, para.indexOf(original))).trim();
+      const kiss = new RegExp(`\\bleans?\\s+down\\s+to\\s+kiss\\s+(${NAMES})['’]s\\s+forehead[.!?]?$`).exec(before);
+      const receiver = bTok && cast.byAlias.get(stripPoss(bTok));
+      const named = [...new Set([...before.matchAll(new RegExp(`\\b(${NAMES})\\b`, "g"))].map((m) => cast.byAlias.get(m[1])).filter((c): c is Character => !!c))];
+      if (receiver && kiss && cast.byAlias.get(kiss[1]) === receiver && named.length === 2 && named.includes(receiver)) bodyPair = { top: named.find((c) => c !== receiver)!, bottom: receiver };
+    }
+    // Named fingers maintaining a hold, followed by lips on the other named person's ass and a rim-touch fragment.
+    if (basePid === "pressure-at-hole" && !tTok && /^(?:his|her|their)$/i.test(bTok ?? "")) {
+      const before = para.slice(0, Math.max(0, para.indexOf(original))).trim();
+      const grip = new RegExp(`\\b(${NAMES})['’]s\\s+fingers\\s+tightening\\s+around\\b`).exec(before);
+      const bodies = [...before.matchAll(new RegExp(`\\b(${NAMES})['’]s\\s+ass\\b`, "g"))];
+      const actor = grip && cast.byAlias.get(grip[1]), receiver = bodies.length && cast.byAlias.get(bodies.at(-1)![1]);
+      const named = new Set([...before.matchAll(new RegExp(`\\b(${NAMES})\\b`, "g"))].map((m) => cast.byAlias.get(m[1])).filter(Boolean));
+      if (actor && receiver && actor !== receiver && named.size === 2) bodyPair = { top: actor, bottom: receiver };
+    }
+    // "Alex opens his legs, making a place for Lee to lie down": the invited person is explicit.
+    if (/^spread-(?:their-)?legs$/.test(basePid)) {
+      const invitation = new RegExp(`\\bmaking\\s+a\\s+place\\s+for\\s+(${NAMES})\\s+to\\s+(?:lay|lie)\\s+down\\b`).exec(sent);
+      const guest = invitation && cast.byAlias.get(invitation[1]);
+      const hostToken = pat.subj === "b" ? bTok : tTok;
+      const host = hostToken && cast.byAlias.get(stripPoss(hostToken));
+      if (host && guest && host !== guest) bodyPair = pat.subj === "b" ? { top: guest, bottom: host } : { top: host, bottom: guest };
+    }
+    // "Alex kneels, letting Lee's shaft fill his throat": the controlling subject owns the throat.
+    if (basePid === "penis-in-mouth" && /^(?:his|her|their)$/i.test(bTok ?? "") && /\bletting\s*$/i.test(sent.slice(0, m.index!))) {
+      const owner = firstEntity(sent.slice(0, m.index!));
+      const giver = tTok && cast.byAlias.get(stripPoss(tTok));
+      if (owner && giver && owner !== giver) bodyPair = { top: giver, bottom: owner };
+    }
+    // "Alex sees Lee's hand reach for a towel. Hears … his mouth … as he strokes Sam":
+    // a hearing fragment continues the observed performer, rather than assigning his act to the observer.
+    if (/^Hears\b/.test(original) && (pat.cat === "oral" || pat.signal?.kind === "handjob")) {
+      const at = para.indexOf(original);
+      const before = at > 0 ? para.slice(0, at).trim().split(/(?<=[.!?])\s+/).pop() ?? "" : "";
+      const seen = new RegExp(`\\b(?:sees?|saw|watches?|watched)\\s+(${NAMES})['’]s\\s+(?:hand|mouth|lips)\\b`).exec(before);
+      const performer = seen && cast.byAlias.get(seen[1]);
+      const tName = tTok && cast.byAlias.get(stripPoss(tTok)), bName = bTok && cast.byAlias.get(stripPoss(bTok));
+      if (performer && tName && performer !== tName && /^(?:his|her|their)$/i.test(bTok ?? "")) bodyPair = { top: tName, bottom: performer };
+      if (performer && bName && performer !== bName && /^(?:he|she|his|her|their)$/i.test(tTok ?? "")) bodyPair = { top: performer, bottom: bName };
+    }
+    const ruled = asked ?? held ?? bodyPair;
+    const resolved = ruled ? { ...ruled, basis: "pronoun" as Basis } : resolvePair(tTok, bTok, pat.subj, cast, ctx, subjChar, nearSubj, subjOrigin, povBody ? "pov" : watchedChar || causative ? "rule" : clauseOrigin);
     const attribution: AttributionEvidence = {
       top: "rule", bottom: "rule", topPronoun: !!(tTok && pronoun(stripPoss(tTok))), bottomPronoun: !!(bTok && pronoun(stripPoss(bTok))),
       subjectCandidates: 0, partnerCandidates: 0,

@@ -1,0 +1,19 @@
+# Owner-review fixes, October 6
+
+These detector changes follow the owner's accepted review of `found-in-the-upside-down`. The existing nine-scene gold inventory is partial: seven expectations were previously missed, and two already passed. The local replay now finds all nine with the expected people.
+
+The changes recognize finger grips around both cocks, spit-slick fingers passing a rim, fingers passing the ring of a rim, an explicitly owned finger still buried inside, and a mouth contacting an explicitly named rim. They also distinguish kissing, guidance toward a bed, and settling after tickling from penetration; a prostate mention cannot reach across a separate swallowing clause. Adding a second finger at someone's lips is not anal fingering.
+
+Attribution rules cover a controlling subject letting a named shaft fill his throat, the owner of a breath that catches before a following pronoun, an observed performer's hand followed by a hearing fragment, and an established penetrating actor continuing while a third person touches his back. Twenty-one invented-adult test cases exercise these rules and nearby counterexamples. The replay also led to narrow rules for a named entering actor continued by a fragment, explicit permission for a named requester’s hand, and a named guest invited between someone’s legs. Neither generated confidence model nor reliability table is regenerated here.
+
+Three earlier negative labels for changed person assignments are retired, and one audit key is excluded from training as `unclear` with its original verdict retained in provenance. Otherwise a key based only on pattern and sentence would teach the model that the newly corrected person assignment was wrong. All original owner answers remain in their provenance file.
+
+Two owner-review questions remain unresolved: R70 concerns simultaneous oral acts and differs from the reviewer's reading of the context; R42 has ambiguous hypothetical pronouns. Their original owner judgments are retained. This fix does not claim that either ambiguity is settled, or that every error in the fic is repaired.
+
+The corpus replay also exposed three-person hints that depended on stale partner memory. Follow-up rules use an explicitly named kissing respondent for an oral offer, two locally named participants continuing a forehead kiss into rubbing, and named fingers plus an explicitly named body owner before a rim-touch fragment. The permission test checks the attribution route as well as the final names, so punctuation inside a quote cannot silently bypass that rule.
+
+Validation on the final detector: full unit suite, production type-check/build, gold and accepted-reading replay passed. Compared with the saved accepted totals, scene expectations improve from 81 right / 7 missed to 88 right / 0 missed, with 0 flipped, all 17 verdicts correct, and the gold false-positive count unchanged at 7. The evaluator removes its accepted-baseline file during corpus-cache cleanup; the earlier totals were saved separately and compared explicitly.
+
+The complete 55-fic comparison changes readings in three fics: 9 removed, 6 added, and 21 reassigned. Every changed reading was reviewed. Outside the reviewed fic, one valid mutual manual-stimulation reading is added in `hate`, and a finger-at-the-lips false positive is removed in `lucky-find`; the penetration scene initially caught by the kissing guard in `pact-of-ice-and-fire` is preserved. Six aggregate verdict changes are the blind/tagged versions of the reviewed fic losing spurious reverse penetration evidence and the incorrectly assigned rimming evidence. They are expected changes, not test failures.
+
+The dialogue hints near paragraph 1127 still attribute the request to the wrong speaker. Their person assignments changed, but they remain wrong and are not counted as repairs. This and the two owner-review questions above remain follow-up work; the fic is not fully corrected.

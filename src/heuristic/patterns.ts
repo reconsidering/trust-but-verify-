@@ -616,6 +616,28 @@ export const PATTERNS: PatternDef[] = [
 
   // ───────────── ANAL: fingering ─────────────
   {
+    // "Sam's finger dips just past the tight ring of Alex's rim."
+    id: "finger-past-ring",
+    kw: "finger|digit",
+    cat: "anal",
+    act: "fingering",
+    subj: "t",
+    weight: 0.9,
+    needsCtx: true,
+    src: `\\b{T:poss}\\s+(?:index\\s+|middle\\s+)?(?:finger|digit)\\s+(?:dip|slip|push|press|slide|slid|sink|sank)\\w*\\s+(?:just\\s+)?past\\s+(?:the\\s+)?(?:rubber[- ]band|(?:tight\\s+)?ring)\\s+of\\s+{B:rimReq}`,
+  },
+  {
+    // "Lee's finger, still buried in the warmth of Alex's ass": ownership is explicit despite the intervening aside.
+    id: "finger-buried-hole",
+    kw: "finger|digit",
+    cat: "anal",
+    act: "fingering",
+    subj: "t",
+    weight: 0.8,
+    needsCtx: true,
+    src: `\\b{T:poss}\\s+(?:index\\s+|middle\\s+)?(?:finger|digit)\\b[^.!?;]{0,70}?\\bburied\\s+(?:deep\\s+)?(?:in|inside)\\s+(?:the\\s+(?:heat|warmth|clutch|tightness)(?:\\s+and\\s+(?:heat|warmth|clutch|tightness))?\\s+of\\s+)?{B:assReq}`,
+  },
+  {
     id: "fingered",
     cat: "anal",
     act: "fingering",
@@ -629,7 +651,7 @@ export const PATTERNS: PatternDef[] = [
     act: "fingering",
     subj: "t",
     weight: 1,
-    src: `\\b{T}\\s+{aux}(?:push|slid|slide|slip|eas|press|work|crook|curl|sink|sank|thrust|add|scissor|twist|insert|wiggl|drove|driv|guid|teas|circl|rub|stuck|stick|shov)\\w*\\s+(?:(?:a|one|two|three|four|another|the|{x's}|first|second|third|slick|lubed|wet|long|thick|blunt|slender|slim|thin|gloved|calloused|single|index|middle)\\s+){0,3}${FINGERS}\\s+(?:(?:back|deep(?:er)?|slowly|all the way|further|carefully|gently|in|up|down)\\s+)*(?:in(?:to|side)?(?:\\s+of)?|past|through|around|against|over|at)\\s+{B:ass}(?!-?\\s*cheeks?\\b)`,
+    src: `\\b{T}\\s+{aux}(?:push|slid|slide|slip|eas|press|work|crook|curl|sink|sank|thrust|add|scissor|twist|insert|wiggl|drove|driv|guid|teas|circl|rub|stuck|stick|shov)\\w*\\s+(?:(?:a|one|two|three|four|another|the|{x's}|first|second|third|slick|lubed|wet|long|thick|blunt|slender|slim|thin|gloved|calloused|single|index|middle|spit-slick|spit-slicked)\\s+){0,3}${FINGERS}\\s+(?:(?:back|deep(?:er)?|slowly|all the way|further|carefully|gently|in|up|down)\\s+)*(?:in(?:to|side)?(?:\\s+of)?|past|through|around|against|over|at)\\s+{B:ass}(?!-?\\s*cheeks?\\b)`,
   },
   {
     id: "fingers-inside",
@@ -1166,6 +1188,16 @@ export const PATTERNS: PatternDef[] = [
   },
 
   // ───────────── ORAL: rimming (top = the one eating ass) ─────────────
+  {
+    // "Sam's mouth makes contact with Alex's rim", with both owners supplied.
+    id: "mouth-contacts-rim",
+    kw: "mouth|lips",
+    cat: "oral",
+    act: "rimming",
+    subj: "t",
+    weight: 0.9,
+    src: `\\b{T:poss}\\s+(?:mouth|lips)\\s+(?:makes?|made|making)\\s+contact\\s+with\\s+{B:rimReq}`,
+  },
   {
     id: "rimmed",
     cat: "oral",
@@ -4265,7 +4297,7 @@ export const PATTERNS: PatternDef[] = [
     weight: 0.8,
     needsCtx: true,
     signal: { kind: "handjob", actorRole: "top" },
-    src: `\\b{T}\\s+{aux}(?:wrapp?|curl|clos|wound)\\w*\\s+(?:a|one|his|her|their|both)\\s+(?:\\w+\\s+)?hands?\\s+around\\s+(?:them\\s+both|both\\s+of\\s+them|the\\s+two\\s+of\\s+them|their\\s+(?:cocks|dicks|erections|lengths))`,
+    src: `\\b{T}\\s+{aux}(?:wrapp?|curl|clos|wound)\\w*\\s+(?:a|one|his|her|their|both)\\s+(?:\\w+\\s+)?(?:hands?|fingers)\\s+around\\s+(?:them\\s+both|both\\s+of\\s+them|the\\s+two\\s+of\\s+them|(?:both\\s+)?their\\s+(?:cocks|dicks|erections|lengths))`,
   },
   {
     // "rutted against each other", "ground their cocks together", "rubbed their erections together"
