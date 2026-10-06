@@ -90,9 +90,9 @@ if (step === "import") {
     return `Claude's "right" calls held ${pct(ok.filter((x) => x.owner === "ok").length, ok.length)} of ${ok.length}; its "wrong" calls held ${pct(wr.filter((x) => x.owner === "wrong").length, wr.length)} of ${wr.length}`;
   };
   console.log(`Round ${round}: ${answers.length} answers (${answers.filter((x) => x.owner === "unclear").length} not sure). ${stat(answers)}.`);
-  const dis = (set) => { const s = set.filter((x) => x.owner !== "unclear"); return `${pct(s.filter((x) => x.owner !== x.claude).length, s.length)} of ${s.length}`; };
+  const dis = (set) => { const s = set.filter((x) => x.owner !== "unclear"); return `${pct(s.filter((x) => x.owner !== x.claude).length, s.length)} (of ${s.length})`; };
   const rk = answers.filter((x) => x.picked === "ranked"), rn = answers.filter((x) => x.picked === "random");
-  if (rk.length) console.log(`You disagreed with Claude on ${dis(rk)} of the ranked picks${rn.length ? ` and ${dis(rn)} of the random ones` : ""}.`);
+  if (rk.length) console.log(`You disagreed with Claude on ${dis(rk)} on the ranked picks${rn.length ? ` and ${dis(rn)} on the random ones` : ""}.`);
   const all = [...rounds.flatMap((r) => r.answers), ...answers];
   console.log(`All rounds (${all.length}): ${stat(all)}.`);
   console.log(`Labels updated: ${JSON.stringify(done)}. Run npm run check, commit tests/right-set and tests/spotcheck, and open a PR; retrain with npm run regen -- --model-only after merging.`);

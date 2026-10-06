@@ -1,10 +1,10 @@
 import { describe, expect, it } from "vitest";
-import { answeredRows, auc, fitLogistic, rank, train } from "../scripts/spotcheck-rank.mjs";
+import { type Answer, type Cand, answeredRows, auc, fitLogistic, rank, train } from "../scripts/spotcheck-rank.mjs";
 
 // Synthetic answers: the owner disagrees with Claude's "wrong" calls on narrated acts, and almost never otherwise.
-const mk = (i: number, claude: "ok" | "wrong", kind: string, fic: string, via: string, disagree: boolean) => ({ key: `${via}#${i}`, fic, via, kind, p: claude === "wrong" ? 0.9 : 0.5, claude, owner: disagree ? (claude === "ok" ? "wrong" : "ok") : claude });
+const mk = (i: number, claude: "ok" | "wrong", kind: string, fic: string, via: string, disagree: boolean): Answer => ({ key: `${via}#${i}`, fic, via, kind, p: claude === "wrong" ? 0.9 : 0.5, claude, owner: disagree ? (claude === "ok" ? "wrong" : "ok") : claude });
 function rounds1() {
-  const answers: ReturnType<typeof mk>[] = [];
+  const answers: Answer[] = [];
   for (let i = 0; i < 60; i++) answers.push(mk(i, i % 3 === 0 ? "wrong" : "ok", i % 3 === 0 ? "act" : "touch", i % 2 ? "ficA" : "ficB", `pat${i % 6}`, i % 3 === 0 ? i % 9 !== 0 : i % 17 === 0));
   return [{ round: 1, date: "2026-10-05", answers }];
 }
@@ -26,7 +26,7 @@ describe("spot-check ranking", () => {
   it("leaves out anything already answered (including Not sure), caps one pattern, and mixes in random picks", () => {
     const rounds = rounds1();
     rounds[0].answers.push({ key: "patZ#1", fic: "ficA", via: "patZ", kind: "act", p: 0.9, claude: "wrong", owner: "unclear" });
-    const cands = Array.from({ length: 80 }, (_, i) => ({ key: `new#${i}`, fic: "ficA", via: `pat${i % 4}~elided`, kind: i % 2 ? "act" : "touch", p: 0.8, claude: i % 3 ? "wrong" : "ok" }));
+    const cands: Cand[] = Array.from({ length: 80 }, (_, i) => ({ key: `new#${i}`, fic: "ficA", via: `pat${i % 4}~elided`, kind: i % 2 ? "act" : "touch", p: 0.8, claude: i % 3 ? ("wrong" as const) : ("ok" as const) }));
     cands.push({ key: "patZ#1", fic: "ficA", via: "patZ", kind: "act", p: 0.9, claude: "wrong" });
     const out = rank(cands, rounds, { n: 12, explore: 2, perPattern: 3 });
     expect(out.picked.length).toBe(12);
