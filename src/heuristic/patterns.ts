@@ -3860,7 +3860,7 @@ export const PATTERNS: PatternDef[] = [
     weight: 0.4,
     needsCtx: true,
     signal: { kind: "prep", actorRole: "bottom" },
-    src: `\\b{B}\\s+{aux}(?:sink|sank|sinks|drop|dropped|drops)\\w*\\s+(?:down\\s+)?(?:to|onto)\\s+(?:(?:his|her|their|my|your)\\s+knees(?!\\s+(?:beside|next\\s+to)\\b)|(?:the\\s+)?(?:cold\\s+|hard\\s+)?(?:floor|ground)(?=\\s+(?:in front of|before|between|at)\\b))`,
+    src: `\\b{B}\\s+{aux}(?:sink|sank|sinks|drop|dropped|drops)\\w*\\s+(?:down\\s+)?(?:to|onto)\\s+(?:(?:his|her|their|my|your)\\s+knees(?!\\s+(?:(?:\\w+\\s+){0,3}?)(?:beside|next\\s+to)\\b)|(?:the\\s+)?(?:cold\\s+|hard\\s+)?(?:floor|ground)(?=\\s+(?:in front of|before|between|at)\\b))`,
   },
   {
     // "nuzzles against the line of Obi-Wan's cock"
@@ -4758,7 +4758,7 @@ export const DIALOGUE: DialogueDef[] = [
   // ── vibe: position and initiative, aftercare, pet names ──
   { cat: "vibe", act: "checking in or leading", role: "top", kind: "position", weight: 0.4, re: /(?:^|[.!?,]\s*)(?:ready\?|you ready\?|are you ready\??|ready for me\??|tell me (?:if|when)|say (?:stop|the word)|is this (?:ok|okay|alright|good)\??|am i hurting you|did i hurt you|does (?:it|that) hurt\??|(?:relax|breathe) for me|let me know if)/ },
   { cat: "vibe", act: "looking after someone", role: "top", kind: "aftercare", weight: 0.4, re: /\blet me (?:clean|take care of|wipe|wash|look after) you\b|\bi(?:'ve| have) got you\b|\byou did (?:so |really |very )?(?:well|good|perfect|beautifully)\b|\bgood job\b/ },
-  { cat: "vibe", act: "asking to be held", role: "bottom", kind: "aftercare", weight: 0.4, re: /\b(?:hold me|stay with me|don'?t let go|i can'?t (?:move|feel my legs|walk))\b/ },
+  { cat: "vibe", act: "asking to be held", role: "bottom", kind: "aftercare", weight: 0.4, re: /\b(?:hold me|stay with me|don'?t let go)\b/ },
   { cat: "vibe", act: "calling someone a good boy/girl", role: "top", kind: "petname", weight: 0.5, re: /\bgood (?:boy|girl|pet|kitten|puppy)\b|\bpretty (?:boy|thing)\b|\bsweet boy\b/ },
   { cat: "vibe", act: "calling someone daddy/sir", role: "bottom", kind: "petname", weight: 0.5, re: /\b(?:please|yes|thank you|thanks),? (?:daddy|sir|master|mistress|mommy)\b|\bdaddy\b(?!\s+(?:issues|long legs))|\byes,? sir\b/ },
 ];

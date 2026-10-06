@@ -1265,8 +1265,8 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
     if (/^fuck/.test(pat.id) && /^\s+(?:would|could|should|might|will|can|had|was|were|did|does|is|are)\b/i.test(sent.slice(m.index! + m[0].length)) && !/^(?:him|her|them|me|you|it)$/i.test(bTok ?? "")) return;
     // "Dustin babbled and Mrs. Henderson looks at him like…": a left-out subject belongs to the one now named, and someone
     // who isn't in the cast can't be credited as the person before.
-    if (pat.elided && new RegExp(`(?:^|(?:[,;]|\\b(?:and|but|while|as|then|yet|so))\\s+)(?:(?:Mr|Mrs|Ms|Miss|Dr)\\.?\\s+)?([A-Z][a-z]+(?:\\s+[A-Z][a-z]+)?)(?:,[^,.;]{2,50},)?\\s*$`).test(sent.slice(0, m.index!))) {
-      const named = new RegExp(`(?:^|(?:[,;]|\\b(?:and|but|while|as|then|yet|so))\\s+)(?:(?:Mr|Mrs|Ms|Miss|Dr)\\.?\\s+)?([A-Z][a-z]+(?:\\s+[A-Z][a-z]+)?)(?:,[^,.;]{2,50},)?\\s*$`).exec(sent.slice(0, m.index!))![1];
+    if (pat.elided && new RegExp(`(?:^|(?:[,;]|\\b(?:and|but|while|as|then|yet|so))\\s+)(?:(?:Mr|Mrs|Ms|Miss|Dr)\\.?\\s+)?([A-Z][a-z]+(?:\\s+[A-Z][a-z]+)?)(?:,[^,.;]{2,50},)?\\s*$`).test(sent.slice(0, m.index!) + (/^\s*,/.test(m[0]) ? "," : ""))) {
+      const named = new RegExp(`(?:^|(?:[,;]|\\b(?:and|but|while|as|then|yet|so))\\s+)(?:(?:Mr|Mrs|Ms|Miss|Dr)\\.?\\s+)?([A-Z][a-z]+(?:\\s+[A-Z][a-z]+)?)(?:,[^,.;]{2,50},)?\\s*$`).exec(sent.slice(0, m.index!) + (/^\s*,/.test(m[0]) ? "," : ""))![1];
       if (!cast.byAlias.get(named) && !cast.byAlias.get(named.split(" ")[0]) && !/^(?:Then|Now|Still|Instead|Maybe|Perhaps|God|Please|Fuck|Jesus|Christ|Just|Again|Next|Later|Soon|Once|Yes|No|Oh|Okay|Ok|Fine|Good|Hell|Shit|Damn|He|She|They|It|We|You|I|His|Her|Their|The|A|An|This|That|There|Some|Another)$/.test(named) && !/ly$/.test(named)) { oneSided(pat, m, tTok, bTok, sent, original, pi); return; }
     }
     // "before Eustace placed a hand on his back and guided him out": the left-out subject is Eustace, whoever he is, when no one
@@ -1349,6 +1349,14 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
     // "palm a dragon egg from top to bottom": the end of a thing, not a role.
     if (pat.id.startsWith("bottomed-for") && /\b(?:top|tops)\s+(?:to|and)\s+$/i.test(sent.slice(0, m.index!) + (/^\s*(?:to|and)\s+/i.exec(m[0])?.[0] ?? ""))) return;
     // "still slightly sore from being stretched open" is a bodily sign after sex, not a scene: it belongs with the soreness hints.
+    // "had to restrain himself from pinning Dean to the wall": the act is held back, not done.
+    if (pat.signal && /\b(?:(?:restrain\w*|resist\w*|stop\w*|prevent\w*|keep\w*|hold(?:ing)?\s+back)\s+(?:himself|herself|themselves)|refrain\w*|abstain\w*)\s+from\s*$/i.test(sent.slice(Math.max(0, m.index! - 60), m.index!) + (/^\s*from\b/i.exec(m[0])?.[0] ?? ""))) return;
+    // "ran his hands through his hair in frustration", "smoothing his hands down the front of his suit": his own hair, his own clothes.
+    if (pat.id.startsWith("care-soothe") && (
+      // His own hair, when the same sentence says it is about his own state (in frustration, fixing it, trying to stop his hands shaking…); with two men the same "his" can be either.
+      (/\bran\s+(his|her|their)\s+(?:hands?|fingers|knuckles)\s+(?:\w+\s+)?(?:through|over|across|down)\s+\1\b/i.test(m[0]) && /\b(?:in\s+(?:his|her|their\s+)?(?:frustration|exasperation|desperation|anxiety|nervousness)|nervously|anxiously|wearily|tiredly|restlessly|roughly|making sure|wondering|fix(?:ed|ing)|a mess|mirror|keep\s+(?:them|his hands)\s+from\s+shaking)\b/i.test(sent)) ||
+      // His own clothes.
+      (/^(?:his|her|their)$/i.test(bTok ?? "") && /\bhands?\s+(?:down|over|along|on)\s+(?:the\s+)?(?:front|sides?|lap|legs?|thighs?|suit|shirt|jacket|dress|skirt|apron|trousers|pants|jeans|tie)\b/i.test(sent.slice(m.index!, m.index! + m[0].length + 40))))) return;
     // "“Ow!” he yelped as he pulled away and looked at his cock in betrayal": he is looking at his own, hurt, body.
     if (pat.id.startsWith("ogle-crotch") && /\b(?:yelp\w*|winc\w*|flinch\w*|hiss\w*|grimac\w*|ouch|ow)\b/i.test(sent) && /\b(?:his|her)\s+(?:\w+\s+)?(?:dick|cock|penis|erection|hard-?on|crotch|groin)\b/i.test(m[0])) return;
     // "the memory of Dean on his knees with his mouth wrapped around his cock" while jerking off: remembered, not a scene now.
