@@ -1,12 +1,12 @@
 {
  "made": "2026-10-06",
- "how": "Owner spot-check answers. Keys are original pattern#hash(evidence). Unclear is excluded from training. Owner verdicts preserved, including R70.",
+ "how": "Owner spot-check answers. Audit keys use pattern#full-sentence hash, as required by context-model training. Unclear is excluded from training. Owner verdicts preserved, including R70.",
  "sourceSha": "1b35ea2b2c860069f4855107bf98452121e5fceb0b9dbf4f9da33c1d89bb699f",
  "engineCommit": "863027c68279ce7506aefe7990a79943f0c45ae7",
  "labels": {
-  "knelt-between~elided#a59c8de": "unclear",
-  "hj-stroke#3b45d040": "wrong",
-  "dd-hj-fingers-around#9c3af1de": "ok"
+  "knelt-between~elided#82774b2f": "unclear",
+  "hj-stroke#51d6834e": "wrong",
+  "dd-hj-fingers-around#d3e474a8": "ok"
  },
  "answers": [
   {
