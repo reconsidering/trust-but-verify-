@@ -150,14 +150,14 @@
    "via": "sinks-to-floor",
    "h": "7fee1af6",
    "conf": 22,
-   "weight": 0.85,
-   "source": "claude",
+   "source": "owner",
    "marks": {
-    "right": 1,
+    "right": 2,
     "wrong": 0
    },
    "seen": [
-    "2026-10-05"
+    "2026-10-05",
+    "2026-10-06"
    ]
   },
   {
@@ -187,14 +187,14 @@
    "via": "dd-felt-push-up-length",
    "h": "c3ef264a",
    "conf": 74,
-   "weight": 0.85,
-   "source": "claude",
+   "source": "owner",
    "marks": {
-    "right": 1,
+    "right": 2,
     "wrong": 0
    },
    "seen": [
-    "2026-10-05"
+    "2026-10-05",
+    "2026-10-06"
    ]
   },
   {
@@ -224,14 +224,14 @@
    "bottom": "Dean Winchester",
    "via": "stretched-open",
    "h": "3cb30995",
-   "weight": 0.85,
-   "source": "claude",
+   "source": "owner",
    "marks": {
-    "right": 1,
+    "right": 2,
     "wrong": 0
    },
    "seen": [
-    "2026-10-05"
+    "2026-10-05",
+    "2026-10-06"
    ]
   }
  ],

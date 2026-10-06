@@ -291,14 +291,14 @@
    "via": "arch-back",
    "h": "240e24ca",
    "conf": 31,
-   "weight": 0.85,
-   "source": "claude",
+   "source": "owner",
    "marks": {
-    "right": 1,
+    "right": 2,
     "wrong": 0
    },
    "seen": [
-    "2026-10-05"
+    "2026-10-05",
+    "2026-10-06"
    ]
   },
   {
@@ -331,14 +331,14 @@
    "via": "presented",
    "h": "abcd8006",
    "conf": 34,
-   "weight": 0.85,
-   "source": "claude",
+   "source": "owner",
    "marks": {
-    "right": 1,
+    "right": 2,
     "wrong": 0
    },
    "seen": [
-    "2026-10-05"
+    "2026-10-05",
+    "2026-10-06"
    ]
   },
   {
@@ -471,14 +471,14 @@
    "via": "spread-legs",
    "h": "473cc865",
    "conf": 34,
-   "weight": 0.85,
-   "source": "claude",
+   "source": "owner",
    "marks": {
-    "right": 1,
+    "right": 2,
     "wrong": 0
    },
    "seen": [
-    "2026-10-05"
+    "2026-10-05",
+    "2026-10-06"
    ]
   },
   {
@@ -598,7 +598,8 @@
    },
    "seen": [
     "2026-10-05"
-   ]
+   ],
+   "retired": "owner judged this wrong in a blind spot-check 2026-10-06"
   },
   {
    "kind": "hint",
@@ -733,14 +734,14 @@
    "via": "fucked-mouth",
    "h": "2a34c5e2",
    "conf": 80,
-   "weight": 0.85,
-   "source": "claude",
+   "source": "owner",
    "marks": {
-    "right": 1,
+    "right": 2,
     "wrong": 0
    },
    "seen": [
-    "2026-10-05"
+    "2026-10-05",
+    "2026-10-06"
    ]
   },
   {
@@ -863,14 +864,14 @@
    "bottom": "Stiles Stilinski",
    "via": "fingers-into",
    "h": "be7b715c",
-   "weight": 0.85,
-   "source": "claude",
+   "source": "owner",
    "marks": {
-    "right": 1,
+    "right": 2,
     "wrong": 0
    },
    "seen": [
-    "2026-10-05"
+    "2026-10-05",
+    "2026-10-06"
    ]
   },
   {
@@ -901,14 +902,14 @@
    "via": "bobbed-head",
    "h": "e0cac189",
    "conf": 34,
-   "weight": 0.85,
-   "source": "claude",
+   "source": "owner",
    "marks": {
-    "right": 1,
+    "right": 2,
     "wrong": 0
    },
    "seen": [
-    "2026-10-05"
+    "2026-10-05",
+    "2026-10-06"
    ]
   },
   {
@@ -920,14 +921,14 @@
    "via": "penis-into",
    "h": "5db200fb",
    "conf": 83,
-   "weight": 0.85,
-   "source": "claude",
+   "source": "owner",
    "marks": {
-    "right": 1,
+    "right": 2,
     "wrong": 0
    },
    "seen": [
-    "2026-10-05"
+    "2026-10-05",
+    "2026-10-06"
    ]
   },
   {
@@ -1540,6 +1541,22 @@
    "disputedOn": [
     "2026-10-05"
    ],
+   "misread": true,
+   "source": "owner",
+   "seen": [
+    "2026-10-06"
+   ]
+  },
+  {
+   "kind": "hint",
+   "card": "anal",
+   "pairing": "Derek Hale/Stiles Stilinski",
+   "who": "Stiles Stilinski",
+   "role": "bottom",
+   "wants": true,
+   "via": "be-fucked",
+   "h": "49d3fc06",
+   "conf": 65,
    "misread": true,
    "source": "owner",
    "seen": [

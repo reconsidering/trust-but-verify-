@@ -360,7 +360,8 @@
    },
    "seen": [
     "2026-10-05"
-   ]
+   ],
+   "retired": "owner judged this wrong in a blind spot-check 2026-10-06"
   },
   {
    "kind": "hint",
@@ -431,14 +432,14 @@
    "via": "fuck",
    "h": "a40e52f0",
    "conf": 27,
-   "weight": 0.85,
-   "source": "claude",
+   "source": "owner",
    "marks": {
-    "right": 1,
+    "right": 2,
     "wrong": 0
    },
    "seen": [
-    "2026-10-05"
+    "2026-10-05",
+    "2026-10-06"
    ]
   },
   {
@@ -591,14 +592,14 @@
    "via": "sinks-to-floor",
    "h": "a3d67039",
    "conf": 32,
-   "weight": 0.85,
-   "source": "claude",
+   "source": "owner",
    "marks": {
-    "right": 1,
+    "right": 2,
     "wrong": 0
    },
    "seen": [
-    "2026-10-05"
+    "2026-10-05",
+    "2026-10-06"
    ]
   },
   {
@@ -644,14 +645,14 @@
    "who": "Dean Winchester",
    "via": "mast-himself",
    "h": "8b03d9a7",
-   "weight": 0.85,
-   "source": "claude",
+   "source": "owner",
    "marks": {
-    "right": 1,
+    "right": 2,
     "wrong": 0
    },
    "seen": [
-    "2026-10-05"
+    "2026-10-05",
+    "2026-10-06"
    ]
   },
   {
@@ -694,14 +695,14 @@
    "who": "Castiel",
    "via": "mast-himself",
    "h": "dcc396fd",
-   "weight": 0.85,
-   "source": "claude",
+   "source": "owner",
    "marks": {
-    "right": 1,
+    "right": 2,
     "wrong": 0
    },
    "seen": [
-    "2026-10-05"
+    "2026-10-05",
+    "2026-10-06"
    ]
   },
   {
@@ -755,7 +756,8 @@
    },
    "seen": [
     "2026-10-05"
-   ]
+   ],
+   "retired": "owner judged this wrong in a blind spot-check 2026-10-06"
   },
   {
    "kind": "scene",
@@ -765,14 +767,14 @@
    "bottom": "Dean Winchester",
    "via": "stretched-open",
    "h": "1b927500",
-   "weight": 0.85,
-   "source": "claude",
+   "source": "owner",
    "marks": {
-    "right": 1,
+    "right": 2,
     "wrong": 0
    },
    "seen": [
-    "2026-10-05"
+    "2026-10-05",
+    "2026-10-06"
    ]
   },
   {
@@ -829,7 +831,8 @@
    },
    "seen": [
     "2026-10-05"
-   ]
+   ],
+   "retired": "owner judged this wrong in a blind spot-check 2026-10-06"
   },
   {
    "kind": "scene",
@@ -857,14 +860,14 @@
    "bottom": "Dean Winchester",
    "via": "fingers-into",
    "h": "afacf768",
-   "weight": 0.85,
-   "source": "claude",
+   "source": "owner",
    "marks": {
-    "right": 1,
+    "right": 2,
     "wrong": 0
    },
    "seen": [
-    "2026-10-05"
+    "2026-10-05",
+    "2026-10-06"
    ]
   },
   {
@@ -876,14 +879,14 @@
    "via": "took-in-mouth",
    "h": "37aa370f",
    "conf": 85,
-   "weight": 0.85,
-   "source": "claude",
+   "source": "owner",
    "marks": {
-    "right": 1,
+    "right": 2,
     "wrong": 0
    },
    "seen": [
-    "2026-10-05"
+    "2026-10-05",
+    "2026-10-06"
    ]
   },
   {
@@ -895,14 +898,14 @@
    "via": "dd2-pulled-out-of-him",
    "h": "4c14b1b7",
    "conf": 70,
-   "weight": 0.85,
-   "source": "claude",
+   "source": "owner",
    "marks": {
-    "right": 1,
+    "right": 2,
     "wrong": 0
    },
    "seen": [
-    "2026-10-05"
+    "2026-10-05",
+    "2026-10-06"
    ]
   },
   {
@@ -914,14 +917,14 @@
    "via": "came-in-mouth",
    "h": "afe16fb7",
    "conf": 60,
-   "weight": 0.85,
-   "source": "claude",
+   "source": "owner",
    "marks": {
-    "right": 1,
+    "right": 2,
     "wrong": 0
    },
    "seen": [
-    "2026-10-05"
+    "2026-10-05",
+    "2026-10-06"
    ]
   },
   {
@@ -1024,14 +1027,14 @@
    "bottom": "Dean Winchester",
    "via": "fingers-into",
    "h": "9ca67c8e",
-   "weight": 0.85,
-   "source": "claude",
+   "source": "owner",
    "marks": {
-    "right": 1,
+    "right": 2,
     "wrong": 0
    },
    "seen": [
-    "2026-10-05"
+    "2026-10-05",
+    "2026-10-06"
    ]
   },
   {
@@ -1061,14 +1064,14 @@
    "bottom": "Dean Winchester",
    "via": "prostate",
    "h": "99db4105",
-   "weight": 0.85,
-   "source": "claude",
+   "source": "owner",
    "marks": {
-    "right": 1,
+    "right": 2,
     "wrong": 0
    },
    "seen": [
-    "2026-10-05"
+    "2026-10-05",
+    "2026-10-06"
    ]
   },
   {
@@ -1709,6 +1712,52 @@
    "bottom": "Dean Winchester",
    "via": "pushed-in",
    "h": "a476f47b",
+   "misread": true,
+   "source": "owner",
+   "seen": [
+    "2026-10-06"
+   ]
+  },
+  {
+   "kind": "hint",
+   "card": "anal",
+   "pairing": "Castiel/Dean Winchester",
+   "who": "Castiel",
+   "role": "top",
+   "wants": true,
+   "via": "hands-on-ass",
+   "h": "af2ffc8e",
+   "conf": 43,
+   "misread": true,
+   "source": "owner",
+   "seen": [
+    "2026-10-06"
+   ]
+  },
+  {
+   "kind": "scene",
+   "card": "anal",
+   "pairing": "Castiel/Dean Winchester",
+   "top": "Castiel",
+   "bottom": "Dean Winchester",
+   "via": "push-into",
+   "h": "a46c97dd",
+   "conf": 68,
+   "misread": true,
+   "source": "owner",
+   "seen": [
+    "2026-10-06"
+   ]
+  },
+  {
+   "kind": "scene",
+   "card": "anal",
+   "pairing": "Castiel/Dean Winchester",
+   "top": "Castiel",
+   "bottom": "Dean Winchester",
+   "via": "prostate",
+   "h": "1d80a67a",
+   "conf": 56,
    "misread": true,
    "source": "owner",
    "seen": [
