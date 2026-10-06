@@ -11,6 +11,7 @@ import { describe, expect, it } from "vitest";
 import { extractFromHtml } from "../src/extract";
 import { analyzeWithPatterns } from "../src/heuristic";
 import type { Instance, PairingResult } from "../src/types";
+import { hashKey } from "../scripts/right-set.mjs";
 
 const dir = process.env.AO3_DIR;
 const strict = !!process.env.GOLD_STRICT;
@@ -18,11 +19,12 @@ const strict = !!process.env.GOLD_STRICT;
 const only = process.env.GOLD_ONLY?.split(",").filter(Boolean);
 export const paraHash = (s: string) => { let h = 2166136261; for (let i = 0; i < s.length; i++) h = Math.imul(h ^ s.charCodeAt(i), 16777619); return (h >>> 0).toString(16); };
 
-type ActKey = "anal" | "blowjob" | "rimming" | "cunnilingus";
+type RankedActKey = "anal" | "blowjob" | "rimming" | "cunnilingus";
+type ActKey = RankedActKey | "manual" | "fingering";
 interface Gold {
   fic: string;
   note?: string;
-  verdicts?: { pairing: string; act: ActKey; verdict: string; top?: string; bottom?: string }[];
+  verdicts?: { pairing: string; act: RankedActKey; verdict: string; top?: string; bottom?: string }[];
   /** A real scene: some reported scene of this act, in this pairing's order or the other, lies within [from-2, to+2]. */
   scenes?: { act: ActKey; from: number; to: number; top: string; bottom: string; h: string }[];
   /** Acts whose scene list above is complete: any other reported scene of that act counts as a false positive. */
@@ -58,7 +60,15 @@ describe.skipIf(!dir)("gold labels", () => {
       };
       const lines: string[] = [];
       const pairingOf = (name: string): PairingResult | undefined => { const [x, y] = name.split("/"); return a.pairings.find((p) => (p.pairing.includes(x.split(" ")[0]) && p.pairing.includes(y.split(" ")[0]))); };
-      const sceneList = (p: PairingResult, act: ActKey): Instance[] => p[act].instances.filter((i) => i.act !== "fingering");
+      const sceneList = (p: PairingResult, act: ActKey): Instance[] => {
+        if (act === "fingering") return p.anal.instances.filter((i) => i.act === "fingering");
+        if (act === "manual") return (p.manual?.instances ?? []).flatMap((i) => {
+          const para = paras.findIndex((text) => hashKey(text) === hashKey(i.evidence));
+          const hit = { ...i, para: para < 0 ? undefined : para, top: i.giver, bottom: i.receiver } as Instance;
+          return i.mutual ? [hit, { ...hit, top: i.receiver, bottom: i.giver }] : [hit];
+        });
+        return p[act].instances.filter((i) => i.act !== "fingering");
+      };
 
       for (const v of gold.verdicts ?? []) {
         const p = pairingOf(v.pairing);

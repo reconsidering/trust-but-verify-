@@ -11,3 +11,15 @@ Answers save in the current browser. Use **Export my answers**, or **Share / sav
 The page records review judgments from engine commit `863027c68279ce7506aefe7990a79943f0c45ae7`. It does not rerun the detector, and newer engine revisions may differ. Its metadata contains paraphrased claims, review notes, paragraph references, and file/paragraph checksums; it contains no story paragraphs. A retrospective paragraph is omitted from displayed excerpts.
 
 For local development, run `npm run dev` from the repository and visit the review path through the development server. Run `npm test` and `npm run build` before merging. A page-only change does not require corpus regression runs; it does not change the engine or generated model tables.
+
+The owner's 2026-10-06 export is imported in
+`tests/labels/found-upside-down-owner-2026-10-06.json` (all 20 verdicts and
+paragraph hashes), `tests/right-set/found-in-the-upside-down.json` (decisive
+main-engine readings), and `tests/gold/found-in-the-upside-down.json`
+(confirmed scenes and missed acts). Manual readings use the existing audit
+label format; the uncertain answer stays `unclear` and does not train the
+model. Decisive main readings are not duplicated in the audit labels.
+The owner verdict for R70 is preserved despite the earlier reviewer disagreement.
+No story text or free-text story context is stored. The gold inventory is partial;
+manual and fingering checks use giver/receiver in the top/bottom fields.
+Generated reliability and learned-model files are updated separately after merge.

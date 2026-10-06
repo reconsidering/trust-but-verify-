@@ -1,0 +1,211 @@
+{
+ "made": "2026-10-06",
+ "how": "Owner spot-check answers. Keys are original pattern#hash(evidence). Unclear is excluded from training. Owner verdicts preserved, including R70.",
+ "sourceSha": "1b35ea2b2c860069f4855107bf98452121e5fceb0b9dbf4f9da33c1d89bb699f",
+ "engineCommit": "863027c68279ce7506aefe7990a79943f0c45ae7",
+ "labels": {
+  "knelt-between~elided#a59c8de": "unclear",
+  "hj-stroke#3b45d040": "wrong",
+  "dd-hj-fingers-around#9c3af1de": "ok"
+ },
+ "answers": [
+  {
+   "id": "R64",
+   "verdict": "wrong",
+   "from": 283,
+   "to": 283,
+   "h": "eb032cbf",
+   "errors": [
+    "Kissing or rubbing mistaken for penetration"
+   ],
+   "updatedAt": "2026-10-06T13:46:05.636Z"
+  },
+  {
+   "id": "M2",
+   "verdict": "correct",
+   "from": 540,
+   "to": 546,
+   "h": "9f1f2a7e",
+   "errors": [],
+   "updatedAt": "2026-10-06T13:46:44.411Z"
+  },
+  {
+   "id": "R27",
+   "verdict": "uncertain",
+   "from": 728,
+   "to": 728,
+   "h": "27715ee0",
+   "errors": [],
+   "updatedAt": "2026-10-06T13:47:35.003Z"
+  },
+  {
+   "id": "R67",
+   "verdict": "wrong",
+   "from": 1002,
+   "to": 1002,
+   "h": "cc28110a",
+   "errors": [
+    "Kissing or rubbing mistaken for penetration"
+   ],
+   "updatedAt": "2026-10-06T13:48:18.085Z"
+  },
+  {
+   "id": "R68",
+   "verdict": "correct",
+   "from": 1008,
+   "to": 1008,
+   "h": "7154a5fe",
+   "errors": [],
+   "updatedAt": "2026-10-06T13:50:22.419Z"
+  },
+  {
+   "id": "R70",
+   "verdict": "wrong",
+   "from": 1009,
+   "to": 1009,
+   "h": "e75d3a8f",
+   "errors": [
+    "Wrong act or body part"
+   ],
+   "updatedAt": "2026-10-06T13:51:28.149Z"
+  },
+  {
+   "id": "S1",
+   "verdict": "wrong",
+   "from": 1014,
+   "to": 1014,
+   "h": "ec8cfc9b",
+   "errors": [
+    "Wrong act or body part"
+   ],
+   "updatedAt": "2026-10-06T13:52:39.598Z"
+  },
+  {
+   "id": "M4",
+   "verdict": "correct",
+   "from": 1121,
+   "to": 1139,
+   "h": "997d589c",
+   "errors": [],
+   "updatedAt": "2026-10-06T13:55:58.984Z"
+  },
+  {
+   "id": "R75",
+   "verdict": "wrong",
+   "from": 1125,
+   "to": 1125,
+   "h": "98bab07c",
+   "errors": [
+    "Wrong person"
+   ],
+   "updatedAt": "2026-10-06T13:56:14.218Z"
+  },
+  {
+   "id": "M5",
+   "verdict": "correct",
+   "from": 1138,
+   "to": 1138,
+   "h": "c6506839",
+   "errors": [],
+   "updatedAt": "2026-10-06T13:58:17.878Z"
+  },
+  {
+   "id": "R80",
+   "verdict": "wrong",
+   "from": 1770,
+   "to": 1770,
+   "h": "ed619ba9",
+   "errors": [
+    "Wrong person"
+   ],
+   "updatedAt": "2026-10-06T13:58:55.144Z"
+  },
+  {
+   "id": "R42",
+   "verdict": "wrong",
+   "from": 2169,
+   "to": 2169,
+   "h": "27d1eea7",
+   "errors": [
+    "Roles reversed"
+   ],
+   "updatedAt": "2026-10-06T14:02:34.417Z"
+  },
+  {
+   "id": "R86",
+   "verdict": "wrong",
+   "from": 2178,
+   "to": 2178,
+   "h": "7d6ee3cb",
+   "errors": [
+    "Wrong act or body part"
+   ],
+   "updatedAt": "2026-10-06T14:44:41.424Z"
+  },
+  {
+   "id": "M17",
+   "verdict": "correct",
+   "from": 2179,
+   "to": 2185,
+   "h": "81368cd2",
+   "errors": [],
+   "updatedAt": "2026-10-06T15:55:00.689Z"
+  },
+  {
+   "id": "S11",
+   "verdict": "correct",
+   "from": 2183,
+   "to": 2183,
+   "h": "905542d2",
+   "errors": [],
+   "updatedAt": "2026-10-06T15:55:34.544Z"
+  },
+  {
+   "id": "R88",
+   "verdict": "wrong",
+   "from": 2295,
+   "to": 2295,
+   "h": "6f40c10b",
+   "errors": [
+    "No act happened"
+   ],
+   "updatedAt": "2026-10-06T15:56:27.549Z"
+  },
+  {
+   "id": "R90",
+   "verdict": "wrong",
+   "from": 2776,
+   "to": 2776,
+   "h": "88cfc293",
+   "errors": [],
+   "updatedAt": "2026-10-06T15:57:41.949Z"
+  },
+  {
+   "id": "M26",
+   "verdict": "correct",
+   "from": 2874,
+   "to": 2878,
+   "h": "bc8b4610",
+   "errors": [],
+   "updatedAt": "2026-10-06T16:05:40.324Z"
+  },
+  {
+   "id": "M30",
+   "verdict": "correct",
+   "from": 2899,
+   "to": 2910,
+   "h": "b201958f",
+   "errors": [],
+   "updatedAt": "2026-10-06T16:06:27.855Z"
+  },
+  {
+   "id": "R95",
+   "verdict": "wrong",
+   "from": 2926,
+   "to": 2926,
+   "h": "3c15369b",
+   "errors": [],
+   "updatedAt": "2026-10-06T16:08:16.587Z"
+  }
+ ]
+}
