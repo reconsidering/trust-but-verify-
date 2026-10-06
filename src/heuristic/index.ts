@@ -1302,7 +1302,7 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
         const g = sm?.groups;
         return !g ? undefined : g.cast ? "cast" : g.pron ? "pron" : "out";
       };
-      const at = para.indexOf(sent);
+      const at = para.indexOf(original.trim());
       const prevSent = at > 0 ? para.slice(Math.max(0, at - 240), at).trim().split(/(?<=[.!?”])\s+/).pop() ?? "" : "";
       const cur = startOf(sent);
       if (cur === "out" || (cur === "pron" && /[.!?”]$/.test(prevSent) && startOf(prevSent) === "out")) { oneSided(pat, m, tTok, bTok, sent, original, pi, pat.subj === "t"); return; }
@@ -1349,7 +1349,18 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
     // "palm a dragon egg from top to bottom": the end of a thing, not a role.
     if (pat.id.startsWith("bottomed-for") && /\b(?:top|tops)\s+(?:to|and)\s+$/i.test(sent.slice(0, m.index!) + (/^\s*(?:to|and)\s+/i.exec(m[0])?.[0] ?? ""))) return;
     // "still slightly sore from being stretched open" is a bodily sign after sex, not a scene: it belongs with the soreness hints.
-    if (pat.cat === "anal" && !pat.signal && /\b(?:sore|aching|achy|tender|raw)\s+(?:from|after)\s+(?:being\s+|having\s+been\s+)(?:stretched|fucked|opened|taken|filled|used|ridden|pounded|bred|knotted|plowed|wrecked)\b/i.test(sent.slice(Math.max(0, m.index! - 40), m.index! + m[0].length))) return;
+    // "“Ow!” he yelped as he pulled away and looked at his cock in betrayal": he is looking at his own, hurt, body.
+    if (pat.id.startsWith("ogle-crotch") && /\b(?:yelp\w*|winc\w*|flinch\w*|hiss\w*|grimac\w*|ouch|ow)\b/i.test(sent) && /\b(?:his|her)\s+(?:\w+\s+)?(?:dick|cock|penis|erection|hard-?on|crotch|groin)\b/i.test(m[0])) return;
+    // "the memory of Dean on his knees with his mouth wrapped around his cock" while jerking off: remembered, not a scene now.
+    // It did happen earlier, so it is kept as a weaker, imagined-style reading rather than dropped (see `remembered` where the kind is chosen).
+    const remembered = !pat.signal && /\b(?:memor(?:y|ies)\s+of|remember(?:ed|ing)\s+(?:how|when|the|that|him|her|them|what)|recall(?:ed|ing)\s+(?:how|when|the|that)|reminisc\w+)\b/i.test(sent.slice(Math.max(0, m.index! - 90), m.index!));
+    // "Theo rocked himself shamelessly" with the other man inside him is being fucked, and "barely touching himself" with someone's mouth on him is being sucked.
+    if (pat.id.startsWith("mast-himself")) {
+      if (/\b(?:grind|ground|rock|thrust)\w*\s+(?:himself|herself|themselves|themself)\b/i.test(m[0]) && /\b(?:inside|buried|fucking|fucked|filling|filled|knot\w*|impaled|stretch\w*|thrust\w* into)\b/i.test(`${paras[pi - 1] ?? ""} ${sent}`)) return;
+      if (/\b(?:cock|dick|length)\s+in\s+(?:your|his|her|their)\s+(?:mouth|throat)\b/i.test(original)) return;
+    }
+    // "a bit sore here and there, as could be expected from getting fucked on the table": the same, with words in between and "getting".
+    if (pat.cat === "anal" && !pat.signal && /\b(?:sore|aching|achy|tender|raw)\b[^.!?;]{0,50}?\b(?:from|after)\s+(?:being\s+|getting\s+|having\s+been\s+)(?:stretched|fucked|opened|taken|filled|used|ridden|pounded|bred|knotted|plowed|wrecked)\b/i.test(sent.slice(Math.max(0, m.index! - 90), m.index! + m[0].length))) return;
     // "He fists Cregan from root to tip": a hand on a cock, not a fist in an ass.
     if (pat.id.startsWith("fisting") && /\b(?:root to tip|base to tip|tip to base|from the base|up and down|his (?:cock|dick|length|shaft)|(?:cock|dick|prick|shaft|length|erection))\b/i.test(sent.slice(m.index!, m.index! + m[0].length + 40)) && !/\b(?:ass|arse|hole|anus|rim|inside)\b/i.test(sent)) return;
     // "he tugged him gently to where he wanted him": a pull, not a handjob. Only "tugged him off" is.
@@ -1428,7 +1439,13 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
     // "it made him flush": with only that one person in the pattern, "him" is the one made to flush, i.e. the causer's partner,
     // not the partner of that person.
     if (causative && !subjChar && nearSubj && !(pat.subj === "t" ? bTok : tTok)) subjChar = nearSubj;
-    const resolved = asked ? { ...asked, basis: "pronoun" as Basis } : resolvePair(tTok, bTok, pat.subj, cast, ctx, subjChar, nearSubj);
+    // "Rhys has a vice grip in Theo’s hair, keeping him still as his throat pulses around his cock": the throat is the held man’s, the cock the holder’s.
+    let held: { top: Character; bottom: Character } | undefined;
+    if (pat.id === "lips-around" && /^(?:his|her|their)$/i.test(tTok ?? "") && /^(?:his|her|their)$/i.test(bTok ?? "") && /\b(?:keeping|holding|pinning|forcing|stilling|guiding|pushing|pulling)\s+(?:him|her|them)\b[^.!?]*\b(?:as|while|and|so)\s*$/i.test(sent.slice(0, m.index!))) {
+      const named = [...new Set(ctx.sentMentions.filter((x) => x.at < m.index!).map((x) => x.c))];
+      if (named.length === 2) held = { top: named[0], bottom: named[1] };
+    }
+    const resolved = asked ? { ...asked, basis: "pronoun" as Basis } : held ? { ...held, basis: "pronoun" as Basis } : resolvePair(tTok, bTok, pat.subj, cast, ctx, subjChar, nearSubj);
     ctx.coSubjects.clear();
     opts.trace?.({ para: pi, via: pat.id, match: m[0], sentence: original, tToken: tTok, bToken: bTok, top: resolved?.top?.name, bottom: resolved?.bottom?.name, basis: resolved?.basis, elidedSubject: subjChar?.name, clauseSubject: nearSubj?.name, lastSubject: ctx.lastSubject?.name, pov: ctx.povNow?.name });
     if (!resolved) { oneSided(pat, m, tTok, bTok, sent, original, pi); return; }
@@ -2027,7 +2044,8 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
     const negated = !ifNot && !doubleNeg && !notWithout && !pretence && !notOnly && !negElsewhere && (NEG.test(noHold(aux)) || NEG.test(noHold(negWindow)) || NEG.test(noHold(negWindow.slice(-14) + matchText.slice(0, 8))) || /\b(?:never|refus(?:ed|es|e|ing) to|declin(?:ed|es|e|ing) to)\b/i.test(pat.id === "cock-never-leaving" ? matchText.replace(/\bnever\s+(?=leav)/i, "") : matchText));
     let kind: Desire["kind"] | "act" = "act";
     if (fantasyPara || FANTASY.test(window) || STRONG_FANTASY.test(prefix)) kind = "fantasy";
-    else if (DESIRE_LEAD.test(sent) || DESIRE.test(window.replace(/\b(?:that|which|what it|it)\s+(?:want|need)(?:ed|s)?\s+to\b/gi, " ").replace(/\b(?:does|did|do)(?:n['’]t| not)\s+(?:even\s+)?resist\s+the\s+(?:temptation|urge|impulse)\b(?:\s+(?:he|she|they)\s+(?:has|have|had|feels?|felt))?/gi, " ")) || DESIRE_TAIL.test(window) || DESIRE.test(aux) || DESIRE.test(m.groups?.lead ?? "") || /^(?:want|need|crav)/i.test(m.groups?.lead ?? "")) kind = "wanted";
+    else if (remembered && !pat.signal) kind = "hypothetical";
+    else if (DESIRE_LEAD.test(sent) || DESIRE.test(window.replace(/\b(?:that|which|what it|it)\s+(?:want|need)(?:ed|s)?\s+to\b/gi, " ").replace(/\b(?:giv\w*|gave|got|get\w*|deliver\w*|provid\w*)\s+(?:(?:him|her|them|you|me)\s+)?(?:exactly\s+|just\s+|only\s+)?(?:what|all)\s+(?:he|she|they|you|I)(?:['’]d)?\s+(?:want|need)(?:ed|s)?\b/gi, " ").replace(/\b(?:does|did|do)(?:n['’]t| not)\s+(?:even\s+)?resist\s+the\s+(?:temptation|urge|impulse)\b(?:\s+(?:he|she|they)\s+(?:has|have|had|feels?|felt))?/gi, " ")) || DESIRE_TAIL.test(window) || DESIRE.test(aux) || DESIRE.test(m.groups?.lead ?? "") || /^(?:want|need|crav)/i.test(m.groups?.lead ?? "")) kind = "wanted";
     else if (/\b(?:want|need|wish|hope|long|crave)\w*\b[^.!?]*\b(?:and|but)\s+(?:then\s+)?(?:have|let|make|get)\s*$/i.test(prefix)) kind = "wanted";
     else if (/\b(?:want|need|wish|hope|long|crave)\w*\s+(?:\w+\s+){0,3}?to\b[^.!?]*\band\s+\w*(?:\s+\w*){0,2}$/i.test(prefix + matchText.slice(0, 14))) kind = "wanted";
     else if (HABIT_AUX.test(aux) && (pat.id === "bottomed-for" || pat.id === "topped")) kind = "identity";
