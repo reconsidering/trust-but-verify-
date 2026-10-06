@@ -1350,7 +1350,7 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
     if (pat.id.startsWith("bottomed-for") && /\b(?:top|tops)\s+(?:to|and)\s+$/i.test(sent.slice(0, m.index!) + (/^\s*(?:to|and)\s+/i.exec(m[0])?.[0] ?? ""))) return;
     // "still slightly sore from being stretched open" is a bodily sign after sex, not a scene: it belongs with the soreness hints.
     // "had to restrain himself from pinning Dean to the wall": the act is held back, not done.
-    if (pat.signal && /\b(?:restrain\w*|refrain\w*|resist\w*|stop\w*|prevent\w*|keep\w*|hold(?:ing)?\s+back)\s+(?:himself\s+|herself\s+|themselves\s+|\w+\s+)?from\s*$/i.test(sent.slice(Math.max(0, m.index! - 60), m.index!) + (/^\s*from\b/i.exec(m[0])?.[0] ?? ""))) return;
+    if (pat.signal && /\b(?:(?:restrain\w*|resist\w*|stop\w*|prevent\w*|keep\w*|hold(?:ing)?\s+back)\s+(?:himself|herself|themselves)|refrain\w*|abstain\w*)\s+from\s*$/i.test(sent.slice(Math.max(0, m.index! - 60), m.index!) + (/^\s*from\b/i.exec(m[0])?.[0] ?? ""))) return;
     // "ran his hands through his hair in frustration", "smoothing his hands down the front of his suit": his own hair, his own clothes.
     if (pat.id.startsWith("care-soothe") && (
       // His own hair, when the same sentence says it is about his own state (in frustration, fixing it, trying to stop his hands shaking…); with two men the same "his" can be either.

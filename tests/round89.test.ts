@@ -34,4 +34,7 @@ describe("round 89: weak patterns", () => {
     expect(run("Though, if Rhys can ever get himself to finally fuck Theo, he’d much rather cockwarm like that.").who(/^fuck/).length).toBeGreaterThan(0);
     expect(run("Theo shivered as Rhys ran his fingers through his chest hair with a hum.").who(/^care-soothe/).length).toBeGreaterThan(0);
   });
+  it("‘a desire to stop Theo from stammering’ still says Theo is stammering; only holding oneself back cancels the act", () => {
+    expect(run("“No,” Rhys said, more out of a desire to stop Theo from stammering than anything else.").who(/^flustered/).length).toBeGreaterThan(0);
+  });
 });
