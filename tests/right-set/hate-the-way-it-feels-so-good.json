@@ -684,14 +684,14 @@
    "who": "Eddie Munson",
    "via": "mast-own",
    "h": "2e0e78a6",
-   "weight": 0.85,
-   "source": "claude",
+   "source": "owner",
    "marks": {
-    "right": 1,
+    "right": 2,
     "wrong": 0
    },
    "seen": [
-    "2026-10-05"
+    "2026-10-05",
+    "2026-10-06"
    ]
   },
   {
@@ -834,14 +834,14 @@
    "via": "tongue-in-hole",
    "h": "999bcbbc",
    "conf": 78,
-   "weight": 0.85,
-   "source": "claude",
+   "source": "owner",
    "marks": {
-    "right": 1,
+    "right": 2,
     "wrong": 0
    },
    "seen": [
-    "2026-10-05"
+    "2026-10-05",
+    "2026-10-06"
    ]
   },
   {
@@ -937,7 +937,8 @@
    "source": "claude",
    "seen": [
     "2026-10-05"
-   ]
+   ],
+   "retired": "owner judged this right in a blind spot-check 2026-10-06"
   },
   {
    "kind": "hint",
@@ -972,7 +973,8 @@
    "source": "claude",
    "seen": [
     "2026-10-05"
-   ]
+   ],
+   "retired": "owner judged this right in a blind spot-check 2026-10-06"
   },
   {
    "kind": "hint",
@@ -1078,7 +1080,8 @@
    "source": "claude",
    "seen": [
     "2026-10-05"
-   ]
+   ],
+   "retired": "owner judged this right in a blind spot-check 2026-10-06"
   },
   {
    "kind": "solo",
@@ -1107,10 +1110,10 @@
    "conf": 48,
    "misread": true,
    "gone": false,
-   "weight": 0.3,
-   "source": "claude",
+   "source": "owner",
    "seen": [
-    "2026-10-05"
+    "2026-10-05",
+    "2026-10-06"
    ]
   },
   {
@@ -1123,10 +1126,10 @@
    "h": "9ea2e197",
    "misread": true,
    "gone": false,
-   "weight": 0.3,
-   "source": "claude",
+   "source": "owner",
    "seen": [
-    "2026-10-05"
+    "2026-10-05",
+    "2026-10-06"
    ]
   },
   {

@@ -429,14 +429,14 @@
    "via": "body-hole-ache",
    "h": "ca5c20d0",
    "conf": 36,
-   "weight": 0.85,
-   "source": "claude",
+   "source": "owner",
    "marks": {
-    "right": 1,
+    "right": 2,
     "wrong": 0
    },
    "seen": [
-    "2026-10-05"
+    "2026-10-05",
+    "2026-10-06"
    ]
   },
   {
@@ -568,14 +568,14 @@
    "via": "toy-removed",
    "h": "3e56643d",
    "conf": 29,
-   "weight": 0.85,
-   "source": "claude",
+   "source": "owner",
    "marks": {
-    "right": 1,
+    "right": 2,
     "wrong": 0
    },
    "seen": [
-    "2026-10-05"
+    "2026-10-05",
+    "2026-10-06"
    ]
   },
   {
@@ -588,14 +588,14 @@
    "via": "knot-owner",
    "h": "167fa0f1",
    "conf": 29,
-   "weight": 0.85,
-   "source": "claude",
+   "source": "owner",
    "marks": {
-    "right": 1,
+    "right": 2,
     "wrong": 0
    },
    "seen": [
-    "2026-10-05"
+    "2026-10-05",
+    "2026-10-06"
    ]
   },
   {
@@ -1893,7 +1893,8 @@
    },
    "seen": [
     "2026-10-05"
-   ]
+   ],
+   "retired": "owner judged this wrong in a blind spot-check 2026-10-06"
   },
   {
    "kind": "hint",
@@ -2160,7 +2161,8 @@
    },
    "seen": [
     "2026-10-05"
-   ]
+   ],
+   "retired": "owner judged this wrong in a blind spot-check 2026-10-06"
   },
   {
    "kind": "solo",
@@ -2274,14 +2276,14 @@
    "bottom": "Dean Winchester",
    "via": "fingers-to-hole",
    "h": "f157ecc3",
-   "weight": 0.85,
-   "source": "claude",
+   "source": "owner",
    "marks": {
-    "right": 1,
+    "right": 2,
     "wrong": 0
    },
    "seen": [
-    "2026-10-05"
+    "2026-10-05",
+    "2026-10-06"
    ]
   },
   {
@@ -2405,14 +2407,14 @@
    "via": "sucked",
    "h": "23e5257c",
    "conf": 68,
-   "weight": 0.85,
-   "source": "claude",
+   "source": "owner",
    "marks": {
-    "right": 1,
+    "right": 2,
     "wrong": 0
    },
    "seen": [
-    "2026-10-05"
+    "2026-10-05",
+    "2026-10-06"
    ]
   },
   {
@@ -3255,10 +3257,10 @@
    "conf": 25,
    "misread": true,
    "gone": true,
-   "weight": 0.3,
-   "source": "claude",
+   "source": "owner",
    "seen": [
-    "2026-10-05"
+    "2026-10-05",
+    "2026-10-06"
    ]
   },
   {
@@ -3273,10 +3275,10 @@
    "conf": 25,
    "misread": true,
    "gone": true,
-   "weight": 0.3,
-   "source": "claude",
+   "source": "owner",
    "seen": [
-    "2026-10-05"
+    "2026-10-05",
+    "2026-10-06"
    ]
   },
   {
@@ -3399,7 +3401,8 @@
    "source": "claude",
    "seen": [
     "2026-10-05"
-   ]
+   ],
+   "retired": "owner judged this right in a blind spot-check 2026-10-06"
   },
   {
    "kind": "hint",
@@ -3453,7 +3456,8 @@
    "source": "claude",
    "seen": [
     "2026-10-05"
-   ]
+   ],
+   "retired": "owner judged this right in a blind spot-check 2026-10-06"
   },
   {
    "kind": "hint",
@@ -3526,7 +3530,8 @@
    "source": "claude",
    "seen": [
     "2026-10-05"
-   ]
+   ],
+   "retired": "owner judged this right in a blind spot-check 2026-10-06"
   },
   {
    "kind": "hint",
@@ -3654,10 +3659,10 @@
    "conf": 16,
    "misread": true,
    "gone": true,
-   "weight": 0.3,
-   "source": "claude",
+   "source": "owner",
    "seen": [
-    "2026-10-05"
+    "2026-10-05",
+    "2026-10-06"
    ]
   },
   {
@@ -3687,10 +3692,10 @@
    "conf": 40,
    "misread": true,
    "gone": false,
-   "weight": 0.3,
-   "source": "claude",
+   "source": "owner",
    "seen": [
-    "2026-10-05"
+    "2026-10-05",
+    "2026-10-06"
    ]
   },
   {
@@ -3792,7 +3797,8 @@
    "source": "claude",
    "seen": [
     "2026-10-05"
-   ]
+   ],
+   "retired": "owner judged this right in a blind spot-check 2026-10-06"
   },
   {
    "kind": "scene",
@@ -3826,7 +3832,8 @@
    "source": "claude",
    "seen": [
     "2026-10-05"
-   ]
+   ],
+   "retired": "owner judged this right in a blind spot-check 2026-10-06"
   },
   {
    "kind": "scene",
@@ -3839,10 +3846,10 @@
    "conf": 34,
    "misread": true,
    "gone": true,
-   "weight": 0.3,
-   "source": "claude",
+   "source": "owner",
    "seen": [
-    "2026-10-05"
+    "2026-10-05",
+    "2026-10-06"
    ]
   },
   {
@@ -3955,6 +3962,35 @@
    "source": "owner",
    "seen": [
     "2026-10-05"
+   ]
+  },
+  {
+   "kind": "hint",
+   "card": "blowjob",
+   "pairing": "Castiel/Dean Winchester",
+   "who": "Dean Winchester",
+   "role": "bottom",
+   "wants": true,
+   "via": "dd2-cock-in-mouth",
+   "h": "90cdb2ef",
+   "conf": 22,
+   "misread": true,
+   "source": "owner",
+   "seen": [
+    "2026-10-06"
+   ]
+  },
+  {
+   "kind": "solo",
+   "card": "solo",
+   "pairing": "Castiel/Dean Winchester",
+   "who": "Dean Winchester",
+   "via": "dd2-mast-take-in-hand",
+   "h": "9ff26b87",
+   "misread": true,
+   "source": "owner",
+   "seen": [
+    "2026-10-06"
    ]
   }
  ]

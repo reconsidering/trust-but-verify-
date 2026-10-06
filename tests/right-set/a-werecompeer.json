@@ -578,7 +578,8 @@
    },
    "seen": [
     "2026-10-05"
-   ]
+   ],
+   "retired": "owner judged this wrong in a blind spot-check 2026-10-06"
   },
   {
    "kind": "hint",
@@ -610,14 +611,14 @@
    "via": "grab-ass",
    "h": "43c897b7",
    "conf": 51,
-   "weight": 0.85,
-   "source": "claude",
+   "source": "owner",
    "marks": {
-    "right": 1,
+    "right": 2,
     "wrong": 0
    },
    "seen": [
-    "2026-10-05"
+    "2026-10-05",
+    "2026-10-06"
    ]
   },
   {
@@ -680,7 +681,8 @@
    ],
    "disputedOn": [
     "2026-10-05"
-   ]
+   ],
+   "retired": "owner judged this wrong in a blind spot-check 2026-10-06"
   },
   {
    "kind": "hint",
@@ -712,14 +714,14 @@
    "via": "stated-bottom-pref",
    "h": "66c67268",
    "conf": 55,
-   "weight": 0.85,
-   "source": "claude",
+   "source": "owner",
    "marks": {
-    "right": 1,
+    "right": 2,
     "wrong": 0
    },
    "seen": [
-    "2026-10-05"
+    "2026-10-05",
+    "2026-10-06"
    ]
   },
   {
@@ -760,7 +762,8 @@
    },
    "seen": [
     "2026-10-05"
-   ]
+   ],
+   "retired": "owner judged this wrong in a blind spot-check 2026-10-06"
   },
   {
    "kind": "solo",
@@ -1128,10 +1131,10 @@
    "conf": 25,
    "misread": true,
    "gone": true,
-   "weight": 0.3,
-   "source": "claude",
+   "source": "owner",
    "seen": [
-    "2026-10-05"
+    "2026-10-05",
+    "2026-10-06"
    ]
   },
   {
@@ -1182,10 +1185,10 @@
    "conf": 72,
    "misread": true,
    "gone": false,
-   "weight": 0.3,
-   "source": "claude",
+   "source": "owner",
    "seen": [
-    "2026-10-05"
+    "2026-10-05",
+    "2026-10-06"
    ]
   },
   {
@@ -1240,7 +1243,8 @@
    "source": "claude",
    "seen": [
     "2026-10-05"
-   ]
+   ],
+   "retired": "owner judged this right in a blind spot-check 2026-10-06"
   },
   {
    "kind": "solo",
@@ -1302,7 +1306,8 @@
    "source": "claude",
    "seen": [
     "2026-10-05"
-   ]
+   ],
+   "retired": "owner judged this right in a blind spot-check 2026-10-06"
   },
   {
    "kind": "scene",
@@ -1315,10 +1320,10 @@
    "conf": 50,
    "misread": true,
    "gone": true,
-   "weight": 0.3,
-   "source": "claude",
+   "source": "owner",
    "seen": [
-    "2026-10-05"
+    "2026-10-05",
+    "2026-10-06"
    ]
   },
   {
@@ -1353,7 +1358,8 @@
    "source": "claude",
    "seen": [
     "2026-10-05"
-   ]
+   ],
+   "retired": "owner judged this right in a blind spot-check 2026-10-06"
   },
   {
    "kind": "scene",
@@ -1420,7 +1426,8 @@
    "source": "claude",
    "seen": [
     "2026-10-05"
-   ]
+   ],
+   "retired": "owner judged this right in a blind spot-check 2026-10-06"
   },
   {
    "kind": "scene",
@@ -1486,6 +1493,57 @@
    "source": "owner",
    "seen": [
     "2026-10-05"
+   ]
+  },
+  {
+   "kind": "hint",
+   "card": "anal",
+   "pairing": "Derek Hale/Stiles Stilinski",
+   "who": "Stiles Stilinski",
+   "role": "bottom",
+   "wants": true,
+   "via": "riding",
+   "h": "6205208d",
+   "conf": 80,
+   "misread": true,
+   "source": "owner",
+   "seen": [
+    "2026-10-06"
+   ]
+  },
+  {
+   "kind": "hint",
+   "card": "blowjob",
+   "pairing": "Derek Hale/Stiles Stilinski",
+   "who": "Stiles Stilinski",
+   "role": "bottom",
+   "wants": true,
+   "via": "sinks-to-floor",
+   "h": "b00ac95",
+   "conf": 31,
+   "misread": true,
+   "source": "owner",
+   "seen": [
+    "2026-10-06"
+   ]
+  },
+  {
+   "kind": "hint",
+   "card": "anal",
+   "pairing": "Derek Hale/Stiles Stilinski",
+   "who": "Stiles Stilinski",
+   "role": "bottom",
+   "wants": true,
+   "via": "fuck",
+   "h": "8902df48",
+   "conf": 84,
+   "disputedOn": [
+    "2026-10-05"
+   ],
+   "misread": true,
+   "source": "owner",
+   "seen": [
+    "2026-10-06"
    ]
   }
  ]

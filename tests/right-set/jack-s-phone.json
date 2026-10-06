@@ -1169,7 +1169,8 @@
    },
    "seen": [
     "2026-10-05"
-   ]
+   ],
+   "retired": "owner judged this wrong in a blind spot-check 2026-10-06"
   },
   {
    "kind": "scene",
@@ -1465,14 +1466,14 @@
    "via": "licked-cock",
    "h": "822aa688",
    "conf": 64,
-   "weight": 0.85,
-   "source": "claude",
+   "source": "owner",
    "marks": {
-    "right": 1,
+    "right": 2,
     "wrong": 0
    },
    "seen": [
-    "2026-10-05"
+    "2026-10-05",
+    "2026-10-06"
    ]
   },
   {
@@ -2109,10 +2110,10 @@
    "conf": 31,
    "misread": true,
    "gone": false,
-   "weight": 0.3,
-   "source": "claude",
+   "source": "owner",
    "seen": [
-    "2026-10-05"
+    "2026-10-05",
+    "2026-10-06"
    ]
   },
   {
@@ -2124,10 +2125,10 @@
    "h": "6a4ea838",
    "misread": true,
    "gone": false,
-   "weight": 0.3,
-   "source": "claude",
+   "source": "owner",
    "seen": [
-    "2026-10-05"
+    "2026-10-05",
+    "2026-10-06"
    ]
   },
   {
@@ -2177,7 +2178,8 @@
    "source": "claude",
    "seen": [
     "2026-10-05"
-   ]
+   ],
+   "retired": "owner judged this right in a blind spot-check 2026-10-06"
   },
   {
    "kind": "scene",
@@ -2229,7 +2231,8 @@
    "source": "claude",
    "seen": [
     "2026-10-05"
-   ]
+   ],
+   "retired": "owner judged this right in a blind spot-check 2026-10-06"
   },
   {
    "kind": "scene",
@@ -2282,7 +2285,8 @@
    "source": "claude",
    "seen": [
     "2026-10-05"
-   ]
+   ],
+   "retired": "owner judged this right in a blind spot-check 2026-10-06"
   },
   {
    "kind": "scene",
@@ -2299,7 +2303,8 @@
    "source": "claude",
    "seen": [
     "2026-10-05"
-   ]
+   ],
+   "retired": "owner judged this right in a blind spot-check 2026-10-06"
   },
   {
    "kind": "scene",
@@ -2316,7 +2321,8 @@
    "source": "claude",
    "seen": [
     "2026-10-05"
-   ]
+   ],
+   "retired": "owner judged this right in a blind spot-check 2026-10-06"
   },
   {
    "kind": "scene",
@@ -2333,6 +2339,22 @@
    "source": "claude",
    "seen": [
     "2026-10-05"
+   ],
+   "retired": "owner judged this right in a blind spot-check 2026-10-06"
+  },
+  {
+   "kind": "scene",
+   "card": "anal",
+   "pairing": "Dracula/Jack Seward",
+   "top": "Dracula",
+   "bottom": "Jack Seward",
+   "via": "be-fucked",
+   "h": "eec52eac",
+   "conf": 36,
+   "misread": true,
+   "source": "owner",
+   "seen": [
+    "2026-10-06"
    ]
   }
  ]
