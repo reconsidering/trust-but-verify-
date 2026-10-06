@@ -63,7 +63,8 @@ describe("the context model", () => {
     const base = { sent: "He pushed inside him, slowly.", paras: ["He pushed inside him, slowly."], pi: 0, basis: "pronoun" as const, elided: false, actorNamed: false, anyNamed: false };
     const pair = featuresOf({ ...base, pairBoth: true }), other = featuresOf({ ...base, pairBoth: false });
     expect(probability(0.9, pair)).toBeGreaterThan(probability(0.9, other));
-    expect(trustOf("some-pattern", pair)).toBeGreaterThan(trustOf("some-pattern", other));
+    // Trust is capped at 1, so two probabilities above 0.9 can receive equal multipliers.
+    expect(trustOf("some-pattern", pair)).toBeGreaterThanOrEqual(trustOf("some-pattern", other));
   });
   it("never trusts a hit by less than the floor or by more than one", () => {
     const f = featuresOf({ sent: "x ".repeat(80), paras: [""], pi: 0, basis: "inferred", elided: true, pairBoth: false, actorNamed: false, anyNamed: false });

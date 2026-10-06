@@ -184,18 +184,18 @@ describe.skipIf(!dir)("context model", () => {
     //  - by fic (every hit of a fic is held out together, so the score is for fics the model has not seen: the honest one).
     const K = 5, lambda = Number(process.env.LAMBDA ?? 8);
     type Pred = { pb: number[]; pm: number[]; ys: number[]; src: string[]; ws: number[] };
-    const cv = (fold: (r: Row) => number): Pred => {
+    const cv = (fold: (r: Row) => number, featureCount: number = FEATURES.length): Pred => {
       const out: Pred = { pb: [], pm: [], ys: [], src: [], ws: [] };
       const testOnly = process.env.LEARN_TEST_ON?.split(","); // a diagnostic: train on every row, score only rows from these sources
       for (let k = 0; k < K; k++) {
         const train = rows.filter((r) => fold(r) !== k), test = rows.filter((r) => fold(r) === k && (!testOnly || testOnly.includes(r.src ?? "audit")));
         const prec = precisions(train);
         // Inside training, each row's own label is left out of its pattern's precision.
-        const Xtr = train.map((r) => [logit(clampP(precisions(train, r)(r.id))), ...r.f]);
+        const Xtr = train.map((r) => [logit(clampP(precisions(train, r)(r.id))), ...r.f.slice(0, featureCount)]);
         const w = fit(Xtr, train.map((r) => r.y), lambda, train.map((r) => r.wt ?? 1));
         for (const r of test) {
           const base = prec(r.id);
-          const x = [logit(clampP(base)), ...r.f];
+          const x = [logit(clampP(base)), ...r.f.slice(0, featureCount)];
           let z = w[0];
           for (let i = 0; i < x.length; i++) z += w[i + 1] * x[i];
           out.pb.push(base); out.pm.push(sig(z)); out.ys.push(r.y); out.src.push(r.src ?? "audit"); out.ws.push(r.wt ?? 1);
@@ -207,6 +207,12 @@ describe.skipIf(!dir)("context model", () => {
     const unseen = cv((r) => hash(r.fic ?? r.key) % K);
     const { pb, pm, ys } = rnd;
     const row = (name: string, ps: number[], y: number[], w?: number[]) => `| ${name} | ${wlogloss(ps, y, w).toFixed(4)} | ${wbrier(ps, y, w).toFixed(4)} | ${wauc(ps, y, w).toFixed(3)} |`;
+    if (process.env.COMPARE_FEATURES) {
+      const legacy = cv((r) => hash(r.fic ?? r.key) % K, LEGACY_FEATURES.length);
+      lines.push("Feature comparison on identical labels and held-out fic folds:", "", "| | log loss | Brier | AUC |", "|---|---|---|---|",
+        row("original 15 features", legacy.pm, legacy.ys, legacy.ws),
+        row("expanded 49 features", unseen.pm, unseen.ys, unseen.ws), "");
+    }
     const rep = (name: string, ps: number[]) => row(name, ps, ys);
     lines.push(`Held-out (${K}-fold, ridge ${lambda}):`, "", "| | log loss | Brier | AUC |", "|---|---|---|---|", rep("pattern record only", pb), rep("pattern record + context", pm), "");
     // Fics the model has not seen, and the same split by where each label came from.

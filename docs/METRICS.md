@@ -13,6 +13,24 @@ labels), so compare the *gap* between the two columns more than the absolute val
 | 2026-10-05 | 1,857 (123) | 0.2478 → 0.2361 | 0.568 → 0.646 | 0.2096 → 0.1914 | 0.563 → 0.676 | c144b6b |
 | 2026-10-06 | 1,848 (101) | 0.2143 → 0.1941 | 0.606 → 0.715 | 0.2103 → 0.1921 | 0.598 → 0.703 | dee23e0 |
 | 2026-10-06 | 1,841 (96) | 0.2068 → 0.1863 | 0.612 → 0.724 | 0.2039 → 0.1846 | 0.604 → 0.716 | 309407d |
+| 2026-10-06 | 1,838 (99) | 0.2124 → 0.1890 | 0.596 → 0.734 | 0.2128 → 0.1945 | 0.573 → 0.700 | based on 3d11c32 |
+
+## Attribution and act-selection features (Oct 6)
+
+After the feature and owner-label corrections merged, both models were trained and evaluated on the same 1,838 labelled readings with the same five held-out fic folds and ridge penalty 8. This comparison isolates the extra features; comparing against earlier rows would also include changes to the labels and engine.
+
+| Feature set | Unseen-fic log loss | Unseen-fic Brier | Unseen-fic AUC |
+|---|---|---|---|
+| Original 15 context features | 0.2029 | 0.0496 | 0.623 |
+| Expanded 49 context features | 0.1945 | 0.0485 | 0.700 |
+
+The expanded set lowers log loss by 0.0084 (about 4%) and raises AUC by 0.077. These are trust-weighted cross-validation estimates for the correctness of detected readings, not missed-scene recall or a test on a separate new corpus. There are 99 wrong readings; the labels are selected reviews, not a random sample of every detection. No confidence interval was calculated. Fourteen audit/report disagreements were excluded by the existing trainer.
+
+The expanded model is not equally good across label sources. On the 223 full-weight mistake-report readings (28 wrong), unseen-fic log loss is 0.436 versus 0.401 for the pattern record alone, although AUC improves from 0.547 to 0.601. On the 1,460 audit readings (67 wrong), log loss is 0.169 and AUC 0.758. Aggregate improvement should not be read as proof that every reported error is fixed.
+
+To reproduce the comparison without changing model weights, run `AO3_DIR=ao3-samples COMPARE_FEATURES=1 npx vitest run tests/learn.test.ts --testTimeout=1500000`. An optional fresh `ROWS_CACHE` path saves the extracted 49-feature rows for subsequent comparisons; use a new path after changing labels or feature extraction. The feature comparison always retrains both sets on identical rows and splits.
+
+The 55-fic regression against `3d11c32` found no changed audit readings and no verdict changes for existing pairings; 13 existing act confidence scores changed. One additional tagged-mode pairing, Cliff/Tanner in `lucky-find`, crossed the existing incidental-pair visibility threshold and appears as unclear anal at 19% confidence. Inspection found existing finger act/attribution errors in its evidence; the new model does not fix those errors. This visibility change is a limitation of the model update, separate from the aggregate metric improvement. Gold totals remain 17/17 verdicts, 81 scenes right, 0 flipped, 7 missed, and 7 false positives; accepted-reading replay and the build passed. After adjusting a test to allow equal capped trust while still requiring a strictly higher underlying pair probability, the full unit suite passed (1,428 tests).
 
 ## Reading the Oct 5 row
 
