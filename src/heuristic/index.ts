@@ -39,6 +39,8 @@ export interface AuditHit {
   sentence: string;
   a: string;
   b?: string;
+  /** For hints and desires: which role the line points the credited person toward (top / bottom). */
+  role?: string;
 }
 
 export interface PatternOptions {
@@ -2352,7 +2354,7 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
   });
   if (opts.audit) {
     for (const h of acts) opts.audit({ via: h.via ?? "?", f: h.feat, kind: "act", cat: h.cat, act: h.act, para: h.para, sentence: h.sentence, a: h.top.name, b: h.bottom.name });
-    for (const h of desires) opts.audit({ via: h.via ?? "?", f: h.feat, kind: h.kind, cat: h.cat, act: h.act, para: h.para, sentence: h.sentence, a: h.who.name, b: h.partner?.name });
+    for (const h of desires) opts.audit({ via: h.via ?? "?", f: h.feat, kind: h.kind, role: h.role, cat: h.cat, act: h.act, para: h.para, sentence: h.sentence, a: h.who.name, b: h.partner?.name });
   }
   const textingResult = summarizeTexts([...texting.messages, ...narratedTexts], where);
   return {

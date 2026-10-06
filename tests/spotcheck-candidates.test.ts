@@ -43,7 +43,7 @@ describe.skipIf(!out)("spot-check candidates", () => {
         seen.add(key);
         const para = paras[h.para] ?? "", s = h.sentence.trim();
         rows.push({
-          key, claude: mine[0].claude, fic: f.replace(/\.html$/, ""), via: h.via, kind: h.kind, act: h.act, a: h.a, b: h.b,
+          key, claude: mine[0].claude, fic: f.replace(/\.html$/, ""), via: h.via, kind: h.kind, role: h.role, act: h.act, a: h.a, b: h.b,
           p: Number(probability(precisionOf(h.via), h.f).toFixed(4)),
           before: cap(paras[h.para - 1] ?? ""), para: para.includes(s) ? cap(para.replace(s, `【${s}】`), 1400) : `【${cap(para, 1400)}】`, after: cap(paras[h.para + 1] ?? ""),
         });
