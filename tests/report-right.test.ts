@@ -39,4 +39,9 @@ describe("the mistake report keeps what looks right", () => {
   it("leaves out an item taken out of the report", () => {
     expect(buildReport({ ...base, flags: [], right: [flag({ included: false })] })).not.toContain("look right (");
   });
+  it("carries the surrounding paragraphs for an item marked right, as it does for a mistake", () => {
+    const text = buildReport({ ...base, flags: [], right: [flag({ id: "r", evidence: "The sentence.", context: "Before it. ¶ The sentence. ¶ After it.", span: 1 })] });
+    const right = text.slice(text.indexOf("## Things I checked that look right"));
+    expect(right).toContain("Around it (1 paragraph either side): Before it. ¶ The sentence. ¶ After it.");
+  });
 });
