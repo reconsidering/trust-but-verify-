@@ -81,8 +81,8 @@ const T = {
   "titfucking": "{A} is fucking {B}'s chest",
   "touching a bulge": "{A} is touching {B}'s bulge",
   "touching the hole": "{A} is touching {B}'s hole",
-  "toy at the hole": "{A} has a toy at {B}'s hole",
-  "toy inside": "{A} has a toy inside {B}",
+  "toy at the hole": "{A} is holding a toy at {B}'s hole",
+  "toy inside": "{A} is putting a toy inside {B}",
   "toying with a chastity device": "{A} is toying with {B}'s chastity device",
   "using a toy on himself": "{A} is using a toy on themself",
   "using an alpha voice": "{A} is using an alpha voice on {B}",
@@ -136,6 +136,8 @@ const Q = { hypothetical: " (read as a hypothetical, not something that happens)
 // When the credited person is the one being penetrated, sucked or licked (a hint or a wish that points them toward the bottom role), the sentence
 // has to say so: "A is having anal sex with B, as the one penetrating" would be the reverse of what the engine means.
 const BOTTOM = {
+  "toy inside": "{A} has a toy inside them (with {B})",
+  "toy at the hole": "{A} has a toy at their own hole (with {B})",
   "anal sex": "{A} is being fucked anally by {B}",
   "anal sex (riding)": "{A} is riding {B} (anal sex)",
   "anal sex (strap-on/toy)": "{A} is being fucked with a toy or strap-on by {B}",
