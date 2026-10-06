@@ -9,7 +9,7 @@ import { describe, expect, it } from "vitest";
 import { type RightSet, baseVia, hashKey, slugOf, strengthOf, weightOf } from "../scripts/right-set.mjs";
 import { extractFromHtml } from "../src/extract";
 import { analyzeWithPatterns } from "../src/heuristic";
-import { FEATURES, MODEL, probability } from "../src/heuristic/learned";
+import { FEATURES, LEGACY_FEATURES, MODEL, probability } from "../src/heuristic/learned";
 
 const dir = process.env.AO3_DIR;
 const labelDir = join(__dirname, "labels");
@@ -143,7 +143,9 @@ describe.skipIf(!dir)("context model", () => {
     const missing: Record<string, string> = {};
     let reportNote = "";
     const cache = process.env.ROWS_CACHE;
-    if (cache && existsSync(cache)) rows = JSON.parse(readFileSync(cache, "utf8"));
+    const cached = cache && existsSync(cache) ? JSON.parse(readFileSync(cache, "utf8")) as Row[] : undefined;
+    const validCache = cached?.length && cached.every((r) => r.f.length === FEATURES.length && r.f.every(Number.isFinite));
+    if (validCache) rows = cached;
     else {
       const reported = rightSetLabels();
       let fromReports = 0, clashes = 0;
@@ -169,7 +171,7 @@ describe.skipIf(!dir)("context model", () => {
       }
       reportNote = `${fromReports} of them come from mistake reports (tests/right-set); ${clashes} were left out because a report and the audit review disagreed.`;
     }
-    if (cache && !existsSync(cache)) writeFileSync(cache, JSON.stringify(rows));
+    if (cache && !validCache) writeFileSync(cache, JSON.stringify(rows));
     // LEARN_FILTER=audit,report keeps only rows from those sources (a diagnostic: which labels move the held-out numbers).
     if (process.env.LEARN_FILTER) { const keep = process.env.LEARN_FILTER.split(","); rows = rows.filter((r) => keep.includes(r.src ?? "audit")); }
     if (process.env.MISSING_OUT) writeFileSync(process.env.MISSING_OUT, JSON.stringify(missing));
@@ -248,6 +250,6 @@ describe.skipIf(!dir)("context model", () => {
       );
       writeFileSync(p, src);
     }
-    expect(MODEL.weights.length === 0 || MODEL.weights.length === FEATURES.length).toBe(true);
+    expect(MODEL.weights.length === 0 || MODEL.weights.length === LEGACY_FEATURES.length || MODEL.weights.length === FEATURES.length).toBe(true);
   }, 1_500_000);
 });

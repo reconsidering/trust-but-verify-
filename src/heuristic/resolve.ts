@@ -1,6 +1,7 @@
 import { type Cast, type Character, type Gender } from "./characters";
 import { canonEpithet } from "./epithets";
 import { Basis } from "./hits";
+import type { AttributionEvidence, PersonOrigin } from "./decision-features";
 
 // ───────────── character resolution ─────────────
 
@@ -148,6 +149,19 @@ export class Ctx {
     }
   }
 
+  /** Eligible people available to the partner resolver, before its preference rules choose one. */
+  partnerCandidateCount(x: Character, g: Gender | "any" = "any") {
+    const pool = new Set([
+      ...this.sentMentions.filter((m) => m.at < this.cutoff).map((m) => m.c),
+      ...this.recent.slice(0, 6),
+      ...this.cast.pairings.filter((p) => p.includes(x)).flat(),
+    ]);
+    const last = this.lastPartner(x);
+    if (last && this.sentMentions.some((m) => m.c === last)) pool.add(last);
+    if (!this.cast.pairings.some((p) => p.includes(x))) this.cast.pairings.flat().forEach((c) => pool.add(c));
+    return [...pool].filter((c) => c !== x && !this.coSubjects.has(c) && Ctx.compatible(c, g)).length;
+  }
+
   partnerOf(x: Character, g: Gender | "any" = "any", exclude: Set<Character> = new Set()): Character | undefined {
     const ok = (c: Character) => c !== x && !exclude.has(c) && !this.coSubjects.has(c) && Ctx.compatible(c, g);
     // Someone else named earlier in the same sentence is the likeliest partner (matters in threesomes).
@@ -223,13 +237,33 @@ export function resolvePair(
   subjChar?: Character,
   /** For pronoun subjects mid-sentence: the nearest preceding clause subject. */
   nearSubj?: Character,
-): { top?: Character; bottom?: Character; basis: Basis } | undefined {
-  const subjectFor = (g: Gender | "any") => (nearSubj && Ctx.compatible(nearSubj, g) ? nearSubj : ctx.subjectFor(g));
+  subjectOrigin: PersonOrigin = "clause",
+  nearOrigin: PersonOrigin = "clause",
+): { top?: Character; bottom?: Character; basis: Basis; attribution: AttributionEvidence } | undefined {
+  let subjectCandidates = 0, partnerCandidates = 0;
+  let chosenSubjectOrigin: PersonOrigin = "recent";
+  const subjectFor = (g: Gender | "any") => {
+    subjectCandidates = Math.max(subjectCandidates, new Set([...(nearSubj ? [nearSubj] : []), ...(ctx.lastSubject ? [ctx.lastSubject] : []), ...ctx.recent].filter((c) => Ctx.compatible(c, g))).size);
+    chosenSubjectOrigin = nearSubj && Ctx.compatible(nearSubj, g) ? nearOrigin
+      : ctx.lastSubject && Ctx.compatible(ctx.lastSubject, g) ? "last-subject" : "recent";
+    return nearSubj && Ctx.compatible(nearSubj, g) ? nearSubj : ctx.subjectFor(g);
+  };
+  const partnerOf = (c: Character, g: Gender | "any" = "any") => {
+    partnerCandidates = Math.max(partnerCandidates, ctx.partnerCandidateCount(c, g));
+    return ctx.partnerOf(c, g);
+  };
+  const tokenOrigin = (tok?: string): PersonOrigin => {
+    if (tok && cast.byAlias.has(stripPoss(tok))) return "name";
+    if (/^Epithet\d+/.test(tok ?? "")) return "epithet";
+    const p = tok && pronoun(stripPoss(tok));
+    return p && "fixed" in p ? "pov" : "pronoun";
+  };
+  let topOrigin = tokenOrigin(tTok), bottomOrigin = tokenOrigin(bTok);
   let t = readSlot(tTok, cast, ctx);
   let b = readSlot(bTok, cast, ctx);
   if (subjChar) {
-    if (subj === "t") t = { char: subjChar };
-    else b = { char: subjChar };
+    if (subj === "t") { t = { char: subjChar }; topOrigin = subjectOrigin; }
+    else { b = { char: subjChar }; bottomOrigin = subjectOrigin; }
   }
   if (tTok && !t) return undefined;
   if (bTok && !b) return undefined;
@@ -240,6 +274,8 @@ export function resolvePair(
     if (s.pron && o.char && o.char !== nearSubj && Ctx.compatible(nearSubj, slotGender(s))) {
       if (subj === "t") t = { char: nearSubj };
       else b = { char: nearSubj };
+      if (subj === "t") topOrigin = nearOrigin;
+      else bottomOrigin = nearOrigin;
       viaNear = true;
     }
   }
@@ -250,16 +286,19 @@ export function resolvePair(
 
   if (t && b) {
     if (top && !bottom) {
-      bottom = ctx.partnerOf(top, slotGender(b));
+      bottom = partnerOf(top, slotGender(b));
+      bottomOrigin = "partner";
       basis = "pronoun";
     } else if (bottom && !top) {
-      top = ctx.partnerOf(bottom, slotGender(t));
+      top = partnerOf(bottom, slotGender(t));
+      topOrigin = "partner";
       basis = "pronoun";
     } else if (!top && !bottom) {
       const [s, o] = subj === "t" ? [t, b] : [b, t];
       const sc = subjectFor(slotGender(s));
-      const oc = sc ? ctx.partnerOf(sc, slotGender(o)) : undefined;
+      const oc = sc ? partnerOf(sc, slotGender(o)) : undefined;
       [top, bottom] = subj === "t" ? [sc, oc] : [oc, sc];
+      [topOrigin, bottomOrigin] = subj === "t" ? [chosenSubjectOrigin, "partner"] : ["partner", chosenSubjectOrigin];
       basis = "pronoun";
     }
   } else {
@@ -268,15 +307,23 @@ export function resolvePair(
     // "…was probably him fingering himself": an object pronoun on its own is the other person, not the subject.
     const objectForm = /^(?:him|her|them)$/i.test((tTok ?? bTok) ?? "");
     const subj0 = subjectFor(slotGender(only));
-    const c = only.char ?? (objectForm && subj0 ? (ctx.partnerOf(subj0, slotGender(only)) ?? subj0) : subj0);
-    const other = c ? ctx.partnerOf(c) : undefined;
+    const c = only.char ?? (objectForm && subj0 ? (partnerOf(subj0, slotGender(only)) ?? subj0) : subj0);
+    const onlyOrigin = only.char ? (t ? topOrigin : bottomOrigin) : objectForm && c !== subj0 ? "partner" : chosenSubjectOrigin;
+    const other = c ? partnerOf(c) : undefined;
     if (t) [top, bottom] = [c, other];
     else [top, bottom] = [other, c];
+    [topOrigin, bottomOrigin] = t ? [onlyOrigin, "partner"] : ["partner", onlyOrigin];
     basis = "inferred";
   }
   if (!top || !bottom || top === bottom) return undefined;
   if (basis === "named" && (t?.epithet || b?.epithet)) basis = "pronoun";
-  return { top, bottom, basis };
+  return { top, bottom, basis, attribution: {
+    top: topOrigin, bottom: bottomOrigin,
+    topPronoun: !!(tTok && pronoun(stripPoss(tTok))), bottomPronoun: !!(bTok && pronoun(stripPoss(bTok))),
+    elided: !tTok || !bTok,
+    subjectCandidates, partnerCandidates,
+    nearbyCharacters: new Set([...ctx.recent.slice(0, 6), ...ctx.sentMentions.map((m) => m.c)]).size,
+  } };
 }
 
 
@@ -285,4 +332,3 @@ export function groupValue(groups: Record<string, string | undefined> | undefine
   for (const [k, v] of Object.entries(groups)) if (v !== undefined && k.startsWith(`${role}_`)) return v;
   return undefined;
 }
-

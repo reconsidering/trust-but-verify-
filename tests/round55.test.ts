@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { type Ao3Meta, emptyMeta } from "../src/ao3";
 import { type AuditHit, analyzeWithPatterns } from "../src/heuristic";
-import { FEATURES, MODEL, featuresOf, probability, trustOf } from "../src/heuristic/learned";
+import { FEATURES, LEGACY_FEATURES, MODEL, featuresOf, probability, trustOf } from "../src/heuristic/learned";
 
 const M: Ao3Meta = { ...emptyMeta(), rating: "Explicit", categories: ["M/M"], fandoms: ["Supernatural"], relationships: ["Dean Winchester/Castiel"], characters: ["Dean Winchester", "Castiel"] };
 const lead = "Dean and Castiel were in bed, naked and kissing, hard and aching. Dean kissed Castiel. Castiel kissed Dean back, moaning. ".repeat(2) + "\n\n";
@@ -54,8 +54,8 @@ describe("acts that were slipping through", () => {
 });
 
 describe("the context model", () => {
-  it("has one weight per feature and gives a feature value for each", () => {
-    expect(MODEL.weights).toHaveLength(FEATURES.length);
+  it("allows an older model to score its feature prefix until retraining", () => {
+    expect([LEGACY_FEATURES.length, FEATURES.length]).toContain(MODEL.weights.length);
     const f = featuresOf({ sent: "Dean fucked Castiel.", paras: ["Dean fucked Castiel."], pi: 0, basis: "named", elided: false, pairBoth: true, actorNamed: true, anyNamed: true });
     expect(f).toHaveLength(FEATURES.length);
   });
