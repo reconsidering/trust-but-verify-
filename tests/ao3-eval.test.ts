@@ -5,12 +5,14 @@
 // Each fic's result goes to <AO3_DIR>/.eval/<fic>.json (the report text plus structured verdicts and timings); REPORT.md
 // and eval.json are merged from those. EVAL_FILES (comma-separated names) limits a run to some fics.
 import { readFileSync, readdirSync, writeFileSync, mkdirSync } from "node:fs";
+import { createHash } from "node:crypto";
 import { join } from "node:path";
 import { afterAll, describe, it } from "vitest";
 import { mergeEval } from "../scripts/eval-merge.mjs";
 import { emptyMeta } from "../src/ao3";
 import { extractFromHtml } from "../src/extract";
-import { analyzeWithPatterns } from "../src/heuristic";
+import { analyzeWithPatterns, type AuditHit } from "../src/heuristic";
+import { splitParagraphs } from "../src/text";
 import { type ActKind, ROLE_WORDS } from "../src/roles";
 import type { ActResult, PairingResult } from "../src/types";
 
@@ -58,7 +60,18 @@ describe.skipIf(!dir)("AO3 evaluation", () => {
       if (a.notes) out.push(`Notes: ${a.notes}`);
       // Same text with its real AO3 tags (what the website does).
       const hits: string[] = [];
-      const tagged = analyzeWithPatterns(work.text, work.meta, { quiet: true, audit: (h) => hits.push(`${h.via}|${h.a}>${h.b ?? ""}|${h.kind}|${h.para}|${String(h.sentence).slice(0, 110)}`) });
+      const snapshotHits: AuditHit[] = [];
+      const tagged = analyzeWithPatterns(work.text, work.meta, { quiet: true, audit: (h) => {
+        hits.push(`${h.via}|${h.a}>${h.b ?? ""}|${h.kind}|${h.para}|${String(h.sentence).slice(0, 110)}`);
+        if (process.env.REVIEW_SNAPSHOT_DIR) snapshotHits.push(h);
+      } });
+      if (process.env.REVIEW_SNAPSHOT_DIR) {
+        mkdirSync(process.env.REVIEW_SNAPSHOT_DIR, { recursive: true });
+        const clean = work.text.replace(/\[\[AO3_UNCERTAIN_NOTE_START\]\][\s\S]*?\[\[AO3_UNCERTAIN_NOTE_END\]\]/g, "").replace(/\[\[AO3_[A-Z_]+\]\]/g, "");
+        const paras = splitParagraphs(clean.replace(/^([ \t]*>[ \t]*\S.*|.*\S[ \t]*<[ \t]*)$/gm, "\n$1\n"));
+        const sha = (bytes: string | Buffer) => createHash("sha256").update(bytes).digest("hex");
+        writeFileSync(join(process.env.REVIEW_SNAPSHOT_DIR, `${f}.json`), JSON.stringify({ file: f, title: work.meta.title, meta: work.meta, sourceSha: sha(readFileSync(join(dir!, f))), paragraphSha: sha(paras.join("\n")), paras, hits: snapshotHits }));
+      }
       const t2 = performance.now();
       out.push("### With tags");
       for (const p of tagged.pairings.slice(0, 3)) out.push(`- **${p.pairing}** anal: ${fmtAct(p.anal)} · ${fmtOral(p)}${p.vaginal.applicable ? ` · vaginal: ${p.vaginal.occurs ? "yes" : "no"}` : ""}`);
