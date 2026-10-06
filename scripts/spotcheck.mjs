@@ -46,7 +46,7 @@ if (step === "next") {
   const { picked, model, available } = rank(cands, rounds, { n, explore });
   const out = join(work, `round-${round}`);
   mkdirSync(out, { recursive: true });
-  const rows = picked.map((c, i) => ({ n: i + 1, key: c.key, pattern: c.via, fic: c.fic, a: c.a, b: c.b, act: c.act, kind: c.kind, before: c.before, para: c.para, after: c.after, note: "" }));
+  const rows = picked.map((c, i) => ({ n: i + 1, key: c.key, pattern: c.via, fic: c.fic, a: c.a, b: c.b, act: c.act, kind: c.kind, role: c.role, before: c.before, para: c.para, after: c.after, note: "" }));
   writeFileSync(join(out, "rows.json"), JSON.stringify({ rows }, null, 1));
   writeFileSync(join(out, "picked.json"), JSON.stringify(Object.fromEntries(picked.map((c) => [c.key, { picked: c.picked, score: Number(c.score.toFixed(3)) }]))));
   const lede = "Judged without seeing what Claude said. For each, is the claim true of the highlighted sentence in its context? The first name in a claim is the person the engine credited with the action. Wrong = the claim is false (or the people are swapped); Fine = true; Not sure = can't tell.";

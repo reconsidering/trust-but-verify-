@@ -43,3 +43,35 @@ export function applyOwnerAnswers(answers, date, setDir = "tests/right-set") {
   for (const [f, set] of sets) writeFileSync(join(setDir, f), JSON.stringify(set, null, 1) + "\n");
   return done;
 }
+
+/**
+ * The owner answered a reading again and changed their mind (or the first question was worded wrongly): make the labels say exactly the new answer,
+ * whatever state the earlier answer left them in. answers: [{ key, owner: "ok"|"wrong" }].
+ */
+export function overrideOwnerAnswers(answers, date, setDir = "tests/right-set") {
+  const files = readdirSync(setDir).filter((f) => f.endsWith(".json"));
+  const sets = new Map(files.map((f) => [f, JSON.parse(readFileSync(join(setDir, f), "utf8"))]));
+  const k = (e) => `${baseVia(e.via ?? "")}#${e.h}`;
+  const done = { entriesRestored: 0, entriesRetired: 0, negativesRetired: 0, negativesRestored: 0, negativesCreated: 0, notFound: 0 };
+  for (const r of answers) {
+    if (r.owner !== "ok" && r.owner !== "wrong") continue;
+    let hit = false;
+    for (const set of sets.values()) {
+      const es = (set.entries ?? []).filter((e) => k(e) === r.key);
+      const ns = (set.negatives ?? []).filter((e) => k(e) === r.key);
+      if (!es.length && !ns.length) continue;
+      hit = true;
+      if (r.owner === "ok") {
+        for (const e of es) { if (e.retired || e.source !== "owner") { delete e.retired; delete e.weight; e.source = "owner"; e.marks.right = Math.max(e.marks.right, 2); e.seen = [...new Set([...(e.seen ?? []), date])]; done.entriesRestored++; } }
+        for (const n of ns) if (!n.retired) { n.retired = `owner re-judged this right ${date}`; done.negativesRetired++; }
+      } else {
+        for (const n of ns) { if (n.retired || n.source !== "owner") { delete n.retired; delete n.weight; n.source = "owner"; n.misread = true; n.seen = [...new Set([...(n.seen ?? []), date])]; done.negativesRestored++; } }
+        for (const e of es) if (!e.retired) { e.retired = `owner re-judged this wrong ${date}`; done.entriesRetired++; }
+        if (!ns.length && es.length) { const { marks, seen, weight, source, retired, ...rest } = es[0]; (set.negatives ??= []).push({ ...rest, misread: true, source: "owner", seen: [date] }); done.negativesCreated++; }
+      }
+    }
+    if (!hit) done.notFound++;
+  }
+  for (const [f, set] of sets) writeFileSync(join(setDir, f), JSON.stringify(set, null, 1) + "\n");
+  return done;
+}

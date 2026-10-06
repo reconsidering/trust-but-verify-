@@ -609,16 +609,15 @@
    "via": "cum-in-throat",
    "h": "25d18c96",
    "conf": 22,
-   "weight": 0.85,
-   "source": "claude",
+   "source": "owner",
    "marks": {
-    "right": 1,
+    "right": 2,
     "wrong": 0
    },
    "seen": [
-    "2026-10-05"
-   ],
-   "retired": "owner judged this wrong in the blind spot-check 2026-10-05"
+    "2026-10-05",
+    "2026-10-06"
+   ]
   },
   {
    "kind": "hint",
@@ -955,7 +954,8 @@
    "source": "owner",
    "seen": [
     "2026-10-05"
-   ]
+   ],
+   "retired": "owner re-judged this right 2026-10-06"
   },
   {
    "kind": "hint",
@@ -1213,7 +1213,8 @@
    "source": "owner",
    "seen": [
     "2026-10-05"
-   ]
+   ],
+   "retired": "owner re-judged this right 2026-10-06"
   }
  ]
 }

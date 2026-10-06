@@ -133,8 +133,26 @@ const T = {
   cunnilingus: "{A} is going down on {B}",
 };
 const Q = { hypothetical: " (read as a hypothetical, not something that happens)", wanted: " (read as something wanted, not something that happens)", said: " (read as something said in dialogue)" };
-export function claim({ a, b, act, kind }) {
+// When the credited person is the one being penetrated, sucked or licked (a hint or a wish that points them toward the bottom role), the sentence
+// has to say so: "A is having anal sex with B, as the one penetrating" would be the reverse of what the engine means.
+const BOTTOM = {
+  "anal sex": "{A} is being fucked anally by {B}",
+  "anal sex (riding)": "{A} is riding {B} (anal sex)",
+  "anal sex (strap-on/toy)": "{A} is being fucked with a toy or strap-on by {B}",
+  blowjob: "{A} is giving {B} a blowjob",
+  "blowjob (face-fucking)": "{A} is being face-fucked by {B}",
+  rimming: "{A} is being rimmed by {B}",
+  cunnilingus: "{A} is being gone down on by {B}",
+  fingering: "{A} is being fingered by {B}",
+  fisting: "{A} is being fisted by {B}",
+  "vaginal sex": "{A} is being penetrated vaginally by {B}",
+  thrusting: "{A} is being thrust into by {B}",
+  "face-fucking": "{A} is being face-fucked by {B}",
+  "double penetration": "{A} is being penetrated by {B} in a double penetration",
+  "prostate play": "{A} is having their prostate played with by {B}",
+};
+export function claim({ a, b, act, kind, role }) {
   const first = (n) => (n ?? "someone").split(" ")[0];
-  const t = (T[act] ?? `${first(a)} → ${first(b)}: ${act} (the first name is the one the engine credited)`).replaceAll("{A}", first(a)).replaceAll("{B}", first(b));
+  const t = ((role === "bottom" && BOTTOM[act]) || T[act] || `${first(a)} → ${first(b)}: ${act} (the first name is the one the engine credited)`).replaceAll("{A}", first(a)).replaceAll("{B}", first(b));
   return t[0].toUpperCase() + t.slice(1) + (Q[kind] ?? "");
 }
