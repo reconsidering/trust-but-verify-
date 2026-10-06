@@ -1,6 +1,6 @@
 {
- "schema": "engine-gold-review/v1",
- "batchId": "gold-ee9f5bfc51a3",
+ "schema": "engine-gold-range-review/v1",
+ "batchId": "gold-ranges-e07c864bf888",
  "engineCommit": "7b58f70ce1ea06d1f6c01e745da9be410e9c8da3",
  "sources": [
   {
@@ -16,13 +16,6 @@
    "sourceSha": "dae22879912fd019b9219d7cf60c85dd861ae5b83de5660c1b3a9918030a3d95",
    "paragraphSha": "1d4071086192c11c15f3d12db8d5dc9cc1890517f101dbff22ff1d61aeb4a154",
    "paragraphCount": 4625
-  },
-  {
-   "file": "belonging.html",
-   "title": "Belonging is Longing is Now",
-   "sourceSha": "d8fe352ab70bc0a8171fea0e069c43d776d3541d741cb74b2b66014ae64e874c",
-   "paragraphSha": "f9bf52ddcb708de72d8df74649d6976fa2ed62ddba1e55df553729ba32589409",
-   "paragraphCount": 5783
   },
   {
    "file": "lightning.html",
@@ -63,15 +56,15 @@
  "rows": [
   {
    "id": "G1",
-   "key": "gold:a-la-carte.json:0#2d58e4f1cf109faa669d923311c63805cd8b63e6916c2265cb7e98fb9e8b2759",
+   "key": "gold-range:a-la-carte.json:0:444-454#2d58e4f1cf109faa669d923311c63805cd8b63e6916c2265cb7e98fb9e8b2759",
    "fic": "a-la-carte.html",
    "para": 444,
-   "pattern": "gold-verdict",
+   "pattern": "gold-range",
    "a": "Obi-Wan Kenobi",
    "b": "Anakin Skywalker",
    "act": "anal",
-   "kind": "gold-verdict",
-   "claim": "Obi-Wan Kenobi penetrates Anakin Skywalker; the gold verdict says the roles do not switch.",
+   "kind": "gold-range",
+   "claim": "Passages 444–454: Obi-Wan Kenobi penetrates Anakin Skywalker with a penis.",
    "gold": {
     "file": "a-la-carte.json",
     "hash": "2d58e4f1cf109faa669d923311c63805cd8b63e6916c2265cb7e98fb9e8b2759",
@@ -83,15 +76,78 @@
     {
      "from": 444,
      "to": 454
-    },
+    }
+   ]
+  },
+  {
+   "id": "G2",
+   "key": "gold-range:a-la-carte.json:0:863-875#2d58e4f1cf109faa669d923311c63805cd8b63e6916c2265cb7e98fb9e8b2759",
+   "fic": "a-la-carte.html",
+   "para": 863,
+   "pattern": "gold-range",
+   "a": "Obi-Wan Kenobi",
+   "b": "Anakin Skywalker",
+   "act": "anal",
+   "kind": "gold-range",
+   "claim": "Passages 863–875: Obi-Wan Kenobi penetrates Anakin Skywalker with a penis.",
+   "gold": {
+    "file": "a-la-carte.json",
+    "hash": "2d58e4f1cf109faa669d923311c63805cd8b63e6916c2265cb7e98fb9e8b2759",
+    "pairing": "Obi-Wan Kenobi/Anakin Skywalker",
+    "act": "anal",
+    "verdict": "one_way"
+   },
+   "evidence": [
     {
      "from": 863,
      "to": 875
-    },
+    }
+   ]
+  },
+  {
+   "id": "G3",
+   "key": "gold-range:a-la-carte.json:0:900-900#2d58e4f1cf109faa669d923311c63805cd8b63e6916c2265cb7e98fb9e8b2759",
+   "fic": "a-la-carte.html",
+   "para": 900,
+   "pattern": "gold-range",
+   "a": "Obi-Wan Kenobi",
+   "b": "Anakin Skywalker",
+   "act": "anal",
+   "kind": "gold-range",
+   "claim": "Passages 900–900: Obi-Wan Kenobi penetrates Anakin Skywalker with a penis.",
+   "gold": {
+    "file": "a-la-carte.json",
+    "hash": "2d58e4f1cf109faa669d923311c63805cd8b63e6916c2265cb7e98fb9e8b2759",
+    "pairing": "Obi-Wan Kenobi/Anakin Skywalker",
+    "act": "anal",
+    "verdict": "one_way"
+   },
+   "evidence": [
     {
      "from": 900,
      "to": 900
-    },
+    }
+   ]
+  },
+  {
+   "id": "G4",
+   "key": "gold-range:a-la-carte.json:0:1942-1960#2d58e4f1cf109faa669d923311c63805cd8b63e6916c2265cb7e98fb9e8b2759",
+   "fic": "a-la-carte.html",
+   "para": 1942,
+   "pattern": "gold-range",
+   "a": "Obi-Wan Kenobi",
+   "b": "Anakin Skywalker",
+   "act": "anal",
+   "kind": "gold-range",
+   "claim": "Passages 1942–1960: Obi-Wan Kenobi penetrates Anakin Skywalker with a penis.",
+   "gold": {
+    "file": "a-la-carte.json",
+    "hash": "2d58e4f1cf109faa669d923311c63805cd8b63e6916c2265cb7e98fb9e8b2759",
+    "pairing": "Obi-Wan Kenobi/Anakin Skywalker",
+    "act": "anal",
+    "verdict": "one_way"
+   },
+   "evidence": [
     {
      "from": 1942,
      "to": 1960
@@ -99,16 +155,16 @@
    ]
   },
   {
-   "id": "G2",
-   "key": "gold:a-la-carte.json:1#2d58e4f1cf109faa669d923311c63805cd8b63e6916c2265cb7e98fb9e8b2759",
+   "id": "G5",
+   "key": "gold-range:a-la-carte.json:1:507-520#2d58e4f1cf109faa669d923311c63805cd8b63e6916c2265cb7e98fb9e8b2759",
    "fic": "a-la-carte.html",
    "para": 507,
-   "pattern": "gold-verdict",
+   "pattern": "gold-range",
    "a": "Obi-Wan Kenobi",
    "b": "Anakin Skywalker",
    "act": "blowjob",
-   "kind": "gold-verdict",
-   "claim": "Obi-Wan Kenobi receives blowjobs from Anakin Skywalker; the gold verdict says the roles do not switch.",
+   "kind": "gold-range",
+   "claim": "Passages 507–520: Obi-Wan Kenobi receives a blowjob from Anakin Skywalker.",
    "gold": {
     "file": "a-la-carte.json",
     "hash": "2d58e4f1cf109faa669d923311c63805cd8b63e6916c2265cb7e98fb9e8b2759",
@@ -120,7 +176,28 @@
     {
      "from": 507,
      "to": 520
-    },
+    }
+   ]
+  },
+  {
+   "id": "G6",
+   "key": "gold-range:a-la-carte.json:1:1974-1974#2d58e4f1cf109faa669d923311c63805cd8b63e6916c2265cb7e98fb9e8b2759",
+   "fic": "a-la-carte.html",
+   "para": 1974,
+   "pattern": "gold-range",
+   "a": "Obi-Wan Kenobi",
+   "b": "Anakin Skywalker",
+   "act": "blowjob",
+   "kind": "gold-range",
+   "claim": "Passages 1974–1974: Obi-Wan Kenobi receives a blowjob from Anakin Skywalker.",
+   "gold": {
+    "file": "a-la-carte.json",
+    "hash": "2d58e4f1cf109faa669d923311c63805cd8b63e6916c2265cb7e98fb9e8b2759",
+    "pairing": "Obi-Wan Kenobi/Anakin Skywalker",
+    "act": "blowjob",
+    "verdict": "one_way"
+   },
+   "evidence": [
     {
      "from": 1974,
      "to": 1974
@@ -128,16 +205,16 @@
    ]
   },
   {
-   "id": "G3",
-   "key": "gold:a-la-carte.json:2#2d58e4f1cf109faa669d923311c63805cd8b63e6916c2265cb7e98fb9e8b2759",
+   "id": "G7",
+   "key": "gold-range:a-la-carte.json:2:846-852#2d58e4f1cf109faa669d923311c63805cd8b63e6916c2265cb7e98fb9e8b2759",
    "fic": "a-la-carte.html",
    "para": 846,
-   "pattern": "gold-verdict",
+   "pattern": "gold-range",
    "a": "Obi-Wan Kenobi",
    "b": "Anakin Skywalker",
    "act": "rimming",
-   "kind": "gold-verdict",
-   "claim": "Obi-Wan Kenobi rims Anakin Skywalker; the gold verdict says the roles do not switch.",
+   "kind": "gold-range",
+   "claim": "Passages 846–852: Obi-Wan Kenobi rims Anakin Skywalker.",
    "gold": {
     "file": "a-la-carte.json",
     "hash": "2d58e4f1cf109faa669d923311c63805cd8b63e6916c2265cb7e98fb9e8b2759",
@@ -153,28 +230,24 @@
    ]
   },
   {
-   "id": "G4",
-   "key": "gold:angel-without-a-god.json:0#e3c51d5d73e7dcdee982a0520dd5dddc8f448105205758243892fa90dbc10ec6",
+   "id": "G8",
+   "key": "gold-range:angel-without-a-god.json:0:4302-4384#777b44fa556410b144309e02f4ccf829fac0c9a355d1c9ed8c72bfe0ae851ee9",
    "fic": "angel-without-a-god.html",
-   "para": 4270,
-   "pattern": "gold-verdict",
+   "para": 4302,
+   "pattern": "gold-range",
    "a": "Eddie Munson",
    "b": "Jason Carver",
    "act": "anal",
-   "kind": "gold-verdict",
-   "claim": "Eddie Munson penetrates Jason Carver; the gold verdict says the roles do not switch.",
+   "kind": "gold-range",
+   "claim": "Passages 4302–4384: Eddie Munson penetrates Jason Carver with a penis.",
    "gold": {
     "file": "angel-without-a-god.json",
-    "hash": "e3c51d5d73e7dcdee982a0520dd5dddc8f448105205758243892fa90dbc10ec6",
+    "hash": "777b44fa556410b144309e02f4ccf829fac0c9a355d1c9ed8c72bfe0ae851ee9",
     "pairing": "Jason Carver/Eddie Munson",
     "act": "anal",
     "verdict": "one_way"
    },
    "evidence": [
-    {
-     "from": 4270,
-     "to": 4287
-    },
     {
      "from": 4302,
      "to": 4384
@@ -182,19 +255,19 @@
    ]
   },
   {
-   "id": "G5",
-   "key": "gold:angel-without-a-god.json:1#e3c51d5d73e7dcdee982a0520dd5dddc8f448105205758243892fa90dbc10ec6",
+   "id": "G9",
+   "key": "gold-range:angel-without-a-god.json:1:3357-3406#777b44fa556410b144309e02f4ccf829fac0c9a355d1c9ed8c72bfe0ae851ee9",
    "fic": "angel-without-a-god.html",
    "para": 3357,
-   "pattern": "gold-verdict",
+   "pattern": "gold-range",
    "a": "Jason Carver",
    "b": "Eddie Munson",
    "act": "blowjob",
-   "kind": "gold-verdict",
-   "claim": "Jason Carver receives blowjobs from Eddie Munson; the gold verdict says the roles do not switch.",
+   "kind": "gold-range",
+   "claim": "Passages 3357–3406: Jason Carver receives a blowjob from Eddie Munson.",
    "gold": {
     "file": "angel-without-a-god.json",
-    "hash": "e3c51d5d73e7dcdee982a0520dd5dddc8f448105205758243892fa90dbc10ec6",
+    "hash": "777b44fa556410b144309e02f4ccf829fac0c9a355d1c9ed8c72bfe0ae851ee9",
     "pairing": "Jason Carver/Eddie Munson",
     "act": "blowjob",
     "verdict": "one_way"
@@ -207,129 +280,16 @@
    ]
   },
   {
-   "id": "G6",
-   "key": "gold:belonging.json:0#9514223ab09dd8f547cb590331465f461fbf1b16ecde2cd56befc4851ba8fec1",
-   "fic": "belonging.html",
-   "para": 679,
-   "pattern": "gold-verdict",
-   "a": "Castiel",
-   "b": "Dean Winchester",
-   "act": "anal",
-   "kind": "gold-verdict",
-   "claim": "Castiel penetrates Dean Winchester; the gold verdict says the roles do not switch.",
-   "gold": {
-    "file": "belonging.json",
-    "hash": "9514223ab09dd8f547cb590331465f461fbf1b16ecde2cd56befc4851ba8fec1",
-    "pairing": "Castiel/Dean Winchester",
-    "act": "anal",
-    "verdict": "one_way"
-   },
-   "evidence": [
-    {
-     "from": 679,
-     "to": 754
-    },
-    {
-     "from": 1192,
-     "to": 1232
-    },
-    {
-     "from": 1453,
-     "to": 1465
-    },
-    {
-     "from": 2095,
-     "to": 2178
-    },
-    {
-     "from": 2950,
-     "to": 3179
-    },
-    {
-     "from": 3415,
-     "to": 3540
-    },
-    {
-     "from": 3833,
-     "to": 3859
-    },
-    {
-     "from": 3859,
-     "to": 3880
-    },
-    {
-     "from": 3963,
-     "to": 4057
-    },
-    {
-     "from": 4113,
-     "to": 4331
-    },
-    {
-     "from": 4438,
-     "to": 4561
-    },
-    {
-     "from": 4646,
-     "to": 4668
-    },
-    {
-     "from": 4677,
-     "to": 4804
-    },
-    {
-     "from": 4938,
-     "to": 5005
-    },
-    {
-     "from": 5007,
-     "to": 5064
-    },
-    {
-     "from": 5308,
-     "to": 5348
-    },
-    {
-     "from": 5361,
-     "to": 5459
-    },
-    {
-     "from": 5459,
-     "to": 5497
-    },
-    {
-     "from": 5528,
-     "to": 5579
-    },
-    {
-     "from": 5581,
-     "to": 5614
-    },
-    {
-     "from": 5617,
-     "to": 5679
-    },
-    {
-     "from": 5680,
-     "to": 5716
-    },
-    {
-     "from": 5780,
-     "to": 5780
-    }
-   ]
-  },
-  {
-   "id": "G7",
-   "key": "gold:lightning.json:0#172d99c8662e127113cb5a7f3690e372c828586a1f152e2b581d61f4d685308e",
+   "id": "G10",
+   "key": "gold-range:lightning.json:0:5436-5481#172d99c8662e127113cb5a7f3690e372c828586a1f152e2b581d61f4d685308e",
    "fic": "lightning.html",
    "para": 5436,
-   "pattern": "gold-verdict",
+   "pattern": "gold-range",
    "a": "Eddie Diaz",
    "b": "Evan \"Buck\" Buckley",
    "act": "anal",
-   "kind": "gold-verdict",
-   "claim": "Eddie Diaz penetrates Evan \"Buck\" Buckley; the gold verdict says the roles do not switch.",
+   "kind": "gold-range",
+   "claim": "Passages 5436–5481: Eddie Diaz penetrates Evan \"Buck\" Buckley with a penis.",
    "gold": {
     "file": "lightning.json",
     "hash": "172d99c8662e127113cb5a7f3690e372c828586a1f152e2b581d61f4d685308e",
@@ -345,16 +305,16 @@
    ]
   },
   {
-   "id": "G8",
-   "key": "gold:lightning.json:1#172d99c8662e127113cb5a7f3690e372c828586a1f152e2b581d61f4d685308e",
+   "id": "G11",
+   "key": "gold-range:lightning.json:1:5403-5421#172d99c8662e127113cb5a7f3690e372c828586a1f152e2b581d61f4d685308e",
    "fic": "lightning.html",
    "para": 5403,
-   "pattern": "gold-verdict",
+   "pattern": "gold-range",
    "a": "Eddie Diaz",
    "b": "Evan \"Buck\" Buckley",
    "act": "blowjob",
-   "kind": "gold-verdict",
-   "claim": "Eddie Diaz receives blowjobs from Evan \"Buck\" Buckley; the gold verdict says the roles do not switch.",
+   "kind": "gold-range",
+   "claim": "Passages 5403–5421: Eddie Diaz receives a blowjob from Evan \"Buck\" Buckley.",
    "gold": {
     "file": "lightning.json",
     "hash": "172d99c8662e127113cb5a7f3690e372c828586a1f152e2b581d61f4d685308e",
@@ -370,16 +330,16 @@
    ]
   },
   {
-   "id": "G9",
-   "key": "gold:prince-prisoner-puppy.json:0#e5ae4792be80121ed19ef8e92c773c97abd344a129f830b3e3ebf9b2be1260ce",
+   "id": "G12",
+   "key": "gold-range:prince-prisoner-puppy.json:0:20-38#e5ae4792be80121ed19ef8e92c773c97abd344a129f830b3e3ebf9b2be1260ce",
    "fic": "prince-prisoner-puppy.html",
    "para": 20,
-   "pattern": "gold-verdict",
+   "pattern": "gold-range",
    "a": "Antinous",
    "b": "Telemachus",
    "act": "anal",
-   "kind": "gold-verdict",
-   "claim": "Antinous penetrates Telemachus; the gold verdict says the roles do not switch.",
+   "kind": "gold-range",
+   "claim": "Passages 20–38: Antinous penetrates Telemachus with a penis.",
    "gold": {
     "file": "prince-prisoner-puppy.json",
     "hash": "e5ae4792be80121ed19ef8e92c773c97abd344a129f830b3e3ebf9b2be1260ce",
@@ -391,55 +351,328 @@
     {
      "from": 20,
      "to": 38
-    },
+    }
+   ]
+  },
+  {
+   "id": "G13",
+   "key": "gold-range:prince-prisoner-puppy.json:0:55-75#e5ae4792be80121ed19ef8e92c773c97abd344a129f830b3e3ebf9b2be1260ce",
+   "fic": "prince-prisoner-puppy.html",
+   "para": 55,
+   "pattern": "gold-range",
+   "a": "Antinous",
+   "b": "Telemachus",
+   "act": "anal",
+   "kind": "gold-range",
+   "claim": "Passages 55–75: Antinous penetrates Telemachus with a penis.",
+   "gold": {
+    "file": "prince-prisoner-puppy.json",
+    "hash": "e5ae4792be80121ed19ef8e92c773c97abd344a129f830b3e3ebf9b2be1260ce",
+    "pairing": "Antinous/Telemachus",
+    "act": "anal",
+    "verdict": "one_way"
+   },
+   "evidence": [
     {
      "from": 55,
      "to": 75
-    },
+    }
+   ]
+  },
+  {
+   "id": "G14",
+   "key": "gold-range:prince-prisoner-puppy.json:0:103-117#e5ae4792be80121ed19ef8e92c773c97abd344a129f830b3e3ebf9b2be1260ce",
+   "fic": "prince-prisoner-puppy.html",
+   "para": 103,
+   "pattern": "gold-range",
+   "a": "Antinous",
+   "b": "Telemachus",
+   "act": "anal",
+   "kind": "gold-range",
+   "claim": "Passages 103–117: Antinous penetrates Telemachus with a penis.",
+   "gold": {
+    "file": "prince-prisoner-puppy.json",
+    "hash": "e5ae4792be80121ed19ef8e92c773c97abd344a129f830b3e3ebf9b2be1260ce",
+    "pairing": "Antinous/Telemachus",
+    "act": "anal",
+    "verdict": "one_way"
+   },
+   "evidence": [
     {
      "from": 103,
      "to": 117
-    },
+    }
+   ]
+  },
+  {
+   "id": "G15",
+   "key": "gold-range:prince-prisoner-puppy.json:0:159-164#e5ae4792be80121ed19ef8e92c773c97abd344a129f830b3e3ebf9b2be1260ce",
+   "fic": "prince-prisoner-puppy.html",
+   "para": 159,
+   "pattern": "gold-range",
+   "a": "Antinous",
+   "b": "Telemachus",
+   "act": "anal",
+   "kind": "gold-range",
+   "claim": "Passages 159–164: Antinous penetrates Telemachus with a penis.",
+   "gold": {
+    "file": "prince-prisoner-puppy.json",
+    "hash": "e5ae4792be80121ed19ef8e92c773c97abd344a129f830b3e3ebf9b2be1260ce",
+    "pairing": "Antinous/Telemachus",
+    "act": "anal",
+    "verdict": "one_way"
+   },
+   "evidence": [
     {
      "from": 159,
      "to": 164
-    },
+    }
+   ]
+  },
+  {
+   "id": "G16",
+   "key": "gold-range:prince-prisoner-puppy.json:0:167-167#e5ae4792be80121ed19ef8e92c773c97abd344a129f830b3e3ebf9b2be1260ce",
+   "fic": "prince-prisoner-puppy.html",
+   "para": 167,
+   "pattern": "gold-range",
+   "a": "Antinous",
+   "b": "Telemachus",
+   "act": "anal",
+   "kind": "gold-range",
+   "claim": "Passages 167–167: Antinous penetrates Telemachus with a penis.",
+   "gold": {
+    "file": "prince-prisoner-puppy.json",
+    "hash": "e5ae4792be80121ed19ef8e92c773c97abd344a129f830b3e3ebf9b2be1260ce",
+    "pairing": "Antinous/Telemachus",
+    "act": "anal",
+    "verdict": "one_way"
+   },
+   "evidence": [
     {
      "from": 167,
      "to": 167
-    },
+    }
+   ]
+  },
+  {
+   "id": "G17",
+   "key": "gold-range:prince-prisoner-puppy.json:0:265-276#e5ae4792be80121ed19ef8e92c773c97abd344a129f830b3e3ebf9b2be1260ce",
+   "fic": "prince-prisoner-puppy.html",
+   "para": 265,
+   "pattern": "gold-range",
+   "a": "Antinous",
+   "b": "Telemachus",
+   "act": "anal",
+   "kind": "gold-range",
+   "claim": "Passages 265–276: Antinous penetrates Telemachus with a penis.",
+   "gold": {
+    "file": "prince-prisoner-puppy.json",
+    "hash": "e5ae4792be80121ed19ef8e92c773c97abd344a129f830b3e3ebf9b2be1260ce",
+    "pairing": "Antinous/Telemachus",
+    "act": "anal",
+    "verdict": "one_way"
+   },
+   "evidence": [
     {
      "from": 265,
      "to": 276
-    },
+    }
+   ]
+  },
+  {
+   "id": "G18",
+   "key": "gold-range:prince-prisoner-puppy.json:0:404-407#e5ae4792be80121ed19ef8e92c773c97abd344a129f830b3e3ebf9b2be1260ce",
+   "fic": "prince-prisoner-puppy.html",
+   "para": 404,
+   "pattern": "gold-range",
+   "a": "Antinous",
+   "b": "Telemachus",
+   "act": "anal",
+   "kind": "gold-range",
+   "claim": "Passages 404–407: Antinous penetrates Telemachus with a penis.",
+   "gold": {
+    "file": "prince-prisoner-puppy.json",
+    "hash": "e5ae4792be80121ed19ef8e92c773c97abd344a129f830b3e3ebf9b2be1260ce",
+    "pairing": "Antinous/Telemachus",
+    "act": "anal",
+    "verdict": "one_way"
+   },
+   "evidence": [
     {
      "from": 404,
      "to": 407
-    },
+    }
+   ]
+  },
+  {
+   "id": "G19",
+   "key": "gold-range:prince-prisoner-puppy.json:0:461-474#e5ae4792be80121ed19ef8e92c773c97abd344a129f830b3e3ebf9b2be1260ce",
+   "fic": "prince-prisoner-puppy.html",
+   "para": 461,
+   "pattern": "gold-range",
+   "a": "Antinous",
+   "b": "Telemachus",
+   "act": "anal",
+   "kind": "gold-range",
+   "claim": "Passages 461–474: Antinous penetrates Telemachus with a penis.",
+   "gold": {
+    "file": "prince-prisoner-puppy.json",
+    "hash": "e5ae4792be80121ed19ef8e92c773c97abd344a129f830b3e3ebf9b2be1260ce",
+    "pairing": "Antinous/Telemachus",
+    "act": "anal",
+    "verdict": "one_way"
+   },
+   "evidence": [
     {
      "from": 461,
      "to": 474
-    },
+    }
+   ]
+  },
+  {
+   "id": "G20",
+   "key": "gold-range:prince-prisoner-puppy.json:0:498-508#e5ae4792be80121ed19ef8e92c773c97abd344a129f830b3e3ebf9b2be1260ce",
+   "fic": "prince-prisoner-puppy.html",
+   "para": 498,
+   "pattern": "gold-range",
+   "a": "Antinous",
+   "b": "Telemachus",
+   "act": "anal",
+   "kind": "gold-range",
+   "claim": "Passages 498–508: Antinous penetrates Telemachus with a penis.",
+   "gold": {
+    "file": "prince-prisoner-puppy.json",
+    "hash": "e5ae4792be80121ed19ef8e92c773c97abd344a129f830b3e3ebf9b2be1260ce",
+    "pairing": "Antinous/Telemachus",
+    "act": "anal",
+    "verdict": "one_way"
+   },
+   "evidence": [
     {
      "from": 498,
      "to": 508
-    },
+    }
+   ]
+  },
+  {
+   "id": "G21",
+   "key": "gold-range:prince-prisoner-puppy.json:0:558-560#e5ae4792be80121ed19ef8e92c773c97abd344a129f830b3e3ebf9b2be1260ce",
+   "fic": "prince-prisoner-puppy.html",
+   "para": 558,
+   "pattern": "gold-range",
+   "a": "Antinous",
+   "b": "Telemachus",
+   "act": "anal",
+   "kind": "gold-range",
+   "claim": "Passages 558–560: Antinous penetrates Telemachus with a penis.",
+   "gold": {
+    "file": "prince-prisoner-puppy.json",
+    "hash": "e5ae4792be80121ed19ef8e92c773c97abd344a129f830b3e3ebf9b2be1260ce",
+    "pairing": "Antinous/Telemachus",
+    "act": "anal",
+    "verdict": "one_way"
+   },
+   "evidence": [
     {
      "from": 558,
      "to": 560
-    },
+    }
+   ]
+  },
+  {
+   "id": "G22",
+   "key": "gold-range:prince-prisoner-puppy.json:0:561-561#e5ae4792be80121ed19ef8e92c773c97abd344a129f830b3e3ebf9b2be1260ce",
+   "fic": "prince-prisoner-puppy.html",
+   "para": 561,
+   "pattern": "gold-range",
+   "a": "Antinous",
+   "b": "Telemachus",
+   "act": "anal",
+   "kind": "gold-range",
+   "claim": "Passages 561–561: Antinous penetrates Telemachus with a penis.",
+   "gold": {
+    "file": "prince-prisoner-puppy.json",
+    "hash": "e5ae4792be80121ed19ef8e92c773c97abd344a129f830b3e3ebf9b2be1260ce",
+    "pairing": "Antinous/Telemachus",
+    "act": "anal",
+    "verdict": "one_way"
+   },
+   "evidence": [
     {
      "from": 561,
      "to": 561
-    },
+    }
+   ]
+  },
+  {
+   "id": "G23",
+   "key": "gold-range:prince-prisoner-puppy.json:0:591-594#e5ae4792be80121ed19ef8e92c773c97abd344a129f830b3e3ebf9b2be1260ce",
+   "fic": "prince-prisoner-puppy.html",
+   "para": 591,
+   "pattern": "gold-range",
+   "a": "Antinous",
+   "b": "Telemachus",
+   "act": "anal",
+   "kind": "gold-range",
+   "claim": "Passages 591–594: Antinous penetrates Telemachus with a penis.",
+   "gold": {
+    "file": "prince-prisoner-puppy.json",
+    "hash": "e5ae4792be80121ed19ef8e92c773c97abd344a129f830b3e3ebf9b2be1260ce",
+    "pairing": "Antinous/Telemachus",
+    "act": "anal",
+    "verdict": "one_way"
+   },
+   "evidence": [
     {
      "from": 591,
      "to": 594
-    },
+    }
+   ]
+  },
+  {
+   "id": "G24",
+   "key": "gold-range:prince-prisoner-puppy.json:0:660-677#e5ae4792be80121ed19ef8e92c773c97abd344a129f830b3e3ebf9b2be1260ce",
+   "fic": "prince-prisoner-puppy.html",
+   "para": 660,
+   "pattern": "gold-range",
+   "a": "Antinous",
+   "b": "Telemachus",
+   "act": "anal",
+   "kind": "gold-range",
+   "claim": "Passages 660–677: Antinous penetrates Telemachus with a penis.",
+   "gold": {
+    "file": "prince-prisoner-puppy.json",
+    "hash": "e5ae4792be80121ed19ef8e92c773c97abd344a129f830b3e3ebf9b2be1260ce",
+    "pairing": "Antinous/Telemachus",
+    "act": "anal",
+    "verdict": "one_way"
+   },
+   "evidence": [
     {
      "from": 660,
      "to": 677
-    },
+    }
+   ]
+  },
+  {
+   "id": "G25",
+   "key": "gold-range:prince-prisoner-puppy.json:0:720-734#e5ae4792be80121ed19ef8e92c773c97abd344a129f830b3e3ebf9b2be1260ce",
+   "fic": "prince-prisoner-puppy.html",
+   "para": 720,
+   "pattern": "gold-range",
+   "a": "Antinous",
+   "b": "Telemachus",
+   "act": "anal",
+   "kind": "gold-range",
+   "claim": "Passages 720–734: Antinous penetrates Telemachus with a penis.",
+   "gold": {
+    "file": "prince-prisoner-puppy.json",
+    "hash": "e5ae4792be80121ed19ef8e92c773c97abd344a129f830b3e3ebf9b2be1260ce",
+    "pairing": "Antinous/Telemachus",
+    "act": "anal",
+    "verdict": "one_way"
+   },
+   "evidence": [
     {
      "from": 720,
      "to": 734
@@ -447,16 +680,16 @@
    ]
   },
   {
-   "id": "G10",
-   "key": "gold:rushing.json:0#ac8c82743cd9c89be3da3563c924eb1e61392d745010cde152a93124947503cd",
+   "id": "G26",
+   "key": "gold-range:rushing.json:0:1148-1150#ac8c82743cd9c89be3da3563c924eb1e61392d745010cde152a93124947503cd",
    "fic": "rushing.html",
    "para": 1148,
-   "pattern": "gold-verdict",
+   "pattern": "gold-range",
    "a": "Derek Hale",
    "b": "Scott McCall",
    "act": "anal",
-   "kind": "gold-verdict",
-   "claim": "Derek Hale and Scott McCall switch roles for anal penetration.",
+   "kind": "gold-range",
+   "claim": "Passages 1148–1150: Derek Hale penetrates Scott McCall with a penis.",
    "gold": {
     "file": "rushing.json",
     "hash": "ac8c82743cd9c89be3da3563c924eb1e61392d745010cde152a93124947503cd",
@@ -468,11 +701,53 @@
     {
      "from": 1148,
      "to": 1150
-    },
+    }
+   ]
+  },
+  {
+   "id": "G27",
+   "key": "gold-range:rushing.json:0:1444-1447#ac8c82743cd9c89be3da3563c924eb1e61392d745010cde152a93124947503cd",
+   "fic": "rushing.html",
+   "para": 1444,
+   "pattern": "gold-range",
+   "a": "Scott McCall",
+   "b": "Derek Hale",
+   "act": "anal",
+   "kind": "gold-range",
+   "claim": "Passages 1444–1447: Scott McCall penetrates Derek Hale with a penis.",
+   "gold": {
+    "file": "rushing.json",
+    "hash": "ac8c82743cd9c89be3da3563c924eb1e61392d745010cde152a93124947503cd",
+    "pairing": "Derek Hale/Scott McCall",
+    "act": "anal",
+    "verdict": "switch"
+   },
+   "evidence": [
     {
      "from": 1444,
      "to": 1447
-    },
+    }
+   ]
+  },
+  {
+   "id": "G28",
+   "key": "gold-range:rushing.json:0:1585-1593#ac8c82743cd9c89be3da3563c924eb1e61392d745010cde152a93124947503cd",
+   "fic": "rushing.html",
+   "para": 1585,
+   "pattern": "gold-range",
+   "a": "Derek Hale",
+   "b": "Scott McCall",
+   "act": "anal",
+   "kind": "gold-range",
+   "claim": "Passages 1585–1593: Derek Hale penetrates Scott McCall with a penis.",
+   "gold": {
+    "file": "rushing.json",
+    "hash": "ac8c82743cd9c89be3da3563c924eb1e61392d745010cde152a93124947503cd",
+    "pairing": "Derek Hale/Scott McCall",
+    "act": "anal",
+    "verdict": "switch"
+   },
+   "evidence": [
     {
      "from": 1585,
      "to": 1593
@@ -480,16 +755,16 @@
    ]
   },
   {
-   "id": "G11",
-   "key": "gold:rushing.json:1#ac8c82743cd9c89be3da3563c924eb1e61392d745010cde152a93124947503cd",
+   "id": "G29",
+   "key": "gold-range:rushing.json:1:1159-1159#ac8c82743cd9c89be3da3563c924eb1e61392d745010cde152a93124947503cd",
    "fic": "rushing.html",
    "para": 1159,
-   "pattern": "gold-verdict",
+   "pattern": "gold-range",
    "a": "Scott McCall",
    "b": "Stiles Stilinski",
    "act": "anal",
-   "kind": "gold-verdict",
-   "claim": "Scott McCall penetrates Stiles Stilinski; the gold verdict says the roles do not switch.",
+   "kind": "gold-range",
+   "claim": "Passages 1159–1159: Scott McCall penetrates Stiles Stilinski with a penis.",
    "gold": {
     "file": "rushing.json",
     "hash": "ac8c82743cd9c89be3da3563c924eb1e61392d745010cde152a93124947503cd",
@@ -505,16 +780,16 @@
    ]
   },
   {
-   "id": "G12",
-   "key": "gold:rushing.json:2#ac8c82743cd9c89be3da3563c924eb1e61392d745010cde152a93124947503cd",
+   "id": "G30",
+   "key": "gold-range:rushing.json:2:1984-1984#ac8c82743cd9c89be3da3563c924eb1e61392d745010cde152a93124947503cd",
    "fic": "rushing.html",
    "para": 1984,
-   "pattern": "gold-verdict",
+   "pattern": "gold-range",
    "a": "Derek Hale",
    "b": "Stiles Stilinski",
    "act": "anal",
-   "kind": "gold-verdict",
-   "claim": "Derek Hale penetrates Stiles Stilinski; the gold verdict says the roles do not switch.",
+   "kind": "gold-range",
+   "claim": "Passages 1984–1984: Derek Hale penetrates Stiles Stilinski with a penis.",
    "gold": {
     "file": "rushing.json",
     "hash": "ac8c82743cd9c89be3da3563c924eb1e61392d745010cde152a93124947503cd",
@@ -530,16 +805,16 @@
    ]
   },
   {
-   "id": "G13",
-   "key": "gold:slipfast.json:0#f404344bbc66d6236559f6afa6f9b097bb9df3df5209fc81970e302162f89213",
+   "id": "G31",
+   "key": "gold-range:slipfast.json:0:380-416#f404344bbc66d6236559f6afa6f9b097bb9df3df5209fc81970e302162f89213",
    "fic": "slipfast.html",
    "para": 380,
-   "pattern": "gold-verdict",
+   "pattern": "gold-range",
    "a": "Ilya Rozanov",
    "b": "Shane Hollander",
    "act": "anal",
-   "kind": "gold-verdict",
-   "claim": "Ilya Rozanov penetrates Shane Hollander; the gold verdict says the roles do not switch.",
+   "kind": "gold-range",
+   "claim": "Passages 380–416: Ilya Rozanov penetrates Shane Hollander with a penis.",
    "gold": {
     "file": "slipfast.json",
     "hash": "f404344bbc66d6236559f6afa6f9b097bb9df3df5209fc81970e302162f89213",
@@ -551,7 +826,28 @@
     {
      "from": 380,
      "to": 416
-    },
+    }
+   ]
+  },
+  {
+   "id": "G32",
+   "key": "gold-range:slipfast.json:0:480-505#f404344bbc66d6236559f6afa6f9b097bb9df3df5209fc81970e302162f89213",
+   "fic": "slipfast.html",
+   "para": 480,
+   "pattern": "gold-range",
+   "a": "Ilya Rozanov",
+   "b": "Shane Hollander",
+   "act": "anal",
+   "kind": "gold-range",
+   "claim": "Passages 480–505: Ilya Rozanov penetrates Shane Hollander with a penis.",
+   "gold": {
+    "file": "slipfast.json",
+    "hash": "f404344bbc66d6236559f6afa6f9b097bb9df3df5209fc81970e302162f89213",
+    "pairing": "Shane Hollander/Ilya Rozanov",
+    "act": "anal",
+    "verdict": "one_way"
+   },
+   "evidence": [
     {
      "from": 480,
      "to": 505
@@ -559,16 +855,16 @@
    ]
   },
   {
-   "id": "G14",
-   "key": "gold:slipfast.json:1#f404344bbc66d6236559f6afa6f9b097bb9df3df5209fc81970e302162f89213",
+   "id": "G33",
+   "key": "gold-range:slipfast.json:1:133-134#f404344bbc66d6236559f6afa6f9b097bb9df3df5209fc81970e302162f89213",
    "fic": "slipfast.html",
    "para": 133,
-   "pattern": "gold-verdict",
-   "a": "Shane Hollander",
-   "b": "Ilya Rozanov",
+   "pattern": "gold-range",
+   "a": "Ilya Rozanov",
+   "b": "Shane Hollander",
    "act": "blowjob",
-   "kind": "gold-verdict",
-   "claim": "Shane Hollander and Ilya Rozanov switch roles for blowjobs.",
+   "kind": "gold-range",
+   "claim": "Passages 133–134: Ilya Rozanov receives a blowjob from Shane Hollander.",
    "gold": {
     "file": "slipfast.json",
     "hash": "f404344bbc66d6236559f6afa6f9b097bb9df3df5209fc81970e302162f89213",
@@ -580,19 +876,103 @@
     {
      "from": 133,
      "to": 134
-    },
+    }
+   ]
+  },
+  {
+   "id": "G34",
+   "key": "gold-range:slipfast.json:1:147-147#f404344bbc66d6236559f6afa6f9b097bb9df3df5209fc81970e302162f89213",
+   "fic": "slipfast.html",
+   "para": 147,
+   "pattern": "gold-range",
+   "a": "Shane Hollander",
+   "b": "Ilya Rozanov",
+   "act": "blowjob",
+   "kind": "gold-range",
+   "claim": "Passages 147–147: Shane Hollander receives a blowjob from Ilya Rozanov.",
+   "gold": {
+    "file": "slipfast.json",
+    "hash": "f404344bbc66d6236559f6afa6f9b097bb9df3df5209fc81970e302162f89213",
+    "pairing": "Shane Hollander/Ilya Rozanov",
+    "act": "blowjob",
+    "verdict": "switch"
+   },
+   "evidence": [
     {
      "from": 147,
      "to": 147
-    },
+    }
+   ]
+  },
+  {
+   "id": "G35",
+   "key": "gold-range:slipfast.json:1:393-399#f404344bbc66d6236559f6afa6f9b097bb9df3df5209fc81970e302162f89213",
+   "fic": "slipfast.html",
+   "para": 393,
+   "pattern": "gold-range",
+   "a": "Shane Hollander",
+   "b": "Ilya Rozanov",
+   "act": "blowjob",
+   "kind": "gold-range",
+   "claim": "Passages 393–399: Shane Hollander receives a blowjob from Ilya Rozanov.",
+   "gold": {
+    "file": "slipfast.json",
+    "hash": "f404344bbc66d6236559f6afa6f9b097bb9df3df5209fc81970e302162f89213",
+    "pairing": "Shane Hollander/Ilya Rozanov",
+    "act": "blowjob",
+    "verdict": "switch"
+   },
+   "evidence": [
     {
      "from": 393,
      "to": 399
-    },
+    }
+   ]
+  },
+  {
+   "id": "G36",
+   "key": "gold-range:slipfast.json:1:490-490#f404344bbc66d6236559f6afa6f9b097bb9df3df5209fc81970e302162f89213",
+   "fic": "slipfast.html",
+   "para": 490,
+   "pattern": "gold-range",
+   "a": "Ilya Rozanov",
+   "b": "Shane Hollander",
+   "act": "blowjob",
+   "kind": "gold-range",
+   "claim": "Passages 490–490: Ilya Rozanov receives a blowjob from Shane Hollander.",
+   "gold": {
+    "file": "slipfast.json",
+    "hash": "f404344bbc66d6236559f6afa6f9b097bb9df3df5209fc81970e302162f89213",
+    "pairing": "Shane Hollander/Ilya Rozanov",
+    "act": "blowjob",
+    "verdict": "switch"
+   },
+   "evidence": [
     {
      "from": 490,
      "to": 490
-    },
+    }
+   ]
+  },
+  {
+   "id": "G37",
+   "key": "gold-range:slipfast.json:1:569-571#f404344bbc66d6236559f6afa6f9b097bb9df3df5209fc81970e302162f89213",
+   "fic": "slipfast.html",
+   "para": 569,
+   "pattern": "gold-range",
+   "a": "Ilya Rozanov",
+   "b": "Shane Hollander",
+   "act": "blowjob",
+   "kind": "gold-range",
+   "claim": "Passages 569–571: Ilya Rozanov receives a blowjob from Shane Hollander.",
+   "gold": {
+    "file": "slipfast.json",
+    "hash": "f404344bbc66d6236559f6afa6f9b097bb9df3df5209fc81970e302162f89213",
+    "pairing": "Shane Hollander/Ilya Rozanov",
+    "act": "blowjob",
+    "verdict": "switch"
+   },
+   "evidence": [
     {
      "from": 569,
      "to": 571
@@ -600,16 +980,16 @@
    ]
   },
   {
-   "id": "G15",
-   "key": "gold:were-compeer.json:0#190ba19f91cf1ea6b5d1694552baa0818ce180685acc4aa9bd03f0e896403349",
+   "id": "G38",
+   "key": "gold-range:were-compeer.json:0:208-239#190ba19f91cf1ea6b5d1694552baa0818ce180685acc4aa9bd03f0e896403349",
    "fic": "were-compeer.html",
    "para": 208,
-   "pattern": "gold-verdict",
+   "pattern": "gold-range",
    "a": "Derek Hale",
    "b": "Stiles Stilinski",
    "act": "anal",
-   "kind": "gold-verdict",
-   "claim": "Derek Hale penetrates Stiles Stilinski; the gold verdict says the roles do not switch.",
+   "kind": "gold-range",
+   "claim": "Passages 208–239: Derek Hale penetrates Stiles Stilinski with a penis.",
    "gold": {
     "file": "were-compeer.json",
     "hash": "190ba19f91cf1ea6b5d1694552baa0818ce180685acc4aa9bd03f0e896403349",
@@ -621,31 +1001,178 @@
     {
      "from": 208,
      "to": 239
-    },
+    }
+   ]
+  },
+  {
+   "id": "G39",
+   "key": "gold-range:were-compeer.json:0:241-249#190ba19f91cf1ea6b5d1694552baa0818ce180685acc4aa9bd03f0e896403349",
+   "fic": "were-compeer.html",
+   "para": 241,
+   "pattern": "gold-range",
+   "a": "Derek Hale",
+   "b": "Stiles Stilinski",
+   "act": "anal",
+   "kind": "gold-range",
+   "claim": "Passages 241–249: Derek Hale penetrates Stiles Stilinski with a penis.",
+   "gold": {
+    "file": "were-compeer.json",
+    "hash": "190ba19f91cf1ea6b5d1694552baa0818ce180685acc4aa9bd03f0e896403349",
+    "pairing": "Derek Hale/Stiles Stilinski",
+    "act": "anal",
+    "verdict": "one_way"
+   },
+   "evidence": [
     {
      "from": 241,
      "to": 249
-    },
+    }
+   ]
+  },
+  {
+   "id": "G40",
+   "key": "gold-range:were-compeer.json:0:397-432#190ba19f91cf1ea6b5d1694552baa0818ce180685acc4aa9bd03f0e896403349",
+   "fic": "were-compeer.html",
+   "para": 397,
+   "pattern": "gold-range",
+   "a": "Derek Hale",
+   "b": "Stiles Stilinski",
+   "act": "anal",
+   "kind": "gold-range",
+   "claim": "Passages 397–432: Derek Hale penetrates Stiles Stilinski with a penis.",
+   "gold": {
+    "file": "were-compeer.json",
+    "hash": "190ba19f91cf1ea6b5d1694552baa0818ce180685acc4aa9bd03f0e896403349",
+    "pairing": "Derek Hale/Stiles Stilinski",
+    "act": "anal",
+    "verdict": "one_way"
+   },
+   "evidence": [
     {
      "from": 397,
      "to": 432
-    },
+    }
+   ]
+  },
+  {
+   "id": "G41",
+   "key": "gold-range:were-compeer.json:0:946-967#190ba19f91cf1ea6b5d1694552baa0818ce180685acc4aa9bd03f0e896403349",
+   "fic": "were-compeer.html",
+   "para": 946,
+   "pattern": "gold-range",
+   "a": "Derek Hale",
+   "b": "Stiles Stilinski",
+   "act": "anal",
+   "kind": "gold-range",
+   "claim": "Passages 946–967: Derek Hale penetrates Stiles Stilinski with a penis.",
+   "gold": {
+    "file": "were-compeer.json",
+    "hash": "190ba19f91cf1ea6b5d1694552baa0818ce180685acc4aa9bd03f0e896403349",
+    "pairing": "Derek Hale/Stiles Stilinski",
+    "act": "anal",
+    "verdict": "one_way"
+   },
+   "evidence": [
     {
      "from": 946,
      "to": 967
-    },
+    }
+   ]
+  },
+  {
+   "id": "G42",
+   "key": "gold-range:were-compeer.json:0:976-986#190ba19f91cf1ea6b5d1694552baa0818ce180685acc4aa9bd03f0e896403349",
+   "fic": "were-compeer.html",
+   "para": 976,
+   "pattern": "gold-range",
+   "a": "Derek Hale",
+   "b": "Stiles Stilinski",
+   "act": "anal",
+   "kind": "gold-range",
+   "claim": "Passages 976–986: Derek Hale penetrates Stiles Stilinski with a penis.",
+   "gold": {
+    "file": "were-compeer.json",
+    "hash": "190ba19f91cf1ea6b5d1694552baa0818ce180685acc4aa9bd03f0e896403349",
+    "pairing": "Derek Hale/Stiles Stilinski",
+    "act": "anal",
+    "verdict": "one_way"
+   },
+   "evidence": [
     {
      "from": 976,
      "to": 986
-    },
+    }
+   ]
+  },
+  {
+   "id": "G43",
+   "key": "gold-range:were-compeer.json:0:1007-1013#190ba19f91cf1ea6b5d1694552baa0818ce180685acc4aa9bd03f0e896403349",
+   "fic": "were-compeer.html",
+   "para": 1007,
+   "pattern": "gold-range",
+   "a": "Derek Hale",
+   "b": "Stiles Stilinski",
+   "act": "anal",
+   "kind": "gold-range",
+   "claim": "Passages 1007–1013: Derek Hale penetrates Stiles Stilinski with a penis.",
+   "gold": {
+    "file": "were-compeer.json",
+    "hash": "190ba19f91cf1ea6b5d1694552baa0818ce180685acc4aa9bd03f0e896403349",
+    "pairing": "Derek Hale/Stiles Stilinski",
+    "act": "anal",
+    "verdict": "one_way"
+   },
+   "evidence": [
     {
      "from": 1007,
      "to": 1013
-    },
+    }
+   ]
+  },
+  {
+   "id": "G44",
+   "key": "gold-range:were-compeer.json:0:1155-1169#190ba19f91cf1ea6b5d1694552baa0818ce180685acc4aa9bd03f0e896403349",
+   "fic": "were-compeer.html",
+   "para": 1155,
+   "pattern": "gold-range",
+   "a": "Derek Hale",
+   "b": "Stiles Stilinski",
+   "act": "anal",
+   "kind": "gold-range",
+   "claim": "Passages 1155–1169: Derek Hale penetrates Stiles Stilinski with a penis.",
+   "gold": {
+    "file": "were-compeer.json",
+    "hash": "190ba19f91cf1ea6b5d1694552baa0818ce180685acc4aa9bd03f0e896403349",
+    "pairing": "Derek Hale/Stiles Stilinski",
+    "act": "anal",
+    "verdict": "one_way"
+   },
+   "evidence": [
     {
      "from": 1155,
      "to": 1169
-    },
+    }
+   ]
+  },
+  {
+   "id": "G45",
+   "key": "gold-range:were-compeer.json:0:1199-1205#190ba19f91cf1ea6b5d1694552baa0818ce180685acc4aa9bd03f0e896403349",
+   "fic": "were-compeer.html",
+   "para": 1199,
+   "pattern": "gold-range",
+   "a": "Derek Hale",
+   "b": "Stiles Stilinski",
+   "act": "anal",
+   "kind": "gold-range",
+   "claim": "Passages 1199–1205: Derek Hale penetrates Stiles Stilinski with a penis.",
+   "gold": {
+    "file": "were-compeer.json",
+    "hash": "190ba19f91cf1ea6b5d1694552baa0818ce180685acc4aa9bd03f0e896403349",
+    "pairing": "Derek Hale/Stiles Stilinski",
+    "act": "anal",
+    "verdict": "one_way"
+   },
+   "evidence": [
     {
      "from": 1199,
      "to": 1205
@@ -653,16 +1180,16 @@
    ]
   },
   {
-   "id": "G16",
-   "key": "gold:were-compeer.json:1#190ba19f91cf1ea6b5d1694552baa0818ce180685acc4aa9bd03f0e896403349",
+   "id": "G46",
+   "key": "gold-range:were-compeer.json:1:223-239#190ba19f91cf1ea6b5d1694552baa0818ce180685acc4aa9bd03f0e896403349",
    "fic": "were-compeer.html",
    "para": 223,
-   "pattern": "gold-verdict",
+   "pattern": "gold-range",
    "a": "Derek Hale",
    "b": "Stiles Stilinski",
    "act": "blowjob",
-   "kind": "gold-verdict",
-   "claim": "Derek Hale receives blowjobs from Stiles Stilinski; the gold verdict says the roles do not switch.",
+   "kind": "gold-range",
+   "claim": "Passages 223–239: Derek Hale receives a blowjob from Stiles Stilinski.",
    "gold": {
     "file": "were-compeer.json",
     "hash": "190ba19f91cf1ea6b5d1694552baa0818ce180685acc4aa9bd03f0e896403349",
@@ -674,15 +1201,78 @@
     {
      "from": 223,
      "to": 239
-    },
+    }
+   ]
+  },
+  {
+   "id": "G47",
+   "key": "gold-range:were-compeer.json:1:283-292#190ba19f91cf1ea6b5d1694552baa0818ce180685acc4aa9bd03f0e896403349",
+   "fic": "were-compeer.html",
+   "para": 283,
+   "pattern": "gold-range",
+   "a": "Derek Hale",
+   "b": "Stiles Stilinski",
+   "act": "blowjob",
+   "kind": "gold-range",
+   "claim": "Passages 283–292: Derek Hale receives a blowjob from Stiles Stilinski.",
+   "gold": {
+    "file": "were-compeer.json",
+    "hash": "190ba19f91cf1ea6b5d1694552baa0818ce180685acc4aa9bd03f0e896403349",
+    "pairing": "Derek Hale/Stiles Stilinski",
+    "act": "blowjob",
+    "verdict": "one_way"
+   },
+   "evidence": [
     {
      "from": 283,
      "to": 292
-    },
+    }
+   ]
+  },
+  {
+   "id": "G48",
+   "key": "gold-range:were-compeer.json:1:556-610#190ba19f91cf1ea6b5d1694552baa0818ce180685acc4aa9bd03f0e896403349",
+   "fic": "were-compeer.html",
+   "para": 556,
+   "pattern": "gold-range",
+   "a": "Derek Hale",
+   "b": "Stiles Stilinski",
+   "act": "blowjob",
+   "kind": "gold-range",
+   "claim": "Passages 556–610: Derek Hale receives a blowjob from Stiles Stilinski.",
+   "gold": {
+    "file": "were-compeer.json",
+    "hash": "190ba19f91cf1ea6b5d1694552baa0818ce180685acc4aa9bd03f0e896403349",
+    "pairing": "Derek Hale/Stiles Stilinski",
+    "act": "blowjob",
+    "verdict": "one_way"
+   },
+   "evidence": [
     {
      "from": 556,
      "to": 610
-    },
+    }
+   ]
+  },
+  {
+   "id": "G49",
+   "key": "gold-range:were-compeer.json:1:976-986#190ba19f91cf1ea6b5d1694552baa0818ce180685acc4aa9bd03f0e896403349",
+   "fic": "were-compeer.html",
+   "para": 976,
+   "pattern": "gold-range",
+   "a": "Derek Hale",
+   "b": "Stiles Stilinski",
+   "act": "blowjob",
+   "kind": "gold-range",
+   "claim": "Passages 976–986: Derek Hale receives a blowjob from Stiles Stilinski.",
+   "gold": {
+    "file": "were-compeer.json",
+    "hash": "190ba19f91cf1ea6b5d1694552baa0818ce180685acc4aa9bd03f0e896403349",
+    "pairing": "Derek Hale/Stiles Stilinski",
+    "act": "blowjob",
+    "verdict": "one_way"
+   },
+   "evidence": [
     {
      "from": 976,
      "to": 986
@@ -690,16 +1280,16 @@
    ]
   },
   {
-   "id": "G17",
-   "key": "gold:were-compeer.json:2#190ba19f91cf1ea6b5d1694552baa0818ce180685acc4aa9bd03f0e896403349",
+   "id": "G50",
+   "key": "gold-range:were-compeer.json:2:556-610#190ba19f91cf1ea6b5d1694552baa0818ce180685acc4aa9bd03f0e896403349",
    "fic": "were-compeer.html",
    "para": 556,
-   "pattern": "gold-verdict",
+   "pattern": "gold-range",
    "a": "Derek Hale",
    "b": "Stiles Stilinski",
    "act": "rimming",
-   "kind": "gold-verdict",
-   "claim": "Derek Hale rims Stiles Stilinski; the gold verdict says the roles do not switch.",
+   "kind": "gold-range",
+   "claim": "Passages 556–610: Derek Hale rims Stiles Stilinski.",
    "gold": {
     "file": "were-compeer.json",
     "hash": "190ba19f91cf1ea6b5d1694552baa0818ce180685acc4aa9bd03f0e896403349",
@@ -711,7 +1301,28 @@
     {
      "from": 556,
      "to": 610
-    },
+    }
+   ]
+  },
+  {
+   "id": "G51",
+   "key": "gold-range:were-compeer.json:2:1155-1169#190ba19f91cf1ea6b5d1694552baa0818ce180685acc4aa9bd03f0e896403349",
+   "fic": "were-compeer.html",
+   "para": 1155,
+   "pattern": "gold-range",
+   "a": "Derek Hale",
+   "b": "Stiles Stilinski",
+   "act": "rimming",
+   "kind": "gold-range",
+   "claim": "Passages 1155–1169: Derek Hale rims Stiles Stilinski.",
+   "gold": {
+    "file": "were-compeer.json",
+    "hash": "190ba19f91cf1ea6b5d1694552baa0818ce180685acc4aa9bd03f0e896403349",
+    "pairing": "Derek Hale/Stiles Stilinski",
+    "act": "rimming",
+    "verdict": "one_way"
+   },
+   "evidence": [
     {
      "from": 1155,
      "to": 1169

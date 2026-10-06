@@ -4,7 +4,7 @@ import { splitParagraphs } from "../src/text";
 
 export type ReviewSource = { file: string; title: string; sourceSha: string; paragraphSha: string; paragraphCount: number };
 export type ReviewRow = { id: string; key: string; fic: string; para: number; pattern: string; a: string; b?: string; act: string; kind: string; role?: string; claim: string; gold?: { file: string; hash: string; pairing: string; act: string; verdict: string }; evidence?: { from: number; to: number }[] };
-export type ReviewBatch = { schema: "engine-review-batch/v1" | "engine-gold-review/v1"; batchId: string; engineCommit: string; sources: ReviewSource[]; rows: ReviewRow[] };
+export type ReviewBatch = { schema: "engine-review-batch/v1" | "engine-gold-review/v1" | "engine-gold-range-review/v1"; batchId: string; engineCommit: string; sources: ReviewSource[]; rows: ReviewRow[] };
 export type ReviewAnswer = { verdict?: "correct" | "wrong" | "uncertain"; errors: string[]; context: string; updatedAt: string };
 
 export const checksum = async (bytes: Uint8Array) => Array.from(new Uint8Array(await crypto.subtle.digest("SHA-256", bytes as Uint8Array<ArrayBuffer>)), (b) => b.toString(16).padStart(2, "0")).join("");
@@ -39,7 +39,7 @@ export function validAnswer(value: unknown): value is ReviewAnswer {
 }
 
 export function importAnswers(batch: ReviewBatch, payload: unknown, current: Record<string, ReviewAnswer>): number {
-  const data = payload as { schema?: string; batchId?: string; engineCommit?: string; answers?: (ReviewAnswer & { id: string; key: string; fic: string; paragraph: number; sourceSha: string })[] };
+  const data = payload as { schema?: string; batchId?: string; engineCommit?: string; answers?: (ReviewAnswer & { id: string; key: string; fic: string; paragraph: number; sourceSha: string; gold?: ReviewRow["gold"]; evidence?: ReviewRow["evidence"] })[] };
   if (data?.schema !== batch.schema || data.batchId !== batch.batchId || data.engineCommit !== batch.engineCommit || !Array.isArray(data.answers)) throw Error("These answers belong to a different review batch.");
   // Validate everything before merging, so a malformed file cannot partially overwrite saved answers.
   const seen = new Set<string>();
@@ -47,6 +47,7 @@ export function importAnswers(batch: ReviewBatch, payload: unknown, current: Rec
     const row = batch.rows.find((r) => r.id === a.id);
     const source = row && batch.sources.find((s) => s.file === row.fic);
     if (!row || seen.has(a.id) || a.key !== row.key || a.fic !== row.fic || a.paragraph !== row.para || a.sourceSha !== source?.sourceSha || !validAnswer(a)) throw Error("An answer does not match this batch.");
+    if (batch.schema === "engine-gold-range-review/v1" && (JSON.stringify(a.gold) !== JSON.stringify(row.gold) || JSON.stringify(a.evidence) !== JSON.stringify(row.evidence))) throw Error("An answer does not match its gold range.");
     seen.add(a.id);
   }
   let changed = 0;
