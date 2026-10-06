@@ -1,6 +1,7 @@
 import { type Desire, type Instance, type Role } from "../types";
 import { type Character } from "./characters";
 import { type Cat } from "./patterns";
+import type { AttributionEvidence } from "./decision-features";
 
 export type Basis = NonNullable<Instance["basis"]>;
 
@@ -25,6 +26,7 @@ export interface ActHit {
   via?: string;
   /** Context features (learned.ts), kept for the audit and the model's training. */
   feat?: number[];
+  attribution?: AttributionEvidence;
 }
 
 export interface DesireHit {
@@ -53,7 +55,7 @@ export interface DesireHit {
   via?: string;
   /** Context features (learned.ts), kept for the audit and the model's training. */
   feat?: number[];
+  attribution?: AttributionEvidence;
 }
 
 // ───────────── text helpers ─────────────
-

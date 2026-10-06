@@ -25,10 +25,13 @@ import { reliabilityOf } from "./reliability";
 import { babyNear, featuresOf, trustOf } from "./learned";
 import { Ctx, groupValue, pronoun, readSlot, resolvePair, stripPoss } from "./resolve";
 import { PairTags, buildAct, buildDynamic, buildManual, buildOthers, buildSolo, buildVaginal, buildVibes, plural, soloIsAnal, tagsFor } from "./builders";
+import type { AttributionEvidence, PersonOrigin } from "./decision-features";
 
 // ───────────── main analysis ─────────────
 
 export interface AuditHit {
+  /** Initial resolver choices; later role/act refinements may change a/b or act. */
+  attribution?: AttributionEvidence;
   via: string;
   /** Context features of the hit (see learned.ts), where the engine computed them. */
   f?: number[];
@@ -654,7 +657,7 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
   }
 
   /** The subject of an earlier verb in "X smiled and sucked him off": nearest name/he/she that isn't an object. */
-  function elidedSubject(prefix: string, suffix = ""): Character | undefined {
+  function elidedSubject(prefix: string, suffix = "", observe?: (source: PersonOrigin) => void): Character | undefined {
     // A blanked-out quote is a clause boundary: "…," Alex says, choking…
     prefix = prefix.replace(/\s{3,}/g, (x) => `,${" ".repeat(x.length - 1)}`);
     // "The northern wolf is a patient man, but … slipping down to the hot springs to jerk off": a sentence that opens on an epithet and names no one
@@ -787,20 +790,24 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
       // is the one doing what follows.
       if (relative && /^Epithet\d+$/.test(h[3]) && i > 0 && /\b(?:was|were|is|am|are|be|been)(?:n['’]t| not)?\s+$/i.test(prefix.slice(0, h.index! + h[0].length - h[3].length))) continue;
       if (isObject && !relative && !/^(?:He|She|They|I)$/.test(h[3])) continue;
-      return resolveToken(h[3], prefix.slice(h.index! + h[0].length) + suffix);
+      return resolveToken(h[3], prefix.slice(h.index! + h[0].length) + suffix, observe);
     }
     return undefined;
   }
 
   /** A name, epithet token, or pronoun to a character (pronouns can't mean someone named in `rest`). */
-  function resolveToken(tok: string, rest = ""): Character | undefined {
+  function resolveToken(tok: string, rest = "", observe?: (source: PersonOrigin) => void): Character | undefined {
     const named = cast.byAlias.get(stripPoss(tok));
-    if (named) return named;
+    if (named) { observe?.("clause"); return named; }
     const viaEpithet = ctx.token(stripPoss(tok));
-    if (viaEpithet !== null) return viaEpithet;
+    if (viaEpithet !== null) { observe?.("epithet"); return viaEpithet; }
     const p = pronoun(stripPoss(tok));
     if (!p) return undefined;
-    return "fixed" in p ? ctx.fixed(p.fixed) : notNamedLater(ctx.subjectFor(p.gender), rest, p.gender);
+    if ("fixed" in p) { observe?.("pov"); return ctx.fixed(p.fixed); }
+    const subject = ctx.subjectFor(p.gender);
+    const chosen = notNamedLater(subject, rest, p.gender);
+    observe?.(chosen !== subject ? "partner" : subject === ctx.lastSubject ? "last-subject" : "recent");
+    return chosen;
   }
 
   /** Who a line is spoken to, when it says so: a name, a term this pair keeps using for one of them, or a role the tags give ("Alpha"). */
@@ -1183,6 +1190,8 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
     // "squeeze himself sideways" through a narrow tunnel is not masturbation.
     if (/^mast-/.test(basePid) && /\bsqueez\w*\s+(?:himself|herself|themselves)\s+(?:sideways|through|past|between|into|in|out|under|over|against|along)\b/i.test(m[0] + " " + sent.slice(m.index! + m[0].length, m.index! + m[0].length + 25))) return;
     let subjChar: Character | undefined;
+    let subjOrigin: PersonOrigin = pat.elided ? "clause" : "rule";
+    const observeSubject = (source: PersonOrigin) => { subjOrigin = source; };
     let subjFromObject = false;
     // "Cas chuckled as he bottomed the dildo out": a top seating a toy, not a bottom.
     if (/\bbottom(?:ed|ing|s)\s+(?:the\s+|a\s+|his\s+|her\s+)?(?:\w+\s+)?(?:dildo|toy|plug|vibrator|vibe|strap\S*|beads)\b/i.test(sent.slice(m.index!))) return;
@@ -1200,13 +1209,14 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
       const lastWord = (before.trim().split(/\s+/).pop() ?? "").replace(/[,;]$/, "");
       if (/^(?:kept|started|began|continued|finished|enjoyed|loved|tried|resumed)$/.test(trigger)) {
         // "…began pushing into him": whoever began must be right before it ("a finger began…" isn't a person).
-        subjChar = resolveToken(lastWord, sent.slice(m.index!));
+        subjChar = resolveToken(lastWord, sent.slice(m.index!), observeSubject);
       } else if (trigger === "to") {
         // "asked Draco to fuck him" → Draco; "rose up on his knees to slide into him" → the clause's subject.
-        const clauseSubj = elidedSubject(before, sent.slice(m.index!));
+        const clauseSubj = elidedSubject(before, sent.slice(m.index!), observeSubject);
         subjChar = /^(?:him|her|them)$/.test(lastWord)
           ? clauseSubj && ctx.partnerOf(clauseSubj)
-          : (resolveToken(lastWord, sent.slice(m.index!)) ?? clauseSubj);
+          : (resolveToken(lastWord, sent.slice(m.index!), observeSubject) ?? clauseSubj);
+        if (/^(?:him|her|them)$/.test(lastWord) && subjChar) subjOrigin = "partner";
       } else {
         // "…as a finger breached him, sliding inside": the clause right before has a thing for its subject,
         // so the left-out subject is that thing, not a person.
@@ -1214,14 +1224,14 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
         if (/^(?:it|this|that|the|a|an|one|another|something)\b/i.test(lastClause) && /\b\w+(?:s|ed)\b/.test(lastClause)) return;
         // "He feels the pressure against his loosened rim, stretching him wide": the -ing is the pressure's, not the one who feels it.
         if (/^\w+ing\b/.test(trigger) && /\b(?:feels?|felt|sees?|saw|watch(?:es|ed)?|hears?|heard|notic(?:es|ed))\s+(?:the|a|an|that|this)\s+\w+/i.test(lastClause)) return;
-        subjChar = elidedSubject(before, sent.slice(m.index!));
+        subjChar = elidedSubject(before, sent.slice(m.index!), observeSubject);
       }
       // "he turns his head just enough to mouth gently at the base of Kenobi's cock": the left-out subject can't be the person whose cock it is,
       // so it is that person's partner.
       if (!subjChar) {
         const objTok = pat.subj === "b" ? tTok : bTok;
         const obj = objTok ? cast.byAlias.get(stripPoss(objTok)) : undefined;
-        if (obj) { subjChar = ctx.partnerOf(obj); subjFromObject = !!subjChar; }
+        if (obj) { subjChar = ctx.partnerOf(obj); subjFromObject = !!subjChar; if (subjChar) subjOrigin = "partner"; }
       }
       if (!subjChar) { oneSided(pat, m, tTok, bTok, sent, original, pi); return; }
     }
@@ -1411,9 +1421,10 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
       }
     }
     const causative = /^(?:him|her|them)$/.test(subjTok ?? "") && /\b(?:make|makes|made|making|let|lets|letting)\s+$/i.test(sent.slice(0, m.index));
+    let clauseOrigin: PersonOrigin = "clause";
     const clauseSubj =
       !pat.elided && subjTok && (pronoun(subjTok) || /^(?:[Hh]is|[Hh]er|[Tt]heir)$/.test(subjTok)) && m.index! > 0
-        ? elidedSubject(sent.slice(0, m.index), sent.slice(m.index!))
+        ? elidedSubject(sent.slice(0, m.index), sent.slice(m.index!), (source) => { clauseOrigin = source; })
         : undefined;
     const causer = causative ? (clauseSubj ?? firstEntity(sent.slice(0, m.index)) ?? ctx.lastSubject) : undefined;
     // "He’s simply staring at Dean as he stretches himself": a body act on oneself, in a clause that follows a watching clause, is done by the one watched.
@@ -1453,7 +1464,14 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
       const named = [...new Set(ctx.sentMentions.filter((x) => x.at < m.index!).map((x) => x.c))];
       if (named.length === 2) held = { top: named[0], bottom: named[1] };
     }
-    const resolved = asked ? { ...asked, basis: "pronoun" as Basis } : held ? { ...held, basis: "pronoun" as Basis } : resolvePair(tTok, bTok, pat.subj, cast, ctx, subjChar, nearSubj);
+    const resolved = asked ? { ...asked, basis: "pronoun" as Basis } : held ? { ...held, basis: "pronoun" as Basis } : resolvePair(tTok, bTok, pat.subj, cast, ctx, subjChar, nearSubj, subjOrigin, povBody ? "pov" : watchedChar || causative ? "rule" : clauseOrigin);
+    const attribution: AttributionEvidence = {
+      top: "rule", bottom: "rule", topPronoun: !!(tTok && pronoun(stripPoss(tTok))), bottomPronoun: !!(bTok && pronoun(stripPoss(bTok))),
+      subjectCandidates: 0, partnerCandidates: 0,
+      nearbyCharacters: new Set([...ctx.recent.slice(0, 6), ...ctx.sentMentions.map((x) => x.c)]).size,
+      ...("attribution" in (resolved ?? {}) ? (resolved as { attribution: AttributionEvidence }).attribution : {}),
+      elided: !!pat.elided,
+    };
     ctx.coSubjects.clear();
     opts.trace?.({ para: pi, via: pat.id, match: m[0], sentence: original, tToken: tTok, bToken: bTok, top: resolved?.top?.name, bottom: resolved?.bottom?.name, basis: resolved?.basis, elidedSubject: subjChar?.name, clauseSubject: nearSubj?.name, lastSubject: ctx.lastSubject?.name, pov: ctx.povNow?.name });
     if (!resolved) { oneSided(pat, m, tTok, bTok, sent, original, pi); return; }
@@ -1532,11 +1550,19 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
     let act = pat.act;
     let cat = pat.cat;
     const actor = pat.subj === "t" ? top : bottom;
+    const originalAt = para.indexOf(original);
+    const surrounding = [
+      paras[pi - 1] ?? "",
+      originalAt < 0 ? "" : para.slice(0, originalAt) + " " + para.slice(originalAt + original.length),
+      sent.slice(0, m.index!) + " " + sent.slice(m.index! + m[0].length),
+      paras[pi + 1] ?? "",
+    ].join(" ");
     const feat = featuresOf({
       sent, paras, pi, basis: basis ?? "inferred", elided: !!pat.elided,
       pairBoth: cast.pairings.some((pr) => pr.includes(top) && pr.includes(bottom)),
       actorNamed: ctx.sentMentions.some((x) => x.c === actor),
       anyNamed: ctx.sentMentions.length > 0,
+      decision: { attribution, match: m[0], surrounding, category: pat.cat, act: pat.act, hint: !!pat.signal },
     });
     let weight = pat.weight * trustOf(pat.id, feat) * (basis === "named" ? 1 : basis === "pronoun" ? 0.75 : 0.5);
     const matchText = m[0];
@@ -1926,6 +1952,7 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
       desires.push({
         via: pat.id,
         feat,
+        attribution,
         cat,
         act,
         who: actor,
@@ -2118,7 +2145,7 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
           acts.push({ via: pat.id, cat, act, top: c, bottom, weight: weight * 0.9, basis: "named", para: pi, sentence: original, context: contextAround(paras[pi] ?? "", original) });
         }
       }
-      acts.push({ via: pat.id, feat, cat, act, top, bottom, weight: retro ? weight * 0.4 : weight, basis, para: pi, sentence: original, holeGuess, pronouns: !pat.elided && PRONOUN_ONLY.test(tTok ?? "") && PRONOUN_ONLY.test(bTok ?? "") ? true : undefined, shaky: retro ? "“what it was like to…” looks back on an earlier time and can describe either partner" : shaky ?? (subjFromObject ? "who is doing it was worked out from the person named in the sentence" : undefined), context: contextAround(paras[pi] ?? "", original) });
+      acts.push({ via: pat.id, feat, attribution, cat, act, top, bottom, weight: retro ? weight * 0.4 : weight, basis, para: pi, sentence: original, holeGuess, pronouns: !pat.elided && PRONOUN_ONLY.test(tTok ?? "") && PRONOUN_ONLY.test(bTok ?? "") ? true : undefined, shaky: retro ? "“what it was like to…” looks back on an earlier time and can describe either partner" : shaky ?? (subjFromObject ? "who is doing it was worked out from the person named in the sentence" : undefined), context: contextAround(paras[pi] ?? "", original) });
       ctx.setPartners(cat, top, bottom);
       ctx.lastSubject = pat.subj === "t" ? top : bottom;
       return;
@@ -2151,6 +2178,7 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
     desires.push({
       via: pat.id,
       feat,
+      attribution,
       cat,
       act,
       who: exp,
@@ -2379,8 +2407,8 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
     texts: [...texting.messages, ...narratedTexts].map((m) => ({ para: m.para, from: m.sender?.name, to: m.receiver?.name })),
   });
   if (opts.audit) {
-    for (const h of acts) opts.audit({ via: h.via ?? "?", f: h.feat, kind: "act", cat: h.cat, act: h.act, para: h.para, sentence: h.sentence, a: h.top.name, b: h.bottom.name });
-    for (const h of desires) opts.audit({ via: h.via ?? "?", f: h.feat, kind: h.kind, role: h.role, cat: h.cat, act: h.act, para: h.para, sentence: h.sentence, a: h.who.name, b: h.partner?.name });
+    for (const h of acts) opts.audit({ via: h.via ?? "?", f: h.feat, attribution: h.attribution, kind: "act", cat: h.cat, act: h.act, para: h.para, sentence: h.sentence, a: h.top.name, b: h.bottom.name });
+    for (const h of desires) opts.audit({ via: h.via ?? "?", f: h.feat, attribution: h.attribution, kind: h.kind, role: h.role, cat: h.cat, act: h.act, para: h.para, sentence: h.sentence, a: h.who.name, b: h.partner?.name });
   }
   const textingResult = summarizeTexts([...texting.messages, ...narratedTexts], where);
   return {
@@ -2393,4 +2421,3 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
     notes: notes.join(" "),
   };
 }
-

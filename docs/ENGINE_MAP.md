@@ -14,6 +14,29 @@ One page, so a deep dive doesn't start by re-reading 12,000 lines. Line numbers 
 9. Output: scenes `groupScenes`, hints and verdicts `buildOthers/Solo/Manual/Vaginal`, vibes `buildVibes`, dynamic `buildDynamic`, per-reading confidence `buildAct` + `scoreDesires` (`builders.ts`).
 10. Confidence: `reliability.ts` (per-pattern precision, from labels — **generated**), `learned.ts` (context model — **generated**), `ao3-prior*.ts` (tag priors).
 
+### Attribution and act-selection features
+
+`resolvePair` records each slot's initial resolution source in `AttributionEvidence`:
+direct name, epithet, POV/fixed pronoun, clause, last subject, recent person,
+inferred partner, or a special rule. Pronoun inputs and left-out subjects are
+recorded separately. Candidate counts describe eligible fallback choices; the
+nearby-character count describes context, not equally likely partners.
+`AuditHit.attribution` preserves these initial choices even when later refinements
+change the reported people or act. Hits outside the existing feature-bearing
+pattern path may have no attribution or feature vector.
+
+`decision-features.ts` turns those choices into features and records lexical
+penetration, kissing, mouth, finger, toy, anal-body and penis cues. Cues in the
+matched phrase are separate from cues in the unmatched current paragraph and its
+immediate neighbours. They are evidence words, not proof that an act occurred.
+The pattern's initial category, fingering/toy type and hint status are also kept.
+
+`learned.ts` appends 34 decision features to the original 15-feature prefix.
+The committed model continues to use its existing prefix weights; missing new
+weights contribute zero until a separate retraining. Training rejects row caches
+with the old vector length and rebuilds them from the local fics. Neither generated
+model weights nor the reliability table are regenerated as part of this feature change.
+
 ## Where to look for a symptom
 | Symptom | Start at |
 |---|---|
