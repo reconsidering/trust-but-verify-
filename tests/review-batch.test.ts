@@ -98,3 +98,41 @@ it("gates answering on the matching story, saves reasons safely, and restores an
   expect(reopened.answers.B1.verdict).toBe("wrong");
   expect(document.querySelector<HTMLButtonElement>('[data-verdict="correct"]')!.disabled).toBe(true);
 });
+
+it("rechecks gold verdicts separately, browses the whole story, and preserves reading answers", async () => {
+  setup();
+  document.body.innerHTML = readFileSync("review/next-batch.html", "utf8");
+  const stories = new Map<string,string[]>();
+  const reading = await mountReview(batch, { stories });
+  await reading.loadFiles([{ name: "synthetic.html", arrayBuffer: async () => arrayBuffer(fixture) }]);
+  document.querySelector<HTMLButtonElement>('[data-verdict="correct"]')!.click();
+  const gold: ReviewBatch = { ...batch, schema: "engine-gold-review/v1", batchId: "synthetic-gold", rows: [{ ...batch.rows[0], id:"G1", key:"gold:synthetic:0#hash", kind:"gold-verdict", gold:{file:"synthetic.json", hash:"hash", pairing:"Morgan/Rowan",act:"cup",verdict:"one_way"}, evidence:[{from:1,to:2}] }] };
+  const verdicts = await mountReview(gold, { stories });
+  expect(document.getElementById("gold-browse")!.hidden).toBe(false);
+  expect(document.querySelector<HTMLButtonElement>('[data-verdict="wrong"]')!.disabled).toBe(false);
+  document.querySelector<HTMLButtonElement>('[data-verdict="wrong"]')!.click();
+  document.getElementById("later-passages")!.click();
+  expect((document.getElementById("passage-number") as HTMLInputElement).value).toBe("2");
+  expect(verdicts.payload().schema).toBe("engine-gold-review/v1");
+  expect(verdicts.payload().answers[0].gold?.pairing).toBe("Morgan/Rowan");
+  expect(() => importAnswers(batch, verdicts.payload(), reading.answers)).toThrow("different");
+  const reopened = await mountReview(batch, { stories });
+  expect(reopened.answers.B1.verdict).toBe("correct");
+  expect(document.getElementById("gold-browse")!.hidden).toBe(true);
+  expect(document.getElementById("needed")!.children).toHaveLength(1);
+});
+
+it("includes every stored gold verdict exactly and publishes no story passages", () => {
+  const gold = JSON.parse(readFileSync("public/review/gold-verdicts.json","utf8")) as ReviewBatch;
+  expect(gold.schema).toBe("engine-gold-review/v1");
+  expect(gold.rows).toHaveLength(17);
+  for (const row of gold.rows) {
+    const bytes = readFileSync("tests/gold/" + row.gold!.file);
+    const original = JSON.parse(bytes.toString());
+    expect(createHash("sha256").update(bytes).digest("hex")).toBe(row.gold!.hash);
+    expect(original.verdicts).toContainEqual({ pairing:row.gold!.pairing,act:row.gold!.act,verdict:row.gold!.verdict,...(row.gold!.verdict === "one_way" ? {top:row.a,bottom:row.b} : {}) });
+    expect(Object.keys(row).every((key) => ["id","key","fic","para","pattern","a","b","act","kind","claim","gold","evidence"].includes(key))).toBe(true);
+    const source = gold.sources.find((s) => s.file === row.fic)!;
+    for (const range of row.evidence ?? []) { expect(range.from).toBeGreaterThanOrEqual(0); expect(range.to).toBeLessThan(source.paragraphCount); }
+  }
+});

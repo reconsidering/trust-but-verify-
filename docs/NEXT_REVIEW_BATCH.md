@@ -30,3 +30,13 @@ node scripts/import-review-batch.mjs public/review/next-batch.json /absolute/pat
 The importer validates batch, detector commit, source and reading identity, then maps Correct to `ok`, Wrong to `wrong`, and Not sure to `unclear`. It preserves newer answers. Tracked provenance excludes free-text context. Review any requested detector corrections separately with invented-adult tests; merge labels and fixes before retraining. Compare held-out log loss and AUC on the same split, and measure recall against independently inventoried scenes.
 
 Validation for this page: 1,433 unit tests passed, including five review/import/integrity tests; production type-check/build passed. A 390px browser test under the repository URL prefix loaded all ten sources from the original ZIP, saved and restored answers, exported the JSON with the detector identity intact, and observed no uploads or external requests. This is browser validation with mobile emulation, not a test on physical iPhone hardware.
+
+## Recheck the gold verdicts
+
+Use the Review selector on the same page to switch to **Gold verdicts**. This includes all 17 stored gold verdicts from eight stories, with the same answer buttons, error checkboxes and correction box. These claims are the stored human gold expectations, not newly predicted engine verdicts. Blowjob wording identifies who receives the blowjob; rimming wording identifies who performs it.
+
+Choose a recorded scene window, use Earlier/Later passages, or enter a passage number to browse anywhere in the story. Recorded windows are partial evidence: a whole-story one-way verdict also needs a check for exceptions elsewhere. Loading the ZIP loads files needed by both views; switching views keeps the locally loaded stories and keeps their answers separate. Existing answers to the 40-reading batch retain their original batch ID.
+
+Gold answers export as `gold-verdict-review-answers.json`, with a separate schema and a hash identifying the gold label file that was reviewed. Send that file back with your corrections. It does not automatically replace gold expectations or create reading-level training labels; `import-review-batch.mjs` rejects verdict feedback. A wrong gold verdict needs its corrected roles or verdict recorded before changing the tests.
+
+Rebuild the verdict metadata with `node scripts/build-gold-review.mjs /absolute/private/snapshots`. The builder publishes names, verdicts, source checksums and scene ranges, without publishing story passages.

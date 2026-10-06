@@ -10,13 +10,14 @@
 <main id="review">
   <p class="eyebrow">Reading review</p><h1>Check the next readings</h1>
   <p>Compare each claim with the passage. Mark it correct, wrong, or not sure, then add a reason if needed. The engine’s confidence is hidden.</p>
+  <label for="review-kind">Review</label><select id="review-kind"><option value="readings">40 sampled readings</option><option value="gold">Gold verdicts</option></select><p id="review-explanation" class="small"></p>
   <section class="load"><label for="stories">Choose your samples ZIP or story HTML files</label>
     <input id="stories" type="file" accept=".zip,.html,.htm,application/zip,text/html" multiple>
     <p class="small">On iPhone, choose the files from Files. They stay on your device. Choose them again when you reopen the page; your answers stay saved.</p>
     <p id="loaded" role="status">No stories loaded yet.</p><details><summary>Stories needed for this batch</summary><ul id="needed"></ul></details>
   </section>
   <div class="toolbar"><span id="progress" aria-live="polite"></span><label for="filter">Show</label><select id="filter"><option value="all">All readings</option><option value="unanswered">Unanswered</option><option value="answered">Answered</option></select><button id="next-unanswered">Next unanswered</button></div>
-  <article id="card"><p id="where" class="small"></p><h2 id="claim"></h2><div id="passages"></div><button id="more">More context</button>
+  <article id="card"><p id="where" class="small"></p><h2 id="claim"></h2><div id="gold-browse" hidden><p class="small">These are stored gold expectations, not a new engine result. Recorded scene windows are partial; check the whole story for exceptions.</p><label for="evidence">Recorded scene window</label><select id="evidence"></select><label for="passage-number">Browse story passage (numbered from 0)</label><input id="passage-number" type="number" min="0"><button id="go-passage">Go</button><button id="earlier-passages">Earlier passages</button><button id="later-passages">Later passages</button><p id="passage-range" class="small"></p></div><div id="passages"></div><button id="more">More context</button>
     <div class="choices"><button data-verdict="correct">Correct</button><button data-verdict="wrong">Wrong</button><button data-verdict="uncertain">Not sure</button></div>
     <fieldset><legend>Common errors — select any that apply</legend><div id="errors"></div></fieldset>
     <label for="context">Additional context or correction</label><textarea id="context" rows="4" placeholder="Who is doing what? What does the passage mean?"></textarea>
