@@ -20,6 +20,8 @@ change is checked). Claude Code (`CLAUDE.md`) also works in this repository, so 
   fics), `npm run dive`, `npm run trace`, `npm run spotcheck`, `npm run regen`. **Without the fics you cannot verify an engine change against real fics.**
   So for an engine change: keep it small and guarded, add a paraphrased test, run `npm test` and `npm run build`, and say plainly in the pull request that
   `npm run check` and `npm run regress -- --hits --all --base origin/main` still need to be run (the owner or Claude Code can run them) before merging.
+- If the owner gives you `ao3-samples.zip` (or asks you to set up the fics), run `npm run setup-fics -- <path to the zip>`: it unzips into `ao3-samples/`
+  and reads every fic once (about 6 minutes) so checks and regressions are cached. Say what you are doing, then carry on with the owner's request.
 
 ## Working alongside Claude
 - Before starting, look at the open pull requests and branches (`claude`-style names such as `fix-notes`, `weak-patterns`, `retrain-model` are Claude's) and avoid editing
