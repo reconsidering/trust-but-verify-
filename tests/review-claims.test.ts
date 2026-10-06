@@ -14,6 +14,10 @@ describe("spot-check claims say which way round the engine means", () => {
     expect(claim({ a: "Cas", b: "Dean", act: "anal sex", kind: "act", role: "top" })).toMatch(/as the one penetrating/);
     expect(claim({ a: "Alex", b: "Henry", act: "blowjob", kind: "act" })).toBe("Alex is getting a blowjob from Henry");
   });
+  it("a toy inside the credited person is worded as theirs, not as theirs put into the partner", () => {
+    expect(claim({ a: "Dean Winchester", b: "Castiel", act: "toy inside", kind: "prep", role: "bottom" })).toMatch(/^Dean has a toy inside them \(with Castiel\)/);
+    expect(claim({ a: "Castiel", b: "Dean", act: "toy inside", kind: "prep", role: "top" })).toMatch(/^Castiel is putting a toy inside Dean/);
+  });
   it("every act label has a wording, none falls back to the vague form", () => {
     expect(claim({ a: "A B", b: "C D", act: "something new", kind: "act" })).toMatch(/first name is the one the engine credited/);
   });
