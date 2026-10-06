@@ -230,16 +230,15 @@
    "via": "toy-inside-him",
    "h": "3ba8fec6",
    "conf": 30,
-   "weight": 0.85,
-   "source": "claude",
+   "source": "owner",
    "marks": {
-    "right": 1,
+    "right": 2,
     "wrong": 0
    },
    "seen": [
-    "2026-10-05"
-   ],
-   "retired": "owner judged this wrong in a blind spot-check 2026-10-06"
+    "2026-10-05",
+    "2026-10-06"
+   ]
   },
   {
    "kind": "hint",
@@ -350,16 +349,15 @@
    "via": "toy-inside-him",
    "h": "129f90db",
    "conf": 30,
-   "weight": 0.85,
-   "source": "claude",
+   "source": "owner",
    "marks": {
-    "right": 1,
+    "right": 2,
     "wrong": 0
    },
    "seen": [
-    "2026-10-05"
-   ],
-   "retired": "owner judged this wrong in a blind spot-check 2026-10-06"
+    "2026-10-05",
+    "2026-10-06"
+   ]
   },
   {
    "kind": "hint",
@@ -3337,7 +3335,8 @@
    "source": "owner",
    "seen": [
     "2026-10-05"
-   ]
+   ],
+   "retired": "owner re-judged this right 2026-10-06"
   },
   {
    "kind": "hint",
@@ -3354,7 +3353,8 @@
    "source": "owner",
    "seen": [
     "2026-10-05"
-   ]
+   ],
+   "retired": "owner re-judged this right 2026-10-06"
   },
   {
    "kind": "hint",
@@ -4015,7 +4015,8 @@
    "source": "owner",
    "seen": [
     "2026-10-06"
-   ]
+   ],
+   "retired": "owner re-judged this right 2026-10-06"
   },
   {
    "kind": "scene",
@@ -4103,7 +4104,8 @@
    "source": "owner",
    "seen": [
     "2026-10-06"
-   ]
+   ],
+   "retired": "owner re-judged this right 2026-10-06"
   }
  ]
 }

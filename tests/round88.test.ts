@@ -60,4 +60,8 @@ describe("round 88: the owner’s notes on spot-check readings", () => {
     const r = run("Rhys held Theo’s head and fucked his mouth, slow and deep, Theo’s lips stretched around him.||He pulls back a few centimeters before pushing back in.");
     expect(r.anal).toEqual([]);
   });
+  it("‘leaned over him and traced his length with his tongue … he took him into his mouth’: the one who leans over is the one sucking", () => {
+    const r = run("Rhys’s eyes watched him, hungry and eager, as Theo leaned over him and traced his length with his tongue.||The shiver that went up Rhys’s body sent a thrill through Theo, and he took him into his mouth.");
+    expect(r.blow).toEqual(["Rhys>Theo"]); // top Rhys is sucked, bottom Theo sucks
+  });
 });

@@ -216,7 +216,7 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
     subjectReG.lastIndex = 0;
     const first = subjectRe.exec(s);
     let m: RegExpExecArray | null = first;
-    if (first && (/['’]s$/.test(first[1]) || /^(?:[Hh]is|[Hh]er|[Tt]heir|[Mm]y)$/.test(first[1])) && /\b(?:on|in|at|of|from|into|to|over|with|across|around|against|onto|under|beneath|behind|beside|near|by|for|through|toward|towards|past)\s+$/i.test(s.slice(0, first.index + first[0].length - first[1].length))) {
+    if (first && (/['’]s$/.test(first[1]) || /^(?:[Hh]is|[Hh]er|[Tt]heir|[Mm]y)$/.test(first[1])) && /\b(?:on|in|at|of|from|into|to|over|with|across|around|against|onto|under|beneath|behind|beside|near|by|for|through|toward|towards|past|up|down|along|inside|within|upon)\s+$/i.test(s.slice(0, first.index + first[0].length - first[1].length))) {
       let next: RegExpExecArray | null;
       subjectReG.lastIndex = first.index + first[0].length;
       next = subjectReG.exec(s);
