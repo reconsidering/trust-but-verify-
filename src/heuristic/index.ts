@@ -1355,7 +1355,7 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
     // "Theo rocked himself shamelessly" with the other man inside him is being fucked, and "barely touching himself" with someone's mouth on him is being sucked.
     if (pat.id.startsWith("mast-himself")) {
       if (/\b(?:grind|ground|rock|thrust)\w*\s+(?:himself|herself|themselves|themself)\b/i.test(m[0]) && /\b(?:inside|buried|fucking|fucked|filling|filled|knot\w*|impaled|stretch\w*|thrust\w* into)\b/i.test(`${paras[pi - 1] ?? ""} ${sent}`)) return;
-      if (/\b(?:in|down|into)\s+(?:your|his|her|their)\s+(?:mouth|throat)\b|\bsuck\w*\b/i.test(original)) return;
+      if (/\b(?:cock|dick|length)\s+in\s+(?:your|his|her|their)\s+(?:mouth|throat)\b/i.test(original)) return;
     }
     // "a bit sore here and there, as could be expected from getting fucked on the table": the same, with words in between and "getting".
     if (pat.cat === "anal" && !pat.signal && /\b(?:sore|aching|achy|tender|raw)\b[^.!?;]{0,50}?\b(?:from|after)\s+(?:being\s+|getting\s+|having\s+been\s+)(?:stretched|fucked|opened|taken|filled|used|ridden|pounded|bred|knotted|plowed|wrecked)\b/i.test(sent.slice(Math.max(0, m.index! - 90), m.index! + m[0].length))) return;
