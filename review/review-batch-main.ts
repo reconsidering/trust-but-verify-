@@ -13,9 +13,9 @@ try {
   const select = document.getElementById("review-kind") as HTMLSelectElement;
   const show = async () => {
     const batch = select.value === "gold" ? gold : readings;
-    document.querySelector("h1")!.textContent = batch === gold ? "Check the gold verdicts" : "Check the next readings";
+    document.querySelector("h1")!.textContent = batch === gold ? "Check the gold ranges" : "Check the next readings";
     (document.getElementById("filter") as HTMLSelectElement).value = "all";
-    document.getElementById("review-explanation")!.textContent = batch === gold ? "Check the stored gold verdicts again. These answers export separately and do not automatically change the gold labels." : "Check the sampled readings. Your existing reading answers are preserved.";
+    document.getElementById("review-explanation")!.textContent = batch === gold ? "Check each recorded range separately, including its act and participants. Belonging is excluded. Previous whole-story answers do not count as range answers." : "Check the sampled readings. Your existing reading answers are preserved.";
     document.getElementById("status")!.textContent = "";
     await mountReview(batch, { stories, sources });
   };

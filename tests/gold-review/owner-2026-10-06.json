@@ -1,0 +1,126 @@
+{
+ "schema": "accepted-gold-feedback/v1",
+ "batchId": "gold-ee9f5bfc51a3",
+ "engineCommit": "7b58f70ce1ea06d1f6c01e745da9be410e9c8da3",
+ "feedbackSha": "60d446ed0dcc4510d490aee9f6f68b1c56b3b323eb886168485125bb9b949a76",
+ "excludedFics": [
+  "belonging.html"
+ ],
+ "answers": [
+  {
+   "id": "G1",
+   "key": "gold:a-la-carte.json:0#2d58e4f1cf109faa669d923311c63805cd8b63e6916c2265cb7e98fb9e8b2759",
+   "fic": "a-la-carte.html",
+   "paragraph": 444,
+   "sourceSha": "4d553843dc96b396376426414fd191534045ca3508acb51a1672e0ef3ebc0cca",
+   "gold": {
+    "file": "a-la-carte.json",
+    "hash": "2d58e4f1cf109faa669d923311c63805cd8b63e6916c2265cb7e98fb9e8b2759",
+    "pairing": "Obi-Wan Kenobi/Anakin Skywalker",
+    "act": "anal",
+    "verdict": "one_way"
+   },
+   "errors": [],
+   "verdict": "correct",
+   "updatedAt": "2026-10-06T19:43:16.140Z"
+  },
+  {
+   "id": "G2",
+   "key": "gold:a-la-carte.json:1#2d58e4f1cf109faa669d923311c63805cd8b63e6916c2265cb7e98fb9e8b2759",
+   "fic": "a-la-carte.html",
+   "paragraph": 507,
+   "sourceSha": "4d553843dc96b396376426414fd191534045ca3508acb51a1672e0ef3ebc0cca",
+   "gold": {
+    "file": "a-la-carte.json",
+    "hash": "2d58e4f1cf109faa669d923311c63805cd8b63e6916c2265cb7e98fb9e8b2759",
+    "pairing": "Obi-Wan Kenobi/Anakin Skywalker",
+    "act": "blowjob",
+    "verdict": "one_way"
+   },
+   "errors": [
+    "Other"
+   ],
+   "verdict": "uncertain",
+   "updatedAt": "2026-10-06T19:45:58.280Z"
+  },
+  {
+   "id": "G3",
+   "key": "gold:a-la-carte.json:2#2d58e4f1cf109faa669d923311c63805cd8b63e6916c2265cb7e98fb9e8b2759",
+   "fic": "a-la-carte.html",
+   "paragraph": 846,
+   "sourceSha": "4d553843dc96b396376426414fd191534045ca3508acb51a1672e0ef3ebc0cca",
+   "gold": {
+    "file": "a-la-carte.json",
+    "hash": "2d58e4f1cf109faa669d923311c63805cd8b63e6916c2265cb7e98fb9e8b2759",
+    "pairing": "Obi-Wan Kenobi/Anakin Skywalker",
+    "act": "rimming",
+    "verdict": "one_way"
+   },
+   "errors": [],
+   "verdict": "correct",
+   "updatedAt": "2026-10-06T19:44:59.704Z"
+  },
+  {
+   "id": "G4",
+   "key": "gold:angel-without-a-god.json:0#e3c51d5d73e7dcdee982a0520dd5dddc8f448105205758243892fa90dbc10ec6",
+   "fic": "angel-without-a-god.html",
+   "paragraph": 4270,
+   "sourceSha": "dae22879912fd019b9219d7cf60c85dd861ae5b83de5660c1b3a9918030a3d95",
+   "gold": {
+    "file": "angel-without-a-god.json",
+    "hash": "e3c51d5d73e7dcdee982a0520dd5dddc8f448105205758243892fa90dbc10ec6",
+    "pairing": "Jason Carver/Eddie Munson",
+    "act": "anal",
+    "verdict": "one_way"
+   },
+   "errors": [
+    "Other"
+   ],
+   "verdict": "wrong",
+   "updatedAt": "2026-10-06T19:49:13.084Z"
+  },
+  {
+   "id": "G5",
+   "key": "gold:angel-without-a-god.json:1#e3c51d5d73e7dcdee982a0520dd5dddc8f448105205758243892fa90dbc10ec6",
+   "fic": "angel-without-a-god.html",
+   "paragraph": 3357,
+   "sourceSha": "dae22879912fd019b9219d7cf60c85dd861ae5b83de5660c1b3a9918030a3d95",
+   "gold": {
+    "file": "angel-without-a-god.json",
+    "hash": "e3c51d5d73e7dcdee982a0520dd5dddc8f448105205758243892fa90dbc10ec6",
+    "pairing": "Jason Carver/Eddie Munson",
+    "act": "blowjob",
+    "verdict": "one_way"
+   },
+   "errors": [],
+   "verdict": "correct",
+   "updatedAt": "2026-10-06T19:49:36.748Z"
+  }
+ ],
+ "decisions": [
+  {
+   "id": "G1",
+   "status": "confirmed-verdict"
+  },
+  {
+   "id": "G2",
+   "status": "unresolved",
+   "reason": "Possible earlier reverse-direction blowjob; requires a separate scene check. No verdict changed."
+  },
+  {
+   "id": "G3",
+   "status": "confirmed-verdict"
+  },
+  {
+   "id": "G4",
+   "status": "corrected-scene",
+   "from": 4270,
+   "to": 4287,
+   "reason": "Fingering, not penile anal penetration. Remove this anal scene expectation; retain the whole-story verdict and later anal scene."
+  },
+  {
+   "id": "G5",
+   "status": "confirmed-verdict"
+  }
+ ]
+}

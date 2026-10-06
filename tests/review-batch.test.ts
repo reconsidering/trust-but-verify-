@@ -122,17 +122,60 @@ it("rechecks gold verdicts separately, browses the whole story, and preserves re
   expect(document.getElementById("needed")!.children).toHaveLength(1);
 });
 
-it("includes every stored gold verdict exactly and publishes no story passages", () => {
+it("includes each remaining gold range separately and publishes no story passages", () => {
   const gold = JSON.parse(readFileSync("public/review/gold-verdicts.json","utf8")) as ReviewBatch;
-  expect(gold.schema).toBe("engine-gold-review/v1");
-  expect(gold.rows).toHaveLength(17);
+  expect(gold.schema).toBe("engine-gold-range-review/v1");
+  expect(gold.rows).toHaveLength(51);
+  expect(new Set(gold.rows.map(r => r.key)).size).toBe(51);
+  expect(gold.rows.some(r => r.fic === "belonging.html")).toBe(false);
   for (const row of gold.rows) {
     const bytes = readFileSync("tests/gold/" + row.gold!.file);
     const original = JSON.parse(bytes.toString());
     expect(createHash("sha256").update(bytes).digest("hex")).toBe(row.gold!.hash);
-    expect(original.verdicts).toContainEqual({ pairing:row.gold!.pairing,act:row.gold!.act,verdict:row.gold!.verdict,...(row.gold!.verdict === "one_way" ? {top:row.a,bottom:row.b} : {}) });
+    expect(original.verdicts.some((v: {pairing:string;act:string;verdict:string}) => v.pairing === row.gold!.pairing && v.act === row.act && v.verdict === row.gold!.verdict)).toBe(true);
+    expect(row.evidence).toHaveLength(1);
+    expect(original.scenes.some((s: {from:number;to:number;top:string;bottom:string;act:string}) => s.from === row.para && s.to === row.evidence![0].to && s.top === row.a && s.bottom === row.b && s.act === row.act)).toBe(true);
     expect(Object.keys(row).every((key) => ["id","key","fic","para","pattern","a","b","act","kind","claim","gold","evidence"].includes(key))).toBe(true);
     const source = gold.sources.find((s) => s.file === row.fic)!;
     for (const range of row.evidence ?? []) { expect(range.from).toBeGreaterThanOrEqual(0); expect(range.to).toBeLessThan(source.paragraphCount); }
   }
+});
+
+
+it("keeps range answers independent, shows the entire range, and rejects old verdict answers", async () => {
+  setup(); document.body.innerHTML = readFileSync("review/next-batch.html", "utf8");
+  const gold: ReviewBatch = {...batch, schema:"engine-gold-range-review/v1",batchId:"ranges",rows:[1,2].map((n) => ({...batch.rows[0],id:"G"+n,key:"range"+n,para:n,evidence:[{from:n,to:n}]}))};
+  const api = await mountReview(gold,{stories:new Map([["synthetic.html",reviewParagraphs(fixture)]])});
+  document.querySelector<HTMLButtonElement>('[data-verdict="wrong"]')!.click();
+  document.getElementById("card")!.scrollIntoView = vi.fn();
+  api.move(1); expect(api.answers.G2).toBeUndefined();
+  document.querySelector<HTMLButtonElement>('[data-verdict="correct"]')!.click();
+  expect(api.payload().answers.map(a => a.verdict)).toEqual(["wrong","correct"]);
+  expect(api.payload().answers[1].evidence).toEqual([{from:2,to:2}]);
+  expect(document.getElementById("where")!.textContent).toContain("Gold range 2–2");
+  expect(() => api.import({...api.payload(),schema:"engine-gold-review/v1"})).toThrow("different");
+  const altered = api.payload(); altered.answers[0].evidence = [{from:0,to:2}];
+  expect(() => api.import(altered)).toThrow("gold range");
+});
+
+it("incorporates only the five non-Belonging answers and preserves unresolved feedback", () => {
+  const accepted = JSON.parse(readFileSync("tests/gold-review/owner-2026-10-06.json","utf8"));
+  expect(accepted.answers).toHaveLength(5);
+  expect(accepted.answers.some((a: {fic:string}) => a.fic === "belonging.html")).toBe(false);
+  expect(accepted.answers.every((a: object) => !("context" in a))).toBe(true);
+  expect(accepted.decisions.find((d: {id:string}) => d.id === "G2").status).toBe("unresolved");
+  const angel = JSON.parse(readFileSync("tests/gold/angel-without-a-god.json","utf8"));
+  expect(angel.scenes.some((s: {act:string;from:number}) => s.act === "anal" && s.from === 4270)).toBe(false);
+  expect(angel.scenes.some((s: {act:string;from:number}) => s.act === "anal" && s.from === 4302)).toBe(true);
+});
+
+
+it("shows a complete gold range even when it extends past the normal context window", async () => {
+  setup(); document.body.innerHTML = readFileSync("review/next-batch.html", "utf8");
+  const paras = Array.from({length:25},(_,n) => `Invented adult passage ${n}.`);
+  const gold: ReviewBatch = {...batch,schema:"engine-gold-range-review/v1",batchId:"long-range",sources:[{...batch.sources[0],paragraphCount:25}],rows:[{...batch.rows[0],para:1,evidence:[{from:1,to:20}]}]};
+  await mountReview(gold,{stories:new Map([["synthetic.html",paras]])});
+  const highlights = document.querySelectorAll("#passages .focus");
+  expect(highlights).toHaveLength(20);
+  expect(highlights[19].textContent).toBe(paras[20]);
 });
