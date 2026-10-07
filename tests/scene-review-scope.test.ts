@@ -53,3 +53,30 @@ it('keeps the accepted owner batch separate from per-reading training labels and
  expect(accepted.scope.confidenceTraining).toContain('none');
  for(const window of accepted.windows)for(const e of window.events){expect(SCORED_ACTS).toContain(e.act);expect(e.from).toBeGreaterThanOrEqual(window.from);expect(e.to).toBeLessThanOrEqual(window.to);expect(e.from).toBeLessThanOrEqual(e.to);}
 });
+
+it('retains partial positive evidence without completing drafts or creating negative labels',()=>{
+ const completed=JSON.parse(readFileSync('tests/scene-review/missed-2051db5b4e06.json','utf8')) as ActInventory;
+ const partial=JSON.parse(readFileSync('tests/scene-review/missed-2051db5b4e06-partial.json','utf8'));
+ const batch=JSON.parse(readFileSync('public/review/missed-scenes.json','utf8')) as SceneBatch;
+ expect(partial.feedbackSha).toBe((completed as ActInventory & {feedbackSha:string}).feedbackSha);
+ expect(partial.windows.map((w:any)=>w.id)).toEqual(completed.skippedUnfinished);
+ expect(partial.windows.reduce((n:number,w:any)=>n+w.events.length,0)).toBe(11);
+ for(const w of partial.windows){
+  const source=batch.sources.find(s=>s.file===w.fic),row=batch.rows.find(r=>r.id===w.id);
+  expect(row).toMatchObject({fic:w.fic,from:w.from,to:w.to,windowSha:w.windowSha,lane:w.lane});
+  expect(w.sourceSha).toBe(source?.sourceSha);
+  expect(w.ownerComplete).toBe(false);expect(w.coverage).toBe('positive-only');
+  expect(w.assistantReview.negativeLabelsAllowed).toBe(false);
+  for(const e of w.events){
+   expect(SCORED_ACTS).toContain(e.act);expect(e.performer.trim()).not.toBe('');
+   if(e.act!=='Solo masturbation')expect(e.receiver.trim()).not.toBe('');
+   expect(e.from).toBeGreaterThanOrEqual(w.from);expect(e.to).toBeLessThanOrEqual(w.to);expect(e.from).toBeLessThanOrEqual(e.to);
+   expect(e.assistantConfidence).toBeGreaterThan(0);expect(e.assistantConfidence).toBeLessThanOrEqual(100);
+  }
+ }
+ const added=partial.windows.flatMap((w:any)=>w.events).filter((e:any)=>e.provenance.includes('not owner-confirmed'));
+ expect(added).toEqual([expect.objectContaining({act:'Solo masturbation',from:356,to:356,ownerEventIndex:1})]);
+ expect(partial.windows.find((w:any)=>w.id==='M26').events).toContainEqual(expect.objectContaining({act:'Toy insertion',performer:'Dean Winchester',receiver:'Dean Winchester'}));
+ expect(partial.windows.find((w:any)=>w.id==='M33').events).toEqual([]);
+ expect(partial.windows.find((w:any)=>w.id==='M33').contextEvents).toHaveLength(2);
+});

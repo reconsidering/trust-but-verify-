@@ -1,0 +1,477 @@
+{
+ "schema": "engine-partial-sex-act-review/v1",
+ "batchId": "missed-2051db5b4e06",
+ "referenceCommit": "85e48fad18655944986ca38d0c1647a1c8beb6f3",
+ "feedbackSha": "30aaaaa97fee8d6d79978065fcdad7ff2f5e488ebc619f5cb2cf96c7104856e9",
+ "scope": {
+  "coverage": "positive-only; incomplete owner windows never establish absence of unlisted acts",
+  "hints": "not scored; omissions never produce negative labels",
+  "confidenceTraining": "none",
+  "assistantConfidence": "subjective passage-review confidence, not calibrated engine probability",
+  "ownerCompletion": "unchanged; all twelve drafts remain incomplete"
+ },
+ "windows": [
+  {
+   "id": "M4",
+   "fic": "rwrb-balls.html",
+   "from": 352,
+   "to": 365,
+   "windowSha": "6a1687f902fde5df1b211ef44f93bcf50c4545278508cd27675eb687061ede81",
+   "lane": "discovery",
+   "sourceSha": "972bdceeca54c37e7f9298ac9621b9155bf28745a076c5d5124e55a38b1a9474",
+   "updatedAt": "2026-10-07T17:00:38.880Z",
+   "ownerComplete": false,
+   "coverage": "positive-only",
+   "ownerVerdict": "acts",
+   "ownerProposalReview": "disagree",
+   "ownerFlags": [
+    "Multiple simultaneous acts"
+   ],
+   "events": [
+    {
+     "act": "Fingering",
+     "performer": "Henry Fox-Mountchristen-Windsor",
+     "receiver": "Alex Claremont-Diaz",
+     "from": 353,
+     "to": 355,
+     "provenance": "owner draft, confirmed by assistant passage review",
+     "ownerEventIndex": 0,
+     "assistantConfidence": 99
+    },
+    {
+     "act": "Anal penetration (penis)",
+     "performer": "Henry Fox-Mountchristen-Windsor",
+     "receiver": "Alex Claremont-Diaz",
+     "from": 357,
+     "to": 362,
+     "provenance": "owner draft, confirmed by assistant passage review",
+     "ownerEventIndex": 2,
+     "assistantConfidence": 99
+    },
+    {
+     "act": "Handjob",
+     "performer": "Henry Fox-Mountchristen-Windsor",
+     "receiver": "Alex Claremont-Diaz",
+     "from": 361,
+     "to": 361,
+     "provenance": "owner draft, confirmed by assistant passage review",
+     "ownerEventIndex": 3,
+     "assistantConfidence": 99
+    },
+    {
+     "act": "Solo masturbation",
+     "performer": "Henry Fox-Mountchristen-Windsor",
+     "receiver": "",
+     "from": 356,
+     "to": 356,
+     "provenance": "assistant interpretation of owner Other entry; not owner-confirmed",
+     "ownerEventIndex": 1,
+     "assistantConfidence": 98
+    }
+   ],
+   "contextEvents": [
+    {
+     "ownerEventIndex": 1,
+     "act": "Other",
+     "occurrence": "Happens in this scene",
+     "performer": "Henry Fox-Mountchristen-Windsor",
+     "receiver": "",
+     "from": 356,
+     "to": 356,
+     "use": "context only; never scored as a sex act or a negative hint label"
+    },
+    {
+     "ownerEventIndex": 4,
+     "act": "Kissing / body rubbing",
+     "occurrence": "Happens in this scene",
+     "performer": "Henry Fox-Mountchristen-Windsor",
+     "receiver": "Alex Claremont-Diaz",
+     "from": 352,
+     "to": 353,
+     "use": "context only; never scored as a sex act or a negative hint label"
+    },
+    {
+     "ownerEventIndex": 5,
+     "act": "Kissing / body rubbing",
+     "occurrence": "Happens in this scene",
+     "performer": "Alex Claremont-Diaz",
+     "receiver": "Henry Fox-Mountchristen-Windsor",
+     "from": 360,
+     "to": 362,
+     "use": "context only; never scored as a sex act or a negative hint label"
+    }
+   ],
+   "assistantReview": {
+    "finding": "performed scored acts",
+    "confidence": 99,
+    "summary": "Three saved partner acts have clear, continuous evidence. The unfinished Other entry is Henry stimulating himself before penetration; retain that as an additional assistant-reviewed solo act. Kissing remains outside the scored inventory.",
+    "negativeLabelsAllowed": false
+   }
+  },
+  {
+   "id": "M13",
+   "fic": "dogbird.html",
+   "from": 992,
+   "to": 1007,
+   "windowSha": "12f67024fb15ad0a1fb3d3f47febb9ef849a453288b1cfd4764410468f6f6366",
+   "lane": "discovery",
+   "sourceSha": "b66dcf4730e681942787b9d280bc8b2825005e179cfe09179a82e935a4f036fb",
+   "updatedAt": "2026-10-07T17:13:01.907Z",
+   "ownerComplete": false,
+   "coverage": "positive-only",
+   "ownerVerdict": "none",
+   "ownerProposalReview": "agree",
+   "ownerFlags": [],
+   "events": [],
+   "contextEvents": [],
+   "assistantReview": {
+    "finding": "no scored acts found in this window",
+    "confidence": 99,
+    "summary": "An argument about leaving and returning home; handling clothing and emotional dialogue do not describe a sex act.",
+    "negativeLabelsAllowed": false
+   }
+  },
+  {
+   "id": "M14",
+   "fic": "on-my-mind.html",
+   "from": 240,
+   "to": 255,
+   "windowSha": "a0b819fcb26ecdad80c1071bdd3a5bdaa0fa0b94a2a7608f78562ef2d1482d25",
+   "lane": "discovery",
+   "sourceSha": "2a886f421c49bdad8483c1703fa8f93668701c525d20f6e777bc23396fea1d2f",
+   "updatedAt": "2026-10-07T17:15:28.533Z",
+   "ownerComplete": false,
+   "coverage": "positive-only",
+   "ownerVerdict": "acts",
+   "ownerProposalReview": "agree",
+   "ownerFlags": [
+    "Act continues outside this window",
+    "Multiple simultaneous acts"
+   ],
+   "events": [
+    {
+     "act": "Blowjob",
+     "performer": "Alex Claremont-Diaz",
+     "receiver": "Henry Hanover-Stuart-Fox",
+     "from": 240,
+     "to": 251,
+     "provenance": "owner draft, confirmed by assistant passage review",
+     "ownerEventIndex": 0,
+     "assistantConfidence": 99
+    },
+    {
+     "act": "Handjob",
+     "performer": "Alex Claremont-Diaz",
+     "receiver": "Henry Hanover-Stuart-Fox",
+     "from": 242,
+     "to": 242,
+     "provenance": "owner draft, confirmed by assistant passage review",
+     "ownerEventIndex": 1,
+     "assistantConfidence": 99
+    },
+    {
+     "act": "Blowjob",
+     "performer": "Henry Hanover-Stuart-Fox",
+     "receiver": "Alex Claremont-Diaz",
+     "from": 253,
+     "to": 253,
+     "provenance": "owner draft, confirmed by assistant passage review",
+     "ownerEventIndex": 2,
+     "assistantConfidence": 99
+    }
+   ],
+   "contextEvents": [
+    {
+     "ownerEventIndex": 3,
+     "act": "Kissing / body rubbing",
+     "occurrence": "Happens in this scene",
+     "performer": "Henry Hanover-Stuart-Fox",
+     "receiver": "Alex Claremont-Diaz",
+     "from": 254,
+     "to": 254,
+     "use": "context only; never scored as a sex act or a negative hint label"
+    }
+   ],
+   "assistantReview": {
+    "finding": "performed scored acts",
+    "confidence": 99,
+    "summary": "Alex performs oral and manual stimulation on Henry, then Henry performs oral stimulation on Alex. Contact with Alex at paragraph 252 alone does not establish an additional handjob. The saved three acts are supported.",
+    "negativeLabelsAllowed": false
+   }
+  },
+  {
+   "id": "M18",
+   "fic": "sweeter.html",
+   "from": 176,
+   "to": 191,
+   "windowSha": "3b5579f3ac71cf061fc4731e97f2a11b5eed221e1f73e21c994c24bdb0f17412",
+   "lane": "discovery",
+   "sourceSha": "d780ecd4fd506dcb427f7c495d1fda738051fbb61e41d54073d70627b8054bdf",
+   "updatedAt": "2026-10-07T17:23:38.095Z",
+   "ownerComplete": false,
+   "coverage": "positive-only",
+   "ownerVerdict": "none",
+   "ownerProposalReview": "agree",
+   "ownerFlags": [],
+   "events": [],
+   "contextEvents": [],
+   "assistantReview": {
+    "finding": "no scored acts found in this window",
+    "confidence": 98,
+    "summary": "Sharing a bed, touching a face and moving closer occur during a discussion about commitment and survival. No explicit scored sex act occurs in this window.",
+    "negativeLabelsAllowed": false
+   }
+  },
+  {
+   "id": "M20",
+   "fic": "sweeter.html",
+   "from": 96,
+   "to": 111,
+   "windowSha": "9f8973572347b265d7e6d9404a75004fe73de1ecb336e8e2ef630ad1d4c913a5",
+   "lane": "random",
+   "sourceSha": "d780ecd4fd506dcb427f7c495d1fda738051fbb61e41d54073d70627b8054bdf",
+   "updatedAt": "2026-10-07T17:25:20.916Z",
+   "ownerComplete": false,
+   "coverage": "positive-only",
+   "ownerVerdict": "none",
+   "ownerProposalReview": "agree",
+   "ownerFlags": [],
+   "events": [],
+   "contextEvents": [],
+   "assistantReview": {
+    "finding": "no scored acts found in this window",
+    "confidence": 99,
+    "summary": "Comforting touch and discussion of a marriage ritual, followed by planning over breakfast. No explicit scored sex act occurs.",
+    "negativeLabelsAllowed": false
+   }
+  },
+  {
+   "id": "M21",
+   "fic": "negotiation.html",
+   "from": 272,
+   "to": 287,
+   "windowSha": "8c63429ebdbfe6bd773f0548df7b692d509defc7d7c4157fbad1556474a1cfe5",
+   "lane": "discovery",
+   "sourceSha": "e3dc9f6098d1606b0ae19cbe3afc48bb70717262d8524b9f6ae9924ecc38b9da",
+   "updatedAt": "2026-10-07T17:26:20.362Z",
+   "ownerComplete": false,
+   "coverage": "positive-only",
+   "ownerVerdict": "none",
+   "ownerProposalReview": "agree",
+   "ownerFlags": [],
+   "events": [],
+   "contextEvents": [],
+   "assistantReview": {
+    "finding": "no scored acts found in this window",
+    "confidence": 99,
+    "summary": "A goodbye followed by awakening during an abduction. Restraints, distress and mention of earlier events are not a performed sex act in this window.",
+    "negativeLabelsAllowed": false
+   }
+  },
+  {
+   "id": "M24",
+   "fic": "tricks-of-the-trade.html",
+   "from": 2720,
+   "to": 2735,
+   "windowSha": "17cd0aa117baacc6d649044f416ac4d213258daed5c080a4bc2dd3f794f1c4d8",
+   "lane": "random",
+   "sourceSha": "25a15e806d8f6a55c030e78d50d58e71f2ca424674b33f7a56471178d4ab1bd3",
+   "updatedAt": "2026-10-07T17:30:31.783Z",
+   "ownerComplete": false,
+   "coverage": "positive-only",
+   "ownerVerdict": "none",
+   "ownerProposalReview": "agree",
+   "ownerFlags": [],
+   "events": [],
+   "contextEvents": [],
+   "assistantReview": {
+    "finding": "no scored acts found in this window",
+    "confidence": 99,
+    "summary": "Breakfast and care during illness. Swallowing refers to food and a sore throat; the dominant relationship is invoked to encourage drinking tea, not to enact a sex act.",
+    "negativeLabelsAllowed": false
+   }
+  },
+  {
+   "id": "M25",
+   "fic": "negotiation.html",
+   "from": 1280,
+   "to": 1295,
+   "windowSha": "dbc0464c8994c21cf9c187536460b7452330ba92f66035537599414d3b4893c0",
+   "lane": "random",
+   "sourceSha": "e3dc9f6098d1606b0ae19cbe3afc48bb70717262d8524b9f6ae9924ecc38b9da",
+   "updatedAt": "2026-10-07T17:30:48.932Z",
+   "ownerComplete": false,
+   "coverage": "positive-only",
+   "ownerVerdict": "none",
+   "ownerProposalReview": "agree",
+   "ownerFlags": [],
+   "events": [],
+   "contextEvents": [],
+   "assistantReview": {
+    "finding": "no scored acts found in this window",
+    "confidence": 99,
+    "summary": "Discussion of a criminal investigation followed by a tense breakfast. No explicit scored sex act occurs.",
+    "negativeLabelsAllowed": false
+   }
+  },
+  {
+   "id": "M26",
+   "fic": "belonging.html",
+   "from": 1152,
+   "to": 1167,
+   "windowSha": "37fedcca82cb01ef5dfcc3b5fe18cbbdf501701cdf7704e7b0ff5468661f354e",
+   "lane": "random",
+   "sourceSha": "d8fe352ab70bc0a8171fea0e069c43d776d3541d741cb74b2b66014ae64e874c",
+   "updatedAt": "2026-10-07T17:33:13.607Z",
+   "ownerComplete": false,
+   "coverage": "positive-only",
+   "ownerVerdict": "acts",
+   "ownerProposalReview": "disagree",
+   "ownerFlags": [
+    "Act continues outside this window",
+    "Multiple simultaneous acts"
+   ],
+   "events": [
+    {
+     "act": "Fingering",
+     "performer": "Castiel",
+     "receiver": "Dean Winchester",
+     "from": 1152,
+     "to": 1155,
+     "provenance": "owner draft, confirmed by assistant passage review",
+     "ownerEventIndex": 0,
+     "assistantConfidence": 99
+    },
+    {
+     "act": "Handjob",
+     "performer": "Castiel",
+     "receiver": "Dean Winchester",
+     "from": 1152,
+     "to": 1155,
+     "provenance": "owner draft, confirmed by assistant passage review",
+     "ownerEventIndex": 1,
+     "assistantConfidence": 99
+    },
+    {
+     "act": "Toy insertion",
+     "performer": "Dean Winchester",
+     "receiver": "Dean Winchester",
+     "from": 1162,
+     "to": 1163,
+     "provenance": "owner draft, confirmed by assistant passage review",
+     "ownerEventIndex": 2,
+     "assistantConfidence": 99
+    },
+    {
+     "act": "Solo masturbation",
+     "performer": "Dean Winchester",
+     "receiver": "",
+     "from": 1167,
+     "to": 1167,
+     "provenance": "owner draft, confirmed by assistant passage review",
+     "ownerEventIndex": 3,
+     "assistantConfidence": 99
+    }
+   ],
+   "contextEvents": [],
+   "assistantReview": {
+    "finding": "performed scored acts",
+    "confidence": 99,
+    "summary": "Castiel provides both fingering and manual stimulation. Dean subsequently inserts the plug himself and begins stroking himself. Having a plug in his mouth is not a blowjob. All four saved acts and the self-insertion attribution are supported.",
+    "negativeLabelsAllowed": false
+   }
+  },
+  {
+   "id": "M29",
+   "fic": "negotiation.html",
+   "from": 1152,
+   "to": 1167,
+   "windowSha": "e069e3ad9154ba61ac3d8d5abe1b33bfccd0c7a00e5fd892e3c9a0505493cf66",
+   "lane": "discovery",
+   "sourceSha": "e3dc9f6098d1606b0ae19cbe3afc48bb70717262d8524b9f6ae9924ecc38b9da",
+   "updatedAt": "2026-10-07T17:35:24.927Z",
+   "ownerComplete": false,
+   "coverage": "positive-only",
+   "ownerVerdict": "none",
+   "ownerProposalReview": "agree",
+   "ownerFlags": [],
+   "events": [],
+   "contextEvents": [],
+   "assistantReview": {
+    "finding": "no scored acts found in this window",
+    "confidence": 99,
+    "summary": "An adult discusses potential partners and meets Bail at a bar. Looking, flirting and proposals do not establish a performed sex act. The passage confirms Anakin is eighteen.",
+    "negativeLabelsAllowed": false
+   }
+  },
+  {
+   "id": "M32",
+   "fic": "a-la-carte.html",
+   "from": 224,
+   "to": 239,
+   "windowSha": "6007b846d8b841d0f952540536b250e5238f041f9860ffe96016ae18270fa670",
+   "lane": "random",
+   "sourceSha": "4d553843dc96b396376426414fd191534045ca3508acb51a1672e0ef3ebc0cca",
+   "updatedAt": "2026-10-07T17:37:16.562Z",
+   "ownerComplete": false,
+   "coverage": "positive-only",
+   "ownerVerdict": "none",
+   "ownerProposalReview": "agree",
+   "ownerFlags": [],
+   "events": [],
+   "contextEvents": [],
+   "assistantReview": {
+    "finding": "no scored acts found in this window",
+    "confidence": 99,
+    "summary": "Clothing advice and a call to arrange shopping before a date. Underwear and romantic interest are not performed sex acts.",
+    "negativeLabelsAllowed": false
+   }
+  },
+  {
+   "id": "M33",
+   "fic": "negotiation.html",
+   "from": 1616,
+   "to": 1631,
+   "windowSha": "2f25ead63137c35aaa6b6663d26d5a3cdedd1d3f8281c963bb68267d68d1e801",
+   "lane": "random",
+   "sourceSha": "e3dc9f6098d1606b0ae19cbe3afc48bb70717262d8524b9f6ae9924ecc38b9da",
+   "updatedAt": "2026-10-07T17:37:41.326Z",
+   "ownerComplete": false,
+   "coverage": "positive-only",
+   "ownerVerdict": "acts",
+   "ownerProposalReview": "agree",
+   "ownerFlags": [
+    "Participants / pronouns unclear"
+   ],
+   "events": [],
+   "contextEvents": [
+    {
+     "ownerEventIndex": 0,
+     "act": "Kissing / body rubbing",
+     "occurrence": "Happens in this scene",
+     "performer": "Unnamed adult woman",
+     "receiver": "Anakin Skywalker",
+     "from": 1621,
+     "to": 1621,
+     "use": "context only; never scored as a sex act or a negative hint label"
+    },
+    {
+     "ownerEventIndex": 1,
+     "act": "Kissing / body rubbing",
+     "occurrence": "Happens in this scene",
+     "performer": "Obi-Wan Kenobi",
+     "receiver": "Anakin Skywalker",
+     "from": 1629,
+     "to": 1631,
+     "use": "context only; never scored as a sex act or a negative hint label"
+    }
+   ],
+   "assistantReview": {
+    "finding": "no scored acts found in this window",
+    "confidence": 99,
+    "summary": "The woman kisses and grinds against Anakin; Obi-Wan later kisses him. Undressing, positioning and restraints do not establish penetration or another scored sex act. Preserve the two saved contextual entries without using them as act labels.",
+    "negativeLabelsAllowed": false
+   }
+  }
+ ]
+}

@@ -92,3 +92,21 @@ The set also feeds the context model (`tests/learn.test.ts`): a "looks right" re
 People get things wrong, so a mark is weighed, not trusted outright. **Strong** (marked right in two reports, or a scene the engine itself put at 70%+) fails the test when it changes. **Single** (marked right once) is only listed in the report. **Disputed** (the same sentence is also listed as wrong in any report) and **retired** (a deliberate fix, or a mark you now disagree with) are skipped. `RIGHT_SET_STRICT=1` fails on any change. When a strong reading changes on purpose, retire it with the hash from the failure.
 
 Labels made by a Claude pass over a fic (`npm run dive -- import <fic>`, see [TESTING.md](TESTING.md)) go into the same right-set files with `source: "claude"` and a weight of 0.85 (0.3 for readings it called wrong, because blind spot-checking showed those hold up far less often). They are never "strong": a set fails only when more of them change than label noise explains, and they count fractionally in the reliability table and the context model. A reading you later mark right yourself becomes full weight.
+
+## Recovering unfinished scene reviews
+
+`tests/scene-review/missed-2051db5b4e06-partial.json` preserves the twelve
+unfinished owner windows separately from the completed inventory. Passage review
+confirmed ten saved performed-act entries and interpreted one unfinished Other
+entry as solo masturbation. That additional interpretation is explicitly marked
+as assistant-reviewed and not owner-confirmed. The combined evidence is 33
+performed acts: 22 in completed windows, 11 positive entries in partial windows.
+
+Each partial window preserves the source and window hashes, draft verdict, flags,
+contextual entries and a paraphrased assistant assessment. All remain incomplete
+and positive-only: even the nine windows where the assistant found no scored
+acts must not produce negative labels from omissions. Hints, kissing and other
+context remain unscored. Assistant confidence is subjective and uncalibrated.
+This supplementary evidence is not consumed by confidence training, gold checks
+or the detector; a future recall comparison must handle its positive-only scope
+explicitly. The original importer continues to skip incomplete windows.
