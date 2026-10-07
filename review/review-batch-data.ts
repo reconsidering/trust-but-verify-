@@ -4,9 +4,12 @@ import { splitParagraphs } from "../src/text";
 
 export type ReviewSource = { file: string; title: string; sourceSha: string; paragraphSha: string; paragraphCount: number };
 export type ReadingProposal = { revision: string; verdict: "correct" | "wrong" | "uncertain"; reading: string; rationale: string; confidence: number; errors: string[] };
-export type ReviewRow = { id: string; key: string; fic: string; para: number; pattern: string; a: string; b?: string; act: string; kind: string; role?: string; claim: string; gold?: { file: string; hash: string; pairing: string; act: string; verdict: string }; evidence?: { from: number; to: number }[]; engineConfidence?: number; proposal?: ReadingProposal };
+export type SceneActProposal = { id: string; revision: string; act: string; performer: string; receiver: string; occurrence: string; evidence: { from: number; to: number }; reviewerConfidence: number; note: string; engineReadingKeys: string[]; engineConfidence: number | null };
+export type SceneEngineReading = { key: string; para: number; pattern: string; act: string; kind: string; claim: string; confidence: number | null; a: string; b?: string; role?: string; features: number[]; attribution: Record<string, string | number | boolean> };
+export type ActReview = { revision: string; verdict?: "correct" | "wrong" | "uncertain"; act: string; performer: string; receiver: string; occurrence: string; context: string; errors: string[] };
+export type ReviewRow = { id: string; key: string; fic: string; para: number; pattern: string; a: string; b?: string; act: string; kind: string; role?: string; claim: string; gold?: { file: string; hash: string; pairing: string; act: string; verdict: string }; evidence?: { from: number; to: number }[]; engineConfidence?: number; proposal?: ReadingProposal; sceneActs?: SceneActProposal[]; engineReadings?: SceneEngineReading[]; trainingNotes?: string[] };
 export type ReviewBatch = { schema: "engine-review-batch/v1" | "engine-gold-review/v1" | "engine-gold-range-review/v1"; batchId: string; engineCommit: string; sources: ReviewSource[]; rows: ReviewRow[]; selection?: { method: string; [key: string]: unknown } };
-export type ReviewAnswer = { verdict?: "correct" | "wrong" | "uncertain"; errors: string[]; context: string; updatedAt: string; proposalReview?: "agree" | "disagree" | "uncertain"; proposalRevision?: string };
+export type ReviewAnswer = { verdict?: "correct" | "wrong" | "uncertain"; errors: string[]; context: string; updatedAt: string; proposalReview?: "agree" | "disagree" | "uncertain"; proposalRevision?: string; actReviews?: Record<string, ActReview>; coverageComplete?: boolean };
 
 export const checksum = async (bytes: Uint8Array) => Array.from(new Uint8Array(await crypto.subtle.digest("SHA-256", bytes as Uint8Array<ArrayBuffer>)), (b) => b.toString(16).padStart(2, "0")).join("");
 
@@ -36,6 +39,8 @@ export async function* storyBytes(file: { name: string; arrayBuffer: () => Promi
 export function validAnswer(value: unknown): value is ReviewAnswer {
   if (!value || typeof value !== "object") return false;
   const a = value as ReviewAnswer;
+  if (a.coverageComplete !== undefined && typeof a.coverageComplete !== 'boolean') return false;
+  if (a.actReviews !== undefined && (!a.actReviews || typeof a.actReviews !== 'object' || Array.isArray(a.actReviews) || Object.values(a.actReviews).some(r => !r || typeof r !== 'object' || typeof r.revision !== 'string' || !r.revision || !['act','performer','receiver','occurrence','context'].every(k => typeof r[k as keyof ActReview] === 'string') || (r.verdict !== undefined && !['correct','wrong','uncertain'].includes(r.verdict)) || !Array.isArray(r.errors) || r.errors.some(e => typeof e !== 'string')))) return false;
   if ((a.proposalReview !== undefined || a.proposalRevision !== undefined) && (!['agree', 'disagree', 'uncertain'].includes(a.proposalReview ?? '') || typeof a.proposalRevision !== 'string' || !a.proposalRevision.trim())) return false;
   return (a.verdict === undefined || ["correct", "wrong", "uncertain"].includes(a.verdict)) && Array.isArray(a.errors) && a.errors.every((e) => typeof e === "string") && typeof a.context === "string" && typeof a.updatedAt === "string";
 }
@@ -50,12 +55,15 @@ export function importAnswers(batch: ReviewBatch, payload: unknown, current: Rec
     const source = row && batch.sources.find((s) => s.file === row.fic);
     if (!row || seen.has(a.id) || a.key !== row.key || a.fic !== row.fic || a.paragraph !== row.para || a.sourceSha !== source?.sourceSha || !validAnswer(a)) throw Error("An answer does not match this batch.");
     if (a.proposalReview && a.proposalRevision !== row.proposal?.revision) throw Error("An answer refers to a different proposed reading.");
+    for (const [id, review] of Object.entries(a.actReviews ?? {})) if (!row.sceneActs?.some(act => act.id === id && act.revision === review.revision)) throw Error('An answer refers to a different act proposal.');
+    if (a.coverageComplete !== undefined && !row.sceneActs) throw Error('This batch does not support act coverage answers.');
+    if (row.sceneActs && JSON.stringify(a.evidence) !== JSON.stringify(row.evidence)) throw Error('An answer does not match its scene window.');
     if (batch.schema === "engine-gold-range-review/v1" && (JSON.stringify(a.gold) !== JSON.stringify(row.gold) || JSON.stringify(a.evidence) !== JSON.stringify(row.evidence))) throw Error("An answer does not match its gold range.");
     seen.add(a.id);
   }
   let changed = 0;
   for (const a of data.answers) if (!current[a.id] || a.updatedAt > current[a.id].updatedAt) {
-    current[a.id] = { verdict: a.verdict, errors: a.errors, context: a.context, updatedAt: a.updatedAt, ...(a.proposalReview ? { proposalReview: a.proposalReview, proposalRevision: a.proposalRevision } : {}) };
+    current[a.id] = { verdict: a.verdict, errors: a.errors, context: a.context, updatedAt: a.updatedAt, ...(a.proposalReview ? { proposalReview: a.proposalReview, proposalRevision: a.proposalRevision } : {}), ...(a.actReviews ? { actReviews: structuredClone(a.actReviews) } : {}), ...(a.coverageComplete !== undefined ? { coverageComplete: a.coverageComplete } : {}) };
     changed++;
   }
   return changed;
@@ -70,6 +78,17 @@ export function validateSuspectBatch(batch: ReviewBatch): ReviewBatch {
     const p = row.proposal, source = batch.sources.find(s => s.file === row.fic);
     if (ids.has(row.id) || keys.has(row.key) || !source || !Number.isInteger(row.para) || row.para < 0 || row.para >= source.paragraphCount || !score(row.engineConfidence) || !p || !score(p.confidence) || !p.revision || !p.reading?.trim() || !p.rationale?.trim() || !['correct', 'wrong', 'uncertain'].includes(p.verdict) || !Array.isArray(p.errors) || !p.errors.every(e => typeof e === 'string') || !row.evidence?.length || row.evidence.some(e => !Number.isInteger(e.from) || !Number.isInteger(e.to) || e.from < 0 || e.to >= source.paragraphCount || e.from > row.para || e.to < row.para)) throw Error('A likely-error reading has invalid confidence, context, or proposal metadata.');
     ids.add(row.id); keys.add(row.key);
+    if (row.sceneActs !== undefined) {
+      const eventIds = new Set<string>(), hitKeys = new Set(row.engineReadings?.map(h => h.key));
+      if (!row.sceneActs.length || !row.engineReadings?.length || hitKeys.size !== row.engineReadings.length) throw Error('Missing or duplicate scene act metadata.');
+      for (const hit of row.engineReadings) if (!hit.key || !hit.claim || !Number.isInteger(hit.para) || hit.para < row.evidence![0].from || hit.para > row.evidence![0].to || (hit.confidence !== null && !score(hit.confidence)) || !hit.features.every(Number.isFinite)) throw Error('Invalid scene engine reading.');
+      for (const act of row.sceneActs) {
+        if (eventIds.has(act.id) || !act.id || !act.revision || !act.act || !act.performer || !act.occurrence || !score(act.reviewerConfidence) || (act.engineConfidence !== null && !score(act.engineConfidence)) || !Number.isInteger(act.evidence.from) || !Number.isInteger(act.evidence.to) || act.evidence.from < row.evidence![0].from || act.evidence.to > row.evidence![0].to || act.evidence.from > act.evidence.to || act.engineReadingKeys.some(k => !hitKeys.has(k))) throw Error('Invalid scene act proposal.');
+        const scores = row.engineReadings.filter(h => act.engineReadingKeys.includes(h.key)).map(h => h.confidence).filter((v): v is number => v !== null);
+        if (act.engineConfidence !== (scores.length ? Math.max(...scores) : null)) throw Error('Act confidence does not match its engine readings.');
+        eventIds.add(act.id);
+      }
+    }
   }
   return batch;
 }

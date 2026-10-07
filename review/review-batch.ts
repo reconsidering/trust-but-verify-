@@ -1,4 +1,4 @@
-import { importAnswers, storyBytes, validAnswer, verifyStory, type ReviewAnswer, type ReviewBatch } from "./review-batch-data";
+import { importAnswers, storyBytes, validAnswer, verifyStory, type ActReview, type ReviewAnswer, type ReviewBatch } from "./review-batch-data";
 
 const ERRORS = ["Wrong person", "Roles reversed", "Wrong act or body part", "No act happened", "Kissing or rubbing mistaken for penetration", "Fingers or toy mistaken for a penis", "Wish or dialogue treated as an act", "Memory counted as a new scene", "Real act treated as hypothetical", "Missed participant", "Another act is missing", "Needs more context", "Other"];
 const element = <T extends HTMLElement = HTMLElement>(id: string) => document.getElementById(id) as T;
@@ -19,11 +19,15 @@ export async function mountReview(batch: ReviewBatch, options: { stories?: Map<s
     for (const row of batch.rows) if (validAnswer(saved[row.id])) answers[row.id] = saved[row.id];
   } catch { storageOK = false; }
   const answered = (id: string) => !!answers[id]?.verdict;
+  const progress = () => {
+    const acts = batch.rows.flatMap(row => (row.sceneActs ?? []).map(act => !!answers[row.id]?.actReviews?.[act.id]?.verdict));
+    return `${batch.rows.filter(r => answered(r.id)).length} of ${batch.rows.length} answered` + (acts.length ? ` · ${acts.filter(Boolean).length} of ${acts.length} act proposals checked` : '');
+  };
   const visible = () => batch.rows.filter((r) => element<HTMLSelectElement>("filter").value === "all" || (element<HTMLSelectElement>("filter").value === "answered" ? answered(r.id) : !answered(r.id) || r.id === current));
   const save = () => {
     try { localStorage.setItem(storageKey, JSON.stringify(answers)); storageOK = true; }
     catch { storageOK = false; notice("Browser storage is unavailable. Export your answers before leaving."); }
-    element("progress").textContent = `${batch.rows.filter((r) => answered(r.id)).length} of ${batch.rows.length} answered`;
+    element("progress").textContent = progress();
   };
   const update = (patch: Partial<ReviewAnswer>) => {
     const row = batch.rows.find((r) => r.id === current);
@@ -36,7 +40,7 @@ export async function mountReview(batch: ReviewBatch, options: { stories?: Map<s
     if (!rows.some((r) => r.id === current)) current = rows[0]?.id;
     const row = rows.find((r) => r.id === current);
     element("card").hidden = !row; element("empty").hidden = !!row;
-    element("progress").textContent = `${batch.rows.filter((r) => answered(r.id)).length} of ${batch.rows.length} answered`;
+    element("progress").textContent = progress();
     if (!row) return;
     const source = batch.sources.find((s) => s.file === row.fic)!;
     element("gold-browse").hidden = !isGold;
@@ -67,6 +71,43 @@ export async function mountReview(batch: ReviewBatch, options: { stories?: Map<s
       button.disabled = !paras || !proposal;
       button.setAttribute('aria-pressed', String(answer?.proposalRevision === proposal?.revision && answer?.proposalReview === button.dataset.proposal));
     });
+    element('scene-acts').hidden = !row.sceneActs;
+    const actCards = element('act-cards'); actCards.replaceChildren();
+    for (const act of row.sceneActs ?? []) {
+      const baseline: ActReview = { revision: act.revision, act: act.act, performer: act.performer, receiver: act.receiver, occurrence: act.occurrence, context: '', errors: [] };
+      const review = answer?.actReviews?.[act.id];
+      const change = (patch: Partial<ActReview>) => update({ actReviews: { ...(answers[row.id]?.actReviews ?? {}), [act.id]: { ...(answers[row.id]?.actReviews?.[act.id] ?? baseline), ...patch } } });
+      const card = document.createElement('section'); card.className = 'act-card'; card.dataset.actId = act.id;
+      const title = document.createElement('h4'); title.textContent = `${act.act}: ${act.performer}${act.receiver ? ' → ' + act.receiver : ' (self)'}`;
+      const summary = document.createElement('p'); summary.textContent = `${act.occurrence} · ¶${act.evidence.from}–${act.evidence.to} · My confidence: ${Math.round(act.reviewerConfidence * 100)}%`;
+      const engine = document.createElement('p'); engine.className = 'small';
+      const matches = row.engineReadings!.filter(h => act.engineReadingKeys.includes(h.key));
+      engine.textContent = matches.length ? 'Matching engine readings: ' + matches.map(h => `¶${h.para}: ${h.kind}, ${h.confidence === null ? 'score unavailable' : Math.round(h.confidence * 100) + '%'}`).join('; ') : 'Engine: no matching act/participant reading in this evidence range; no confidence score available. Related or conflicting readings are listed below.';
+      const note = document.createElement('p'); note.textContent = act.note;
+      const choices = document.createElement('div'); choices.className = 'choices';
+      for (const [value, text] of [['correct', 'Correct'], ['wrong', 'Wrong'], ['uncertain', 'Not sure']] as const) {
+        const button = document.createElement('button'); button.textContent = text; button.dataset.actVerdict = value; button.disabled = !paras;
+        button.setAttribute('aria-pressed', String(review?.verdict === value)); button.onclick = () => { change({ verdict: value }); render(); }; choices.append(button);
+      }
+      const corrections = document.createElement('details'), heading = document.createElement('summary'); heading.textContent = 'Correction / additional context'; corrections.append(heading);
+      for (const [key, labelText] of [['act', 'Act'], ['performer', 'Performer / giver'], ['receiver', 'Receiver (blank for solo)'], ['occurrence', 'Occurrence: performed, imagined, memory, recording, habitual, wanted or uncertain'], ['context', 'Additional context / correction']] as const) {
+        const label = document.createElement('label'); label.textContent = labelText;
+        const input = key === 'context' ? document.createElement('textarea') : document.createElement('input'); input.value = (review ?? baseline)[key]; input.disabled = !paras; input.dataset.actField = key;
+        input.oninput = () => change({ [key]: input.value }); label.append(input); corrections.append(label);
+      }
+      const errors = document.createElement('fieldset'), legend = document.createElement('legend'); legend.textContent = 'Common errors'; errors.append(legend);
+      for (const error of ['Wrong person', 'Roles reversed', 'Wrong act or body part', 'Fingers or toy mistaken for a penis', 'No act happened', 'Wish or dialogue treated as an act', 'Memory counted as a new scene', 'Another act is missing', 'Range boundaries wrong', 'Needs more context']) {
+        const label = document.createElement('label'), input = document.createElement('input'); input.type = 'checkbox'; input.disabled = !paras; input.checked = review?.errors.includes(error) ?? false;
+        input.onchange = () => { const values = new Set(answers[row.id]?.actReviews?.[act.id]?.errors ?? []); input.checked ? values.add(error) : values.delete(error); change({ errors: [...values] }); }; label.append(input, document.createTextNode(error)); errors.append(label);
+      }
+      corrections.append(errors); card.append(title, summary, engine, note, choices, corrections); actCards.append(card);
+    }
+    const coverage = element<HTMLInputElement>('coverage-complete'); coverage.disabled = !paras; coverage.checked = answer?.coverageComplete ?? false; coverage.onchange = () => update({ coverageComplete: coverage.checked });
+    const engineReadings = element('scene-engine-readings'); engineReadings.replaceChildren();
+    for (const hit of row.engineReadings ?? []) {
+      const p = document.createElement('p'); p.className = 'small'; p.textContent = `¶${hit.para} · ${hit.claim} · ${hit.kind} · Engine confidence: ${hit.confidence === null ? 'unavailable' : Math.round(hit.confidence * 100) + '%'} · ${hit.pattern}`; engineReadings.append(p);
+    }
+    element('training-notes').textContent = row.trainingNotes?.join(' ') ?? '';
     const root = element("passages"); root.replaceChildren();
     if (!paras) { const p = document.createElement("p"); p.textContent = `Choose ${source.file}, or the samples ZIP containing it, to read this passage.`; root.append(p); }
     else for (let i = Math.max(0, proposal ? Math.min(row.evidence![0].from, focus - radius) : focus - radius); i <= Math.min(paras.length - 1, isRange && focus === row.para ? row.evidence![0].to + radius : proposal ? Math.max(row.evidence![0].to, focus + radius) : focus + radius); i++) {
@@ -105,8 +146,8 @@ export async function mountReview(batch: ReviewBatch, options: { stories?: Map<s
     loading = false; element<HTMLInputElement>("stories").disabled = false; element<HTMLSelectElement>("review-kind").disabled = false; render();
     notice(errors.length ? errors.join(" ") : matched ? "Stories loaded. Your saved answers are unchanged." : "No matching story versions were found. Choose the original files used for this batch.");
   };
-  const payload = () => ({ schema: batch.schema, batchId: batch.batchId, engineCommit: batch.engineCommit, exportedAt: new Date().toISOString(), answers: batch.rows.filter((r) => answers[r.id]).map((r) => ({ id: r.id, key: r.key, fic: r.fic, paragraph: r.para, sourceSha: batch.sources.find((s) => s.file === r.fic)!.sourceSha, ...(r.gold ? { gold: r.gold } : {}), ...(isRange ? { evidence: r.evidence } : {}), ...answers[r.id] })) });
-  const answerName = hasProposals ? 'suspect-scene-review-answers.json' : isRange ? 'gold-range-review-answers.json' : isGold ? 'gold-verdict-review-answers.json' : 'next-reading-review-answers.json';
+  const payload = () => ({ schema: batch.schema, batchId: batch.batchId, engineCommit: batch.engineCommit, exportedAt: new Date().toISOString(), answers: batch.rows.filter((r) => answers[r.id]).map((r) => ({ id: r.id, key: r.key, fic: r.fic, paragraph: r.para, sourceSha: batch.sources.find((s) => s.file === r.fic)!.sourceSha, ...(r.gold ? { gold: r.gold } : {}), ...(isRange || r.sceneActs ? { evidence: r.evidence } : {}), ...answers[r.id] })) });
+  const answerName = batch.rows.some(r => r.sceneActs) ? 'suspect-scene-review-2-answers.json' : hasProposals ? 'suspect-scene-review-answers.json' : isRange ? 'gold-range-review-answers.json' : isGold ? 'gold-verdict-review-answers.json' : 'next-reading-review-answers.json';
   const answerFile = () => new File([JSON.stringify(payload(), null, 2)], answerName, { type: "application/json" });
   element<HTMLInputElement>("stories").onchange = () => { void loadFiles(Array.from(element<HTMLInputElement>("stories").files ?? [])); };
   element<HTMLSelectElement>("filter").onchange = () => { current = undefined; browse = visible()[0]?.para ?? 0; expanded = false; render(); };
