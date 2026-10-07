@@ -56,6 +56,26 @@ AO3_DIR=ao3-samples npx vitest run tests/gold-eval.test.ts                      
   each paragraph, never the fic's own text; if the engine's paragraph splitting changes, the hash lets a file shift itself.
   The report gives verdict accuracy, scene recall and precision, POV and text-sender accuracy. `GOLD_STRICT=1` fails on any miss.
 
+## Independent scene-review answers
+
+`scripts/import-missed-scene-review.mjs` saves completed owner windows in
+`tests/scene-review/` as an **act-only inventory**, separate from confidence-training
+labels, the right-set, and gold verdicts. It records nine explicit act categories
+only when marked “Happens in this scene”. Unfinished windows, wishes, fantasies,
+memories, and broad “Kissing / body rubbing” or “Other” entries are unscored.
+An empty inventory window means no reviewed act from that explicit scope; it
+does not mean that hints or other activity are absent or wrong.
+
+`actHitsForWindow` in `scripts/scene-review-scope.mjs` excludes hint kinds and
+non-act types before any future comparison. In particular, checking out a cock
+or bulge cannot become a negative label because the owner did not flag it.
+Importing these answers does not retrain confidence, change detection rules,
+or claim an accuracy/recall result. Actual recall comparison is a separate step.
+
+```sh
+node scripts/import-missed-scene-review.mjs public/review/missed-scenes.json owner-answers.json tests/scene-review/batch-id.json
+```
+
 ## The "looks right" set
 
 Readings you mark "Looks right" in a mistake report can be kept (the report panel's **Save looks-right set** button downloads them as a small file with no story text; hand that file to Claude, or run the import below on it) as a locked set so a later change can't quietly undo them:
