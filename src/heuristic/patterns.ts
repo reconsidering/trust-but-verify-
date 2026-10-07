@@ -2464,13 +2464,24 @@ export const PATTERNS: PatternDef[] = [
     src: `\\b(?<lead>having|feeling|felt|feel|feels|with|of|want(?:ed|s)?|need(?:ed|s)?|crav(?:ed|es)?)\\s+{T}\\s+(?:(?:(?:deep|so deep|buried|all the way|finally|still|right)\\s+)*inside|(?:(?:deep|so deep|buried|all the way|balls-deep)\\s+)+in)\\s+{B:ass}`,
   },
   {
+    // Adult synthetic: Morgan raises Rowan's hips so each thrust hits his prostate, continuing an established insertion.
+    id: "hips-thrust-prostate",
+    cat: "anal",
+    act: "anal sex",
+    subj: "t",
+    weight: 0.9,
+    needsCtx: true,
+    src: `\\b{T}\\s+{aux}(?:hike|lift|rais)\\w*\\s+{B:poss}\\s+hips\\b[^.!?]{0,60}?\\b(?:each|every)\\s+thrust\\s+(?:hits?|strikes?)\\s+(?:his|her|their|the)\\s+prostate\\b`,
+  },
+  {
     id: "pushed-in",
     cat: "anal",
     act: "anal sex",
     subj: "t",
     weight: 0.7,
     needsCtx: true,
-    src: `\\b{T}\\s+{aux}(?:push|slid|slide|slip|sink|sank|thrust|eas|sheath|guid|rock|snap|fuck|press)\\w*\\s+(?:${SELF}\\s+)?(?:(?:back|forward|slowly|carefully|deep|all the way|right|finally|gently)\\s+)*(?:in|inside|home)(?![\\w-])(?!\\s*(?:to|the|a|an|his|her|their|my|your|front|back|line|time|place|close|closer|between|with|for|on|at|of|and then the|next|beside|quietly|silently|unnoticed|behind|alongside|among|near|opposite|across|beneath|under|over|after|before|through|from|hesitantly|nervously|awkwardly|response|return|reply|answer|anger|fear|surprise|kind|turn|retaliation|defen[cs]e|reaction)\\b)(?!\\s+[\\w-]+['’]s\\b)`,
+    // Adult synthetic: Morgan slowly, patiently, pushes inside; punctuation does not remove the named actor.
+    src: `\\b{T}\\s+{aux}(?:[\\w-]+ly,\\s+(?:ever\\s+so\\s+)?[\\w-]+ly,\\s+)?(?:push|slid|slide|slip|sink|sank|thrust|eas|sheath|guid|rock|snap|fuck|press)\\w*\\s+(?:${SELF}\\s+)?(?:(?:back|forward|slowly|carefully|deep|all the way|right|finally|gently)\\s+)*(?:in|inside|home)(?![\\w-])(?!\\s*(?:to|the|a|an|his|her|their|my|your|front|back|line|time|place|close|closer|between|with|for|on|at|of|and then the|next|beside|quietly|silently|unnoticed|behind|alongside|among|near|opposite|across|beneath|under|over|after|before|through|from|hesitantly|nervously|awkwardly|response|return|reply|answer|anger|fear|surprise|kind|turn|retaliation|defen[cs]e|reaction)\\b)(?!\\s+[\\w-]+['’]s\\b)`,
   },
   {
     // "Cas was scorching and slick and snug around Dean's cock"

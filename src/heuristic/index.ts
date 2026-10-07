@@ -1169,6 +1169,18 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
     if (pat.id.replace(/~elided$/, "") === "fuck" && /^\W*(?:and\s+)?fuck\b/i.test(m[0]) &&
         /^\W*(?:(?:honestly|well|oh|ugh|fine|great|yeah|and|but|so|god|christ|shit|damn|okay|ok),?\s+)*(?:fuck\b[^.!?]*?(?:\band)?\s*)?$/i.test(sent.slice(0, m.index!).replace(/[“"][^”"]*[”"]/g, " "))) return;
     const basePid = pat.id.replace(/~(?:elided|one-sided)$/, "");
+    // Adult synthetic: Morgan inserts fingers down a stranger's throat to clear an airway.
+    // An optional anal target must not turn explicit nonsexual anatomy or a toy cavity into partner fingering.
+    if (basePid === "dd2-finger-shoved-into") {
+      const tail = sent.slice(m.index! + m[0].length);
+      if (/^\s+(?:down|into|in|inside)\s+(?:[\w'’]+\s+){0,4}(?:throat|mouth|ears?|nose|fleshlight|toy)\b/i.test(tail)) return;
+      if (/^\s+into\s+the\s+opening\b/i.test(tail) && /\b(?:fleshlight|sex toy)\b/i.test(paras.slice(Math.max(0, pi - 3), pi + 1).join(" "))) return;
+    }
+    // Adult synthetic: Rowan works himself open before adding a third finger; Morgan is only watching.
+    if (basePid === "dd3-slipping-second" && /\b(?:work|open|stretch|prep)\w*\s+(?:himself|herself|themselves)\s+(?:open|up|more)\b/i.test(sent.slice(0, m.index! + m[0].length))) return;
+    // Adult synthetic: a plug removed from a mouth is reinserted into an ass; this is not penile penetration.
+    if (/^(?:push-into|pushed-in)$/.test(basePid) && /\b(?:shov|push|slid|slip|insert)\w*\s+it\s+(?:back\s+)?(?:into|in|inside)\b/i.test(m[0]) &&
+        /\b(?:plug|dildo|vibrator|toy)\b[^.!?]{0,120}\b(?:out|remove\w*|pull\w*)\b/i.test(sent.slice(0, m.index!))) return;
     // "Sam's mouth getting to work on Lee's cock": the mouth is working, not an elided penetrating actor.
     if (basePid === "dd-grinds-onto-cock" && /\b(?:mouth|lips|tongue)\s+getting\s*$/i.test(sent.slice(0, m.index!))) return;
     // "his prostate as Sam swallows around Alex's cock": the prostate cannot reach across a new finite clause.
@@ -1555,6 +1567,32 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
       if (performer && tName && performer !== tName && /^(?:his|her|their)$/i.test(bTok ?? "")) bodyPair = { top: tName, bottom: performer };
       if (performer && bName && performer !== bName && /^(?:he|she|his|her|their)$/i.test(tTok ?? "")) bodyPair = { top: performer, bottom: bName };
     }
+    let desiredReceiver: Character | undefined;
+    // Adult synthetic: Rowan pushes onto Morgan's fingers as he thrusts in; the fingers establish the actor.
+    if (basePid === "pushed-in" && /^he$/i.test(tTok ?? "")) {
+      const onto = new RegExp(`\\b(?:push|press|sink|sank)\\w*\\s+down\\s+on\\s+(${NAMES})['’]s\\s+fingers?\\b`).exec(sent.slice(0, m.index!));
+      const fingerOwner = onto && cast.byAlias.get(onto[1]);
+      const receiver = firstEntity(sent.slice(0, m.index!));
+      if (fingerOwner && receiver && fingerOwner !== receiver) bodyPair = {top:fingerOwner,bottom:receiver};
+      // Adult synthetic: Rowan relaxes, which Morgan did not expect, because he slides inside.
+      const reaction = new RegExp(`\\b(${NAMES})\\s+(?:clearly\\s+)?(?:didn['’]t|did not)\\s+expect,?\\s+because\\s*$`).exec(sent.slice(0, m.index!));
+      const actor = reaction && cast.byAlias.get(reaction[1]);
+      if (actor && receiver && actor !== receiver) bodyPair = {top:actor,bottom:receiver};
+    }
+    // Adult synthetic: Rowan moans, but Morgan does not linger and instead adds another finger.
+    if (basePid === "dd3-slipping-second") {
+      const coordinated = new RegExp(`\\bbut\\s+(${NAMES})\\s+(?:didn['’]t|did not)\\s+linger\\b[^.!?]{0,50}?\\binstead\\s+(?:he|she)\\s+add\\w*`).exec(m[0]);
+      const actor = coordinated && cast.byAlias.get(coordinated[1]);
+      const receiver = actor && ctx.partnerOf(actor);
+      if (actor && receiver) bodyPair = {top:actor,bottom:receiver};
+    }
+    // Adult synthetic: Rowan needs to be one with Morgan and wants him inside; a former partner is not involved.
+    if (basePid === "push-into" && /^(?:him|her)$/i.test(tTok ?? "") && /^(?:him|her)$/i.test(bTok ?? "") && /\bdriven\s+inside\b/i.test(m[0])) {
+      const desired = new RegExp(`\\bone\\s+with\\s+(${NAMES})\\b`).exec(sent.slice(0,m.index!));
+      const actor = desired && cast.byAlias.get(desired[1]);
+      const receiver = firstEntity(paras[pi - 1] ?? "");
+      if (actor && receiver && actor !== receiver && cast.pairings.some(pair => pair.includes(actor) && pair.includes(receiver))) {bodyPair = {top:actor,bottom:receiver}; desiredReceiver = receiver;}
+    }
     const ruled = asked ?? held ?? bodyPair;
     const resolved = ruled ? { ...ruled, basis: "pronoun" as Basis } : resolvePair(tTok, bTok, pat.subj, cast, ctx, subjChar, nearSubj, subjOrigin, povBody ? "pov" : watchedChar || causative ? "rule" : clauseOrigin);
     const attribution: AttributionEvidence = {
@@ -1641,6 +1679,11 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
     let { basis } = resolved;
     let act = pat.act;
     let cat = pat.cat;
+    // A hip adjustment and prostate-directed thrust continue penile penetration only when this same pair just established it.
+    if (basePid === "hips-thrust-prostate") {
+      const previous = acts.filter(a => a.top === top && a.bottom === bottom && a.para >= pi - 4 && a.para < pi && (a.act === "fingering" || a.act.startsWith("anal sex"))).pop();
+      if (!previous?.act.startsWith("anal sex") || FINGER_CTX.test(sent)) return;
+    }
     const actor = pat.subj === "t" ? top : bottom;
     const originalAt = para.indexOf(original);
     const surrounding = [
@@ -1974,9 +2017,21 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
       const oc = owner ? cast.byAlias.get(owner[1]) : undefined;
       if (oc && oc !== top) [top, bottom] = [oc, top];
     }
+    // Adult synthetic: licking before pushing past a rim continues the tongue action, not a new penile act.
+    if (cat === "anal" && act.startsWith("anal sex") && /^(?:push-into|pushed-in)$/.test(basePid) &&
+        /\blick\w*\s+(?:[\w-]+\s+){0,2}before\s+push\w*/i.test(sent.slice(0,m.index!) + matchText) && !PENIS_CTX.test(matchText)) {cat="oral";act="rimming";}
+    // Adult synthetic: Morgan eases in a finger while receiving oral stimulation, then pushes it deeper.
+    // The cock in the mouth must not overwrite explicit finger evidence earlier in this paragraph.
+    if (cat === "anal" && act.startsWith("anal sex") && basePid === "pushed-in" && !PENIS_CTX.test(matchText) &&
+        /\b(?:push|pushing)\s+in\b/i.test(matchText) && /\b(?:eas|insert|slip|slid|push)\w*\s+(?:a|one|his|her|their)\s+finger\s+(?:into|in|inside)\b/i.test(para.slice(0,para.indexOf(original)))) act="fingering";
+    // Adult synthetic: a prostate tap during finger preparation stays fingering until a new penetrative act is established.
+    if (basePid === "prostate" && !PENIS_CTX.test(para)) {
+      const previous = acts.filter(a=>a.top===top && a.bottom===bottom && a.para>=pi-3 && a.para<pi && (a.act==="fingering" || a.act.startsWith("anal sex"))).pop();
+      if (previous?.act === "fingering") act="fingering";
+    }
     // "…when a second finger began pushing into him": fingers named in the sentence (and no cock) mean fingering.
     // Fingers busy elsewhere ("his fingers tangling in Alex's curls") don't make it fingering.
-    const fingerSent = sent.replace(/\b(?:fingers?|fingertips?|digits?|knuckles?)\b[^,.;]{0,40}?\b(?:hair|curls|locks|sheets?|pillows?|shoulders?|back|neck|jaw|cheeks?|face|scalp|nape|arms?|biceps?|hands?|chest|headboard|blankets?)\b/gi, "");
+    const fingerSent = sent.replace(/\bas\s+(?:he|she|they)\s+finger\w*\s+(?:himself|herself|themselves)\b[^.!?]*/gi, "").replace(/\b(?:fingers?|fingertips?|digits?|knuckles?)\b[^,.;]{0,40}?\b(?:hair|curls|locks|sheets?|pillows?|shoulders?|back|neck|jaw|cheeks?|face|scalp|nape|arms?|biceps?|hands?|chest|headboard|blankets?)\b/gi, "");
     // "opened him up with two fingers, then fucked him": the fingers belong to the clause before; the fucking is a new clause.
     const fingersBeforeOnly = FINGER_CTX.test(sent.slice(0, m.index!)) && !FINGER_CTX.test(matchText + " " + sent.slice(m.index! + matchText.length)) &&
       /[,;]|\b(?:then|and then)\b/.test(sent.slice(Math.max(0, m.index! - 14), m.index!) + matchText.slice(0, 12)) && /\b(?:fuck|pound|rail|bang|plow|plough|screw|breed|took|take)\w*/i.test(matchText);
@@ -2260,7 +2315,7 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
     const ownerImagines = (kind === "fantasy" || kind === "hypothetical" || kind === "wanted") && /imagin\w*\s+(?:himself|herself|themselves|being|how|what)\b|fantasi[sz]\w*\s+(?:about|of)|picturing\s+(?:himself|herself|themselves)/i.test(prefix)
       ? (() => { const bm = new RegExp(`^\\W*(${NAMES})['’]s\\s+(?:whole\\s+|entire\\s+)?(?:body|mind|brain|head|heart|skin|stomach|cock|dick)\\b`).exec(sent); return bm ? cast.byAlias.get(bm[1]) : undefined; })()
       : undefined;
-    const exp = ownerImagines ?? pronounWisher ?? (ifOnly ? cast.byAlias.get(ifOnly[1]) : undefined) ?? povWisher ?? (wantAnd ? firstEntity(sent) : undefined) ?? firstEntity(window) ?? (pat.subj === "t" ? top : bottom);
+    const exp = desiredReceiver ?? ownerImagines ?? pronounWisher ?? (ifOnly ? cast.byAlias.get(ifOnly[1]) : undefined) ?? povWisher ?? (wantAnd ? firstEntity(sent) : undefined) ?? firstEntity(window) ?? (pat.subj === "t" ? top : bottom);
     // "Dean … flashes of him getting fucked against the glass": a wish about being taken, in the words of the one wishing, is about themselves.
     const passiveSelf = (kind === "fantasy" || kind === "hypothetical" || kind === "wanted") && /^(?:passive-|be-|get-)/.test(pat.id) && /^(?:him|he|her|she)$/i.test(bTok ?? "") && !!exp && (exp === top || exp === bottom);
     const role: Role | undefined = passiveSelf ? "bottom" : exp === top ? "top" : exp === bottom ? "bottom" : undefined;
