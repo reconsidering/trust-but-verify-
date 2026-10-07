@@ -4,6 +4,8 @@
 //   AO3_DIR=ao3-samples WRITE_LEARNED=1 npx vitest run tests/learn.test.ts ...            also writes the model into learned.ts
 // The model is switched on only when it improves held-out log loss; the report goes to LEARN_REPORT.md in AO3_DIR.
 import { existsSync, readFileSync, readdirSync, writeFileSync } from "node:fs";
+import { createHash } from "node:crypto";
+import { cacheFingerprint, claimOf, reviewedClaims, sameClaim, validRowsCache } from "../scripts/reviewed-claims.mjs";
 import { join } from "node:path";
 import { describe, expect, it } from "vitest";
 import { type RightSet, baseVia, hashKey, slugOf, strengthOf, weightOf } from "../scripts/right-set.mjs";
@@ -138,25 +140,43 @@ function auc(ps: number[], ys: number[]): number {
 describe.skipIf(!dir)("context model", () => {
   it("trains on the labels and reports held-out accuracy", () => {
     const labels = loadLabels();
+    const root = join(__dirname,"..");
+    const claims = reviewedClaims(root);
+    const changedClaims: {key:string;fic:string;para:number}[] = [];
     let rows: Row[] = [];
     const seen = new Set<string>();
     const missing: Record<string, string> = {};
     let reportNote = "";
     const cache = process.env.ROWS_CACHE;
-    const cached = cache && existsSync(cache) ? JSON.parse(readFileSync(cache, "utf8")) as Row[] : undefined;
-    const validCache = cached?.length && cached.every((r) => r.f.length === FEATURES.length && r.f.every(Number.isFinite));
-    if (validCache) rows = cached;
+    const filesUnder = (path:string):string[] => existsSync(path) ? readdirSync(path,{withFileTypes:true}).flatMap(e => e.isDirectory() ? filesUnder(join(path,e.name)) : [join(path,e.name)]) : [];
+    const fingerprint = cacheFingerprint([
+      ...filesUnder(join(root,"src")), ...filesUnder(labelDir), ...filesUnder(join(__dirname,"right-set")),
+      ...filesUnder(join(root,"public/review")), ...filesUnder(join(root,"scripts")), __filename,
+      ...readdirSync(dir!).filter(f=>f.endsWith(".html")).map(f=>join(dir!,f)),
+    ], FEATURES);
+    const cached = cache && existsSync(cache) ? JSON.parse(readFileSync(cache,"utf8")) as {rows:Row[];note?:string;changedClaims?:typeof changedClaims} : undefined;
+    const validCache = validRowsCache(cached,fingerprint,FEATURES.length);
+    if (validCache) {rows = cached!.rows; reportNote=cached!.note ?? "";changedClaims.push(...(cached!.changedClaims ?? []));}
     else {
       const reported = rightSetLabels();
       let fromReports = 0, clashes = 0;
       for (const f of readdirSync(dir!).filter((x) => x.endsWith(".html")).sort()) {
-        const work = extractFromHtml(readFileSync(join(dir!, f), "utf8"));
+        const sourceBytes = readFileSync(join(dir!,f));
+        const sourceSha = createHash("sha256").update(sourceBytes).digest("hex");
+        const work = extractFromHtml(sourceBytes.toString("utf8"));
         const rs = reported.get(slugOf(work.meta.title ?? ""));
         analyzeWithPatterns(work.text, work.meta, {
           quiet: true,
           audit: (h) => {
             const key = `${h.via}#${hash(h.sentence).toString(16)}`;
             let lab = labels.get(key);
+            if (claims.has(key)) {
+              const reviewed = claims.get(key);
+              if (!reviewed || !sameClaim(reviewed,claimOf(h,f,sourceSha))) {
+                changedClaims.push({key,fic:f,para:h.para});
+                return; // Preserve the review, but never train on a different claim.
+              }
+            }
             const rep = rs?.get(`${baseVia(h.via)}#${hashKey(h.sentence)}`);
             const fromReport = rep?.lab;
             // People get things wrong: where the audit review and a report disagree, neither is used.
@@ -171,7 +191,9 @@ describe.skipIf(!dir)("context model", () => {
       }
       reportNote = `${fromReports} of them come from mistake reports (tests/right-set); ${clashes} were left out because a report and the audit review disagreed.`;
     }
-    if (cache && !validCache) writeFileSync(cache, JSON.stringify(rows));
+    if (cache && !validCache) writeFileSync(cache, JSON.stringify({schema:"engine-learning-rows/v2",fingerprint,rows,note:reportNote,changedClaims}));
+    if (process.env.REVIEW_QUEUE_OUT) writeFileSync(process.env.REVIEW_QUEUE_OUT,JSON.stringify(changedClaims,null,2));
+    reportNote += ` ${changedClaims.length} changed or unverifiable reviewed claims were excluded and need re-review.`;
     // LEARN_FILTER=audit,report keeps only rows from those sources (a diagnostic: which labels move the held-out numbers).
     if (process.env.LEARN_FILTER) { const keep = process.env.LEARN_FILTER.split(","); rows = rows.filter((r) => keep.includes(r.src ?? "audit")); }
     if (process.env.MISSING_OUT) writeFileSync(process.env.MISSING_OUT, JSON.stringify(missing));

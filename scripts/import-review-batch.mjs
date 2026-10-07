@@ -3,6 +3,7 @@
 import { createHash } from "node:crypto";
 import { existsSync, readFileSync, writeFileSync } from "node:fs";
 import { resolve, sep } from 'node:path';
+import { claimOf } from './reviewed-claims.mjs';
 import { buildSuspectActReview } from './suspect-act-review.mjs';
 
 const [batchPath, answersPath, outputPath, actOutputPath] = process.argv.slice(2);
@@ -27,7 +28,7 @@ for (const a of feedback.answers) {
       (a.verdict !== undefined && !["correct", "wrong", "uncertain"].includes(a.verdict)) || !Array.isArray(a.errors) || !a.errors.every((e) => typeof e === "string") || typeof a.updatedAt !== "string") throw Error("An answer is malformed or does not match its batch reading.");
   seen.add(a.id);
   if (!a.verdict) continue;
-  const safe = { id: a.id, key: row.key, fic: row.fic, paragraph: row.para, sourceSha: source.sourceSha, verdict: a.verdict, errors: a.errors, updatedAt: a.updatedAt };
+  const safe = { id: a.id, key: row.key, fic: row.fic, paragraph: row.para, sourceSha: source.sourceSha, claim: claimOf(row,row.fic,source.sourceSha), verdict: a.verdict, errors: a.errors, updatedAt: a.updatedAt };
   const old = answers.get(a.id);
   if (!old || safe.updatedAt > old.updatedAt) answers.set(a.id, safe);
 }
