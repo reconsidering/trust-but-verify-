@@ -1,0 +1,584 @@
+{
+ "schema": "engine-missed-scene-review/v1",
+ "batchId": "missed-2051db5b4e06",
+ "referenceCommit": "85e48fad18655944986ca38d0c1647a1c8beb6f3",
+ "selection": {
+  "seed": "missed-scenes-2026-10-07",
+  "width": 16,
+  "randomPerFic": 2,
+  "discoveryPerFic": 2,
+  "method": "fixed non-overlapping windows; seeded uniform rank within each source; discovery requires two broad lexical cues; neither lane uses detector output; child-containing windows and eight-paragraph context excluded"
+ },
+ "sources": [
+  {
+   "file": "a-la-carte.html",
+   "title": "à la carte",
+   "sourceSha": "4d553843dc96b396376426414fd191534045ca3508acb51a1672e0ef3ebc0cca",
+   "paragraphSha": "9db9cf7ac1dd38c785bc3fb13ccfd4a6162208036fa6736a063bca7a413fa7d6",
+   "paragraphCount": 1984,
+   "wordCount": 55600,
+   "lengthBand": "medium",
+   "participants": [
+    "Obi-Wan Kenobi",
+    "Anakin Skywalker",
+    "Mace Windu",
+    "Quinlan Vos",
+    "Satine Kryze",
+    "Ahsoka Tano",
+    "Padmé Amidala",
+    "CT-7567 | Rex",
+    "CT-5597 | Jesse",
+    "Sheev Palpatine",
+    "Dooku (Star Wars)"
+   ],
+   "eligibleWindows": 99,
+   "cueWindows": 33,
+   "style": {
+    "dialogueFraction": 0.4057459677419355,
+    "meanParagraphWords": 28.024193548387096
+   }
+  },
+  {
+   "file": "belonging.html",
+   "title": "Belonging is Longing is Now",
+   "sourceSha": "d8fe352ab70bc0a8171fea0e069c43d776d3541d741cb74b2b66014ae64e874c",
+   "paragraphSha": "f9bf52ddcb708de72d8df74649d6976fa2ed62ddba1e55df553729ba32589409",
+   "paragraphCount": 5783,
+   "wordCount": 104483,
+   "lengthBand": "long",
+   "participants": [
+    "Castiel (Supernatural)",
+    "Dean Winchester",
+    "John Winchester",
+    "Sam Winchester",
+    "Gabriel (Supernatural)",
+    "Michael (Supernatural)",
+    "Bobby Singer (Supernatural)",
+    "Castiel"
+   ],
+   "eligibleWindows": 348,
+   "cueWindows": 191,
+   "style": {
+    "dialogueFraction": 0.5625108075393395,
+    "meanParagraphWords": 18.067266124848693
+   }
+  },
+  {
+   "file": "dogbird.html",
+   "title": "like a dog with a bird at your door",
+   "sourceSha": "b66dcf4730e681942787b9d280bc8b2825005e179cfe09179a82e935a4f036fb",
+   "paragraphSha": "a9bac5bb63b9adc912ac2f8d6f224c1311c7a6e977ef8c66ad82fb1e384479ee",
+   "paragraphCount": 1474,
+   "wordCount": 51169,
+   "lengthBand": "medium",
+   "participants": [
+    "Evan \"Buck\" Buckley",
+    "Eddie Diaz (9-1-1 TV)",
+    "Christopher Diaz (9-1-1 TV)",
+    "Henrietta \"Hen\" Wilson",
+    "Natalia Dollenmeyer",
+    "Marisol (9-1-1 TV)",
+    "Eddie Diaz's Parents (9-1-1 TV)",
+    "Isabel Diaz (9-1-1 TV)",
+    "Josephina \"Pepa\" Diaz"
+   ],
+   "eligibleWindows": 50,
+   "cueWindows": 17,
+   "style": {
+    "dialogueFraction": 0.39348710990502034,
+    "meanParagraphWords": 34.71438263229308
+   }
+  },
+  {
+   "file": "innocent-until.html",
+   "title": "Innocent Until",
+   "sourceSha": "ffa71a4c7726196bc68e41ceb1805c28b7de2698384e84270c5d0f1f6f4ef78c",
+   "paragraphSha": "1b144bbdaf9d60d9c1ed0bb6efc2a0618b0b1187845bbf7d1b1d3e10d8a3b9e2",
+   "paragraphCount": 4922,
+   "wordCount": 136866,
+   "lengthBand": "long",
+   "participants": [
+    "Steve Rogers",
+    "James \"Bucky\" Barnes",
+    "Jennifer Walters",
+    "Matt Murdock",
+    "Franklin \"Foggy\" Nelson",
+    "Karen Page",
+    "Sarah Rogers",
+    "Clint Barton",
+    "Natasha Romanov",
+    "Peggy Carter",
+    "Sharon Carter (Marvel)",
+    "Sam Wilson (Marvel)",
+    "Gwen Stacy",
+    "Peter Parker",
+    "Wade Wilson",
+    "Bucky Barnes"
+   ],
+   "eligibleWindows": 224,
+   "cueWindows": 106,
+   "style": {
+    "dialogueFraction": 0.5002031694433158,
+    "meanParagraphWords": 27.80698902885006
+   }
+  },
+  {
+   "file": "lightning.html",
+   "title": "Held Up a Lightning Rod (Wonder Why I'm Struck)",
+   "sourceSha": "0a3fe56af1a92ac27ba2da61af1ffb88f11cf6aa44cb91777bb7b97c025f67d7",
+   "paragraphSha": "53578f7dc07a33d29e2ff7074e2292cf37257cf8e0045e06178adfc251bae999",
+   "paragraphCount": 5692,
+   "wordCount": 128759,
+   "lengthBand": "long",
+   "participants": [
+    "Christopher Diaz (9-1-1 TV)",
+    "Original Female Character(s)",
+    "Isabel Diaz (9-1-1 TV)",
+    "Maddie Buckley",
+    "Bobby Nash",
+    "Evan \"Buck\" Buckley",
+    "Eddie Diaz (9-1-1 TV)",
+    "Past Evan \"Buck\" Buckley",
+    "Eddie Diaz",
+    "Shannon Diaz"
+   ],
+   "eligibleWindows": 169,
+   "cueWindows": 33,
+   "style": {
+    "dialogueFraction": 0.44395643007730146,
+    "meanParagraphWords": 22.62104708362614
+   }
+  },
+  {
+   "file": "negotiation.html",
+   "title": "Negotiation",
+   "sourceSha": "e3dc9f6098d1606b0ae19cbe3afc48bb70717262d8524b9f6ae9924ecc38b9da",
+   "paragraphSha": "4ad5bc9cc22011193bd5c764dc21f36bfac570da98492b9e4e7ab74ce43211a4",
+   "paragraphCount": 1637,
+   "wordCount": 86793,
+   "lengthBand": "long",
+   "participants": [
+    "Obi-Wan Kenobi",
+    "Anakin Skywalker",
+    "Padme Amidala",
+    "Anakin Skywalker (past)",
+    "Bail Organa",
+    "Breha Organa (Past)"
+   ],
+   "eligibleWindows": 67,
+   "cueWindows": 16,
+   "style": {
+    "dialogueFraction": 0.3842394624312767,
+    "meanParagraphWords": 53.01954795357361
+   }
+  },
+  {
+   "file": "on-my-mind.html",
+   "title": "On My Mind (Let's Go)",
+   "sourceSha": "2a886f421c49bdad8483c1703fa8f93668701c525d20f6e777bc23396fea1d2f",
+   "paragraphSha": "dbf2396ed192524e6c558d6db045f4e1dd721fd1afc12f84afd452e8f228df3f",
+   "paragraphCount": 266,
+   "wordCount": 10751,
+   "lengthBand": "short",
+   "participants": [
+    "Alex Claremont-Diaz",
+    "Henry Hanover-Stuart-Fox"
+   ],
+   "eligibleWindows": 17,
+   "cueWindows": 12,
+   "style": {
+    "dialogueFraction": 0.4699248120300752,
+    "meanParagraphWords": 40.41729323308271
+   }
+  },
+  {
+   "file": "rwrb-balls.html",
+   "title": "Red, White, and Royal Blue Balls",
+   "sourceSha": "972bdceeca54c37e7f9298ac9621b9155bf28745a076c5d5124e55a38b1a9474",
+   "paragraphSha": "ac2603b094d8fccc28763cab1621c7bd53c3c32cf37d63667293cb991935f7f8",
+   "paragraphCount": 366,
+   "wordCount": 10105,
+   "lengthBand": "short",
+   "participants": [
+    "Alex Claremont-Diaz",
+    "Henry Fox-Mountchristen-Windsor"
+   ],
+   "eligibleWindows": 21,
+   "cueWindows": 15,
+   "style": {
+    "dialogueFraction": 0.24316939890710382,
+    "meanParagraphWords": 27.60928961748634
+   }
+  },
+  {
+   "file": "sweeter.html",
+   "title": "sweeter coming from my hand",
+   "sourceSha": "d780ecd4fd506dcb427f7c495d1fda738051fbb61e41d54073d70627b8054bdf",
+   "paragraphSha": "6e97e5b7ec680f3e7715fdddde65d603039110a11a818cf25c3be9c3721ccdda",
+   "paragraphCount": 369,
+   "wordCount": 9993,
+   "lengthBand": "short",
+   "participants": [
+    "Castiel",
+    "Dean Winchester",
+    "Sam Winchester",
+    "Charlie Bradbury"
+   ],
+   "eligibleWindows": 22,
+   "cueWindows": 10,
+   "style": {
+    "dialogueFraction": 0.45257452574525747,
+    "meanParagraphWords": 27.08130081300813
+   }
+  },
+  {
+   "file": "tricks-of-the-trade.html",
+   "title": "Tricks of the Trade",
+   "sourceSha": "25a15e806d8f6a55c030e78d50d58e71f2ca424674b33f7a56471178d4ab1bd3",
+   "paragraphSha": "56e605751373cfe88dc1f6a48760f8625a143c8157e758778c2f64929a65e8d7",
+   "paragraphCount": 3875,
+   "wordCount": 90541,
+   "lengthBand": "long",
+   "participants": [
+    "Pamela Barnes (Supernatural)",
+    "Charlie Bradbury",
+    "Ellen Harvelle",
+    "Jo Harvelle",
+    "Meg Masters",
+    "Castiel",
+    "Dean Winchester",
+    "Jessica Moore",
+    "Sam Winchester",
+    "brief Castiel"
+   ],
+   "eligibleWindows": 217,
+   "cueWindows": 67,
+   "style": {
+    "dialogueFraction": 0.5429677419354839,
+    "meanParagraphWords": 23.36541935483871
+   }
+  }
+ ],
+ "rows": [
+  {
+   "fic": "rwrb-balls.html",
+   "from": 128,
+   "to": 143,
+   "windowSha": "dbf7c08459cc18b15547c3ddf3756deeddaaf96eebcd792424b4f842fcaf66d6",
+   "lane": "random",
+   "id": "M1"
+  },
+  {
+   "fic": "dogbird.html",
+   "from": 1424,
+   "to": 1439,
+   "windowSha": "6d615e652e4c0b2216798b9e42950cce5734e98c765ebe8f49542397c270de04",
+   "lane": "random",
+   "id": "M2"
+  },
+  {
+   "fic": "on-my-mind.html",
+   "from": 192,
+   "to": 207,
+   "windowSha": "1a785a6616c1aaf7dccbed152d1e8cc7b9bbf8baa651658b0d19b379e34b07d4",
+   "lane": "discovery",
+   "id": "M3"
+  },
+  {
+   "fic": "rwrb-balls.html",
+   "from": 352,
+   "to": 365,
+   "windowSha": "6a1687f902fde5df1b211ef44f93bcf50c4545278508cd27675eb687061ede81",
+   "lane": "discovery",
+   "id": "M4"
+  },
+  {
+   "fic": "lightning.html",
+   "from": 1328,
+   "to": 1343,
+   "windowSha": "f04f9feb794a3073bc7e46e7baa2b30fc29ac132c3b6e12cc5879ed247cb06f2",
+   "lane": "random",
+   "id": "M5"
+  },
+  {
+   "fic": "lightning.html",
+   "from": 3264,
+   "to": 3279,
+   "windowSha": "a37fe4e38ad1bebdbe64f7abc7a574b8bcab7dd2b930c1809789e9dc59afcd9b",
+   "lane": "random",
+   "id": "M6"
+  },
+  {
+   "fic": "a-la-carte.html",
+   "from": 1920,
+   "to": 1935,
+   "windowSha": "34073beee3ab5aaf8649e47fe1d77934df8ced5692a5697f6b38b08e21747b3c",
+   "lane": "discovery",
+   "id": "M7"
+  },
+  {
+   "fic": "rwrb-balls.html",
+   "from": 336,
+   "to": 351,
+   "windowSha": "e554a0309a9b6439e5bdb48b34e7f51d4bc61c4f2b2243ab8705bdf2518fb132",
+   "lane": "discovery",
+   "id": "M8"
+  },
+  {
+   "fic": "tricks-of-the-trade.html",
+   "from": 256,
+   "to": 271,
+   "windowSha": "c7e8450dfeb5577fbc2a956fd8bab263e1bd9745eed2ff78c63b29e72c5dc5d2",
+   "lane": "discovery",
+   "id": "M9"
+  },
+  {
+   "fic": "innocent-until.html",
+   "from": 1232,
+   "to": 1247,
+   "windowSha": "baa13c0a2ed31858f999a2bc9a6fad7351b36b96271e2bd27ed9853800199991",
+   "lane": "discovery",
+   "id": "M10"
+  },
+  {
+   "fic": "innocent-until.html",
+   "from": 400,
+   "to": 415,
+   "windowSha": "3cd707dd9a6042ff9b08fdcf0d908949a5eff61d785a249d09196686b4982f09",
+   "lane": "random",
+   "id": "M11"
+  },
+  {
+   "fic": "dogbird.html",
+   "from": 1232,
+   "to": 1247,
+   "windowSha": "b37c8f1bd6dd1bc9b18df16c96ecca2fd8dbe561182a1e9cd39c260f19692ad4",
+   "lane": "discovery",
+   "id": "M12"
+  },
+  {
+   "fic": "dogbird.html",
+   "from": 992,
+   "to": 1007,
+   "windowSha": "12f67024fb15ad0a1fb3d3f47febb9ef849a453288b1cfd4764410468f6f6366",
+   "lane": "discovery",
+   "id": "M13"
+  },
+  {
+   "fic": "on-my-mind.html",
+   "from": 240,
+   "to": 255,
+   "windowSha": "a0b819fcb26ecdad80c1071bdd3a5bdaa0fa0b94a2a7608f78562ef2d1482d25",
+   "lane": "discovery",
+   "id": "M14"
+  },
+  {
+   "fic": "innocent-until.html",
+   "from": 800,
+   "to": 815,
+   "windowSha": "c17bb6ece3c25f2176e97cd47b0662daaa7a505ee31c30ff9a989fbf8ad50e3f",
+   "lane": "discovery",
+   "id": "M15"
+  },
+  {
+   "fic": "on-my-mind.html",
+   "from": 64,
+   "to": 79,
+   "windowSha": "ff0d118ecf29288e6aa9e9acde65b39dbb421ddc5d1f6a424bf8b989a1d7bbaa",
+   "lane": "random",
+   "id": "M16"
+  },
+  {
+   "fic": "innocent-until.html",
+   "from": 1680,
+   "to": 1695,
+   "windowSha": "a5fc1d990fda79145dc7c130659811110c366392179a6ffb86bd1ff25a5a4ae8",
+   "lane": "random",
+   "id": "M17"
+  },
+  {
+   "fic": "sweeter.html",
+   "from": 176,
+   "to": 191,
+   "windowSha": "3b5579f3ac71cf061fc4731e97f2a11b5eed221e1f73e21c994c24bdb0f17412",
+   "lane": "discovery",
+   "id": "M18"
+  },
+  {
+   "fic": "dogbird.html",
+   "from": 1328,
+   "to": 1343,
+   "windowSha": "78b245b63b57d461ccf6bf62b15d23ab6fb4bc954df2b0569f3bb5ff34a9e002",
+   "lane": "random",
+   "id": "M19"
+  },
+  {
+   "fic": "sweeter.html",
+   "from": 96,
+   "to": 111,
+   "windowSha": "9f8973572347b265d7e6d9404a75004fe73de1ecb336e8e2ef630ad1d4c913a5",
+   "lane": "random",
+   "id": "M20"
+  },
+  {
+   "fic": "negotiation.html",
+   "from": 272,
+   "to": 287,
+   "windowSha": "8c63429ebdbfe6bd773f0548df7b692d509defc7d7c4157fbad1556474a1cfe5",
+   "lane": "discovery",
+   "id": "M21"
+  },
+  {
+   "fic": "sweeter.html",
+   "from": 160,
+   "to": 175,
+   "windowSha": "a0e90a3bac59fc6deb9b3c83cdb4cc6c4bba12fc4c8e4b893da2a3f0197b6ce0",
+   "lane": "discovery",
+   "id": "M22"
+  },
+  {
+   "fic": "a-la-carte.html",
+   "from": 480,
+   "to": 495,
+   "windowSha": "a8b21badd5833b2b79596164fc9f8daa62d975109746e4fb1c6ac2ae307920ce",
+   "lane": "random",
+   "id": "M23"
+  },
+  {
+   "fic": "tricks-of-the-trade.html",
+   "from": 2720,
+   "to": 2735,
+   "windowSha": "17cd0aa117baacc6d649044f416ac4d213258daed5c080a4bc2dd3f794f1c4d8",
+   "lane": "random",
+   "id": "M24"
+  },
+  {
+   "fic": "negotiation.html",
+   "from": 1280,
+   "to": 1295,
+   "windowSha": "dbc0464c8994c21cf9c187536460b7452330ba92f66035537599414d3b4893c0",
+   "lane": "random",
+   "id": "M25"
+  },
+  {
+   "fic": "belonging.html",
+   "from": 1152,
+   "to": 1167,
+   "windowSha": "37fedcca82cb01ef5dfcc3b5fe18cbbdf501701cdf7704e7b0ff5468661f354e",
+   "lane": "random",
+   "id": "M26"
+  },
+  {
+   "fic": "a-la-carte.html",
+   "from": 464,
+   "to": 479,
+   "windowSha": "12fc02fe2f480babdf3829785dac888789aa6c2166d2e86684d62543e74cc509",
+   "lane": "discovery",
+   "id": "M27"
+  },
+  {
+   "fic": "belonging.html",
+   "from": 4016,
+   "to": 4031,
+   "windowSha": "81b9c1d7ae03e7d6cd11f05f21ca927da8490223a2997d5e67e5a58a05521bba",
+   "lane": "random",
+   "id": "M28"
+  },
+  {
+   "fic": "negotiation.html",
+   "from": 1152,
+   "to": 1167,
+   "windowSha": "e069e3ad9154ba61ac3d8d5abe1b33bfccd0c7a00e5fd892e3c9a0505493cf66",
+   "lane": "discovery",
+   "id": "M29"
+  },
+  {
+   "fic": "lightning.html",
+   "from": 5392,
+   "to": 5407,
+   "windowSha": "a0fe700bc131eb1d0c35033fbdaf2246100931a218b59a03d3c7617d34728fff",
+   "lane": "discovery",
+   "id": "M30"
+  },
+  {
+   "fic": "sweeter.html",
+   "from": 16,
+   "to": 31,
+   "windowSha": "1ab7dcf36f72a401a622cf95facded36be6fdcf013b2f443f6ae16fd29f8d66a",
+   "lane": "random",
+   "id": "M31"
+  },
+  {
+   "fic": "a-la-carte.html",
+   "from": 224,
+   "to": 239,
+   "windowSha": "6007b846d8b841d0f952540536b250e5238f041f9860ffe96016ae18270fa670",
+   "lane": "random",
+   "id": "M32"
+  },
+  {
+   "fic": "negotiation.html",
+   "from": 1616,
+   "to": 1631,
+   "windowSha": "2f25ead63137c35aaa6b6663d26d5a3cdedd1d3f8281c963bb68267d68d1e801",
+   "lane": "random",
+   "id": "M33"
+  },
+  {
+   "fic": "rwrb-balls.html",
+   "from": 256,
+   "to": 271,
+   "windowSha": "bfa9ac4144a96b9d1aabf47b6987172de2e714de9522118a4ca2065d0cf729b6",
+   "lane": "random",
+   "id": "M34"
+  },
+  {
+   "fic": "belonging.html",
+   "from": 4272,
+   "to": 4287,
+   "windowSha": "9b583a8521a7594023e5d6276920470b87d5393a921ba56adc592febb39c181e",
+   "lane": "discovery",
+   "id": "M35"
+  },
+  {
+   "fic": "tricks-of-the-trade.html",
+   "from": 2928,
+   "to": 2943,
+   "windowSha": "19b656afb01797ade59cf6712976f47e39cd9903d7200538d16ad11db915ae79",
+   "lane": "discovery",
+   "id": "M36"
+  },
+  {
+   "fic": "lightning.html",
+   "from": 5632,
+   "to": 5647,
+   "windowSha": "6798a1038c56967164c7a2a444b96af3d622eeee64fc29a0ba8447246b104e1f",
+   "lane": "discovery",
+   "id": "M37"
+  },
+  {
+   "fic": "on-my-mind.html",
+   "from": 112,
+   "to": 127,
+   "windowSha": "b5194ec1269ab6e667761aa00cf6f0379a4323c4d6a34603f41838c4cdd42c61",
+   "lane": "random",
+   "id": "M38"
+  },
+  {
+   "fic": "belonging.html",
+   "from": 1104,
+   "to": 1119,
+   "windowSha": "5ae62436f880320256d6360717c9e081fc8e26233b8db5de33315b0c28ca135d",
+   "lane": "discovery",
+   "id": "M39"
+  },
+  {
+   "fic": "tricks-of-the-trade.html",
+   "from": 3568,
+   "to": 3583,
+   "windowSha": "b845168d3f90c5b34d4387bdd203f2849d8bd9dbada250e91dd2bb0722dc543b",
+   "lane": "random",
+   "id": "M40"
+  }
+ ]
+}

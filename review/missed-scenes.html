@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'none'; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'none'; style-src 'self' 'unsafe-inline'; connect-src 'self' ws://127.0.0.1:* ws://localhost:*">
+<meta name="robots" content="noindex"><title>Find missed scenes</title><link rel="stylesheet" href="./review-batch.css"><link rel="stylesheet" href="./missed-scenes.css"></head>
+<body><main><p class="eyebrow">Independent passage review</p><h1>Find missed scenes</h1>
+<p>Read the highlighted passage and record every sexual act it describes. These passages were selected without using the analyzer’s results, and may contain no sexual activity.</p>
+<p><a href="./next-batch.html">Back to readings and gold ranges</a></p>
+<section class="load"><label for="stories">Choose your samples ZIP or story HTML files</label><input id="stories" type="file" accept=".zip,.html,.htm,application/zip,text/html" multiple><p class="small">On iPhone, choose from Files. Story text stays on this device. Choose the files again when reopening; saved answers remain in this browser.</p><p id="loaded" role="status"></p><details><summary>Stories needed</summary><ul id="needed"></ul></details></section>
+<div class="toolbar"><span id="progress" aria-live="polite"></span><label for="filter">Show</label><select id="filter"><option value="all">All passages</option><option value="unanswered">Unfinished</option><option value="answered">Finished</option></select><button id="next-unanswered">Next unfinished</button></div>
+<article id="card"><p id="where" class="small"></p><h2>What happens in this passage?</h2>
+<p class="small">Record acts in the highlighted window only. Use surrounding text to resolve who does what. If a scene continues outside the window, record the part shown here. Paragraph numbers start at 0.</p>
+<div id="passages"></div><button id="more">More context</button>
+<details><summary>Browse elsewhere for context</summary><label for="passage-number">Paragraph number</label><input id="passage-number" type="number" min="0"><button id="go-passage">Go</button><button id="earlier-passages">Earlier</button><button id="later-passages">Later</button><button id="return-window">Return to highlighted window</button></details>
+<div class="choices"><button data-answer="acts">Acts present</button><button data-answer="none">No sexual act</button><button data-answer="uncertain">Not sure</button></div>
+<section id="act-section" hidden><p class="small">Add a separate entry for each act or change of participants. “Performer” means the penetrator for penetration, the person using fingers/toy/hands, or the person using their mouth for oral acts. Enter “Unclear” for an unknown participant. Refine the start/end paragraphs to the evidence for that act.</p><div id="events"></div><button id="add-act">+ Add another act</button></section>
+<label class="check"><input id="complete" type="checkbox">I checked the entire highlighted window and recorded every act (or confirmed there are none).</label>
+<fieldset><legend>Context that needs attention — select any</legend><div id="errors"></div></fieldset>
+<label for="context">Additional context</label><textarea id="context" rows="4" placeholder="Pronoun ambiguity, an act continuing outside the window, another participant, or details to check later…"></textarea>
+<nav><button id="previous">← Previous</button><span id="position"></span><button id="next">Next →</button></nav><button id="clear">Clear this answer</button></article>
+<p id="empty" hidden>No passages in this view.</p><p id="status" role="status"></p>
+<footer><button id="export">Export my answers</button><button id="share" hidden>Share / save answers</button><label class="import">Import saved answers<input id="answers-file" type="file" accept=".json,application/json"></label><p class="small">Export a backup when stopping. Send the JSON back so we can compare your independent inventory with the engine and identify omissions. Unfinished and uncertain windows are excluded from recall scoring.</p></footer>
+</main><script type="module" src="./missed-scene-main.ts"></script></body></html>

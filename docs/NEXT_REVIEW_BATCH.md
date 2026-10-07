@@ -47,3 +47,7 @@ Validation: ten review/import/integrity tests and the production build passed. A
 Owner update, October 7: Prince 55–75 is now a fingering scene, not penile anal penetration. WereCompeer is split into oral activity at 976–981 and anal penetration/cockwarming at 982–986; both labels remain. The uncertain Rushing 1148–1150 item is excluded from the review batch only; its existing evaluation scene is unchanged. Slipfast's simultaneous blowjob/fingering scene remains labelled blowjob. The returned 51 answers and approved decisions are preserved without free-text passages in `tests/gold-review/owner-2026-10-07.json`.
 
 This metadata rebuild changes the gold batch identity. Keep the previous exported answers as a backup; they are retained in the repository feedback record, but are not copied automatically onto changed scene ranges. The original 40-reading batch is unchanged. Anal claims now explicitly say “anally” to distinguish them from oral activity.
+
+## Independent missed-scene inventory
+
+For passages selected without detector hits, use [the missed-scene review](MISSED_SCENE_REVIEW.md). After its page update is merged, it is linked from the readings page and hosted at `review/missed-scenes.html`. Its answers record acts, participants, occurrence type and evidence ranges rather than correct/wrong engine claims.
