@@ -14,10 +14,12 @@ A small web app: drop in an AO3 download (PDF, EPUB, HTML, or TXT) and it tells 
 
      Each act gets its own verdict, so someone who both sucks and rims their partner isn't mistaken for a switch.
 
-   An **Anal role switching found** indicator appears when each partner has at least
-   one anal scene scored 75% or higher. Expand it to see the strongest scene in
-   each direction and its confidence. The scenes can occur at different points
-   in the work; hints and oral, finger or toy acts do not trigger this indicator.
+   A **Usual anal top receives anal stimulation** indicator identifies the partner
+   with the most detected anal penetration scenes and flags bottoming, receiving
+   fingering, rimming or anal toys. Expand it for the activities, locations and
+   scores. High-confidence entries score at least 75%; fingering scenes without
+   scores are marked for review. Tied topping counts are identified explicitly.
+   Hints and oral penetration do not trigger it.
 
    Every act also shows a **by-person** confidence for each partner in each role (e.g. Dunk tops 97% /
    bottoms 9%; Aerion sucks cock 97% / gets sucked 97%). The roles are scored independently, so someone who

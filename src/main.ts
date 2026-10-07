@@ -1307,7 +1307,7 @@ function renderAnalysis(a: Analysis, target: HTMLElement, notesEl: HTMLElement, 
   for (const p of a.pairings) {
     const block = el("div", "pairing-block");
     if (a.pairings.length > 1) block.append(el("h4", "pairing-name", p.pairing));
-    const switching = renderAnalSwitchIndicator(p.anal, p.pairing);
+    const switching = renderAnalSwitchIndicator(p);
     if (switching) block.append(switching);
     if (vibeMode === "single" && p.vibeCombined?.length) block.append(renderVibe(p.vibeCombined, p.pairing, a.source, { key: "vibe", title: "Vibe (combined)", ends: ["Total bottom", "Vers", "Total top"], hint: "One rating: sex acts, stated roles and tags, desires and hints, and everyday behaviour such as taking charge, caring and yielding, all together." }));
     else if (p.vibe?.length) block.append(renderVibe(p.vibe, p.pairing, a.source));
