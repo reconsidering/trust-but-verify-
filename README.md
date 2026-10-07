@@ -14,6 +14,13 @@ A small web app: drop in an AO3 download (PDF, EPUB, HTML, or TXT) and it tells 
 
      Each act gets its own verdict, so someone who both sucks and rims their partner isn't mistaken for a switch.
 
+   A **Usual anal top receives anal stimulation** indicator identifies the partner
+   with the most detected anal penetration scenes and flags bottoming, receiving
+   fingering, rimming or anal toys. Expand it for the activities, locations and
+   scores. High-confidence entries score at least 75%; fingering scenes without
+   scores are marked for review. Tied topping counts are identified explicitly.
+   Hints and oral penetration do not trigger it.
+
    Every act also shows a **by-person** confidence for each partner in each role (e.g. Dunk tops 97% /
    bottoms 9%; Aerion sucks cock 97% / gets sucked 97%). The roles are scored independently, so someone who
    switches scores high on both. Each score is built from that person's scenes in the role (scenes worked
