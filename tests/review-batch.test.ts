@@ -125,14 +125,14 @@ it("rechecks gold verdicts separately, browses the whole story, and preserves re
 it("includes each remaining gold range separately and publishes no story passages", () => {
   const gold = JSON.parse(readFileSync("public/review/gold-verdicts.json","utf8")) as ReviewBatch;
   expect(gold.schema).toBe("engine-gold-range-review/v1");
-  expect(gold.rows).toHaveLength(51);
-  expect(new Set(gold.rows.map(r => r.key)).size).toBe(51);
+  expect(gold.rows).toHaveLength(50);
+  expect(new Set(gold.rows.map(r => r.key)).size).toBe(50);
   expect(gold.rows.some(r => r.fic === "belonging.html")).toBe(false);
   for (const row of gold.rows) {
     const bytes = readFileSync("tests/gold/" + row.gold!.file);
     const original = JSON.parse(bytes.toString());
     expect(createHash("sha256").update(bytes).digest("hex")).toBe(row.gold!.hash);
-    expect(original.verdicts.some((v: {pairing:string;act:string;verdict:string}) => v.pairing === row.gold!.pairing && v.act === row.act && v.verdict === row.gold!.verdict)).toBe(true);
+    if (row.gold!.verdict !== "scene") expect(original.verdicts.some((v: {pairing:string;act:string;verdict:string}) => v.pairing === row.gold!.pairing && v.act === row.act && v.verdict === row.gold!.verdict)).toBe(true);
     expect(row.evidence).toHaveLength(1);
     expect(original.scenes.some((s: {from:number;to:number;top:string;bottom:string;act:string}) => s.from === row.para && s.to === row.evidence![0].to && s.top === row.a && s.bottom === row.b && s.act === row.act)).toBe(true);
     expect(Object.keys(row).every((key) => ["id","key","fic","para","pattern","a","b","act","kind","claim","gold","evidence"].includes(key))).toBe(true);
@@ -178,4 +178,18 @@ it("shows a complete gold range even when it extends past the normal context win
   const highlights = document.querySelectorAll("#passages .focus");
   expect(highlights).toHaveLength(20);
   expect(highlights[19].textContent).toBe(paras[20]);
+});
+
+
+it("applies the owner-approved scene correction, exclusion, and oral/anal split", () => {
+  const batch = JSON.parse(readFileSync("public/review/gold-verdicts.json","utf8")) as ReviewBatch;
+  const prince = batch.rows.find(r => r.fic === "prince-prisoner-puppy.html" && r.para === 55)!;
+  expect(prince.act).toBe("fingering"); expect(prince.claim).toContain("anally fingers");
+  expect(batch.rows.some(r => r.fic === "rushing.html" && r.para === 1148 && r.act === "anal")).toBe(false);
+  const rushing = JSON.parse(readFileSync("tests/gold/rushing.json","utf8"));
+  expect(rushing.scenes.some((s: {from:number;act:string}) => s.from === 1148 && s.act === "anal")).toBe(true);
+  const oral = batch.rows.find(r => r.fic === "were-compeer.html" && r.para === 976 && r.act === "blowjob")!;
+  const anal = batch.rows.find(r => r.fic === "were-compeer.html" && r.para === 982 && r.act === "anal")!;
+  expect(oral.evidence).toEqual([{from:976,to:981}]);expect(anal.evidence).toEqual([{from:982,to:986}]);
+  expect(batch.rows.find(r => r.fic === "slipfast.html" && r.para === 393)!.act).toBe("blowjob");
 });
