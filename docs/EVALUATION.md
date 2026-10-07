@@ -56,6 +56,26 @@ AO3_DIR=ao3-samples npx vitest run tests/gold-eval.test.ts                      
   each paragraph, never the fic's own text; if the engine's paragraph splitting changes, the hash lets a file shift itself.
   The report gives verdict accuracy, scene recall and precision, POV and text-sender accuracy. `GOLD_STRICT=1` fails on any miss.
 
+## Independent scene-review answers
+
+`scripts/import-missed-scene-review.mjs` saves completed owner windows in
+`tests/scene-review/` as an **act-only inventory**, separate from confidence-training
+labels, the right-set, and gold verdicts. It records nine explicit act categories
+only when marked “Happens in this scene”. Unfinished windows, wishes, fantasies,
+memories, and broad “Kissing / body rubbing” or “Other” entries are unscored.
+An empty inventory window means no reviewed act from that explicit scope; it
+does not mean that hints or other activity are absent or wrong.
+
+`actHitsForWindow` in `scripts/scene-review-scope.mjs` excludes hint kinds and
+non-act types before any future comparison. In particular, checking out a cock
+or bulge cannot become a negative label because the owner did not flag it.
+Importing these answers does not retrain confidence, change detection rules,
+or claim an accuracy/recall result. Actual recall comparison is a separate step.
+
+```sh
+node scripts/import-missed-scene-review.mjs public/review/missed-scenes.json owner-answers.json tests/scene-review/batch-id.json
+```
+
 ## The "looks right" set
 
 Readings you mark "Looks right" in a mistake report can be kept (the report panel's **Save looks-right set** button downloads them as a small file with no story text; hand that file to Claude, or run the import below on it) as a locked set so a later change can't quietly undo them:
@@ -72,3 +92,21 @@ The set also feeds the context model (`tests/learn.test.ts`): a "looks right" re
 People get things wrong, so a mark is weighed, not trusted outright. **Strong** (marked right in two reports, or a scene the engine itself put at 70%+) fails the test when it changes. **Single** (marked right once) is only listed in the report. **Disputed** (the same sentence is also listed as wrong in any report) and **retired** (a deliberate fix, or a mark you now disagree with) are skipped. `RIGHT_SET_STRICT=1` fails on any change. When a strong reading changes on purpose, retire it with the hash from the failure.
 
 Labels made by a Claude pass over a fic (`npm run dive -- import <fic>`, see [TESTING.md](TESTING.md)) go into the same right-set files with `source: "claude"` and a weight of 0.85 (0.3 for readings it called wrong, because blind spot-checking showed those hold up far less often). They are never "strong": a set fails only when more of them change than label noise explains, and they count fractionally in the reliability table and the context model. A reading you later mark right yourself becomes full weight.
+
+## Recovering unfinished scene reviews
+
+`tests/scene-review/missed-2051db5b4e06-partial.json` preserves the twelve
+unfinished owner windows separately from the completed inventory. Passage review
+confirmed ten saved performed-act entries and interpreted one unfinished Other
+entry as solo masturbation. That additional interpretation is explicitly marked
+as assistant-reviewed and not owner-confirmed. The combined evidence is 33
+performed acts: 22 in completed windows, 11 positive entries in partial windows.
+
+Each partial window preserves the source and window hashes, draft verdict, flags,
+contextual entries and a paraphrased assistant assessment. All remain incomplete
+and positive-only: even the nine windows where the assistant found no scored
+acts must not produce negative labels from omissions. Hints, kissing and other
+context remain unscored. Assistant confidence is subjective and uncalibrated.
+This supplementary evidence is not consumed by confidence training, gold checks
+or the detector; a future recall comparison must handle its positive-only scope
+explicitly. The original importer continues to skip incomplete windows.
