@@ -62,3 +62,19 @@ model weights nor the reliability table are regenerated as part of this feature 
 
 ## Where tests live
 `tests/round*.test.ts` (one per fix round, paraphrased sentences), `tests/smoke.test.ts` (speed and known-mistake classes), `tests/trace.test.ts`, `tests/dive.test.ts`; labels in `tests/gold/` and `tests/right-set/`. How they're run: `docs/TESTING.md`.
+
+### Per-reading confidence coverage
+
+`builders.ts` scores every displayed act scene and hint. Previously unscored
+fingering and vaginal scenes use `sceneLineScore`, following the existing scene
+score approach: match strength, named/pronoun/inferred attribution, distinct
+agreement sentences, conflicting participant assignments and shaky wording.
+Ambiguous penetration sites lower these new display scores. These additions
+do not change detections or verdict weights. They are heuristic scores, not new
+learned-model training or measured calibration. Existing hint and solo/manual/other
+line scores remain in place; all carry explanations.
+
+`analyze.ts` requires individual numeric confidence and reasons for every Claude
+scene and hint and retains them when splitting oral acts or converting vaginal
+scenes. Invalid or missing item scores reject the response, rather than borrowing
+an overall verdict score. The vaginal card displays the individual scores too.

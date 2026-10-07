@@ -968,6 +968,8 @@ function renderVaginal(v: VaginalResult, pairing: string, source: string): HTMLE
     v.instances.forEach((i, n) => {
       const li = el("li");
       li.append(el("strong", undefined, [i.top, i.bottom].filter(Boolean).join(" & ")), ` · ${i.act}`);
+      const chip = confChip(i.confidence, i.reasons);
+      if (chip) li.append(chip);
       if (i.where) li.append(el("span", "where", ` · ${i.where}`));
       if (i.evidence) li.append(el("div", "evidence", i.evidence));
       flagControl(li, { id: `${source}|${pairing}|vaginal|${n}`, kind: "scene", pairing, card: "vaginal", top: i.top, bottom: i.bottom, act: i.act, basis: i.basis, confidence: i.confidence, confidenceReasons: i.reasons, where: i.where, evidence: i.evidence, context: i.context });

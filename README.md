@@ -17,9 +17,15 @@ A small web app: drop in an AO3 download (PDF, EPUB, HTML, or TXT) and it tells 
    A **Usual anal top receives anal stimulation** indicator identifies the partner
    with the most detected anal penetration scenes and flags bottoming, receiving
    fingering, rimming or anal toys. Expand it for the activities, locations and
-   scores. High-confidence entries score at least 75%; fingering scenes without
-   scores are marked for review. Tied topping counts are identified explicitly.
+   scores. High-confidence entries score at least 75%. Tied topping counts are
+   identified explicitly.
    Hints and oral penetration do not trigger it.
+
+   Every detected sex-act scene and hint has its own confidence score and reasons,
+   including anal/vaginal fingering, solo acts and hand/body play. A hint's score
+   describes confidence in the interpretation, not whether the activity happened.
+   Pattern-engine scores are heuristic estimates; optional Claude scores are its
+   own estimates, not measured accuracy guarantees.
 
    Every act also shows a **by-person** confidence for each partner in each role (e.g. Dunk tops 97% /
    bottoms 9%; Aerion sucks cock 97% / gets sucked 97%). The roles are scored independently, so someone who
