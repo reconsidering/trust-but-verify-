@@ -14,6 +14,11 @@ A small web app: drop in an AO3 download (PDF, EPUB, HTML, or TXT) and it tells 
 
      Each act gets its own verdict, so someone who both sucks and rims their partner isn't mistaken for a switch.
 
+   An **Anal role switching found** indicator appears when each partner has at least
+   one anal scene scored 75% or higher. Expand it to see the strongest scene in
+   each direction and its confidence. The scenes can occur at different points
+   in the work; hints and oral, finger or toy acts do not trigger this indicator.
+
    Every act also shows a **by-person** confidence for each partner in each role (e.g. Dunk tops 97% /
    bottoms 9%; Aerion sucks cock 97% / gets sucked 97%). The roles are scored independently, so someone who
    switches scores high on both. Each score is built from that person's scenes in the role (scenes worked

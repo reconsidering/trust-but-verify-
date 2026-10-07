@@ -1,4 +1,5 @@
 import "./style.css";
+import { renderAnalSwitchIndicator } from "./anal-switch";
 import Anthropic from "@anthropic-ai/sdk";
 import { hasAo3Meta, romanticPairings } from "./ao3";
 import { MODELS, type ModelId, RefusalError, analyzeWork, estimateTokens, excerptExplicit } from "./analyze";
@@ -1306,6 +1307,8 @@ function renderAnalysis(a: Analysis, target: HTMLElement, notesEl: HTMLElement, 
   for (const p of a.pairings) {
     const block = el("div", "pairing-block");
     if (a.pairings.length > 1) block.append(el("h4", "pairing-name", p.pairing));
+    const switching = renderAnalSwitchIndicator(p.anal, p.pairing);
+    if (switching) block.append(switching);
     if (vibeMode === "single" && p.vibeCombined?.length) block.append(renderVibe(p.vibeCombined, p.pairing, a.source, { key: "vibe", title: "Vibe (combined)", ends: ["Total bottom", "Vers", "Total top"], hint: "One rating: sex acts, stated roles and tags, desires and hints, and everyday behaviour such as taking charge, caring and yielding, all together." }));
     else if (p.vibe?.length) block.append(renderVibe(p.vibe, p.pairing, a.source));
     if (vibeMode === "two" && p.dynamic?.length && p.dynamic.some((d) => d.label !== "Unclear")) block.append(renderVibe(p.dynamic, p.pairing, a.source, { key: "dynamic", title: "Everyday dynamic", ends: ["Follows", "Balanced", "Leads"], hint: "Who leads and who follows outside the sex: taking charge, caring, protecting, praising, yielding. Separate from who tops and bottoms." }));

@@ -383,3 +383,14 @@ footer { margin-top: 32px; color: var(--muted); font-size: 0.85rem; text-align: 
 .read-pct { color: var(--muted); font-variant-numeric: tabular-nums; }
 .ctx-right { margin: 4px 0 2px; }
 .ctx-right[hidden] { display: none; }
+
+.anal-switch-indicator {
+  border: 1px solid var(--switch);
+  border-left: 4px solid var(--switch);
+  border-radius: 8px;
+  padding: 0.8rem 1rem;
+  margin-bottom: 1rem;
+  overflow-wrap: anywhere;
+}
+.anal-switch-indicator summary { color: var(--switch); font-weight: 700; cursor: pointer; }
+.anal-switch-indicator p, .anal-switch-indicator ul { margin-bottom: 0; }
