@@ -1,0 +1,439 @@
+{
+ "made": "2026-10-07",
+ "how": "Owner review: lowest per-hit learned confidence in unused adult-screened encounters, with story/pattern caps and manual continuity checks. Keys use full audit sentence hashes. Only the owner’s engine verdicts become labels; assistant proposals and scores are not imported. Uncertain answers are excluded from training; free-text context stays private.",
+ "batchId": "suspect-two-569919fdfb5e",
+ "engineCommit": "569919fdfb5ec3b529b9d3decba0b12d6584f896",
+ "feedbackSha": "ed8ee14dd1273923912ab44ccbf72ddf2d6b634f6a0f63c11fc13dc76932dc8b",
+ "labels": {
+  "hj-stroke~elided#67af7d65": "ok",
+  "hj-stroke~elided#e5ec6c3": "wrong",
+  "dd2-hj-hand-to-dick#a654f61c": "wrong",
+  "hj-stroke~elided#d253d1bb": "ok",
+  "dd4-licks-precome-from-tip#3174e6d9": "wrong",
+  "dd2-mast-take-in-hand#9f56b93e": "ok",
+  "hj-stroke~elided#532d3191": "wrong",
+  "hj-stroke#564c5374": "wrong",
+  "pushed-in#98322f06": "ok",
+  "pushed-in~elided#76c14cce": "ok",
+  "hj-stroke~elided#3e175c22": "ok",
+  "dd2-mast-take-in-hand~elided#a427a91b": "wrong",
+  "mast-himself#e8294018": "wrong",
+  "prostate~elided#daccd89c": "ok",
+  "mast-himself~elided#973ce6d0": "ok",
+  "mast-himself#a9f820c3": "wrong",
+  "lips-around#a5fd47e7": "ok",
+  "pushed-in#5d174b60": "ok",
+  "dd6-slips-cock-inside~elided#4e4877bb": "ok",
+  "prostate~elided#dce8267": "ok",
+  "push-into#42aebfbe": "ok",
+  "mast-himself#193c5626": "wrong",
+  "dd2-hj-took-in-hand~elided#d8de1320": "ok",
+  "dd2-finger-shoved-into#23d512f4": "ok",
+  "mast-himself~elided#acb2eca6": "wrong",
+  "dd-takes-into-mouth~elided#1d44bd9b": "wrong",
+  "push-into~elided#731c6e63": "ok",
+  "fingers-enter-hole#be444316": "wrong",
+  "dd2-finger-shoved-into#c45aa58f": "ok",
+  "push-into#3db4ce5f": "wrong",
+  "dd-grinds-onto-cock#7c5dee14": "ok",
+  "lips-around#ca5a626d": "ok",
+  "come-in-mouth~elided#b55f4af4": "ok",
+  "riding#31793d32": "ok",
+  "tongue-in-him#ce17e3f5": "ok",
+  "fuck#c4cba462": "wrong"
+ },
+ "answers": [
+  {
+   "id": "T1",
+   "key": "hj-stroke~elided#67af7d65",
+   "fic": "jacks.html",
+   "paragraph": 6982,
+   "sourceSha": "1c82d8bb62ab4aa836ffe8f4924db20c8420faddb9f3b0d75e08a9b35f18957d",
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-07T21:11:37.107Z"
+  },
+  {
+   "id": "T2",
+   "key": "hj-stroke~elided#e5ec6c3",
+   "fic": "belonging.html",
+   "paragraph": 3057,
+   "sourceSha": "d8fe352ab70bc0a8171fea0e069c43d776d3541d741cb74b2b66014ae64e874c",
+   "verdict": "wrong",
+   "errors": [
+    "Wrong act or body part"
+   ],
+   "updatedAt": "2026-10-07T21:24:00.094Z"
+  },
+  {
+   "id": "T3",
+   "key": "dd2-hj-hand-to-dick#a654f61c",
+   "fic": "more-views.html",
+   "paragraph": 206,
+   "sourceSha": "61461060f56925872cb638627ee721273255d669032ded0d8562ffef4fc8601f",
+   "verdict": "wrong",
+   "errors": [
+    "Memory counted as a new scene"
+   ],
+   "updatedAt": "2026-10-07T21:25:25.051Z"
+  },
+  {
+   "id": "T4",
+   "key": "hj-stroke~elided#d253d1bb",
+   "fic": "bluebells.html",
+   "paragraph": 1650,
+   "sourceSha": "ed9e8f48d2ed52e7c6f9a2ee3fc00dc5ad9e38f897fbc2f4fa60ffd193ba1a89",
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-07T21:25:28.212Z"
+  },
+  {
+   "id": "T5",
+   "key": "dd4-licks-precome-from-tip#3174e6d9",
+   "fic": "belonging.html",
+   "paragraph": 1036,
+   "sourceSha": "d8fe352ab70bc0a8171fea0e069c43d776d3541d741cb74b2b66014ae64e874c",
+   "verdict": "wrong",
+   "errors": [
+    "Wrong act or body part"
+   ],
+   "updatedAt": "2026-10-07T21:27:03.610Z"
+  },
+  {
+   "id": "T6",
+   "key": "dd2-mast-take-in-hand#9f56b93e",
+   "fic": "tricks-of-the-trade.html",
+   "paragraph": 1218,
+   "sourceSha": "25a15e806d8f6a55c030e78d50d58e71f2ca424674b33f7a56471178d4ab1bd3",
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-07T21:27:25.839Z"
+  },
+  {
+   "id": "T7",
+   "key": "hj-stroke~elided#532d3191",
+   "fic": "more-views.html",
+   "paragraph": 589,
+   "sourceSha": "61461060f56925872cb638627ee721273255d669032ded0d8562ffef4fc8601f",
+   "verdict": "wrong",
+   "errors": [
+    "Wrong act or body part"
+   ],
+   "updatedAt": "2026-10-07T21:28:35.539Z"
+  },
+  {
+   "id": "T8",
+   "key": "hj-stroke#564c5374",
+   "fic": "innocent-until.html",
+   "paragraph": 4117,
+   "sourceSha": "ffa71a4c7726196bc68e41ceb1805c28b7de2698384e84270c5d0f1f6f4ef78c",
+   "verdict": "wrong",
+   "errors": [
+    "Wrong person"
+   ],
+   "updatedAt": "2026-10-07T21:29:51.577Z"
+  },
+  {
+   "id": "T9",
+   "key": "pushed-in#98322f06",
+   "fic": "belonging.html",
+   "paragraph": 5374,
+   "sourceSha": "d8fe352ab70bc0a8171fea0e069c43d776d3541d741cb74b2b66014ae64e874c",
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-07T21:30:13.493Z"
+  },
+  {
+   "id": "T10",
+   "key": "pushed-in~elided#76c14cce",
+   "fic": "jacks.html",
+   "paragraph": 7799,
+   "sourceSha": "1c82d8bb62ab4aa836ffe8f4924db20c8420faddb9f3b0d75e08a9b35f18957d",
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-07T21:30:52.450Z"
+  },
+  {
+   "id": "T11",
+   "key": "hj-stroke~elided#3e175c22",
+   "fic": "mars.html",
+   "paragraph": 1316,
+   "sourceSha": "43ef00b3070686ea49aed427155aa8c42f88c242698d4dbdf25ec95f4a8c0432",
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-07T21:32:18.877Z"
+  },
+  {
+   "id": "T12",
+   "key": "dd2-mast-take-in-hand~elided#a427a91b",
+   "fic": "lightning.html",
+   "paragraph": 1143,
+   "sourceSha": "0a3fe56af1a92ac27ba2da61af1ffb88f11cf6aa44cb91777bb7b97c025f67d7",
+   "verdict": "wrong",
+   "errors": [
+    "Wrong person",
+    "Hypothetical / wanted / threatened"
+   ],
+   "updatedAt": "2026-10-07T21:32:56.020Z"
+  },
+  {
+   "id": "T13",
+   "key": "mast-himself#e8294018",
+   "fic": "lightning.html",
+   "paragraph": 4590,
+   "sourceSha": "0a3fe56af1a92ac27ba2da61af1ffb88f11cf6aa44cb91777bb7b97c025f67d7",
+   "verdict": "wrong",
+   "errors": [
+    "Wrong person",
+    "Memory counted as a new scene"
+   ],
+   "updatedAt": "2026-10-07T21:33:29.004Z"
+  },
+  {
+   "id": "T14",
+   "key": "prostate~elided#daccd89c",
+   "fic": "belonging.html",
+   "paragraph": 4704,
+   "sourceSha": "d8fe352ab70bc0a8171fea0e069c43d776d3541d741cb74b2b66014ae64e874c",
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-07T21:33:51.171Z"
+  },
+  {
+   "id": "T15",
+   "key": "mast-himself~elided#973ce6d0",
+   "fic": "jacks.html",
+   "paragraph": 4751,
+   "sourceSha": "1c82d8bb62ab4aa836ffe8f4924db20c8420faddb9f3b0d75e08a9b35f18957d",
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-07T21:34:47.614Z"
+  },
+  {
+   "id": "T16",
+   "key": "mast-himself#a9f820c3",
+   "fic": "innocent-until.html",
+   "paragraph": 4774,
+   "sourceSha": "ffa71a4c7726196bc68e41ceb1805c28b7de2698384e84270c5d0f1f6f4ef78c",
+   "verdict": "wrong",
+   "errors": [
+    "Wrong person"
+   ],
+   "updatedAt": "2026-10-07T21:36:10.908Z"
+  },
+  {
+   "id": "T17",
+   "key": "lips-around#a5fd47e7",
+   "fic": "jacks.html",
+   "paragraph": 6058,
+   "sourceSha": "1c82d8bb62ab4aa836ffe8f4924db20c8420faddb9f3b0d75e08a9b35f18957d",
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-07T21:36:42.990Z"
+  },
+  {
+   "id": "T18",
+   "key": "pushed-in#5d174b60",
+   "fic": "tricks-of-the-trade.html",
+   "paragraph": 3768,
+   "sourceSha": "25a15e806d8f6a55c030e78d50d58e71f2ca424674b33f7a56471178d4ab1bd3",
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-07T21:37:11.524Z"
+  },
+  {
+   "id": "T19",
+   "key": "dd6-slips-cock-inside~elided#4e4877bb",
+   "fic": "lock-it.html",
+   "paragraph": 185,
+   "sourceSha": "cefecea8f64bab5b5bbeee0fdf6cf6d8a7712191f584b965d3b8100cfec2a635",
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-07T21:37:54.407Z"
+  },
+  {
+   "id": "T20",
+   "key": "prostate~elided#dce8267",
+   "fic": "rwrb-balls.html",
+   "paragraph": 194,
+   "sourceSha": "972bdceeca54c37e7f9298ac9621b9155bf28745a076c5d5124e55a38b1a9474",
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-07T21:38:38.741Z"
+  },
+  {
+   "id": "T22",
+   "key": "push-into#42aebfbe",
+   "fic": "jacks.html",
+   "paragraph": 9076,
+   "sourceSha": "1c82d8bb62ab4aa836ffe8f4924db20c8420faddb9f3b0d75e08a9b35f18957d",
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-07T21:39:33.499Z"
+  },
+  {
+   "id": "T23",
+   "key": "mast-himself#193c5626",
+   "fic": "autocorrect.html",
+   "paragraph": 75,
+   "sourceSha": "7bb7cfa0690ea42eea1d2220659ed798c400cf939cf0b28ef1c9fb99e76b7780",
+   "verdict": "wrong",
+   "errors": [
+    "Wrong person",
+    "Hypothetical / wanted / threatened"
+   ],
+   "updatedAt": "2026-10-07T21:40:18.365Z"
+  },
+  {
+   "id": "T24",
+   "key": "dd2-hj-took-in-hand~elided#d8de1320",
+   "fic": "tricks-of-the-trade.html",
+   "paragraph": 3283,
+   "sourceSha": "25a15e806d8f6a55c030e78d50d58e71f2ca424674b33f7a56471178d4ab1bd3",
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-07T21:40:46.949Z"
+  },
+  {
+   "id": "T25",
+   "key": "dd2-finger-shoved-into#23d512f4",
+   "fic": "tricks-of-the-trade.html",
+   "paragraph": 2287,
+   "sourceSha": "25a15e806d8f6a55c030e78d50d58e71f2ca424674b33f7a56471178d4ab1bd3",
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-07T21:41:12.473Z"
+  },
+  {
+   "id": "T26",
+   "key": "mast-himself~elided#acb2eca6",
+   "fic": "dogbird.html",
+   "paragraph": 24,
+   "sourceSha": "b66dcf4730e681942787b9d280bc8b2825005e179cfe09179a82e935a4f036fb",
+   "verdict": "wrong",
+   "errors": [
+    "No act happened",
+    "Wrong act or body part"
+   ],
+   "updatedAt": "2026-10-07T21:41:49.688Z"
+  },
+  {
+   "id": "T27",
+   "key": "dd-takes-into-mouth~elided#1d44bd9b",
+   "fic": "tricks-of-the-trade.html",
+   "paragraph": 3099,
+   "sourceSha": "25a15e806d8f6a55c030e78d50d58e71f2ca424674b33f7a56471178d4ab1bd3",
+   "verdict": "wrong",
+   "errors": [
+    "Roles reversed"
+   ],
+   "updatedAt": "2026-10-07T21:42:14.130Z"
+  },
+  {
+   "id": "T28",
+   "key": "push-into~elided#731c6e63",
+   "fic": "starting-place.html",
+   "paragraph": 558,
+   "sourceSha": "62fbf6258405fce5dc103deef1fb478214cd0b7c032a93fcd032cbd3c3436fd2",
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-07T21:43:11.836Z"
+  },
+  {
+   "id": "T29",
+   "key": "fingers-enter-hole#be444316",
+   "fic": "mars.html",
+   "paragraph": 639,
+   "sourceSha": "43ef00b3070686ea49aed427155aa8c42f88c242698d4dbdf25ec95f4a8c0432",
+   "verdict": "wrong",
+   "errors": [
+    "Wrong person"
+   ],
+   "updatedAt": "2026-10-07T21:44:10.198Z"
+  },
+  {
+   "id": "T30",
+   "key": "dd2-finger-shoved-into#c45aa58f",
+   "fic": "starting-place.html",
+   "paragraph": 620,
+   "sourceSha": "62fbf6258405fce5dc103deef1fb478214cd0b7c032a93fcd032cbd3c3436fd2",
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-07T21:44:45.984Z"
+  },
+  {
+   "id": "T31",
+   "key": "push-into#3db4ce5f",
+   "fic": "belonging.html",
+   "paragraph": 733,
+   "sourceSha": "d8fe352ab70bc0a8171fea0e069c43d776d3541d741cb74b2b66014ae64e874c",
+   "verdict": "wrong",
+   "errors": [
+    "Wrong act or body part"
+   ],
+   "updatedAt": "2026-10-07T21:45:12.234Z"
+  },
+  {
+   "id": "T32",
+   "key": "dd-grinds-onto-cock#7c5dee14",
+   "fic": "starting-place.html",
+   "paragraph": 1032,
+   "sourceSha": "62fbf6258405fce5dc103deef1fb478214cd0b7c032a93fcd032cbd3c3436fd2",
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-07T21:45:56.117Z"
+  },
+  {
+   "id": "T34",
+   "key": "lips-around#ca5a626d",
+   "fic": "more-views.html",
+   "paragraph": 270,
+   "sourceSha": "61461060f56925872cb638627ee721273255d669032ded0d8562ffef4fc8601f",
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-07T21:46:28.833Z"
+  },
+  {
+   "id": "T35",
+   "key": "come-in-mouth~elided#b55f4af4",
+   "fic": "bluebells.html",
+   "paragraph": 1167,
+   "sourceSha": "ed9e8f48d2ed52e7c6f9a2ee3fc00dc5ad9e38f897fbc2f4fa60ffd193ba1a89",
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-07T21:47:10.992Z"
+  },
+  {
+   "id": "T37",
+   "key": "riding#31793d32",
+   "fic": "starting-place.html",
+   "paragraph": 709,
+   "sourceSha": "62fbf6258405fce5dc103deef1fb478214cd0b7c032a93fcd032cbd3c3436fd2",
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-07T21:48:42.038Z"
+  },
+  {
+   "id": "T39",
+   "key": "tongue-in-him#ce17e3f5",
+   "fic": "innocent-until.html",
+   "paragraph": 2533,
+   "sourceSha": "ffa71a4c7726196bc68e41ceb1805c28b7de2698384e84270c5d0f1f6f4ef78c",
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-07T21:49:17.773Z"
+  },
+  {
+   "id": "T40",
+   "key": "fuck#c4cba462",
+   "fic": "a-la-carte.html",
+   "paragraph": 1379,
+   "sourceSha": "4d553843dc96b396376426414fd191534045ca3508acb51a1672e0ef3ebc0cca",
+   "verdict": "wrong",
+   "errors": [
+    "Memory counted as a new scene"
+   ],
+   "updatedAt": "2026-10-07T21:49:40.892Z"
+  }
+ ]
+}

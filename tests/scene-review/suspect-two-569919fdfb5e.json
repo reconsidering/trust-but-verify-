@@ -1,0 +1,3269 @@
+{
+ "schema": "engine-suspect-act-review/v1",
+ "batchId": "suspect-two-569919fdfb5e",
+ "referenceCommit": "569919fdfb5ec3b529b9d3decba0b12d6584f896",
+ "scope": {
+  "coverage": "positive-only, including windows marked checked; omissions never establish absence",
+  "occurrence": "events include only owner-confirmed performed acts",
+  "scoredActs": [
+   "Anal penetration (penis)",
+   "Blowjob",
+   "Rimming",
+   "Cunnilingus",
+   "Vaginal penetration (penis)",
+   "Fingering",
+   "Toy insertion",
+   "Handjob",
+   "Solo masturbation"
+  ],
+  "otherActivity": "other confirmed performed categories are retained with scored:false",
+  "context": "memory, imagined, habitual, recording and not-performed confirmations remain in reviews, not performed events",
+  "rejected": "wrong and uncertain proposals remain in reviews and never become positives",
+  "hints": "unreviewed; never derive negative hint labels or per-hit labels from act reviews",
+  "confidenceTraining": "none; only separately imported main engine verdicts train confidence",
+  "privateText": "free-text context, story text and assistant confidence are excluded"
+ },
+ "sources": [
+  {
+   "file": "jacks.html",
+   "title": "Jack's phone.",
+   "sourceSha": "1c82d8bb62ab4aa836ffe8f4924db20c8420faddb9f3b0d75e08a9b35f18957d",
+   "paragraphSha": "243b447f5811886dca1d72fca33f2761722cb802a440c2cb82c2dcd756487f1b",
+   "paragraphCount": 13370
+  },
+  {
+   "file": "belonging.html",
+   "title": "Belonging is Longing is Now",
+   "sourceSha": "d8fe352ab70bc0a8171fea0e069c43d776d3541d741cb74b2b66014ae64e874c",
+   "paragraphSha": "f9bf52ddcb708de72d8df74649d6976fa2ed62ddba1e55df553729ba32589409",
+   "paragraphCount": 5783
+  },
+  {
+   "file": "more-views.html",
+   "title": "More Views. More Money.",
+   "sourceSha": "61461060f56925872cb638627ee721273255d669032ded0d8562ffef4fc8601f",
+   "paragraphSha": "220940e4b87a4b161eda553e7169b3dce3e3f50562957b20d665f0b1e127ebec",
+   "paragraphCount": 1018
+  },
+  {
+   "file": "bluebells.html",
+   "title": "Bluebells and Daylillies and Wild Roses Running Rampant",
+   "sourceSha": "ed9e8f48d2ed52e7c6f9a2ee3fc00dc5ad9e38f897fbc2f4fa60ffd193ba1a89",
+   "paragraphSha": "081dae67e5497c717e4fbc94129c03d0a4a6da96e5b4538f5f5e0a40f67258eb",
+   "paragraphCount": 1747
+  },
+  {
+   "file": "tricks-of-the-trade.html",
+   "title": "Tricks of the Trade",
+   "sourceSha": "25a15e806d8f6a55c030e78d50d58e71f2ca424674b33f7a56471178d4ab1bd3",
+   "paragraphSha": "56e605751373cfe88dc1f6a48760f8625a143c8157e758778c2f64929a65e8d7",
+   "paragraphCount": 3875
+  },
+  {
+   "file": "innocent-until.html",
+   "title": "Innocent Until",
+   "sourceSha": "ffa71a4c7726196bc68e41ceb1805c28b7de2698384e84270c5d0f1f6f4ef78c",
+   "paragraphSha": "1b144bbdaf9d60d9c1ed0bb6efc2a0618b0b1187845bbf7d1b1d3e10d8a3b9e2",
+   "paragraphCount": 4922
+  },
+  {
+   "file": "mars.html",
+   "title": "another night on mars",
+   "sourceSha": "43ef00b3070686ea49aed427155aa8c42f88c242698d4dbdf25ec95f4a8c0432",
+   "paragraphSha": "31b1d90d66cd9a817127ba1d93e71720eeea8aa4f5fb87291b46cf4018963af5",
+   "paragraphCount": 1647
+  },
+  {
+   "file": "lightning.html",
+   "title": "Held Up a Lightning Rod (Wonder Why I'm Struck)",
+   "sourceSha": "0a3fe56af1a92ac27ba2da61af1ffb88f11cf6aa44cb91777bb7b97c025f67d7",
+   "paragraphSha": "53578f7dc07a33d29e2ff7074e2292cf37257cf8e0045e06178adfc251bae999",
+   "paragraphCount": 5692
+  },
+  {
+   "file": "lock-it.html",
+   "title": "Better Lock It In Your Pocket",
+   "sourceSha": "cefecea8f64bab5b5bbeee0fdf6cf6d8a7712191f584b965d3b8100cfec2a635",
+   "paragraphSha": "bdd1ce138123d589ef0c128fb91373a304bb1cb3dfc53ed3596201124270e73c",
+   "paragraphCount": 210
+  },
+  {
+   "file": "rwrb-balls.html",
+   "title": "Red, White, and Royal Blue Balls",
+   "sourceSha": "972bdceeca54c37e7f9298ac9621b9155bf28745a076c5d5124e55a38b1a9474",
+   "paragraphSha": "ac2603b094d8fccc28763cab1621c7bd53c3c32cf37d63667293cb991935f7f8",
+   "paragraphCount": 366
+  },
+  {
+   "file": "autocorrect.html",
+   "title": "Damn You Auto Correct!",
+   "sourceSha": "7bb7cfa0690ea42eea1d2220659ed798c400cf939cf0b28ef1c9fb99e76b7780",
+   "paragraphSha": "77d7533e42fc233186b9d7eb3b2227fabbb8dd046a9e500a9daaf1d9beff2128",
+   "paragraphCount": 218
+  },
+  {
+   "file": "dogbird.html",
+   "title": "like a dog with a bird at your door",
+   "sourceSha": "b66dcf4730e681942787b9d280bc8b2825005e179cfe09179a82e935a4f036fb",
+   "paragraphSha": "a9bac5bb63b9adc912ac2f8d6f224c1311c7a6e977ef8c66ad82fb1e384479ee",
+   "paragraphCount": 1474
+  },
+  {
+   "file": "starting-place.html",
+   "title": "The Starting Place",
+   "sourceSha": "62fbf6258405fce5dc103deef1fb478214cd0b7c032a93fcd032cbd3c3436fd2",
+   "paragraphSha": "e46756bde3782b58c979ef1412c896957972266c8bb1a99fd27158953d2bead9",
+   "paragraphCount": 1077
+  },
+  {
+   "file": "a-la-carte.html",
+   "title": "à la carte",
+   "sourceSha": "4d553843dc96b396376426414fd191534045ca3508acb51a1672e0ef3ebc0cca",
+   "paragraphSha": "9db9cf7ac1dd38c785bc3fb13ccfd4a6162208036fa6736a063bca7a413fa7d6",
+   "paragraphCount": 1984
+  }
+ ],
+ "unanswered": [
+  "T21",
+  "T33",
+  "T36",
+  "T38"
+ ],
+ "windows": [
+  {
+   "id": "T1",
+   "key": "hj-stroke~elided#67af7d65",
+   "fic": "jacks.html",
+   "from": 6918,
+   "to": 7000,
+   "sourceSha": "1c82d8bb62ab4aa836ffe8f4924db20c8420faddb9f3b0d75e08a9b35f18957d",
+   "updatedAt": "2026-10-07T21:11:37.107Z",
+   "coverageReviewed": true,
+   "coverage": "positive-only",
+   "reviews": [
+    {
+     "id": "A1",
+     "revision": "scene-two-r1",
+     "verdict": "correct",
+     "act": "Anal penetration (penis)",
+     "performer": "Dracula",
+     "receiver": "Jack Seward",
+     "occurrence": "performed",
+     "from": 6955,
+     "to": 6991,
+     "errors": []
+    },
+    {
+     "id": "A2",
+     "revision": "scene-two-r1",
+     "verdict": "correct",
+     "act": "Handjob",
+     "performer": "Dracula",
+     "receiver": "Jack Seward",
+     "occurrence": "performed",
+     "from": 6982,
+     "to": 6982,
+     "errors": []
+    },
+    {
+     "id": "A3",
+     "revision": "scene-two-r1",
+     "verdict": "correct",
+     "act": "Solo masturbation",
+     "performer": "Jack Seward",
+     "receiver": "",
+     "occurrence": "performed",
+     "from": 6930,
+     "to": 6932,
+     "errors": []
+    },
+    {
+     "id": "A4",
+     "revision": "scene-two-r1",
+     "verdict": "correct",
+     "act": "External anal stimulation",
+     "performer": "Dracula",
+     "receiver": "Jack Seward",
+     "occurrence": "performed",
+     "from": 6948,
+     "to": 6949,
+     "errors": []
+    },
+    {
+     "id": "A5",
+     "revision": "scene-two-r1",
+     "verdict": "correct",
+     "act": "Oral stimulation (penis)",
+     "performer": "Dracula",
+     "receiver": "Jack Seward",
+     "occurrence": "performed",
+     "from": 6949,
+     "to": 6949,
+     "errors": []
+    }
+   ],
+   "events": [
+    {
+     "ownerActId": "A1",
+     "act": "Anal penetration (penis)",
+     "performer": "Dracula",
+     "receiver": "Jack Seward",
+     "from": 6955,
+     "to": 6991,
+     "scored": true
+    },
+    {
+     "ownerActId": "A2",
+     "act": "Handjob",
+     "performer": "Dracula",
+     "receiver": "Jack Seward",
+     "from": 6982,
+     "to": 6982,
+     "scored": true
+    },
+    {
+     "ownerActId": "A3",
+     "act": "Solo masturbation",
+     "performer": "Jack Seward",
+     "receiver": "",
+     "from": 6930,
+     "to": 6932,
+     "scored": true
+    },
+    {
+     "ownerActId": "A4",
+     "act": "External anal stimulation",
+     "performer": "Dracula",
+     "receiver": "Jack Seward",
+     "from": 6948,
+     "to": 6949,
+     "scored": false
+    },
+    {
+     "ownerActId": "A5",
+     "act": "Oral stimulation (penis)",
+     "performer": "Dracula",
+     "receiver": "Jack Seward",
+     "from": 6949,
+     "to": 6949,
+     "scored": false
+    }
+   ]
+  },
+  {
+   "id": "T2",
+   "key": "hj-stroke~elided#e5ec6c3",
+   "fic": "belonging.html",
+   "from": 3049,
+   "to": 3088,
+   "sourceSha": "d8fe352ab70bc0a8171fea0e069c43d776d3541d741cb74b2b66014ae64e874c",
+   "updatedAt": "2026-10-07T21:24:00.094Z",
+   "coverageReviewed": false,
+   "coverage": "positive-only",
+   "reviews": [
+    {
+     "id": "A1",
+     "revision": "scene-two-r1",
+     "verdict": "correct",
+     "act": "Toy insertion",
+     "performer": "Castiel",
+     "receiver": "Dean Winchester",
+     "occurrence": "performed",
+     "from": 3054,
+     "to": 3059,
+     "errors": []
+    },
+    {
+     "id": "A2",
+     "revision": "scene-two-r1",
+     "verdict": "correct",
+     "act": "Anal penetration (penis)",
+     "performer": "Castiel",
+     "receiver": "Dean Winchester",
+     "occurrence": "performed",
+     "from": 3066,
+     "to": 3080,
+     "errors": []
+    },
+    {
+     "id": "A3",
+     "revision": "scene-two-r1",
+     "verdict": "correct",
+     "act": "Body rubbing / frottage",
+     "performer": "Dean Winchester",
+     "receiver": "",
+     "occurrence": "performed",
+     "from": 3061,
+     "to": 3061,
+     "errors": []
+    }
+   ],
+   "events": [
+    {
+     "ownerActId": "A1",
+     "act": "Toy insertion",
+     "performer": "Castiel",
+     "receiver": "Dean Winchester",
+     "from": 3054,
+     "to": 3059,
+     "scored": true
+    },
+    {
+     "ownerActId": "A2",
+     "act": "Anal penetration (penis)",
+     "performer": "Castiel",
+     "receiver": "Dean Winchester",
+     "from": 3066,
+     "to": 3080,
+     "scored": true
+    },
+    {
+     "ownerActId": "A3",
+     "act": "Body rubbing / frottage",
+     "performer": "Dean Winchester",
+     "receiver": "",
+     "from": 3061,
+     "to": 3061,
+     "scored": false
+    }
+   ]
+  },
+  {
+   "id": "T3",
+   "key": "dd2-hj-hand-to-dick#a654f61c",
+   "fic": "more-views.html",
+   "from": 198,
+   "to": 214,
+   "sourceSha": "61461060f56925872cb638627ee721273255d669032ded0d8562ffef4fc8601f",
+   "updatedAt": "2026-10-07T21:25:25.051Z",
+   "coverageReviewed": true,
+   "coverage": "positive-only",
+   "reviews": [
+    {
+     "id": "A1",
+     "revision": "scene-two-r1",
+     "verdict": "correct",
+     "act": "Handjob",
+     "performer": "Castiel",
+     "receiver": "Dean Winchester",
+     "occurrence": "memory",
+     "from": 205,
+     "to": 207,
+     "errors": []
+    },
+    {
+     "id": "A2",
+     "revision": "scene-two-r1",
+     "verdict": "correct",
+     "act": "Solo masturbation",
+     "performer": "Castiel",
+     "receiver": "",
+     "occurrence": "habitual",
+     "from": 208,
+     "to": 208,
+     "errors": []
+    }
+   ],
+   "events": []
+  },
+  {
+   "id": "T4",
+   "key": "hj-stroke~elided#d253d1bb",
+   "fic": "bluebells.html",
+   "from": 1639,
+   "to": 1664,
+   "sourceSha": "ed9e8f48d2ed52e7c6f9a2ee3fc00dc5ad9e38f897fbc2f4fa60ffd193ba1a89",
+   "updatedAt": "2026-10-07T21:25:28.212Z",
+   "coverageReviewed": false,
+   "coverage": "positive-only",
+   "reviews": [],
+   "events": []
+  },
+  {
+   "id": "T5",
+   "key": "dd4-licks-precome-from-tip#3174e6d9",
+   "fic": "belonging.html",
+   "from": 1028,
+   "to": 1062,
+   "sourceSha": "d8fe352ab70bc0a8171fea0e069c43d776d3541d741cb74b2b66014ae64e874c",
+   "updatedAt": "2026-10-07T21:27:03.610Z",
+   "coverageReviewed": true,
+   "coverage": "positive-only",
+   "reviews": [
+    {
+     "id": "A1",
+     "revision": "scene-two-r1",
+     "verdict": "correct",
+     "act": "Solo masturbation",
+     "performer": "Dean Winchester",
+     "receiver": "",
+     "occurrence": "performed",
+     "from": 1035,
+     "to": 1045,
+     "errors": []
+    },
+    {
+     "id": "A2",
+     "revision": "scene-two-r1",
+     "verdict": "correct",
+     "act": "Thigh sex",
+     "performer": "Castiel",
+     "receiver": "Dean Winchester",
+     "occurrence": "performed",
+     "from": 1053,
+     "to": 1062,
+     "errors": []
+    }
+   ],
+   "events": [
+    {
+     "ownerActId": "A1",
+     "act": "Solo masturbation",
+     "performer": "Dean Winchester",
+     "receiver": "",
+     "from": 1035,
+     "to": 1045,
+     "scored": true
+    },
+    {
+     "ownerActId": "A2",
+     "act": "Thigh sex",
+     "performer": "Castiel",
+     "receiver": "Dean Winchester",
+     "from": 1053,
+     "to": 1062,
+     "scored": false
+    }
+   ]
+  },
+  {
+   "id": "T6",
+   "key": "dd2-mast-take-in-hand#9f56b93e",
+   "fic": "tricks-of-the-trade.html",
+   "from": 1210,
+   "to": 1228,
+   "sourceSha": "25a15e806d8f6a55c030e78d50d58e71f2ca424674b33f7a56471178d4ab1bd3",
+   "updatedAt": "2026-10-07T21:27:25.839Z",
+   "coverageReviewed": true,
+   "coverage": "positive-only",
+   "reviews": [
+    {
+     "id": "A1",
+     "revision": "scene-two-r1",
+     "verdict": "correct",
+     "act": "Solo masturbation",
+     "performer": "Dean Winchester",
+     "receiver": "",
+     "occurrence": "performed",
+     "from": 1218,
+     "to": 1221,
+     "errors": []
+    },
+    {
+     "id": "A2",
+     "revision": "scene-two-r1",
+     "verdict": "correct",
+     "act": "Manual genital stimulation",
+     "performer": "Castiel",
+     "receiver": "Dean Winchester",
+     "occurrence": "performed",
+     "from": 1211,
+     "to": 1211,
+     "errors": []
+    }
+   ],
+   "events": [
+    {
+     "ownerActId": "A1",
+     "act": "Solo masturbation",
+     "performer": "Dean Winchester",
+     "receiver": "",
+     "from": 1218,
+     "to": 1221,
+     "scored": true
+    },
+    {
+     "ownerActId": "A2",
+     "act": "Manual genital stimulation",
+     "performer": "Castiel",
+     "receiver": "Dean Winchester",
+     "from": 1211,
+     "to": 1211,
+     "scored": false
+    }
+   ]
+  },
+  {
+   "id": "T7",
+   "key": "hj-stroke~elided#532d3191",
+   "fic": "more-views.html",
+   "from": 548,
+   "to": 593,
+   "sourceSha": "61461060f56925872cb638627ee721273255d669032ded0d8562ffef4fc8601f",
+   "updatedAt": "2026-10-07T21:28:35.539Z",
+   "coverageReviewed": true,
+   "coverage": "positive-only",
+   "reviews": [
+    {
+     "id": "A1",
+     "revision": "scene-two-r1",
+     "verdict": "correct",
+     "act": "Handjob",
+     "performer": "Dean Winchester",
+     "receiver": "Castiel",
+     "occurrence": "performed",
+     "from": 556,
+     "to": 565,
+     "errors": []
+    },
+    {
+     "id": "A2",
+     "revision": "scene-two-r1",
+     "verdict": "correct",
+     "act": "Handjob",
+     "performer": "Castiel",
+     "receiver": "Dean Winchester",
+     "occurrence": "performed",
+     "from": 576,
+     "to": 579,
+     "errors": []
+    },
+    {
+     "id": "A3",
+     "revision": "scene-two-r1",
+     "verdict": "correct",
+     "act": "Blowjob",
+     "performer": "Dean Winchester",
+     "receiver": "Castiel",
+     "occurrence": "performed",
+     "from": 563,
+     "to": 565,
+     "errors": []
+    },
+    {
+     "id": "A4",
+     "revision": "scene-two-r1",
+     "verdict": "correct",
+     "act": "Body rubbing / frottage",
+     "performer": "Castiel",
+     "receiver": "Dean Winchester",
+     "occurrence": "performed",
+     "from": 570,
+     "to": 592,
+     "errors": []
+    },
+    {
+     "id": "A5",
+     "revision": "scene-two-r1",
+     "verdict": "correct",
+     "act": "Blowjob",
+     "performer": "Dean Winchester",
+     "receiver": "Castiel",
+     "occurrence": "recording",
+     "from": 558,
+     "to": 558,
+     "errors": []
+    }
+   ],
+   "events": [
+    {
+     "ownerActId": "A1",
+     "act": "Handjob",
+     "performer": "Dean Winchester",
+     "receiver": "Castiel",
+     "from": 556,
+     "to": 565,
+     "scored": true
+    },
+    {
+     "ownerActId": "A2",
+     "act": "Handjob",
+     "performer": "Castiel",
+     "receiver": "Dean Winchester",
+     "from": 576,
+     "to": 579,
+     "scored": true
+    },
+    {
+     "ownerActId": "A3",
+     "act": "Blowjob",
+     "performer": "Dean Winchester",
+     "receiver": "Castiel",
+     "from": 563,
+     "to": 565,
+     "scored": true
+    },
+    {
+     "ownerActId": "A4",
+     "act": "Body rubbing / frottage",
+     "performer": "Castiel",
+     "receiver": "Dean Winchester",
+     "from": 570,
+     "to": 592,
+     "scored": false
+    }
+   ]
+  },
+  {
+   "id": "T8",
+   "key": "hj-stroke#564c5374",
+   "fic": "innocent-until.html",
+   "from": 4099,
+   "to": 4128,
+   "sourceSha": "ffa71a4c7726196bc68e41ceb1805c28b7de2698384e84270c5d0f1f6f4ef78c",
+   "updatedAt": "2026-10-07T21:29:51.577Z",
+   "coverageReviewed": true,
+   "coverage": "positive-only",
+   "reviews": [
+    {
+     "id": "A1",
+     "revision": "scene-two-r1",
+     "verdict": "correct",
+     "act": "Handjob",
+     "performer": "Steve Rogers",
+     "receiver": "James \"Bucky\" Barnes",
+     "occurrence": "performed",
+     "from": 4104,
+     "to": 4104,
+     "errors": []
+    },
+    {
+     "id": "A2",
+     "revision": "scene-two-r1",
+     "verdict": "correct",
+     "act": "Rimming",
+     "performer": "James \"Bucky\" Barnes",
+     "receiver": "Steve Rogers",
+     "occurrence": "performed",
+     "from": 4112,
+     "to": 4122,
+     "errors": []
+    },
+    {
+     "id": "A3",
+     "revision": "scene-two-r1",
+     "verdict": "correct",
+     "act": "Manual genital stimulation",
+     "performer": "James \"Bucky\" Barnes",
+     "receiver": "Steve Rogers",
+     "occurrence": "performed",
+     "from": 4113,
+     "to": 4114,
+     "errors": []
+    },
+    {
+     "id": "A4",
+     "revision": "scene-two-r1",
+     "verdict": "correct",
+     "act": "Manual genital stimulation",
+     "performer": "Steve Rogers",
+     "receiver": "",
+     "occurrence": "performed",
+     "from": 4117,
+     "to": 4117,
+     "errors": []
+    },
+    {
+     "id": "A5",
+     "revision": "scene-two-r1",
+     "verdict": "correct",
+     "act": "External perineal stimulation",
+     "performer": "James \"Bucky\" Barnes",
+     "receiver": "Steve Rogers",
+     "occurrence": "performed",
+     "from": 4120,
+     "to": 4120,
+     "errors": []
+    }
+   ],
+   "events": [
+    {
+     "ownerActId": "A1",
+     "act": "Handjob",
+     "performer": "Steve Rogers",
+     "receiver": "James \"Bucky\" Barnes",
+     "from": 4104,
+     "to": 4104,
+     "scored": true
+    },
+    {
+     "ownerActId": "A2",
+     "act": "Rimming",
+     "performer": "James \"Bucky\" Barnes",
+     "receiver": "Steve Rogers",
+     "from": 4112,
+     "to": 4122,
+     "scored": true
+    },
+    {
+     "ownerActId": "A3",
+     "act": "Manual genital stimulation",
+     "performer": "James \"Bucky\" Barnes",
+     "receiver": "Steve Rogers",
+     "from": 4113,
+     "to": 4114,
+     "scored": false
+    },
+    {
+     "ownerActId": "A4",
+     "act": "Manual genital stimulation",
+     "performer": "Steve Rogers",
+     "receiver": "",
+     "from": 4117,
+     "to": 4117,
+     "scored": false
+    },
+    {
+     "ownerActId": "A5",
+     "act": "External perineal stimulation",
+     "performer": "James \"Bucky\" Barnes",
+     "receiver": "Steve Rogers",
+     "from": 4120,
+     "to": 4120,
+     "scored": false
+    }
+   ]
+  },
+  {
+   "id": "T9",
+   "key": "pushed-in#98322f06",
+   "fic": "belonging.html",
+   "from": 5366,
+   "to": 5389,
+   "sourceSha": "d8fe352ab70bc0a8171fea0e069c43d776d3541d741cb74b2b66014ae64e874c",
+   "updatedAt": "2026-10-07T21:30:13.493Z",
+   "coverageReviewed": true,
+   "coverage": "positive-only",
+   "reviews": [
+    {
+     "id": "A1",
+     "revision": "scene-two-r1",
+     "verdict": "correct",
+     "act": "Anal penetration (penis)",
+     "performer": "Castiel",
+     "receiver": "Dean Winchester",
+     "occurrence": "performed",
+     "from": 5374,
+     "to": 5388,
+     "errors": []
+    }
+   ],
+   "events": [
+    {
+     "ownerActId": "A1",
+     "act": "Anal penetration (penis)",
+     "performer": "Castiel",
+     "receiver": "Dean Winchester",
+     "from": 5374,
+     "to": 5388,
+     "scored": true
+    }
+   ]
+  },
+  {
+   "id": "T10",
+   "key": "pushed-in~elided#76c14cce",
+   "fic": "jacks.html",
+   "from": 7791,
+   "to": 7834,
+   "sourceSha": "1c82d8bb62ab4aa836ffe8f4924db20c8420faddb9f3b0d75e08a9b35f18957d",
+   "updatedAt": "2026-10-07T21:30:52.450Z",
+   "coverageReviewed": false,
+   "coverage": "positive-only",
+   "reviews": [
+    {
+     "id": "A1",
+     "revision": "scene-two-r1",
+     "verdict": "correct",
+     "act": "Anal penetration (penis)",
+     "performer": "Dracula",
+     "receiver": "Jack Seward",
+     "occurrence": "performed",
+     "from": 7799,
+     "to": 7829,
+     "errors": []
+    },
+    {
+     "id": "A2",
+     "revision": "scene-two-r1",
+     "verdict": "correct",
+     "act": "Handjob",
+     "performer": "Dracula",
+     "receiver": "Jack Seward",
+     "occurrence": "performed",
+     "from": 7813,
+     "to": 7813,
+     "errors": []
+    },
+    {
+     "id": "A3",
+     "revision": "scene-two-r1",
+     "verdict": "correct",
+     "act": "Body rubbing / frottage",
+     "performer": "Jack Seward",
+     "receiver": "",
+     "occurrence": "performed",
+     "from": 7798,
+     "to": 7798,
+     "errors": []
+    }
+   ],
+   "events": [
+    {
+     "ownerActId": "A1",
+     "act": "Anal penetration (penis)",
+     "performer": "Dracula",
+     "receiver": "Jack Seward",
+     "from": 7799,
+     "to": 7829,
+     "scored": true
+    },
+    {
+     "ownerActId": "A2",
+     "act": "Handjob",
+     "performer": "Dracula",
+     "receiver": "Jack Seward",
+     "from": 7813,
+     "to": 7813,
+     "scored": true
+    },
+    {
+     "ownerActId": "A3",
+     "act": "Body rubbing / frottage",
+     "performer": "Jack Seward",
+     "receiver": "",
+     "from": 7798,
+     "to": 7798,
+     "scored": false
+    }
+   ]
+  },
+  {
+   "id": "T11",
+   "key": "hj-stroke~elided#3e175c22",
+   "fic": "mars.html",
+   "from": 1260,
+   "to": 1327,
+   "sourceSha": "43ef00b3070686ea49aed427155aa8c42f88c242698d4dbdf25ec95f4a8c0432",
+   "updatedAt": "2026-10-07T21:32:18.877Z",
+   "coverageReviewed": true,
+   "coverage": "positive-only",
+   "reviews": [
+    {
+     "id": "A1",
+     "revision": "scene-two-r1",
+     "verdict": "correct",
+     "act": "Blowjob",
+     "performer": "Dean Winchester",
+     "receiver": "Castiel",
+     "occurrence": "performed",
+     "from": 1268,
+     "to": 1282,
+     "errors": []
+    },
+    {
+     "id": "A2",
+     "revision": "scene-two-r1",
+     "verdict": "correct",
+     "act": "Fingering",
+     "performer": "Dean Winchester",
+     "receiver": "Castiel",
+     "occurrence": "performed",
+     "from": 1282,
+     "to": 1286,
+     "errors": []
+    },
+    {
+     "id": "A3",
+     "revision": "scene-two-r1",
+     "verdict": "correct",
+     "act": "Solo masturbation",
+     "performer": "Dean Winchester",
+     "receiver": "",
+     "occurrence": "performed",
+     "from": 1293,
+     "to": 1295,
+     "errors": []
+    },
+    {
+     "id": "A4",
+     "revision": "scene-two-r1",
+     "verdict": "correct",
+     "act": "Anal penetration (penis)",
+     "performer": "Dean Winchester",
+     "receiver": "Castiel",
+     "occurrence": "performed",
+     "from": 1298,
+     "to": 1319,
+     "errors": []
+    },
+    {
+     "id": "A5",
+     "revision": "scene-two-r1",
+     "verdict": "correct",
+     "act": "Solo masturbation",
+     "performer": "Castiel",
+     "receiver": "",
+     "occurrence": "performed",
+     "from": 1308,
+     "to": 1308,
+     "errors": []
+    },
+    {
+     "id": "A6",
+     "revision": "scene-two-r1",
+     "verdict": "correct",
+     "act": "Handjob",
+     "performer": "Dean Winchester",
+     "receiver": "Castiel",
+     "occurrence": "performed",
+     "from": 1314,
+     "to": 1318,
+     "errors": []
+    }
+   ],
+   "events": [
+    {
+     "ownerActId": "A1",
+     "act": "Blowjob",
+     "performer": "Dean Winchester",
+     "receiver": "Castiel",
+     "from": 1268,
+     "to": 1282,
+     "scored": true
+    },
+    {
+     "ownerActId": "A2",
+     "act": "Fingering",
+     "performer": "Dean Winchester",
+     "receiver": "Castiel",
+     "from": 1282,
+     "to": 1286,
+     "scored": true
+    },
+    {
+     "ownerActId": "A3",
+     "act": "Solo masturbation",
+     "performer": "Dean Winchester",
+     "receiver": "",
+     "from": 1293,
+     "to": 1295,
+     "scored": true
+    },
+    {
+     "ownerActId": "A4",
+     "act": "Anal penetration (penis)",
+     "performer": "Dean Winchester",
+     "receiver": "Castiel",
+     "from": 1298,
+     "to": 1319,
+     "scored": true
+    },
+    {
+     "ownerActId": "A5",
+     "act": "Solo masturbation",
+     "performer": "Castiel",
+     "receiver": "",
+     "from": 1308,
+     "to": 1308,
+     "scored": true
+    },
+    {
+     "ownerActId": "A6",
+     "act": "Handjob",
+     "performer": "Dean Winchester",
+     "receiver": "Castiel",
+     "from": 1314,
+     "to": 1318,
+     "scored": true
+    }
+   ]
+  },
+  {
+   "id": "T12",
+   "key": "dd2-mast-take-in-hand~elided#a427a91b",
+   "fic": "lightning.html",
+   "from": 1110,
+   "to": 1151,
+   "sourceSha": "0a3fe56af1a92ac27ba2da61af1ffb88f11cf6aa44cb91777bb7b97c025f67d7",
+   "updatedAt": "2026-10-07T21:32:56.020Z",
+   "coverageReviewed": true,
+   "coverage": "positive-only",
+   "reviews": [
+    {
+     "id": "A1",
+     "revision": "scene-two-r1",
+     "verdict": "correct",
+     "act": "Solo masturbation",
+     "performer": "Evan \"Buck\" Buckley",
+     "receiver": "",
+     "occurrence": "performed",
+     "from": 1128,
+     "to": 1146,
+     "errors": []
+    },
+    {
+     "id": "A2",
+     "revision": "scene-two-r1",
+     "verdict": "correct",
+     "act": "Blowjob",
+     "performer": "Evan \"Buck\" Buckley",
+     "receiver": "Eddie Diaz",
+     "occurrence": "imagined",
+     "from": 1118,
+     "to": 1130,
+     "errors": []
+    }
+   ],
+   "events": [
+    {
+     "ownerActId": "A1",
+     "act": "Solo masturbation",
+     "performer": "Evan \"Buck\" Buckley",
+     "receiver": "",
+     "from": 1128,
+     "to": 1146,
+     "scored": true
+    }
+   ]
+  },
+  {
+   "id": "T13",
+   "key": "mast-himself#e8294018",
+   "fic": "lightning.html",
+   "from": 4582,
+   "to": 4598,
+   "sourceSha": "0a3fe56af1a92ac27ba2da61af1ffb88f11cf6aa44cb91777bb7b97c025f67d7",
+   "updatedAt": "2026-10-07T21:33:29.004Z",
+   "coverageReviewed": true,
+   "coverage": "positive-only",
+   "reviews": [
+    {
+     "id": "A1",
+     "revision": "scene-two-r1",
+     "verdict": "correct",
+     "act": "Solo masturbation",
+     "performer": "Eddie Diaz",
+     "receiver": "",
+     "occurrence": "memory",
+     "from": 4589,
+     "to": 4590,
+     "errors": []
+    }
+   ],
+   "events": []
+  },
+  {
+   "id": "T14",
+   "key": "prostate~elided#daccd89c",
+   "fic": "belonging.html",
+   "from": 4696,
+   "to": 4716,
+   "sourceSha": "d8fe352ab70bc0a8171fea0e069c43d776d3541d741cb74b2b66014ae64e874c",
+   "updatedAt": "2026-10-07T21:33:51.171Z",
+   "coverageReviewed": true,
+   "coverage": "positive-only",
+   "reviews": [
+    {
+     "id": "A1",
+     "revision": "scene-two-r1",
+     "verdict": "correct",
+     "act": "Fingering",
+     "performer": "Castiel",
+     "receiver": "Dean Winchester",
+     "occurrence": "performed",
+     "from": 4704,
+     "to": 4713,
+     "errors": []
+    },
+    {
+     "id": "A2",
+     "revision": "scene-two-r1",
+     "verdict": "correct",
+     "act": "Manual genital stimulation",
+     "performer": "Castiel",
+     "receiver": "Dean Winchester",
+     "occurrence": "performed",
+     "from": 4714,
+     "to": 4714,
+     "errors": []
+    }
+   ],
+   "events": [
+    {
+     "ownerActId": "A1",
+     "act": "Fingering",
+     "performer": "Castiel",
+     "receiver": "Dean Winchester",
+     "from": 4704,
+     "to": 4713,
+     "scored": true
+    },
+    {
+     "ownerActId": "A2",
+     "act": "Manual genital stimulation",
+     "performer": "Castiel",
+     "receiver": "Dean Winchester",
+     "from": 4714,
+     "to": 4714,
+     "scored": false
+    }
+   ]
+  },
+  {
+   "id": "T15",
+   "key": "mast-himself~elided#973ce6d0",
+   "fic": "jacks.html",
+   "from": 4740,
+   "to": 4776,
+   "sourceSha": "1c82d8bb62ab4aa836ffe8f4924db20c8420faddb9f3b0d75e08a9b35f18957d",
+   "updatedAt": "2026-10-07T21:34:47.614Z",
+   "coverageReviewed": true,
+   "coverage": "positive-only",
+   "reviews": [
+    {
+     "id": "A1",
+     "revision": "scene-two-r1",
+     "verdict": "correct",
+     "act": "Handjob",
+     "performer": "Jack Seward",
+     "receiver": "Dracula",
+     "occurrence": "performed",
+     "from": 4743,
+     "to": 4743,
+     "errors": []
+    },
+    {
+     "id": "A2",
+     "revision": "scene-two-r1",
+     "verdict": "correct",
+     "act": "Oral stimulation (penis)",
+     "performer": "Jack Seward",
+     "receiver": "Dracula",
+     "occurrence": "performed",
+     "from": 4740,
+     "to": 4748,
+     "errors": []
+    },
+    {
+     "id": "A3",
+     "revision": "scene-two-r1",
+     "verdict": "correct",
+     "act": "Anal penetration (penis)",
+     "performer": "Dracula",
+     "receiver": "Jack Seward",
+     "occurrence": "performed",
+     "from": 4748,
+     "to": 4774,
+     "errors": []
+    },
+    {
+     "id": "A4",
+     "revision": "scene-two-r1",
+     "verdict": "correct",
+     "act": "Solo masturbation",
+     "performer": "Jack Seward",
+     "receiver": "",
+     "occurrence": "performed",
+     "from": 4751,
+     "to": 4757,
+     "errors": []
+    }
+   ],
+   "events": [
+    {
+     "ownerActId": "A1",
+     "act": "Handjob",
+     "performer": "Jack Seward",
+     "receiver": "Dracula",
+     "from": 4743,
+     "to": 4743,
+     "scored": true
+    },
+    {
+     "ownerActId": "A2",
+     "act": "Oral stimulation (penis)",
+     "performer": "Jack Seward",
+     "receiver": "Dracula",
+     "from": 4740,
+     "to": 4748,
+     "scored": false
+    },
+    {
+     "ownerActId": "A3",
+     "act": "Anal penetration (penis)",
+     "performer": "Dracula",
+     "receiver": "Jack Seward",
+     "from": 4748,
+     "to": 4774,
+     "scored": true
+    },
+    {
+     "ownerActId": "A4",
+     "act": "Solo masturbation",
+     "performer": "Jack Seward",
+     "receiver": "",
+     "from": 4751,
+     "to": 4757,
+     "scored": true
+    }
+   ]
+  },
+  {
+   "id": "T16",
+   "key": "mast-himself#a9f820c3",
+   "fic": "innocent-until.html",
+   "from": 4766,
+   "to": 4905,
+   "sourceSha": "ffa71a4c7726196bc68e41ceb1805c28b7de2698384e84270c5d0f1f6f4ef78c",
+   "updatedAt": "2026-10-07T21:36:10.908Z",
+   "coverageReviewed": true,
+   "coverage": "positive-only",
+   "reviews": [
+    {
+     "id": "A1",
+     "revision": "scene-two-r1",
+     "verdict": "correct",
+     "act": "Body rubbing / frottage",
+     "performer": "James \"Bucky\" Barnes",
+     "receiver": "Steve Rogers",
+     "occurrence": "performed",
+     "from": 4771,
+     "to": 4772,
+     "errors": []
+    },
+    {
+     "id": "A2",
+     "revision": "scene-two-r1",
+     "verdict": "correct",
+     "act": "Solo masturbation",
+     "performer": "Steve Rogers",
+     "receiver": "",
+     "occurrence": "performed",
+     "from": 4774,
+     "to": 4774,
+     "errors": []
+    },
+    {
+     "id": "A3",
+     "revision": "scene-two-r1",
+     "verdict": "correct",
+     "act": "Rimming",
+     "performer": "James \"Bucky\" Barnes",
+     "receiver": "Steve Rogers",
+     "occurrence": "performed",
+     "from": 4802,
+     "to": 4803,
+     "errors": []
+    },
+    {
+     "id": "A4",
+     "revision": "scene-two-r1",
+     "verdict": "correct",
+     "act": "Handjob",
+     "performer": "James \"Bucky\" Barnes",
+     "receiver": "Steve Rogers",
+     "occurrence": "performed",
+     "from": 4816,
+     "to": 4837,
+     "errors": []
+    },
+    {
+     "id": "A5",
+     "revision": "scene-two-r1",
+     "verdict": "correct",
+     "act": "Sounding",
+     "performer": "James \"Bucky\" Barnes",
+     "receiver": "Steve Rogers",
+     "occurrence": "performed",
+     "from": 4818,
+     "to": 4833,
+     "errors": []
+    },
+    {
+     "id": "A6",
+     "revision": "scene-two-r1",
+     "verdict": "correct",
+     "act": "Blowjob",
+     "performer": "James \"Bucky\" Barnes",
+     "receiver": "Steve Rogers",
+     "occurrence": "performed",
+     "from": 4824,
+     "to": 4824,
+     "errors": []
+    },
+    {
+     "id": "A7",
+     "revision": "scene-two-r1",
+     "verdict": "correct",
+     "act": "External anal stimulation",
+     "performer": "James \"Bucky\" Barnes",
+     "receiver": "Steve Rogers",
+     "occurrence": "performed",
+     "from": 4882,
+     "to": 4882,
+     "errors": []
+    },
+    {
+     "id": "A8",
+     "revision": "scene-two-r1",
+     "verdict": "correct",
+     "act": "Toy-assisted penile stimulation",
+     "performer": "James \"Bucky\" Barnes",
+     "receiver": "Steve Rogers",
+     "occurrence": "performed",
+     "from": 4874,
+     "to": 4875,
+     "errors": []
+    },
+    {
+     "id": "A9",
+     "revision": "scene-two-r1",
+     "verdict": "correct",
+     "act": "Solo masturbation",
+     "performer": "Steve Rogers",
+     "receiver": "",
+     "occurrence": "performed",
+     "from": 4876,
+     "to": 4885,
+     "errors": []
+    },
+    {
+     "id": "A10",
+     "revision": "scene-two-r1",
+     "verdict": "correct",
+     "act": "Fingering",
+     "performer": "James \"Bucky\" Barnes",
+     "receiver": "Steve Rogers",
+     "occurrence": "performed",
+     "from": 4889,
+     "to": 4889,
+     "errors": []
+    },
+    {
+     "id": "A11",
+     "revision": "scene-two-r1",
+     "verdict": "correct",
+     "act": "Anal penetration (penis)",
+     "performer": "James \"Bucky\" Barnes",
+     "receiver": "Steve Rogers",
+     "occurrence": "performed",
+     "from": 4889,
+     "to": 4895,
+     "errors": []
+    }
+   ],
+   "events": [
+    {
+     "ownerActId": "A1",
+     "act": "Body rubbing / frottage",
+     "performer": "James \"Bucky\" Barnes",
+     "receiver": "Steve Rogers",
+     "from": 4771,
+     "to": 4772,
+     "scored": false
+    },
+    {
+     "ownerActId": "A2",
+     "act": "Solo masturbation",
+     "performer": "Steve Rogers",
+     "receiver": "",
+     "from": 4774,
+     "to": 4774,
+     "scored": true
+    },
+    {
+     "ownerActId": "A3",
+     "act": "Rimming",
+     "performer": "James \"Bucky\" Barnes",
+     "receiver": "Steve Rogers",
+     "from": 4802,
+     "to": 4803,
+     "scored": true
+    },
+    {
+     "ownerActId": "A4",
+     "act": "Handjob",
+     "performer": "James \"Bucky\" Barnes",
+     "receiver": "Steve Rogers",
+     "from": 4816,
+     "to": 4837,
+     "scored": true
+    },
+    {
+     "ownerActId": "A5",
+     "act": "Sounding",
+     "performer": "James \"Bucky\" Barnes",
+     "receiver": "Steve Rogers",
+     "from": 4818,
+     "to": 4833,
+     "scored": false
+    },
+    {
+     "ownerActId": "A6",
+     "act": "Blowjob",
+     "performer": "James \"Bucky\" Barnes",
+     "receiver": "Steve Rogers",
+     "from": 4824,
+     "to": 4824,
+     "scored": true
+    },
+    {
+     "ownerActId": "A7",
+     "act": "External anal stimulation",
+     "performer": "James \"Bucky\" Barnes",
+     "receiver": "Steve Rogers",
+     "from": 4882,
+     "to": 4882,
+     "scored": false
+    },
+    {
+     "ownerActId": "A8",
+     "act": "Toy-assisted penile stimulation",
+     "performer": "James \"Bucky\" Barnes",
+     "receiver": "Steve Rogers",
+     "from": 4874,
+     "to": 4875,
+     "scored": false
+    },
+    {
+     "ownerActId": "A9",
+     "act": "Solo masturbation",
+     "performer": "Steve Rogers",
+     "receiver": "",
+     "from": 4876,
+     "to": 4885,
+     "scored": true
+    },
+    {
+     "ownerActId": "A10",
+     "act": "Fingering",
+     "performer": "James \"Bucky\" Barnes",
+     "receiver": "Steve Rogers",
+     "from": 4889,
+     "to": 4889,
+     "scored": true
+    },
+    {
+     "ownerActId": "A11",
+     "act": "Anal penetration (penis)",
+     "performer": "James \"Bucky\" Barnes",
+     "receiver": "Steve Rogers",
+     "from": 4889,
+     "to": 4895,
+     "scored": true
+    }
+   ]
+  },
+  {
+   "id": "T17",
+   "key": "lips-around#a5fd47e7",
+   "fic": "jacks.html",
+   "from": 6045,
+   "to": 6066,
+   "sourceSha": "1c82d8bb62ab4aa836ffe8f4924db20c8420faddb9f3b0d75e08a9b35f18957d",
+   "updatedAt": "2026-10-07T21:36:42.990Z",
+   "coverageReviewed": true,
+   "coverage": "positive-only",
+   "reviews": [
+    {
+     "id": "A1",
+     "revision": "scene-two-r1",
+     "verdict": "correct",
+     "act": "Blowjob",
+     "performer": "Jack Seward",
+     "receiver": "Dracula",
+     "occurrence": "performed",
+     "from": 6053,
+     "to": 6061,
+     "errors": []
+    },
+    {
+     "id": "A2",
+     "revision": "scene-two-r1",
+     "verdict": "correct",
+     "act": "Fingering",
+     "performer": "Jack Seward",
+     "receiver": "Dracula",
+     "occurrence": "performed",
+     "from": 6053,
+     "to": 6054,
+     "errors": []
+    },
+    {
+     "id": "A3",
+     "revision": "scene-two-r1",
+     "verdict": "correct",
+     "act": "Fisting",
+     "performer": "Jack Seward",
+     "receiver": "Dracula",
+     "occurrence": "performed",
+     "from": 6054,
+     "to": 6061,
+     "errors": []
+    }
+   ],
+   "events": [
+    {
+     "ownerActId": "A1",
+     "act": "Blowjob",
+     "performer": "Jack Seward",
+     "receiver": "Dracula",
+     "from": 6053,
+     "to": 6061,
+     "scored": true
+    },
+    {
+     "ownerActId": "A2",
+     "act": "Fingering",
+     "performer": "Jack Seward",
+     "receiver": "Dracula",
+     "from": 6053,
+     "to": 6054,
+     "scored": true
+    },
+    {
+     "ownerActId": "A3",
+     "act": "Fisting",
+     "performer": "Jack Seward",
+     "receiver": "Dracula",
+     "from": 6054,
+     "to": 6061,
+     "scored": false
+    }
+   ]
+  },
+  {
+   "id": "T18",
+   "key": "pushed-in#5d174b60",
+   "fic": "tricks-of-the-trade.html",
+   "from": 3743,
+   "to": 3787,
+   "sourceSha": "25a15e806d8f6a55c030e78d50d58e71f2ca424674b33f7a56471178d4ab1bd3",
+   "updatedAt": "2026-10-07T21:37:11.524Z",
+   "coverageReviewed": true,
+   "coverage": "positive-only",
+   "reviews": [
+    {
+     "id": "A1",
+     "revision": "scene-two-r1",
+     "verdict": "correct",
+     "act": "Blowjob",
+     "performer": "Castiel",
+     "receiver": "Dean Winchester",
+     "occurrence": "performed",
+     "from": 3751,
+     "to": 3753,
+     "errors": []
+    },
+    {
+     "id": "A2",
+     "revision": "scene-two-r1",
+     "verdict": "correct",
+     "act": "Handjob",
+     "performer": "Castiel",
+     "receiver": "Dean Winchester",
+     "occurrence": "performed",
+     "from": 3757,
+     "to": 3766,
+     "errors": []
+    },
+    {
+     "id": "A3",
+     "revision": "scene-two-r1",
+     "verdict": "correct",
+     "act": "Solo masturbation",
+     "performer": "Castiel",
+     "receiver": "",
+     "occurrence": "performed",
+     "from": 3757,
+     "to": 3757,
+     "errors": []
+    },
+    {
+     "id": "A4",
+     "revision": "scene-two-r1",
+     "verdict": "correct",
+     "act": "Fingering",
+     "performer": "Castiel",
+     "receiver": "Dean Winchester",
+     "occurrence": "performed",
+     "from": 3768,
+     "to": 3769,
+     "errors": []
+    },
+    {
+     "id": "A5",
+     "revision": "scene-two-r1",
+     "verdict": "correct",
+     "act": "Anal penetration (penis)",
+     "performer": "Castiel",
+     "receiver": "Dean Winchester",
+     "occurrence": "performed",
+     "from": 3773,
+     "to": 3780,
+     "errors": []
+    },
+    {
+     "id": "A6",
+     "revision": "scene-two-r1",
+     "verdict": "correct",
+     "act": "Body rubbing / frottage",
+     "performer": "Castiel",
+     "receiver": "Dean Winchester",
+     "occurrence": "performed",
+     "from": 3756,
+     "to": 3756,
+     "errors": []
+    }
+   ],
+   "events": [
+    {
+     "ownerActId": "A1",
+     "act": "Blowjob",
+     "performer": "Castiel",
+     "receiver": "Dean Winchester",
+     "from": 3751,
+     "to": 3753,
+     "scored": true
+    },
+    {
+     "ownerActId": "A2",
+     "act": "Handjob",
+     "performer": "Castiel",
+     "receiver": "Dean Winchester",
+     "from": 3757,
+     "to": 3766,
+     "scored": true
+    },
+    {
+     "ownerActId": "A3",
+     "act": "Solo masturbation",
+     "performer": "Castiel",
+     "receiver": "",
+     "from": 3757,
+     "to": 3757,
+     "scored": true
+    },
+    {
+     "ownerActId": "A4",
+     "act": "Fingering",
+     "performer": "Castiel",
+     "receiver": "Dean Winchester",
+     "from": 3768,
+     "to": 3769,
+     "scored": true
+    },
+    {
+     "ownerActId": "A5",
+     "act": "Anal penetration (penis)",
+     "performer": "Castiel",
+     "receiver": "Dean Winchester",
+     "from": 3773,
+     "to": 3780,
+     "scored": true
+    },
+    {
+     "ownerActId": "A6",
+     "act": "Body rubbing / frottage",
+     "performer": "Castiel",
+     "receiver": "Dean Winchester",
+     "from": 3756,
+     "to": 3756,
+     "scored": false
+    }
+   ]
+  },
+  {
+   "id": "T19",
+   "key": "dd6-slips-cock-inside~elided#4e4877bb",
+   "fic": "lock-it.html",
+   "from": 152,
+   "to": 209,
+   "sourceSha": "cefecea8f64bab5b5bbeee0fdf6cf6d8a7712191f584b965d3b8100cfec2a635",
+   "updatedAt": "2026-10-07T21:37:54.407Z",
+   "coverageReviewed": true,
+   "coverage": "positive-only",
+   "reviews": [
+    {
+     "id": "A1",
+     "revision": "scene-two-r1",
+     "verdict": "correct",
+     "act": "Rimming",
+     "performer": "Eddie Diaz",
+     "receiver": "Evan \"Buck\" Buckley",
+     "occurrence": "performed",
+     "from": 164,
+     "to": 167,
+     "errors": []
+    },
+    {
+     "id": "A2",
+     "revision": "scene-two-r1",
+     "verdict": "correct",
+     "act": "Fingering",
+     "performer": "Eddie Diaz",
+     "receiver": "Evan \"Buck\" Buckley",
+     "occurrence": "performed",
+     "from": 171,
+     "to": 171,
+     "errors": []
+    },
+    {
+     "id": "A3",
+     "revision": "scene-two-r1",
+     "verdict": "correct",
+     "act": "Anal penetration (penis)",
+     "performer": "Eddie Diaz",
+     "receiver": "Evan \"Buck\" Buckley",
+     "occurrence": "performed",
+     "from": 175,
+     "to": 196,
+     "errors": []
+    },
+    {
+     "id": "A4",
+     "revision": "scene-two-r1",
+     "verdict": "correct",
+     "act": "External anal stimulation",
+     "performer": "Eddie Diaz",
+     "receiver": "Evan \"Buck\" Buckley",
+     "occurrence": "performed",
+     "from": 160,
+     "to": 165,
+     "errors": []
+    },
+    {
+     "id": "A5",
+     "revision": "scene-two-r1",
+     "verdict": "correct",
+     "act": "Manual genital stimulation",
+     "performer": "Eddie Diaz",
+     "receiver": "Evan \"Buck\" Buckley",
+     "occurrence": "performed",
+     "from": 158,
+     "to": 158,
+     "errors": []
+    },
+    {
+     "id": "A6",
+     "revision": "scene-two-r1",
+     "verdict": "correct",
+     "act": "Manual genital stimulation",
+     "performer": "Evan \"Buck\" Buckley",
+     "receiver": "",
+     "occurrence": "performed",
+     "from": 201,
+     "to": 201,
+     "errors": []
+    }
+   ],
+   "events": [
+    {
+     "ownerActId": "A1",
+     "act": "Rimming",
+     "performer": "Eddie Diaz",
+     "receiver": "Evan \"Buck\" Buckley",
+     "from": 164,
+     "to": 167,
+     "scored": true
+    },
+    {
+     "ownerActId": "A2",
+     "act": "Fingering",
+     "performer": "Eddie Diaz",
+     "receiver": "Evan \"Buck\" Buckley",
+     "from": 171,
+     "to": 171,
+     "scored": true
+    },
+    {
+     "ownerActId": "A3",
+     "act": "Anal penetration (penis)",
+     "performer": "Eddie Diaz",
+     "receiver": "Evan \"Buck\" Buckley",
+     "from": 175,
+     "to": 196,
+     "scored": true
+    },
+    {
+     "ownerActId": "A4",
+     "act": "External anal stimulation",
+     "performer": "Eddie Diaz",
+     "receiver": "Evan \"Buck\" Buckley",
+     "from": 160,
+     "to": 165,
+     "scored": false
+    },
+    {
+     "ownerActId": "A5",
+     "act": "Manual genital stimulation",
+     "performer": "Eddie Diaz",
+     "receiver": "Evan \"Buck\" Buckley",
+     "from": 158,
+     "to": 158,
+     "scored": false
+    },
+    {
+     "ownerActId": "A6",
+     "act": "Manual genital stimulation",
+     "performer": "Evan \"Buck\" Buckley",
+     "receiver": "",
+     "from": 201,
+     "to": 201,
+     "scored": false
+    }
+   ]
+  },
+  {
+   "id": "T20",
+   "key": "prostate~elided#dce8267",
+   "fic": "rwrb-balls.html",
+   "from": 174,
+   "to": 198,
+   "sourceSha": "972bdceeca54c37e7f9298ac9621b9155bf28745a076c5d5124e55a38b1a9474",
+   "updatedAt": "2026-10-07T21:38:38.741Z",
+   "coverageReviewed": true,
+   "coverage": "positive-only",
+   "reviews": [
+    {
+     "id": "A1",
+     "revision": "scene-two-r1",
+     "verdict": "correct",
+     "act": "Fingering",
+     "performer": "Alex Claremont-Diaz",
+     "receiver": "Henry Fox-Mountchristen-Windsor",
+     "occurrence": "performed",
+     "from": 182,
+     "to": 184,
+     "errors": []
+    },
+    {
+     "id": "A2",
+     "revision": "scene-two-r1",
+     "verdict": "correct",
+     "act": "External anal stimulation",
+     "performer": "Henry Fox-Mountchristen-Windsor",
+     "receiver": "Henry Fox-Mountchristen-Windsor",
+     "occurrence": "performed",
+     "from": 180,
+     "to": 180,
+     "errors": []
+    },
+    {
+     "id": "A3",
+     "revision": "scene-two-r1",
+     "verdict": "correct",
+     "act": "Anal penetration (penis)",
+     "performer": "Alex Claremont-Diaz",
+     "receiver": "Henry Fox-Mountchristen-Windsor",
+     "occurrence": "performed",
+     "from": 191,
+     "to": 195,
+     "errors": []
+    },
+    {
+     "id": "A4",
+     "revision": "scene-two-r1",
+     "verdict": "correct",
+     "act": "Solo masturbation",
+     "performer": "Henry Fox-Mountchristen-Windsor",
+     "receiver": "",
+     "occurrence": "performed",
+     "from": 194,
+     "to": 194,
+     "errors": []
+    }
+   ],
+   "events": [
+    {
+     "ownerActId": "A1",
+     "act": "Fingering",
+     "performer": "Alex Claremont-Diaz",
+     "receiver": "Henry Fox-Mountchristen-Windsor",
+     "from": 182,
+     "to": 184,
+     "scored": true
+    },
+    {
+     "ownerActId": "A2",
+     "act": "External anal stimulation",
+     "performer": "Henry Fox-Mountchristen-Windsor",
+     "receiver": "Henry Fox-Mountchristen-Windsor",
+     "from": 180,
+     "to": 180,
+     "scored": false
+    },
+    {
+     "ownerActId": "A3",
+     "act": "Anal penetration (penis)",
+     "performer": "Alex Claremont-Diaz",
+     "receiver": "Henry Fox-Mountchristen-Windsor",
+     "from": 191,
+     "to": 195,
+     "scored": true
+    },
+    {
+     "ownerActId": "A4",
+     "act": "Solo masturbation",
+     "performer": "Henry Fox-Mountchristen-Windsor",
+     "receiver": "",
+     "from": 194,
+     "to": 194,
+     "scored": true
+    }
+   ]
+  },
+  {
+   "id": "T22",
+   "key": "push-into#42aebfbe",
+   "fic": "jacks.html",
+   "from": 9040,
+   "to": 9084,
+   "sourceSha": "1c82d8bb62ab4aa836ffe8f4924db20c8420faddb9f3b0d75e08a9b35f18957d",
+   "updatedAt": "2026-10-07T21:39:33.499Z",
+   "coverageReviewed": true,
+   "coverage": "positive-only",
+   "reviews": [
+    {
+     "id": "A1",
+     "revision": "scene-two-r1",
+     "verdict": "correct",
+     "act": "Blowjob",
+     "performer": "Dracula",
+     "receiver": "Jack Seward",
+     "occurrence": "performed",
+     "from": 9061,
+     "to": 9064,
+     "errors": []
+    },
+    {
+     "id": "A2",
+     "revision": "scene-two-r1",
+     "verdict": "correct",
+     "act": "Rimming",
+     "performer": "Dracula",
+     "receiver": "Jack Seward",
+     "occurrence": "performed",
+     "from": 9065,
+     "to": 9067,
+     "errors": []
+    },
+    {
+     "id": "A3",
+     "revision": "scene-two-r1",
+     "verdict": "correct",
+     "act": "Anal penetration (penis)",
+     "performer": "Dracula",
+     "receiver": "Jack Seward",
+     "occurrence": "performed",
+     "from": 9075,
+     "to": 9084,
+     "errors": []
+    },
+    {
+     "id": "A4",
+     "revision": "scene-two-r1",
+     "verdict": "correct",
+     "act": "Handjob",
+     "performer": "Dracula",
+     "receiver": "Jack Seward",
+     "occurrence": "performed",
+     "from": 9078,
+     "to": 9080,
+     "errors": []
+    }
+   ],
+   "events": [
+    {
+     "ownerActId": "A1",
+     "act": "Blowjob",
+     "performer": "Dracula",
+     "receiver": "Jack Seward",
+     "from": 9061,
+     "to": 9064,
+     "scored": true
+    },
+    {
+     "ownerActId": "A2",
+     "act": "Rimming",
+     "performer": "Dracula",
+     "receiver": "Jack Seward",
+     "from": 9065,
+     "to": 9067,
+     "scored": true
+    },
+    {
+     "ownerActId": "A3",
+     "act": "Anal penetration (penis)",
+     "performer": "Dracula",
+     "receiver": "Jack Seward",
+     "from": 9075,
+     "to": 9084,
+     "scored": true
+    },
+    {
+     "ownerActId": "A4",
+     "act": "Handjob",
+     "performer": "Dracula",
+     "receiver": "Jack Seward",
+     "from": 9078,
+     "to": 9080,
+     "scored": true
+    }
+   ]
+  },
+  {
+   "id": "T23",
+   "key": "mast-himself#193c5626",
+   "fic": "autocorrect.html",
+   "from": 67,
+   "to": 83,
+   "sourceSha": "7bb7cfa0690ea42eea1d2220659ed798c400cf939cf0b28ef1c9fb99e76b7780",
+   "updatedAt": "2026-10-07T21:40:18.365Z",
+   "coverageReviewed": true,
+   "coverage": "positive-only",
+   "reviews": [
+    {
+     "id": "A1",
+     "revision": "scene-two-r1",
+     "verdict": "correct",
+     "act": "Solo masturbation",
+     "performer": "Dean Winchester",
+     "receiver": "",
+     "occurrence": "imagined",
+     "from": 75,
+     "to": 75,
+     "errors": []
+    }
+   ],
+   "events": []
+  },
+  {
+   "id": "T24",
+   "key": "dd2-hj-took-in-hand~elided#d8de1320",
+   "fic": "tricks-of-the-trade.html",
+   "from": 3261,
+   "to": 3292,
+   "sourceSha": "25a15e806d8f6a55c030e78d50d58e71f2ca424674b33f7a56471178d4ab1bd3",
+   "updatedAt": "2026-10-07T21:40:46.949Z",
+   "coverageReviewed": true,
+   "coverage": "positive-only",
+   "reviews": [
+    {
+     "id": "A1",
+     "revision": "scene-two-r1",
+     "verdict": "correct",
+     "act": "Fingering",
+     "performer": "Castiel",
+     "receiver": "Dean Winchester",
+     "occurrence": "performed",
+     "from": 3269,
+     "to": 3278,
+     "errors": []
+    },
+    {
+     "id": "A2",
+     "revision": "scene-two-r1",
+     "verdict": "correct",
+     "act": "Toy insertion",
+     "performer": "Castiel",
+     "receiver": "Dean Winchester",
+     "occurrence": "performed",
+     "from": 3278,
+     "to": 3287,
+     "errors": []
+    },
+    {
+     "id": "A3",
+     "revision": "scene-two-r1",
+     "verdict": "correct",
+     "act": "Blowjob",
+     "performer": "Dean Winchester",
+     "receiver": "Castiel",
+     "occurrence": "performed",
+     "from": 3280,
+     "to": 3282,
+     "errors": []
+    },
+    {
+     "id": "A4",
+     "revision": "scene-two-r1",
+     "verdict": "correct",
+     "act": "Handjob",
+     "performer": "Castiel",
+     "receiver": "Dean Winchester",
+     "occurrence": "performed",
+     "from": 3283,
+     "to": 3284,
+     "errors": []
+    }
+   ],
+   "events": [
+    {
+     "ownerActId": "A1",
+     "act": "Fingering",
+     "performer": "Castiel",
+     "receiver": "Dean Winchester",
+     "from": 3269,
+     "to": 3278,
+     "scored": true
+    },
+    {
+     "ownerActId": "A2",
+     "act": "Toy insertion",
+     "performer": "Castiel",
+     "receiver": "Dean Winchester",
+     "from": 3278,
+     "to": 3287,
+     "scored": true
+    },
+    {
+     "ownerActId": "A3",
+     "act": "Blowjob",
+     "performer": "Dean Winchester",
+     "receiver": "Castiel",
+     "from": 3280,
+     "to": 3282,
+     "scored": true
+    },
+    {
+     "ownerActId": "A4",
+     "act": "Handjob",
+     "performer": "Castiel",
+     "receiver": "Dean Winchester",
+     "from": 3283,
+     "to": 3284,
+     "scored": true
+    }
+   ]
+  },
+  {
+   "id": "T25",
+   "key": "dd2-finger-shoved-into#23d512f4",
+   "fic": "tricks-of-the-trade.html",
+   "from": 2266,
+   "to": 2300,
+   "sourceSha": "25a15e806d8f6a55c030e78d50d58e71f2ca424674b33f7a56471178d4ab1bd3",
+   "updatedAt": "2026-10-07T21:41:12.473Z",
+   "coverageReviewed": true,
+   "coverage": "positive-only",
+   "reviews": [
+    {
+     "id": "A1",
+     "revision": "scene-two-r1",
+     "verdict": "correct",
+     "act": "Toy insertion",
+     "performer": "Castiel",
+     "receiver": "Dean Winchester",
+     "occurrence": "performed",
+     "from": 2271,
+     "to": 2271,
+     "errors": []
+    },
+    {
+     "id": "A2",
+     "revision": "scene-two-r1",
+     "verdict": "correct",
+     "act": "Handjob",
+     "performer": "Castiel",
+     "receiver": "Dean Winchester",
+     "occurrence": "performed",
+     "from": 2274,
+     "to": 2274,
+     "errors": []
+    },
+    {
+     "id": "A3",
+     "revision": "scene-two-r1",
+     "verdict": "correct",
+     "act": "Fingering",
+     "performer": "Castiel",
+     "receiver": "Dean Winchester",
+     "occurrence": "performed",
+     "from": 2282,
+     "to": 2287,
+     "errors": []
+    },
+    {
+     "id": "A4",
+     "revision": "scene-two-r1",
+     "verdict": "correct",
+     "act": "Anal penetration (penis)",
+     "performer": "Castiel",
+     "receiver": "Dean Winchester",
+     "occurrence": "performed",
+     "from": 2283,
+     "to": 2292,
+     "errors": []
+    },
+    {
+     "id": "A5",
+     "revision": "scene-two-r1",
+     "verdict": "correct",
+     "act": "Toy insertion",
+     "performer": "Castiel",
+     "receiver": "Dean Winchester",
+     "occurrence": "performed",
+     "from": 2287,
+     "to": 2292,
+     "errors": []
+    }
+   ],
+   "events": [
+    {
+     "ownerActId": "A1",
+     "act": "Toy insertion",
+     "performer": "Castiel",
+     "receiver": "Dean Winchester",
+     "from": 2271,
+     "to": 2271,
+     "scored": true
+    },
+    {
+     "ownerActId": "A2",
+     "act": "Handjob",
+     "performer": "Castiel",
+     "receiver": "Dean Winchester",
+     "from": 2274,
+     "to": 2274,
+     "scored": true
+    },
+    {
+     "ownerActId": "A3",
+     "act": "Fingering",
+     "performer": "Castiel",
+     "receiver": "Dean Winchester",
+     "from": 2282,
+     "to": 2287,
+     "scored": true
+    },
+    {
+     "ownerActId": "A4",
+     "act": "Anal penetration (penis)",
+     "performer": "Castiel",
+     "receiver": "Dean Winchester",
+     "from": 2283,
+     "to": 2292,
+     "scored": true
+    },
+    {
+     "ownerActId": "A5",
+     "act": "Toy insertion",
+     "performer": "Castiel",
+     "receiver": "Dean Winchester",
+     "from": 2287,
+     "to": 2292,
+     "scored": true
+    }
+   ]
+  },
+  {
+   "id": "T26",
+   "key": "mast-himself~elided#acb2eca6",
+   "fic": "dogbird.html",
+   "from": 16,
+   "to": 32,
+   "sourceSha": "b66dcf4730e681942787b9d280bc8b2825005e179cfe09179a82e935a4f036fb",
+   "updatedAt": "2026-10-07T21:41:49.688Z",
+   "coverageReviewed": true,
+   "coverage": "positive-only",
+   "reviews": [
+    {
+     "id": "A1",
+     "revision": "scene-two-r1",
+     "verdict": "correct",
+     "act": "Solo masturbation",
+     "performer": "Evan \"Buck\" Buckley",
+     "receiver": "",
+     "occurrence": "not performed",
+     "from": 24,
+     "to": 24,
+     "errors": []
+    }
+   ],
+   "events": []
+  },
+  {
+   "id": "T27",
+   "key": "dd-takes-into-mouth~elided#1d44bd9b",
+   "fic": "tricks-of-the-trade.html",
+   "from": 3091,
+   "to": 3112,
+   "sourceSha": "25a15e806d8f6a55c030e78d50d58e71f2ca424674b33f7a56471178d4ab1bd3",
+   "updatedAt": "2026-10-07T21:42:14.130Z",
+   "coverageReviewed": true,
+   "coverage": "positive-only",
+   "reviews": [
+    {
+     "id": "A1",
+     "revision": "scene-two-r1",
+     "verdict": "correct",
+     "act": "Blowjob",
+     "performer": "Castiel",
+     "receiver": "Dean Winchester",
+     "occurrence": "performed",
+     "from": 3099,
+     "to": 3104,
+     "errors": []
+    },
+    {
+     "id": "A2",
+     "revision": "scene-two-r1",
+     "verdict": "correct",
+     "act": "Manual genital stimulation",
+     "performer": "Castiel",
+     "receiver": "Dean Winchester",
+     "occurrence": "performed",
+     "from": 3100,
+     "to": 3100,
+     "errors": []
+    }
+   ],
+   "events": [
+    {
+     "ownerActId": "A1",
+     "act": "Blowjob",
+     "performer": "Castiel",
+     "receiver": "Dean Winchester",
+     "from": 3099,
+     "to": 3104,
+     "scored": true
+    },
+    {
+     "ownerActId": "A2",
+     "act": "Manual genital stimulation",
+     "performer": "Castiel",
+     "receiver": "Dean Winchester",
+     "from": 3100,
+     "to": 3100,
+     "scored": false
+    }
+   ]
+  },
+  {
+   "id": "T28",
+   "key": "push-into~elided#731c6e63",
+   "fic": "starting-place.html",
+   "from": 541,
+   "to": 567,
+   "sourceSha": "62fbf6258405fce5dc103deef1fb478214cd0b7c032a93fcd032cbd3c3436fd2",
+   "updatedAt": "2026-10-07T21:43:11.836Z",
+   "coverageReviewed": true,
+   "coverage": "positive-only",
+   "reviews": [
+    {
+     "id": "A1",
+     "revision": "scene-two-r1",
+     "verdict": "uncertain",
+     "act": "Fingering",
+     "performer": "Castiel",
+     "receiver": "Dean Winchester",
+     "occurrence": "performed",
+     "from": 541,
+     "to": 544,
+     "errors": []
+    },
+    {
+     "id": "A2",
+     "revision": "scene-two-r1",
+     "verdict": "correct",
+     "act": "Solo masturbation",
+     "performer": "Castiel",
+     "receiver": "",
+     "occurrence": "performed",
+     "from": 544,
+     "to": 544,
+     "errors": []
+    },
+    {
+     "id": "A3",
+     "revision": "scene-two-r1",
+     "verdict": "correct",
+     "act": "Anal penetration (penis)",
+     "performer": "Castiel",
+     "receiver": "Dean Winchester",
+     "occurrence": "performed",
+     "from": 549,
+     "to": 566,
+     "errors": []
+    },
+    {
+     "id": "A4",
+     "revision": "scene-two-r1",
+     "verdict": "correct",
+     "act": "Handjob",
+     "performer": "Castiel",
+     "receiver": "Dean Winchester",
+     "occurrence": "performed",
+     "from": 559,
+     "to": 560,
+     "errors": []
+    }
+   ],
+   "events": [
+    {
+     "ownerActId": "A2",
+     "act": "Solo masturbation",
+     "performer": "Castiel",
+     "receiver": "",
+     "from": 544,
+     "to": 544,
+     "scored": true
+    },
+    {
+     "ownerActId": "A3",
+     "act": "Anal penetration (penis)",
+     "performer": "Castiel",
+     "receiver": "Dean Winchester",
+     "from": 549,
+     "to": 566,
+     "scored": true
+    },
+    {
+     "ownerActId": "A4",
+     "act": "Handjob",
+     "performer": "Castiel",
+     "receiver": "Dean Winchester",
+     "from": 559,
+     "to": 560,
+     "scored": true
+    }
+   ]
+  },
+  {
+   "id": "T29",
+   "key": "fingers-enter-hole#be444316",
+   "fic": "mars.html",
+   "from": 631,
+   "to": 655,
+   "sourceSha": "43ef00b3070686ea49aed427155aa8c42f88c242698d4dbdf25ec95f4a8c0432",
+   "updatedAt": "2026-10-07T21:44:10.198Z",
+   "coverageReviewed": true,
+   "coverage": "positive-only",
+   "reviews": [
+    {
+     "id": "A1",
+     "revision": "scene-two-r1",
+     "verdict": "correct",
+     "act": "Fingering",
+     "performer": "Dean Winchester",
+     "receiver": "Dean Winchester",
+     "occurrence": "performed",
+     "from": 635,
+     "to": 647,
+     "errors": []
+    },
+    {
+     "id": "A2",
+     "revision": "scene-two-r1",
+     "verdict": "correct",
+     "act": "Solo masturbation",
+     "performer": "Dean Winchester",
+     "receiver": "",
+     "occurrence": "performed",
+     "from": 635,
+     "to": 649,
+     "errors": []
+    },
+    {
+     "id": "A3",
+     "revision": "scene-two-r1",
+     "verdict": "correct",
+     "act": "Solo masturbation",
+     "performer": "Castiel",
+     "receiver": "",
+     "occurrence": "performed",
+     "from": 640,
+     "to": 655,
+     "errors": []
+    },
+    {
+     "id": "A4",
+     "revision": "scene-two-r1",
+     "verdict": "correct",
+     "act": "Rimming",
+     "performer": "Castiel",
+     "receiver": "Dean Winchester",
+     "occurrence": "imagined",
+     "from": 641,
+     "to": 643,
+     "errors": []
+    },
+    {
+     "id": "A5",
+     "revision": "scene-two-r1",
+     "verdict": "correct",
+     "act": "Anal penetration (penis)",
+     "performer": "Castiel",
+     "receiver": "Dean Winchester",
+     "occurrence": "imagined",
+     "from": 647,
+     "to": 647,
+     "errors": []
+    },
+    {
+     "id": "A6",
+     "revision": "scene-two-r1",
+     "verdict": "correct",
+     "act": "Fingering",
+     "performer": "Castiel",
+     "receiver": "Castiel",
+     "occurrence": "imagined",
+     "from": 648,
+     "to": 648,
+     "errors": []
+    }
+   ],
+   "events": [
+    {
+     "ownerActId": "A1",
+     "act": "Fingering",
+     "performer": "Dean Winchester",
+     "receiver": "Dean Winchester",
+     "from": 635,
+     "to": 647,
+     "scored": true
+    },
+    {
+     "ownerActId": "A2",
+     "act": "Solo masturbation",
+     "performer": "Dean Winchester",
+     "receiver": "",
+     "from": 635,
+     "to": 649,
+     "scored": true
+    },
+    {
+     "ownerActId": "A3",
+     "act": "Solo masturbation",
+     "performer": "Castiel",
+     "receiver": "",
+     "from": 640,
+     "to": 655,
+     "scored": true
+    }
+   ]
+  },
+  {
+   "id": "T30",
+   "key": "dd2-finger-shoved-into#c45aa58f",
+   "fic": "starting-place.html",
+   "from": 605,
+   "to": 643,
+   "sourceSha": "62fbf6258405fce5dc103deef1fb478214cd0b7c032a93fcd032cbd3c3436fd2",
+   "updatedAt": "2026-10-07T21:44:45.984Z",
+   "coverageReviewed": true,
+   "coverage": "positive-only",
+   "reviews": [
+    {
+     "id": "A1",
+     "revision": "scene-two-r1",
+     "verdict": "correct",
+     "act": "Blowjob",
+     "performer": "Dean Winchester",
+     "receiver": "Castiel",
+     "occurrence": "performed",
+     "from": 613,
+     "to": 615,
+     "errors": []
+    },
+    {
+     "id": "A2",
+     "revision": "scene-two-r1",
+     "verdict": "correct",
+     "act": "Fingering",
+     "performer": "Castiel",
+     "receiver": "Dean Winchester",
+     "occurrence": "performed",
+     "from": 620,
+     "to": 622,
+     "errors": []
+    },
+    {
+     "id": "A3",
+     "revision": "scene-two-r1",
+     "verdict": "correct",
+     "act": "Oral stimulation through clothing",
+     "performer": "Castiel",
+     "receiver": "Dean Winchester",
+     "occurrence": "performed",
+     "from": 619,
+     "to": 622,
+     "errors": []
+    },
+    {
+     "id": "A4",
+     "revision": "scene-two-r1",
+     "verdict": "correct",
+     "act": "Solo masturbation",
+     "performer": "Dean Winchester",
+     "receiver": "",
+     "occurrence": "performed",
+     "from": 634,
+     "to": 638,
+     "errors": []
+    },
+    {
+     "id": "A5",
+     "revision": "scene-two-r1",
+     "verdict": "correct",
+     "act": "Solo masturbation",
+     "performer": "Castiel",
+     "receiver": "",
+     "occurrence": "performed",
+     "from": 635,
+     "to": 635,
+     "errors": []
+    }
+   ],
+   "events": [
+    {
+     "ownerActId": "A1",
+     "act": "Blowjob",
+     "performer": "Dean Winchester",
+     "receiver": "Castiel",
+     "from": 613,
+     "to": 615,
+     "scored": true
+    },
+    {
+     "ownerActId": "A2",
+     "act": "Fingering",
+     "performer": "Castiel",
+     "receiver": "Dean Winchester",
+     "from": 620,
+     "to": 622,
+     "scored": true
+    },
+    {
+     "ownerActId": "A3",
+     "act": "Oral stimulation through clothing",
+     "performer": "Castiel",
+     "receiver": "Dean Winchester",
+     "from": 619,
+     "to": 622,
+     "scored": false
+    },
+    {
+     "ownerActId": "A4",
+     "act": "Solo masturbation",
+     "performer": "Dean Winchester",
+     "receiver": "",
+     "from": 634,
+     "to": 638,
+     "scored": true
+    },
+    {
+     "ownerActId": "A5",
+     "act": "Solo masturbation",
+     "performer": "Castiel",
+     "receiver": "",
+     "from": 635,
+     "to": 635,
+     "scored": true
+    }
+   ]
+  },
+  {
+   "id": "T31",
+   "key": "push-into#3db4ce5f",
+   "fic": "belonging.html",
+   "from": 725,
+   "to": 747,
+   "sourceSha": "d8fe352ab70bc0a8171fea0e069c43d776d3541d741cb74b2b66014ae64e874c",
+   "updatedAt": "2026-10-07T21:45:12.234Z",
+   "coverageReviewed": true,
+   "coverage": "positive-only",
+   "reviews": [
+    {
+     "id": "A1",
+     "revision": "scene-two-r1",
+     "verdict": "correct",
+     "act": "Toy insertion",
+     "performer": "Castiel",
+     "receiver": "Dean Winchester",
+     "occurrence": "performed",
+     "from": 725,
+     "to": 731,
+     "errors": []
+    },
+    {
+     "id": "A2",
+     "revision": "scene-two-r1",
+     "verdict": "correct",
+     "act": "Fingering",
+     "performer": "Castiel",
+     "receiver": "Dean Winchester",
+     "occurrence": "performed",
+     "from": 732,
+     "to": 747,
+     "errors": []
+    }
+   ],
+   "events": [
+    {
+     "ownerActId": "A1",
+     "act": "Toy insertion",
+     "performer": "Castiel",
+     "receiver": "Dean Winchester",
+     "from": 725,
+     "to": 731,
+     "scored": true
+    },
+    {
+     "ownerActId": "A2",
+     "act": "Fingering",
+     "performer": "Castiel",
+     "receiver": "Dean Winchester",
+     "from": 732,
+     "to": 747,
+     "scored": true
+    }
+   ]
+  },
+  {
+   "id": "T32",
+   "key": "dd-grinds-onto-cock#7c5dee14",
+   "fic": "starting-place.html",
+   "from": 1005,
+   "to": 1055,
+   "sourceSha": "62fbf6258405fce5dc103deef1fb478214cd0b7c032a93fcd032cbd3c3436fd2",
+   "updatedAt": "2026-10-07T21:45:56.117Z",
+   "coverageReviewed": true,
+   "coverage": "positive-only",
+   "reviews": [
+    {
+     "id": "A1",
+     "revision": "scene-two-r1",
+     "verdict": "correct",
+     "act": "Rimming",
+     "performer": "Castiel",
+     "receiver": "Dean Winchester",
+     "occurrence": "performed",
+     "from": 1013,
+     "to": 1019,
+     "errors": []
+    },
+    {
+     "id": "A2",
+     "revision": "scene-two-r1",
+     "verdict": "correct",
+     "act": "Fingering",
+     "performer": "Castiel",
+     "receiver": "Dean Winchester",
+     "occurrence": "performed",
+     "from": 1019,
+     "to": 1019,
+     "errors": []
+    },
+    {
+     "id": "A3",
+     "revision": "scene-two-r1",
+     "verdict": "correct",
+     "act": "Anal penetration (penis)",
+     "performer": "Castiel",
+     "receiver": "Dean Winchester",
+     "occurrence": "performed",
+     "from": 1032,
+     "to": 1052,
+     "errors": []
+    },
+    {
+     "id": "A4",
+     "revision": "scene-two-r1",
+     "verdict": "correct",
+     "act": "Handjob",
+     "performer": "Castiel",
+     "receiver": "Dean Winchester",
+     "occurrence": "performed",
+     "from": 1037,
+     "to": 1048,
+     "errors": []
+    }
+   ],
+   "events": [
+    {
+     "ownerActId": "A1",
+     "act": "Rimming",
+     "performer": "Castiel",
+     "receiver": "Dean Winchester",
+     "from": 1013,
+     "to": 1019,
+     "scored": true
+    },
+    {
+     "ownerActId": "A2",
+     "act": "Fingering",
+     "performer": "Castiel",
+     "receiver": "Dean Winchester",
+     "from": 1019,
+     "to": 1019,
+     "scored": true
+    },
+    {
+     "ownerActId": "A3",
+     "act": "Anal penetration (penis)",
+     "performer": "Castiel",
+     "receiver": "Dean Winchester",
+     "from": 1032,
+     "to": 1052,
+     "scored": true
+    },
+    {
+     "ownerActId": "A4",
+     "act": "Handjob",
+     "performer": "Castiel",
+     "receiver": "Dean Winchester",
+     "from": 1037,
+     "to": 1048,
+     "scored": true
+    }
+   ]
+  },
+  {
+   "id": "T34",
+   "key": "lips-around#ca5a626d",
+   "fic": "more-views.html",
+   "from": 251,
+   "to": 278,
+   "sourceSha": "61461060f56925872cb638627ee721273255d669032ded0d8562ffef4fc8601f",
+   "updatedAt": "2026-10-07T21:46:28.833Z",
+   "coverageReviewed": true,
+   "coverage": "positive-only",
+   "reviews": [
+    {
+     "id": "A1",
+     "revision": "scene-two-r1",
+     "verdict": "correct",
+     "act": "Blowjob",
+     "performer": "Dean Winchester",
+     "receiver": "Castiel",
+     "occurrence": "performed",
+     "from": 259,
+     "to": 273,
+     "errors": []
+    },
+    {
+     "id": "A2",
+     "revision": "scene-two-r1",
+     "verdict": "correct",
+     "act": "Handjob",
+     "performer": "Dean Winchester",
+     "receiver": "Castiel",
+     "occurrence": "performed",
+     "from": 274,
+     "to": 274,
+     "errors": []
+    }
+   ],
+   "events": [
+    {
+     "ownerActId": "A1",
+     "act": "Blowjob",
+     "performer": "Dean Winchester",
+     "receiver": "Castiel",
+     "from": 259,
+     "to": 273,
+     "scored": true
+    },
+    {
+     "ownerActId": "A2",
+     "act": "Handjob",
+     "performer": "Dean Winchester",
+     "receiver": "Castiel",
+     "from": 274,
+     "to": 274,
+     "scored": true
+    }
+   ]
+  },
+  {
+   "id": "T35",
+   "key": "come-in-mouth~elided#b55f4af4",
+   "fic": "bluebells.html",
+   "from": 1157,
+   "to": 1175,
+   "sourceSha": "ed9e8f48d2ed52e7c6f9a2ee3fc00dc5ad9e38f897fbc2f4fa60ffd193ba1a89",
+   "updatedAt": "2026-10-07T21:47:10.992Z",
+   "coverageReviewed": true,
+   "coverage": "positive-only",
+   "reviews": [
+    {
+     "id": "A1",
+     "revision": "scene-two-r1",
+     "verdict": "correct",
+     "act": "Handjob",
+     "performer": "David Shepherd",
+     "receiver": "Brother Diarmuid",
+     "occurrence": "performed",
+     "from": 1162,
+     "to": 1162,
+     "errors": []
+    },
+    {
+     "id": "A2",
+     "revision": "scene-two-r1",
+     "verdict": "correct",
+     "act": "Blowjob",
+     "performer": "David Shepherd",
+     "receiver": "Brother Diarmuid",
+     "occurrence": "performed",
+     "from": 1164,
+     "to": 1167,
+     "errors": []
+    },
+    {
+     "id": "A3",
+     "revision": "scene-two-r1",
+     "verdict": "correct",
+     "act": "Manual genital stimulation",
+     "performer": "David Shepherd",
+     "receiver": "",
+     "occurrence": "performed",
+     "from": 1165,
+     "to": 1165,
+     "errors": []
+    },
+    {
+     "id": "A4",
+     "revision": "scene-two-r1",
+     "verdict": "correct",
+     "act": "Thigh sex",
+     "performer": "David Shepherd",
+     "receiver": "Brother Diarmuid",
+     "occurrence": "performed",
+     "from": 1168,
+     "to": 1171,
+     "errors": []
+    },
+    {
+     "id": "A5",
+     "revision": "scene-two-r1",
+     "verdict": "correct",
+     "act": "Handjob",
+     "performer": "Brother Diarmuid",
+     "receiver": "David Shepherd",
+     "occurrence": "performed",
+     "from": 1168,
+     "to": 1171,
+     "errors": []
+    }
+   ],
+   "events": [
+    {
+     "ownerActId": "A1",
+     "act": "Handjob",
+     "performer": "David Shepherd",
+     "receiver": "Brother Diarmuid",
+     "from": 1162,
+     "to": 1162,
+     "scored": true
+    },
+    {
+     "ownerActId": "A2",
+     "act": "Blowjob",
+     "performer": "David Shepherd",
+     "receiver": "Brother Diarmuid",
+     "from": 1164,
+     "to": 1167,
+     "scored": true
+    },
+    {
+     "ownerActId": "A3",
+     "act": "Manual genital stimulation",
+     "performer": "David Shepherd",
+     "receiver": "",
+     "from": 1165,
+     "to": 1165,
+     "scored": false
+    },
+    {
+     "ownerActId": "A4",
+     "act": "Thigh sex",
+     "performer": "David Shepherd",
+     "receiver": "Brother Diarmuid",
+     "from": 1168,
+     "to": 1171,
+     "scored": false
+    },
+    {
+     "ownerActId": "A5",
+     "act": "Handjob",
+     "performer": "Brother Diarmuid",
+     "receiver": "David Shepherd",
+     "from": 1168,
+     "to": 1171,
+     "scored": true
+    }
+   ]
+  },
+  {
+   "id": "T37",
+   "key": "riding#31793d32",
+   "fic": "starting-place.html",
+   "from": 679,
+   "to": 717,
+   "sourceSha": "62fbf6258405fce5dc103deef1fb478214cd0b7c032a93fcd032cbd3c3436fd2",
+   "updatedAt": "2026-10-07T21:48:42.038Z",
+   "coverageReviewed": true,
+   "coverage": "positive-only",
+   "reviews": [
+    {
+     "id": "A1",
+     "revision": "scene-two-r1",
+     "verdict": "correct",
+     "act": "Blowjob",
+     "performer": "Castiel",
+     "receiver": "Dean Winchester",
+     "occurrence": "performed",
+     "from": 687,
+     "to": 697,
+     "errors": []
+    },
+    {
+     "id": "A2",
+     "revision": "scene-two-r1",
+     "verdict": "correct",
+     "act": "Fingering",
+     "performer": "Castiel",
+     "receiver": "Dean Winchester",
+     "occurrence": "performed",
+     "from": 689,
+     "to": 697,
+     "errors": []
+    },
+    {
+     "id": "A3",
+     "revision": "scene-two-r1",
+     "verdict": "correct",
+     "act": "Handjob",
+     "performer": "Castiel",
+     "receiver": "Dean Winchester",
+     "occurrence": "performed",
+     "from": 694,
+     "to": 699,
+     "errors": []
+    },
+    {
+     "id": "A4",
+     "revision": "scene-two-r1",
+     "verdict": "correct",
+     "act": "Anal penetration (penis)",
+     "performer": "Dean Winchester",
+     "receiver": "Castiel",
+     "occurrence": "performed",
+     "from": 708,
+     "to": 717,
+     "errors": []
+    },
+    {
+     "id": "A5",
+     "revision": "scene-two-r1",
+     "verdict": "correct",
+     "act": "Solo masturbation",
+     "performer": "Castiel",
+     "receiver": "",
+     "occurrence": "performed",
+     "from": 714,
+     "to": 717,
+     "errors": []
+    }
+   ],
+   "events": [
+    {
+     "ownerActId": "A1",
+     "act": "Blowjob",
+     "performer": "Castiel",
+     "receiver": "Dean Winchester",
+     "from": 687,
+     "to": 697,
+     "scored": true
+    },
+    {
+     "ownerActId": "A2",
+     "act": "Fingering",
+     "performer": "Castiel",
+     "receiver": "Dean Winchester",
+     "from": 689,
+     "to": 697,
+     "scored": true
+    },
+    {
+     "ownerActId": "A3",
+     "act": "Handjob",
+     "performer": "Castiel",
+     "receiver": "Dean Winchester",
+     "from": 694,
+     "to": 699,
+     "scored": true
+    },
+    {
+     "ownerActId": "A4",
+     "act": "Anal penetration (penis)",
+     "performer": "Dean Winchester",
+     "receiver": "Castiel",
+     "from": 708,
+     "to": 717,
+     "scored": true
+    },
+    {
+     "ownerActId": "A5",
+     "act": "Solo masturbation",
+     "performer": "Castiel",
+     "receiver": "",
+     "from": 714,
+     "to": 717,
+     "scored": true
+    }
+   ]
+  },
+  {
+   "id": "T39",
+   "key": "tongue-in-him#ce17e3f5",
+   "fic": "innocent-until.html",
+   "from": 2519,
+   "to": 2577,
+   "sourceSha": "ffa71a4c7726196bc68e41ceb1805c28b7de2698384e84270c5d0f1f6f4ef78c",
+   "updatedAt": "2026-10-07T21:49:17.773Z",
+   "coverageReviewed": true,
+   "coverage": "positive-only",
+   "reviews": [
+    {
+     "id": "A1",
+     "revision": "scene-two-r1",
+     "verdict": "correct",
+     "act": "Rimming",
+     "performer": "James \"Bucky\" Barnes",
+     "receiver": "Steve Rogers",
+     "occurrence": "performed",
+     "from": 2527,
+     "to": 2535,
+     "errors": []
+    },
+    {
+     "id": "A2",
+     "revision": "scene-two-r1",
+     "verdict": "correct",
+     "act": "Fingering",
+     "performer": "James \"Bucky\" Barnes",
+     "receiver": "Steve Rogers",
+     "occurrence": "performed",
+     "from": 2533,
+     "to": 2533,
+     "errors": []
+    },
+    {
+     "id": "A3",
+     "revision": "scene-two-r1",
+     "verdict": "correct",
+     "act": "Anal penetration (penis)",
+     "performer": "James \"Bucky\" Barnes",
+     "receiver": "Steve Rogers",
+     "occurrence": "performed",
+     "from": 2546,
+     "to": 2575,
+     "errors": []
+    },
+    {
+     "id": "A4",
+     "revision": "scene-two-r1",
+     "verdict": "correct",
+     "act": "Handjob",
+     "performer": "James \"Bucky\" Barnes",
+     "receiver": "Steve Rogers",
+     "occurrence": "performed",
+     "from": 2568,
+     "to": 2573,
+     "errors": []
+    },
+    {
+     "id": "A5",
+     "revision": "scene-two-r1",
+     "verdict": "correct",
+     "act": "Solo masturbation",
+     "performer": "James \"Bucky\" Barnes",
+     "receiver": "",
+     "occurrence": "performed",
+     "from": 2575,
+     "to": 2575,
+     "errors": []
+    }
+   ],
+   "events": [
+    {
+     "ownerActId": "A1",
+     "act": "Rimming",
+     "performer": "James \"Bucky\" Barnes",
+     "receiver": "Steve Rogers",
+     "from": 2527,
+     "to": 2535,
+     "scored": true
+    },
+    {
+     "ownerActId": "A2",
+     "act": "Fingering",
+     "performer": "James \"Bucky\" Barnes",
+     "receiver": "Steve Rogers",
+     "from": 2533,
+     "to": 2533,
+     "scored": true
+    },
+    {
+     "ownerActId": "A3",
+     "act": "Anal penetration (penis)",
+     "performer": "James \"Bucky\" Barnes",
+     "receiver": "Steve Rogers",
+     "from": 2546,
+     "to": 2575,
+     "scored": true
+    },
+    {
+     "ownerActId": "A4",
+     "act": "Handjob",
+     "performer": "James \"Bucky\" Barnes",
+     "receiver": "Steve Rogers",
+     "from": 2568,
+     "to": 2573,
+     "scored": true
+    },
+    {
+     "ownerActId": "A5",
+     "act": "Solo masturbation",
+     "performer": "James \"Bucky\" Barnes",
+     "receiver": "",
+     "from": 2575,
+     "to": 2575,
+     "scored": true
+    }
+   ]
+  },
+  {
+   "id": "T40",
+   "key": "fuck#c4cba462",
+   "fic": "a-la-carte.html",
+   "from": 1371,
+   "to": 1387,
+   "sourceSha": "4d553843dc96b396376426414fd191534045ca3508acb51a1672e0ef3ebc0cca",
+   "updatedAt": "2026-10-07T21:49:40.892Z",
+   "coverageReviewed": true,
+   "coverage": "positive-only",
+   "reviews": [
+    {
+     "id": "A1",
+     "revision": "scene-two-r1",
+     "verdict": "wrong",
+     "act": "Anal penetration (penis)",
+     "performer": "Anakin Skywalker",
+     "receiver": "Obi-Wan Kenobi",
+     "occurrence": "memory",
+     "from": 1379,
+     "to": 1379,
+     "errors": []
+    }
+   ],
+   "events": []
+  }
+ ],
+ "feedbackSha": "ed8ee14dd1273923912ab44ccbf72ddf2d6b634f6a0f63c11fc13dc76932dc8b"
+}
