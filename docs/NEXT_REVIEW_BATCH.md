@@ -51,3 +51,19 @@ This metadata rebuild changes the gold batch identity. Keep the previous exporte
 ## Independent missed-scene inventory
 
 For passages selected without detector hits, use [the missed-scene review](MISSED_SCENE_REVIEW.md). After its page update is merged, it is linked from the readings page and hosted at `review/missed-scenes.html`. Its answers record acts, participants, occurrence type and evidence ranges rather than correct/wrong engine claims.
+
+## Second likely-error set: act-by-act review
+
+After merging, open `review/next-batch.html?review=suspect2`. The selector retains the previous likely-error batch, sampled readings and gold ranges. Each batch has separate saved answers.
+
+The new set contains 40 unused encounter windows from 16 adult-screened sources, refreshed against main at `569919f`. Selection ranks individual readings by learned confidence, with story and pattern caps. Manual continuity checks exclude continuations of earlier review scenes and combine candidates from the same encounter. No story paragraphs are published.
+
+There are 156 proposed act entries, including separate occurrence types for performed acts, memories, imagined acts, a recording, habitual activity and an unsupported act. Each entry shows my subjective confidence, its evidence range, and matching engine readings with their individual confidence and original act/hint kind. No matching reading means no score; it does not mean zero confidence. Related incorrect readings remain visible in the full engine list. A correct main reading can coexist with an incorrect secondary reading.
+
+Mark each proposed act Correct, Wrong or Not sure. Open its correction section to edit act, giver, receiver, occurrence, errors and context. These controls are independent of the main engine claim. The coverage checkbox records that you checked the shown window; it never converts unlisted acts or hints into negative labels. Add any unlisted act and its participants/range in the main context box.
+
+Export as `suspect-scene-review-2-answers.json`. Export/import preserves per-act corrections, proposal revisions, window identity and coverage. Matching source hashes and proposal identities are checked before import. The manifest also retains per-reading attribution and confidence feature inputs for later training analysis. Assistant proposals are not accepted labels. The existing command-line label importer handles the main claim only; returned act inventory must be adjudicated separately so those additional answers are not lost or mistaken for hint negatives.
+
+This targeted sample is for finding errors and improving training coverage, not estimating overall accuracy, recall or held-out AUC. The model and engine rules are unchanged.
+
+Validation: 1,506 unit tests passed (13 optional tests skipped), followed by 16 targeted review tests after the final UI update. Production type-check/build passed. A 390px Chromium check loaded all 16 original sources, saved/exported/imported/restored independent act corrections and coverage, switched to the previous batch, and found no JavaScript errors, uploads or horizontal overflow. This is mobile-width browser validation, not a physical iPhone test.
