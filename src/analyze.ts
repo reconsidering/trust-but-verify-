@@ -13,7 +13,7 @@ interface ClaudeAct extends Omit<ActResult, "confidence"> {
 interface ClaudeVaginal {
   occurs: boolean;
   summary: string;
-  instances: { participants: string[]; act: string; where: string; evidence: string }[];
+  instances: { participants: string[]; act: string; where: string; evidence: string; confidence: number; reasons: string[] }[];
   confidence: { level: "High" | "Medium" | "Low"; reasons: string[] };
 }
 interface ClaudeAnswer {
@@ -30,16 +30,22 @@ export const MODELS = [
 
 export type ModelId = (typeof MODELS)[number]["id"];
 
+const readingConfidence = {
+  confidence: { type: "number", description: "Confidence that this particular reading has the correct act, participants and occurrence (0 to 1); not the aggregate verdict confidence." },
+  reasons: { type: "array", items: { type: "string" }, description: "Short reasons for this reading's confidence, including uncertainty in act or participant attribution." },
+};
+
 const instanceSchema = {
   type: "object",
   properties: {
+    ...readingConfidence,
     top: { type: "string", description: "Character name of the top (penetrative partner) in this instance." },
     bottom: { type: "string", description: "Character name of the bottom (receptive partner) in this instance." },
     act: { type: "string", description: "Short label, e.g. 'anal sex', 'blowjob', 'rimming', 'strap-on', 'fingering'." },
     where: { type: "string", description: "Chapter number/title or scene description so the reader can find it." },
     evidence: { type: "string", description: "A brief paraphrase (not a long quote) showing who did what." },
   },
-  required: ["top", "bottom", "act", "where", "evidence"],
+  required: ["top", "bottom", "act", "where", "evidence", "confidence", "reasons"],
   additionalProperties: false,
 };
 
@@ -62,6 +68,7 @@ const actSchema = {
       items: {
         type: "object",
         properties: {
+          ...readingConfidence,
           who: { type: "string" },
           role: { type: "string", enum: ["top", "bottom"] },
           wants: { type: "boolean", description: "false if they say they do NOT want this role." },
@@ -70,7 +77,7 @@ const actSchema = {
           where: { type: "string" },
           evidence: { type: "string", description: "Short paraphrase." },
         },
-        required: ["who", "role", "wants", "kind", "act", "where", "evidence"],
+        required: ["who", "role", "wants", "kind", "act", "where", "evidence", "confidence", "reasons"],
         additionalProperties: false,
       },
     },
@@ -109,12 +116,13 @@ const vaginalSchema = {
       items: {
         type: "object",
         properties: {
+          ...readingConfidence,
           participants: { type: "array", items: { type: "string" } },
           act: { type: "string", description: "'vaginal sex' or 'fingering'." },
           where: { type: "string" },
           evidence: { type: "string" },
         },
-        required: ["participants", "act", "where", "evidence"],
+        required: ["participants", "act", "where", "evidence", "confidence", "reasons"],
         additionalProperties: false,
       },
     },
@@ -153,7 +161,9 @@ const analysisSchema = {
   additionalProperties: false,
 };
 
-const SYSTEM_PROMPT = `You analyze fanfiction (usually from Archive of Our Own) for readers who want to know the sexual role dynamics of a work before reading it. The work is fiction; report what happens in it accurately and matter-of-factly.
+const SYSTEM_PROMPT = `Give every scene and hint its own numeric confidence from 0 to 1 and short reasons. Score whether the act, participants and occurrence were read correctly. A confidently identified wish is still only a wish; its confidence does not mean it happened. Do not copy the overall verdict confidence into individual readings.
+
+You analyze fanfiction (usually from Archive of Our Own) for readers who want to know the sexual role dynamics of a work before reading it. The work is fiction; report what happens in it accurately and matter-of-factly.
 
 Keep the story's sexual roles separate from dom/sub dynamics, Alpha/Omega status, service roles, physical presentation, and emotional behavior. A service top is not necessarily dominant, and a bottom is not necessarily submissive. Treat AO3 tags as metadata, not as proof that a particular act occurs. Do not count AO3 summaries, author notes, fantasies, or nightmares as on-page acts. If story evidence conflicts with tags, report the conflict.
 
@@ -264,9 +274,18 @@ export class RefusalError extends Error {}
 
 const LEVEL_SCORE = { High: 0.9, Medium: 0.62, Low: 0.3 } as const;
 
-function toAnalysis(a: ClaudeAnswer): Analysis {
+function checkedReading<T extends { confidence?: number; reasons?: string[] }>(reading: T): T {
+  if (!Number.isFinite(reading.confidence) || reading.confidence! < 0 || reading.confidence! > 1 || !Array.isArray(reading.reasons) || !reading.reasons.every(reason => typeof reason === "string")) {
+    throw new Error("Claude returned a reading without a valid individual confidence score and reasons. Please retry the analysis.");
+  }
+  return reading;
+}
+
+export function toAnalysis(a: ClaudeAnswer): Analysis {
   const act = (x: ClaudeAct): ActResult => ({
     ...x,
+    instances: x.instances.map(checkedReading),
+    desires: x.desires.map(checkedReading),
     confidence: { score: LEVEL_SCORE[x.confidence.level], label: x.confidence.level, reasons: x.confidence.reasons },
   });
   return {
@@ -282,12 +301,14 @@ function toAnalysis(a: ClaudeAnswer): Analysis {
         occurs: p.vaginal.occurs,
         applicable: p.vaginal.occurs || p.vaginal.instances.length > 0,
         summary: p.vaginal.summary,
-        instances: p.vaginal.instances.map((i) => ({
+        instances: p.vaginal.instances.map(checkedReading).map((i) => ({
           top: i.participants[0] ?? "",
           bottom: i.participants[1] ?? "",
           act: i.act,
           where: i.where,
           evidence: i.evidence,
+          confidence: i.confidence,
+          reasons: i.reasons,
         })),
         confidence: {
           score: LEVEL_SCORE[p.vaginal.confidence.level],

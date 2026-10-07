@@ -136,6 +136,26 @@ export function buildManual(pair: [Character, Character], hits: DesireHit[], whe
   return { occurs: instances.length > 0, summary: parts.length ? parts.join("; ") : "No handjobs, frottage or other body play recognized.", people, instances };
 }
 
+/** Score a displayed scene without changing the readings or their verdict weights. */
+export function sceneLineScore(best: ActHit, hits: ActHit[]): { confidence: number; reasons: string[] } {
+  const agrees = (h: ActHit) => h.top.name === best.top.name && h.bottom.name === best.bottom.name;
+  const sentences = new Set(hits.filter(agrees).map(h => h.sentence)).size;
+  const against = new Set(hits.filter(h => !agrees(h)).map(h => h.sentence)).size;
+  const reasons: string[] = [];
+  let conf = 0.3 + 0.5 * Math.min(1, best.weight);
+  if (sentences >= 3) { conf += 0.15; reasons.push(`${sentences} sentences agree`); }
+  else if (sentences === 2) { conf += 0.1; reasons.push("2 sentences agree"); }
+  else reasons.push("one sentence");
+  if (best.basis === "named") { conf += 0.05; reasons.push("people named directly"); }
+  else if (best.basis === "inferred") { conf -= 0.1; reasons.push("people inferred, not named"); }
+  else reasons.push("people found through pronouns");
+  if (against) { conf -= Math.min(0.3, 0.1 * against); reasons.push(`${against} sentence${against === 1 ? "" : "s"} in the scene point the other way`); }
+  const shaky = hits.find(h => h.shaky && h.sentence === best.sentence)?.shaky;
+  if (shaky) { conf -= 0.25; reasons.push(shaky); }
+  if (best.holeGuess === "ambiguous") { conf -= 0.15; reasons.push("penetration site ambiguous"); }
+  return { confidence: Math.round(Math.max(0.15, Math.min(0.98, conf)) * 100) / 100, reasons };
+}
+
 // ───────────── vaginal sex (occurrence only) ─────────────
 
 export function buildVaginal(hits: ActHit[], pair: [Character, Character], meta: Ao3Meta, where: (pi: number) => string): VaginalResult {
@@ -154,6 +174,8 @@ export function buildVaginal(hits: ActHit[], pair: [Character, Character], meta:
       via: best.via,
       evidence: truncate(best.sentence),
       basis: best.basis,
+      context: best.context,
+      ...sceneLineScore(best, scene.hits),
     });
   }
   const sex = hits.filter((h) => h.act !== "fingering");
@@ -386,7 +408,7 @@ export function scoreDesires(sig: DesireHit[], pointsTo: (d: DesireHit) => strin
     let conf = (DESIRE_BASE[d.kind] ?? 0.5) * (0.7 + 0.3 * Math.min(1, d.weight));
     if (DESIRE_NOTE[d.kind]) reasons.push(DESIRE_NOTE[d.kind]!);
     if (d.guessed) { conf -= 0.2; reasons.push("speaker guessed from the narration"); }
-    else if (d.basis === "named") conf += 0.05;
+    else if (d.basis === "named") { conf += 0.05; reasons.push("person named directly"); }
     else if (d.basis === "inferred") { conf -= 0.15; reasons.push("people inferred, not named"); }
     else if (d.basis === "pronoun") reasons.push("people found through pronouns");
     if (!d.wants) reasons.push("negated, so it counts the other way");
@@ -400,6 +422,7 @@ export function scoreDesires(sig: DesireHit[], pointsTo: (d: DesireHit) => strin
       if (agree) { conf += Math.min(0.09, 0.03 * agree); reasons.push(`${agree} other line${agree === 1 ? "" : "s"} point the same way`); }
       if (conflict) { conf -= Math.min(0.12, 0.04 * conflict); reasons.push(`${conflict} other line${conflict === 1 ? "" : "s"} point the other way`); }
     }
+    if (!reasons.length) reasons.push("wording and attribution of this reading");
     out.set(d, { conf: Math.max(0.15, Math.min(0.95, conf)), reasons });
   }
   return out;
@@ -514,6 +537,8 @@ export function buildAct(
       via: best.via,
       evidence: truncate(best.sentence),
       basis: best.basis,
+      context: best.context,
+      ...sceneLineScore(best, scene.hits),
     });
   }
 
