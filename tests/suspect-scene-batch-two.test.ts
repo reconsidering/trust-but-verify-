@@ -34,9 +34,14 @@ const synthetic = (): ReviewBatch => ({ schema: 'engine-review-batch/v1', batchI
 it('gates per-act controls and exports corrections independently without accepting other acts or hints', async () => {
  document.body.innerHTML = readFileSync('review/next-batch.html','utf8'); const batch = synthetic();
  const blocked = await mountReview(batch); document.querySelector<HTMLButtonElement>('[data-act-verdict=correct]')!.click(); expect(blocked.payload().answers).toHaveLength(0);
+ expect(document.querySelector('[data-act-id=A1] .act-evidence')!.textContent).toContain('Load the story');
+ batch.rows[0].sceneActs![1].evidence.from = 1;
  const stories = new Map([['adult.html',['Adult characters meet.','Morgan inserts a finger into Rowan.','Rowan imagines a handjob.']]]);
  const api = await mountReview(batch,{stories});
  expect(document.querySelector('[data-act-id=A1]')!.textContent).toContain('no confidence score');
+ expect(document.querySelector('[data-act-id=A1] .act-evidence')!.textContent).toBe('¶1 · Morgan inserts a finger into Rowan.');
+ expect(document.querySelectorAll('[data-act-id=A2] .act-evidence p')).toHaveLength(2);
+ expect(document.querySelector('[data-act-id=A2] .act-evidence')!.textContent).toBe('¶1 · Morgan inserts a finger into Rowan.¶2 · Rowan imagines a handjob.');
  expect(document.querySelector('[data-act-id=A2]')!.textContent).toContain('hypothetical, 68%');
  document.querySelector<HTMLButtonElement>('[data-act-id=A1] [data-act-verdict=wrong]')!.click();
  const receiver = document.querySelector<HTMLInputElement>('[data-act-id=A1] [data-act-field=receiver]')!; receiver.value='Morgan'; receiver.dispatchEvent(new Event('input'));

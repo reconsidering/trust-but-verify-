@@ -84,6 +84,13 @@ export async function mountReview(batch: ReviewBatch, options: { stories?: Map<s
       const matches = row.engineReadings!.filter(h => act.engineReadingKeys.includes(h.key));
       engine.textContent = matches.length ? 'Matching engine readings: ' + matches.map(h => `¶${h.para}: ${h.kind}, ${h.confidence === null ? 'score unavailable' : Math.round(h.confidence * 100) + '%'}`).join('; ') : 'Engine: no matching act/participant reading in this evidence range; no confidence score available. Related or conflicting readings are listed below.';
       const note = document.createElement('p'); note.textContent = act.note;
+      const evidence = document.createElement('div'); evidence.className = 'act-evidence'; evidence.setAttribute('aria-label', 'Cited paragraphs');
+      if (!paras) {
+        const message = document.createElement('p'); message.textContent = 'Load the story to read the cited paragraphs here.'; evidence.append(message);
+      } else for (let i = act.evidence.from; i <= act.evidence.to; i++) {
+        const paragraph = document.createElement('p'), number = document.createElement('span'); number.className = 'passage-number'; number.textContent = `¶${i} · `;
+        paragraph.append(number, document.createTextNode(paras[i])); evidence.append(paragraph);
+      }
       const choices = document.createElement('div'); choices.className = 'choices';
       for (const [value, text] of [['correct', 'Correct'], ['wrong', 'Wrong'], ['uncertain', 'Not sure']] as const) {
         const button = document.createElement('button'); button.textContent = text; button.dataset.actVerdict = value; button.disabled = !paras;
@@ -100,7 +107,7 @@ export async function mountReview(batch: ReviewBatch, options: { stories?: Map<s
         const label = document.createElement('label'), input = document.createElement('input'); input.type = 'checkbox'; input.disabled = !paras; input.checked = review?.errors.includes(error) ?? false;
         input.onchange = () => { const values = new Set(answers[row.id]?.actReviews?.[act.id]?.errors ?? []); input.checked ? values.add(error) : values.delete(error); change({ errors: [...values] }); }; label.append(input, document.createTextNode(error)); errors.append(label);
       }
-      corrections.append(errors); card.append(title, summary, engine, note, choices, corrections); actCards.append(card);
+      corrections.append(errors); card.append(title, summary, engine, note, evidence, choices, corrections); actCards.append(card);
     }
     const coverage = element<HTMLInputElement>('coverage-complete'); coverage.disabled = !paras; coverage.checked = answer?.coverageComplete ?? false; coverage.onchange = () => update({ coverageComplete: coverage.checked });
     const engineReadings = element('scene-engine-readings'); engineReadings.replaceChildren();
