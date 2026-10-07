@@ -1,0 +1,479 @@
+{
+ "made": "2026-10-07",
+ "how": "Owner review: 20 attribution/act-selection targets, 10 random readings with diversity caps, and 10 high-confidence controls. Keys use full audit sentence hashes. Uncertain answers are excluded from training; free-text context stays private.",
+ "batchId": "oct6-4be55d1e796d",
+ "engineCommit": "7b58f70ce1ea06d1f6c01e745da9be410e9c8da3",
+ "feedbackSha": "d05f3f9c18d7ab98bcf26f00005b5f3d8a1105e592cdeac6a5a795f9c3b21e51",
+ "labels": {
+  "fuck#90c4d7ef": "ok",
+  "clenched-around~elided#ca3c9b96": "ok",
+  "dd3-hj-applying-lube#8c01bae1": "unclear",
+  "penis-against#f8da9afc": "ok",
+  "fuck#51959f8b": "wrong",
+  "fuck#e8d83aee": "ok",
+  "mouth-full-of-cock#e0621a96": "ok",
+  "dd-finger-slips-into#4424fb54": "ok",
+  "pushed-in#5d7d11c8": "wrong",
+  "hole-around#3077e664": "ok",
+  "sucked~elided#d51aff64": "ok",
+  "pushed-in#9f4b0b59": "wrong",
+  "push-into~elided#83505ffb": "ok",
+  "dd4-drags-teeth-along#c2f87cea": "ok",
+  "dd3-slipping-second#fdb4231f": "wrong",
+  "fuck#9cd8358d": "ok",
+  "dd-hole-strangles-cock#ca3c9b96": "ok",
+  "dd2-finger-shoved-into~elided#77725a44": "wrong",
+  "dd2-finger-shoved-into#877f79a0": "wrong",
+  "stretched-open~elided#32f54f67": "ok",
+  "pushed-in~elided#7b5359a6": "wrong",
+  "push-into~elided#991082a9": "wrong",
+  "dd2-hj-took-in-hand#d15f3c8e": "wrong",
+  "dd2-finger-shoved-into~elided#6d5743ee": "ok",
+  "dd3-hj-strokes-in-time#cbf38f0c": "wrong",
+  "thrusts-falter#bbe82dba": "ok",
+  "adds-finger#f5ea72e7": "ok",
+  "dd3-slipping-second~elided#85409ac5": "wrong",
+  "dd3-slipping-second~elided#fdb4231f": "wrong",
+  "dd3-slipping-second#f5ea72e7": "ok",
+  "dd6-presses-past-rim~elided#dcbd6a57": "ok",
+  "prostate~elided#33b0365": "wrong",
+  "pushed-in#bc3c21ec": "ok",
+  "push-into~elided#5e637fee": "wrong",
+  "dd2-finger-shoved-into#f5ea72e7": "ok",
+  "dd-fucks-into-him#9c60937a": "ok",
+  "push-into#485fd110": "wrong",
+  "dd2-hj-hand-to-dick#f50c4554": "ok",
+  "sucked#874b9d56": "unclear",
+  "fingers-find-prostate#4f56da60": "ok"
+ },
+ "answers": [
+  {
+   "id": "B1",
+   "key": "fuck#90c4d7ef",
+   "fic": "a-la-carte.html",
+   "paragraph": 701,
+   "sourceSha": "4d553843dc96b396376426414fd191534045ca3508acb51a1672e0ef3ebc0cca",
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-07T01:16:24.211Z"
+  },
+  {
+   "id": "B2",
+   "key": "clenched-around~elided#ca3c9b96",
+   "fic": "on-my-mind.html",
+   "paragraph": 189,
+   "sourceSha": "2a886f421c49bdad8483c1703fa8f93668701c525d20f6e777bc23396fea1d2f",
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-07T13:56:32.710Z"
+  },
+  {
+   "id": "B3",
+   "key": "dd3-hj-applying-lube#8c01bae1",
+   "fic": "rwrb-balls.html",
+   "paragraph": 244,
+   "sourceSha": "972bdceeca54c37e7f9298ac9621b9155bf28745a076c5d5124e55a38b1a9474",
+   "verdict": "uncertain",
+   "errors": [],
+   "updatedAt": "2026-10-07T13:57:38.455Z"
+  },
+  {
+   "id": "B4",
+   "key": "penis-against#f8da9afc",
+   "fic": "negotiation.html",
+   "paragraph": 1130,
+   "sourceSha": "e3dc9f6098d1606b0ae19cbe3afc48bb70717262d8524b9f6ae9924ecc38b9da",
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-07T13:58:42.414Z"
+  },
+  {
+   "id": "B5",
+   "key": "fuck#51959f8b",
+   "fic": "lightning.html",
+   "paragraph": 2550,
+   "sourceSha": "0a3fe56af1a92ac27ba2da61af1ffb88f11cf6aa44cb91777bb7b97c025f67d7",
+   "verdict": "wrong",
+   "errors": [],
+   "updatedAt": "2026-10-07T13:59:11.850Z"
+  },
+  {
+   "id": "B6",
+   "key": "fuck#e8d83aee",
+   "fic": "lightning.html",
+   "paragraph": 5465,
+   "sourceSha": "0a3fe56af1a92ac27ba2da61af1ffb88f11cf6aa44cb91777bb7b97c025f67d7",
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-07T13:59:39.067Z"
+  },
+  {
+   "id": "B7",
+   "key": "mouth-full-of-cock#e0621a96",
+   "fic": "innocent-until.html",
+   "paragraph": 3690,
+   "sourceSha": "ffa71a4c7726196bc68e41ceb1805c28b7de2698384e84270c5d0f1f6f4ef78c",
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-07T14:00:25.087Z"
+  },
+  {
+   "id": "B8",
+   "key": "dd-finger-slips-into#4424fb54",
+   "fic": "innocent-until.html",
+   "paragraph": 4182,
+   "sourceSha": "ffa71a4c7726196bc68e41ceb1805c28b7de2698384e84270c5d0f1f6f4ef78c",
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-07T14:00:44.990Z"
+  },
+  {
+   "id": "B9",
+   "key": "pushed-in#5d7d11c8",
+   "fic": "innocent-until.html",
+   "paragraph": 1203,
+   "sourceSha": "ffa71a4c7726196bc68e41ceb1805c28b7de2698384e84270c5d0f1f6f4ef78c",
+   "verdict": "wrong",
+   "errors": [
+    "Roles reversed"
+   ],
+   "updatedAt": "2026-10-07T14:01:02.274Z"
+  },
+  {
+   "id": "B10",
+   "key": "hole-around#3077e664",
+   "fic": "belonging.html",
+   "paragraph": 4204,
+   "sourceSha": "d8fe352ab70bc0a8171fea0e069c43d776d3541d741cb74b2b66014ae64e874c",
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-07T14:01:27.269Z"
+  },
+  {
+   "id": "B11",
+   "key": "sucked~elided#d51aff64",
+   "fic": "a-la-carte.html",
+   "paragraph": 511,
+   "sourceSha": "4d553843dc96b396376426414fd191534045ca3508acb51a1672e0ef3ebc0cca",
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-07T14:01:49.366Z"
+  },
+  {
+   "id": "B12",
+   "key": "pushed-in#9f4b0b59",
+   "fic": "lightning.html",
+   "paragraph": 5449,
+   "sourceSha": "0a3fe56af1a92ac27ba2da61af1ffb88f11cf6aa44cb91777bb7b97c025f67d7",
+   "verdict": "wrong",
+   "errors": [
+    "Roles reversed"
+   ],
+   "updatedAt": "2026-10-07T14:02:12.283Z"
+  },
+  {
+   "id": "B13",
+   "key": "push-into~elided#83505ffb",
+   "fic": "sweeter.html",
+   "paragraph": 349,
+   "sourceSha": "d780ecd4fd506dcb427f7c495d1fda738051fbb61e41d54073d70627b8054bdf",
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-07T14:03:18.316Z"
+  },
+  {
+   "id": "B14",
+   "key": "dd4-drags-teeth-along#c2f87cea",
+   "fic": "negotiation.html",
+   "paragraph": 856,
+   "sourceSha": "e3dc9f6098d1606b0ae19cbe3afc48bb70717262d8524b9f6ae9924ecc38b9da",
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-07T14:03:58.173Z"
+  },
+  {
+   "id": "B15",
+   "key": "dd3-slipping-second#fdb4231f",
+   "fic": "innocent-until.html",
+   "paragraph": 3718,
+   "sourceSha": "ffa71a4c7726196bc68e41ceb1805c28b7de2698384e84270c5d0f1f6f4ef78c",
+   "verdict": "wrong",
+   "errors": [
+    "Wrong person"
+   ],
+   "updatedAt": "2026-10-07T14:04:36.176Z"
+  },
+  {
+   "id": "B16",
+   "key": "fuck#9cd8358d",
+   "fic": "belonging.html",
+   "paragraph": 3863,
+   "sourceSha": "d8fe352ab70bc0a8171fea0e069c43d776d3541d741cb74b2b66014ae64e874c",
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-07T14:05:03.839Z"
+  },
+  {
+   "id": "B17",
+   "key": "dd-hole-strangles-cock#ca3c9b96",
+   "fic": "on-my-mind.html",
+   "paragraph": 189,
+   "sourceSha": "2a886f421c49bdad8483c1703fa8f93668701c525d20f6e777bc23396fea1d2f",
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-07T14:05:19.117Z"
+  },
+  {
+   "id": "B18",
+   "key": "dd2-finger-shoved-into~elided#77725a44",
+   "fic": "lightning.html",
+   "paragraph": 4039,
+   "sourceSha": "0a3fe56af1a92ac27ba2da61af1ffb88f11cf6aa44cb91777bb7b97c025f67d7",
+   "verdict": "wrong",
+   "errors": [
+    "No act happened"
+   ],
+   "updatedAt": "2026-10-07T14:05:34.203Z"
+  },
+  {
+   "id": "B19",
+   "key": "dd2-finger-shoved-into#877f79a0",
+   "fic": "belonging.html",
+   "paragraph": 2454,
+   "sourceSha": "d8fe352ab70bc0a8171fea0e069c43d776d3541d741cb74b2b66014ae64e874c",
+   "verdict": "wrong",
+   "errors": [],
+   "updatedAt": "2026-10-07T14:06:19.865Z"
+  },
+  {
+   "id": "B20",
+   "key": "stretched-open~elided#32f54f67",
+   "fic": "negotiation.html",
+   "paragraph": 1129,
+   "sourceSha": "e3dc9f6098d1606b0ae19cbe3afc48bb70717262d8524b9f6ae9924ecc38b9da",
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-07T14:06:58.642Z"
+  },
+  {
+   "id": "B21",
+   "key": "pushed-in~elided#7b5359a6",
+   "fic": "dogbird.html",
+   "paragraph": 1291,
+   "sourceSha": "b66dcf4730e681942787b9d280bc8b2825005e179cfe09179a82e935a4f036fb",
+   "verdict": "wrong",
+   "errors": [
+    "Fingers or toy mistaken for a penis"
+   ],
+   "updatedAt": "2026-10-07T14:09:51.937Z"
+  },
+  {
+   "id": "B22",
+   "key": "push-into~elided#991082a9",
+   "fic": "a-la-carte.html",
+   "paragraph": 848,
+   "sourceSha": "4d553843dc96b396376426414fd191534045ca3508acb51a1672e0ef3ebc0cca",
+   "verdict": "wrong",
+   "errors": [
+    "Wrong act or body part"
+   ],
+   "updatedAt": "2026-10-07T14:10:39.615Z"
+  },
+  {
+   "id": "B23",
+   "key": "dd2-hj-took-in-hand#d15f3c8e",
+   "fic": "rwrb-balls.html",
+   "paragraph": 361,
+   "sourceSha": "972bdceeca54c37e7f9298ac9621b9155bf28745a076c5d5124e55a38b1a9474",
+   "verdict": "wrong",
+   "errors": [
+    "Wrong act or body part"
+   ],
+   "updatedAt": "2026-10-07T14:10:53.057Z"
+  },
+  {
+   "id": "B24",
+   "key": "dd2-finger-shoved-into~elided#6d5743ee",
+   "fic": "tricks-of-the-trade.html",
+   "paragraph": 1713,
+   "sourceSha": "25a15e806d8f6a55c030e78d50d58e71f2ca424674b33f7a56471178d4ab1bd3",
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-07T14:11:45.233Z"
+  },
+  {
+   "id": "B25",
+   "key": "dd3-hj-strokes-in-time#cbf38f0c",
+   "fic": "dogbird.html",
+   "paragraph": 1324,
+   "sourceSha": "b66dcf4730e681942787b9d280bc8b2825005e179cfe09179a82e935a4f036fb",
+   "verdict": "wrong",
+   "errors": [
+    "Wrong act or body part",
+    "Other"
+   ],
+   "updatedAt": "2026-10-07T14:12:34.920Z"
+  },
+  {
+   "id": "B26",
+   "key": "thrusts-falter#bbe82dba",
+   "fic": "rwrb-balls.html",
+   "paragraph": 225,
+   "sourceSha": "972bdceeca54c37e7f9298ac9621b9155bf28745a076c5d5124e55a38b1a9474",
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-07T14:12:48.630Z"
+  },
+  {
+   "id": "B27",
+   "key": "adds-finger#f5ea72e7",
+   "fic": "tricks-of-the-trade.html",
+   "paragraph": 3604,
+   "sourceSha": "25a15e806d8f6a55c030e78d50d58e71f2ca424674b33f7a56471178d4ab1bd3",
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-07T14:13:06.709Z"
+  },
+  {
+   "id": "B28",
+   "key": "dd3-slipping-second~elided#85409ac5",
+   "fic": "tricks-of-the-trade.html",
+   "paragraph": 1764,
+   "sourceSha": "25a15e806d8f6a55c030e78d50d58e71f2ca424674b33f7a56471178d4ab1bd3",
+   "verdict": "wrong",
+   "errors": [
+    "Roles reversed"
+   ],
+   "updatedAt": "2026-10-07T14:13:18.799Z"
+  },
+  {
+   "id": "B29",
+   "key": "dd3-slipping-second~elided#fdb4231f",
+   "fic": "innocent-until.html",
+   "paragraph": 3718,
+   "sourceSha": "ffa71a4c7726196bc68e41ceb1805c28b7de2698384e84270c5d0f1f6f4ef78c",
+   "verdict": "wrong",
+   "errors": [
+    "Wrong person",
+    "Other"
+   ],
+   "updatedAt": "2026-10-07T14:15:54.639Z"
+  },
+  {
+   "id": "B30",
+   "key": "dd3-slipping-second#f5ea72e7",
+   "fic": "tricks-of-the-trade.html",
+   "paragraph": 3604,
+   "sourceSha": "25a15e806d8f6a55c030e78d50d58e71f2ca424674b33f7a56471178d4ab1bd3",
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-07T14:16:06.607Z"
+  },
+  {
+   "id": "B31",
+   "key": "dd6-presses-past-rim~elided#dcbd6a57",
+   "fic": "belonging.html",
+   "paragraph": 5780,
+   "sourceSha": "d8fe352ab70bc0a8171fea0e069c43d776d3541d741cb74b2b66014ae64e874c",
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-07T14:16:21.133Z"
+  },
+  {
+   "id": "B32",
+   "key": "prostate~elided#33b0365",
+   "fic": "rwrb-balls.html",
+   "paragraph": 355,
+   "sourceSha": "972bdceeca54c37e7f9298ac9621b9155bf28745a076c5d5124e55a38b1a9474",
+   "verdict": "wrong",
+   "errors": [
+    "Fingers or toy mistaken for a penis"
+   ],
+   "updatedAt": "2026-10-07T14:17:05.622Z"
+  },
+  {
+   "id": "B33",
+   "key": "pushed-in#bc3c21ec",
+   "fic": "dogbird.html",
+   "paragraph": 1315,
+   "sourceSha": "b66dcf4730e681942787b9d280bc8b2825005e179cfe09179a82e935a4f036fb",
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-07T14:17:28.941Z"
+  },
+  {
+   "id": "B34",
+   "key": "push-into~elided#5e637fee",
+   "fic": "belonging.html",
+   "paragraph": 1228,
+   "sourceSha": "d8fe352ab70bc0a8171fea0e069c43d776d3541d741cb74b2b66014ae64e874c",
+   "verdict": "wrong",
+   "errors": [
+    "Fingers or toy mistaken for a penis"
+   ],
+   "updatedAt": "2026-10-07T14:17:46.603Z"
+  },
+  {
+   "id": "B35",
+   "key": "dd2-finger-shoved-into#f5ea72e7",
+   "fic": "tricks-of-the-trade.html",
+   "paragraph": 3604,
+   "sourceSha": "25a15e806d8f6a55c030e78d50d58e71f2ca424674b33f7a56471178d4ab1bd3",
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-07T14:17:54.783Z"
+  },
+  {
+   "id": "B36",
+   "key": "dd-fucks-into-him#9c60937a",
+   "fic": "on-my-mind.html",
+   "paragraph": 195,
+   "sourceSha": "2a886f421c49bdad8483c1703fa8f93668701c525d20f6e777bc23396fea1d2f",
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-07T14:18:11.999Z"
+  },
+  {
+   "id": "B37",
+   "key": "push-into#485fd110",
+   "fic": "a-la-carte.html",
+   "paragraph": 1939,
+   "sourceSha": "4d553843dc96b396376426414fd191534045ca3508acb51a1672e0ef3ebc0cca",
+   "verdict": "wrong",
+   "errors": [
+    "Wrong person"
+   ],
+   "updatedAt": "2026-10-07T14:20:03.950Z"
+  },
+  {
+   "id": "B38",
+   "key": "dd2-hj-hand-to-dick#f50c4554",
+   "fic": "lightning.html",
+   "paragraph": 5476,
+   "sourceSha": "0a3fe56af1a92ac27ba2da61af1ffb88f11cf6aa44cb91777bb7b97c025f67d7",
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-07T14:20:43.922Z"
+  },
+  {
+   "id": "B39",
+   "key": "sucked#874b9d56",
+   "fic": "dogbird.html",
+   "paragraph": 1298,
+   "sourceSha": "b66dcf4730e681942787b9d280bc8b2825005e179cfe09179a82e935a4f036fb",
+   "verdict": "uncertain",
+   "errors": [],
+   "updatedAt": "2026-10-07T14:20:57.294Z"
+  },
+  {
+   "id": "B40",
+   "key": "fingers-find-prostate#4f56da60",
+   "fic": "rwrb-balls.html",
+   "paragraph": 353,
+   "sourceSha": "972bdceeca54c37e7f9298ac9621b9155bf28745a076c5d5124e55a38b1a9474",
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-07T14:21:43.544Z"
+  }
+ ]
+}
