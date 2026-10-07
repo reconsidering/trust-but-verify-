@@ -3,9 +3,10 @@ import { extractFromHtml } from "../src/extract";
 import { splitParagraphs } from "../src/text";
 
 export type ReviewSource = { file: string; title: string; sourceSha: string; paragraphSha: string; paragraphCount: number };
-export type ReviewRow = { id: string; key: string; fic: string; para: number; pattern: string; a: string; b?: string; act: string; kind: string; role?: string; claim: string; gold?: { file: string; hash: string; pairing: string; act: string; verdict: string }; evidence?: { from: number; to: number }[] };
-export type ReviewBatch = { schema: "engine-review-batch/v1" | "engine-gold-review/v1" | "engine-gold-range-review/v1"; batchId: string; engineCommit: string; sources: ReviewSource[]; rows: ReviewRow[] };
-export type ReviewAnswer = { verdict?: "correct" | "wrong" | "uncertain"; errors: string[]; context: string; updatedAt: string };
+export type ReadingProposal = { revision: string; verdict: "correct" | "wrong" | "uncertain"; reading: string; rationale: string; confidence: number; errors: string[] };
+export type ReviewRow = { id: string; key: string; fic: string; para: number; pattern: string; a: string; b?: string; act: string; kind: string; role?: string; claim: string; gold?: { file: string; hash: string; pairing: string; act: string; verdict: string }; evidence?: { from: number; to: number }[]; engineConfidence?: number; proposal?: ReadingProposal };
+export type ReviewBatch = { schema: "engine-review-batch/v1" | "engine-gold-review/v1" | "engine-gold-range-review/v1"; batchId: string; engineCommit: string; sources: ReviewSource[]; rows: ReviewRow[]; selection?: { method: string; [key: string]: unknown } };
+export type ReviewAnswer = { verdict?: "correct" | "wrong" | "uncertain"; errors: string[]; context: string; updatedAt: string; proposalReview?: "agree" | "disagree" | "uncertain"; proposalRevision?: string };
 
 export const checksum = async (bytes: Uint8Array) => Array.from(new Uint8Array(await crypto.subtle.digest("SHA-256", bytes as Uint8Array<ArrayBuffer>)), (b) => b.toString(16).padStart(2, "0")).join("");
 
@@ -35,6 +36,7 @@ export async function* storyBytes(file: { name: string; arrayBuffer: () => Promi
 export function validAnswer(value: unknown): value is ReviewAnswer {
   if (!value || typeof value !== "object") return false;
   const a = value as ReviewAnswer;
+  if ((a.proposalReview !== undefined || a.proposalRevision !== undefined) && (!['agree', 'disagree', 'uncertain'].includes(a.proposalReview ?? '') || typeof a.proposalRevision !== 'string' || !a.proposalRevision.trim())) return false;
   return (a.verdict === undefined || ["correct", "wrong", "uncertain"].includes(a.verdict)) && Array.isArray(a.errors) && a.errors.every((e) => typeof e === "string") && typeof a.context === "string" && typeof a.updatedAt === "string";
 }
 
@@ -47,13 +49,27 @@ export function importAnswers(batch: ReviewBatch, payload: unknown, current: Rec
     const row = batch.rows.find((r) => r.id === a.id);
     const source = row && batch.sources.find((s) => s.file === row.fic);
     if (!row || seen.has(a.id) || a.key !== row.key || a.fic !== row.fic || a.paragraph !== row.para || a.sourceSha !== source?.sourceSha || !validAnswer(a)) throw Error("An answer does not match this batch.");
+    if (a.proposalReview && a.proposalRevision !== row.proposal?.revision) throw Error("An answer refers to a different proposed reading.");
     if (batch.schema === "engine-gold-range-review/v1" && (JSON.stringify(a.gold) !== JSON.stringify(row.gold) || JSON.stringify(a.evidence) !== JSON.stringify(row.evidence))) throw Error("An answer does not match its gold range.");
     seen.add(a.id);
   }
   let changed = 0;
   for (const a of data.answers) if (!current[a.id] || a.updatedAt > current[a.id].updatedAt) {
-    current[a.id] = { verdict: a.verdict, errors: a.errors, context: a.context, updatedAt: a.updatedAt };
+    current[a.id] = { verdict: a.verdict, errors: a.errors, context: a.context, updatedAt: a.updatedAt, ...(a.proposalReview ? { proposalReview: a.proposalReview, proposalRevision: a.proposalRevision } : {}) };
     changed++;
   }
   return changed;
+}
+
+/** Validate the scored batch before showing any assistant proposals. */
+export function validateSuspectBatch(batch: ReviewBatch): ReviewBatch {
+  const score = (v: unknown) => typeof v === 'number' && Number.isFinite(v) && v >= 0 && v <= 1;
+  if (batch.schema !== 'engine-review-batch/v1' || batch.rows.length !== 40 || !batch.selection?.method || !/^[a-f0-9]{40}$/.test(batch.engineCommit)) throw Error('The likely-error review batch is incomplete.');
+  const ids = new Set<string>(), keys = new Set<string>();
+  for (const row of batch.rows) {
+    const p = row.proposal, source = batch.sources.find(s => s.file === row.fic);
+    if (ids.has(row.id) || keys.has(row.key) || !source || !Number.isInteger(row.para) || row.para < 0 || row.para >= source.paragraphCount || !score(row.engineConfidence) || !p || !score(p.confidence) || !p.revision || !p.reading?.trim() || !p.rationale?.trim() || !['correct', 'wrong', 'uncertain'].includes(p.verdict) || !Array.isArray(p.errors) || !p.errors.every(e => typeof e === 'string') || !row.evidence?.length || row.evidence.some(e => !Number.isInteger(e.from) || !Number.isInteger(e.to) || e.from < 0 || e.to >= source.paragraphCount || e.from > row.para || e.to < row.para)) throw Error('A likely-error reading has invalid confidence, context, or proposal metadata.');
+    ids.add(row.id); keys.add(row.key);
+  }
+  return batch;
 }

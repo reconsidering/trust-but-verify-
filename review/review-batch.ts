@@ -1,6 +1,6 @@
 import { importAnswers, storyBytes, validAnswer, verifyStory, type ReviewAnswer, type ReviewBatch } from "./review-batch-data";
 
-const ERRORS = ["Wrong person", "Roles reversed", "Wrong act or body part", "No act happened", "Kissing or rubbing mistaken for penetration", "Fingers or toy mistaken for a penis", "Wish or dialogue treated as an act", "Real act treated as hypothetical", "Missed participant", "Another act is missing", "Needs more context", "Other"];
+const ERRORS = ["Wrong person", "Roles reversed", "Wrong act or body part", "No act happened", "Kissing or rubbing mistaken for penetration", "Fingers or toy mistaken for a penis", "Wish or dialogue treated as an act", "Memory counted as a new scene", "Real act treated as hypothetical", "Missed participant", "Another act is missing", "Needs more context", "Other"];
 const element = <T extends HTMLElement = HTMLElement>(id: string) => document.getElementById(id) as T;
 const notice = (text: string) => { element("status").textContent = text; };
 
@@ -10,6 +10,7 @@ export async function mountReview(batch: ReviewBatch, options: { stories?: Map<s
   const stories = options.stories ?? new Map<string, string[]>();
   const isRange = batch.schema === "engine-gold-range-review/v1";
   const isGold = isRange || batch.schema === "engine-gold-review/v1";
+  const hasProposals = batch.rows.some(r => r.proposal);
   let browse = batch.rows[0]?.para ?? 0;
   let current: string | undefined = batch.rows[0]?.id;
   let expanded = false, storageOK = true, loading = false;
@@ -41,7 +42,7 @@ export async function mountReview(batch: ReviewBatch, options: { stories?: Map<s
     element("gold-browse").hidden = !isGold;
     const paras = stories.get(row.fic), answer = answers[row.id];
     const focus = isGold ? Math.max(0, Math.min(browse, source.paragraphCount - 1)) : row.para;
-    const radius = isGold ? (expanded ? 20 : 8) : (expanded ? 8 : 2);
+    const radius = isGold ? (expanded ? 20 : 8) : hasProposals ? (expanded ? 20 : 5) : (expanded ? 8 : 2);
     if (isGold) {
       element<HTMLInputElement>("passage-number").value = String(focus);
       element<HTMLInputElement>("passage-number").max = String(source.paragraphCount - 1);
@@ -53,10 +54,25 @@ export async function mountReview(batch: ReviewBatch, options: { stories?: Map<s
     }
     element("where").textContent = isRange ? `${source.title} · Gold range ${row.evidence![0].from}–${row.evidence![0].to}` : isGold ? `${source.title} · Whole-story gold verdict` : `${source.title} · Passage ${row.para}`;
     element("claim").textContent = row.claim;
+    const proposal = row.proposal;
+    element("reading-proposal").hidden = !proposal;
+    element("engine-answer-label").hidden = !proposal;
+    if (proposal) {
+      element("engine-confidence").textContent = `Engine confidence in its claim: ${Math.round(row.engineConfidence! * 100)}%`;
+      element("proposal-reading").textContent = proposal.reading;
+      element("proposal-rationale").textContent = proposal.rationale;
+      element("proposal-confidence").textContent = `My assessment: engine ${proposal.verdict === 'uncertain' ? 'uncertain' : proposal.verdict} · My confidence in this assessment: ${Math.round(proposal.confidence * 100)}%`;
+    }
+    document.querySelectorAll<HTMLButtonElement>('[data-proposal]').forEach(button => {
+      button.disabled = !paras || !proposal;
+      button.setAttribute('aria-pressed', String(answer?.proposalRevision === proposal?.revision && answer?.proposalReview === button.dataset.proposal));
+    });
     const root = element("passages"); root.replaceChildren();
     if (!paras) { const p = document.createElement("p"); p.textContent = `Choose ${source.file}, or the samples ZIP containing it, to read this passage.`; root.append(p); }
-    else for (let i = Math.max(0, focus - radius); i <= Math.min(paras.length - 1, isRange && focus === row.para ? row.evidence![0].to + radius : focus + radius); i++) {
-      const p = document.createElement("p"); p.textContent = paras[i]; p.className = (isRange && i >= row.evidence![0].from && i <= row.evidence![0].to) || i === focus ? "focus" : "dim"; root.append(p);
+    else for (let i = Math.max(0, proposal ? Math.min(row.evidence![0].from, focus - radius) : focus - radius); i <= Math.min(paras.length - 1, isRange && focus === row.para ? row.evidence![0].to + radius : proposal ? Math.max(row.evidence![0].to, focus + radius) : focus + radius); i++) {
+      const p = document.createElement("p");
+      if (proposal) { const number = document.createElement('span'); number.className = 'passage-number'; number.textContent = `¶${i} · `; p.append(number); }
+      p.append(document.createTextNode(paras[i])); p.className = (isRange && i >= row.evidence![0].from && i <= row.evidence![0].to) || i === focus ? "focus" : "dim"; root.append(p);
     }
     document.querySelectorAll<HTMLButtonElement>("[data-verdict]").forEach((button) => { button.disabled = !paras; button.setAttribute("aria-pressed", String(answer?.verdict === button.dataset.verdict)); });
     const context = element<HTMLTextAreaElement>("context"); context.disabled = !paras; context.value = answer?.context ?? "";
@@ -90,16 +106,29 @@ export async function mountReview(batch: ReviewBatch, options: { stories?: Map<s
     notice(errors.length ? errors.join(" ") : matched ? "Stories loaded. Your saved answers are unchanged." : "No matching story versions were found. Choose the original files used for this batch.");
   };
   const payload = () => ({ schema: batch.schema, batchId: batch.batchId, engineCommit: batch.engineCommit, exportedAt: new Date().toISOString(), answers: batch.rows.filter((r) => answers[r.id]).map((r) => ({ id: r.id, key: r.key, fic: r.fic, paragraph: r.para, sourceSha: batch.sources.find((s) => s.file === r.fic)!.sourceSha, ...(r.gold ? { gold: r.gold } : {}), ...(isRange ? { evidence: r.evidence } : {}), ...answers[r.id] })) });
-  const answerFile = () => new File([JSON.stringify(payload(), null, 2)], isRange ? "gold-range-review-answers.json" : isGold ? "gold-verdict-review-answers.json" : "next-reading-review-answers.json", { type: "application/json" });
+  const answerName = hasProposals ? 'suspect-scene-review-answers.json' : isRange ? 'gold-range-review-answers.json' : isGold ? 'gold-verdict-review-answers.json' : 'next-reading-review-answers.json';
+  const answerFile = () => new File([JSON.stringify(payload(), null, 2)], answerName, { type: "application/json" });
   element<HTMLInputElement>("stories").onchange = () => { void loadFiles(Array.from(element<HTMLInputElement>("stories").files ?? [])); };
   element<HTMLSelectElement>("filter").onchange = () => { current = undefined; browse = visible()[0]?.para ?? 0; expanded = false; render(); };
-  document.querySelectorAll<HTMLButtonElement>("[data-verdict]").forEach((b) => { b.onclick = () => { update({ verdict: b.dataset.verdict as ReviewAnswer["verdict"] }); render(); if (storageOK) notice("Answer saved. Add context or continue to the next reading."); }; });
+  document.querySelectorAll<HTMLButtonElement>("[data-verdict]").forEach((b) => { b.onclick = () => {
+    const previous = current ? answers[current] : undefined;
+    update({ verdict: b.dataset.verdict as ReviewAnswer["verdict"], proposalReview: previous?.proposalReview === 'disagree' ? 'disagree' : undefined, proposalRevision: previous?.proposalReview === 'disagree' ? previous.proposalRevision : undefined });
+    render(); if (storageOK) notice("Answer saved. Add context or continue to the next reading.");
+  }; });
+  document.querySelectorAll<HTMLButtonElement>('[data-proposal]').forEach(b => { b.onclick = () => {
+    const proposal = batch.rows.find(r => r.id === current)?.proposal;
+    if (!proposal) return;
+    const review = b.dataset.proposal as ReviewAnswer['proposalReview'];
+    update({ proposalReview: review, proposalRevision: proposal.revision, verdict: review === 'agree' ? proposal.verdict : review === 'uncertain' ? 'uncertain' : undefined, errors: review === 'agree' ? [...proposal.errors] : [] });
+    render();
+    if (storageOK) notice(review === 'disagree' ? 'Disagreement saved. Mark the engine correct, wrong, or not sure and add your correction.' : 'Assessment saved. Add context or continue to the next reading.');
+  }; });
   element<HTMLTextAreaElement>("context").oninput = () => update({ context: element<HTMLTextAreaElement>("context").value });
   element("previous").onclick = () => move(-1); element("next").onclick = () => move(1);
   element("more").onclick = () => { expanded = !expanded; render(); };
   element("next-unanswered").onclick = () => { const at = batch.rows.findIndex((r) => r.id === current), next = [...batch.rows.slice(at + 1), ...batch.rows.slice(0, at + 1)].find((r) => !answered(r.id)); if (next) { element<HTMLSelectElement>("filter").value = "unanswered"; current = next.id; browse = next.para; expanded = false; render(); } else notice("All readings have an answer."); };
   element("clear").onclick = () => { if (current) delete answers[current]; save(); render(); };
-  element("export").onclick = () => { const url = URL.createObjectURL(answerFile()), a = document.createElement("a"); a.href = url; a.download = isRange ? "gold-range-review-answers.json" : isGold ? "gold-verdict-review-answers.json" : "next-reading-review-answers.json"; a.click(); setTimeout(() => URL.revokeObjectURL(url), 1000); notice("Answers exported. Send this JSON file back when you are ready."); };
+  element("export").onclick = () => { const url = URL.createObjectURL(answerFile()), a = document.createElement("a"); a.href = url; a.download = answerName; a.click(); setTimeout(() => URL.revokeObjectURL(url), 1000); notice("Answers exported. Send this JSON file back when you are ready."); };
   if (navigator.share && navigator.canShare) {
     element("share").hidden = false;
     element("share").onclick = async () => { const file = answerFile(); if (!navigator.canShare({ files: [file] })) { notice("Use Export my answers to save the file."); return; } try { await navigator.share({ files: [file], title: "My reading review" }); } catch (e) { if (!(e instanceof Error && e.name === "AbortError")) notice("Sharing is unavailable. Use Export my answers."); } };
