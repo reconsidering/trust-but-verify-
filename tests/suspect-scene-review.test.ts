@@ -9,7 +9,7 @@ it('has 40 fresh, ranked, contextual proposals without private story paragraphs 
  const old=JSON.parse(readFileSync('public/review/next-batch.json','utf8')) as ReviewBatch;
  for(const source of published.sources){const previous=old.sources.find(s=>s.file===source.file);if(previous)expect(source).toEqual(previous);}
  const done=new Set(old.rows.map(r=>r.key));
- for(const f of readdirSync('tests/labels').filter(f=>f.endsWith('.json')))for(const key of Object.keys(JSON.parse(readFileSync('tests/labels/'+f,'utf8')).labels??{}))done.add(key);
+ for(const f of readdirSync('tests/labels').filter(f=>f.endsWith('.json'))){const accepted=JSON.parse(readFileSync('tests/labels/'+f,'utf8'));if(accepted.batchId===published.batchId)continue;for(const key of Object.keys(accepted.labels??{}))done.add(key);}
  const pattern=new Map<string,number>(),fic=new Map<string,number>();
  for(const [i,row] of published.rows.entries()){
   expect(done.has(row.key)).toBe(false);

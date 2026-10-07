@@ -1,0 +1,465 @@
+{
+ "made": "2026-10-07",
+ "how": "Owner review: Lowest current-model probability of being correct among eligible unreviewed actual-act detections, with diversity and context exclusions. One focused reading per non-overlapping passage window; multiple readings may concern a long scene. This targeted batch cannot estimate overall accuracy or recall.. Keys use full audit sentence hashes. Only the owner’s engine verdicts become labels; assistant proposals and scores are not imported. Uncertain answers are excluded from training; free-text context stays private.",
+ "batchId": "suspect-3ef02b25a6e5",
+ "engineCommit": "816dd628004176ddd3506fc6d152b9f11d340976",
+ "feedbackSha": "8579472f58f2abc3bb13025bd195cf24ec5c2ef56dc6fb0b055d86a81aaa0e31",
+ "labels": {
+  "lips-around#f1068c00": "ok",
+  "dd3-slipping-second#4d40b1f5": "ok",
+  "pushed-in~elided#57b9cbdc": "wrong",
+  "pushed-in#b281f086": "wrong",
+  "dd3-slipping-second~elided#84d562e0": "ok",
+  "dd2-finger-shoved-into#663258aa": "wrong",
+  "dd6-slips-cock-inside#d3f45802": "ok",
+  "hole-around#cbbdef35": "ok",
+  "dd2-finger-shoved-into#85409ac5": "ok",
+  "pushed-in~elided#bbf49886": "ok",
+  "pushed-in~elided#48d97ba": "ok",
+  "passive-fucked~elided#88cfd103": "wrong",
+  "fuck#d89057f1": "ok",
+  "dd3-slipping-second~elided#5beb565b": "ok",
+  "cock-on-prostate#39107777": "ok",
+  "fuck#2cf6af0a": "ok",
+  "dd2-finger-shoved-into~elided#67962be5": "ok",
+  "dd5-pushes-finger-in#23bde934": "ok",
+  "dd3-licks-at-hole#2f19c66a": "ok",
+  "push-into~elided#2aa7713d": "ok",
+  "dd2-finger-shoved-into#652bee8c": "ok",
+  "sucked#ef01ca30": "ok",
+  "bottomed-out~elided#1127c53f": "wrong",
+  "dd-laps-at-cock~elided#5e4ba464": "wrong",
+  "lips-around#6f26e131": "ok",
+  "dd-laps-at-cock#5ad6a3ce": "wrong",
+  "dd6-slips-cock-inside#d13d09f": "ok",
+  "push-into#df3d85ef": "ok",
+  "push-into#800ca1f8": "wrong",
+  "lips-around#d08b40e0": "wrong",
+  "dd6-slips-cock-inside#501b75a1": "wrong",
+  "hole-around#6ca1bfd5": "ok",
+  "dd6-slips-cock-inside#31e853ff": "ok",
+  "dd3-impaling~elided#4e281574": "ok",
+  "fuck#12eb07f7": "ok",
+  "push-into~elided#8c33eb9a": "ok",
+  "fuck#6e4d4b5c": "ok",
+  "sucked~elided#48aff8b3": "wrong",
+  "tongue-on-cock-area#63654053": "ok"
+ },
+ "answers": [
+  {
+   "id": "S1",
+   "key": "lips-around#f1068c00",
+   "fic": "more-views.html",
+   "paragraph": 429,
+   "sourceSha": "61461060f56925872cb638627ee721273255d669032ded0d8562ffef4fc8601f",
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-07T17:59:23.684Z"
+  },
+  {
+   "id": "S2",
+   "key": "dd3-slipping-second#4d40b1f5",
+   "fic": "a-la-carte.html",
+   "paragraph": 434,
+   "sourceSha": "4d553843dc96b396376426414fd191534045ca3508acb51a1672e0ef3ebc0cca",
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-07T17:59:50.660Z"
+  },
+  {
+   "id": "S3",
+   "key": "pushed-in~elided#57b9cbdc",
+   "fic": "more-views.html",
+   "paragraph": 890,
+   "sourceSha": "61461060f56925872cb638627ee721273255d669032ded0d8562ffef4fc8601f",
+   "verdict": "wrong",
+   "errors": [
+    "Fingers or toy mistaken for a penis"
+   ],
+   "updatedAt": "2026-10-07T18:00:02.932Z"
+  },
+  {
+   "id": "S4",
+   "key": "pushed-in#b281f086",
+   "fic": "more-views.html",
+   "paragraph": 958,
+   "sourceSha": "61461060f56925872cb638627ee721273255d669032ded0d8562ffef4fc8601f",
+   "verdict": "wrong",
+   "errors": [
+    "Fingers or toy mistaken for a penis"
+   ],
+   "updatedAt": "2026-10-07T18:00:21.466Z"
+  },
+  {
+   "id": "S5",
+   "key": "dd3-slipping-second~elided#84d562e0",
+   "fic": "tricks-of-the-trade.html",
+   "paragraph": 413,
+   "sourceSha": "25a15e806d8f6a55c030e78d50d58e71f2ca424674b33f7a56471178d4ab1bd3",
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-07T18:01:02.361Z"
+  },
+  {
+   "id": "S6",
+   "key": "dd2-finger-shoved-into#663258aa",
+   "fic": "tricks-of-the-trade.html",
+   "paragraph": 2556,
+   "sourceSha": "25a15e806d8f6a55c030e78d50d58e71f2ca424674b33f7a56471178d4ab1bd3",
+   "verdict": "wrong",
+   "errors": [
+    "Roles reversed"
+   ],
+   "updatedAt": "2026-10-07T18:01:20.083Z"
+  },
+  {
+   "id": "S7",
+   "key": "dd6-slips-cock-inside#d3f45802",
+   "fic": "innocent-until.html",
+   "paragraph": 4227,
+   "sourceSha": "ffa71a4c7726196bc68e41ceb1805c28b7de2698384e84270c5d0f1f6f4ef78c",
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-07T18:01:42.927Z"
+  },
+  {
+   "id": "S8",
+   "key": "hole-around#cbbdef35",
+   "fic": "bluebells.html",
+   "paragraph": 840,
+   "sourceSha": "ed9e8f48d2ed52e7c6f9a2ee3fc00dc5ad9e38f897fbc2f4fa60ffd193ba1a89",
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-07T18:03:12.385Z"
+  },
+  {
+   "id": "S9",
+   "key": "dd2-finger-shoved-into#85409ac5",
+   "fic": "tricks-of-the-trade.html",
+   "paragraph": 1764,
+   "sourceSha": "25a15e806d8f6a55c030e78d50d58e71f2ca424674b33f7a56471178d4ab1bd3",
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-07T18:03:34.111Z"
+  },
+  {
+   "id": "S10",
+   "key": "pushed-in~elided#bbf49886",
+   "fic": "tricks-of-the-trade.html",
+   "paragraph": 2578,
+   "sourceSha": "25a15e806d8f6a55c030e78d50d58e71f2ca424674b33f7a56471178d4ab1bd3",
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-07T18:03:54.273Z"
+  },
+  {
+   "id": "S11",
+   "key": "pushed-in~elided#48d97ba",
+   "fic": "tricks-of-the-trade.html",
+   "paragraph": 3604,
+   "sourceSha": "25a15e806d8f6a55c030e78d50d58e71f2ca424674b33f7a56471178d4ab1bd3",
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-07T18:04:15.734Z"
+  },
+  {
+   "id": "S12",
+   "key": "passive-fucked~elided#88cfd103",
+   "fic": "starting-place.html",
+   "paragraph": 803,
+   "sourceSha": "62fbf6258405fce5dc103deef1fb478214cd0b7c032a93fcd032cbd3c3436fd2",
+   "verdict": "wrong",
+   "errors": [
+    "No act happened",
+    "Wish or dialogue treated as an act"
+   ],
+   "updatedAt": "2026-10-07T18:06:27.417Z"
+  },
+  {
+   "id": "S13",
+   "key": "fuck#d89057f1",
+   "fic": "belonging.html",
+   "paragraph": 5668,
+   "sourceSha": "d8fe352ab70bc0a8171fea0e069c43d776d3541d741cb74b2b66014ae64e874c",
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-07T18:07:19.529Z"
+  },
+  {
+   "id": "S14",
+   "key": "dd3-slipping-second~elided#5beb565b",
+   "fic": "sweeter.html",
+   "paragraph": 344,
+   "sourceSha": "d780ecd4fd506dcb427f7c495d1fda738051fbb61e41d54073d70627b8054bdf",
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-07T18:07:45.914Z"
+  },
+  {
+   "id": "S15",
+   "key": "cock-on-prostate#39107777",
+   "fic": "belonging.html",
+   "paragraph": 3440,
+   "sourceSha": "d8fe352ab70bc0a8171fea0e069c43d776d3541d741cb74b2b66014ae64e874c",
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-07T18:08:08.683Z"
+  },
+  {
+   "id": "S16",
+   "key": "fuck#2cf6af0a",
+   "fic": "jacks.html",
+   "paragraph": 11799,
+   "sourceSha": "1c82d8bb62ab4aa836ffe8f4924db20c8420faddb9f3b0d75e08a9b35f18957d",
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-07T18:09:02.750Z"
+  },
+  {
+   "id": "S17",
+   "key": "dd2-finger-shoved-into~elided#67962be5",
+   "fic": "tricks-of-the-trade.html",
+   "paragraph": 2095,
+   "sourceSha": "25a15e806d8f6a55c030e78d50d58e71f2ca424674b33f7a56471178d4ab1bd3",
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-07T18:09:11.790Z"
+  },
+  {
+   "id": "S18",
+   "key": "dd5-pushes-finger-in#23bde934",
+   "fic": "more-views.html",
+   "paragraph": 838,
+   "sourceSha": "61461060f56925872cb638627ee721273255d669032ded0d8562ffef4fc8601f",
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-07T18:09:30.781Z"
+  },
+  {
+   "id": "S19",
+   "key": "dd3-licks-at-hole#2f19c66a",
+   "fic": "whisper.html",
+   "paragraph": 443,
+   "sourceSha": "52b242a237c19a643a886b07c3f6b64eab70c1e6df16357a5099174bc76116bd",
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-07T18:09:57.288Z"
+  },
+  {
+   "id": "S20",
+   "key": "push-into~elided#2aa7713d",
+   "fic": "bluebells.html",
+   "paragraph": 1276,
+   "sourceSha": "ed9e8f48d2ed52e7c6f9a2ee3fc00dc5ad9e38f897fbc2f4fa60ffd193ba1a89",
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-07T18:10:08.837Z"
+  },
+  {
+   "id": "S21",
+   "key": "dd2-finger-shoved-into#652bee8c",
+   "fic": "belonging.html",
+   "paragraph": 2805,
+   "sourceSha": "d8fe352ab70bc0a8171fea0e069c43d776d3541d741cb74b2b66014ae64e874c",
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-07T18:10:15.227Z"
+  },
+  {
+   "id": "S22",
+   "key": "sucked#ef01ca30",
+   "fic": "belonging.html",
+   "paragraph": 3388,
+   "sourceSha": "d8fe352ab70bc0a8171fea0e069c43d776d3541d741cb74b2b66014ae64e874c",
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-07T18:10:28.050Z"
+  },
+  {
+   "id": "S23",
+   "key": "bottomed-out~elided#1127c53f",
+   "fic": "innocent-until.html",
+   "paragraph": 2867,
+   "sourceSha": "ffa71a4c7726196bc68e41ceb1805c28b7de2698384e84270c5d0f1f6f4ef78c",
+   "verdict": "wrong",
+   "errors": [
+    "Fingers or toy mistaken for a penis"
+   ],
+   "updatedAt": "2026-10-07T18:10:42.460Z"
+  },
+  {
+   "id": "S24",
+   "key": "dd-laps-at-cock~elided#5e4ba464",
+   "fic": "mars.html",
+   "paragraph": 1047,
+   "sourceSha": "43ef00b3070686ea49aed427155aa8c42f88c242698d4dbdf25ec95f4a8c0432",
+   "verdict": "wrong",
+   "errors": [
+    "Roles reversed"
+   ],
+   "updatedAt": "2026-10-07T20:30:19.085Z"
+  },
+  {
+   "id": "S25",
+   "key": "lips-around#6f26e131",
+   "fic": "mars.html",
+   "paragraph": 1388,
+   "sourceSha": "43ef00b3070686ea49aed427155aa8c42f88c242698d4dbdf25ec95f4a8c0432",
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-07T20:30:39.209Z"
+  },
+  {
+   "id": "S26",
+   "key": "dd-laps-at-cock#5ad6a3ce",
+   "fic": "more-views.html",
+   "paragraph": 344,
+   "sourceSha": "61461060f56925872cb638627ee721273255d669032ded0d8562ffef4fc8601f",
+   "verdict": "wrong",
+   "errors": [
+    "Roles reversed"
+   ],
+   "updatedAt": "2026-10-07T20:30:55.049Z"
+  },
+  {
+   "id": "S27",
+   "key": "dd6-slips-cock-inside#d13d09f",
+   "fic": "belonging.html",
+   "paragraph": 3515,
+   "sourceSha": "d8fe352ab70bc0a8171fea0e069c43d776d3541d741cb74b2b66014ae64e874c",
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-07T20:31:21.789Z"
+  },
+  {
+   "id": "S28",
+   "key": "push-into#df3d85ef",
+   "fic": "jacks.html",
+   "paragraph": 11547,
+   "sourceSha": "1c82d8bb62ab4aa836ffe8f4924db20c8420faddb9f3b0d75e08a9b35f18957d",
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-07T20:31:51.669Z"
+  },
+  {
+   "id": "S29",
+   "key": "push-into#800ca1f8",
+   "fic": "jacks.html",
+   "paragraph": 2093,
+   "sourceSha": "1c82d8bb62ab4aa836ffe8f4924db20c8420faddb9f3b0d75e08a9b35f18957d",
+   "verdict": "wrong",
+   "errors": [
+    "Roles reversed"
+   ],
+   "updatedAt": "2026-10-07T20:32:06.095Z"
+  },
+  {
+   "id": "S30",
+   "key": "lips-around#d08b40e0",
+   "fic": "more-views.html",
+   "paragraph": 375,
+   "sourceSha": "61461060f56925872cb638627ee721273255d669032ded0d8562ffef4fc8601f",
+   "verdict": "wrong",
+   "errors": [
+    "Memory counted as a new scene"
+   ],
+   "updatedAt": "2026-10-07T20:32:18.028Z"
+  },
+  {
+   "id": "S31",
+   "key": "dd6-slips-cock-inside#501b75a1",
+   "fic": "lightning.html",
+   "paragraph": 1203,
+   "sourceSha": "0a3fe56af1a92ac27ba2da61af1ffb88f11cf6aa44cb91777bb7b97c025f67d7",
+   "verdict": "wrong",
+   "errors": [
+    "Wrong act or body part",
+    "Wish or dialogue treated as an act",
+    "No act happened"
+   ],
+   "updatedAt": "2026-10-07T20:34:48.749Z"
+  },
+  {
+   "id": "S32",
+   "key": "hole-around#6ca1bfd5",
+   "fic": "belonging.html",
+   "paragraph": 4213,
+   "sourceSha": "d8fe352ab70bc0a8171fea0e069c43d776d3541d741cb74b2b66014ae64e874c",
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-07T20:35:16.023Z"
+  },
+  {
+   "id": "S33",
+   "key": "dd6-slips-cock-inside#31e853ff",
+   "fic": "innocent-until.html",
+   "paragraph": 4260,
+   "sourceSha": "ffa71a4c7726196bc68e41ceb1805c28b7de2698384e84270c5d0f1f6f4ef78c",
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-07T20:35:26.762Z"
+  },
+  {
+   "id": "S34",
+   "key": "dd3-impaling~elided#4e281574",
+   "fic": "jacks.html",
+   "paragraph": 5341,
+   "sourceSha": "1c82d8bb62ab4aa836ffe8f4924db20c8420faddb9f3b0d75e08a9b35f18957d",
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-07T20:35:43.149Z"
+  },
+  {
+   "id": "S35",
+   "key": "fuck#12eb07f7",
+   "fic": "mars.html",
+   "paragraph": 1492,
+   "sourceSha": "43ef00b3070686ea49aed427155aa8c42f88c242698d4dbdf25ec95f4a8c0432",
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-07T20:35:54.200Z"
+  },
+  {
+   "id": "S36",
+   "key": "push-into~elided#8c33eb9a",
+   "fic": "bluebells.html",
+   "paragraph": 869,
+   "sourceSha": "ed9e8f48d2ed52e7c6f9a2ee3fc00dc5ad9e38f897fbc2f4fa60ffd193ba1a89",
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-07T20:36:29.740Z"
+  },
+  {
+   "id": "S38",
+   "key": "fuck#6e4d4b5c",
+   "fic": "jacks.html",
+   "paragraph": 13050,
+   "sourceSha": "1c82d8bb62ab4aa836ffe8f4924db20c8420faddb9f3b0d75e08a9b35f18957d",
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-07T20:37:32.266Z"
+  },
+  {
+   "id": "S39",
+   "key": "sucked~elided#48aff8b3",
+   "fic": "dogbird.html",
+   "paragraph": 1299,
+   "sourceSha": "b66dcf4730e681942787b9d280bc8b2825005e179cfe09179a82e935a4f036fb",
+   "verdict": "wrong",
+   "errors": [
+    "Wrong act or body part"
+   ],
+   "updatedAt": "2026-10-07T20:37:42.937Z"
+  },
+  {
+   "id": "S40",
+   "key": "tongue-on-cock-area#63654053",
+   "fic": "innocent-until.html",
+   "paragraph": 3690,
+   "sourceSha": "ffa71a4c7726196bc68e41ceb1805c28b7de2698384e84270c5d0f1f6f4ef78c",
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-07T20:38:13.144Z"
+  }
+ ]
+}
