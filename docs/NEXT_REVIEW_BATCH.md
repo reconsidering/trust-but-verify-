@@ -62,8 +62,17 @@ There are 156 proposed act entries, including separate occurrence types for perf
 
 Mark each proposed act Correct, Wrong or Not sure. Open its correction section to edit act, giver, receiver, occurrence, errors and context. These controls are independent of the main engine claim. The coverage checkbox records that you checked the shown window; it never converts unlisted acts or hints into negative labels. Add any unlisted act and its participants/range in the main context box.
 
-Export as `suspect-scene-review-2-answers.json`. Export/import preserves per-act corrections, proposal revisions, window identity and coverage. Matching source hashes and proposal identities are checked before import. The manifest also retains per-reading attribution and confidence feature inputs for later training analysis. Assistant proposals are not accepted labels. The existing command-line label importer handles the main claim only; returned act inventory must be adjudicated separately so those additional answers are not lost or mistaken for hint negatives.
+Export as `suspect-scene-review-2-answers.json`. Export/import preserves per-act corrections, proposal revisions, window identity and coverage. Matching source hashes and proposal identities are checked before import. The manifest also retains per-reading attribution and confidence feature inputs for later training analysis. Assistant proposals are not accepted labels. The command-line importer requires a separate scene-review output for this batch. It stores marked act answers and confirmed performed positives separately from main-claim confidence labels; it never labels hints or unmarked acts from inventory omissions.
 
 This targeted sample is for finding errors and improving training coverage, not estimating overall accuracy, recall or held-out AUC. The model and engine rules are unchanged.
 
 Validation: 1,506 unit tests passed (13 optional tests skipped), followed by 16 targeted review tests after the final UI update. Production type-check/build passed. A 390px Chromium check loaded all 16 original sources, saved/exported/imported/restored independent act corrections and coverage, switched to the previous batch, and found no JavaScript errors, uploads or horizontal overflow. This is mobile-width browser validation, not a physical iPhone test.
+
+
+Owner feedback, October 7 (second set): 36 main engine verdicts are accepted (22 correct, 14 wrong). Four scenes, T21/T33/T36/T38, remain unanswered. The separate act review preserves 129 marked proposals: 127 confirmed, one rejected and one uncertain. There are 117 confirmed performed entries, including 91 in the existing scored-act categories and 26 additional activity entries. Ten confirmations describe memories, fantasies, habitual activity, a recording or a non-performed act; they remain context, not performed events. Unmarked act cards are never approved by the main-claim answer or coverage checkbox.
+
+```sh
+node scripts/import-review-batch.mjs public/review/suspect-scenes-2.json /absolute/path/suspect-scene-review-2-answers.json tests/labels/batch-suspect-two-569919fdfb5e.json tests/scene-review/suspect-two-569919fdfb5e.json
+```
+
+Both outputs validate against batch, source, evidence and proposal identities before writing, and preserve newer saved answers. Act reviews retain structured corrections and error flags, excluding free-text context. Their inventory is positive-only even when coverage is checked. Rejected and uncertain proposals are retained for adjudication without becoming performed positives or extra confidence labels. Main-claim answers alone become per-reading training labels. No engine rules, models or gold ranges are changed by this import.

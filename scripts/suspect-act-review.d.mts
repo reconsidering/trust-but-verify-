@@ -1,0 +1,3 @@
+import type {ReviewBatch} from '../review/review-batch-data';
+export type SuspectActReview = {schema:string;batchId:string;referenceCommit:string;scope:Record<string,unknown>;sources:ReviewBatch['sources'];unanswered:string[];windows:{id:string;key:string;fic:string;from:number;to:number;sourceSha:string;updatedAt:string;coverageReviewed:boolean;coverage:string;reviews:{id:string;revision:string;verdict:string;act:string;performer:string;receiver:string;occurrence:string;from:number;to:number;errors:string[]}[];events:{ownerActId:string;act:string;performer:string;receiver:string;from:number;to:number;scored:boolean}[]}[]};
+export function buildSuspectActReview(batch:ReviewBatch,feedback:unknown,previous?:SuspectActReview):SuspectActReview;
