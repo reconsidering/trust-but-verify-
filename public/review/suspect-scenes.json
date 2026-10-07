@@ -1,0 +1,1227 @@
+{
+ "schema": "engine-review-batch/v1",
+ "batchId": "suspect-3ef02b25a6e5",
+ "engineCommit": "816dd628004176ddd3506fc6d152b9f11d340976",
+ "selection": {
+  "method": "Lowest current-model probability of being correct among eligible unreviewed actual-act detections, with diversity and context exclusions. One focused reading per non-overlapping passage window; multiple readings may concern a long scene. This targeted batch cannot estimate overall accuracy or recall.",
+  "model": "Committed main-branch confidence model; per-reading probability, not aggregate scene/verdict confidence",
+  "candidateCount": 420,
+  "perFicMaximum": 6,
+  "perPatternMaximum": 4,
+  "minimumParagraphSeparation": 21,
+  "previousBatchesExcluded": true,
+  "labelledReadingsExcluded": true,
+  "reviewer": "Codex",
+  "reviewMethod": "Each selected passage read with surrounding context; proposed readings paraphrased. Reviewer confidence is subjective and uncalibrated. No proposals are accepted labels.",
+  "confidenceMeaning": "engineConfidence = model probability its individual reading is correct; proposal.confidence = reviewer confidence in the proposed assessment",
+  "sourcePoolCount": 22,
+  "paragraphLayout": "Original extracted story paragraphs; equal paragraph count and identical text in every reviewed evidence window verified against engine audit paragraphs."
+ },
+ "sources": [
+  {
+   "file": "a-la-carte.html",
+   "title": "à la carte",
+   "sourceSha": "4d553843dc96b396376426414fd191534045ca3508acb51a1672e0ef3ebc0cca",
+   "paragraphSha": "9db9cf7ac1dd38c785bc3fb13ccfd4a6162208036fa6736a063bca7a413fa7d6",
+   "paragraphCount": 1984
+  },
+  {
+   "file": "belonging.html",
+   "title": "Belonging is Longing is Now",
+   "sourceSha": "d8fe352ab70bc0a8171fea0e069c43d776d3541d741cb74b2b66014ae64e874c",
+   "paragraphSha": "f9bf52ddcb708de72d8df74649d6976fa2ed62ddba1e55df553729ba32589409",
+   "paragraphCount": 5783
+  },
+  {
+   "file": "bluebells.html",
+   "title": "Bluebells and Daylillies and Wild Roses Running Rampant",
+   "sourceSha": "ed9e8f48d2ed52e7c6f9a2ee3fc00dc5ad9e38f897fbc2f4fa60ffd193ba1a89",
+   "paragraphSha": "081dae67e5497c717e4fbc94129c03d0a4a6da96e5b4538f5f5e0a40f67258eb",
+   "paragraphCount": 1747
+  },
+  {
+   "file": "dogbird.html",
+   "title": "like a dog with a bird at your door",
+   "sourceSha": "b66dcf4730e681942787b9d280bc8b2825005e179cfe09179a82e935a4f036fb",
+   "paragraphSha": "a9bac5bb63b9adc912ac2f8d6f224c1311c7a6e977ef8c66ad82fb1e384479ee",
+   "paragraphCount": 1474
+  },
+  {
+   "file": "innocent-until.html",
+   "title": "Innocent Until",
+   "sourceSha": "ffa71a4c7726196bc68e41ceb1805c28b7de2698384e84270c5d0f1f6f4ef78c",
+   "paragraphSha": "1b144bbdaf9d60d9c1ed0bb6efc2a0618b0b1187845bbf7d1b1d3e10d8a3b9e2",
+   "paragraphCount": 4922
+  },
+  {
+   "file": "jacks.html",
+   "title": "Jack's phone.",
+   "sourceSha": "1c82d8bb62ab4aa836ffe8f4924db20c8420faddb9f3b0d75e08a9b35f18957d",
+   "paragraphSha": "243b447f5811886dca1d72fca33f2761722cb802a440c2cb82c2dcd756487f1b",
+   "paragraphCount": 13370
+  },
+  {
+   "file": "lightning.html",
+   "title": "Held Up a Lightning Rod (Wonder Why I'm Struck)",
+   "sourceSha": "0a3fe56af1a92ac27ba2da61af1ffb88f11cf6aa44cb91777bb7b97c025f67d7",
+   "paragraphSha": "53578f7dc07a33d29e2ff7074e2292cf37257cf8e0045e06178adfc251bae999",
+   "paragraphCount": 5692
+  },
+  {
+   "file": "mars.html",
+   "title": "another night on mars",
+   "sourceSha": "43ef00b3070686ea49aed427155aa8c42f88c242698d4dbdf25ec95f4a8c0432",
+   "paragraphSha": "31b1d90d66cd9a817127ba1d93e71720eeea8aa4f5fb87291b46cf4018963af5",
+   "paragraphCount": 1647
+  },
+  {
+   "file": "more-views.html",
+   "title": "More Views. More Money.",
+   "sourceSha": "61461060f56925872cb638627ee721273255d669032ded0d8562ffef4fc8601f",
+   "paragraphSha": "220940e4b87a4b161eda553e7169b3dce3e3f50562957b20d665f0b1e127ebec",
+   "paragraphCount": 1018
+  },
+  {
+   "file": "shawnee.html",
+   "title": "The Shawnee Trail",
+   "sourceSha": "cf8b28049c599f96ddf1055ba3aece1810d6f1fb44db46dea1e5f2522b860140",
+   "paragraphSha": "ddd83f6e4121a23548f9c54777c24bc496b561a9f14f6cc50b28a0ff7760c336",
+   "paragraphCount": 5250
+  },
+  {
+   "file": "starting-place.html",
+   "title": "The Starting Place",
+   "sourceSha": "62fbf6258405fce5dc103deef1fb478214cd0b7c032a93fcd032cbd3c3436fd2",
+   "paragraphSha": "e46756bde3782b58c979ef1412c896957972266c8bb1a99fd27158953d2bead9",
+   "paragraphCount": 1077
+  },
+  {
+   "file": "sweeter.html",
+   "title": "sweeter coming from my hand",
+   "sourceSha": "d780ecd4fd506dcb427f7c495d1fda738051fbb61e41d54073d70627b8054bdf",
+   "paragraphSha": "6e97e5b7ec680f3e7715fdddde65d603039110a11a818cf25c3be9c3721ccdda",
+   "paragraphCount": 369
+  },
+  {
+   "file": "tricks-of-the-trade.html",
+   "title": "Tricks of the Trade",
+   "sourceSha": "25a15e806d8f6a55c030e78d50d58e71f2ca424674b33f7a56471178d4ab1bd3",
+   "paragraphSha": "56e605751373cfe88dc1f6a48760f8625a143c8157e758778c2f64929a65e8d7",
+   "paragraphCount": 3875
+  },
+  {
+   "file": "whisper.html",
+   "title": "Whisper in my ear",
+   "sourceSha": "52b242a237c19a643a886b07c3f6b64eab70c1e6df16357a5099174bc76116bd",
+   "paragraphSha": "be87ebc0b8822287453570bee5c685c2ed21da71e6d2856abfc19483eaea0329",
+   "paragraphCount": 490
+  }
+ ],
+ "rows": [
+  {
+   "key": "lips-around#f1068c00",
+   "fic": "more-views.html",
+   "para": 429,
+   "a": "Castiel",
+   "b": "Dean Winchester",
+   "act": "blowjob",
+   "kind": "act",
+   "id": "S1",
+   "pattern": "lips-around",
+   "claim": "Castiel is getting a blowjob from Dean",
+   "engineConfidence": 0.7554824428881809,
+   "evidence": [
+    {
+     "from": 427,
+     "to": 431
+    }
+   ],
+   "proposal": {
+    "revision": "2026-10-07-v1",
+    "verdict": "correct",
+    "confidence": 0.99,
+    "reading": "Dean gives Castiel a blowjob in this scene.",
+    "rationale": "Dean handles Castiel’s erection and lowers his mouth onto it; Castiel then guides Dean’s head. The names in the surrounding actions resolve the two male pronouns.",
+    "errors": []
+   }
+  },
+  {
+   "key": "dd3-slipping-second#4d40b1f5",
+   "fic": "a-la-carte.html",
+   "para": 434,
+   "a": "Obi-Wan Kenobi",
+   "b": "Anakin Skywalker",
+   "act": "fingering",
+   "kind": "act",
+   "id": "S2",
+   "pattern": "dd3-slipping-second",
+   "claim": "Obi-Wan is fingering Anakin",
+   "engineConfidence": 0.7855638115134234,
+   "evidence": [
+    {
+     "from": 432,
+     "to": 436
+    }
+   ],
+   "proposal": {
+    "revision": "2026-10-07-v1",
+    "verdict": "correct",
+    "confidence": 0.99,
+    "reading": "Obi-Wan fingers Anakin; a second finger is added here.",
+    "rationale": "The preceding insertion and subsequent scissoring both identify Obi-Wan’s fingers and Anakin as the receiver. The later penile penetration has not started at this point.",
+    "errors": []
+   }
+  },
+  {
+   "key": "pushed-in~elided#57b9cbdc",
+   "fic": "more-views.html",
+   "para": 890,
+   "a": "Castiel",
+   "b": "Dean Winchester",
+   "act": "anal sex",
+   "kind": "act",
+   "id": "S3",
+   "pattern": "pushed-in~elided",
+   "claim": "Castiel is having anal sex with Dean, as the one penetrating",
+   "engineConfidence": 0.8038231841793495,
+   "evidence": [
+    {
+     "from": 886,
+     "to": 894
+    }
+   ],
+   "proposal": {
+    "revision": "2026-10-07-v1",
+    "verdict": "wrong",
+    "confidence": 0.99,
+    "reading": "Castiel inserts a thumb and then a finger into Dean’s anus, not a penis.",
+    "rationale": "Castiel has prepared his hand. The same paragraph identifies a thumb, its withdrawal, and its replacement by a finger; the following passage continues finger stimulation. The generic insertion pattern lost the body-part reference.",
+    "errors": [
+     "Fingers or toy mistaken for a penis"
+    ]
+   }
+  },
+  {
+   "key": "pushed-in#b281f086",
+   "fic": "more-views.html",
+   "para": 958,
+   "a": "Castiel",
+   "b": "Dean Winchester",
+   "act": "anal sex",
+   "kind": "act",
+   "id": "S4",
+   "pattern": "pushed-in",
+   "claim": "Castiel is having anal sex with Dean, as the one penetrating",
+   "engineConfidence": 0.809696394086141,
+   "evidence": [
+    {
+     "from": 955,
+     "to": 966
+    }
+   ],
+   "proposal": {
+    "revision": "2026-10-07-v1",
+    "verdict": "wrong",
+    "confidence": 0.99,
+    "reading": "Castiel fingers Dean here. Penile anal penetration begins later, at passage 966.",
+    "rationale": "The immediately preceding contact is a finger at Dean’s anus, and the next actions add more fingers. Castiel only prepares his penis after this. Penile sex later in the scene does not make this earlier insertion penile sex.",
+    "errors": [
+     "Fingers or toy mistaken for a penis"
+    ]
+   }
+  },
+  {
+   "key": "dd3-slipping-second~elided#84d562e0",
+   "fic": "tricks-of-the-trade.html",
+   "para": 413,
+   "a": "Castiel",
+   "b": "Dean Winchester",
+   "act": "fingering",
+   "kind": "act",
+   "id": "S5",
+   "pattern": "dd3-slipping-second~elided",
+   "claim": "Castiel is fingering Dean",
+   "engineConfidence": 0.8160110465048842,
+   "evidence": [
+    {
+     "from": 409,
+     "to": 415
+    }
+   ],
+   "proposal": {
+    "revision": "2026-10-07-v1",
+    "verdict": "correct",
+    "confidence": 0.99,
+    "reading": "Castiel fingers Dean and adds a third finger here.",
+    "rationale": "The dialogue interrupts continuous preparation, but does not change the actor. Castiel’s existing fingers are inside Dean and the next paragraph describes their movement.",
+    "errors": []
+   }
+  },
+  {
+   "key": "dd2-finger-shoved-into#663258aa",
+   "fic": "tricks-of-the-trade.html",
+   "para": 2556,
+   "a": "Dean Winchester",
+   "b": "Castiel",
+   "act": "fingering",
+   "kind": "act",
+   "id": "S6",
+   "pattern": "dd2-finger-shoved-into",
+   "claim": "Dean is fingering Castiel",
+   "engineConfidence": 0.8230962774202703,
+   "evidence": [
+    {
+     "from": 2554,
+     "to": 2557
+    }
+   ],
+   "proposal": {
+    "revision": "2026-10-07-v1",
+    "verdict": "wrong",
+    "confidence": 0.99,
+    "reading": "Castiel fingers Dean and then inserts a plug; Dean does not finger Castiel.",
+    "rationale": "Dean is restrained on the wheel while Castiel applies lubricant, inserts his fingers, and replaces them with a plug. A pronoun inside a paragraph initially focused on Dean appears to have been assigned to the wrong actor.",
+    "errors": [
+     "Roles reversed"
+    ]
+   }
+  },
+  {
+   "key": "dd6-slips-cock-inside#d3f45802",
+   "fic": "innocent-until.html",
+   "para": 4227,
+   "a": "James \"Bucky\" Barnes",
+   "b": "Steve Rogers",
+   "act": "anal sex",
+   "kind": "act",
+   "id": "S7",
+   "pattern": "dd6-slips-cock-inside",
+   "claim": "James is having anal sex with Steve, as the one penetrating",
+   "engineConfidence": 0.8231032549364592,
+   "evidence": [
+    {
+     "from": 4225,
+     "to": 4229
+    }
+   ],
+   "proposal": {
+    "revision": "2026-10-07-v1",
+    "verdict": "correct",
+    "confidence": 0.99,
+    "reading": "Bucky penetrates Steve anally with his penis.",
+    "rationale": "The paragraph explicitly ties Bucky’s thrusting penis to Steve. The references to striking and fingernails describe additional activity and do not make the penetrator or body part ambiguous.",
+    "errors": []
+   }
+  },
+  {
+   "key": "hole-around#cbbdef35",
+   "fic": "bluebells.html",
+   "para": 840,
+   "a": "David Shepherd",
+   "b": "Brother Diarmuid",
+   "act": "anal sex",
+   "kind": "act",
+   "id": "S8",
+   "pattern": "hole-around",
+   "claim": "David is having anal sex with Diarmuid, as the one penetrating",
+   "engineConfidence": 0.8285682379652138,
+   "evidence": [
+    {
+     "from": 838,
+     "to": 843
+    }
+   ],
+   "proposal": {
+    "revision": "2026-10-07-v1",
+    "verdict": "correct",
+    "confidence": 0.99,
+    "reading": "David penetrates Diarmuid anally with his penis.",
+    "rationale": "The preceding passage places David inside his husband, and the following thrusts, position, and genital references keep Diarmuid as the receiver. The engine’s shortened name “Brother” refers to Brother Diarmuid.",
+    "errors": []
+   }
+  },
+  {
+   "key": "dd2-finger-shoved-into#85409ac5",
+   "fic": "tricks-of-the-trade.html",
+   "para": 1764,
+   "a": "Castiel",
+   "b": "Dean Winchester",
+   "act": "fingering",
+   "kind": "act",
+   "id": "S9",
+   "pattern": "dd2-finger-shoved-into",
+   "claim": "Castiel is fingering Dean",
+   "engineConfidence": 0.8288268377551476,
+   "evidence": [
+    {
+     "from": 1763,
+     "to": 1766
+    }
+   ],
+   "proposal": {
+    "revision": "2026-10-07-v1",
+    "verdict": "correct",
+    "confidence": 0.99,
+    "reading": "Castiel fingers Dean in this scene.",
+    "rationale": "Castiel applies lubricant and inserts a finger before adding more. Dean’s reaction briefly takes grammatical focus, but the fingers still belong to Castiel. The dildo is introduced after this reading.",
+    "errors": []
+   }
+  },
+  {
+   "key": "pushed-in~elided#bbf49886",
+   "fic": "tricks-of-the-trade.html",
+   "para": 2578,
+   "a": "Castiel",
+   "b": "Dean Winchester",
+   "act": "anal sex",
+   "kind": "act",
+   "id": "S10",
+   "pattern": "pushed-in~elided",
+   "claim": "Castiel is having anal sex with Dean, as the one penetrating",
+   "engineConfidence": 0.8317977221660758,
+   "evidence": [
+    {
+     "from": 2576,
+     "to": 2582
+    }
+   ],
+   "proposal": {
+    "revision": "2026-10-07-v1",
+    "verdict": "correct",
+    "confidence": 0.97,
+    "reading": "Castiel penetrates Dean anally with his penis after removing the plug.",
+    "rationale": "The plug is removed rather than thrust back in. Castiel’s preceding announcement, subsequent hip thrusts, prostate contact, and orgasm support penile penetration; the selected sentence does not name the body part directly.",
+    "errors": []
+   }
+  },
+  {
+   "key": "pushed-in~elided#48d97ba",
+   "fic": "tricks-of-the-trade.html",
+   "para": 3604,
+   "a": "Castiel",
+   "b": "Dean Winchester",
+   "act": "anal sex",
+   "kind": "act",
+   "id": "S11",
+   "pattern": "pushed-in~elided",
+   "claim": "Castiel is having anal sex with Dean, as the one penetrating",
+   "engineConfidence": 0.832550920852918,
+   "evidence": [
+    {
+     "from": 3602,
+     "to": 3606
+    }
+   ],
+   "proposal": {
+    "revision": "2026-10-07-v1",
+    "verdict": "correct",
+    "confidence": 0.98,
+    "reading": "Castiel penetrates Dean anally with his penis after finger preparation.",
+    "rationale": "The paragraph distinguishes fingers used for stretching from Castiel lubricating himself and then entering Dean. The selected sentence is the later entry, not the earlier finger insertion.",
+    "errors": []
+   }
+  },
+  {
+   "key": "passive-fucked~elided#88cfd103",
+   "fic": "starting-place.html",
+   "para": 803,
+   "a": "Castiel",
+   "b": "Dean Winchester",
+   "act": "anal sex",
+   "kind": "act",
+   "id": "S12",
+   "pattern": "passive-fucked~elided",
+   "claim": "Castiel is having anal sex with Dean, as the one penetrating",
+   "engineConfidence": 0.8446872089948498,
+   "evidence": [
+    {
+     "from": 799,
+     "to": 810
+    }
+   ],
+   "proposal": {
+    "revision": "2026-10-07-v1",
+    "verdict": "wrong",
+    "confidence": 0.97,
+    "reading": "Dean needs and wants repeated knotting by Castiel; this sentence is not a newly occurring penetration.",
+    "rationale": "Penile anal sex is narrated earlier at 799–801 and again at 810. At the selected passage, Dean is out of bed thinking about the needs caused by his heat. Preserve the actual neighbouring scenes, but classify this particular statement as need or desire.",
+    "errors": [
+     "No act happened",
+     "Wish or dialogue treated as an act"
+    ]
+   }
+  },
+  {
+   "key": "fuck#d89057f1",
+   "fic": "belonging.html",
+   "para": 5668,
+   "a": "Castiel",
+   "b": "Dean Winchester",
+   "act": "anal sex",
+   "kind": "act",
+   "id": "S13",
+   "pattern": "fuck",
+   "claim": "Castiel is having anal sex with Dean, as the one penetrating",
+   "engineConfidence": 0.8498590071569668,
+   "evidence": [
+    {
+     "from": 5665,
+     "to": 5673
+    }
+   ],
+   "proposal": {
+    "revision": "2026-10-07-v1",
+    "verdict": "correct",
+    "confidence": 0.99,
+    "reading": "Castiel penetrates Dean anally with his penis.",
+    "rationale": "Several consecutive sentences continue Castiel’s thrusting. The following genital and knot references establish the anatomy and recipient despite both people being unnamed in the selected sentence.",
+    "errors": []
+   }
+  },
+  {
+   "key": "dd3-slipping-second~elided#5beb565b",
+   "fic": "sweeter.html",
+   "para": 344,
+   "a": "Castiel",
+   "b": "Dean Winchester",
+   "act": "fingering",
+   "kind": "act",
+   "id": "S14",
+   "pattern": "dd3-slipping-second~elided",
+   "claim": "Castiel is fingering Dean",
+   "engineConfidence": 0.8514376787705468,
+   "evidence": [
+    {
+     "from": 338,
+     "to": 347
+    }
+   ],
+   "proposal": {
+    "revision": "2026-10-07-v1",
+    "verdict": "correct",
+    "confidence": 0.99,
+    "reading": "Castiel fingers Dean and adds a third finger here.",
+    "rationale": "The preceding preparation and Dean’s movements onto Castiel’s fingers establish the act. The possessive pronoun in the selected sentence carries Castiel forward; it does not introduce another actor.",
+    "errors": []
+   }
+  },
+  {
+   "key": "cock-on-prostate#39107777",
+   "fic": "belonging.html",
+   "para": 3440,
+   "a": "Castiel",
+   "b": "Dean Winchester",
+   "act": "anal sex",
+   "kind": "act",
+   "id": "S15",
+   "pattern": "cock-on-prostate",
+   "claim": "Castiel is having anal sex with Dean, as the one penetrating",
+   "engineConfidence": 0.8519276394818615,
+   "evidence": [
+    {
+     "from": 3435,
+     "to": 3446
+    }
+   ],
+   "proposal": {
+    "revision": "2026-10-07-v1",
+    "verdict": "correct",
+    "confidence": 0.98,
+    "reading": "Castiel’s penis is inside Dean anally while Dean moves his hips against Castiel.",
+    "rationale": "The selected sentence uses repeated male possessives, but the adjacent explicit entry identifies Castiel as the penetrator. Dean moving back onto him does not reverse their penetrative roles.",
+    "errors": []
+   }
+  },
+  {
+   "key": "fuck#2cf6af0a",
+   "fic": "jacks.html",
+   "para": 11799,
+   "a": "Dracula",
+   "b": "Jack Seward",
+   "act": "anal sex",
+   "kind": "act",
+   "id": "S16",
+   "pattern": "fuck",
+   "claim": "Dracula is having anal sex with Jack, as the one penetrating",
+   "engineConfidence": 0.854543957947261,
+   "evidence": [
+    {
+     "from": 11794,
+     "to": 11800
+    }
+   ],
+   "proposal": {
+    "revision": "2026-10-07-v1",
+    "verdict": "correct",
+    "confidence": 0.99,
+    "reading": "Dracula penetrates Jack anally with his penis.",
+    "rationale": "The entry and continuing penetration immediately before this establish Dracula as the actor. Vlad, Dracula, and the count refer to the same adult character.",
+    "errors": []
+   }
+  },
+  {
+   "key": "dd2-finger-shoved-into~elided#67962be5",
+   "fic": "tricks-of-the-trade.html",
+   "para": 2095,
+   "a": "Castiel",
+   "b": "Dean Winchester",
+   "act": "fingering",
+   "kind": "act",
+   "id": "S17",
+   "pattern": "dd2-finger-shoved-into~elided",
+   "claim": "Castiel is fingering Dean",
+   "engineConfidence": 0.8580792035383235,
+   "evidence": [
+    {
+     "from": 2094,
+     "to": 2096
+    }
+   ],
+   "proposal": {
+    "revision": "2026-10-07-v1",
+    "verdict": "correct",
+    "confidence": 0.99,
+    "reading": "Castiel fingers Dean before inserting a plug.",
+    "rationale": "The paragraph identifies Castiel’s lubricated fingers first, then separately narrates plug insertion. The engine’s finger reading belongs to the first stage, not to the toy.",
+    "errors": []
+   }
+  },
+  {
+   "key": "dd5-pushes-finger-in#23bde934",
+   "fic": "more-views.html",
+   "para": 838,
+   "a": "Castiel",
+   "b": "Dean Winchester",
+   "act": "fingering",
+   "kind": "act",
+   "id": "S18",
+   "pattern": "dd5-pushes-finger-in",
+   "claim": "Castiel is fingering Dean",
+   "engineConfidence": 0.8583003393138842,
+   "evidence": [
+    {
+     "from": 835,
+     "to": 840
+    }
+   ],
+   "proposal": {
+    "revision": "2026-10-07-v1",
+    "verdict": "correct",
+    "confidence": 0.99,
+    "reading": "Castiel inserts a finger into Dean’s anus.",
+    "rationale": "The paragraph explicitly identifies the inserted finger; Dean’s reaction and the following description of its depth confirm entry. The discussion of future penile sex is not the detected act.",
+    "errors": []
+   }
+  },
+  {
+   "key": "dd3-licks-at-hole#2f19c66a",
+   "fic": "whisper.html",
+   "para": 443,
+   "a": "Alex Claremont-Diaz",
+   "b": "Henry Fox-Mountchristen-Windsor",
+   "act": "rimming",
+   "kind": "act",
+   "id": "S19",
+   "pattern": "dd3-licks-at-hole",
+   "claim": "Alex is rimming Henry",
+   "engineConfidence": 0.8606359978297509,
+   "evidence": [
+    {
+     "from": 440,
+     "to": 447
+    }
+   ],
+   "proposal": {
+    "revision": "2026-10-07-v1",
+    "verdict": "correct",
+    "confidence": 0.99,
+    "reading": "Alex rims Henry here.",
+    "rationale": "Although Alex had just spoken about a longer rimming session as a wish, he subsequently kneels and actually applies his tongue to Henry’s anus. This reading is the performed act, before fingers and penile entry.",
+    "errors": []
+   }
+  },
+  {
+   "key": "push-into~elided#2aa7713d",
+   "fic": "bluebells.html",
+   "para": 1276,
+   "a": "David Shepherd",
+   "b": "Brother Diarmuid",
+   "act": "anal sex",
+   "kind": "act",
+   "id": "S20",
+   "pattern": "push-into~elided",
+   "claim": "David is having anal sex with Diarmuid, as the one penetrating",
+   "engineConfidence": 0.8685426246097839,
+   "evidence": [
+    {
+     "from": 1271,
+     "to": 1278
+    }
+   ],
+   "proposal": {
+    "revision": "2026-10-07-v1",
+    "verdict": "correct",
+    "confidence": 0.99,
+    "reading": "David penetrates Diarmuid anally with his penis.",
+    "rationale": "Diarmuid is lowered onto David’s penis before the selected sentence, and David’s thrusts and the subsequent orgasm continue that same physical event. The married pair’s roles are clear in context.",
+    "errors": []
+   }
+  },
+  {
+   "key": "dd2-finger-shoved-into#652bee8c",
+   "fic": "belonging.html",
+   "para": 2805,
+   "a": "Castiel",
+   "b": "Dean Winchester",
+   "act": "fingering",
+   "kind": "act",
+   "id": "S21",
+   "pattern": "dd2-finger-shoved-into",
+   "claim": "Castiel is fingering Dean",
+   "engineConfidence": 0.8689759787183651,
+   "evidence": [
+    {
+     "from": 2800,
+     "to": 2808
+    }
+   ],
+   "proposal": {
+    "revision": "2026-10-07-v1",
+    "verdict": "correct",
+    "confidence": 0.99,
+    "reading": "Castiel fingers Dean anally. A prostate massager is inserted afterward.",
+    "rationale": "The target identifies two fingers; Castiel is established as the alpha doing the stimulation. The later massager does not replace the body part in this particular reading.",
+    "errors": []
+   }
+  },
+  {
+   "key": "sucked#ef01ca30",
+   "fic": "belonging.html",
+   "para": 3388,
+   "a": "Castiel",
+   "b": "Dean Winchester",
+   "act": "blowjob",
+   "kind": "act",
+   "id": "S22",
+   "pattern": "sucked",
+   "claim": "Castiel is getting a blowjob from Dean",
+   "engineConfidence": 0.8728342626324803,
+   "evidence": [
+    {
+     "from": 3385,
+     "to": 3394
+    }
+   ],
+   "proposal": {
+    "revision": "2026-10-07-v1",
+    "verdict": "correct",
+    "confidence": 0.99,
+    "reading": "Dean gives Castiel a blowjob here, moving beyond passive oral cockwarming.",
+    "rationale": "Dean actively uses his tongue and mouth on Castiel’s penis, and Castiel responds physically. The subsequent warning distinguishes active sucking from the previously requested oral holding.",
+    "errors": []
+   }
+  },
+  {
+   "key": "bottomed-out~elided#1127c53f",
+   "fic": "innocent-until.html",
+   "para": 2867,
+   "a": "James \"Bucky\" Barnes",
+   "b": "Steve Rogers",
+   "act": "anal sex",
+   "kind": "act",
+   "id": "S23",
+   "pattern": "bottomed-out~elided",
+   "claim": "James is having anal sex with Steve, as the one penetrating",
+   "engineConfidence": 0.8798665106212481,
+   "evidence": [
+    {
+     "from": 2862,
+     "to": 2869
+    }
+   ],
+   "proposal": {
+    "revision": "2026-10-07-v1",
+    "verdict": "wrong",
+    "confidence": 0.99,
+    "reading": "Bucky inserts a plug into Steve’s anus, not his penis.",
+    "rationale": "Bucky first removes his fingers and then lubricates and inserts the plug. The object that reaches full depth is that same plug; generic thrusting and depth language do not change it into a penis.",
+    "errors": [
+     "Fingers or toy mistaken for a penis"
+    ]
+   }
+  },
+  {
+   "key": "dd-laps-at-cock~elided#5e4ba464",
+   "fic": "mars.html",
+   "para": 1047,
+   "a": "Dean Winchester",
+   "b": "Castiel",
+   "act": "blowjob",
+   "kind": "act",
+   "id": "S24",
+   "pattern": "dd-laps-at-cock~elided",
+   "claim": "Dean is getting a blowjob from Castiel",
+   "engineConfidence": 0.8804905768491871,
+   "evidence": [
+    {
+     "from": 1044,
+     "to": 1050
+    }
+   ],
+   "proposal": {
+    "revision": "2026-10-07-v1",
+    "verdict": "wrong",
+    "confidence": 0.99,
+    "reading": "Dean gives Castiel a blowjob; Castiel is the recipient.",
+    "rationale": "Dean kneels, takes Castiel’s penis into his mouth, and lowers his own head while using his tongue. Castiel’s named vocal reaction seems to have displaced Dean as the actor in the carried-over sentence.",
+    "errors": [
+     "Roles reversed"
+    ]
+   }
+  },
+  {
+   "key": "lips-around#6f26e131",
+   "fic": "mars.html",
+   "para": 1388,
+   "a": "Dean Winchester",
+   "b": "Castiel",
+   "act": "blowjob",
+   "kind": "act",
+   "id": "S25",
+   "pattern": "lips-around",
+   "claim": "Dean is getting a blowjob from Castiel",
+   "engineConfidence": 0.8862684827271783,
+   "evidence": [
+    {
+     "from": 1382,
+     "to": 1392
+    }
+   ],
+   "proposal": {
+    "revision": "2026-10-07-v1",
+    "verdict": "correct",
+    "confidence": 0.99,
+    "reading": "Castiel gives Dean a blowjob.",
+    "rationale": "Castiel’s lips are explicitly around Dean’s penis. Dean also requests anal sex, but that request does not make the existing oral stimulation hypothetical or reverse who is giving it.",
+    "errors": []
+   }
+  },
+  {
+   "key": "dd-laps-at-cock#5ad6a3ce",
+   "fic": "more-views.html",
+   "para": 344,
+   "a": "Castiel",
+   "b": "Dean Winchester",
+   "act": "blowjob",
+   "kind": "act",
+   "id": "S26",
+   "pattern": "dd-laps-at-cock",
+   "claim": "Castiel is getting a blowjob from Dean",
+   "engineConfidence": 0.8865101149202149,
+   "evidence": [
+    {
+     "from": 340,
+     "to": 345
+    }
+   ],
+   "proposal": {
+    "revision": "2026-10-07-v1",
+    "verdict": "wrong",
+    "confidence": 0.99,
+    "reading": "Castiel gives Dean a blowjob; Dean is the recipient.",
+    "rationale": "Castiel kneels and takes Dean’s penis into his mouth before the target sentence. Dean’s spoken reaction intervenes, but the next tongue movement still belongs to Castiel.",
+    "errors": [
+     "Roles reversed"
+    ]
+   }
+  },
+  {
+   "key": "dd6-slips-cock-inside#d13d09f",
+   "fic": "belonging.html",
+   "para": 3515,
+   "a": "Castiel",
+   "b": "Dean Winchester",
+   "act": "anal sex",
+   "kind": "act",
+   "id": "S27",
+   "pattern": "dd6-slips-cock-inside",
+   "claim": "Castiel is having anal sex with Dean, as the one penetrating",
+   "engineConfidence": 0.8905788358200298,
+   "evidence": [
+    {
+     "from": 3509,
+     "to": 3518
+    }
+   ],
+   "proposal": {
+    "revision": "2026-10-07-v1",
+    "verdict": "correct",
+    "confidence": 0.99,
+    "reading": "Castiel continues penile anal penetration of Dean while discussing possible toy play.",
+    "rationale": "The surrounding speech describes imagined future objects, but the narration explicitly identifies Castiel’s penis moving inside Dean now. The current act should stay distinct from the hypothetical toy insertions.",
+    "errors": []
+   }
+  },
+  {
+   "key": "push-into#df3d85ef",
+   "fic": "jacks.html",
+   "para": 11547,
+   "a": "Dracula",
+   "b": "Jack Seward",
+   "act": "anal sex",
+   "kind": "act",
+   "id": "S28",
+   "pattern": "push-into",
+   "claim": "Dracula is having anal sex with Jack, as the one penetrating",
+   "engineConfidence": 0.8946292064842801,
+   "evidence": [
+    {
+     "from": 11540,
+     "to": 11550
+    }
+   ],
+   "proposal": {
+    "revision": "2026-10-07-v1",
+    "verdict": "correct",
+    "confidence": 0.99,
+    "reading": "Dracula penetrates Jack anally with his penis.",
+    "rationale": "The count is already inside Jack and drives the movement. Jack’s spoken demands and the chains on his body do not change the actor identified by the surrounding narration.",
+    "errors": []
+   }
+  },
+  {
+   "key": "push-into#800ca1f8",
+   "fic": "jacks.html",
+   "para": 2093,
+   "a": "Jack Seward",
+   "b": "Dracula",
+   "act": "anal sex",
+   "kind": "act",
+   "id": "S29",
+   "pattern": "push-into",
+   "claim": "Jack is having anal sex with Dracula, as the one penetrating",
+   "engineConfidence": 0.9027935752877047,
+   "evidence": [
+    {
+     "from": 2090,
+     "to": 2100
+    }
+   ],
+   "proposal": {
+    "revision": "2026-10-07-v1",
+    "verdict": "wrong",
+    "confidence": 0.99,
+    "reading": "Dracula penetrates Jack anally; Jack is receiving, not penetrating.",
+    "rationale": "The count is explicitly thrusting into Jack. The selected passive description has Jack raised on the table for the other man’s movement, so reading Jack as the penetrator reverses the roles.",
+    "errors": [
+     "Roles reversed"
+    ]
+   }
+  },
+  {
+   "key": "lips-around#d08b40e0",
+   "fic": "more-views.html",
+   "para": 375,
+   "a": "Dean Winchester",
+   "b": "Castiel",
+   "act": "blowjob",
+   "kind": "act",
+   "id": "S30",
+   "pattern": "lips-around",
+   "claim": "Dean is getting a blowjob from Castiel",
+   "engineConfidence": 0.9040558585511781,
+   "evidence": [
+    {
+     "from": 373,
+     "to": 378
+    }
+   ],
+   "proposal": {
+    "revision": "2026-10-07-v1",
+    "verdict": "wrong",
+    "confidence": 0.97,
+    "reading": "Dean remembers Castiel giving him a blowjob the previous night; no new blowjob happens in this bathroom passage.",
+    "rationale": "The current action is hangover care. Dean mentally recalls the earlier oral encounter and recording. The act and direction are real, but this evidence should be historical rather than a second present scene.",
+    "errors": [
+     "Memory counted as a new scene"
+    ]
+   }
+  },
+  {
+   "key": "dd6-slips-cock-inside#501b75a1",
+   "fic": "lightning.html",
+   "para": 1203,
+   "a": "Eddie Diaz",
+   "b": "Evan \"Buck\" Buckley",
+   "act": "anal sex",
+   "kind": "act",
+   "id": "S31",
+   "pattern": "dd6-slips-cock-inside",
+   "claim": "Eddie is having anal sex with Evan, as the one penetrating",
+   "engineConfidence": 0.9049833229836178,
+   "evidence": [
+    {
+     "from": 1195,
+     "to": 1204
+    }
+   ],
+   "proposal": {
+    "revision": "2026-10-07-v1",
+    "verdict": "wrong",
+    "confidence": 0.99,
+    "reading": "Eddie masturbates while imagining Buck giving him a blowjob. No partnered penetration happens here.",
+    "rationale": "The mouth, kneeling position, and imagined opening of Buck’s lips make the fantasy oral, not anal. Eddie is physically alone stimulating himself, and the paragraph explicitly frames Buck’s involvement as an idea.",
+    "errors": [
+     "Wrong act or body part",
+     "Wish or dialogue treated as an act",
+     "No act happened"
+    ]
+   }
+  },
+  {
+   "key": "hole-around#6ca1bfd5",
+   "fic": "belonging.html",
+   "para": 4213,
+   "a": "Castiel",
+   "b": "Dean Winchester",
+   "act": "anal sex",
+   "kind": "act",
+   "id": "S32",
+   "pattern": "hole-around",
+   "claim": "Castiel is having anal sex with Dean, as the one penetrating",
+   "engineConfidence": 0.9071700003518012,
+   "evidence": [
+    {
+     "from": 4208,
+     "to": 4216
+    }
+   ],
+   "proposal": {
+    "revision": "2026-10-07-v1",
+    "verdict": "correct",
+    "confidence": 0.99,
+    "reading": "Castiel penetrates Dean anally with his penis.",
+    "rationale": "The preceding swing movement repeatedly places Dean on Castiel’s penis. The alpha designation and Dean’s reaction identify Castiel and Dean consistently despite pronouns in the target.",
+    "errors": []
+   }
+  },
+  {
+   "key": "dd6-slips-cock-inside#31e853ff",
+   "fic": "innocent-until.html",
+   "para": 4260,
+   "a": "James \"Bucky\" Barnes",
+   "b": "Steve Rogers",
+   "act": "anal sex",
+   "kind": "act",
+   "id": "S33",
+   "pattern": "dd6-slips-cock-inside",
+   "claim": "James is having anal sex with Steve, as the one penetrating",
+   "engineConfidence": 0.909420424921103,
+   "evidence": [
+    {
+     "from": 4253,
+     "to": 4267
+    }
+   ],
+   "proposal": {
+    "revision": "2026-10-07-v1",
+    "verdict": "correct",
+    "confidence": 0.99,
+    "reading": "Bucky penetrates Steve anally with his penis here; oral sex occurs before and afterward.",
+    "rationale": "Steve’s ankles are folded toward his chest before Bucky enters and thrusts. Bucky withdraws to ejaculate over Steve’s torso, and only afterward offers his penis to Steve’s mouth. The surrounding oral acts do not turn this insertion into oral penetration.",
+    "errors": []
+   }
+  },
+  {
+   "key": "dd3-impaling~elided#4e281574",
+   "fic": "jacks.html",
+   "para": 5341,
+   "a": "Dracula",
+   "b": "Jack Seward",
+   "act": "anal sex",
+   "kind": "act",
+   "id": "S34",
+   "pattern": "dd3-impaling~elided",
+   "claim": "Dracula is having anal sex with Jack, as the one penetrating",
+   "engineConfidence": 0.9105243385119038,
+   "evidence": [
+    {
+     "from": 5335,
+     "to": 5345
+    }
+   ],
+   "proposal": {
+    "revision": "2026-10-07-v1",
+    "verdict": "correct",
+    "confidence": 0.99,
+    "reading": "Dracula penetrates Jack anally with his penis.",
+    "rationale": "The selected narration names the count as the person entering Jack. Jack’s perspective and the following position do not turn Jack into the penetrator.",
+    "errors": []
+   }
+  },
+  {
+   "key": "fuck#12eb07f7",
+   "fic": "mars.html",
+   "para": 1492,
+   "a": "Dean Winchester",
+   "b": "Castiel",
+   "act": "anal sex",
+   "kind": "act",
+   "id": "S35",
+   "pattern": "fuck",
+   "claim": "Dean is having anal sex with Castiel, as the one penetrating",
+   "engineConfidence": 0.9127318138687189,
+   "evidence": [
+    {
+     "from": 1489,
+     "to": 1495
+    }
+   ],
+   "proposal": {
+    "revision": "2026-10-07-v1",
+    "verdict": "correct",
+    "confidence": 0.99,
+    "reading": "Dean penetrates Castiel anally with his penis: this is a genuine reversal of their earlier roles.",
+    "rationale": "Castiel opens for Dean’s fingers, explicitly requests penetration, and then receives Dean’s penis. This switch is supported by the text and should not be suppressed because of earlier scenes or alpha/omega assumptions.",
+    "errors": []
+   }
+  },
+  {
+   "key": "push-into~elided#8c33eb9a",
+   "fic": "bluebells.html",
+   "para": 869,
+   "a": "David Shepherd",
+   "b": "Brother Diarmuid",
+   "act": "anal sex",
+   "kind": "act",
+   "id": "S36",
+   "pattern": "push-into~elided",
+   "claim": "David is having anal sex with Diarmuid, as the one penetrating",
+   "engineConfidence": 0.9158131209533588,
+   "evidence": [
+    {
+     "from": 867,
+     "to": 871
+    }
+   ],
+   "proposal": {
+    "revision": "2026-10-07-v1",
+    "verdict": "correct",
+    "confidence": 0.98,
+    "reading": "David penetrates Diarmuid anally in a narrated earlier encounter in the barn.",
+    "rationale": "This is a narrative summary of an event that really occurred, not a fantasy or an unfulfilled plan. The paragraph identifies David freeing his penis and penetrating his husband; preserve that real event.",
+    "errors": []
+   }
+  },
+  {
+   "key": "dd-hj-palm-bulge#de4d7fcd",
+   "fic": "shawnee.html",
+   "para": 1657,
+   "a": "Castiel",
+   "b": "Dean Winchester",
+   "act": "handjob",
+   "kind": "act",
+   "id": "S37",
+   "pattern": "dd-hj-palm-bulge",
+   "claim": "Castiel and Dean are having a handjob",
+   "engineConfidence": 0.9179031196464079,
+   "evidence": [
+    {
+     "from": 1656,
+     "to": 1664
+    }
+   ],
+   "proposal": {
+    "revision": "2026-10-07-v1",
+    "verdict": "correct",
+    "confidence": 0.94,
+    "reading": "Castiel manually stimulates Dean, first through his trousers; direct stroking and shared hand stimulation follow.",
+    "rationale": "The selected contact is palm pressure over clothing. The following passages remove the clothing and describe stroking, then both men’s hands on their erections. The broad handjob reading fits the scene, but the selected contact alone is not a mutual handjob.",
+    "errors": []
+   }
+  },
+  {
+   "key": "fuck#6e4d4b5c",
+   "fic": "jacks.html",
+   "para": 13050,
+   "a": "Dracula",
+   "b": "Jack Seward",
+   "act": "anal sex",
+   "kind": "act",
+   "id": "S38",
+   "pattern": "fuck",
+   "claim": "Dracula is having anal sex with Jack, as the one penetrating",
+   "engineConfidence": 0.9191335320342296,
+   "evidence": [
+    {
+     "from": 13042,
+     "to": 13054
+    }
+   ],
+   "proposal": {
+    "revision": "2026-10-07-v1",
+    "verdict": "correct",
+    "confidence": 0.99,
+    "reading": "Dracula continues penile anal penetration of Jack.",
+    "rationale": "Explicit penile entry is established before the target and continues while Dracula reassures Jack. The two unnamed pronouns carry forward that same actor and receiver.",
+    "errors": []
+   }
+  },
+  {
+   "key": "sucked~elided#48aff8b3",
+   "fic": "dogbird.html",
+   "para": 1299,
+   "a": "Eddie Diaz",
+   "b": "Evan \"Buck\" Buckley",
+   "act": "blowjob",
+   "kind": "act",
+   "id": "S39",
+   "pattern": "sucked~elided",
+   "claim": "Eddie is getting a blowjob from Evan",
+   "engineConfidence": 0.9209406583793087,
+   "evidence": [
+    {
+     "from": 1293,
+     "to": 1302
+    }
+   ],
+   "proposal": {
+    "revision": "2026-10-07-v1",
+    "verdict": "wrong",
+    "confidence": 0.98,
+    "reading": "Buck fingers Eddie here. Eddie’s anus grips the inserted fingers; it is not a mouth sucking a penis.",
+    "rationale": "Buck has moved away from oral stimulation before the selected action. The two fingers and Eddie’s anal response are explicit. Earlier oral activity is real, but does not make the target’s figurative sucking action a new blowjob.",
+    "errors": [
+     "Wrong act or body part"
+    ]
+   }
+  },
+  {
+   "key": "tongue-on-cock-area#63654053",
+   "fic": "innocent-until.html",
+   "para": 3690,
+   "a": "Steve Rogers",
+   "b": "James \"Bucky\" Barnes",
+   "act": "blowjob",
+   "kind": "act",
+   "id": "S40",
+   "pattern": "tongue-on-cock-area",
+   "claim": "Steve is getting a blowjob from James",
+   "engineConfidence": 0.9220319345648681,
+   "evidence": [
+    {
+     "from": 3689,
+     "to": 3694
+    }
+   ],
+   "proposal": {
+    "revision": "2026-10-07-v1",
+    "verdict": "correct",
+    "confidence": 0.99,
+    "reading": "Bucky gives Steve a blowjob.",
+    "rationale": "The immediately preceding sentence places Steve’s penis in Bucky’s mouth; tongue movement and sucking continue until Steve’s orgasm. Steve sucking Bucky’s fingers is a separate concurrent action, not a reversed blowjob.",
+    "errors": []
+   }
+  }
+ ]
+}
