@@ -4,7 +4,7 @@ import {TextEncoder,TextDecoder} from 'node:util';
 import {afterEach,expect,it,vi} from 'vitest';
 import JSZip from 'jszip';
 import {buildMissedBatch} from '../scripts/build-missed-scene-batch.mjs';
-import {ACTS,OCCURRENCES,emptyAnswer,importSceneAnswers,validSceneAnswer,type SceneBatch} from '../review/missed-scene-data';
+import {ACTS,OCCURRENCES,emptyAnswer,importSceneAnswers,validSceneAnswer,validateSceneProposals,proposalEventText,type SceneProposals,type SceneBatch} from '../review/missed-scene-data';
 import {mountMissedReview} from '../review/missed-scene-review';
 const hash=(s:string)=>createHash('sha256').update(s).digest('hex');
 const fixture='<div id="chapters"><p>Morgan and Rowan are adults.</p><p>Morgan kisses Rowan.</p><p>Rowan speaks.</p></div>';
@@ -74,4 +74,47 @@ it('requires explicit confirmation for no-act answers and prevents incomplete fo
  document.querySelector<HTMLButtonElement>('[data-answer="acts"]')!.click();(document.getElementById('complete') as HTMLInputElement).click();expect(api.answers.M1.complete).toBe(false);
  document.querySelector<HTMLButtonElement>('[data-answer="none"]')!.click();expect(api.answers.M1.complete).toBe(false);(document.getElementById('complete') as HTMLInputElement).click();expect(api.answers.M1.complete).toBe(true);expect(api.answers.M1.events).toEqual([]);
  document.querySelector<HTMLButtonElement>('[data-answer="uncertain"]')!.click();expect(api.answers.M1.complete).toBe(false);expect((document.getElementById('complete') as HTMLInputElement).disabled).toBe(true);
+});
+
+const proposals=()=>({schema:'engine-missed-scene-proposals/v1' as const,batchId:batch.batchId,revision:'invented-v1',reviewer:'ChatGPT',method:'Context review',rows:[{...row,verdict:'acts' as const,events:completed().events,flags:['Act continues outside this window'],summary:'Adult Morgan and Rowan kiss; no penetration.'}]});
+
+it('validates all forty proposals against unchanged passage identities and separates penile anal from oral claims',()=>{
+ const published=JSON.parse(readFileSync('public/review/missed-scenes.json','utf8')) as SceneBatch;
+ const suggested=validateSceneProposals(published,JSON.parse(readFileSync('public/review/missed-scene-proposals.json','utf8')));
+ expect(suggested.rows).toHaveLength(40);expect(suggested.rows.some(r=>r.verdict==='none')).toBe(true);
+ const bad=structuredClone(suggested);bad.rows[1].windowSha='wrong';expect(()=>validateSceneProposals(published,bad)).toThrow('passage');
+ expect(()=>validateSceneProposals(published,{...suggested,rows:suggested.rows.slice(1)})).toThrow('batch');
+ const event=completed().events[0];expect(proposalEventText({...event,act:'Anal penetration (penis)'})).toContain('anally with a penis');expect(proposalEventText({...event,act:'Blowjob'})).toContain('oral stimulation of the penis');
+});
+
+it('does not autoaccept proposals, requires loaded stories and completion, preserves notes, and invalidates agreement on editing',async()=>{
+ setup();const suggested=proposals(),api=await mountMissedReview(batch,suggested);
+ expect(api.answers).toEqual({});expect(document.querySelector<HTMLButtonElement>('[data-proposal="agree"]')!.disabled).toBe(true);
+ await api.loadFiles([{name:'adult.html',arrayBuffer:async()=>new TextEncoder().encode(fixture).buffer as ArrayBuffer}]);
+ const context=document.getElementById('context') as HTMLTextAreaElement;context.value='My note';context.dispatchEvent(new Event('input'));
+ document.querySelector<HTMLButtonElement>('[data-proposal="agree"]')!.click();expect(api.answers.M1.proposalReview).toBe('agree');expect(api.answers.M1.complete).toBe(false);expect(api.answers.M1.context).toBe('My note');expect(api.answers.M1.events).toEqual(suggested.rows[0].events);
+ (document.getElementById('complete') as HTMLInputElement).click();expect(api.answers.M1.complete).toBe(true);
+ const name=document.querySelector<HTMLInputElement>('#events input:not([type=number])')!;name.value='Another adult';name.dispatchEvent(new Event('input'));
+ expect(api.answers.M1.proposalReview).toBe('disagree');expect(api.answers.M1.complete).toBe(false);expect(suggested.rows[0].events[0].performer).toBe('Morgan');
+ expect(document.querySelector('[data-proposal="disagree"]')!.getAttribute('aria-pressed')).toBe('true');
+ const exported=api.payload();setup();const restored=await mountMissedReview(batch,suggested);expect(restored.answers.M1.proposalReview).toBe('disagree');expect(restored.payload().answers[0].context).toBe('My note');
+ localStorage.clear();setup();const imported=await mountMissedReview(batch,suggested);expect(imported.import(exported)).toBe(1);expect(imported.answers.M1.proposalRevision).toBe('invented-v1');
+ setup();const revised=await mountMissedReview(batch,{...suggested,revision:'invented-v2'});expect(revised.answers.M1.events[0].performer).toBe('Another adult');expect(document.getElementById('proposal-state')!.textContent).toContain('earlier proposal');expect(document.querySelector('[data-proposal="disagree"]')!.getAttribute('aria-pressed')).toBe('false');
+});
+
+it('preserves existing independent answers on load and disagreement, and keeps uncertain proposals unfinished',async()=>{
+ setup();localStorage.setItem('missed-scene-review:invented',JSON.stringify({M1:{...completed(),context:'Existing owner correction',events:[{...completed().events[0],performer:'Rowan',receiver:'Morgan'}]}}));
+ const api=await mountMissedReview(batch,proposals());expect(api.answers.M1.events[0].performer).toBe('Rowan');expect(api.answers.M1.complete).toBe(true);expect(api.answers.M1.proposalReview).toBeUndefined();
+ await api.loadFiles([{name:'adult.html',arrayBuffer:async()=>new TextEncoder().encode(fixture).buffer as ArrayBuffer}]);
+ document.querySelector<HTMLButtonElement>('[data-proposal="disagree"]')!.click();expect(api.answers.M1.events[0].performer).toBe('Rowan');expect(api.answers.M1.context).toBe('Existing owner correction');expect(api.answers.M1.complete).toBe(false);
+ document.querySelector<HTMLButtonElement>('[data-proposal="uncertain"]')!.click();expect(api.answers.M1.verdict).toBe('uncertain');expect(api.answers.M1.proposalReview).toBe('uncertain');expect(api.answers.M1.complete).toBe(false);expect((document.getElementById('complete') as HTMLInputElement).disabled).toBe(true);expect(validSceneAnswer(api.answers.M1,row)).toBe(true);
+ document.querySelector<HTMLButtonElement>('[data-answer="acts"]')!.click();expect(api.answers.M1.proposalReview).toBe('disagree');expect(validSceneAnswer(api.answers.M1,row)).toBe(true);
+});
+
+it('records explicit no-act agreement and rejects inconsistent agreement imports atomically',async()=>{
+ setup();const suggested:SceneProposals=proposals();suggested.rows[0].verdict='none';suggested.rows[0].events=[];
+ const api=await mountMissedReview(batch,suggested);await api.loadFiles([{name:'adult.html',arrayBuffer:async()=>new TextEncoder().encode(fixture).buffer as ArrayBuffer}]);
+ document.querySelector<HTMLButtonElement>('[data-proposal="agree"]')!.click();expect(api.answers.M1.verdict).toBe('none');expect(api.answers.M1.complete).toBe(false);(document.getElementById('complete') as HTMLInputElement).click();expect(api.answers.M1.complete).toBe(true);
+ const bad={...payload(),answers:[{...payload().answers[0],proposalReview:'agree',proposalRevision:'invented-v1',updatedAt:'2026-10-09T00:00:00Z'}]};expect(()=>api.import(bad)).toThrow('agreement');expect(api.answers.M1.verdict).toBe('none');
+ expect(validSceneAnswer({...completed(),proposalReview:'agree'},row)).toBe(false);expect(validSceneAnswer({...completed(),proposalReview:'uncertain',proposalRevision:'v1'},row)).toBe(false);
 });
