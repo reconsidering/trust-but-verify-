@@ -33,7 +33,7 @@ Validation for this page: 1,433 unit tests passed, including five review/import/
 
 ## Recheck each gold range
 
-Select **Gold ranges**. The page now has 51 separate recorded ranges across seven stories, with the complete range highlighted and its own correct/wrong/not-sure answer, common errors, and notes. Claims describe the act and direction in that range, including both directions of switch verdicts. Browse surrounding passages for context. These are stored gold expectations, not new engine predictions.
+Select **Gold ranges**. The page now has 50 separate recorded ranges across seven stories, with the complete range highlighted and its own correct/wrong/not-sure answer, common errors, and notes. Claims describe the act and direction in that range, including both directions of switch verdicts. Browse surrounding passages for context. These are stored gold expectations, not new engine predictions.
 
 Belonging is excluded from this batch and its returned answer was discarded; its existing engine gold labels are unchanged. Five other owner answers are recorded without free-text passages in `tests/gold-review/owner-2026-10-06.json`: three confirmed verdicts, an unresolved possible reverse-direction blowjob reference in A La Carte, and the Angel fingering correction. The Angel 4270–4287 range was removed from the anal scenes; its later anal scene and whole-story verdict remain.
 
@@ -42,3 +42,8 @@ Range answers use a new batch identity and export as `gold-range-review-answers.
 Rebuild metadata with `node scripts/build-gold-review.mjs`, optionally supplying the private snapshot directory to revalidate source identities. `gold-sources.json` records source and paragraph checksums from the original verified manifest. No story text is published. Range feedback must be adjudicated as scene evidence; it is not reading-level model training data.
 
 Validation: ten review/import/integrity tests and the production build passed. A targeted real-story Angel gold replay confirmed 2/2 verdicts and 3/3 remaining scenes, with no stale labels or flipped scenes. The corrected labels expose one existing anal false positive in the fingering window; detector changes are separate from this review update.
+
+
+Owner update, October 7: Prince 55–75 is now a fingering scene, not penile anal penetration. WereCompeer is split into oral activity at 976–981 and anal penetration/cockwarming at 982–986; both labels remain. The uncertain Rushing 1148–1150 item is excluded from the review batch only; its existing evaluation scene is unchanged. Slipfast's simultaneous blowjob/fingering scene remains labelled blowjob. The returned 51 answers and approved decisions are preserved without free-text passages in `tests/gold-review/owner-2026-10-07.json`.
+
+This metadata rebuild changes the gold batch identity. Keep the previous exported answers as a backup; they are retained in the repository feedback record, but are not copied automatically onto changed scene ranges. The original 40-reading batch is unchanged. Anal claims now explicitly say “anally” to distinguish them from oral activity.

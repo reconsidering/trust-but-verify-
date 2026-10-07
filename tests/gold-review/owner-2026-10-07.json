@@ -1,0 +1,1215 @@
+{
+ "schema": "accepted-gold-range-feedback/v1",
+ "batchId": "gold-ranges-e07c864bf888",
+ "engineCommit": "7b58f70ce1ea06d1f6c01e745da9be410e9c8da3",
+ "feedbackSha": "b1741c919ff9af9719ed6515a740d3ef16b2dd1dfd00d2f9f3e2757d01895469",
+ "answers": [
+  {
+   "id": "G1",
+   "key": "gold-range:a-la-carte.json:0:444-454#2d58e4f1cf109faa669d923311c63805cd8b63e6916c2265cb7e98fb9e8b2759",
+   "fic": "a-la-carte.html",
+   "paragraph": 444,
+   "sourceSha": "4d553843dc96b396376426414fd191534045ca3508acb51a1672e0ef3ebc0cca",
+   "gold": {
+    "file": "a-la-carte.json",
+    "hash": "2d58e4f1cf109faa669d923311c63805cd8b63e6916c2265cb7e98fb9e8b2759",
+    "pairing": "Obi-Wan Kenobi/Anakin Skywalker",
+    "act": "anal",
+    "verdict": "one_way"
+   },
+   "evidence": [
+    {
+     "from": 444,
+     "to": 454
+    }
+   ],
+   "errors": [],
+   "verdict": "correct",
+   "updatedAt": "2026-10-06T21:11:45.346Z"
+  },
+  {
+   "id": "G2",
+   "key": "gold-range:a-la-carte.json:0:863-875#2d58e4f1cf109faa669d923311c63805cd8b63e6916c2265cb7e98fb9e8b2759",
+   "fic": "a-la-carte.html",
+   "paragraph": 863,
+   "sourceSha": "4d553843dc96b396376426414fd191534045ca3508acb51a1672e0ef3ebc0cca",
+   "gold": {
+    "file": "a-la-carte.json",
+    "hash": "2d58e4f1cf109faa669d923311c63805cd8b63e6916c2265cb7e98fb9e8b2759",
+    "pairing": "Obi-Wan Kenobi/Anakin Skywalker",
+    "act": "anal",
+    "verdict": "one_way"
+   },
+   "evidence": [
+    {
+     "from": 863,
+     "to": 875
+    }
+   ],
+   "errors": [],
+   "verdict": "correct",
+   "updatedAt": "2026-10-06T21:12:03.012Z"
+  },
+  {
+   "id": "G3",
+   "key": "gold-range:a-la-carte.json:0:900-900#2d58e4f1cf109faa669d923311c63805cd8b63e6916c2265cb7e98fb9e8b2759",
+   "fic": "a-la-carte.html",
+   "paragraph": 900,
+   "sourceSha": "4d553843dc96b396376426414fd191534045ca3508acb51a1672e0ef3ebc0cca",
+   "gold": {
+    "file": "a-la-carte.json",
+    "hash": "2d58e4f1cf109faa669d923311c63805cd8b63e6916c2265cb7e98fb9e8b2759",
+    "pairing": "Obi-Wan Kenobi/Anakin Skywalker",
+    "act": "anal",
+    "verdict": "one_way"
+   },
+   "evidence": [
+    {
+     "from": 900,
+     "to": 900
+    }
+   ],
+   "errors": [],
+   "verdict": "correct",
+   "updatedAt": "2026-10-06T21:12:08.072Z"
+  },
+  {
+   "id": "G4",
+   "key": "gold-range:a-la-carte.json:0:1942-1960#2d58e4f1cf109faa669d923311c63805cd8b63e6916c2265cb7e98fb9e8b2759",
+   "fic": "a-la-carte.html",
+   "paragraph": 1942,
+   "sourceSha": "4d553843dc96b396376426414fd191534045ca3508acb51a1672e0ef3ebc0cca",
+   "gold": {
+    "file": "a-la-carte.json",
+    "hash": "2d58e4f1cf109faa669d923311c63805cd8b63e6916c2265cb7e98fb9e8b2759",
+    "pairing": "Obi-Wan Kenobi/Anakin Skywalker",
+    "act": "anal",
+    "verdict": "one_way"
+   },
+   "evidence": [
+    {
+     "from": 1942,
+     "to": 1960
+    }
+   ],
+   "errors": [],
+   "verdict": "correct",
+   "updatedAt": "2026-10-06T21:12:13.740Z"
+  },
+  {
+   "id": "G5",
+   "key": "gold-range:a-la-carte.json:1:507-520#2d58e4f1cf109faa669d923311c63805cd8b63e6916c2265cb7e98fb9e8b2759",
+   "fic": "a-la-carte.html",
+   "paragraph": 507,
+   "sourceSha": "4d553843dc96b396376426414fd191534045ca3508acb51a1672e0ef3ebc0cca",
+   "gold": {
+    "file": "a-la-carte.json",
+    "hash": "2d58e4f1cf109faa669d923311c63805cd8b63e6916c2265cb7e98fb9e8b2759",
+    "pairing": "Obi-Wan Kenobi/Anakin Skywalker",
+    "act": "blowjob",
+    "verdict": "one_way"
+   },
+   "evidence": [
+    {
+     "from": 507,
+     "to": 520
+    }
+   ],
+   "errors": [],
+   "verdict": "correct",
+   "updatedAt": "2026-10-06T21:12:18.938Z"
+  },
+  {
+   "id": "G6",
+   "key": "gold-range:a-la-carte.json:1:1974-1974#2d58e4f1cf109faa669d923311c63805cd8b63e6916c2265cb7e98fb9e8b2759",
+   "fic": "a-la-carte.html",
+   "paragraph": 1974,
+   "sourceSha": "4d553843dc96b396376426414fd191534045ca3508acb51a1672e0ef3ebc0cca",
+   "gold": {
+    "file": "a-la-carte.json",
+    "hash": "2d58e4f1cf109faa669d923311c63805cd8b63e6916c2265cb7e98fb9e8b2759",
+    "pairing": "Obi-Wan Kenobi/Anakin Skywalker",
+    "act": "blowjob",
+    "verdict": "one_way"
+   },
+   "evidence": [
+    {
+     "from": 1974,
+     "to": 1974
+    }
+   ],
+   "errors": [],
+   "verdict": "correct",
+   "updatedAt": "2026-10-06T21:12:26.624Z"
+  },
+  {
+   "id": "G7",
+   "key": "gold-range:a-la-carte.json:2:846-852#2d58e4f1cf109faa669d923311c63805cd8b63e6916c2265cb7e98fb9e8b2759",
+   "fic": "a-la-carte.html",
+   "paragraph": 846,
+   "sourceSha": "4d553843dc96b396376426414fd191534045ca3508acb51a1672e0ef3ebc0cca",
+   "gold": {
+    "file": "a-la-carte.json",
+    "hash": "2d58e4f1cf109faa669d923311c63805cd8b63e6916c2265cb7e98fb9e8b2759",
+    "pairing": "Obi-Wan Kenobi/Anakin Skywalker",
+    "act": "rimming",
+    "verdict": "one_way"
+   },
+   "evidence": [
+    {
+     "from": 846,
+     "to": 852
+    }
+   ],
+   "errors": [],
+   "verdict": "correct",
+   "updatedAt": "2026-10-06T21:12:43.778Z"
+  },
+  {
+   "id": "G8",
+   "key": "gold-range:angel-without-a-god.json:0:4302-4384#777b44fa556410b144309e02f4ccf829fac0c9a355d1c9ed8c72bfe0ae851ee9",
+   "fic": "angel-without-a-god.html",
+   "paragraph": 4302,
+   "sourceSha": "dae22879912fd019b9219d7cf60c85dd861ae5b83de5660c1b3a9918030a3d95",
+   "gold": {
+    "file": "angel-without-a-god.json",
+    "hash": "777b44fa556410b144309e02f4ccf829fac0c9a355d1c9ed8c72bfe0ae851ee9",
+    "pairing": "Jason Carver/Eddie Munson",
+    "act": "anal",
+    "verdict": "one_way"
+   },
+   "evidence": [
+    {
+     "from": 4302,
+     "to": 4384
+    }
+   ],
+   "errors": [],
+   "verdict": "correct",
+   "updatedAt": "2026-10-07T12:13:09.631Z"
+  },
+  {
+   "id": "G9",
+   "key": "gold-range:angel-without-a-god.json:1:3357-3406#777b44fa556410b144309e02f4ccf829fac0c9a355d1c9ed8c72bfe0ae851ee9",
+   "fic": "angel-without-a-god.html",
+   "paragraph": 3357,
+   "sourceSha": "dae22879912fd019b9219d7cf60c85dd861ae5b83de5660c1b3a9918030a3d95",
+   "gold": {
+    "file": "angel-without-a-god.json",
+    "hash": "777b44fa556410b144309e02f4ccf829fac0c9a355d1c9ed8c72bfe0ae851ee9",
+    "pairing": "Jason Carver/Eddie Munson",
+    "act": "blowjob",
+    "verdict": "one_way"
+   },
+   "evidence": [
+    {
+     "from": 3357,
+     "to": 3406
+    }
+   ],
+   "errors": [],
+   "verdict": "correct",
+   "updatedAt": "2026-10-07T12:15:22.180Z"
+  },
+  {
+   "id": "G10",
+   "key": "gold-range:lightning.json:0:5436-5481#172d99c8662e127113cb5a7f3690e372c828586a1f152e2b581d61f4d685308e",
+   "fic": "lightning.html",
+   "paragraph": 5436,
+   "sourceSha": "0a3fe56af1a92ac27ba2da61af1ffb88f11cf6aa44cb91777bb7b97c025f67d7",
+   "gold": {
+    "file": "lightning.json",
+    "hash": "172d99c8662e127113cb5a7f3690e372c828586a1f152e2b581d61f4d685308e",
+    "pairing": "Evan \"Buck\" Buckley/Eddie Diaz",
+    "act": "anal",
+    "verdict": "one_way"
+   },
+   "evidence": [
+    {
+     "from": 5436,
+     "to": 5481
+    }
+   ],
+   "errors": [],
+   "verdict": "correct",
+   "updatedAt": "2026-10-07T12:18:55.098Z"
+  },
+  {
+   "id": "G11",
+   "key": "gold-range:lightning.json:1:5403-5421#172d99c8662e127113cb5a7f3690e372c828586a1f152e2b581d61f4d685308e",
+   "fic": "lightning.html",
+   "paragraph": 5403,
+   "sourceSha": "0a3fe56af1a92ac27ba2da61af1ffb88f11cf6aa44cb91777bb7b97c025f67d7",
+   "gold": {
+    "file": "lightning.json",
+    "hash": "172d99c8662e127113cb5a7f3690e372c828586a1f152e2b581d61f4d685308e",
+    "pairing": "Evan \"Buck\" Buckley/Eddie Diaz",
+    "act": "blowjob",
+    "verdict": "one_way"
+   },
+   "evidence": [
+    {
+     "from": 5403,
+     "to": 5421
+    }
+   ],
+   "errors": [],
+   "verdict": "correct",
+   "updatedAt": "2026-10-07T12:29:58.761Z"
+  },
+  {
+   "id": "G12",
+   "key": "gold-range:prince-prisoner-puppy.json:0:20-38#e5ae4792be80121ed19ef8e92c773c97abd344a129f830b3e3ebf9b2be1260ce",
+   "fic": "prince-prisoner-puppy.html",
+   "paragraph": 20,
+   "sourceSha": "cb68b9eaa778291f8ecbe13bcdb59ee9a7d3f0a170fa1ec35347e4663d6714fa",
+   "gold": {
+    "file": "prince-prisoner-puppy.json",
+    "hash": "e5ae4792be80121ed19ef8e92c773c97abd344a129f830b3e3ebf9b2be1260ce",
+    "pairing": "Antinous/Telemachus",
+    "act": "anal",
+    "verdict": "one_way"
+   },
+   "evidence": [
+    {
+     "from": 20,
+     "to": 38
+    }
+   ],
+   "errors": [],
+   "verdict": "correct",
+   "updatedAt": "2026-10-07T12:33:14.808Z"
+  },
+  {
+   "id": "G13",
+   "key": "gold-range:prince-prisoner-puppy.json:0:55-75#e5ae4792be80121ed19ef8e92c773c97abd344a129f830b3e3ebf9b2be1260ce",
+   "fic": "prince-prisoner-puppy.html",
+   "paragraph": 55,
+   "sourceSha": "cb68b9eaa778291f8ecbe13bcdb59ee9a7d3f0a170fa1ec35347e4663d6714fa",
+   "gold": {
+    "file": "prince-prisoner-puppy.json",
+    "hash": "e5ae4792be80121ed19ef8e92c773c97abd344a129f830b3e3ebf9b2be1260ce",
+    "pairing": "Antinous/Telemachus",
+    "act": "anal",
+    "verdict": "one_way"
+   },
+   "evidence": [
+    {
+     "from": 55,
+     "to": 75
+    }
+   ],
+   "errors": [
+    "Fingers or toy mistaken for a penis"
+   ],
+   "updatedAt": "2026-10-07T12:48:01.893Z",
+   "verdict": "wrong"
+  },
+  {
+   "id": "G14",
+   "key": "gold-range:prince-prisoner-puppy.json:0:103-117#e5ae4792be80121ed19ef8e92c773c97abd344a129f830b3e3ebf9b2be1260ce",
+   "fic": "prince-prisoner-puppy.html",
+   "paragraph": 103,
+   "sourceSha": "cb68b9eaa778291f8ecbe13bcdb59ee9a7d3f0a170fa1ec35347e4663d6714fa",
+   "gold": {
+    "file": "prince-prisoner-puppy.json",
+    "hash": "e5ae4792be80121ed19ef8e92c773c97abd344a129f830b3e3ebf9b2be1260ce",
+    "pairing": "Antinous/Telemachus",
+    "act": "anal",
+    "verdict": "one_way"
+   },
+   "evidence": [
+    {
+     "from": 103,
+     "to": 117
+    }
+   ],
+   "errors": [],
+   "verdict": "correct",
+   "updatedAt": "2026-10-07T12:50:46.966Z"
+  },
+  {
+   "id": "G15",
+   "key": "gold-range:prince-prisoner-puppy.json:0:159-164#e5ae4792be80121ed19ef8e92c773c97abd344a129f830b3e3ebf9b2be1260ce",
+   "fic": "prince-prisoner-puppy.html",
+   "paragraph": 159,
+   "sourceSha": "cb68b9eaa778291f8ecbe13bcdb59ee9a7d3f0a170fa1ec35347e4663d6714fa",
+   "gold": {
+    "file": "prince-prisoner-puppy.json",
+    "hash": "e5ae4792be80121ed19ef8e92c773c97abd344a129f830b3e3ebf9b2be1260ce",
+    "pairing": "Antinous/Telemachus",
+    "act": "anal",
+    "verdict": "one_way"
+   },
+   "evidence": [
+    {
+     "from": 159,
+     "to": 164
+    }
+   ],
+   "errors": [],
+   "verdict": "correct",
+   "updatedAt": "2026-10-07T12:52:27.407Z"
+  },
+  {
+   "id": "G16",
+   "key": "gold-range:prince-prisoner-puppy.json:0:167-167#e5ae4792be80121ed19ef8e92c773c97abd344a129f830b3e3ebf9b2be1260ce",
+   "fic": "prince-prisoner-puppy.html",
+   "paragraph": 167,
+   "sourceSha": "cb68b9eaa778291f8ecbe13bcdb59ee9a7d3f0a170fa1ec35347e4663d6714fa",
+   "gold": {
+    "file": "prince-prisoner-puppy.json",
+    "hash": "e5ae4792be80121ed19ef8e92c773c97abd344a129f830b3e3ebf9b2be1260ce",
+    "pairing": "Antinous/Telemachus",
+    "act": "anal",
+    "verdict": "one_way"
+   },
+   "evidence": [
+    {
+     "from": 167,
+     "to": 167
+    }
+   ],
+   "errors": [],
+   "verdict": "correct",
+   "updatedAt": "2026-10-07T12:59:25.466Z"
+  },
+  {
+   "id": "G17",
+   "key": "gold-range:prince-prisoner-puppy.json:0:265-276#e5ae4792be80121ed19ef8e92c773c97abd344a129f830b3e3ebf9b2be1260ce",
+   "fic": "prince-prisoner-puppy.html",
+   "paragraph": 265,
+   "sourceSha": "cb68b9eaa778291f8ecbe13bcdb59ee9a7d3f0a170fa1ec35347e4663d6714fa",
+   "gold": {
+    "file": "prince-prisoner-puppy.json",
+    "hash": "e5ae4792be80121ed19ef8e92c773c97abd344a129f830b3e3ebf9b2be1260ce",
+    "pairing": "Antinous/Telemachus",
+    "act": "anal",
+    "verdict": "one_way"
+   },
+   "evidence": [
+    {
+     "from": 265,
+     "to": 276
+    }
+   ],
+   "errors": [],
+   "verdict": "correct",
+   "updatedAt": "2026-10-07T13:01:30.288Z"
+  },
+  {
+   "id": "G18",
+   "key": "gold-range:prince-prisoner-puppy.json:0:404-407#e5ae4792be80121ed19ef8e92c773c97abd344a129f830b3e3ebf9b2be1260ce",
+   "fic": "prince-prisoner-puppy.html",
+   "paragraph": 404,
+   "sourceSha": "cb68b9eaa778291f8ecbe13bcdb59ee9a7d3f0a170fa1ec35347e4663d6714fa",
+   "gold": {
+    "file": "prince-prisoner-puppy.json",
+    "hash": "e5ae4792be80121ed19ef8e92c773c97abd344a129f830b3e3ebf9b2be1260ce",
+    "pairing": "Antinous/Telemachus",
+    "act": "anal",
+    "verdict": "one_way"
+   },
+   "evidence": [
+    {
+     "from": 404,
+     "to": 407
+    }
+   ],
+   "errors": [],
+   "verdict": "correct",
+   "updatedAt": "2026-10-07T13:02:47.710Z"
+  },
+  {
+   "id": "G19",
+   "key": "gold-range:prince-prisoner-puppy.json:0:461-474#e5ae4792be80121ed19ef8e92c773c97abd344a129f830b3e3ebf9b2be1260ce",
+   "fic": "prince-prisoner-puppy.html",
+   "paragraph": 461,
+   "sourceSha": "cb68b9eaa778291f8ecbe13bcdb59ee9a7d3f0a170fa1ec35347e4663d6714fa",
+   "gold": {
+    "file": "prince-prisoner-puppy.json",
+    "hash": "e5ae4792be80121ed19ef8e92c773c97abd344a129f830b3e3ebf9b2be1260ce",
+    "pairing": "Antinous/Telemachus",
+    "act": "anal",
+    "verdict": "one_way"
+   },
+   "evidence": [
+    {
+     "from": 461,
+     "to": 474
+    }
+   ],
+   "errors": [],
+   "verdict": "correct",
+   "updatedAt": "2026-10-07T13:07:53.624Z"
+  },
+  {
+   "id": "G20",
+   "key": "gold-range:prince-prisoner-puppy.json:0:498-508#e5ae4792be80121ed19ef8e92c773c97abd344a129f830b3e3ebf9b2be1260ce",
+   "fic": "prince-prisoner-puppy.html",
+   "paragraph": 498,
+   "sourceSha": "cb68b9eaa778291f8ecbe13bcdb59ee9a7d3f0a170fa1ec35347e4663d6714fa",
+   "gold": {
+    "file": "prince-prisoner-puppy.json",
+    "hash": "e5ae4792be80121ed19ef8e92c773c97abd344a129f830b3e3ebf9b2be1260ce",
+    "pairing": "Antinous/Telemachus",
+    "act": "anal",
+    "verdict": "one_way"
+   },
+   "evidence": [
+    {
+     "from": 498,
+     "to": 508
+    }
+   ],
+   "errors": [],
+   "verdict": "correct",
+   "updatedAt": "2026-10-07T13:08:57.172Z"
+  },
+  {
+   "id": "G21",
+   "key": "gold-range:prince-prisoner-puppy.json:0:558-560#e5ae4792be80121ed19ef8e92c773c97abd344a129f830b3e3ebf9b2be1260ce",
+   "fic": "prince-prisoner-puppy.html",
+   "paragraph": 558,
+   "sourceSha": "cb68b9eaa778291f8ecbe13bcdb59ee9a7d3f0a170fa1ec35347e4663d6714fa",
+   "gold": {
+    "file": "prince-prisoner-puppy.json",
+    "hash": "e5ae4792be80121ed19ef8e92c773c97abd344a129f830b3e3ebf9b2be1260ce",
+    "pairing": "Antinous/Telemachus",
+    "act": "anal",
+    "verdict": "one_way"
+   },
+   "evidence": [
+    {
+     "from": 558,
+     "to": 560
+    }
+   ],
+   "errors": [],
+   "verdict": "correct",
+   "updatedAt": "2026-10-07T13:10:32.862Z"
+  },
+  {
+   "id": "G22",
+   "key": "gold-range:prince-prisoner-puppy.json:0:561-561#e5ae4792be80121ed19ef8e92c773c97abd344a129f830b3e3ebf9b2be1260ce",
+   "fic": "prince-prisoner-puppy.html",
+   "paragraph": 561,
+   "sourceSha": "cb68b9eaa778291f8ecbe13bcdb59ee9a7d3f0a170fa1ec35347e4663d6714fa",
+   "gold": {
+    "file": "prince-prisoner-puppy.json",
+    "hash": "e5ae4792be80121ed19ef8e92c773c97abd344a129f830b3e3ebf9b2be1260ce",
+    "pairing": "Antinous/Telemachus",
+    "act": "anal",
+    "verdict": "one_way"
+   },
+   "evidence": [
+    {
+     "from": 561,
+     "to": 561
+    }
+   ],
+   "errors": [],
+   "verdict": "correct",
+   "updatedAt": "2026-10-07T13:11:04.555Z"
+  },
+  {
+   "id": "G23",
+   "key": "gold-range:prince-prisoner-puppy.json:0:591-594#e5ae4792be80121ed19ef8e92c773c97abd344a129f830b3e3ebf9b2be1260ce",
+   "fic": "prince-prisoner-puppy.html",
+   "paragraph": 591,
+   "sourceSha": "cb68b9eaa778291f8ecbe13bcdb59ee9a7d3f0a170fa1ec35347e4663d6714fa",
+   "gold": {
+    "file": "prince-prisoner-puppy.json",
+    "hash": "e5ae4792be80121ed19ef8e92c773c97abd344a129f830b3e3ebf9b2be1260ce",
+    "pairing": "Antinous/Telemachus",
+    "act": "anal",
+    "verdict": "one_way"
+   },
+   "evidence": [
+    {
+     "from": 591,
+     "to": 594
+    }
+   ],
+   "errors": [],
+   "verdict": "correct",
+   "updatedAt": "2026-10-07T13:11:53.445Z"
+  },
+  {
+   "id": "G24",
+   "key": "gold-range:prince-prisoner-puppy.json:0:660-677#e5ae4792be80121ed19ef8e92c773c97abd344a129f830b3e3ebf9b2be1260ce",
+   "fic": "prince-prisoner-puppy.html",
+   "paragraph": 660,
+   "sourceSha": "cb68b9eaa778291f8ecbe13bcdb59ee9a7d3f0a170fa1ec35347e4663d6714fa",
+   "gold": {
+    "file": "prince-prisoner-puppy.json",
+    "hash": "e5ae4792be80121ed19ef8e92c773c97abd344a129f830b3e3ebf9b2be1260ce",
+    "pairing": "Antinous/Telemachus",
+    "act": "anal",
+    "verdict": "one_way"
+   },
+   "evidence": [
+    {
+     "from": 660,
+     "to": 677
+    }
+   ],
+   "errors": [],
+   "verdict": "correct",
+   "updatedAt": "2026-10-07T13:12:54.108Z"
+  },
+  {
+   "id": "G25",
+   "key": "gold-range:prince-prisoner-puppy.json:0:720-734#e5ae4792be80121ed19ef8e92c773c97abd344a129f830b3e3ebf9b2be1260ce",
+   "fic": "prince-prisoner-puppy.html",
+   "paragraph": 720,
+   "sourceSha": "cb68b9eaa778291f8ecbe13bcdb59ee9a7d3f0a170fa1ec35347e4663d6714fa",
+   "gold": {
+    "file": "prince-prisoner-puppy.json",
+    "hash": "e5ae4792be80121ed19ef8e92c773c97abd344a129f830b3e3ebf9b2be1260ce",
+    "pairing": "Antinous/Telemachus",
+    "act": "anal",
+    "verdict": "one_way"
+   },
+   "evidence": [
+    {
+     "from": 720,
+     "to": 734
+    }
+   ],
+   "errors": [],
+   "verdict": "correct",
+   "updatedAt": "2026-10-07T13:13:52.028Z"
+  },
+  {
+   "id": "G26",
+   "key": "gold-range:rushing.json:0:1148-1150#ac8c82743cd9c89be3da3563c924eb1e61392d745010cde152a93124947503cd",
+   "fic": "rushing.html",
+   "paragraph": 1148,
+   "sourceSha": "72467682bf42c40db092db18dc3eccd9919fb7bfd6dda69221431195875ea485",
+   "gold": {
+    "file": "rushing.json",
+    "hash": "ac8c82743cd9c89be3da3563c924eb1e61392d745010cde152a93124947503cd",
+    "pairing": "Derek Hale/Scott McCall",
+    "act": "anal",
+    "verdict": "switch"
+   },
+   "evidence": [
+    {
+     "from": 1148,
+     "to": 1150
+    }
+   ],
+   "errors": [],
+   "verdict": "uncertain",
+   "updatedAt": "2026-10-07T13:15:03.678Z"
+  },
+  {
+   "id": "G27",
+   "key": "gold-range:rushing.json:0:1444-1447#ac8c82743cd9c89be3da3563c924eb1e61392d745010cde152a93124947503cd",
+   "fic": "rushing.html",
+   "paragraph": 1444,
+   "sourceSha": "72467682bf42c40db092db18dc3eccd9919fb7bfd6dda69221431195875ea485",
+   "gold": {
+    "file": "rushing.json",
+    "hash": "ac8c82743cd9c89be3da3563c924eb1e61392d745010cde152a93124947503cd",
+    "pairing": "Derek Hale/Scott McCall",
+    "act": "anal",
+    "verdict": "switch"
+   },
+   "evidence": [
+    {
+     "from": 1444,
+     "to": 1447
+    }
+   ],
+   "errors": [],
+   "verdict": "correct",
+   "updatedAt": "2026-10-07T13:15:32.856Z"
+  },
+  {
+   "id": "G28",
+   "key": "gold-range:rushing.json:0:1585-1593#ac8c82743cd9c89be3da3563c924eb1e61392d745010cde152a93124947503cd",
+   "fic": "rushing.html",
+   "paragraph": 1585,
+   "sourceSha": "72467682bf42c40db092db18dc3eccd9919fb7bfd6dda69221431195875ea485",
+   "gold": {
+    "file": "rushing.json",
+    "hash": "ac8c82743cd9c89be3da3563c924eb1e61392d745010cde152a93124947503cd",
+    "pairing": "Derek Hale/Scott McCall",
+    "act": "anal",
+    "verdict": "switch"
+   },
+   "evidence": [
+    {
+     "from": 1585,
+     "to": 1593
+    }
+   ],
+   "errors": [],
+   "verdict": "correct",
+   "updatedAt": "2026-10-07T13:16:09.567Z"
+  },
+  {
+   "id": "G29",
+   "key": "gold-range:rushing.json:1:1159-1159#ac8c82743cd9c89be3da3563c924eb1e61392d745010cde152a93124947503cd",
+   "fic": "rushing.html",
+   "paragraph": 1159,
+   "sourceSha": "72467682bf42c40db092db18dc3eccd9919fb7bfd6dda69221431195875ea485",
+   "gold": {
+    "file": "rushing.json",
+    "hash": "ac8c82743cd9c89be3da3563c924eb1e61392d745010cde152a93124947503cd",
+    "pairing": "Scott McCall/Stiles Stilinski",
+    "act": "anal",
+    "verdict": "one_way"
+   },
+   "evidence": [
+    {
+     "from": 1159,
+     "to": 1159
+    }
+   ],
+   "errors": [],
+   "verdict": "correct",
+   "updatedAt": "2026-10-07T13:16:58.717Z"
+  },
+  {
+   "id": "G30",
+   "key": "gold-range:rushing.json:2:1984-1984#ac8c82743cd9c89be3da3563c924eb1e61392d745010cde152a93124947503cd",
+   "fic": "rushing.html",
+   "paragraph": 1984,
+   "sourceSha": "72467682bf42c40db092db18dc3eccd9919fb7bfd6dda69221431195875ea485",
+   "gold": {
+    "file": "rushing.json",
+    "hash": "ac8c82743cd9c89be3da3563c924eb1e61392d745010cde152a93124947503cd",
+    "pairing": "Derek Hale/Stiles Stilinski",
+    "act": "anal",
+    "verdict": "one_way"
+   },
+   "evidence": [
+    {
+     "from": 1984,
+     "to": 1984
+    }
+   ],
+   "errors": [],
+   "verdict": "correct",
+   "updatedAt": "2026-10-07T13:17:16.276Z"
+  },
+  {
+   "id": "G31",
+   "key": "gold-range:slipfast.json:0:380-416#f404344bbc66d6236559f6afa6f9b097bb9df3df5209fc81970e302162f89213",
+   "fic": "slipfast.html",
+   "paragraph": 380,
+   "sourceSha": "71b92f3b525c233feb648f601e11aba947d49797e1d7159725cfbcf23acfdca5",
+   "gold": {
+    "file": "slipfast.json",
+    "hash": "f404344bbc66d6236559f6afa6f9b097bb9df3df5209fc81970e302162f89213",
+    "pairing": "Shane Hollander/Ilya Rozanov",
+    "act": "anal",
+    "verdict": "one_way"
+   },
+   "evidence": [
+    {
+     "from": 380,
+     "to": 416
+    }
+   ],
+   "errors": [],
+   "verdict": "correct",
+   "updatedAt": "2026-10-07T13:18:55.334Z"
+  },
+  {
+   "id": "G32",
+   "key": "gold-range:slipfast.json:0:480-505#f404344bbc66d6236559f6afa6f9b097bb9df3df5209fc81970e302162f89213",
+   "fic": "slipfast.html",
+   "paragraph": 480,
+   "sourceSha": "71b92f3b525c233feb648f601e11aba947d49797e1d7159725cfbcf23acfdca5",
+   "gold": {
+    "file": "slipfast.json",
+    "hash": "f404344bbc66d6236559f6afa6f9b097bb9df3df5209fc81970e302162f89213",
+    "pairing": "Shane Hollander/Ilya Rozanov",
+    "act": "anal",
+    "verdict": "one_way"
+   },
+   "evidence": [
+    {
+     "from": 480,
+     "to": 505
+    }
+   ],
+   "errors": [],
+   "verdict": "correct",
+   "updatedAt": "2026-10-07T13:20:35.350Z"
+  },
+  {
+   "id": "G33",
+   "key": "gold-range:slipfast.json:1:133-134#f404344bbc66d6236559f6afa6f9b097bb9df3df5209fc81970e302162f89213",
+   "fic": "slipfast.html",
+   "paragraph": 133,
+   "sourceSha": "71b92f3b525c233feb648f601e11aba947d49797e1d7159725cfbcf23acfdca5",
+   "gold": {
+    "file": "slipfast.json",
+    "hash": "f404344bbc66d6236559f6afa6f9b097bb9df3df5209fc81970e302162f89213",
+    "pairing": "Shane Hollander/Ilya Rozanov",
+    "act": "blowjob",
+    "verdict": "switch"
+   },
+   "evidence": [
+    {
+     "from": 133,
+     "to": 134
+    }
+   ],
+   "errors": [],
+   "verdict": "correct",
+   "updatedAt": "2026-10-07T13:21:20.220Z"
+  },
+  {
+   "id": "G34",
+   "key": "gold-range:slipfast.json:1:147-147#f404344bbc66d6236559f6afa6f9b097bb9df3df5209fc81970e302162f89213",
+   "fic": "slipfast.html",
+   "paragraph": 147,
+   "sourceSha": "71b92f3b525c233feb648f601e11aba947d49797e1d7159725cfbcf23acfdca5",
+   "gold": {
+    "file": "slipfast.json",
+    "hash": "f404344bbc66d6236559f6afa6f9b097bb9df3df5209fc81970e302162f89213",
+    "pairing": "Shane Hollander/Ilya Rozanov",
+    "act": "blowjob",
+    "verdict": "switch"
+   },
+   "evidence": [
+    {
+     "from": 147,
+     "to": 147
+    }
+   ],
+   "errors": [],
+   "verdict": "correct",
+   "updatedAt": "2026-10-07T13:21:37.206Z"
+  },
+  {
+   "id": "G35",
+   "key": "gold-range:slipfast.json:1:393-399#f404344bbc66d6236559f6afa6f9b097bb9df3df5209fc81970e302162f89213",
+   "fic": "slipfast.html",
+   "paragraph": 393,
+   "sourceSha": "71b92f3b525c233feb648f601e11aba947d49797e1d7159725cfbcf23acfdca5",
+   "gold": {
+    "file": "slipfast.json",
+    "hash": "f404344bbc66d6236559f6afa6f9b097bb9df3df5209fc81970e302162f89213",
+    "pairing": "Shane Hollander/Ilya Rozanov",
+    "act": "blowjob",
+    "verdict": "switch"
+   },
+   "evidence": [
+    {
+     "from": 393,
+     "to": 399
+    }
+   ],
+   "errors": [
+    "Wrong act or body part"
+   ],
+   "verdict": "wrong",
+   "updatedAt": "2026-10-07T13:22:47.119Z"
+  },
+  {
+   "id": "G36",
+   "key": "gold-range:slipfast.json:1:490-490#f404344bbc66d6236559f6afa6f9b097bb9df3df5209fc81970e302162f89213",
+   "fic": "slipfast.html",
+   "paragraph": 490,
+   "sourceSha": "71b92f3b525c233feb648f601e11aba947d49797e1d7159725cfbcf23acfdca5",
+   "gold": {
+    "file": "slipfast.json",
+    "hash": "f404344bbc66d6236559f6afa6f9b097bb9df3df5209fc81970e302162f89213",
+    "pairing": "Shane Hollander/Ilya Rozanov",
+    "act": "blowjob",
+    "verdict": "switch"
+   },
+   "evidence": [
+    {
+     "from": 490,
+     "to": 490
+    }
+   ],
+   "errors": [],
+   "verdict": "correct",
+   "updatedAt": "2026-10-07T13:24:54.241Z"
+  },
+  {
+   "id": "G37",
+   "key": "gold-range:slipfast.json:1:569-571#f404344bbc66d6236559f6afa6f9b097bb9df3df5209fc81970e302162f89213",
+   "fic": "slipfast.html",
+   "paragraph": 569,
+   "sourceSha": "71b92f3b525c233feb648f601e11aba947d49797e1d7159725cfbcf23acfdca5",
+   "gold": {
+    "file": "slipfast.json",
+    "hash": "f404344bbc66d6236559f6afa6f9b097bb9df3df5209fc81970e302162f89213",
+    "pairing": "Shane Hollander/Ilya Rozanov",
+    "act": "blowjob",
+    "verdict": "switch"
+   },
+   "evidence": [
+    {
+     "from": 569,
+     "to": 571
+    }
+   ],
+   "errors": [],
+   "verdict": "correct",
+   "updatedAt": "2026-10-07T13:26:10.601Z"
+  },
+  {
+   "id": "G38",
+   "key": "gold-range:were-compeer.json:0:208-239#190ba19f91cf1ea6b5d1694552baa0818ce180685acc4aa9bd03f0e896403349",
+   "fic": "were-compeer.html",
+   "paragraph": 208,
+   "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+   "gold": {
+    "file": "were-compeer.json",
+    "hash": "190ba19f91cf1ea6b5d1694552baa0818ce180685acc4aa9bd03f0e896403349",
+    "pairing": "Derek Hale/Stiles Stilinski",
+    "act": "anal",
+    "verdict": "one_way"
+   },
+   "evidence": [
+    {
+     "from": 208,
+     "to": 239
+    }
+   ],
+   "errors": [],
+   "verdict": "correct",
+   "updatedAt": "2026-10-07T13:29:08.167Z"
+  },
+  {
+   "id": "G39",
+   "key": "gold-range:were-compeer.json:0:241-249#190ba19f91cf1ea6b5d1694552baa0818ce180685acc4aa9bd03f0e896403349",
+   "fic": "were-compeer.html",
+   "paragraph": 241,
+   "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+   "gold": {
+    "file": "were-compeer.json",
+    "hash": "190ba19f91cf1ea6b5d1694552baa0818ce180685acc4aa9bd03f0e896403349",
+    "pairing": "Derek Hale/Stiles Stilinski",
+    "act": "anal",
+    "verdict": "one_way"
+   },
+   "evidence": [
+    {
+     "from": 241,
+     "to": 249
+    }
+   ],
+   "errors": [],
+   "verdict": "correct",
+   "updatedAt": "2026-10-07T13:29:34.305Z"
+  },
+  {
+   "id": "G40",
+   "key": "gold-range:were-compeer.json:0:397-432#190ba19f91cf1ea6b5d1694552baa0818ce180685acc4aa9bd03f0e896403349",
+   "fic": "were-compeer.html",
+   "paragraph": 397,
+   "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+   "gold": {
+    "file": "were-compeer.json",
+    "hash": "190ba19f91cf1ea6b5d1694552baa0818ce180685acc4aa9bd03f0e896403349",
+    "pairing": "Derek Hale/Stiles Stilinski",
+    "act": "anal",
+    "verdict": "one_way"
+   },
+   "evidence": [
+    {
+     "from": 397,
+     "to": 432
+    }
+   ],
+   "errors": [],
+   "verdict": "correct",
+   "updatedAt": "2026-10-07T13:31:20.854Z"
+  },
+  {
+   "id": "G41",
+   "key": "gold-range:were-compeer.json:0:946-967#190ba19f91cf1ea6b5d1694552baa0818ce180685acc4aa9bd03f0e896403349",
+   "fic": "were-compeer.html",
+   "paragraph": 946,
+   "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+   "gold": {
+    "file": "were-compeer.json",
+    "hash": "190ba19f91cf1ea6b5d1694552baa0818ce180685acc4aa9bd03f0e896403349",
+    "pairing": "Derek Hale/Stiles Stilinski",
+    "act": "anal",
+    "verdict": "one_way"
+   },
+   "evidence": [
+    {
+     "from": 946,
+     "to": 967
+    }
+   ],
+   "errors": [],
+   "verdict": "correct",
+   "updatedAt": "2026-10-07T13:36:08.009Z"
+  },
+  {
+   "id": "G42",
+   "key": "gold-range:were-compeer.json:0:976-986#190ba19f91cf1ea6b5d1694552baa0818ce180685acc4aa9bd03f0e896403349",
+   "fic": "were-compeer.html",
+   "paragraph": 976,
+   "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+   "gold": {
+    "file": "were-compeer.json",
+    "hash": "190ba19f91cf1ea6b5d1694552baa0818ce180685acc4aa9bd03f0e896403349",
+    "pairing": "Derek Hale/Stiles Stilinski",
+    "act": "anal",
+    "verdict": "one_way"
+   },
+   "evidence": [
+    {
+     "from": 976,
+     "to": 986
+    }
+   ],
+   "errors": [
+    "Wrong act or body part"
+   ],
+   "verdict": "wrong",
+   "updatedAt": "2026-10-07T13:38:05.569Z"
+  },
+  {
+   "id": "G43",
+   "key": "gold-range:were-compeer.json:0:1007-1013#190ba19f91cf1ea6b5d1694552baa0818ce180685acc4aa9bd03f0e896403349",
+   "fic": "were-compeer.html",
+   "paragraph": 1007,
+   "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+   "gold": {
+    "file": "were-compeer.json",
+    "hash": "190ba19f91cf1ea6b5d1694552baa0818ce180685acc4aa9bd03f0e896403349",
+    "pairing": "Derek Hale/Stiles Stilinski",
+    "act": "anal",
+    "verdict": "one_way"
+   },
+   "evidence": [
+    {
+     "from": 1007,
+     "to": 1013
+    }
+   ],
+   "errors": [],
+   "verdict": "correct",
+   "updatedAt": "2026-10-07T13:38:57.718Z"
+  },
+  {
+   "id": "G44",
+   "key": "gold-range:were-compeer.json:0:1155-1169#190ba19f91cf1ea6b5d1694552baa0818ce180685acc4aa9bd03f0e896403349",
+   "fic": "were-compeer.html",
+   "paragraph": 1155,
+   "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+   "gold": {
+    "file": "were-compeer.json",
+    "hash": "190ba19f91cf1ea6b5d1694552baa0818ce180685acc4aa9bd03f0e896403349",
+    "pairing": "Derek Hale/Stiles Stilinski",
+    "act": "anal",
+    "verdict": "one_way"
+   },
+   "evidence": [
+    {
+     "from": 1155,
+     "to": 1169
+    }
+   ],
+   "errors": [],
+   "verdict": "correct",
+   "updatedAt": "2026-10-07T13:39:43.549Z"
+  },
+  {
+   "id": "G45",
+   "key": "gold-range:were-compeer.json:0:1199-1205#190ba19f91cf1ea6b5d1694552baa0818ce180685acc4aa9bd03f0e896403349",
+   "fic": "were-compeer.html",
+   "paragraph": 1199,
+   "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+   "gold": {
+    "file": "were-compeer.json",
+    "hash": "190ba19f91cf1ea6b5d1694552baa0818ce180685acc4aa9bd03f0e896403349",
+    "pairing": "Derek Hale/Stiles Stilinski",
+    "act": "anal",
+    "verdict": "one_way"
+   },
+   "evidence": [
+    {
+     "from": 1199,
+     "to": 1205
+    }
+   ],
+   "errors": [],
+   "verdict": "correct",
+   "updatedAt": "2026-10-07T13:40:14.620Z"
+  },
+  {
+   "id": "G46",
+   "key": "gold-range:were-compeer.json:1:223-239#190ba19f91cf1ea6b5d1694552baa0818ce180685acc4aa9bd03f0e896403349",
+   "fic": "were-compeer.html",
+   "paragraph": 223,
+   "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+   "gold": {
+    "file": "were-compeer.json",
+    "hash": "190ba19f91cf1ea6b5d1694552baa0818ce180685acc4aa9bd03f0e896403349",
+    "pairing": "Derek Hale/Stiles Stilinski",
+    "act": "blowjob",
+    "verdict": "one_way"
+   },
+   "evidence": [
+    {
+     "from": 223,
+     "to": 239
+    }
+   ],
+   "errors": [],
+   "verdict": "correct",
+   "updatedAt": "2026-10-07T13:40:47.584Z"
+  },
+  {
+   "id": "G47",
+   "key": "gold-range:were-compeer.json:1:283-292#190ba19f91cf1ea6b5d1694552baa0818ce180685acc4aa9bd03f0e896403349",
+   "fic": "were-compeer.html",
+   "paragraph": 283,
+   "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+   "gold": {
+    "file": "were-compeer.json",
+    "hash": "190ba19f91cf1ea6b5d1694552baa0818ce180685acc4aa9bd03f0e896403349",
+    "pairing": "Derek Hale/Stiles Stilinski",
+    "act": "blowjob",
+    "verdict": "one_way"
+   },
+   "evidence": [
+    {
+     "from": 283,
+     "to": 292
+    }
+   ],
+   "errors": [],
+   "verdict": "correct",
+   "updatedAt": "2026-10-07T13:41:20.765Z"
+  },
+  {
+   "id": "G48",
+   "key": "gold-range:were-compeer.json:1:556-610#190ba19f91cf1ea6b5d1694552baa0818ce180685acc4aa9bd03f0e896403349",
+   "fic": "were-compeer.html",
+   "paragraph": 556,
+   "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+   "gold": {
+    "file": "were-compeer.json",
+    "hash": "190ba19f91cf1ea6b5d1694552baa0818ce180685acc4aa9bd03f0e896403349",
+    "pairing": "Derek Hale/Stiles Stilinski",
+    "act": "blowjob",
+    "verdict": "one_way"
+   },
+   "evidence": [
+    {
+     "from": 556,
+     "to": 610
+    }
+   ],
+   "errors": [],
+   "verdict": "correct",
+   "updatedAt": "2026-10-07T13:42:35.122Z"
+  },
+  {
+   "id": "G49",
+   "key": "gold-range:were-compeer.json:1:976-986#190ba19f91cf1ea6b5d1694552baa0818ce180685acc4aa9bd03f0e896403349",
+   "fic": "were-compeer.html",
+   "paragraph": 976,
+   "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+   "gold": {
+    "file": "were-compeer.json",
+    "hash": "190ba19f91cf1ea6b5d1694552baa0818ce180685acc4aa9bd03f0e896403349",
+    "pairing": "Derek Hale/Stiles Stilinski",
+    "act": "blowjob",
+    "verdict": "one_way"
+   },
+   "evidence": [
+    {
+     "from": 976,
+     "to": 986
+    }
+   ],
+   "errors": [],
+   "verdict": "correct",
+   "updatedAt": "2026-10-07T13:42:55.339Z"
+  },
+  {
+   "id": "G50",
+   "key": "gold-range:were-compeer.json:2:556-610#190ba19f91cf1ea6b5d1694552baa0818ce180685acc4aa9bd03f0e896403349",
+   "fic": "were-compeer.html",
+   "paragraph": 556,
+   "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+   "gold": {
+    "file": "were-compeer.json",
+    "hash": "190ba19f91cf1ea6b5d1694552baa0818ce180685acc4aa9bd03f0e896403349",
+    "pairing": "Derek Hale/Stiles Stilinski",
+    "act": "rimming",
+    "verdict": "one_way"
+   },
+   "evidence": [
+    {
+     "from": 556,
+     "to": 610
+    }
+   ],
+   "errors": [],
+   "verdict": "correct",
+   "updatedAt": "2026-10-07T13:43:59.772Z"
+  },
+  {
+   "id": "G51",
+   "key": "gold-range:were-compeer.json:2:1155-1169#190ba19f91cf1ea6b5d1694552baa0818ce180685acc4aa9bd03f0e896403349",
+   "fic": "were-compeer.html",
+   "paragraph": 1155,
+   "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+   "gold": {
+    "file": "were-compeer.json",
+    "hash": "190ba19f91cf1ea6b5d1694552baa0818ce180685acc4aa9bd03f0e896403349",
+    "pairing": "Derek Hale/Stiles Stilinski",
+    "act": "rimming",
+    "verdict": "one_way"
+   },
+   "evidence": [
+    {
+     "from": 1155,
+     "to": 1169
+    }
+   ],
+   "errors": [],
+   "verdict": "correct",
+   "updatedAt": "2026-10-07T13:44:17.211Z"
+  }
+ ],
+ "decisions": [
+  {
+   "id": "G13",
+   "decision": "relabel-fingering"
+  },
+  {
+   "id": "G26",
+   "decision": "exclude-from-review-only",
+   "reason": "Owner uncertain; no adjudicated evaluation label change."
+  },
+  {
+   "id": "G35",
+   "decision": "retain-blowjob",
+   "reason": "Simultaneous oral activity and fingering; owner approved retaining."
+  },
+  {
+   "id": "G42",
+   "decision": "split-range-retain-anal",
+   "from": 982,
+   "to": 986
+  },
+  {
+   "id": "G49",
+   "decision": "split-range-retain-oral",
+   "from": 976,
+   "to": 981
+  }
+ ]
+}
