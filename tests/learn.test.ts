@@ -12,12 +12,16 @@ import { analyzeWithPatterns } from "../src/heuristic";
 import { FEATURES, LEGACY_FEATURES, MODEL, probability } from "../src/heuristic/learned";
 
 const dir = process.env.AO3_DIR;
+const experiment = process.env.CONFIDENCE_EXPERIMENT;
+if (experiment && experiment !== "scene") throw Error("Unknown confidence experiment");
+if (experiment && process.env.WRITE_LEARNED) throw Error("Scene agreement is report-only; unset WRITE_LEARNED.");
+const featureNames: readonly string[] = [...FEATURES, ...(experiment ? ["sceneRoleAgreement"] : [])];
 const labelDir = join(__dirname, "labels");
 const hash = (s: string) => { let h = 2166136261; for (let i = 0; i < s.length; i++) h = Math.imul(h ^ s.charCodeAt(i), 16777619); return h >>> 0; };
 const PRIOR_MEAN = 0.9, PRIOR_STRENGTH = 4;
 
 /** `wt` is how far the label is trusted (1 for the owner's own marks; less for an unverified pass). */
-type Row = { key: string; id: string; f: number[]; y: number; wt: number; src?: "audit" | "report" | "weighted"; fic?: string };
+type Row = { key: string; id: string; f: number[]; y: number; wt: number; src?: "audit" | "report" | "weighted"; fic?: string; experiments?: {scene: number} };
 
 function loadLabels(): Map<string, "ok" | "wrong"> {
   const out = new Map<string, "ok" | "wrong">();
@@ -144,7 +148,7 @@ describe.skipIf(!dir)("context model", () => {
     let reportNote = "";
     const cache = process.env.ROWS_CACHE;
     const cached = cache && existsSync(cache) ? JSON.parse(readFileSync(cache, "utf8")) as Row[] : undefined;
-    const validCache = cached?.length && cached.every((r) => r.f.length === FEATURES.length && r.f.every(Number.isFinite));
+    const validCache = cached?.length && cached.every((r) => r.f.length === FEATURES.length && r.f.every(Number.isFinite) && (!experiment || Number.isFinite(r.experiments?.scene)));
     if (validCache) rows = cached;
     else {
       const reported = rightSetLabels();
@@ -165,7 +169,7 @@ describe.skipIf(!dir)("context model", () => {
             if (!h.f) { if (lab) missing[key] = h.kind; return; }
             if (!lab || seen.has(key)) return;
             seen.add(key);
-            rows.push({ key, id: h.via, f: h.f, y: lab === "ok" ? 1 : 0, wt: !labels.get(key) && rep ? rep.wt : 1, src: labels.get(key) ? "audit" : rep && rep.wt < 1 ? "weighted" : "report", fic: f });
+            rows.push({ key, id: h.via, f: h.f, y: lab === "ok" ? 1 : 0, wt: !labels.get(key) && rep ? rep.wt : 1, src: labels.get(key) ? "audit" : rep && rep.wt < 1 ? "weighted" : "report", fic: f, experiments: {scene: h.attribution?.sceneRoleAgreement ?? 0} });
           },
         });
       }
@@ -178,7 +182,8 @@ describe.skipIf(!dir)("context model", () => {
     const lines: string[] = ["# Context model", "", `${rows.length} labelled hits found again in the samples (of ${labels.size} labels); ${rows.filter((r) => !r.y).length} wrong.`, ...(reportNote ? [reportNote] : []), ""];
     expect(rows.length).toBeGreaterThan(200);
 
-    const designs = (set: Row[], pre: (id: string, r?: Row) => number) => set.map((r) => [logit(clampP(pre(r.id, r))), ...r.f]);
+    const featureRow = (r: Row) => [...r.f, ...(experiment ? [r.experiments!.scene] : [])];
+    if (experiment) lines.push("Experiment: sceneRoleAgreement alone; existing feature prefix unchanged.", "");
     // 5-fold cross-validation; pattern precision for a held-out row comes from the other folds only. Two ways to split the rows:
     //  - at random (the original: hits from the same fic can sit on both sides, which flatters the model; kept so the history in docs/METRICS.md stays comparable);
     //  - by fic (every hit of a fic is held out together, so the score is for fics the model has not seen: the honest one).
@@ -191,11 +196,11 @@ describe.skipIf(!dir)("context model", () => {
         const train = rows.filter((r) => fold(r) !== k), test = rows.filter((r) => fold(r) === k && (!testOnly || testOnly.includes(r.src ?? "audit")));
         const prec = precisions(train);
         // Inside training, each row's own label is left out of its pattern's precision.
-        const Xtr = train.map((r) => [logit(clampP(precisions(train, r)(r.id))), ...r.f]);
+        const Xtr = train.map((r) => [logit(clampP(precisions(train, r)(r.id))), ...featureRow(r)]);
         const w = fit(Xtr, train.map((r) => r.y), lambda, train.map((r) => r.wt ?? 1));
         for (const r of test) {
           const base = prec(r.id);
-          const x = [logit(clampP(base)), ...r.f];
+          const x = [logit(clampP(base)), ...featureRow(r)];
           let z = w[0];
           for (let i = 0; i < x.length; i++) z += w[i + 1] * x[i];
           out.pb.push(base); out.pm.push(sig(z)); out.ys.push(r.y); out.src.push(r.src ?? "audit"); out.ws.push(r.wt ?? 1);
@@ -233,11 +238,11 @@ describe.skipIf(!dir)("context model", () => {
 
     // Final model on everything.
     const precAll = precisions(rows);
-    const Xall = rows.map((r) => [logit(clampP(precisions(rows, r)(r.id))), ...r.f]);
+    const Xall = rows.map((r) => [logit(clampP(precisions(rows, r)(r.id))), ...featureRow(r)]);
     const wAll = fit(Xall, rows.map((r) => r.y), lambda, rows.map((r) => r.wt ?? 1));
-    lines.push("Weights:", "", `- bias ${wAll[0].toFixed(3)}, pattern record ${wAll[1].toFixed(3)}`, ...FEATURES.map((n, i) => `- ${n}: ${wAll[i + 2].toFixed(3)}`), "", `Switch on: ${better ? "yes" : "no"} (needs lower held-out log loss and higher AUC).`);
+    lines.push("Weights:", "", `- bias ${wAll[0].toFixed(3)}, pattern record ${wAll[1].toFixed(3)}`, ...featureNames.map((n, i) => `- ${n}: ${wAll[i + 2].toFixed(3)}`), "", `Switch on: ${better ? "yes" : "no"} (needs lower held-out log loss and higher AUC).`);
     // What it would do to the wrong rows: share of wrong hits trusted below 0.8, vs right hits.
-    const mult = (r: Row) => Math.max(0.4, Math.min(1, probability(precAll(r.id), r.f, { enabled: true, bias: wAll[0], prior: wAll[1], weights: wAll.slice(2) }) / 0.9));
+    const mult = (r: Row) => Math.max(0.4, Math.min(1, probability(precAll(r.id), featureRow(r), { enabled: true, bias: wAll[0], prior: wAll[1], weights: wAll.slice(2) }) / 0.9));
     const low = (set: Row[]) => (set.filter((r) => mult(r) < 0.8).length / Math.max(1, set.length)) * 100;
     lines.push(`In-sample: ${low(rows.filter((r) => !r.y)).toFixed(0)}% of wrong hits trusted below 0.8 vs ${low(rows.filter((r) => r.y)).toFixed(0)}% of right ones.`);
     writeFileSync(join(dir!, "LEARN_REPORT.md"), lines.join("\n"));

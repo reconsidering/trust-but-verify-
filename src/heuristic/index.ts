@@ -25,7 +25,7 @@ import { reliabilityOf } from "./reliability";
 import { babyNear, featuresOf, trustOf } from "./learned";
 import { Ctx, groupValue, pronoun, readSlot, resolvePair, stripPoss } from "./resolve";
 import { PairTags, buildAct, buildDynamic, buildManual, buildOthers, buildSolo, buildVaginal, buildVibes, plural, soloIsAnal, tagsFor } from "./builders";
-import type { AttributionEvidence, PersonOrigin } from "./decision-features";
+import { sceneRoleAgreementOf, type AttributionEvidence, type PersonOrigin } from "./decision-features";
 
 // ───────────── main analysis ─────────────
 
@@ -408,6 +408,13 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
   }
   scan();
   if (ctx.learnFromVotes()) scan();
+  // Confidence experiment only: compare text readings before later tag-based role settling.
+  const contextReadings = [
+    ...acts.map(h => ({a:h.top.name,b:h.bottom.name,kind:"act",cat:h.cat,act:h.act,para:h.para,sentence:h.sentence})),
+    ...desires.map(h => ({a:h.who.name,b:h.partner?.name,role:h.role,kind:h.kind,cat:h.cat,act:h.act,para:h.para,sentence:h.sentence})),
+  ];
+  const sceneAgreements = sceneRoleAgreementOf(contextReadings,pi => chapters[pi]??"");
+  for (const [i,h] of [...acts,...desires].entries()) if(h.attribution) h.attribution.sceneRoleAgreement = sceneAgreements[i];
   settlePronounPairs();
   settleAboRoles();
 
