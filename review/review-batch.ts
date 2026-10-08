@@ -151,7 +151,7 @@ export async function mountReview(batch: ReviewBatch, options: { stories?: Map<s
     const context = element<HTMLTextAreaElement>("context"); context.disabled = !paras; context.value = answer?.context ?? "";
     element<HTMLButtonElement>("more").disabled = !paras; element("more").textContent = expanded ? "Less context" : "More context";
     const checks = element("errors"); checks.replaceChildren();
-    for (const error of isGold ? ["Wrong act or body part", "Roles reversed", "Fingers or toy mistaken for a penis", "Wish or dialogue treated as an act", "Act missed", "Act did not occur", "Wrong participants", "Range boundaries wrong", "Needs more context", "Other"] : ERRORS) {
+    for (const error of isGold ? ["Wrong act or body part", "Roles reversed", "Fingers or toy mistaken for a penis", "Wish or dialogue treated as an act", "Act missed", "Act did not occur", "Wrong participants", "Range boundaries wrong", "Needs more context", "Other"] : [...new Set([...ERRORS, ...(proposal?.errors ?? []), ...(answer?.errors ?? [])])]) {
       const label = document.createElement("label"), input = document.createElement("input"); input.type = "checkbox"; input.disabled = !paras; input.checked = answer?.errors.includes(error) ?? false;
       input.onchange = () => { const values = new Set(answers[row.id]?.errors ?? []); input.checked ? values.add(error) : values.delete(error); update({ errors: [...values] }); };
       label.append(input, document.createTextNode(error)); checks.append(label);
@@ -189,12 +189,21 @@ export async function mountReview(batch: ReviewBatch, options: { stories?: Map<s
     render(); if (storageOK) notice("Answer saved. Add context or continue to the next reading.");
   }; });
   document.querySelectorAll<HTMLButtonElement>('[data-proposal]').forEach(b => { b.onclick = () => {
-    const proposal = batch.rows.find(r => r.id === current)?.proposal;
+    const row = batch.rows.find(r => r.id === current);
+    const proposal = row?.proposal;
     if (!proposal) return;
     const review = b.dataset.proposal as ReviewAnswer['proposalReview'];
-    update({ proposalReview: review, proposalRevision: proposal.revision, verdict: review === 'agree' ? proposal.verdict : review === 'uncertain' ? 'uncertain' : undefined, errors: review === 'agree' ? [...proposal.errors] : [] });
+    const previous = current ? answers[current] : undefined;
+    const proposedContext = `${proposal.reading}\n\n${proposal.rationale}`;
+    const existingContext = previous?.context ?? '';
+    const context = existingContext.trim() ? existingContext.includes(proposedContext) ? existingContext : `${existingContext}\n\n${proposedContext}` : proposedContext;
+    const audit = row?.labelAudit;
+    const labels = audit?.pastLabels.filter(label => !label.retired) ?? [];
+    const expectedLabel = proposal.verdict === 'correct' ? 'ok' : 'wrong';
+    const pastLabelReview: ReviewAnswer['pastLabelReview'] = proposal.verdict === 'uncertain' ? 'uncertain' : audit && !audit.changed && !audit.quarantined && labels.length && labels.every(label => label.identityVerified && label.verdict === expectedLabel) ? 'keep' : 'replace';
+    update({ proposalReview: review, proposalRevision: proposal.revision, verdict: review === 'agree' ? proposal.verdict : review === 'uncertain' ? 'uncertain' : undefined, errors: review === 'agree' ? [...new Set([...(previous?.errors ?? []), ...proposal.errors])] : [], ...(review === 'agree' ? {context, ...(audit ? {pastLabelReview} : {})} : {}) });
     render();
-    if (storageOK) notice(review === 'disagree' ? 'Disagreement saved. Mark the engine correct, wrong, or not sure and add your correction.' : 'Assessment saved. Add context or continue to the next reading.');
+    if (storageOK) notice(review === 'disagree' ? 'Disagreement saved. Mark the engine correct, wrong, or not sure and add your correction.' : review === 'agree' ? 'Assessment saved. My reading, explanation and applicable errors were added; your existing notes and checked errors were preserved.' : 'Assessment saved. Add context or continue to the next reading.');
   }; });
   document.querySelectorAll<HTMLButtonElement>('[data-past-label]').forEach(b => { b.onclick = () => {
     update({pastLabelReview: b.dataset.pastLabel as ReviewAnswer['pastLabelReview']}); render();

@@ -36,12 +36,28 @@ it('gates proposal buttons, shows both distinct confidences, and saves agreed en
  expect(document.getElementById('passages')!.textContent).toContain('one finger');
  document.querySelector<HTMLButtonElement>('[data-proposal=agree]')!.click();
  expect(api.answers.S1).toMatchObject({verdict:'wrong',proposalReview:'agree',proposalRevision:'r1',errors:['Fingers or toy mistaken for a penis']});
+ expect((document.getElementById('context') as HTMLTextAreaElement).value).toBe(`${batch.rows[0].proposal!.reading}\n\n${batch.rows[0].proposal!.rationale}`);
+ expect([...document.querySelectorAll<HTMLInputElement>('#errors input')].filter(i=>i.checked).map(i=>i.parentElement!.textContent)).toEqual(['Fingers or toy mistaken for a penis']);
  const text=document.getElementById('context') as HTMLTextAreaElement;text.value='My correction <script>unsafe()</script>';text.dispatchEvent(new Event('input'));
  expect(document.querySelector('#context script')).toBeNull();expect(api.payload().answers[0].context).toBe(text.value);
  expect(localStorage.getItem('engine-review:'+batch.batchId)).not.toContain('Morgan inserts one finger');
  const imported:Record<string,typeof api.answers.S1>={};expect(importAnswers(batch,api.payload(),imported)).toBe(1);expect(imported.S1.proposalReview).toBe('agree');
  const altered=structuredClone(api.payload());altered.answers[0].proposalRevision='other';expect(()=>importAnswers(batch,altered,{})).toThrow('different proposed');
  setup();const restored=await mountReview(batch,{stories});expect(restored.answers.S1.verdict).toBe('wrong');
+});
+it('adds all proposed error checkboxes and context on agreement without erasing notes or duplicating the assessment',async()=>{
+ setup();const batch=synthetic();batch.rows[0].proposal!.errors.push('Hypothetical / wanted / threatened');
+ const api=await mountReview(batch,{stories:new Map([['adult.html',['Intro','Lead-in','Invented adult action','Reaction','End']]])});
+ const context=document.getElementById('context') as HTMLTextAreaElement;
+ context.value='My additional observation.';context.dispatchEvent(new Event('input'));
+ document.querySelector<HTMLInputElement>('#errors input')!.click();
+ const agree=document.querySelector<HTMLButtonElement>('[data-proposal=agree]')!;agree.click();
+ const expected=`My additional observation.\n\n${batch.rows[0].proposal!.reading}\n\n${batch.rows[0].proposal!.rationale}`;
+ expect(context.value).toBe(expected);expect(api.answers.S1.errors).toEqual(['Wrong person','Fingers or toy mistaken for a penis','Hypothetical / wanted / threatened']);
+ expect([...document.querySelectorAll<HTMLInputElement>('#errors input')].filter(i=>i.checked).map(i=>i.parentElement!.textContent)).toEqual(api.answers.S1.errors);
+ agree.click();expect(context.value).toBe(expected);expect(api.payload().answers[0].context).toBe(expected);
+ setup();const reopened=await mountReview(batch,{stories:new Map([['adult.html',['Intro','Lead-in','Invented adult action','Reaction','End']]])});
+ expect(reopened.answers.S1.context).toBe(expected);expect(reopened.answers.S1.errors).toEqual(api.answers.S1.errors);
 });
 it('never turns disagree into the opposite label and preserves disagreement with a manual correction',async()=>{
  setup();const batch=synthetic(),api=await mountReview(batch,{stories:new Map([['adult.html',['','', 'Invented adult action','','']]])});
