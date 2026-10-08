@@ -1,3 +1,4 @@
+import {validateReadingReviews} from "../scripts/reading-review-validation.mjs";
 import JSZip from "jszip";
 import { extractFromHtml } from "../src/extract";
 import { splitParagraphs } from "../src/text";
@@ -5,13 +6,14 @@ import { splitParagraphs } from "../src/text";
 export type ReviewSource = { file: string; title: string; sourceSha: string; paragraphSha: string; paragraphCount: number };
 export type ReadingProposal = { revision: string; verdict: "correct" | "wrong" | "uncertain"; reading: string; rationale: string; confidence: number; errors: string[] };
 export type SceneActProposal = { id: string; revision: string; act: string; performer: string; receiver: string; occurrence: string; evidence: { from: number; to: number }; reviewerConfidence: number; note: string; engineReadingKeys: string[]; engineConfidence: number | null };
-export type SceneEngineReading = { key: string; para: number; pattern: string; act: string; kind: string; claim: string; confidence: number | null; a: string; b?: string; role?: string; features: number[]; attribution: Record<string, string | number | boolean> };
+export type SceneEngineReading = { id?: string; confidenceBasis?: string; proposal?: ReadingProposal; key: string; para: number; pattern: string; act: string; kind: string; claim: string; confidence: number | null; a: string; b?: string; role?: string; features: number[]; attribution: Record<string, string | number | boolean> };
 export type ActReview = { revision: string; verdict?: "correct" | "wrong" | "uncertain"; act: string; performer: string; receiver: string; occurrence: string; context: string; errors: string[] };
 export type PastLabel = { source: string; verdict: "ok" | "wrong" | "unclear"; provenance: string; date?: string; claim: string; identityVerified: boolean; key: string; weight?: number; confidence?: number; retired?: string; errors?: string[] };
 export type LabelAudit = { pastLabels: PastLabel[]; priority: number; occurrence: string; changed: boolean; quarantined: boolean; status: string; reasons: string[]; recentEvidence: string[]; referenceClaim?: string; referenceCommit?: string; referenceIsOriginal?: boolean };
 export type ReviewRow = { id: string; key: string; fic: string; para: number; pattern: string; a: string; b?: string; act: string; kind: string; role?: string; claim: string; gold?: { file: string; hash: string; pairing: string; act: string; verdict: string }; evidence?: { from: number; to: number }[]; engineConfidence?: number; proposal?: ReadingProposal; sceneActs?: SceneActProposal[]; engineReadings?: SceneEngineReading[]; trainingNotes?: string[]; labelAudit?: LabelAudit };
 export type ReviewBatch = { schema: "engine-review-batch/v1" | "engine-gold-review/v1" | "engine-gold-range-review/v1"; batchId: string; engineCommit: string; sources: ReviewSource[]; rows: ReviewRow[]; selection?: { method: string; answerFile?: string; [key: string]: unknown } };
-export type ReviewAnswer = { verdict?: "correct" | "wrong" | "uncertain"; errors: string[]; context: string; updatedAt: string; proposalReview?: "agree" | "disagree" | "uncertain"; proposalRevision?: string; actReviews?: Record<string, ActReview>; coverageComplete?: boolean; pastLabelReview?: "keep" | "replace" | "uncertain" };
+export type ReadingReview = { verdict?: "correct" | "wrong" | "uncertain"; proposalReview?: "agree" | "disagree" | "uncertain"; proposalRevision: string; errors: string[]; context: string; updatedAt: string };
+export type ReviewAnswer = { readingReviews?: Record<string, ReadingReview>; verdict?: "correct" | "wrong" | "uncertain"; errors: string[]; context: string; updatedAt: string; proposalReview?: "agree" | "disagree" | "uncertain"; proposalRevision?: string; actReviews?: Record<string, ActReview>; coverageComplete?: boolean; pastLabelReview?: "keep" | "replace" | "uncertain" };
 
 export const checksum = async (bytes: Uint8Array) => Array.from(new Uint8Array(await crypto.subtle.digest("SHA-256", bytes as Uint8Array<ArrayBuffer>)), (b) => b.toString(16).padStart(2, "0")).join("");
 
@@ -57,6 +59,7 @@ export function importAnswers(batch: ReviewBatch, payload: unknown, current: Rec
     const row = batch.rows.find((r) => r.id === a.id);
     const source = row && batch.sources.find((s) => s.file === row.fic);
     if (!row || seen.has(a.id) || a.key !== row.key || a.fic !== row.fic || a.paragraph !== row.para || a.sourceSha !== source?.sourceSha || !validAnswer(a)) throw Error("An answer does not match this batch.");
+    validateReadingReviews(row,a);
     if (a.proposalReview && a.proposalRevision !== row.proposal?.revision) throw Error("An answer refers to a different proposed reading.");
     for (const [id, review] of Object.entries(a.actReviews ?? {})) if (!row.sceneActs?.some(act => act.id === id && act.revision === review.revision)) throw Error('An answer refers to a different act proposal.');
     if (a.coverageComplete !== undefined && !row.sceneActs) throw Error('This batch does not support act coverage answers.');
@@ -67,7 +70,7 @@ export function importAnswers(batch: ReviewBatch, payload: unknown, current: Rec
   }
   let changed = 0;
   for (const a of data.answers) if (!current[a.id] || a.updatedAt > current[a.id].updatedAt) {
-    current[a.id] = { verdict: a.verdict, errors: a.errors, context: a.context, updatedAt: a.updatedAt, ...(a.proposalReview ? { proposalReview: a.proposalReview, proposalRevision: a.proposalRevision } : {}), ...(a.actReviews ? { actReviews: structuredClone(a.actReviews) } : {}), ...(a.coverageComplete !== undefined ? { coverageComplete: a.coverageComplete } : {}), ...(a.pastLabelReview ? {pastLabelReview: a.pastLabelReview} : {}) };
+    current[a.id] = { verdict: a.verdict, errors: a.errors, context: a.context, updatedAt: a.updatedAt, ...(a.proposalReview ? { proposalReview: a.proposalReview, proposalRevision: a.proposalRevision } : {}), ...(a.readingReviews ? {readingReviews: structuredClone(a.readingReviews)} : {}), ...(a.actReviews ? { actReviews: structuredClone(a.actReviews) } : {}), ...(a.coverageComplete !== undefined ? { coverageComplete: a.coverageComplete } : {}), ...(a.pastLabelReview ? {pastLabelReview: a.pastLabelReview} : {}) };
     changed++;
   }
   return changed;
@@ -81,6 +84,7 @@ export function validatePastLabelBatch(batch: ReviewBatch): ReviewBatch {
   for (const row of batch.rows) {
     const source = batch.sources.find(s => s.file === row.fic), audit = row.labelAudit, proposal = row.proposal;
     if (!source || ids.has(row.id) || keys.has(row.key) || !Number.isInteger(row.para) || row.para < 0 || row.para >= source.paragraphCount || !score(row.engineConfidence) || !proposal || !score(proposal.confidence) || !proposal.revision || !proposal.reading || !proposal.rationale || !['correct','wrong','uncertain'].includes(proposal.verdict) || !audit?.pastLabels.length || !audit.status || !audit.occurrence || !row.evidence?.length || row.evidence.some(e => !Number.isInteger(e.from) || !Number.isInteger(e.to) || e.from < 0 || e.from > row.para || e.to < row.para || e.to >= source.paragraphCount)) throw Error('A past-label item is missing its claim, confidence, history or citation.');
+    if(row.engineReadings){const ids=new Set<string>();for(const h of row.engineReadings){if(!h.id||ids.has(h.id)||!h.proposal||!score(h.proposal.confidence)||!h.proposal.reading||!h.proposal.rationale||!['correct','wrong','uncertain'].includes(h.proposal.verdict)||(h.confidence!==null&&!score(h.confidence))||!row.evidence.some(e=>h.para>=e.from&&h.para<=e.to))throw Error('Invalid individual engine reading.');ids.add(h.id);}if(!ids.has('primary'))throw Error('Missing target reading.');}
     for (const label of audit.pastLabels) if (!['ok','wrong','unclear'].includes(label.verdict) || !label.source || !label.key || !label.claim || !label.provenance || typeof label.identityVerified !== 'boolean' || (label.confidence !== undefined && !score(label.confidence))) throw Error('A historical label has invalid provenance.');
     ids.add(row.id); keys.add(row.key);
   }

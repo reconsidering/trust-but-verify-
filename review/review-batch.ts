@@ -1,3 +1,5 @@
+import {validateReadingReviews} from "../scripts/reading-review-validation.mjs";
+import {renderIndividualReadings} from "./individual-readings";
 import { importAnswers, storyBytes, validAnswer, verifyStory, type ActReview, type ReviewAnswer, type ReviewBatch } from "./review-batch-data";
 
 const ERRORS = ["Wrong person", "Roles reversed", "Wrong act or body part", "No act happened", "Kissing or rubbing mistaken for penetration", "Fingers or toy mistaken for a penis", "Penis mistaken for fingers or a toy", "Wish or dialogue treated as an act", "Memory counted as a new scene", "Wrong occurrence: memory / fantasy / habitual / recording", "Real act treated as hypothetical", "Missed participant", "Another act is missing", "Needs more context", "Other"];
@@ -16,12 +18,13 @@ export async function mountReview(batch: ReviewBatch, options: { stories?: Map<s
   let expanded = false, storageOK = true, loading = false;
   try {
     const saved = JSON.parse(localStorage.getItem(storageKey) ?? "{}");
-    for (const row of batch.rows) if (validAnswer(saved[row.id])) answers[row.id] = saved[row.id];
+    for (const row of batch.rows) if (validAnswer(saved[row.id])) { try {validateReadingReviews(row,{...saved[row.id],evidence:row.evidence});answers[row.id] = saved[row.id];} catch { /* Keep invalid saved readings out of the exported feedback. */ } }
   } catch { storageOK = false; }
-  const answered = (id: string) => !!answers[id]?.verdict;
+  const answered = (id: string) => {const row=batch.rows.find(r=>r.id===id);return !!answers[id]?.verdict && (row?.engineReadings??[]).filter(h=>h.proposal&&h.id!=='primary').every(h=>!!answers[id]?.readingReviews?.[h.id!]?.verdict);};
   const progress = () => {
+    const readings=batch.rows.flatMap(row=>(row.engineReadings??[]).filter(h=>h.proposal&&h.id!=='primary').map(h=>!!answers[row.id]?.readingReviews?.[h.id!]?.verdict));
     const acts = batch.rows.flatMap(row => (row.sceneActs ?? []).map(act => !!answers[row.id]?.actReviews?.[act.id]?.verdict));
-    return `${batch.rows.filter(r => answered(r.id)).length} of ${batch.rows.length} answered` + (acts.length ? ` · ${acts.filter(Boolean).length} of ${acts.length} act proposals checked` : '');
+    return `${batch.rows.filter(r => !!answers[r.id]?.verdict).length} of ${batch.rows.length} answered` + (acts.length ? ` · ${acts.filter(Boolean).length} of ${acts.length} act proposals checked` : '') + (readings.length ? ` · ${readings.filter(Boolean).length} of ${readings.length} additional engine readings checked` : '');
   };
   const visible = () => batch.rows.filter((r) => element<HTMLSelectElement>("filter").value === "all" || (element<HTMLSelectElement>("filter").value === "answered" ? answered(r.id) : !answered(r.id) || r.id === current));
   const save = () => {
@@ -134,11 +137,8 @@ export async function mountReview(batch: ReviewBatch, options: { stories?: Map<s
       }
       corrections.append(errors); card.append(title, summary, engine, note, evidence, choices, corrections); actCards.append(card);
     }
-    const coverage = element<HTMLInputElement>('coverage-complete'); coverage.disabled = !paras; coverage.checked = answer?.coverageComplete ?? false; coverage.onchange = () => update({ coverageComplete: coverage.checked });
-    const engineReadings = element('scene-engine-readings'); engineReadings.replaceChildren();
-    for (const hit of row.engineReadings ?? []) {
-      const p = document.createElement('p'); p.className = 'small'; p.textContent = `¶${hit.para} · ${hit.claim} · ${hit.kind} · Engine confidence: ${hit.confidence === null ? 'unavailable' : Math.round(hit.confidence * 100) + '%'} · ${hit.pattern}`; engineReadings.append(p);
-    }
+    element('scene-engine-review').hidden = !row.engineReadings?.length;
+    renderIndividualReadings(element('scene-engine-readings'),row,paras,()=>answers[row.id],update,render);
     element('training-notes').textContent = row.trainingNotes?.join(' ') ?? '';
     const root = element("passages"); root.replaceChildren();
     if (!paras) { const p = document.createElement("p"); p.textContent = `Choose ${source.file}, or the samples ZIP containing it, to read this passage.`; root.append(p); }
@@ -178,7 +178,7 @@ export async function mountReview(batch: ReviewBatch, options: { stories?: Map<s
     loading = false; element<HTMLInputElement>("stories").disabled = false; element<HTMLSelectElement>("review-kind").disabled = false; render();
     notice(errors.length ? errors.join(" ") : matched ? "Stories loaded. Your saved answers are unchanged." : "No matching story versions were found. Choose the original files used for this batch.");
   };
-  const payload = () => ({ schema: batch.schema, batchId: batch.batchId, engineCommit: batch.engineCommit, exportedAt: new Date().toISOString(), answers: batch.rows.filter((r) => answers[r.id]).map((r) => ({ id: r.id, key: r.key, fic: r.fic, paragraph: r.para, sourceSha: batch.sources.find((s) => s.file === r.fic)!.sourceSha, ...(r.gold ? { gold: r.gold } : {}), ...(isRange || r.sceneActs ? { evidence: r.evidence } : {}), ...answers[r.id] })) });
+  const payload = () => ({ schema: batch.schema, batchId: batch.batchId, engineCommit: batch.engineCommit, exportedAt: new Date().toISOString(), answers: batch.rows.filter((r) => answers[r.id]).map((r) => ({ id: r.id, key: r.key, fic: r.fic, paragraph: r.para, sourceSha: batch.sources.find((s) => s.file === r.fic)!.sourceSha, ...(r.gold ? { gold: r.gold } : {}), ...(isRange || r.sceneActs || r.engineReadings ? { evidence: r.evidence } : {}), ...answers[r.id] })) });
   const answerName = batch.selection?.answerFile ?? (batch.rows.some(r => r.labelAudit) ? 'past-label-review-answers.json' : batch.rows.some(r => r.sceneActs) ? 'suspect-scene-review-2-answers.json' : hasProposals ? 'suspect-scene-review-answers.json' : isRange ? 'gold-range-review-answers.json' : isGold ? 'gold-verdict-review-answers.json' : 'next-reading-review-answers.json');
   const answerFile = () => new File([JSON.stringify(payload(), null, 2)], answerName, { type: "application/json" });
   element<HTMLInputElement>("stories").onchange = () => { void loadFiles(Array.from(element<HTMLInputElement>("stories").files ?? [])); };

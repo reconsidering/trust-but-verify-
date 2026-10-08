@@ -45,3 +45,15 @@ node scripts/import-review-batch.mjs public/review/past-labels-2.json /path/to/p
 Only explicit judgments on today’s claim become confidence labels. Historical Keep/Needs fresh label choices and assistant confidence never imply labels. Importing also does not automatically clear quarantines or restore retired right-set records. Detection-rule fixes and retraining remain separate work.
 
 No engine rules, labels, models, reliability tables, metrics, source fics or raw feedback are committed. Validation checks the fifty history/claim/citation records, source bounds, exclusions, unanswered feedback handling and Agree behavior. Validation passed: `npm test` (1,571 passed; 13 skipped) and `npm run build`. All 22 source checksums and the final built review manifest match.
+
+## Individual engine readings (2026-10-08)
+
+The existing 50 windows now include all 164 current engine readings: the 50 targets and 114 additional acts, hints, preparation, dialogue and behavior cues. Each has a separate assistant assessment, explanation and confidence. The fresh tagged audit was run on main `7695a01`; detection code has not changed since this batch was prepared. Existing batch identity, target proposals and saved answers are preserved.
+
+Open **Past labels batch 2**, load the original fics or ZIP locally, and use **All engine acts, hints and other cues in this window**. Agree/disagree refers to the assistant’s assessment. Agree fills the verdict, correction and suggested common errors for that card. Disagree leaves its engine verdict open; choose Engine correct, Engine wrong or Not sure and add your correction. The target card shares its answer with the main target above. Every other card saves independently. Export the answers using the existing Save/Share controls.
+
+The engine confidence is the committed model probability where feature records exist. Otherwise the displayed item score is used; eleven behavior or dialogue cues emit no individual score and explicitly show unavailable. These scores are separate from the assistant’s confidence. The proposed assessments are 98 supported, 59 incorrect and seven uncertain; none become accepted labels before owner review.
+
+The existing import command above accepts the individual decisions too, even when the main target is unanswered. Only explicit engine verdicts become confidence labels. Merely rejecting an assistant assessment, approving an act inventory entry, or leaving a hint unmarked creates no inferred label. Different claims or conflicting answers sharing a legacy sentence key are preserved and quarantined as uncertain rather than overwritten. Free-text notes and assistant confidence stay out of tracked labels. Retrain separately after accepted reviews are imported.
+
+Belonging and Negotiation use the same clearer section heading and explicitly label individual hints and other cues. Their existing separate reading decisions, assistant calls, scores and exports remain supported.
