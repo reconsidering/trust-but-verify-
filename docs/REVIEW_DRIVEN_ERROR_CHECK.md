@@ -27,7 +27,7 @@ The existing `build-review-batch.mjs` was checked against the screened tagged sn
 
 There are only three moved records in group F; inventing two additional changes would be misleading. All three are included, supplemented by five seeded stable readings from the changed-verdict works. Groups C and D include every moved reading, including every frame-related removal found in this audit; they were not limited to five.
 
-All audit readings in **Fling, Rwrb Balls and Tuica**, before or after and in both modes, are included: 264 records, covering every reading behind the eight verdict changes as well as ancillary cues. Fourteen of those overlap the 178 moved records. The comparative set therefore contains **428 records**, plus a separate **36-claim restoration set**. When both modes have identical paraphrased meaning, the page displays them together (253 comparative cards initially) and preserves both original record identities in the saved answers. Different meanings stay separate. Filtering to one mode lets the owner judge them independently.
+All audit readings in **Fling, Rwrb Balls and Tuica**, before or after and in both modes, are included: 264 records, covering every reading behind the eight verdict changes as well as ancillary cues. Fourteen of those overlap the 178 moved records. The comparative set therefore contains **428 records**, plus a separate **36-claim restoration set**. When both modes have identical paraphrased meaning, the page displays them together (395 comparative cards with the actual recorded names) and preserves both original record identities in the saved answers. Different meanings stay separate. Filtering to one mode lets the owner judge them independently.
 
 The full learn test ran with `REVIEW_QUEUE_OUT` and without `WRITE_LEARNED`, exporting the 36 changed or unverifiable claims. Their original keys, source checksums, current claim identities and paragraph references are retained in `public/review/review-driven-claims.json`. A missing earlier identity is explicitly shown as unavailable. No earlier label is automatically transferred.
 
@@ -101,7 +101,7 @@ All three replacement cases are in `tests/review-driven-rules.test.ts` and asser
 
 ## What the owner does
 
-1. Open **[the review page](../public/review/review-driven-error-check.html)**. After merge and Pages deployment, use `/trust-but-verify-/review/review-driven-error-check.html`. It is also a self-contained HTML file: no story upload or network request is required to answer it.
+1. Open **[the review page](../review/review-driven-error-check.html)**. After merge and Pages deployment, use `/trust-but-verify-/review/review-driven-error-check.html`. The page shows actual recorded character names and assistant recommendations. Load the samples ZIP or fic HTML files to read cited paragraphs locally; files are checked against the recorded source and paragraph checksums. Story text stays on the device and is not included in answer exports.
 2. Read Before, After and the assessment. Consult the original fic at the cited paragraph range when needed. Select **better / worse / same / not sure**, optionally check common errors and add context. Filter by cause or mode to work in short batches.
 3. Use **Save answers** for the comparative set. Then choose **36 claims to restore**, explicitly mark current claims **correct / wrong / not sure**, and save that set separately. Progress persists in the current browser; use the saved JSON to move devices or restore it later.
 

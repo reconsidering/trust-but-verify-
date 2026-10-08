@@ -124,13 +124,29 @@
    "b": "Anakin Skywalker",
    "act": "rimming",
    "kind": "act",
-   "claim": "Avery is rimming Morgan",
-   "beforeClaim": "Avery is having anal sex with Morgan, as the one penetrating",
+   "claim": "Obi-Wan Kenobi is rimming Anakin Skywalker [category: rimming; occurrence: act]",
+   "beforeClaim": "Obi-Wan Kenobi is having anal sex with Anakin Skywalker, as the one penetrating [category: anal sex; occurrence: act]",
    "reason": "Claim changed since review",
    "assessment": "Confirm the current claim independently. The earlier label was quarantined and is not carried over.",
    "context": {
     "from": 846,
     "to": 850
+   },
+   "reviewedClaim": {
+    "fic": "a-la-carte.html",
+    "sourceSha": "4d553843dc96b396376426414fd191534045ca3508acb51a1672e0ef3ebc0cca",
+    "paragraph": 848,
+    "pattern": "push-into~elided",
+    "act": "anal sex",
+    "kind": "act",
+    "a": "Obi-Wan Kenobi",
+    "b": "Anakin Skywalker",
+    "role": ""
+   },
+   "recommendation": {
+    "verdict": "uncertain",
+    "label": "Not sure",
+    "reason": "Confirm the current claim independently. The earlier label was quarantined and is not carried over."
    }
   },
   {
@@ -144,13 +160,19 @@
    "act": "anal sex",
    "kind": "fantasy",
    "role": "bottom",
-   "claim": "Morgan is being fucked anally by Avery",
+   "claim": "Anakin Skywalker is being fucked anally by Obi-Wan Kenobi [category: anal sex; occurrence: fantasy]",
    "beforeClaim": "Earlier claim identity unavailable; do not infer agreement.",
    "reason": "Missing identity, superseded review, or pending adjudication",
    "assessment": "A person wants imminent penetration while a partner prepares them. Changing wanted to fantasy may lose the distinction between desire and an imagined scene; neither should count as performed penetration here.",
    "context": {
     "from": 429,
     "to": 433
+   },
+   "reviewedClaim": null,
+   "recommendation": {
+    "verdict": "uncertain",
+    "label": "Not sure",
+    "reason": "The earlier claim identity is unavailable, so I cannot reliably compare before with after. Judge the current reading from the loaded passage."
    }
   },
   {
@@ -164,13 +186,29 @@
    "act": "anal sex",
    "kind": "history",
    "role": "top",
-   "claim": "Morgan is having anal sex with Avery, as the one penetrating",
-   "beforeClaim": "Morgan is having anal sex with Avery, as the one penetrating",
+   "claim": "Anakin Skywalker is having anal sex with Obi-Wan Kenobi, as the one penetrating [category: anal sex; occurrence: history]",
+   "beforeClaim": "Anakin Skywalker is having anal sex with Obi-Wan Kenobi, as the one penetrating [category: anal sex; occurrence: act]",
    "reason": "Claim changed since review",
    "assessment": "Conversation explains an absence from work by sex that already occurred. Historical evidence fits the surrounding office discussion.",
    "context": {
     "from": 1377,
     "to": 1381
+   },
+   "reviewedClaim": {
+    "fic": "a-la-carte.html",
+    "sourceSha": "4d553843dc96b396376426414fd191534045ca3508acb51a1672e0ef3ebc0cca",
+    "paragraph": 1379,
+    "pattern": "fuck",
+    "act": "anal sex",
+    "kind": "act",
+    "a": "Anakin Skywalker",
+    "b": "Obi-Wan Kenobi",
+    "role": ""
+   },
+   "recommendation": {
+    "verdict": "better",
+    "label": "Better",
+    "reason": "Conversation explains an absence from work by sex that already occurred. Historical evidence fits the surrounding office discussion."
    }
   },
   {
@@ -184,13 +222,29 @@
    "act": "anal sex",
    "kind": "wanted",
    "role": "bottom",
-   "claim": "Morgan is being fucked anally by Avery (read as something wanted, not something that happens)",
-   "beforeClaim": "Avery is being fingered by Rowan (read as something wanted, not something that happens)",
+   "claim": "Anakin Skywalker is being fucked anally by Obi-Wan Kenobi (read as something wanted, not something that happens) [category: anal sex; occurrence: wanted]",
+   "beforeClaim": "Obi-Wan Kenobi is being fingered by Mace Windu (read as something wanted, not something that happens) [category: fingering; occurrence: wanted]",
    "reason": "Claim changed since review",
    "assessment": "Confirm the current claim independently. The earlier label was quarantined and is not carried over.",
    "context": {
     "from": 1937,
     "to": 1941
+   },
+   "reviewedClaim": {
+    "fic": "a-la-carte.html",
+    "sourceSha": "4d553843dc96b396376426414fd191534045ca3508acb51a1672e0ef3ebc0cca",
+    "paragraph": 1939,
+    "pattern": "push-into",
+    "act": "fingering",
+    "kind": "wanted",
+    "a": "Obi-Wan Kenobi",
+    "b": "Mace Windu",
+    "role": "bottom"
+   },
+   "recommendation": {
+    "verdict": "uncertain",
+    "label": "Not sure",
+    "reason": "Confirm the current claim independently. The earlier label was quarantined and is not carried over."
    }
   },
   {
@@ -204,13 +258,29 @@
    "act": "masturbation",
    "kind": "fantasy",
    "role": "bottom",
-   "claim": "Morgan is masturbating",
-   "beforeClaim": "Morgan is masturbating",
+   "claim": "Castiel is masturbating [category: masturbation; occurrence: fantasy]",
+   "beforeClaim": "Castiel is masturbating [category: masturbation; occurrence: masturbation]",
    "reason": "Claim changed since review",
    "assessment": "An imagined observer appears in a person's mind during texting. The depicted masturbation is part of the imagined image, not a newly performed scene. Actor identity still needs checking.",
    "context": {
     "from": 73,
     "to": 77
+   },
+   "reviewedClaim": {
+    "fic": "autocorrect.html",
+    "sourceSha": "7bb7cfa0690ea42eea1d2220659ed798c400cf939cf0b28ef1c9fb99e76b7780",
+    "paragraph": 75,
+    "pattern": "mast-himself",
+    "act": "masturbation",
+    "kind": "masturbation",
+    "a": "Castiel",
+    "b": "Dean Winchester",
+    "role": "bottom"
+   },
+   "recommendation": {
+    "verdict": "better",
+    "label": "Better",
+    "reason": "An imagined observer appears in a person's mind during texting. The depicted masturbation is part of the imagined image, not a newly performed scene. Actor identity still needs checking."
    }
   },
   {
@@ -223,13 +293,29 @@
    "b": "Dean Winchester",
    "act": "fingering",
    "kind": "act",
-   "claim": "Rowan is fingering Avery",
-   "beforeClaim": "Rowan is having anal sex with Avery, as the one penetrating",
+   "claim": "Castiel is fingering Dean Winchester [category: fingering; occurrence: act]",
+   "beforeClaim": "Castiel is having anal sex with Dean Winchester, as the one penetrating [category: anal sex; occurrence: act]",
    "reason": "Claim changed since review",
    "assessment": "The preceding and following paragraphs explicitly describe fingers entering the receiver. Generic depth wording between them should stay fingering.",
    "context": {
     "from": 731,
     "to": 735
+   },
+   "reviewedClaim": {
+    "fic": "belonging.html",
+    "sourceSha": "d8fe352ab70bc0a8171fea0e069c43d776d3541d741cb74b2b66014ae64e874c",
+    "paragraph": 733,
+    "pattern": "push-into",
+    "act": "anal sex",
+    "kind": "act",
+    "a": "Castiel",
+    "b": "Dean Winchester",
+    "role": ""
+   },
+   "recommendation": {
+    "verdict": "better",
+    "label": "Better",
+    "reason": "The preceding and following paragraphs explicitly describe fingers entering the receiver. Generic depth wording between them should stay fingering."
    }
   },
   {
@@ -243,13 +329,19 @@
    "act": "frottage",
    "kind": "handjob",
    "role": "top",
-   "claim": "Morgan and Avery are rubbing against each other (frottage)",
+   "claim": "Brother Diarmuid and David Shepherd are rubbing against each other (frottage) [category: frottage; occurrence: handjob]",
    "beforeClaim": "Earlier claim identity unavailable; do not infer agreement.",
    "reason": "Missing identity, superseded review, or pending adjudication",
    "assessment": "During penetration the recipient rubs their penis against the other adult’s body. That friction is not a moving hand performing a handjob.",
    "context": {
     "from": 843,
     "to": 847
+   },
+   "reviewedClaim": null,
+   "recommendation": {
+    "verdict": "uncertain",
+    "label": "Not sure",
+    "reason": "The earlier claim identity is unavailable, so I cannot reliably compare before with after. Judge the current reading from the loaded passage."
    }
   },
   {
@@ -262,13 +354,29 @@
    "b": "Eddie Diaz",
    "act": "fingering",
    "kind": "act",
-   "claim": "Jordan is fingering Avery",
-   "beforeClaim": "Jordan is having anal sex with Avery, as the one penetrating",
+   "claim": "Evan \"Buck\" Buckley is fingering Eddie Diaz [category: fingering; occurrence: act]",
+   "beforeClaim": "Evan \"Buck\" Buckley is having anal sex with Eddie Diaz, as the one penetrating [category: anal sex; occurrence: act]",
    "reason": "Claim changed since review",
    "assessment": "Confirm the current claim independently. The earlier label was quarantined and is not carried over.",
    "context": {
     "from": 1289,
     "to": 1293
+   },
+   "reviewedClaim": {
+    "fic": "dogbird.html",
+    "sourceSha": "b66dcf4730e681942787b9d280bc8b2825005e179cfe09179a82e935a4f036fb",
+    "paragraph": 1291,
+    "pattern": "pushed-in~elided",
+    "act": "anal sex",
+    "kind": "act",
+    "a": "Evan \"Buck\" Buckley",
+    "b": "Eddie Diaz",
+    "role": ""
+   },
+   "recommendation": {
+    "verdict": "uncertain",
+    "label": "Not sure",
+    "reason": "Confirm the current claim independently. The earlier label was quarantined and is not carried over."
    }
   },
   {
@@ -282,13 +390,29 @@
    "act": "genital licking",
    "kind": "handjob",
    "role": "top",
-   "claim": "Jordan → Avery: genital licking (the first name is the one the engine credited)",
-   "beforeClaim": "Avery is getting a blowjob from Jordan",
+   "claim": "Evan \"Buck\" Buckley gives Eddie Diaz external oral genital contact [category: genital licking; occurrence: handjob]",
+   "beforeClaim": "Eddie Diaz is getting a blowjob from Evan \"Buck\" Buckley [category: blowjob; occurrence: act]",
    "reason": "Claim changed since review",
    "assessment": "Scrotal oral contact occurs alongside finger insertion. These are distinct activities; neither proves penile oral penetration.",
    "context": {
     "from": 1296,
     "to": 1300
+   },
+   "reviewedClaim": {
+    "fic": "dogbird.html",
+    "sourceSha": "b66dcf4730e681942787b9d280bc8b2825005e179cfe09179a82e935a4f036fb",
+    "paragraph": 1298,
+    "pattern": "sucked",
+    "act": "blowjob",
+    "kind": "act",
+    "a": "Eddie Diaz",
+    "b": "Evan \"Buck\" Buckley",
+    "role": ""
+   },
+   "recommendation": {
+    "verdict": "better",
+    "label": "Better",
+    "reason": "Scrotal oral contact occurs alongside finger insertion. These are distinct activities; neither proves penile oral penetration."
    }
   },
   {
@@ -302,13 +426,29 @@
    "act": "genital licking",
    "kind": "handjob",
    "role": "top",
-   "claim": "Jordan → Avery: genital licking (the first name is the one the engine credited)",
-   "beforeClaim": "Avery is getting a blowjob from Jordan",
+   "claim": "Evan \"Buck\" Buckley gives Eddie Diaz external oral genital contact [category: genital licking; occurrence: handjob]",
+   "beforeClaim": "Eddie Diaz is getting a blowjob from Evan \"Buck\" Buckley [category: blowjob; occurrence: act]",
    "reason": "Claim changed since review",
    "assessment": "The performer withdraws their mouth from the scrotum while continuing finger movement. The receiving opening drawing in fingers is not a mouth taking a penis.",
    "context": {
     "from": 1297,
     "to": 1301
+   },
+   "reviewedClaim": {
+    "fic": "dogbird.html",
+    "sourceSha": "b66dcf4730e681942787b9d280bc8b2825005e179cfe09179a82e935a4f036fb",
+    "paragraph": 1299,
+    "pattern": "sucked~elided",
+    "act": "blowjob",
+    "kind": "act",
+    "a": "Eddie Diaz",
+    "b": "Evan \"Buck\" Buckley",
+    "role": ""
+   },
+   "recommendation": {
+    "verdict": "better",
+    "label": "Better",
+    "reason": "The performer withdraws their mouth from the scrotum while continuing finger movement. The receiving opening drawing in fingers is not a mouth taking a penis."
    }
   },
   {
@@ -322,13 +462,19 @@
    "act": "handjob",
    "kind": "handjob",
    "role": "top",
-   "claim": "Jordan and Avery are having a handjob",
+   "claim": "Evan \"Buck\" Buckley manually stimulates Eddie Diaz's penis [category: handjob; occurrence: handjob]",
    "beforeClaim": "Earlier claim identity unavailable; do not infer agreement.",
    "reason": "Missing identity, superseded review, or pending adjudication",
    "assessment": "Confirm the current claim independently. The earlier label was quarantined and is not carried over.",
    "context": {
     "from": 1322,
     "to": 1326
+   },
+   "reviewedClaim": null,
+   "recommendation": {
+    "verdict": "uncertain",
+    "label": "Not sure",
+    "reason": "The earlier claim identity is unavailable, so I cannot reliably compare before with after. Judge the current reading from the loaded passage."
    }
   },
   {
@@ -342,13 +488,19 @@
    "act": "handjob",
    "kind": "handjob",
    "role": "top",
-   "claim": "Riley and Morgan are having a handjob",
+   "claim": "Steve Harrington manually stimulates Billy Hargrove's penis [category: handjob; occurrence: handjob]",
    "beforeClaim": "Earlier claim identity unavailable; do not infer agreement.",
    "reason": "Missing identity, superseded review, or pending adjudication",
    "assessment": "Confirm the current claim independently. The earlier label was quarantined and is not carried over.",
    "context": {
     "from": 1012,
     "to": 1016
+   },
+   "reviewedClaim": null,
+   "recommendation": {
+    "verdict": "uncertain",
+    "label": "Not sure",
+    "reason": "The earlier claim identity is unavailable, so I cannot reliably compare before with after. Judge the current reading from the loaded passage."
    }
   },
   {
@@ -361,13 +513,29 @@
    "b": "Steve Rogers",
    "act": "fingering",
    "kind": "act",
-   "claim": "Jordan is fingering Cameron",
-   "beforeClaim": "Cameron is fingering Jordan",
+   "claim": "James \"Bucky\" Barnes is fingering Steve Rogers [category: fingering; occurrence: act]",
+   "beforeClaim": "Steve Rogers is fingering James \"Bucky\" Barnes [category: fingering; occurrence: act]",
    "reason": "Claim changed since review",
    "assessment": "Confirm the current claim independently. The earlier label was quarantined and is not carried over.",
    "context": {
     "from": 1201,
     "to": 1205
+   },
+   "reviewedClaim": {
+    "fic": "innocent-until.html",
+    "sourceSha": "ffa71a4c7726196bc68e41ceb1805c28b7de2698384e84270c5d0f1f6f4ef78c",
+    "paragraph": 1203,
+    "pattern": "pushed-in",
+    "act": "fingering",
+    "kind": "act",
+    "a": "Steve Rogers",
+    "b": "James \"Bucky\" Barnes",
+    "role": ""
+   },
+   "recommendation": {
+    "verdict": "uncertain",
+    "label": "Not sure",
+    "reason": "Confirm the current claim independently. The earlier label was quarantined and is not carried over."
    }
   },
   {
@@ -380,13 +548,29 @@
    "b": "Steve Rogers",
    "act": "anal sex (strap-on/toy)",
    "kind": "act",
-   "claim": "Jordan → Cameron: anal sex (strap-on/toy) (the first name is the one the engine credited)",
-   "beforeClaim": "Jordan is having anal sex with Cameron, as the one penetrating",
+   "claim": "James \"Bucky\" Barnes → Steve Rogers: anal sex (strap-on/toy) (the first name is the one the engine credited) [category: anal sex (strap-on/toy); occurrence: act]",
+   "beforeClaim": "James \"Bucky\" Barnes is having anal sex with Steve Rogers, as the one penetrating [category: anal sex; occurrence: act]",
    "reason": "Claim changed since review",
    "assessment": "Explicit finger withdrawal is followed by a lubricated plug being pushed in and settled at depth. Toy rather than penile continuation fits.",
    "context": {
     "from": 2865,
     "to": 2869
+   },
+   "reviewedClaim": {
+    "fic": "innocent-until.html",
+    "sourceSha": "ffa71a4c7726196bc68e41ceb1805c28b7de2698384e84270c5d0f1f6f4ef78c",
+    "paragraph": 2867,
+    "pattern": "bottomed-out~elided",
+    "act": "anal sex",
+    "kind": "act",
+    "a": "James \"Bucky\" Barnes",
+    "b": "Steve Rogers",
+    "role": ""
+   },
+   "recommendation": {
+    "verdict": "better",
+    "label": "Better",
+    "reason": "Explicit finger withdrawal is followed by a lubricated plug being pushed in and settled at depth. Toy rather than penile continuation fits."
    }
   },
   {
@@ -400,13 +584,29 @@
    "act": "masturbation",
    "kind": "masturbation",
    "role": "bottom",
-   "claim": "Cameron is masturbating",
-   "beforeClaim": "Jordan is masturbating",
+   "claim": "Steve Rogers is masturbating [category: masturbation; occurrence: masturbation]",
+   "beforeClaim": "James \"Bucky\" Barnes is masturbating [category: masturbation; occurrence: masturbation]",
    "reason": "Claim changed since review",
    "assessment": "The person in a chastity device rocks themselves while a partner leaves for the bathroom. The self-motion belongs to the person wearing the device, not the departing observer.",
    "context": {
     "from": 4772,
     "to": 4776
+   },
+   "reviewedClaim": {
+    "fic": "innocent-until.html",
+    "sourceSha": "ffa71a4c7726196bc68e41ceb1805c28b7de2698384e84270c5d0f1f6f4ef78c",
+    "paragraph": 4774,
+    "pattern": "mast-himself",
+    "act": "masturbation",
+    "kind": "masturbation",
+    "a": "James \"Bucky\" Barnes",
+    "b": "Steve Rogers",
+    "role": "bottom"
+   },
+   "recommendation": {
+    "verdict": "better",
+    "label": "Better",
+    "reason": "The person in a chastity device rocks themselves while a partner leaves for the bathroom. The self-motion belongs to the person wearing the device, not the departing observer."
    }
   },
   {
@@ -419,13 +619,29 @@
    "b": "Jack Seward",
    "act": "anal sex",
    "kind": "act",
-   "claim": "Rowan is having anal sex with Jordan, as the one penetrating",
-   "beforeClaim": "Jordan is having anal sex with Rowan, as the one penetrating",
+   "claim": "Dracula is having anal sex with Jack Seward, as the one penetrating [category: anal sex; occurrence: act]",
+   "beforeClaim": "Jack Seward is having anal sex with Dracula, as the one penetrating [category: anal sex; occurrence: act]",
    "reason": "Claim changed since review",
    "assessment": "The receiver's body is elevated while the other person continues thrusting. Passive body positioning does not reverse penetration direction.",
    "context": {
     "from": 2091,
     "to": 2095
+   },
+   "reviewedClaim": {
+    "fic": "jacks.html",
+    "sourceSha": "1c82d8bb62ab4aa836ffe8f4924db20c8420faddb9f3b0d75e08a9b35f18957d",
+    "paragraph": 2093,
+    "pattern": "push-into",
+    "act": "anal sex",
+    "kind": "act",
+    "a": "Jack Seward",
+    "b": "Dracula",
+    "role": ""
+   },
+   "recommendation": {
+    "verdict": "better",
+    "label": "Better",
+    "reason": "The receiver's body is elevated while the other person continues thrusting. Passive body positioning does not reverse penetration direction."
    }
   },
   {
@@ -438,13 +654,29 @@
    "b": "Evan \"Buck\" Buckley",
    "act": "anal sex",
    "kind": "act",
-   "claim": "Jordan is having anal sex with Casey, as the one penetrating",
-   "beforeClaim": "Casey is having anal sex with Jordan, as the one penetrating",
+   "claim": "Eddie Diaz is having anal sex with Evan \"Buck\" Buckley, as the one penetrating [category: anal sex; occurrence: act]",
+   "beforeClaim": "Evan \"Buck\" Buckley is having anal sex with Eddie Diaz, as the one penetrating [category: anal sex; occurrence: act]",
    "reason": "Claim changed since review",
    "assessment": "Confirm the current claim independently. The earlier label was quarantined and is not carried over.",
    "context": {
     "from": 5447,
     "to": 5451
+   },
+   "reviewedClaim": {
+    "fic": "lightning.html",
+    "sourceSha": "0a3fe56af1a92ac27ba2da61af1ffb88f11cf6aa44cb91777bb7b97c025f67d7",
+    "paragraph": 5449,
+    "pattern": "pushed-in",
+    "act": "anal sex",
+    "kind": "act",
+    "a": "Evan \"Buck\" Buckley",
+    "b": "Eddie Diaz",
+    "role": ""
+   },
+   "recommendation": {
+    "verdict": "uncertain",
+    "label": "Not sure",
+    "reason": "Confirm the current claim independently. The earlier label was quarantined and is not carried over."
    }
   },
   {
@@ -458,13 +690,29 @@
    "act": "blowjob (face-fucking)",
    "kind": "fantasy",
    "role": "top",
-   "claim": "Jordan → Casey: blowjob (face-fucking) (the first name is the one the engine credited)",
-   "beforeClaim": "Jordan is having anal sex with Casey, as the one penetrating",
+   "claim": "Eddie Diaz puts their penis into Evan \"Buck\" Buckley's mouth [category: blowjob (face-fucking); occurrence: fantasy]",
+   "beforeClaim": "Eddie Diaz is having anal sex with Evan \"Buck\" Buckley, as the one penetrating [category: anal sex; occurrence: act]",
    "reason": "Claim changed since review",
    "assessment": "The person stimulates themselves while imagining a partner providing oral sex. The imagined blowjob is not a current partnered scene.",
    "context": {
     "from": 1201,
     "to": 1205
+   },
+   "reviewedClaim": {
+    "fic": "lightning.html",
+    "sourceSha": "0a3fe56af1a92ac27ba2da61af1ffb88f11cf6aa44cb91777bb7b97c025f67d7",
+    "paragraph": 1203,
+    "pattern": "dd6-slips-cock-inside",
+    "act": "anal sex",
+    "kind": "act",
+    "a": "Eddie Diaz",
+    "b": "Evan \"Buck\" Buckley",
+    "role": ""
+   },
+   "recommendation": {
+    "verdict": "better",
+    "label": "Better",
+    "reason": "The person stimulates themselves while imagining a partner providing oral sex. The imagined blowjob is not a current partnered scene."
    }
   },
   {
@@ -478,13 +726,29 @@
    "act": "masturbation",
    "kind": "history",
    "role": "bottom",
-   "claim": "Casey is masturbating",
-   "beforeClaim": "Casey is masturbating",
+   "claim": "Evan \"Buck\" Buckley is masturbating [category: masturbation; occurrence: history]",
+   "beforeClaim": "Evan \"Buck\" Buckley is masturbating [category: masturbation; occurrence: masturbation]",
    "reason": "Claim changed since review",
    "assessment": "The narrator acknowledges self-stimulation that happened earlier while watching a nonsexual gift-opening video. Historical rather than newly current activity fits the nearby retrospective explanation.",
    "context": {
     "from": 4588,
     "to": 4592
+   },
+   "reviewedClaim": {
+    "fic": "lightning.html",
+    "sourceSha": "0a3fe56af1a92ac27ba2da61af1ffb88f11cf6aa44cb91777bb7b97c025f67d7",
+    "paragraph": 4590,
+    "pattern": "mast-himself",
+    "act": "masturbation",
+    "kind": "masturbation",
+    "a": "Evan \"Buck\" Buckley",
+    "b": "Eddie Diaz",
+    "role": "bottom"
+   },
+   "recommendation": {
+    "verdict": "better",
+    "label": "Better",
+    "reason": "The narrator acknowledges self-stimulation that happened earlier while watching a nonsexual gift-opening video. Historical rather than newly current activity fits the nearby retrospective explanation."
    }
   },
   {
@@ -497,13 +761,19 @@
    "b": "Dean Winchester",
    "act": "blowjob",
    "kind": "act",
-   "claim": "Rowan is getting a blowjob from Avery",
+   "claim": "Castiel is getting a blowjob from Dean Winchester [category: blowjob; occurrence: act]",
    "beforeClaim": "Earlier claim identity unavailable; do not infer agreement.",
    "reason": "Missing identity, superseded review, or pending adjudication",
    "assessment": "The mouth belongs to the person already giving oral sex; the recipient's reaction should not become the tongue performer.",
    "context": {
     "from": 1045,
     "to": 1049
+   },
+   "reviewedClaim": null,
+   "recommendation": {
+    "verdict": "uncertain",
+    "label": "Not sure",
+    "reason": "The earlier claim identity is unavailable, so I cannot reliably compare before with after. Judge the current reading from the loaded passage."
    }
   },
   {
@@ -516,13 +786,29 @@
    "b": "Dean Winchester",
    "act": "blowjob",
    "kind": "act",
-   "claim": "Rowan is getting a blowjob from Avery",
-   "beforeClaim": "Avery is getting a blowjob from Rowan",
+   "claim": "Castiel is getting a blowjob from Dean Winchester [category: blowjob; occurrence: act]",
+   "beforeClaim": "Dean Winchester is getting a blowjob from Castiel [category: blowjob; occurrence: act]",
    "reason": "Claim changed since review",
    "assessment": "The mouth belongs to the person already giving oral sex; the recipient's reaction should not become the tongue performer.",
    "context": {
     "from": 1045,
     "to": 1049
+   },
+   "reviewedClaim": {
+    "fic": "mars.html",
+    "sourceSha": "43ef00b3070686ea49aed427155aa8c42f88c242698d4dbdf25ec95f4a8c0432",
+    "paragraph": 1047,
+    "pattern": "dd-laps-at-cock~elided",
+    "act": "blowjob",
+    "kind": "act",
+    "a": "Dean Winchester",
+    "b": "Castiel",
+    "role": ""
+   },
+   "recommendation": {
+    "verdict": "better",
+    "label": "Better",
+    "reason": "The mouth belongs to the person already giving oral sex; the recipient's reaction should not become the tongue performer."
    }
   },
   {
@@ -535,13 +821,19 @@
    "b": "Castiel",
    "act": "blowjob",
    "kind": "act",
-   "claim": "Avery is getting a blowjob from Rowan",
+   "claim": "Dean Winchester is getting a blowjob from Castiel [category: blowjob; occurrence: act]",
    "beforeClaim": "Earlier claim identity unavailable; do not infer agreement.",
    "reason": "Missing identity, superseded review, or pending adjudication",
    "assessment": "The established oral performer continues using their tongue while the recipient reacts. Participant ownership should follow the performer, not the reacting subject.",
    "context": {
     "from": 342,
     "to": 346
+   },
+   "reviewedClaim": null,
+   "recommendation": {
+    "verdict": "uncertain",
+    "label": "Not sure",
+    "reason": "The earlier claim identity is unavailable, so I cannot reliably compare before with after. Judge the current reading from the loaded passage."
    }
   },
   {
@@ -554,13 +846,29 @@
    "b": "Castiel",
    "act": "blowjob",
    "kind": "act",
-   "claim": "Avery is getting a blowjob from Rowan",
-   "beforeClaim": "Rowan is getting a blowjob from Avery",
+   "claim": "Dean Winchester is getting a blowjob from Castiel [category: blowjob; occurrence: act]",
+   "beforeClaim": "Castiel is getting a blowjob from Dean Winchester [category: blowjob; occurrence: act]",
    "reason": "Claim changed since review",
    "assessment": "The established oral performer continues using their tongue while the recipient reacts. Participant ownership should follow the performer, not the reacting subject.",
    "context": {
     "from": 342,
     "to": 346
+   },
+   "reviewedClaim": {
+    "fic": "more-views.html",
+    "sourceSha": "61461060f56925872cb638627ee721273255d669032ded0d8562ffef4fc8601f",
+    "paragraph": 344,
+    "pattern": "dd-laps-at-cock",
+    "act": "blowjob",
+    "kind": "act",
+    "a": "Castiel",
+    "b": "Dean Winchester",
+    "role": ""
+   },
+   "recommendation": {
+    "verdict": "better",
+    "label": "Better",
+    "reason": "The established oral performer continues using their tongue while the recipient reacts. Participant ownership should follow the performer, not the reacting subject."
    }
   },
   {
@@ -573,13 +881,29 @@
    "b": "Dean Winchester",
    "act": "fingering",
    "kind": "act",
-   "claim": "Rowan is fingering Avery",
-   "beforeClaim": "Rowan is having anal sex with Avery, as the one penetrating",
+   "claim": "Castiel is fingering Dean Winchester [category: fingering; occurrence: act]",
+   "beforeClaim": "Castiel is having anal sex with Dean Winchester, as the one penetrating [category: anal sex; occurrence: act]",
    "reason": "Claim changed since review",
    "assessment": "A thumb enters, withdraws, and is replaced by a finger. Bounded instrument continuity fits the generic insertion matches.",
    "context": {
     "from": 888,
     "to": 892
+   },
+   "reviewedClaim": {
+    "fic": "more-views.html",
+    "sourceSha": "61461060f56925872cb638627ee721273255d669032ded0d8562ffef4fc8601f",
+    "paragraph": 890,
+    "pattern": "pushed-in~elided",
+    "act": "anal sex",
+    "kind": "act",
+    "a": "Castiel",
+    "b": "Dean Winchester",
+    "role": ""
+   },
+   "recommendation": {
+    "verdict": "better",
+    "label": "Better",
+    "reason": "A thumb enters, withdraws, and is replaced by a finger. Bounded instrument continuity fits the generic insertion matches."
    }
   },
   {
@@ -592,13 +916,29 @@
    "b": "Dean Winchester",
    "act": "fingering",
    "kind": "act",
-   "claim": "Rowan is fingering Avery",
-   "beforeClaim": "Rowan is having anal sex with Avery, as the one penetrating",
+   "claim": "Castiel is fingering Dean Winchester [category: fingering; occurrence: act]",
+   "beforeClaim": "Castiel is having anal sex with Dean Winchester, as the one penetrating [category: anal sex; occurrence: act]",
    "reason": "Claim changed since review",
    "assessment": "A finger touches the rim before the generic entry sentence; two paragraphs later two fingers are explicitly inside and another is subsequently added. The historical reference to summer preparation does not imply that a penis has entered yet.",
    "context": {
     "from": 956,
     "to": 960
+   },
+   "reviewedClaim": {
+    "fic": "more-views.html",
+    "sourceSha": "61461060f56925872cb638627ee721273255d669032ded0d8562ffef4fc8601f",
+    "paragraph": 958,
+    "pattern": "pushed-in",
+    "act": "anal sex",
+    "kind": "act",
+    "a": "Castiel",
+    "b": "Dean Winchester",
+    "role": ""
+   },
+   "recommendation": {
+    "verdict": "better",
+    "label": "Better",
+    "reason": "A finger touches the rim before the generic entry sentence; two paragraphs later two fingers are explicitly inside and another is subsequently added. The historical reference to summer preparation does not imply that a penis has entered yet."
    }
   },
   {
@@ -612,13 +952,29 @@
    "act": "handjob",
    "kind": "history",
    "role": "top",
-   "claim": "Rowan and Avery are having a handjob",
-   "beforeClaim": "Rowan and Avery are having a handjob",
+   "claim": "Castiel manually stimulates Dean Winchester's penis [category: handjob; occurrence: history]",
+   "beforeClaim": "Castiel manually stimulates Dean Winchester's penis [category: handjob; occurrence: handjob]",
    "reason": "Claim changed since review",
    "assessment": "A retrospective paragraph about an earlier manual encounter is dated by the following paragraph. It supports historical hand stimulation.",
    "context": {
     "from": 204,
     "to": 208
+   },
+   "reviewedClaim": {
+    "fic": "more-views.html",
+    "sourceSha": "61461060f56925872cb638627ee721273255d669032ded0d8562ffef4fc8601f",
+    "paragraph": 206,
+    "pattern": "dd2-hj-hand-to-dick",
+    "act": "handjob",
+    "kind": "handjob",
+    "a": "Castiel",
+    "b": "Dean Winchester",
+    "role": "top"
+   },
+   "recommendation": {
+    "verdict": "better",
+    "label": "Better",
+    "reason": "A retrospective paragraph about an earlier manual encounter is dated by the following paragraph. It supports historical hand stimulation."
    }
   },
   {
@@ -632,13 +988,29 @@
    "act": "blowjob",
    "kind": "history",
    "role": "top",
-   "claim": "Avery is getting a blowjob from Rowan",
-   "beforeClaim": "Avery is getting a blowjob from Rowan",
+   "claim": "Dean Winchester is getting a blowjob from Castiel [category: blowjob; occurrence: history]",
+   "beforeClaim": "Dean Winchester is getting a blowjob from Castiel [category: blowjob; occurrence: act]",
    "reason": "Claim changed since review",
    "assessment": "A person recalls fragments of an earlier oral/manual encounter. Remembered evidence should stay available without adding another current scene.",
    "context": {
     "from": 373,
     "to": 377
+   },
+   "reviewedClaim": {
+    "fic": "more-views.html",
+    "sourceSha": "61461060f56925872cb638627ee721273255d669032ded0d8562ffef4fc8601f",
+    "paragraph": 375,
+    "pattern": "lips-around",
+    "act": "blowjob",
+    "kind": "act",
+    "a": "Dean Winchester",
+    "b": "Castiel",
+    "role": ""
+   },
+   "recommendation": {
+    "verdict": "better",
+    "label": "Better",
+    "reason": "A person recalls fragments of an earlier oral/manual encounter. Remembered evidence should stay available without adding another current scene."
    }
   },
   {
@@ -652,13 +1024,29 @@
    "act": "frottage",
    "kind": "handjob",
    "role": "top",
-   "claim": "Rowan and Avery are rubbing against each other (frottage)",
-   "beforeClaim": "Rowan and Avery are having a handjob",
+   "claim": "Castiel and Dean Winchester are rubbing against each other (frottage) [category: frottage; occurrence: handjob]",
+   "beforeClaim": "Castiel manually stimulates Dean Winchester's penis [category: handjob; occurrence: handjob]",
    "reason": "Claim changed since review",
    "assessment": "The two adults rub their genitals together while kissing. Frottage is the supported contact category.",
    "context": {
     "from": 587,
     "to": 591
+   },
+   "reviewedClaim": {
+    "fic": "more-views.html",
+    "sourceSha": "61461060f56925872cb638627ee721273255d669032ded0d8562ffef4fc8601f",
+    "paragraph": 589,
+    "pattern": "hj-stroke~elided",
+    "act": "handjob",
+    "kind": "handjob",
+    "a": "Castiel",
+    "b": "Dean Winchester",
+    "role": "top"
+   },
+   "recommendation": {
+    "verdict": "better",
+    "label": "Better",
+    "reason": "The two adults rub their genitals together while kissing. Frottage is the supported contact category."
    }
   },
   {
@@ -672,13 +1060,19 @@
    "act": "genital licking",
    "kind": "handjob",
    "role": "top",
-   "claim": "Jamie → Avery: genital licking (the first name is the one the engine credited)",
+   "claim": "Laurent gives Damen external oral genital contact [category: genital licking; occurrence: handjob]",
    "beforeClaim": "Earlier claim identity unavailable; do not infer agreement.",
    "reason": "Missing identity, superseded review, or pending adjudication",
    "assessment": "A performer externally licks the shaft and orally contacts the scrotum. External body play is explicit; enclosed-mouth penile contact needs separate evidence.",
    "context": {
     "from": 6565,
     "to": 6569
+   },
+   "reviewedClaim": null,
+   "recommendation": {
+    "verdict": "uncertain",
+    "label": "Not sure",
+    "reason": "The earlier claim identity is unavailable, so I cannot reliably compare before with after. Judge the current reading from the loaded passage."
    }
   },
   {
@@ -691,13 +1085,19 @@
    "b": "Elphaba Thropp",
    "act": "fingering",
    "kind": "act",
-   "claim": "Jordan is fingering Rowan",
+   "claim": "Glinda the Good is fingering Elphaba Thropp [category: fingering; occurrence: act]",
    "beforeClaim": "Earlier claim identity unavailable; do not infer agreement.",
    "reason": "Missing identity, superseded review, or pending adjudication",
    "assessment": "The previous instruction explicitly requests finger insertion and the receiver inserts one and then two. This is self-fingering rather than penile vaginal sex.",
    "context": {
     "from": 1004,
     "to": 1008
+   },
+   "reviewedClaim": null,
+   "recommendation": {
+    "verdict": "uncertain",
+    "label": "Not sure",
+    "reason": "The earlier claim identity is unavailable, so I cannot reliably compare before with after. Judge the current reading from the loaded passage."
    }
   },
   {
@@ -710,13 +1110,29 @@
    "b": "Alex Claremont-Diaz",
    "act": "fingering",
    "kind": "act",
-   "claim": "Rowan is fingering Morgan",
-   "beforeClaim": "Rowan is having anal sex with Morgan, as the one penetrating",
+   "claim": "Henry Fox-Mountchristen-Windsor is fingering Alex Claremont-Diaz [category: fingering; occurrence: act]",
+   "beforeClaim": "Henry Fox-Mountchristen-Windsor is having anal sex with Alex Claremont-Diaz, as the one penetrating [category: anal sex; occurrence: act]",
    "reason": "Claim changed since review",
    "assessment": "Confirm the current claim independently. The earlier label was quarantined and is not carried over.",
    "context": {
     "from": 353,
     "to": 357
+   },
+   "reviewedClaim": {
+    "fic": "rwrb-balls.html",
+    "sourceSha": "972bdceeca54c37e7f9298ac9621b9155bf28745a076c5d5124e55a38b1a9474",
+    "paragraph": 355,
+    "pattern": "prostate~elided",
+    "act": "anal sex",
+    "kind": "act",
+    "a": "Henry Fox-Mountchristen-Windsor",
+    "b": "Alex Claremont-Diaz",
+    "role": ""
+   },
+   "recommendation": {
+    "verdict": "uncertain",
+    "label": "Not sure",
+    "reason": "Confirm the current claim independently. The earlier label was quarantined and is not carried over."
    }
   },
   {
@@ -730,13 +1146,19 @@
    "act": "handjob",
    "kind": "handjob",
    "role": "top",
-   "claim": "Rowan and Morgan are having a handjob",
+   "claim": "Henry Fox-Mountchristen-Windsor manually stimulates Alex Claremont-Diaz's penis [category: handjob; occurrence: handjob]",
    "beforeClaim": "Earlier claim identity unavailable; do not infer agreement.",
    "reason": "Missing identity, superseded review, or pending adjudication",
    "assessment": "The new top continues penile penetration while giving the receiver a simultaneous handjob. The separate hand action does not reverse anal roles.",
    "context": {
     "from": 359,
     "to": 363
+   },
+   "reviewedClaim": null,
+   "recommendation": {
+    "verdict": "uncertain",
+    "label": "Not sure",
+    "reason": "The earlier claim identity is unavailable, so I cannot reliably compare before with after. Judge the current reading from the loaded passage."
    }
   },
   {
@@ -749,13 +1171,29 @@
    "b": "Dean Winchester",
    "act": "fingering",
    "kind": "act",
-   "claim": "Morgan is fingering Avery",
-   "beforeClaim": "Avery is fingering Morgan",
+   "claim": "Castiel is fingering Dean Winchester [category: fingering; occurrence: act]",
+   "beforeClaim": "Dean Winchester is fingering Castiel [category: fingering; occurrence: act]",
    "reason": "Claim changed since review",
    "assessment": "Confirm the current claim independently. The earlier label was quarantined and is not carried over.",
    "context": {
     "from": 1762,
     "to": 1766
+   },
+   "reviewedClaim": {
+    "fic": "tricks-of-the-trade.html",
+    "sourceSha": "25a15e806d8f6a55c030e78d50d58e71f2ca424674b33f7a56471178d4ab1bd3",
+    "paragraph": 1764,
+    "pattern": "dd3-slipping-second~elided",
+    "act": "fingering",
+    "kind": "act",
+    "a": "Dean Winchester",
+    "b": "Castiel",
+    "role": ""
+   },
+   "recommendation": {
+    "verdict": "uncertain",
+    "label": "Not sure",
+    "reason": "Confirm the current claim independently. The earlier label was quarantined and is not carried over."
    }
   },
   {
@@ -768,13 +1206,29 @@
    "b": "Dean Winchester",
    "act": "fingering",
    "kind": "act",
-   "claim": "Morgan is fingering Avery",
-   "beforeClaim": "Avery is fingering Morgan",
+   "claim": "Castiel is fingering Dean Winchester [category: fingering; occurrence: act]",
+   "beforeClaim": "Dean Winchester is fingering Castiel [category: fingering; occurrence: act]",
    "reason": "Claim changed since review",
    "assessment": "A named partner lubricates and inserts their fingers before replacing them with a plug. The receiver's narration and reactions do not make them the finger performer.",
    "context": {
     "from": 2554,
     "to": 2558
+   },
+   "reviewedClaim": {
+    "fic": "tricks-of-the-trade.html",
+    "sourceSha": "25a15e806d8f6a55c030e78d50d58e71f2ca424674b33f7a56471178d4ab1bd3",
+    "paragraph": 2556,
+    "pattern": "dd2-finger-shoved-into",
+    "act": "fingering",
+    "kind": "act",
+    "a": "Dean Winchester",
+    "b": "Castiel",
+    "role": ""
+   },
+   "recommendation": {
+    "verdict": "better",
+    "label": "Better",
+    "reason": "A named partner lubricates and inserts their fingers before replacing them with a plug. The receiver's narration and reactions do not make them the finger performer."
    }
   },
   {
@@ -787,13 +1241,29 @@
    "b": "Castiel",
    "act": "blowjob",
    "kind": "act",
-   "claim": "Avery is getting a blowjob from Morgan",
-   "beforeClaim": "Morgan is getting a blowjob from Avery",
+   "claim": "Dean Winchester is getting a blowjob from Castiel [category: blowjob; occurrence: act]",
+   "beforeClaim": "Castiel is getting a blowjob from Dean Winchester [category: blowjob; occurrence: act]",
    "reason": "Claim changed since review",
    "assessment": "The established partner lowers their mouth to give oral sex while the receiver reacts. Continue the mouth owner's action rather than using the receiver as performer.",
    "context": {
     "from": 3097,
     "to": 3101
+   },
+   "reviewedClaim": {
+    "fic": "tricks-of-the-trade.html",
+    "sourceSha": "25a15e806d8f6a55c030e78d50d58e71f2ca424674b33f7a56471178d4ab1bd3",
+    "paragraph": 3099,
+    "pattern": "dd-takes-into-mouth~elided",
+    "act": "blowjob",
+    "kind": "act",
+    "a": "Castiel",
+    "b": "Dean Winchester",
+    "role": ""
+   },
+   "recommendation": {
+    "verdict": "better",
+    "label": "Better",
+    "reason": "The established partner lowers their mouth to give oral sex while the receiver reacts. Continue the mouth owner's action rather than using the receiver as performer."
    }
   },
   {
@@ -806,13 +1276,19 @@
    "b": "Dean Winchester",
    "act": "fingering",
    "kind": "act",
-   "claim": "Morgan is fingering Avery",
+   "claim": "Castiel is fingering Dean Winchester [category: fingering; occurrence: act]",
    "beforeClaim": "Earlier claim identity unavailable; do not infer agreement.",
    "reason": "Missing identity, superseded review, or pending adjudication",
    "assessment": "Confirmed new reading error: after finger preparation the performer lubricates their own penis and begins penile penetration, with continued hip thrusts in the next paragraph. The depth match is now labelled fingering. A separate penile match survives, so the scene is not completely missed.",
    "context": {
     "from": 3602,
     "to": 3606
+   },
+   "reviewedClaim": null,
+   "recommendation": {
+    "verdict": "uncertain",
+    "label": "Not sure",
+    "reason": "The earlier claim identity is unavailable, so I cannot reliably compare before with after. Judge the current reading from the loaded passage."
    }
   }
  ]
