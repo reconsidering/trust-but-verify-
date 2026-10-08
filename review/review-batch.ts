@@ -137,7 +137,6 @@ export async function mountReview(batch: ReviewBatch, options: { stories?: Map<s
       }
       corrections.append(errors); card.append(title, summary, engine, note, evidence, choices, corrections); actCards.append(card);
     }
-    const coverage = element<HTMLInputElement>('coverage-complete'); coverage.disabled = !paras; coverage.checked = answer?.coverageComplete ?? false; coverage.onchange = () => update({ coverageComplete: coverage.checked });
     element('scene-engine-review').hidden = !row.engineReadings?.length;
     renderIndividualReadings(element('scene-engine-readings'),row,paras,()=>answers[row.id],update,render);
     element('training-notes').textContent = row.trainingNotes?.join(' ') ?? '';
