@@ -1,0 +1,3319 @@
+{
+ "schema": "engine-review-batch/v1",
+ "batchId": "past-labels-28061110392e",
+ "engineCommit": "a1a7a3987df8df0d84418a50fd338d0aceed5277",
+ "selection": {
+  "method": "Highest-risk recoverable past per-reading labels: changed/quarantined identities, mismatches with earlier reports and recent owner reviews, then current-model disagreement. Deterministic rank/key order; cap eight per fic; consolidate identical current claims at the same citation. Each selected context manually inspected. No label changes.",
+  "stats": {
+   "auditFiles": 7,
+   "auditAssignments": 1769,
+   "uniqueAuditKeys": 1769,
+   "matchedAuditKeys": 1564,
+   "rightSetFiles": 22,
+   "rightSetEntries": 950,
+   "goldFiles": 10,
+   "goldScenes": 87,
+   "spotcheckAnswers": 300,
+   "goldFeedbackFiles": 2,
+   "inventoryFiles": 3,
+   "inventoryWindows": 76,
+   "eligibleSources": 51,
+   "eligibleAuditHits": 5756,
+   "candidates": 2141,
+   "quarantined": 36,
+   "changed": 40,
+   "removed": 15,
+   "selected": 50,
+   "selectedSources": 17,
+   "selectedUniqueParagraphs": 49,
+   "selectedChanged": 37,
+   "selectedQuarantined": 32,
+   "assistantAssessments": {
+    "correct": 39,
+    "wrong": 9,
+    "uncertain": 2
+   }
+  },
+  "detectorAuditCommit": "3ebbfdf0dc23d67f91dd01c469dd7c69edb80699",
+  "confidenceCommit": "a1a7a3987df8df0d84418a50fd338d0aceed5277",
+  "scores": "Current committed per-hit confidence model with current reliability; in-sample scores, not held-out probabilities. Assistant scores are subjective.",
+  "scope": "All stored label/review files inventoried; only 51 previously age-screened available sources replayed. Unmatched keys are not assumed false negatives; uncertain/retired labels do not become training labels. Positive inventories never reject omitted hints."
+ },
+ "sources": [
+  {
+   "file": "belonging.html",
+   "title": "Belonging is Longing is Now",
+   "sourceSha": "d8fe352ab70bc0a8171fea0e069c43d776d3541d741cb74b2b66014ae64e874c",
+   "paragraphSha": "f9bf52ddcb708de72d8df74649d6976fa2ed62ddba1e55df553729ba32589409",
+   "paragraphCount": 5783
+  },
+  {
+   "file": "autocorrect.html",
+   "title": "Damn You Auto Correct!",
+   "sourceSha": "7bb7cfa0690ea42eea1d2220659ed798c400cf939cf0b28ef1c9fb99e76b7780",
+   "paragraphSha": "77d7533e42fc233186b9d7eb3b2227fabbb8dd046a9e500a9daaf1d9beff2128",
+   "paragraphCount": 218
+  },
+  {
+   "file": "rwrb-balls.html",
+   "title": "Red, White, and Royal Blue Balls",
+   "sourceSha": "972bdceeca54c37e7f9298ac9621b9155bf28745a076c5d5124e55a38b1a9474",
+   "paragraphSha": "ac2603b094d8fccc28763cab1621c7bd53c3c32cf37d63667293cb991935f7f8",
+   "paragraphCount": 366
+  },
+  {
+   "file": "tricks-of-the-trade.html",
+   "title": "Tricks of the Trade",
+   "sourceSha": "25a15e806d8f6a55c030e78d50d58e71f2ca424674b33f7a56471178d4ab1bd3",
+   "paragraphSha": "56e605751373cfe88dc1f6a48760f8625a143c8157e758778c2f64929a65e8d7",
+   "paragraphCount": 3875
+  },
+  {
+   "file": "lightning.html",
+   "title": "Held Up a Lightning Rod (Wonder Why I'm Struck)",
+   "sourceSha": "0a3fe56af1a92ac27ba2da61af1ffb88f11cf6aa44cb91777bb7b97c025f67d7",
+   "paragraphSha": "53578f7dc07a33d29e2ff7074e2292cf37257cf8e0045e06178adfc251bae999",
+   "paragraphCount": 5692
+  },
+  {
+   "file": "more-views.html",
+   "title": "More Views. More Money.",
+   "sourceSha": "61461060f56925872cb638627ee721273255d669032ded0d8562ffef4fc8601f",
+   "paragraphSha": "220940e4b87a4b161eda553e7169b3dce3e3f50562957b20d665f0b1e127ebec",
+   "paragraphCount": 1018
+  },
+  {
+   "file": "innocent-until.html",
+   "title": "Innocent Until",
+   "sourceSha": "ffa71a4c7726196bc68e41ceb1805c28b7de2698384e84270c5d0f1f6f4ef78c",
+   "paragraphSha": "1b144bbdaf9d60d9c1ed0bb6efc2a0618b0b1187845bbf7d1b1d3e10d8a3b9e2",
+   "paragraphCount": 4922
+  },
+  {
+   "file": "a-la-carte.html",
+   "title": "à la carte",
+   "sourceSha": "4d553843dc96b396376426414fd191534045ca3508acb51a1672e0ef3ebc0cca",
+   "paragraphSha": "9db9cf7ac1dd38c785bc3fb13ccfd4a6162208036fa6736a063bca7a413fa7d6",
+   "paragraphCount": 1984
+  },
+  {
+   "file": "dogbird.html",
+   "title": "like a dog with a bird at your door",
+   "sourceSha": "b66dcf4730e681942787b9d280bc8b2825005e179cfe09179a82e935a4f036fb",
+   "paragraphSha": "a9bac5bb63b9adc912ac2f8d6f224c1311c7a6e977ef8c66ad82fb1e384479ee",
+   "paragraphCount": 1474
+  },
+  {
+   "file": "jacks.html",
+   "title": "Jack's phone.",
+   "sourceSha": "1c82d8bb62ab4aa836ffe8f4924db20c8420faddb9f3b0d75e08a9b35f18957d",
+   "paragraphSha": "243b447f5811886dca1d72fca33f2761722cb802a440c2cb82c2dcd756487f1b",
+   "paragraphCount": 13370
+  },
+  {
+   "file": "mars.html",
+   "title": "another night on mars",
+   "sourceSha": "43ef00b3070686ea49aed427155aa8c42f88c242698d4dbdf25ec95f4a8c0432",
+   "paragraphSha": "31b1d90d66cd9a817127ba1d93e71720eeea8aa4f5fb87291b46cf4018963af5",
+   "paragraphCount": 1647
+  },
+  {
+   "file": "bluebells.html",
+   "title": "Bluebells and Daylillies and Wild Roses Running Rampant",
+   "sourceSha": "ed9e8f48d2ed52e7c6f9a2ee3fc00dc5ad9e38f897fbc2f4fa60ffd193ba1a89",
+   "paragraphSha": "081dae67e5497c717e4fbc94129c03d0a4a6da96e5b4538f5f5e0a40f67258eb",
+   "paragraphCount": 1747
+  },
+  {
+   "file": "new-bitch.html",
+   "title": "New Bitch",
+   "sourceSha": "035c7e5c68df50c2dc0d7e64a801001d3c59ccfadda9e1f8511960dd26a018e7",
+   "paragraphSha": "5527ed5d1e69500ba1329c931eafb505469a502764e91e796db95d4bceaee936",
+   "paragraphCount": 7944
+  },
+  {
+   "file": "premium.html",
+   "title": "Premium Access",
+   "sourceSha": "fd55aafebbb996b705f70915c6c8ffb4a4628bb0684fc7ed24db4bcaae6fa6f3",
+   "paragraphSha": "d3be80d7f04f3cc29996f0b0c5d687fd48052ae4a3aadcffdf540621310adb82",
+   "paragraphCount": 13972
+  },
+  {
+   "file": "pact-of-ice-and-fire.html",
+   "title": "the Pact of Ice and Fire",
+   "sourceSha": "997833dcfbe3192cbe4770c9eba16c74e756bcc4df4988b19a0a8826469e61d9",
+   "paragraphSha": "e75cab45711c6b91c147ecba30d53cddae14fdc8665dd4240222a0152efe3e83",
+   "paragraphCount": 5851
+  },
+  {
+   "file": "were-compeer.html",
+   "title": "A WereCompeer",
+   "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+   "paragraphSha": "db8942d563fe592c068945be850d2bc5ed6f9abcf355f4b74bc0962bcd4d71dc",
+   "paragraphCount": 1220
+  },
+  {
+   "file": "hate.html",
+   "title": "Hate the Way It Feels So Good",
+   "sourceSha": "a34987282302730c5cb9cf4350457713e847383ca411b02c726281de0863ab0b",
+   "paragraphSha": "5043e33ae248b134c4e0770ce09f249d64a0331a0cd82425f12a2a3242135316",
+   "paragraphCount": 1885
+  }
+ ],
+ "rows": [
+  {
+   "id": "L1",
+   "key": "push-into#3db4ce5f",
+   "fic": "belonging.html",
+   "para": 733,
+   "pattern": "push-into",
+   "a": "Castiel",
+   "b": "Dean Winchester",
+   "act": "fingering",
+   "kind": "act",
+   "claim": "Castiel is fingering Dean Winchester",
+   "engineConfidence": 0.9727315208600715,
+   "evidence": [
+    {
+     "from": 731,
+     "to": 735
+    }
+   ],
+   "proposal": {
+    "revision": "past-label-v1-3dc2672d368b",
+    "verdict": "correct",
+    "confidence": 0.98,
+    "reading": "Castiel fingers Dean Winchester; the vague depth sentence continues the preceding finger insertion, not penile penetration.",
+    "rationale": "Your newer act review confirms this finger sequence. The old rejected claim was anal sex, so it must not label the corrected fingering claim wrong.",
+    "errors": []
+   },
+   "labelAudit": {
+    "pastLabels": [
+     {
+      "source": "tests/labels/batch-suspect-two-569919fdfb5e.json",
+      "verdict": "wrong",
+      "date": "2026-10-07",
+      "provenance": "Owner review",
+      "claim": "Castiel is having anal sex with Dean Winchester, as the one penetrating [anal sex; Performed]",
+      "identityVerified": true,
+      "key": "push-into#3db4ce5f",
+      "errors": [
+       "Wrong act or body part"
+      ]
+     },
+     {
+      "source": "tests/right-set/belonging-is-longing-is-now.json",
+      "verdict": "wrong",
+      "date": "2026-10-05",
+      "provenance": "owner",
+      "weight": 1,
+      "claim": "anal scene: recorded top Dean Winchester; recorded bottom Castiel. Instrument detail was not recorded.",
+      "identityVerified": true,
+      "key": "push-into#65f2ab15",
+      "confidence": 0.68
+     }
+    ],
+    "priority": 213.3182880215018,
+    "occurrence": "Performed",
+    "changed": true,
+    "quarantined": true,
+    "status": "Changed claim: obtain a fresh current verdict; the old verdict may still be correct for the old claim.",
+    "reasons": [
+     "Changed or unverifiable claim is already quarantined from confidence training.",
+     "The current act, participants or occurrence differs from the saved identity or pre-change engine reference.",
+     "People or occurrence disagree with an earlier mistake report.",
+     "A recent owner act review covers this citation.",
+     "An older wrong label conflicts with the current model’s high trust; this is a review priority, not proof of correctness."
+    ],
+    "recentEvidence": [
+     "suspect-two-569919fdfb5e / T31: owner-confirmed Fingering, Castiel → Dean Winchester, ¶732–747.",
+     "suspect-two-569919fdfb5e / T31: owner marked correct: Fingering, Castiel → Dean Winchester, performed, ¶732–747."
+    ],
+    "referenceClaim": "Castiel is having anal sex with Dean Winchester, as the one penetrating [anal sex; Performed]",
+    "referenceCommit": "6e878a4",
+    "referenceIsOriginal": false
+   }
+  },
+  {
+   "id": "L2",
+   "key": "mast-himself#193c5626",
+   "fic": "autocorrect.html",
+   "para": 75,
+   "pattern": "mast-himself",
+   "a": "Castiel",
+   "b": "Dean Winchester",
+   "act": "masturbation",
+   "kind": "fantasy",
+   "role": "bottom",
+   "claim": "Castiel is masturbating",
+   "engineConfidence": 0.9065523746608308,
+   "evidence": [
+    {
+     "from": 73,
+     "to": 77
+    }
+   ],
+   "proposal": {
+    "revision": "past-label-v1-c2d192e97045",
+    "verdict": "wrong",
+    "confidence": 0.97,
+    "reading": "Dean Winchester imagines masturbating while Castiel watches; nobody performs that imagined act in the present scene.",
+    "rationale": "The fantasy frame is now recognized, but the engine still assigns the imagined self-touch to Castiel. Your recent act review identifies Dean as the imagined performer.",
+    "errors": [
+     "Wrong person"
+    ]
+   },
+   "labelAudit": {
+    "pastLabels": [
+     {
+      "source": "tests/labels/batch-suspect-two-569919fdfb5e.json",
+      "verdict": "wrong",
+      "date": "2026-10-07",
+      "provenance": "Owner review",
+      "claim": "Castiel is masturbating [masturbation; Performed solo]",
+      "identityVerified": true,
+      "key": "mast-himself#193c5626",
+      "errors": [
+       "Wrong person",
+       "Hypothetical / wanted / threatened"
+      ]
+     }
+    ],
+    "priority": 184.66380936652078,
+    "occurrence": "Imagined / fantasy",
+    "changed": true,
+    "quarantined": true,
+    "status": "Changed claim: obtain a fresh current verdict; the old verdict may still be correct for the old claim.",
+    "reasons": [
+     "Changed or unverifiable claim is already quarantined from confidence training.",
+     "The current act, participants or occurrence differs from the saved identity or pre-change engine reference.",
+     "A recent owner act review covers this citation.",
+     "An older wrong label conflicts with the current model’s high trust; this is a review priority, not proof of correctness."
+    ],
+    "recentEvidence": [
+     "suspect-two-569919fdfb5e / T23: owner marked correct: Solo masturbation, Dean Winchester (solo), imagined, ¶75–75."
+    ],
+    "referenceClaim": "Castiel is masturbating [masturbation; Performed solo]",
+    "referenceCommit": "6e878a4",
+    "referenceIsOriginal": false
+   }
+  },
+  {
+   "id": "L3",
+   "key": "prostate~elided#33b0365",
+   "fic": "rwrb-balls.html",
+   "para": 355,
+   "pattern": "prostate~elided",
+   "a": "Henry Fox-Mountchristen-Windsor",
+   "b": "Alex Claremont-Diaz",
+   "act": "fingering",
+   "kind": "act",
+   "claim": "Henry Fox-Mountchristen-Windsor is fingering Alex Claremont-Diaz",
+   "engineConfidence": 0.9855084531656998,
+   "evidence": [
+    {
+     "from": 353,
+     "to": 357
+    }
+   ],
+   "proposal": {
+    "revision": "past-label-v1-c8eeef303911",
+    "verdict": "correct",
+    "confidence": 0.99,
+    "reading": "Henry Fox-Mountchristen-Windsor fingers Alex Claremont-Diaz and touches his prostate; penile penetration begins later.",
+    "rationale": "The surrounding stretch establishes a finger, and your missed-scene review independently confirms the fingering here. The old wrong mark rejected anal penetration at this citation.",
+    "errors": []
+   },
+   "labelAudit": {
+    "pastLabels": [
+     {
+      "source": "tests/labels/batch-oct6-4be55d1e796d.json",
+      "verdict": "wrong",
+      "date": "2026-10-07",
+      "provenance": "Owner review",
+      "claim": "Henry Fox-Mountchristen-Windsor is having anal sex with Alex Claremont-Diaz, as the one penetrating [anal sex; Performed]",
+      "identityVerified": true,
+      "key": "prostate~elided#33b0365",
+      "errors": [
+       "Fingers or toy mistaken for a penis"
+      ]
+     }
+    ],
+    "priority": 183.6377113291425,
+    "occurrence": "Performed",
+    "changed": true,
+    "quarantined": true,
+    "status": "Changed claim: obtain a fresh current verdict; the old verdict may still be correct for the old claim.",
+    "reasons": [
+     "Changed or unverifiable claim is already quarantined from confidence training.",
+     "The current act, participants or occurrence differs from the saved identity or pre-change engine reference.",
+     "A recent owner act review covers this citation.",
+     "An older wrong label conflicts with the current model’s high trust; this is a review priority, not proof of correctness."
+    ],
+    "recentEvidence": [
+     "missed-2051db5b4e06 / M4: owner-confirmed Fingering, Henry Fox-Mountchristen-Windsor → Alex Claremont-Diaz, ¶353–355."
+    ],
+    "referenceClaim": "Henry Fox-Mountchristen-Windsor is fingering Alex Claremont-Diaz [fingering; Performed]",
+    "referenceCommit": "6e878a4",
+    "referenceIsOriginal": false
+   }
+  },
+  {
+   "id": "L4",
+   "key": "dd-takes-into-mouth~elided#1d44bd9b",
+   "fic": "tricks-of-the-trade.html",
+   "para": 3099,
+   "pattern": "dd-takes-into-mouth~elided",
+   "a": "Dean Winchester",
+   "b": "Castiel",
+   "act": "blowjob",
+   "kind": "act",
+   "claim": "Dean Winchester is getting a blowjob from Castiel",
+   "engineConfidence": 0.9317881249745391,
+   "evidence": [
+    {
+     "from": 3097,
+     "to": 3101
+    }
+   ],
+   "proposal": {
+    "revision": "past-label-v1-fe849224e42e",
+    "verdict": "correct",
+    "confidence": 0.99,
+    "reading": "Castiel gives Dean Winchester a blowjob; Dean is the penile receiver/top in the engine's oral convention.",
+    "rationale": "Castiel owns the mouth action despite Dean's reactions. Your newer review confirms this direction. The older rejected reading assigned the opposite oral roles.",
+    "errors": []
+   },
+   "labelAudit": {
+    "pastLabels": [
+     {
+      "source": "tests/labels/batch-suspect-two-569919fdfb5e.json",
+      "verdict": "wrong",
+      "date": "2026-10-07",
+      "provenance": "Owner review",
+      "claim": "Castiel is getting a blowjob from Dean Winchester [blowjob; Performed]",
+      "identityVerified": true,
+      "key": "dd-takes-into-mouth~elided#1d44bd9b",
+      "errors": [
+       "Roles reversed"
+      ]
+     },
+     {
+      "source": "tests/labels/audit-2026-10-03.json",
+      "verdict": "ok",
+      "date": "2026-10-03",
+      "provenance": "Mixed agent audit / owner rechecks",
+      "claim": "Full original claim identity unavailable; the old sentence key alone does not establish act, people or occurrence.",
+      "identityVerified": false,
+      "key": "sucked#1d44bd9b"
+     }
+    ],
+    "priority": 182.29470312436348,
+    "occurrence": "Performed",
+    "changed": true,
+    "quarantined": true,
+    "status": "Changed claim: obtain a fresh current verdict; the old verdict may still be correct for the old claim.",
+    "reasons": [
+     "Changed or unverifiable claim is already quarantined from confidence training.",
+     "The current act, participants or occurrence differs from the saved identity or pre-change engine reference.",
+     "A recent owner act review covers this citation.",
+     "An older wrong label conflicts with the current model’s high trust; this is a review priority, not proof of correctness."
+    ],
+    "recentEvidence": [
+     "suspect-two-569919fdfb5e / T27: owner-confirmed Blowjob, Castiel → Dean Winchester, ¶3099–3104.",
+     "suspect-two-569919fdfb5e / T27: owner marked correct: Blowjob, Castiel → Dean Winchester, performed, ¶3099–3104."
+    ],
+    "referenceClaim": "Castiel is getting a blowjob from Dean Winchester [blowjob; Performed]",
+    "referenceCommit": "6e878a4",
+    "referenceIsOriginal": false
+   }
+  },
+  {
+   "id": "L5",
+   "key": "mast-himself#e8294018",
+   "fic": "lightning.html",
+   "para": 4590,
+   "pattern": "mast-himself",
+   "a": "Evan \"Buck\" Buckley",
+   "b": "Eddie Diaz",
+   "act": "masturbation",
+   "kind": "history",
+   "role": "bottom",
+   "claim": "Evan \"Buck\" Buckley is masturbating",
+   "engineConfidence": 0.7802082715608039,
+   "evidence": [
+    {
+     "from": 4588,
+     "to": 4592
+    }
+   ],
+   "proposal": {
+    "revision": "past-label-v1-9db6dae47c85",
+    "verdict": "wrong",
+    "confidence": 0.98,
+    "reading": "Eddie Diaz remembers masturbating while watching a video of Evan \"Buck\" Buckley opening a gift.",
+    "rationale": "Historical occurrence is now appropriate, but Eddie is the remembering self-touch performer, not Buck. Your latest review confirms Eddie and the memory frame.",
+    "errors": [
+     "Wrong person"
+    ]
+   },
+   "labelAudit": {
+    "pastLabels": [
+     {
+      "source": "tests/labels/batch-suspect-two-569919fdfb5e.json",
+      "verdict": "wrong",
+      "date": "2026-10-07",
+      "provenance": "Owner review",
+      "claim": "Evan \"Buck\" Buckley is masturbating [masturbation; Performed solo]",
+      "identityVerified": true,
+      "key": "mast-himself#e8294018",
+      "errors": [
+       "Wrong person",
+       "Memory counted as a new scene"
+      ]
+     }
+    ],
+    "priority": 181.5052067890201,
+    "occurrence": "Earlier / memory",
+    "changed": true,
+    "quarantined": true,
+    "status": "Changed claim: obtain a fresh current verdict; the old verdict may still be correct for the old claim.",
+    "reasons": [
+     "Changed or unverifiable claim is already quarantined from confidence training.",
+     "The current act, participants or occurrence differs from the saved identity or pre-change engine reference.",
+     "A recent owner act review covers this citation."
+    ],
+    "recentEvidence": [
+     "suspect-two-569919fdfb5e / T13: owner marked correct: Solo masturbation, Eddie Diaz (solo), memory, ¶4589–4590."
+    ],
+    "referenceClaim": "Evan \"Buck\" Buckley is masturbating [masturbation; Performed solo]",
+    "referenceCommit": "6e878a4",
+    "referenceIsOriginal": false
+   }
+  },
+  {
+   "id": "L6",
+   "key": "hj-stroke~elided#532d3191",
+   "fic": "more-views.html",
+   "para": 589,
+   "pattern": "hj-stroke~elided",
+   "a": "Castiel",
+   "b": "Dean Winchester",
+   "act": "frottage",
+   "kind": "handjob",
+   "role": "top",
+   "claim": "Castiel and Dean Winchester are rubbing against each other (frottage)",
+   "engineConfidence": 0.861691301058072,
+   "evidence": [
+    {
+     "from": 587,
+     "to": 591
+    }
+   ],
+   "proposal": {
+    "revision": "past-label-v1-078d9bdbbc63",
+    "verdict": "correct",
+    "confidence": 0.98,
+    "reading": "Castiel and Dean Winchester rub their penises together; this particular sentence describes body rubbing, not a handjob.",
+    "rationale": "The explicit hip movement supports frottage. Your recent inventory distinguishes nearby handjobs from this later rubbing. The engine retains a technical handjob kind, but its actual act category is now frottage.",
+    "errors": []
+   },
+   "labelAudit": {
+    "pastLabels": [
+     {
+      "source": "tests/labels/batch-suspect-two-569919fdfb5e.json",
+      "verdict": "wrong",
+      "date": "2026-10-07",
+      "provenance": "Owner review",
+      "claim": "Castiel manually stimulates Dean Winchester's penis [handjob; Performed]",
+      "identityVerified": true,
+      "key": "hj-stroke~elided#532d3191",
+      "errors": [
+       "Wrong act or body part"
+      ]
+     }
+    ],
+    "priority": 180.5422825264518,
+    "occurrence": "Performed",
+    "changed": true,
+    "quarantined": true,
+    "status": "Changed claim: obtain a fresh current verdict; the old verdict may still be correct for the old claim.",
+    "reasons": [
+     "Changed or unverifiable claim is already quarantined from confidence training.",
+     "The current act, participants or occurrence differs from the saved identity or pre-change engine reference.",
+     "A recent owner act review covers this citation.",
+     "An older wrong label conflicts with the current model’s high trust; this is a review priority, not proof of correctness."
+    ],
+    "recentEvidence": [
+     "suspect-two-569919fdfb5e / T7: owner-confirmed Body rubbing / frottage, Castiel → Dean Winchester, ¶570–592.",
+     "suspect-two-569919fdfb5e / T7: owner marked correct: Body rubbing / frottage, Castiel → Dean Winchester, performed, ¶570–592."
+    ],
+    "referenceClaim": "Castiel manually stimulates Dean Winchester's penis [handjob; Performed]",
+    "referenceCommit": "6e878a4",
+    "referenceIsOriginal": false
+   }
+  },
+  {
+   "id": "L7",
+   "key": "dd2-hj-hand-to-dick#a654f61c",
+   "fic": "more-views.html",
+   "para": 206,
+   "pattern": "dd2-hj-hand-to-dick",
+   "a": "Castiel",
+   "b": "Dean Winchester",
+   "act": "handjob",
+   "kind": "history",
+   "role": "top",
+   "claim": "Castiel manually stimulates Dean Winchester's penis",
+   "engineConfidence": 0.7307107317136107,
+   "evidence": [
+    {
+     "from": 204,
+     "to": 208
+    }
+   ],
+   "proposal": {
+    "revision": "past-label-v1-109adfab8c2d",
+    "verdict": "correct",
+    "confidence": 0.98,
+    "reading": "Castiel recalls giving Dean Winchester a handjob almost two weeks earlier.",
+    "rationale": "The following paragraph dates the event. Your latest review confirms a remembered handjob rather than a new current act. The old rejection applied to a current handjob claim.",
+    "errors": []
+   },
+   "labelAudit": {
+    "pastLabels": [
+     {
+      "source": "tests/labels/batch-suspect-two-569919fdfb5e.json",
+      "verdict": "wrong",
+      "date": "2026-10-07",
+      "provenance": "Owner review",
+      "claim": "Castiel manually stimulates Dean Winchester's penis [handjob; Performed]",
+      "identityVerified": true,
+      "key": "dd2-hj-hand-to-dick#a654f61c",
+      "errors": [
+       "Memory counted as a new scene"
+      ]
+     }
+    ],
+    "priority": 180.26776829284026,
+    "occurrence": "Earlier / memory",
+    "changed": true,
+    "quarantined": true,
+    "status": "Changed claim: obtain a fresh current verdict; the old verdict may still be correct for the old claim.",
+    "reasons": [
+     "Changed or unverifiable claim is already quarantined from confidence training.",
+     "The current act, participants or occurrence differs from the saved identity or pre-change engine reference.",
+     "A recent owner act review covers this citation."
+    ],
+    "recentEvidence": [
+     "suspect-two-569919fdfb5e / T3: owner marked correct: Handjob, Castiel → Dean Winchester, memory, ¶205–207."
+    ],
+    "referenceClaim": "Castiel manually stimulates Dean Winchester's penis [handjob; Performed]",
+    "referenceCommit": "6e878a4",
+    "referenceIsOriginal": false
+   }
+  },
+  {
+   "id": "L8",
+   "key": "mast-himself#a9f820c3",
+   "fic": "innocent-until.html",
+   "para": 4774,
+   "pattern": "mast-himself",
+   "a": "Steve Rogers",
+   "b": "Steve Rogers",
+   "act": "masturbation",
+   "kind": "masturbation",
+   "role": "bottom",
+   "claim": "Steve Rogers is masturbating",
+   "engineConfidence": 0.8264650175436742,
+   "evidence": [
+    {
+     "from": 4772,
+     "to": 4776
+    }
+   ],
+   "proposal": {
+    "revision": "past-label-v1-17b8284cfc41",
+    "verdict": "correct",
+    "confidence": 0.97,
+    "reading": "Steve Rogers stimulates himself against his own chastity cage while James \"Bucky\" Barnes is briefly in the bathroom.",
+    "rationale": "Steve is the explicitly described performer, and your recent review confirms this solo activity. The old rejection named Bucky instead. A partner field in the audit is context, not a partnered masturbation claim.",
+    "errors": []
+   },
+   "labelAudit": {
+    "pastLabels": [
+     {
+      "source": "tests/labels/batch-suspect-two-569919fdfb5e.json",
+      "verdict": "wrong",
+      "date": "2026-10-07",
+      "provenance": "Owner review",
+      "claim": "James \"Bucky\" Barnes is masturbating [masturbation; Performed solo]",
+      "identityVerified": true,
+      "key": "mast-himself#a9f820c3",
+      "errors": [
+       "Wrong person"
+      ]
+     }
+    ],
+    "priority": 179.66162543859184,
+    "occurrence": "Performed solo",
+    "changed": true,
+    "quarantined": true,
+    "status": "Changed claim: obtain a fresh current verdict; the old verdict may still be correct for the old claim.",
+    "reasons": [
+     "Changed or unverifiable claim is already quarantined from confidence training.",
+     "The current act, participants or occurrence differs from the saved identity or pre-change engine reference.",
+     "A recent owner act review covers this citation.",
+     "An older wrong label conflicts with the current model’s high trust; this is a review priority, not proof of correctness."
+    ],
+    "recentEvidence": [
+     "suspect-two-569919fdfb5e / T16: owner-confirmed Solo masturbation, Steve Rogers (solo), ¶4774–4774.",
+     "suspect-two-569919fdfb5e / T16: owner marked correct: Solo masturbation, Steve Rogers (solo), performed, ¶4774–4774."
+    ],
+    "referenceClaim": "James \"Bucky\" Barnes is masturbating [masturbation; Performed solo]",
+    "referenceCommit": "6e878a4",
+    "referenceIsOriginal": false
+   }
+  },
+  {
+   "id": "L9",
+   "key": "fuck#c4cba462",
+   "fic": "a-la-carte.html",
+   "para": 1379,
+   "pattern": "fuck",
+   "a": "Anakin Skywalker",
+   "b": "Obi-Wan Kenobi",
+   "act": "anal sex",
+   "kind": "history",
+   "role": "top",
+   "claim": "Anakin Skywalker is having anal sex with Obi-Wan Kenobi, as the one penetrating",
+   "engineConfidence": 0.9642040361197641,
+   "evidence": [
+    {
+     "from": 1377,
+     "to": 1381
+    }
+   ],
+   "proposal": {
+    "revision": "past-label-v1-a8ddbb3e02f5",
+    "verdict": "wrong",
+    "confidence": 0.96,
+    "reading": "Anakin Skywalker makes a pleased, colloquial remark about the effect of earlier sex; it does not establish that Anakin penetrated Obi-Wan Kenobi.",
+    "rationale": "Moving the line to history does not repair the unsupported penetration direction. Your recent act review also rejects that historical anal claim; the surrounding conversation gives no new top-role evidence.",
+    "errors": [
+     "Wrong act or body part",
+     "Roles reversed"
+    ]
+   },
+   "labelAudit": {
+    "pastLabels": [
+     {
+      "source": "tests/labels/batch-suspect-two-569919fdfb5e.json",
+      "verdict": "wrong",
+      "date": "2026-10-07",
+      "provenance": "Owner review",
+      "claim": "Anakin Skywalker is having anal sex with Obi-Wan Kenobi, as the one penetrating [anal sex; Performed]",
+      "identityVerified": true,
+      "key": "fuck#c4cba462",
+      "errors": [
+       "Memory counted as a new scene"
+      ]
+     }
+    ],
+    "priority": 179.1051009029941,
+    "occurrence": "Earlier / memory",
+    "changed": true,
+    "quarantined": true,
+    "status": "Changed claim: obtain a fresh current verdict; the old verdict may still be correct for the old claim.",
+    "reasons": [
+     "Changed or unverifiable claim is already quarantined from confidence training.",
+     "The current act, participants or occurrence differs from the saved identity or pre-change engine reference.",
+     "A recent owner act review covers this citation.",
+     "An older wrong label conflicts with the current model’s high trust; this is a review priority, not proof of correctness."
+    ],
+    "recentEvidence": [
+     "suspect-two-569919fdfb5e / T40: owner marked wrong: Anal penetration (penis), Anakin Skywalker → Obi-Wan Kenobi, memory, ¶1379–1379."
+    ],
+    "referenceClaim": "Anakin Skywalker is having anal sex with Obi-Wan Kenobi, as the one penetrating [anal sex; Performed]",
+    "referenceCommit": "6e878a4",
+    "referenceIsOriginal": false
+   }
+  },
+  {
+   "id": "L10",
+   "key": "bottomed-out~elided#48d97ba",
+   "fic": "tricks-of-the-trade.html",
+   "para": 3604,
+   "pattern": "bottomed-out~elided",
+   "a": "Castiel",
+   "b": "Dean Winchester",
+   "act": "fingering",
+   "kind": "act",
+   "claim": "Castiel is fingering Dean Winchester",
+   "engineConfidence": 0.9367112104809733,
+   "evidence": [
+    {
+     "from": 3602,
+     "to": 3606
+    }
+   ],
+   "proposal": {
+    "revision": "past-label-v1-537b6bd4dc93",
+    "verdict": "wrong",
+    "confidence": 0.99,
+    "reading": "Castiel transitions from finger preparation to penile penetration of Dean Winchester before reaching full depth.",
+    "rationale": "The preparation fingers have been overtaken by an explicit penile action and the following hip thrusts. The depth hit is incorrectly labelled fingering. A separate correct penile hit does not make this individual claim right.",
+    "errors": [
+     "Penis mistaken for fingers or a toy",
+     "Wrong act or body part"
+    ]
+   },
+   "labelAudit": {
+    "pastLabels": [
+     {
+      "source": "tests/labels/audit-2026-10-03.json",
+      "verdict": "ok",
+      "date": "2026-10-03",
+      "provenance": "Mixed agent audit / owner rechecks",
+      "claim": "Full original claim identity unavailable; the old sentence key alone does not establish act, people or occurrence.",
+      "identityVerified": false,
+      "key": "bottomed-out~elided#48d97ba"
+     },
+     {
+      "source": "tests/labels/batch-oct6-4be55d1e796d.json",
+      "verdict": "ok",
+      "date": "2026-10-07",
+      "provenance": "Owner review",
+      "claim": "Castiel is fingering Dean Winchester [fingering; Performed]",
+      "identityVerified": true,
+      "key": "dd2-finger-shoved-into#f5ea72e7"
+     },
+     {
+      "source": "tests/labels/batch-oct6-4be55d1e796d.json",
+      "verdict": "ok",
+      "date": "2026-10-07",
+      "provenance": "Owner review",
+      "claim": "Castiel is fingering Dean Winchester [fingering; Performed]",
+      "identityVerified": true,
+      "key": "adds-finger#f5ea72e7"
+     },
+     {
+      "source": "tests/labels/audit-2026-10-03.json",
+      "verdict": "ok",
+      "date": "2026-10-03",
+      "provenance": "Mixed agent audit / owner rechecks",
+      "claim": "Full original claim identity unavailable; the old sentence key alone does not establish act, people or occurrence.",
+      "identityVerified": false,
+      "key": "fingers-into#992f1f4a"
+     },
+     {
+      "source": "tests/labels/batch-oct6-4be55d1e796d.json",
+      "verdict": "ok",
+      "date": "2026-10-07",
+      "provenance": "Owner review",
+      "claim": "Castiel is fingering Dean Winchester [fingering; Performed]",
+      "identityVerified": true,
+      "key": "dd3-slipping-second#f5ea72e7"
+     },
+     {
+      "source": "tests/right-set/tricks-of-the-trade.json",
+      "verdict": "wrong",
+      "date": "2026-10-06",
+      "provenance": "owner",
+      "weight": 1,
+      "claim": "anal hint: Castiel points toward top. Specific act and occurrence not recorded.",
+      "identityVerified": true,
+      "key": "bottomed-out#d4eecdcc",
+      "confidence": 0.57
+     },
+     {
+      "source": "tests/right-set/tricks-of-the-trade.json",
+      "verdict": "ok",
+      "date": "2026-10-06",
+      "provenance": "owner",
+      "weight": 1,
+      "claim": "anal scene: recorded top Castiel; recorded bottom Dean Winchester. Instrument detail was not recorded.",
+      "identityVerified": true,
+      "key": "fingers-into#9ca67c8e"
+     }
+    ],
+    "priority": 175.58221973797566,
+    "occurrence": "Performed",
+    "changed": true,
+    "quarantined": true,
+    "status": "Changed claim: obtain a fresh current verdict; the old verdict may still be correct for the old claim.",
+    "reasons": [
+     "Changed or unverifiable claim is already quarantined from confidence training.",
+     "The current act, participants or occurrence differs from the saved identity or pre-change engine reference.",
+     "People or occurrence disagree with an earlier mistake report."
+    ],
+    "recentEvidence": [],
+    "referenceClaim": "Castiel is having anal sex with Dean Winchester, as the one penetrating [anal sex; Performed]",
+    "referenceCommit": "6e878a4",
+    "referenceIsOriginal": false
+   }
+  },
+  {
+   "id": "L11",
+   "key": "pushed-in~elided#7b5359a6",
+   "fic": "dogbird.html",
+   "para": 1291,
+   "pattern": "pushed-in~elided",
+   "a": "Evan \"Buck\" Buckley",
+   "b": "Eddie Diaz",
+   "act": "fingering",
+   "kind": "act",
+   "claim": "Evan \"Buck\" Buckley is fingering Eddie Diaz",
+   "engineConfidence": 0.9605585617773988,
+   "evidence": [
+    {
+     "from": 1289,
+     "to": 1293
+    }
+   ],
+   "proposal": {
+    "revision": "past-label-v1-ee025a7601e8",
+    "verdict": "correct",
+    "confidence": 0.98,
+    "reading": "Evan \"Buck\" Buckley inserts a finger into Eddie Diaz while continuing a blowjob.",
+    "rationale": "The vague further-in movement continues the finger's first-knuckle insertion, with subsequent finger pumping. It does not add penile anal penetration; the old rejected claim did.",
+    "errors": []
+   },
+   "labelAudit": {
+    "pastLabels": [
+     {
+      "source": "tests/labels/batch-oct6-4be55d1e796d.json",
+      "verdict": "wrong",
+      "date": "2026-10-07",
+      "provenance": "Owner review",
+      "claim": "Evan \"Buck\" Buckley is having anal sex with Eddie Diaz, as the one penetrating [anal sex; Performed]",
+      "identityVerified": true,
+      "key": "pushed-in~elided#7b5359a6",
+      "errors": [
+       "Fingers or toy mistaken for a penis"
+      ]
+     },
+     {
+      "source": "tests/labels/audit-2026-10-03.json",
+      "verdict": "ok",
+      "date": "2026-10-03",
+      "provenance": "Mixed agent audit / owner rechecks",
+      "claim": "Full original claim identity unavailable; the old sentence key alone does not establish act, people or occurrence.",
+      "identityVerified": false,
+      "key": "fingers-into~elided#44d53a72"
+     }
+    ],
+    "priority": 171.01396404443497,
+    "occurrence": "Performed",
+    "changed": true,
+    "quarantined": true,
+    "status": "Changed claim: obtain a fresh current verdict; the old verdict may still be correct for the old claim.",
+    "reasons": [
+     "Changed or unverifiable claim is already quarantined from confidence training.",
+     "The current act, participants or occurrence differs from the saved identity or pre-change engine reference.",
+     "An older wrong label conflicts with the current model’s high trust; this is a review priority, not proof of correctness."
+    ],
+    "recentEvidence": [],
+    "referenceClaim": "Evan \"Buck\" Buckley is fingering Eddie Diaz [fingering; Performed]",
+    "referenceCommit": "6e878a4",
+    "referenceIsOriginal": false
+   }
+  },
+  {
+   "id": "L12",
+   "key": "push-into#800ca1f8",
+   "fic": "jacks.html",
+   "para": 2093,
+   "pattern": "push-into",
+   "a": "Dracula",
+   "b": "Jack Seward",
+   "act": "anal sex",
+   "kind": "act",
+   "claim": "Dracula is having anal sex with Jack Seward, as the one penetrating",
+   "engineConfidence": 0.9314504794142509,
+   "evidence": [
+    {
+     "from": 2091,
+     "to": 2095
+    }
+   ],
+   "proposal": {
+    "revision": "past-label-v1-9d8221f2d082",
+    "verdict": "correct",
+    "confidence": 0.99,
+    "reading": "Dracula penetrates Jack Seward anally; Jack receives the action while positioned on a table.",
+    "rationale": "The named title of the count owns the thrusting, and Jack's reactions establish the receiver. The older wrong mark was attached to the opposite penetration direction.",
+    "errors": []
+   },
+   "labelAudit": {
+    "pastLabels": [
+     {
+      "source": "tests/labels/batch-suspect-3ef02b25a6e5.json",
+      "verdict": "wrong",
+      "date": "2026-10-07",
+      "provenance": "Owner review",
+      "claim": "Jack Seward is having anal sex with Dracula, as the one penetrating [anal sex; Performed]",
+      "identityVerified": true,
+      "key": "push-into#800ca1f8",
+      "errors": [
+       "Roles reversed"
+      ]
+     }
+    ],
+    "priority": 170.28626198535628,
+    "occurrence": "Performed",
+    "changed": true,
+    "quarantined": true,
+    "status": "Changed claim: obtain a fresh current verdict; the old verdict may still be correct for the old claim.",
+    "reasons": [
+     "Changed or unverifiable claim is already quarantined from confidence training.",
+     "The current act, participants or occurrence differs from the saved identity or pre-change engine reference.",
+     "An older wrong label conflicts with the current model’s high trust; this is a review priority, not proof of correctness."
+    ],
+    "recentEvidence": [],
+    "referenceClaim": "Jack Seward is having anal sex with Dracula, as the one penetrating [anal sex; Performed]",
+    "referenceCommit": "6e878a4",
+    "referenceIsOriginal": false
+   }
+  },
+  {
+   "id": "L13",
+   "key": "pushed-in~elided#57b9cbdc",
+   "fic": "more-views.html",
+   "para": 890,
+   "pattern": "pushed-in~elided",
+   "a": "Castiel",
+   "b": "Dean Winchester",
+   "act": "fingering",
+   "kind": "act",
+   "claim": "Castiel is fingering Dean Winchester",
+   "engineConfidence": 0.8903928520952191,
+   "evidence": [
+    {
+     "from": 888,
+     "to": 892
+    }
+   ],
+   "proposal": {
+    "revision": "past-label-v1-95106ea34e95",
+    "verdict": "correct",
+    "confidence": 0.99,
+    "reading": "Castiel first inserts a thumb and then a finger into Dean Winchester.",
+    "rationale": "The surrounding paragraph explicitly names the thumb, its withdrawal, and its replacement with a finger. Reclassifying the vague insertion as fingering fixes the old penile interpretation.",
+    "errors": []
+   },
+   "labelAudit": {
+    "pastLabels": [
+     {
+      "source": "tests/labels/batch-suspect-3ef02b25a6e5.json",
+      "verdict": "wrong",
+      "date": "2026-10-07",
+      "provenance": "Owner review",
+      "claim": "Castiel is having anal sex with Dean Winchester, as the one penetrating [anal sex; Performed]",
+      "identityVerified": true,
+      "key": "pushed-in~elided#57b9cbdc",
+      "errors": [
+       "Fingers or toy mistaken for a penis"
+      ]
+     }
+    ],
+    "priority": 169.2598213023805,
+    "occurrence": "Performed",
+    "changed": true,
+    "quarantined": true,
+    "status": "Changed claim: obtain a fresh current verdict; the old verdict may still be correct for the old claim.",
+    "reasons": [
+     "Changed or unverifiable claim is already quarantined from confidence training.",
+     "The current act, participants or occurrence differs from the saved identity or pre-change engine reference.",
+     "An older wrong label conflicts with the current model’s high trust; this is a review priority, not proof of correctness."
+    ],
+    "recentEvidence": [],
+    "referenceClaim": "Castiel is having anal sex with Dean Winchester, as the one penetrating [anal sex; Performed]",
+    "referenceCommit": "6e878a4",
+    "referenceIsOriginal": false
+   }
+  },
+  {
+   "id": "L14",
+   "key": "pushed-in#5d7d11c8",
+   "fic": "innocent-until.html",
+   "para": 1203,
+   "pattern": "pushed-in",
+   "a": "James \"Bucky\" Barnes",
+   "b": "Steve Rogers",
+   "act": "fingering",
+   "kind": "act",
+   "claim": "James \"Bucky\" Barnes is fingering Steve Rogers",
+   "engineConfidence": 0.9794277866244216,
+   "evidence": [
+    {
+     "from": 1201,
+     "to": 1205
+    }
+   ],
+   "proposal": {
+    "revision": "past-label-v1-77705ba42614",
+    "verdict": "correct",
+    "confidence": 0.98,
+    "reading": "James \"Bucky\" Barnes fingers Steve Rogers; Steve moves against Bucky's fingers.",
+    "rationale": "The receiver's movement does not make Steve the finger performer. The current direction follows the owner of the fingers; the old rejected claim reversed them.",
+    "errors": []
+   },
+   "labelAudit": {
+    "pastLabels": [
+     {
+      "source": "tests/labels/batch-oct6-4be55d1e796d.json",
+      "verdict": "wrong",
+      "date": "2026-10-07",
+      "provenance": "Owner review",
+      "claim": "Steve Rogers is fingering James \"Bucky\" Barnes [fingering; Performed]",
+      "identityVerified": true,
+      "key": "pushed-in#5d7d11c8",
+      "errors": [
+       "Roles reversed"
+      ]
+     }
+    ],
+    "priority": 168.48569466561054,
+    "occurrence": "Performed",
+    "changed": true,
+    "quarantined": true,
+    "status": "Changed claim: obtain a fresh current verdict; the old verdict may still be correct for the old claim.",
+    "reasons": [
+     "Changed or unverifiable claim is already quarantined from confidence training.",
+     "The current act, participants or occurrence differs from the saved identity or pre-change engine reference.",
+     "An older wrong label conflicts with the current model’s high trust; this is a review priority, not proof of correctness."
+    ],
+    "recentEvidence": [],
+    "referenceClaim": "James \"Bucky\" Barnes is fingering Steve Rogers [fingering; Performed]",
+    "referenceCommit": "6e878a4",
+    "referenceIsOriginal": false
+   }
+  },
+  {
+   "id": "L15",
+   "key": "pushed-in#9f4b0b59",
+   "fic": "lightning.html",
+   "para": 5449,
+   "pattern": "pushed-in",
+   "a": "Eddie Diaz",
+   "b": "Evan \"Buck\" Buckley",
+   "act": "anal sex",
+   "kind": "act",
+   "claim": "Eddie Diaz is having anal sex with Evan \"Buck\" Buckley, as the one penetrating",
+   "engineConfidence": 0.9647203545474238,
+   "evidence": [
+    {
+     "from": 5447,
+     "to": 5451
+    }
+   ],
+   "proposal": {
+    "revision": "past-label-v1-858853f2bf38",
+    "verdict": "correct",
+    "confidence": 0.99,
+    "reading": "Eddie Diaz penetrates Evan \"Buck\" Buckley anally.",
+    "rationale": "The preceding paragraph identifies Eddie's penis at Buck's anus and the next confirms it inside Buck. The old claim credited Buck as the penetrating partner.",
+    "errors": []
+   },
+   "labelAudit": {
+    "pastLabels": [
+     {
+      "source": "tests/labels/batch-oct6-4be55d1e796d.json",
+      "verdict": "wrong",
+      "date": "2026-10-07",
+      "provenance": "Owner review",
+      "claim": "Evan \"Buck\" Buckley is having anal sex with Eddie Diaz, as the one penetrating [anal sex; Performed]",
+      "identityVerified": true,
+      "key": "pushed-in#9f4b0b59",
+      "errors": [
+       "Roles reversed"
+      ]
+     }
+    ],
+    "priority": 168.1180088636856,
+    "occurrence": "Performed",
+    "changed": true,
+    "quarantined": true,
+    "status": "Changed claim: obtain a fresh current verdict; the old verdict may still be correct for the old claim.",
+    "reasons": [
+     "Changed or unverifiable claim is already quarantined from confidence training.",
+     "The current act, participants or occurrence differs from the saved identity or pre-change engine reference.",
+     "A recent owner act review covers this citation.",
+     "An older wrong label conflicts with the current model’s high trust; this is a review priority, not proof of correctness."
+    ],
+    "recentEvidence": [
+     "tests/gold-review/owner-2026-10-07.json / G10: owner marked correct for gold range anal, ¶5436–5481. Range-level feedback does not adjudicate this individual hit."
+    ],
+    "referenceClaim": "Eddie Diaz is having anal sex with Evan \"Buck\" Buckley, as the one penetrating [anal sex; Performed]",
+    "referenceCommit": "6e878a4",
+    "referenceIsOriginal": false
+   }
+  },
+  {
+   "id": "L16",
+   "key": "dd2-finger-shoved-into#663258aa",
+   "fic": "tricks-of-the-trade.html",
+   "para": 2556,
+   "pattern": "dd2-finger-shoved-into",
+   "a": "Castiel",
+   "b": "Dean Winchester",
+   "act": "fingering",
+   "kind": "act",
+   "claim": "Castiel is fingering Dean Winchester",
+   "engineConfidence": 0.9438433474442726,
+   "evidence": [
+    {
+     "from": 2554,
+     "to": 2558
+    }
+   ],
+   "proposal": {
+    "revision": "past-label-v1-6e575d9a3815",
+    "verdict": "correct",
+    "confidence": 0.99,
+    "reading": "Castiel fingers Dean Winchester and subsequently replaces his fingers with a plug.",
+    "rationale": "Named hand ownership and the explicit transition support Castiel as performer. Dean's narration and reactions cannot reverse the finger direction.",
+    "errors": []
+   },
+   "labelAudit": {
+    "pastLabels": [
+     {
+      "source": "tests/labels/batch-suspect-3ef02b25a6e5.json",
+      "verdict": "wrong",
+      "date": "2026-10-07",
+      "provenance": "Owner review",
+      "claim": "Dean Winchester is fingering Castiel [fingering; Performed]",
+      "identityVerified": true,
+      "key": "dd2-finger-shoved-into#663258aa",
+      "errors": [
+       "Roles reversed"
+      ]
+     },
+     {
+      "source": "tests/labels/audit-2026-10-03.json",
+      "verdict": "ok",
+      "date": "2026-10-03",
+      "provenance": "Mixed agent audit / owner rechecks",
+      "claim": "Full original claim identity unavailable; the old sentence key alone does not establish act, people or occurrence.",
+      "identityVerified": false,
+      "key": "scissors-open#d5428c6e"
+     },
+     {
+      "source": "tests/right-set/tricks-of-the-trade.json",
+      "verdict": "ok",
+      "date": "2026-10-05",
+      "provenance": "claude",
+      "weight": 0.85,
+      "claim": "anal scene: recorded top Castiel; recorded bottom Dean Winchester. Instrument detail was not recorded.",
+      "identityVerified": true,
+      "key": "scissors-open#f23262d0"
+     }
+    ],
+    "priority": 167.59608368610682,
+    "occurrence": "Performed",
+    "changed": true,
+    "quarantined": true,
+    "status": "Changed claim: obtain a fresh current verdict; the old verdict may still be correct for the old claim.",
+    "reasons": [
+     "Changed or unverifiable claim is already quarantined from confidence training.",
+     "The current act, participants or occurrence differs from the saved identity or pre-change engine reference.",
+     "An older wrong label conflicts with the current model’s high trust; this is a review priority, not proof of correctness."
+    ],
+    "recentEvidence": [],
+    "referenceClaim": "Dean Winchester is fingering Castiel [fingering; Performed]",
+    "referenceCommit": "6e878a4",
+    "referenceIsOriginal": false
+   }
+  },
+  {
+   "id": "L17",
+   "key": "sucked~elided#48aff8b3",
+   "fic": "dogbird.html",
+   "para": 1299,
+   "pattern": "sucked~elided",
+   "a": "Evan \"Buck\" Buckley",
+   "b": "Eddie Diaz",
+   "act": "genital licking",
+   "kind": "handjob",
+   "role": "top",
+   "claim": "Evan \"Buck\" Buckley gives Eddie Diaz external oral genital contact",
+   "engineConfidence": 0.938641750701994,
+   "evidence": [
+    {
+     "from": 1297,
+     "to": 1301
+    }
+   ],
+   "proposal": {
+    "revision": "past-label-v1-c0f8cb778b4c",
+    "verdict": "correct",
+    "confidence": 0.97,
+    "reading": "Evan \"Buck\" Buckley gives Eddie Diaz oral contact on the scrotum while also fingering him.",
+    "rationale": "The surrounding passage explicitly establishes scrotal contact, distinct from penile sucking. The new body-play category fits; the technical handjob kind is a container, not a manual-act assertion.",
+    "errors": []
+   },
+   "labelAudit": {
+    "pastLabels": [
+     {
+      "source": "tests/labels/batch-suspect-3ef02b25a6e5.json",
+      "verdict": "wrong",
+      "date": "2026-10-07",
+      "provenance": "Owner review",
+      "claim": "Eddie Diaz is getting a blowjob from Evan \"Buck\" Buckley [blowjob; Performed]",
+      "identityVerified": true,
+      "key": "sucked~elided#48aff8b3",
+      "errors": [
+       "Wrong act or body part"
+      ]
+     }
+    ],
+    "priority": 167.46604376754985,
+    "occurrence": "Performed",
+    "changed": true,
+    "quarantined": true,
+    "status": "Changed claim: obtain a fresh current verdict; the old verdict may still be correct for the old claim.",
+    "reasons": [
+     "Changed or unverifiable claim is already quarantined from confidence training.",
+     "The current act, participants or occurrence differs from the saved identity or pre-change engine reference.",
+     "An older wrong label conflicts with the current model’s high trust; this is a review priority, not proof of correctness."
+    ],
+    "recentEvidence": [],
+    "referenceClaim": "Eddie Diaz is getting a blowjob from Evan \"Buck\" Buckley [blowjob; Performed]",
+    "referenceCommit": "6e878a4",
+    "referenceIsOriginal": false
+   }
+  },
+  {
+   "id": "L18",
+   "key": "push-into#485fd110",
+   "fic": "a-la-carte.html",
+   "para": 1939,
+   "pattern": "push-into",
+   "a": "Anakin Skywalker",
+   "b": "Obi-Wan Kenobi",
+   "act": "anal sex",
+   "kind": "wanted",
+   "role": "bottom",
+   "claim": "Anakin Skywalker is being fucked anally by Obi-Wan Kenobi (read as something wanted, not something that happens)",
+   "engineConfidence": 0.9346380024580639,
+   "evidence": [
+    {
+     "from": 1937,
+     "to": 1941
+    }
+   ],
+   "proposal": {
+    "revision": "past-label-v1-cd17818806ed",
+    "verdict": "correct",
+    "confidence": 0.97,
+    "reading": "Anakin Skywalker wants Obi-Wan Kenobi's penile penetration while Anakin is currently preparing himself with his fingers.",
+    "rationale": "The sentence separates the desired partner action from the performed self-fingering. The current wanted anal reading has the supported people and receiver, unlike the earlier wanted-fingering claim involving a bystander.",
+    "errors": []
+   },
+   "labelAudit": {
+    "pastLabels": [
+     {
+      "source": "tests/labels/batch-oct6-4be55d1e796d.json",
+      "verdict": "wrong",
+      "date": "2026-10-07",
+      "provenance": "Owner review",
+      "claim": "Obi-Wan Kenobi is being fingered by Mace Windu (read as something wanted, not something that happens) [fingering; Wanted / proposed]",
+      "identityVerified": true,
+      "key": "push-into#485fd110",
+      "errors": [
+       "Wrong person"
+      ]
+     }
+    ],
+    "priority": 167.3659500614516,
+    "occurrence": "Wanted / proposed",
+    "changed": true,
+    "quarantined": true,
+    "status": "Changed claim: obtain a fresh current verdict; the old verdict may still be correct for the old claim.",
+    "reasons": [
+     "Changed or unverifiable claim is already quarantined from confidence training.",
+     "The current act, participants or occurrence differs from the saved identity or pre-change engine reference.",
+     "An older wrong label conflicts with the current model’s high trust; this is a review priority, not proof of correctness."
+    ],
+    "recentEvidence": [],
+    "referenceClaim": "Anakin Skywalker is being fucked anally by Obi-Wan Kenobi (read as something wanted, not something that happens) [anal sex; Wanted / proposed]",
+    "referenceCommit": "6e878a4",
+    "referenceIsOriginal": false
+   }
+  },
+  {
+   "id": "L19",
+   "key": "bottomed-out~elided#1127c53f",
+   "fic": "innocent-until.html",
+   "para": 2867,
+   "pattern": "bottomed-out~elided",
+   "a": "James \"Bucky\" Barnes",
+   "b": "Steve Rogers",
+   "act": "anal sex (strap-on/toy)",
+   "kind": "act",
+   "claim": "James \"Bucky\" Barnes → Steve Rogers: anal sex (strap-on/toy) (the first name is the one the engine credited)",
+   "engineConfidence": 0.9058223194014619,
+   "evidence": [
+    {
+     "from": 2865,
+     "to": 2869
+    }
+   ],
+   "proposal": {
+    "revision": "past-label-v1-979fa7e99fa4",
+    "verdict": "correct",
+    "confidence": 0.99,
+    "reading": "James \"Bucky\" Barnes inserts an anal plug into Steve Rogers, after withdrawing his fingers.",
+    "rationale": "The instrument is explicitly a plug and remains the object reaching full depth. The old rejected penile reading should not carry over to this corrected toy claim.",
+    "errors": []
+   },
+   "labelAudit": {
+    "pastLabels": [
+     {
+      "source": "tests/labels/batch-suspect-3ef02b25a6e5.json",
+      "verdict": "wrong",
+      "date": "2026-10-07",
+      "provenance": "Owner review",
+      "claim": "James \"Bucky\" Barnes is having anal sex with Steve Rogers, as the one penetrating [anal sex; Performed]",
+      "identityVerified": true,
+      "key": "bottomed-out~elided#1127c53f",
+      "errors": [
+       "Fingers or toy mistaken for a penis"
+      ]
+     }
+    ],
+    "priority": 166.64555798503653,
+    "occurrence": "Performed",
+    "changed": true,
+    "quarantined": true,
+    "status": "Changed claim: obtain a fresh current verdict; the old verdict may still be correct for the old claim.",
+    "reasons": [
+     "Changed or unverifiable claim is already quarantined from confidence training.",
+     "The current act, participants or occurrence differs from the saved identity or pre-change engine reference.",
+     "An older wrong label conflicts with the current model’s high trust; this is a review priority, not proof of correctness."
+    ],
+    "recentEvidence": [],
+    "referenceClaim": "James \"Bucky\" Barnes is having anal sex with Steve Rogers, as the one penetrating [anal sex; Performed]",
+    "referenceCommit": "6e878a4",
+    "referenceIsOriginal": false
+   }
+  },
+  {
+   "id": "L20",
+   "key": "lips-around#d08b40e0",
+   "fic": "more-views.html",
+   "para": 375,
+   "pattern": "lips-around",
+   "a": "Dean Winchester",
+   "b": "Castiel",
+   "act": "blowjob",
+   "kind": "history",
+   "role": "top",
+   "claim": "Dean Winchester is getting a blowjob from Castiel",
+   "engineConfidence": 0.9456471701836743,
+   "evidence": [
+    {
+     "from": 373,
+     "to": 377
+    }
+   ],
+   "proposal": {
+    "revision": "past-label-v1-0f9468f2c65e",
+    "verdict": "correct",
+    "confidence": 0.98,
+    "reading": "Dean Winchester remembers Castiel giving him a blowjob during an earlier encounter.",
+    "rationale": "The narrator explicitly recalls fragments of a past encounter and identifies Castiel's mouth. History keeps the oral evidence without counting another current scene.",
+    "errors": []
+   },
+   "labelAudit": {
+    "pastLabels": [
+     {
+      "source": "tests/labels/batch-suspect-3ef02b25a6e5.json",
+      "verdict": "wrong",
+      "date": "2026-10-07",
+      "provenance": "Owner review",
+      "claim": "Dean Winchester is getting a blowjob from Castiel [blowjob; Performed]",
+      "identityVerified": true,
+      "key": "lips-around#d08b40e0",
+      "errors": [
+       "Memory counted as a new scene"
+      ]
+     }
+    ],
+    "priority": 166.64117925459186,
+    "occurrence": "Earlier / memory",
+    "changed": true,
+    "quarantined": true,
+    "status": "Changed claim: obtain a fresh current verdict; the old verdict may still be correct for the old claim.",
+    "reasons": [
+     "Changed or unverifiable claim is already quarantined from confidence training.",
+     "The current act, participants or occurrence differs from the saved identity or pre-change engine reference.",
+     "An older wrong label conflicts with the current model’s high trust; this is a review priority, not proof of correctness."
+    ],
+    "recentEvidence": [],
+    "referenceClaim": "Dean Winchester is getting a blowjob from Castiel [blowjob; Performed]",
+    "referenceCommit": "6e878a4",
+    "referenceIsOriginal": false
+   }
+  },
+  {
+   "id": "L21",
+   "key": "push-into~elided#991082a9",
+   "fic": "a-la-carte.html",
+   "para": 848,
+   "pattern": "push-into~elided",
+   "a": "Obi-Wan Kenobi",
+   "b": "Anakin Skywalker",
+   "act": "rimming",
+   "kind": "act",
+   "claim": "Obi-Wan Kenobi is rimming Anakin Skywalker",
+   "engineConfidence": 0.8947890373914974,
+   "evidence": [
+    {
+     "from": 846,
+     "to": 850
+    }
+   ],
+   "proposal": {
+    "revision": "past-label-v1-a968cfbea361",
+    "verdict": "correct",
+    "confidence": 0.99,
+    "reading": "Obi-Wan Kenobi rims Anakin Skywalker, including tongue penetration.",
+    "rationale": "Tongue contact at the anus starts before the vague insertion and is explicitly confirmed afterward. Penile anal sex was the old error; the corrected rimming claim is supported.",
+    "errors": []
+   },
+   "labelAudit": {
+    "pastLabels": [
+     {
+      "source": "tests/labels/batch-oct6-4be55d1e796d.json",
+      "verdict": "wrong",
+      "date": "2026-10-07",
+      "provenance": "Owner review",
+      "claim": "Obi-Wan Kenobi is having anal sex with Anakin Skywalker, as the one penetrating [anal sex; Performed]",
+      "identityVerified": true,
+      "key": "push-into~elided#991082a9",
+      "errors": [
+       "Wrong act or body part"
+      ]
+     }
+    ],
+    "priority": 166.36972593478743,
+    "occurrence": "Performed",
+    "changed": true,
+    "quarantined": true,
+    "status": "Changed claim: obtain a fresh current verdict; the old verdict may still be correct for the old claim.",
+    "reasons": [
+     "Changed or unverifiable claim is already quarantined from confidence training.",
+     "The current act, participants or occurrence differs from the saved identity or pre-change engine reference.",
+     "A recent owner act review covers this citation.",
+     "An older wrong label conflicts with the current model’s high trust; this is a review priority, not proof of correctness."
+    ],
+    "recentEvidence": [
+     "tests/gold-review/owner-2026-10-07.json / G7: owner marked correct for gold range rimming, ¶846–852. Range-level feedback does not adjudicate this individual hit."
+    ],
+    "referenceClaim": "Obi-Wan Kenobi is rimming Anakin Skywalker [rimming; Performed]",
+    "referenceCommit": "6e878a4",
+    "referenceIsOriginal": false
+   }
+  },
+  {
+   "id": "L22",
+   "key": "pushed-in#b281f086",
+   "fic": "more-views.html",
+   "para": 958,
+   "pattern": "pushed-in",
+   "a": "Castiel",
+   "b": "Dean Winchester",
+   "act": "fingering",
+   "kind": "act",
+   "claim": "Castiel is fingering Dean Winchester",
+   "engineConfidence": 0.8918827242767237,
+   "evidence": [
+    {
+     "from": 956,
+     "to": 960
+    }
+   ],
+   "proposal": {
+    "revision": "past-label-v1-262546f385da",
+    "verdict": "correct",
+    "confidence": 0.97,
+    "reading": "Castiel inserts fingers into Dean Winchester in the current encounter.",
+    "rationale": "A finger is positioned immediately before insertion, and two inserted fingers are explicit two paragraphs later. Mention of earlier finger encounters does not turn this present sequence into history.",
+    "errors": []
+   },
+   "labelAudit": {
+    "pastLabels": [
+     {
+      "source": "tests/labels/batch-suspect-3ef02b25a6e5.json",
+      "verdict": "wrong",
+      "date": "2026-10-07",
+      "provenance": "Owner review",
+      "claim": "Castiel is having anal sex with Dean Winchester, as the one penetrating [anal sex; Performed]",
+      "identityVerified": true,
+      "key": "pushed-in#b281f086",
+      "errors": [
+       "Fingers or toy mistaken for a penis"
+      ]
+     }
+    ],
+    "priority": 166.2970681069181,
+    "occurrence": "Performed",
+    "changed": true,
+    "quarantined": true,
+    "status": "Changed claim: obtain a fresh current verdict; the old verdict may still be correct for the old claim.",
+    "reasons": [
+     "Changed or unverifiable claim is already quarantined from confidence training.",
+     "The current act, participants or occurrence differs from the saved identity or pre-change engine reference.",
+     "An older wrong label conflicts with the current model’s high trust; this is a review priority, not proof of correctness."
+    ],
+    "recentEvidence": [],
+    "referenceClaim": "Castiel is having anal sex with Dean Winchester, as the one penetrating [anal sex; Performed]",
+    "referenceCommit": "6e878a4",
+    "referenceIsOriginal": false
+   }
+  },
+  {
+   "id": "L23",
+   "key": "dd3-slipping-second~elided#85409ac5",
+   "fic": "tricks-of-the-trade.html",
+   "para": 1764,
+   "pattern": "dd3-slipping-second~elided",
+   "a": "Castiel",
+   "b": "Dean Winchester",
+   "act": "fingering",
+   "kind": "act",
+   "claim": "Castiel is fingering Dean Winchester",
+   "engineConfidence": 0.953620949005993,
+   "evidence": [
+    {
+     "from": 1762,
+     "to": 1766
+    }
+   ],
+   "proposal": {
+    "revision": "past-label-v1-cfc78ca41d92",
+    "verdict": "correct",
+    "confidence": 0.99,
+    "reading": "Castiel adds another finger inside Dean Winchester.",
+    "rationale": "The preceding paragraph establishes Castiel's first inserted finger, and the continuation names his additional fingers and hand. Dean remains the receiver.",
+    "errors": []
+   },
+   "labelAudit": {
+    "pastLabels": [
+     {
+      "source": "tests/labels/batch-oct6-4be55d1e796d.json",
+      "verdict": "wrong",
+      "date": "2026-10-07",
+      "provenance": "Owner review",
+      "claim": "Dean Winchester is fingering Castiel [fingering; Performed]",
+      "identityVerified": true,
+      "key": "dd3-slipping-second~elided#85409ac5",
+      "errors": [
+       "Roles reversed"
+      ]
+     },
+     {
+      "source": "tests/labels/batch-suspect-3ef02b25a6e5.json",
+      "verdict": "ok",
+      "date": "2026-10-07",
+      "provenance": "Owner review",
+      "claim": "Castiel is fingering Dean Winchester [fingering; Performed]",
+      "identityVerified": true,
+      "key": "dd2-finger-shoved-into#85409ac5"
+     },
+     {
+      "source": "tests/labels/audit-2026-10-03.json",
+      "verdict": "ok",
+      "date": "2026-10-03",
+      "provenance": "Mixed agent audit / owner rechecks",
+      "claim": "Full original claim identity unavailable; the old sentence key alone does not establish act, people or occurrence.",
+      "identityVerified": false,
+      "key": "fingered~elided#845fb851"
+     },
+     {
+      "source": "tests/labels/audit-2026-10-03.json",
+      "verdict": "ok",
+      "date": "2026-10-03",
+      "provenance": "Mixed agent audit / owner rechecks",
+      "claim": "Full original claim identity unavailable; the old sentence key alone does not establish act, people or occurrence.",
+      "identityVerified": false,
+      "key": "fingered#845fb851"
+     },
+     {
+      "source": "tests/right-set/tricks-of-the-trade.json",
+      "verdict": "wrong",
+      "date": "2026-10-05",
+      "provenance": "claude",
+      "weight": 0.3,
+      "claim": "anal scene: recorded top Castiel; recorded bottom Dean Winchester. Instrument detail was not recorded.",
+      "identityVerified": true,
+      "key": "fingered#c1683e23",
+      "retired": "owner judged this right in a blind spot-check 2026-10-06"
+     },
+     {
+      "source": "tests/spotcheck/rounds.json",
+      "verdict": "ok",
+      "date": "2026-10-06",
+      "provenance": "owner blind spot-check",
+      "weight": 1,
+      "claim": "Full original claim identity was not recorded in this blind spot-check.",
+      "identityVerified": false,
+      "key": "fingered~elided#c1683e23",
+      "confidence": 0.9578
+     },
+     {
+      "source": "tests/spotcheck/rounds.json",
+      "verdict": "ok",
+      "date": "2026-10-06",
+      "provenance": "owner blind spot-check",
+      "weight": 1,
+      "claim": "Full original claim identity was not recorded in this blind spot-check.",
+      "identityVerified": false,
+      "key": "fingered#c1683e23",
+      "confidence": 0.9578
+     }
+    ],
+    "priority": 163.84052372514984,
+    "occurrence": "Performed",
+    "changed": true,
+    "quarantined": true,
+    "status": "Changed claim: obtain a fresh current verdict; the old verdict may still be correct for the old claim.",
+    "reasons": [
+     "Changed or unverifiable claim is already quarantined from confidence training.",
+     "The current act, participants or occurrence differs from the saved identity or pre-change engine reference.",
+     "An older wrong label conflicts with the current model’s high trust; this is a review priority, not proof of correctness."
+    ],
+    "recentEvidence": [],
+    "referenceClaim": "Castiel is fingering Dean Winchester [fingering; Performed]",
+    "referenceCommit": "6e878a4",
+    "referenceIsOriginal": false
+   }
+  },
+  {
+   "id": "L24",
+   "key": "dd6-slips-cock-inside#501b75a1",
+   "fic": "lightning.html",
+   "para": 1203,
+   "pattern": "dd6-slips-cock-inside",
+   "a": "Eddie Diaz",
+   "b": "Evan \"Buck\" Buckley",
+   "act": "blowjob (face-fucking)",
+   "kind": "fantasy",
+   "role": "top",
+   "claim": "Eddie Diaz puts their penis into Evan \"Buck\" Buckley's mouth",
+   "engineConfidence": 0.8985595051163163,
+   "evidence": [
+    {
+     "from": 1201,
+     "to": 1205
+    }
+   ],
+   "proposal": {
+    "revision": "past-label-v1-4af1b7c986a8",
+    "verdict": "correct",
+    "confidence": 0.99,
+    "reading": "Eddie Diaz imagines putting his penis into Evan \"Buck\" Buckley's mouth while Eddie actually masturbates.",
+    "rationale": "The apartment scenario is expressly an imagined idea; the mouth is the proposed penetration site. Your newer review distinguishes the actual solo act from this fantasy. It is not a performed oral or anal scene.",
+    "errors": []
+   },
+   "labelAudit": {
+    "pastLabels": [
+     {
+      "source": "tests/labels/batch-suspect-3ef02b25a6e5.json",
+      "verdict": "wrong",
+      "date": "2026-10-07",
+      "provenance": "Owner review",
+      "claim": "Eddie Diaz is having anal sex with Evan \"Buck\" Buckley, as the one penetrating [anal sex; Performed]",
+      "identityVerified": true,
+      "key": "dd6-slips-cock-inside#501b75a1",
+      "errors": [
+       "Wrong act or body part",
+       "Wish or dialogue treated as an act",
+       "No act happened"
+      ]
+     }
+    ],
+    "priority": 162.4639876279079,
+    "occurrence": "Imagined / fantasy",
+    "changed": true,
+    "quarantined": true,
+    "status": "Changed claim: obtain a fresh current verdict; the old verdict may still be correct for the old claim.",
+    "reasons": [
+     "Changed or unverifiable claim is already quarantined from confidence training.",
+     "The current act, participants or occurrence differs from the saved identity or pre-change engine reference.",
+     "An older wrong label conflicts with the current model’s high trust; this is a review priority, not proof of correctness."
+    ],
+    "recentEvidence": [],
+    "referenceClaim": "Eddie Diaz is having anal sex with Evan \"Buck\" Buckley, as the one penetrating [anal sex; Performed]",
+    "referenceCommit": "6e878a4",
+    "referenceIsOriginal": false
+   }
+  },
+  {
+   "id": "L25",
+   "key": "dd-laps-at-cock#5ad6a3ce",
+   "fic": "more-views.html",
+   "para": 344,
+   "pattern": "dd-laps-at-cock",
+   "a": "Dean Winchester",
+   "b": "Castiel",
+   "act": "blowjob",
+   "kind": "act",
+   "claim": "Dean Winchester is getting a blowjob from Castiel",
+   "engineConfidence": 0.8962433855209382,
+   "evidence": [
+    {
+     "from": 342,
+     "to": 346
+    }
+   ],
+   "proposal": {
+    "revision": "past-label-v1-a66c78f4f2f4",
+    "verdict": "correct",
+    "confidence": 0.97,
+    "reading": "Castiel continues giving Dean Winchester a blowjob, moving his tongue around Dean's penis within that ongoing oral action.",
+    "rationale": "The preceding mouth enclosure and continued oral sequence support a blowjob rather than a separate new external lick. The corrected penis-owner convention makes Dean the oral top/receiver.",
+    "errors": []
+   },
+   "labelAudit": {
+    "pastLabels": [
+     {
+      "source": "tests/labels/batch-suspect-3ef02b25a6e5.json",
+      "verdict": "wrong",
+      "date": "2026-10-07",
+      "provenance": "Owner review",
+      "claim": "Castiel is getting a blowjob from Dean Winchester [blowjob; Performed]",
+      "identityVerified": true,
+      "key": "dd-laps-at-cock#5ad6a3ce",
+      "errors": [
+       "Roles reversed"
+      ]
+     },
+     {
+      "source": "tests/labels/audit-2026-10-03.json",
+      "verdict": "ok",
+      "date": "2026-10-03",
+      "provenance": "Mixed agent audit / owner rechecks",
+      "claim": "Full original claim identity unavailable; the old sentence key alone does not establish act, people or occurrence.",
+      "identityVerified": false,
+      "key": "tongue-around-head#5ad6a3ce"
+     }
+    ],
+    "priority": 162.40608463802346,
+    "occurrence": "Performed",
+    "changed": true,
+    "quarantined": true,
+    "status": "Changed claim: obtain a fresh current verdict; the old verdict may still be correct for the old claim.",
+    "reasons": [
+     "Changed or unverifiable claim is already quarantined from confidence training.",
+     "The current act, participants or occurrence differs from the saved identity or pre-change engine reference.",
+     "An older wrong label conflicts with the current model’s high trust; this is a review priority, not proof of correctness."
+    ],
+    "recentEvidence": [],
+    "referenceClaim": "Castiel is getting a blowjob from Dean Winchester [blowjob; Performed]",
+    "referenceCommit": "6e878a4",
+    "referenceIsOriginal": false
+   }
+  },
+  {
+   "id": "L26",
+   "key": "dd-laps-at-cock~elided#5e4ba464",
+   "fic": "mars.html",
+   "para": 1047,
+   "pattern": "dd-laps-at-cock~elided",
+   "a": "Castiel",
+   "b": "Dean Winchester",
+   "act": "blowjob",
+   "kind": "act",
+   "claim": "Castiel is getting a blowjob from Dean Winchester",
+   "engineConfidence": 0.866901218766719,
+   "evidence": [
+    {
+     "from": 1045,
+     "to": 1049
+    }
+   ],
+   "proposal": {
+    "revision": "past-label-v1-17133988df43",
+    "verdict": "correct",
+    "confidence": 0.99,
+    "reading": "Dean Winchester gives Castiel a blowjob.",
+    "rationale": "Dean encloses Castiel's penis with his lips and lowers his head. Castiel's pleasure reaction is not a change in mouth ownership; the new oral direction fits the passage.",
+    "errors": []
+   },
+   "labelAudit": {
+    "pastLabels": [
+     {
+      "source": "tests/labels/batch-suspect-3ef02b25a6e5.json",
+      "verdict": "wrong",
+      "date": "2026-10-07",
+      "provenance": "Owner review",
+      "claim": "Dean Winchester is getting a blowjob from Castiel [blowjob; Performed]",
+      "identityVerified": true,
+      "key": "dd-laps-at-cock~elided#5e4ba464",
+      "errors": [
+       "Roles reversed"
+      ]
+     },
+     {
+      "source": "tests/labels/audit-2026-10-03.json",
+      "verdict": "ok",
+      "date": "2026-10-03",
+      "provenance": "Mixed agent audit / owner rechecks",
+      "claim": "Full original claim identity unavailable; the old sentence key alone does not establish act, people or occurrence.",
+      "identityVerified": false,
+      "key": "tongue-around-head~elided#5e4ba464"
+     }
+    ],
+    "priority": 161.67253046916798,
+    "occurrence": "Performed",
+    "changed": true,
+    "quarantined": true,
+    "status": "Changed claim: obtain a fresh current verdict; the old verdict may still be correct for the old claim.",
+    "reasons": [
+     "Changed or unverifiable claim is already quarantined from confidence training.",
+     "The current act, participants or occurrence differs from the saved identity or pre-change engine reference.",
+     "An older wrong label conflicts with the current model’s high trust; this is a review priority, not proof of correctness."
+    ],
+    "recentEvidence": [],
+    "referenceClaim": "Dean Winchester is getting a blowjob from Castiel [blowjob; Performed]",
+    "referenceCommit": "6e878a4",
+    "referenceIsOriginal": false
+   }
+  },
+  {
+   "id": "L27",
+   "key": "hj-stroke~elided#d5a9d60f",
+   "fic": "bluebells.html",
+   "para": 845,
+   "pattern": "hj-stroke~elided",
+   "a": "Brother Diarmuid",
+   "b": "David Shepherd",
+   "act": "frottage",
+   "kind": "handjob",
+   "role": "top",
+   "claim": "Brother Diarmuid and David Shepherd are rubbing against each other (frottage)",
+   "engineConfidence": 0.691959016329653,
+   "evidence": [
+    {
+     "from": 843,
+     "to": 847
+    }
+   ],
+   "proposal": {
+    "revision": "past-label-v1-c43d31b517f1",
+    "verdict": "correct",
+    "confidence": 0.93,
+    "reading": "Brother Diarmuid rubs his penis against David Shepherd's abdomen during their encounter.",
+    "rationale": "The contact is produced by body movement rather than a stroking hand. Frottage/body rubbing is supported, although it is not specifically penis-against-penis rubbing. The earlier rejection need not apply to this new category.",
+    "errors": []
+   },
+   "labelAudit": {
+    "pastLabels": [
+     {
+      "source": "tests/labels/audit-2026-10-03.json",
+      "verdict": "wrong",
+      "date": "2026-10-03",
+      "provenance": "Mixed agent audit / owner rechecks",
+      "claim": "Full original claim identity unavailable; the old sentence key alone does not establish act, people or occurrence.",
+      "identityVerified": false,
+      "key": "hj-stroke~elided#d5a9d60f"
+     }
+    ],
+    "priority": 161.29897540824132,
+    "occurrence": "Performed",
+    "changed": true,
+    "quarantined": true,
+    "status": "Changed claim: obtain a fresh current verdict; the old verdict may still be correct for the old claim. The original claim identity is unavailable; do not reconstruct it from the sentence key.",
+    "reasons": [
+     "Changed or unverifiable claim is already quarantined from confidence training.",
+     "The current act, participants or occurrence differs from the saved identity or pre-change engine reference."
+    ],
+    "recentEvidence": [],
+    "referenceClaim": "Brother Diarmuid manually stimulates David Shepherd's penis [handjob; Performed]",
+    "referenceCommit": "6e878a4",
+    "referenceIsOriginal": false
+   }
+  },
+  {
+   "id": "L28",
+   "key": "sucked~elided#9f6e08d1",
+   "fic": "new-bitch.html",
+   "para": 6567,
+   "pattern": "sucked~elided",
+   "a": "Laurent",
+   "b": "Damen",
+   "act": "genital licking",
+   "kind": "handjob",
+   "role": "top",
+   "claim": "Laurent gives Damen external oral genital contact",
+   "engineConfidence": 0.9344764341668893,
+   "evidence": [
+    {
+     "from": 6565,
+     "to": 6569
+    }
+   ],
+   "proposal": {
+    "revision": "past-label-v1-8296e6e9190f",
+    "verdict": "correct",
+    "confidence": 0.98,
+    "reading": "Laurent gives Damen external oral genital contact, including shaft licking and scrotal sucking.",
+    "rationale": "These actions are explicit. Penile mouth enclosure is not established by this individual scrotal-contact match, so the new body-play category is appropriate. The original unversioned claim identity is unavailable.",
+    "errors": []
+   },
+   "labelAudit": {
+    "pastLabels": [
+     {
+      "source": "tests/labels/audit-2026-10-03.json",
+      "verdict": "ok",
+      "date": "2026-10-03",
+      "provenance": "Mixed agent audit / owner rechecks",
+      "claim": "Full original claim identity unavailable; the old sentence key alone does not establish act, people or occurrence.",
+      "identityVerified": false,
+      "key": "sucked~elided#9f6e08d1"
+     }
+    ],
+    "priority": 145.63808914582776,
+    "occurrence": "Performed",
+    "changed": true,
+    "quarantined": true,
+    "status": "Changed claim: obtain a fresh current verdict; the old verdict may still be correct for the old claim. The original claim identity is unavailable; do not reconstruct it from the sentence key.",
+    "reasons": [
+     "Changed or unverifiable claim is already quarantined from confidence training.",
+     "The current act, participants or occurrence differs from the saved identity or pre-change engine reference."
+    ],
+    "recentEvidence": [],
+    "referenceClaim": "Damen is getting a blowjob from Laurent [blowjob; Performed]",
+    "referenceCommit": "6e878a4",
+    "referenceIsOriginal": false
+   }
+  },
+  {
+   "id": "L29",
+   "key": "pushed-in~elided#ea63bb7b",
+   "fic": "premium.html",
+   "para": 1006,
+   "pattern": "pushed-in~elided",
+   "a": "Glinda the Good",
+   "b": "Elphaba Thropp",
+   "act": "fingering",
+   "kind": "act",
+   "claim": "Glinda the Good is fingering Elphaba Thropp",
+   "engineConfidence": 0.9419534098681317,
+   "evidence": [
+    {
+     "from": 1004,
+     "to": 1008
+    }
+   ],
+   "proposal": {
+    "revision": "past-label-v1-9c6d4798c790",
+    "verdict": "wrong",
+    "confidence": 0.99,
+    "reading": "Glinda the Good fingers herself on Elphaba Thropp's instruction; Elphaba then mirrors the self-touch.",
+    "rationale": "The two adults each use their own fingers. The current partnered claim says Glinda fingers Elphaba, which is still wrong despite replacing a penile interpretation.",
+    "errors": [
+     "Wrong person",
+     "Wrong act or body part"
+    ]
+   },
+   "labelAudit": {
+    "pastLabels": [
+     {
+      "source": "tests/labels/audit-2026-10-03.json",
+      "verdict": "ok",
+      "date": "2026-10-03",
+      "provenance": "Mixed agent audit / owner rechecks",
+      "claim": "Full original claim identity unavailable; the old sentence key alone does not establish act, people or occurrence.",
+      "identityVerified": false,
+      "key": "pushed-in~elided#ea63bb7b"
+     }
+    ],
+    "priority": 145.4511647532967,
+    "occurrence": "Performed",
+    "changed": true,
+    "quarantined": true,
+    "status": "Changed claim: obtain a fresh current verdict; the old verdict may still be correct for the old claim. The original claim identity is unavailable; do not reconstruct it from the sentence key.",
+    "reasons": [
+     "Changed or unverifiable claim is already quarantined from confidence training.",
+     "The current act, participants or occurrence differs from the saved identity or pre-change engine reference."
+    ],
+    "recentEvidence": [],
+    "referenceClaim": "Glinda the Good is having vaginal sex with Elphaba Thropp [vaginal sex; Performed]",
+    "referenceCommit": "6e878a4",
+    "referenceIsOriginal": false
+   }
+  },
+  {
+   "id": "L30",
+   "key": "dd2-hj-took-in-hand#d15f3c8e",
+   "fic": "rwrb-balls.html",
+   "para": 361,
+   "pattern": "dd2-hj-took-in-hand",
+   "a": "Henry Fox-Mountchristen-Windsor",
+   "b": "Alex Claremont-Diaz",
+   "act": "handjob",
+   "kind": "handjob",
+   "role": "top",
+   "claim": "Henry Fox-Mountchristen-Windsor manually stimulates Alex Claremont-Diaz's penis",
+   "engineConfidence": 0.9653387827149469,
+   "evidence": [
+    {
+     "from": 359,
+     "to": 363
+    }
+   ],
+   "proposal": {
+    "revision": "past-label-v1-85256d672bc5",
+    "verdict": "correct",
+    "confidence": 0.99,
+    "reading": "Henry Fox-Mountchristen-Windsor gives Alex Claremont-Diaz a handjob while Henry also penetrates Alex.",
+    "rationale": "The named performer takes Alex's penis in hand and strokes it. Your missed-scene review explicitly confirms this handjob, contradicting the older wrong mark on the same claim.",
+    "errors": []
+   },
+   "labelAudit": {
+    "pastLabels": [
+     {
+      "source": "tests/labels/batch-oct6-4be55d1e796d.json",
+      "verdict": "wrong",
+      "date": "2026-10-07",
+      "provenance": "Owner review",
+      "claim": "Henry Fox-Mountchristen-Windsor manually stimulates Alex Claremont-Diaz's penis [handjob; Performed]",
+      "identityVerified": true,
+      "key": "dd2-hj-took-in-hand#d15f3c8e",
+      "errors": [
+       "Wrong act or body part"
+      ]
+     }
+    ],
+    "priority": 143.13346956787368,
+    "occurrence": "Performed",
+    "changed": false,
+    "quarantined": true,
+    "status": "Possible old-label conflict: I would accept today’s claim; please check whether the earlier rejection still applies.",
+    "reasons": [
+     "Changed or unverifiable claim is already quarantined from confidence training.",
+     "A recent owner act review covers this citation.",
+     "An older wrong label conflicts with the current model’s high trust; this is a review priority, not proof of correctness."
+    ],
+    "recentEvidence": [
+     "missed-2051db5b4e06 / M4: owner-confirmed Anal penetration (penis), Henry Fox-Mountchristen-Windsor → Alex Claremont-Diaz, ¶357–362.",
+     "missed-2051db5b4e06 / M4: owner-confirmed Handjob, Henry Fox-Mountchristen-Windsor → Alex Claremont-Diaz, ¶361–361."
+    ],
+    "referenceClaim": "Henry Fox-Mountchristen-Windsor manually stimulates Alex Claremont-Diaz's penis [handjob; Performed]",
+    "referenceCommit": "6e878a4",
+    "referenceIsOriginal": false
+   }
+  },
+  {
+   "id": "L31",
+   "key": "passive-fucked~elided#a79171d8",
+   "fic": "a-la-carte.html",
+   "para": 431,
+   "pattern": "passive-fucked~elided",
+   "a": "Anakin Skywalker",
+   "b": "Obi-Wan Kenobi",
+   "act": "anal sex",
+   "kind": "fantasy",
+   "role": "bottom",
+   "claim": "Anakin Skywalker is being fucked anally by Obi-Wan Kenobi",
+   "engineConfidence": 0.9084599288135341,
+   "evidence": [
+    {
+     "from": 429,
+     "to": 433
+    }
+   ],
+   "proposal": {
+    "revision": "past-label-v1-55f99e403c7f",
+    "verdict": "uncertain",
+    "confidence": 0.85,
+    "reading": "Anakin Skywalker anticipates or wants Obi-Wan Kenobi's anal penetration; penetration has not yet occurred at this citation.",
+    "rationale": "Demoting this line from a performed act is appropriate. Wanted/anticipated seems more precise than fantasy, but whether that distinction warrants a wrong label needs your judgment. The older full reviewed identity is unavailable.",
+    "errors": [
+     "Needs more context"
+    ]
+   },
+   "labelAudit": {
+    "pastLabels": [
+     {
+      "source": "tests/labels/audit-2026-10-03.json",
+      "verdict": "ok",
+      "date": "2026-10-03",
+      "provenance": "Mixed agent audit / owner rechecks",
+      "claim": "Full original claim identity unavailable; the old sentence key alone does not establish act, people or occurrence.",
+      "identityVerified": false,
+      "key": "passive-fucked~elided#a79171d8"
+     }
+    ],
+    "priority": 142.28850177966166,
+    "occurrence": "Imagined / fantasy",
+    "changed": true,
+    "quarantined": true,
+    "status": "Changed claim: obtain a fresh current verdict; the old verdict may still be correct for the old claim. The original claim identity is unavailable; do not reconstruct it from the sentence key.",
+    "reasons": [
+     "Changed or unverifiable claim is already quarantined from confidence training.",
+     "The current act, participants or occurrence differs from the saved identity or pre-change engine reference."
+    ],
+    "recentEvidence": [],
+    "referenceClaim": "Anakin Skywalker is being fucked anally by Obi-Wan Kenobi (read as something wanted, not something that happens) [anal sex; Wanted / proposed]",
+    "referenceCommit": "6e878a4",
+    "referenceIsOriginal": false
+   }
+  },
+  {
+   "id": "L32",
+   "key": "dd3-hj-strokes-in-time#cbf38f0c",
+   "fic": "dogbird.html",
+   "para": 1324,
+   "pattern": "dd3-hj-strokes-in-time",
+   "a": "Evan \"Buck\" Buckley",
+   "b": "Eddie Diaz",
+   "act": "handjob",
+   "kind": "handjob",
+   "role": "top",
+   "claim": "Evan \"Buck\" Buckley manually stimulates Eddie Diaz's penis",
+   "engineConfidence": 0.9072573774385856,
+   "evidence": [
+    {
+     "from": 1322,
+     "to": 1326
+    }
+   ],
+   "proposal": {
+    "revision": "past-label-v1-34f0863a3776",
+    "verdict": "correct",
+    "confidence": 0.99,
+    "reading": "Evan \"Buck\" Buckley gives Eddie Diaz a handjob while Buck penetrates Eddie.",
+    "rationale": "Eddie guides Buck's hand to Eddie's penis, and Buck wraps and strokes it. The same current claim was rejected earlier; the nearby receiver's dialogue does not reverse the hand action.",
+    "errors": []
+   },
+   "labelAudit": {
+    "pastLabels": [
+     {
+      "source": "tests/labels/batch-oct6-4be55d1e796d.json",
+      "verdict": "wrong",
+      "date": "2026-10-07",
+      "provenance": "Owner review",
+      "claim": "Evan \"Buck\" Buckley manually stimulates Eddie Diaz's penis [handjob; Performed]",
+      "identityVerified": true,
+      "key": "dd3-hj-strokes-in-time#cbf38f0c",
+      "errors": [
+       "Wrong act or body part",
+       "Other"
+      ]
+     }
+    ],
+    "priority": 126.68143443596463,
+    "occurrence": "Performed",
+    "changed": false,
+    "quarantined": true,
+    "status": "Possible old-label conflict: I would accept today’s claim; please check whether the earlier rejection still applies.",
+    "reasons": [
+     "Changed or unverifiable claim is already quarantined from confidence training.",
+     "An older wrong label conflicts with the current model’s high trust; this is a review priority, not proof of correctness."
+    ],
+    "recentEvidence": [],
+    "referenceClaim": "Evan \"Buck\" Buckley manually stimulates Eddie Diaz's penis [handjob; Performed]",
+    "referenceCommit": "6e878a4",
+    "referenceIsOriginal": false
+   }
+  },
+  {
+   "id": "L33",
+   "key": "sucked#b5b3f29c",
+   "fic": "jacks.html",
+   "para": 11792,
+   "pattern": "sucked",
+   "a": "Dracula",
+   "b": "Jack Seward",
+   "act": "genital licking",
+   "kind": "handjob",
+   "role": "top",
+   "claim": "Dracula gives Jack Seward external oral genital contact",
+   "engineConfidence": 0.9657449774780207,
+   "evidence": [
+    {
+     "from": 11790,
+     "to": 11794
+    }
+   ],
+   "proposal": {
+    "revision": "past-label-v1-abb26265b225",
+    "verdict": "correct",
+    "confidence": 0.99,
+    "reading": "Dracula gives Jack Seward oral scrotal contact and also rims him.",
+    "rationale": "Scrotal sucking is explicit and separate from the adjacent rimming. It does not establish a penile blowjob at that match. The older mistake report recorded different oral roles/category.",
+    "errors": []
+   },
+   "labelAudit": {
+    "pastLabels": [
+     {
+      "source": "tests/right-set/jack-s-phone.json",
+      "verdict": "ok",
+      "date": "2026-10-05",
+      "provenance": "claude",
+      "weight": 0.85,
+      "claim": "blowjob scene: recorded top Jack Seward; recorded bottom Dracula (top = penis owner/receiver; bottom = mouth performer/giver). Instrument detail was not recorded.",
+      "identityVerified": true,
+      "key": "sucked#548b7178",
+      "confidence": 0.68,
+      "retired": "owner judged this wrong in a blind spot-check 2026-10-06"
+     },
+     {
+      "source": "tests/right-set/jack-s-phone.json",
+      "verdict": "wrong",
+      "date": "2026-10-06",
+      "provenance": "owner",
+      "weight": 1,
+      "claim": "blowjob scene: recorded top Jack Seward; recorded bottom Dracula (top = penis owner/receiver; bottom = mouth performer/giver). Instrument detail was not recorded.",
+      "identityVerified": true,
+      "key": "sucked#548b7178",
+      "confidence": 0.68
+     }
+    ],
+    "priority": 98.14362443695052,
+    "occurrence": "Performed",
+    "changed": true,
+    "quarantined": false,
+    "status": "Changed claim: obtain a fresh current verdict; the old verdict may still be correct for the old claim.",
+    "reasons": [
+     "The current act, participants or occurrence differs from the saved identity or pre-change engine reference.",
+     "People or occurrence disagree with an earlier mistake report.",
+     "An older wrong label conflicts with the current model’s high trust; this is a review priority, not proof of correctness."
+    ],
+    "recentEvidence": [],
+    "referenceClaim": "Jack Seward is getting a blowjob from Dracula [blowjob; Performed]",
+    "referenceCommit": "6e878a4",
+    "referenceIsOriginal": false
+   }
+  },
+  {
+   "id": "L34",
+   "key": "sucked#3a4b7f0d",
+   "fic": "pact-of-ice-and-fire.html",
+   "para": 4623,
+   "pattern": "sucked",
+   "a": "Cregan Stark",
+   "b": "Jacaerys Velaryon",
+   "act": "genital licking",
+   "kind": "handjob",
+   "role": "top",
+   "claim": "Cregan Stark gives Jacaerys Velaryon external oral genital contact",
+   "engineConfidence": 0.9741823632223454,
+   "evidence": [
+    {
+     "from": 4621,
+     "to": 4625
+    }
+   ],
+   "proposal": {
+    "revision": "past-label-v1-0de5e7da9c1d",
+    "verdict": "correct",
+    "confidence": 0.99,
+    "reading": "Cregan Stark gives Jacaerys Velaryon oral scrotal contact; a distinct penile blowjob also occurs later in the paragraph.",
+    "rationale": "The scrotal match now has the appropriate external contact category. The later enclosed-mouth penile contact should remain a separate blowjob, rather than making the scrotal hit itself a blowjob.",
+    "errors": []
+   },
+   "labelAudit": {
+    "pastLabels": [
+     {
+      "source": "tests/right-set/the-pact-of-ice-and-fire.json",
+      "verdict": "ok",
+      "date": "2026-10-04",
+      "provenance": "Owner mistake report",
+      "weight": 1,
+      "claim": "blowjob scene: recorded top Jacaerys Velaryon; recorded bottom Cregan Stark (top = penis owner/receiver; bottom = mouth performer/giver). Instrument detail was not recorded.",
+      "identityVerified": true,
+      "key": "sucked#b053d50",
+      "confidence": 0.78
+     }
+    ],
+    "priority": 74.64544091944137,
+    "occurrence": "Performed",
+    "changed": true,
+    "quarantined": false,
+    "status": "Changed claim: obtain a fresh current verdict; the old verdict may still be correct for the old claim.",
+    "reasons": [
+     "The current act, participants or occurrence differs from the saved identity or pre-change engine reference.",
+     "People or occurrence disagree with an earlier mistake report."
+    ],
+    "recentEvidence": [],
+    "referenceClaim": "Jacaerys Velaryon is getting a blowjob from Cregan Stark [blowjob; Performed]",
+    "referenceCommit": "6e878a4",
+    "referenceIsOriginal": false
+   }
+  },
+  {
+   "id": "L35",
+   "key": "licked-cock#dc15593d",
+   "fic": "jacks.html",
+   "para": 2041,
+   "pattern": "licked-cock",
+   "a": "Dracula",
+   "b": "Jack Seward",
+   "act": "genital licking",
+   "kind": "handjob",
+   "role": "top",
+   "claim": "Dracula gives Jack Seward external oral genital contact",
+   "engineConfidence": 0.9872220464544491,
+   "evidence": [
+    {
+     "from": 2039,
+     "to": 2043
+    }
+   ],
+   "proposal": {
+    "revision": "past-label-v1-4866f216bb47",
+    "verdict": "correct",
+    "confidence": 0.99,
+    "reading": "Dracula licks Jack Seward's scrotum and penis externally.",
+    "rationale": "The passage specifies exterior licking and kissing without penile mouth enclosure. The former broadly accepted blowjob category should be rechecked against this more specific contact category.",
+    "errors": []
+   },
+   "labelAudit": {
+    "pastLabels": [
+     {
+      "source": "tests/right-set/jack-s-phone.json",
+      "verdict": "ok",
+      "date": "2026-10-05",
+      "provenance": "claude",
+      "weight": 0.85,
+      "claim": "blowjob scene: recorded top Jack Seward; recorded bottom Dracula (top = penis owner/receiver; bottom = mouth performer/giver). Instrument detail was not recorded.",
+      "identityVerified": true,
+      "key": "licked-cock#b6132d0d",
+      "confidence": 0.64
+     }
+    ],
+    "priority": 74.31944883863878,
+    "occurrence": "Performed",
+    "changed": true,
+    "quarantined": false,
+    "status": "Changed claim: obtain a fresh current verdict; the old verdict may still be correct for the old claim.",
+    "reasons": [
+     "The current act, participants or occurrence differs from the saved identity or pre-change engine reference.",
+     "People or occurrence disagree with an earlier mistake report."
+    ],
+    "recentEvidence": [],
+    "referenceClaim": "Jack Seward is getting a blowjob from Dracula [blowjob; Performed]",
+    "referenceCommit": "6e878a4",
+    "referenceIsOriginal": false
+   }
+  },
+  {
+   "id": "L36",
+   "key": "body-hole-ache#7e69fc38",
+   "fic": "belonging.html",
+   "para": 731,
+   "pattern": "body-hole-ache",
+   "a": "Dean Winchester",
+   "b": "Castiel",
+   "act": "aching hole",
+   "kind": "body",
+   "role": "bottom",
+   "claim": "Dean Winchester has an aching hole (a sign of bottoming)",
+   "engineConfidence": 0.938255701207798,
+   "evidence": [
+    {
+     "from": 729,
+     "to": 733
+    }
+   ],
+   "proposal": {
+    "revision": "past-label-v1-c20a00889627",
+    "verdict": "correct",
+    "confidence": 0.9,
+    "reading": "Dean Winchester has anal emptiness/arousal after Castiel removes a plug; it is a body cue, not a new insertion.",
+    "rationale": "The named receiver is Dean, and the surrounding finger sequence confirms whose body is being prepared. Your recent toy-removal adjudication does not reject this body hint or prove a new toy insertion.",
+    "errors": []
+   },
+   "labelAudit": {
+    "pastLabels": [
+     {
+      "source": "tests/right-set/belonging-is-longing-is-now.json",
+      "verdict": "wrong",
+      "date": "2026-10-05",
+      "provenance": "owner",
+      "weight": 1,
+      "claim": "anal hint: Castiel points toward bottom. Specific act and occurrence not recorded.",
+      "identityVerified": true,
+      "key": "body-hole-ache#9a1d012c",
+      "confidence": 0.32
+     }
+    ],
+    "priority": 68.45639253019495,
+    "occurrence": "Body cue / hint",
+    "changed": false,
+    "quarantined": false,
+    "status": "Possible old-label conflict: I would accept today’s claim; please check whether the earlier rejection still applies.",
+    "reasons": [
+     "People or occurrence disagree with an earlier mistake report.",
+     "A recent owner act review covers this citation.",
+     "An older wrong label conflicts with the current model’s high trust; this is a review priority, not proof of correctness."
+    ],
+    "recentEvidence": [
+     "suspect-two-569919fdfb5e / T31: owner-confirmed Toy insertion, Castiel → Dean Winchester, ¶725–731.",
+     "suspect-two-569919fdfb5e / T31: owner marked correct: Toy insertion, Castiel → Dean Winchester, performed, ¶725–731."
+    ],
+    "referenceClaim": "Dean Winchester has an aching hole (a sign of bottoming) [aching hole; Body cue / hint]",
+    "referenceCommit": "6e878a4",
+    "referenceIsOriginal": false
+   }
+  },
+  {
+   "id": "L37",
+   "key": "push-into#40d1daf9",
+   "fic": "tricks-of-the-trade.html",
+   "para": 786,
+   "pattern": "push-into",
+   "a": "Castiel",
+   "b": "Dean Winchester",
+   "act": "anal sex (strap-on/toy)",
+   "kind": "act",
+   "claim": "Castiel → Dean Winchester: anal sex (strap-on/toy) (the first name is the one the engine credited)",
+   "engineConfidence": 0.9390003294391241,
+   "evidence": [
+    {
+     "from": 784,
+     "to": 788
+    }
+   ],
+   "proposal": {
+    "revision": "past-label-v1-0f1896acde10",
+    "verdict": "correct",
+    "confidence": 0.99,
+    "reading": "Castiel inserts an anal plug into Dean Winchester.",
+    "rationale": "The plug is explicit. The older wrong mark on an anal-category reading should not reject this specific toy insertion; it is not penile penetration.",
+    "errors": []
+   },
+   "labelAudit": {
+    "pastLabels": [
+     {
+      "source": "tests/right-set/tricks-of-the-trade.json",
+      "verdict": "ok",
+      "date": "2026-10-05",
+      "provenance": "claude",
+      "weight": 0.85,
+      "claim": "anal scene: recorded top Castiel; recorded bottom Dean Winchester. Instrument detail was not recorded.",
+      "identityVerified": true,
+      "key": "push-into#a46c97dd",
+      "confidence": 0.68,
+      "retired": "owner judged this wrong in a blind spot-check 2026-10-06"
+     },
+     {
+      "source": "tests/right-set/tricks-of-the-trade.json",
+      "verdict": "wrong",
+      "date": "2026-10-06",
+      "provenance": "owner",
+      "weight": 1,
+      "claim": "anal scene: recorded top Castiel; recorded bottom Dean Winchester. Instrument detail was not recorded.",
+      "identityVerified": true,
+      "key": "push-into#a46c97dd",
+      "confidence": 0.68
+     }
+    ],
+    "priority": 67.47500823597811,
+    "occurrence": "Performed",
+    "changed": true,
+    "quarantined": false,
+    "status": "Changed claim: obtain a fresh current verdict; the old verdict may still be correct for the old claim.",
+    "reasons": [
+     "The current act, participants or occurrence differs from the saved identity or pre-change engine reference.",
+     "An older wrong label conflicts with the current model’s high trust; this is a review priority, not proof of correctness."
+    ],
+    "recentEvidence": [],
+    "referenceClaim": "Castiel is having anal sex with Dean Winchester, as the one penetrating [anal sex; Performed]",
+    "referenceCommit": "6e878a4",
+    "referenceIsOriginal": false
+   }
+  },
+  {
+   "id": "L38",
+   "key": "push-into#f7d42b80",
+   "fic": "belonging.html",
+   "para": 3057,
+   "pattern": "push-into",
+   "a": "Castiel",
+   "b": "Dean Winchester",
+   "act": "anal sex (strap-on/toy)",
+   "kind": "act",
+   "claim": "Castiel → Dean Winchester: anal sex (strap-on/toy) (the first name is the one the engine credited)",
+   "engineConfidence": 0.9714888938673429,
+   "evidence": [
+    {
+     "from": 3055,
+     "to": 3059
+    }
+   ],
+   "proposal": {
+    "revision": "past-label-v1-bd67bcf56fe5",
+    "verdict": "correct",
+    "confidence": 0.99,
+    "reading": "Castiel thrusts a toy into Dean Winchester while holding Dean steady by the genitals.",
+    "rationale": "Your latest review confirms the toy action. The static grip is not automatically a handjob, and penile penetration begins later. The older correct label needs the updated instrument identity.",
+    "errors": []
+   },
+   "labelAudit": {
+    "pastLabels": [
+     {
+      "source": "tests/right-set/belonging-is-longing-is-now.json",
+      "verdict": "ok",
+      "date": "2026-10-05",
+      "provenance": "claude",
+      "weight": 0.85,
+      "claim": "anal scene: recorded top Castiel; recorded bottom Dean Winchester. Instrument detail was not recorded.",
+      "identityVerified": true,
+      "key": "push-into#6962b618",
+      "confidence": 0.83
+     }
+    ],
+    "priority": 59.71277765331643,
+    "occurrence": "Performed",
+    "changed": true,
+    "quarantined": false,
+    "status": "Changed claim: obtain a fresh current verdict; the old verdict may still be correct for the old claim.",
+    "reasons": [
+     "The current act, participants or occurrence differs from the saved identity or pre-change engine reference.",
+     "A recent owner act review covers this citation."
+    ],
+    "recentEvidence": [
+     "suspect-two-569919fdfb5e / T2: owner-confirmed Toy insertion, Castiel → Dean Winchester, ¶3054–3059.",
+     "suspect-two-569919fdfb5e / T2: owner marked correct: Toy insertion, Castiel → Dean Winchester, performed, ¶3054–3059."
+    ],
+    "referenceClaim": "Castiel is having anal sex with Dean Winchester, as the one penetrating [anal sex; Performed]",
+    "referenceCommit": "6e878a4",
+    "referenceIsOriginal": false
+   }
+  },
+  {
+   "id": "L39",
+   "key": "dd2-finger-shoved-into#32be40a4",
+   "fic": "belonging.html",
+   "para": 3003,
+   "pattern": "dd2-finger-shoved-into",
+   "a": "Dean Winchester",
+   "b": "Castiel",
+   "act": "fingering himself",
+   "kind": "solo",
+   "role": "bottom",
+   "claim": "Dean Winchester is fingering themself (solo)",
+   "engineConfidence": 0.970139463414243,
+   "evidence": [
+    {
+     "from": 3001,
+     "to": 3005
+    }
+   ],
+   "proposal": {
+    "revision": "past-label-v1-928eaa2617c0",
+    "verdict": "correct",
+    "confidence": 0.99,
+    "reading": "Dean Winchester fingers himself while Castiel watches and directs him.",
+    "rationale": "The surrounding finger ownership and reflexive phrasing are explicit. The older low-weight rejected partnered reading cannot make this performed solo action wrong.",
+    "errors": []
+   },
+   "labelAudit": {
+    "pastLabels": [
+     {
+      "source": "tests/right-set/belonging-is-longing-is-now.json",
+      "verdict": "wrong",
+      "date": "2026-10-05",
+      "provenance": "claude",
+      "weight": 0.3,
+      "claim": "anal scene: recorded top Dean Winchester; recorded bottom Castiel. Instrument detail was not recorded.",
+      "identityVerified": true,
+      "key": "dd2-finger-shoved-into#40aea87e"
+     }
+    ],
+    "priority": 58.25348658535607,
+    "occurrence": "Performed solo",
+    "changed": false,
+    "quarantined": false,
+    "status": "Possible old-label conflict: I would accept today’s claim; please check whether the earlier rejection still applies.",
+    "reasons": [
+     "People or occurrence disagree with an earlier mistake report.",
+     "An older wrong label conflicts with the current model’s high trust; this is a review priority, not proof of correctness."
+    ],
+    "recentEvidence": [],
+    "referenceClaim": "Dean Winchester is fingering themself (solo) [fingering himself; Performed solo]",
+    "referenceCommit": "6e878a4",
+    "referenceIsOriginal": false
+   }
+  },
+  {
+   "id": "L40",
+   "key": "dd2-finger-shoved-into#f74d678",
+   "fic": "were-compeer.html",
+   "para": 139,
+   "pattern": "dd2-finger-shoved-into",
+   "a": "Stiles Stilinski",
+   "b": "Derek Hale",
+   "act": "fingering himself",
+   "kind": "solo",
+   "role": "bottom",
+   "claim": "Stiles Stilinski is fingering themself (solo)",
+   "engineConfidence": 0.9689891070162515,
+   "evidence": [
+    {
+     "from": 137,
+     "to": 141
+    }
+   ],
+   "proposal": {
+    "revision": "past-label-v1-22abd305124c",
+    "verdict": "wrong",
+    "confidence": 0.99,
+    "reading": "Stiles Stilinski considers self-fingering but refrains because he is unsure of Derek Hale's rules.",
+    "rationale": "The conditional and following reluctance explicitly establish an unperformed possibility. The engine's solo kind still asserts performed self-fingering here.",
+    "errors": [
+     "Wish or dialogue treated as an act",
+     "No act happened"
+    ]
+   },
+   "labelAudit": {
+    "pastLabels": [
+     {
+      "source": "tests/right-set/a-werecompeer.json",
+      "verdict": "wrong",
+      "date": "2026-10-05",
+      "provenance": "claude",
+      "weight": 0.3,
+      "claim": "anal hint: Derek Hale points toward top. Specific act and occurrence not recorded.",
+      "identityVerified": true,
+      "key": "dd2-finger-shoved-into#358a2fd5",
+      "confidence": 0.15
+     }
+    ],
+    "priority": 58.224727675406285,
+    "occurrence": "Performed solo",
+    "changed": false,
+    "quarantined": false,
+    "status": "Check the old label’s exact meaning; a high model score is not proof that the label should change.",
+    "reasons": [
+     "People or occurrence disagree with an earlier mistake report.",
+     "An older wrong label conflicts with the current model’s high trust; this is a review priority, not proof of correctness."
+    ],
+    "recentEvidence": [],
+    "referenceClaim": "Stiles Stilinski is fingering themself (solo) [fingering himself; Performed solo]",
+    "referenceCommit": "6e878a4",
+    "referenceIsOriginal": false
+   }
+  },
+  {
+   "id": "L41",
+   "key": "push-into~elided#21b804db",
+   "fic": "belonging.html",
+   "para": 5558,
+   "pattern": "push-into~elided",
+   "a": "Castiel",
+   "b": "Dean Winchester",
+   "act": "anal sex",
+   "kind": "wanted",
+   "role": "top",
+   "claim": "Castiel is having anal sex with Dean Winchester, as the one penetrating (read as something wanted, not something that happens)",
+   "engineConfidence": 0.9357988997224078,
+   "evidence": [
+    {
+     "from": 5556,
+     "to": 5560
+    }
+   ],
+   "proposal": {
+    "revision": "past-label-v1-91f411c742ce",
+    "verdict": "wrong",
+    "confidence": 0.99,
+    "reading": "Dean Winchester wants to keep Castiel's penis deep in his mouth during an ongoing blowjob.",
+    "rationale": "The drool, swallowing instruction and adjacent oral action establish a mouth context. The engine classifies that desire as anal sex, so the desired act is still wrong.",
+    "errors": [
+     "Wrong act or body part"
+    ]
+   },
+   "labelAudit": {
+    "pastLabels": [
+     {
+      "source": "tests/right-set/belonging-is-longing-is-now.json",
+      "verdict": "wrong",
+      "date": "2026-10-06",
+      "provenance": "owner",
+      "weight": 1,
+      "claim": "anal hint: Dean Winchester points toward top. Specific act and occurrence not recorded.",
+      "identityVerified": true,
+      "key": "push-into#da9860b1",
+      "confidence": 0.72
+     }
+    ],
+    "priority": 57.394972493060195,
+    "occurrence": "Wanted / proposed",
+    "changed": false,
+    "quarantined": false,
+    "status": "Check the old label’s exact meaning; a high model score is not proof that the label should change.",
+    "reasons": [
+     "People or occurrence disagree with an earlier mistake report.",
+     "An older wrong label conflicts with the current model’s high trust; this is a review priority, not proof of correctness."
+    ],
+    "recentEvidence": [],
+    "referenceClaim": "Castiel is having anal sex with Dean Winchester, as the one penetrating (read as something wanted, not something that happens) [anal sex; Wanted / proposed]",
+    "referenceCommit": "6e878a4",
+    "referenceIsOriginal": false
+   }
+  },
+  {
+   "id": "L42",
+   "key": "take-x~elided#13035cfe",
+   "fic": "tricks-of-the-trade.html",
+   "para": 1421,
+   "pattern": "take-x~elided",
+   "a": "Dean Winchester",
+   "b": "Castiel",
+   "act": "anal sex",
+   "kind": "wanted",
+   "role": "bottom",
+   "claim": "Dean Winchester is being fucked anally by Castiel (read as something wanted, not something that happens)",
+   "engineConfidence": 0.9731596690778445,
+   "evidence": [
+    {
+     "from": 1419,
+     "to": 1438
+    }
+   ],
+   "proposal": {
+    "revision": "past-label-v1-ce5caf59717f",
+    "verdict": "uncertain",
+    "confidence": 0.85,
+    "reading": "Castiel wants sexual activity with Dean Winchester but pauses to check consent; the later shown action is oral.",
+    "rationale": "The desire is explicit and Dean is its target, but the vague wording does not establish an anal site. The following scene is a blowjob. I would not accept an anal-specific hint without clearer context.",
+    "errors": [
+     "Wrong act or body part",
+     "Needs more context"
+    ]
+   },
+   "labelAudit": {
+    "pastLabels": [
+     {
+      "source": "tests/right-set/tricks-of-the-trade.json",
+      "verdict": "wrong",
+      "date": "2026-10-06",
+      "provenance": "owner",
+      "weight": 1,
+      "claim": "anal hint: Castiel points toward top. Specific act and occurrence not recorded.",
+      "identityVerified": true,
+      "key": "take-x#cf3392dc",
+      "confidence": 0.62
+     },
+     {
+      "source": "tests/right-set/tricks-of-the-trade.json",
+      "verdict": "wrong",
+      "date": "2026-10-05",
+      "provenance": "claude",
+      "weight": 0.3,
+      "claim": "anal hint: Dean Winchester points toward bottom. Specific act and occurrence not recorded.",
+      "identityVerified": true,
+      "key": "take-x#cf3392dc",
+      "confidence": 0.67
+     }
+    ],
+    "priority": 57.328991726946114,
+    "occurrence": "Wanted / proposed",
+    "changed": false,
+    "quarantined": false,
+    "status": "Check the old label’s exact meaning; a high model score is not proof that the label should change.",
+    "reasons": [
+     "People or occurrence disagree with an earlier mistake report.",
+     "An older wrong label conflicts with the current model’s high trust; this is a review priority, not proof of correctness."
+    ],
+    "recentEvidence": [],
+    "referenceClaim": "Dean Winchester is being fucked anally by Castiel (read as something wanted, not something that happens) [anal sex; Wanted / proposed]",
+    "referenceCommit": "6e878a4",
+    "referenceIsOriginal": false
+   }
+  },
+  {
+   "id": "L43",
+   "key": "lips-around#fb263830",
+   "fic": "tricks-of-the-trade.html",
+   "para": 1472,
+   "pattern": "lips-around",
+   "a": "Dean Winchester",
+   "b": "Castiel",
+   "act": "blowjob",
+   "kind": "hypothetical",
+   "role": "bottom",
+   "claim": "Dean Winchester is giving Castiel a blowjob (read as a hypothetical, not something that happens)",
+   "engineConfidence": 0.8734752645519216,
+   "evidence": [
+    {
+     "from": 1470,
+     "to": 1474
+    }
+   ],
+   "proposal": {
+    "revision": "past-label-v1-450d40b9ea7e",
+    "verdict": "wrong",
+    "confidence": 0.97,
+    "reading": "Castiel masturbates while remembering Dean Winchester giving him a blowjob.",
+    "rationale": "The oral action is explicitly a memory, not a hypothetical possibility and not a new current blowjob. The giver/receiver direction is supported, but the occurrence class needs correction.",
+    "errors": [
+     "Wrong occurrence: memory / fantasy / habitual / recording"
+    ]
+   },
+   "labelAudit": {
+    "pastLabels": [
+     {
+      "source": "tests/right-set/tricks-of-the-trade.json",
+      "verdict": "wrong",
+      "date": "2026-10-06",
+      "provenance": "owner",
+      "weight": 1,
+      "claim": "blowjob scene: recorded top Castiel; recorded bottom Dean Winchester (top = penis owner/receiver; bottom = mouth performer/giver). Instrument detail was not recorded.",
+      "identityVerified": true,
+      "key": "lips-around#9c4aec1d",
+      "confidence": 0.68
+     }
+    ],
+    "priority": 54.83688161379804,
+    "occurrence": "Imagined / conditional",
+    "changed": false,
+    "quarantined": false,
+    "status": "Check the old label’s exact meaning; a high model score is not proof that the label should change.",
+    "reasons": [
+     "People or occurrence disagree with an earlier mistake report.",
+     "An older wrong label conflicts with the current model’s high trust; this is a review priority, not proof of correctness."
+    ],
+    "recentEvidence": [],
+    "referenceClaim": "Dean Winchester is giving Castiel a blowjob (read as a hypothetical, not something that happens) [blowjob; Imagined / conditional]",
+    "referenceCommit": "6e878a4",
+    "referenceIsOriginal": false
+   }
+  },
+  {
+   "id": "L44",
+   "key": "lips-around#43ef943d",
+   "fic": "hate.html",
+   "para": 242,
+   "pattern": "lips-around",
+   "a": "Eddie Munson",
+   "b": "Steve Harrington",
+   "act": "blowjob",
+   "kind": "act",
+   "claim": "Eddie Munson is getting a blowjob from Steve Harrington",
+   "engineConfidence": 0.9727903413119775,
+   "evidence": [
+    {
+     "from": 240,
+     "to": 244
+    }
+   ],
+   "proposal": {
+    "revision": "past-label-v1-840a1db48181",
+    "verdict": "correct",
+    "confidence": 0.99,
+    "reading": "Eddie Munson's penis is in Steve Harrington's mouth during a blowjob/face-fucking sequence.",
+    "rationale": "The surrounding throat contact establishes oral penetration and Eddie as penis owner. The older report rejected the reversed oral direction; the current claim follows the engine's documented oral convention.",
+    "errors": []
+   },
+   "labelAudit": {
+    "pastLabels": [
+     {
+      "source": "tests/right-set/hate-the-way-it-feels-so-good.json",
+      "verdict": "wrong",
+      "date": "2026-10-06",
+      "provenance": "owner",
+      "weight": 1,
+      "claim": "blowjob scene: recorded top Steve Harrington; recorded bottom Eddie Munson (top = penis owner/receiver; bottom = mouth performer/giver). Instrument detail was not recorded.",
+      "identityVerified": true,
+      "key": "lips-around#fe9db6cc",
+      "confidence": 0.48
+     }
+    ],
+    "priority": 54.31975853279944,
+    "occurrence": "Performed",
+    "changed": false,
+    "quarantined": false,
+    "status": "Possible old-label conflict: I would accept today’s claim; please check whether the earlier rejection still applies.",
+    "reasons": [
+     "People or occurrence disagree with an earlier mistake report.",
+     "An older wrong label conflicts with the current model’s high trust; this is a review priority, not proof of correctness."
+    ],
+    "recentEvidence": [],
+    "referenceClaim": "Eddie Munson is getting a blowjob from Steve Harrington [blowjob; Performed]",
+    "referenceCommit": "6e878a4",
+    "referenceIsOriginal": false
+   }
+  },
+  {
+   "id": "L45",
+   "key": "thrust-back#57218739",
+   "fic": "were-compeer.html",
+   "para": 595,
+   "pattern": "thrust-back",
+   "a": "Stiles Stilinski",
+   "b": "Derek Hale",
+   "act": "pushing back",
+   "kind": "touch",
+   "role": "bottom",
+   "claim": "Stiles Stilinski is pushing back against Derek Hale during sex",
+   "engineConfidence": 0.961379753810021,
+   "evidence": [
+    {
+     "from": 593,
+     "to": 597
+    }
+   ],
+   "proposal": {
+    "revision": "past-label-v1-ed0b7a615e52",
+    "verdict": "correct",
+    "confidence": 0.98,
+    "reading": "Stiles Stilinski pushes his body back toward Derek Hale's tongue during ongoing anal play.",
+    "rationale": "The previous and following paragraphs establish Derek's tongue and fingers on Stiles. This touch/position cue is supported but is not itself a separate penile penetration claim.",
+    "errors": []
+   },
+   "labelAudit": {
+    "pastLabels": [
+     {
+      "source": "tests/right-set/a-werecompeer.json",
+      "verdict": "wrong",
+      "date": "2026-10-06",
+      "provenance": "owner",
+      "weight": 1,
+      "claim": "anal hint: Derek Hale points toward bottom. Specific act and occurrence not recorded.",
+      "identityVerified": true,
+      "key": "thrust-back#9d0d0632",
+      "confidence": 0.25
+     }
+    ],
+    "priority": 54.03449384525052,
+    "occurrence": "Touch / position cue",
+    "changed": false,
+    "quarantined": false,
+    "status": "Possible old-label conflict: I would accept today’s claim; please check whether the earlier rejection still applies.",
+    "reasons": [
+     "People or occurrence disagree with an earlier mistake report.",
+     "A recent owner act review covers this citation.",
+     "An older wrong label conflicts with the current model’s high trust; this is a review priority, not proof of correctness."
+    ],
+    "recentEvidence": [
+     "tests/gold-review/owner-2026-10-07.json / G48: owner marked correct for gold range blowjob, ¶556–610. Range-level feedback does not adjudicate this individual hit.",
+     "tests/gold-review/owner-2026-10-07.json / G50: owner marked correct for gold range rimming, ¶556–610. Range-level feedback does not adjudicate this individual hit."
+    ],
+    "referenceClaim": "Stiles Stilinski is pushing back against Derek Hale during sex [pushing back; Touch / position cue]",
+    "referenceCommit": "6e878a4",
+    "referenceIsOriginal": false
+   }
+  },
+  {
+   "id": "L46",
+   "key": "spread-legs~elided#2ca19744",
+   "fic": "belonging.html",
+   "para": 451,
+   "pattern": "spread-legs~elided",
+   "a": "Dean Winchester",
+   "b": "Castiel",
+   "act": "spreading their legs",
+   "kind": "prep",
+   "role": "bottom",
+   "claim": "Dean Winchester is spreading their legs for Castiel",
+   "engineConfidence": 0.95256401383894,
+   "evidence": [
+    {
+     "from": 449,
+     "to": 453
+    }
+   ],
+   "proposal": {
+    "revision": "past-label-v1-72f2a7427f66",
+    "verdict": "correct",
+    "confidence": 0.96,
+    "reading": "Castiel positions Dean Winchester with his knees spread; Dean is the prepared receiver.",
+    "rationale": "The engine's prep category credits Dean's receptive position. Castiel performs the positioning, so the label should not be read as Dean actively spreading Castiel's legs or as proof that penetration occurs.",
+    "errors": []
+   },
+   "labelAudit": {
+    "pastLabels": [
+     {
+      "source": "tests/right-set/belonging-is-longing-is-now.json",
+      "verdict": "wrong",
+      "date": "2026-10-06",
+      "provenance": "owner",
+      "weight": 1,
+      "claim": "anal hint: Castiel points toward bottom. Specific act and occurrence not recorded.",
+      "identityVerified": true,
+      "key": "spread-legs#a777a325",
+      "confidence": 0.25
+     }
+    ],
+    "priority": 53.8141003459735,
+    "occurrence": "Preparation / position cue",
+    "changed": false,
+    "quarantined": false,
+    "status": "Possible old-label conflict: I would accept today’s claim; please check whether the earlier rejection still applies.",
+    "reasons": [
+     "People or occurrence disagree with an earlier mistake report.",
+     "An older wrong label conflicts with the current model’s high trust; this is a review priority, not proof of correctness."
+    ],
+    "recentEvidence": [],
+    "referenceClaim": "Dean Winchester is spreading their legs for Castiel [spreading their legs; Preparation / position cue]",
+    "referenceCommit": "6e878a4",
+    "referenceIsOriginal": false
+   }
+  },
+  {
+   "id": "L47",
+   "key": "body-leaking-from#f74d678",
+   "fic": "were-compeer.html",
+   "para": 139,
+   "pattern": "body-leaking-from",
+   "a": "Stiles Stilinski",
+   "b": "Derek Hale",
+   "act": "leaking come",
+   "kind": "body",
+   "role": "bottom",
+   "claim": "Stiles Stilinski is leaking come after sex with Derek Hale",
+   "engineConfidence": 0.9521723130359627,
+   "evidence": [
+    {
+     "from": 137,
+     "to": 141
+    }
+   ],
+   "proposal": {
+    "revision": "past-label-v1-57a156584b03",
+    "verdict": "wrong",
+    "confidence": 0.93,
+    "reading": "Stiles Stilinski's anal slick is leaking; this does not describe semen leakage after sex.",
+    "rationale": "The fluid is explicitly slick from his own arousal, not come left from penetration. A bottom-associated body cue may be reasonable, but the current specific leaking-come claim overstates it.",
+    "errors": [
+     "Wrong act or body part"
+    ]
+   },
+   "labelAudit": {
+    "pastLabels": [
+     {
+      "source": "tests/right-set/a-werecompeer.json",
+      "verdict": "wrong",
+      "date": "2026-10-05",
+      "provenance": "claude",
+      "weight": 0.3,
+      "claim": "anal hint: Derek Hale points toward bottom. Specific act and occurrence not recorded.",
+      "identityVerified": true,
+      "key": "body-leaking-from#358a2fd5",
+      "confidence": 0.25
+     },
+     {
+      "source": "tests/spotcheck/rounds.json",
+      "verdict": "unclear",
+      "date": "2026-10-06",
+      "provenance": "owner blind spot-check",
+      "weight": 1,
+      "claim": "Full original claim identity was not recorded in this blind spot-check.",
+      "identityVerified": false,
+      "key": "body-leaking-from#358a2fd5",
+      "confidence": 0.9063
+     }
+    ],
+    "priority": 53.80430782589907,
+    "occurrence": "Body cue / hint",
+    "changed": false,
+    "quarantined": false,
+    "status": "Check the old label’s exact meaning; a high model score is not proof that the label should change.",
+    "reasons": [
+     "People or occurrence disagree with an earlier mistake report.",
+     "An older wrong label conflicts with the current model’s high trust; this is a review priority, not proof of correctness."
+    ],
+    "recentEvidence": [],
+    "referenceClaim": "Stiles Stilinski is leaking come after sex with Derek Hale [leaking come; Body cue / hint]",
+    "referenceCommit": "6e878a4",
+    "referenceIsOriginal": false
+   }
+  },
+  {
+   "id": "L48",
+   "key": "fuck~elided#bc8b5a3f",
+   "fic": "were-compeer.html",
+   "para": 1198,
+   "pattern": "fuck~elided",
+   "a": "Stiles Stilinski",
+   "b": "Derek Hale",
+   "act": "anal sex",
+   "kind": "wanted",
+   "role": "bottom",
+   "claim": "Stiles Stilinski is being fucked anally by Derek Hale (read as something wanted, not something that happens)",
+   "engineConfidence": 0.9453309103688801,
+   "evidence": [
+    {
+     "from": 1196,
+     "to": 1200
+    }
+   ],
+   "proposal": {
+    "revision": "past-label-v1-7a39bef6e591",
+    "verdict": "correct",
+    "confidence": 0.98,
+    "reading": "Stiles Stilinski wants Derek Hale's anal penetration, then begins riding Derek in the next paragraph.",
+    "rationale": "The reference to what will not happen concerns pregnancy during this heat, not refusal of penetration. The desired receiver direction is supported and immediately becomes actual activity.",
+    "errors": []
+   },
+   "labelAudit": {
+    "pastLabels": [
+     {
+      "source": "tests/right-set/a-werecompeer.json",
+      "verdict": "ok",
+      "date": "2026-10-05",
+      "provenance": "claude",
+      "weight": 0.85,
+      "claim": "anal hint: Stiles Stilinski points toward bottom. Specific act and occurrence not recorded.",
+      "identityVerified": true,
+      "key": "fuck#8902df48",
+      "confidence": 0.84,
+      "retired": "owner judged this wrong in a blind spot-check 2026-10-06"
+     },
+     {
+      "source": "tests/right-set/a-werecompeer.json",
+      "verdict": "wrong",
+      "date": "2026-10-06",
+      "provenance": "owner",
+      "weight": 1,
+      "claim": "anal hint: Stiles Stilinski points toward top. Specific act and occurrence not recorded.",
+      "identityVerified": true,
+      "key": "fuck#8902df48",
+      "confidence": 0.72
+     },
+     {
+      "source": "tests/right-set/a-werecompeer.json",
+      "verdict": "wrong",
+      "date": "2026-10-06",
+      "provenance": "owner",
+      "weight": 1,
+      "claim": "anal hint: Stiles Stilinski points toward bottom. Specific act and occurrence not recorded.",
+      "identityVerified": true,
+      "key": "fuck#8902df48",
+      "confidence": 0.84
+     }
+    ],
+    "priority": 53.633272759222,
+    "occurrence": "Wanted / proposed",
+    "changed": false,
+    "quarantined": false,
+    "status": "Possible old-label conflict: I would accept today’s claim; please check whether the earlier rejection still applies.",
+    "reasons": [
+     "People or occurrence disagree with an earlier mistake report.",
+     "An older wrong label conflicts with the current model’s high trust; this is a review priority, not proof of correctness."
+    ],
+    "recentEvidence": [],
+    "referenceClaim": "Stiles Stilinski is being fucked anally by Derek Hale (read as something wanted, not something that happens) [anal sex; Wanted / proposed]",
+    "referenceCommit": "6e878a4",
+    "referenceIsOriginal": false
+   }
+  },
+  {
+   "id": "L49",
+   "key": "push-into~elided#f997e3ce",
+   "fic": "belonging.html",
+   "para": 1213,
+   "pattern": "push-into~elided",
+   "a": "Castiel",
+   "b": "Dean Winchester",
+   "act": "anal sex (strap-on/toy)",
+   "kind": "act",
+   "claim": "Castiel → Dean Winchester: anal sex (strap-on/toy) (the first name is the one the engine credited)",
+   "engineConfidence": 0.9762012052868061,
+   "evidence": [
+    {
+     "from": 1211,
+     "to": 1215
+    }
+   ],
+   "proposal": {
+    "revision": "past-label-v1-04a160007b18",
+    "verdict": "correct",
+    "confidence": 0.99,
+    "reading": "Castiel inserts an anal plug into Dean Winchester after removing an enema instrument.",
+    "rationale": "The explicit plug replacement supports toy insertion, not penile penetration. The older correct mark on the broad anal category needs a fresh instrument-specific identity.",
+    "errors": []
+   },
+   "labelAudit": {
+    "pastLabels": [
+     {
+      "source": "tests/right-set/belonging-is-longing-is-now.json",
+      "verdict": "ok",
+      "date": "2026-10-05",
+      "provenance": "claude",
+      "weight": 0.85,
+      "claim": "anal scene: recorded top Castiel; recorded bottom Dean Winchester. Instrument detail was not recorded.",
+      "identityVerified": true,
+      "key": "push-into#d35976b8",
+      "confidence": 0.85
+     }
+    ],
+    "priority": 44.594969867829846,
+    "occurrence": "Performed",
+    "changed": true,
+    "quarantined": false,
+    "status": "Changed claim: obtain a fresh current verdict; the old verdict may still be correct for the old claim.",
+    "reasons": [
+     "The current act, participants or occurrence differs from the saved identity or pre-change engine reference."
+    ],
+    "recentEvidence": [],
+    "referenceClaim": "Castiel is having anal sex with Dean Winchester, as the one penetrating [anal sex; Performed]",
+    "referenceCommit": "6e878a4",
+    "referenceIsOriginal": false
+   }
+  },
+  {
+   "id": "L50",
+   "key": "push-into#64e4f3a5",
+   "fic": "belonging.html",
+   "para": 4052,
+   "pattern": "push-into",
+   "a": "Castiel",
+   "b": "Dean Winchester",
+   "act": "anal sex (strap-on/toy)",
+   "kind": "act",
+   "claim": "Castiel → Dean Winchester: anal sex (strap-on/toy) (the first name is the one the engine credited)",
+   "engineConfidence": 0.9889232927247246,
+   "evidence": [
+    {
+     "from": 4050,
+     "to": 4054
+    }
+   ],
+   "proposal": {
+    "revision": "past-label-v1-b989c1a1b09f",
+    "verdict": "correct",
+    "confidence": 0.99,
+    "reading": "Castiel inserts an anal plug into Dean Winchester after withdrawing his penis.",
+    "rationale": "The paragraph explicitly switches from a knot/penis to a plug. The current toy classification follows that transition; the older broad anal-category label should be verified against the new claim.",
+    "errors": []
+   },
+   "labelAudit": {
+    "pastLabels": [
+     {
+      "source": "tests/right-set/belonging-is-longing-is-now.json",
+      "verdict": "ok",
+      "date": "2026-10-05",
+      "provenance": "claude",
+      "weight": 0.85,
+      "claim": "anal scene: recorded top Castiel; recorded bottom Dean Winchester. Instrument detail was not recorded.",
+      "identityVerified": true,
+      "key": "push-into#69e3f012",
+      "confidence": 0.68
+     }
+    ],
+    "priority": 44.27691768188188,
+    "occurrence": "Performed",
+    "changed": true,
+    "quarantined": false,
+    "status": "Changed claim: obtain a fresh current verdict; the old verdict may still be correct for the old claim.",
+    "reasons": [
+     "The current act, participants or occurrence differs from the saved identity or pre-change engine reference."
+    ],
+    "recentEvidence": [],
+    "referenceClaim": "Castiel is having anal sex with Dean Winchester, as the one penetrating [anal sex; Performed]",
+    "referenceCommit": "6e878a4",
+    "referenceIsOriginal": false
+   }
+  }
+ ]
+}

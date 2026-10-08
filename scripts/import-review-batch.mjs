@@ -26,9 +26,10 @@ for (const a of feedback.answers) {
   const row = batch.rows.find((r) => r.id === a.id), source = row && batch.sources.find((s) => s.file === row.fic);
   if (!row || seen.has(a.id) || a.key !== row.key || a.fic !== row.fic || a.paragraph !== row.para || a.sourceSha !== source?.sourceSha ||
       (a.verdict !== undefined && !["correct", "wrong", "uncertain"].includes(a.verdict)) || !Array.isArray(a.errors) || !a.errors.every((e) => typeof e === "string") || typeof a.updatedAt !== "string") throw Error("An answer is malformed or does not match its batch reading.");
+  if (a.pastLabelReview !== undefined && (!row.labelAudit || !['keep','replace','uncertain'].includes(a.pastLabelReview))) throw Error('An answer has an invalid past-label decision.');
   seen.add(a.id);
   if (!a.verdict) continue;
-  const safe = { id: a.id, key: row.key, fic: row.fic, paragraph: row.para, sourceSha: source.sourceSha, claim: claimOf(row,row.fic,source.sourceSha), verdict: a.verdict, errors: a.errors, updatedAt: a.updatedAt };
+  const safe = { id: a.id, key: row.key, fic: row.fic, paragraph: row.para, sourceSha: source.sourceSha, claim: claimOf(row,row.fic,source.sourceSha), verdict: a.verdict, errors: a.errors, updatedAt: a.updatedAt, ...(a.pastLabelReview ? {pastLabelReview:a.pastLabelReview} : {}) };
   const old = answers.get(a.id);
   if (!old || safe.updatedAt > old.updatedAt) answers.set(a.id, safe);
 }

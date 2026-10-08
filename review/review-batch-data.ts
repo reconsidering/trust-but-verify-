@@ -7,9 +7,11 @@ export type ReadingProposal = { revision: string; verdict: "correct" | "wrong" |
 export type SceneActProposal = { id: string; revision: string; act: string; performer: string; receiver: string; occurrence: string; evidence: { from: number; to: number }; reviewerConfidence: number; note: string; engineReadingKeys: string[]; engineConfidence: number | null };
 export type SceneEngineReading = { key: string; para: number; pattern: string; act: string; kind: string; claim: string; confidence: number | null; a: string; b?: string; role?: string; features: number[]; attribution: Record<string, string | number | boolean> };
 export type ActReview = { revision: string; verdict?: "correct" | "wrong" | "uncertain"; act: string; performer: string; receiver: string; occurrence: string; context: string; errors: string[] };
-export type ReviewRow = { id: string; key: string; fic: string; para: number; pattern: string; a: string; b?: string; act: string; kind: string; role?: string; claim: string; gold?: { file: string; hash: string; pairing: string; act: string; verdict: string }; evidence?: { from: number; to: number }[]; engineConfidence?: number; proposal?: ReadingProposal; sceneActs?: SceneActProposal[]; engineReadings?: SceneEngineReading[]; trainingNotes?: string[] };
+export type PastLabel = { source: string; verdict: "ok" | "wrong" | "unclear"; provenance: string; date?: string; claim: string; identityVerified: boolean; key: string; weight?: number; confidence?: number; retired?: string; errors?: string[] };
+export type LabelAudit = { pastLabels: PastLabel[]; priority: number; occurrence: string; changed: boolean; quarantined: boolean; status: string; reasons: string[]; recentEvidence: string[]; referenceClaim?: string; referenceCommit?: string; referenceIsOriginal?: boolean };
+export type ReviewRow = { id: string; key: string; fic: string; para: number; pattern: string; a: string; b?: string; act: string; kind: string; role?: string; claim: string; gold?: { file: string; hash: string; pairing: string; act: string; verdict: string }; evidence?: { from: number; to: number }[]; engineConfidence?: number; proposal?: ReadingProposal; sceneActs?: SceneActProposal[]; engineReadings?: SceneEngineReading[]; trainingNotes?: string[]; labelAudit?: LabelAudit };
 export type ReviewBatch = { schema: "engine-review-batch/v1" | "engine-gold-review/v1" | "engine-gold-range-review/v1"; batchId: string; engineCommit: string; sources: ReviewSource[]; rows: ReviewRow[]; selection?: { method: string; [key: string]: unknown } };
-export type ReviewAnswer = { verdict?: "correct" | "wrong" | "uncertain"; errors: string[]; context: string; updatedAt: string; proposalReview?: "agree" | "disagree" | "uncertain"; proposalRevision?: string; actReviews?: Record<string, ActReview>; coverageComplete?: boolean };
+export type ReviewAnswer = { verdict?: "correct" | "wrong" | "uncertain"; errors: string[]; context: string; updatedAt: string; proposalReview?: "agree" | "disagree" | "uncertain"; proposalRevision?: string; actReviews?: Record<string, ActReview>; coverageComplete?: boolean; pastLabelReview?: "keep" | "replace" | "uncertain" };
 
 export const checksum = async (bytes: Uint8Array) => Array.from(new Uint8Array(await crypto.subtle.digest("SHA-256", bytes as Uint8Array<ArrayBuffer>)), (b) => b.toString(16).padStart(2, "0")).join("");
 
@@ -39,6 +41,7 @@ export async function* storyBytes(file: { name: string; arrayBuffer: () => Promi
 export function validAnswer(value: unknown): value is ReviewAnswer {
   if (!value || typeof value !== "object") return false;
   const a = value as ReviewAnswer;
+  if (a.pastLabelReview !== undefined && !['keep', 'replace', 'uncertain'].includes(a.pastLabelReview)) return false;
   if (a.coverageComplete !== undefined && typeof a.coverageComplete !== 'boolean') return false;
   if (a.actReviews !== undefined && (!a.actReviews || typeof a.actReviews !== 'object' || Array.isArray(a.actReviews) || Object.values(a.actReviews).some(r => !r || typeof r !== 'object' || typeof r.revision !== 'string' || !r.revision || !['act','performer','receiver','occurrence','context'].every(k => typeof r[k as keyof ActReview] === 'string') || (r.verdict !== undefined && !['correct','wrong','uncertain'].includes(r.verdict)) || !Array.isArray(r.errors) || r.errors.some(e => typeof e !== 'string')))) return false;
   if ((a.proposalReview !== undefined || a.proposalRevision !== undefined) && (!['agree', 'disagree', 'uncertain'].includes(a.proposalReview ?? '') || typeof a.proposalRevision !== 'string' || !a.proposalRevision.trim())) return false;
@@ -57,16 +60,31 @@ export function importAnswers(batch: ReviewBatch, payload: unknown, current: Rec
     if (a.proposalReview && a.proposalRevision !== row.proposal?.revision) throw Error("An answer refers to a different proposed reading.");
     for (const [id, review] of Object.entries(a.actReviews ?? {})) if (!row.sceneActs?.some(act => act.id === id && act.revision === review.revision)) throw Error('An answer refers to a different act proposal.');
     if (a.coverageComplete !== undefined && !row.sceneActs) throw Error('This batch does not support act coverage answers.');
+    if (a.pastLabelReview !== undefined && !row.labelAudit) throw Error('This batch does not support past-label answers.');
     if (row.sceneActs && JSON.stringify(a.evidence) !== JSON.stringify(row.evidence)) throw Error('An answer does not match its scene window.');
     if (batch.schema === "engine-gold-range-review/v1" && (JSON.stringify(a.gold) !== JSON.stringify(row.gold) || JSON.stringify(a.evidence) !== JSON.stringify(row.evidence))) throw Error("An answer does not match its gold range.");
     seen.add(a.id);
   }
   let changed = 0;
   for (const a of data.answers) if (!current[a.id] || a.updatedAt > current[a.id].updatedAt) {
-    current[a.id] = { verdict: a.verdict, errors: a.errors, context: a.context, updatedAt: a.updatedAt, ...(a.proposalReview ? { proposalReview: a.proposalReview, proposalRevision: a.proposalRevision } : {}), ...(a.actReviews ? { actReviews: structuredClone(a.actReviews) } : {}), ...(a.coverageComplete !== undefined ? { coverageComplete: a.coverageComplete } : {}) };
+    current[a.id] = { verdict: a.verdict, errors: a.errors, context: a.context, updatedAt: a.updatedAt, ...(a.proposalReview ? { proposalReview: a.proposalReview, proposalRevision: a.proposalRevision } : {}), ...(a.actReviews ? { actReviews: structuredClone(a.actReviews) } : {}), ...(a.coverageComplete !== undefined ? { coverageComplete: a.coverageComplete } : {}), ...(a.pastLabelReview ? {pastLabelReview: a.pastLabelReview} : {}) };
     changed++;
   }
   return changed;
+}
+
+/** Past judgments and current claims stay separate; neither assistant nor historical verdicts prefill answers. */
+export function validatePastLabelBatch(batch: ReviewBatch): ReviewBatch {
+  const score = (v: unknown) => typeof v === 'number' && Number.isFinite(v) && v >= 0 && v <= 1;
+  if (batch.schema !== 'engine-review-batch/v1' || batch.rows.length !== 50 || !batch.selection?.method || !/^[a-f0-9]{40}$/.test(batch.engineCommit)) throw Error('The past-label review is incomplete.');
+  const ids = new Set<string>(), keys = new Set<string>();
+  for (const row of batch.rows) {
+    const source = batch.sources.find(s => s.file === row.fic), audit = row.labelAudit, proposal = row.proposal;
+    if (!source || ids.has(row.id) || keys.has(row.key) || !Number.isInteger(row.para) || row.para < 0 || row.para >= source.paragraphCount || !score(row.engineConfidence) || !proposal || !score(proposal.confidence) || !proposal.revision || !proposal.reading || !proposal.rationale || !['correct','wrong','uncertain'].includes(proposal.verdict) || !audit?.pastLabels.length || !audit.status || !audit.occurrence || !row.evidence?.length || row.evidence.some(e => !Number.isInteger(e.from) || !Number.isInteger(e.to) || e.from < 0 || e.from > row.para || e.to < row.para || e.to >= source.paragraphCount)) throw Error('A past-label item is missing its claim, confidence, history or citation.');
+    for (const label of audit.pastLabels) if (!['ok','wrong','unclear'].includes(label.verdict) || !label.source || !label.key || !label.claim || !label.provenance || typeof label.identityVerified !== 'boolean' || (label.confidence !== undefined && !score(label.confidence))) throw Error('A historical label has invalid provenance.');
+    ids.add(row.id); keys.add(row.key);
+  }
+  return batch;
 }
 
 /** Validate the scored batch before showing any assistant proposals. */
