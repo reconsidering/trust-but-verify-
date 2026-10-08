@@ -180,9 +180,9 @@ export interface SoloResult {
   instances: SoloAct[];
 }
 
-/** Hand sex between the pair: handjobs and frottage. Not ranked top/bottom; shown as who does what to whom. */
+/** Hands and body contact between the pair, shown as who does what to whom. Explicit penis-to-buttock contact also supplies a directional hint. */
 export interface ManualAct {
-  /** The one whose hand it is (or either, when mutual). */
+  /** The contact giver or penis owner (or either, when mutual). */
   giver: string;
   receiver: string;
   /** "Handjob", "Mutual handjob", "Frottage", "Thigh sex" or "Chest sex" (giver = whose thighs or chest). */

@@ -19,7 +19,6 @@ describe("not sex", () => {
   it("'your ass is grass'", () => nothing("“You tell anyone that and your ass is grass, Harrington,” Eddie said."));
   it("'fuck me, so El really can…'", () => nothing("“Fuck me, so El really can move shit with her mind?” Eddie said."));
   it("thighs clenching", () => nothing("His hands lifted to splay on Eddie’s thighs as they clenched around Steve."));
-  it("a cock brushing an ass", () => nothing("Eddie’s cock brushed against Steve’s ass."));
   it("cum in his own mouth", () => nothing("He made Steve cum in his own mouth."));
   it("frilly tops", () => nothing("He liked the way girls would dress up in pretty pastel skirts and frilly tops."));
   it("a doctor ('for her') in a pair with no woman", () => nothing("The doctor was careful. Steve parted his legs for her when she pressed gently on his knees."));

@@ -1045,7 +1045,7 @@ function renderManual(v: ManualResult, pairing: string, source: string): HTMLEle
   const head = el("div", "act-head");
   head.append(el("h4", undefined, "Handjobs, frottage & body play"), el("span", "badge one_way", `${v.instances.length} found`));
   card.append(head, el("p", "summary", v.summary));
-  card.append(el("p", "hint", "Not ranked top or bottom: this shows who uses their hand (or thighs, or chest) on whom."));
+  card.append(el("p", "hint", "This shows who does what to whom. Penis against buttocks is external contact and contributes a top/bottom hint; it does not count as penetration."));
   const det = el("details", "instances");
   det.append(el("summary", undefined, `${v.instances.length} moment${v.instances.length === 1 ? "" : "s"}`));
   const ul = el("ul");
