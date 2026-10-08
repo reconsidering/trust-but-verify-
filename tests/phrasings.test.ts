@@ -197,7 +197,7 @@ const REAL: [string, Exp][] = [
   ["Derek ignored the question in favor of licking Stiles' rim.", ["oral", DH, SS, "rimming"]],
   ["Derek was happy about eating Stiles out.", ["oral", DH, SS, "rimming"]],
   ["Stiles came apart while Derek was swallowing him down.", ["oral", SS, DH]],
-  ["Derek took Stiles' balls into his mouth.", ["oral", SS, DH]],
+  // Scrotal contact is covered as body play by the invented-adult review-driven tests.
   ["Stiles lay face-down. He pushed Stiles' legs apart and pushed in.", ["anal", DH, SS]],
   ["Derek's cock was hard. He crawled down the bed and licked at the head of Derek's cock.", ["oral", DH, SS]],
   ['"Oh," Stiles gasped when Derek kissed his cock.', ["oral", SS, DH]], // straight open, curly-style close mix below

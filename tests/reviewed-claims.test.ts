@@ -1,8 +1,8 @@
 import {describe,it,expect} from 'vitest';
-import {mkdtempSync,writeFileSync,rmSync} from 'node:fs';
+import {mkdtempSync,writeFileSync,rmSync,mkdirSync,readFileSync} from 'node:fs';
 import {tmpdir} from 'node:os';
 import {join} from 'node:path';
-import {cacheFingerprint,claimOf,sameClaim,validRowsCache,reviewedClaims} from '../scripts/reviewed-claims.mjs';
+import {cacheFingerprint,claimOf,sameClaim,validRowsCache,reviewedClaims,sameReportedPeople} from '../scripts/reviewed-claims.mjs';
 const hit={via:'insert',para:3,act:'anal sex',kind:'act',a:'Morgan',b:'Rowan'};
 describe('reviewed claim identity and extraction cache',()=>{
  it('does not apply a rejected penis reading to corrected finger or reversed-person readings',()=>{
@@ -29,4 +29,24 @@ describe('reviewed claim identity and extraction cache',()=>{
    expect(validRowsCache({schema:'engine-learning-rows/v2',fingerprint:f,rows:[{...rows[0],f:[NaN]}]},f,1)).toBe(false);
   } finally {rmSync(dir,{recursive:true,force:true});}
  });
+});
+
+it('does not reuse older right-set directions for reversed or now historical claims',()=>{
+ const entry={kind:'scene',top:'Morgan',bottom:'Rowan'};
+ expect(sameReportedPeople(entry,{kind:'act',a:'Morgan',b:'Rowan'})).toBe(true);
+ expect(sameReportedPeople(entry,{kind:'act',a:'Rowan',b:'Morgan'})).toBe(false);
+ expect(sameReportedPeople(entry,{kind:'history',a:'Morgan',b:'Rowan',role:'top'})).toBe(false);
+});
+
+it('quarantines an affected unversioned claim without assigning a replacement label',()=>{
+ const dir=mkdtempSync(join(tmpdir(),'legacy-claims-'));
+ try {
+  mkdirSync(join(dir,'tests/labels'),{recursive:true});
+  writeFileSync(join(dir,'tests/labels/adults.json'),JSON.stringify({labels:{'insert#adult-hash':'wrong','stroke#adult-hash':'ok'}}));
+  writeFileSync(join(dir,'tests/scene-review-adjudication.json'),JSON.stringify({changedUnversionedKeys:['insert#adult-hash']}));
+  const claims=reviewedClaims(dir);
+  expect(claims.get('insert#adult-hash')).toBeNull();
+  expect(claims.has('stroke#adult-hash')).toBe(false);
+  expect(JSON.parse(readFileSync(join(dir,'tests/labels/adults.json'),'utf8')).labels['insert#adult-hash']).toBe('wrong');
+ } finally {rmSync(dir,{recursive:true,force:true});}
 });

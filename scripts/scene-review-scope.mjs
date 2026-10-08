@@ -10,7 +10,7 @@ export function actualActOf(hit) {
   if (hit.kind === 'solo' || hit.kind === 'masturbation') {
     return hit.act === 'masturbation' ? 'Solo masturbation' : hit.act === 'fingering himself' ? 'Fingering' : hit.act === 'using a toy on himself' ? 'Toy insertion' : undefined;
   }
-  if (/^(?:anal sex \(strap-on\/toy\)|toy inside|using a toy on himself)$/.test(hit.act)) return 'Toy insertion';
+  if (/^(?:anal sex \((?:strap-on\/toy|toy)\)|toy inside|using a toy on himself)$/.test(hit.act)) return 'Toy insertion';
   if (/^fingering(?: himself)?$/.test(hit.act)) return 'Fingering';
   if (/^anal sex(?: \(riding\))?$/.test(hit.act)) return 'Anal penetration (penis)';
   if (/^blowjob(?: \(face-fucking\))?$/.test(hit.act)) return 'Blowjob';

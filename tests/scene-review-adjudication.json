@@ -1,0 +1,45 @@
+{
+ "scope": "Evaluation exclusions only; original owner answers and labels are preserved. No replacement verdict inferred.",
+ "exclusions": [
+  {
+   "batchId": "missed-2051db5b4e06",
+   "id": "M35",
+   "eventId": 1,
+   "reason": "Toy removal/presence does not establish a new insertion at this citation."
+  },
+  {
+   "batchId": "suspect-two-569919fdfb5e",
+   "id": "T25",
+   "eventId": "A1",
+   "reason": "Existing plug is removed; this does not establish a new toy insertion."
+  },
+  {
+   "batchId": "suspect-two-569919fdfb5e",
+   "id": "T31",
+   "eventId": "A1",
+   "reason": "Existing plug is removed; this does not establish a new toy insertion."
+  }
+ ],
+ "disputedReadingIds": [
+  {
+   "batchId": "oct6-4be55d1e796d",
+   "id": "B23",
+   "reason": "Surrounding passage and later partial inventory support the rejected manual act. Needs owner adjudication; no label changed."
+  },
+  {
+   "batchId": "oct6-4be55d1e796d",
+   "id": "B25",
+   "reason": "Surrounding passage supports the rejected direction; a separate same-paragraph detection has the reverse direction. Needs owner adjudication; no label changed."
+  }
+ ],
+ "changedUnversionedKeys": [
+  "bottomed-out~elided#48d97ba",
+  "hj-stroke~elided#d5a9d60f",
+  "passive-fucked~elided#a79171d8",
+  "pushed-in~elided#ea63bb7b",
+  "sucked~elided#9f6e08d1",
+  "tongue-around-head#5ad6a3ce",
+  "tongue-around-head~elided#5e4ba464"
+ ],
+ "changedUnversionedReason": "Observed claims changed from main 6e878a4; original review identity is unavailable. Preserve original labels, but quarantine these keys pending re-review."
+}

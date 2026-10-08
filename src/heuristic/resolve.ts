@@ -20,6 +20,8 @@ export function pronoun(tok: string): PronounInfo | undefined {
 
 export class Ctx {
   recent: Character[] = [];
+  sentenceIndex = 0;
+  mentionedAt = new Map<Character,number>();
   lastSubject?: Character;
   /** Learned epithets ("the blond" → Draco). */
   epithets = new Map<string, Character>();
@@ -33,11 +35,13 @@ export class Ctx {
 
   reset() {
     this.recent = [];
+    this.sentenceIndex=0;this.mentionedAt.clear();
     this.lastSubject = undefined;
     this.sentence.clear();
   }
 
   newSentence(epiTable: string[] = []) {
+    this.sentenceIndex++;
     this.sentence.clear();
     this.epiTable = epiTable;
   }
@@ -111,6 +115,7 @@ export class Ctx {
 
   mention(c: Character | undefined) {
     if (!c) return;
+    this.mentionedAt.set(c,this.sentenceIndex);
     this.recent = [c, ...this.recent.filter((r) => r !== c)].slice(0, 10);
   }
 

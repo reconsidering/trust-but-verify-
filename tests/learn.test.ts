@@ -5,10 +5,12 @@
 // The model is switched on only when it improves held-out log loss; the report goes to LEARN_REPORT.md in AO3_DIR.
 import { existsSync, readFileSync, readdirSync, writeFileSync } from "node:fs";
 import { createHash } from "node:crypto";
-import { cacheFingerprint, claimOf, reviewedClaims, sameClaim, validRowsCache } from "../scripts/reviewed-claims.mjs";
+import { cacheFingerprint, claimOf, reviewedClaims, sameClaim, sameReportedPeople, validRowsCache } from "../scripts/reviewed-claims.mjs";
 import { join } from "node:path";
 import { describe, expect, it } from "vitest";
-import { type RightSet, baseVia, hashKey, slugOf, strengthOf, weightOf } from "../scripts/right-set.mjs";
+import {TRIALS,trialFeatures} from "../scripts/confidence-trials.mjs";
+import type {DecisionOutcome} from "../src/heuristic";
+import { type RightSet, type RightEntry, baseVia, hashKey, slugOf, strengthOf, weightOf } from "../scripts/right-set.mjs";
 import { extractFromHtml } from "../src/extract";
 import { analyzeWithPatterns } from "../src/heuristic";
 import { FEATURES, LEGACY_FEATURES, MODEL, probability } from "../src/heuristic/learned";
@@ -19,7 +21,7 @@ const hash = (s: string) => { let h = 2166136261; for (let i = 0; i < s.length; 
 const PRIOR_MEAN = 0.9, PRIOR_STRENGTH = 4;
 
 /** `wt` is how far the label is trusted (1 for the owner's own marks; less for an unverified pass). */
-type Row = { key: string; id: string; f: number[]; y: number; wt: number; src?: "audit" | "report" | "weighted"; fic?: string };
+type Row = { key: string; id: string; f: number[]; y: number; wt: number; src?: "audit" | "report" | "weighted"; fic?: string; outcome?:DecisionOutcome };
 
 function loadLabels(): Map<string, "ok" | "wrong"> {
   const out = new Map<string, "ok" | "wrong">();
@@ -35,17 +37,17 @@ function loadLabels(): Map<string, "ok" | "wrong"> {
  * Keyed by pattern and sentence like the audit labels, and only for the fic they came from. A reading marked both ways, a disputed or retired
  * one, and anything reported wrong for a reason other than a misreading (counted twice, too strong) teaches nothing and is left out.
  */
-function rightSetLabels(): Map<string, Map<string, { lab: "ok" | "wrong"; wt: number }>> {
-  const out = new Map<string, Map<string, { lab: "ok" | "wrong"; wt: number }>>();
+function rightSetLabels(): Map<string, Map<string, { lab: "ok" | "wrong"; wt: number; entry:RightEntry }>> {
+  const out = new Map<string, Map<string, { lab: "ok" | "wrong"; wt: number; entry:RightEntry }>>();
   const dirp = join(__dirname, "right-set");
   if (!existsSync(dirp)) return out;
   for (const f of readdirSync(dirp).filter((x) => x.endsWith(".json"))) {
     const set = JSON.parse(readFileSync(join(dirp, f), "utf8")) as RightSet;
-    const m = new Map<string, { lab: "ok" | "wrong"; wt: number }>();
+    const m = new Map<string, { lab: "ok" | "wrong"; wt: number; entry:RightEntry }>();
     const k = (e: { via?: string; h: string }) => `${baseVia(e.via ?? "")}#${e.h}`;
     const rightKeys = new Set(set.entries.map(k));
-    for (const e of set.entries) { const st = strengthOf(e); if (st === "strong" || st === "single" || st === "weighted") m.set(k(e), { lab: "ok", wt: weightOf(e) }); }
-    for (const n of set.negatives ?? []) if (n.misread && !rightKeys.has(k(n)) && !n.retired) m.set(k(n), { lab: "wrong", wt: weightOf(n) });
+    for (const e of set.entries) { const st = strengthOf(e); if (st === "strong" || st === "single" || st === "weighted") m.set(k(e), { lab: "ok", wt: weightOf(e), entry:e }); }
+    for (const n of set.negatives ?? []) if (n.misread && !rightKeys.has(k(n)) && !n.retired) m.set(k(n), { lab: "wrong", wt: weightOf(n), entry:n });
     out.set(set.fic, m);
   }
   return out;
@@ -142,7 +144,7 @@ describe.skipIf(!dir)("context model", () => {
     const labels = loadLabels();
     const root = join(__dirname,"..");
     const claims = reviewedClaims(root);
-    const changedClaims: {key:string;fic:string;para:number}[] = [];
+    const changedClaims: {key:string;fic:string;para:number;reviewed:unknown;current:unknown;reason:string}[] = [];
     let rows: Row[] = [];
     const seen = new Set<string>();
     const missing: Record<string, string> = {};
@@ -151,7 +153,7 @@ describe.skipIf(!dir)("context model", () => {
     const filesUnder = (path:string):string[] => existsSync(path) ? readdirSync(path,{withFileTypes:true}).flatMap(e => e.isDirectory() ? filesUnder(join(path,e.name)) : [join(path,e.name)]) : [];
     const fingerprint = cacheFingerprint([
       ...filesUnder(join(root,"src")), ...filesUnder(labelDir), ...filesUnder(join(__dirname,"right-set")),
-      ...filesUnder(join(root,"public/review")), ...filesUnder(join(root,"scripts")), __filename,
+      ...filesUnder(join(root,"public/review")), ...filesUnder(join(root,"scripts")), join(__dirname,"scene-review-adjudication.json"), __filename,
       ...readdirSync(dir!).filter(f=>f.endsWith(".html")).map(f=>join(dir!,f)),
     ], FEATURES);
     const cached = cache && existsSync(cache) ? JSON.parse(readFileSync(cache,"utf8")) as {rows:Row[];note?:string;changedClaims?:typeof changedClaims} : undefined;
@@ -173,19 +175,19 @@ describe.skipIf(!dir)("context model", () => {
             if (claims.has(key)) {
               const reviewed = claims.get(key);
               if (!reviewed || !sameClaim(reviewed,claimOf(h,f,sourceSha))) {
-                changedClaims.push({key,fic:f,para:h.para});
+                changedClaims.push({key,fic:f,para:h.para,reviewed,current:claimOf(h,f,sourceSha),reason:reviewed ? "Claim changed since review" : "Missing identity, superseded review, or pending adjudication"});
                 return; // Preserve the review, but never train on a different claim.
               }
             }
             const rep = rs?.get(`${baseVia(h.via)}#${hashKey(h.sentence)}`);
-            const fromReport = rep?.lab;
+            const fromReport = rep && sameReportedPeople(rep.entry,h) ? rep.lab : undefined;
             // People get things wrong: where the audit review and a report disagree, neither is used.
             if (lab && fromReport && lab !== fromReport) { clashes++; if (!seen.has(key)) seen.add(key); return; }
             if (!lab && fromReport) { lab = fromReport; if (h.f && !seen.has(key)) fromReports++; }
             if (!h.f) { if (lab) missing[key] = h.kind; return; }
             if (!lab || seen.has(key)) return;
             seen.add(key);
-            rows.push({ key, id: h.via, f: h.f, y: lab === "ok" ? 1 : 0, wt: !labels.get(key) && rep ? rep.wt : 1, src: labels.get(key) ? "audit" : rep && rep.wt < 1 ? "weighted" : "report", fic: f });
+            rows.push({ key, id: h.via, f: h.f, outcome:h.decisionOutcome, y: lab === "ok" ? 1 : 0, wt: !labels.get(key) && rep ? rep.wt : 1, src: labels.get(key) ? "audit" : rep && rep.wt < 1 ? "weighted" : "report", fic: f });
           },
         });
       }
@@ -194,10 +196,13 @@ describe.skipIf(!dir)("context model", () => {
     if (cache && !validCache) writeFileSync(cache, JSON.stringify({schema:"engine-learning-rows/v2",fingerprint,rows,note:reportNote,changedClaims}));
     if (process.env.REVIEW_QUEUE_OUT) writeFileSync(process.env.REVIEW_QUEUE_OUT,JSON.stringify(changedClaims,null,2));
     reportNote += ` ${changedClaims.length} changed or unverifiable reviewed claims were excluded and need re-review.`;
+    const trial=process.env.CONFIDENCE_TRIAL;
+    if(trial && (!TRIALS[trial] || process.env.WRITE_LEARNED)) throw Error("Confidence trials are report-only and cannot write production weights.");
+    if(trial) rows=rows.map(r=>({...r,f:[...r.f,...trialFeatures(trial,r.outcome)]}));
     // LEARN_FILTER=audit,report keeps only rows from those sources (a diagnostic: which labels move the held-out numbers).
     if (process.env.LEARN_FILTER) { const keep = process.env.LEARN_FILTER.split(","); rows = rows.filter((r) => keep.includes(r.src ?? "audit")); }
     if (process.env.MISSING_OUT) writeFileSync(process.env.MISSING_OUT, JSON.stringify(missing));
-    const lines: string[] = ["# Context model", "", `${rows.length} labelled hits found again in the samples (of ${labels.size} labels); ${rows.filter((r) => !r.y).length} wrong.`, ...(reportNote ? [reportNote] : []), ""];
+    const lines: string[] = ["# Context model", "", ...(trial?[`Report-only trial: ${trial}`,""]:[]), `${rows.length} labelled hits found again in the samples (of ${labels.size} labels); ${rows.filter((r) => !r.y).length} wrong.`, ...(reportNote ? [reportNote] : []), ""];
     expect(rows.length).toBeGreaterThan(200);
 
     const designs = (set: Row[], pre: (id: string, r?: Row) => number) => set.map((r) => [logit(clampP(pre(r.id, r))), ...r.f]);
@@ -257,7 +262,7 @@ describe.skipIf(!dir)("context model", () => {
     const precAll = precisions(rows);
     const Xall = rows.map((r) => [logit(clampP(precisions(rows, r)(r.id))), ...r.f]);
     const wAll = fit(Xall, rows.map((r) => r.y), lambda, rows.map((r) => r.wt ?? 1));
-    lines.push("Weights:", "", `- bias ${wAll[0].toFixed(3)}, pattern record ${wAll[1].toFixed(3)}`, ...FEATURES.map((n, i) => `- ${n}: ${wAll[i + 2].toFixed(3)}`), "", `Switch on: ${better ? "yes" : "no"} (needs lower held-out log loss and higher AUC).`);
+    lines.push("Weights:", "", `- bias ${wAll[0].toFixed(3)}, pattern record ${wAll[1].toFixed(3)}`, ...[...FEATURES,...(trial?TRIALS[trial]:[])].map((n, i) => `- ${n}: ${wAll[i + 2].toFixed(3)}`), "", `Switch on: ${better ? "yes" : "no"} (needs lower held-out log loss and higher AUC).`);
     // What it would do to the wrong rows: share of wrong hits trusted below 0.8, vs right hits.
     const mult = (r: Row) => Math.max(0.4, Math.min(1, probability(precAll(r.id), r.f, { enabled: true, bias: wAll[0], prior: wAll[1], weights: wAll.slice(2) }) / 0.9));
     const low = (set: Row[]) => (set.filter((r) => mult(r) < 0.8).length / Math.max(1, set.length)) * 100;

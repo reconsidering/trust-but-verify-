@@ -31,6 +31,12 @@ export function reviewedClaims(root) {
     }
     for (const key of Object.keys(labels.superseded ?? {})) out.set(key,null);
   }
+  const adjudication=join(root,'tests/scene-review-adjudication.json');
+  if(existsSync(adjudication)) for(const disputed of JSON.parse(readFileSync(adjudication,'utf8')).disputedReadingIds ?? []) {
+    const row=manifests.get(disputed.batchId)?.rows.find(r=>r.id===disputed.id);
+    if(row) out.set(row.key,null);
+  }
+  if(existsSync(adjudication)) for(const key of JSON.parse(readFileSync(adjudication,'utf8')).changedUnversionedKeys ?? []) out.set(key,null);
   return out;
 }
 export function cacheFingerprint(files, features) {
@@ -43,4 +49,15 @@ export function validRowsCache(cache, fingerprint, featureCount) {
     Array.isArray(cache.rows) && cache.rows.length > 0 && cache.rows.every(r =>
       typeof r.key === 'string' && typeof r.fic === 'string' && ['0','1'].includes(String(r.y)) &&
       Number.isFinite(r.wt) && r.wt > 0 && Array.isArray(r.f) && r.f.length === featureCount && r.f.every(Number.isFinite));
+}
+
+/** Older reports lack full source/act identities; at least do not reuse changed people or occurrence classes. */
+export function sameReportedPeople(entry,hit) {
+  const actual=['act','handjob','solo','masturbation'].includes(hit.kind);
+  if(entry.kind==='scene'&&!actual || entry.kind==='hint'&&actual || entry.kind==='solo'&&!['solo','masturbation'].includes(hit.kind)) return false;
+  if(entry.who && entry.who!==hit.a) return false;
+  if(entry.role && entry.role!==hit.role) return false;
+  const top=hit.kind==='act'?hit.a:hit.role==='top'?hit.a:hit.b;
+  const bottom=hit.kind==='act'?hit.b:hit.role==='bottom'?hit.a:hit.b;
+  return (!entry.top || entry.top===top) && (!entry.bottom || entry.bottom===bottom);
 }

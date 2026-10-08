@@ -51,3 +51,9 @@ it('includes explicitly anal solo stimulation but excludes wishes and other hint
  for(const kind of ['wanted','hypothetical','history','ogling','prep'] as const){p.anal.desires=[{...d,kind}];expect(analReceptionEvidence(p)).toEqual([]);}
  p.anal.desires=[{...d,wants:false}];expect(analReceptionEvidence(p)).toEqual([]);
 });
+
+it('includes high-confidence external anal contact without counting it as another penetration scene',()=>{
+ const p={...pair(),manual:{occurs:true,summary:'',people:[],instances:[{giver:'Rowan',receiver:'Morgan',act:'External anal stimulation',mutual:false,evidence:'',where:'Chapter 3',confidence:0.9}]}};
+ expect(analReceptionEvidence(p)[0]).toMatchObject({name:'Morgan',topScenes:2,evidence:[{activity:'Receives external anal stimulation',where:'Chapter 3',confidence:0.9}]});
+ p.manual.instances[0].confidence=0.7;expect(analReceptionEvidence(p)).toEqual([]);
+});
