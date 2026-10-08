@@ -111,7 +111,7 @@ export function buildManual(pair: [Character, Character], hits: DesireHit[], whe
     if (seen.has(key)) continue;
     seen.add(key);
     const mutual = /^(?:mutual|frottage)/i.test(d.act);
-    const act = d.act === "frottage" ? "Frottage" : /^thigh/i.test(d.act) ? "Thigh sex" : /^tit/i.test(d.act) ? "Chest sex" : mutual ? "Mutual handjob" : "Handjob";
+    const act = d.act === "genital licking" ? "Genital licking" : d.act === "external anal stimulation" ? "External anal stimulation" : d.act === "frottage" ? "Frottage" : /^thigh/i.test(d.act) ? "Thigh sex" : /^tit/i.test(d.act) ? "Chest sex" : mutual ? "Mutual handjob" : "Handjob";
     instances.push({ giver: d.who.name, receiver: d.partner.name, act, mutual, evidence: truncate(d.sentence), where: where(d.para), context: d.context, via: d.via, ...lineScore(d) });
   }
   const people = pair.map((c) => ({
@@ -132,6 +132,12 @@ export function buildManual(pair: [Character, Character], hits: DesireHit[], whe
       const n = instances.filter((i) => i.act === act && i.giver === p.name).length;
       if (n) parts.push(`${instances.find((i) => i.act === act && i.giver === p.name)!.receiver} thrusts ${what.replace("their", `${p.name}’s`)} ×${n}`);
     }
+  }
+  for(const p of people) {
+    const n=instances.filter(i=>i.act==="External anal stimulation" && i.giver===p.name).length;
+    const oral=instances.filter(i=>i.act==="Genital licking" && i.giver===p.name).length;
+    if(oral) parts.push(`${p.name} gives genital licking ×${oral}`);
+    if(n) parts.push(`${p.name} gives external anal stimulation ×${n}`);
   }
   return { occurs: instances.length > 0, summary: parts.length ? parts.join("; ") : "No handjobs, frottage or other body play recognized.", people, instances };
 }

@@ -6,7 +6,7 @@ type Evidence = {activity:string;where:string;confidence?:number};
 export type AnalReception = {name:string;topScenes:number;tied:boolean;evidence:Evidence[]};
 
 /** Scene counts choose the usual top; hints and tags never establish received stimulation. */
-export function analReceptionEvidence(pair: Pick<PairingResult,'pairing'|'anal'|'rimming'|'solo'>): AnalReception[] {
+export function analReceptionEvidence(pair: Pick<PairingResult,'pairing'|'anal'|'rimming'|'solo'> & Partial<Pick<PairingResult,'manual'>>): AnalReception[] {
   const names=pair.pairing.split('/').map(name=>name.trim());
   if(names.length!==2 || !names[0] || !names[1] || names[0]===names[1])return [];
   const counts=names.map((name,n)=>pair.anal.instances.filter(s=>s.top===name && s.bottom===names[1-n] && penisAct(s.act)).length);
@@ -25,6 +25,7 @@ export function analReceptionEvidence(pair: Pick<PairingResult,'pairing'|'anal'|
       if(s.act.split(',').some(label=>/^(?:anal sex \(strap-on\/toy\)|toy inside)$/.test(label.trim())))add('Receives an anal toy',s);
     }
     for(const s of pair.rimming.instances)if(s.bottom===name && s.top===names[1-n] && s.act.split(',').some(label=>label.trim()==='rimming'))add('Is rimmed',s);
+    for(const s of pair.manual?.instances ?? []) if(s.receiver===name && s.giver===names[1-n] && s.act==='External anal stimulation') add('Receives external anal stimulation',s);
     // Self-fingering and toys are anal only when the anal result explicitly identifies them as such.
     // Solo labels alone can also describe vaginal stimulation and must not be treated as anal proof.
     for(const d of pair.anal.desires){
@@ -36,7 +37,7 @@ export function analReceptionEvidence(pair: Pick<PairingResult,'pairing'|'anal'|
   });
 }
 
-export function renderAnalSwitchIndicator(pair: Pick<PairingResult,'pairing'|'anal'|'rimming'|'solo'>): HTMLElement | undefined {
+export function renderAnalSwitchIndicator(pair: Pick<PairingResult,'pairing'|'anal'|'rimming'|'solo'> & Partial<Pick<PairingResult,'manual'>>): HTMLElement | undefined {
   const readings=analReceptionEvidence(pair);
   if(!readings.length)return;
   const box=document.createElement('details');box.className='anal-switch-indicator';

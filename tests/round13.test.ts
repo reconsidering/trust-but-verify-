@@ -72,8 +72,7 @@ describe("recognized phrasings", () => {
     ["Derek's cock hit the back of Stiles' throat.", "blowjob"],
     ["Stiles had Derek's cock in his mouth.", "blowjob"],
     ["Stiles gave Derek a blowjob.", "blowjob"],
-    ["Stiles mouthed at Derek's balls.", "blowjob"],
-    ["Stiles sucked Derek's balls into his mouth.", "blowjob"],
+    // Scrotal contact is covered as body play by the invented-adult review-driven tests.
     ["Derek's tongue circled Stiles' rim.", "rimming"],
     ["Derek licked into Stiles' hole.", "rimming"],
     ["Derek licked over Stiles' hole.", "rimming"],

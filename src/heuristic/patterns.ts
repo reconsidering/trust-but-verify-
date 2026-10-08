@@ -377,6 +377,58 @@ const SELF = "(?:himself|herself|themself|themselves|myself|yourself)";
 const DEPTH = "(?:(?:back|forward|all the way|deep(?:er)?|slowly|carefully|home|fully|further|right|still|gently|roughly|finally|in|up|halfway|half-?way|partway|part way|a little|a bit|just|a few inches|an inch|inch by inch|slow|easily|swiftly|suddenly|so far|so deep|so deeply|as deep|as far|as deeply)\\s+)*";
 
 export const PATTERNS: PatternDef[] = [
+  {
+    // Adult synthetic: Morgan rubs Rowan's anus externally; no insertion is claimed.
+    id: "review-external-anal-contact", cat: "vibe", act: "external anal stimulation", subj: "t", weight: 0.85,
+    kw: "anus|asshole|perineum", needsCtx: true, signal: {kind:"handjob",actorRole:"top"},
+    src: `\\b{T}\\s+{aux}(?:rub|massage|circl|stroke|press|tease)\\w*\\s+{B:poss}\\s+(?:anus|asshole|perineum)\\s+(?:externally|with\\s+(?:his|her|their)\\s+(?:finger|thumb|knuckle)s?)\\b`,
+  },
+
+  {
+    // Adult synthetic: Morgan penetrates Rowan with a tongue after anal positioning is explicit.
+    id: "review-tongue-penetrates-person", cat: "oral", act: "rimming", subj: "t", weight: 0.85,
+    kw: "tongue", needsCtx: true,
+    src: `\\b{T}\\s+{aux}penetrat\\w*\\s+{B}\\s+with\\s+(?:his|her|their)\\s+tongue\\b`,
+  },
+  {
+    // Adult synthetic: a previously identified anal toy is inserted by its tip.
+    id: "review-toy-tip-inside", cat: "anal", act: "anal sex (strap-on/toy)", subj: "t", weight: 0.8,
+    kw: "tip", needsCtx: true,
+    src: `\\b{T}\\s+{aux}(?:push|press|slid|slip|insert|ease)\\w*\\s+(?:the|its)\\s+tip\\s+(?:inside|in)(?:\\s+{B})?\\b`,
+  },
+  {
+    // Adult synthetic: Morgan removes an anal toy and physically replaces it with a penis.
+    id: "review-replaces-anal-toy", cat: "anal", act: "anal sex", subj: "t", weight: 0.8,
+    kw: "place", needsCtx: true,
+    src: `\\b{T}\\s+{aux}(?:insert|slip|slid|push)\\w*\\s+${SELF}\\s+in\\s+its\\s+place\\b`,
+  },
+
+  {
+    // Adult synthetic: Rowan reaches orgasm down Morgan's throat after reciprocal oral activity.
+    id: "review-orgasm-down-throat", cat: "oral", act: "blowjob", subj: "t", weight: 0.9,
+    kw: "throat", needsCtx: true,
+    src: `\\b{T}\\s+{aux}(?:comes?|came|cums?|cummed)\\s*,?\\s*(?:hard\\s*,?\\s*)?down\\s+{B:poss}\\s+throat\\b`,
+  },
+  {
+    // Adult synthetic: tongue stimulation continues at a previously established anal rim.
+    id: "review-tongue-summary", cat: "oral", act: "rimming", subj: "t", weight: 0.65,
+    kw: "tongue", needsCtx: true,
+    src: `\\b{T}\\s+{aux}(?:proceeds?\\s+to\\s+)?unravel\\w*\\s+{B}\\s+(?:completely\\s+)?with\\s+(?:his|her|their)\\s+tongue\\b`,
+  },
+  {
+    // Adult synthetic: a second encounter explicitly resumes the pair's established penetration.
+    id: "review-takes-second-time", cat: "anal", act: "anal sex", subj: "t", weight: 0.65,
+    kw: "second", needsCtx: true,
+    src: `\\b{T}\\s+{aux}(?:takes?|took)\\s+{B}\\s+for\\s+the\\s+second\\s+time\\b`,
+  },
+
+  {
+    // Adult synthetic: Morgan slides an identified dildo inside Rowan's established anal target.
+    id: "review-inserts-named-toy", cat: "anal", act: "anal sex (strap-on/toy)", subj: "t", weight: 0.85,
+    kw: "dildo|plug|vibrator", needsCtx: true,
+    src: `\\b{T}\\s+{aux}(?:push|slid|slip|insert)\\w*\\s+(?:the|a)\\s+(?:dildo|plug|vibrator)\\s+(?:inside|in)(?:\\s+{B})?\\b`,
+  },
+
   // ───────────── ANAL: penetration ─────────────
   {
     id: "fuck",
