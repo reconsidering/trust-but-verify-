@@ -1,0 +1,1346 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>Every moved engine reading</title><style>body{font:17px/1.6 system-ui,sans-serif;max-width:1050px;margin:auto;padding:20px;color:#17212b;background:#f5f7fa}main{background:white;padding:24px;border:1px solid #cad4df;border-radius:10px}nav{display:flex;flex-wrap:wrap;gap:12px;margin:0 0 20px}a{color:#244a80}h1,h2,h3{line-height:1.25;scroll-margin-top:20px}h1{font-size:2rem}h2{border-top:1px solid #dce3eb;padding-top:20px;margin-top:30px}table{display:block;max-width:100%;overflow-x:auto;border-collapse:collapse;margin:20px 0;font-size:.95rem}th,td{border:1px solid #d0d9e3;padding:10px;text-align:left;vertical-align:top;min-width:100px}td:last-child{min-width:230px}th{background:#eaf0f7}tr:nth-child(even){background:#f7f9fc}pre{overflow-x:auto;padding:12px;background:#edf1f6}code{font-size:.92em;overflow-wrap:anywhere}.toc ul{padding-left:22px}.toc{padding:10px 16px;background:#edf2f8;border-radius:8px}@media(max-width:600px){body{padding:10px}main{padding:16px}h1{font-size:1.6rem}nav a{padding:6px 0}}</style></head><body><nav aria-label="Review pages"><a href="./review-driven-error-check.html">Interactive review</a><a href="./review-driven-findings.html">Findings report</a><a href="./review-driven-moved-readings.html">Every moved reading</a><a href="./next-batch.html">Other review sets</a></nav><main><details><summary>Jump to a section</summary><div class="toc">
+<ul>
+<li><a href="#every-moved-reading-in-the-review-driven-comparison">Every moved reading in the review-driven comparison</a><ul>
+<li><a href="#a-instrument-carryover">A. Instrument carryover</a></li>
+<li><a href="#b-action-ownership">B. Action ownership</a></li>
+<li><a href="#c-occurrence-frames">C. Occurrence frames</a></li>
+<li><a href="#d-contact-categories">D. Contact categories</a></li>
+<li><a href="#e-new-inventory-patterns">E. New inventory patterns</a></li>
+<li><a href="#f-other">F. Other</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</details><h1 id="every-moved-reading-in-the-review-driven-comparison">Every moved reading in the review-driven comparison</h1>
+<p>Before <code>6e878a4</code>; after <code>3ebbfdf</code>. Only the same 51 eligible sources are compared. Each row is an audit pattern/sentence-hash location in one mode; simultaneous claims at the location stay together. Confidence-only changes are not detection changes. Story text is never included. All 178 records are also review items, with the same IDs.</p>
+<h2 id="a-instrument-carryover">A. Instrument carryover</h2>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Source / mode / paragraph</th>
+<th>Pattern</th>
+<th>Before</th>
+<th>After</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>R12</td>
+<td>temporalary.html / tag-free / 437</td>
+<td>pushed-in</td>
+<td>Morgan is having anal sex with Avery, as the one penetrating [category: anal sex; occurrence: act]</td>
+<td>Morgan is fingering Avery [category: fingering; occurrence: act]</td>
+</tr>
+<tr>
+<td>R20</td>
+<td>premium.html / tagged / 1006</td>
+<td>pushed-in~elided</td>
+<td>Jordan is having vaginal sex with Rowan [category: vaginal sex; occurrence: act]</td>
+<td>Jordan is fingering Rowan [category: fingering; occurrence: act]</td>
+</tr>
+<tr>
+<td>R24</td>
+<td>tricks-of-the-trade.html / tag-free / 786</td>
+<td>push-into</td>
+<td>Morgan is having anal sex with Avery, as the one penetrating [category: anal sex; occurrence: act]</td>
+<td>Morgan → Avery: anal sex (strap-on/toy) (the first name is the one the engine credited) [category: anal sex (strap-on/toy); occurrence: act]</td>
+</tr>
+<tr>
+<td>R56</td>
+<td>tricks-of-the-trade.html / tag-free / 3604</td>
+<td>bottomed-out~elided</td>
+<td>Morgan is having anal sex with Avery, as the one penetrating [category: anal sex; occurrence: act]</td>
+<td>Morgan is fingering Avery [category: fingering; occurrence: act]</td>
+</tr>
+<tr>
+<td>R59</td>
+<td>hate.html / tag-free / 822</td>
+<td>pushed-in</td>
+<td>Morgan is having anal sex with Avery, as the one penetrating [category: anal sex; occurrence: act]</td>
+<td>Morgan is fingering Avery [category: fingering; occurrence: act]</td>
+</tr>
+<tr>
+<td>R60</td>
+<td>innocent-until.html / tagged / 2867</td>
+<td>came-inside~elided</td>
+<td>Jordan is having anal sex with Cameron, as the one penetrating [category: anal sex; occurrence: act]</td>
+<td>Jordan → Cameron: anal sex (strap-on/toy) (the first name is the one the engine credited) [category: anal sex (strap-on/toy); occurrence: act]</td>
+</tr>
+<tr>
+<td>R83</td>
+<td>more-views.html / tagged / 890</td>
+<td>pushed-in~elided</td>
+<td>Rowan is having anal sex with Avery, as the one penetrating [category: anal sex; occurrence: act]</td>
+<td>Rowan is fingering Avery [category: fingering; occurrence: act]</td>
+</tr>
+<tr>
+<td>R107</td>
+<td>belonging.html / tag-free / 1461</td>
+<td>push-into</td>
+<td>Rowan is having anal sex with Avery, as the one penetrating [category: anal sex; occurrence: act]</td>
+<td>Rowan → Avery: anal sex (strap-on/toy) (the first name is the one the engine credited) [category: anal sex (strap-on/toy); occurrence: act]</td>
+</tr>
+<tr>
+<td>R109</td>
+<td>belonging.html / tagged / 1461</td>
+<td>push-into</td>
+<td>Rowan is having anal sex with Avery, as the one penetrating [category: anal sex; occurrence: act]</td>
+<td>Rowan → Avery: anal sex (strap-on/toy) (the first name is the one the engine credited) [category: anal sex (strap-on/toy); occurrence: act]</td>
+</tr>
+<tr>
+<td>R113</td>
+<td>belonging.html / tag-free / 733</td>
+<td>push-into</td>
+<td>Rowan is having anal sex with Avery, as the one penetrating [category: anal sex; occurrence: act]</td>
+<td>Rowan is fingering Avery [category: fingering; occurrence: act]</td>
+</tr>
+<tr>
+<td>R118</td>
+<td>more-views.html / tag-free / 958</td>
+<td>pushed-in</td>
+<td>Morgan is having anal sex with Avery, as the one penetrating [category: anal sex; occurrence: act]</td>
+<td>Morgan is fingering Avery [category: fingering; occurrence: act]</td>
+</tr>
+<tr>
+<td>R126</td>
+<td>hate.html / tag-free / 822</td>
+<td>push-into</td>
+<td>Morgan is having anal sex with Avery, as the one penetrating [category: anal sex; occurrence: act]</td>
+<td>Morgan is fingering Avery [category: fingering; occurrence: act]</td>
+</tr>
+<tr>
+<td>R163</td>
+<td>tricks-of-the-trade.html / tagged / 3604</td>
+<td>bottomed-out~elided</td>
+<td>Morgan is having anal sex with Avery, as the one penetrating [category: anal sex; occurrence: act]</td>
+<td>Morgan is fingering Avery [category: fingering; occurrence: act]</td>
+</tr>
+<tr>
+<td>R171</td>
+<td>hate.html / tagged / 822</td>
+<td>pushed-in</td>
+<td>Morgan is having anal sex with Avery, as the one penetrating [category: anal sex; occurrence: act]</td>
+<td>Morgan is fingering Avery [category: fingering; occurrence: act]</td>
+</tr>
+<tr>
+<td>R189</td>
+<td>hips.html / tag-free / 2109</td>
+<td>pushed-in</td>
+<td>Avery is having vaginal sex with Jordan [category: vaginal sex; occurrence: act]</td>
+<td>Avery is fingering Jordan [category: fingering; occurrence: act]</td>
+</tr>
+<tr>
+<td>R190</td>
+<td>premium.html / tag-free / 1006</td>
+<td>pushed-in~elided</td>
+<td>Jordan is having vaginal sex with Rowan [category: vaginal sex; occurrence: act]</td>
+<td>Jordan is fingering Rowan [category: fingering; occurrence: act]</td>
+</tr>
+<tr>
+<td>R234</td>
+<td>belonging.html / tagged / 733</td>
+<td>push-into</td>
+<td>Rowan is having anal sex with Avery, as the one penetrating [category: anal sex; occurrence: act]</td>
+<td>Rowan is fingering Avery [category: fingering; occurrence: act]</td>
+</tr>
+<tr>
+<td>R241</td>
+<td>innocent-until.html / tag-free / 2867</td>
+<td>came-inside~elided</td>
+<td>Morgan is having anal sex with Cameron, as the one penetrating [category: anal sex; occurrence: act]</td>
+<td>Morgan → Cameron: anal sex (strap-on/toy) (the first name is the one the engine credited) [category: anal sex (strap-on/toy); occurrence: act]</td>
+</tr>
+<tr>
+<td>R256</td>
+<td>belonging.html / tag-free / 1213</td>
+<td>push-into~elided</td>
+<td>Rowan is having anal sex with Avery, as the one penetrating [category: anal sex; occurrence: act]</td>
+<td>Rowan → Avery: anal sex (strap-on/toy) (the first name is the one the engine credited) [category: anal sex (strap-on/toy); occurrence: act]</td>
+</tr>
+<tr>
+<td>R259</td>
+<td>belonging.html / tagged / 1213</td>
+<td>push-into~elided</td>
+<td>Rowan is having anal sex with Avery, as the one penetrating [category: anal sex; occurrence: act]</td>
+<td>Rowan → Avery: anal sex (strap-on/toy) (the first name is the one the engine credited) [category: anal sex (strap-on/toy); occurrence: act]</td>
+</tr>
+<tr>
+<td>R263</td>
+<td>innocent-until.html / tagged / 2867</td>
+<td>bottomed-out~elided</td>
+<td>Jordan is having anal sex with Cameron, as the one penetrating [category: anal sex; occurrence: act]</td>
+<td>Jordan → Cameron: anal sex (strap-on/toy) (the first name is the one the engine credited) [category: anal sex (strap-on/toy); occurrence: act]</td>
+</tr>
+<tr>
+<td>R266</td>
+<td>innocent-until.html / tag-free / 2867</td>
+<td>bottomed-out~elided</td>
+<td>Morgan is having anal sex with Cameron, as the one penetrating [category: anal sex; occurrence: act]</td>
+<td>Morgan → Cameron: anal sex (strap-on/toy) (the first name is the one the engine credited) [category: anal sex (strap-on/toy); occurrence: act]</td>
+</tr>
+<tr>
+<td>R281</td>
+<td>tricks-of-the-trade.html / tagged / 786</td>
+<td>push-into</td>
+<td>Morgan is having anal sex with Avery, as the one penetrating [category: anal sex; occurrence: act]</td>
+<td>Morgan → Avery: anal sex (strap-on/toy) (the first name is the one the engine credited) [category: anal sex (strap-on/toy); occurrence: act]</td>
+</tr>
+<tr>
+<td>R289</td>
+<td>temporalary.html / tagged / 437</td>
+<td>pushed-in</td>
+<td>Morgan is having anal sex with Avery, as the one penetrating [category: anal sex; occurrence: act]</td>
+<td>Morgan is fingering Avery [category: fingering; occurrence: act]</td>
+</tr>
+<tr>
+<td>R290</td>
+<td>hips.html / tagged / 2109</td>
+<td>pushed-in</td>
+<td>Avery is having vaginal sex with Jordan [category: vaginal sex; occurrence: act]</td>
+<td>Avery is fingering Jordan [category: fingering; occurrence: act]</td>
+</tr>
+<tr>
+<td>R294</td>
+<td>belonging.html / tag-free / 3057</td>
+<td>push-into</td>
+<td>Rowan is having anal sex with Avery, as the one penetrating [category: anal sex; occurrence: act]</td>
+<td>Rowan → Avery: anal sex (strap-on/toy) (the first name is the one the engine credited) [category: anal sex (strap-on/toy); occurrence: act]</td>
+</tr>
+<tr>
+<td>R297</td>
+<td>hate.html / tagged / 822</td>
+<td>push-into</td>
+<td>Morgan is having anal sex with Avery, as the one penetrating [category: anal sex; occurrence: act]</td>
+<td>Morgan is fingering Avery [category: fingering; occurrence: act]</td>
+</tr>
+<tr>
+<td>R303</td>
+<td>belonging.html / tag-free / 4052</td>
+<td>push-into</td>
+<td>Rowan is having anal sex with Avery, as the one penetrating [category: anal sex; occurrence: act]</td>
+<td>Rowan → Avery: anal sex (strap-on/toy) (the first name is the one the engine credited) [category: anal sex (strap-on/toy); occurrence: act]</td>
+</tr>
+<tr>
+<td>R314</td>
+<td>belonging.html / tagged / 3057</td>
+<td>push-into</td>
+<td>Rowan is having anal sex with Avery, as the one penetrating [category: anal sex; occurrence: act]</td>
+<td>Rowan → Avery: anal sex (strap-on/toy) (the first name is the one the engine credited) [category: anal sex (strap-on/toy); occurrence: act]</td>
+</tr>
+<tr>
+<td>R315</td>
+<td>belonging.html / tagged / 4052</td>
+<td>push-into</td>
+<td>Rowan is having anal sex with Avery, as the one penetrating [category: anal sex; occurrence: act]</td>
+<td>Rowan → Avery: anal sex (strap-on/toy) (the first name is the one the engine credited) [category: anal sex (strap-on/toy); occurrence: act]</td>
+</tr>
+<tr>
+<td>R369</td>
+<td>more-views.html / tagged / 958</td>
+<td>pushed-in</td>
+<td>Rowan is having anal sex with Avery, as the one penetrating [category: anal sex; occurrence: act]</td>
+<td>Rowan is fingering Avery [category: fingering; occurrence: act]</td>
+</tr>
+<tr>
+<td>R376</td>
+<td>more-views.html / tag-free / 890</td>
+<td>pushed-in~elided</td>
+<td>Morgan is having anal sex with Avery, as the one penetrating [category: anal sex; occurrence: act]</td>
+<td>Morgan is fingering Avery [category: fingering; occurrence: act]</td>
+</tr>
+</tbody>
+</table>
+<h2 id="b-action-ownership">B. Action ownership</h2>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Source / mode / paragraph</th>
+<th>Pattern</th>
+<th>Before</th>
+<th>After</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>R22</td>
+<td>mars.html / tag-free / 1047</td>
+<td>dd-laps-at-cock~elided</td>
+<td>Avery is getting a blowjob from Rowan [category: blowjob; occurrence: act]</td>
+<td>Rowan is getting a blowjob from Avery [category: blowjob; occurrence: act]</td>
+</tr>
+<tr>
+<td>R48</td>
+<td>more-views.html / tagged / 908</td>
+<td>dd-takes-into-mouth~elided</td>
+<td>Rowan is getting a blowjob from Avery [category: blowjob; occurrence: act]</td>
+<td>Avery is getting a blowjob from Rowan [category: blowjob; occurrence: act]</td>
+</tr>
+<tr>
+<td>R85</td>
+<td>jacks.html / tag-free / 2093</td>
+<td>push-into</td>
+<td>Riley is having anal sex with Rowan, as the one penetrating [category: anal sex; occurrence: act]</td>
+<td>Rowan is having anal sex with Riley, as the one penetrating [category: anal sex; occurrence: act]</td>
+</tr>
+<tr>
+<td>R120</td>
+<td>tricks-of-the-trade.html / tagged / 3099</td>
+<td>dd-takes-into-mouth~elided</td>
+<td>Morgan is getting a blowjob from Avery [category: blowjob; occurrence: act]</td>
+<td>Avery is getting a blowjob from Morgan [category: blowjob; occurrence: act]</td>
+</tr>
+<tr>
+<td>R124</td>
+<td>more-views.html / tagged / 344</td>
+<td>dd-laps-at-cock</td>
+<td>Rowan is getting a blowjob from Avery [category: blowjob; occurrence: act]</td>
+<td>Avery is getting a blowjob from Rowan [category: blowjob; occurrence: act]</td>
+</tr>
+<tr>
+<td>R136</td>
+<td>more-views.html / tag-free / 344</td>
+<td>dd-laps-at-cock</td>
+<td>Morgan is getting a blowjob from Avery [category: blowjob; occurrence: act]</td>
+<td>Avery is getting a blowjob from Morgan [category: blowjob; occurrence: act]</td>
+</tr>
+<tr>
+<td>R140</td>
+<td>innocent-until.html / tag-free / 4774</td>
+<td>mast-himself</td>
+<td>Morgan is masturbating [category: masturbation; occurrence: masturbation]</td>
+<td>Cameron is masturbating [category: masturbation; occurrence: masturbation]</td>
+</tr>
+<tr>
+<td>R143</td>
+<td>please.html / tagged / 4242</td>
+<td>dd2-finger-shoved-into</td>
+<td>Jamie is fingering Rowan [category: fingering; occurrence: act]</td>
+<td>Rowan is fingering Jamie [category: fingering; occurrence: act]</td>
+</tr>
+<tr>
+<td>R152</td>
+<td>tricks-of-the-trade.html / tag-free / 3099</td>
+<td>dd-takes-into-mouth~elided</td>
+<td>Morgan is getting a blowjob from Avery [category: blowjob; occurrence: act]</td>
+<td>Avery is getting a blowjob from Morgan [category: blowjob; occurrence: act]</td>
+</tr>
+<tr>
+<td>R162</td>
+<td>jacks.html / tagged / 2093</td>
+<td>push-into</td>
+<td>Jordan is having anal sex with Rowan, as the one penetrating [category: anal sex; occurrence: act]</td>
+<td>Rowan is having anal sex with Jordan, as the one penetrating [category: anal sex; occurrence: act]</td>
+</tr>
+<tr>
+<td>R181</td>
+<td>more-views.html / tag-free / 344</td>
+<td>tongue-around-head</td>
+<td>Morgan is getting a blowjob from Avery [category: blowjob; occurrence: act]</td>
+<td>Avery is getting a blowjob from Morgan [category: blowjob; occurrence: act]</td>
+</tr>
+<tr>
+<td>R184</td>
+<td>tricks-of-the-trade.html / tag-free / 2556</td>
+<td>dd2-finger-shoved-into</td>
+<td>Avery is fingering Morgan [category: fingering; occurrence: act]</td>
+<td>Morgan is fingering Avery [category: fingering; occurrence: act]</td>
+</tr>
+<tr>
+<td>R193</td>
+<td>innocent-until.html / tagged / 4774</td>
+<td>mast-himself</td>
+<td>Jordan is masturbating [category: masturbation; occurrence: masturbation]</td>
+<td>Cameron is masturbating [category: masturbation; occurrence: masturbation]</td>
+</tr>
+<tr>
+<td>R201</td>
+<td>mars.html / tagged / 1047</td>
+<td>dd-laps-at-cock~elided</td>
+<td>Avery is getting a blowjob from Rowan [category: blowjob; occurrence: act]</td>
+<td>Rowan is getting a blowjob from Avery [category: blowjob; occurrence: act]</td>
+</tr>
+<tr>
+<td>R239</td>
+<td>mars.html / tag-free / 1047</td>
+<td>tongue-around-head~elided</td>
+<td>Avery is getting a blowjob from Rowan [category: blowjob; occurrence: act]</td>
+<td>Rowan is getting a blowjob from Avery [category: blowjob; occurrence: act]</td>
+</tr>
+<tr>
+<td>R244</td>
+<td>tricks-of-the-trade.html / tagged / 2556</td>
+<td>dd2-finger-shoved-into</td>
+<td>Avery is fingering Morgan [category: fingering; occurrence: act]</td>
+<td>Morgan is fingering Avery [category: fingering; occurrence: act]</td>
+</tr>
+<tr>
+<td>R254</td>
+<td>more-views.html / tagged / 344</td>
+<td>tongue-around-head</td>
+<td>Rowan is getting a blowjob from Avery [category: blowjob; occurrence: act]</td>
+<td>Avery is getting a blowjob from Rowan [category: blowjob; occurrence: act]</td>
+</tr>
+<tr>
+<td>R277</td>
+<td>more-views.html / tag-free / 908</td>
+<td>dd-takes-into-mouth~elided</td>
+<td>Morgan is getting a blowjob from Avery [category: blowjob; occurrence: act]</td>
+<td>Avery is getting a blowjob from Morgan [category: blowjob; occurrence: act]</td>
+</tr>
+<tr>
+<td>R287</td>
+<td>mars.html / tag-free / 639</td>
+<td>fingers-enter-hole</td>
+<td>Rowan is fingering Avery [category: fingering; occurrence: act]</td>
+<td>No reading emitted at this location.</td>
+</tr>
+<tr>
+<td>R296</td>
+<td>sugar-alpha.html / tagged / 1776</td>
+<td>dd2-finger-shoved-into~elided</td>
+<td>Riley is fingering Morgan [category: fingering; occurrence: act]</td>
+<td>Morgan is fingering Riley [category: fingering; occurrence: act]</td>
+</tr>
+<tr>
+<td>R339</td>
+<td>lightning.html / tag-free / 2550</td>
+<td>spread-legs</td>
+<td>Jordan is spreading their legs for Rowan [category: spreading their legs; occurrence: prep]</td>
+<td>Jordan is spreading their legs for Alexis [category: spreading their legs; occurrence: prep]</td>
+</tr>
+<tr>
+<td>R372</td>
+<td>please.html / tag-free / 4242</td>
+<td>dd2-finger-shoved-into</td>
+<td>Jamie is fingering Rowan [category: fingering; occurrence: act]</td>
+<td>Rowan is fingering Jamie [category: fingering; occurrence: act]</td>
+</tr>
+<tr>
+<td>R402</td>
+<td>mars.html / tagged / 639</td>
+<td>fingers-enter-hole</td>
+<td>Rowan is fingering Avery [category: fingering; occurrence: act]</td>
+<td>No reading emitted at this location.</td>
+</tr>
+<tr>
+<td>R406</td>
+<td>hips.html / tagged / 318</td>
+<td>self-insert</td>
+<td>No reading emitted at this location.</td>
+<td>Avery is fingering themself (solo) [category: fingering himself; occurrence: solo]</td>
+</tr>
+<tr>
+<td>R417</td>
+<td>sugar-alpha.html / tag-free / 1776</td>
+<td>dd2-finger-shoved-into~elided</td>
+<td>Riley is fingering Morgan [category: fingering; occurrence: act]</td>
+<td>Morgan is fingering Riley [category: fingering; occurrence: act]</td>
+</tr>
+<tr>
+<td>R421</td>
+<td>mars.html / tagged / 1047</td>
+<td>tongue-around-head~elided</td>
+<td>Avery is getting a blowjob from Rowan [category: blowjob; occurrence: act]</td>
+<td>Rowan is getting a blowjob from Avery [category: blowjob; occurrence: act]</td>
+</tr>
+</tbody>
+</table>
+<h2 id="c-occurrence-frames">C. Occurrence frames</h2>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Source / mode / paragraph</th>
+<th>Pattern</th>
+<th>Before</th>
+<th>After</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>R9</td>
+<td>a-la-carte.html / tagged / 1379</td>
+<td>fuck</td>
+<td>Morgan is having anal sex with Avery, as the one penetrating [category: anal sex; occurrence: act]</td>
+<td>Morgan is having anal sex with Avery, as the one penetrating [category: anal sex; occurrence: history]</td>
+</tr>
+<tr>
+<td>R11</td>
+<td>more-views.html / tagged / 375</td>
+<td>lips-around</td>
+<td>Avery is getting a blowjob from Rowan [category: blowjob; occurrence: act]</td>
+<td>Avery is getting a blowjob from Rowan [category: blowjob; occurrence: history]</td>
+</tr>
+<tr>
+<td>R15</td>
+<td>lightning.html / tag-free / 4590</td>
+<td>mast-himself</td>
+<td>Rowan is masturbating [category: masturbation; occurrence: masturbation]</td>
+<td>Rowan is masturbating [category: masturbation; occurrence: history]</td>
+</tr>
+<tr>
+<td>R19</td>
+<td>autocorrect.html / tag-free / 75</td>
+<td>mast-himself</td>
+<td>Morgan is masturbating [category: masturbation; occurrence: masturbation]</td>
+<td>Morgan is masturbating [category: masturbation; occurrence: fantasy]</td>
+</tr>
+<tr>
+<td>R43</td>
+<td>sugar-alpha.html / tagged / 1998</td>
+<td>dd-grinds-onto-cock~elided</td>
+<td>Riley is being fucked anally by Morgan (read as something wanted, not something that happens) [category: anal sex; occurrence: wanted]</td>
+<td>Riley is being fucked anally by Morgan [category: anal sex; occurrence: fantasy]</td>
+</tr>
+<tr>
+<td>R44</td>
+<td>sugar-alpha.html / tag-free / 1379</td>
+<td>fuck</td>
+<td>Morgan is having anal sex with Riley, as the one penetrating (read as something wanted, not something that happens) [category: anal sex; occurrence: wanted]</td>
+<td>Morgan is having anal sex with Riley, as the one penetrating [category: anal sex; occurrence: fantasy]</td>
+</tr>
+<tr>
+<td>R47</td>
+<td>more-views.html / tag-free / 206</td>
+<td>dd2-hj-hand-to-dick</td>
+<td>Morgan manually stimulates Avery’s penis [category: handjob; occurrence: handjob]</td>
+<td>Morgan manually stimulates Avery’s penis [category: handjob; occurrence: history]</td>
+</tr>
+<tr>
+<td>R55</td>
+<td>sugar-alpha.html / tagged / 1379</td>
+<td>hj-stroke</td>
+<td>Morgan manually stimulates Riley’s penis [category: handjob; occurrence: handjob]</td>
+<td>Morgan manually stimulates Riley’s penis [category: handjob; occurrence: fantasy]</td>
+</tr>
+<tr>
+<td>R66</td>
+<td>lightning.html / tag-free / 1203</td>
+<td>dd6-slips-cock-inside</td>
+<td>Jordan is having anal sex with Rowan, as the one penetrating [category: anal sex; occurrence: act]</td>
+<td>Jordan puts their penis into Rowan’s mouth [category: blowjob (face-fucking); occurrence: fantasy]</td>
+</tr>
+<tr>
+<td>R127</td>
+<td>more-views.html / tag-free / 375</td>
+<td>lips-around</td>
+<td>Avery is getting a blowjob from Morgan [category: blowjob; occurrence: act]</td>
+<td>Avery is getting a blowjob from Morgan [category: blowjob; occurrence: history]</td>
+</tr>
+<tr>
+<td>R133</td>
+<td>sugar-alpha.html / tag-free / 1998</td>
+<td>dd-grinds-onto-cock~elided</td>
+<td>Riley is being fucked anally by Morgan (read as something wanted, not something that happens) [category: anal sex; occurrence: wanted]</td>
+<td>Riley is being fucked anally by Morgan [category: anal sex; occurrence: fantasy]</td>
+</tr>
+<tr>
+<td>R134</td>
+<td>lightning.html / tagged / 1203</td>
+<td>dd6-slips-cock-inside</td>
+<td>Jordan is having anal sex with Casey, as the one penetrating [category: anal sex; occurrence: act]</td>
+<td>Jordan puts their penis into Casey’s mouth [category: blowjob (face-fucking); occurrence: fantasy]</td>
+</tr>
+<tr>
+<td>R135</td>
+<td>starting-place.html / tag-free / 803</td>
+<td>passive-fucked~elided</td>
+<td>Morgan is having anal sex with Jordan, as the one penetrating [category: anal sex; occurrence: act]</td>
+<td>No reading emitted at this location.</td>
+</tr>
+<tr>
+<td>R146</td>
+<td>a-la-carte.html / tag-free / 431</td>
+<td>passive-fucked~elided</td>
+<td>Morgan is being fucked anally by Avery (read as something wanted, not something that happens) [category: anal sex; occurrence: wanted]</td>
+<td>Morgan is being fucked anally by Avery [category: anal sex; occurrence: fantasy]</td>
+</tr>
+<tr>
+<td>R151</td>
+<td>sugar-alpha.html / tagged / 1379</td>
+<td>fuck~elided</td>
+<td>Riley is being fucked anally by Jordan (read as something wanted, not something that happens) [category: anal sex; occurrence: wanted]</td>
+<td>Jordan is having anal sex with Riley, as the one penetrating [category: anal sex; occurrence: fantasy]</td>
+</tr>
+<tr>
+<td>R187</td>
+<td>sugar-alpha.html / tagged / 1379</td>
+<td>fuck</td>
+<td>Morgan is having anal sex with Riley, as the one penetrating (read as something wanted, not something that happens) [category: anal sex; occurrence: wanted]</td>
+<td>Morgan is having anal sex with Riley, as the one penetrating [category: anal sex; occurrence: fantasy]</td>
+</tr>
+<tr>
+<td>R196</td>
+<td>sugar-alpha.html / tag-free / 1379</td>
+<td>fuck~elided</td>
+<td>Riley is being fucked anally by Jordan (read as something wanted, not something that happens) [category: anal sex; occurrence: wanted]</td>
+<td>Jordan is having anal sex with Riley, as the one penetrating [category: anal sex; occurrence: fantasy]</td>
+</tr>
+<tr>
+<td>R198</td>
+<td>lightning.html / tagged / 4590</td>
+<td>mast-himself</td>
+<td>Casey is masturbating [category: masturbation; occurrence: masturbation]</td>
+<td>Casey is masturbating [category: masturbation; occurrence: history]</td>
+</tr>
+<tr>
+<td>R212</td>
+<td>a-la-carte.html / tagged / 431</td>
+<td>passive-fucked~elided</td>
+<td>Morgan is being fucked anally by Avery (read as something wanted, not something that happens) [category: anal sex; occurrence: wanted]</td>
+<td>Morgan is being fucked anally by Avery [category: anal sex; occurrence: fantasy]</td>
+</tr>
+<tr>
+<td>R229</td>
+<td>a-la-carte.html / tag-free / 1379</td>
+<td>fuck</td>
+<td>Morgan is having anal sex with Avery, as the one penetrating [category: anal sex; occurrence: act]</td>
+<td>Morgan is having anal sex with Avery, as the one penetrating [category: anal sex; occurrence: history]</td>
+</tr>
+<tr>
+<td>R285</td>
+<td>more-views.html / tagged / 206</td>
+<td>dd2-hj-hand-to-dick</td>
+<td>Rowan manually stimulates Avery’s penis [category: handjob; occurrence: handjob]</td>
+<td>Rowan manually stimulates Avery’s penis [category: handjob; occurrence: history]</td>
+</tr>
+<tr>
+<td>R308</td>
+<td>sugar-alpha.html / tag-free / 1379</td>
+<td>hj-stroke</td>
+<td>Morgan manually stimulates Riley’s penis [category: handjob; occurrence: handjob]</td>
+<td>Morgan manually stimulates Riley’s penis [category: handjob; occurrence: fantasy]</td>
+</tr>
+<tr>
+<td>R317</td>
+<td>starting-place.html / tagged / 803</td>
+<td>passive-fucked~elided</td>
+<td>Rowan is having anal sex with Jordan, as the one penetrating [category: anal sex; occurrence: act]</td>
+<td>No reading emitted at this location.</td>
+</tr>
+<tr>
+<td>R407</td>
+<td>autocorrect.html / tagged / 75</td>
+<td>mast-himself</td>
+<td>Morgan is masturbating [category: masturbation; occurrence: masturbation]</td>
+<td>Morgan is masturbating [category: masturbation; occurrence: fantasy]</td>
+</tr>
+</tbody>
+</table>
+<h2 id="d-contact-categories">D. Contact categories</h2>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Source / mode / paragraph</th>
+<th>Pattern</th>
+<th>Before</th>
+<th>After</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>R1</td>
+<td>new-bitch.html / tagged / 6567</td>
+<td>licked-slit~elided</td>
+<td>Avery is getting a blowjob from Jamie [category: blowjob; occurrence: act]</td>
+<td>No reading emitted at this location.</td>
+</tr>
+<tr>
+<td>R3</td>
+<td>dogbird.html / tag-free / 1299</td>
+<td>licked-slit~elided</td>
+<td>Avery is getting a blowjob from Morgan [category: blowjob; occurrence: act]</td>
+<td>No reading emitted at this location.</td>
+</tr>
+<tr>
+<td>R10</td>
+<td>found-in-the-upside-down.html / tagged / 1007</td>
+<td>licked-slit~elided</td>
+<td>Morgan is getting a blowjob from Rowan [category: blowjob; occurrence: act]</td>
+<td>No reading emitted at this location.</td>
+</tr>
+<tr>
+<td>R18</td>
+<td>found-in-the-upside-down.html / tagged / 1007</td>
+<td>sucked~elided</td>
+<td>Morgan is getting a blowjob from Rowan [category: blowjob; occurrence: act]</td>
+<td>Rowan gives Morgan external oral genital contact [category: genital licking; occurrence: handjob]</td>
+</tr>
+<tr>
+<td>R23</td>
+<td>innocent-until.html / tag-free / 4117</td>
+<td>hj-stroke</td>
+<td>Cameron manually stimulates Morgan’s penis [category: handjob; occurrence: handjob]</td>
+<td>No reading emitted at this location.</td>
+</tr>
+<tr>
+<td>R30</td>
+<td>dogbird.html / tagged / 1298</td>
+<td>licked-slit</td>
+<td>Avery is getting a blowjob from Jordan [category: blowjob; occurrence: act]</td>
+<td>No reading emitted at this location.</td>
+</tr>
+<tr>
+<td>R32</td>
+<td>found-in-the-upside-down.html / tagged / 1774</td>
+<td>sucked~elided</td>
+<td>Morgan is getting a blowjob from Rowan [category: blowjob; occurrence: act]</td>
+<td>Rowan gives Morgan external oral genital contact [category: genital licking; occurrence: handjob]</td>
+</tr>
+<tr>
+<td>R33</td>
+<td>new-bitch.html / tag-free / 6567</td>
+<td>licked-slit~elided</td>
+<td>Jordan is getting a blowjob from Jamie [category: blowjob; occurrence: act]</td>
+<td>No reading emitted at this location.</td>
+</tr>
+<tr>
+<td>R35</td>
+<td>new-bitch.html / tagged / 6567</td>
+<td>sucked~elided</td>
+<td>Avery is getting a blowjob from Jamie [category: blowjob; occurrence: act]</td>
+<td>Jamie gives Avery external oral genital contact [category: genital licking; occurrence: handjob]</td>
+</tr>
+<tr>
+<td>R39</td>
+<td>more-views.html / tagged / 589</td>
+<td>hj-stroke~elided</td>
+<td>Rowan manually stimulates Avery’s penis [category: handjob; occurrence: handjob]</td>
+<td>Rowan and Avery are rubbing against each other (frottage) [category: frottage; occurrence: handjob]</td>
+</tr>
+<tr>
+<td>R49</td>
+<td>innocent-until.html / tag-free / 3687</td>
+<td>licked-cock</td>
+<td>Cameron is getting a blowjob from Morgan [category: blowjob; occurrence: act]</td>
+<td>Morgan gives Cameron external oral genital contact [category: genital licking; occurrence: handjob]</td>
+</tr>
+<tr>
+<td>R58</td>
+<td>dogbird.html / tag-free / 1298</td>
+<td>licked-slit</td>
+<td>Avery is getting a blowjob from Morgan [category: blowjob; occurrence: act]</td>
+<td>No reading emitted at this location.</td>
+</tr>
+<tr>
+<td>R61</td>
+<td>belonging.html / tag-free / 4470</td>
+<td>hj-stroke~elided</td>
+<td>Rowan manually stimulates Avery’s penis [category: handjob; occurrence: handjob]</td>
+<td>No reading emitted at this location.</td>
+</tr>
+<tr>
+<td>R67</td>
+<td>bluebells.html / tag-free / 845</td>
+<td>hj-stroke~elided</td>
+<td>Jordan manually stimulates Avery’s penis [category: handjob; occurrence: handjob]</td>
+<td>Jordan and Avery are rubbing against each other (frottage) [category: frottage; occurrence: handjob]</td>
+</tr>
+<tr>
+<td>R72</td>
+<td>lightning.html / tag-free / 1143</td>
+<td>dd2-mast-take-in-hand~elided</td>
+<td>Jordan is masturbating [category: masturbation; occurrence: masturbation]</td>
+<td>No reading emitted at this location.</td>
+</tr>
+<tr>
+<td>R80</td>
+<td>dogbird.html / tag-free / 1298</td>
+<td>took-in-mouth</td>
+<td>Avery is getting a blowjob from Morgan [category: blowjob; occurrence: act]</td>
+<td>No reading emitted at this location.</td>
+</tr>
+<tr>
+<td>R81</td>
+<td>found-in-the-upside-down.html / tagged / 1774</td>
+<td>licked-slit~elided</td>
+<td>Morgan is getting a blowjob from Rowan [category: blowjob; occurrence: act]</td>
+<td>No reading emitted at this location.</td>
+</tr>
+<tr>
+<td>R112</td>
+<td>fling.html / tag-free / 102</td>
+<td>took-in-mouth~elided</td>
+<td>Rowan is getting a blowjob from Morgan [category: blowjob; occurrence: act]</td>
+<td>Morgan gives Rowan external oral genital contact [category: genital licking; occurrence: handjob]</td>
+</tr>
+<tr>
+<td>R114</td>
+<td>tuica.html / tagged / 336</td>
+<td>come-in-mouth~elided</td>
+<td>Avery is getting a blowjob from Morgan [category: blowjob; occurrence: act]</td>
+<td>No reading emitted at this location.</td>
+</tr>
+<tr>
+<td>R119</td>
+<td>pact-of-ice-and-fire.html / tagged / 4623</td>
+<td>sucked</td>
+<td>Rowan is getting a blowjob from Morgan [category: blowjob; occurrence: act]</td>
+<td>Morgan gives Rowan external oral genital contact [category: genital licking; occurrence: handjob]</td>
+</tr>
+<tr>
+<td>R123</td>
+<td>jacks.html / tagged / 6941</td>
+<td>licked-cock~elided</td>
+<td>Jordan is getting a blowjob from Rowan [category: blowjob; occurrence: act]</td>
+<td>Rowan gives Jordan external oral genital contact [category: genital licking; occurrence: handjob]</td>
+</tr>
+<tr>
+<td>R129</td>
+<td>pact-of-ice-and-fire.html / tag-free / 4623</td>
+<td>sucked</td>
+<td>Rowan is getting a blowjob from Morgan [category: blowjob; occurrence: act]</td>
+<td>Morgan gives Rowan external oral genital contact [category: genital licking; occurrence: handjob]</td>
+</tr>
+<tr>
+<td>R141</td>
+<td>fling.html / tagged / 102</td>
+<td>takes-between-lips~elided</td>
+<td>Rowan is getting a blowjob from Morgan [category: blowjob; occurrence: act]</td>
+<td>No reading emitted at this location.</td>
+</tr>
+<tr>
+<td>R142</td>
+<td>tuica.html / tag-free / 336</td>
+<td>came-in-mouth~elided</td>
+<td>Avery is getting a blowjob from Morgan [category: blowjob; occurrence: act]</td>
+<td>No reading emitted at this location.</td>
+</tr>
+<tr>
+<td>R145</td>
+<td>new-bitch.html / tagged / 5218</td>
+<td>hj-stroke</td>
+<td>Avery manually stimulates Jamie’s penis [category: handjob; occurrence: handjob]</td>
+<td>Avery and Jamie are rubbing against each other (frottage) [category: frottage; occurrence: handjob]</td>
+</tr>
+<tr>
+<td>R147</td>
+<td>belonging.html / tagged / 1036</td>
+<td>dd4-licks-precome-from-tip</td>
+<td>Rowan is getting a blowjob from Avery [category: blowjob; occurrence: act]</td>
+<td>No reading emitted at this location.</td>
+</tr>
+<tr>
+<td>R148</td>
+<td>belonging.html / tagged / 4470</td>
+<td>hj-stroke~elided</td>
+<td>Rowan manually stimulates Avery’s penis [category: handjob; occurrence: handjob]</td>
+<td>No reading emitted at this location.</td>
+</tr>
+<tr>
+<td>R154</td>
+<td>jacks.html / tagged / 11792</td>
+<td>licked-slit</td>
+<td>Jordan is getting a blowjob from Rowan [category: blowjob; occurrence: act]</td>
+<td>No reading emitted at this location.</td>
+</tr>
+<tr>
+<td>R169</td>
+<td>hate.html / tagged / 806</td>
+<td>hj-stroke</td>
+<td>Avery manually stimulates Morgan’s penis [category: handjob; occurrence: handjob]</td>
+<td>Avery and Morgan are rubbing against each other (frottage) [category: frottage; occurrence: handjob]</td>
+</tr>
+<tr>
+<td>R173</td>
+<td>belonging.html / tagged / 3057</td>
+<td>hj-stroke~elided</td>
+<td>Rowan manually stimulates Avery’s penis [category: handjob; occurrence: handjob]</td>
+<td>No reading emitted at this location.</td>
+</tr>
+<tr>
+<td>R186</td>
+<td>new-bitch.html / tag-free / 6567</td>
+<td>sucked~elided</td>
+<td>Jordan is getting a blowjob from Jamie [category: blowjob; occurrence: act]</td>
+<td>Jamie gives Jordan external oral genital contact [category: genital licking; occurrence: handjob]</td>
+</tr>
+<tr>
+<td>R192</td>
+<td>dogbird.html / tagged / 24</td>
+<td>mast-himself~elided</td>
+<td>Jordan is masturbating [category: masturbation; occurrence: masturbation]</td>
+<td>No reading emitted at this location.</td>
+</tr>
+<tr>
+<td>R199</td>
+<td>belonging.html / tag-free / 1036</td>
+<td>dd4-licks-precome-from-tip</td>
+<td>Rowan is getting a blowjob from Avery [category: blowjob; occurrence: act]</td>
+<td>No reading emitted at this location.</td>
+</tr>
+<tr>
+<td>R204</td>
+<td>tuica.html / tag-free / 336</td>
+<td>come-in-mouth~elided</td>
+<td>Avery is getting a blowjob from Morgan [category: blowjob; occurrence: act]</td>
+<td>No reading emitted at this location.</td>
+</tr>
+<tr>
+<td>R207</td>
+<td>innocent-until.html / tagged / 3687</td>
+<td>licked-cock</td>
+<td>Cameron is getting a blowjob from Jordan [category: blowjob; occurrence: act]</td>
+<td>Jordan gives Cameron external oral genital contact [category: genital licking; occurrence: handjob]</td>
+</tr>
+<tr>
+<td>R214</td>
+<td>dogbird.html / tagged / 1299</td>
+<td>licked-cock~elided</td>
+<td>Avery is getting a blowjob from Jordan [category: blowjob; occurrence: act]</td>
+<td>No reading emitted at this location.</td>
+</tr>
+<tr>
+<td>R222</td>
+<td>innocent-until.html / tagged / 3687</td>
+<td>lips-around</td>
+<td>Cameron is getting a blowjob from Jordan [category: blowjob; occurrence: act]</td>
+<td>No reading emitted at this location.</td>
+</tr>
+<tr>
+<td>R240</td>
+<td>jacks.html / tagged / 8183</td>
+<td>hj-stroke~elided</td>
+<td>Rowan manually stimulates Jordan’s penis [category: handjob; occurrence: handjob]</td>
+<td>Rowan and Jordan are rubbing against each other (frottage) [category: frottage; occurrence: handjob]</td>
+</tr>
+<tr>
+<td>R242</td>
+<td>dogbird.html / tag-free / 1299</td>
+<td>licked-cock~elided</td>
+<td>Avery is getting a blowjob from Morgan [category: blowjob; occurrence: act]</td>
+<td>No reading emitted at this location.</td>
+</tr>
+<tr>
+<td>R248</td>
+<td>dogbird.html / tagged / 1299</td>
+<td>sucked~elided</td>
+<td>Avery is getting a blowjob from Jordan [category: blowjob; occurrence: act]</td>
+<td>Jordan gives Avery external oral genital contact [category: genital licking; occurrence: handjob]</td>
+</tr>
+<tr>
+<td>R260</td>
+<td>dogbird.html / tag-free / 1299</td>
+<td>sucked~elided</td>
+<td>Avery is getting a blowjob from Morgan [category: blowjob; occurrence: act]</td>
+<td>Morgan gives Avery external oral genital contact [category: genital licking; occurrence: handjob]</td>
+</tr>
+<tr>
+<td>R262</td>
+<td>new-bitch.html / tag-free / 5218</td>
+<td>hj-stroke</td>
+<td>Jordan manually stimulates Jamie’s penis [category: handjob; occurrence: handjob]</td>
+<td>Jordan and Jamie are rubbing against each other (frottage) [category: frottage; occurrence: handjob]</td>
+</tr>
+<tr>
+<td>R268</td>
+<td>pact-of-ice-and-fire.html / tag-free / 1047</td>
+<td>licked-cock</td>
+<td>Jordan is getting a blowjob from Morgan [category: blowjob; occurrence: act]</td>
+<td>Morgan gives Jordan external oral genital contact [category: genital licking; occurrence: handjob]</td>
+</tr>
+<tr>
+<td>R273</td>
+<td>tuica.html / tagged / 336</td>
+<td>came-in-mouth~elided</td>
+<td>Avery is getting a blowjob from Morgan [category: blowjob; occurrence: act]</td>
+<td>No reading emitted at this location.</td>
+</tr>
+<tr>
+<td>R275</td>
+<td>bluebells.html / tagged / 845</td>
+<td>hj-stroke~elided</td>
+<td>Morgan manually stimulates Avery’s penis [category: handjob; occurrence: handjob]</td>
+<td>Morgan and Avery are rubbing against each other (frottage) [category: frottage; occurrence: handjob]</td>
+</tr>
+<tr>
+<td>R288</td>
+<td>innocent-until.html / tag-free / 3687</td>
+<td>lips-around</td>
+<td>Cameron is getting a blowjob from Morgan [category: blowjob; occurrence: act]</td>
+<td>No reading emitted at this location.</td>
+</tr>
+<tr>
+<td>R298</td>
+<td>hate.html / tag-free / 806</td>
+<td>hj-stroke</td>
+<td>Avery manually stimulates Morgan’s penis [category: handjob; occurrence: handjob]</td>
+<td>Avery and Morgan are rubbing against each other (frottage) [category: frottage; occurrence: handjob]</td>
+</tr>
+<tr>
+<td>R305</td>
+<td>found-in-the-upside-down.html / tag-free / 1774</td>
+<td>licked-slit~elided</td>
+<td>Morgan is getting a blowjob from Rowan [category: blowjob; occurrence: act]</td>
+<td>No reading emitted at this location.</td>
+</tr>
+<tr>
+<td>R306</td>
+<td>belonging.html / tag-free / 3057</td>
+<td>hj-stroke~elided</td>
+<td>Rowan manually stimulates Avery’s penis [category: handjob; occurrence: handjob]</td>
+<td>No reading emitted at this location.</td>
+</tr>
+<tr>
+<td>R310</td>
+<td>hate.html / tag-free / 689</td>
+<td>hj-stroke~elided</td>
+<td>Avery manually stimulates Morgan’s penis [category: handjob; occurrence: handjob]</td>
+<td>Avery and Morgan are rubbing against each other (frottage) [category: frottage; occurrence: handjob]</td>
+</tr>
+<tr>
+<td>R313</td>
+<td>dogbird.html / tag-free / 24</td>
+<td>mast-himself~elided</td>
+<td>Morgan is masturbating [category: masturbation; occurrence: masturbation]</td>
+<td>No reading emitted at this location.</td>
+</tr>
+<tr>
+<td>R318</td>
+<td>dogbird.html / tag-free / 1298</td>
+<td>sucked</td>
+<td>Avery is getting a blowjob from Morgan [category: blowjob; occurrence: act]</td>
+<td>Morgan gives Avery external oral genital contact [category: genital licking; occurrence: handjob]</td>
+</tr>
+<tr>
+<td>R319</td>
+<td>fling.html / tagged / 102</td>
+<td>took-in-mouth~elided</td>
+<td>Rowan is getting a blowjob from Morgan [category: blowjob; occurrence: act]</td>
+<td>Morgan gives Rowan external oral genital contact [category: genital licking; occurrence: handjob]</td>
+</tr>
+<tr>
+<td>R321</td>
+<td>jacks.html / tagged / 6941</td>
+<td>licked-slit~elided</td>
+<td>Jordan is getting a blowjob from Rowan [category: blowjob; occurrence: act]</td>
+<td>No reading emitted at this location.</td>
+</tr>
+<tr>
+<td>R329</td>
+<td>hate.html / tagged / 689</td>
+<td>hj-stroke~elided</td>
+<td>Avery manually stimulates Morgan’s penis [category: handjob; occurrence: handjob]</td>
+<td>Avery and Morgan are rubbing against each other (frottage) [category: frottage; occurrence: handjob]</td>
+</tr>
+<tr>
+<td>R331</td>
+<td>found-in-the-upside-down.html / tag-free / 1007</td>
+<td>licked-slit~elided</td>
+<td>Morgan is getting a blowjob from Rowan [category: blowjob; occurrence: act]</td>
+<td>No reading emitted at this location.</td>
+</tr>
+<tr>
+<td>R333</td>
+<td>lightning.html / tagged / 1143</td>
+<td>dd2-mast-take-in-hand~elided</td>
+<td>Jordan is masturbating [category: masturbation; occurrence: masturbation]</td>
+<td>No reading emitted at this location.</td>
+</tr>
+<tr>
+<td>R338</td>
+<td>dogbird.html / tagged / 1298</td>
+<td>sucked</td>
+<td>Avery is getting a blowjob from Jordan [category: blowjob; occurrence: act]</td>
+<td>Jordan gives Avery external oral genital contact [category: genital licking; occurrence: handjob]</td>
+</tr>
+<tr>
+<td>R342</td>
+<td>dogbird.html / tagged / 1299</td>
+<td>licked-slit~elided</td>
+<td>Avery is getting a blowjob from Jordan [category: blowjob; occurrence: act]</td>
+<td>No reading emitted at this location.</td>
+</tr>
+<tr>
+<td>R350</td>
+<td>found-in-the-upside-down.html / tag-free / 1007</td>
+<td>sucked~elided</td>
+<td>Morgan is getting a blowjob from Rowan [category: blowjob; occurrence: act]</td>
+<td>Rowan gives Morgan external oral genital contact [category: genital licking; occurrence: handjob]</td>
+</tr>
+<tr>
+<td>R360</td>
+<td>jacks.html / tag-free / 8183</td>
+<td>hj-stroke~elided</td>
+<td>Rowan manually stimulates Riley’s penis [category: handjob; occurrence: handjob]</td>
+<td>Rowan and Riley are rubbing against each other (frottage) [category: frottage; occurrence: handjob]</td>
+</tr>
+<tr>
+<td>R361</td>
+<td>more-views.html / tag-free / 589</td>
+<td>hj-stroke~elided</td>
+<td>Morgan manually stimulates Avery’s penis [category: handjob; occurrence: handjob]</td>
+<td>Morgan and Avery are rubbing against each other (frottage) [category: frottage; occurrence: handjob]</td>
+</tr>
+<tr>
+<td>R362</td>
+<td>found-in-the-upside-down.html / tag-free / 1774</td>
+<td>sucked~elided</td>
+<td>Morgan is getting a blowjob from Rowan [category: blowjob; occurrence: act]</td>
+<td>Rowan gives Morgan external oral genital contact [category: genital licking; occurrence: handjob]</td>
+</tr>
+<tr>
+<td>R371</td>
+<td>jacks.html / tagged / 11792</td>
+<td>sucked</td>
+<td>Jordan is getting a blowjob from Rowan [category: blowjob; occurrence: act]</td>
+<td>Rowan gives Jordan external oral genital contact [category: genital licking; occurrence: handjob]</td>
+</tr>
+<tr>
+<td>R404</td>
+<td>fling.html / tag-free / 102</td>
+<td>takes-between-lips~elided</td>
+<td>Rowan is getting a blowjob from Morgan [category: blowjob; occurrence: act]</td>
+<td>No reading emitted at this location.</td>
+</tr>
+<tr>
+<td>R405</td>
+<td>innocent-until.html / tagged / 4117</td>
+<td>hj-stroke</td>
+<td>Cameron manually stimulates Jordan’s penis [category: handjob; occurrence: handjob]</td>
+<td>No reading emitted at this location.</td>
+</tr>
+<tr>
+<td>R411</td>
+<td>dogbird.html / tagged / 1298</td>
+<td>took-in-mouth</td>
+<td>Avery is getting a blowjob from Jordan [category: blowjob; occurrence: act]</td>
+<td>No reading emitted at this location.</td>
+</tr>
+<tr>
+<td>R413</td>
+<td>pact-of-ice-and-fire.html / tagged / 1047</td>
+<td>licked-cock</td>
+<td>Rowan is getting a blowjob from Morgan [category: blowjob; occurrence: act]</td>
+<td>Morgan gives Rowan external oral genital contact [category: genital licking; occurrence: handjob]</td>
+</tr>
+<tr>
+<td>R425</td>
+<td>jacks.html / tagged / 2041</td>
+<td>licked-cock</td>
+<td>Jordan is getting a blowjob from Rowan [category: blowjob; occurrence: act]</td>
+<td>Rowan gives Jordan external oral genital contact [category: genital licking; occurrence: handjob]</td>
+</tr>
+</tbody>
+</table>
+<h2 id="e-new-inventory-patterns">E. New inventory patterns</h2>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Source / mode / paragraph</th>
+<th>Pattern</th>
+<th>Before</th>
+<th>After</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>R40</td>
+<td>mars.html / tag-free / 1582</td>
+<td>review-inserts-named-toy</td>
+<td>No reading emitted at this location.</td>
+<td>Rowan → Avery: anal sex (strap-on/toy) (the first name is the one the engine credited) (read as a hypothetical, not something that happens) [category: anal sex (strap-on/toy); occurrence: hypothetical]</td>
+</tr>
+<tr>
+<td>R69</td>
+<td>belonging.html / tag-free / 4279</td>
+<td>review-replaces-anal-toy~elided</td>
+<td>No reading emitted at this location.</td>
+<td>Rowan is having anal sex with Avery, as the one penetrating [category: anal sex; occurrence: act]</td>
+</tr>
+<tr>
+<td>R149</td>
+<td>tricks-of-the-trade.html / tag-free / 3278</td>
+<td>review-toy-tip-inside~elided</td>
+<td>No reading emitted at this location.</td>
+<td>Morgan → Avery: anal sex (strap-on/toy) (the first name is the one the engine credited) [category: anal sex (strap-on/toy); occurrence: act]</td>
+</tr>
+<tr>
+<td>R150</td>
+<td>mars.html / tagged / 1582</td>
+<td>review-inserts-named-toy</td>
+<td>No reading emitted at this location.</td>
+<td>Rowan → Avery: anal sex (strap-on/toy) (the first name is the one the engine credited) (read as a hypothetical, not something that happens) [category: anal sex (strap-on/toy); occurrence: hypothetical]</td>
+</tr>
+<tr>
+<td>R164</td>
+<td>on-my-mind.html / tagged / 253</td>
+<td>review-orgasm-down-throat</td>
+<td>No reading emitted at this location.</td>
+<td>Morgan is getting a blowjob from Rowan [category: blowjob; occurrence: act]</td>
+</tr>
+<tr>
+<td>R167</td>
+<td>jacks.html / tag-free / 9067</td>
+<td>review-tongue-penetrates-person</td>
+<td>No reading emitted at this location.</td>
+<td>Rowan is rimming Riley [category: rimming; occurrence: act]</td>
+</tr>
+<tr>
+<td>R202</td>
+<td>rwrb-balls.html / tag-free / 258</td>
+<td>review-tongue-summary~elided</td>
+<td>No reading emitted at this location.</td>
+<td>Morgan is rimming Rowan [category: rimming; occurrence: act]</td>
+</tr>
+<tr>
+<td>R211</td>
+<td>tricks-of-the-trade.html / tagged / 3278</td>
+<td>review-toy-tip-inside~elided</td>
+<td>No reading emitted at this location.</td>
+<td>Morgan → Avery: anal sex (strap-on/toy) (the first name is the one the engine credited) [category: anal sex (strap-on/toy); occurrence: act]</td>
+</tr>
+<tr>
+<td>R224</td>
+<td>quantum-leap.html / tagged / 61</td>
+<td>review-inserts-named-toy</td>
+<td>No reading emitted at this location.</td>
+<td>Avery → Rowan: anal sex (strap-on/toy) (the first name is the one the engine credited) [category: anal sex (strap-on/toy); occurrence: act]</td>
+</tr>
+<tr>
+<td>R236</td>
+<td>jacks.html / tagged / 9067</td>
+<td>review-tongue-penetrates-person</td>
+<td>No reading emitted at this location.</td>
+<td>Rowan is rimming Jordan [category: rimming; occurrence: act]</td>
+</tr>
+<tr>
+<td>R246</td>
+<td>tricks-of-the-trade.html / tagged / 2287</td>
+<td>review-inserts-named-toy</td>
+<td>No reading emitted at this location.</td>
+<td>Morgan → Avery: anal sex (strap-on/toy) (the first name is the one the engine credited) [category: anal sex (strap-on/toy); occurrence: act]</td>
+</tr>
+<tr>
+<td>R316</td>
+<td>please.html / tag-free / 2148</td>
+<td>review-orgasm-down-throat</td>
+<td>No reading emitted at this location.</td>
+<td>Rowan is getting a blowjob from Jamie [category: blowjob; occurrence: act]</td>
+</tr>
+<tr>
+<td>R323</td>
+<td>on-my-mind.html / tag-free / 253</td>
+<td>review-orgasm-down-throat</td>
+<td>No reading emitted at this location.</td>
+<td>Morgan is getting a blowjob from Rowan [category: blowjob; occurrence: act]</td>
+</tr>
+<tr>
+<td>R326</td>
+<td>quantum-leap.html / tag-free / 61</td>
+<td>review-inserts-named-toy</td>
+<td>No reading emitted at this location.</td>
+<td>Morgan → Rowan: anal sex (strap-on/toy) (the first name is the one the engine credited) [category: anal sex (strap-on/toy); occurrence: act]</td>
+</tr>
+<tr>
+<td>R335</td>
+<td>belonging.html / tag-free / 4273</td>
+<td>review-orgasm-down-throat</td>
+<td>No reading emitted at this location.</td>
+<td>Avery is getting a blowjob from Rowan [category: blowjob; occurrence: act]</td>
+</tr>
+<tr>
+<td>R337</td>
+<td>tricks-of-the-trade.html / tag-free / 2287</td>
+<td>review-inserts-named-toy</td>
+<td>No reading emitted at this location.</td>
+<td>Morgan → Avery: anal sex (strap-on/toy) (the first name is the one the engine credited) [category: anal sex (strap-on/toy); occurrence: act]</td>
+</tr>
+<tr>
+<td>R345</td>
+<td>rwrb-balls.html / tagged / 258</td>
+<td>review-tongue-summary~elided</td>
+<td>No reading emitted at this location.</td>
+<td>Morgan is rimming Rowan [category: rimming; occurrence: act]</td>
+</tr>
+<tr>
+<td>R353</td>
+<td>tuica.html / tag-free / 336</td>
+<td>review-orgasm-down-throat~elided</td>
+<td>No reading emitted at this location.</td>
+<td>Avery is getting a blowjob from Morgan (read as something wanted, not something that happens) [category: blowjob; occurrence: wanted]</td>
+</tr>
+<tr>
+<td>R363</td>
+<td>please.html / tagged / 2148</td>
+<td>review-orgasm-down-throat</td>
+<td>No reading emitted at this location.</td>
+<td>Rowan is getting a blowjob from Jamie [category: blowjob; occurrence: act]</td>
+</tr>
+<tr>
+<td>R396</td>
+<td>rwrb-balls.html / tag-free / 258</td>
+<td>review-takes-second-time</td>
+<td>No reading emitted at this location.</td>
+<td>Morgan is having anal sex with Rowan, as the one penetrating [category: anal sex; occurrence: act]</td>
+</tr>
+<tr>
+<td>R410</td>
+<td>rwrb-balls.html / tagged / 258</td>
+<td>review-takes-second-time</td>
+<td>No reading emitted at this location.</td>
+<td>Morgan is having anal sex with Rowan, as the one penetrating [category: anal sex; occurrence: act]</td>
+</tr>
+<tr>
+<td>R415</td>
+<td>belonging.html / tagged / 4273</td>
+<td>review-orgasm-down-throat</td>
+<td>No reading emitted at this location.</td>
+<td>Avery is getting a blowjob from Rowan [category: blowjob; occurrence: act]</td>
+</tr>
+<tr>
+<td>R416</td>
+<td>belonging.html / tagged / 4279</td>
+<td>review-replaces-anal-toy~elided</td>
+<td>No reading emitted at this location.</td>
+<td>Rowan is having anal sex with Avery, as the one penetrating [category: anal sex; occurrence: act]</td>
+</tr>
+<tr>
+<td>R426</td>
+<td>tuica.html / tagged / 336</td>
+<td>review-orgasm-down-throat~elided</td>
+<td>No reading emitted at this location.</td>
+<td>Avery is getting a blowjob from Morgan (read as something wanted, not something that happens) [category: blowjob; occurrence: wanted]</td>
+</tr>
+</tbody>
+</table>
+<h2 id="f-other">F. Other</h2>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Source / mode / paragraph</th>
+<th>Pattern</th>
+<th>Before</th>
+<th>After</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>R50</td>
+<td>mars.html / tagged / 1582</td>
+<td>push-into</td>
+<td>Rowan is having anal sex with Avery, as the one penetrating (read as a hypothetical, not something that happens) [category: anal sex; occurrence: hypothetical]</td>
+<td>No reading emitted at this location.</td>
+</tr>
+<tr>
+<td>R144</td>
+<td>lightning.html / tagged / 2550</td>
+<td>spread-legs</td>
+<td>Jordan is spreading their legs for Casey [category: spreading their legs; occurrence: prep]</td>
+<td>No reading emitted at this location.</td>
+</tr>
+<tr>
+<td>R168</td>
+<td>mars.html / tag-free / 1582</td>
+<td>push-into</td>
+<td>Rowan is having anal sex with Avery, as the one penetrating (read as a hypothetical, not something that happens) [category: anal sex; occurrence: hypothetical]</td>
+<td>No reading emitted at this location.</td>
+</tr>
+</tbody>
+</table></main></body></html>
