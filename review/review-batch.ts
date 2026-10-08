@@ -189,14 +189,19 @@ export async function mountReview(batch: ReviewBatch, options: { stories?: Map<s
     render(); if (storageOK) notice("Answer saved. Add context or continue to the next reading.");
   }; });
   document.querySelectorAll<HTMLButtonElement>('[data-proposal]').forEach(b => { b.onclick = () => {
-    const proposal = batch.rows.find(r => r.id === current)?.proposal;
+    const row = batch.rows.find(r => r.id === current);
+    const proposal = row?.proposal;
     if (!proposal) return;
     const review = b.dataset.proposal as ReviewAnswer['proposalReview'];
     const previous = current ? answers[current] : undefined;
     const proposedContext = `${proposal.reading}\n\n${proposal.rationale}`;
     const existingContext = previous?.context ?? '';
     const context = existingContext.trim() ? existingContext.includes(proposedContext) ? existingContext : `${existingContext}\n\n${proposedContext}` : proposedContext;
-    update({ proposalReview: review, proposalRevision: proposal.revision, verdict: review === 'agree' ? proposal.verdict : review === 'uncertain' ? 'uncertain' : undefined, errors: review === 'agree' ? [...new Set([...(previous?.errors ?? []), ...proposal.errors])] : [], ...(review === 'agree' ? {context} : {}) });
+    const audit = row?.labelAudit;
+    const labels = audit?.pastLabels.filter(label => !label.retired) ?? [];
+    const expectedLabel = proposal.verdict === 'correct' ? 'ok' : 'wrong';
+    const pastLabelReview: ReviewAnswer['pastLabelReview'] = proposal.verdict === 'uncertain' ? 'uncertain' : audit && !audit.changed && !audit.quarantined && labels.length && labels.every(label => label.identityVerified && label.verdict === expectedLabel) ? 'keep' : 'replace';
+    update({ proposalReview: review, proposalRevision: proposal.revision, verdict: review === 'agree' ? proposal.verdict : review === 'uncertain' ? 'uncertain' : undefined, errors: review === 'agree' ? [...new Set([...(previous?.errors ?? []), ...proposal.errors])] : [], ...(review === 'agree' ? {context, ...(audit ? {pastLabelReview} : {})} : {}) });
     render();
     if (storageOK) notice(review === 'disagree' ? 'Disagreement saved. Mark the engine correct, wrong, or not sure and add your correction.' : review === 'agree' ? 'Assessment saved. My reading, explanation and applicable errors were added; your existing notes and checked errors were preserved.' : 'Assessment saved. Add context or continue to the next reading.');
   }; });

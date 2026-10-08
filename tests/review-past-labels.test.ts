@@ -42,3 +42,24 @@ it('imports only the explicitly judged current claim, preserving its identity wi
  expect(run([answer])).toBe(0);expect(JSON.parse(readFileSync(out,'utf8')).labels).toEqual({});
  expect(run([{...answer,verdict:'correct'}])).toBe(0);const text=readFileSync(out,'utf8'),saved=JSON.parse(text);expect(saved.labels).toEqual({'cup#madeup':'ok'});expect(saved.answers[0].claim.a).toBe('Morgan Vale');expect(saved.answers[0].pastLabelReview).toBe('replace');expect(text).not.toContain('PRIVATE_CONTEXT');expect(saved.answers[0].engineConfidence).toBeUndefined();expect(saved.answers[0].proposal).toBeUndefined();expect(saved.answers[0].labelAudit).toBeUndefined();
 });
+it('agreement automatically selects the matching historical decision and exports it, with manual overrides still available',async()=>{
+ const cases=[
+  {changed:true,quarantined:false,label:'ok',verdict:'correct',verified:true,expected:'replace'},
+  {changed:false,quarantined:false,label:'ok',verdict:'correct',verified:true,expected:'keep'},
+  {changed:false,quarantined:false,label:'wrong',verdict:'wrong',verified:true,expected:'keep'},
+  {changed:false,quarantined:false,label:'wrong',verdict:'correct',verified:true,expected:'replace'},
+  {changed:false,quarantined:true,label:'ok',verdict:'correct',verified:true,expected:'replace'},
+  {changed:false,quarantined:false,label:'ok',verdict:'correct',verified:false,expected:'replace'},
+  {changed:true,quarantined:true,label:'wrong',verdict:'uncertain',verified:true,expected:'uncertain'},
+ ] as const;
+ for(const [index,c]of cases.entries()){
+  document.body.innerHTML=readFileSync('review/next-batch.html','utf8');const batch=synthetic();batch.batchId+='-'+index;
+  const row=batch.rows[0];row.proposal!.verdict=c.verdict;row.labelAudit!.changed=c.changed;row.labelAudit!.quarantined=c.quarantined;row.labelAudit!.pastLabels[0].verdict=c.label;row.labelAudit!.pastLabels[0].identityVerified=c.verified;
+  const api=await mountReview(batch,{stories:new Map([['adult.html',paragraphs()]])});
+  expect(api.payload().answers).toHaveLength(0);
+  document.querySelector<HTMLButtonElement>('[data-proposal="agree"]')!.click();
+  expect(api.answers.L1.pastLabelReview).toBe(c.expected);expect(api.payload().answers[0].pastLabelReview).toBe(c.expected);
+  expect(document.querySelector(`[data-past-label="${c.expected}"]`)!.getAttribute('aria-pressed')).toBe('true');
+  document.querySelector<HTMLButtonElement>('[data-past-label="uncertain"]')!.click();expect(api.answers.L1.pastLabelReview).toBe('uncertain');
+ }
+});
