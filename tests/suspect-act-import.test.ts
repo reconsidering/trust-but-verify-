@@ -29,3 +29,10 @@ it('validates both outputs before writing and never discards per-act answers sil
  const beforeLabels=readFileSync(lp,'utf8'),beforeActs=readFileSync(sp,'utf8');feedback.answers[0].actReviews.A0.revision='changed';writeFileSync(ap,JSON.stringify(feedback));expect(run(lp,sp).status).not.toBe(0);expect(readFileSync(lp,'utf8')).toBe(beforeLabels);expect(readFileSync(sp,'utf8')).toBe(beforeActs);
  expect(beforeActs).not.toContain('DO_NOT_PUBLISH_PRIVATE_CONTEXT');expect(run(lp,'tests/labels/never-write-acts.json').status).not.toBe(0);
 });
+it('preserves a cleared act field on an explicit rejection without creating a performed event',()=>{
+ const {batch,feedback}=setup();feedback.answers[0].actReviews.A2.act='';
+ const result=buildSuspectActReview(batch,feedback),review=result.windows[0].reviews.find(r=>r.id==='A2');
+ expect(review).toMatchObject({act:'',verdict:'wrong'});expect(result.windows[0].events.some(e=>e.ownerActId==='A2')).toBe(false);
+ feedback.answers[0].actReviews.A2.verdict='correct';expect(()=>buildSuspectActReview(batch,feedback)).toThrow('Invalid act proposal');
+ feedback.answers[0].actReviews.A2.verdict='uncertain';expect(()=>buildSuspectActReview(batch,feedback)).toThrow('Invalid act proposal');
+});

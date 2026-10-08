@@ -1,0 +1,1803 @@
+{
+ "schema": "engine-suspect-act-review/v1",
+ "batchId": "suspect-three-4dd3a27d25b0",
+ "referenceCommit": "4c1e362e4cc4199996cdac8a2eb272061c461be1",
+ "scope": {
+  "coverage": "positive-only, including windows marked checked; omissions never establish absence",
+  "occurrence": "events include only owner-confirmed performed acts",
+  "scoredActs": [
+   "Anal penetration (penis)",
+   "Blowjob",
+   "Rimming",
+   "Cunnilingus",
+   "Vaginal penetration (penis)",
+   "Fingering",
+   "Toy insertion",
+   "Handjob",
+   "Solo masturbation"
+  ],
+  "otherActivity": "other confirmed performed categories are retained with scored:false",
+  "context": "memory, imagined, habitual, recording and not-performed confirmations remain in reviews, not performed events",
+  "rejected": "wrong and uncertain proposals remain in reviews and never become positives",
+  "hints": "unreviewed; never derive negative hint labels or per-hit labels from act reviews",
+  "confidenceTraining": "none; only separately imported main engine verdicts train confidence",
+  "privateText": "free-text context, story text and assistant confidence are excluded"
+ },
+ "sources": [
+  {
+   "file": "angel-without-a-god.html",
+   "title": "angel without a god",
+   "sourceSha": "dae22879912fd019b9219d7cf60c85dd861ae5b83de5660c1b3a9918030a3d95",
+   "paragraphSha": "1d4071086192c11c15f3d12db8d5dc9cc1890517f101dbff22ff1d61aeb4a154",
+   "paragraphCount": 4625
+  },
+  {
+   "file": "belonging.html",
+   "title": "Belonging is Longing is Now",
+   "sourceSha": "d8fe352ab70bc0a8171fea0e069c43d776d3541d741cb74b2b66014ae64e874c",
+   "paragraphSha": "f9bf52ddcb708de72d8df74649d6976fa2ed62ddba1e55df553729ba32589409",
+   "paragraphCount": 5783
+  },
+  {
+   "file": "different-town-2.html",
+   "title": "Different Town",
+   "sourceSha": "8924281b07da3042e28dde552c887185855f9fb9376a57a2b70885b1b0c8d4a0",
+   "paragraphSha": "157a561a06e65787c3ed9eae856d921d94115feec1110ebe64c8d9e1718d610c",
+   "paragraphCount": 1719
+  },
+  {
+   "file": "ethan.html",
+   "sourceSha": "571d0d4887ffa6eebafe4eee78fc200a0d6076d109a4d075e3e277753f6b1824",
+   "paragraphSha": "2e1081d801ebaa15c0dc81cce81c44b6112673042170b71282acae74a8190efb",
+   "paragraphCount": 3677
+  },
+  {
+   "file": "found-in-the-upside-down.html",
+   "title": "Found in the Upside Down",
+   "sourceSha": "1b35ea2b2c860069f4855107bf98452121e5fceb0b9dbf4f9da33c1d89bb699f",
+   "paragraphSha": "bfeae364ffe28a234772d7aa805f04510415789974a736df43a1ade996dfe69d",
+   "paragraphCount": 3050
+  },
+  {
+   "file": "hate.html",
+   "title": "Hate the Way It Feels So Good",
+   "sourceSha": "a34987282302730c5cb9cf4350457713e847383ca411b02c726281de0863ab0b",
+   "paragraphSha": "5043e33ae248b134c4e0770ce09f249d64a0331a0cd82425f12a2a3242135316",
+   "paragraphCount": 1885
+  },
+  {
+   "file": "jacks.html",
+   "title": "Jack's phone.",
+   "sourceSha": "1c82d8bb62ab4aa836ffe8f4924db20c8420faddb9f3b0d75e08a9b35f18957d",
+   "paragraphSha": "243b447f5811886dca1d72fca33f2761722cb802a440c2cb82c2dcd756487f1b",
+   "paragraphCount": 13370
+  },
+  {
+   "file": "more-views.html",
+   "title": "More Views. More Money.",
+   "sourceSha": "61461060f56925872cb638627ee721273255d669032ded0d8562ffef4fc8601f",
+   "paragraphSha": "220940e4b87a4b161eda553e7169b3dce3e3f50562957b20d665f0b1e127ebec",
+   "paragraphCount": 1018
+  },
+  {
+   "file": "negotiation.html",
+   "title": "Negotiation",
+   "sourceSha": "e3dc9f6098d1606b0ae19cbe3afc48bb70717262d8524b9f6ae9924ecc38b9da",
+   "paragraphSha": "4ad5bc9cc22011193bd5c764dc21f36bfac570da98492b9e4e7ab74ce43211a4",
+   "paragraphCount": 1637
+  },
+  {
+   "file": "new-bitch.html",
+   "title": "New Bitch",
+   "sourceSha": "035c7e5c68df50c2dc0d7e64a801001d3c59ccfadda9e1f8511960dd26a018e7",
+   "paragraphSha": "5527ed5d1e69500ba1329c931eafb505469a502764e91e796db95d4bceaee936",
+   "paragraphCount": 7944
+  },
+  {
+   "file": "please.html",
+   "title": "please turn on your magic beam (mr sandman bring me a dream)",
+   "sourceSha": "4c22df6fad65421863f64b54c93585f2bd4f0ba9d5e6e6d9363689456366ebd9",
+   "paragraphSha": "3d98e03e32366d0f5969a0c2ecfdea1f4907f8a955769579f62ae82b3357d169",
+   "paragraphCount": 5759
+  },
+  {
+   "file": "spoonful.html",
+   "title": "A Spoonful of Sugar",
+   "sourceSha": "4c9a8a51991f7503facb7594c09540ed954f245b26418dd4ae3e50e628a6caed",
+   "paragraphSha": "adef66e2edfa34889ece46fdd99bbe811cc8c8c37389edac5709c51ea806eb3e",
+   "paragraphCount": 923
+  },
+  {
+   "file": "steady-eddie.html",
+   "title": "Keep it Steady, Eddie",
+   "sourceSha": "6df06eafa0879c71bd9d3e7401cb3ce8c878e3da07d39265d9c4357c3c00dec8",
+   "paragraphSha": "494f981d4b56d4f5f3633dd2ca11e35afc227f12d2c184a07d9c603256be690e",
+   "paragraphCount": 2783
+  },
+  {
+   "file": "sugar-alpha.html",
+   "title": "Sugar Alpha",
+   "sourceSha": "68a3c9d689b093806fb072b5e550e79a61eb9f16c1e79ca192ba24597338de5e",
+   "paragraphSha": "a45eb70114d525d57925d8f98cbdd975a8ae19a3be5dd2adcea51caa98ccc950",
+   "paragraphCount": 2428
+  }
+ ],
+ "unanswered": [
+  "U4",
+  "U13",
+  "U26",
+  "U31",
+  "U32",
+  "U34",
+  "U37",
+  "U39",
+  "U40",
+  "U42",
+  "U46",
+  "U48"
+ ],
+ "windows": [
+  {
+   "id": "U1",
+   "key": "mast-himself~elided#e69cfbe0",
+   "fic": "angel-without-a-god.html",
+   "from": 1012,
+   "to": 1018,
+   "sourceSha": "dae22879912fd019b9219d7cf60c85dd861ae5b83de5660c1b3a9918030a3d95",
+   "updatedAt": "2026-10-08T13:21:16.560Z",
+   "coverageReviewed": false,
+   "coverage": "positive-only",
+   "reviews": [
+    {
+     "id": "A1",
+     "revision": "suspect-three-r1",
+     "verdict": "correct",
+     "act": "Solo masturbation",
+     "performer": "Jason Carver",
+     "receiver": "",
+     "occurrence": "habitual",
+     "from": 1015,
+     "to": 1015,
+     "errors": []
+    }
+   ],
+   "events": []
+  },
+  {
+   "id": "U2",
+   "key": "mast-himself~elided#604dd4a0",
+   "fic": "different-town-2.html",
+   "from": 332,
+   "to": 338,
+   "sourceSha": "8924281b07da3042e28dde552c887185855f9fb9376a57a2b70885b1b0c8d4a0",
+   "updatedAt": "2026-10-08T13:22:41.404Z",
+   "coverageReviewed": false,
+   "coverage": "positive-only",
+   "reviews": [
+    {
+     "id": "A1",
+     "revision": "suspect-three-r1",
+     "verdict": "correct",
+     "act": "Solo masturbation",
+     "performer": "Eddie Diaz",
+     "receiver": "",
+     "occurrence": "not performed",
+     "from": 333,
+     "to": 335,
+     "errors": []
+    }
+   ],
+   "events": []
+  },
+  {
+   "id": "U3",
+   "key": "mast-word#50870538",
+   "fic": "sugar-alpha.html",
+   "from": 971,
+   "to": 977,
+   "sourceSha": "68a3c9d689b093806fb072b5e550e79a61eb9f16c1e79ca192ba24597338de5e",
+   "updatedAt": "2026-10-08T13:23:39.281Z",
+   "coverageReviewed": false,
+   "coverage": "positive-only",
+   "reviews": [
+    {
+     "id": "A1",
+     "revision": "suspect-three-r1",
+     "verdict": "correct",
+     "act": "Solo masturbation",
+     "performer": "Stiles Stilinski",
+     "receiver": "",
+     "occurrence": "habitual",
+     "from": 974,
+     "to": 974,
+     "errors": []
+    }
+   ],
+   "events": []
+  },
+  {
+   "id": "U5",
+   "key": "dd2-hj-hand-to-dick#56628ee6",
+   "fic": "ethan.html",
+   "from": 3432,
+   "to": 3438,
+   "sourceSha": "571d0d4887ffa6eebafe4eee78fc200a0d6076d109a4d075e3e277753f6b1824",
+   "updatedAt": "2026-10-08T15:58:40.551Z",
+   "coverageReviewed": false,
+   "coverage": "positive-only",
+   "reviews": [
+    {
+     "id": "A1",
+     "revision": "suspect-three-r1",
+     "verdict": "correct",
+     "act": "Anal penetration (penis)",
+     "performer": "Hank",
+     "receiver": "Ethan Barnes",
+     "occurrence": "performed",
+     "from": 3432,
+     "to": 3435,
+     "errors": []
+    },
+    {
+     "id": "A2",
+     "revision": "suspect-three-r1",
+     "verdict": "correct",
+     "act": "Handjob",
+     "performer": "Hank",
+     "receiver": "Ethan Barnes",
+     "occurrence": "performed",
+     "from": 3435,
+     "to": 3435,
+     "errors": []
+    }
+   ],
+   "events": [
+    {
+     "ownerActId": "A1",
+     "act": "Anal penetration (penis)",
+     "performer": "Hank",
+     "receiver": "Ethan Barnes",
+     "from": 3432,
+     "to": 3435,
+     "scored": true
+    },
+    {
+     "ownerActId": "A2",
+     "act": "Handjob",
+     "performer": "Hank",
+     "receiver": "Ethan Barnes",
+     "from": 3435,
+     "to": 3435,
+     "scored": true
+    }
+   ]
+  },
+  {
+   "id": "U6",
+   "key": "mast-himself#538ccb69",
+   "fic": "angel-without-a-god.html",
+   "from": 2371,
+   "to": 2381,
+   "sourceSha": "dae22879912fd019b9219d7cf60c85dd861ae5b83de5660c1b3a9918030a3d95",
+   "updatedAt": "2026-10-08T16:00:04.432Z",
+   "coverageReviewed": false,
+   "coverage": "positive-only",
+   "reviews": [
+    {
+     "id": "A1",
+     "revision": "suspect-three-r1",
+     "verdict": "correct",
+     "act": "Solo masturbation",
+     "performer": "Jason Carver",
+     "receiver": "",
+     "occurrence": "habitual",
+     "from": 2378,
+     "to": 2378,
+     "errors": []
+    }
+   ],
+   "events": []
+  },
+  {
+   "id": "U7",
+   "key": "be-fucked~elided#5a581c45",
+   "fic": "sugar-alpha.html",
+   "from": 201,
+   "to": 207,
+   "sourceSha": "68a3c9d689b093806fb072b5e550e79a61eb9f16c1e79ca192ba24597338de5e",
+   "updatedAt": "2026-10-08T16:01:29.309Z",
+   "coverageReviewed": false,
+   "coverage": "positive-only",
+   "reviews": [
+    {
+     "id": "A1",
+     "revision": "suspect-three-r1",
+     "verdict": "wrong",
+     "act": "Anal penetration (penis)",
+     "performer": "Peter Hale",
+     "receiver": "Stiles Stilinski",
+     "occurrence": "imagined",
+     "from": 204,
+     "to": 205,
+     "errors": [
+      "Wrong person"
+     ]
+    }
+   ],
+   "events": []
+  },
+  {
+   "id": "U8",
+   "key": "passive-fucked~elided#7da31c0f",
+   "fic": "new-bitch.html",
+   "from": 1246,
+   "to": 1252,
+   "sourceSha": "035c7e5c68df50c2dc0d7e64a801001d3c59ccfadda9e1f8511960dd26a018e7",
+   "updatedAt": "2026-10-08T16:03:54.486Z",
+   "coverageReviewed": false,
+   "coverage": "positive-only",
+   "reviews": [
+    {
+     "id": "A1",
+     "revision": "suspect-three-r1",
+     "verdict": "correct",
+     "act": "Anal penetration (penis)",
+     "performer": "Unknown partner",
+     "receiver": "Ancel",
+     "occurrence": "wanted",
+     "from": 1249,
+     "to": 1249,
+     "errors": []
+    }
+   ],
+   "events": []
+  },
+  {
+   "id": "U9",
+   "key": "mast-himself#a7f94f44",
+   "fic": "please.html",
+   "from": 2392,
+   "to": 2398,
+   "sourceSha": "4c22df6fad65421863f64b54c93585f2bd4f0ba9d5e6e6d9363689456366ebd9",
+   "updatedAt": "2026-10-08T16:05:42.692Z",
+   "coverageReviewed": false,
+   "coverage": "positive-only",
+   "reviews": [
+    {
+     "id": "A1",
+     "revision": "suspect-three-r1",
+     "verdict": "correct",
+     "act": "Solo masturbation",
+     "performer": "Steve Harrington",
+     "receiver": "",
+     "occurrence": "not performed",
+     "from": 2395,
+     "to": 2397,
+     "errors": []
+    }
+   ],
+   "events": []
+  },
+  {
+   "id": "U10",
+   "key": "mast-himself#fa7b5311",
+   "fic": "sugar-alpha.html",
+   "from": 371,
+   "to": 377,
+   "sourceSha": "68a3c9d689b093806fb072b5e550e79a61eb9f16c1e79ca192ba24597338de5e",
+   "updatedAt": "2026-10-08T16:06:06.958Z",
+   "coverageReviewed": false,
+   "coverage": "positive-only",
+   "reviews": [
+    {
+     "id": "A1",
+     "revision": "suspect-three-r1",
+     "verdict": "correct",
+     "act": "Solo masturbation",
+     "performer": "Stiles Stilinski",
+     "receiver": "",
+     "occurrence": "performed",
+     "from": 371,
+     "to": 371,
+     "errors": []
+    }
+   ],
+   "events": [
+    {
+     "ownerActId": "A1",
+     "act": "Solo masturbation",
+     "performer": "Stiles Stilinski",
+     "receiver": "",
+     "from": 371,
+     "to": 371,
+     "scored": true
+    }
+   ]
+  },
+  {
+   "id": "U11",
+   "key": "hj-stroke~elided#384dce8f",
+   "fic": "new-bitch.html",
+   "from": 4722,
+   "to": 4730,
+   "sourceSha": "035c7e5c68df50c2dc0d7e64a801001d3c59ccfadda9e1f8511960dd26a018e7",
+   "updatedAt": "2026-10-08T16:06:25.096Z",
+   "coverageReviewed": false,
+   "coverage": "positive-only",
+   "reviews": [
+    {
+     "id": "A1",
+     "revision": "suspect-three-r1",
+     "verdict": "correct",
+     "act": "Handjob",
+     "performer": "Damen",
+     "receiver": "Laurent",
+     "occurrence": "performed",
+     "from": 4723,
+     "to": 4725,
+     "errors": []
+    },
+    {
+     "id": "A2",
+     "revision": "suspect-three-r1",
+     "verdict": "correct",
+     "act": "Fingering",
+     "performer": "Damen",
+     "receiver": "Laurent",
+     "occurrence": "performed",
+     "from": 4728,
+     "to": 4730,
+     "errors": []
+    }
+   ],
+   "events": [
+    {
+     "ownerActId": "A1",
+     "act": "Handjob",
+     "performer": "Damen",
+     "receiver": "Laurent",
+     "from": 4723,
+     "to": 4725,
+     "scored": true
+    },
+    {
+     "ownerActId": "A2",
+     "act": "Fingering",
+     "performer": "Damen",
+     "receiver": "Laurent",
+     "from": 4728,
+     "to": 4730,
+     "scored": true
+    }
+   ]
+  },
+  {
+   "id": "U12",
+   "key": "hj-stroke#4a17a895",
+   "fic": "hate.html",
+   "from": 324,
+   "to": 330,
+   "sourceSha": "a34987282302730c5cb9cf4350457713e847383ca411b02c726281de0863ab0b",
+   "updatedAt": "2026-10-08T16:07:09.202Z",
+   "coverageReviewed": false,
+   "coverage": "positive-only",
+   "reviews": [
+    {
+     "id": "A1",
+     "revision": "suspect-three-r1",
+     "verdict": "correct",
+     "act": "Solo masturbation",
+     "performer": "Steve Harrington",
+     "receiver": "",
+     "occurrence": "performed",
+     "from": 327,
+     "to": 327,
+     "errors": []
+    }
+   ],
+   "events": [
+    {
+     "ownerActId": "A1",
+     "act": "Solo masturbation",
+     "performer": "Steve Harrington",
+     "receiver": "",
+     "from": 327,
+     "to": 327,
+     "scored": true
+    }
+   ]
+  },
+  {
+   "id": "U14",
+   "key": "dd2-mast-take-in-hand#b48b20e5",
+   "fic": "new-bitch.html",
+   "from": 6418,
+   "to": 6424,
+   "sourceSha": "035c7e5c68df50c2dc0d7e64a801001d3c59ccfadda9e1f8511960dd26a018e7",
+   "updatedAt": "2026-10-08T16:09:41.500Z",
+   "coverageReviewed": false,
+   "coverage": "positive-only",
+   "reviews": [
+    {
+     "id": "A1",
+     "revision": "suspect-three-r1",
+     "verdict": "wrong",
+     "act": "",
+     "performer": "Damen",
+     "receiver": "Laurent",
+     "occurrence": "performed",
+     "from": 6419,
+     "to": 6419,
+     "errors": [
+      "Wrong act or body part"
+     ]
+    },
+    {
+     "id": "A2",
+     "revision": "suspect-three-r1",
+     "verdict": "correct",
+     "act": "Anal penetration (penis)",
+     "performer": "Damen",
+     "receiver": "Laurent",
+     "occurrence": "performed",
+     "from": 6421,
+     "to": 6424,
+     "errors": []
+    }
+   ],
+   "events": [
+    {
+     "ownerActId": "A2",
+     "act": "Anal penetration (penis)",
+     "performer": "Damen",
+     "receiver": "Laurent",
+     "from": 6421,
+     "to": 6424,
+     "scored": true
+    }
+   ]
+  },
+  {
+   "id": "U15",
+   "key": "dd4-frot-grind-hips-together~elided#2d4d6696",
+   "fic": "negotiation.html",
+   "from": 667,
+   "to": 673,
+   "sourceSha": "e3dc9f6098d1606b0ae19cbe3afc48bb70717262d8524b9f6ae9924ecc38b9da",
+   "updatedAt": "2026-10-08T16:10:28.894Z",
+   "coverageReviewed": false,
+   "coverage": "positive-only",
+   "reviews": [
+    {
+     "id": "A1",
+     "revision": "suspect-three-r1",
+     "verdict": "uncertain",
+     "act": "Frottage",
+     "performer": "Obi-Wan Kenobi",
+     "receiver": "Anakin Skywalker",
+     "occurrence": "performed",
+     "from": 670,
+     "to": 670,
+     "errors": []
+    }
+   ],
+   "events": []
+  },
+  {
+   "id": "U16",
+   "key": "hj-stroke#d18be96c",
+   "fic": "more-views.html",
+   "from": 149,
+   "to": 155,
+   "sourceSha": "61461060f56925872cb638627ee721273255d669032ded0d8562ffef4fc8601f",
+   "updatedAt": "2026-10-08T16:10:52.132Z",
+   "coverageReviewed": false,
+   "coverage": "positive-only",
+   "reviews": [
+    {
+     "id": "A1",
+     "revision": "suspect-three-r1",
+     "verdict": "correct",
+     "act": "Solo masturbation",
+     "performer": "Dean Winchester",
+     "receiver": "",
+     "occurrence": "performed",
+     "from": 152,
+     "to": 154,
+     "errors": []
+    }
+   ],
+   "events": [
+    {
+     "ownerActId": "A1",
+     "act": "Solo masturbation",
+     "performer": "Dean Winchester",
+     "receiver": "",
+     "from": 152,
+     "to": 154,
+     "scored": true
+    }
+   ]
+  },
+  {
+   "id": "U17",
+   "key": "dd-hj-pulled-out#ba9f640d",
+   "fic": "please.html",
+   "from": 2853,
+   "to": 2859,
+   "sourceSha": "4c22df6fad65421863f64b54c93585f2bd4f0ba9d5e6e6d9363689456366ebd9",
+   "updatedAt": "2026-10-08T16:12:27.481Z",
+   "coverageReviewed": false,
+   "coverage": "positive-only",
+   "reviews": [
+    {
+     "id": "A1",
+     "revision": "suspect-three-r1",
+     "verdict": "wrong",
+     "act": "Blowjob",
+     "performer": "Steve Harrington",
+     "receiver": "Eddie Munson",
+     "occurrence": "performed",
+     "from": 2854,
+     "to": 2855,
+     "errors": [
+      "Roles reversed"
+     ]
+    },
+    {
+     "id": "A2",
+     "revision": "suspect-three-r1",
+     "verdict": "wrong",
+     "act": "Solo masturbation",
+     "performer": "Eddie Munson",
+     "receiver": "",
+     "occurrence": "performed",
+     "from": 2856,
+     "to": 2856,
+     "errors": []
+    },
+    {
+     "id": "A3",
+     "revision": "suspect-three-r1",
+     "verdict": "correct",
+     "act": "Ejaculation onto partner",
+     "performer": "Eddie Munson",
+     "receiver": "Steve Harrington",
+     "occurrence": "performed",
+     "from": 2856,
+     "to": 2856,
+     "errors": []
+    }
+   ],
+   "events": [
+    {
+     "ownerActId": "A3",
+     "act": "Ejaculation onto partner",
+     "performer": "Eddie Munson",
+     "receiver": "Steve Harrington",
+     "from": 2856,
+     "to": 2856,
+     "scored": false
+    }
+   ]
+  },
+  {
+   "id": "U18",
+   "key": "push-into#2b157886",
+   "fic": "please.html",
+   "from": 3846,
+   "to": 3852,
+   "sourceSha": "4c22df6fad65421863f64b54c93585f2bd4f0ba9d5e6e6d9363689456366ebd9",
+   "updatedAt": "2026-10-08T16:13:06.733Z",
+   "coverageReviewed": false,
+   "coverage": "positive-only",
+   "reviews": [
+    {
+     "id": "A1",
+     "revision": "suspect-three-r1",
+     "verdict": "correct",
+     "act": "Anal penetration (penis)",
+     "performer": "Eddie Munson",
+     "receiver": "Steve Harrington",
+     "occurrence": "performed",
+     "from": 3847,
+     "to": 3849,
+     "errors": []
+    },
+    {
+     "id": "A2",
+     "revision": "suspect-three-r1",
+     "verdict": "correct",
+     "act": "Handjob",
+     "performer": "Eddie Munson",
+     "receiver": "Steve Harrington",
+     "occurrence": "performed",
+     "from": 3847,
+     "to": 3849,
+     "errors": []
+    },
+    {
+     "id": "A3",
+     "revision": "suspect-three-r1",
+     "verdict": "correct",
+     "act": "Oral finger contact",
+     "performer": "Eddie Munson",
+     "receiver": "Steve Harrington",
+     "occurrence": "performed",
+     "from": 3846,
+     "to": 3847,
+     "errors": []
+    }
+   ],
+   "events": [
+    {
+     "ownerActId": "A1",
+     "act": "Anal penetration (penis)",
+     "performer": "Eddie Munson",
+     "receiver": "Steve Harrington",
+     "from": 3847,
+     "to": 3849,
+     "scored": true
+    },
+    {
+     "ownerActId": "A2",
+     "act": "Handjob",
+     "performer": "Eddie Munson",
+     "receiver": "Steve Harrington",
+     "from": 3847,
+     "to": 3849,
+     "scored": true
+    },
+    {
+     "ownerActId": "A3",
+     "act": "Oral finger contact",
+     "performer": "Eddie Munson",
+     "receiver": "Steve Harrington",
+     "from": 3846,
+     "to": 3847,
+     "scored": false
+    }
+   ]
+  },
+  {
+   "id": "U19",
+   "key": "hj-stroke~elided#f7189f95",
+   "fic": "new-bitch.html",
+   "from": 6300,
+   "to": 6306,
+   "sourceSha": "035c7e5c68df50c2dc0d7e64a801001d3c59ccfadda9e1f8511960dd26a018e7",
+   "updatedAt": "2026-10-08T16:13:32.350Z",
+   "coverageReviewed": false,
+   "coverage": "positive-only",
+   "reviews": [
+    {
+     "id": "A1",
+     "revision": "suspect-three-r1",
+     "verdict": "correct",
+     "act": "Handjob",
+     "performer": "Damen",
+     "receiver": "Laurent",
+     "occurrence": "performed",
+     "from": 6300,
+     "to": 6303,
+     "errors": []
+    }
+   ],
+   "events": [
+    {
+     "ownerActId": "A1",
+     "act": "Handjob",
+     "performer": "Damen",
+     "receiver": "Laurent",
+     "from": 6300,
+     "to": 6303,
+     "scored": true
+    }
+   ]
+  },
+  {
+   "id": "U20",
+   "key": "dd2-mast-take-in-hand~elided#60833792",
+   "fic": "hate.html",
+   "from": 745,
+   "to": 751,
+   "sourceSha": "a34987282302730c5cb9cf4350457713e847383ca411b02c726281de0863ab0b",
+   "updatedAt": "2026-10-08T16:14:01.169Z",
+   "coverageReviewed": false,
+   "coverage": "positive-only",
+   "reviews": [
+    {
+     "id": "A1",
+     "revision": "suspect-three-r1",
+     "verdict": "correct",
+     "act": "Solo masturbation",
+     "performer": "Steve Harrington",
+     "receiver": "",
+     "occurrence": "performed",
+     "from": 748,
+     "to": 751,
+     "errors": []
+    }
+   ],
+   "events": [
+    {
+     "ownerActId": "A1",
+     "act": "Solo masturbation",
+     "performer": "Steve Harrington",
+     "receiver": "",
+     "from": 748,
+     "to": 751,
+     "scored": true
+    }
+   ]
+  },
+  {
+   "id": "U21",
+   "key": "dd-hj-knot#2cdbdff6",
+   "fic": "angel-without-a-god.html",
+   "from": 1577,
+   "to": 1583,
+   "sourceSha": "dae22879912fd019b9219d7cf60c85dd861ae5b83de5660c1b3a9918030a3d95",
+   "updatedAt": "2026-10-08T16:15:12.816Z",
+   "coverageReviewed": false,
+   "coverage": "positive-only",
+   "reviews": [
+    {
+     "id": "A1",
+     "revision": "suspect-three-r1",
+     "verdict": "uncertain",
+     "act": "Handjob",
+     "performer": "Eddie Munson",
+     "receiver": "Jason Carver",
+     "occurrence": "imagined",
+     "from": 1578,
+     "to": 1580,
+     "errors": []
+    },
+    {
+     "id": "A2",
+     "revision": "suspect-three-r1",
+     "verdict": "correct",
+     "act": "Genital rubbing",
+     "performer": "Jason Carver",
+     "receiver": "Eddie Munson",
+     "occurrence": "imagined",
+     "from": 1580,
+     "to": 1580,
+     "errors": []
+    }
+   ],
+   "events": []
+  },
+  {
+   "id": "U22",
+   "key": "pushed-in#fc1981c9",
+   "fic": "hate.html",
+   "from": 1387,
+   "to": 1393,
+   "sourceSha": "a34987282302730c5cb9cf4350457713e847383ca411b02c726281de0863ab0b",
+   "updatedAt": "2026-10-08T16:16:15.640Z",
+   "coverageReviewed": false,
+   "coverage": "positive-only",
+   "reviews": [
+    {
+     "id": "A1",
+     "revision": "suspect-three-r1",
+     "verdict": "correct",
+     "act": "Fingering",
+     "performer": "Eddie Munson",
+     "receiver": "Steve Harrington",
+     "occurrence": "performed",
+     "from": 1387,
+     "to": 1391,
+     "errors": []
+    }
+   ],
+   "events": [
+    {
+     "ownerActId": "A1",
+     "act": "Fingering",
+     "performer": "Eddie Munson",
+     "receiver": "Steve Harrington",
+     "from": 1387,
+     "to": 1391,
+     "scored": true
+    }
+   ]
+  },
+  {
+   "id": "U23",
+   "key": "hj-stroke~elided#f1b19f44",
+   "fic": "jacks.html",
+   "from": 6795,
+   "to": 6805,
+   "sourceSha": "1c82d8bb62ab4aa836ffe8f4924db20c8420faddb9f3b0d75e08a9b35f18957d",
+   "updatedAt": "2026-10-08T16:16:45.355Z",
+   "coverageReviewed": false,
+   "coverage": "positive-only",
+   "reviews": [
+    {
+     "id": "A1",
+     "revision": "suspect-three-r1",
+     "verdict": "correct",
+     "act": "Genital rubbing",
+     "performer": "Jack Seward",
+     "receiver": "Dracula",
+     "occurrence": "performed",
+     "from": 6798,
+     "to": 6798,
+     "errors": []
+    },
+    {
+     "id": "A2",
+     "revision": "suspect-three-r1",
+     "verdict": "correct",
+     "act": "Manual genital contact",
+     "performer": "Dracula",
+     "receiver": "Jack Seward",
+     "occurrence": "performed",
+     "from": 6803,
+     "to": 6803,
+     "errors": []
+    }
+   ],
+   "events": [
+    {
+     "ownerActId": "A1",
+     "act": "Genital rubbing",
+     "performer": "Jack Seward",
+     "receiver": "Dracula",
+     "from": 6798,
+     "to": 6798,
+     "scored": false
+    },
+    {
+     "ownerActId": "A2",
+     "act": "Manual genital contact",
+     "performer": "Dracula",
+     "receiver": "Jack Seward",
+     "from": 6803,
+     "to": 6803,
+     "scored": false
+    }
+   ]
+  },
+  {
+   "id": "U24",
+   "key": "dd4-sucked-cock~elided#834484b2",
+   "fic": "spoonful.html",
+   "from": 457,
+   "to": 463,
+   "sourceSha": "4c9a8a51991f7503facb7594c09540ed954f245b26418dd4ae3e50e628a6caed",
+   "updatedAt": "2026-10-08T16:17:55.702Z",
+   "coverageReviewed": false,
+   "coverage": "positive-only",
+   "reviews": [
+    {
+     "id": "A1",
+     "revision": "suspect-three-r1",
+     "verdict": "correct",
+     "act": "Blowjob",
+     "performer": "Stiles Stilinski",
+     "receiver": "Peter Hale",
+     "occurrence": "performed",
+     "from": 459,
+     "to": 463,
+     "errors": []
+    }
+   ],
+   "events": [
+    {
+     "ownerActId": "A1",
+     "act": "Blowjob",
+     "performer": "Stiles Stilinski",
+     "receiver": "Peter Hale",
+     "from": 459,
+     "to": 463,
+     "scored": true
+    }
+   ]
+  },
+  {
+   "id": "U25",
+   "key": "lips-around#a5d0f8c0",
+   "fic": "new-bitch.html",
+   "from": 1960,
+   "to": 1966,
+   "sourceSha": "035c7e5c68df50c2dc0d7e64a801001d3c59ccfadda9e1f8511960dd26a018e7",
+   "updatedAt": "2026-10-08T16:18:43.547Z",
+   "coverageReviewed": false,
+   "coverage": "positive-only",
+   "reviews": [
+    {
+     "id": "A1",
+     "revision": "suspect-three-r1",
+     "verdict": "correct",
+     "act": "Blowjob",
+     "performer": "Damen",
+     "receiver": "Laurent",
+     "occurrence": "performed",
+     "from": 1961,
+     "to": 1963,
+     "errors": []
+    },
+    {
+     "id": "A2",
+     "revision": "suspect-three-r1",
+     "verdict": "wrong",
+     "act": "Handjob",
+     "performer": "Damen",
+     "receiver": "Laurent",
+     "occurrence": "performed",
+     "from": 1961,
+     "to": 1961,
+     "errors": [
+      "No act happened"
+     ]
+    }
+   ],
+   "events": [
+    {
+     "ownerActId": "A1",
+     "act": "Blowjob",
+     "performer": "Damen",
+     "receiver": "Laurent",
+     "from": 1961,
+     "to": 1963,
+     "scored": true
+    }
+   ]
+  },
+  {
+   "id": "U27",
+   "key": "dd4-licks-precome-from-tip#afcc220d",
+   "fic": "please.html",
+   "from": 2225,
+   "to": 2231,
+   "sourceSha": "4c22df6fad65421863f64b54c93585f2bd4f0ba9d5e6e6d9363689456366ebd9",
+   "updatedAt": "2026-10-08T16:19:20.155Z",
+   "coverageReviewed": false,
+   "coverage": "positive-only",
+   "reviews": [
+    {
+     "id": "A1",
+     "revision": "suspect-three-r1",
+     "verdict": "correct",
+     "act": "Blowjob",
+     "performer": "Eddie Munson",
+     "receiver": "Steve Harrington",
+     "occurrence": "performed",
+     "from": 2227,
+     "to": 2229,
+     "errors": []
+    },
+    {
+     "id": "A2",
+     "revision": "suspect-three-r1",
+     "verdict": "correct",
+     "act": "Handjob",
+     "performer": "Eddie Munson",
+     "receiver": "Steve Harrington",
+     "occurrence": "performed",
+     "from": 2227,
+     "to": 2229,
+     "errors": []
+    }
+   ],
+   "events": [
+    {
+     "ownerActId": "A1",
+     "act": "Blowjob",
+     "performer": "Eddie Munson",
+     "receiver": "Steve Harrington",
+     "from": 2227,
+     "to": 2229,
+     "scored": true
+    },
+    {
+     "ownerActId": "A2",
+     "act": "Handjob",
+     "performer": "Eddie Munson",
+     "receiver": "Steve Harrington",
+     "from": 2227,
+     "to": 2229,
+     "scored": true
+    }
+   ]
+  },
+  {
+   "id": "U28",
+   "key": "pushed-in#45e2a37e",
+   "fic": "sugar-alpha.html",
+   "from": 1735,
+   "to": 1749,
+   "sourceSha": "68a3c9d689b093806fb072b5e550e79a61eb9f16c1e79ca192ba24597338de5e",
+   "updatedAt": "2026-10-08T16:46:26.905Z",
+   "coverageReviewed": false,
+   "coverage": "positive-only",
+   "reviews": [
+    {
+     "id": "A1",
+     "revision": "suspect-three-r1",
+     "verdict": "correct",
+     "act": "Rimming",
+     "performer": "Derek Hale",
+     "receiver": "Stiles Stilinski",
+     "occurrence": "performed",
+     "from": 1738,
+     "to": 1743,
+     "errors": []
+    },
+    {
+     "id": "A2",
+     "revision": "suspect-three-r1",
+     "verdict": "correct",
+     "act": "Fingering",
+     "performer": "Derek Hale",
+     "receiver": "Stiles Stilinski",
+     "occurrence": "performed",
+     "from": 1740,
+     "to": 1743,
+     "errors": []
+    },
+    {
+     "id": "A3",
+     "revision": "suspect-three-r1",
+     "verdict": "correct",
+     "act": "Anal penetration (penis)",
+     "performer": "Derek Hale",
+     "receiver": "Stiles Stilinski",
+     "occurrence": "performed",
+     "from": 1744,
+     "to": 1749,
+     "errors": []
+    }
+   ],
+   "events": [
+    {
+     "ownerActId": "A1",
+     "act": "Rimming",
+     "performer": "Derek Hale",
+     "receiver": "Stiles Stilinski",
+     "from": 1738,
+     "to": 1743,
+     "scored": true
+    },
+    {
+     "ownerActId": "A2",
+     "act": "Fingering",
+     "performer": "Derek Hale",
+     "receiver": "Stiles Stilinski",
+     "from": 1740,
+     "to": 1743,
+     "scored": true
+    },
+    {
+     "ownerActId": "A3",
+     "act": "Anal penetration (penis)",
+     "performer": "Derek Hale",
+     "receiver": "Stiles Stilinski",
+     "from": 1744,
+     "to": 1749,
+     "scored": true
+    }
+   ]
+  },
+  {
+   "id": "U29",
+   "key": "pushed-in~elided#d72e3dad",
+   "fic": "sugar-alpha.html",
+   "from": 1840,
+   "to": 1846,
+   "sourceSha": "68a3c9d689b093806fb072b5e550e79a61eb9f16c1e79ca192ba24597338de5e",
+   "updatedAt": "2026-10-08T16:47:28.235Z",
+   "coverageReviewed": false,
+   "coverage": "positive-only",
+   "reviews": [
+    {
+     "id": "A1",
+     "revision": "suspect-three-r1",
+     "verdict": "correct",
+     "act": "Toy insertion",
+     "performer": "Derek Hale",
+     "receiver": "Stiles Stilinski",
+     "occurrence": "performed",
+     "from": 1840,
+     "to": 1843,
+     "errors": []
+    },
+    {
+     "id": "A2",
+     "revision": "suspect-three-r1",
+     "verdict": "correct",
+     "act": "Fingering",
+     "performer": "Derek Hale",
+     "receiver": "Stiles Stilinski",
+     "occurrence": "performed",
+     "from": 1843,
+     "to": 1843,
+     "errors": []
+    },
+    {
+     "id": "A3",
+     "revision": "suspect-three-r1",
+     "verdict": "correct",
+     "act": "Fisting",
+     "performer": "Derek Hale",
+     "receiver": "Stiles Stilinski",
+     "occurrence": "performed",
+     "from": 1844,
+     "to": 1845,
+     "errors": []
+    }
+   ],
+   "events": [
+    {
+     "ownerActId": "A1",
+     "act": "Toy insertion",
+     "performer": "Derek Hale",
+     "receiver": "Stiles Stilinski",
+     "from": 1840,
+     "to": 1843,
+     "scored": true
+    },
+    {
+     "ownerActId": "A2",
+     "act": "Fingering",
+     "performer": "Derek Hale",
+     "receiver": "Stiles Stilinski",
+     "from": 1843,
+     "to": 1843,
+     "scored": true
+    },
+    {
+     "ownerActId": "A3",
+     "act": "Fisting",
+     "performer": "Derek Hale",
+     "receiver": "Stiles Stilinski",
+     "from": 1844,
+     "to": 1845,
+     "scored": false
+    }
+   ]
+  },
+  {
+   "id": "U30",
+   "key": "lips-around#77ec058d",
+   "fic": "found-in-the-upside-down.html",
+   "from": 1124,
+   "to": 1130,
+   "sourceSha": "1b35ea2b2c860069f4855107bf98452121e5fceb0b9dbf4f9da33c1d89bb699f",
+   "updatedAt": "2026-10-08T16:48:32.226Z",
+   "coverageReviewed": false,
+   "coverage": "positive-only",
+   "reviews": [
+    {
+     "id": "A1",
+     "revision": "suspect-three-r1",
+     "verdict": "correct",
+     "act": "Blowjob",
+     "performer": "Billy Hargrove",
+     "receiver": "Steve Harrington",
+     "occurrence": "performed",
+     "from": 1124,
+     "to": 1130,
+     "errors": []
+    },
+    {
+     "id": "A2",
+     "revision": "suspect-three-r1",
+     "verdict": "correct",
+     "act": "External anal stimulation",
+     "performer": "Eddie Munson",
+     "receiver": "Billy Hargrove",
+     "occurrence": "performed",
+     "from": 1126,
+     "to": 1130,
+     "errors": []
+    }
+   ],
+   "events": [
+    {
+     "ownerActId": "A1",
+     "act": "Blowjob",
+     "performer": "Billy Hargrove",
+     "receiver": "Steve Harrington",
+     "from": 1124,
+     "to": 1130,
+     "scored": true
+    },
+    {
+     "ownerActId": "A2",
+     "act": "External anal stimulation",
+     "performer": "Eddie Munson",
+     "receiver": "Billy Hargrove",
+     "from": 1126,
+     "to": 1130,
+     "scored": false
+    }
+   ]
+  },
+  {
+   "id": "U33",
+   "key": "dd-hj-fist-works#482ac57a",
+   "fic": "steady-eddie.html",
+   "from": 2168,
+   "to": 2174,
+   "sourceSha": "6df06eafa0879c71bd9d3e7401cb3ce8c878e3da07d39265d9c4357c3c00dec8",
+   "updatedAt": "2026-10-08T16:50:52.616Z",
+   "coverageReviewed": false,
+   "coverage": "positive-only",
+   "reviews": [
+    {
+     "id": "A1",
+     "revision": "suspect-three-r1",
+     "verdict": "wrong",
+     "act": "Handjob",
+     "performer": "Steve Harrington",
+     "receiver": "Eddie Munson",
+     "occurrence": "not performed",
+     "from": 2171,
+     "to": 2173,
+     "errors": [
+      "No act happened"
+     ]
+    }
+   ],
+   "events": []
+  },
+  {
+   "id": "U35",
+   "key": "dd2-clenching-around-cock~elided#5a7c7eec",
+   "fic": "jacks.html",
+   "from": 3509,
+   "to": 3515,
+   "sourceSha": "1c82d8bb62ab4aa836ffe8f4924db20c8420faddb9f3b0d75e08a9b35f18957d",
+   "updatedAt": "2026-10-08T16:51:15.774Z",
+   "coverageReviewed": false,
+   "coverage": "positive-only",
+   "reviews": [
+    {
+     "id": "A1",
+     "revision": "suspect-three-r1",
+     "verdict": "correct",
+     "act": "Anal penetration (penis)",
+     "performer": "Dracula",
+     "receiver": "Jack Seward",
+     "occurrence": "performed",
+     "from": 3509,
+     "to": 3515,
+     "errors": []
+    }
+   ],
+   "events": [
+    {
+     "ownerActId": "A1",
+     "act": "Anal penetration (penis)",
+     "performer": "Dracula",
+     "receiver": "Jack Seward",
+     "from": 3509,
+     "to": 3515,
+     "scored": true
+    }
+   ]
+  },
+  {
+   "id": "U36",
+   "key": "bobs-slowly~elided#908eb0b0",
+   "fic": "found-in-the-upside-down.html",
+   "from": 2900,
+   "to": 2906,
+   "sourceSha": "1b35ea2b2c860069f4855107bf98452121e5fceb0b9dbf4f9da33c1d89bb699f",
+   "updatedAt": "2026-10-08T16:51:37.994Z",
+   "coverageReviewed": false,
+   "coverage": "positive-only",
+   "reviews": [
+    {
+     "id": "A3",
+     "revision": "suspect-three-r1",
+     "verdict": "correct",
+     "act": "Anal penetration (penis)",
+     "performer": "Steve Harrington",
+     "receiver": "Billy Hargrove",
+     "occurrence": "wanted",
+     "from": 2903,
+     "to": 2906,
+     "errors": []
+    },
+    {
+     "id": "A2",
+     "revision": "suspect-three-r1",
+     "verdict": "correct",
+     "act": "Fingering",
+     "performer": "Steve Harrington",
+     "receiver": "Billy Hargrove",
+     "occurrence": "performed",
+     "from": 2903,
+     "to": 2903,
+     "errors": []
+    },
+    {
+     "id": "A1",
+     "revision": "suspect-three-r1",
+     "verdict": "correct",
+     "act": "Blowjob",
+     "performer": "Eddie Munson",
+     "receiver": "Steve Harrington",
+     "occurrence": "performed",
+     "from": 2903,
+     "to": 2903,
+     "errors": []
+    }
+   ],
+   "events": [
+    {
+     "ownerActId": "A2",
+     "act": "Fingering",
+     "performer": "Steve Harrington",
+     "receiver": "Billy Hargrove",
+     "from": 2903,
+     "to": 2903,
+     "scored": true
+    },
+    {
+     "ownerActId": "A1",
+     "act": "Blowjob",
+     "performer": "Eddie Munson",
+     "receiver": "Steve Harrington",
+     "from": 2903,
+     "to": 2903,
+     "scored": true
+    }
+   ]
+  },
+  {
+   "id": "U38",
+   "key": "came-in-mouth#6f2a8af9",
+   "fic": "ethan.html",
+   "from": 3230,
+   "to": 3236,
+   "sourceSha": "571d0d4887ffa6eebafe4eee78fc200a0d6076d109a4d075e3e277753f6b1824",
+   "updatedAt": "2026-10-08T16:53:20.977Z",
+   "coverageReviewed": false,
+   "coverage": "positive-only",
+   "reviews": [
+    {
+     "id": "A1",
+     "revision": "suspect-three-r1",
+     "verdict": "correct",
+     "act": "Blowjob",
+     "performer": "Hank",
+     "receiver": "Ethan Barnes",
+     "occurrence": "performed",
+     "from": 3231,
+     "to": 3234,
+     "errors": []
+    },
+    {
+     "id": "A2",
+     "revision": "suspect-three-r1",
+     "verdict": "correct",
+     "act": "External anal stimulation",
+     "performer": "Hank",
+     "receiver": "Ethan Barnes",
+     "occurrence": "performed",
+     "from": 3232,
+     "to": 3233,
+     "errors": []
+    },
+    {
+     "id": "A3",
+     "revision": "suspect-three-r1",
+     "verdict": "correct",
+     "act": "Handjob",
+     "performer": "Ethan Barnes",
+     "receiver": "Hank",
+     "occurrence": "performed",
+     "from": 3235,
+     "to": 3236,
+     "errors": []
+    }
+   ],
+   "events": [
+    {
+     "ownerActId": "A1",
+     "act": "Blowjob",
+     "performer": "Hank",
+     "receiver": "Ethan Barnes",
+     "from": 3231,
+     "to": 3234,
+     "scored": true
+    },
+    {
+     "ownerActId": "A2",
+     "act": "External anal stimulation",
+     "performer": "Hank",
+     "receiver": "Ethan Barnes",
+     "from": 3232,
+     "to": 3233,
+     "scored": false
+    },
+    {
+     "ownerActId": "A3",
+     "act": "Handjob",
+     "performer": "Ethan Barnes",
+     "receiver": "Hank",
+     "from": 3235,
+     "to": 3236,
+     "scored": true
+    }
+   ]
+  },
+  {
+   "id": "U41",
+   "key": "dd-hj-fist-works#59025756",
+   "fic": "ethan.html",
+   "from": 2385,
+   "to": 2391,
+   "sourceSha": "571d0d4887ffa6eebafe4eee78fc200a0d6076d109a4d075e3e277753f6b1824",
+   "updatedAt": "2026-10-08T16:53:41.431Z",
+   "coverageReviewed": false,
+   "coverage": "positive-only",
+   "reviews": [],
+   "events": []
+  },
+  {
+   "id": "U43",
+   "key": "mouth-around-him#eb1d2151",
+   "fic": "found-in-the-upside-down.html",
+   "from": 2173,
+   "to": 2179,
+   "sourceSha": "1b35ea2b2c860069f4855107bf98452121e5fceb0b9dbf4f9da33c1d89bb699f",
+   "updatedAt": "2026-10-08T16:54:11.627Z",
+   "coverageReviewed": false,
+   "coverage": "positive-only",
+   "reviews": [],
+   "events": []
+  },
+  {
+   "id": "U44",
+   "key": "dd5-pushes-finger-in~elided#67560b1f",
+   "fic": "jacks.html",
+   "from": 6005,
+   "to": 6011,
+   "sourceSha": "1c82d8bb62ab4aa836ffe8f4924db20c8420faddb9f3b0d75e08a9b35f18957d",
+   "updatedAt": "2026-10-08T16:54:41.295Z",
+   "coverageReviewed": false,
+   "coverage": "positive-only",
+   "reviews": [
+    {
+     "id": "A1",
+     "revision": "suspect-three-r1",
+     "verdict": "correct",
+     "act": "Fingering",
+     "performer": "Jack Seward",
+     "receiver": "Dracula",
+     "occurrence": "performed",
+     "from": 6008,
+     "to": 6009,
+     "errors": []
+    },
+    {
+     "id": "A2",
+     "revision": "suspect-three-r1",
+     "verdict": "correct",
+     "act": "Perineal stimulation",
+     "performer": "Jack Seward",
+     "receiver": "Dracula",
+     "occurrence": "performed",
+     "from": 6009,
+     "to": 6009,
+     "errors": []
+    }
+   ],
+   "events": [
+    {
+     "ownerActId": "A1",
+     "act": "Fingering",
+     "performer": "Jack Seward",
+     "receiver": "Dracula",
+     "from": 6008,
+     "to": 6009,
+     "scored": true
+    },
+    {
+     "ownerActId": "A2",
+     "act": "Perineal stimulation",
+     "performer": "Jack Seward",
+     "receiver": "Dracula",
+     "from": 6009,
+     "to": 6009,
+     "scored": false
+    }
+   ]
+  },
+  {
+   "id": "U45",
+   "key": "dd6-slips-cock-inside#b1138137",
+   "fic": "hate.html",
+   "from": 1695,
+   "to": 1701,
+   "sourceSha": "a34987282302730c5cb9cf4350457713e847383ca411b02c726281de0863ab0b",
+   "updatedAt": "2026-10-08T16:55:01.400Z",
+   "coverageReviewed": false,
+   "coverage": "positive-only",
+   "reviews": [
+    {
+     "id": "A1",
+     "revision": "suspect-three-r1",
+     "verdict": "correct",
+     "act": "Anal penetration (penis)",
+     "performer": "Eddie Munson",
+     "receiver": "Steve Harrington",
+     "occurrence": "performed",
+     "from": 1698,
+     "to": 1701,
+     "errors": []
+    }
+   ],
+   "events": [
+    {
+     "ownerActId": "A1",
+     "act": "Anal penetration (penis)",
+     "performer": "Eddie Munson",
+     "receiver": "Steve Harrington",
+     "from": 1698,
+     "to": 1701,
+     "scored": true
+    }
+   ]
+  },
+  {
+   "id": "U47",
+   "key": "riding#683df94e",
+   "fic": "belonging.html",
+   "from": 4983,
+   "to": 4989,
+   "sourceSha": "d8fe352ab70bc0a8171fea0e069c43d776d3541d741cb74b2b66014ae64e874c",
+   "updatedAt": "2026-10-08T16:55:44.210Z",
+   "coverageReviewed": false,
+   "coverage": "positive-only",
+   "reviews": [
+    {
+     "id": "A2",
+     "revision": "suspect-three-r1",
+     "verdict": "correct",
+     "act": "Handjob",
+     "performer": "Castiel",
+     "receiver": "Dean Winchester",
+     "occurrence": "performed",
+     "from": 4985,
+     "to": 4985,
+     "errors": []
+    },
+    {
+     "id": "A1",
+     "revision": "suspect-three-r1",
+     "verdict": "correct",
+     "act": "Anal penetration (penis)",
+     "performer": "Castiel",
+     "receiver": "Dean Winchester",
+     "occurrence": "performed",
+     "from": 4983,
+     "to": 4988,
+     "errors": []
+    }
+   ],
+   "events": [
+    {
+     "ownerActId": "A2",
+     "act": "Handjob",
+     "performer": "Castiel",
+     "receiver": "Dean Winchester",
+     "from": 4985,
+     "to": 4985,
+     "scored": true
+    },
+    {
+     "ownerActId": "A1",
+     "act": "Anal penetration (penis)",
+     "performer": "Castiel",
+     "receiver": "Dean Winchester",
+     "from": 4983,
+     "to": 4988,
+     "scored": true
+    }
+   ]
+  },
+  {
+   "id": "U49",
+   "key": "push-into~elided#7d76700e",
+   "fic": "jacks.html",
+   "from": 3749,
+   "to": 3755,
+   "sourceSha": "1c82d8bb62ab4aa836ffe8f4924db20c8420faddb9f3b0d75e08a9b35f18957d",
+   "updatedAt": "2026-10-08T16:56:31.291Z",
+   "coverageReviewed": false,
+   "coverage": "positive-only",
+   "reviews": [
+    {
+     "id": "A1",
+     "revision": "suspect-three-r1",
+     "verdict": "correct",
+     "act": "Anal penetration (penis)",
+     "performer": "Dracula",
+     "receiver": "Jack Seward",
+     "occurrence": "performed",
+     "from": 3750,
+     "to": 3755,
+     "errors": []
+    },
+    {
+     "id": "A2",
+     "revision": "suspect-three-r1",
+     "verdict": "correct",
+     "act": "Solo masturbation",
+     "performer": "Jack Seward",
+     "receiver": "",
+     "occurrence": "performed",
+     "from": 3753,
+     "to": 3753,
+     "errors": []
+    }
+   ],
+   "events": [
+    {
+     "ownerActId": "A1",
+     "act": "Anal penetration (penis)",
+     "performer": "Dracula",
+     "receiver": "Jack Seward",
+     "from": 3750,
+     "to": 3755,
+     "scored": true
+    },
+    {
+     "ownerActId": "A2",
+     "act": "Solo masturbation",
+     "performer": "Jack Seward",
+     "receiver": "",
+     "from": 3753,
+     "to": 3753,
+     "scored": true
+    }
+   ]
+  },
+  {
+   "id": "U50",
+   "key": "push-into#2f8aa1af",
+   "fic": "jacks.html",
+   "from": 2785,
+   "to": 2791,
+   "sourceSha": "1c82d8bb62ab4aa836ffe8f4924db20c8420faddb9f3b0d75e08a9b35f18957d",
+   "updatedAt": "2026-10-08T16:56:51.721Z",
+   "coverageReviewed": false,
+   "coverage": "positive-only",
+   "reviews": [
+    {
+     "id": "A1",
+     "revision": "suspect-three-r1",
+     "verdict": "correct",
+     "act": "Anal penetration (penis)",
+     "performer": "Dracula",
+     "receiver": "Jack Seward",
+     "occurrence": "performed",
+     "from": 2786,
+     "to": 2791,
+     "errors": []
+    }
+   ],
+   "events": [
+    {
+     "ownerActId": "A1",
+     "act": "Anal penetration (penis)",
+     "performer": "Dracula",
+     "receiver": "Jack Seward",
+     "from": 2786,
+     "to": 2791,
+     "scored": true
+    }
+   ]
+  }
+ ],
+ "feedbackSha": "08e0c367d94b2047f29549694f954b9cef41e987a516cd55272fd3da1163ece4"
+}
