@@ -1,3 +1,4 @@
+import {PENIS_BUTTOCK_CONTACT} from "./contact";
 import { type Ao3Meta } from "../ao3";
 import { type ActResult, type Confidence, type Desire, type Instance, type DynamicRating, type ManualAct, type ManualResult, type OtherScene, type OthersResult, type Role, type SoloAct, type SoloResult, type VaginalResult, type VibeRating, confidenceLabel } from "../types";
 import { rateDynamic, rateVibe, type VibeItem } from "../vibe";
@@ -111,8 +112,9 @@ export function buildManual(pair: [Character, Character], hits: DesireHit[], whe
     if (seen.has(key)) continue;
     seen.add(key);
     const mutual = /^(?:mutual|frottage)/i.test(d.act);
-    const act = d.act === "genital licking" ? "Genital licking" : d.act === "external anal stimulation" ? "External anal stimulation" : d.act === "frottage" ? "Frottage" : /^thigh/i.test(d.act) ? "Thigh sex" : /^tit/i.test(d.act) ? "Chest sex" : mutual ? "Mutual handjob" : "Handjob";
-    instances.push({ giver: d.who.name, receiver: d.partner.name, act, mutual, evidence: truncate(d.sentence), where: where(d.para), context: d.context, via: d.via, ...lineScore(d) });
+    const act = d.act === PENIS_BUTTOCK_CONTACT ? "Penis against buttocks" : d.act === "genital licking" ? "Genital licking" : d.act === "external anal stimulation" ? "External anal stimulation" : d.act === "frottage" ? "Frottage" : /^thigh/i.test(d.act) ? "Thigh sex" : /^tit/i.test(d.act) ? "Chest sex" : mutual ? "Mutual handjob" : "Handjob";
+    const receiverInitiates = d.act === PENIS_BUTTOCK_CONTACT && d.role === "bottom";
+    instances.push({ giver: receiverInitiates ? d.partner.name : d.who.name, receiver: receiverInitiates ? d.who.name : d.partner.name, act, mutual, evidence: truncate(d.sentence), where: where(d.para), context: d.context, via: d.via, ...lineScore(d) });
   }
   const people = pair.map((c) => ({
     name: c.name,
@@ -136,6 +138,8 @@ export function buildManual(pair: [Character, Character], hits: DesireHit[], whe
   for(const p of people) {
     const n=instances.filter(i=>i.act==="External anal stimulation" && i.giver===p.name).length;
     const oral=instances.filter(i=>i.act==="Genital licking" && i.giver===p.name).length;
+    const contact=instances.filter(i=>i.act==="Penis against buttocks" && i.giver===p.name).length;
+    if(contact) parts.push(`${p.name}: penis against partner’s buttocks ×${contact}`);
     if(oral) parts.push(`${p.name} gives genital licking ×${oral}`);
     if(n) parts.push(`${p.name} gives external anal stimulation ×${n}`);
   }
@@ -303,7 +307,7 @@ export function buildVibes(pair: [Character, Character], acts: ActHit[], des: De
     add(d.who, tier, d.wants ? d.role : flip(d.role), (d.wants ? w : w * 0.5) * (d.kind === "stated" || d.kind === "body" ? Math.min(1, d.weight + 0.2) : 1), dsrc);
     // Position (and, in the combined view, aftercare) is two-sided: the one resting on a chest or held close means the other
     // is the chest or the arms.
-    if (d.wants && (d.kind === "position" || (combined && d.kind === "aftercare"))) add(other(d.who), tier, flip(d.role), w * 0.7, theirs(dsrc));
+    if (d.wants && (d.kind === "position" || (d.act === PENIS_BUTTOCK_CONTACT && d.partner === other(d.who)) || (combined && d.kind === "aftercare"))) add(other(d.who), tier, flip(d.role), w * (d.act === PENIS_BUTTOCK_CONTACT ? 1 : 0.7), theirs(dsrc));
     // A tag that names the pair's dynamic ("Dom/sub", "Praise Kink") backs up who gives the orders, the praise or the care.
     if (combined && tags.dynamicTags.length && d.wants && (d.kind === "petname" || d.kind === "aftercare")) add(d.who, 2, d.role, w * 0.5, { ...dsrc, what: `${dsrc.what}; backed up by a dynamic tag (${tags.dynamicTags[0]})` });
   }
@@ -624,7 +628,7 @@ export function buildAct(
   // ── desire, fantasy & other signals ──
   // Ogling/touching/fingering hints only mean something for same-sex pairs.
   const sameSex = pair[0].gender === pair[1].gender || pair[0].gender === "u" || pair[1].gender === "u";
-  const sig: DesireHit[] = des.filter((d) => sameSex || (d.kind !== "ogling" && d.kind !== "touch" && d.kind !== "prep" && d.kind !== "fingers" && d.kind !== "solo" && d.kind !== "body" && d.kind !== "aftercare" && d.kind !== "position" && d.kind !== "petname"));
+  const sig: DesireHit[] = des.filter((d) => d.act === PENIS_BUTTOCK_CONTACT || sameSex || (d.kind !== "ogling" && d.kind !== "touch" && d.kind !== "prep" && d.kind !== "fingers" && d.kind !== "solo" && d.kind !== "body" && d.kind !== "aftercare" && d.kind !== "position" && d.kind !== "petname"));
   if (cat === "anal" && sameSex) {
     for (const f of fingering) {
       sig.push({ cat, act: "fingering", who: f.top, partner: f.bottom, role: "top", wants: true, kind: "fingering", weight: 0.8, para: f.para, sentence: f.sentence });

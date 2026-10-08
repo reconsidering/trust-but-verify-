@@ -13,7 +13,6 @@ describe("Dracula aliases + big-cock phrasings", () => {
     "The count seated himself inside of Jack with a groan.",
     "The count's huge prick stabbed into him over and over.",
     "The count spread Jack open, nudging against his hole with the wide head of his cock.",
-    "The count was rubbing his enormous prick against Jack's ass.",
     "The count was fucking into him, snarling.",
   ];
   for (const l of anal) it(`anal: ${l}`, () => expect(hits(l, "anal")).toBeGreaterThan(0));

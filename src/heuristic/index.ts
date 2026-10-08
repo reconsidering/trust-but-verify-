@@ -1,3 +1,4 @@
+import {PENIS_BUTTOCK_CONTACT,explicitPenisButtockContact} from "./contact";
 // Free, offline top/bottom analysis using sentence patterns instead of AI.
 //
 // Pipeline: split into paragraphs and sentences → mask dialogue → find act patterns in narration →
@@ -1193,7 +1194,20 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
     if(basePid==="review-tongue-summary" && (!/\b(?:rim|anus|asshole)\b/i.test(reviewBefore) || /\b(?:mouth|throat)\b/i.test(sent))) return;
     if(basePid==="review-takes-second-time" && (!/\b(?:breathless|sticky|thrust|orgasm|sex|cock|penis|hips)\b/i.test(sent) || /^\s+(?:to|on|for)\b/i.test(sent.slice(m.index!+m[0].length)))) return;
     if(basePid==="review-takes-second-time" && !acts.some(a=>a.cat==="anal" && a.act==="anal sex" && a.para>=pi-12 && !paras.slice(a.para+1,pi).some(p=>SCENE_BREAK.test(p)||CHAPTER_RE.test(p)))) return;
-    const occurrence = !pat.signal || ["handjob","masturbation","solo"].includes(pat.signal.kind) ? occurrenceContext(sent.slice(0,m.index!+m[0].length), original, paras[pi-1] ?? "", paras[pi+1] ?? "") : undefined;
+    const externalPenisButtockContact = !pat.signal && /^(?:penis-against|press-cock-against|hole-around)$/.test(basePid) &&
+      /\b(?:cock|dick|penis|prick|shaft|erection|hard-?on)\b/i.test(m[0]) &&
+      /\b(?:ass|arse|butt|buttocks|backside|bum)\b/i.test(m[0]) && /\b(?:against|between|along|over)\b/i.test(m[0]) &&
+      !/\b(?:swallow\w*|took|takes?|accept\w*|squeez\w*|grip\w*|milk\w*|suck\w*|clench\w*|flutter\w*|tighten\w*|clamp\w*)\b/i.test(m[0]) &&
+      !/^\s*(?:,?\s*(?:and|then)\s+)?(?:(?:push|slip|slide|slid|press|thrust|sink|sank)\w*\s+)?(?:in|inside|into)\b/i.test(sent.slice(m.index!+m[0].length));
+    const penisButtockContact = explicitPenisButtockContact(basePid,m[0]) || externalPenisButtockContact;
+    if(penisButtockContact && /\b(?:his|her|their)\s+own\s+(?:ass|arse|butt|buttocks|backside|bum)\b/i.test(m[0]))return;
+    // An active mover's pronoun belongs to the action rule, not to a nested stationary-contact match.
+    if(basePid==="penis-rests-against-buttocks" && /^(?:his|her|their)\b/i.test(m[0]) && /\b(?:grind|rut|rub|rock|hump)\w*\s+$/i.test(sent.slice(0,m.index!)))return;
+    const contactPrefix = (sent.slice(0,m.index!).split(/\b(?:but|yet|however)\b/i).pop() ?? "")+" "+(m.groups?.aux ?? "");
+    const contactWish = penisButtockContact && /\b(?:want\w*|wish\w*|urge|tempted)\b[^;.!?]{0,120}$/i.test(contactPrefix);
+    const contactRecall = penisButtockContact && /\b(?:lingers?|lingering)\b[^;.!?]{0,90}\b(?:feeling|feel)\b/i.test(contactPrefix);
+    const contactConditional = penisButtockContact && (HYPO_AUX.test(m.groups?.aux ?? "") || /\b(?:if|would|could|might|should)\b[^,;.!?]{0,65}$/i.test(contactPrefix));
+    const occurrence = (penisButtockContact || !pat.signal || ["handjob","masturbation","solo"].includes(pat.signal.kind) ? occurrenceContext(sent.slice(0,m.index!+m[0].length), original, paras[pi-1] ?? "", paras[pi+1] ?? "") : undefined) ?? (contactWish ? "wanted" : contactRecall ? "history" : undefined);
     // Adult synthetic: gripping a counter to steady oneself is not genital stimulation.
     if(pat.signal?.kind==="masturbation" &&
        (/\b(?:counter|table|chair|doorframe|railing|wall)\b/i.test(m[0]+sent.slice(m.index!+m[0].length,m.index!+m[0].length+50)) ||
@@ -1717,6 +1731,7 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
     let { basis } = resolved;
     let act = pat.act;
     let cat = pat.cat;
+    if(penisButtockContact){act=PENIS_BUTTOCK_CONTACT;cat="anal";}
     // A hip adjustment and prostate-directed thrust continue penile penetration only when this same pair just established it.
     if (basePid === "hips-thrust-prostate") {
       const previous = acts.filter(a => a.top === top && a.bottom === bottom && a.para >= pi - 4 && a.para < pi && (a.act === "fingering" || a.act.startsWith("anal sex"))).pop();
@@ -1745,6 +1760,16 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
     let weight = pat.weight * trustOf(pat.id, feat) * (basis === "named" ? 1 : basis === "pronoun" ? 0.75 : 0.5);
     const matchText = m[0];
     const after = sent.slice(m.index! + matchText.length, m.index! + matchText.length + 70);
+    // Invented adults: a penis between buttocks is contact evidence, not independent proof of insertion.
+    if(externalPenisButtockContact){
+      if(NEG.test(m.groups?.aux ?? "") || /\b(?:not|never|didn[’\']t|doesn[’\']t|wasn[’\']t|isn[’\']t)\b[^;.!?]{0,65}$/i.test(contactPrefix))return;
+      if(!desires.some(d=>d.sentence===original && d.act===PENIS_BUTTOCK_CONTACT &&
+        (d.who===top && d.partner===bottom || d.who===bottom && d.partner===top)))
+        desires.push({via:pat.id,cat:"anal",act:PENIS_BUTTOCK_CONTACT,who:top,partner:bottom,role:"top",wants:true,
+          kind:occurrence==="history"||occurrence==="recording"?"history":occurrence==="habitual"?"identity":occurrence ?? (contactConditional?"hypothetical":"touch"),
+          weight:weight*Math.min(1,0.6/pat.weight),para:pi,sentence:original,basis,feat,attribution});
+      return;
+    }
 
     // Refinements.
     if (pat.id === "fuck") {
@@ -2241,7 +2266,14 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
         const target=holeType(matchText,sent,para,actor,actor);
         cat=target==="ambiguous"?"vibe":target;
       }
-      if (desires.some((d) => d.sentence === original && d.cat === cat && d.kind === pat.signal!.kind && d.who === actor)) return;
+      const signalKind = penisButtockContact ? "touch" : pat.signal.kind;
+      if(penisButtockContact){
+        const priorContact=desires.findIndex(d=>d.sentence===original && d.act===PENIS_BUTTOCK_CONTACT &&
+          (d.who===top && d.partner===bottom || d.who===bottom && d.partner===top));
+        // Keep the existing action hint's actor and provenance when it replaces a broad penetration-rule fallback.
+        if(priorContact>=0){if(/^(?:penis-against|press-cock-against|hole-around)(?:~|$)/.test(desires[priorContact].via ?? ""))desires.splice(priorContact,1);else return;}
+      }
+      if (desires.some((d) => d.sentence === original && d.cat === cat && d.kind === signalKind && d.who === actor)) return;
       const other = actor === top ? bottom : top;
       desires.push({
         via: pat.id,
@@ -2253,7 +2285,7 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
         partner: other,
         role: pat.signal.actorRole,
         wants: true,
-        kind: occurrence==="history" || occurrence==="recording" ? "history" : occurrence==="habitual" ? "identity" : occurrence ?? pat.signal.kind,
+        kind: occurrence==="history" || occurrence==="recording" ? "history" : occurrence==="habitual" ? "identity" : occurrence ?? (contactConditional ? "hypothetical" : signalKind),
         weight,
         para: pi,
         sentence: original,
@@ -2608,7 +2640,7 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
     // Solo acts get their own card. Self-fingering and toys on oneself still count toward anal bottom evidence, but only for
     // someone with an ass in play: a woman fingering herself is vaginal unless the sentence says ass.
     const soloDes = allPairDes.filter((d) => d.kind === "solo" || d.kind === "masturbation");
-    const manualDes = allPairDes.filter((d) => d.kind === "handjob");
+    const manualDes = allPairDes.filter((d) => d.kind === "handjob" || d.kind === "touch" && d.act === PENIS_BUTTOCK_CONTACT);
     const pDes = allPairDes.filter((d) => d.kind !== "masturbation" && d.kind !== "handjob" && !(d.kind === "solo" && !soloIsAnal(d)));
     const tagged = pairOrder.get(key);
     const members = tagged ?? (pActs[0] ? [pActs[0].top, pActs[0].bottom] : pDes[0] ? [pDes[0].who, pDes[0].partner!] : undefined);

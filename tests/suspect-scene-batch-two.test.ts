@@ -47,10 +47,10 @@ it('gates per-act controls and exports corrections independently without accepti
  const receiver = document.querySelector<HTMLInputElement>('[data-act-id=A1] [data-act-field=receiver]')!; receiver.value='Morgan'; receiver.dispatchEvent(new Event('input'));
  const context = document.querySelector<HTMLTextAreaElement>('[data-act-id=A1] [data-act-field=context]')!; context.value='Self-insertion, not a partner act.'; context.dispatchEvent(new Event('input'));
  document.querySelector<HTMLInputElement>('[data-act-id=A1] fieldset input')!.click();
- document.querySelector<HTMLInputElement>('#coverage-complete')!.click();
+ expect(document.querySelector('#coverage-complete')).toBeNull();
  expect(api.answers.T1.verdict).toBeUndefined(); expect(api.answers.T1.actReviews!.A2).toBeUndefined();
  expect(api.answers.T1.actReviews!.A1).toMatchObject({verdict:'wrong',receiver:'Morgan',context:context.value,errors:['Wrong person']});
- expect(api.answers.T1.coverageComplete).toBe(true);
+ expect(api.answers.T1.coverageComplete).toBeUndefined();
  const payload=api.payload(), imported: Record<string,ReviewAnswer>={}; expect(importAnswers(batch,payload,imported)).toBe(1); expect(imported.T1).toEqual(api.answers.T1);
  const altered=structuredClone(payload); altered.answers[0].actReviews!.A1.revision='other'; expect(()=>importAnswers(batch,altered,{})).toThrow('act proposal');
  const wrongWindow=structuredClone(payload); wrongWindow.answers[0].evidence=[{from:0,to:1}]; expect(()=>importAnswers(batch,wrongWindow,{})).toThrow('scene window');

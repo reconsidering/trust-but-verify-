@@ -7,7 +7,7 @@ export function buildSuspectActReview(batch, feedback, previous) {
   if (batch.schema !== 'engine-review-batch/v1' || feedback.schema !== batch.schema || feedback.batchId !== batch.batchId || feedback.engineCommit !== batch.engineCommit || !Array.isArray(feedback.answers)) throw Error('Act feedback belongs to a different batch.');
   if (previous && (previous.schema !== 'engine-suspect-act-review/v1' || previous.batchId !== batch.batchId || previous.referenceCommit !== batch.engineCommit)) throw Error('The existing act review belongs to another batch.');
   const windows = new Map((previous?.windows ?? []).map(w => [w.id, w])), seen = new Set();
-  const knownActs = new Set([...SCORED_ACTS, ...batch.rows.flatMap(r => (r.sceneActs ?? []).map(a => a.act)), 'Other']);
+  const knownActs = new Set([...SCORED_ACTS, ...batch.rows.flatMap(r => (r.sceneActs ?? []).map(a => a.act)), 'Other', 'Penis against buttocks']);
   for (const answer of feedback.answers) {
     const row = batch.rows.find(r => r.id === answer.id), source = row && batch.sources.find(s => s.file === row.fic);
     if (!row || !source || !row.sceneActs || seen.has(answer.id) || answer.key !== row.key || answer.fic !== row.fic || answer.paragraph !== row.para || answer.sourceSha !== source.sourceSha || JSON.stringify(answer.evidence) !== JSON.stringify(row.evidence) || !Number.isFinite(Date.parse(answer.updatedAt)) || !strings(answer.errors) || (answer.verdict !== undefined && !verdicts.includes(answer.verdict)) || (answer.coverageComplete !== undefined && typeof answer.coverageComplete !== 'boolean')) throw Error('Invalid scene identity or answer metadata.');

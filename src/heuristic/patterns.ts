@@ -3018,6 +3018,24 @@ export const PATTERNS: PatternDef[] = [
     src: `\\b{B}\\s+{aux}(?:push|press|grind|ground|rock|arch|wiggl|shimm|back|rut)\\w*\\s+(?:his|her|their|my|your)\\s+(?:(?:ass|arse|butt|bum)\\s+(?:back\\s+|up\\s+)?|hips\\s+back\\s+)(?:against|into|onto|toward|towards)\\s+{T:penis}`,
   },
   {
+    // Invented adults: Morgan's penis rests against Rowan's buttocks without insertion.
+    id: "penis-rests-against-buttocks",
+    cat: "anal",
+    act: "penis against buttocks",
+    subj: "t",
+    weight: 0.6,
+    kw: "cock|dick|penis|prick|shaft|erection|hard.?on",
+    signal: { kind: "touch", actorRole: "top" },
+    src: `\\b{T:penisReq}\\s+(?:(?:is|was|were|are)\\s+)?(?:(?:rest|rests|rested|resting|press|presses|pressed|pressing|lay|lies|lying)\\s+)?(?:against|between|along)\\s+{B:poss}\\s+(?:[\\w-]+\\s+){0,2}?(?:buttocks|ass|arse|butt|backside|bum)\\b`,
+  },
+  {
+    // Invented adults: Rowan's buttocks press against Morgan's penis; Rowan receives the contact.
+    id: "buttocks-rest-against-penis", cat: "anal", act: "penis against buttocks", subj: "b", weight: 0.6,
+    kw: "cock|dick|penis|prick|shaft|erection|hard.?on",
+    signal: { kind: "touch", actorRole: "bottom" },
+    src: `\\b{B:poss}\\s+(?:ass|arse|butt|buttocks|backside|bum)(?:\\s+cheeks)?\\s+(?:(?:is|was|were|are)\\s+)?(?:(?:rest|rests|rested|resting|press|presses|pressed|pressing|lay|lies|lying)\\s+)?(?:against|along)\\s+{T:penisReq}`,
+  },
+  {
     id: "grind-cock-on-ass",
     cat: "anal",
     act: "grinding against an ass",
