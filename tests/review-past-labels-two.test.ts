@@ -43,3 +43,11 @@ it('agreement accepts today’s call and requests a fresh identity-specific labe
  document.querySelector<HTMLButtonElement>('[data-past-label=uncertain]')!.click();expect(api.answers.P28.pastLabelReview).toBe('uncertain');
  expect(batch.selection!.answerFile).toBe('past-label-review-2-answers.json');
 });
+it('includes all 164 window readings, each with its own versioned assessment and score provenance',()=>{
+ const readings=batch.rows.flatMap(r=>r.engineReadings??[]);expect(readings).toHaveLength(164);
+ for(const row of batch.rows){expect(row.engineReadings!.filter(h=>h.id==='primary')).toHaveLength(1);expect(new Set(row.engineReadings!.map(h=>h.id)).size).toBe(row.engineReadings!.length);
+  for(const h of row.engineReadings!){expect(h.proposal!.rationale.length).toBeGreaterThan(10);expect(h.confidenceBasis).toBeTruthy();expect(h).not.toHaveProperty('sentence');expect(h.para).toBeGreaterThanOrEqual(row.evidence![0].from);expect(h.para).toBeLessThanOrEqual(row.evidence![0].to);}
+ }
+ expect(readings.filter(h=>h.confidence===null)).toHaveLength(11);
+ expect(readings.some(h=>h.kind==='hypothetical'&&h.proposal!.verdict==='correct')).toBe(true);
+});
