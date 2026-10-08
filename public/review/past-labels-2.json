@@ -1,0 +1,3517 @@
+{
+ "schema": "engine-review-batch/v1",
+ "batchId": "past-labels-two-a06784f5a2fa",
+ "engineCommit": "227c4639776bdc378c02214c1545f1866af4e787",
+ "selection": {
+  "method": "Risk-rank surviving historical per-reading records by label/model disagreement, indirect attribution, occurrence frames and contact/instrument warnings from recent owner reviews. Retired-only records, the first past-label review windows and new suspect batch 3 windows are excluded. At most six per source, targets at least 12 paragraphs apart. Risk/key selection is deterministic; display order puts ten proposed verdict changes first, then four uncertain cases, then thirty-six identity rechecks whose negative verdicts still look supported. Manually reviewed calls do not manufacture accepted labels.",
+  "answerFile": "past-label-review-2-answers.json",
+  "stats": {
+   "auditAssignments": 1769,
+   "auditKeys": 2069,
+   "rightEntries": 950,
+   "recoveredKeys": 1471,
+   "recoveredHistoricalHitKeys": 1858,
+   "candidates": 1644,
+   "sources": 22,
+   "selected": 50,
+   "selectedSources": 22,
+   "goldFiles": 10,
+   "goldRanges": 87,
+   "inventoryWindows": 76,
+   "assistantAssessments": {
+    "correct": 10,
+    "wrong": 36,
+    "uncertain": 4
+   }
+  },
+  "detectorAuditCommit": "4c1e362e4cc4199996cdac8a2eb272061c461be1",
+  "confidenceCommit": "227c4639776bdc378c02214c1545f1866af4e787",
+  "latestFeedback": {
+   "batchId": "past-labels-28061110392e",
+   "explicitCorrect": 39,
+   "explicitWrong": 7,
+   "explicitUncertain": 1,
+   "unresolvedIds": [
+    "L9",
+    "L10",
+    "L42"
+   ],
+   "sha256": "c9823f5ec8391be665e12f71198dad1f873e9487364b9641379667ea0d1747ab",
+   "scope": "Read for manual attribution, instrument and occurrence review; answered passages are excluded. No disagreements without a verdict are inferred as labels."
+  },
+  "scope": "All past per-reading act and hint labels considered. Gold ranges and confirmed act inventories are context, never implied negative per-hit/hint labels. Models and training labels unchanged."
+ },
+ "sources": [
+  {
+   "file": "angel-without-a-god.html",
+   "title": "angel without a god",
+   "sourceSha": "dae22879912fd019b9219d7cf60c85dd861ae5b83de5660c1b3a9918030a3d95",
+   "paragraphSha": "1d4071086192c11c15f3d12db8d5dc9cc1890517f101dbff22ff1d61aeb4a154",
+   "paragraphCount": 4625
+  },
+  {
+   "file": "belonging.html",
+   "title": "Belonging is Longing is Now",
+   "sourceSha": "d8fe352ab70bc0a8171fea0e069c43d776d3541d741cb74b2b66014ae64e874c",
+   "paragraphSha": "f9bf52ddcb708de72d8df74649d6976fa2ed62ddba1e55df553729ba32589409",
+   "paragraphCount": 5783
+  },
+  {
+   "file": "covered.html",
+   "title": "covered in the colors—pulled apart at the seams",
+   "sourceSha": "301ec67c0b6dd5535e4e32931e0d4c1dacc9cd0f599e42a9334e6c0859bfebb3",
+   "paragraphSha": "3ef5ba1851421faca49ada1d5c3972a3e23c283fc8517d4ba218010d582237cf",
+   "paragraphCount": 2322
+  },
+  {
+   "file": "different-town-2.html",
+   "title": "Different Town",
+   "sourceSha": "8924281b07da3042e28dde552c887185855f9fb9376a57a2b70885b1b0c8d4a0",
+   "paragraphSha": "157a561a06e65787c3ed9eae856d921d94115feec1110ebe64c8d9e1718d610c",
+   "paragraphCount": 1719
+  },
+  {
+   "file": "dogbird.html",
+   "title": "like a dog with a bird at your door",
+   "sourceSha": "b66dcf4730e681942787b9d280bc8b2825005e179cfe09179a82e935a4f036fb",
+   "paragraphSha": "a9bac5bb63b9adc912ac2f8d6f224c1311c7a6e977ef8c66ad82fb1e384479ee",
+   "paragraphCount": 1474
+  },
+  {
+   "file": "fling.html",
+   "title": "Fling",
+   "sourceSha": "1b9391fae1def21384730e3a32425d81fc43cfbaa15e0a1e36d307c10050c637",
+   "paragraphSha": "627c7df1e6a2556c3bed909a8148c4e217d908fb46338fee3bfaa87a76cb7ae2",
+   "paragraphCount": 254
+  },
+  {
+   "file": "found-in-the-upside-down.html",
+   "title": "Found in the Upside Down",
+   "sourceSha": "1b35ea2b2c860069f4855107bf98452121e5fceb0b9dbf4f9da33c1d89bb699f",
+   "paragraphSha": "bfeae364ffe28a234772d7aa805f04510415789974a736df43a1ade996dfe69d",
+   "paragraphCount": 3050
+  },
+  {
+   "file": "hate.html",
+   "title": "Hate the Way It Feels So Good",
+   "sourceSha": "a34987282302730c5cb9cf4350457713e847383ca411b02c726281de0863ab0b",
+   "paragraphSha": "5043e33ae248b134c4e0770ce09f249d64a0331a0cd82425f12a2a3242135316",
+   "paragraphCount": 1885
+  },
+  {
+   "file": "hearts-truth.html",
+   "title": "The Heart's Honest Truth",
+   "sourceSha": "8f8475aebc261535b49fea7c4b696b3353325d5b9a45ce9b3a3a487da800b815",
+   "paragraphSha": "ffdca305b26b825501ec14db328c98372718e072496c19b34b208cc1623854a9",
+   "paragraphCount": 430
+  },
+  {
+   "file": "jacks.html",
+   "title": "Jack's phone.",
+   "sourceSha": "1c82d8bb62ab4aa836ffe8f4924db20c8420faddb9f3b0d75e08a9b35f18957d",
+   "paragraphSha": "243b447f5811886dca1d72fca33f2761722cb802a440c2cb82c2dcd756487f1b",
+   "paragraphCount": 13370
+  },
+  {
+   "file": "kissed.html",
+   "title": "I know I've kissed you before (Can I try again)",
+   "sourceSha": "d5ab43bf7e48aafac0a7b41d4213b49f188be27512e86782cdfb84384481159d",
+   "paragraphSha": "0d2c5f24c5b41a01702869ef44a70e77ccf518e60a408a2db645c9ea7ad48d3b",
+   "paragraphCount": 4706
+  },
+  {
+   "file": "lightning.html",
+   "title": "Held Up a Lightning Rod (Wonder Why I'm Struck)",
+   "sourceSha": "0a3fe56af1a92ac27ba2da61af1ffb88f11cf6aa44cb91777bb7b97c025f67d7",
+   "paragraphSha": "53578f7dc07a33d29e2ff7074e2292cf37257cf8e0045e06178adfc251bae999",
+   "paragraphCount": 5692
+  },
+  {
+   "file": "more-views.html",
+   "title": "More Views. More Money.",
+   "sourceSha": "61461060f56925872cb638627ee721273255d669032ded0d8562ffef4fc8601f",
+   "paragraphSha": "220940e4b87a4b161eda553e7169b3dce3e3f50562957b20d665f0b1e127ebec",
+   "paragraphCount": 1018
+  },
+  {
+   "file": "new-bitch.html",
+   "title": "New Bitch",
+   "sourceSha": "035c7e5c68df50c2dc0d7e64a801001d3c59ccfadda9e1f8511960dd26a018e7",
+   "paragraphSha": "5527ed5d1e69500ba1329c931eafb505469a502764e91e796db95d4bceaee936",
+   "paragraphCount": 7944
+  },
+  {
+   "file": "please.html",
+   "title": "please turn on your magic beam (mr sandman bring me a dream)",
+   "sourceSha": "4c22df6fad65421863f64b54c93585f2bd4f0ba9d5e6e6d9363689456366ebd9",
+   "paragraphSha": "3d98e03e32366d0f5969a0c2ecfdea1f4907f8a955769579f62ae82b3357d169",
+   "paragraphCount": 5759
+  },
+  {
+   "file": "prince-prisoner-puppy.html",
+   "title": "Prince, Prisoner, Puppy, Parent",
+   "sourceSha": "cb68b9eaa778291f8ecbe13bcdb59ee9a7d3f0a170fa1ec35347e4663d6714fa",
+   "paragraphSha": "9cd533d1f684a763a828c7145a87d767ffe3b70d60bdcc1e05f76542a1281393",
+   "paragraphCount": 958
+  },
+  {
+   "file": "shawnee.html",
+   "title": "The Shawnee Trail",
+   "sourceSha": "cf8b28049c599f96ddf1055ba3aece1810d6f1fb44db46dea1e5f2522b860140",
+   "paragraphSha": "ddd83f6e4121a23548f9c54777c24bc496b561a9f14f6cc50b28a0ff7760c336",
+   "paragraphCount": 5250
+  },
+  {
+   "file": "steady-eddie.html",
+   "title": "Keep it Steady, Eddie",
+   "sourceSha": "6df06eafa0879c71bd9d3e7401cb3ce8c878e3da07d39265d9c4357c3c00dec8",
+   "paragraphSha": "494f981d4b56d4f5f3633dd2ca11e35afc227f12d2c184a07d9c603256be690e",
+   "paragraphCount": 2783
+  },
+  {
+   "file": "tricks-of-the-trade.html",
+   "title": "Tricks of the Trade",
+   "sourceSha": "25a15e806d8f6a55c030e78d50d58e71f2ca424674b33f7a56471178d4ab1bd3",
+   "paragraphSha": "56e605751373cfe88dc1f6a48760f8625a143c8157e758778c2f64929a65e8d7",
+   "paragraphCount": 3875
+  },
+  {
+   "file": "tuica.html",
+   "title": "The Taste of Țuică",
+   "sourceSha": "5d4576b9b18c9a7bf6bd4d343e423aa37a4822932d3a66c37467df1e1d30287d",
+   "paragraphSha": "191a3ffe622375e550ff9789fa04a7eb7afce190bb84b69c857b1b37e239a32c",
+   "paragraphCount": 542
+  },
+  {
+   "file": "were-compeer.html",
+   "title": "A WereCompeer",
+   "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+   "paragraphSha": "db8942d563fe592c068945be850d2bc5ed6f9abcf355f4b74bc0962bcd4d71dc",
+   "paragraphCount": 1220
+  },
+  {
+   "file": "whisper.html",
+   "title": "Whisper in my ear",
+   "sourceSha": "52b242a237c19a643a886b07c3f6b64eab70c1e6df16357a5099174bc76116bd",
+   "paragraphSha": "be87ebc0b8822287453570bee5c685c2ed21da71e6d2856abfc19483eaea0329",
+   "paragraphCount": 490
+  }
+ ],
+ "rows": [
+  {
+   "id": "P8",
+   "key": "pushed-in#855bdcff",
+   "fic": "tricks-of-the-trade.html",
+   "para": 3773,
+   "pattern": "pushed-in",
+   "a": "Castiel",
+   "b": "Dean Winchester",
+   "act": "anal sex",
+   "kind": "act",
+   "claim": "Castiel is having anal sex with Dean Winchester, as the one penetrating [anal sex; Performed]",
+   "engineConfidence": 0.9540414190203772,
+   "evidence": [
+    {
+     "from": 3770,
+     "to": 3776
+    }
+   ],
+   "proposal": {
+    "revision": "past-two-r1",
+    "verdict": "correct",
+    "confidence": 0.99,
+    "reading": "Castiel penetrates Dean Winchester anally with his penis.",
+    "rationale": "The explicitly identified penis, prostate contact and continuing thrusts confirm the act and direction. The old rejection may refer to a different claim identity.",
+    "errors": []
+   },
+   "labelAudit": {
+    "pastLabels": [
+     {
+      "source": "tests/labels/audit-2026-10-03.json",
+      "verdict": "wrong",
+      "provenance": "Saved per-reading judgment; original claim identity not saved",
+      "key": "pushed-in#855bdcff",
+      "identityVerified": false,
+      "claim": "The original engine description was not saved with this hash-only label. This verdict does not automatically judge the current description below.",
+      "date": "2026-10-03"
+     }
+    ],
+    "priority": 0.8872227804612074,
+    "occurrence": "Performed",
+    "changed": false,
+    "quarantined": false,
+    "status": "My current reading supports a different verdict from a surviving past record. Check both before accepting a fresh label.",
+    "reasons": [
+     "Current model confidence disagrees with or leaves uncertainty about a surviving historical judgment.",
+     "The original full claim identity is unavailable; old and current descriptions must not be equated.",
+     "Several nearby characters or indirect participant resolution.",
+     "A performed-act hit occurs near memory, conditional or recording language; context was checked manually.",
+     "Instrument, ownership or self-versus-partner contact is a recent owner-review error family.",
+     "My proposed current verdict differs from at least one surviving historical verdict."
+    ],
+    "recentEvidence": [
+     "tests/scene-review/suspect-two-569919fdfb5e.json, suspect-two-569919fdfb5e/T18: owner-confirmed Blowjob, Castiel → Dean Winchester, ¶3751–3753. Positive-only evidence; omissions are not negatives.",
+     "tests/scene-review/suspect-two-569919fdfb5e.json, suspect-two-569919fdfb5e/T18: owner-confirmed Handjob, Castiel → Dean Winchester, ¶3757–3766. Positive-only evidence; omissions are not negatives.",
+     "tests/scene-review/suspect-two-569919fdfb5e.json, suspect-two-569919fdfb5e/T18: owner-confirmed Solo masturbation, Castiel, ¶3757–3757. Positive-only evidence; omissions are not negatives.",
+     "tests/scene-review/suspect-two-569919fdfb5e.json, suspect-two-569919fdfb5e/T18: owner-confirmed Fingering, Castiel → Dean Winchester, ¶3768–3769. Positive-only evidence; omissions are not negatives.",
+     "tests/scene-review/suspect-two-569919fdfb5e.json, suspect-two-569919fdfb5e/T18: owner-confirmed Anal penetration (penis), Castiel → Dean Winchester, ¶3773–3780. Positive-only evidence; omissions are not negatives.",
+     "tests/scene-review/suspect-two-569919fdfb5e.json, suspect-two-569919fdfb5e/T18: owner-confirmed Body rubbing / frottage, Castiel → Dean Winchester, ¶3756–3756. Positive-only evidence; omissions are not negatives."
+    ],
+    "referenceIsOriginal": false
+   },
+   "trainingNotes": [
+    "The saved verdict judges the original saved claim, when recoverable, never an automatically substituted current claim.",
+    "Hints are judged only if explicitly reviewed; no negative labels are inferred from missing acts or inventory omissions."
+   ]
+  },
+  {
+   "id": "P9",
+   "key": "hj-stroke~elided#cf444e71",
+   "fic": "hearts-truth.html",
+   "para": 350,
+   "pattern": "hj-stroke~elided",
+   "a": "Harry Potter",
+   "b": "Draco Malfoy",
+   "act": "handjob",
+   "kind": "handjob",
+   "role": "top",
+   "claim": "Harry Potter gives Draco Malfoy a handjob. [handjob; Performed]",
+   "engineConfidence": 0.8841724650820361,
+   "evidence": [
+    {
+     "from": 347,
+     "to": 353
+    }
+   ],
+   "proposal": {
+    "revision": "past-two-r1",
+    "verdict": "correct",
+    "confidence": 0.96,
+    "reading": "Harry Potter penetrates Draco Malfoy anally and manually stimulates Draco.",
+    "rationale": "The preceding paragraph names Draco’s penis as the one Harry is holding. Harry’s own penis remains inside Draco.",
+    "errors": []
+   },
+   "labelAudit": {
+    "pastLabels": [
+     {
+      "source": "tests/labels/audit-2026-10-03.json",
+      "verdict": "wrong",
+      "provenance": "Saved per-reading judgment; original claim identity not saved",
+      "key": "hj-stroke~elided#cf444e71",
+      "identityVerified": false,
+      "claim": "The original engine description was not saved with this hash-only label. This verdict does not automatically judge the current description below.",
+      "date": "2026-10-03"
+     }
+    ],
+    "priority": 0.8862948557951199,
+    "occurrence": "Performed",
+    "changed": false,
+    "quarantined": false,
+    "status": "My current reading supports a different verdict from a surviving past record. Check both before accepting a fresh label.",
+    "reasons": [
+     "Current model confidence disagrees with or leaves uncertainty about a surviving historical judgment.",
+     "The original full claim identity is unavailable; old and current descriptions must not be equated.",
+     "Several nearby characters or indirect participant resolution.",
+     "A performed-act hit occurs near memory, conditional or recording language; context was checked manually.",
+     "Instrument, ownership or self-versus-partner contact is a recent owner-review error family.",
+     "My proposed current verdict differs from at least one surviving historical verdict."
+    ],
+    "recentEvidence": [],
+    "referenceIsOriginal": false
+   },
+   "trainingNotes": [
+    "The saved verdict judges the original saved claim, when recoverable, never an automatically substituted current claim.",
+    "Hints are judged only if explicitly reviewed; no negative labels are inferred from missing acts or inventory omissions."
+   ]
+  },
+  {
+   "id": "P17",
+   "key": "be-fucked~elided#3fca5214",
+   "fic": "jacks.html",
+   "para": 4137,
+   "pattern": "be-fucked~elided",
+   "a": "Jack Seward",
+   "b": "Dracula",
+   "act": "anal sex",
+   "kind": "wanted",
+   "role": "bottom",
+   "claim": "Jack Seward is being fucked anally by Dracula (read as something wanted, not something that happens) [anal sex; Wanted]",
+   "engineConfidence": 0.9626300173681888,
+   "evidence": [
+    {
+     "from": 4134,
+     "to": 4140
+    }
+   ],
+   "proposal": {
+    "revision": "past-two-r1",
+    "verdict": "correct",
+    "confidence": 0.96,
+    "reading": "Jack Seward asks Dracula for harder and faster anal sex while already receiving it.",
+    "rationale": "The wanted reading has the correct requester and role. It is a request during a performed act, not evidence that penetration is absent.",
+    "errors": []
+   },
+   "labelAudit": {
+    "pastLabels": [
+     {
+      "source": "tests/labels/audit-2026-10-03.json",
+      "verdict": "ok",
+      "provenance": "Saved per-reading judgment; original claim identity not saved",
+      "key": "be-fucked~elided#3fca5214",
+      "identityVerified": false,
+      "claim": "The original engine description was not saved with this hash-only label. This verdict does not automatically judge the current description below.",
+      "date": "2026-10-03"
+     },
+     {
+      "source": "tests/right-set/jack-s-phone.json",
+      "verdict": "ok",
+      "provenance": "Saved mistake-report judgment; retired (record source: claude)",
+      "key": "be-fucked#aa3b5e98",
+      "identityVerified": false,
+      "claim": "Saved report summary: Jack Seward was credited with a anal hint as bottom (wanted / hypothetical). The full original engine description and instrument were not recorded.",
+      "date": "2026-10-05",
+      "confidence": 0.61,
+      "retired": "owner judged this wrong in a blind spot-check 2026-10-06"
+     },
+     {
+      "source": "tests/right-set/jack-s-phone.json",
+      "verdict": "wrong",
+      "provenance": "Saved mistake-report judgment (record source: owner)",
+      "key": "be-fucked#aa3b5e98",
+      "identityVerified": false,
+      "claim": "Saved report summary: Jack Seward was credited with a anal hint as bottom (wanted / hypothetical). The full original engine description and instrument were not recorded.",
+      "date": "2026-10-06",
+      "confidence": 0.61
+     }
+    ],
+    "priority": 0.7794465095525038,
+    "occurrence": "Wanted",
+    "changed": false,
+    "quarantined": false,
+    "status": "My current reading supports a different verdict from a surviving past record. Check both before accepting a fresh label.",
+    "reasons": [
+     "Current model confidence disagrees with or leaves uncertainty about a surviving historical judgment.",
+     "The original full claim identity is unavailable; old and current descriptions must not be equated.",
+     "Several nearby characters or indirect participant resolution.",
+     "Instrument, ownership or self-versus-partner contact is a recent owner-review error family.",
+     "My proposed current verdict differs from at least one surviving historical verdict."
+    ],
+    "recentEvidence": [],
+    "referenceIsOriginal": false
+   },
+   "trainingNotes": [
+    "The saved verdict judges the original saved claim, when recoverable, never an automatically substituted current claim.",
+    "Hints are judged only if explicitly reviewed; no negative labels are inferred from missing acts or inventory omissions."
+   ]
+  },
+  {
+   "id": "P28",
+   "key": "fuck#51959f8b",
+   "fic": "lightning.html",
+   "para": 2550,
+   "pattern": "fuck",
+   "a": "Evan \"Buck\" Buckley",
+   "b": "Eddie Diaz",
+   "act": "anal sex",
+   "kind": "hypothetical",
+   "role": "top",
+   "claim": "Evan \"Buck\" Buckley is having anal sex with Eddie Diaz, as the one penetrating (read as a hypothetical, not something that happens) [anal sex; Hypothetical]",
+   "engineConfidence": 0.9461757190313977,
+   "evidence": [
+    {
+     "from": 2547,
+     "to": 2553
+    }
+   ],
+   "proposal": {
+    "revision": "past-two-r1",
+    "verdict": "correct",
+    "confidence": 0.98,
+    "reading": "Eddie Diaz imagines Evan Buckley penetrating Eddie anally.",
+    "rationale": "The thought changes from Eddie imagining himself penetrating Buck to imagining Buck penetrating him. The engine marks the latter as hypothetical and gets its direction right.",
+    "errors": []
+   },
+   "labelAudit": {
+    "pastLabels": [
+     {
+      "source": "tests/labels/batch-oct6-4be55d1e796d.json",
+      "verdict": "wrong",
+      "provenance": "Saved per-reading judgment with owner answer metadata",
+      "key": "fuck#51959f8b",
+      "identityVerified": false,
+      "claim": "The original engine description was not saved with this hash-only label. This verdict does not automatically judge the current description below.",
+      "date": "2026-10-07T13:59:11.850Z",
+      "errors": []
+     }
+    ],
+    "priority": 0.7328966454672688,
+    "occurrence": "Hypothetical",
+    "changed": false,
+    "quarantined": false,
+    "status": "My current reading supports a different verdict from a surviving past record. Check both before accepting a fresh label.",
+    "reasons": [
+     "Current model confidence disagrees with or leaves uncertainty about a surviving historical judgment.",
+     "The original full claim identity is unavailable; old and current descriptions must not be equated.",
+     "Several nearby characters or indirect participant resolution.",
+     "Instrument, ownership or self-versus-partner contact is a recent owner-review error family.",
+     "My proposed current verdict differs from at least one surviving historical verdict."
+    ],
+    "recentEvidence": [],
+    "referenceIsOriginal": false
+   },
+   "trainingNotes": [
+    "The saved verdict judges the original saved claim, when recoverable, never an automatically substituted current claim.",
+    "Hints are judged only if explicitly reviewed; no negative labels are inferred from missing acts or inventory omissions."
+   ]
+  },
+  {
+   "id": "P35",
+   "key": "come-in-mouth#3b04df82",
+   "fic": "please.html",
+   "para": 2148,
+   "pattern": "come-in-mouth",
+   "a": "Eddie Munson",
+   "b": "Steve Harrington",
+   "act": "blowjob",
+   "kind": "act",
+   "claim": "Eddie Munson is getting a blowjob from Steve Harrington [blowjob; Performed]",
+   "engineConfidence": 0.9887814119521592,
+   "evidence": [
+    {
+     "from": 2145,
+     "to": 2151
+    }
+   ],
+   "proposal": {
+    "revision": "past-two-r1",
+    "verdict": "correct",
+    "confidence": 0.99,
+    "reading": "Steve Harrington performs oral sex on Eddie Munson, who ejaculates into Steve’s mouth.",
+    "rationale": "The mouth contact, movement and completion clearly establish the act and direction.",
+    "errors": []
+   },
+   "labelAudit": {
+    "pastLabels": [
+     {
+      "source": "tests/labels/audit-2026-10-03.json",
+      "verdict": "wrong",
+      "provenance": "Saved per-reading judgment; original claim identity not saved",
+      "key": "come-in-mouth#3b04df82",
+      "identityVerified": false,
+      "claim": "The original engine description was not saved with this hash-only label. This verdict does not automatically judge the current description below.",
+      "date": "2026-10-03"
+     }
+    ],
+    "priority": 0.6563297765736875,
+    "occurrence": "Performed",
+    "changed": false,
+    "quarantined": false,
+    "status": "My current reading supports a different verdict from a surviving past record. Check both before accepting a fresh label.",
+    "reasons": [
+     "Current model confidence disagrees with or leaves uncertainty about a surviving historical judgment.",
+     "The original full claim identity is unavailable; old and current descriptions must not be equated.",
+     "Several nearby characters or indirect participant resolution.",
+     "My proposed current verdict differs from at least one surviving historical verdict."
+    ],
+    "recentEvidence": [],
+    "referenceIsOriginal": false
+   },
+   "trainingNotes": [
+    "The saved verdict judges the original saved claim, when recoverable, never an automatically substituted current claim.",
+    "Hints are judged only if explicitly reviewed; no negative labels are inferred from missing acts or inventory omissions."
+   ]
+  },
+  {
+   "id": "P38",
+   "key": "thrust-back#525071d2",
+   "fic": "shawnee.html",
+   "para": 275,
+   "pattern": "thrust-back",
+   "a": "Dean Winchester",
+   "b": "Castiel",
+   "act": "pushing back",
+   "kind": "touch",
+   "role": "bottom",
+   "claim": "Dean Winchester is pushing back against Castiel during sex [pushing back; Contact cue]",
+   "engineConfidence": 0.9704449750764499,
+   "evidence": [
+    {
+     "from": 272,
+     "to": 278
+    }
+   ],
+   "proposal": {
+    "revision": "past-two-r1",
+    "verdict": "correct",
+    "confidence": 0.99,
+    "reading": "Dean Winchester rocks back into Castiel’s fingers.",
+    "rationale": "The movement into the receiving touch is explicit, and the actor and partner are correct. This is a position cue, not a separate penetration event.",
+    "errors": []
+   },
+   "labelAudit": {
+    "pastLabels": [
+     {
+      "source": "tests/labels/audit-2026-10-03.json",
+      "verdict": "ok",
+      "provenance": "Saved per-reading judgment; original claim identity not saved",
+      "key": "thrust-back#525071d2",
+      "identityVerified": false,
+      "claim": "The original engine description was not saved with this hash-only label. This verdict does not automatically judge the current description below.",
+      "date": "2026-10-03"
+     },
+     {
+      "source": "tests/right-set/the-shawnee-trail.json",
+      "verdict": "ok",
+      "provenance": "Saved mistake-report judgment; retired (record source: claude)",
+      "key": "thrust-back#fa1c0819",
+      "identityVerified": false,
+      "claim": "Saved report summary: Dean Winchester was credited with a anal hint as bottom (wanted / hypothetical). The full original engine description and instrument were not recorded.",
+      "date": "2026-10-05",
+      "confidence": 0.37,
+      "retired": "owner judged this wrong in the blind spot-check 2026-10-05"
+     },
+     {
+      "source": "tests/right-set/the-shawnee-trail.json",
+      "verdict": "wrong",
+      "provenance": "Saved mistake-report judgment (record source: owner)",
+      "key": "thrust-back#fa1c0819",
+      "identityVerified": false,
+      "claim": "Saved report summary: Dean Winchester was credited with a anal hint as bottom (wanted / hypothetical). The full original engine description and instrument were not recorded.",
+      "date": "2026-10-05",
+      "confidence": 0.37
+     }
+    ],
+    "priority": 0.6462447362920474,
+    "occurrence": "Contact cue",
+    "changed": false,
+    "quarantined": false,
+    "status": "My current reading supports a different verdict from a surviving past record. Check both before accepting a fresh label.",
+    "reasons": [
+     "Current model confidence disagrees with or leaves uncertainty about a surviving historical judgment.",
+     "The original full claim identity is unavailable; old and current descriptions must not be equated.",
+     "Several nearby characters or indirect participant resolution.",
+     "My proposed current verdict differs from at least one surviving historical verdict."
+    ],
+    "recentEvidence": [],
+    "referenceIsOriginal": false
+   },
+   "trainingNotes": [
+    "The saved verdict judges the original saved claim, when recoverable, never an automatically substituted current claim.",
+    "Hints are judged only if explicitly reviewed; no negative labels are inferred from missing acts or inventory omissions."
+   ]
+  },
+  {
+   "id": "P41",
+   "key": "inside#78f6f2f8",
+   "fic": "tuica.html",
+   "para": 446,
+   "pattern": "inside",
+   "a": "Harry Potter",
+   "b": "Draco Malfoy",
+   "act": "anal sex",
+   "kind": "act",
+   "claim": "Harry Potter is having anal sex with Draco Malfoy, as the one penetrating [anal sex; Performed]",
+   "engineConfidence": 0.9776449474970788,
+   "evidence": [
+    {
+     "from": 443,
+     "to": 449
+    }
+   ],
+   "proposal": {
+    "revision": "past-two-r1",
+    "verdict": "correct",
+    "confidence": 0.99,
+    "reading": "Harry Potter and Ron Weasley simultaneously penetrate Draco Malfoy anally.",
+    "rationale": "Harry’s penis is explicitly inside Draco beside Ron’s. The prior uncertain label can be resolved from the surrounding action.",
+    "errors": []
+   },
+   "labelAudit": {
+    "pastLabels": [
+     {
+      "source": "tests/labels/audit-2026-10-03.json",
+      "verdict": "unclear",
+      "provenance": "Saved per-reading judgment; original claim identity not saved",
+      "key": "inside#78f6f2f8",
+      "identityVerified": false,
+      "claim": "The original engine description was not saved with this hash-only label. This verdict does not automatically judge the current description below.",
+      "date": "2026-10-03"
+     }
+    ],
+    "priority": 0.6375,
+    "occurrence": "Performed",
+    "changed": false,
+    "quarantined": false,
+    "status": "My current reading supports a different verdict from a surviving past record. Check both before accepting a fresh label.",
+    "reasons": [
+     "Current model confidence disagrees with or leaves uncertainty about a surviving historical judgment.",
+     "The original full claim identity is unavailable; old and current descriptions must not be equated.",
+     "Several nearby characters or indirect participant resolution.",
+     "A performed-act hit occurs near memory, conditional or recording language; context was checked manually.",
+     "Instrument, ownership or self-versus-partner contact is a recent owner-review error family.",
+     "My proposed current verdict differs from at least one surviving historical verdict."
+    ],
+    "recentEvidence": [],
+    "referenceIsOriginal": false
+   },
+   "trainingNotes": [
+    "The saved verdict judges the original saved claim, when recoverable, never an automatically substituted current claim.",
+    "Hints are judged only if explicitly reviewed; no negative labels are inferred from missing acts or inventory omissions."
+   ]
+  },
+  {
+   "id": "P42",
+   "key": "push-into~elided#5bfd1f24",
+   "fic": "prince-prisoner-puppy.html",
+   "para": 594,
+   "pattern": "push-into~elided",
+   "a": "Antinous",
+   "b": "Telemachus",
+   "act": "anal sex",
+   "kind": "act",
+   "claim": "Antinous is having anal sex with Telemachus, as the one penetrating [anal sex; Performed]",
+   "engineConfidence": 0.9471340551392456,
+   "evidence": [
+    {
+     "from": 591,
+     "to": 597
+    }
+   ],
+   "proposal": {
+    "revision": "past-two-r1",
+    "verdict": "correct",
+    "confidence": 0.99,
+    "reading": "Antinous first fingers Telemachus, then penetrates him anally with a penis.",
+    "rationale": "Both instruments are explicit and sequential. The anal reading is supported after the fingers are withdrawn.",
+    "errors": []
+   },
+   "labelAudit": {
+    "pastLabels": [
+     {
+      "source": "tests/right-set/prince-prisoner-puppy-parent.json",
+      "verdict": "wrong",
+      "provenance": "Saved mistake-report judgment; retired",
+      "key": "push-into#c3d78cbe",
+      "identityVerified": false,
+      "claim": "Saved report summary: Antinous was credited as top/active, with Telemachus receiving, in the anal category. The full original engine description and instrument were not recorded.",
+      "date": "2026-10-04",
+      "retired": "fixed in the Prince, Prisoner, Puppy report fixes"
+     },
+     {
+      "source": "tests/right-set/prince-prisoner-puppy-parent.json",
+      "verdict": "unclear",
+      "provenance": "Saved mistake-report judgment; disputed (record source: claude)",
+      "key": "push-into#c3d78cbe",
+      "identityVerified": false,
+      "claim": "Saved report summary: Antinous was credited as top/active, with Telemachus receiving, in the anal category. The full original engine description and instrument were not recorded.",
+      "date": "2026-10-05",
+      "confidence": 0.6
+     }
+    ],
+    "priority": 0.6375,
+    "occurrence": "Performed",
+    "changed": false,
+    "quarantined": false,
+    "status": "My current reading supports a different verdict from a surviving past record. Check both before accepting a fresh label.",
+    "reasons": [
+     "Current model confidence disagrees with or leaves uncertainty about a surviving historical judgment.",
+     "The original full claim identity is unavailable; old and current descriptions must not be equated.",
+     "Several nearby characters or indirect participant resolution.",
+     "A performed-act hit occurs near memory, conditional or recording language; context was checked manually.",
+     "Instrument, ownership or self-versus-partner contact is a recent owner-review error family.",
+     "My proposed current verdict differs from at least one surviving historical verdict."
+    ],
+    "recentEvidence": [
+     "tests/gold/prince-prisoner-puppy.json: recorded gold anal, Antinous → Telemachus, ¶591–594. A scene-range label is contextual evidence, not a label on this individual match."
+    ],
+    "referenceIsOriginal": false
+   },
+   "trainingNotes": [
+    "The saved verdict judges the original saved claim, when recoverable, never an automatically substituted current claim.",
+    "Hints are judged only if explicitly reviewed; no negative labels are inferred from missing acts or inventory omissions."
+   ]
+  },
+  {
+   "id": "P43",
+   "key": "thrust-back~elided#c061ee6a",
+   "fic": "steady-eddie.html",
+   "para": 1632,
+   "pattern": "thrust-back~elided",
+   "a": "Steve Harrington",
+   "b": "Eddie Munson",
+   "act": "pushing back",
+   "kind": "touch",
+   "role": "bottom",
+   "claim": "Steve Harrington is pushing back against Eddie Munson during sex [pushing back; Contact cue]",
+   "engineConfidence": 0.9505828211383158,
+   "evidence": [
+    {
+     "from": 1629,
+     "to": 1635
+    }
+   ],
+   "proposal": {
+    "revision": "past-two-r1",
+    "verdict": "correct",
+    "confidence": 0.99,
+    "reading": "Steve Harrington presses his buttocks back against Eddie Munson’s groin.",
+    "rationale": "The named bodies and backward movement directly support the cue. No penetration is inferred from it.",
+    "errors": []
+   },
+   "labelAudit": {
+    "pastLabels": [
+     {
+      "source": "tests/labels/review-2026-10-04.json",
+      "verdict": "ok",
+      "provenance": "Saved per-reading judgment; original claim identity not saved",
+      "key": "thrust-back~elided#c061ee6a",
+      "identityVerified": false,
+      "claim": "The original engine description was not saved with this hash-only label. This verdict does not automatically judge the current description below.",
+      "date": "2026-10-04"
+     },
+     {
+      "source": "tests/right-set/keep-it-steady-eddie.json",
+      "verdict": "ok",
+      "provenance": "Saved mistake-report judgment; retired (record source: claude)",
+      "key": "thrust-back#631b1211",
+      "identityVerified": false,
+      "claim": "Saved report summary: Steve Harrington was credited with a anal hint as bottom (wanted / hypothetical). The full original engine description and instrument were not recorded.",
+      "date": "2026-10-05",
+      "confidence": 0.36,
+      "retired": "owner judged this wrong in a blind spot-check 2026-10-06"
+     },
+     {
+      "source": "tests/right-set/keep-it-steady-eddie.json",
+      "verdict": "wrong",
+      "provenance": "Saved mistake-report judgment (record source: owner)",
+      "key": "thrust-back#631b1211",
+      "identityVerified": false,
+      "claim": "Saved report summary: Steve Harrington was credited with a anal hint as bottom (wanted / hypothetical). The full original engine description and instrument were not recorded.",
+      "date": "2026-10-06",
+      "confidence": 0.36
+     }
+    ],
+    "priority": 0.6353205516260738,
+    "occurrence": "Contact cue",
+    "changed": false,
+    "quarantined": false,
+    "status": "My current reading supports a different verdict from a surviving past record. Check both before accepting a fresh label.",
+    "reasons": [
+     "Current model confidence disagrees with or leaves uncertainty about a surviving historical judgment.",
+     "The original full claim identity is unavailable; old and current descriptions must not be equated.",
+     "Several nearby characters or indirect participant resolution.",
+     "My proposed current verdict differs from at least one surviving historical verdict."
+    ],
+    "recentEvidence": [],
+    "referenceIsOriginal": false
+   },
+   "trainingNotes": [
+    "The saved verdict judges the original saved claim, when recoverable, never an automatically substituted current claim.",
+    "Hints are judged only if explicitly reviewed; no negative labels are inferred from missing acts or inventory omissions."
+   ]
+  },
+  {
+   "id": "P46",
+   "key": "sucked#f439902a",
+   "fic": "new-bitch.html",
+   "para": 1822,
+   "pattern": "sucked",
+   "a": "Laurent",
+   "b": "Damen",
+   "act": "blowjob",
+   "kind": "hypothetical",
+   "role": "bottom",
+   "claim": "Laurent is giving Damen a blowjob (read as a hypothetical, not something that happens) [blowjob; Hypothetical]",
+   "engineConfidence": 0.9441686286151407,
+   "evidence": [
+    {
+     "from": 1819,
+     "to": 1825
+    }
+   ],
+   "proposal": {
+    "revision": "past-two-r1",
+    "verdict": "correct",
+    "confidence": 0.98,
+    "reading": "Laurent imagines performing oral sex on Damen.",
+    "rationale": "The desired mouth position and act are explicit, and the engine correctly keeps the reading hypothetical rather than performed.",
+    "errors": []
+   },
+   "labelAudit": {
+    "pastLabels": [
+     {
+      "source": "tests/labels/review-2026-10-03.json",
+      "verdict": "wrong",
+      "provenance": "Saved per-reading judgment; original claim identity not saved",
+      "key": "sucked#f439902a",
+      "identityVerified": false,
+      "claim": "The original engine description was not saved with this hash-only label. This verdict does not automatically judge the current description below.",
+      "date": "2026-10-03"
+     }
+    ],
+    "priority": 0.6317927457383274,
+    "occurrence": "Hypothetical",
+    "changed": false,
+    "quarantined": false,
+    "status": "My current reading supports a different verdict from a surviving past record. Check both before accepting a fresh label.",
+    "reasons": [
+     "Current model confidence disagrees with or leaves uncertainty about a surviving historical judgment.",
+     "The original full claim identity is unavailable; old and current descriptions must not be equated.",
+     "Several nearby characters or indirect participant resolution.",
+     "My proposed current verdict differs from at least one surviving historical verdict."
+    ],
+    "recentEvidence": [],
+    "referenceIsOriginal": false
+   },
+   "trainingNotes": [
+    "The saved verdict judges the original saved claim, when recoverable, never an automatically substituted current claim.",
+    "Hints are judged only if explicitly reviewed; no negative labels are inferred from missing acts or inventory omissions."
+   ]
+  },
+  {
+   "id": "P22",
+   "key": "be-fucked#992109fb",
+   "fic": "were-compeer.html",
+   "para": 146,
+   "pattern": "be-fucked",
+   "a": "Stiles Stilinski",
+   "b": "Derek Hale",
+   "act": "anal sex",
+   "kind": "hypothetical",
+   "role": "bottom",
+   "claim": "Stiles Stilinski is being fucked anally by Derek Hale (read as a hypothetical, not something that happens) [anal sex; Hypothetical]",
+   "engineConfidence": 0.9880828327362771,
+   "evidence": [
+    {
+     "from": 143,
+     "to": 149
+    }
+   ],
+   "proposal": {
+    "revision": "past-two-r1",
+    "verdict": "uncertain",
+    "confidence": 0.67,
+    "reading": "Stiles Stilinski anticipates being changed by his month with Derek Hale; an anal-sex reading is plausible but indirect.",
+    "rationale": "This is an anticipated outcome rather than a performed act. The surrounding sexual expectations support the hint, but this sentence does not specify an instrument or act. Do not reject anal desire solely because a later act is different.",
+    "errors": [
+     "Needs more context"
+    ]
+   },
+   "labelAudit": {
+    "pastLabels": [
+     {
+      "source": "tests/right-set/a-werecompeer.json",
+      "verdict": "ok",
+      "provenance": "Saved mistake-report judgment; retired (record source: claude)",
+      "key": "be-fucked#92add07f",
+      "identityVerified": false,
+      "claim": "Saved report summary: Stiles Stilinski was credited with a anal hint as bottom (wanted / hypothetical). The full original engine description and instrument were not recorded.",
+      "date": "2026-10-05",
+      "confidence": 0.3,
+      "retired": "owner judged this wrong in the blind spot-check 2026-10-05"
+     },
+     {
+      "source": "tests/right-set/a-werecompeer.json",
+      "verdict": "wrong",
+      "provenance": "Saved mistake-report judgment (record source: owner)",
+      "key": "be-fucked#92add07f",
+      "identityVerified": false,
+      "claim": "Saved report summary: Stiles Stilinski was credited with a anal hint as bottom (wanted / hypothetical). The full original engine description and instrument were not recorded.",
+      "date": "2026-10-05",
+      "confidence": 0.3
+     }
+    ],
+    "priority": 0.7559455580049524,
+    "occurrence": "Hypothetical",
+    "changed": false,
+    "quarantined": false,
+    "status": "I recommend leaving today’s verdict unresolved until you check the context.",
+    "reasons": [
+     "Current model confidence disagrees with or leaves uncertainty about a surviving historical judgment.",
+     "The original full claim identity is unavailable; old and current descriptions must not be equated.",
+     "Several nearby characters or indirect participant resolution.",
+     "Instrument, ownership or self-versus-partner contact is a recent owner-review error family.",
+     "My proposed current verdict differs from at least one surviving historical verdict."
+    ],
+    "recentEvidence": [],
+    "referenceIsOriginal": false
+   },
+   "trainingNotes": [
+    "The saved verdict judges the original saved claim, when recoverable, never an automatically substituted current claim.",
+    "Hints are judged only if explicitly reviewed; no negative labels are inferred from missing acts or inventory omissions."
+   ]
+  },
+  {
+   "id": "P29",
+   "key": "made-love-to~elided#cc2cf4de",
+   "fic": "jacks.html",
+   "para": 1276,
+   "pattern": "made-love-to~elided",
+   "a": "Jack Seward",
+   "b": "Dracula",
+   "act": "anal sex",
+   "kind": "hypothetical",
+   "role": "bottom",
+   "claim": "Jack Seward is being fucked anally by Dracula (read as a hypothetical, not something that happens) [anal sex; Hypothetical]",
+   "engineConfidence": 0.9230811061995612,
+   "evidence": [
+    {
+     "from": 1273,
+     "to": 1279
+    }
+   ],
+   "proposal": {
+    "revision": "past-two-r1",
+    "verdict": "uncertain",
+    "confidence": 0.66,
+    "reading": "Dracula defers renewed sexual activity with Jack Seward to feed him.",
+    "rationale": "A contemplated sexual encounter is supported, but the phrase itself does not specify anal penetration. The hypothetical status is appropriate; the act subtype is less certain.",
+    "errors": [
+     "Needs more context"
+    ]
+   },
+   "labelAudit": {
+    "pastLabels": [
+     {
+      "source": "tests/labels/audit-2026-10-03.json",
+      "verdict": "wrong",
+      "provenance": "Saved per-reading judgment; original claim identity not saved",
+      "key": "made-love-to~elided#cc2cf4de",
+      "identityVerified": false,
+      "claim": "The original engine description was not saved with this hash-only label. This verdict does not automatically judge the current description below.",
+      "date": "2026-10-03"
+     }
+    ],
+    "priority": 0.7201946084097587,
+    "occurrence": "Hypothetical",
+    "changed": false,
+    "quarantined": false,
+    "status": "I recommend leaving today’s verdict unresolved until you check the context.",
+    "reasons": [
+     "Current model confidence disagrees with or leaves uncertainty about a surviving historical judgment.",
+     "The original full claim identity is unavailable; old and current descriptions must not be equated.",
+     "Several nearby characters or indirect participant resolution.",
+     "Instrument, ownership or self-versus-partner contact is a recent owner-review error family.",
+     "My proposed current verdict differs from at least one surviving historical verdict."
+    ],
+    "recentEvidence": [],
+    "referenceIsOriginal": false
+   },
+   "trainingNotes": [
+    "The saved verdict judges the original saved claim, when recoverable, never an automatically substituted current claim.",
+    "Hints are judged only if explicitly reviewed; no negative labels are inferred from missing acts or inventory omissions."
+   ]
+  },
+  {
+   "id": "P37",
+   "key": "hands-on-ass#3a0f0587",
+   "fic": "tricks-of-the-trade.html",
+   "para": 2271,
+   "pattern": "hands-on-ass",
+   "a": "Castiel",
+   "b": "Dean Winchester",
+   "act": "grabbing an ass",
+   "kind": "touch",
+   "role": "top",
+   "claim": "Castiel is grabbing Dean Winchester's ass [grabbing an ass; Contact cue]",
+   "engineConfidence": 0.9735694176813217,
+   "evidence": [
+    {
+     "from": 2268,
+     "to": 2274
+    }
+   ],
+   "proposal": {
+    "revision": "past-two-r1",
+    "verdict": "uncertain",
+    "confidence": 0.76,
+    "reading": "Castiel reaches to Dean Winchester’s anus and removes a plug.",
+    "rationale": "Sexual contact at the buttocks is clear, but the target specifies plug removal rather than gripping a buttock. Whether this broad touch cue is acceptable needs the owner’s judgment.",
+    "errors": [
+     "Wrong act or body part"
+    ]
+   },
+   "labelAudit": {
+    "pastLabels": [
+     {
+      "source": "tests/labels/audit-2026-10-03.json",
+      "verdict": "ok",
+      "provenance": "Saved per-reading judgment; original claim identity not saved",
+      "key": "hands-on-ass#3a0f0587",
+      "identityVerified": false,
+      "claim": "The original engine description was not saved with this hash-only label. This verdict does not automatically judge the current description below.",
+      "date": "2026-10-03"
+     },
+     {
+      "source": "tests/right-set/tricks-of-the-trade.json",
+      "verdict": "ok",
+      "provenance": "Saved mistake-report judgment; retired (record source: claude)",
+      "key": "hands-on-ass#af2ffc8e",
+      "identityVerified": false,
+      "claim": "Saved report summary: Castiel was credited with a anal hint as top (wanted / hypothetical). The full original engine description and instrument were not recorded.",
+      "date": "2026-10-05",
+      "confidence": 0.43,
+      "retired": "owner judged this wrong in a blind spot-check 2026-10-06"
+     },
+     {
+      "source": "tests/right-set/tricks-of-the-trade.json",
+      "verdict": "wrong",
+      "provenance": "Saved mistake-report judgment (record source: owner)",
+      "key": "hands-on-ass#af2ffc8e",
+      "identityVerified": false,
+      "claim": "Saved report summary: Castiel was credited with a anal hint as top (wanted / hypothetical). The full original engine description and instrument were not recorded.",
+      "date": "2026-10-06",
+      "confidence": 0.43
+     }
+    ],
+    "priority": 0.647963179724727,
+    "occurrence": "Contact cue",
+    "changed": false,
+    "quarantined": false,
+    "status": "I recommend leaving today’s verdict unresolved until you check the context.",
+    "reasons": [
+     "Current model confidence disagrees with or leaves uncertainty about a surviving historical judgment.",
+     "The original full claim identity is unavailable; old and current descriptions must not be equated.",
+     "Several nearby characters or indirect participant resolution.",
+     "My proposed current verdict differs from at least one surviving historical verdict."
+    ],
+    "recentEvidence": [
+     "tests/scene-review/suspect-two-569919fdfb5e.json, suspect-two-569919fdfb5e/T25: owner-confirmed Toy insertion, Castiel → Dean Winchester, ¶2271–2271. Positive-only evidence; omissions are not negatives.",
+     "tests/scene-review/suspect-two-569919fdfb5e.json, suspect-two-569919fdfb5e/T25: owner-confirmed Handjob, Castiel → Dean Winchester, ¶2274–2274. Positive-only evidence; omissions are not negatives.",
+     "tests/scene-review/suspect-two-569919fdfb5e.json, suspect-two-569919fdfb5e/T25: owner-confirmed Fingering, Castiel → Dean Winchester, ¶2282–2287. Positive-only evidence; omissions are not negatives.",
+     "tests/scene-review/suspect-two-569919fdfb5e.json, suspect-two-569919fdfb5e/T25: owner-confirmed Anal penetration (penis), Castiel → Dean Winchester, ¶2283–2292. Positive-only evidence; omissions are not negatives.",
+     "tests/scene-review/suspect-two-569919fdfb5e.json, suspect-two-569919fdfb5e/T25: owner-confirmed Toy insertion, Castiel → Dean Winchester, ¶2287–2292. Positive-only evidence; omissions are not negatives."
+    ],
+    "referenceIsOriginal": false
+   },
+   "trainingNotes": [
+    "The saved verdict judges the original saved claim, when recoverable, never an automatically substituted current claim.",
+    "Hints are judged only if explicitly reviewed; no negative labels are inferred from missing acts or inventory omissions."
+   ]
+  },
+  {
+   "id": "P44",
+   "key": "abo-bare-neck~elided#e13044e",
+   "fic": "dogbird.html",
+   "para": 1130,
+   "pattern": "abo-bare-neck~elided",
+   "a": "Evan \"Buck\" Buckley",
+   "b": "Eddie Diaz",
+   "act": "baring their neck",
+   "kind": "behavior",
+   "role": "bottom",
+   "claim": "Evan \"Buck\" Buckley is baring their neck to Eddie Diaz (a submissive gesture) [baring their neck; Everyday behavior]",
+   "engineConfidence": 0.8782300163660866,
+   "evidence": [
+    {
+     "from": 1127,
+     "to": 1133
+    }
+   ],
+   "proposal": {
+    "revision": "past-two-r1",
+    "verdict": "uncertain",
+    "confidence": 0.72,
+    "reading": "Buck tilts his head and neck while orally stimulating Eddie Diaz through clothing.",
+    "rationale": "The movement is literal, but interpreting it as baring the neck in submission may overstate its purpose. The oral posture is better established than the relationship inference.",
+    "errors": [
+     "Wrong act or body part"
+    ]
+   },
+   "labelAudit": {
+    "pastLabels": [
+     {
+      "source": "tests/labels/audit-2026-10-03.json",
+      "verdict": "wrong",
+      "provenance": "Saved per-reading judgment; original claim identity not saved",
+      "key": "abo-bare-neck~elided#e13044e",
+      "identityVerified": false,
+      "claim": "The original engine description was not saved with this hash-only label. This verdict does not automatically judge the current description below.",
+      "date": "2026-10-03"
+     }
+    ],
+    "priority": 0.6330265090013476,
+    "occurrence": "Everyday behavior",
+    "changed": false,
+    "quarantined": false,
+    "status": "I recommend leaving today’s verdict unresolved until you check the context.",
+    "reasons": [
+     "Current model confidence disagrees with or leaves uncertainty about a surviving historical judgment.",
+     "The original full claim identity is unavailable; old and current descriptions must not be equated.",
+     "Several nearby characters or indirect participant resolution.",
+     "My proposed current verdict differs from at least one surviving historical verdict."
+    ],
+    "recentEvidence": [],
+    "referenceIsOriginal": false
+   },
+   "trainingNotes": [
+    "The saved verdict judges the original saved claim, when recoverable, never an automatically substituted current claim.",
+    "Hints are judged only if explicitly reviewed; no negative labels are inferred from missing acts or inventory omissions."
+   ]
+  },
+  {
+   "id": "P1",
+   "key": "passive-fucked~elided#e88b92f5",
+   "fic": "belonging.html",
+   "para": 691,
+   "pattern": "passive-fucked~elided",
+   "a": "Castiel",
+   "b": "Dean Winchester",
+   "act": "anal sex",
+   "kind": "act",
+   "claim": "Castiel is having anal sex with Dean Winchester, as the one penetrating [anal sex; Performed]",
+   "engineConfidence": 0.9657359536237573,
+   "evidence": [
+    {
+     "from": 688,
+     "to": 694
+    }
+   ],
+   "proposal": {
+    "revision": "past-two-r1",
+    "verdict": "wrong",
+    "confidence": 0.99,
+    "reading": "Castiel inserts an anal plug into Dean Winchester.",
+    "rationale": "The explicitly named plug remains the instrument; pressing its tip does not establish penile penetration.",
+    "errors": [
+     "Fingers or toy mistaken for a penis"
+    ]
+   },
+   "labelAudit": {
+    "pastLabels": [
+     {
+      "source": "tests/labels/audit-2026-10-03.json",
+      "verdict": "ok",
+      "provenance": "Saved per-reading judgment; original claim identity not saved",
+      "key": "passive-fucked~elided#e88b92f5",
+      "identityVerified": false,
+      "claim": "The original engine description was not saved with this hash-only label. This verdict does not automatically judge the current description below.",
+      "date": "2026-10-03"
+     },
+     {
+      "source": "tests/right-set/belonging-is-longing-is-now.json",
+      "verdict": "wrong",
+      "provenance": "Saved mistake-report judgment (record source: owner)",
+      "key": "passive-fucked#8a682881",
+      "identityVerified": false,
+      "claim": "Saved report summary: Dean Winchester was credited as top/active, with Castiel receiving, in the anal category. The full original engine description and instrument were not recorded.",
+      "date": "2026-10-06",
+      "confidence": 0.16
+     }
+    ],
+    "priority": 0.9311547744930666,
+    "occurrence": "Performed",
+    "changed": false,
+    "quarantined": false,
+    "status": "My current reading supports a different verdict from a surviving past record. Check both before accepting a fresh label.",
+    "reasons": [
+     "Current model confidence disagrees with or leaves uncertainty about a surviving historical judgment.",
+     "The original full claim identity is unavailable; old and current descriptions must not be equated.",
+     "Several nearby characters or indirect participant resolution.",
+     "A performed-act hit occurs near memory, conditional or recording language; context was checked manually.",
+     "Instrument, ownership or self-versus-partner contact is a recent owner-review error family.",
+     "My proposed current verdict differs from at least one surviving historical verdict."
+    ],
+    "recentEvidence": [
+     "tests/gold/belonging.json: recorded gold anal, Castiel → Dean Winchester, ¶679–754. A scene-range label is contextual evidence, not a label on this individual match."
+    ],
+    "referenceIsOriginal": false
+   },
+   "trainingNotes": [
+    "The saved verdict judges the original saved claim, when recoverable, never an automatically substituted current claim.",
+    "Hints are judged only if explicitly reviewed; no negative labels are inferred from missing acts or inventory omissions."
+   ]
+  },
+  {
+   "id": "P2",
+   "key": "pushed-in~elided#6462d66e",
+   "fic": "belonging.html",
+   "para": 2863,
+   "pattern": "pushed-in~elided",
+   "a": "Castiel",
+   "b": "Dean Winchester",
+   "act": "anal sex",
+   "kind": "act",
+   "claim": "Castiel is having anal sex with Dean Winchester, as the one penetrating [anal sex; Performed]",
+   "engineConfidence": 0.9347446704209366,
+   "evidence": [
+    {
+     "from": 2860,
+     "to": 2866
+    }
+   ],
+   "proposal": {
+    "revision": "past-two-r1",
+    "verdict": "wrong",
+    "confidence": 0.99,
+    "reading": "Dean Winchester performs oral sex on Castiel.",
+    "rationale": "The insertion is through Dean’s mouth and past his lips, not into his anus.",
+    "errors": [
+     "Wrong act or body part"
+    ]
+   },
+   "labelAudit": {
+    "pastLabels": [
+     {
+      "source": "tests/right-set/belonging-is-longing-is-now.json",
+      "verdict": "wrong",
+      "provenance": "Saved mistake-report judgment (record source: owner)",
+      "key": "pushed-in#c05ead58",
+      "identityVerified": false,
+      "claim": "Saved report summary: Castiel was credited as top/active, with Dean Winchester receiving, in the anal category. The full original engine description and instrument were not recorded.",
+      "date": "2026-10-06",
+      "confidence": 0.34
+     }
+    ],
+    "priority": 0.9141095687315152,
+    "occurrence": "Performed",
+    "changed": false,
+    "quarantined": false,
+    "status": "My current reading supports the same verdict. Preserve the historical record; a fresh claim-specific judgment can still resolve the missing original identity.",
+    "reasons": [
+     "Current model confidence disagrees with or leaves uncertainty about a surviving historical judgment.",
+     "The original full claim identity is unavailable; old and current descriptions must not be equated.",
+     "Several nearby characters or indirect participant resolution.",
+     "A performed-act hit occurs near memory, conditional or recording language; context was checked manually.",
+     "Instrument, ownership or self-versus-partner contact is a recent owner-review error family."
+    ],
+    "recentEvidence": [],
+    "referenceIsOriginal": false
+   },
+   "trainingNotes": [
+    "The saved verdict judges the original saved claim, when recoverable, never an automatically substituted current claim.",
+    "Hints are judged only if explicitly reviewed; no negative labels are inferred from missing acts or inventory omissions."
+   ]
+  },
+  {
+   "id": "P3",
+   "key": "came-inside#ff0b155e",
+   "fic": "prince-prisoner-puppy.html",
+   "para": 507,
+   "pattern": "came-inside",
+   "a": "Telemachus",
+   "b": "Antinous",
+   "act": "anal sex",
+   "kind": "act",
+   "claim": "Telemachus is having anal sex with Antinous, as the one penetrating [anal sex; Performed]",
+   "engineConfidence": 0.9806568855694769,
+   "evidence": [
+    {
+     "from": 504,
+     "to": 510
+    }
+   ],
+   "proposal": {
+    "revision": "past-two-r1",
+    "verdict": "wrong",
+    "confidence": 0.99,
+    "reading": "Antinous penetrates Telemachus anally; Telemachus receives.",
+    "rationale": "The named thrusting performer and inserted penis establish the opposite direction to the engine claim.",
+    "errors": [
+     "Roles reversed",
+     "Wrong person"
+    ]
+   },
+   "labelAudit": {
+    "pastLabels": [
+     {
+      "source": "tests/right-set/prince-prisoner-puppy-parent.json",
+      "verdict": "wrong",
+      "provenance": "Saved mistake-report judgment (record source: owner)",
+      "key": "came-inside#6459a6df",
+      "identityVerified": false,
+      "claim": "Saved report summary: Telemachus was credited as top/active, with Antinous receiving, in the anal category. The full original engine description and instrument were not recorded.",
+      "date": "2026-10-06",
+      "confidence": 0.28
+     }
+    ],
+    "priority": 0.9018612870632123,
+    "occurrence": "Performed",
+    "changed": false,
+    "quarantined": false,
+    "status": "My current reading supports the same verdict. Preserve the historical record; a fresh claim-specific judgment can still resolve the missing original identity.",
+    "reasons": [
+     "Current model confidence disagrees with or leaves uncertainty about a surviving historical judgment.",
+     "The original full claim identity is unavailable; old and current descriptions must not be equated.",
+     "Several nearby characters or indirect participant resolution.",
+     "A performed-act hit occurs near memory, conditional or recording language; context was checked manually.",
+     "Instrument, ownership or self-versus-partner contact is a recent owner-review error family."
+    ],
+    "recentEvidence": [
+     "tests/gold/prince-prisoner-puppy.json: recorded gold anal, Antinous → Telemachus, ¶498–508. A scene-range label is contextual evidence, not a label on this individual match."
+    ],
+    "referenceIsOriginal": false
+   },
+   "trainingNotes": [
+    "The saved verdict judges the original saved claim, when recoverable, never an automatically substituted current claim.",
+    "Hints are judged only if explicitly reviewed; no negative labels are inferred from missing acts or inventory omissions."
+   ]
+  },
+  {
+   "id": "P4",
+   "key": "dd2-finger-shoved-into#ae9aefb9",
+   "fic": "hate.html",
+   "para": 735,
+   "pattern": "dd2-finger-shoved-into",
+   "a": "Steve Harrington",
+   "b": "Eddie Munson",
+   "act": "fingering",
+   "kind": "act",
+   "claim": "Steve Harrington is fingering Eddie Munson [fingering; Performed]",
+   "engineConfidence": 0.9728428451070273,
+   "evidence": [
+    {
+     "from": 732,
+     "to": 738
+    }
+   ],
+   "proposal": {
+    "revision": "past-two-r1",
+    "verdict": "wrong",
+    "confidence": 0.99,
+    "reading": "Steve Harrington puts fingers under Eddie Munson’s waistband to remove clothing.",
+    "rationale": "The fingers enter clothing, not a genital or anal opening.",
+    "errors": [
+     "Wrong act or body part"
+    ]
+   },
+   "labelAudit": {
+    "pastLabels": [
+     {
+      "source": "tests/right-set/hate-the-way-it-feels-so-good.json",
+      "verdict": "wrong",
+      "provenance": "Saved mistake-report judgment (record source: owner)",
+      "key": "dd2-finger-shoved-into#9ea2e197",
+      "identityVerified": false,
+      "claim": "Saved report summary: Steve Harrington was credited as top/active, with Eddie Munson receiving, in the anal category. The full original engine description and instrument were not recorded.",
+      "date": "2026-10-06"
+     }
+    ],
+    "priority": 0.8975635648088651,
+    "occurrence": "Performed",
+    "changed": false,
+    "quarantined": false,
+    "status": "My current reading supports the same verdict. Preserve the historical record; a fresh claim-specific judgment can still resolve the missing original identity.",
+    "reasons": [
+     "Current model confidence disagrees with or leaves uncertainty about a surviving historical judgment.",
+     "The original full claim identity is unavailable; old and current descriptions must not be equated.",
+     "Several nearby characters or indirect participant resolution.",
+     "A performed-act hit occurs near memory, conditional or recording language; context was checked manually.",
+     "Instrument, ownership or self-versus-partner contact is a recent owner-review error family."
+    ],
+    "recentEvidence": [],
+    "referenceIsOriginal": false
+   },
+   "trainingNotes": [
+    "The saved verdict judges the original saved claim, when recoverable, never an automatically substituted current claim.",
+    "Hints are judged only if explicitly reviewed; no negative labels are inferred from missing acts or inventory omissions."
+   ]
+  },
+  {
+   "id": "P5",
+   "key": "hj-jerk-him#53ecdb3d",
+   "fic": "please.html",
+   "para": 4241,
+   "pattern": "hj-jerk-him",
+   "a": "Eddie Munson",
+   "b": "Steve Harrington",
+   "act": "handjob",
+   "kind": "handjob",
+   "role": "top",
+   "claim": "Eddie Munson gives Steve Harrington a handjob. [handjob; Performed]",
+   "engineConfidence": 0.967926978596481,
+   "evidence": [
+    {
+     "from": 4238,
+     "to": 4244
+    }
+   ],
+   "proposal": {
+    "revision": "past-two-r1",
+    "verdict": "wrong",
+    "confidence": 0.99,
+    "reading": "Eddie Munson holds Steve Harrington’s hair while Steve kisses him; later Steve fingers himself.",
+    "rationale": "The target grip is in hair, not on a penis. The later hand-guided stimulation has Steve acting on Eddie, not the claimed direction.",
+    "errors": [
+     "Wrong act or body part",
+     "Wrong person"
+    ]
+   },
+   "labelAudit": {
+    "pastLabels": [
+     {
+      "source": "tests/labels/audit-2026-10-03.json",
+      "verdict": "wrong",
+      "provenance": "Saved per-reading judgment; original claim identity not saved",
+      "key": "hj-jerk-him#53ecdb3d",
+      "identityVerified": false,
+      "claim": "The original engine description was not saved with this hash-only label. This verdict does not automatically judge the current description below.",
+      "date": "2026-10-03"
+     }
+    ],
+    "priority": 0.8948598382280646,
+    "occurrence": "Performed",
+    "changed": false,
+    "quarantined": false,
+    "status": "My current reading supports the same verdict. Preserve the historical record; a fresh claim-specific judgment can still resolve the missing original identity.",
+    "reasons": [
+     "Current model confidence disagrees with or leaves uncertainty about a surviving historical judgment.",
+     "The original full claim identity is unavailable; old and current descriptions must not be equated.",
+     "Several nearby characters or indirect participant resolution.",
+     "A performed-act hit occurs near memory, conditional or recording language; context was checked manually.",
+     "Instrument, ownership or self-versus-partner contact is a recent owner-review error family."
+    ],
+    "recentEvidence": [],
+    "referenceIsOriginal": false
+   },
+   "trainingNotes": [
+    "The saved verdict judges the original saved claim, when recoverable, never an automatically substituted current claim.",
+    "Hints are judged only if explicitly reviewed; no negative labels are inferred from missing acts or inventory omissions."
+   ]
+  },
+  {
+   "id": "P6",
+   "key": "pushed-in#75d2bd51",
+   "fic": "more-views.html",
+   "para": 267,
+   "pattern": "pushed-in",
+   "a": "Castiel",
+   "b": "Dean Winchester",
+   "act": "fingering",
+   "kind": "act",
+   "claim": "Castiel is fingering Dean Winchester [fingering; Performed]",
+   "engineConfidence": 0.8919382507279358,
+   "evidence": [
+    {
+     "from": 264,
+     "to": 270
+    }
+   ],
+   "proposal": {
+    "revision": "past-two-r1",
+    "verdict": "wrong",
+    "confidence": 0.99,
+    "reading": "Castiel presses Dean Winchester’s jaw externally while Dean performs oral sex on Castiel.",
+    "rationale": "The thumb presses the jaw near the ear, not into an anus or vagina.",
+    "errors": [
+     "Wrong act or body part"
+    ]
+   },
+   "labelAudit": {
+    "pastLabels": [
+     {
+      "source": "tests/labels/audit-2026-10-03.json",
+      "verdict": "wrong",
+      "provenance": "Saved per-reading judgment; original claim identity not saved",
+      "key": "pushed-in#75d2bd51",
+      "identityVerified": false,
+      "claim": "The original engine description was not saved with this hash-only label. This verdict does not automatically judge the current description below.",
+      "date": "2026-10-03"
+     }
+    ],
+    "priority": 0.8905660379003647,
+    "occurrence": "Performed",
+    "changed": false,
+    "quarantined": false,
+    "status": "My current reading supports the same verdict. Preserve the historical record; a fresh claim-specific judgment can still resolve the missing original identity.",
+    "reasons": [
+     "Current model confidence disagrees with or leaves uncertainty about a surviving historical judgment.",
+     "The original full claim identity is unavailable; old and current descriptions must not be equated.",
+     "Several nearby characters or indirect participant resolution.",
+     "A performed-act hit occurs near memory, conditional or recording language; context was checked manually.",
+     "Instrument, ownership or self-versus-partner contact is a recent owner-review error family."
+    ],
+    "recentEvidence": [
+     "tests/scene-review/suspect-two-569919fdfb5e.json, suspect-two-569919fdfb5e/T34: owner-confirmed Blowjob, Dean Winchester → Castiel, ¶259–273. Positive-only evidence; omissions are not negatives.",
+     "tests/scene-review/suspect-two-569919fdfb5e.json, suspect-two-569919fdfb5e/T34: owner-confirmed Handjob, Dean Winchester → Castiel, ¶274–274. Positive-only evidence; omissions are not negatives."
+    ],
+    "referenceIsOriginal": false
+   },
+   "trainingNotes": [
+    "The saved verdict judges the original saved claim, when recoverable, never an automatically substituted current claim.",
+    "Hints are judged only if explicitly reviewed; no negative labels are inferred from missing acts or inventory omissions."
+   ]
+  },
+  {
+   "id": "P7",
+   "key": "dd3-slipping-second#b3c14af0",
+   "fic": "tricks-of-the-trade.html",
+   "para": 1696,
+   "pattern": "dd3-slipping-second",
+   "a": "Dean Winchester",
+   "b": "Castiel",
+   "act": "fingering",
+   "kind": "act",
+   "claim": "Dean Winchester is fingering Castiel [fingering; Performed]",
+   "engineConfidence": 0.9558972758161239,
+   "evidence": [
+    {
+     "from": 1693,
+     "to": 1699
+    }
+   ],
+   "proposal": {
+    "revision": "past-two-r1",
+    "verdict": "wrong",
+    "confidence": 0.99,
+    "reading": "Dean Winchester and Castiel watch another adult performer finger his partner onstage.",
+    "rationale": "The target action belongs to the unnamed stage performers. Dean holds Castiel’s hand while watching.",
+    "errors": [
+     "Wrong person"
+    ]
+   },
+   "labelAudit": {
+    "pastLabels": [
+     {
+      "source": "tests/right-set/tricks-of-the-trade.json",
+      "verdict": "wrong",
+      "provenance": "Saved mistake-report judgment (record source: owner)",
+      "key": "dd3-slipping-second#2628789e",
+      "identityVerified": false,
+      "claim": "Saved report summary: Dean Winchester was credited as top/active, with Castiel receiving, in the anal category. The full original engine description and instrument were not recorded.",
+      "date": "2026-10-06"
+     }
+    ],
+    "priority": 0.8882435016988681,
+    "occurrence": "Performed",
+    "changed": false,
+    "quarantined": false,
+    "status": "My current reading supports the same verdict. Preserve the historical record; a fresh claim-specific judgment can still resolve the missing original identity.",
+    "reasons": [
+     "Current model confidence disagrees with or leaves uncertainty about a surviving historical judgment.",
+     "The original full claim identity is unavailable; old and current descriptions must not be equated.",
+     "Several nearby characters or indirect participant resolution.",
+     "A performed-act hit occurs near memory, conditional or recording language; context was checked manually.",
+     "Instrument, ownership or self-versus-partner contact is a recent owner-review error family."
+    ],
+    "recentEvidence": [],
+    "referenceIsOriginal": false
+   },
+   "trainingNotes": [
+    "The saved verdict judges the original saved claim, when recoverable, never an automatically substituted current claim.",
+    "Hints are judged only if explicitly reviewed; no negative labels are inferred from missing acts or inventory omissions."
+   ]
+  },
+  {
+   "id": "P10",
+   "key": "came-inside~elided#b20bdf27",
+   "fic": "were-compeer.html",
+   "para": 248,
+   "pattern": "came-inside~elided",
+   "a": "Vernon Boyd",
+   "b": "Derek Hale",
+   "act": "anal sex",
+   "kind": "act",
+   "claim": "Vernon Boyd is having anal sex with Derek Hale, as the one penetrating [anal sex; Performed]",
+   "engineConfidence": 0.8771075042386641,
+   "evidence": [
+    {
+     "from": 245,
+     "to": 251
+    }
+   ],
+   "proposal": {
+    "revision": "past-two-r1",
+    "verdict": "wrong",
+    "confidence": 0.99,
+    "reading": "Derek Hale penetrates Stiles Stilinski anally, then withdraws and rubs externally.",
+    "rationale": "Boyd is not the participant in this passage; the named receiving body is Stiles.",
+    "errors": [
+     "Wrong person"
+    ]
+   },
+   "labelAudit": {
+    "pastLabels": [
+     {
+      "source": "tests/right-set/a-werecompeer.json",
+      "verdict": "wrong",
+      "provenance": "Saved mistake-report judgment (record source: owner)",
+      "key": "came-inside#33072e75",
+      "identityVerified": false,
+      "claim": "Saved report summary: Vernon Boyd was credited as top/active, with Derek Hale receiving, in the anal category. The full original engine description and instrument were not recorded.",
+      "date": "2026-10-06",
+      "confidence": 0.5
+     }
+    ],
+    "priority": 0.8824091273312653,
+    "occurrence": "Performed",
+    "changed": false,
+    "quarantined": false,
+    "status": "My current reading supports the same verdict. Preserve the historical record; a fresh claim-specific judgment can still resolve the missing original identity.",
+    "reasons": [
+     "Current model confidence disagrees with or leaves uncertainty about a surviving historical judgment.",
+     "The original full claim identity is unavailable; old and current descriptions must not be equated.",
+     "Several nearby characters or indirect participant resolution.",
+     "A performed-act hit occurs near memory, conditional or recording language; context was checked manually.",
+     "Instrument, ownership or self-versus-partner contact is a recent owner-review error family."
+    ],
+    "recentEvidence": [
+     "tests/gold/were-compeer.json: recorded gold anal, Derek Hale → Stiles Stilinski, ¶241–249. A scene-range label is contextual evidence, not a label on this individual match."
+    ],
+    "referenceIsOriginal": false
+   },
+   "trainingNotes": [
+    "The saved verdict judges the original saved claim, when recoverable, never an automatically substituted current claim.",
+    "Hints are judged only if explicitly reviewed; no negative labels are inferred from missing acts or inventory omissions."
+   ]
+  },
+  {
+   "id": "P11",
+   "key": "pushed-in#a9ab8ca1",
+   "fic": "tricks-of-the-trade.html",
+   "para": 456,
+   "pattern": "pushed-in",
+   "a": "Castiel",
+   "b": "Dean Winchester",
+   "act": "fingering",
+   "kind": "act",
+   "claim": "Castiel is fingering Dean Winchester [fingering; Performed]",
+   "engineConfidence": 0.9425302765684365,
+   "evidence": [
+    {
+     "from": 453,
+     "to": 459
+    }
+   ],
+   "proposal": {
+    "revision": "past-two-r1",
+    "verdict": "wrong",
+    "confidence": 0.99,
+    "reading": "Castiel penetrates Dean Winchester anally with his penis after finger and toy preparation.",
+    "rationale": "The target explicitly identifies the new instrument as a penis. Earlier fingers no longer determine the act.",
+    "errors": [
+     "Penis mistaken for fingers or a toy"
+    ]
+   },
+   "labelAudit": {
+    "pastLabels": [
+     {
+      "source": "tests/right-set/tricks-of-the-trade.json",
+      "verdict": "ok",
+      "provenance": "Saved mistake-report judgment; retired (record source: claude)",
+      "key": "pushed-in#a476f47b",
+      "identityVerified": false,
+      "claim": "Saved report summary: Castiel was credited as top/active, with Dean Winchester receiving, in the anal category. The full original engine description and instrument were not recorded.",
+      "date": "2026-10-05",
+      "retired": "owner judged this wrong in a blind spot-check 2026-10-06"
+     },
+     {
+      "source": "tests/right-set/tricks-of-the-trade.json",
+      "verdict": "wrong",
+      "provenance": "Saved mistake-report judgment (record source: owner)",
+      "key": "pushed-in#a476f47b",
+      "identityVerified": false,
+      "claim": "Saved report summary: Castiel was credited as top/active, with Dean Winchester receiving, in the anal category. The full original engine description and instrument were not recorded.",
+      "date": "2026-10-06"
+     }
+    ],
+    "priority": 0.88089165211264,
+    "occurrence": "Performed",
+    "changed": false,
+    "quarantined": false,
+    "status": "My current reading supports the same verdict. Preserve the historical record; a fresh claim-specific judgment can still resolve the missing original identity.",
+    "reasons": [
+     "Current model confidence disagrees with or leaves uncertainty about a surviving historical judgment.",
+     "The original full claim identity is unavailable; old and current descriptions must not be equated.",
+     "Several nearby characters or indirect participant resolution.",
+     "A performed-act hit occurs near memory, conditional or recording language; context was checked manually.",
+     "Instrument, ownership or self-versus-partner contact is a recent owner-review error family."
+    ],
+    "recentEvidence": [],
+    "referenceIsOriginal": false
+   },
+   "trainingNotes": [
+    "The saved verdict judges the original saved claim, when recoverable, never an automatically substituted current claim.",
+    "Hints are judged only if explicitly reviewed; no negative labels are inferred from missing acts or inventory omissions."
+   ]
+  },
+  {
+   "id": "P12",
+   "key": "mast-own#dc6c6c40",
+   "fic": "hearts-truth.html",
+   "para": 211,
+   "pattern": "mast-own",
+   "a": "Draco Malfoy",
+   "b": "Harry Potter",
+   "act": "masturbation",
+   "kind": "masturbation",
+   "role": "bottom",
+   "claim": "Draco Malfoy masturbates. [masturbation; Performed]",
+   "engineConfidence": 0.8396194420195529,
+   "evidence": [
+    {
+     "from": 208,
+     "to": 214
+    }
+   ],
+   "proposal": {
+    "revision": "past-two-r1",
+    "verdict": "wrong",
+    "confidence": 0.99,
+    "reading": "Harry Potter gives Draco Malfoy a handjob and compares the sensation with his own self-touch.",
+    "rationale": "Draco is receiving another person’s touch; the comparison does not make Draco the person masturbating.",
+    "errors": [
+     "Wrong person",
+     "Wrong act or body part",
+     "Wrong occurrence: memory / fantasy / habitual / recording"
+    ]
+   },
+   "labelAudit": {
+    "pastLabels": [
+     {
+      "source": "tests/labels/audit-2026-10-03.json",
+      "verdict": "wrong",
+      "provenance": "Saved per-reading judgment; original claim identity not saved",
+      "key": "mast-own#dc6c6c40",
+      "identityVerified": false,
+      "claim": "The original engine description was not saved with this hash-only label. This verdict does not automatically judge the current description below.",
+      "date": "2026-10-03"
+     }
+    ],
+    "priority": 0.8617906931107541,
+    "occurrence": "Performed",
+    "changed": false,
+    "quarantined": false,
+    "status": "My current reading supports the same verdict. Preserve the historical record; a fresh claim-specific judgment can still resolve the missing original identity.",
+    "reasons": [
+     "Current model confidence disagrees with or leaves uncertainty about a surviving historical judgment.",
+     "The original full claim identity is unavailable; old and current descriptions must not be equated.",
+     "Several nearby characters or indirect participant resolution.",
+     "A performed-act hit occurs near memory, conditional or recording language; context was checked manually.",
+     "Instrument, ownership or self-versus-partner contact is a recent owner-review error family."
+    ],
+    "recentEvidence": [],
+    "referenceIsOriginal": false
+   },
+   "trainingNotes": [
+    "The saved verdict judges the original saved claim, when recoverable, never an automatically substituted current claim.",
+    "Hints are judged only if explicitly reviewed; no negative labels are inferred from missing acts or inventory omissions."
+   ]
+  },
+  {
+   "id": "P13",
+   "key": "mast-got-off#659b952c",
+   "fic": "belonging.html",
+   "para": 233,
+   "pattern": "mast-got-off",
+   "a": "Dean Winchester",
+   "b": "Castiel",
+   "act": "masturbation",
+   "kind": "masturbation",
+   "role": "bottom",
+   "claim": "Dean Winchester masturbates. [masturbation; Performed]",
+   "engineConfidence": 0.9572663831752177,
+   "evidence": [
+    {
+     "from": 230,
+     "to": 236
+    }
+   ],
+   "proposal": {
+    "revision": "past-two-r1",
+    "verdict": "wrong",
+    "confidence": 0.99,
+    "reading": "Castiel remembers Dean Winchester masturbating earlier that morning.",
+    "rationale": "Dean is presently unconscious. The solo act is explicitly earlier, not happening in this passage.",
+    "errors": [
+     "Memory counted as a new scene",
+     "Wrong occurrence: memory / fantasy / habitual / recording"
+    ]
+   },
+   "labelAudit": {
+    "pastLabels": [
+     {
+      "source": "tests/labels/audit-2026-10-03.json",
+      "verdict": "ok",
+      "provenance": "Saved per-reading judgment; original claim identity not saved",
+      "key": "mast-got-off#659b952c",
+      "identityVerified": false,
+      "claim": "The original engine description was not saved with this hash-only label. This verdict does not automatically judge the current description below.",
+      "date": "2026-10-03"
+     },
+     {
+      "source": "tests/right-set/belonging-is-longing-is-now.json",
+      "verdict": "ok",
+      "provenance": "Saved mistake-report judgment; retired (record source: claude)",
+      "key": "mast-got-off#30fe948e",
+      "identityVerified": false,
+      "claim": "Saved report summary: Dean Winchester was credited with a solo solo. The full original engine description and instrument were not recorded.",
+      "date": "2026-10-05",
+      "retired": "owner judged this wrong in the blind spot-check 2026-10-05"
+     },
+     {
+      "source": "tests/right-set/belonging-is-longing-is-now.json",
+      "verdict": "wrong",
+      "provenance": "Saved mistake-report judgment (record source: owner)",
+      "key": "mast-got-off#30fe948e",
+      "identityVerified": false,
+      "claim": "Saved report summary: Dean Winchester was credited with a solo solo. The full original engine description and instrument were not recorded.",
+      "date": "2026-10-05"
+     }
+    ],
+    "priority": 0.8514965107463698,
+    "occurrence": "Performed",
+    "changed": false,
+    "quarantined": false,
+    "status": "My current reading supports a different verdict from a surviving past record. Check both before accepting a fresh label.",
+    "reasons": [
+     "Current model confidence disagrees with or leaves uncertainty about a surviving historical judgment.",
+     "The original full claim identity is unavailable; old and current descriptions must not be equated.",
+     "Several nearby characters or indirect participant resolution.",
+     "A performed-act hit occurs near memory, conditional or recording language; context was checked manually.",
+     "Instrument, ownership or self-versus-partner contact is a recent owner-review error family.",
+     "My proposed current verdict differs from at least one surviving historical verdict."
+    ],
+    "recentEvidence": [],
+    "referenceIsOriginal": false
+   },
+   "trainingNotes": [
+    "The saved verdict judges the original saved claim, when recoverable, never an automatically substituted current claim.",
+    "Hints are judged only if explicitly reviewed; no negative labels are inferred from missing acts or inventory omissions."
+   ]
+  },
+  {
+   "id": "P14",
+   "key": "hollowed-cheeks#f15ed11d",
+   "fic": "more-views.html",
+   "para": 569,
+   "pattern": "hollowed-cheeks",
+   "a": "Castiel",
+   "b": "Dean Winchester",
+   "act": "blowjob",
+   "kind": "act",
+   "claim": "Castiel is getting a blowjob from Dean Winchester [blowjob; Performed]",
+   "engineConfidence": 0.9611055730577474,
+   "evidence": [
+    {
+     "from": 566,
+     "to": 572
+    }
+   ],
+   "proposal": {
+    "revision": "past-two-r1",
+    "verdict": "wrong",
+    "confidence": 0.99,
+    "reading": "Dean Winchester sucks Castiel’s fingers.",
+    "rationale": "Fingers are explicitly in Dean’s mouth. There is no penis-in-mouth contact in the target passage.",
+    "errors": [
+     "Wrong act or body part"
+    ]
+   },
+   "labelAudit": {
+    "pastLabels": [
+     {
+      "source": "tests/labels/audit-2026-10-03.json",
+      "verdict": "wrong",
+      "provenance": "Saved per-reading judgment; original claim identity not saved",
+      "key": "hollowed-cheeks#f15ed11d",
+      "identityVerified": false,
+      "claim": "The original engine description was not saved with this hash-only label. This verdict does not automatically judge the current description below.",
+      "date": "2026-10-03"
+     }
+    ],
+    "priority": 0.8286080651817611,
+    "occurrence": "Performed",
+    "changed": false,
+    "quarantined": false,
+    "status": "My current reading supports the same verdict. Preserve the historical record; a fresh claim-specific judgment can still resolve the missing original identity.",
+    "reasons": [
+     "Current model confidence disagrees with or leaves uncertainty about a surviving historical judgment.",
+     "The original full claim identity is unavailable; old and current descriptions must not be equated.",
+     "Several nearby characters or indirect participant resolution.",
+     "A performed-act hit occurs near memory, conditional or recording language; context was checked manually."
+    ],
+    "recentEvidence": [
+     "tests/scene-review/suspect-two-569919fdfb5e.json, suspect-two-569919fdfb5e/T7: owner-confirmed Handjob, Dean Winchester → Castiel, ¶556–565. Positive-only evidence; omissions are not negatives.",
+     "tests/scene-review/suspect-two-569919fdfb5e.json, suspect-two-569919fdfb5e/T7: owner-confirmed Handjob, Castiel → Dean Winchester, ¶576–579. Positive-only evidence; omissions are not negatives.",
+     "tests/scene-review/suspect-two-569919fdfb5e.json, suspect-two-569919fdfb5e/T7: owner-confirmed Blowjob, Dean Winchester → Castiel, ¶563–565. Positive-only evidence; omissions are not negatives.",
+     "tests/scene-review/suspect-two-569919fdfb5e.json, suspect-two-569919fdfb5e/T7: owner-confirmed Body rubbing / frottage, Castiel → Dean Winchester, ¶570–592. Positive-only evidence; omissions are not negatives."
+    ],
+    "referenceIsOriginal": false
+   },
+   "trainingNotes": [
+    "The saved verdict judges the original saved claim, when recoverable, never an automatically substituted current claim.",
+    "Hints are judged only if explicitly reviewed; no negative labels are inferred from missing acts or inventory omissions."
+   ]
+  },
+  {
+   "id": "P15",
+   "key": "prostate#9324cc2e",
+   "fic": "tricks-of-the-trade.html",
+   "para": 415,
+   "pattern": "prostate",
+   "a": "Castiel",
+   "b": "Dean Winchester",
+   "act": "anal sex",
+   "kind": "act",
+   "claim": "Castiel is having anal sex with Dean Winchester, as the one penetrating [anal sex; Performed]",
+   "engineConfidence": 0.965213477895457,
+   "evidence": [
+    {
+     "from": 412,
+     "to": 418
+    }
+   ],
+   "proposal": {
+    "revision": "past-two-r1",
+    "verdict": "wrong",
+    "confidence": 0.99,
+    "reading": "Castiel fingers Dean Winchester anally.",
+    "rationale": "Curled fingers stimulate the prostate; no penis has replaced them.",
+    "errors": [
+     "Wrong act or body part",
+     "Fingers or toy mistaken for a penis"
+    ]
+   },
+   "labelAudit": {
+    "pastLabels": [
+     {
+      "source": "tests/right-set/tricks-of-the-trade.json",
+      "verdict": "ok",
+      "provenance": "Saved mistake-report judgment; retired (record source: claude)",
+      "key": "prostate#1d80a67a",
+      "identityVerified": false,
+      "claim": "Saved report summary: Castiel was credited as top/active, with Dean Winchester receiving, in the anal category. The full original engine description and instrument were not recorded.",
+      "date": "2026-10-05",
+      "confidence": 0.56,
+      "retired": "owner judged this wrong in a blind spot-check 2026-10-06"
+     },
+     {
+      "source": "tests/right-set/tricks-of-the-trade.json",
+      "verdict": "wrong",
+      "provenance": "Saved mistake-report judgment (record source: owner)",
+      "key": "prostate#1d80a67a",
+      "identityVerified": false,
+      "claim": "Saved report summary: Castiel was credited as top/active, with Dean Winchester receiving, in the anal category. The full original engine description and instrument were not recorded.",
+      "date": "2026-10-06",
+      "confidence": 0.56
+     }
+    ],
+    "priority": 0.8183674128425014,
+    "occurrence": "Performed",
+    "changed": false,
+    "quarantined": false,
+    "status": "My current reading supports the same verdict. Preserve the historical record; a fresh claim-specific judgment can still resolve the missing original identity.",
+    "reasons": [
+     "Current model confidence disagrees with or leaves uncertainty about a surviving historical judgment.",
+     "The original full claim identity is unavailable; old and current descriptions must not be equated.",
+     "Several nearby characters or indirect participant resolution.",
+     "A performed-act hit occurs near memory, conditional or recording language; context was checked manually.",
+     "Instrument, ownership or self-versus-partner contact is a recent owner-review error family."
+    ],
+    "recentEvidence": [],
+    "referenceIsOriginal": false
+   },
+   "trainingNotes": [
+    "The saved verdict judges the original saved claim, when recoverable, never an automatically substituted current claim.",
+    "Hints are judged only if explicitly reviewed; no negative labels are inferred from missing acts or inventory omissions."
+   ]
+  },
+  {
+   "id": "P16",
+   "key": "fuck~elided#b7ccd1ab",
+   "fic": "were-compeer.html",
+   "para": 694,
+   "pattern": "fuck~elided",
+   "a": "Vernon Boyd",
+   "b": "Derek Hale",
+   "act": "anal sex",
+   "kind": "act",
+   "claim": "Vernon Boyd is having anal sex with Derek Hale, as the one penetrating [anal sex; Performed]",
+   "engineConfidence": 0.7295874169654679,
+   "evidence": [
+    {
+     "from": 691,
+     "to": 697
+    }
+   ],
+   "proposal": {
+    "revision": "past-two-r1",
+    "verdict": "wrong",
+    "confidence": 0.99,
+    "reading": "Derek Hale and Stiles Stilinski rub against each other without penetration.",
+    "rationale": "The passage distinguishes the grinding from penetrative sex, and Derek’s clothes remain on. Boyd is also wrongly selected.",
+    "errors": [
+     "Wrong act or body part",
+     "Wrong person",
+     "Kissing or rubbing mistaken for penetration"
+    ]
+   },
+   "labelAudit": {
+    "pastLabels": [
+     {
+      "source": "tests/right-set/a-werecompeer.json",
+      "verdict": "wrong",
+      "provenance": "Saved mistake-report judgment (record source: claude)",
+      "key": "fuck#b745df77",
+      "identityVerified": false,
+      "claim": "Saved report summary: Vernon Boyd was credited as top/active, with Derek Hale receiving, in the anal category. The full original engine description and instrument were not recorded.",
+      "date": "2026-10-05",
+      "confidence": 0.48
+     }
+    ],
+    "priority": 0.8012730793310073,
+    "occurrence": "Performed",
+    "changed": false,
+    "quarantined": false,
+    "status": "My current reading supports the same verdict. Preserve the historical record; a fresh claim-specific judgment can still resolve the missing original identity.",
+    "reasons": [
+     "Current model confidence disagrees with or leaves uncertainty about a surviving historical judgment.",
+     "The original full claim identity is unavailable; old and current descriptions must not be equated.",
+     "Several nearby characters or indirect participant resolution.",
+     "A performed-act hit occurs near memory, conditional or recording language; context was checked manually.",
+     "Instrument, ownership or self-versus-partner contact is a recent owner-review error family."
+    ],
+    "recentEvidence": [],
+    "referenceIsOriginal": false
+   },
+   "trainingNotes": [
+    "The saved verdict judges the original saved claim, when recoverable, never an automatically substituted current claim.",
+    "Hints are judged only if explicitly reviewed; no negative labels are inferred from missing acts or inventory omissions."
+   ]
+  },
+  {
+   "id": "P18",
+   "key": "tongue-on-cock-area#43953e33",
+   "fic": "hearts-truth.html",
+   "para": 272,
+   "pattern": "tongue-on-cock-area",
+   "a": "Draco Malfoy",
+   "b": "Harry Potter",
+   "act": "blowjob",
+   "kind": "act",
+   "claim": "Draco Malfoy is getting a blowjob from Harry Potter [blowjob; Performed]",
+   "engineConfidence": 0.933219744354046,
+   "evidence": [
+    {
+     "from": 269,
+     "to": 275
+    }
+   ],
+   "proposal": {
+    "revision": "past-two-r1",
+    "verdict": "wrong",
+    "confidence": 0.99,
+    "reading": "Harry Potter and Draco Malfoy rub their penises together and manually stimulate them.",
+    "rationale": "Licking lips is not oral contact with a penis; the ongoing contact is manual and genital rubbing.",
+    "errors": [
+     "Wrong act or body part"
+    ]
+   },
+   "labelAudit": {
+    "pastLabels": [
+     {
+      "source": "tests/labels/audit-2026-10-03.json",
+      "verdict": "wrong",
+      "provenance": "Saved per-reading judgment; original claim identity not saved",
+      "key": "tongue-on-cock-area#43953e33",
+      "identityVerified": false,
+      "claim": "The original engine description was not saved with this hash-only label. This verdict does not automatically judge the current description below.",
+      "date": "2026-10-03"
+     }
+    ],
+    "priority": 0.7757708593947253,
+    "occurrence": "Performed",
+    "changed": false,
+    "quarantined": false,
+    "status": "My current reading supports the same verdict. Preserve the historical record; a fresh claim-specific judgment can still resolve the missing original identity.",
+    "reasons": [
+     "Current model confidence disagrees with or leaves uncertainty about a surviving historical judgment.",
+     "The original full claim identity is unavailable; old and current descriptions must not be equated.",
+     "Several nearby characters or indirect participant resolution.",
+     "A performed-act hit occurs near memory, conditional or recording language; context was checked manually."
+    ],
+    "recentEvidence": [],
+    "referenceIsOriginal": false
+   },
+   "trainingNotes": [
+    "The saved verdict judges the original saved claim, when recoverable, never an automatically substituted current claim.",
+    "Hints are judged only if explicitly reviewed; no negative labels are inferred from missing acts or inventory omissions."
+   ]
+  },
+  {
+   "id": "P19",
+   "key": "stretched-open~elided#db234e3",
+   "fic": "belonging.html",
+   "para": 3446,
+   "pattern": "stretched-open~elided",
+   "a": "Castiel",
+   "b": "Dean Winchester",
+   "act": "fingering",
+   "kind": "act",
+   "claim": "Castiel is fingering Dean Winchester [fingering; Performed]",
+   "engineConfidence": 0.9363217144529831,
+   "evidence": [
+    {
+     "from": 3443,
+     "to": 3449
+    }
+   ],
+   "proposal": {
+    "revision": "past-two-r1",
+    "verdict": "wrong",
+    "confidence": 0.99,
+    "reading": "Castiel penetrates Dean Winchester anally with his penis.",
+    "rationale": "The repeated penis description establishes the instrument; fingers are not the thing thrusting here.",
+    "errors": [
+     "Penis mistaken for fingers or a toy"
+    ]
+   },
+   "labelAudit": {
+    "pastLabels": [
+     {
+      "source": "tests/labels/audit-2026-10-03.json",
+      "verdict": "ok",
+      "provenance": "Saved per-reading judgment; original claim identity not saved",
+      "key": "stretched-open~elided#db234e3",
+      "identityVerified": false,
+      "claim": "The original engine description was not saved with this hash-only label. This verdict does not automatically judge the current description below.",
+      "date": "2026-10-03"
+     },
+     {
+      "source": "tests/right-set/belonging-is-longing-is-now.json",
+      "verdict": "ok",
+      "provenance": "Saved mistake-report judgment; retired (record source: claude)",
+      "key": "stretched-open#f0e694f7",
+      "identityVerified": false,
+      "claim": "Saved report summary: Castiel was credited as top/active, with Dean Winchester receiving, in the anal category. The full original engine description and instrument were not recorded.",
+      "date": "2026-10-05",
+      "retired": "owner judged this wrong in a blind spot-check 2026-10-06"
+     },
+     {
+      "source": "tests/right-set/belonging-is-longing-is-now.json",
+      "verdict": "wrong",
+      "provenance": "Saved mistake-report judgment (record source: owner)",
+      "key": "stretched-open#f0e694f7",
+      "identityVerified": false,
+      "claim": "Saved report summary: Castiel was credited as top/active, with Dean Winchester receiving, in the anal category. The full original engine description and instrument were not recorded.",
+      "date": "2026-10-06"
+     }
+    ],
+    "priority": 0.7649769429491408,
+    "occurrence": "Performed",
+    "changed": false,
+    "quarantined": false,
+    "status": "My current reading supports a different verdict from a surviving past record. Check both before accepting a fresh label.",
+    "reasons": [
+     "Current model confidence disagrees with or leaves uncertainty about a surviving historical judgment.",
+     "The original full claim identity is unavailable; old and current descriptions must not be equated.",
+     "Several nearby characters or indirect participant resolution.",
+     "Instrument, ownership or self-versus-partner contact is a recent owner-review error family.",
+     "My proposed current verdict differs from at least one surviving historical verdict."
+    ],
+    "recentEvidence": [
+     "tests/gold/belonging.json: recorded gold anal, Castiel → Dean Winchester, ¶3415–3540. A scene-range label is contextual evidence, not a label on this individual match.",
+     "tests/gold/belonging.json: recorded gold rimming, Castiel → Dean Winchester, ¶3415–3540. A scene-range label is contextual evidence, not a label on this individual match."
+    ],
+    "referenceIsOriginal": false
+   },
+   "trainingNotes": [
+    "The saved verdict judges the original saved claim, when recoverable, never an automatically substituted current claim.",
+    "Hints are judged only if explicitly reviewed; no negative labels are inferred from missing acts or inventory omissions."
+   ]
+  },
+  {
+   "id": "P20",
+   "key": "passive-fucked~elided#dc29e",
+   "fic": "jacks.html",
+   "para": 1696,
+   "pattern": "passive-fucked~elided",
+   "a": "Dracula",
+   "b": "Jack Seward",
+   "act": "anal sex",
+   "kind": "wanted",
+   "role": "bottom",
+   "claim": "Dracula is being fucked anally by Jack Seward (read as something wanted, not something that happens) [anal sex; Wanted]",
+   "engineConfidence": 0.9307342929635404,
+   "evidence": [
+    {
+     "from": 1693,
+     "to": 1699
+    }
+   ],
+   "proposal": {
+    "revision": "past-two-r1",
+    "verdict": "wrong",
+    "confidence": 0.99,
+    "reading": "Jack Seward asks Dracula to penetrate him, while Dracula is already doing so.",
+    "rationale": "The engine credits Dracula as the one asking to receive. Jack is the requester and receiver.",
+    "errors": [
+     "Wrong person",
+     "Roles reversed"
+    ]
+   },
+   "labelAudit": {
+    "pastLabels": [
+     {
+      "source": "tests/right-set/jack-s-phone.json",
+      "verdict": "wrong",
+      "provenance": "Saved mistake-report judgment (record source: owner)",
+      "key": "passive-fucked#b8374e4e",
+      "identityVerified": false,
+      "claim": "Saved report summary: Dracula was credited with a anal hint as bottom (wanted / hypothetical). The full original engine description and instrument were not recorded.",
+      "date": "2026-10-06",
+      "confidence": 0.51
+     }
+    ],
+    "priority": 0.7619038611299472,
+    "occurrence": "Wanted",
+    "changed": false,
+    "quarantined": false,
+    "status": "My current reading supports the same verdict. Preserve the historical record; a fresh claim-specific judgment can still resolve the missing original identity.",
+    "reasons": [
+     "Current model confidence disagrees with or leaves uncertainty about a surviving historical judgment.",
+     "The original full claim identity is unavailable; old and current descriptions must not be equated.",
+     "Several nearby characters or indirect participant resolution.",
+     "Instrument, ownership or self-versus-partner contact is a recent owner-review error family."
+    ],
+    "recentEvidence": [],
+    "referenceIsOriginal": false
+   },
+   "trainingNotes": [
+    "The saved verdict judges the original saved claim, when recoverable, never an automatically substituted current claim.",
+    "Hints are judged only if explicitly reviewed; no negative labels are inferred from missing acts or inventory omissions."
+   ]
+  },
+  {
+   "id": "P21",
+   "key": "pushed-in~elided#76b11636",
+   "fic": "belonging.html",
+   "para": 1356,
+   "pattern": "pushed-in~elided",
+   "a": "Castiel",
+   "b": "Dean Winchester",
+   "act": "anal sex",
+   "kind": "act",
+   "claim": "Castiel is having anal sex with Dean Winchester, as the one penetrating [anal sex; Performed]",
+   "engineConfidence": 0.9287598987796438,
+   "evidence": [
+    {
+     "from": 1353,
+     "to": 1359
+    }
+   ],
+   "proposal": {
+    "revision": "past-two-r1",
+    "verdict": "wrong",
+    "confidence": 0.99,
+    "reading": "Dean Winchester inserts a plug into himself while Castiel manually stimulates him through clothing.",
+    "rationale": "The object was identified as a plug. Dean pushes it into himself; Castiel’s hand is outside his clothing.",
+    "errors": [
+     "Wrong act or body part",
+     "Wrong person",
+     "Fingers or toy mistaken for a penis"
+    ]
+   },
+   "labelAudit": {
+    "pastLabels": [
+     {
+      "source": "tests/labels/audit-2026-10-03.json",
+      "verdict": "ok",
+      "provenance": "Saved per-reading judgment; original claim identity not saved",
+      "key": "pushed-in~elided#76b11636",
+      "identityVerified": false,
+      "claim": "The original engine description was not saved with this hash-only label. This verdict does not automatically judge the current description below.",
+      "date": "2026-10-03"
+     },
+     {
+      "source": "tests/right-set/belonging-is-longing-is-now.json",
+      "verdict": "wrong",
+      "provenance": "Saved mistake-report judgment (record source: claude)",
+      "key": "pushed-in#36d98e19",
+      "identityVerified": false,
+      "claim": "Saved report summary: Dean Winchester was credited as top/active, with Castiel receiving, in the anal category. The full original engine description and instrument were not recorded.",
+      "date": "2026-10-05",
+      "confidence": 0.15
+     }
+    ],
+    "priority": 0.7608179443288041,
+    "occurrence": "Performed",
+    "changed": false,
+    "quarantined": false,
+    "status": "My current reading supports a different verdict from a surviving past record. Check both before accepting a fresh label.",
+    "reasons": [
+     "Current model confidence disagrees with or leaves uncertainty about a surviving historical judgment.",
+     "The original full claim identity is unavailable; old and current descriptions must not be equated.",
+     "Several nearby characters or indirect participant resolution.",
+     "Instrument, ownership or self-versus-partner contact is a recent owner-review error family.",
+     "My proposed current verdict differs from at least one surviving historical verdict."
+    ],
+    "recentEvidence": [],
+    "referenceIsOriginal": false
+   },
+   "trainingNotes": [
+    "The saved verdict judges the original saved claim, when recoverable, never an automatically substituted current claim.",
+    "Hints are judged only if explicitly reviewed; no negative labels are inferred from missing acts or inventory omissions."
+   ]
+  },
+  {
+   "id": "P23",
+   "key": "forcing-cock-down-throat~elided#70f2bdb1",
+   "fic": "jacks.html",
+   "para": 4092,
+   "pattern": "forcing-cock-down-throat~elided",
+   "a": "Jack Seward",
+   "b": "Dracula",
+   "act": "blowjob",
+   "kind": "act",
+   "claim": "Jack Seward is getting a blowjob from Dracula [blowjob; Performed]",
+   "engineConfidence": 0.8930909874531636,
+   "evidence": [
+    {
+     "from": 4089,
+     "to": 4095
+    }
+   ],
+   "proposal": {
+    "revision": "past-two-r1",
+    "verdict": "wrong",
+    "confidence": 0.99,
+    "reading": "Jack Seward performs oral sex on Dracula.",
+    "rationale": "The mouth belongs to Jack and the penis to Dracula; the engine claim reverses who is receiving oral stimulation.",
+    "errors": [
+     "Roles reversed",
+     "Wrong person"
+    ]
+   },
+   "labelAudit": {
+    "pastLabels": [
+     {
+      "source": "tests/labels/audit-2026-10-03.json",
+      "verdict": "ok",
+      "provenance": "Saved per-reading judgment; original claim identity not saved",
+      "key": "forcing-cock-down-throat~elided#70f2bdb1",
+      "identityVerified": false,
+      "claim": "The original engine description was not saved with this hash-only label. This verdict does not automatically judge the current description below.",
+      "date": "2026-10-03"
+     },
+     {
+      "source": "tests/right-set/jack-s-phone.json",
+      "verdict": "wrong",
+      "provenance": "Saved mistake-report judgment (record source: owner)",
+      "key": "forcing-cock-down-throat#c4cef9a2",
+      "identityVerified": false,
+      "claim": "Saved report summary: Jack Seward was credited with a blowjob hint as top (wanted / hypothetical). The full original engine description and instrument were not recorded.",
+      "date": "2026-10-05",
+      "confidence": 0.31
+     }
+    ],
+    "priority": 0.7537000430992401,
+    "occurrence": "Performed",
+    "changed": false,
+    "quarantined": false,
+    "status": "My current reading supports a different verdict from a surviving past record. Check both before accepting a fresh label.",
+    "reasons": [
+     "Current model confidence disagrees with or leaves uncertainty about a surviving historical judgment.",
+     "The original full claim identity is unavailable; old and current descriptions must not be equated.",
+     "Several nearby characters or indirect participant resolution.",
+     "A performed-act hit occurs near memory, conditional or recording language; context was checked manually.",
+     "My proposed current verdict differs from at least one surviving historical verdict."
+    ],
+    "recentEvidence": [],
+    "referenceIsOriginal": false
+   },
+   "trainingNotes": [
+    "The saved verdict judges the original saved claim, when recoverable, never an automatically substituted current claim.",
+    "Hints are judged only if explicitly reviewed; no negative labels are inferred from missing acts or inventory omissions."
+   ]
+  },
+  {
+   "id": "P24",
+   "key": "be-fucked#b2c469c6",
+   "fic": "were-compeer.html",
+   "para": 1075,
+   "pattern": "be-fucked",
+   "a": "Stiles Stilinski",
+   "b": "Derek Hale",
+   "act": "anal sex",
+   "kind": "wanted",
+   "role": "bottom",
+   "claim": "Stiles Stilinski is being fucked anally by Derek Hale (read as something wanted, not something that happens) [anal sex; Wanted]",
+   "engineConfidence": 0.9706051375127195,
+   "evidence": [
+    {
+     "from": 1072,
+     "to": 1078
+    }
+   ],
+   "proposal": {
+    "revision": "past-two-r1",
+    "verdict": "wrong",
+    "confidence": 0.96,
+    "reading": "Stiles Stilinski recalls his earlier motivation for accepting the contract and acknowledges that sex happened.",
+    "rationale": "The desire belongs to the earlier decision; this is retrospective narration while Stiles is alone, not a new current request.",
+    "errors": [
+     "Wrong occurrence: memory / fantasy / habitual / recording"
+    ]
+   },
+   "labelAudit": {
+    "pastLabels": [
+     {
+      "source": "tests/right-set/a-werecompeer.json",
+      "verdict": "ok",
+      "provenance": "Saved mistake-report judgment; retired (record source: claude)",
+      "key": "be-fucked#49d3fc06",
+      "identityVerified": false,
+      "claim": "Saved report summary: Stiles Stilinski was credited with a anal hint as bottom (wanted / hypothetical). The full original engine description and instrument were not recorded.",
+      "date": "2026-10-05",
+      "confidence": 0.65,
+      "retired": "owner judged this wrong in a blind spot-check 2026-10-06"
+     },
+     {
+      "source": "tests/right-set/a-werecompeer.json",
+      "verdict": "wrong",
+      "provenance": "Saved mistake-report judgment (record source: owner)",
+      "key": "be-fucked#49d3fc06",
+      "identityVerified": false,
+      "claim": "Saved report summary: Stiles Stilinski was credited with a anal hint as bottom (wanted / hypothetical). The full original engine description and instrument were not recorded.",
+      "date": "2026-10-06",
+      "confidence": 0.65
+     }
+    ],
+    "priority": 0.7463328256319958,
+    "occurrence": "Wanted",
+    "changed": false,
+    "quarantined": false,
+    "status": "My current reading supports the same verdict. Preserve the historical record; a fresh claim-specific judgment can still resolve the missing original identity.",
+    "reasons": [
+     "Current model confidence disagrees with or leaves uncertainty about a surviving historical judgment.",
+     "The original full claim identity is unavailable; old and current descriptions must not be equated.",
+     "Several nearby characters or indirect participant resolution.",
+     "Instrument, ownership or self-versus-partner contact is a recent owner-review error family."
+    ],
+    "recentEvidence": [],
+    "referenceIsOriginal": false
+   },
+   "trainingNotes": [
+    "The saved verdict judges the original saved claim, when recoverable, never an automatically substituted current claim.",
+    "Hints are judged only if explicitly reviewed; no negative labels are inferred from missing acts or inventory omissions."
+   ]
+  },
+  {
+   "id": "P25",
+   "key": "fuck#62d62acb",
+   "fic": "found-in-the-upside-down.html",
+   "para": 2169,
+   "pattern": "fuck",
+   "a": "Billy Hargrove",
+   "b": "Steve Harrington",
+   "act": "anal sex",
+   "kind": "hypothetical",
+   "role": "top",
+   "claim": "Billy Hargrove is having anal sex with Steve Harrington, as the one penetrating (read as a hypothetical, not something that happens) [anal sex; Hypothetical]",
+   "engineConfidence": 0.9686030969548196,
+   "evidence": [
+    {
+     "from": 2166,
+     "to": 2172
+    }
+   ],
+   "proposal": {
+    "revision": "past-two-r1",
+    "verdict": "wrong",
+    "confidence": 0.99,
+    "reading": "Billy Hargrove considers allowing Steve Harrington to penetrate Billy, then chooses a different proposed activity.",
+    "rationale": "The imagined penetrating person is Steve, not Billy. The contemplated act is not performed here.",
+    "errors": [
+     "Roles reversed",
+     "Wrong person"
+    ]
+   },
+   "labelAudit": {
+    "pastLabels": [
+     {
+      "source": "tests/right-set/found-in-the-upside-down.json",
+      "verdict": "wrong",
+      "provenance": "Saved mistake-report judgment (record source: owner)",
+      "key": "fuck#c0403cce",
+      "identityVerified": false,
+      "claim": "Saved report summary: Billy Hargrove was credited with a anal hint as top (wanted / hypothetical). The full original engine description and instrument were not recorded.",
+      "date": "2026-10-06",
+      "confidence": 0.35
+     }
+    ],
+    "priority": 0.7452317033251509,
+    "occurrence": "Hypothetical",
+    "changed": false,
+    "quarantined": false,
+    "status": "My current reading supports the same verdict. Preserve the historical record; a fresh claim-specific judgment can still resolve the missing original identity.",
+    "reasons": [
+     "Current model confidence disagrees with or leaves uncertainty about a surviving historical judgment.",
+     "The original full claim identity is unavailable; old and current descriptions must not be equated.",
+     "Several nearby characters or indirect participant resolution.",
+     "Instrument, ownership or self-versus-partner contact is a recent owner-review error family."
+    ],
+    "recentEvidence": [],
+    "referenceIsOriginal": false
+   },
+   "trainingNotes": [
+    "The saved verdict judges the original saved claim, when recoverable, never an automatically substituted current claim.",
+    "Hints are judged only if explicitly reviewed; no negative labels are inferred from missing acts or inventory omissions."
+   ]
+  },
+  {
+   "id": "P26",
+   "key": "dd2-mast-take-in-hand#29a60975",
+   "fic": "belonging.html",
+   "para": 2468,
+   "pattern": "dd2-mast-take-in-hand",
+   "a": "Dean Winchester",
+   "b": "Castiel",
+   "act": "masturbation",
+   "kind": "masturbation",
+   "role": "bottom",
+   "claim": "Dean Winchester masturbates. [masturbation; Performed]",
+   "engineConfidence": 0.8905261324106513,
+   "evidence": [
+    {
+     "from": 2465,
+     "to": 2471
+    }
+   ],
+   "proposal": {
+    "revision": "past-two-r1",
+    "verdict": "wrong",
+    "confidence": 0.99,
+    "reading": "Castiel holds his own penis without stimulating himself; Dean Winchester continues using a masturbation toy.",
+    "rationale": "The passage explicitly says Castiel does not start self-stimulation. The engine’s target credits Dean for Castiel’s hold.",
+    "errors": [
+     "Wrong person",
+     "No act happened"
+    ]
+   },
+   "labelAudit": {
+    "pastLabels": [
+     {
+      "source": "tests/right-set/belonging-is-longing-is-now.json",
+      "verdict": "ok",
+      "provenance": "Saved mistake-report judgment; retired (record source: claude)",
+      "key": "dd2-mast-take-in-hand#9ff26b87",
+      "identityVerified": false,
+      "claim": "Saved report summary: Dean Winchester was credited with a solo solo. The full original engine description and instrument were not recorded.",
+      "date": "2026-10-05",
+      "retired": "owner judged this wrong in a blind spot-check 2026-10-06"
+     },
+     {
+      "source": "tests/right-set/belonging-is-longing-is-now.json",
+      "verdict": "wrong",
+      "provenance": "Saved mistake-report judgment (record source: owner)",
+      "key": "dd2-mast-take-in-hand#9ff26b87",
+      "identityVerified": false,
+      "claim": "Saved report summary: Dean Winchester was credited with a solo solo. The full original engine description and instrument were not recorded.",
+      "date": "2026-10-06"
+     }
+    ],
+    "priority": 0.7397893728258582,
+    "occurrence": "Performed",
+    "changed": false,
+    "quarantined": false,
+    "status": "My current reading supports the same verdict. Preserve the historical record; a fresh claim-specific judgment can still resolve the missing original identity.",
+    "reasons": [
+     "Current model confidence disagrees with or leaves uncertainty about a surviving historical judgment.",
+     "The original full claim identity is unavailable; old and current descriptions must not be equated.",
+     "Several nearby characters or indirect participant resolution.",
+     "Instrument, ownership or self-versus-partner contact is a recent owner-review error family."
+    ],
+    "recentEvidence": [],
+    "referenceIsOriginal": false
+   },
+   "trainingNotes": [
+    "The saved verdict judges the original saved claim, when recoverable, never an automatically substituted current claim.",
+    "Hints are judged only if explicitly reviewed; no negative labels are inferred from missing acts or inventory omissions."
+   ]
+  },
+  {
+   "id": "P27",
+   "key": "prostate~elided#8672e3c3",
+   "fic": "whisper.html",
+   "para": 452,
+   "pattern": "prostate~elided",
+   "a": "Henry Fox-Mountchristen-Windsor",
+   "b": "Alex Claremont-Diaz",
+   "act": "anal sex",
+   "kind": "wanted",
+   "role": "top",
+   "claim": "Henry Fox-Mountchristen-Windsor is having anal sex with Alex Claremont-Diaz, as the one penetrating (read as something wanted, not something that happens) [anal sex; Wanted]",
+   "engineConfidence": 0.9516094932647994,
+   "evidence": [
+    {
+     "from": 449,
+     "to": 455
+    }
+   ],
+   "proposal": {
+    "revision": "past-two-r1",
+    "verdict": "wrong",
+    "confidence": 0.99,
+    "reading": "Henry Fox-Mountchristen-Windsor asks Alex Claremont-Diaz to continue penetrating Henry anally.",
+    "rationale": "Henry is receiving prostate stimulation, not proposing to penetrate Alex. The actual ongoing act supports the request but not the engine’s direction.",
+    "errors": [
+     "Roles reversed",
+     "Wrong person"
+    ]
+   },
+   "labelAudit": {
+    "pastLabels": [
+     {
+      "source": "tests/right-set/whisper-in-my-ear.json",
+      "verdict": "wrong",
+      "provenance": "Saved mistake-report judgment (record source: owner)",
+      "key": "prostate#41d1b5f3",
+      "identityVerified": false,
+      "claim": "Saved report summary: Henry Fox-Mountchristen-Windsor was credited with a anal hint as top (wanted / hypothetical). The full original engine description and instrument were not recorded.",
+      "date": "2026-10-06",
+      "confidence": 0.66
+     }
+    ],
+    "priority": 0.7358852212956396,
+    "occurrence": "Wanted",
+    "changed": false,
+    "quarantined": false,
+    "status": "My current reading supports the same verdict. Preserve the historical record; a fresh claim-specific judgment can still resolve the missing original identity.",
+    "reasons": [
+     "Current model confidence disagrees with or leaves uncertainty about a surviving historical judgment.",
+     "The original full claim identity is unavailable; old and current descriptions must not be equated.",
+     "Several nearby characters or indirect participant resolution.",
+     "Instrument, ownership or self-versus-partner contact is a recent owner-review error family."
+    ],
+    "recentEvidence": [],
+    "referenceIsOriginal": false
+   },
+   "trainingNotes": [
+    "The saved verdict judges the original saved claim, when recoverable, never an automatically substituted current claim.",
+    "Hints are judged only if explicitly reviewed; no negative labels are inferred from missing acts or inventory omissions."
+   ]
+  },
+  {
+   "id": "P30",
+   "key": "stretched-open#2210888f",
+   "fic": "hate.html",
+   "para": 1507,
+   "pattern": "stretched-open",
+   "a": "Steve Harrington",
+   "b": "Eddie Munson",
+   "act": "fingering",
+   "kind": "act",
+   "claim": "Steve Harrington is fingering Eddie Munson [fingering; Performed]",
+   "engineConfidence": 0.9811210546376904,
+   "evidence": [
+    {
+     "from": 1504,
+     "to": 1510
+    }
+   ],
+   "proposal": {
+    "revision": "past-two-r1",
+    "verdict": "wrong",
+    "confidence": 0.99,
+    "reading": "Steve Harrington manually stimulates both his penis and Eddie Munson’s together.",
+    "rationale": "The fingers form a grip around the penises; they are not inserted into either person.",
+    "errors": [
+     "Wrong act or body part"
+    ]
+   },
+   "labelAudit": {
+    "pastLabels": [
+     {
+      "source": "tests/labels/audit-2026-10-03.json",
+      "verdict": "ok",
+      "provenance": "Saved per-reading judgment; original claim identity not saved",
+      "key": "stretched-open#2210888f",
+      "identityVerified": false,
+      "claim": "The original engine description was not saved with this hash-only label. This verdict does not automatically judge the current description below.",
+      "date": "2026-10-03"
+     },
+     {
+      "source": "tests/right-set/hate-the-way-it-feels-so-good.json",
+      "verdict": "wrong",
+      "provenance": "Saved mistake-report judgment (record source: owner)",
+      "key": "stretched-open#c8af6673",
+      "identityVerified": false,
+      "claim": "Saved report summary: Steve Harrington was credited as top/active, with Eddie Munson receiving, in the anal category. The full original engine description and instrument were not recorded.",
+      "date": "2026-10-05"
+     }
+    ],
+    "priority": 0.7146165800507297,
+    "occurrence": "Performed",
+    "changed": false,
+    "quarantined": false,
+    "status": "My current reading supports a different verdict from a surviving past record. Check both before accepting a fresh label.",
+    "reasons": [
+     "Current model confidence disagrees with or leaves uncertainty about a surviving historical judgment.",
+     "The original full claim identity is unavailable; old and current descriptions must not be equated.",
+     "Several nearby characters or indirect participant resolution.",
+     "Instrument, ownership or self-versus-partner contact is a recent owner-review error family.",
+     "My proposed current verdict differs from at least one surviving historical verdict."
+    ],
+    "recentEvidence": [],
+    "referenceIsOriginal": false
+   },
+   "trainingNotes": [
+    "The saved verdict judges the original saved claim, when recoverable, never an automatically substituted current claim.",
+    "Hints are judged only if explicitly reviewed; no negative labels are inferred from missing acts or inventory omissions."
+   ]
+  },
+  {
+   "id": "P31",
+   "key": "sank-down#3d221efc",
+   "fic": "kissed.html",
+   "para": 4318,
+   "pattern": "sank-down",
+   "a": "Eddie Munson",
+   "b": "Steve Harrington",
+   "act": "anal sex (riding)",
+   "kind": "act",
+   "claim": "Steve Harrington is riding Eddie Munson (anal sex) [anal sex (riding); Performed]",
+   "engineConfidence": 0.912839992148279,
+   "evidence": [
+    {
+     "from": 4315,
+     "to": 4321
+    }
+   ],
+   "proposal": {
+    "revision": "past-two-r1",
+    "verdict": "wrong",
+    "confidence": 0.98,
+    "reading": "Eddie Munson penetrates Steve Harrington and remains inside him after ejaculation.",
+    "rationale": "The anal act and direction are supported, but the target describes Eddie collapsing toward Steve, not Steve riding Eddie. The riding subtype is unsupported by this passage.",
+    "errors": [
+     "Wrong act or body part"
+    ]
+   },
+   "labelAudit": {
+    "pastLabels": [
+     {
+      "source": "tests/labels/audit-2026-10-03.json",
+      "verdict": "wrong",
+      "provenance": "Saved per-reading judgment; original claim identity not saved",
+      "key": "sank-down#3d221efc",
+      "identityVerified": false,
+      "claim": "The original engine description was not saved with this hash-only label. This verdict does not automatically judge the current description below.",
+      "date": "2026-10-03"
+     }
+    ],
+    "priority": 0.7145619956815535,
+    "occurrence": "Performed",
+    "changed": false,
+    "quarantined": false,
+    "status": "My current reading supports the same verdict. Preserve the historical record; a fresh claim-specific judgment can still resolve the missing original identity.",
+    "reasons": [
+     "Current model confidence disagrees with or leaves uncertainty about a surviving historical judgment.",
+     "The original full claim identity is unavailable; old and current descriptions must not be equated.",
+     "Several nearby characters or indirect participant resolution.",
+     "Instrument, ownership or self-versus-partner contact is a recent owner-review error family."
+    ],
+    "recentEvidence": [],
+    "referenceIsOriginal": false
+   },
+   "trainingNotes": [
+    "The saved verdict judges the original saved claim, when recoverable, never an automatically substituted current claim.",
+    "Hints are judged only if explicitly reviewed; no negative labels are inferred from missing acts or inventory omissions."
+   ]
+  },
+  {
+   "id": "P32",
+   "key": "hj-stroke~elided#794ba3e3",
+   "fic": "angel-without-a-god.html",
+   "para": 4380,
+   "pattern": "hj-stroke~elided",
+   "a": "Jason Carver",
+   "b": "Eddie Munson",
+   "act": "handjob",
+   "kind": "handjob",
+   "role": "top",
+   "claim": "Jason Carver gives Eddie Munson a handjob. [handjob; Performed]",
+   "engineConfidence": 0.6767311548161048,
+   "evidence": [
+    {
+     "from": 4377,
+     "to": 4383
+    }
+   ],
+   "proposal": {
+    "revision": "past-two-r1",
+    "verdict": "wrong",
+    "confidence": 0.99,
+    "reading": "Eddie Munson gives Jason Carver a handjob while penetrating Jason anally.",
+    "rationale": "Jason ejaculates onto Eddie’s fist and grips Eddie internally. That is not Jason manually stimulating Eddie.",
+    "errors": [
+     "Roles reversed",
+     "Wrong person"
+    ]
+   },
+   "labelAudit": {
+    "pastLabels": [
+     {
+      "source": "tests/labels/review-2026-10-03.json",
+      "verdict": "wrong",
+      "provenance": "Saved per-reading judgment; original claim identity not saved",
+      "key": "hj-stroke~elided#794ba3e3",
+      "identityVerified": false,
+      "claim": "The original engine description was not saved with this hash-only label. This verdict does not automatically judge the current description below.",
+      "date": "2026-10-03"
+     }
+    ],
+    "priority": 0.6972021351488576,
+    "occurrence": "Performed",
+    "changed": false,
+    "quarantined": false,
+    "status": "My current reading supports the same verdict. Preserve the historical record; a fresh claim-specific judgment can still resolve the missing original identity.",
+    "reasons": [
+     "Current model confidence disagrees with or leaves uncertainty about a surviving historical judgment.",
+     "The original full claim identity is unavailable; old and current descriptions must not be equated.",
+     "Several nearby characters or indirect participant resolution.",
+     "A performed-act hit occurs near memory, conditional or recording language; context was checked manually.",
+     "Instrument, ownership or self-versus-partner contact is a recent owner-review error family."
+    ],
+    "recentEvidence": [
+     "tests/gold/angel-without-a-god.json: recorded gold anal, Eddie Munson → Jason Carver, ¶4302–4384. A scene-range label is contextual evidence, not a label on this individual match."
+    ],
+    "referenceIsOriginal": false
+   },
+   "trainingNotes": [
+    "The saved verdict judges the original saved claim, when recoverable, never an automatically substituted current claim.",
+    "Hints are judged only if explicitly reviewed; no negative labels are inferred from missing acts or inventory omissions."
+   ]
+  },
+  {
+   "id": "P33",
+   "key": "fuck#37141563",
+   "fic": "covered.html",
+   "para": 1103,
+   "pattern": "fuck",
+   "a": "Asami Sato",
+   "b": "Korra",
+   "act": "vaginal sex",
+   "kind": "act",
+   "claim": "Asami Sato is having vaginal sex with Korra [vaginal sex; Performed]",
+   "engineConfidence": 0.9533321881481461,
+   "evidence": [
+    {
+     "from": 1100,
+     "to": 1106
+    }
+   ],
+   "proposal": {
+    "revision": "past-two-r1",
+    "verdict": "wrong",
+    "confidence": 0.98,
+    "reading": "Asami Sato reflects on an ongoing sexual affair with Korra.",
+    "rationale": "The passage summarizes a relationship while talking with Mako, not a performed sex scene. It also does not specify penile vaginal penetration.",
+    "errors": [
+     "Wrong occurrence: memory / fantasy / habitual / recording",
+     "Wrong act or body part"
+    ]
+   },
+   "labelAudit": {
+    "pastLabels": [
+     {
+      "source": "tests/labels/review-2026-10-04.json",
+      "verdict": "wrong",
+      "provenance": "Saved per-reading judgment; original claim identity not saved",
+      "key": "fuck#37141563",
+      "identityVerified": false,
+      "claim": "The original engine description was not saved with this hash-only label. This verdict does not automatically judge the current description below.",
+      "date": "2026-10-04"
+     }
+    ],
+    "priority": 0.6743327034814804,
+    "occurrence": "Performed",
+    "changed": false,
+    "quarantined": false,
+    "status": "My current reading supports the same verdict. Preserve the historical record; a fresh claim-specific judgment can still resolve the missing original identity.",
+    "reasons": [
+     "Current model confidence disagrees with or leaves uncertainty about a surviving historical judgment.",
+     "The original full claim identity is unavailable; old and current descriptions must not be equated.",
+     "A performed-act hit occurs near memory, conditional or recording language; context was checked manually."
+    ],
+    "recentEvidence": [],
+    "referenceIsOriginal": false
+   },
+   "trainingNotes": [
+    "The saved verdict judges the original saved claim, when recoverable, never an automatically substituted current claim.",
+    "Hints are judged only if explicitly reviewed; no negative labels are inferred from missing acts or inventory omissions."
+   ]
+  },
+  {
+   "id": "P34",
+   "key": "hj-stroke~elided#369a0b39",
+   "fic": "fling.html",
+   "para": 113,
+   "pattern": "hj-stroke~elided",
+   "a": "Derek Hale",
+   "b": "Stiles Stilinski",
+   "act": "handjob",
+   "kind": "handjob",
+   "role": "top",
+   "claim": "Derek Hale gives Stiles Stilinski a handjob. [handjob; Performed]",
+   "engineConfidence": 0.8321121580448141,
+   "evidence": [
+    {
+     "from": 110,
+     "to": 116
+    }
+   ],
+   "proposal": {
+    "revision": "past-two-r1",
+    "verdict": "wrong",
+    "confidence": 0.99,
+    "reading": "Derek Hale rubs his penis through fluid on Stiles Stilinski’s body, then penetrates Stiles anally.",
+    "rationale": "The rubbing instrument is Derek’s penis against a body; a handjob is not described.",
+    "errors": [
+     "Wrong act or body part"
+    ]
+   },
+   "labelAudit": {
+    "pastLabels": [
+     {
+      "source": "tests/labels/audit-2026-10-03.json",
+      "verdict": "wrong",
+      "provenance": "Saved per-reading judgment; original claim identity not saved",
+      "key": "hj-stroke~elided#369a0b39",
+      "identityVerified": false,
+      "claim": "The original engine description was not saved with this hash-only label. This verdict does not automatically judge the current description below.",
+      "date": "2026-10-03"
+     }
+    ],
+    "priority": 0.6701616869246477,
+    "occurrence": "Performed",
+    "changed": false,
+    "quarantined": false,
+    "status": "My current reading supports the same verdict. Preserve the historical record; a fresh claim-specific judgment can still resolve the missing original identity.",
+    "reasons": [
+     "Current model confidence disagrees with or leaves uncertainty about a surviving historical judgment.",
+     "The original full claim identity is unavailable; old and current descriptions must not be equated.",
+     "Several nearby characters or indirect participant resolution.",
+     "Instrument, ownership or self-versus-partner contact is a recent owner-review error family."
+    ],
+    "recentEvidence": [],
+    "referenceIsOriginal": false
+   },
+   "trainingNotes": [
+    "The saved verdict judges the original saved claim, when recoverable, never an automatically substituted current claim.",
+    "Hints are judged only if explicitly reviewed; no negative labels are inferred from missing acts or inventory omissions."
+   ]
+  },
+  {
+   "id": "P36",
+   "key": "body-sore-ass#ff53f26f",
+   "fic": "hate.html",
+   "para": 828,
+   "pattern": "body-sore-ass",
+   "a": "Steve Harrington",
+   "b": "Eddie Munson",
+   "act": "loose or sore after sex",
+   "kind": "body",
+   "role": "bottom",
+   "claim": "Steve Harrington is loose or sore after sex with Eddie Munson [loose or sore after sex; Body cue]",
+   "engineConfidence": 0.9867870666824052,
+   "evidence": [
+    {
+     "from": 825,
+     "to": 831
+    }
+   ],
+   "proposal": {
+    "revision": "past-two-r1",
+    "verdict": "wrong",
+    "confidence": 0.96,
+    "reading": "Steve Harrington briefly feels empty when Eddie Munson withdraws his fingers before penile insertion.",
+    "rationale": "A temporary empty sensation is not the same as being loose or sore after sex. The current claim changes the bodily cue.",
+    "errors": [
+     "Wrong act or body part"
+    ]
+   },
+   "labelAudit": {
+    "pastLabels": [
+     {
+      "source": "tests/labels/audit-2026-10-03.json",
+      "verdict": "ok",
+      "provenance": "Saved per-reading judgment; original claim identity not saved",
+      "key": "body-sore-ass#ff53f26f",
+      "identityVerified": false,
+      "claim": "The original engine description was not saved with this hash-only label. This verdict does not automatically judge the current description below.",
+      "date": "2026-10-03"
+     },
+     {
+      "source": "tests/right-set/hate-the-way-it-feels-so-good.json",
+      "verdict": "ok",
+      "provenance": "Saved mistake-report judgment; retired (record source: claude)",
+      "key": "body-sore-ass#85a9f79",
+      "identityVerified": false,
+      "claim": "Saved report summary: Steve Harrington was credited with a anal hint as bottom (wanted / hypothetical). The full original engine description and instrument were not recorded.",
+      "date": "2026-10-05",
+      "confidence": 0.35,
+      "retired": "owner judged this wrong in the blind spot-check 2026-10-05"
+     },
+     {
+      "source": "tests/right-set/hate-the-way-it-feels-so-good.json",
+      "verdict": "wrong",
+      "provenance": "Saved mistake-report judgment (record source: owner)",
+      "key": "body-sore-ass#85a9f79",
+      "identityVerified": false,
+      "claim": "Saved report summary: Steve Harrington was credited with a anal hint as bottom (wanted / hypothetical). The full original engine description and instrument were not recorded.",
+      "date": "2026-10-05",
+      "confidence": 0.35
+     }
+    ],
+    "priority": 0.655232886675323,
+    "occurrence": "Body cue",
+    "changed": false,
+    "quarantined": false,
+    "status": "My current reading supports a different verdict from a surviving past record. Check both before accepting a fresh label.",
+    "reasons": [
+     "Current model confidence disagrees with or leaves uncertainty about a surviving historical judgment.",
+     "The original full claim identity is unavailable; old and current descriptions must not be equated.",
+     "Several nearby characters or indirect participant resolution.",
+     "My proposed current verdict differs from at least one surviving historical verdict."
+    ],
+    "recentEvidence": [],
+    "referenceIsOriginal": false
+   },
+   "trainingNotes": [
+    "The saved verdict judges the original saved claim, when recoverable, never an automatically substituted current claim.",
+    "Hints are judged only if explicitly reviewed; no negative labels are inferred from missing acts or inventory omissions."
+   ]
+  },
+  {
+   "id": "P39",
+   "key": "plug-in-ass#8c3a1aed",
+   "fic": "tricks-of-the-trade.html",
+   "para": 2135,
+   "pattern": "plug-in-ass",
+   "a": "Castiel",
+   "b": "Dean Winchester",
+   "act": "wearing a plug",
+   "kind": "prep",
+   "role": "bottom",
+   "claim": "Castiel is wearing a plug (put in by or for Dean Winchester) [wearing a plug; Preparation cue]",
+   "engineConfidence": 0.8970301165928475,
+   "evidence": [
+    {
+     "from": 2132,
+     "to": 2138
+    }
+   ],
+   "proposal": {
+    "revision": "past-two-r1",
+    "verdict": "wrong",
+    "confidence": 0.99,
+    "reading": "Dean Winchester is wearing a plug and a penis cage; Castiel mentions calming techniques.",
+    "rationale": "The receiving perspective and subsequent dialogue identify Dean as wearing the devices, not Castiel.",
+    "errors": [
+     "Wrong person"
+    ]
+   },
+   "labelAudit": {
+    "pastLabels": [
+     {
+      "source": "tests/right-set/tricks-of-the-trade.json",
+      "verdict": "wrong",
+      "provenance": "Saved mistake-report judgment (record source: owner)",
+      "key": "plug-in-ass#99c89dd9",
+      "identityVerified": false,
+      "claim": "Saved report summary: Castiel was credited with a anal hint as bottom (wanted / hypothetical). The full original engine description and instrument were not recorded.",
+      "date": "2026-10-06",
+      "confidence": 0.26
+     }
+    ],
+    "priority": 0.6433665641260662,
+    "occurrence": "Preparation cue",
+    "changed": false,
+    "quarantined": false,
+    "status": "My current reading supports the same verdict. Preserve the historical record; a fresh claim-specific judgment can still resolve the missing original identity.",
+    "reasons": [
+     "Current model confidence disagrees with or leaves uncertainty about a surviving historical judgment.",
+     "The original full claim identity is unavailable; old and current descriptions must not be equated.",
+     "Several nearby characters or indirect participant resolution."
+    ],
+    "recentEvidence": [],
+    "referenceIsOriginal": false
+   },
+   "trainingNotes": [
+    "The saved verdict judges the original saved claim, when recoverable, never an automatically substituted current claim.",
+    "Hints are judged only if explicitly reviewed; no negative labels are inferred from missing acts or inventory omissions."
+   ]
+  },
+  {
+   "id": "P40",
+   "key": "taste-precum-throat#3f36c18b",
+   "fic": "tuica.html",
+   "para": 248,
+   "pattern": "taste-precum-throat",
+   "a": "Draco Malfoy",
+   "b": "Ron Weasley",
+   "act": "blowjob",
+   "kind": "act",
+   "claim": "Draco Malfoy is getting a blowjob from Ron Weasley [blowjob; Performed]",
+   "engineConfidence": 0.9639241279343966,
+   "evidence": [
+    {
+     "from": 245,
+     "to": 251
+    }
+   ],
+   "proposal": {
+    "revision": "past-two-r1",
+    "verdict": "wrong",
+    "confidence": 0.99,
+    "reading": "Ron Weasley and Draco Malfoy kiss while Harry Potter unbuttons Ron’s clothing.",
+    "rationale": "The mouth opens for a kiss; no penis is placed in Draco’s mouth here.",
+    "errors": [
+     "Wrong act or body part"
+    ]
+   },
+   "labelAudit": {
+    "pastLabels": [
+     {
+      "source": "tests/labels/audit-2026-10-03.json",
+      "verdict": "wrong",
+      "provenance": "Saved per-reading judgment; original claim identity not saved",
+      "key": "taste-precum-throat#3f36c18b",
+      "identityVerified": false,
+      "claim": "The original engine description was not saved with this hash-only label. This verdict does not automatically judge the current description below.",
+      "date": "2026-10-03"
+     }
+    ],
+    "priority": 0.6426582703639181,
+    "occurrence": "Performed",
+    "changed": false,
+    "quarantined": false,
+    "status": "My current reading supports the same verdict. Preserve the historical record; a fresh claim-specific judgment can still resolve the missing original identity.",
+    "reasons": [
+     "Current model confidence disagrees with or leaves uncertainty about a surviving historical judgment.",
+     "The original full claim identity is unavailable; old and current descriptions must not be equated.",
+     "Several nearby characters or indirect participant resolution."
+    ],
+    "recentEvidence": [],
+    "referenceIsOriginal": false
+   },
+   "trainingNotes": [
+    "The saved verdict judges the original saved claim, when recoverable, never an automatically substituted current claim.",
+    "Hints are judged only if explicitly reviewed; no negative labels are inferred from missing acts or inventory omissions."
+   ]
+  },
+  {
+   "id": "P45",
+   "key": "sinks-to-floor~elided#5f56bf7c",
+   "fic": "were-compeer.html",
+   "para": 1096,
+   "pattern": "sinks-to-floor~elided",
+   "a": "Stiles Stilinski",
+   "b": "Derek Hale",
+   "act": "kneeling",
+   "kind": "prep",
+   "role": "bottom",
+   "claim": "Stiles Stilinski is dropping to their knees in front of Derek Hale, sexually [kneeling; Preparation cue]",
+   "engineConfidence": 0.8765103667228485,
+   "evidence": [
+    {
+     "from": 1093,
+     "to": 1099
+    }
+   ],
+   "proposal": {
+    "revision": "past-two-r1",
+    "verdict": "wrong",
+    "confidence": 0.98,
+    "reading": "Stiles Stilinski collapses to his knees at Derek Hale’s empty office chair during painful heat symptoms.",
+    "rationale": "The posture is real, but Derek is absent. This is seeking scent and managing symptoms, not kneeling before the partner for sex.",
+    "errors": [
+     "Wrong person",
+     "Wrong act or body part"
+    ]
+   },
+   "labelAudit": {
+    "pastLabels": [
+     {
+      "source": "tests/right-set/a-werecompeer.json",
+      "verdict": "ok",
+      "provenance": "Saved mistake-report judgment; retired (record source: claude)",
+      "key": "sinks-to-floor#b00ac95",
+      "identityVerified": false,
+      "claim": "Saved report summary: Stiles Stilinski was credited with a blowjob hint as bottom (wanted / hypothetical). The full original engine description and instrument were not recorded.",
+      "date": "2026-10-05",
+      "confidence": 0.31,
+      "retired": "owner judged this wrong in a blind spot-check 2026-10-06"
+     },
+     {
+      "source": "tests/right-set/a-werecompeer.json",
+      "verdict": "wrong",
+      "provenance": "Saved mistake-report judgment (record source: owner)",
+      "key": "sinks-to-floor#b00ac95",
+      "identityVerified": false,
+      "claim": "Saved report summary: Stiles Stilinski was credited with a blowjob hint as bottom (wanted / hypothetical). The full original engine description and instrument were not recorded.",
+      "date": "2026-10-06",
+      "confidence": 0.31
+     }
+    ],
+    "priority": 0.6320807016975667,
+    "occurrence": "Preparation cue",
+    "changed": false,
+    "quarantined": false,
+    "status": "My current reading supports the same verdict. Preserve the historical record; a fresh claim-specific judgment can still resolve the missing original identity.",
+    "reasons": [
+     "Current model confidence disagrees with or leaves uncertainty about a surviving historical judgment.",
+     "The original full claim identity is unavailable; old and current descriptions must not be equated.",
+     "Several nearby characters or indirect participant resolution."
+    ],
+    "recentEvidence": [],
+    "referenceIsOriginal": false
+   },
+   "trainingNotes": [
+    "The saved verdict judges the original saved claim, when recoverable, never an automatically substituted current claim.",
+    "Hints are judged only if explicitly reviewed; no negative labels are inferred from missing acts or inventory omissions."
+   ]
+  },
+  {
+   "id": "P47",
+   "key": "care-bring#e9be52ae",
+   "fic": "new-bitch.html",
+   "para": 5928,
+   "pattern": "care-bring",
+   "a": "Damen",
+   "b": "Laurent",
+   "act": "looking after someone",
+   "kind": "behavior",
+   "role": "top",
+   "claim": "Damen is looking after Laurent [looking after someone; Everyday behavior]",
+   "engineConfidence": 0.8756282761416018,
+   "evidence": [
+    {
+     "from": 5925,
+     "to": 5931
+    }
+   ],
+   "proposal": {
+    "revision": "past-two-r1",
+    "verdict": "wrong",
+    "confidence": 0.99,
+    "reading": "Laurent gives Damen the lunch Laurent bought for him.",
+    "rationale": "The perspective and Damen’s response show that Laurent supplies the food, reversing the engine’s care direction.",
+    "errors": [
+     "Wrong person",
+     "Roles reversed"
+    ]
+   },
+   "labelAudit": {
+    "pastLabels": [
+     {
+      "source": "tests/labels/review-2026-10-03.json",
+      "verdict": "wrong",
+      "provenance": "Saved per-reading judgment; original claim identity not saved",
+      "key": "care-bring#e9be52ae",
+      "identityVerified": false,
+      "claim": "The original engine description was not saved with this hash-only label. This verdict does not automatically judge the current description below.",
+      "date": "2026-10-03"
+     }
+    ],
+    "priority": 0.631595551877881,
+    "occurrence": "Everyday behavior",
+    "changed": false,
+    "quarantined": false,
+    "status": "My current reading supports the same verdict. Preserve the historical record; a fresh claim-specific judgment can still resolve the missing original identity.",
+    "reasons": [
+     "Current model confidence disagrees with or leaves uncertainty about a surviving historical judgment.",
+     "The original full claim identity is unavailable; old and current descriptions must not be equated.",
+     "Several nearby characters or indirect participant resolution."
+    ],
+    "recentEvidence": [],
+    "referenceIsOriginal": false
+   },
+   "trainingNotes": [
+    "The saved verdict judges the original saved claim, when recoverable, never an automatically substituted current claim.",
+    "Hints are judged only if explicitly reviewed; no negative labels are inferred from missing acts or inventory omissions."
+   ]
+  },
+  {
+   "id": "P48",
+   "key": "hand-in-pants-poss#aa4b9921",
+   "fic": "steady-eddie.html",
+   "para": 2023,
+   "pattern": "hand-in-pants-poss",
+   "a": "Eddie Munson",
+   "b": "Steve Harrington",
+   "act": "hand down the back of the pants",
+   "kind": "touch",
+   "role": "top",
+   "claim": "Eddie Munson has a hand down the back of Steve Harrington's pants [hand down the back of the pants; Contact cue]",
+   "engineConfidence": 0.9396854870500274,
+   "evidence": [
+    {
+     "from": 2020,
+     "to": 2026
+    }
+   ],
+   "proposal": {
+    "revision": "past-two-r1",
+    "verdict": "wrong",
+    "confidence": 0.98,
+    "reading": "Eddie Munson puts a hand inside the front of Steve Harrington’s briefs and manually stimulates his penis.",
+    "rationale": "The contact is at the penis, not a hand down the back of the pants. The broad hand-in-clothing cue has the wrong location.",
+    "errors": [
+     "Wrong act or body part"
+    ]
+   },
+   "labelAudit": {
+    "pastLabels": [
+     {
+      "source": "tests/labels/audit-2026-10-03.json",
+      "verdict": "ok",
+      "provenance": "Saved per-reading judgment; original claim identity not saved",
+      "key": "hand-in-pants-poss#aa4b9921",
+      "identityVerified": false,
+      "claim": "The original engine description was not saved with this hash-only label. This verdict does not automatically judge the current description below.",
+      "date": "2026-10-03"
+     },
+     {
+      "source": "tests/right-set/keep-it-steady-eddie.json",
+      "verdict": "wrong",
+      "provenance": "Saved mistake-report judgment (record source: owner)",
+      "key": "hand-in-pants-poss#4466a6f9",
+      "identityVerified": false,
+      "claim": "Saved report summary: Eddie Munson was credited with a anal hint as top (wanted / hypothetical). The full original engine description and instrument were not recorded.",
+      "date": "2026-10-06",
+      "confidence": 0.55
+     }
+    ],
+    "priority": 0.6293270178775152,
+    "occurrence": "Contact cue",
+    "changed": false,
+    "quarantined": false,
+    "status": "My current reading supports a different verdict from a surviving past record. Check both before accepting a fresh label.",
+    "reasons": [
+     "Current model confidence disagrees with or leaves uncertainty about a surviving historical judgment.",
+     "The original full claim identity is unavailable; old and current descriptions must not be equated.",
+     "Several nearby characters or indirect participant resolution.",
+     "My proposed current verdict differs from at least one surviving historical verdict."
+    ],
+    "recentEvidence": [],
+    "referenceIsOriginal": false
+   },
+   "trainingNotes": [
+    "The saved verdict judges the original saved claim, when recoverable, never an automatically substituted current claim.",
+    "Hints are judged only if explicitly reviewed; no negative labels are inferred from missing acts or inventory omissions."
+   ]
+  },
+  {
+   "id": "P49",
+   "key": "sub-pinned#caf21fd1",
+   "fic": "jacks.html",
+   "para": 4253,
+   "pattern": "sub-pinned",
+   "a": "Jack Seward",
+   "b": "Dracula",
+   "act": "being pinned",
+   "kind": "behavior",
+   "role": "bottom",
+   "claim": "Jack Seward is being pinned by Dracula [being pinned; Everyday behavior]",
+   "engineConfidence": 0.9253168305995944,
+   "evidence": [
+    {
+     "from": 4250,
+     "to": 4256
+    }
+   ],
+   "proposal": {
+    "revision": "past-two-r1",
+    "verdict": "wrong",
+    "confidence": 0.99,
+    "reading": "Jack Seward voluntarily moves under the bedding and cuddles Dracula.",
+    "rationale": "Jack presses himself close; Dracula does not pin him. The later embrace is not restraint.",
+    "errors": [
+     "Wrong act or body part"
+    ]
+   },
+   "labelAudit": {
+    "pastLabels": [
+     {
+      "source": "tests/labels/audit-2026-10-03.json",
+      "verdict": "wrong",
+      "provenance": "Saved per-reading judgment; original claim identity not saved",
+      "key": "sub-pinned#caf21fd1",
+      "identityVerified": false,
+      "claim": "The original engine description was not saved with this hash-only label. This verdict does not automatically judge the current description below.",
+      "date": "2026-10-03"
+     }
+    ],
+    "priority": 0.621424256829777,
+    "occurrence": "Everyday behavior",
+    "changed": false,
+    "quarantined": false,
+    "status": "My current reading supports the same verdict. Preserve the historical record; a fresh claim-specific judgment can still resolve the missing original identity.",
+    "reasons": [
+     "Current model confidence disagrees with or leaves uncertainty about a surviving historical judgment.",
+     "The original full claim identity is unavailable; old and current descriptions must not be equated.",
+     "Several nearby characters or indirect participant resolution."
+    ],
+    "recentEvidence": [],
+    "referenceIsOriginal": false
+   },
+   "trainingNotes": [
+    "The saved verdict judges the original saved claim, when recoverable, never an automatically substituted current claim.",
+    "Hints are judged only if explicitly reviewed; no negative labels are inferred from missing acts or inventory omissions."
+   ]
+  },
+  {
+   "id": "P50",
+   "key": "dom-carry#87b8c1c3",
+   "fic": "different-town-2.html",
+   "para": 953,
+   "pattern": "dom-carry",
+   "a": "Evan \"Buck\" Buckley",
+   "b": "Eddie Diaz",
+   "act": "lifting or carrying someone",
+   "kind": "behavior",
+   "role": "top",
+   "claim": "Evan \"Buck\" Buckley is lifting or carrying Eddie Diaz [lifting or carrying someone; Everyday behavior]",
+   "engineConfidence": 0.9214258818007813,
+   "evidence": [
+    {
+     "from": 950,
+     "to": 956
+    }
+   ],
+   "proposal": {
+    "revision": "past-two-r1",
+    "verdict": "wrong",
+    "confidence": 0.99,
+    "reading": "Buck carries Eddie Diaz’s son to bed while Eddie watches.",
+    "rationale": "The lifted person is Christopher, not Eddie. This is ordinary childcare rather than an adult-pair carrying cue.",
+    "errors": [
+     "Wrong person"
+    ]
+   },
+   "labelAudit": {
+    "pastLabels": [
+     {
+      "source": "tests/labels/review-2026-10-04.json",
+      "verdict": "wrong",
+      "provenance": "Saved per-reading judgment; original claim identity not saved",
+      "key": "dom-carry#87b8c1c3",
+      "identityVerified": false,
+      "claim": "The original engine description was not saved with this hash-only label. This verdict does not automatically judge the current description below.",
+      "date": "2026-10-04"
+     }
+    ],
+    "priority": 0.6192842349904297,
+    "occurrence": "Everyday behavior",
+    "changed": false,
+    "quarantined": false,
+    "status": "My current reading supports the same verdict. Preserve the historical record; a fresh claim-specific judgment can still resolve the missing original identity.",
+    "reasons": [
+     "Current model confidence disagrees with or leaves uncertainty about a surviving historical judgment.",
+     "The original full claim identity is unavailable; old and current descriptions must not be equated.",
+     "Several nearby characters or indirect participant resolution."
+    ],
+    "recentEvidence": [],
+    "referenceIsOriginal": false
+   },
+   "trainingNotes": [
+    "The saved verdict judges the original saved claim, when recoverable, never an automatically substituted current claim.",
+    "Hints are judged only if explicitly reviewed; no negative labels are inferred from missing acts or inventory omissions."
+   ]
+  }
+ ]
+}
