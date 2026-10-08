@@ -1,7 +1,7 @@
 // Browser-safe identity and answer validation; no story text or Node dependencies.
 import {SCORED_ACTS} from './scene-review-scope.mjs';
 const verdicts=['correct','wrong','uncertain'],occurrences=['performed','memory','habitual','imagined','recording','wanted','unclear','not performed'];
-const acts=[...SCORED_ACTS,'Kissing / body rubbing','Other'];
+const acts=[...SCORED_ACTS,'Fisting','Urethral sounding','Penis against buttocks','Genital oral contact','Kissing / body rubbing','Other'];
 export function validateDeepFeedback(batch,feedback){
  if(batch.schema!=='engine-fic-deep-review/v1'||feedback?.schema!==batch.schema||feedback.batchId!==batch.batchId||feedback.engineCommit!==batch.engineCommit||feedback.sourceSha!==batch.source.sourceSha)throw Error('These answers belong to a different source, batch or engine revision.');
  for(const k of ['readingAnswers','actAnswers','windowAnswers'])if(!feedback[k]||typeof feedback[k]!=='object'||Array.isArray(feedback[k]))throw Error('Invalid answer collection.');
