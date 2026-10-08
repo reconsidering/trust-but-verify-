@@ -1,6 +1,6 @@
 import { importAnswers, storyBytes, validAnswer, verifyStory, type ActReview, type ReviewAnswer, type ReviewBatch } from "./review-batch-data";
 
-const ERRORS = ["Wrong person", "Roles reversed", "Wrong act or body part", "No act happened", "Kissing or rubbing mistaken for penetration", "Fingers or toy mistaken for a penis", "Wish or dialogue treated as an act", "Memory counted as a new scene", "Real act treated as hypothetical", "Missed participant", "Another act is missing", "Needs more context", "Other"];
+const ERRORS = ["Wrong person", "Roles reversed", "Wrong act or body part", "No act happened", "Kissing or rubbing mistaken for penetration", "Fingers or toy mistaken for a penis", "Penis mistaken for fingers or a toy", "Wish or dialogue treated as an act", "Memory counted as a new scene", "Wrong occurrence: memory / fantasy / habitual / recording", "Real act treated as hypothetical", "Missed participant", "Another act is missing", "Needs more context", "Other"];
 const element = <T extends HTMLElement = HTMLElement>(id: string) => document.getElementById(id) as T;
 const notice = (text: string) => { element("status").textContent = text; };
 
@@ -58,11 +58,36 @@ export async function mountReview(batch: ReviewBatch, options: { stories?: Map<s
     }
     element("where").textContent = isRange ? `${source.title} · Gold range ${row.evidence![0].from}–${row.evidence![0].to}` : isGold ? `${source.title} · Whole-story gold verdict` : `${source.title} · Passage ${row.para}`;
     element("claim").textContent = row.claim;
+    const audit = row.labelAudit;
+    element('past-labels').hidden = !audit;
+    element('past-current-heading').hidden = !audit;
+    const history = element('past-label-history'); history.replaceChildren();
+    if (audit) {
+      for (const label of audit.pastLabels) {
+        const item = document.createElement('section'); item.className = 'past-label-record';
+        const verdict = document.createElement('strong'); verdict.textContent = `Past label: ${label.verdict === 'ok' ? 'Correct (ok)' : label.verdict === 'wrong' ? 'Wrong' : 'Not sure'}${label.retired ? ' · retired' : ''}`;
+        const description = document.createElement('p'); description.textContent = label.claim;
+        const provenance = document.createElement('p'); provenance.className = 'small'; provenance.textContent = `${label.provenance}${label.date ? ' · ' + label.date : ''}${label.weight !== undefined ? ' · label weight ' + label.weight : ''}${label.confidence !== undefined ? ' · recorded engine confidence ' + Math.round(label.confidence * 100) + '%' : ''} · ${label.source}`;
+        item.append(verdict, description, provenance);
+        if (label.retired) { const retired = document.createElement('p'); retired.className = 'small'; retired.textContent = label.retired; item.append(retired); }
+        history.append(item);
+      }
+      element('past-label-status').textContent = audit.status;
+      const reasons = element('past-label-reasons'); reasons.replaceChildren();
+      for (const text of audit.reasons) { const li = document.createElement('li'); li.textContent = text; reasons.append(li); }
+      const evidence = element('past-label-evidence'); evidence.replaceChildren();
+      for (const text of audit.recentEvidence) { const p = document.createElement('p'); p.className = 'small'; p.textContent = text; evidence.append(p); }
+      element('past-label-reference').textContent = audit.referenceClaim ? `Pre-change engine reference (${audit.referenceCommit}; not a recovered original review): ${audit.referenceClaim}` : '';
+    }
+    document.querySelectorAll<HTMLButtonElement>('[data-past-label]').forEach(button => {
+      button.disabled = !paras || !audit;
+      button.setAttribute('aria-pressed', String(answer?.pastLabelReview === button.dataset.pastLabel));
+    });
     const proposal = row.proposal;
     element("reading-proposal").hidden = !proposal;
     element("engine-answer-label").hidden = !proposal;
     if (proposal) {
-      element("engine-confidence").textContent = `Engine confidence in its claim: ${Math.round(row.engineConfidence! * 100)}%`;
+      element("engine-confidence").textContent = `Engine confidence in its claim: ${Math.round(row.engineConfidence! * 100)}%${audit ? ' · ' + audit.occurrence : ''}`;
       element("proposal-reading").textContent = proposal.reading;
       element("proposal-rationale").textContent = proposal.rationale;
       element("proposal-confidence").textContent = `My assessment: engine ${proposal.verdict === 'uncertain' ? 'uncertain' : proposal.verdict} · My confidence in this assessment: ${Math.round(proposal.confidence * 100)}%`;
@@ -154,7 +179,7 @@ export async function mountReview(batch: ReviewBatch, options: { stories?: Map<s
     notice(errors.length ? errors.join(" ") : matched ? "Stories loaded. Your saved answers are unchanged." : "No matching story versions were found. Choose the original files used for this batch.");
   };
   const payload = () => ({ schema: batch.schema, batchId: batch.batchId, engineCommit: batch.engineCommit, exportedAt: new Date().toISOString(), answers: batch.rows.filter((r) => answers[r.id]).map((r) => ({ id: r.id, key: r.key, fic: r.fic, paragraph: r.para, sourceSha: batch.sources.find((s) => s.file === r.fic)!.sourceSha, ...(r.gold ? { gold: r.gold } : {}), ...(isRange || r.sceneActs ? { evidence: r.evidence } : {}), ...answers[r.id] })) });
-  const answerName = batch.rows.some(r => r.sceneActs) ? 'suspect-scene-review-2-answers.json' : hasProposals ? 'suspect-scene-review-answers.json' : isRange ? 'gold-range-review-answers.json' : isGold ? 'gold-verdict-review-answers.json' : 'next-reading-review-answers.json';
+  const answerName = batch.rows.some(r => r.labelAudit) ? 'past-label-review-answers.json' : batch.rows.some(r => r.sceneActs) ? 'suspect-scene-review-2-answers.json' : hasProposals ? 'suspect-scene-review-answers.json' : isRange ? 'gold-range-review-answers.json' : isGold ? 'gold-verdict-review-answers.json' : 'next-reading-review-answers.json';
   const answerFile = () => new File([JSON.stringify(payload(), null, 2)], answerName, { type: "application/json" });
   element<HTMLInputElement>("stories").onchange = () => { void loadFiles(Array.from(element<HTMLInputElement>("stories").files ?? [])); };
   element<HTMLSelectElement>("filter").onchange = () => { current = undefined; browse = visible()[0]?.para ?? 0; expanded = false; render(); };
@@ -170,6 +195,10 @@ export async function mountReview(batch: ReviewBatch, options: { stories?: Map<s
     update({ proposalReview: review, proposalRevision: proposal.revision, verdict: review === 'agree' ? proposal.verdict : review === 'uncertain' ? 'uncertain' : undefined, errors: review === 'agree' ? [...proposal.errors] : [] });
     render();
     if (storageOK) notice(review === 'disagree' ? 'Disagreement saved. Mark the engine correct, wrong, or not sure and add your correction.' : 'Assessment saved. Add context or continue to the next reading.');
+  }; });
+  document.querySelectorAll<HTMLButtonElement>('[data-past-label]').forEach(b => { b.onclick = () => {
+    update({pastLabelReview: b.dataset.pastLabel as ReviewAnswer['pastLabelReview']}); render();
+    if (storageOK) notice('Past-label decision saved separately. Mark the current engine claim or agree/disagree with my assessment.');
   }; });
   element<HTMLTextAreaElement>("context").oninput = () => update({ context: element<HTMLTextAreaElement>("context").value });
   element("previous").onclick = () => move(-1); element("next").onclick = () => move(1);
