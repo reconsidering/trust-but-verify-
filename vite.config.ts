@@ -5,7 +5,7 @@ export default defineConfig({
   base: "./",
   // Classic, self-contained worker: no module imports for the browser to fail on (Safari: "Importing a module script failed").
   worker: { format: "iife" },
-  build: { rollupOptions: { input: { app: "index.html", review: "review/next-batch.html", missed: "review/missed-scenes.html", driven: "review/review-driven-error-check.html", negotiation: "review/negotiation.html", belonging: "review/belonging.html" } } },
+  build: { rollupOptions: { input: { app: "index.html", review: "review/next-batch.html", missed: "review/missed-scenes.html", driven: "review/review-driven-error-check.html", negotiation: "review/negotiation.html", belonging: "review/belonging.html", sugarAlpha: "review/sugar-alpha.html", newBitch: "review/new-bitch.html" } } },
   test: {
     environment: "jsdom",
     // GitHub's runners are about twice as slow as a developer machine; the engine tests that scan many sentences
