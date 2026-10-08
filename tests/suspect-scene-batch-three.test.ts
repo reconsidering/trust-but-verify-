@@ -13,7 +13,8 @@ it('provides 50 new reviewed passages, with real model scores and no repeated pr
  // These are the batches that existed when batch 3 was selected. Later label audits can revisit nearby context.
  const priorFiles = ['found-in-the-upside-down', 'gold-sources', 'gold-verdicts', 'missed-scene-proposals', 'missed-scenes', 'next-batch', 'past-labels', 'review-driven-claims', 'review-driven-error-check', 'suspect-scenes', 'suspect-scenes-2'];
  const prior = priorFiles.flatMap(f => JSON.parse(readFileSync(`public/review/${f}.json`,'utf8')).rows ?? []);
- const labelled = new Set(readdirSync('tests/labels').filter(f => f.endsWith('.json')).flatMap(f => Object.keys(JSON.parse(readFileSync(`tests/labels/${f}`,'utf8')).labels)));
+ // This batch's own returned judgments do not make its original selection a repeated label.
+ const labelled = new Set(readdirSync('tests/labels').filter(f => f.endsWith('.json')).map(f => JSON.parse(readFileSync(`tests/labels/${f}`,'utf8'))).filter(review => review.batchId !== batch.batchId).flatMap(review => Object.keys(review.labels)));
  for (const [i,row] of batch.rows.entries()) {
   expect(labelled.has(row.key)).toBe(false);
   expect(['act','handjob','solo','masturbation']).toContain(row.kind);

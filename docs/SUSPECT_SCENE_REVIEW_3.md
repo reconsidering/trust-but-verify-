@@ -47,3 +47,20 @@ Only explicit owner verdicts on the main engine claim become per-reading confide
 ## Validation
 
 Batch checks validate all 50 identities, source/citation bounds, 87 act proposals, model probabilities and earlier-review exclusions. Interaction checks cover Agree autofill, independent act answers and the new export filename. Validation passed: `npm test` (1,568 passed; 13 skipped) and `npm run build`. No engine code, generated model/reliability files, labels, metric rows or sample fics are included.
+
+## Owner answers imported (2026-10-08)
+
+The returned `suspect-scene-review-3-answers.json` was validated against batch `suspect-three-4dd3a27d25b0`, including source hashes, reading identities, evidence windows and proposal revisions. Its 38 saved windows produce:
+
+- **35 explicit engine judgments:** 16 correct, 17 wrong and two uncertain. Only the 33 definitive judgments are eligible for confidence training; uncertainty is retained without becoming a binary label.
+- **Three unresolved disagreements:** U5, U17 and U45 have no engine verdict or correction. They create no labels.
+- **59 individually marked act proposals:** 51 correct, six rejected and two uncertain. Of the 51 confirmations, 43 are performed events, three habitual, two wanted, two not performed and one imagined.
+- The 43 performed events include 35 in the standard scored categories and eight other confirmed contact or completion events. Non-performed confirmations, rejections and uncertainty remain review records rather than performed events. No hint or omitted act receives an inferred negative label.
+
+The accepted outputs are `tests/labels/batch-suspect-three-4dd3a27d25b0.json` and `tests/scene-review/suspect-three-4dd3a27d25b0.json`. Both record the checksum of the original uploaded feedback. Private correction text and assistant confidence are excluded from both files.
+
+U14/A1 explicitly rejects the proposed act and clears its act field. The importer now accepts a blank act only on an explicit **wrong** answer, preserving the owner's rejection exactly. A blank act on a correct or uncertain answer remains invalid, and this rejected record cannot create a performed event.
+
+Twelve windows have no saved answers: U4, U13, U26, U31, U32, U34, U37, U39, U40, U42, U46 and U48. Including the three unresolved disagreements, 15 main engine claims still need a verdict. Of the 87 act proposals, 28 remain unmarked. These remain open for later exports; no decisions were guessed.
+
+This import adds review data only. Detection rules and generated confidence files are unchanged. Retrain separately after merging if these accepted judgments should affect the model's confidence scores.

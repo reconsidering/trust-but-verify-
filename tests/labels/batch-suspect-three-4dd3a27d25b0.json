@@ -1,0 +1,824 @@
+{
+ "made": "2026-10-08",
+ "how": "Owner review: Rank unlabelled performed-act hits by current model doubt (65%), smoothed recent reviewed-family error rate (20%, newest file weighted twice), attribution ambiguity (10%) and occurrence-frame cue (5%). Reviewed samples are biased; this ranking is not an error probability.. Keys use full audit sentence hashes. Only the owner’s engine verdicts become labels; assistant proposals and scores are not imported. Uncertain answers are excluded from training; free-text context stays private.",
+ "batchId": "suspect-three-4dd3a27d25b0",
+ "engineCommit": "4c1e362e4cc4199996cdac8a2eb272061c461be1",
+ "feedbackSha": "08e0c367d94b2047f29549694f954b9cef41e987a516cd55272fd3da1163ece4",
+ "labels": {
+  "mast-himself~elided#e69cfbe0": "wrong",
+  "mast-himself~elided#604dd4a0": "wrong",
+  "mast-word#50870538": "wrong",
+  "mast-himself#538ccb69": "wrong",
+  "be-fucked~elided#5a581c45": "wrong",
+  "passive-fucked~elided#7da31c0f": "wrong",
+  "mast-himself#a7f94f44": "wrong",
+  "mast-himself#fa7b5311": "wrong",
+  "hj-stroke~elided#384dce8f": "ok",
+  "hj-stroke#4a17a895": "wrong",
+  "dd2-mast-take-in-hand#b48b20e5": "wrong",
+  "dd4-frot-grind-hips-together~elided#2d4d6696": "wrong",
+  "hj-stroke#d18be96c": "wrong",
+  "push-into#2b157886": "wrong",
+  "hj-stroke~elided#f7189f95": "ok",
+  "dd2-mast-take-in-hand~elided#60833792": "ok",
+  "dd-hj-knot#2cdbdff6": "unclear",
+  "pushed-in#fc1981c9": "ok",
+  "hj-stroke~elided#f1b19f44": "wrong",
+  "dd4-sucked-cock~elided#834484b2": "ok",
+  "lips-around#a5d0f8c0": "unclear",
+  "dd4-licks-precome-from-tip#afcc220d": "ok",
+  "pushed-in#45e2a37e": "ok",
+  "pushed-in~elided#d72e3dad": "ok",
+  "lips-around#77ec058d": "ok",
+  "dd-hj-fist-works#482ac57a": "wrong",
+  "dd2-clenching-around-cock~elided#5a7c7eec": "ok",
+  "bobs-slowly~elided#908eb0b0": "ok",
+  "came-in-mouth#6f2a8af9": "ok",
+  "dd-hj-fist-works#59025756": "wrong",
+  "mouth-around-him#eb1d2151": "ok",
+  "dd5-pushes-finger-in~elided#67560b1f": "ok",
+  "riding#683df94e": "ok",
+  "push-into~elided#7d76700e": "ok",
+  "push-into#2f8aa1af": "wrong"
+ },
+ "answers": [
+  {
+   "id": "U1",
+   "key": "mast-himself~elided#e69cfbe0",
+   "fic": "angel-without-a-god.html",
+   "paragraph": 1015,
+   "sourceSha": "dae22879912fd019b9219d7cf60c85dd861ae5b83de5660c1b3a9918030a3d95",
+   "claim": {
+    "fic": "angel-without-a-god.html",
+    "sourceSha": "dae22879912fd019b9219d7cf60c85dd861ae5b83de5660c1b3a9918030a3d95",
+    "paragraph": 1015,
+    "pattern": "mast-himself~elided",
+    "act": "masturbation",
+    "kind": "masturbation",
+    "a": "Jason Carver",
+    "b": "Eddie Munson",
+    "role": "bottom"
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Wrong occurrence: memory / fantasy / habitual / recording"
+   ],
+   "updatedAt": "2026-10-08T13:21:16.560Z"
+  },
+  {
+   "id": "U2",
+   "key": "mast-himself~elided#604dd4a0",
+   "fic": "different-town-2.html",
+   "paragraph": 335,
+   "sourceSha": "8924281b07da3042e28dde552c887185855f9fb9376a57a2b70885b1b0c8d4a0",
+   "claim": {
+    "fic": "different-town-2.html",
+    "sourceSha": "8924281b07da3042e28dde552c887185855f9fb9376a57a2b70885b1b0c8d4a0",
+    "paragraph": 335,
+    "pattern": "mast-himself~elided",
+    "act": "masturbation",
+    "kind": "masturbation",
+    "a": "Eddie Diaz",
+    "b": "Evan \"Buck\" Buckley",
+    "role": "bottom"
+   },
+   "verdict": "wrong",
+   "errors": [
+    "No act happened",
+    "Wrong act or body part"
+   ],
+   "updatedAt": "2026-10-08T13:22:41.404Z"
+  },
+  {
+   "id": "U3",
+   "key": "mast-word#50870538",
+   "fic": "sugar-alpha.html",
+   "paragraph": 974,
+   "sourceSha": "68a3c9d689b093806fb072b5e550e79a61eb9f16c1e79ca192ba24597338de5e",
+   "claim": {
+    "fic": "sugar-alpha.html",
+    "sourceSha": "68a3c9d689b093806fb072b5e550e79a61eb9f16c1e79ca192ba24597338de5e",
+    "paragraph": 974,
+    "pattern": "mast-word",
+    "act": "masturbation",
+    "kind": "masturbation",
+    "a": "Stiles Stilinski",
+    "b": "Derek Hale",
+    "role": "bottom"
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Wrong occurrence: memory / fantasy / habitual / recording"
+   ],
+   "updatedAt": "2026-10-08T13:23:39.281Z"
+  },
+  {
+   "id": "U6",
+   "key": "mast-himself#538ccb69",
+   "fic": "angel-without-a-god.html",
+   "paragraph": 2378,
+   "sourceSha": "dae22879912fd019b9219d7cf60c85dd861ae5b83de5660c1b3a9918030a3d95",
+   "claim": {
+    "fic": "angel-without-a-god.html",
+    "sourceSha": "dae22879912fd019b9219d7cf60c85dd861ae5b83de5660c1b3a9918030a3d95",
+    "paragraph": 2378,
+    "pattern": "mast-himself",
+    "act": "masturbation",
+    "kind": "masturbation",
+    "a": "Jason Carver",
+    "b": "Eddie Munson",
+    "role": "bottom"
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Wrong occurrence: memory / fantasy / habitual / recording"
+   ],
+   "updatedAt": "2026-10-08T16:00:04.432Z"
+  },
+  {
+   "id": "U7",
+   "key": "be-fucked~elided#5a581c45",
+   "fic": "sugar-alpha.html",
+   "paragraph": 204,
+   "sourceSha": "68a3c9d689b093806fb072b5e550e79a61eb9f16c1e79ca192ba24597338de5e",
+   "claim": {
+    "fic": "sugar-alpha.html",
+    "sourceSha": "68a3c9d689b093806fb072b5e550e79a61eb9f16c1e79ca192ba24597338de5e",
+    "paragraph": 204,
+    "pattern": "be-fucked~elided",
+    "act": "anal sex",
+    "kind": "act",
+    "a": "Isaac Lahey",
+    "b": "Stiles Stilinski",
+    "role": ""
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Wish or dialogue treated as an act",
+    "Wrong person"
+   ],
+   "updatedAt": "2026-10-08T16:01:29.309Z"
+  },
+  {
+   "id": "U8",
+   "key": "passive-fucked~elided#7da31c0f",
+   "fic": "new-bitch.html",
+   "paragraph": 1249,
+   "sourceSha": "035c7e5c68df50c2dc0d7e64a801001d3c59ccfadda9e1f8511960dd26a018e7",
+   "claim": {
+    "fic": "new-bitch.html",
+    "sourceSha": "035c7e5c68df50c2dc0d7e64a801001d3c59ccfadda9e1f8511960dd26a018e7",
+    "paragraph": 1249,
+    "pattern": "passive-fucked~elided",
+    "act": "anal sex",
+    "kind": "act",
+    "a": "Laurent",
+    "b": "Ancel",
+    "role": ""
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Wish or dialogue treated as an act",
+    "Wrong person"
+   ],
+   "updatedAt": "2026-10-08T16:03:54.486Z"
+  },
+  {
+   "id": "U9",
+   "key": "mast-himself#a7f94f44",
+   "fic": "please.html",
+   "paragraph": 2395,
+   "sourceSha": "4c22df6fad65421863f64b54c93585f2bd4f0ba9d5e6e6d9363689456366ebd9",
+   "claim": {
+    "fic": "please.html",
+    "sourceSha": "4c22df6fad65421863f64b54c93585f2bd4f0ba9d5e6e6d9363689456366ebd9",
+    "paragraph": 2395,
+    "pattern": "mast-himself",
+    "act": "masturbation",
+    "kind": "masturbation",
+    "a": "Steve Harrington",
+    "b": "Eddie Munson",
+    "role": "bottom"
+   },
+   "verdict": "wrong",
+   "errors": [
+    "No act happened",
+    "Wrong act or body part"
+   ],
+   "updatedAt": "2026-10-08T16:05:42.692Z"
+  },
+  {
+   "id": "U10",
+   "key": "mast-himself#fa7b5311",
+   "fic": "sugar-alpha.html",
+   "paragraph": 374,
+   "sourceSha": "68a3c9d689b093806fb072b5e550e79a61eb9f16c1e79ca192ba24597338de5e",
+   "claim": {
+    "fic": "sugar-alpha.html",
+    "sourceSha": "68a3c9d689b093806fb072b5e550e79a61eb9f16c1e79ca192ba24597338de5e",
+    "paragraph": 374,
+    "pattern": "mast-himself",
+    "act": "masturbation",
+    "kind": "masturbation",
+    "a": "Derek Hale",
+    "b": "Stiles Stilinski",
+    "role": "bottom"
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Wrong person",
+    "Wrong act or body part"
+   ],
+   "updatedAt": "2026-10-08T16:06:06.958Z"
+  },
+  {
+   "id": "U11",
+   "key": "hj-stroke~elided#384dce8f",
+   "fic": "new-bitch.html",
+   "paragraph": 4725,
+   "sourceSha": "035c7e5c68df50c2dc0d7e64a801001d3c59ccfadda9e1f8511960dd26a018e7",
+   "claim": {
+    "fic": "new-bitch.html",
+    "sourceSha": "035c7e5c68df50c2dc0d7e64a801001d3c59ccfadda9e1f8511960dd26a018e7",
+    "paragraph": 4725,
+    "pattern": "hj-stroke~elided",
+    "act": "handjob",
+    "kind": "handjob",
+    "a": "Damen",
+    "b": "Laurent",
+    "role": "top"
+   },
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-08T16:06:25.096Z"
+  },
+  {
+   "id": "U12",
+   "key": "hj-stroke#4a17a895",
+   "fic": "hate.html",
+   "paragraph": 327,
+   "sourceSha": "a34987282302730c5cb9cf4350457713e847383ca411b02c726281de0863ab0b",
+   "claim": {
+    "fic": "hate.html",
+    "sourceSha": "a34987282302730c5cb9cf4350457713e847383ca411b02c726281de0863ab0b",
+    "paragraph": 327,
+    "pattern": "hj-stroke",
+    "act": "handjob",
+    "kind": "handjob",
+    "a": "Steve Harrington",
+    "b": "Eddie Munson",
+    "role": "top"
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Wrong person",
+    "Wrong act or body part"
+   ],
+   "updatedAt": "2026-10-08T16:07:09.202Z"
+  },
+  {
+   "id": "U14",
+   "key": "dd2-mast-take-in-hand#b48b20e5",
+   "fic": "new-bitch.html",
+   "paragraph": 6421,
+   "sourceSha": "035c7e5c68df50c2dc0d7e64a801001d3c59ccfadda9e1f8511960dd26a018e7",
+   "claim": {
+    "fic": "new-bitch.html",
+    "sourceSha": "035c7e5c68df50c2dc0d7e64a801001d3c59ccfadda9e1f8511960dd26a018e7",
+    "paragraph": 6421,
+    "pattern": "dd2-mast-take-in-hand",
+    "act": "masturbation",
+    "kind": "masturbation",
+    "a": "Damen",
+    "b": "Laurent",
+    "role": "bottom"
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Wrong act or body part"
+   ],
+   "updatedAt": "2026-10-08T16:09:41.500Z"
+  },
+  {
+   "id": "U15",
+   "key": "dd4-frot-grind-hips-together~elided#2d4d6696",
+   "fic": "negotiation.html",
+   "paragraph": 670,
+   "sourceSha": "e3dc9f6098d1606b0ae19cbe3afc48bb70717262d8524b9f6ae9924ecc38b9da",
+   "claim": {
+    "fic": "negotiation.html",
+    "sourceSha": "e3dc9f6098d1606b0ae19cbe3afc48bb70717262d8524b9f6ae9924ecc38b9da",
+    "paragraph": 670,
+    "pattern": "dd4-frot-grind-hips-together~elided",
+    "act": "frottage",
+    "kind": "handjob",
+    "a": "Bail Organa",
+    "b": "Anakin Skywalker",
+    "role": "top"
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Wrong person"
+   ],
+   "updatedAt": "2026-10-08T16:10:28.894Z"
+  },
+  {
+   "id": "U16",
+   "key": "hj-stroke#d18be96c",
+   "fic": "more-views.html",
+   "paragraph": 152,
+   "sourceSha": "61461060f56925872cb638627ee721273255d669032ded0d8562ffef4fc8601f",
+   "claim": {
+    "fic": "more-views.html",
+    "sourceSha": "61461060f56925872cb638627ee721273255d669032ded0d8562ffef4fc8601f",
+    "paragraph": 152,
+    "pattern": "hj-stroke",
+    "act": "handjob",
+    "kind": "handjob",
+    "a": "Castiel",
+    "b": "Dean Winchester",
+    "role": "top"
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Wrong person",
+    "Wrong act or body part"
+   ],
+   "updatedAt": "2026-10-08T16:10:52.132Z"
+  },
+  {
+   "id": "U18",
+   "key": "push-into#2b157886",
+   "fic": "please.html",
+   "paragraph": 3849,
+   "sourceSha": "4c22df6fad65421863f64b54c93585f2bd4f0ba9d5e6e6d9363689456366ebd9",
+   "claim": {
+    "fic": "please.html",
+    "sourceSha": "4c22df6fad65421863f64b54c93585f2bd4f0ba9d5e6e6d9363689456366ebd9",
+    "paragraph": 3849,
+    "pattern": "push-into",
+    "act": "anal sex",
+    "kind": "act",
+    "a": "Will Byers",
+    "b": "Eddie Munson",
+    "role": ""
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Wrong person"
+   ],
+   "updatedAt": "2026-10-08T16:13:06.733Z"
+  },
+  {
+   "id": "U19",
+   "key": "hj-stroke~elided#f7189f95",
+   "fic": "new-bitch.html",
+   "paragraph": 6303,
+   "sourceSha": "035c7e5c68df50c2dc0d7e64a801001d3c59ccfadda9e1f8511960dd26a018e7",
+   "claim": {
+    "fic": "new-bitch.html",
+    "sourceSha": "035c7e5c68df50c2dc0d7e64a801001d3c59ccfadda9e1f8511960dd26a018e7",
+    "paragraph": 6303,
+    "pattern": "hj-stroke~elided",
+    "act": "handjob",
+    "kind": "handjob",
+    "a": "Damen",
+    "b": "Laurent",
+    "role": "top"
+   },
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-08T16:13:32.350Z"
+  },
+  {
+   "id": "U20",
+   "key": "dd2-mast-take-in-hand~elided#60833792",
+   "fic": "hate.html",
+   "paragraph": 748,
+   "sourceSha": "a34987282302730c5cb9cf4350457713e847383ca411b02c726281de0863ab0b",
+   "claim": {
+    "fic": "hate.html",
+    "sourceSha": "a34987282302730c5cb9cf4350457713e847383ca411b02c726281de0863ab0b",
+    "paragraph": 748,
+    "pattern": "dd2-mast-take-in-hand~elided",
+    "act": "masturbation",
+    "kind": "masturbation",
+    "a": "Steve Harrington",
+    "b": "Eddie Munson",
+    "role": "bottom"
+   },
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-08T16:14:01.169Z"
+  },
+  {
+   "id": "U21",
+   "key": "dd-hj-knot#2cdbdff6",
+   "fic": "angel-without-a-god.html",
+   "paragraph": 1580,
+   "sourceSha": "dae22879912fd019b9219d7cf60c85dd861ae5b83de5660c1b3a9918030a3d95",
+   "claim": {
+    "fic": "angel-without-a-god.html",
+    "sourceSha": "dae22879912fd019b9219d7cf60c85dd861ae5b83de5660c1b3a9918030a3d95",
+    "paragraph": 1580,
+    "pattern": "dd-hj-knot",
+    "act": "handjob",
+    "kind": "handjob",
+    "a": "Jason Carver",
+    "b": "Eddie Munson",
+    "role": "top"
+   },
+   "verdict": "uncertain",
+   "errors": [],
+   "updatedAt": "2026-10-08T16:15:12.816Z"
+  },
+  {
+   "id": "U22",
+   "key": "pushed-in#fc1981c9",
+   "fic": "hate.html",
+   "paragraph": 1390,
+   "sourceSha": "a34987282302730c5cb9cf4350457713e847383ca411b02c726281de0863ab0b",
+   "claim": {
+    "fic": "hate.html",
+    "sourceSha": "a34987282302730c5cb9cf4350457713e847383ca411b02c726281de0863ab0b",
+    "paragraph": 1390,
+    "pattern": "pushed-in",
+    "act": "fingering",
+    "kind": "act",
+    "a": "Eddie Munson",
+    "b": "Steve Harrington",
+    "role": ""
+   },
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-08T16:16:15.640Z"
+  },
+  {
+   "id": "U23",
+   "key": "hj-stroke~elided#f1b19f44",
+   "fic": "jacks.html",
+   "paragraph": 6798,
+   "sourceSha": "1c82d8bb62ab4aa836ffe8f4924db20c8420faddb9f3b0d75e08a9b35f18957d",
+   "claim": {
+    "fic": "jacks.html",
+    "sourceSha": "1c82d8bb62ab4aa836ffe8f4924db20c8420faddb9f3b0d75e08a9b35f18957d",
+    "paragraph": 6798,
+    "pattern": "hj-stroke~elided",
+    "act": "handjob",
+    "kind": "handjob",
+    "a": "Jack Seward",
+    "b": "Dracula",
+    "role": "top"
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Wrong act or body part"
+   ],
+   "updatedAt": "2026-10-08T16:16:45.355Z"
+  },
+  {
+   "id": "U24",
+   "key": "dd4-sucked-cock~elided#834484b2",
+   "fic": "spoonful.html",
+   "paragraph": 460,
+   "sourceSha": "4c9a8a51991f7503facb7594c09540ed954f245b26418dd4ae3e50e628a6caed",
+   "claim": {
+    "fic": "spoonful.html",
+    "sourceSha": "4c9a8a51991f7503facb7594c09540ed954f245b26418dd4ae3e50e628a6caed",
+    "paragraph": 460,
+    "pattern": "dd4-sucked-cock~elided",
+    "act": "blowjob",
+    "kind": "act",
+    "a": "Peter Hale",
+    "b": "Stiles Stilinski",
+    "role": ""
+   },
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-08T16:17:55.702Z"
+  },
+  {
+   "id": "U25",
+   "key": "lips-around#a5d0f8c0",
+   "fic": "new-bitch.html",
+   "paragraph": 1963,
+   "sourceSha": "035c7e5c68df50c2dc0d7e64a801001d3c59ccfadda9e1f8511960dd26a018e7",
+   "claim": {
+    "fic": "new-bitch.html",
+    "sourceSha": "035c7e5c68df50c2dc0d7e64a801001d3c59ccfadda9e1f8511960dd26a018e7",
+    "paragraph": 1963,
+    "pattern": "lips-around",
+    "act": "blowjob",
+    "kind": "act",
+    "a": "Laurent",
+    "b": "Damen",
+    "role": ""
+   },
+   "verdict": "uncertain",
+   "errors": [],
+   "updatedAt": "2026-10-08T16:18:43.547Z"
+  },
+  {
+   "id": "U27",
+   "key": "dd4-licks-precome-from-tip#afcc220d",
+   "fic": "please.html",
+   "paragraph": 2228,
+   "sourceSha": "4c22df6fad65421863f64b54c93585f2bd4f0ba9d5e6e6d9363689456366ebd9",
+   "claim": {
+    "fic": "please.html",
+    "sourceSha": "4c22df6fad65421863f64b54c93585f2bd4f0ba9d5e6e6d9363689456366ebd9",
+    "paragraph": 2228,
+    "pattern": "dd4-licks-precome-from-tip",
+    "act": "blowjob",
+    "kind": "act",
+    "a": "Steve Harrington",
+    "b": "Eddie Munson",
+    "role": ""
+   },
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-08T16:19:20.155Z"
+  },
+  {
+   "id": "U28",
+   "key": "pushed-in#45e2a37e",
+   "fic": "sugar-alpha.html",
+   "paragraph": 1746,
+   "sourceSha": "68a3c9d689b093806fb072b5e550e79a61eb9f16c1e79ca192ba24597338de5e",
+   "claim": {
+    "fic": "sugar-alpha.html",
+    "sourceSha": "68a3c9d689b093806fb072b5e550e79a61eb9f16c1e79ca192ba24597338de5e",
+    "paragraph": 1746,
+    "pattern": "pushed-in",
+    "act": "anal sex",
+    "kind": "act",
+    "a": "Derek Hale",
+    "b": "Stiles Stilinski",
+    "role": ""
+   },
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-08T16:46:26.905Z"
+  },
+  {
+   "id": "U29",
+   "key": "pushed-in~elided#d72e3dad",
+   "fic": "sugar-alpha.html",
+   "paragraph": 1843,
+   "sourceSha": "68a3c9d689b093806fb072b5e550e79a61eb9f16c1e79ca192ba24597338de5e",
+   "claim": {
+    "fic": "sugar-alpha.html",
+    "sourceSha": "68a3c9d689b093806fb072b5e550e79a61eb9f16c1e79ca192ba24597338de5e",
+    "paragraph": 1843,
+    "pattern": "pushed-in~elided",
+    "act": "fingering",
+    "kind": "act",
+    "a": "Derek Hale",
+    "b": "Stiles Stilinski",
+    "role": ""
+   },
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-08T16:47:28.235Z"
+  },
+  {
+   "id": "U30",
+   "key": "lips-around#77ec058d",
+   "fic": "found-in-the-upside-down.html",
+   "paragraph": 1127,
+   "sourceSha": "1b35ea2b2c860069f4855107bf98452121e5fceb0b9dbf4f9da33c1d89bb699f",
+   "claim": {
+    "fic": "found-in-the-upside-down.html",
+    "sourceSha": "1b35ea2b2c860069f4855107bf98452121e5fceb0b9dbf4f9da33c1d89bb699f",
+    "paragraph": 1127,
+    "pattern": "lips-around",
+    "act": "blowjob",
+    "kind": "act",
+    "a": "Steve Harrington",
+    "b": "Billy Hargrove",
+    "role": ""
+   },
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-08T16:48:32.226Z"
+  },
+  {
+   "id": "U33",
+   "key": "dd-hj-fist-works#482ac57a",
+   "fic": "steady-eddie.html",
+   "paragraph": 2171,
+   "sourceSha": "6df06eafa0879c71bd9d3e7401cb3ce8c878e3da07d39265d9c4357c3c00dec8",
+   "claim": {
+    "fic": "steady-eddie.html",
+    "sourceSha": "6df06eafa0879c71bd9d3e7401cb3ce8c878e3da07d39265d9c4357c3c00dec8",
+    "paragraph": 2171,
+    "pattern": "dd-hj-fist-works",
+    "act": "handjob",
+    "kind": "handjob",
+    "a": "Steve Harrington",
+    "b": "Eddie Munson",
+    "role": "top"
+   },
+   "verdict": "wrong",
+   "errors": [
+    "No act happened",
+    "Wrong act or body part"
+   ],
+   "updatedAt": "2026-10-08T16:50:52.616Z"
+  },
+  {
+   "id": "U35",
+   "key": "dd2-clenching-around-cock~elided#5a7c7eec",
+   "fic": "jacks.html",
+   "paragraph": 3512,
+   "sourceSha": "1c82d8bb62ab4aa836ffe8f4924db20c8420faddb9f3b0d75e08a9b35f18957d",
+   "claim": {
+    "fic": "jacks.html",
+    "sourceSha": "1c82d8bb62ab4aa836ffe8f4924db20c8420faddb9f3b0d75e08a9b35f18957d",
+    "paragraph": 3512,
+    "pattern": "dd2-clenching-around-cock~elided",
+    "act": "anal sex",
+    "kind": "act",
+    "a": "Dracula",
+    "b": "Jack Seward",
+    "role": ""
+   },
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-08T16:51:15.774Z"
+  },
+  {
+   "id": "U36",
+   "key": "bobs-slowly~elided#908eb0b0",
+   "fic": "found-in-the-upside-down.html",
+   "paragraph": 2903,
+   "sourceSha": "1b35ea2b2c860069f4855107bf98452121e5fceb0b9dbf4f9da33c1d89bb699f",
+   "claim": {
+    "fic": "found-in-the-upside-down.html",
+    "sourceSha": "1b35ea2b2c860069f4855107bf98452121e5fceb0b9dbf4f9da33c1d89bb699f",
+    "paragraph": 2903,
+    "pattern": "bobs-slowly~elided",
+    "act": "blowjob",
+    "kind": "act",
+    "a": "Steve Harrington",
+    "b": "Eddie Munson",
+    "role": ""
+   },
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-08T16:51:37.994Z"
+  },
+  {
+   "id": "U38",
+   "key": "came-in-mouth#6f2a8af9",
+   "fic": "ethan.html",
+   "paragraph": 3233,
+   "sourceSha": "571d0d4887ffa6eebafe4eee78fc200a0d6076d109a4d075e3e277753f6b1824",
+   "claim": {
+    "fic": "ethan.html",
+    "sourceSha": "571d0d4887ffa6eebafe4eee78fc200a0d6076d109a4d075e3e277753f6b1824",
+    "paragraph": 3233,
+    "pattern": "came-in-mouth",
+    "act": "blowjob",
+    "kind": "act",
+    "a": "Ethan Barnes",
+    "b": "Hank",
+    "role": ""
+   },
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-08T16:53:20.977Z"
+  },
+  {
+   "id": "U41",
+   "key": "dd-hj-fist-works#59025756",
+   "fic": "ethan.html",
+   "paragraph": 2388,
+   "sourceSha": "571d0d4887ffa6eebafe4eee78fc200a0d6076d109a4d075e3e277753f6b1824",
+   "claim": {
+    "fic": "ethan.html",
+    "sourceSha": "571d0d4887ffa6eebafe4eee78fc200a0d6076d109a4d075e3e277753f6b1824",
+    "paragraph": 2388,
+    "pattern": "dd-hj-fist-works",
+    "act": "handjob",
+    "kind": "handjob",
+    "a": "Hank",
+    "b": "Ethan Barnes",
+    "role": "top"
+   },
+   "verdict": "wrong",
+   "errors": [
+    "No act happened",
+    "Wrong act or body part"
+   ],
+   "updatedAt": "2026-10-08T16:53:41.431Z"
+  },
+  {
+   "id": "U43",
+   "key": "mouth-around-him#eb1d2151",
+   "fic": "found-in-the-upside-down.html",
+   "paragraph": 2176,
+   "sourceSha": "1b35ea2b2c860069f4855107bf98452121e5fceb0b9dbf4f9da33c1d89bb699f",
+   "claim": {
+    "fic": "found-in-the-upside-down.html",
+    "sourceSha": "1b35ea2b2c860069f4855107bf98452121e5fceb0b9dbf4f9da33c1d89bb699f",
+    "paragraph": 2176,
+    "pattern": "mouth-around-him",
+    "act": "blowjob",
+    "kind": "act",
+    "a": "Billy Hargrove",
+    "b": "Eddie Munson",
+    "role": ""
+   },
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-08T16:54:11.627Z"
+  },
+  {
+   "id": "U44",
+   "key": "dd5-pushes-finger-in~elided#67560b1f",
+   "fic": "jacks.html",
+   "paragraph": 6008,
+   "sourceSha": "1c82d8bb62ab4aa836ffe8f4924db20c8420faddb9f3b0d75e08a9b35f18957d",
+   "claim": {
+    "fic": "jacks.html",
+    "sourceSha": "1c82d8bb62ab4aa836ffe8f4924db20c8420faddb9f3b0d75e08a9b35f18957d",
+    "paragraph": 6008,
+    "pattern": "dd5-pushes-finger-in~elided",
+    "act": "fingering",
+    "kind": "act",
+    "a": "Jack Seward",
+    "b": "Dracula",
+    "role": ""
+   },
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-08T16:54:41.295Z"
+  },
+  {
+   "id": "U47",
+   "key": "riding#683df94e",
+   "fic": "belonging.html",
+   "paragraph": 4986,
+   "sourceSha": "d8fe352ab70bc0a8171fea0e069c43d776d3541d741cb74b2b66014ae64e874c",
+   "claim": {
+    "fic": "belonging.html",
+    "sourceSha": "d8fe352ab70bc0a8171fea0e069c43d776d3541d741cb74b2b66014ae64e874c",
+    "paragraph": 4986,
+    "pattern": "riding",
+    "act": "anal sex (riding)",
+    "kind": "act",
+    "a": "Castiel",
+    "b": "Dean Winchester",
+    "role": ""
+   },
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-08T16:55:44.210Z"
+  },
+  {
+   "id": "U49",
+   "key": "push-into~elided#7d76700e",
+   "fic": "jacks.html",
+   "paragraph": 3752,
+   "sourceSha": "1c82d8bb62ab4aa836ffe8f4924db20c8420faddb9f3b0d75e08a9b35f18957d",
+   "claim": {
+    "fic": "jacks.html",
+    "sourceSha": "1c82d8bb62ab4aa836ffe8f4924db20c8420faddb9f3b0d75e08a9b35f18957d",
+    "paragraph": 3752,
+    "pattern": "push-into~elided",
+    "act": "anal sex",
+    "kind": "act",
+    "a": "Dracula",
+    "b": "Jack Seward",
+    "role": ""
+   },
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-08T16:56:31.291Z"
+  },
+  {
+   "id": "U50",
+   "key": "push-into#2f8aa1af",
+   "fic": "jacks.html",
+   "paragraph": 2788,
+   "sourceSha": "1c82d8bb62ab4aa836ffe8f4924db20c8420faddb9f3b0d75e08a9b35f18957d",
+   "claim": {
+    "fic": "jacks.html",
+    "sourceSha": "1c82d8bb62ab4aa836ffe8f4924db20c8420faddb9f3b0d75e08a9b35f18957d",
+    "paragraph": 2788,
+    "pattern": "push-into",
+    "act": "anal sex",
+    "kind": "act",
+    "a": "Dracula",
+    "b": "Frank Renfield",
+    "role": ""
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Wrong person"
+   ],
+   "updatedAt": "2026-10-08T16:56:51.721Z"
+  }
+ ]
+}
