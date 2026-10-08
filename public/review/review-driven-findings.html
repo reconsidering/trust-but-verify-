@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>Review-driven engine findings</title><style>body{font:17px/1.6 system-ui,sans-serif;max-width:1050px;margin:auto;padding:20px;color:#17212b;background:#f5f7fa}main{background:white;padding:24px;border:1px solid #cad4df;border-radius:10px}nav{display:flex;flex-wrap:wrap;gap:12px;margin:0 0 20px}a{color:#244a80}h1,h2,h3{line-height:1.25;scroll-margin-top:20px}h1{font-size:2rem}h2{border-top:1px solid #dce3eb;padding-top:20px;margin-top:30px}table{display:block;max-width:100%;overflow-x:auto;border-collapse:collapse;margin:20px 0;font-size:.95rem}th,td{border:1px solid #d0d9e3;padding:10px;text-align:left;vertical-align:top;min-width:100px}td:last-child{min-width:230px}th{background:#eaf0f7}tr:nth-child(even){background:#f7f9fc}pre{overflow-x:auto;padding:12px;background:#edf1f6}code{font-size:.92em;overflow-wrap:anywhere}.toc ul{padding-left:22px}.toc{padding:10px 16px;background:#edf2f8;border-radius:8px}@media(max-width:600px){body{padding:10px}main{padding:16px}h1{font-size:1.6rem}nav a{padding:6px 0}}</style></head><body><nav aria-label="Review pages"><a href="./review-driven-error-check.html">Interactive review</a><a href="./review-driven-findings.html">Findings report</a><a href="./review-driven-moved-readings.html">Every moved reading</a><a href="./next-batch.html">Other review sets</a></nav><main><details><summary>Jump to a section</summary><div class="toc">
+<ul>
+<li><a href="#checking-the-review-driven-engine-changes">Checking the review-driven engine changes</a><ul>
+<li><a href="#what-was-compared">What was compared</a></li>
+<li><a href="#counts-and-review-coverage">Counts and review coverage</a></li>
+<li><a href="#findings">Findings</a><ul>
+<li><a href="#1-a-new-incorrect-finger-reading-in-tricks-of-the-trade">1. A new incorrect finger reading in Tricks of the Trade</a></li>
+<li><a href="#2-memory-wording-can-swallow-simultaneous-real-activity">2. Memory wording can swallow simultaneous real activity</a></li>
+<li><a href="#3-a-restraint-guard-can-remove-real-hand-motion">3. A restraint guard can remove real hand motion</a></li>
+<li><a href="#4-earlier-anal-context-can-contaminate-a-tongue-summary">4. Earlier anal context can contaminate a tongue summary</a></li>
+<li><a href="#5-tuicas-changed-summary-exposes-existing-errors">5. Tuica's changed summary exposes existing errors</a></li>
+<li><a href="#6-an-unsuccessful-rub-is-still-reported-as-contact">6. An unsuccessful rub is still reported as contact</a></li>
+</ul>
+</li>
+<li><a href="#risks-by-cause-group">Risks by cause group</a></li>
+<li><a href="#the-eight-changed-verdicts">The eight changed verdicts</a></li>
+<li><a href="#the-rewritten-older-tests">The rewritten older tests</a></li>
+<li><a href="#what-the-owner-does">What the owner does</a></li>
+<li><a href="#validation">Validation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</details><h1 id="checking-the-review-driven-engine-changes">Checking the review-driven engine changes</h1>
+<p>Compared <code>6e878a4</code> with latest main <code>3ebbfdf</code> on 2026-10-08. This is a report and owner-review batch, not a detector or label update. Production weights, reliability, metrics, patterns, guards and labels are unchanged.</p>
+<h2 id="what-was-compared">What was compared</h2>
+<p>Installed dependencies and unpacked the supplied archive using setup-fics with <code>--no-eval</code>, then removed the four previously excluded sources before any evaluation. The archive has 54 HTML entries; setup retains the existing owner-uploaded <code>found-in-the-upside-down.html</code>, making 55 local sources before exclusions. Under AGENTS.md, <code>play-the-game</code>, <code>self-mythology</code>, <code>slipfast</code> and <code>strawberry-mama</code> were excluded because of sexual content involving minors. The comparison covers the same remaining 51 sources on both sides, not all 55.</p>
+<p>Ran <code>npm run regress -- --hits --all --base 6e878a4 --jobs 2</code>. Both tagged and tag-free modes were evaluated. The standard comparison reported eight verdict changes and 22 works with moved tagged readings: 46 removed, 36 added, 11 changing only the person. Its exit status 1 means verdicts changed, not that evaluation crashed. Four absent excluded works in the cached baseline are scope exclusions, not detector removals.</p>
+<p>That tool's individual-hit signature omits the act category and collects individual hits only in tagged mode. A supplementary full audit therefore ran both engines in both modes on every eligible source, with source checksums checked against the context snapshots. It found <strong>178 changed pattern/sentence-hash locations across 26 works: 92 tagged and 86 tag-free</strong>. Each record retains all distinct claims at that location, including act, participants, role and occurrence. Identical duplicate emissions are collapsed. These are reading records, not independent scenes. Act retyping accounts for changes the standard comparison cannot list.</p>
+<p><a href="./review-driven-moved-readings.html">Every moved reading</a> is listed by cause with before/after paraphrases and matching review IDs. The public review manifest also contains the complete list. Cause groups are primary explanations; a correction can involve more than one rule.</p>
+<h2 id="counts-and-review-coverage">Counts and review coverage</h2>
+<p>The existing <code>build-review-batch.mjs</code> was checked against the screened tagged snapshots; its standard 40-reading manifest, claim helper and <code>engine-review-batch/v1</code> layout were used as the compatibility reference. Its fixed 20/10/10 lanes cannot include every movement or both audit modes, so this comparison retains the full changed set instead. The restoration set uses the same source/claim identities and existing <code>import-review-batch.mjs</code>; the comparison set is intentionally a different schema to prevent accidental label imports. No changed reading was sampled out. The fixed ordering seed is <code>review-driven-error-check-2026-10-08</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Cause</th>
+<th style="text-align: right;">Moved records</th>
+<th style="text-align: right;">Removed claim sides</th>
+<th style="text-align: right;">Added claim sides</th>
+<th style="text-align: right;">Review records</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A. Instrument carryover</td>
+<td style="text-align: right;">32</td>
+<td style="text-align: right;">32</td>
+<td style="text-align: right;">32</td>
+<td style="text-align: right;">32</td>
+</tr>
+<tr>
+<td>B. Performer / ownership</td>
+<td style="text-align: right;">26</td>
+<td style="text-align: right;">25</td>
+<td style="text-align: right;">24</td>
+<td style="text-align: right;">26</td>
+</tr>
+<tr>
+<td>C. Memory, fantasy and other occurrence frames</td>
+<td style="text-align: right;">24</td>
+<td style="text-align: right;">24</td>
+<td style="text-align: right;">22</td>
+<td style="text-align: right;">24</td>
+</tr>
+<tr>
+<td>D. Contact categories / restraint guards</td>
+<td style="text-align: right;">69</td>
+<td style="text-align: right;">69</td>
+<td style="text-align: right;">33</td>
+<td style="text-align: right;">69</td>
+</tr>
+<tr>
+<td>E. New inventory patterns</td>
+<td style="text-align: right;">24</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">24</td>
+<td style="text-align: right;">24</td>
+</tr>
+<tr>
+<td>F. Other</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">8, including five stable controls</td>
+</tr>
+</tbody>
+</table>
+<p>There are only three moved records in group F; inventing two additional changes would be misleading. All three are included, supplemented by five seeded stable readings from the changed-verdict works. Groups C and D include every moved reading, including every frame-related removal found in this audit; they were not limited to five.</p>
+<p>All audit readings in <strong>Fling, Rwrb Balls and Tuica</strong>, before or after and in both modes, are included: 264 records, covering every reading behind the eight verdict changes as well as ancillary cues. Fourteen of those overlap the 178 moved records. The comparative set therefore contains <strong>428 records</strong>, plus a separate <strong>36-claim restoration set</strong>. When both modes have identical paraphrased meaning, the page displays them together (253 comparative cards initially) and preserves both original record identities in the saved answers. Different meanings stay separate. Filtering to one mode lets the owner judge them independently.</p>
+<p>The full learn test ran with <code>REVIEW_QUEUE_OUT</code> and without <code>WRITE_LEARNED</code>, exporting the 36 changed or unverifiable claims. Their original keys, source checksums, current claim identities and paragraph references are retained in <code>public/review/review-driven-claims.json</code>. A missing earlier identity is explicitly shown as unavailable. No earlier label is automatically transferred.</p>
+<h2 id="findings">Findings</h2>
+<h3 id="1-a-new-incorrect-finger-reading-in-tricks-of-the-trade">1. A new incorrect finger reading in Tricks of the Trade</h3>
+<p><strong>Confirmed in the source and audit, paragraph 3604, both modes.</strong> Finger preparation is followed by the performer lubricating their own penis and beginning penetration; the next paragraph continues hip thrusting. The <code>bottomed-out~elided</code> reading changes from anal sex to fingering. In an invented-adult paraphrase: Morgan prepares Rowan with fingers, lubricates himself, then enters and settles fully inside; the engine incorrectly treats the final depth as fingers.</p>
+<p>This is an incorrect new instrument claim and loss of penile evidence at that reading. A separate <code>pushed-in~elided</code> penile reading survives, so the whole scene is not missed. This is narrower than claiming a new scene-level false negative.</p>
+<h3 id="2-memory-wording-can-swallow-simultaneous-real-activity">2. Memory wording can swallow simultaneous real activity</h3>
+<p><strong>Confirmed in a diagnostic using invented adults; not established as a new error in this corpus.</strong> Morgan remembers yesterday's kiss while manually stimulating Rowan in the present. Before: a current handjob. After: history. The frame check sees the memory prefix without isolating the current action's clause. A second diagnostic describing a real observed action forming a mental image is demoted to fantasy despite an explicit statement that it is happening.</p>
+<p>This is a potential source of false negatives for current manual scenes. Ordinary past tense alone is not the problem; an unrelated memory or mental-image clause is.</p>
+<h3 id="3-a-restraint-guard-can-remove-real-hand-motion">3. A restraint guard can remove real hand motion</h3>
+<p><strong>Confirmed in an invented-adult diagnostic; not established as a new error in this corpus.</strong> Morgan holds Rowan's penis, Rowan holds Morgan steady, and Morgan moves the hand up and down Rowan's penis. Before: handjob. After: no reading. Nearby stabilization belongs to the other person, and the guard's movement exceptions do not recognize the explicit up-and-down wording. This is a current-act false negative in the diagnostic.</p>
+<p>The real corpus's restraint-only holds mostly look appropriately removed. That does not validate the broader guard for moving hands or different stabilization subjects.</p>
+<h3 id="4-earlier-anal-context-can-contaminate-a-tongue-summary">4. Earlier anal context can contaminate a tongue summary</h3>
+<p><strong>Confirmed in an invented-adult diagnostic; not established as a new error in this corpus.</strong> Morgan first touches Rowan's anus, then kisses Rowan's lips, and a following sentence summarizes pleasure caused by the tongue. Before: no rimming reading. After: a new <code>review-tongue-summary</code> rimming act. The mouth target established in the preceding sentence should prevent an anal inference. This is a new false positive in the diagnostic.</p>
+<h3 id="5-tuicas-changed-summary-exposes-existing-errors">5. Tuica's changed summary exposes existing errors</h3>
+<p><strong>Confirmed surviving reading errors; these individual errors predate PR #133.</strong> At paragraph 248, kissing after skin contact is still interpreted as a blowjob. In an invented-adult paraphrase, Morgan tastes residue on Rowan's tongue while they kiss; that does not establish penile oral penetration. At paragraph 283, an explicitly named oral performer is still attributed to the third adult. In a paraphrase, Avery takes Morgan's penis into their mouth, then Rowan joins; the engine credits Rowan for the earlier action as well.</p>
+<p>Demoting the earlier near-climax at paragraph 336 is appropriate: a recalled pending orgasm is not a completed one. But after removing those old claims, the declared-pair oral summary flips to the direction supported by the unchanged false-positive kiss reading and loses the actual direction hidden by the unchanged attribution error. The new whole-work conclusion is therefore suspect and should be prioritized for owner review. Correctly changing one claim does not validate the resulting unlabelled summary.</p>
+<h3 id="6-an-unsuccessful-rub-is-still-reported-as-contact">6. An unsuccessful rub is still reported as contact</h3>
+<p><strong>Confirmed surviving occurrence problem at Hate paragraph 806; the failed-attempt problem predates the category change.</strong> An adult attempts to rub against a partner who is already out of reach. The old handjob reading becomes frottage, but its performed occurrence remains. The category correction does not make the unsuccessful contact happen. This is not evidence that PR #133 newly introduced the occurrence error.</p>
+<h2 id="risks-by-cause-group">Risks by cause group</h2>
+<ul>
+<li><strong>A:</strong> Confirmed new instrument error in finding 1. Also possible: a finger used by Rowan on Morgan can be inherited by Morgan's later vague continuation into Rowan, despite opposite participants. Instrument continuity needs target and performer continuity, not just nearby instrument words.</li>
+<li><strong>B:</strong> Possible: carrying the established oral performer over a genuine handover when the new performer is expressed with a pronoun. The inspected ownership corrections generally agree with surrounding actions, but do not prove every omitted-subject continuation is right.</li>
+<li><strong>C:</strong> Confirmed diagnostic in finding 2. An explicit memory clause can coexist with current self-touch or manual contact; removing the whole scene would lose a real act. The Lightning passages are particularly important because imagined partner commands accompany real solo stimulation elsewhere in the same passage.</li>
+<li><strong>D:</strong> Confirmed diagnostic in finding 3. Also possible: category corrections suppress simultaneous penile oral contact or a handjob when scrotal contact occurs nearby. The mixed Innocent Until passage contains a moving hand and scrotal oral contact and needs both categories retained. External anal contact should never manufacture penetration.</li>
+<li><strong>E:</strong> Confirmed diagnostic in finding 4. Earlier anal anatomy does not prove that later summarized tongue activity remains anal after an explicit change to kissing. Actual rimming additions in Rwrb Balls and Jacks remain owner review items.</li>
+<li><strong>F:</strong> Possible: removing a body-position hint during a mixed recollection/future-imagery passage can accidentally discard a valid hint belonging to another adult. The Lightning paragraph 2550 removal involves precisely this attribution boundary. The two Mars paragraph 1582 removals are paired with a new toy-pattern claim; the remaining hypothetical-versus-history classification still needs adjudication. No new error is established merely because an old pattern disappears.</li>
+</ul>
+<p>These are not prevalence estimates: the set deliberately covers changes and changed summaries, not a representative unseen-fic accuracy sample.</p>
+<h2 id="the-eight-changed-verdicts">The eight changed verdicts</h2>
+<table>
+<thead>
+<tr>
+<th>Work</th>
+<th>Mode(s)</th>
+<th>Before → after</th>
+<th>Assessment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Fling</td>
+<td>Tagged and tag-free</td>
+<td>Oral switch remains a switch; leading recipient changes</td>
+<td>Both directions are explicit. Scrotal-contact duplicate removal looks appropriate. Leading-direction change remains unlabelled.</td>
+</tr>
+<tr>
+<td>Rwrb Balls</td>
+<td>Tagged and tag-free</td>
+<td>Anal switch remains a switch; leading penetrator changes</td>
+<td>Both anal directions are explicit. The new resumed-penetration summary has surrounding support; confirm aggregation with the owner.</td>
+</tr>
+<tr>
+<td>Rwrb Balls</td>
+<td>Tagged and tag-free</td>
+<td>No / unclear rimming → one-way rimming</td>
+<td>Prior anal attention supports the tongue summary, but it is a less direct statement than explicit tongue-to-anus contact. Owner confirmation required.</td>
+</tr>
+<tr>
+<td>Tuica</td>
+<td>Tagged and tag-free</td>
+<td>Oral one-way direction reverses</td>
+<td>The near-climax demotion is sound; surviving kiss and participant errors make the resulting summary suspect. See finding 5.</td>
+</tr>
+</tbody>
+</table>
+<p>There are eight mode-specific verdict changes, not eight independent works or scenes. Every audit reading from these works is available in the page, including unchanged cues and third-person actions.</p>
+<h2 id="the-rewritten-older-tests">The rewritten older tests</h2>
+<p>The three removed expectations were all scrotal-contact cases, in two files; they were not three separate changes to the overall suite's meaning.</p>
+<table>
+<thead>
+<tr>
+<th>Older coverage, paraphrased with invented adults</th>
+<th>Old expectation</th>
+<th>Replacement expectation</th>
+<th>Could it hide a regression?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>round13: Morgan orally mouths Rowan's scrotum</td>
+<td>Blowjob present</td>
+<td>Genital licking with Morgan as giver and Rowan as receiver; no blowjob instances</td>
+<td>The new category is anatomically appropriate. Replacing a legacy cast/context loses that exact attribution coverage.</td>
+</tr>
+<tr>
+<td>round13: Morgan draws Rowan's scrotum into their mouth</td>
+<td>Blowjob present</td>
+<td>Same body-play category and direction; no blowjob instances</td>
+<td>Appropriate for this isolated contact. It does not test simultaneous penile oral contact.</td>
+</tr>
+<tr>
+<td>phrasings: Morgan takes Rowan's scrotum into their mouth</td>
+<td>Oral reading with the penile recipient credited as top</td>
+<td>Body-play giver/receiver asserted; no blowjob instances</td>
+<td>Appropriate category change. It does not prove surrounding mixed-contact phrasings stay detected.</td>
+</tr>
+</tbody>
+</table>
+<p>All three replacement cases are in <code>tests/review-driven-rules.test.ts</code> and assert both the body-play result and the absence of blowjob instances. They also assert numeric confidence. They are stronger than simply deleting the old assertions, but the new isolated cases do not cover hand movement during restraint, mixed scrotal/penile oral contact, or a different nearby mouth owner. No test expectations were altered in this report PR.</p>
+<h2 id="what-the-owner-does">What the owner does</h2>
+<ol>
+<li>Open <strong><a href="./review-driven-error-check.html">the review page</a></strong>. After merge and Pages deployment, use <code>/trust-but-verify-/review/review-driven-error-check.html</code>. It is also a self-contained HTML file: no story upload or network request is required to answer it.</li>
+<li>Read Before, After and the assessment. Consult the original fic at the cited paragraph range when needed. Select <strong>better / worse / same / not sure</strong>, optionally check common errors and add context. Filter by cause or mode to work in short batches.</li>
+<li>Use <strong>Save answers</strong> for the comparative set. Then choose <strong>36 claims to restore</strong>, explicitly mark current claims <strong>correct / wrong / not sure</strong>, and save that set separately. Progress persists in the current browser; use the saved JSON to move devices or restore it later.</li>
+</ol>
+<p>What happens afterward:</p>
+<ul>
+<li>Comparative answers identify follow-up detector findings; they are <strong>not confidence labels</strong>. In particular, “better” does not prove the current claim correct, and “worse” does not prove every associated act wrong.</li>
+<li>Import explicit current-claim judgments using the existing tool:</li>
+</ul>
+<p><code>sh
+  node scripts/import-review-batch.mjs public/review/review-driven-claims.json review-driven-claim-answers.json tests/labels/zz-owner-review-driven-2026-10-08.json</code></p>
+<p>The importer preserves current claim identity and source checksum; it leaves free-text context out of tracked labels. The page exports only explicit correct/wrong judgments as <code>verdict</code>; a not-sure mark remains in <code>reviewVerdict</code> and the importer skips it. This avoids overwriting a claim identity while falling back to an older training label. Import and label changes belong in a later PR, after reviewing the owner’s answers. Use the explicit output filename because both the label and reviewed-identity loaders apply files in lexical order; the default batch filename can be overwritten by older files. In that label PR, reconcile previous judgments and remove only those explicit quarantine entries the owner has now adjudicated. Seven legacy keys and two disputed reading IDs are explicitly forced to remain quarantined by <code>reviewedClaims</code>; importing a new answer alone will not release them. If a formerly confirmed answer changes to not sure, remove its older training label in that reconciliation rather than relying on the importer to retract it. No such labels or quarantine metadata are changed here.
+- Then check that label PR and retrain the confidence model separately. No labels or model files are changed here. Re-importing an uncertain answer cannot restore a trusted training label.</p>
+<h2 id="validation">Validation</h2>
+<p>The full dual-mode audit completed for 51 sources and both engines. Source hashes agree. The learn replay exported exactly 36 claims without writing model files. Every moved reading is in both the metadata manifest and the paraphrased appendix. Browser checks passed for rendering, mode filtering, comparison answers without implicit labels, explicit current-claim export, answer reload, mismatched-source rejection and not-sure round trips. A not-sure export produced zero imported labels. The existing importer accepted an exported correctness answer into a temporary file and preserved the current claim identity; no repository label was written. <code>npm test</code>: 1,558 passed, 13 skipped. <code>npm run build</code>: passed; the built output contains the self-contained review page. Source checksums, all movement counts and the absence of long verbatim audit sentences in the artifacts were verified. No gold run was repeated because engine code and labels are unchanged.</p></main></body></html>
