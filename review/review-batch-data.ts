@@ -10,7 +10,7 @@ export type ActReview = { revision: string; verdict?: "correct" | "wrong" | "unc
 export type PastLabel = { source: string; verdict: "ok" | "wrong" | "unclear"; provenance: string; date?: string; claim: string; identityVerified: boolean; key: string; weight?: number; confidence?: number; retired?: string; errors?: string[] };
 export type LabelAudit = { pastLabels: PastLabel[]; priority: number; occurrence: string; changed: boolean; quarantined: boolean; status: string; reasons: string[]; recentEvidence: string[]; referenceClaim?: string; referenceCommit?: string; referenceIsOriginal?: boolean };
 export type ReviewRow = { id: string; key: string; fic: string; para: number; pattern: string; a: string; b?: string; act: string; kind: string; role?: string; claim: string; gold?: { file: string; hash: string; pairing: string; act: string; verdict: string }; evidence?: { from: number; to: number }[]; engineConfidence?: number; proposal?: ReadingProposal; sceneActs?: SceneActProposal[]; engineReadings?: SceneEngineReading[]; trainingNotes?: string[]; labelAudit?: LabelAudit };
-export type ReviewBatch = { schema: "engine-review-batch/v1" | "engine-gold-review/v1" | "engine-gold-range-review/v1"; batchId: string; engineCommit: string; sources: ReviewSource[]; rows: ReviewRow[]; selection?: { method: string; [key: string]: unknown } };
+export type ReviewBatch = { schema: "engine-review-batch/v1" | "engine-gold-review/v1" | "engine-gold-range-review/v1"; batchId: string; engineCommit: string; sources: ReviewSource[]; rows: ReviewRow[]; selection?: { method: string; answerFile?: string; [key: string]: unknown } };
 export type ReviewAnswer = { verdict?: "correct" | "wrong" | "uncertain"; errors: string[]; context: string; updatedAt: string; proposalReview?: "agree" | "disagree" | "uncertain"; proposalRevision?: string; actReviews?: Record<string, ActReview>; coverageComplete?: boolean; pastLabelReview?: "keep" | "replace" | "uncertain" };
 
 export const checksum = async (bytes: Uint8Array) => Array.from(new Uint8Array(await crypto.subtle.digest("SHA-256", bytes as Uint8Array<ArrayBuffer>)), (b) => b.toString(16).padStart(2, "0")).join("");
@@ -88,9 +88,9 @@ export function validatePastLabelBatch(batch: ReviewBatch): ReviewBatch {
 }
 
 /** Validate the scored batch before showing any assistant proposals. */
-export function validateSuspectBatch(batch: ReviewBatch): ReviewBatch {
+export function validateSuspectBatch(batch: ReviewBatch, expectedRows = 40): ReviewBatch {
   const score = (v: unknown) => typeof v === 'number' && Number.isFinite(v) && v >= 0 && v <= 1;
-  if (batch.schema !== 'engine-review-batch/v1' || batch.rows.length !== 40 || !batch.selection?.method || !/^[a-f0-9]{40}$/.test(batch.engineCommit)) throw Error('The likely-error review batch is incomplete.');
+  if (batch.schema !== 'engine-review-batch/v1' || batch.rows.length !== expectedRows || !batch.selection?.method || !/^[a-f0-9]{40}$/.test(batch.engineCommit)) throw Error('The likely-error review batch is incomplete.');
   const ids = new Set<string>(), keys = new Set<string>();
   for (const row of batch.rows) {
     const p = row.proposal, source = batch.sources.find(s => s.file === row.fic);
