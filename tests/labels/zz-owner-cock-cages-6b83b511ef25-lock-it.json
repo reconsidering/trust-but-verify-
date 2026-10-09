@@ -1,0 +1,263 @@
+{
+  "made": "2026-10-09",
+  "how": "Explicit owner judgments from the tagged cock-cage passage review. Only separately judged engine cues become confidence labels. Uncertain answers are excluded from training. Confirmed device actions are stored separately as unscored events; omissions never imply negative labels. Free-text notes and assistant confidence are excluded.",
+  "batchId": "cock-cages-lock-it-8c745f1-v1",
+  "engineCommit": "8c745f1",
+  "labels": {
+    "chastity-wearer#3f2c8de4": "unclear",
+    "chastity-wearer#135c07c7": "ok",
+    "chastity-wearer#45b91bd4": "ok",
+    "chastity-wearer#addd6ef8": "ok",
+    "chastity-wearer#aa24e00d": "ok",
+    "chastity-wearer#a6a0a10b": "ok",
+    "chastity-wearer#9d9d223f": "ok",
+    "chastity-wearer#6f33a38f": "ok",
+    "chastity-wearer#d5d28585": "ok",
+    "chastity-wearer#b82b3899": "ok",
+    "chastity-wearer#e9a9f7e1": "ok"
+  },
+  "answers": [
+    {
+      "id": "D1",
+      "key": "chastity-wearer#3f2c8de4",
+      "fic": "lock-it.html",
+      "paragraph": 30,
+      "sourceSha": "cefecea8f64bab5b5bbeee0fdf6cf6d8a7712191f584b965d3b8100cfec2a635",
+      "claim": {
+        "fic": "lock-it.html",
+        "sourceSha": "cefecea8f64bab5b5bbeee0fdf6cf6d8a7712191f584b965d3b8100cfec2a635",
+        "paragraph": 30,
+        "pattern": "chastity-wearer",
+        "act": "wearing a chastity device",
+        "kind": "behavior",
+        "a": "Evan \"Buck\" Buckley",
+        "b": "Eddie Diaz",
+        "role": "bottom"
+      },
+      "verdict": "wrong",
+      "errors": [
+        "No act happened"
+      ],
+      "updatedAt": "2026-10-09T14:45:11.263Z"
+    },
+    {
+      "id": "D2",
+      "key": "chastity-wearer#135c07c7",
+      "fic": "lock-it.html",
+      "paragraph": 48,
+      "sourceSha": "cefecea8f64bab5b5bbeee0fdf6cf6d8a7712191f584b965d3b8100cfec2a635",
+      "claim": {
+        "fic": "lock-it.html",
+        "sourceSha": "cefecea8f64bab5b5bbeee0fdf6cf6d8a7712191f584b965d3b8100cfec2a635",
+        "paragraph": 48,
+        "pattern": "chastity-wearer",
+        "act": "wearing a chastity device",
+        "kind": "behavior",
+        "a": "Evan \"Buck\" Buckley",
+        "b": "Eddie Diaz",
+        "role": "bottom"
+      },
+      "verdict": "correct",
+      "errors": [],
+      "updatedAt": "2026-10-09T14:45:11.743Z"
+    },
+    {
+      "id": "D3",
+      "key": "chastity-wearer#45b91bd4",
+      "fic": "lock-it.html",
+      "paragraph": 132,
+      "sourceSha": "cefecea8f64bab5b5bbeee0fdf6cf6d8a7712191f584b965d3b8100cfec2a635",
+      "claim": {
+        "fic": "lock-it.html",
+        "sourceSha": "cefecea8f64bab5b5bbeee0fdf6cf6d8a7712191f584b965d3b8100cfec2a635",
+        "paragraph": 132,
+        "pattern": "chastity-wearer",
+        "act": "wearing a chastity device",
+        "kind": "behavior",
+        "a": "Evan \"Buck\" Buckley",
+        "b": "Eddie Diaz",
+        "role": "bottom"
+      },
+      "verdict": "correct",
+      "errors": [],
+      "updatedAt": "2026-10-09T14:45:12.409Z"
+    },
+    {
+      "id": "D4",
+      "key": "chastity-wearer#addd6ef8",
+      "fic": "lock-it.html",
+      "paragraph": 135,
+      "sourceSha": "cefecea8f64bab5b5bbeee0fdf6cf6d8a7712191f584b965d3b8100cfec2a635",
+      "claim": {
+        "fic": "lock-it.html",
+        "sourceSha": "cefecea8f64bab5b5bbeee0fdf6cf6d8a7712191f584b965d3b8100cfec2a635",
+        "paragraph": 135,
+        "pattern": "chastity-wearer",
+        "act": "wearing a chastity device",
+        "kind": "behavior",
+        "a": "Evan \"Buck\" Buckley",
+        "b": "Eddie Diaz",
+        "role": "bottom"
+      },
+      "verdict": "correct",
+      "errors": [],
+      "updatedAt": "2026-10-09T14:45:12.409Z"
+    },
+    {
+      "id": "D5",
+      "key": "chastity-wearer#aa24e00d",
+      "fic": "lock-it.html",
+      "paragraph": 183,
+      "sourceSha": "cefecea8f64bab5b5bbeee0fdf6cf6d8a7712191f584b965d3b8100cfec2a635",
+      "claim": {
+        "fic": "lock-it.html",
+        "sourceSha": "cefecea8f64bab5b5bbeee0fdf6cf6d8a7712191f584b965d3b8100cfec2a635",
+        "paragraph": 183,
+        "pattern": "chastity-wearer",
+        "act": "wearing a chastity device",
+        "kind": "behavior",
+        "a": "Evan \"Buck\" Buckley",
+        "b": "Eddie Diaz",
+        "role": "bottom"
+      },
+      "verdict": "correct",
+      "errors": [],
+      "updatedAt": "2026-10-09T14:45:12.791Z"
+    },
+    {
+      "id": "D6",
+      "key": "chastity-wearer#a6a0a10b",
+      "fic": "lock-it.html",
+      "paragraph": 185,
+      "sourceSha": "cefecea8f64bab5b5bbeee0fdf6cf6d8a7712191f584b965d3b8100cfec2a635",
+      "claim": {
+        "fic": "lock-it.html",
+        "sourceSha": "cefecea8f64bab5b5bbeee0fdf6cf6d8a7712191f584b965d3b8100cfec2a635",
+        "paragraph": 185,
+        "pattern": "chastity-wearer",
+        "act": "wearing a chastity device",
+        "kind": "behavior",
+        "a": "Evan \"Buck\" Buckley",
+        "b": "Eddie Diaz",
+        "role": "bottom"
+      },
+      "verdict": "correct",
+      "errors": [],
+      "updatedAt": "2026-10-09T14:45:12.791Z"
+    },
+    {
+      "id": "D7",
+      "key": "chastity-wearer#9d9d223f",
+      "fic": "lock-it.html",
+      "paragraph": 186,
+      "sourceSha": "cefecea8f64bab5b5bbeee0fdf6cf6d8a7712191f584b965d3b8100cfec2a635",
+      "claim": {
+        "fic": "lock-it.html",
+        "sourceSha": "cefecea8f64bab5b5bbeee0fdf6cf6d8a7712191f584b965d3b8100cfec2a635",
+        "paragraph": 186,
+        "pattern": "chastity-wearer",
+        "act": "wearing a chastity device",
+        "kind": "behavior",
+        "a": "Evan \"Buck\" Buckley",
+        "b": "Eddie Diaz",
+        "role": "bottom"
+      },
+      "verdict": "correct",
+      "errors": [],
+      "updatedAt": "2026-10-09T14:45:12.791Z"
+    },
+    {
+      "id": "D8",
+      "key": "chastity-wearer#6f33a38f",
+      "fic": "lock-it.html",
+      "paragraph": 192,
+      "sourceSha": "cefecea8f64bab5b5bbeee0fdf6cf6d8a7712191f584b965d3b8100cfec2a635",
+      "claim": {
+        "fic": "lock-it.html",
+        "sourceSha": "cefecea8f64bab5b5bbeee0fdf6cf6d8a7712191f584b965d3b8100cfec2a635",
+        "paragraph": 192,
+        "pattern": "chastity-wearer",
+        "act": "wearing a chastity device",
+        "kind": "behavior",
+        "a": "Evan \"Buck\" Buckley",
+        "b": "Eddie Diaz",
+        "role": "bottom"
+      },
+      "verdict": "correct",
+      "errors": [],
+      "updatedAt": "2026-10-09T14:45:13.076Z"
+    },
+    {
+      "id": "D9",
+      "key": "chastity-wearer#d5d28585",
+      "fic": "lock-it.html",
+      "paragraph": 196,
+      "sourceSha": "cefecea8f64bab5b5bbeee0fdf6cf6d8a7712191f584b965d3b8100cfec2a635",
+      "claim": {
+        "fic": "lock-it.html",
+        "sourceSha": "cefecea8f64bab5b5bbeee0fdf6cf6d8a7712191f584b965d3b8100cfec2a635",
+        "paragraph": 196,
+        "pattern": "chastity-wearer",
+        "act": "wearing a chastity device",
+        "kind": "behavior",
+        "a": "Evan \"Buck\" Buckley",
+        "b": "Eddie Diaz",
+        "role": "bottom"
+      },
+      "verdict": "correct",
+      "errors": [],
+      "updatedAt": "2026-10-09T14:45:13.076Z"
+    },
+    {
+      "id": "D10",
+      "key": "chastity-wearer#b82b3899",
+      "fic": "lock-it.html",
+      "paragraph": 197,
+      "sourceSha": "cefecea8f64bab5b5bbeee0fdf6cf6d8a7712191f584b965d3b8100cfec2a635",
+      "claim": {
+        "fic": "lock-it.html",
+        "sourceSha": "cefecea8f64bab5b5bbeee0fdf6cf6d8a7712191f584b965d3b8100cfec2a635",
+        "paragraph": 197,
+        "pattern": "chastity-wearer",
+        "act": "wearing a chastity device",
+        "kind": "behavior",
+        "a": "Evan \"Buck\" Buckley",
+        "b": "Eddie Diaz",
+        "role": "bottom"
+      },
+      "verdict": "correct",
+      "errors": [],
+      "updatedAt": "2026-10-09T14:45:13.076Z"
+    },
+    {
+      "id": "D11",
+      "key": "chastity-wearer#e9a9f7e1",
+      "fic": "lock-it.html",
+      "paragraph": 200,
+      "sourceSha": "cefecea8f64bab5b5bbeee0fdf6cf6d8a7712191f584b965d3b8100cfec2a635",
+      "claim": {
+        "fic": "lock-it.html",
+        "sourceSha": "cefecea8f64bab5b5bbeee0fdf6cf6d8a7712191f584b965d3b8100cfec2a635",
+        "paragraph": 200,
+        "pattern": "chastity-wearer",
+        "act": "wearing a chastity device",
+        "kind": "behavior",
+        "a": "Evan \"Buck\" Buckley",
+        "b": "Eddie Diaz",
+        "role": "bottom"
+      },
+      "verdict": "correct",
+      "errors": [],
+      "updatedAt": "2026-10-09T14:45:13.424Z"
+    }
+  ],
+  "ambiguousReadingKeys": [
+    "chastity-wearer#3f2c8de4"
+  ],
+  "superseded": {
+    "chastity-wearer#3f2c8de4": {
+      "reason": "Two distinct claims in this owner export share this legacy key. Preserve both answers but exclude the key from training to avoid assigning either judgment to a different claim."
+    }
+  },
+  "feedbackSha": "6b83b511ef2551b38cb5ea80c5da7bfc281c79796e615b288e953f1d94e82546"
+}

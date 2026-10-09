@@ -1,0 +1,319 @@
+{
+ "schema": "engine-suspect-act-review/v1",
+ "batchId": "cock-cages-were-compeer-8c745f1-v1",
+ "referenceCommit": "8c745f1",
+ "scope": {
+  "coverage": "positive-only; even complete windows never imply missing-act or hint negatives",
+  "occurrence": "only explicitly confirmed performed acts become events",
+  "confidenceTraining": "separate explicit per-reading decisions only",
+  "privateText": "free text and assistant scores excluded"
+ },
+ "sources": [
+  {
+   "file": "were-compeer.html",
+   "title": "A WereCompeer",
+   "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+   "paragraphSha": "db8942d563fe592c068945be850d2bc5ed6f9abcf355f4b74bc0962bcd4d71dc",
+   "paragraphCount": 1220
+  }
+ ],
+ "windows": [
+  {
+   "id": "W1",
+   "fic": "were-compeer.html",
+   "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+   "from": 85,
+   "to": 96,
+   "coverage": "positive-only",
+   "coverageReviewed": false,
+   "reviews": [
+    {
+     "id": "A1",
+     "revision": "1066d3d6a5b70972",
+     "verdict": "correct",
+     "act": "Chastity device fitting",
+     "performer": "Stiles Stilinski",
+     "receiver": "Stiles Stilinski",
+     "occurrence": "performed",
+     "from": 93,
+     "to": 93,
+     "errors": [
+      "Act missed"
+     ]
+    },
+    {
+     "id": "A2",
+     "revision": "001debcbb11304c3",
+     "verdict": "correct",
+     "act": "Chastity device fitting",
+     "performer": "Vernon Boyd",
+     "receiver": "Stiles Stilinski",
+     "occurrence": "performed",
+     "from": 93,
+     "to": 93,
+     "errors": [
+      "Act missed"
+     ]
+    }
+   ],
+   "events": [
+    {
+     "ownerActId": "A1",
+     "act": "Chastity device fitting",
+     "performer": "Stiles Stilinski",
+     "receiver": "Stiles Stilinski",
+     "from": 93,
+     "to": 93,
+     "scored": false
+    },
+    {
+     "ownerActId": "A2",
+     "act": "Chastity device fitting",
+     "performer": "Vernon Boyd",
+     "receiver": "Stiles Stilinski",
+     "from": 93,
+     "to": 93,
+     "scored": false
+    }
+   ]
+  },
+  {
+   "id": "W3",
+   "fic": "were-compeer.html",
+   "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+   "from": 207,
+   "to": 216,
+   "coverage": "positive-only",
+   "coverageReviewed": false,
+   "reviews": [
+    {
+     "id": "A3",
+     "revision": "94ad483ed4532d5e",
+     "verdict": "correct",
+     "act": "Chastity device removal",
+     "performer": "Derek Hale",
+     "receiver": "Stiles Stilinski",
+     "occurrence": "performed",
+     "from": 209,
+     "to": 209,
+     "errors": [
+      "Act missed"
+     ]
+    },
+    {
+     "id": "A4",
+     "revision": "4c2f1e31da89be70",
+     "verdict": "correct",
+     "act": "Handjob",
+     "performer": "Derek Hale",
+     "receiver": "Stiles Stilinski",
+     "occurrence": "performed",
+     "from": 211,
+     "to": 212,
+     "errors": [
+      "Act missed"
+     ]
+    }
+   ],
+   "events": [
+    {
+     "ownerActId": "A3",
+     "act": "Chastity device removal",
+     "performer": "Derek Hale",
+     "receiver": "Stiles Stilinski",
+     "from": 209,
+     "to": 209,
+     "scored": false
+    },
+    {
+     "ownerActId": "A4",
+     "act": "Handjob",
+     "performer": "Derek Hale",
+     "receiver": "Stiles Stilinski",
+     "from": 211,
+     "to": 212,
+     "scored": true
+    }
+   ]
+  },
+  {
+   "id": "W4",
+   "fic": "were-compeer.html",
+   "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+   "from": 254,
+   "to": 257,
+   "coverage": "positive-only",
+   "coverageReviewed": false,
+   "reviews": [
+    {
+     "id": "A5",
+     "revision": "f0f85e9ea6c35aae",
+     "verdict": "correct",
+     "act": "Chastity device fitting",
+     "performer": "Derek Hale",
+     "receiver": "Stiles Stilinski",
+     "occurrence": "performed",
+     "from": 255,
+     "to": 255,
+     "errors": [
+      "Act missed"
+     ]
+    }
+   ],
+   "events": [
+    {
+     "ownerActId": "A5",
+     "act": "Chastity device fitting",
+     "performer": "Derek Hale",
+     "receiver": "Stiles Stilinski",
+     "from": 255,
+     "to": 255,
+     "scored": false
+    }
+   ]
+  },
+  {
+   "id": "W5",
+   "fic": "were-compeer.html",
+   "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+   "from": 294,
+   "to": 307,
+   "coverage": "positive-only",
+   "coverageReviewed": false,
+   "reviews": [
+    {
+     "id": "A6",
+     "revision": "f7148475161a0166",
+     "verdict": "correct",
+     "act": "Chastity device removal",
+     "performer": "Derek Hale",
+     "receiver": "Stiles Stilinski",
+     "occurrence": "performed",
+     "from": 305,
+     "to": 305,
+     "errors": [
+      "Act missed"
+     ]
+    }
+   ],
+   "events": [
+    {
+     "ownerActId": "A6",
+     "act": "Chastity device removal",
+     "performer": "Derek Hale",
+     "receiver": "Stiles Stilinski",
+     "from": 305,
+     "to": 305,
+     "scored": false
+    }
+   ]
+  },
+  {
+   "id": "W6",
+   "fic": "were-compeer.html",
+   "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+   "from": 449,
+   "to": 452,
+   "coverage": "positive-only",
+   "coverageReviewed": false,
+   "reviews": [
+    {
+     "id": "A7",
+     "revision": "1de117595caab91e",
+     "verdict": "correct",
+     "act": "Chastity device fitting",
+     "performer": "Derek Hale",
+     "receiver": "Stiles Stilinski",
+     "occurrence": "performed",
+     "from": 450,
+     "to": 450,
+     "errors": [
+      "Act missed"
+     ]
+    }
+   ],
+   "events": [
+    {
+     "ownerActId": "A7",
+     "act": "Chastity device fitting",
+     "performer": "Derek Hale",
+     "receiver": "Stiles Stilinski",
+     "from": 450,
+     "to": 450,
+     "scored": false
+    }
+   ]
+  },
+  {
+   "id": "W7",
+   "fic": "were-compeer.html",
+   "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+   "from": 944,
+   "to": 948,
+   "coverage": "positive-only",
+   "coverageReviewed": false,
+   "reviews": [
+    {
+     "id": "A8",
+     "revision": "db3ff0b486c30c67",
+     "verdict": "correct",
+     "act": "Chastity device removal",
+     "performer": "Derek Hale",
+     "receiver": "Stiles Stilinski",
+     "occurrence": "performed",
+     "from": 946,
+     "to": 946,
+     "errors": [
+      "Act missed"
+     ]
+    }
+   ],
+   "events": [
+    {
+     "ownerActId": "A8",
+     "act": "Chastity device removal",
+     "performer": "Derek Hale",
+     "receiver": "Stiles Stilinski",
+     "from": 946,
+     "to": 946,
+     "scored": false
+    }
+   ]
+  },
+  {
+   "id": "W8",
+   "fic": "were-compeer.html",
+   "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+   "from": 974,
+   "to": 986,
+   "coverage": "positive-only",
+   "coverageReviewed": false,
+   "reviews": [
+    {
+     "id": "A9",
+     "revision": "8bb9cfec9218fd85",
+     "verdict": "correct",
+     "act": "Chastity device removal",
+     "performer": "Derek Hale",
+     "receiver": "Stiles Stilinski",
+     "occurrence": "performed",
+     "from": 986,
+     "to": 986,
+     "errors": []
+    }
+   ],
+   "events": [
+    {
+     "ownerActId": "A9",
+     "act": "Chastity device removal",
+     "performer": "Derek Hale",
+     "receiver": "Stiles Stilinski",
+     "from": 986,
+     "to": 986,
+     "scored": false
+    }
+   ]
+  }
+ ],
+ "feedbackSha": "6b83b511ef2551b38cb5ea80c5da7bfc281c79796e615b288e953f1d94e82546"
+}

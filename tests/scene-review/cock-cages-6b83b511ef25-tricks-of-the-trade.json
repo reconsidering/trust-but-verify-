@@ -1,0 +1,275 @@
+{
+ "schema": "engine-suspect-act-review/v1",
+ "batchId": "cock-cages-tricks-of-the-trade-8c745f1-v1",
+ "referenceCommit": "8c745f1",
+ "scope": {
+  "coverage": "positive-only; even complete windows never imply missing-act or hint negatives",
+  "occurrence": "only explicitly confirmed performed acts become events",
+  "confidenceTraining": "separate explicit per-reading decisions only",
+  "privateText": "free text and assistant scores excluded"
+ },
+ "sources": [
+  {
+   "file": "tricks-of-the-trade.html",
+   "title": "Tricks of the Trade",
+   "sourceSha": "25a15e806d8f6a55c030e78d50d58e71f2ca424674b33f7a56471178d4ab1bd3",
+   "paragraphSha": "56e605751373cfe88dc1f6a48760f8625a143c8157e758778c2f64929a65e8d7",
+   "paragraphCount": 3875
+  }
+ ],
+ "windows": [
+  {
+   "id": "W2",
+   "fic": "tricks-of-the-trade.html",
+   "sourceSha": "25a15e806d8f6a55c030e78d50d58e71f2ca424674b33f7a56471178d4ab1bd3",
+   "from": 1202,
+   "to": 1214,
+   "coverage": "positive-only",
+   "coverageReviewed": false,
+   "reviews": [
+    {
+     "id": "A1",
+     "revision": "b21f47b2db7cb57f",
+     "verdict": "correct",
+     "act": "Chastity device fitting",
+     "performer": "Castiel",
+     "receiver": "Dean Winchester",
+     "occurrence": "performed",
+     "from": 1208,
+     "to": 1208,
+     "errors": [
+      "Act missed"
+     ]
+    }
+   ],
+   "events": [
+    {
+     "ownerActId": "A1",
+     "act": "Chastity device fitting",
+     "performer": "Castiel",
+     "receiver": "Dean Winchester",
+     "from": 1208,
+     "to": 1208,
+     "scored": false
+    }
+   ]
+  },
+  {
+   "id": "W3",
+   "fic": "tricks-of-the-trade.html",
+   "sourceSha": "25a15e806d8f6a55c030e78d50d58e71f2ca424674b33f7a56471178d4ab1bd3",
+   "from": 1284,
+   "to": 1293,
+   "coverage": "positive-only",
+   "coverageReviewed": false,
+   "reviews": [
+    {
+     "id": "A2",
+     "revision": "ee309fd3d1a2661d",
+     "verdict": "correct",
+     "act": "Chastity device fitting",
+     "performer": "Castiel",
+     "receiver": "Dean Winchester",
+     "occurrence": "performed",
+     "from": 1287,
+     "to": 1287,
+     "errors": []
+    }
+   ],
+   "events": [
+    {
+     "ownerActId": "A2",
+     "act": "Chastity device fitting",
+     "performer": "Castiel",
+     "receiver": "Dean Winchester",
+     "from": 1287,
+     "to": 1287,
+     "scored": false
+    }
+   ]
+  },
+  {
+   "id": "W5",
+   "fic": "tricks-of-the-trade.html",
+   "sourceSha": "25a15e806d8f6a55c030e78d50d58e71f2ca424674b33f7a56471178d4ab1bd3",
+   "from": 1427,
+   "to": 1434,
+   "coverage": "positive-only",
+   "coverageReviewed": false,
+   "reviews": [
+    {
+     "id": "A3",
+     "revision": "c970d0b5e379d3be",
+     "verdict": "correct",
+     "act": "Chastity keyholding",
+     "performer": "Castiel",
+     "receiver": "Dean Winchester",
+     "occurrence": "performed",
+     "from": 1429,
+     "to": 1429,
+     "errors": []
+    },
+    {
+     "id": "A4",
+     "revision": "d8bf5ff4b1e07431",
+     "verdict": "correct",
+     "act": "Chastity device removal",
+     "performer": "Castiel",
+     "receiver": "Dean Winchester",
+     "occurrence": "performed",
+     "from": 1432,
+     "to": 1432,
+     "errors": []
+    }
+   ],
+   "events": [
+    {
+     "ownerActId": "A3",
+     "act": "Chastity keyholding",
+     "performer": "Castiel",
+     "receiver": "Dean Winchester",
+     "from": 1429,
+     "to": 1429,
+     "scored": false
+    },
+    {
+     "ownerActId": "A4",
+     "act": "Chastity device removal",
+     "performer": "Castiel",
+     "receiver": "Dean Winchester",
+     "from": 1432,
+     "to": 1432,
+     "scored": false
+    }
+   ]
+  },
+  {
+   "id": "W7",
+   "fic": "tricks-of-the-trade.html",
+   "sourceSha": "25a15e806d8f6a55c030e78d50d58e71f2ca424674b33f7a56471178d4ab1bd3",
+   "from": 2093,
+   "to": 2098,
+   "coverage": "positive-only",
+   "coverageReviewed": false,
+   "reviews": [
+    {
+     "id": "A5",
+     "revision": "778a9d3e1d026b72",
+     "verdict": "correct",
+     "act": "Chastity device fitting",
+     "performer": "Castiel",
+     "receiver": "Dean Winchester",
+     "occurrence": "performed",
+     "from": 2094,
+     "to": 2094,
+     "errors": [
+      "Act missed"
+     ]
+    }
+   ],
+   "events": [
+    {
+     "ownerActId": "A5",
+     "act": "Chastity device fitting",
+     "performer": "Castiel",
+     "receiver": "Dean Winchester",
+     "from": 2094,
+     "to": 2094,
+     "scored": false
+    }
+   ]
+  },
+  {
+   "id": "W8",
+   "fic": "tricks-of-the-trade.html",
+   "sourceSha": "25a15e806d8f6a55c030e78d50d58e71f2ca424674b33f7a56471178d4ab1bd3",
+   "from": 2270,
+   "to": 2276,
+   "coverage": "positive-only",
+   "coverageReviewed": false,
+   "reviews": [
+    {
+     "id": "A6",
+     "revision": "14fe13887a425982",
+     "verdict": "correct",
+     "act": "Chastity device stimulation",
+     "performer": "Castiel",
+     "receiver": "Dean Winchester",
+     "occurrence": "performed",
+     "from": 2271,
+     "to": 2271,
+     "errors": [
+      "Act missed"
+     ]
+    },
+    {
+     "id": "A7",
+     "revision": "aac688fd2a14c46b",
+     "verdict": "correct",
+     "act": "Chastity device removal",
+     "performer": "Castiel",
+     "receiver": "Dean Winchester",
+     "occurrence": "performed",
+     "from": 2274,
+     "to": 2274,
+     "errors": []
+    }
+   ],
+   "events": [
+    {
+     "ownerActId": "A6",
+     "act": "Chastity device stimulation",
+     "performer": "Castiel",
+     "receiver": "Dean Winchester",
+     "from": 2271,
+     "to": 2271,
+     "scored": false
+    },
+    {
+     "ownerActId": "A7",
+     "act": "Chastity device removal",
+     "performer": "Castiel",
+     "receiver": "Dean Winchester",
+     "from": 2274,
+     "to": 2274,
+     "scored": false
+    }
+   ]
+  },
+  {
+   "id": "W9",
+   "fic": "tricks-of-the-trade.html",
+   "sourceSha": "25a15e806d8f6a55c030e78d50d58e71f2ca424674b33f7a56471178d4ab1bd3",
+   "from": 3840,
+   "to": 3844,
+   "coverage": "positive-only",
+   "coverageReviewed": false,
+   "reviews": [
+    {
+     "id": "A8",
+     "revision": "8d4ac38630cfe0ba",
+     "verdict": "correct",
+     "act": "Chastity device stimulation",
+     "performer": "Castiel",
+     "receiver": "Dean Winchester",
+     "occurrence": "performed",
+     "from": 3842,
+     "to": 3842,
+     "errors": []
+    }
+   ],
+   "events": [
+    {
+     "ownerActId": "A8",
+     "act": "Chastity device stimulation",
+     "performer": "Castiel",
+     "receiver": "Dean Winchester",
+     "from": 3842,
+     "to": 3842,
+     "scored": false
+    }
+   ]
+  }
+ ],
+ "feedbackSha": "6b83b511ef2551b38cb5ea80c5da7bfc281c79796e615b288e953f1d94e82546"
+}

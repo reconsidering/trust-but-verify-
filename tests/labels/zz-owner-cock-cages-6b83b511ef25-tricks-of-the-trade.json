@@ -1,0 +1,732 @@
+{
+ "made": "2026-10-09",
+ "how": "Explicit owner judgments from the tagged cock-cage passage review. Only separately judged engine cues become confidence labels. Uncertain answers are excluded from training. Confirmed device actions are stored separately as unscored events; omissions never imply negative labels. Free-text notes and assistant confidence are excluded.",
+ "batchId": "cock-cages-tricks-of-the-trade-8c745f1-v1",
+ "engineCommit": "8c745f1",
+ "labels": {
+  "chastity-wearer#86860067": "wrong",
+  "chastity-keyholder#49099b42": "wrong",
+  "chastity-keyholder#db9df013": "wrong",
+  "chastity-keyholder#9d147c73": "ok",
+  "chastity-wearer#3fd51a72": "ok",
+  "chastity-wearer#ec4c994c": "ok",
+  "chastity-wearer#1c1f9458": "ok",
+  "chastity-wearer#1758767a": "ok",
+  "chastity-wearer#54d1e38d": "ok",
+  "chastity-wearer#cb1c7354": "unclear",
+  "chastity-keyholder#f00d73ac": "ok",
+  "chastity-wearer#1892539e": "ok",
+  "chastity-lock-on-ing#1892539e": "ok",
+  "chastity-wearer#8bcd0c4d": "ok",
+  "chastity-wearer#628fa69c": "ok",
+  "chastity-wearer#91cd9c56": "ok",
+  "chastity-wearer#f9e013cb": "ok",
+  "chastity-wearer#100f5576": "ok",
+  "chastity-keyholder-key~elided#b0bbfc96": "ok",
+  "chastity-wearer#625d6429": "ok",
+  "chastity-keyholder#625d6429": "ok",
+  "chastity-keyholder#f404fcf0": "ok",
+  "chastity-wearer#8bc759a": "wrong",
+  "chastity-wearer#66dc55d0": "ok",
+  "chastity-wearer#88e05a2": "ok",
+  "chastity-wearer#de91adf1": "ok",
+  "chastity-wearer#1f138dfb": "ok",
+  "chastity-wearer#4a114273": "ok",
+  "chastity-wearer#95e7f0ad": "ok",
+  "chastity-keyholder-free#95e7f0ad": "ok",
+  "chastity-wearer#e7b768ce": "ok",
+  "chastity-keyholder-tap#e7b768ce": "ok"
+ },
+ "answers": [
+  {
+   "id": "D1",
+   "key": "chastity-wearer#86860067",
+   "fic": "tricks-of-the-trade.html",
+   "paragraph": 909,
+   "sourceSha": "25a15e806d8f6a55c030e78d50d58e71f2ca424674b33f7a56471178d4ab1bd3",
+   "claim": {
+    "fic": "tricks-of-the-trade.html",
+    "sourceSha": "25a15e806d8f6a55c030e78d50d58e71f2ca424674b33f7a56471178d4ab1bd3",
+    "paragraph": 909,
+    "pattern": "chastity-wearer",
+    "act": "wearing a chastity device",
+    "kind": "behavior",
+    "a": "Dean Winchester",
+    "b": "Castiel",
+    "role": "bottom"
+   },
+   "verdict": "wrong",
+   "errors": [
+    "No act happened"
+   ],
+   "updatedAt": "2026-10-09T14:45:55.833Z"
+  },
+  {
+   "id": "D2",
+   "key": "chastity-keyholder#49099b42",
+   "fic": "tricks-of-the-trade.html",
+   "paragraph": 1204,
+   "sourceSha": "25a15e806d8f6a55c030e78d50d58e71f2ca424674b33f7a56471178d4ab1bd3",
+   "claim": {
+    "fic": "tricks-of-the-trade.html",
+    "sourceSha": "25a15e806d8f6a55c030e78d50d58e71f2ca424674b33f7a56471178d4ab1bd3",
+    "paragraph": 1204,
+    "pattern": "chastity-keyholder",
+    "act": "holding the key to a chastity device",
+    "kind": "behavior",
+    "a": "Castiel",
+    "b": "Dean Winchester",
+    "role": "top"
+   },
+   "verdict": "wrong",
+   "errors": [
+    "No act happened"
+   ],
+   "updatedAt": "2026-10-09T14:45:56.216Z"
+  },
+  {
+   "id": "D3",
+   "key": "chastity-keyholder#db9df013",
+   "fic": "tricks-of-the-trade.html",
+   "paragraph": 1204,
+   "sourceSha": "25a15e806d8f6a55c030e78d50d58e71f2ca424674b33f7a56471178d4ab1bd3",
+   "claim": {
+    "fic": "tricks-of-the-trade.html",
+    "sourceSha": "25a15e806d8f6a55c030e78d50d58e71f2ca424674b33f7a56471178d4ab1bd3",
+    "paragraph": 1204,
+    "pattern": "chastity-keyholder",
+    "act": "controlling a chastity device",
+    "kind": "behavior",
+    "a": "Castiel",
+    "b": "Dean Winchester",
+    "role": "top"
+   },
+   "verdict": "wrong",
+   "errors": [
+    "No act happened"
+   ],
+   "updatedAt": "2026-10-09T14:45:56.216Z"
+  },
+  {
+   "id": "D4",
+   "key": "chastity-keyholder#9d147c73",
+   "fic": "tricks-of-the-trade.html",
+   "paragraph": 1206,
+   "sourceSha": "25a15e806d8f6a55c030e78d50d58e71f2ca424674b33f7a56471178d4ab1bd3",
+   "claim": {
+    "fic": "tricks-of-the-trade.html",
+    "sourceSha": "25a15e806d8f6a55c030e78d50d58e71f2ca424674b33f7a56471178d4ab1bd3",
+    "paragraph": 1206,
+    "pattern": "chastity-keyholder",
+    "act": "controlling a chastity device",
+    "kind": "behavior",
+    "a": "Castiel",
+    "b": "Dean Winchester",
+    "role": "top"
+   },
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-09T14:45:56.216Z"
+  },
+  {
+   "id": "D5",
+   "key": "chastity-wearer#3fd51a72",
+   "fic": "tricks-of-the-trade.html",
+   "paragraph": 1208,
+   "sourceSha": "25a15e806d8f6a55c030e78d50d58e71f2ca424674b33f7a56471178d4ab1bd3",
+   "claim": {
+    "fic": "tricks-of-the-trade.html",
+    "sourceSha": "25a15e806d8f6a55c030e78d50d58e71f2ca424674b33f7a56471178d4ab1bd3",
+    "paragraph": 1208,
+    "pattern": "chastity-wearer",
+    "act": "wearing a chastity device",
+    "kind": "behavior",
+    "a": "Dean Winchester",
+    "b": "Castiel",
+    "role": "bottom"
+   },
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-09T14:45:56.216Z"
+  },
+  {
+   "id": "D6",
+   "key": "chastity-wearer#ec4c994c",
+   "fic": "tricks-of-the-trade.html",
+   "paragraph": 1208,
+   "sourceSha": "25a15e806d8f6a55c030e78d50d58e71f2ca424674b33f7a56471178d4ab1bd3",
+   "claim": {
+    "fic": "tricks-of-the-trade.html",
+    "sourceSha": "25a15e806d8f6a55c030e78d50d58e71f2ca424674b33f7a56471178d4ab1bd3",
+    "paragraph": 1208,
+    "pattern": "chastity-wearer",
+    "act": "wearing a chastity device",
+    "kind": "behavior",
+    "a": "Dean Winchester",
+    "b": "Castiel",
+    "role": "bottom"
+   },
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-09T14:45:56.216Z"
+  },
+  {
+   "id": "D7",
+   "key": "chastity-wearer#1c1f9458",
+   "fic": "tricks-of-the-trade.html",
+   "paragraph": 1211,
+   "sourceSha": "25a15e806d8f6a55c030e78d50d58e71f2ca424674b33f7a56471178d4ab1bd3",
+   "claim": {
+    "fic": "tricks-of-the-trade.html",
+    "sourceSha": "25a15e806d8f6a55c030e78d50d58e71f2ca424674b33f7a56471178d4ab1bd3",
+    "paragraph": 1211,
+    "pattern": "chastity-wearer",
+    "act": "wearing a chastity device",
+    "kind": "behavior",
+    "a": "Dean Winchester",
+    "b": "Castiel",
+    "role": "bottom"
+   },
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-09T14:45:56.216Z"
+  },
+  {
+   "id": "D8",
+   "key": "chastity-wearer#1758767a",
+   "fic": "tricks-of-the-trade.html",
+   "paragraph": 1213,
+   "sourceSha": "25a15e806d8f6a55c030e78d50d58e71f2ca424674b33f7a56471178d4ab1bd3",
+   "claim": {
+    "fic": "tricks-of-the-trade.html",
+    "sourceSha": "25a15e806d8f6a55c030e78d50d58e71f2ca424674b33f7a56471178d4ab1bd3",
+    "paragraph": 1213,
+    "pattern": "chastity-wearer",
+    "act": "wearing a chastity device",
+    "kind": "behavior",
+    "a": "Dean Winchester",
+    "b": "Castiel",
+    "role": "bottom"
+   },
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-09T14:45:56.216Z"
+  },
+  {
+   "id": "D9",
+   "key": "chastity-wearer#54d1e38d",
+   "fic": "tricks-of-the-trade.html",
+   "paragraph": 1214,
+   "sourceSha": "25a15e806d8f6a55c030e78d50d58e71f2ca424674b33f7a56471178d4ab1bd3",
+   "claim": {
+    "fic": "tricks-of-the-trade.html",
+    "sourceSha": "25a15e806d8f6a55c030e78d50d58e71f2ca424674b33f7a56471178d4ab1bd3",
+    "paragraph": 1214,
+    "pattern": "chastity-wearer",
+    "act": "wearing a chastity device",
+    "kind": "behavior",
+    "a": "Dean Winchester",
+    "b": "Castiel",
+    "role": "bottom"
+   },
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-09T14:45:56.216Z"
+  },
+  {
+   "id": "D10",
+   "key": "chastity-wearer#cb1c7354",
+   "fic": "tricks-of-the-trade.html",
+   "paragraph": 1285,
+   "sourceSha": "25a15e806d8f6a55c030e78d50d58e71f2ca424674b33f7a56471178d4ab1bd3",
+   "claim": {
+    "fic": "tricks-of-the-trade.html",
+    "sourceSha": "25a15e806d8f6a55c030e78d50d58e71f2ca424674b33f7a56471178d4ab1bd3",
+    "paragraph": 1285,
+    "pattern": "chastity-wearer",
+    "act": "wearing a chastity device",
+    "kind": "behavior",
+    "a": "Dean Winchester",
+    "b": "Castiel",
+    "role": "bottom"
+   },
+   "verdict": "uncertain",
+   "errors": [
+    "Needs more context"
+   ],
+   "updatedAt": "2026-10-09T14:45:56.600Z"
+  },
+  {
+   "id": "D11",
+   "key": "chastity-keyholder#f00d73ac",
+   "fic": "tricks-of-the-trade.html",
+   "paragraph": 1285,
+   "sourceSha": "25a15e806d8f6a55c030e78d50d58e71f2ca424674b33f7a56471178d4ab1bd3",
+   "claim": {
+    "fic": "tricks-of-the-trade.html",
+    "sourceSha": "25a15e806d8f6a55c030e78d50d58e71f2ca424674b33f7a56471178d4ab1bd3",
+    "paragraph": 1285,
+    "pattern": "chastity-keyholder",
+    "act": "controlling a chastity device",
+    "kind": "behavior",
+    "a": "Castiel",
+    "b": "Dean Winchester",
+    "role": "top"
+   },
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-09T14:45:56.600Z"
+  },
+  {
+   "id": "D12",
+   "key": "chastity-wearer#1892539e",
+   "fic": "tricks-of-the-trade.html",
+   "paragraph": 1287,
+   "sourceSha": "25a15e806d8f6a55c030e78d50d58e71f2ca424674b33f7a56471178d4ab1bd3",
+   "claim": {
+    "fic": "tricks-of-the-trade.html",
+    "sourceSha": "25a15e806d8f6a55c030e78d50d58e71f2ca424674b33f7a56471178d4ab1bd3",
+    "paragraph": 1287,
+    "pattern": "chastity-wearer",
+    "act": "wearing a chastity device",
+    "kind": "behavior",
+    "a": "Dean Winchester",
+    "b": "Castiel",
+    "role": "bottom"
+   },
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-09T14:45:56.600Z"
+  },
+  {
+   "id": "D13",
+   "key": "chastity-lock-on-ing#1892539e",
+   "fic": "tricks-of-the-trade.html",
+   "paragraph": 1287,
+   "sourceSha": "25a15e806d8f6a55c030e78d50d58e71f2ca424674b33f7a56471178d4ab1bd3",
+   "claim": {
+    "fic": "tricks-of-the-trade.html",
+    "sourceSha": "25a15e806d8f6a55c030e78d50d58e71f2ca424674b33f7a56471178d4ab1bd3",
+    "paragraph": 1287,
+    "pattern": "chastity-lock-on-ing",
+    "act": "locking a chastity device on their partner",
+    "kind": "behavior",
+    "a": "Castiel",
+    "b": "Dean Winchester",
+    "role": "top"
+   },
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-09T14:45:56.600Z"
+  },
+  {
+   "id": "D14",
+   "key": "chastity-wearer#8bcd0c4d",
+   "fic": "tricks-of-the-trade.html",
+   "paragraph": 1291,
+   "sourceSha": "25a15e806d8f6a55c030e78d50d58e71f2ca424674b33f7a56471178d4ab1bd3",
+   "claim": {
+    "fic": "tricks-of-the-trade.html",
+    "sourceSha": "25a15e806d8f6a55c030e78d50d58e71f2ca424674b33f7a56471178d4ab1bd3",
+    "paragraph": 1291,
+    "pattern": "chastity-wearer",
+    "act": "wearing a chastity device",
+    "kind": "behavior",
+    "a": "Dean Winchester",
+    "b": "Castiel",
+    "role": "bottom"
+   },
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-09T14:45:56.600Z"
+  },
+  {
+   "id": "D15",
+   "key": "chastity-wearer#628fa69c",
+   "fic": "tricks-of-the-trade.html",
+   "paragraph": 1292,
+   "sourceSha": "25a15e806d8f6a55c030e78d50d58e71f2ca424674b33f7a56471178d4ab1bd3",
+   "claim": {
+    "fic": "tricks-of-the-trade.html",
+    "sourceSha": "25a15e806d8f6a55c030e78d50d58e71f2ca424674b33f7a56471178d4ab1bd3",
+    "paragraph": 1292,
+    "pattern": "chastity-wearer",
+    "act": "wearing a chastity device",
+    "kind": "behavior",
+    "a": "Dean Winchester",
+    "b": "Castiel",
+    "role": "bottom"
+   },
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-09T14:45:56.600Z"
+  },
+  {
+   "id": "D16",
+   "key": "chastity-wearer#91cd9c56",
+   "fic": "tricks-of-the-trade.html",
+   "paragraph": 1370,
+   "sourceSha": "25a15e806d8f6a55c030e78d50d58e71f2ca424674b33f7a56471178d4ab1bd3",
+   "claim": {
+    "fic": "tricks-of-the-trade.html",
+    "sourceSha": "25a15e806d8f6a55c030e78d50d58e71f2ca424674b33f7a56471178d4ab1bd3",
+    "paragraph": 1370,
+    "pattern": "chastity-wearer",
+    "act": "wearing a chastity device",
+    "kind": "behavior",
+    "a": "Dean Winchester",
+    "b": "Castiel",
+    "role": "bottom"
+   },
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-09T14:45:57.233Z"
+  },
+  {
+   "id": "D17",
+   "key": "chastity-wearer#f9e013cb",
+   "fic": "tricks-of-the-trade.html",
+   "paragraph": 1372,
+   "sourceSha": "25a15e806d8f6a55c030e78d50d58e71f2ca424674b33f7a56471178d4ab1bd3",
+   "claim": {
+    "fic": "tricks-of-the-trade.html",
+    "sourceSha": "25a15e806d8f6a55c030e78d50d58e71f2ca424674b33f7a56471178d4ab1bd3",
+    "paragraph": 1372,
+    "pattern": "chastity-wearer",
+    "act": "wearing a chastity device",
+    "kind": "behavior",
+    "a": "Dean Winchester",
+    "b": "Castiel",
+    "role": "bottom"
+   },
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-09T14:45:57.233Z"
+  },
+  {
+   "id": "D18",
+   "key": "chastity-wearer#100f5576",
+   "fic": "tricks-of-the-trade.html",
+   "paragraph": 1372,
+   "sourceSha": "25a15e806d8f6a55c030e78d50d58e71f2ca424674b33f7a56471178d4ab1bd3",
+   "claim": {
+    "fic": "tricks-of-the-trade.html",
+    "sourceSha": "25a15e806d8f6a55c030e78d50d58e71f2ca424674b33f7a56471178d4ab1bd3",
+    "paragraph": 1372,
+    "pattern": "chastity-wearer",
+    "act": "wearing a chastity device",
+    "kind": "behavior",
+    "a": "Dean Winchester",
+    "b": "Castiel",
+    "role": "bottom"
+   },
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-09T14:45:57.233Z"
+  },
+  {
+   "id": "D19",
+   "key": "chastity-keyholder-key~elided#b0bbfc96",
+   "fic": "tricks-of-the-trade.html",
+   "paragraph": 1429,
+   "sourceSha": "25a15e806d8f6a55c030e78d50d58e71f2ca424674b33f7a56471178d4ab1bd3",
+   "claim": {
+    "fic": "tricks-of-the-trade.html",
+    "sourceSha": "25a15e806d8f6a55c030e78d50d58e71f2ca424674b33f7a56471178d4ab1bd3",
+    "paragraph": 1429,
+    "pattern": "chastity-keyholder-key~elided",
+    "act": "holding the key to a chastity device",
+    "kind": "behavior",
+    "a": "Castiel",
+    "b": "Dean Winchester",
+    "role": "top"
+   },
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-09T14:45:57.715Z"
+  },
+  {
+   "id": "D20",
+   "key": "chastity-wearer#625d6429",
+   "fic": "tricks-of-the-trade.html",
+   "paragraph": 1429,
+   "sourceSha": "25a15e806d8f6a55c030e78d50d58e71f2ca424674b33f7a56471178d4ab1bd3",
+   "claim": {
+    "fic": "tricks-of-the-trade.html",
+    "sourceSha": "25a15e806d8f6a55c030e78d50d58e71f2ca424674b33f7a56471178d4ab1bd3",
+    "paragraph": 1429,
+    "pattern": "chastity-wearer",
+    "act": "wearing a chastity device",
+    "kind": "behavior",
+    "a": "Dean Winchester",
+    "b": "Castiel",
+    "role": "bottom"
+   },
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-09T14:45:57.715Z"
+  },
+  {
+   "id": "D21",
+   "key": "chastity-keyholder#625d6429",
+   "fic": "tricks-of-the-trade.html",
+   "paragraph": 1429,
+   "sourceSha": "25a15e806d8f6a55c030e78d50d58e71f2ca424674b33f7a56471178d4ab1bd3",
+   "claim": {
+    "fic": "tricks-of-the-trade.html",
+    "sourceSha": "25a15e806d8f6a55c030e78d50d58e71f2ca424674b33f7a56471178d4ab1bd3",
+    "paragraph": 1429,
+    "pattern": "chastity-keyholder",
+    "act": "controlling a chastity device",
+    "kind": "behavior",
+    "a": "Castiel",
+    "b": "Dean Winchester",
+    "role": "top"
+   },
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-09T14:45:57.715Z"
+  },
+  {
+   "id": "D22",
+   "key": "chastity-keyholder#f404fcf0",
+   "fic": "tricks-of-the-trade.html",
+   "paragraph": 1432,
+   "sourceSha": "25a15e806d8f6a55c030e78d50d58e71f2ca424674b33f7a56471178d4ab1bd3",
+   "claim": {
+    "fic": "tricks-of-the-trade.html",
+    "sourceSha": "25a15e806d8f6a55c030e78d50d58e71f2ca424674b33f7a56471178d4ab1bd3",
+    "paragraph": 1432,
+    "pattern": "chastity-keyholder",
+    "act": "holding the key to a chastity device",
+    "kind": "behavior",
+    "a": "Castiel",
+    "b": "Dean Winchester",
+    "role": "top"
+   },
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-09T14:45:57.715Z"
+  },
+  {
+   "id": "D23",
+   "key": "chastity-wearer#8bc759a",
+   "fic": "tricks-of-the-trade.html",
+   "paragraph": 2049,
+   "sourceSha": "25a15e806d8f6a55c030e78d50d58e71f2ca424674b33f7a56471178d4ab1bd3",
+   "claim": {
+    "fic": "tricks-of-the-trade.html",
+    "sourceSha": "25a15e806d8f6a55c030e78d50d58e71f2ca424674b33f7a56471178d4ab1bd3",
+    "paragraph": 2049,
+    "pattern": "chastity-wearer",
+    "act": "wearing a chastity device",
+    "kind": "behavior",
+    "a": "Dean Winchester",
+    "b": "Castiel",
+    "role": "bottom"
+   },
+   "verdict": "wrong",
+   "errors": [
+    "No act happened",
+    "Wrong act or body part"
+   ],
+   "updatedAt": "2026-10-09T14:45:58.149Z"
+  },
+  {
+   "id": "D24",
+   "key": "chastity-wearer#66dc55d0",
+   "fic": "tricks-of-the-trade.html",
+   "paragraph": 2094,
+   "sourceSha": "25a15e806d8f6a55c030e78d50d58e71f2ca424674b33f7a56471178d4ab1bd3",
+   "claim": {
+    "fic": "tricks-of-the-trade.html",
+    "sourceSha": "25a15e806d8f6a55c030e78d50d58e71f2ca424674b33f7a56471178d4ab1bd3",
+    "paragraph": 2094,
+    "pattern": "chastity-wearer",
+    "act": "wearing a chastity device",
+    "kind": "behavior",
+    "a": "Dean Winchester",
+    "b": "Castiel",
+    "role": "bottom"
+   },
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-09T14:45:58.565Z"
+  },
+  {
+   "id": "D25",
+   "key": "chastity-wearer#88e05a2",
+   "fic": "tricks-of-the-trade.html",
+   "paragraph": 2094,
+   "sourceSha": "25a15e806d8f6a55c030e78d50d58e71f2ca424674b33f7a56471178d4ab1bd3",
+   "claim": {
+    "fic": "tricks-of-the-trade.html",
+    "sourceSha": "25a15e806d8f6a55c030e78d50d58e71f2ca424674b33f7a56471178d4ab1bd3",
+    "paragraph": 2094,
+    "pattern": "chastity-wearer",
+    "act": "wearing a chastity device",
+    "kind": "behavior",
+    "a": "Dean Winchester",
+    "b": "Castiel",
+    "role": "bottom"
+   },
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-09T14:45:58.565Z"
+  },
+  {
+   "id": "D26",
+   "key": "chastity-wearer#de91adf1",
+   "fic": "tricks-of-the-trade.html",
+   "paragraph": 2095,
+   "sourceSha": "25a15e806d8f6a55c030e78d50d58e71f2ca424674b33f7a56471178d4ab1bd3",
+   "claim": {
+    "fic": "tricks-of-the-trade.html",
+    "sourceSha": "25a15e806d8f6a55c030e78d50d58e71f2ca424674b33f7a56471178d4ab1bd3",
+    "paragraph": 2095,
+    "pattern": "chastity-wearer",
+    "act": "wearing a chastity device",
+    "kind": "behavior",
+    "a": "Dean Winchester",
+    "b": "Castiel",
+    "role": "bottom"
+   },
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-09T14:45:58.565Z"
+  },
+  {
+   "id": "D27",
+   "key": "chastity-wearer#1f138dfb",
+   "fic": "tricks-of-the-trade.html",
+   "paragraph": 2097,
+   "sourceSha": "25a15e806d8f6a55c030e78d50d58e71f2ca424674b33f7a56471178d4ab1bd3",
+   "claim": {
+    "fic": "tricks-of-the-trade.html",
+    "sourceSha": "25a15e806d8f6a55c030e78d50d58e71f2ca424674b33f7a56471178d4ab1bd3",
+    "paragraph": 2097,
+    "pattern": "chastity-wearer",
+    "act": "wearing a chastity device",
+    "kind": "behavior",
+    "a": "Dean Winchester",
+    "b": "Castiel",
+    "role": "bottom"
+   },
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-09T14:45:58.565Z"
+  },
+  {
+   "id": "D28",
+   "key": "chastity-wearer#4a114273",
+   "fic": "tricks-of-the-trade.html",
+   "paragraph": 2271,
+   "sourceSha": "25a15e806d8f6a55c030e78d50d58e71f2ca424674b33f7a56471178d4ab1bd3",
+   "claim": {
+    "fic": "tricks-of-the-trade.html",
+    "sourceSha": "25a15e806d8f6a55c030e78d50d58e71f2ca424674b33f7a56471178d4ab1bd3",
+    "paragraph": 2271,
+    "pattern": "chastity-wearer",
+    "act": "wearing a chastity device",
+    "kind": "behavior",
+    "a": "Dean Winchester",
+    "b": "Castiel",
+    "role": "bottom"
+   },
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-09T14:45:58.966Z"
+  },
+  {
+   "id": "D29",
+   "key": "chastity-wearer#95e7f0ad",
+   "fic": "tricks-of-the-trade.html",
+   "paragraph": 2274,
+   "sourceSha": "25a15e806d8f6a55c030e78d50d58e71f2ca424674b33f7a56471178d4ab1bd3",
+   "claim": {
+    "fic": "tricks-of-the-trade.html",
+    "sourceSha": "25a15e806d8f6a55c030e78d50d58e71f2ca424674b33f7a56471178d4ab1bd3",
+    "paragraph": 2274,
+    "pattern": "chastity-wearer",
+    "act": "wearing a chastity device",
+    "kind": "behavior",
+    "a": "Dean Winchester",
+    "b": "Castiel",
+    "role": "bottom"
+   },
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-09T14:45:58.966Z"
+  },
+  {
+   "id": "D30",
+   "key": "chastity-keyholder-free#95e7f0ad",
+   "fic": "tricks-of-the-trade.html",
+   "paragraph": 2274,
+   "sourceSha": "25a15e806d8f6a55c030e78d50d58e71f2ca424674b33f7a56471178d4ab1bd3",
+   "claim": {
+    "fic": "tricks-of-the-trade.html",
+    "sourceSha": "25a15e806d8f6a55c030e78d50d58e71f2ca424674b33f7a56471178d4ab1bd3",
+    "paragraph": 2274,
+    "pattern": "chastity-keyholder-free",
+    "act": "freeing their partner from a chastity device",
+    "kind": "behavior",
+    "a": "Castiel",
+    "b": "Dean Winchester",
+    "role": "top"
+   },
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-09T14:45:58.966Z"
+  },
+  {
+   "id": "D31",
+   "key": "chastity-wearer#e7b768ce",
+   "fic": "tricks-of-the-trade.html",
+   "paragraph": 3842,
+   "sourceSha": "25a15e806d8f6a55c030e78d50d58e71f2ca424674b33f7a56471178d4ab1bd3",
+   "claim": {
+    "fic": "tricks-of-the-trade.html",
+    "sourceSha": "25a15e806d8f6a55c030e78d50d58e71f2ca424674b33f7a56471178d4ab1bd3",
+    "paragraph": 3842,
+    "pattern": "chastity-wearer",
+    "act": "wearing a chastity device",
+    "kind": "behavior",
+    "a": "Dean Winchester",
+    "b": "Castiel",
+    "role": "bottom"
+   },
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-09T14:45:59.815Z"
+  },
+  {
+   "id": "D32",
+   "key": "chastity-keyholder-tap#e7b768ce",
+   "fic": "tricks-of-the-trade.html",
+   "paragraph": 3842,
+   "sourceSha": "25a15e806d8f6a55c030e78d50d58e71f2ca424674b33f7a56471178d4ab1bd3",
+   "claim": {
+    "fic": "tricks-of-the-trade.html",
+    "sourceSha": "25a15e806d8f6a55c030e78d50d58e71f2ca424674b33f7a56471178d4ab1bd3",
+    "paragraph": 3842,
+    "pattern": "chastity-keyholder-tap",
+    "act": "toying with a chastity device",
+    "kind": "behavior",
+    "a": "Castiel",
+    "b": "Dean Winchester",
+    "role": "top"
+   },
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-09T14:45:59.815Z"
+  }
+ ],
+ "ambiguousReadingKeys": [],
+ "superseded": {
+  "chastity-wearer#cb1c7354": {
+   "reason": "The owner left this claim uncertain."
+  }
+ },
+ "feedbackSha": "6b83b511ef2551b38cb5ea80c5da7bfc281c79796e615b288e953f1d94e82546"
+}

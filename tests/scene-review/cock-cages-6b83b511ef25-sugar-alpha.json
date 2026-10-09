@@ -1,0 +1,83 @@
+{
+ "schema": "engine-suspect-act-review/v1",
+ "batchId": "cock-cages-sugar-alpha-8c745f1-v1",
+ "referenceCommit": "8c745f1",
+ "scope": {
+  "coverage": "positive-only; even complete windows never imply missing-act or hint negatives",
+  "occurrence": "only explicitly confirmed performed acts become events",
+  "confidenceTraining": "separate explicit per-reading decisions only",
+  "privateText": "free text and assistant scores excluded"
+ },
+ "sources": [
+  {
+   "file": "sugar-alpha.html",
+   "title": "Sugar Alpha",
+   "sourceSha": "68a3c9d689b093806fb072b5e550e79a61eb9f16c1e79ca192ba24597338de5e",
+   "paragraphSha": "a45eb70114d525d57925d8f98cbdd975a8ae19a3be5dd2adcea51caa98ccc950",
+   "paragraphCount": 2428
+  }
+ ],
+ "windows": [
+  {
+   "id": "W1",
+   "fic": "sugar-alpha.html",
+   "sourceSha": "68a3c9d689b093806fb072b5e550e79a61eb9f16c1e79ca192ba24597338de5e",
+   "from": 38,
+   "to": 44,
+   "coverage": "positive-only",
+   "coverageReviewed": false,
+   "reviews": [
+    {
+     "id": "A1",
+     "revision": "789b640bc5e2afff",
+     "verdict": "correct",
+     "act": "Chastity device wearing",
+     "performer": "Isaac Lahey",
+     "receiver": "Isaac Lahey",
+     "occurrence": "performed",
+     "from": 42,
+     "to": 42,
+     "errors": [
+      "Act missed"
+     ]
+    }
+   ],
+   "events": [
+    {
+     "ownerActId": "A1",
+     "act": "Chastity device wearing",
+     "performer": "Isaac Lahey",
+     "receiver": "Isaac Lahey",
+     "from": 42,
+     "to": 42,
+     "scored": false
+    }
+   ]
+  },
+  {
+   "id": "W5",
+   "fic": "sugar-alpha.html",
+   "sourceSha": "68a3c9d689b093806fb072b5e550e79a61eb9f16c1e79ca192ba24597338de5e",
+   "from": 2400,
+   "to": 2403,
+   "coverage": "positive-only",
+   "coverageReviewed": false,
+   "reviews": [
+    {
+     "id": "A2",
+     "revision": "6b535a050464d766",
+     "verdict": "correct",
+     "act": "Chastity device wearing",
+     "performer": "Stiles Stilinski",
+     "receiver": "Stiles Stilinski",
+     "occurrence": "not performed",
+     "from": 2402,
+     "to": 2403,
+     "errors": []
+    }
+   ],
+   "events": []
+  }
+ ],
+ "feedbackSha": "6b83b511ef2551b38cb5ea80c5da7bfc281c79796e615b288e953f1d94e82546"
+}

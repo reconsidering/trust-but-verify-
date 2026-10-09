@@ -1,0 +1,123 @@
+{
+ "made": "2026-10-09",
+ "how": "Explicit owner judgments from the tagged cock-cage passage review. Only separately judged engine cues become confidence labels. Uncertain answers are excluded from training. Confirmed device actions are stored separately as unscored events; omissions never imply negative labels. Free-text notes and assistant confidence are excluded.",
+ "batchId": "cock-cages-rental-agreement-8c745f1-v1",
+ "engineCommit": "8c745f1",
+ "labels": {
+  "chastity-wearer#33be44b6": "ok",
+  "chastity-keyholder-tap~elided#33be44b6": "ok",
+  "chastity-wearer#c39c57ba": "ok",
+  "chastity-wearer#47269d0a": "ok",
+  "chastity-wearer#d3dcabd0": "ok"
+ },
+ "answers": [
+  {
+   "id": "D1",
+   "key": "chastity-wearer#33be44b6",
+   "fic": "rental-agreement.html",
+   "paragraph": 55,
+   "sourceSha": "6c50f2c632fb1643ccf4a210cb23c249e75f5dcc7d259572d0d712433eb20d82",
+   "claim": {
+    "fic": "rental-agreement.html",
+    "sourceSha": "6c50f2c632fb1643ccf4a210cb23c249e75f5dcc7d259572d0d712433eb20d82",
+    "paragraph": 55,
+    "pattern": "chastity-wearer",
+    "act": "wearing a chastity device",
+    "kind": "behavior",
+    "a": "Peter Parker",
+    "b": "Wade Wilson",
+    "role": "bottom"
+   },
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-09T14:45:36.284Z"
+  },
+  {
+   "id": "D2",
+   "key": "chastity-keyholder-tap~elided#33be44b6",
+   "fic": "rental-agreement.html",
+   "paragraph": 55,
+   "sourceSha": "6c50f2c632fb1643ccf4a210cb23c249e75f5dcc7d259572d0d712433eb20d82",
+   "claim": {
+    "fic": "rental-agreement.html",
+    "sourceSha": "6c50f2c632fb1643ccf4a210cb23c249e75f5dcc7d259572d0d712433eb20d82",
+    "paragraph": 55,
+    "pattern": "chastity-keyholder-tap~elided",
+    "act": "toying with a chastity device",
+    "kind": "behavior",
+    "a": "Wade Wilson",
+    "b": "Peter Parker",
+    "role": "top"
+   },
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-09T14:45:36.284Z"
+  },
+  {
+   "id": "D3",
+   "key": "chastity-wearer#c39c57ba",
+   "fic": "rental-agreement.html",
+   "paragraph": 106,
+   "sourceSha": "6c50f2c632fb1643ccf4a210cb23c249e75f5dcc7d259572d0d712433eb20d82",
+   "claim": {
+    "fic": "rental-agreement.html",
+    "sourceSha": "6c50f2c632fb1643ccf4a210cb23c249e75f5dcc7d259572d0d712433eb20d82",
+    "paragraph": 106,
+    "pattern": "chastity-wearer",
+    "act": "wearing a chastity device",
+    "kind": "behavior",
+    "a": "Peter Parker",
+    "b": "Wade Wilson",
+    "role": "bottom"
+   },
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-09T14:45:36.667Z"
+  },
+  {
+   "id": "D4",
+   "key": "chastity-wearer#47269d0a",
+   "fic": "rental-agreement.html",
+   "paragraph": 109,
+   "sourceSha": "6c50f2c632fb1643ccf4a210cb23c249e75f5dcc7d259572d0d712433eb20d82",
+   "claim": {
+    "fic": "rental-agreement.html",
+    "sourceSha": "6c50f2c632fb1643ccf4a210cb23c249e75f5dcc7d259572d0d712433eb20d82",
+    "paragraph": 109,
+    "pattern": "chastity-wearer",
+    "act": "wearing a chastity device",
+    "kind": "behavior",
+    "a": "Peter Parker",
+    "b": "Wade Wilson",
+    "role": "bottom"
+   },
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-09T14:45:36.667Z"
+  },
+  {
+   "id": "D5",
+   "key": "chastity-wearer#d3dcabd0",
+   "fic": "rental-agreement.html",
+   "paragraph": 137,
+   "sourceSha": "6c50f2c632fb1643ccf4a210cb23c249e75f5dcc7d259572d0d712433eb20d82",
+   "claim": {
+    "fic": "rental-agreement.html",
+    "sourceSha": "6c50f2c632fb1643ccf4a210cb23c249e75f5dcc7d259572d0d712433eb20d82",
+    "paragraph": 137,
+    "pattern": "chastity-wearer",
+    "act": "wearing a chastity device",
+    "kind": "behavior",
+    "a": "Peter Parker",
+    "b": "Wade Wilson",
+    "role": "bottom"
+   },
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-09T14:45:37.565Z"
+  }
+ ],
+ "ambiguousReadingKeys": [],
+ "superseded": {},
+ "feedbackSha": "6b83b511ef2551b38cb5ea80c5da7bfc281c79796e615b288e953f1d94e82546"
+}

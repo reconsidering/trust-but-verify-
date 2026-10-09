@@ -1,0 +1,93 @@
+{
+ "schema": "engine-suspect-act-review/v1",
+ "batchId": "cock-cages-prince-prisoner-puppy-8c745f1-v1",
+ "referenceCommit": "8c745f1",
+ "scope": {
+  "coverage": "positive-only; even complete windows never imply missing-act or hint negatives",
+  "occurrence": "only explicitly confirmed performed acts become events",
+  "confidenceTraining": "separate explicit per-reading decisions only",
+  "privateText": "free text and assistant scores excluded"
+ },
+ "sources": [
+  {
+   "file": "prince-prisoner-puppy.html",
+   "title": "Prince, Prisoner, Puppy, Parent",
+   "sourceSha": "cb68b9eaa778291f8ecbe13bcdb59ee9a7d3f0a170fa1ec35347e4663d6714fa",
+   "paragraphSha": "9cd533d1f684a763a828c7145a87d767ffe3b70d60bdcc1e05f76542a1281393",
+   "paragraphCount": 958
+  }
+ ],
+ "windows": [
+  {
+   "id": "W1",
+   "fic": "prince-prisoner-puppy.html",
+   "sourceSha": "cb68b9eaa778291f8ecbe13bcdb59ee9a7d3f0a170fa1ec35347e4663d6714fa",
+   "from": 427,
+   "to": 434,
+   "coverage": "positive-only",
+   "coverageReviewed": false,
+   "reviews": [
+    {
+     "id": "A1",
+     "revision": "9449e9cb961647a3",
+     "verdict": "correct",
+     "act": "Chastity device stimulation",
+     "performer": "Antinous",
+     "receiver": "Telemachus",
+     "occurrence": "performed",
+     "from": 432,
+     "to": 432,
+     "errors": [
+      "Act missed"
+     ]
+    }
+   ],
+   "events": [
+    {
+     "ownerActId": "A1",
+     "act": "Chastity device stimulation",
+     "performer": "Antinous",
+     "receiver": "Telemachus",
+     "from": 432,
+     "to": 432,
+     "scored": false
+    }
+   ]
+  },
+  {
+   "id": "W3",
+   "fic": "prince-prisoner-puppy.html",
+   "sourceSha": "cb68b9eaa778291f8ecbe13bcdb59ee9a7d3f0a170fa1ec35347e4663d6714fa",
+   "from": 463,
+   "to": 467,
+   "coverage": "positive-only",
+   "coverageReviewed": false,
+   "reviews": [
+    {
+     "id": "A2",
+     "revision": "59f693d43e7e5db0",
+     "verdict": "correct",
+     "act": "Chastity device removal",
+     "performer": "Antinous",
+     "receiver": "Telemachus",
+     "occurrence": "performed",
+     "from": 465,
+     "to": 465,
+     "errors": []
+    }
+   ],
+   "events": [
+    {
+     "ownerActId": "A2",
+     "act": "Chastity device removal",
+     "performer": "Antinous",
+     "receiver": "Telemachus",
+     "from": 465,
+     "to": 465,
+     "scored": false
+    }
+   ]
+  }
+ ],
+ "feedbackSha": "6b83b511ef2551b38cb5ea80c5da7bfc281c79796e615b288e953f1d94e82546"
+}

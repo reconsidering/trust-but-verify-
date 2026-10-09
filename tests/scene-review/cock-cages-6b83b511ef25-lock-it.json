@@ -1,0 +1,193 @@
+{
+ "schema": "engine-suspect-act-review/v1",
+ "batchId": "cock-cages-lock-it-8c745f1-v1",
+ "referenceCommit": "8c745f1",
+ "scope": {
+  "coverage": "positive-only; even complete windows never imply missing-act or hint negatives",
+  "occurrence": "only explicitly confirmed performed acts become events",
+  "confidenceTraining": "separate explicit per-reading decisions only",
+  "privateText": "free text and assistant scores excluded"
+ },
+ "sources": [
+  {
+   "file": "lock-it.html",
+   "title": "Better Lock It In Your Pocket",
+   "sourceSha": "cefecea8f64bab5b5bbeee0fdf6cf6d8a7712191f584b965d3b8100cfec2a635",
+   "paragraphSha": "bdd1ce138123d589ef0c128fb91373a304bb1cb3dfc53ed3596201124270e73c",
+   "paragraphCount": 210
+  }
+ ],
+ "windows": [
+  {
+   "id": "W2",
+   "fic": "lock-it.html",
+   "sourceSha": "cefecea8f64bab5b5bbeee0fdf6cf6d8a7712191f584b965d3b8100cfec2a635",
+   "from": 47,
+   "to": 49,
+   "coverage": "positive-only",
+   "coverageReviewed": false,
+   "reviews": [
+    {
+     "id": "A1",
+     "revision": "17921fff156b3fc8",
+     "verdict": "correct",
+     "act": "Chastity device fitting",
+     "performer": "Evan \"Buck\" Buckley",
+     "receiver": "Evan \"Buck\" Buckley",
+     "occurrence": "memory",
+     "from": 48,
+     "to": 48,
+     "errors": [
+      "Act missed"
+     ]
+    }
+   ],
+   "events": []
+  },
+  {
+   "id": "W3",
+   "fic": "lock-it.html",
+   "sourceSha": "cefecea8f64bab5b5bbeee0fdf6cf6d8a7712191f584b965d3b8100cfec2a635",
+   "from": 114,
+   "to": 118,
+   "coverage": "positive-only",
+   "coverageReviewed": false,
+   "reviews": [
+    {
+     "id": "A2",
+     "revision": "6aa6bb6e44f17d18",
+     "verdict": "correct",
+     "act": "Chastity keyholding",
+     "performer": "Eddie Diaz",
+     "receiver": "Evan \"Buck\" Buckley",
+     "occurrence": "performed",
+     "from": 116,
+     "to": 116,
+     "errors": [
+      "Act missed"
+     ]
+    }
+   ],
+   "events": [
+    {
+     "ownerActId": "A2",
+     "act": "Chastity keyholding",
+     "performer": "Eddie Diaz",
+     "receiver": "Evan \"Buck\" Buckley",
+     "from": 116,
+     "to": 116,
+     "scored": false
+    }
+   ]
+  },
+  {
+   "id": "W4",
+   "fic": "lock-it.html",
+   "sourceSha": "cefecea8f64bab5b5bbeee0fdf6cf6d8a7712191f584b965d3b8100cfec2a635",
+   "from": 132,
+   "to": 136,
+   "coverage": "positive-only",
+   "coverageReviewed": false,
+   "reviews": [
+    {
+     "id": "A3",
+     "revision": "db40c6bc363fb40d",
+     "verdict": "correct",
+     "act": "Chastity device stimulation",
+     "performer": "Eddie Diaz",
+     "receiver": "Evan \"Buck\" Buckley",
+     "occurrence": "performed",
+     "from": 135,
+     "to": 135,
+     "errors": [
+      "Act missed"
+     ]
+    }
+   ],
+   "events": [
+    {
+     "ownerActId": "A3",
+     "act": "Chastity device stimulation",
+     "performer": "Eddie Diaz",
+     "receiver": "Evan \"Buck\" Buckley",
+     "from": 135,
+     "to": 135,
+     "scored": false
+    }
+   ]
+  },
+  {
+   "id": "W5",
+   "fic": "lock-it.html",
+   "sourceSha": "cefecea8f64bab5b5bbeee0fdf6cf6d8a7712191f584b965d3b8100cfec2a635",
+   "from": 182,
+   "to": 187,
+   "coverage": "positive-only",
+   "coverageReviewed": false,
+   "reviews": [
+    {
+     "id": "A4",
+     "revision": "538c18abf0d002cc",
+     "verdict": "correct",
+     "act": "Chastity device stimulation",
+     "performer": "Eddie Diaz",
+     "receiver": "Evan \"Buck\" Buckley",
+     "occurrence": "performed",
+     "from": 183,
+     "to": 183,
+     "errors": [
+      "Act missed"
+     ]
+    }
+   ],
+   "events": [
+    {
+     "ownerActId": "A4",
+     "act": "Chastity device stimulation",
+     "performer": "Eddie Diaz",
+     "receiver": "Evan \"Buck\" Buckley",
+     "from": 183,
+     "to": 183,
+     "scored": false
+    }
+   ]
+  },
+  {
+   "id": "W7",
+   "fic": "lock-it.html",
+   "sourceSha": "cefecea8f64bab5b5bbeee0fdf6cf6d8a7712191f584b965d3b8100cfec2a635",
+   "from": 199,
+   "to": 201,
+   "coverage": "positive-only",
+   "coverageReviewed": false,
+   "reviews": [
+    {
+     "id": "A5",
+     "revision": "f391f64e6ce73e24",
+     "verdict": "correct",
+     "act": "Chastity device removal",
+     "performer": "Eddie Diaz",
+     "receiver": "Evan \"Buck\" Buckley",
+     "occurrence": "performed",
+     "from": 200,
+     "to": 200,
+     "errors": [
+      "Act missed"
+     ]
+    }
+   ],
+   "events": [
+    {
+     "ownerActId": "A5",
+     "act": "Chastity device removal",
+     "performer": "Eddie Diaz",
+     "receiver": "Evan \"Buck\" Buckley",
+     "from": 200,
+     "to": 200,
+     "scored": false
+    }
+   ]
+  }
+ ],
+ "feedbackSha": "6b83b511ef2551b38cb5ea80c5da7bfc281c79796e615b288e953f1d94e82546"
+}

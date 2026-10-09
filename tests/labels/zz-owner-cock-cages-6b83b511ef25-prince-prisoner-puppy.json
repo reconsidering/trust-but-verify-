@@ -1,0 +1,233 @@
+{
+ "made": "2026-10-09",
+ "how": "Explicit owner judgments from the tagged cock-cage passage review. Only separately judged engine cues become confidence labels. Uncertain answers are excluded from training. Confirmed device actions are stored separately as unscored events; omissions never imply negative labels. Free-text notes and assistant confidence are excluded.",
+ "batchId": "cock-cages-prince-prisoner-puppy-8c745f1-v1",
+ "engineCommit": "8c745f1",
+ "labels": {
+  "chastity-wearer#855a9308": "ok",
+  "chastity-wearer#a34f0040": "ok",
+  "chastity-wearer#aa1c98b2": "ok",
+  "chastity-wearer#b3d236c1": "ok",
+  "chastity-wearer#d981aeba": "ok",
+  "chastity-wearer#214e3e3a": "ok",
+  "chastity-wearer#17b11f3d": "ok",
+  "chastity-wearer#e6c8c299": "ok",
+  "chastity-wearer#df175c0f": "ok",
+  "chastity-keyholder~elided#4a9803f2": "ok"
+ },
+ "answers": [
+  {
+   "id": "D1",
+   "key": "chastity-wearer#855a9308",
+   "fic": "prince-prisoner-puppy.html",
+   "paragraph": 429,
+   "sourceSha": "cb68b9eaa778291f8ecbe13bcdb59ee9a7d3f0a170fa1ec35347e4663d6714fa",
+   "claim": {
+    "fic": "prince-prisoner-puppy.html",
+    "sourceSha": "cb68b9eaa778291f8ecbe13bcdb59ee9a7d3f0a170fa1ec35347e4663d6714fa",
+    "paragraph": 429,
+    "pattern": "chastity-wearer",
+    "act": "wearing a chastity device",
+    "kind": "behavior",
+    "a": "Telemachus",
+    "b": "Antinous",
+    "role": "bottom"
+   },
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-09T14:45:24.486Z"
+  },
+  {
+   "id": "D2",
+   "key": "chastity-wearer#a34f0040",
+   "fic": "prince-prisoner-puppy.html",
+   "paragraph": 432,
+   "sourceSha": "cb68b9eaa778291f8ecbe13bcdb59ee9a7d3f0a170fa1ec35347e4663d6714fa",
+   "claim": {
+    "fic": "prince-prisoner-puppy.html",
+    "sourceSha": "cb68b9eaa778291f8ecbe13bcdb59ee9a7d3f0a170fa1ec35347e4663d6714fa",
+    "paragraph": 432,
+    "pattern": "chastity-wearer",
+    "act": "wearing a chastity device",
+    "kind": "behavior",
+    "a": "Telemachus",
+    "b": "Antinous",
+    "role": "bottom"
+   },
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-09T14:45:24.486Z"
+  },
+  {
+   "id": "D3",
+   "key": "chastity-wearer#aa1c98b2",
+   "fic": "prince-prisoner-puppy.html",
+   "paragraph": 433,
+   "sourceSha": "cb68b9eaa778291f8ecbe13bcdb59ee9a7d3f0a170fa1ec35347e4663d6714fa",
+   "claim": {
+    "fic": "prince-prisoner-puppy.html",
+    "sourceSha": "cb68b9eaa778291f8ecbe13bcdb59ee9a7d3f0a170fa1ec35347e4663d6714fa",
+    "paragraph": 433,
+    "pattern": "chastity-wearer",
+    "act": "wearing a chastity device",
+    "kind": "behavior",
+    "a": "Telemachus",
+    "b": "Antinous",
+    "role": "bottom"
+   },
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-09T14:45:24.486Z"
+  },
+  {
+   "id": "D4",
+   "key": "chastity-wearer#b3d236c1",
+   "fic": "prince-prisoner-puppy.html",
+   "paragraph": 450,
+   "sourceSha": "cb68b9eaa778291f8ecbe13bcdb59ee9a7d3f0a170fa1ec35347e4663d6714fa",
+   "claim": {
+    "fic": "prince-prisoner-puppy.html",
+    "sourceSha": "cb68b9eaa778291f8ecbe13bcdb59ee9a7d3f0a170fa1ec35347e4663d6714fa",
+    "paragraph": 450,
+    "pattern": "chastity-wearer",
+    "act": "wearing a chastity device",
+    "kind": "behavior",
+    "a": "Telemachus",
+    "b": "Antinous",
+    "role": "bottom"
+   },
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-09T14:45:24.886Z"
+  },
+  {
+   "id": "D5",
+   "key": "chastity-wearer#d981aeba",
+   "fic": "prince-prisoner-puppy.html",
+   "paragraph": 451,
+   "sourceSha": "cb68b9eaa778291f8ecbe13bcdb59ee9a7d3f0a170fa1ec35347e4663d6714fa",
+   "claim": {
+    "fic": "prince-prisoner-puppy.html",
+    "sourceSha": "cb68b9eaa778291f8ecbe13bcdb59ee9a7d3f0a170fa1ec35347e4663d6714fa",
+    "paragraph": 451,
+    "pattern": "chastity-wearer",
+    "act": "wearing a chastity device",
+    "kind": "behavior",
+    "a": "Telemachus",
+    "b": "Antinous",
+    "role": "bottom"
+   },
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-09T14:45:24.886Z"
+  },
+  {
+   "id": "D6",
+   "key": "chastity-wearer#214e3e3a",
+   "fic": "prince-prisoner-puppy.html",
+   "paragraph": 452,
+   "sourceSha": "cb68b9eaa778291f8ecbe13bcdb59ee9a7d3f0a170fa1ec35347e4663d6714fa",
+   "claim": {
+    "fic": "prince-prisoner-puppy.html",
+    "sourceSha": "cb68b9eaa778291f8ecbe13bcdb59ee9a7d3f0a170fa1ec35347e4663d6714fa",
+    "paragraph": 452,
+    "pattern": "chastity-wearer",
+    "act": "wearing a chastity device",
+    "kind": "behavior",
+    "a": "Telemachus",
+    "b": "Antinous",
+    "role": "bottom"
+   },
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-09T14:45:24.886Z"
+  },
+  {
+   "id": "D7",
+   "key": "chastity-wearer#17b11f3d",
+   "fic": "prince-prisoner-puppy.html",
+   "paragraph": 453,
+   "sourceSha": "cb68b9eaa778291f8ecbe13bcdb59ee9a7d3f0a170fa1ec35347e4663d6714fa",
+   "claim": {
+    "fic": "prince-prisoner-puppy.html",
+    "sourceSha": "cb68b9eaa778291f8ecbe13bcdb59ee9a7d3f0a170fa1ec35347e4663d6714fa",
+    "paragraph": 453,
+    "pattern": "chastity-wearer",
+    "act": "wearing a chastity device",
+    "kind": "behavior",
+    "a": "Telemachus",
+    "b": "Antinous",
+    "role": "bottom"
+   },
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-09T14:45:24.886Z"
+  },
+  {
+   "id": "D8",
+   "key": "chastity-wearer#e6c8c299",
+   "fic": "prince-prisoner-puppy.html",
+   "paragraph": 455,
+   "sourceSha": "cb68b9eaa778291f8ecbe13bcdb59ee9a7d3f0a170fa1ec35347e4663d6714fa",
+   "claim": {
+    "fic": "prince-prisoner-puppy.html",
+    "sourceSha": "cb68b9eaa778291f8ecbe13bcdb59ee9a7d3f0a170fa1ec35347e4663d6714fa",
+    "paragraph": 455,
+    "pattern": "chastity-wearer",
+    "act": "wearing a chastity device",
+    "kind": "behavior",
+    "a": "Telemachus",
+    "b": "Antinous",
+    "role": "bottom"
+   },
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-09T14:45:24.886Z"
+  },
+  {
+   "id": "D9",
+   "key": "chastity-wearer#df175c0f",
+   "fic": "prince-prisoner-puppy.html",
+   "paragraph": 455,
+   "sourceSha": "cb68b9eaa778291f8ecbe13bcdb59ee9a7d3f0a170fa1ec35347e4663d6714fa",
+   "claim": {
+    "fic": "prince-prisoner-puppy.html",
+    "sourceSha": "cb68b9eaa778291f8ecbe13bcdb59ee9a7d3f0a170fa1ec35347e4663d6714fa",
+    "paragraph": 455,
+    "pattern": "chastity-wearer",
+    "act": "wearing a chastity device",
+    "kind": "behavior",
+    "a": "Telemachus",
+    "b": "Antinous",
+    "role": "bottom"
+   },
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-09T14:45:24.886Z"
+  },
+  {
+   "id": "D10",
+   "key": "chastity-keyholder~elided#4a9803f2",
+   "fic": "prince-prisoner-puppy.html",
+   "paragraph": 465,
+   "sourceSha": "cb68b9eaa778291f8ecbe13bcdb59ee9a7d3f0a170fa1ec35347e4663d6714fa",
+   "claim": {
+    "fic": "prince-prisoner-puppy.html",
+    "sourceSha": "cb68b9eaa778291f8ecbe13bcdb59ee9a7d3f0a170fa1ec35347e4663d6714fa",
+    "paragraph": 465,
+    "pattern": "chastity-keyholder~elided",
+    "act": "holding the key to a chastity device",
+    "kind": "behavior",
+    "a": "Antinous",
+    "b": "Telemachus",
+    "role": "top"
+   },
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-09T14:45:25.852Z"
+  }
+ ],
+ "ambiguousReadingKeys": [],
+ "superseded": {},
+ "feedbackSha": "6b83b511ef2551b38cb5ea80c5da7bfc281c79796e615b288e953f1d94e82546"
+}
