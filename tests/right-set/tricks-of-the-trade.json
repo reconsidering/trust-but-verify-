@@ -1096,6 +1096,25 @@
    "seen": [
     "2026-10-05"
    ]
+  },
+  {
+   "kind": "hint",
+   "card": "anal",
+   "pairing": "Castiel/Dean Winchester",
+   "who": "Castiel",
+   "role": "top",
+   "wants": true,
+   "via": "take-x",
+   "h": "cf3392dc",
+   "conf": 62,
+   "marks": {
+    "right": 1,
+    "wrong": 0
+   },
+   "source": "owner",
+   "seen": [
+    "2026-10-09"
+   ]
   }
  ],
  "fic": "tricks-of-the-trade",
@@ -1174,7 +1193,8 @@
    "seen": [
     "2026-10-05",
     "2026-10-06"
-   ]
+   ],
+   "retired": "owner re-judged this right in the October 4-5 review 2026-10-09"
   },
   {
    "kind": "hint",
@@ -1425,12 +1445,11 @@
    "h": "8ad86cb7",
    "misread": true,
    "gone": false,
-   "weight": 0.3,
-   "source": "claude",
+   "source": "owner",
    "seen": [
-    "2026-10-05"
-   ],
-   "retired": "owner judged this right in a blind spot-check 2026-10-06"
+    "2026-10-05",
+    "2026-10-09"
+   ]
   },
   {
    "kind": "scene",

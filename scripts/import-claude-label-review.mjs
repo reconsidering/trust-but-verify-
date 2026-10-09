@@ -1,5 +1,5 @@
 // Apply the owner's answers on the October 4-5 Claude labels (review/claude-oct4-5.html, schema claude-label-review/v1) to tests/right-set.
-//   node scripts/import-claude-label-review.mjs <answers.json> [--date YYYY-MM-DD] [--dry]
+//   node scripts/import-claude-label-review.mjs <answers.json> [--date YYYY-MM-DD] [--dry] [--overwrite-conflicts]
 // Only the owner's verdict on the ORIGINAL reading is applied here, to the Claude label it was made about, at full weight:
 //   original right, Claude said right  -> the entry becomes the owner's (no weight, a second right mark)
 //   original wrong, Claude said wrong  -> the negative becomes the owner's (no weight)
@@ -12,7 +12,7 @@ import { readFileSync, writeFileSync } from "node:fs";
 const args = process.argv.slice(2);
 const file = args.find((a) => !a.startsWith("--"));
 const opt = (n) => { const i = args.indexOf(`--${n}`); return i >= 0 ? args[i + 1] : undefined; };
-const dry = args.includes("--dry");
+const dry = args.includes("--dry"), overwrite = args.includes("--overwrite-conflicts");
 const date = opt("date") ?? new Date().toISOString().slice(0, 10);
 if (!file) { console.error("usage: node scripts/import-claude-label-review.mjs <answers.json> [--date YYYY-MM-DD] [--dry]"); process.exit(2); }
 
@@ -67,7 +67,25 @@ for (const a of feedback.answers) {
     }
   }
 }
-console.log(`${feedback.answers.length} answers`, done);
+// --overwrite-conflicts: the owner has said the new answer replaces an earlier owner label. Make the labels say exactly the new answer.
+const overwritten = { restored: 0, retired: 0, created: 0 };
+if (overwrite) for (const id of conflicts) {
+  const a = feedback.answers.find((x) => x.id === id), rec = a.historicalRecord, set = load(batch.items.find((x) => x.id === id).historical.path);
+  const [keep, drop] = a.originalVerdict === "correct" ? [(set.entries ??= []), (set.negatives ??= [])] : [(set.negatives ??= []), (set.entries ??= [])];
+  const mine = keep.filter((e) => same(e, rec)), other = drop.filter((e) => same(e, rec));
+  for (const e of mine) if (e.retired || e.source !== "owner") {
+    delete e.retired; delete e.weight; e.source = "owner"; e.seen = [...new Set([...(e.seen ?? []), date])];
+    if (a.originalVerdict === "correct") e.marks = { right: Math.max(e.marks?.right ?? 0, 2), wrong: e.marks?.wrong ?? 0 }; else e.misread = true;
+    overwritten.restored++;
+  }
+  for (const e of other) if (!e.retired) { e.retired = `owner re-judged this ${a.originalVerdict === "correct" ? "right" : "wrong"} in the October 4-5 review ${date}`; overwritten.retired++; }
+  if (!mine.length && other.length) {
+    const { marks, seen: _s, weight, source, retired, misread, gone, ...rest } = other[0];
+    keep.push(a.originalVerdict === "correct" ? { ...rest, marks: { right: 1, wrong: 0 }, source: "owner", seen: [date] } : { ...rest, misread: true, source: "owner", seen: [date] });
+    overwritten.created++;
+  }
+}
+console.log(`${feedback.answers.length} answers`, done, overwrite ? { overwritten } : "");
 if (missing.length) console.log(`no live label found (retired or never stored): ${missing.join(", ")}`);
-if (conflicts.length) console.log(`differs from an earlier owner label, left alone: ${conflicts.join(", ")}`);
+if (conflicts.length) console.log(`differs from an earlier owner label, ${overwrite ? "overwritten" : "left alone"}: ${conflicts.join(", ")}`);
 if (!dry) for (const [p, set] of sets) writeFileSync(p, JSON.stringify(set, null, 1) + "\n");

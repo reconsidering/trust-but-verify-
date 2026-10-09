@@ -502,7 +502,8 @@
    },
    "seen": [
     "2026-10-05"
-   ]
+   ],
+   "retired": "owner re-judged this wrong in the October 4-5 review 2026-10-09"
   },
   {
    "kind": "hint",
@@ -1244,12 +1245,11 @@
    "conf": 27,
    "misread": true,
    "gone": false,
-   "weight": 0.3,
-   "source": "claude",
+   "source": "owner",
    "seen": [
-    "2026-10-05"
-   ],
-   "retired": "owner judged this right in a blind spot-check 2026-10-06"
+    "2026-10-05",
+    "2026-10-09"
+   ]
   },
   {
    "kind": "solo",
@@ -1427,12 +1427,11 @@
    "conf": 25,
    "misread": true,
    "gone": true,
-   "weight": 0.3,
-   "source": "claude",
+   "source": "owner",
    "seen": [
-    "2026-10-05"
-   ],
-   "retired": "owner judged this right in a blind spot-check 2026-10-06"
+    "2026-10-05",
+    "2026-10-09"
+   ]
   },
   {
    "kind": "scene",
@@ -1642,6 +1641,22 @@
    "via": "riding",
    "h": "73e231c7",
    "conf": 80,
+   "misread": true,
+   "source": "owner",
+   "seen": [
+    "2026-10-09"
+   ]
+  },
+  {
+   "kind": "hint",
+   "card": "anal",
+   "pairing": "Derek Hale/Stiles Stilinski",
+   "who": "Stiles Stilinski",
+   "role": "bottom",
+   "wants": true,
+   "via": "bent-over-furniture",
+   "h": "5c477f2d",
+   "conf": 33,
    "misread": true,
    "source": "owner",
    "seen": [

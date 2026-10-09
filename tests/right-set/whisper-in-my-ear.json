@@ -27,16 +27,15 @@
    "who": "Henry Fox-Mountchristen-Windsor",
    "via": "mast-himself",
    "h": "70a8a466",
-   "weight": 0.85,
-   "source": "claude",
+   "source": "owner",
    "marks": {
-    "right": 1,
+    "right": 2,
     "wrong": 0
    },
    "seen": [
-    "2026-10-05"
-   ],
-   "retired": "owner judged this wrong in a blind spot-check 2026-10-06"
+    "2026-10-05",
+    "2026-10-09"
+   ]
   },
   {
    "kind": "scene",
@@ -147,12 +146,11 @@
    "conf": 30,
    "misread": true,
    "gone": false,
-   "weight": 0.3,
-   "source": "claude",
+   "source": "owner",
    "seen": [
-    "2026-10-05"
-   ],
-   "retired": "owner judged this right in a blind spot-check 2026-10-06"
+    "2026-10-05",
+    "2026-10-09"
+   ]
   },
   {
    "kind": "scene",
@@ -182,12 +180,11 @@
    "h": "161ae146",
    "misread": true,
    "gone": false,
-   "weight": 0.3,
-   "source": "claude",
+   "source": "owner",
    "seen": [
-    "2026-10-05"
-   ],
-   "retired": "owner judged this right in the blind spot-check 2026-10-05"
+    "2026-10-05",
+    "2026-10-09"
+   ]
   },
   {
    "kind": "solo",
@@ -200,7 +197,8 @@
    "source": "owner",
    "seen": [
     "2026-10-06"
-   ]
+   ],
+   "retired": "owner re-judged this right in the October 4-5 review 2026-10-09"
   }
  ]
 }

@@ -1009,7 +1009,8 @@
    },
    "seen": [
     "2026-10-05"
-   ]
+   ],
+   "retired": "owner re-judged this wrong in the October 4-5 review 2026-10-09"
   },
   {
    "kind": "solo",
@@ -1045,7 +1046,8 @@
    "seen": [
     "2026-10-05",
     "2026-10-06"
-   ]
+   ],
+   "retired": "owner re-judged this wrong in the October 4-5 review 2026-10-09"
   },
   {
    "kind": "scene",
@@ -2174,12 +2176,11 @@
    "conf": 63,
    "misread": true,
    "gone": false,
-   "weight": 0.3,
-   "source": "claude",
+   "source": "owner",
    "seen": [
-    "2026-10-05"
-   ],
-   "retired": "owner judged this right in a blind spot-check 2026-10-06"
+    "2026-10-05",
+    "2026-10-09"
+   ]
   },
   {
    "kind": "scene",
@@ -2617,6 +2618,34 @@
    "via": "passive-fucked",
    "h": "9904546d",
    "conf": 40,
+   "misread": true,
+   "source": "owner",
+   "seen": [
+    "2026-10-09"
+   ]
+  },
+  {
+   "kind": "solo",
+   "card": "solo",
+   "pairing": "Dracula/Jack Seward",
+   "who": "Dracula",
+   "via": "mast-word",
+   "h": "3af17fd8",
+   "misread": true,
+   "source": "owner",
+   "seen": [
+    "2026-10-09"
+   ]
+  },
+  {
+   "kind": "scene",
+   "card": "rimming",
+   "pairing": "Dracula/Jack Seward",
+   "top": "Dracula",
+   "bottom": "Jack Seward",
+   "via": "tongue-inside-him",
+   "h": "254ed222",
+   "conf": 60,
    "misread": true,
    "source": "owner",
    "seen": [
