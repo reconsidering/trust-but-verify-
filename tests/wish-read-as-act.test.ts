@@ -42,6 +42,7 @@ describe('an expected, planned or not-yet act is not anal sex',()=>{
   'Morgan fucked Rowan hard, and Rowan knew it wouldn’t stop until morning.',
   'Morgan fucked Rowan hard until Rowan came.',
   'Morgan pushed into Rowan and fucked him hard.',
+  'Morgan kissed Rowan hard and pushed him onto the bed. Rowan expected to be stretched to take it.',
  ])('still reads a real act: %s',text=>{
   expect(act(run(text),'anal').filter(h=>/anal sex/.test(h.act)).length).toBeGreaterThan(0);
  });

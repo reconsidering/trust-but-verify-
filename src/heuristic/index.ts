@@ -2551,7 +2551,7 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
     // "he knows it won't stop until Derek sinks into him", "now he's expected to get fucked", "he plans to get railed that night",
     // "so Derek can get what he needs to open Stiles up": something expected, planned or still to come, not done yet.
     else if (/\b(?:won['’]t|wouldn['’]t|will not|would not|can['’]t|cannot|never)\s+(?:\w+\s+)?(?:stop|end|let up|ease|fade|go away|abate|be satisfied|be enough|be over)\w*\s+until\b[^.!?;]*$/i.test(prefix) ||
-      /\b(?:expect(?:s|ed|ing)?|suppos(?:ed)|plan(?:s|ned|ning)?|intend(?:s|ed|ing)?|dread(?:s|ed|ing)?|fear(?:s|ed|ing)?|afraid|worr(?:y|ies|ied|ying)|about)\s+to\s*$/i.test((prefix + (/^\s*to\s+/i.test(matchText) ? " to " : "")).slice(-60)) ||
+      /\b(?:(?:is|was|were|are|am|['’]s|['’]re)\s+(?:expected|supposed)|plan(?:s|ned|ning)?|intend(?:s|ed|ing)?|dread(?:s|ed|ing)?|fear(?:s|ed|ing)?|afraid|worr(?:y|ies|ied|ying))\s+to\s*$/i.test((prefix + (/^\s*to\s+/i.test(matchText) ? " to " : "")).slice(-60)) ||
       /\b(?:get|fetch|gather|grab|bring|find)\w*\s+(?:what|everything|all)\s+(?:he|she|they)\s+needs?\s+to\s*$/i.test((prefix + (/^\s*to\s+/i.test(matchText) ? " to " : "")).slice(-70))) kind = "hypothetical";
     else if (HABIT_AUX.test(aux) && (pat.id === "bottomed-for" || pat.id === "topped")) kind = "identity";
     // "A routine was established, Dean would take Cas every morning": a would in a described routine is something that happened, not a maybe.
