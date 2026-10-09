@@ -1495,10 +1495,12 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
         (/\b(?:want(?:ed|s|ing)?|wish(?:ed|es)?|long(?:ed|s|ing)?|crav(?:ed|es|ing)|hop(?:ed|es|ing)|need(?:ed|s)?)\s+(?:to|for)\b[^.!?;]*$/i.test(sent.slice(0, m.index!)) ||
          /\b(?:fantas(?:y|ies|ised|ized|ising|izing)|dream(?:s|ed|t|ing)?|imagin\w+|daydream\w*)\s+(?:of|about)\b[^.!?;]*$/i.test(sent.slice(0, m.index!)))) return;
     // …and when the wish is the helper verb inside the match itself: "a drug that makes him want to kneel between Derek’s thighs".
-    if (pat.signal && /\b(?:want(?:s|ed|ing)?|wish(?:es|ed)?|long(?:s|ed|ing)?|crav(?:es|ed|ing)|urge|tempt\w*)\b/i.test(m.groups?.aux ?? "")) return;
+    // Only for hints that describe a physical gesture; a wish to protect or to be led still shows the dynamic, so behavior hints keep it.
+    const gestureHint = pat.signal && /^(?:touch|prep|body|position|fingers|handjob)$/.test(pat.signal.kind);
+    if (gestureHint && /\b(?:want(?:s|ed|ing)?|wish(?:es|ed)?|crav(?:es|ed|ing)|tempt\w*)\b/i.test(m.groups?.aux ?? "")) return;
     // "makes Stiles want to hike his knees up and present his ass", "Stiles wants Derek to bend him over the sofa": a hint from a wish is not
     // the gesture itself. The wish ends at a new sentence, a semicolon, a dash or a "so / then / but" clause.
-    if (pat.signal && /\b(?:want(?:s|ed|ing)?|wish(?:es|ed)?|long(?:s|ed|ing)?|crav(?:es|ed|ing)|ach(?:es|ed|ing)|yearn(?:s|ed|ing)?|urge|tempt\w*)\s+(?:(?:for\s+)?[\w'’-]+\s+){0,3}?to\b[^;—]*$/i.test((sent.slice(0, m.index!) + (/^(?:[\w'’-]+\s+)?to\s+/i.exec(m[0])?.[0] ?? "")).split(/,\s+(?:so|then|but|which|while|until)\b|\b(?:and then|but then)\b/).pop() ?? "")) return;
+    if (gestureHint && /\b(?:(?:want(?:s|ed|ing)?|wish(?:es|ed)?|crav(?:es|ed|ing))\s+(?:[\w'’-]+\s+)?to|long(?:s|ed|ing)\s+to|(?:the\s+)?urge\s+to|tempt\w*\s+to)\b[^;—]*$/i.test((sent.slice(0, m.index!) + (/^(?:[\w'’-]+\s+)?to\s+/i.exec(m[0])?.[0] ?? "")).split(/,\s+(?:so|then|but|which|while|until)\b|\b(?:and then|but then)\b/).pop() ?? "")) return;
     // Arms around him pinning him to a chest is a hug, not a hold-down.
     if (pat.id.startsWith("dom-pin") && /\bto\s*$/i.test(m[0]) && /^\s*(?:the\s+|his\s+|her\s+|their\s+|my\s+)?(?:warm\s+|broad\s+|solid\s+|firm\s+)?(?:mass of\s+)?chest\b/i.test(sent.slice(m.index! + m[0].length)) && /\barms?\b[^.!?]*$/i.test(sent.slice(0, m.index!))) return;
     // "dropped to his knees and began pulling Molotovs out of his backpack": kneeling to do something.

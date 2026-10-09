@@ -19,6 +19,14 @@ describe('a hint from a wish is not the gesture',()=>{
   expect(run('Morgan kissed Rowan hard. Rowan wanted more. Morgan pushed him down and knelt between his thighs.').some(h=>/kneeling/.test(h.act))).toBe(true);
  });
 });
+describe('a wish to protect, or "long enough to", still shows the dynamic',()=>{
+ it('keeps a protecting hint when the wish is to protect',()=>{
+  expect(run('Morgan just wants to protect Rowan, and curls around him to shield him from the world.').some(h=>h.via.startsWith('dom-protect'))).toBe(true);
+ });
+ it('does not treat "long enough to" as a wish',()=>{
+  expect(run('Morgan pulled away just long enough to grab their shirts, then carried Rowan to the bed.').some(h=>h.kind!=='act'&&/carry|carrying/.test(h.act))).toBe(true);
+ });
+});
 describe('an expected, planned or not-yet act is not anal sex',()=>{
  it.each([
   'Rowan knew it wouldn’t stop until Morgan sank into him and fucked him hard.',
