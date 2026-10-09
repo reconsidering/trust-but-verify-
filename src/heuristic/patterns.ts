@@ -73,7 +73,17 @@ const HF_PENIS = "(?:cock|dick|prick|length|erection|shaft|penis)";
 const HF_WITHOUT =
   `(?:untouched|hands[- ]?free|with(?:out\\s+(?:a|any|one)|\\s+no)\\s+(?:single\\s+)?hands?\\s+on\\s+(?:him|her|them|(?:his|her|their)\\s+(?:own\\s+)?${HF_PENIS})` +
   `|without\\s+(?:anyone|anybody|either\\s+of\\s+them|[\\w’'-]+(?:\\s+[\\w’'-]+)?)\\s+(?:ever\\s+|even\\s+|once\\s+)?(?:touching|laying\\s+a\\s+(?:finger|hand)\\s+on)\\s+(?:him|her|them|(?:his|her|their)\\s+${HF_PENIS})` +
-  `|without\\s+(?:ever\\s+|even\\s+|once\\s+)?(?:being\\s+touched|touching\\s+(?:him|her|them)sel(?:f|ves)|a\\s+(?:single\\s+)?(?:hand|touch)\\s+(?:to|on)\\s+(?:his|her|their)\\s+${HF_PENIS}))(?![\\w-])`;
+  `|without\\s+(?:ever\\s+|even\\s+|once\\s+)?(?:being\\s+touched|touching\\s+(?:him|her|them)sel(?:f|ves)|a\\s+(?:single\\s+)?(?:hand|touch)\\s+(?:to|on)\\s+(?:his|her|their)\\s+${HF_PENIS})` +
+  // "without any direct stimulation", "with no one touching his cock", "with his cock completely ignored".
+  `|without\\s+(?:any\\s+|a\\s+single\\s+|even\\s+a\\s+|so\\s+much\\s+as\\s+a\\s+)?(?:direct\\s+|manual\\s+|penile\\s+|genital\\s+|further\\s+|extra\\s+|additional\\s+)?(?:stimulation|attention|contact|touch|touching)(?:\\s+(?:to|on|of|at)\\s+(?:his|her|their)\\s+${HF_PENIS}|\\s+at\\s+all)?` +
+  `|with\\s+no\\s+(?:one|body)\\s+touching\\s+(?:him|her|them|(?:his|her|their)\\s+${HF_PENIS})` +
+  // "without ever releasing his cock" (a caged one), "without the attention being given to his cock".
+  `|without\\s+(?:ever\\s+|even\\s+|once\\s+)?(?:releasing|unlocking|removing|uncaging|freeing|taking\\s+off)\\s+(?:his|her|their|the)\\s+(?:${HF_PENIS}|cage|chastity\\s+device)` +
+  `|without\\s+(?:the\\s+|any\\s+)?attention\\s+(?:being\\s+)?(?:given\\s+)?(?:to|on)\\s+(?:his|her|their)\\s+${HF_PENIS}` +
+  `|with\\s+(?:his|her|their)\\s+${HF_PENIS}\\s+(?:still\\s+|completely\\s+|totally\\s+)?(?:untouched|ignored|neglected))(?![\\w-])`;
+// Between the come verb and the "without a touch" words there may be a short clause ("came, clenching around his cock, untouched"), but not a hand.
+const HF_MANUAL = "(?:strok\\w*|jerk\\w*|wrapp?\\w*|gripp?\\w*|grasp\\w*|squeez\\w*|pump\\w*|fist\\w*|hands?|fingers?|touch\\w*|rubb?\\w*|tugg?\\w*)";
+const HF_GAP = `(?:(?:(?!\\b${HF_MANUAL}\\b)[^.!?;]){1,80}?[,\\s]+)?`;
 
 export const ASS = `(?:(?:${ASS_ADJ})(?:,\\s*(?:and\\s+)?|\\s+and\\s+|\\s+)){0,3}(?:ass(?:hole)?|arse(?:hole)?|${ANUS}|front ?hole|hole|entrance|rim|opening|bum|butt|insides?|prostate|body|backside|channel|pussy|cunt|vagina|folds|cervix|sex)`;
 const RIM = `(?:(?:${ASS_ADJ})(?:,\\s*(?:and\\s+)?|\\s+and\\s+|\\s+)){0,3}(?:ass(?:hole)?|arse(?:hole)?|${ANUS}|hole|entrance|rim|(?:ass |arse |butt )?crack|cleft|crease|taint|perineum)(?!\\s+(?:cheeks?|muscles?))`;
@@ -3611,16 +3621,16 @@ export const PATTERNS: PatternDef[] = [
   {
     // Invented adults: "Rowan came untouched", "Rowan came hands-free", "Rowan came without Morgan ever touching his cock".
     id: "came-untouched", cat: "anal", act: "hands-free orgasm", subj: "b", weight: 0.8, needsCtx: true,
-    kw: "untouched|hands.?free|without",
+    kw: "untouched|hands.?free|without|with no|ignored|neglected",
     signal: { kind: "body", actorRole: "bottom" },
-    src: `\\b{B}\\s+{aux}${HF_COME}\\s*,?\\s+${HF_ADV}${HF_WITHOUT}`,
+    src: `\\b{B}\\s+{aux}${HF_COME}[,\\s]+${HF_GAP}${HF_ADV}${HF_WITHOUT}`,
   },
   {
     // Invented adults: "Morgan made Rowan come untouched", "Morgan brought Rowan to orgasm hands-free".
     id: "made-come-untouched", cat: "anal", act: "hands-free orgasm", subj: "t", weight: 0.8, needsCtx: true,
-    kw: "untouched|hands.?free|without",
+    kw: "untouched|hands.?free|without|with no|ignored|neglected",
     signal: { kind: "body", actorRole: "bottom", actor: "b" },
-    src: `\\b{T}\\s+{aux}(?:made|make|makes|making|got|gets|getting|brought|bring|brings|bringing)\\s+{B}\\s+(?:to\\s+)?(?:come|cum|coming|orgasm|climax|completion)\\s*,?\\s+${HF_ADV}${HF_WITHOUT}`,
+    src: `\\b{T}\\s+{aux}(?:(?:deliver\\w*|kept|keeps|fulfill?\\w*)\\s+on\\s+(?:his|her|their)\\s+promise\\s+to\\s+)?(?:made|make|makes|making|got|gets|getting|brought|bring|brings|bringing)\\s+{B}\\s+(?:to\\s+)?(?:come|cum|coming|orgasm|climax|completion)[,\\s]+${HF_GAP}${HF_ADV}${HF_WITHOUT}`,
   },
   {
     // Invented adults: "Rowan's untouched cock spilled between them".
@@ -3628,6 +3638,50 @@ export const PATTERNS: PatternDef[] = [
     kw: "untouched",
     signal: { kind: "body", actorRole: "bottom" },
     src: `\\b{B:poss}\\s+(?:[\\w-]+\\s+)?untouched\\s+${HF_PENIS}\\s+(?:[\\w-]+\\s+){0,2}?(?:spill|spurt|shot|shoot|came|comes|erupt|empt|paint|splatter|releas)\\w*`,
+  },
+  {
+    // Invented adults: "Rowan's cock erupted inside the cage": a caged penis cannot be stroked.
+    id: "cage-erupts", cat: "anal", act: "hands-free orgasm", subj: "b", weight: 0.75, needsCtx: true,
+    kw: "cage|chastity",
+    signal: { kind: "body", actorRole: "bottom" },
+    src: `\\b{B:poss}\\s+(?:[\\w-]+\\s+)?${HF_PENIS}\\s+(?:[\\w-]+\\s+){0,2}?(?:erupt|spill|spurt|shot|shoot|cum|came|come|leak|empt|burst)\\w*\\s+(?:[^.!?]{0,25}?)(?:inside|in|into)\\s+(?:the|its|his|her|their)\\s+(?:[\\w-]+\\s+)?(?:cage|chastity)`,
+  },
+  {
+    // Invented adults: "his cock twitching untouched between them and spilling over their stomachs".
+    id: "untouched-cock-twitches-spills", cat: "anal", act: "hands-free orgasm", subj: "b", weight: 0.75, needsCtx: true,
+    kw: "untouched",
+    signal: { kind: "body", actorRole: "bottom" },
+    src: `\\b{B:poss}\\s+(?:[\\w-]+\\s+)?${HF_PENIS}\\s+(?:[\\w-]+\\s+){0,3}?untouched\\b(?:(?!\\b${HF_MANUAL}\\b)[^.!?]){0,40}?\\b(?:spill|spurt|shoot|shot|cum|come|erupt|empt|paint|splatter|releas)\\w*`,
+  },
+  {
+    // Invented adults: "Rowan was coming just from Morgan fucking him", "Rowan came on his own just from Morgan pounding him".
+    id: "came-just-from-partner-verbing", cat: "anal", act: "hands-free orgasm", subj: "b", weight: 0.75, needsCtx: true,
+    kw: "just|only|purely|solely",
+    signal: { kind: "body", actorRole: "bottom" },
+    src: `\\b{B}\\s+{aux}${HF_COME}[,\\s]+${HF_ADV}(?:on\\s+(?:his|her|their)\\s+own\\s+)?(?:just|only|purely|solely)\\s+(?:from|by|off)\\s+{T}\\s+(?:fuck|pound|screw|breed|tak|knott?|rimm|thrust)\\w*\\s+(?:him|her|them)\\b`,
+  },
+  {
+    // Invented adults: "Rowan didn't need a hand on him to come", "Rowan never needed anyone's touch to come". The negation is the point, so
+    // handleMatch does not treat it as cancelling the orgasm (it does not use {aux}).
+    id: "came-no-hand-needed", cat: "anal", act: "hands-free orgasm", subj: "b", weight: 0.75, needsCtx: true,
+    kw: "need",
+    signal: { kind: "body", actorRole: "bottom" },
+    src: `\\b{B}\\s+(?:did\\s*n['\u2019]t|did\\s+not|never|hardly|barely)\\s+(?:even\\s+)?need\\s+(?:a|any|anyone(?:['\u2019]s)?|his|their|to\\s+be)\\s+(?:hand|hands|touch|stroking|stroked|touched|help)\\b[^.!?]{0,30}?\\bto\\s+(?:come|cum|orgasm|climax)\\b`,
+  },
+  {
+    // Invented adults: "Rowan came from the fucking alone", "Rowan came just from the stretch of Morgan's knot", "Rowan came only from the rimming".
+    id: "came-from-stimulation-alone", cat: "anal", act: "hands-free orgasm", subj: "b", weight: 0.75, needsCtx: true,
+    kw: "alone|just|only|purely|solely",
+    signal: { kind: "body", actorRole: "bottom" },
+    src: `\\b{B}\\s+{aux}${HF_COME}[,\\s]+${HF_ADV}(?:(?:just|only|purely|solely)\\s+(?:from|by|off)\\s+|(?=(?:from|by|off)\\s+(?:the\\s+|that\\s+|his\\s+|their\\s+)?(?:fucking|thrusting|thrusts|stretch\\w*|fullness|pressure|rimming|knot|tongue)\\b[^.!?]{0,30}?\\balone\\b)(?:from|by|off)\\s+)(?:the\\s+|that\\s+|his\\s+|their\\s+)?(?:fucking|thrusting|thrusts|stretch\\w*|fullness|pressure|rimming|knot|tongue)(?![\\w-])`,
+  },
+  {
+    // Invented adults: "Rowan came still locked in his cage", "Rowan came while caged", "Rowan came in his cage". A caged penis cannot be
+    // stroked, so this is an orgasm without penile touch; handleMatch asks for an anal scene nearby.
+    id: "came-caged", cat: "anal", act: "hands-free orgasm", subj: "b", weight: 0.7, needsCtx: true,
+    kw: "cage|caged|chastity|locked",
+    signal: { kind: "body", actorRole: "bottom" },
+    src: `\\b{B}\\s+{aux}${HF_COME}[,\\s]+${HF_ADV}(?:(?:still|while|even\\s+while|with\\s+(?:his|her|their)\\s+${HF_PENIS}\\s+(?:still\\s+)?)\\s*)?(?:caged|locked(?:\\s+up)?(?:\\s+in\\s+(?:his|her|their|its|a|the)\\s+(?:\\w+\\s+)?(?:cage|chastity))?|in\\s+(?:his|her|their|its|the)\\s+(?:\\w+\\s+)?(?:cage|chastity)(?:\\s+device)?)(?![\\w-])`,
   },
   {
     // Invented adults: "Rowan came just from Morgan's cock", "Rowan came on Morgan's fingers alone". Without "just/only" or "alone"
@@ -3656,7 +3710,7 @@ export const PATTERNS: PatternDef[] = [
     id: "came-from-prostate", cat: "anal", act: "prostate orgasm", subj: "b", weight: 0.8,
     kw: "prostate",
     signal: { kind: "body", actorRole: "bottom" },
-    src: `\\b{B}\\s+{aux}${HF_COME}\\s*,?\\s+${HF_ADV}(?:(?:just|only|purely|solely|entirely)\\s+)?(?:from|through|off)\\s+(?:(?:the\\s+)?(?:stimulation|pressure|massage|attention|abuse)\\s+(?:of|on|to)\\s+)?(?:his|her|their|the)\\s+prostate(?:\\s+(?:alone|stimulation))?(?![\\w-])`,
+    src: `\\b{B}\\s+{aux}${HF_COME}\\s*,?\\s+${HF_ADV}(?:(?:just|only|purely|solely|entirely)\\s+)?(?:from|through|off)\\s+(?:nothing\\s+but\\s+)?(?:(?:the\\s+)?(?:stimulation|pressure|massage|attention|abuse)\\s+(?:of|on|to)\\s+)?(?:his|her|their|the)\\s+prostate(?:\\s+(?:alone|stimulation))?(?![\\w-])`,
   },
   {
     id: "body-full",
