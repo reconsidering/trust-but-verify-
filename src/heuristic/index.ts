@@ -1490,10 +1490,29 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
     if (pat.id.startsWith("care-soothe") && /\bhands?\s+together\b/i.test(sent.slice(m.index!, m.index! + m[0].length + 20))) return;
     // A handjob on oneself ("fists his own cock") is solo.
     if (pat.id.startsWith("hj-") && /\b(?:his|her|their)\s+own\b/i.test(m[0])) return;
+    // "pictured Morgan gripping his swollen cock between his fingers", "Rowan rubs his cock under the sheet, egged on by Morgan's orders":
+    // a named subject, a bare "his" and nobody else named or pointed at before it. When his hand is on it, or the other man is only watching or
+    // urging, the cock is the subject's own, not the partner's. (Not "Morgan pushed Rowan down and gripped his cock between his fingers".)
+    if (pat.id.startsWith("hj-stroke") && !pat.elided && tTok && cast.byAlias.get(tTok) && /^(?:his|her|their)$/i.test(bTok ?? "") &&
+        !new RegExp(`\\b(?:${NAMES}|him|her|them)\\b`).test(sent.slice(0, m.index!)) &&
+        (/^\s*(?:in|between|with)\s+(?:his|her|their)\s+(?:\w+\s+)?(?:fingers?|fist|hands?|palm|grip)\b/i.test(sent.slice(m.index! + m[0].length)) ||
+         new RegExp(`^[^.!?]{0,40}?(?:\\b(?:egged|urged|spurred|goaded|encouraged)\\s+on\\s+by|\\b(?:for|at|in front of))\\s+(?:${NAMES})\\b`).test(sent.slice(m.index! + m[0].length)))) return;
+    // "Morgan's lust made him spread his legs wide in invitation": after make/let/have, "him" is the one spreading his own legs, not someone else's legs being spread.
+    if (pat.id.startsWith("spread-their-legs") && /^(?:him|her|them)$/i.test(tTok ?? "") && /^(?:him|her|them)\s+\w+\s+(?:his|her|their)\s/i.test(m[0]) &&
+        /\b(?:make|makes|made|making|let|lets|letting|has|had|have)\s+$/i.test(sent.slice(0, m.index!))) return;
+    // "Rowan flexed his muscles, squeezing his ass cheeks with a whimper": a squeeze that follows the subject's own muscles tensing is his own, not the partner's.
+    if (pat.id.startsWith("grab-ass") && pat.elided && /\b(?:flex|clench|tens|tighten|contract)\w*\s+(?:his|her|their)\s+(?:\w+\s+)?(?:muscles?|glutes?|thighs?|cheeks?|ass|butt|abs|stomach)\b[^.!?]*$/i.test(sent.slice(0, m.index!))) return;
     // A wish or fantasy before the verb: "wanted to hold him close and continue to stroke his cock", "fantasies of pressing him down".
     if (pat.cat === "vibe" && (pat.signal?.kind === "handjob" || pat.id.startsWith("dom-pin")) &&
         (/\b(?:want(?:ed|s|ing)?|wish(?:ed|es)?|long(?:ed|s|ing)?|crav(?:ed|es|ing)|hop(?:ed|es|ing)|need(?:ed|s)?)\s+(?:to|for)\b[^.!?;]*$/i.test(sent.slice(0, m.index!)) ||
          /\b(?:fantas(?:y|ies|ised|ized|ising|izing)|dream(?:s|ed|t|ing)?|imagin\w+|daydream\w*)\s+(?:of|about)\b[^.!?;]*$/i.test(sent.slice(0, m.index!)))) return;
+    // …and when the wish is the helper verb inside the match itself: "a drug that makes him want to kneel between Derek’s thighs".
+    // Only for hints that describe a physical gesture; a wish to protect or to be led still shows the dynamic, so behavior hints keep it.
+    const gestureHint = pat.signal && /^(?:touch|prep|body|position|fingers|handjob)$/.test(pat.signal.kind);
+    if (gestureHint && /\b(?:want(?:s|ed|ing)?|wish(?:es|ed)?|crav(?:es|ed|ing)|tempt\w*)\b/i.test(m.groups?.aux ?? "")) return;
+    // "makes Stiles want to hike his knees up and present his ass", "Stiles wants Derek to bend him over the sofa": a hint from a wish is not
+    // the gesture itself. The wish ends at a new sentence, a semicolon, a dash or a "so / then / but" clause.
+    if (gestureHint && /\b(?:(?:want(?:s|ed|ing)?|wish(?:es|ed)?|crav(?:es|ed|ing))\s+(?:[\w'’-]+\s+)?to|long(?:s|ed|ing)\s+to|(?:the\s+)?urge\s+to|tempt\w*\s+to)\b[^;—]*$/i.test((sent.slice(0, m.index!) + (/^(?:[\w'’-]+\s+)?to\s+/i.exec(m[0])?.[0] ?? "")).split(/,\s+(?:so|then|but|which|while|until)\b|\b(?:and then|but then)\b/).pop() ?? "")) return;
     // Arms around him pinning him to a chest is a hug, not a hold-down.
     if (pat.id.startsWith("dom-pin") && /\bto\s*$/i.test(m[0]) && /^\s*(?:the\s+|his\s+|her\s+|their\s+|my\s+)?(?:warm\s+|broad\s+|solid\s+|firm\s+)?(?:mass of\s+)?chest\b/i.test(sent.slice(m.index! + m[0].length)) && /\barms?\b[^.!?]*$/i.test(sent.slice(0, m.index!))) return;
     // "dropped to his knees and began pulling Molotovs out of his backpack": kneeling to do something.
@@ -1542,6 +1561,22 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
     if (pat.id.startsWith("spread-their-legs") && /^\s*(?:apart\s+|wide\s+)?until\s+(?:they|his legs|her legs|their legs)(?:['’]re|\s+(?:are|were))\s+(?:bracketing|framing|around|on either side)/i.test(sent.slice(m.index! + m[0].length))) return;
     // "he sucks on Obi-Wan's tongue": kissing, not a blowjob.
     if (pat.id.startsWith("sucked") && /\bsuck\w*\s+(?:on\s+|at\s+)?(?:[\w'’-]+['’]s\s+|his\s+|her\s+|their\s+)?(?:tongue|lips?|neck|earlobe|ear|collarbone|jaw|shoulder|nipples?|skin|bruise|pulse point)\b/i.test(sent.slice(m.index!))) return;
+    // "He rubs himself down, shaking his head": drying off with a towel is not masturbation.
+    if (pat.id.startsWith("mast-himself") && /^\s+down\b(?!\s+(?:there|below|between))/i.test(sent.slice(m.index! + m[0].length))) return;
+    // "Rowan let the tip of Morgan's thumb slide in, sucked on it, wrapping his tongue around it, hollowing his cheeks": the cheeks hollow around a thumb or finger
+    // from the sentence before (the elided "it"), not a cock.
+    if (pat.id.startsWith("hollowed-cheeks") && !/\b(?:cock|dick|penis|length|shaft|erection)\b/i.test(m[0]) &&
+        /\bsuck\w*\s+(?:on\s+|at\s+)?(?:it|them)\b/i.test(sent.slice(0, m.index!)) &&
+        /\b(?:thumb|fingers?|fingertips?)\b/i.test((para.slice(0, Math.max(0, para.indexOf(original))) + sent.slice(0, m.index!)).slice(-170)) &&
+        !/\b(?:cock|dick|penis|length|shaft|erection)\b/i.test((para.slice(0, Math.max(0, para.indexOf(original))) + sent.slice(0, m.index!)).slice(-170))) return;
+    // "thinking about Morgan fucking him with his mouth": a mouth is oral, not anal sex (a tongue is rimming, handled below).
+    if (pat.id === "fuck" && /^\s+(?:[\w']+\s+){0,4}?with\s+(?:his|her|their|my|your)\s+(?:mouth|lips)\b/i.test(sent.slice(m.index! + m[0].length))) return;
+    // "the warmth of his body has Rowan sinking into his body, letting the water lap against them": relaxing into a warm body, not a penetration.
+    if (pat.id.startsWith("push-into") && /\b(?:sink|sank|sunk|sinking)\w*\s+(?:in)?to\s+(?:his|her|their)\s+body$/i.test(m[0]) && !/\b(?:cock|dick|penis|hole|inside|thrust\w*|slick|fuck\w*)\b/i.test(sent)) return;
+    // "feeling the heat from his ass work its way to his cock": a sensation travelling, not an ass around a cock.
+    if (pat.id.startsWith("hole-around") && /\b(?:work|works|worked|working|travel\w*|spread\w*|crawl\w*|creep\w*|snak\w*)\s+(?:its|their|a)\s+way\b/i.test(m[0])) return;
+    // "…then shoved his fingers under his own nose and breathed in": fingers brought to a face are not fingers inserted.
+    if (pat.id.startsWith("dd2-finger-shoved-into") && /^\s+(?:in|inside|into|under|to|towards?|past|against|onto?)\s+(?:(?:his|her|their|my|your|the|a)\s+|[\w'’-]+['’]s?\s+)?(?:own\s+)?(?:mouth|nose|lips?|throat|hair|pockets?|face|chin|cheeks?)\b/i.test(sent.slice(m.index! + m[0].length))) return;
     // A fight is not dominance: "He slammed Cas up against the wall, fist pulling back to land another blow."
     if (pat.id.startsWith("dom-") && /\b(?:punch\w*|slugg\w*|(?:land|landed|landing|throw|threw|throwing)\s+(?:another\s+|a\s+)?(?:blow|punch|hit)|fist\s+(?:pulling|drawing|cocking|swinging)\s+back|swung|knife|blade|gun|bleed\w*|bruis\w*|broke\s+(?:his|her|their)\s+(?:nose|jaw|ribs?))\b/i.test(sent)) return;
     // "Castiel grabbed his leg and, using it as leverage, he started thrusting": "he" is the nearest clause's subject.
@@ -2547,6 +2582,11 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
     // "suddenly wanting to see him lube up, only to be kissed as he lines up and pushes in": a new clause between the wish and the "and" means the "and" joins that clause.
     else if (/\b(?:want|need|wish|hope|long|crave)\w*\s+(?:\w+\s+){0,3}?to\b[^.!?]*\band\s+\w*(?:\s+\w*){0,2}$/i.test(prefix + matchText.slice(0, 14)) &&
              !/\b(?:want|need|wish|hope|long|crave)\w*\s+(?:\w+\s+){0,3}?to\b[^.!?]*\b(?:only to|as|while|when|before|after)\s+(?:he|she|they|\w+)\s+[^.!?]*\band\s+\w*(?:\s+\w*){0,2}$/i.test(prefix + matchText.slice(0, 14))) kind = "wanted";
+    // "he knows it won't stop until Derek sinks into him", "now he's expected to get fucked", "he plans to get railed that night",
+    // "so Derek can get what he needs to open Stiles up": something expected, planned or still to come, not done yet.
+    else if (/\b(?:won['’]t|wouldn['’]t|will not|would not|can['’]t|cannot|never)\s+(?:\w+\s+)?(?:stop|end|let up|ease|fade|go away|abate|be satisfied|be enough|be over)\w*\s+until\b[^.!?;]*$/i.test(prefix) ||
+      /\b(?:(?:is|was|were|are|am|['’]s|['’]re)\s+(?:expected|supposed)|plan(?:s|ned|ning)?|intend(?:s|ed|ing)?|dread(?:s|ed|ing)?|fear(?:s|ed|ing)?|afraid|worr(?:y|ies|ied|ying))\s+to\s*$/i.test((prefix + (/^\s*to\s+/i.test(matchText) ? " to " : "")).slice(-60)) ||
+      /\b(?:get|fetch|gather|grab|bring|find)\w*\s+(?:what|everything|all)\s+(?:he|she|they)\s+needs?\s+to\s*$/i.test((prefix + (/^\s*to\s+/i.test(matchText) ? " to " : "")).slice(-70))) kind = "hypothetical";
     else if (HABIT_AUX.test(aux) && (pat.id === "bottomed-for" || pat.id === "topped")) kind = "identity";
     // "A routine was established, Dean would take Cas every morning": a would in a described routine is something that happened, not a maybe.
     else if (/^\s*would\b/i.test(aux) && /\b(?:routine|every (?:day|night|morning|evening|afternoon|time)|each (?:day|night|morning|evening|afternoon|time)|daily|nightly|usually|always|often|whenever|during those (?:\w+ )?(?:days|nights|weeks)|those (?:\w+ )?(?:days|nights|weeks)|most (?:days|nights|mornings))\b/i.test(para.slice(Math.max(0, para.indexOf(sent) - 220), para.indexOf(sent) + sent.length)) && !DESIRE.test(window) && !negated) kind = "act";
