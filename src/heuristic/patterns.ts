@@ -66,6 +66,15 @@ const MOUTH_ADJ = "hot|wet|warm|open|eager|pretty|soft|swollen|perfect|waiting|w
 export const PENIS = `(?:(?:${PENIS_ADJ})\\s+){0,2}(?:cock(?:head)?|dick|prick|length|shaft|erection|member|hard-?on|manhood|girth|knot|strap(?:-?on)?|dildo|balls)`;
 /** Words for the anus itself, beyond "hole" and "ass": "butthole", "pucker", "ring of muscle", "back door"... */
 const ANUS = `butt-?hole|anus|sphincter|rosebud|starfish|back ?door|back entrance|(?:(?:tight|outer|inner|first)\\s+)?rings? of muscles?|pucker|passage`;
+// Hands-free orgasm: coming without anyone touching the penis, from anal or prostate stimulation alone.
+const HF_COME = "(?:came|comes|come|coming|cum(?:s|med|ming)?|climax(?:ed|es|ing)?|orgasm(?:ed|s|ing)?|spill(?:ed|s|ing)?|spurt(?:ed|s|ing)?)";
+const HF_ADV = "(?:(?:hard|again|suddenly|finally|completely|totally|entirely|utterly|helplessly|violently|explosively|messily|instantly|then)\\s*,?\\s+){0,3}";
+const HF_PENIS = "(?:cock|dick|prick|length|erection|shaft|penis)";
+const HF_WITHOUT =
+  `(?:untouched|hands[- ]?free|with(?:out\\s+(?:a|any|one)|\\s+no)\\s+(?:single\\s+)?hands?\\s+on\\s+(?:him|her|them|(?:his|her|their)\\s+(?:own\\s+)?${HF_PENIS})` +
+  `|without\\s+(?:anyone|anybody|either\\s+of\\s+them|[\\w’'-]+(?:\\s+[\\w’'-]+)?)\\s+(?:ever\\s+|even\\s+|once\\s+)?(?:touching|laying\\s+a\\s+(?:finger|hand)\\s+on)\\s+(?:him|her|them|(?:his|her|their)\\s+${HF_PENIS})` +
+  `|without\\s+(?:ever\\s+|even\\s+|once\\s+)?(?:being\\s+touched|touching\\s+(?:him|her|them)sel(?:f|ves)|a\\s+(?:single\\s+)?(?:hand|touch)\\s+(?:to|on)\\s+(?:his|her|their)\\s+${HF_PENIS}))(?![\\w-])`;
+
 export const ASS = `(?:(?:${ASS_ADJ})(?:,\\s*(?:and\\s+)?|\\s+and\\s+|\\s+)){0,3}(?:ass(?:hole)?|arse(?:hole)?|${ANUS}|front ?hole|hole|entrance|rim|opening|bum|butt|insides?|prostate|body|backside|channel|pussy|cunt|vagina|folds|cervix|sex)`;
 const RIM = `(?:(?:${ASS_ADJ})(?:,\\s*(?:and\\s+)?|\\s+and\\s+|\\s+)){0,3}(?:ass(?:hole)?|arse(?:hole)?|${ANUS}|hole|entrance|rim|(?:ass |arse |butt )?crack|cleft|crease|taint|perineum)(?!\\s+(?:cheeks?|muscles?))`;
 const MOUTH = `(?:(?:${MOUTH_ADJ})\\s+){0,2}(?:mouth|lips|throat|tongue)`;
@@ -3596,6 +3605,58 @@ export const PATTERNS: PatternDef[] = [
     needs: /\b(?:ass|arse|hole|rim|fucked|inside|thighs|cock|dick|last night|night before|morning after|come|cum)\b/i,
     signal: { kind: "body", actorRole: "bottom" },
     src: `\\b{B}\\s+{aux}(?:(?:walk|mov|limp|hobbl|stagger|shuffl|waddl)\\w*\\s+(?:\\w+\\s+){0,2}?(?:funny|gingerly|stiffly|bowlegged|bow-legged|carefully|with a (?:slight |small |faint |noticeable )?(?:limp|wince|hitch|waddle))|(?:sat|sit|sits|sitting|lower(?:ed|s|ing)\\s+${SELF})\\s+(?:down\\s+)?(?:gingerly|carefully|slowly|with a (?:wince|hiss|grimace))|wince[ds]?\\s+(?:as|when|while)\\s+(?:he|she|they)\\s+(?:sat|sit|lowered|moved|shifted))`,
+  },
+  // Hands-free orgasms. Coming untouched, or from the prostate alone, marks the one who comes as the receiving partner. Hints, not
+  // acts; handleMatch also asks for anal context nearby and drops wishes ("wanted to come untouched").
+  {
+    // Invented adults: "Rowan came untouched", "Rowan came hands-free", "Rowan came without Morgan ever touching his cock".
+    id: "came-untouched", cat: "anal", act: "hands-free orgasm", subj: "b", weight: 0.8, needsCtx: true,
+    kw: "untouched|hands.?free|without",
+    signal: { kind: "body", actorRole: "bottom" },
+    src: `\\b{B}\\s+{aux}${HF_COME}\\s*,?\\s+${HF_ADV}${HF_WITHOUT}`,
+  },
+  {
+    // Invented adults: "Morgan made Rowan come untouched", "Morgan brought Rowan to orgasm hands-free".
+    id: "made-come-untouched", cat: "anal", act: "hands-free orgasm", subj: "t", weight: 0.8, needsCtx: true,
+    kw: "untouched|hands.?free|without",
+    signal: { kind: "body", actorRole: "bottom", actor: "b" },
+    src: `\\b{T}\\s+{aux}(?:made|make|makes|making|got|gets|getting|brought|bring|brings|bringing)\\s+{B}\\s+(?:to\\s+)?(?:come|cum|coming|orgasm|climax|completion)\\s*,?\\s+${HF_ADV}${HF_WITHOUT}`,
+  },
+  {
+    // Invented adults: "Rowan's untouched cock spilled between them".
+    id: "untouched-cock-spills", cat: "anal", act: "hands-free orgasm", subj: "b", weight: 0.8, needsCtx: true,
+    kw: "untouched",
+    signal: { kind: "body", actorRole: "bottom" },
+    src: `\\b{B:poss}\\s+(?:[\\w-]+\\s+)?untouched\\s+${HF_PENIS}\\s+(?:[\\w-]+\\s+){0,2}?(?:spill|spurt|shot|shoot|came|comes|erupt|empt|paint|splatter|releas)\\w*`,
+  },
+  {
+    // Invented adults: "Rowan came just from Morgan's cock", "Rowan came on Morgan's fingers alone". Without "just/only" or "alone"
+    // it says nothing about hands (handleMatch checks).
+    id: "came-from-partner-alone", cat: "anal", act: "hands-free orgasm", subj: "b", weight: 0.75, needsCtx: true,
+    kw: "just|only|purely|solely|alone",
+    signal: { kind: "body", actorRole: "bottom" },
+    src: `\\b{B}\\s+{aux}${HF_COME}\\s*,?\\s+${HF_ADV}(?:(?<hfOnly>just|only|purely|solely)\\s+)?(?:from|on|off|around)\\s+{T:poss}\\s+(?:[\\w-]+\\s+)?(?:cock|dick|prick|fingers|knot|length|shaft)(?:\\s+(?<hfAlone>alone))?(?![\\w-])`,
+  },
+  {
+    // Invented adults: "Rowan came just from being fucked", "Rowan came from being fingered alone".
+    id: "came-from-being-fucked", cat: "anal", act: "hands-free orgasm", subj: "b", weight: 0.75, needsCtx: true,
+    kw: "just|only|purely|solely|alone",
+    signal: { kind: "body", actorRole: "bottom" },
+    src: `\\b{B}\\s+{aux}${HF_COME}\\s*,?\\s+${HF_ADV}(?:(?:just|only|purely|solely)\\s+(?:from|by|off)\\s+(?:being|getting)\\s+(?:fucked|filled|fingered|pounded|knotted)|(?:from|by)\\s+(?:being|getting)\\s+(?:fucked|filled|fingered|pounded|knotted)\\s+alone)(?![\\w-])`,
+  },
+  {
+    // Invented adults: "Rowan's prostate orgasm", "Rowan had a prostate orgasm", "Rowan came from his prostate alone".
+    id: "prostate-orgasm", cat: "anal", act: "prostate orgasm", subj: "b", weight: 0.8,
+    kw: "prostate",
+    signal: { kind: "body", actorRole: "bottom" },
+    src: `\\b(?:{B:poss}\\s+(?:[\\w-]+\\s+){0,2}?prostate[- ]orgasm|{B}\\s+{aux}(?:had|has|have|having|got|gets|reached|reaches|hit|hits|experienc\\w+)\\s+(?:a|an|his|her|their|another|the)\\s+(?:[\\w-]+\\s+){0,2}?prostate[- ]orgasm)`,
+  },
+  {
+    // Invented adults: "Rowan came from his prostate alone", "Rowan came from the pressure on his prostate".
+    id: "came-from-prostate", cat: "anal", act: "prostate orgasm", subj: "b", weight: 0.8,
+    kw: "prostate",
+    signal: { kind: "body", actorRole: "bottom" },
+    src: `\\b{B}\\s+{aux}${HF_COME}\\s*,?\\s+${HF_ADV}(?:(?:just|only|purely|solely|entirely)\\s+)?(?:from|through|off)\\s+(?:(?:the\\s+)?(?:stimulation|pressure|massage|attention|abuse)\\s+(?:of|on|to)\\s+)?(?:his|her|their|the)\\s+prostate(?:\\s+(?:alone|stimulation))?(?![\\w-])`,
   },
   {
     id: "body-full",

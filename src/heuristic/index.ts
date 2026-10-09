@@ -2209,6 +2209,18 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
         if ((recentB.some((a) => a.top === bottom && a.bottom === top) && !recentB.some((a) => a.top === top && a.bottom === bottom)) || ownerDoes) [top, bottom] = [bottom, top];
       }
       if (NEG.test(m.groups?.aux ?? "") || NEG.test(prefix.slice(-40))) return;
+      // Hands-free orgasm: "Rowan came untouched" says who receives only when something is happening to Rowan's ass. A wish ("wanted to
+      // come untouched", "imagined making him come hands-free") is not an orgasm, and "came on Morgan's cock" needs "just" or "alone".
+      if (act === "hands-free orgasm" || act === "prostate orgasm") {
+        if (HYPO_AUX.test(m.groups?.aux ?? "") || /\b(?:want\w*|wanna|wish\w*|long\w*|need\w*|tri(?:ed|es)|try|can|must|able)\b/i.test(m.groups?.aux ?? "")) return;
+        if (/\b(?:want\w*|wish\w*|imagin\w*|fantas\w*|dream\w*|pictur\w*|thought\s+(?:about|of)|think\w*\s+(?:about|of)|if|unless|whether|promis\w*|tried|try|trying|could|would|ever\s+been\s+able)\b[^.!?]*$/i.test(prefix.slice(-80))) return;
+        if (basePid === "came-from-partner-alone" && !m.groups?.hfOnly && !m.groups?.hfAlone) return;
+        if (act === "hands-free orgasm") {
+          const near = `${paras[pi - 1] ?? ""} ${para}`;
+          const penetration = /\b(?:fuck(?:ed|ing|s)?|inside\s+(?:him|her|them|me)|thrust\w*|knot\w*|pound\w*|buried|filled|fingered|fingering)\b/i;
+          if (!ANAL_CTX.test(near) && !(penetration.test(near) && !VULVA_CTX.test(near))) return;
+        }
+      }
       if (pat.signal.kind === "fingers" && /\bown\b/i.test(matchText)) return;
       // "resisted the urge to shove a hand down his pants": an urge about his own body, not a touch of the partner.
       if ((pat.id.startsWith("hand-in-pants") || pat.id.startsWith("hj-hand-in-pants")) && /\b(?:urge|temptation|tempted|resist\w*|fought|fighting)\b[^.!?]*$/i.test(prefix)) return;
