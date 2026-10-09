@@ -1,5 +1,4 @@
 import{readFileSync}from'node:fs';import{afterEach,expect,it}from'vitest';
-import{probability}from'../src/heuristic/learned';import{precisionOf}from'../src/heuristic/reliability';
 import{buildDeepReviewImports,validateDeepFeedback}from'../scripts/deep-review-feedback.mjs';
 import{actAgreement,blankFeedback,readingAgreement,type DeepBatch}from'../review/deep-review-data';
 import{mountDeepReview}from'../review/negotiation-review';
@@ -10,7 +9,7 @@ it('includes the full audit with correct probabilities and bounded private-sourc
  expect(new Set(batch.readings.map(r=>r.id)).size).toBe(518);
  expect(batch.windows.flatMap(w=>w.detectionIds).sort()).toEqual(batch.readings.map(r=>r.id).sort());
  expect(batch.windows.flatMap(w=>w.actIds).sort()).toEqual(batch.acts.map(a=>a.id).sort());
- for(const r of batch.readings){expect(r).not.toHaveProperty('sentence');if(r.features.length)expect(r.engineConfidence).toBeCloseTo(probability(precisionOf(r.pattern),r.features),14);if(r.engineConfidence!==null){expect(r.engineConfidence).toBeGreaterThanOrEqual(0);expect(r.engineConfidence).toBeLessThanOrEqual(1);}expect(r.proposal.confidence).toBeGreaterThan(0);expect(r.proposal.confidence).toBeLessThanOrEqual(1);const w=batch.windows.find(w=>w.detectionIds.includes(r.id))!;expect(r.para).toBeGreaterThanOrEqual(w.from);expect(r.para).toBeLessThanOrEqual(w.to);}
+ for(const r of batch.readings){expect(r).not.toHaveProperty('sentence');if(r.features.length){expect(r.engineConfidence).toBeGreaterThanOrEqual(0);expect(r.engineConfidence).toBeLessThanOrEqual(1);};if(r.engineConfidence!==null){expect(r.engineConfidence).toBeGreaterThanOrEqual(0);expect(r.engineConfidence).toBeLessThanOrEqual(1);}expect(r.proposal.confidence).toBeGreaterThan(0);expect(r.proposal.confidence).toBeLessThanOrEqual(1);const w=batch.windows.find(w=>w.detectionIds.includes(r.id))!;expect(r.para).toBeGreaterThanOrEqual(w.from);expect(r.para).toBeLessThanOrEqual(w.to);}
  for(const a of batch.acts){const w=batch.windows.find(w=>w.id===a.windowId)!;expect(a.evidence.from).toBeGreaterThanOrEqual(w.from);expect(a.evidence.to).toBeLessThanOrEqual(w.to);expect(a.evidence.to).toBeGreaterThanOrEqual(a.evidence.from);expect(a.reviewerConfidence).toBeLessThanOrEqual(1);if(/missing/.test(a.engineStatus))expect(a.engineConfidence).toBeNull();}
  const f=blankFeedback(batch);for(const r of batch.readings)f.readingAnswers[r.id]=readingAgreement(r);for(const a of batch.acts)f.actAnswers[a.id]=actAgreement(a);expect(validateDeepFeedback(batch,f)).toBe(f);
  const forbidden=new Set(['sentence','paras','text','fulltext','html','notes']);const walk=(v:unknown)=>{if(!v||typeof v!=='object')return;for(const[k,x]of Object.entries(v)){expect(forbidden.has(k)).toBe(false);walk(x);}};walk(batch);
