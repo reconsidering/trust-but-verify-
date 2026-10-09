@@ -296,7 +296,8 @@
    },
    "seen": [
     "2026-10-05"
-   ]
+   ],
+   "retired": "owner judged this wrong in the October 4-5 review 2026-10-09"
   },
   {
    "kind": "hint",
@@ -537,7 +538,8 @@
    },
    "seen": [
     "2026-10-05"
-   ]
+   ],
+   "retired": "owner judged this wrong in the October 4-5 review 2026-10-09"
   },
   {
    "kind": "hint",
@@ -785,7 +787,8 @@
    },
    "seen": [
     "2026-10-05"
-   ]
+   ],
+   "retired": "owner judged this wrong in the October 4-5 review 2026-10-09"
   },
   {
    "kind": "scene",
@@ -914,10 +917,10 @@
    "conf": 39,
    "misread": true,
    "gone": false,
-   "weight": 0.3,
-   "source": "claude",
+   "source": "owner",
    "seen": [
-    "2026-10-05"
+    "2026-10-05",
+    "2026-10-09"
    ]
   },
   {
@@ -988,10 +991,10 @@
    "conf": 77,
    "misread": true,
    "gone": false,
-   "weight": 0.3,
-   "source": "claude",
+   "source": "owner",
    "seen": [
-    "2026-10-05"
+    "2026-10-05",
+    "2026-10-09"
    ]
   },
   {
@@ -1047,7 +1050,8 @@
    "source": "claude",
    "seen": [
     "2026-10-05"
-   ]
+   ],
+   "retired": "owner judged this right in the October 4-5 review 2026-10-09"
   },
   {
    "kind": "hint",
@@ -1061,10 +1065,10 @@
    "conf": 37,
    "misread": true,
    "gone": false,
-   "weight": 0.3,
-   "source": "claude",
+   "source": "owner",
    "seen": [
-    "2026-10-05"
+    "2026-10-05",
+    "2026-10-09"
    ]
   },
   {
@@ -1215,6 +1219,53 @@
     "2026-10-05"
    ],
    "retired": "owner re-judged this right 2026-10-06"
+  },
+  {
+   "kind": "hint",
+   "card": "anal",
+   "pairing": "Steve Harrington/Eddie Munson",
+   "who": "Steve Harrington",
+   "role": "bottom",
+   "wants": true,
+   "via": "dialogue:anal sex",
+   "h": "27480662",
+   "conf": 77,
+   "misread": true,
+   "source": "owner",
+   "seen": [
+    "2026-10-09"
+   ]
+  },
+  {
+   "kind": "hint",
+   "card": "anal",
+   "pairing": "Steve Harrington/Eddie Munson",
+   "who": "Eddie Munson",
+   "role": "top",
+   "wants": true,
+   "via": "push-into",
+   "h": "c98b1870",
+   "conf": 37,
+   "misread": true,
+   "source": "owner",
+   "seen": [
+    "2026-10-09"
+   ]
+  },
+  {
+   "kind": "scene",
+   "card": "anal",
+   "pairing": "Steve Harrington/Eddie Munson",
+   "top": "Eddie Munson",
+   "bottom": "Steve Harrington",
+   "via": "push-into",
+   "h": "458bdbbf",
+   "conf": 75,
+   "misread": true,
+   "source": "owner",
+   "seen": [
+    "2026-10-09"
+   ]
   }
  ]
 }
