@@ -1,0 +1,155 @@
+{
+  "schema": "cock-cage-review-index/v1",
+  "engineCommit": "8c745f1",
+  "selection": "Manually selected adult-context passages from fics with an explicit cock-cage tag. Tags determine eligibility only, never whether an event happened.",
+  "fics": [
+    {
+      "id": "innocent-until",
+      "title": "Innocent Until",
+      "tag": "Cock Cages",
+      "tags": [
+        "Cock Cages"
+      ],
+      "manifest": "cock-cages-innocent-until.json",
+      "passages": 9,
+      "readings": 14,
+      "proposals": 4,
+      "assessments": {
+        "wrong": 2,
+        "correct": 8,
+        "uncertain": 4
+      }
+    },
+    {
+      "id": "lock-it",
+      "title": "Better Lock It In Your Pocket",
+      "tag": "Cock Cages",
+      "tags": [
+        "Cock Cages"
+      ],
+      "manifest": "cock-cages-lock-it.json",
+      "passages": 7,
+      "readings": 11,
+      "proposals": 5,
+      "assessments": {
+        "wrong": 1,
+        "correct": 10,
+        "uncertain": 0
+      }
+    },
+    {
+      "id": "nazarene",
+      "title": "you're stumbling like the nazarene",
+      "tag": "Cock Cages",
+      "tags": [
+        "Cock Cages"
+      ],
+      "manifest": "cock-cages-nazarene.json",
+      "passages": 6,
+      "readings": 7,
+      "proposals": 5,
+      "assessments": {
+        "wrong": 4,
+        "correct": 3,
+        "uncertain": 0
+      }
+    },
+    {
+      "id": "prince-prisoner-puppy",
+      "title": "Prince, Prisoner, Puppy, Parent",
+      "tag": "Cock Cages",
+      "tags": [
+        "Cock Cages"
+      ],
+      "manifest": "cock-cages-prince-prisoner-puppy.json",
+      "passages": 3,
+      "readings": 10,
+      "proposals": 2,
+      "assessments": {
+        "wrong": 0,
+        "correct": 10,
+        "uncertain": 0
+      }
+    },
+    {
+      "id": "rental-agreement",
+      "title": "Rental Agreement",
+      "tag": "Cock Cages",
+      "tags": [
+        "Cock Cages"
+      ],
+      "manifest": "cock-cages-rental-agreement.json",
+      "passages": 3,
+      "readings": 5,
+      "proposals": 2,
+      "assessments": {
+        "wrong": 0,
+        "correct": 5,
+        "uncertain": 0
+      }
+    },
+    {
+      "id": "sugar-alpha",
+      "title": "Sugar Alpha",
+      "tag": "Cock Cages",
+      "tags": [
+        "Cock Cages"
+      ],
+      "manifest": "cock-cages-sugar-alpha.json",
+      "passages": 5,
+      "readings": 5,
+      "proposals": 2,
+      "assessments": {
+        "wrong": 4,
+        "correct": 1,
+        "uncertain": 0
+      }
+    },
+    {
+      "id": "were-compeer",
+      "title": "A WereCompeer",
+      "tag": "Cock Cages",
+      "tags": [
+        "Cock Cages"
+      ],
+      "manifest": "cock-cages-were-compeer.json",
+      "passages": 8,
+      "readings": 27,
+      "proposals": 9,
+      "assessments": {
+        "wrong": 1,
+        "correct": 15,
+        "uncertain": 11
+      }
+    },
+    {
+      "id": "tricks-of-the-trade",
+      "title": "Tricks of the Trade",
+      "tag": "Cock Cage",
+      "tags": [
+        "Cock Cage",
+        "cas puts dean in a cock cage"
+      ],
+      "manifest": "cock-cages-tricks-of-the-trade.json",
+      "passages": 9,
+      "readings": 32,
+      "proposals": 8,
+      "assessments": {
+        "wrong": 4,
+        "correct": 27,
+        "uncertain": 1
+      }
+    }
+  ],
+  "excluded": [
+    {
+      "file": "coming-full-circle.html",
+      "reason": "Adult-only sexual context was not established in this pass."
+    },
+    {
+      "file": "lucky-find.html",
+      "reason": "Adult-only sexual context was not established in this pass."
+    }
+  ],
+  "totalPassages": 50
+}

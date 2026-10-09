@@ -1,0 +1,641 @@
+{
+  "schema": "engine-fic-deep-review/v1",
+  "batchId": "cock-cages-innocent-until-8c745f1-v1",
+  "engineCommit": "8c745f1",
+  "source": {
+    "file": "innocent-until.html",
+    "title": "Innocent Until",
+    "sourceSha": "ffa71a4c7726196bc68e41ceb1805c28b7de2698384e84270c5d0f1f6f4ef78c",
+    "paragraphSha": "1b144bbdaf9d60d9c1ed0bb6efc2a0618b0b1187845bbf7d1b1d3e10d8a3b9e2",
+    "paragraphCount": 4922
+  },
+  "answerFile": "cock-cages-innocent-until-answers.json",
+  "method": "Cage vocabulary screened independently, selected passages and surrounding context read closely, then compared against a fresh tagged audit. Adult context checked. Includes supported cues, proposed errors, explicit non-wearing and missed device actions. Eligibility requires a cock-cage tag: Cock Cages. Tags are not evidence that an action happens. Cage wearer/keyholder cues describe device dynamics, not penetrative top/bottom roles. A proposal, remembered fitting, actual fitting, wearing, key transfer and removal remain distinct. Source size is not an assertion of exhaustive review. Assistant confidence is subjective.",
+  "statistics": {
+    "paragraphsRead": 4922,
+    "words": 136866,
+    "engineReadings": 302,
+    "reviewWindows": 9,
+    "actProposals": 4,
+    "readingAssessments": {
+      "wrong": 2,
+      "correct": 8,
+      "uncertain": 4
+    }
+  },
+  "verdicts": [],
+  "windows": [
+    {
+      "id": "W1",
+      "fic": "innocent-until.html",
+      "from": 25,
+      "to": 30,
+      "title": "A jail-cell metaphor",
+      "chapter": 1,
+      "detectionIds": [
+        "D1"
+      ],
+      "actIds": []
+    },
+    {
+      "id": "W2",
+      "fic": "innocent-until.html",
+      "from": 789,
+      "to": 793,
+      "title": "Equipment in a drawer",
+      "chapter": 2,
+      "detectionIds": [
+        "D2"
+      ],
+      "actIds": []
+    },
+    {
+      "id": "W3",
+      "fic": "innocent-until.html",
+      "from": 1611,
+      "to": 1621,
+      "title": "Proposal before fitting",
+      "chapter": 3,
+      "detectionIds": [
+        "D3",
+        "D4",
+        "D5",
+        "D6"
+      ],
+      "actIds": []
+    },
+    {
+      "id": "W4",
+      "fic": "innocent-until.html",
+      "from": 1674,
+      "to": 1681,
+      "title": "Actual fitting",
+      "chapter": 3,
+      "detectionIds": [
+        "D7"
+      ],
+      "actIds": [
+        "A1"
+      ]
+    },
+    {
+      "id": "W5",
+      "fic": "innocent-until.html",
+      "from": 1847,
+      "to": 1851,
+      "title": "Tugging the worn device",
+      "chapter": 3,
+      "detectionIds": [
+        "D8"
+      ],
+      "actIds": [
+        "A2"
+      ]
+    },
+    {
+      "id": "W6",
+      "fic": "innocent-until.html",
+      "from": 2080,
+      "to": 2084,
+      "title": "Wearing during distress",
+      "chapter": 4,
+      "detectionIds": [
+        "D9",
+        "D10"
+      ],
+      "actIds": []
+    },
+    {
+      "id": "W7",
+      "fic": "innocent-until.html",
+      "from": 2140,
+      "to": 2147,
+      "title": "Oral contact followed by removal",
+      "chapter": 4,
+      "detectionIds": [
+        "D11"
+      ],
+      "actIds": [
+        "A3"
+      ]
+    },
+    {
+      "id": "W8",
+      "fic": "innocent-until.html",
+      "from": 3190,
+      "to": 3192,
+      "title": "A conditional threat",
+      "chapter": 5,
+      "detectionIds": [
+        "D12"
+      ],
+      "actIds": []
+    },
+    {
+      "id": "W9",
+      "fic": "innocent-until.html",
+      "from": 4805,
+      "to": 4814,
+      "title": "Unlocking a cage versus cuffs",
+      "chapter": 8,
+      "detectionIds": [
+        "D13",
+        "D14"
+      ],
+      "actIds": [
+        "A4"
+      ]
+    }
+  ],
+  "readings": [
+    {
+      "id": "D1",
+      "key": "chastity-wearer#dbf48ee2",
+      "fic": "innocent-until.html",
+      "para": 27,
+      "pattern": "chastity-wearer",
+      "a": "Steve Rogers",
+      "b": "James \"Bucky\" Barnes",
+      "role": "bottom",
+      "act": "wearing a chastity device",
+      "kind": "behavior",
+      "claim": "Steve Rogers is credited as cage wearer in the pairing Steve Rogers/James \"Bucky\" Barnes (a device-role cue, not proof of who fitted it).",
+      "engineConfidence": null,
+      "confidenceBasis": "The current engine does not expose an individual confidence score for this cue. No score is invented from a pairing score or a vibe weight.",
+      "features": [],
+      "proposal": {
+        "revision": "3e54cf3fa1e6a43c",
+        "verdict": "wrong",
+        "reading": "Steve is in a holding cell; there is no chastity device here.",
+        "rationale": "The cage language describes confinement, not genital equipment.",
+        "confidence": 0.98,
+        "errors": [
+          "Wrong act or body part",
+          "No act happened"
+        ]
+      }
+    },
+    {
+      "id": "D2",
+      "key": "chastity-wearer#9d320025",
+      "fic": "innocent-until.html",
+      "para": 791,
+      "pattern": "chastity-wearer",
+      "a": "Steve Rogers",
+      "b": "James \"Bucky\" Barnes",
+      "role": "bottom",
+      "act": "wearing a chastity device",
+      "kind": "behavior",
+      "claim": "Steve Rogers is credited as cage wearer in the pairing Steve Rogers/James \"Bucky\" Barnes (a device-role cue, not proof of who fitted it).",
+      "engineConfidence": null,
+      "confidenceBasis": "The current engine does not expose an individual confidence score for this cue. No score is invented from a pairing score or a vibe weight.",
+      "features": [],
+      "proposal": {
+        "revision": "7fbb492589f29285",
+        "verdict": "wrong",
+        "reading": "Steve examines equipment in Bucky’s playroom; he is not wearing a cage.",
+        "rationale": "An inventory does not establish fitting or wearing.",
+        "confidence": 0.98,
+        "errors": [
+          "No act happened"
+        ]
+      }
+    },
+    {
+      "id": "D3",
+      "key": "chastity-wearer#d651ccc9",
+      "fic": "innocent-until.html",
+      "para": 1613,
+      "pattern": "chastity-wearer",
+      "a": "Steve Rogers",
+      "b": "James \"Bucky\" Barnes",
+      "role": "bottom",
+      "act": "wearing a chastity device",
+      "kind": "behavior",
+      "claim": "Steve Rogers is credited as cage wearer in the pairing Steve Rogers/James \"Bucky\" Barnes (a device-role cue, not proof of who fitted it).",
+      "engineConfidence": null,
+      "confidenceBasis": "The current engine does not expose an individual confidence score for this cue. No score is invented from a pairing score or a vibe weight.",
+      "features": [],
+      "proposal": {
+        "revision": "52a5a988e9449395",
+        "verdict": "uncertain",
+        "reading": "Bucky proposes caging Steve and fetches equipment. Wearing has not begun in these paragraphs.",
+        "rationale": "This supports an intended control dynamic, but a wearer-state claim would be premature.",
+        "confidence": 0.65,
+        "errors": [
+          "Needs more context"
+        ]
+      }
+    },
+    {
+      "id": "D4",
+      "key": "chastity-keyholder#d651ccc9",
+      "fic": "innocent-until.html",
+      "para": 1613,
+      "pattern": "chastity-keyholder",
+      "a": "James \"Bucky\" Barnes",
+      "b": "Steve Rogers",
+      "role": "top",
+      "act": "controlling a chastity device",
+      "kind": "behavior",
+      "claim": "James \"Bucky\" Barnes → Steve Rogers: controlling a chastity device (the first name is the one the engine credited)",
+      "engineConfidence": null,
+      "confidenceBasis": "The current engine does not expose an individual confidence score for this cue. No score is invented from a pairing score or a vibe weight.",
+      "features": [],
+      "proposal": {
+        "revision": "86f31400d9a09644",
+        "verdict": "correct",
+        "reading": "Bucky proposes controlling Steve’s device use.",
+        "rationale": "The desire identifies a planned control dynamic, not completed fitting.",
+        "confidence": 0.98,
+        "errors": []
+      }
+    },
+    {
+      "id": "D5",
+      "key": "chastity-wearer#c4bba1c6",
+      "fic": "innocent-until.html",
+      "para": 1618,
+      "pattern": "chastity-wearer",
+      "a": "Steve Rogers",
+      "b": "James \"Bucky\" Barnes",
+      "role": "bottom",
+      "act": "wearing a chastity device",
+      "kind": "behavior",
+      "claim": "Steve Rogers is credited as cage wearer in the pairing Steve Rogers/James \"Bucky\" Barnes (a device-role cue, not proof of who fitted it).",
+      "engineConfidence": null,
+      "confidenceBasis": "The current engine does not expose an individual confidence score for this cue. No score is invented from a pairing score or a vibe weight.",
+      "features": [],
+      "proposal": {
+        "revision": "52a5a988e9449395",
+        "verdict": "uncertain",
+        "reading": "Bucky proposes caging Steve and fetches equipment. Wearing has not begun in these paragraphs.",
+        "rationale": "This supports an intended control dynamic, but a wearer-state claim would be premature.",
+        "confidence": 0.65,
+        "errors": [
+          "Needs more context"
+        ]
+      }
+    },
+    {
+      "id": "D6",
+      "key": "chastity-wearer#ef73a1b5",
+      "fic": "innocent-until.html",
+      "para": 1619,
+      "pattern": "chastity-wearer",
+      "a": "Steve Rogers",
+      "b": "James \"Bucky\" Barnes",
+      "role": "bottom",
+      "act": "wearing a chastity device",
+      "kind": "behavior",
+      "claim": "Steve Rogers is credited as cage wearer in the pairing Steve Rogers/James \"Bucky\" Barnes (a device-role cue, not proof of who fitted it).",
+      "engineConfidence": null,
+      "confidenceBasis": "The current engine does not expose an individual confidence score for this cue. No score is invented from a pairing score or a vibe weight.",
+      "features": [],
+      "proposal": {
+        "revision": "52a5a988e9449395",
+        "verdict": "uncertain",
+        "reading": "Bucky proposes caging Steve and fetches equipment. Wearing has not begun in these paragraphs.",
+        "rationale": "This supports an intended control dynamic, but a wearer-state claim would be premature.",
+        "confidence": 0.65,
+        "errors": [
+          "Needs more context"
+        ]
+      }
+    },
+    {
+      "id": "D7",
+      "key": "chastity-wearer#28f2eea2",
+      "fic": "innocent-until.html",
+      "para": 1678,
+      "pattern": "chastity-wearer",
+      "a": "Steve Rogers",
+      "b": "James \"Bucky\" Barnes",
+      "role": "bottom",
+      "act": "wearing a chastity device",
+      "kind": "behavior",
+      "claim": "Steve Rogers is credited as cage wearer in the pairing Steve Rogers/James \"Bucky\" Barnes (a device-role cue, not proof of who fitted it).",
+      "engineConfidence": null,
+      "confidenceBasis": "The current engine does not expose an individual confidence score for this cue. No score is invented from a pairing score or a vibe weight.",
+      "features": [],
+      "proposal": {
+        "revision": "2882f0279c963364",
+        "verdict": "correct",
+        "reading": "Bucky fits the device onto Steve.",
+        "rationale": "The rings are physically placed and the device settles on Steve.",
+        "confidence": 0.98,
+        "errors": []
+      }
+    },
+    {
+      "id": "D8",
+      "key": "chastity-wearer#c07c6300",
+      "fic": "innocent-until.html",
+      "para": 1849,
+      "pattern": "chastity-wearer",
+      "a": "Steve Rogers",
+      "b": "James \"Bucky\" Barnes",
+      "role": "bottom",
+      "act": "wearing a chastity device",
+      "kind": "behavior",
+      "claim": "Steve Rogers is credited as cage wearer in the pairing Steve Rogers/James \"Bucky\" Barnes (a device-role cue, not proof of who fitted it).",
+      "engineConfidence": null,
+      "confidenceBasis": "The current engine does not expose an individual confidence score for this cue. No score is invented from a pairing score or a vibe weight.",
+      "features": [],
+      "proposal": {
+        "revision": "179892a22338d1f3",
+        "verdict": "correct",
+        "reading": "Steve wears the cage and Bucky tugs it.",
+        "rationale": "The physical contact is with the caged penis; it does not establish penetration.",
+        "confidence": 0.98,
+        "errors": []
+      }
+    },
+    {
+      "id": "D9",
+      "key": "chastity-wearer#e95c18d3",
+      "fic": "innocent-until.html",
+      "para": 2080,
+      "pattern": "chastity-wearer",
+      "a": "Steve Rogers",
+      "b": "James \"Bucky\" Barnes",
+      "role": "bottom",
+      "act": "wearing a chastity device",
+      "kind": "behavior",
+      "claim": "Steve Rogers is credited as cage wearer in the pairing Steve Rogers/James \"Bucky\" Barnes (a device-role cue, not proof of who fitted it).",
+      "engineConfidence": null,
+      "confidenceBasis": "The current engine does not expose an individual confidence score for this cue. No score is invented from a pairing score or a vibe weight.",
+      "features": [],
+      "proposal": {
+        "revision": "90824a91e7fe608b",
+        "verdict": "correct",
+        "reading": "Steve is still wearing the cage while Bucky tries to comfort him.",
+        "rationale": "The hard outline under Steve’s underwear and the preceding cage reference identify the device.",
+        "confidence": 0.98,
+        "errors": []
+      }
+    },
+    {
+      "id": "D10",
+      "key": "chastity-wearer#aec01be5",
+      "fic": "innocent-until.html",
+      "para": 2082,
+      "pattern": "chastity-wearer",
+      "a": "Steve Rogers",
+      "b": "James \"Bucky\" Barnes",
+      "role": "bottom",
+      "act": "wearing a chastity device",
+      "kind": "behavior",
+      "claim": "Steve Rogers is credited as cage wearer in the pairing Steve Rogers/James \"Bucky\" Barnes (a device-role cue, not proof of who fitted it).",
+      "engineConfidence": null,
+      "confidenceBasis": "The current engine does not expose an individual confidence score for this cue. No score is invented from a pairing score or a vibe weight.",
+      "features": [],
+      "proposal": {
+        "revision": "90824a91e7fe608b",
+        "verdict": "correct",
+        "reading": "Steve is still wearing the cage while Bucky tries to comfort him.",
+        "rationale": "The hard outline under Steve’s underwear and the preceding cage reference identify the device.",
+        "confidence": 0.98,
+        "errors": []
+      }
+    },
+    {
+      "id": "D11",
+      "key": "chastity-wearer#9aac85c0",
+      "fic": "innocent-until.html",
+      "para": 2142,
+      "pattern": "chastity-wearer",
+      "a": "Steve Rogers",
+      "b": "James \"Bucky\" Barnes",
+      "role": "bottom",
+      "act": "wearing a chastity device",
+      "kind": "behavior",
+      "claim": "Steve Rogers is credited as cage wearer in the pairing Steve Rogers/James \"Bucky\" Barnes (a device-role cue, not proof of who fitted it).",
+      "engineConfidence": null,
+      "confidenceBasis": "The current engine does not expose an individual confidence score for this cue. No score is invented from a pairing score or a vibe weight.",
+      "features": [],
+      "proposal": {
+        "revision": "8542a493ff72e07c",
+        "verdict": "correct",
+        "reading": "Steve initially wears the cage; Bucky then takes its pieces off.",
+        "rationale": "The passage distinguishes contact with the caged tip from later freedom.",
+        "confidence": 0.98,
+        "errors": []
+      }
+    },
+    {
+      "id": "D12",
+      "key": "chastity-wearer#b264f78a",
+      "fic": "innocent-until.html",
+      "para": 3191,
+      "pattern": "chastity-wearer",
+      "a": "Steve Rogers",
+      "b": "James \"Bucky\" Barnes",
+      "role": "bottom",
+      "act": "wearing a chastity device",
+      "kind": "behavior",
+      "claim": "Steve Rogers is credited as cage wearer in the pairing Steve Rogers/James \"Bucky\" Barnes (a device-role cue, not proof of who fitted it).",
+      "engineConfidence": null,
+      "confidenceBasis": "The current engine does not expose an individual confidence score for this cue. No score is invented from a pairing score or a vibe weight.",
+      "features": [],
+      "proposal": {
+        "revision": "045cdc8f875cd7fa",
+        "verdict": "uncertain",
+        "reading": "Bucky threatens a future cage if Steve dislodges the anal toy; no fitting happens here.",
+        "rationale": "A control-intent cue can be reasonable, but this is not a current wearer state.",
+        "confidence": 0.65,
+        "errors": [
+          "Wish or dialogue treated as an act"
+        ]
+      }
+    },
+    {
+      "id": "D13",
+      "key": "chastity-keyholder#7a5cc299",
+      "fic": "innocent-until.html",
+      "para": 4805,
+      "pattern": "chastity-keyholder",
+      "a": "James \"Bucky\" Barnes",
+      "b": "Steve Rogers",
+      "role": "top",
+      "act": "controlling a chastity device",
+      "kind": "behavior",
+      "claim": "James \"Bucky\" Barnes → Steve Rogers: controlling a chastity device (the first name is the one the engine credited)",
+      "engineConfidence": null,
+      "confidenceBasis": "The current engine does not expose an individual confidence score for this cue. No score is invented from a pairing score or a vibe weight.",
+      "features": [],
+      "proposal": {
+        "revision": "0b7c12aee27a6567",
+        "verdict": "correct",
+        "reading": "Bucky unlocks Steve’s cock cage after separately unlocking handcuffs.",
+        "rationale": "The cage lock is explicitly identified; the earlier keys belong to restraints.",
+        "confidence": 0.98,
+        "errors": []
+      }
+    },
+    {
+      "id": "D14",
+      "key": "chastity-keyholder#627c1deb",
+      "fic": "innocent-until.html",
+      "para": 4812,
+      "pattern": "chastity-keyholder",
+      "a": "James \"Bucky\" Barnes",
+      "b": "Steve Rogers",
+      "role": "top",
+      "act": "holding the key to a chastity device",
+      "kind": "behavior",
+      "claim": "James \"Bucky\" Barnes is holding the key to Steve Rogers's chastity device",
+      "engineConfidence": 0.977897571775353,
+      "confidenceBasis": "Committed model probability for this exact pattern record and context.",
+      "features": [
+        1.9459101490553132,
+        2.302585092994046,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2.6390573296152584,
+        1,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        2.3978952727983707,
+        1.791759469228055,
+        1.9459101490553132,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "proposal": {
+        "revision": "0b7c12aee27a6567",
+        "verdict": "correct",
+        "reading": "Bucky unlocks Steve’s cock cage after separately unlocking handcuffs.",
+        "rationale": "The cage lock is explicitly identified; the earlier keys belong to restraints.",
+        "confidence": 0.98,
+        "errors": []
+      }
+    }
+  ],
+  "acts": [
+    {
+      "id": "A1",
+      "windowId": "W4",
+      "revision": "b676099fd0edaab3",
+      "act": "Chastity device fitting",
+      "performer": "James \"Bucky\" Barnes",
+      "receiver": "Steve Rogers",
+      "occurrence": "performed",
+      "evidence": {
+        "from": 1678,
+        "to": 1678
+      },
+      "reviewerConfidence": 0.99,
+      "note": "Bucky fits the rings and settles the cage onto Steve; this is distinct from the earlier finger insertion.",
+      "engineStatus": "specific device action/state missing or only indirectly detected",
+      "engineConfidence": null,
+      "engineReadingKeys": [
+        "chastity-wearer#28f2eea2"
+      ],
+      "errors": [
+        "Act missed"
+      ]
+    },
+    {
+      "id": "A2",
+      "windowId": "W5",
+      "revision": "cdea1c285b52dd98",
+      "act": "Chastity device stimulation",
+      "performer": "James \"Bucky\" Barnes",
+      "receiver": "Steve Rogers",
+      "occurrence": "performed",
+      "evidence": {
+        "from": 1849,
+        "to": 1849
+      },
+      "reviewerConfidence": 0.99,
+      "note": "Bucky tugs Steve’s caged penis. This is device-mediated contact, not evidence of a separate penile handjob.",
+      "engineStatus": "specific device action/state missing or only indirectly detected",
+      "engineConfidence": null,
+      "engineReadingKeys": [
+        "chastity-wearer#c07c6300"
+      ],
+      "errors": [
+        "Act missed"
+      ]
+    },
+    {
+      "id": "A3",
+      "windowId": "W7",
+      "revision": "1faf465d56f2d6e5",
+      "act": "Chastity device removal",
+      "performer": "James \"Bucky\" Barnes",
+      "receiver": "Steve Rogers",
+      "occurrence": "performed",
+      "evidence": {
+        "from": 2145,
+        "to": 2145
+      },
+      "reviewerConfidence": 0.99,
+      "note": "Bucky removes the cage piece by piece. Steve is uncaged afterward.",
+      "engineStatus": "specific device action/state missing or only indirectly detected",
+      "engineConfidence": null,
+      "engineReadingKeys": [],
+      "errors": [
+        "Act missed"
+      ]
+    },
+    {
+      "id": "A4",
+      "windowId": "W9",
+      "revision": "05ed15dedb42871c",
+      "act": "Chastity device removal",
+      "performer": "James \"Bucky\" Barnes",
+      "receiver": "Steve Rogers",
+      "occurrence": "performed",
+      "evidence": {
+        "from": 4812,
+        "to": 4812
+      },
+      "reviewerConfidence": 0.99,
+      "note": "Bucky unlocks the cage. Keep this distinct from the earlier handcuff removal.",
+      "engineStatus": "related hint detected; specific device action reviewed separately",
+      "engineConfidence": 0.977897571775353,
+      "engineReadingKeys": [
+        "chastity-keyholder#627c1deb"
+      ],
+      "errors": []
+    }
+  ]
+}

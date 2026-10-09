@@ -1,0 +1,291 @@
+{
+  "schema": "engine-fic-deep-review/v1",
+  "batchId": "cock-cages-rental-agreement-8c745f1-v1",
+  "engineCommit": "8c745f1",
+  "source": {
+    "file": "rental-agreement.html",
+    "title": "Rental Agreement",
+    "sourceSha": "6c50f2c632fb1643ccf4a210cb23c249e75f5dcc7d259572d0d712433eb20d82",
+    "paragraphSha": "26880f371f3cd475edbab58e2c1097366c5b8682534dc1222483c7ed8cd1a0ae",
+    "paragraphCount": 140
+  },
+  "answerFile": "cock-cages-rental-agreement-answers.json",
+  "method": "Cage vocabulary screened independently, selected passages and surrounding context read closely, then compared against a fresh tagged audit. Adult context checked. Includes supported cues, proposed errors, explicit non-wearing and missed device actions. Eligibility requires a cock-cage tag: Cock Cages. Tags are not evidence that an action happens. Cage wearer/keyholder cues describe device dynamics, not penetrative top/bottom roles. A proposal, remembered fitting, actual fitting, wearing, key transfer and removal remain distinct. Source size is not an assertion of exhaustive review. Assistant confidence is subjective.",
+  "statistics": {
+    "paragraphsRead": 140,
+    "words": 6407,
+    "engineReadings": 26,
+    "reviewWindows": 3,
+    "actProposals": 2,
+    "readingAssessments": {
+      "wrong": 0,
+      "correct": 5,
+      "uncertain": 0
+    }
+  },
+  "verdicts": [],
+  "windows": [
+    {
+      "id": "W1",
+      "fic": "rental-agreement.html",
+      "from": 53,
+      "to": 57,
+      "title": "Tapping a silicone device",
+      "chapter": 1,
+      "detectionIds": [
+        "D1",
+        "D2"
+      ],
+      "actIds": [
+        "A1"
+      ]
+    },
+    {
+      "id": "W2",
+      "fic": "rental-agreement.html",
+      "from": 104,
+      "to": 111,
+      "title": "Stimulation through a cage opening",
+      "chapter": 1,
+      "detectionIds": [
+        "D3",
+        "D4"
+      ],
+      "actIds": [
+        "A2"
+      ]
+    },
+    {
+      "id": "W3",
+      "fic": "rental-agreement.html",
+      "from": 135,
+      "to": 139,
+      "title": "Device hidden under a superhero suit",
+      "chapter": 1,
+      "detectionIds": [
+        "D5"
+      ],
+      "actIds": []
+    }
+  ],
+  "readings": [
+    {
+      "id": "D1",
+      "key": "chastity-wearer#33be44b6",
+      "fic": "rental-agreement.html",
+      "para": 55,
+      "pattern": "chastity-wearer",
+      "a": "Peter Parker",
+      "b": "Wade Wilson",
+      "role": "bottom",
+      "act": "wearing a chastity device",
+      "kind": "behavior",
+      "claim": "Peter Parker is credited as cage wearer in the pairing Peter Parker/Wade Wilson (a device-role cue, not proof of who fitted it).",
+      "engineConfidence": null,
+      "confidenceBasis": "The current engine does not expose an individual confidence score for this cue. No score is invented from a pairing score or a vibe weight.",
+      "features": [],
+      "proposal": {
+        "revision": "81ac98438e769f1b",
+        "verdict": "correct",
+        "reading": "Peter wears the cage and Wade taps it.",
+        "rationale": "The nearby anal plug is a different device in a different body location.",
+        "confidence": 0.98,
+        "errors": []
+      }
+    },
+    {
+      "id": "D2",
+      "key": "chastity-keyholder-tap~elided#33be44b6",
+      "fic": "rental-agreement.html",
+      "para": 55,
+      "pattern": "chastity-keyholder-tap~elided",
+      "a": "Wade Wilson",
+      "b": "Peter Parker",
+      "role": "top",
+      "act": "toying with a chastity device",
+      "kind": "behavior",
+      "claim": "Wade Wilson is toying with Peter Parker's chastity device",
+      "engineConfidence": 0.9357740117548516,
+      "confidenceBasis": "Committed model probability for this exact pattern record and context.",
+      "features": [
+        1.791759469228055,
+        2.3978952727983707,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        2.833213344056216,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        1.3862943611198906,
+        1.0986122886681096,
+        1.3862943611198906,
+        0,
+        0,
+        0,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "proposal": {
+        "revision": "81ac98438e769f1b",
+        "verdict": "correct",
+        "reading": "Peter wears the cage and Wade taps it.",
+        "rationale": "The nearby anal plug is a different device in a different body location.",
+        "confidence": 0.98,
+        "errors": []
+      }
+    },
+    {
+      "id": "D3",
+      "key": "chastity-wearer#c39c57ba",
+      "fic": "rental-agreement.html",
+      "para": 106,
+      "pattern": "chastity-wearer",
+      "a": "Peter Parker",
+      "b": "Wade Wilson",
+      "role": "bottom",
+      "act": "wearing a chastity device",
+      "kind": "behavior",
+      "claim": "Peter Parker is credited as cage wearer in the pairing Peter Parker/Wade Wilson (a device-role cue, not proof of who fitted it).",
+      "engineConfidence": null,
+      "confidenceBasis": "The current engine does not expose an individual confidence score for this cue. No score is invented from a pairing score or a vibe weight.",
+      "features": [],
+      "proposal": {
+        "revision": "9b5a45a3428c4c04",
+        "verdict": "correct",
+        "reading": "Peter remains caged; Wade rubs the exposed penile tip through the small opening.",
+        "rationale": "The roleplay language does not change penile anatomy into a clitoris. Shell contact and actual tip stimulation are different.",
+        "confidence": 0.98,
+        "errors": []
+      }
+    },
+    {
+      "id": "D4",
+      "key": "chastity-wearer#47269d0a",
+      "fic": "rental-agreement.html",
+      "para": 109,
+      "pattern": "chastity-wearer",
+      "a": "Peter Parker",
+      "b": "Wade Wilson",
+      "role": "bottom",
+      "act": "wearing a chastity device",
+      "kind": "behavior",
+      "claim": "Peter Parker is credited as cage wearer in the pairing Peter Parker/Wade Wilson (a device-role cue, not proof of who fitted it).",
+      "engineConfidence": null,
+      "confidenceBasis": "The current engine does not expose an individual confidence score for this cue. No score is invented from a pairing score or a vibe weight.",
+      "features": [],
+      "proposal": {
+        "revision": "9b5a45a3428c4c04",
+        "verdict": "correct",
+        "reading": "Peter remains caged; Wade rubs the exposed penile tip through the small opening.",
+        "rationale": "The roleplay language does not change penile anatomy into a clitoris. Shell contact and actual tip stimulation are different.",
+        "confidence": 0.98,
+        "errors": []
+      }
+    },
+    {
+      "id": "D5",
+      "key": "chastity-wearer#d3dcabd0",
+      "fic": "rental-agreement.html",
+      "para": 137,
+      "pattern": "chastity-wearer",
+      "a": "Peter Parker",
+      "b": "Wade Wilson",
+      "role": "bottom",
+      "act": "wearing a chastity device",
+      "kind": "behavior",
+      "claim": "Peter Parker is credited as cage wearer in the pairing Peter Parker/Wade Wilson (a device-role cue, not proof of who fitted it).",
+      "engineConfidence": null,
+      "confidenceBasis": "The current engine does not expose an individual confidence score for this cue. No score is invented from a pairing score or a vibe weight.",
+      "features": [],
+      "proposal": {
+        "revision": "a60c4bcf4556fbd6",
+        "verdict": "correct",
+        "reading": "Peter still wears the cage and anal plug under his suit.",
+        "rationale": "Wade and Deadpool are the same person; Peter and Spider-man are also the same person.",
+        "confidence": 0.98,
+        "errors": []
+      }
+    }
+  ],
+  "acts": [
+    {
+      "id": "A1",
+      "windowId": "W1",
+      "revision": "387e625630088074",
+      "act": "Chastity device stimulation",
+      "performer": "Wade Wilson",
+      "receiver": "Peter Parker",
+      "occurrence": "performed",
+      "evidence": {
+        "from": 55,
+        "to": 55
+      },
+      "reviewerConfidence": 0.99,
+      "note": "Wade taps Peter’s silicone cage. Do not confuse it with the anal plug touched earlier.",
+      "engineStatus": "related hint detected; specific device action reviewed separately",
+      "engineConfidence": 0.9357740117548516,
+      "engineReadingKeys": [
+        "chastity-wearer#33be44b6",
+        "chastity-keyholder-tap~elided#33be44b6"
+      ],
+      "errors": []
+    },
+    {
+      "id": "A2",
+      "windowId": "W2",
+      "revision": "fc25ecf52e96eda4",
+      "act": "Chastity device stimulation",
+      "performer": "Wade Wilson",
+      "receiver": "Peter Parker",
+      "occurrence": "performed",
+      "evidence": {
+        "from": 106,
+        "to": 109
+      },
+      "reviewerConfidence": 0.99,
+      "note": "Wade first grips the shell, then rubs Peter’s penile tip through its opening. The device remains on; no cage removal is narrated.",
+      "engineStatus": "specific device action/state missing or only indirectly detected",
+      "engineConfidence": null,
+      "engineReadingKeys": [
+        "chastity-wearer#c39c57ba",
+        "chastity-wearer#47269d0a"
+      ],
+      "errors": [
+        "Act missed"
+      ]
+    }
+  ]
+}
