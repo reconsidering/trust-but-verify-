@@ -1601,12 +1601,19 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
     }
     // "Morgan catches him looking at his cock": after catch/notice, "him" is the one looking, and "his" belongs to the one who caught him.
     const causative = /^(?:him|her|them)$/.test(subjTok ?? "") && (/\b(?:make|makes|made|making|let|lets|letting)\s+$/i.test(sent.slice(0, m.index)) ||
-      (pat.id.startsWith("ogle-") && /\b(?:catch|catches|caught|catching|notice|notices|noticed|noticing)\s+$/i.test(sent.slice(0, m.index))));
+      (pat.id.startsWith("ogle-") && /\b(?:catch|catches|caught|catching|notice|notices|noticed|noticing)\s+$/i.test(sent.slice(0, m.index))) ||
+      // "when he feels him blow on his cock": after a feeling verb, "him" is the one doing it and "his" is the one who feels it.
+      (pat.cat === "oral" && /\b(?:feel|feels|felt|feeling)\s+$/i.test(sent.slice(0, m.index))));
     let clauseOrigin: PersonOrigin = "clause";
-    const clauseSubj =
+    const clauseSubj0 =
       !pat.elided && subjTok && (pronoun(subjTok) || /^(?:[Hh]is|[Hh]er|[Tt]heir)$/.test(subjTok)) && m.index! > 0
         ? elidedSubject(sent.slice(0, m.index), sent.slice(m.index!), (source) => { clauseOrigin = source; })
         : undefined;
+    // "watching Morgan manipulate his mouth over his hard cock": after a watching verb and a name, the first "his" is that name's own.
+    const watchedDoer = !clauseSubj0 && pat.cat === "oral" && !pat.elided && /^(?:his|her|their)$/i.test(subjTok ?? "")
+      ? new RegExp(`\\b(?:watch\\w*|see|sees|saw|seeing|feel\\w*|hear\\w*|notic\\w*)\\s+(${NAMES})\\s+\\w+\\s+$`, "i").exec(sent.slice(0, m.index))?.[1]
+      : undefined;
+    const clauseSubj = clauseSubj0 ?? (watchedDoer ? cast.byAlias.get(watchedDoer) : undefined);
     const causer = causative ? (clauseSubj ?? firstEntity(sent.slice(0, m.index)) ?? ctx.lastSubject) : undefined;
     // "He’s simply staring at Dean as he stretches himself": a body act on oneself, in a clause that follows a watching clause, is done by the one watched.
     const watched = !causative && !pat.elided && /^(?:he|she)$/i.test(subjTok ?? "") && REFLEXIVE.test(m[0])
