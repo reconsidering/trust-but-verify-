@@ -1561,6 +1561,22 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
     if (pat.id.startsWith("spread-their-legs") && /^\s*(?:apart\s+|wide\s+)?until\s+(?:they|his legs|her legs|their legs)(?:['’]re|\s+(?:are|were))\s+(?:bracketing|framing|around|on either side)/i.test(sent.slice(m.index! + m[0].length))) return;
     // "he sucks on Obi-Wan's tongue": kissing, not a blowjob.
     if (pat.id.startsWith("sucked") && /\bsuck\w*\s+(?:on\s+|at\s+)?(?:[\w'’-]+['’]s\s+|his\s+|her\s+|their\s+)?(?:tongue|lips?|neck|earlobe|ear|collarbone|jaw|shoulder|nipples?|skin|bruise|pulse point)\b/i.test(sent.slice(m.index!))) return;
+    // "He rubs himself down, shaking his head": drying off with a towel is not masturbation.
+    if (pat.id.startsWith("mast-himself") && /^\s+down\b(?!\s+(?:there|below|between))/i.test(sent.slice(m.index! + m[0].length))) return;
+    // "Rowan let the tip of Morgan's thumb slide in, sucked on it, wrapping his tongue around it, hollowing his cheeks": the cheeks hollow around a thumb or finger
+    // from the sentence before (the elided "it"), not a cock.
+    if (pat.id.startsWith("hollowed-cheeks") && !/\b(?:cock|dick|penis|length|shaft|erection)\b/i.test(m[0]) &&
+        /\bsuck\w*\s+(?:on\s+|at\s+)?(?:it|them)\b/i.test(sent.slice(0, m.index!)) &&
+        /\b(?:thumb|fingers?|fingertips?)\b/i.test((para.slice(0, Math.max(0, para.indexOf(original))) + sent.slice(0, m.index!)).slice(-170)) &&
+        !/\b(?:cock|dick|penis|length|shaft|erection)\b/i.test((para.slice(0, Math.max(0, para.indexOf(original))) + sent.slice(0, m.index!)).slice(-170))) return;
+    // "thinking about Morgan fucking him with his mouth": a mouth is oral, not anal sex (a tongue is rimming, handled below).
+    if (pat.id === "fuck" && /^\s+(?:[\w']+\s+){0,4}?with\s+(?:his|her|their|my|your)\s+(?:mouth|lips)\b/i.test(sent.slice(m.index! + m[0].length))) return;
+    // "the warmth of his body has Rowan sinking into his body, letting the water lap against them": relaxing into a warm body, not a penetration.
+    if (pat.id.startsWith("push-into") && /\b(?:sink|sank|sunk|sinking)\w*\s+(?:in)?to\s+(?:his|her|their)\s+body$/i.test(m[0]) && !/\b(?:cock|dick|penis|hole|inside|thrust\w*|slick|fuck\w*)\b/i.test(sent)) return;
+    // "feeling the heat from his ass work its way to his cock": a sensation travelling, not an ass around a cock.
+    if (pat.id.startsWith("hole-around") && /\b(?:work|works|worked|working|travel\w*|spread\w*|crawl\w*|creep\w*|snak\w*)\s+(?:its|their|a)\s+way\b/i.test(m[0])) return;
+    // "…then shoved his fingers under his own nose and breathed in": fingers brought to a face are not fingers inserted.
+    if (pat.id.startsWith("dd2-finger-shoved-into") && /^\s+(?:in|inside|into|under|to|towards?|past|against|onto?)\s+(?:(?:his|her|their|my|your|the|a)\s+|[\w'’-]+['’]s?\s+)?(?:own\s+)?(?:mouth|nose|lips?|throat|hair|pockets?|face|chin|cheeks?)\b/i.test(sent.slice(m.index! + m[0].length))) return;
     // A fight is not dominance: "He slammed Cas up against the wall, fist pulling back to land another blow."
     if (pat.id.startsWith("dom-") && /\b(?:punch\w*|slugg\w*|(?:land|landed|landing|throw|threw|throwing)\s+(?:another\s+|a\s+)?(?:blow|punch|hit)|fist\s+(?:pulling|drawing|cocking|swinging)\s+back|swung|knife|blade|gun|bleed\w*|bruis\w*|broke\s+(?:his|her|their)\s+(?:nose|jaw|ribs?))\b/i.test(sent)) return;
     // "Castiel grabbed his leg and, using it as leverage, he started thrusting": "he" is the nearest clause's subject.
