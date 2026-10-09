@@ -1,0 +1,1502 @@
+{
+ "made": "2026-10-09",
+ "how": "Explicit owner judgments on current engine readings from a full-text deep review. Acts and hints are labelled only when explicitly judged. Uncertain answers are excluded from training. No label is inferred from a missed act, assistant confidence, or an omission.",
+ "batchId": "sugar-alpha-errors-b91edd7-v1",
+ "engineCommit": "b91edd7",
+ "labels": {
+  "presented~elided#5908b3c4": "wrong",
+  "bend-over#be426d83": "wrong",
+  "dialogue:anal sex#61009c00": "wrong",
+  "mast-himself#8b0f0902": "wrong",
+  "arch-back#e32e22fd": "wrong",
+  "grab-ass~elided#f0cb7957": "wrong",
+  "possessive-thrusts-grinding#8e6677b4": "wrong",
+  "dd3-thrusts-deeper#8e6677b4": "wrong",
+  "thrusts-push-him#8e6677b4": "wrong",
+  "hj-stroke#b0743f31": "wrong",
+  "fingers-into-mouth#223f257d": "wrong",
+  "suck-fingers#eb55f737": "wrong",
+  "fuck~elided#19e0a74e": "wrong",
+  "fuck~elided#a97aa036": "wrong",
+  "push-into#a97aa036": "wrong",
+  "dialogue:blowjob#ab2735a9": "wrong",
+  "lines-up-hole#bac8b63e": "ok",
+  "plug-worn#5b42b061": "wrong",
+  "dialogue:anal sex#21f09cc0": "wrong",
+  "plug-worn#7f74a214": "wrong",
+  "plug-worn#65c507e": "wrong",
+  "toy-in~elided#686b8f01": "wrong",
+  "plug-worn#686b8f01": "wrong",
+  "pushed-in#13333298": "wrong",
+  "plug-worn#105ac322": "wrong",
+  "pushed-in#80c31cc1": "wrong",
+  "fuck~elided#ccb5ede9": "wrong",
+  "dialogue:anal sex#1806f9c3": "wrong",
+  "dialogue:anal sex#7e2595f3": "wrong",
+  "ogle-crotch#29d72937": "wrong",
+  "ogle-crotch-oral#29d72937": "wrong",
+  "fuck~elided#49eef1f6": "wrong",
+  "dialogue:anal sex#ca0da828": "wrong",
+  "be-fucked~elided#a1107784": "wrong",
+  "knelt-between#822dcf79": "wrong",
+  "spread-their-legs#6f2197f6": "wrong",
+  "hollowed-cheeks~elided#fa5d3033": "wrong",
+  "lips-around#da259066": "wrong",
+  "licked-vulva~elided#96a5b37b": "wrong",
+  "sucked~elided#7cc25179": "wrong",
+  "fuck#97a40fdf": "wrong",
+  "plug-worn#b9c4ff61": "wrong",
+  "stretched-open~elided#9c262d89": "unclear",
+  "mast-word#a319bcd8": "wrong",
+  "hj-stroke#158c35c7": "wrong",
+  "fuck~elided#158c35c7": "wrong",
+  "dd2-finger-shoved-into#bd5c6c1b": "wrong",
+  "push-into#c78a506c": "wrong",
+  "dialogue:anal sex#77967bfe": "wrong",
+  "sucked~elided#a73a52cf": "wrong",
+  "pushed-in#294badf7": "wrong",
+  "dd2-finger-shoved-into~elided#4f82ddce": "unclear",
+  "hole-around#1103b22b": "wrong",
+  "rock-into#4e896f75": "wrong",
+  "stretched-open~elided#eea56194": "wrong",
+  "knot-owner#7ca30d0f": "wrong",
+  "mast-himself~elided#4ed8ceaf": "wrong",
+  "penis-into#90532eb6": "wrong",
+  "plug-worn#c32bb244": "wrong",
+  "penis-against#5581db6b": "unclear",
+  "plug-worn#ab5df7": "wrong"
+ },
+ "answers": [
+  {
+   "id": "D6",
+   "key": "presented~elided#5908b3c4",
+   "fic": "sugar-alpha.html",
+   "paragraph": 233,
+   "sourceSha": "68a3c9d689b093806fb072b5e550e79a61eb9f16c1e79ca192ba24597338de5e",
+   "claim": {
+    "fic": "sugar-alpha.html",
+    "sourceSha": "68a3c9d689b093806fb072b5e550e79a61eb9f16c1e79ca192ba24597338de5e",
+    "paragraph": 233,
+    "pattern": "presented~elided",
+    "act": "presenting",
+    "kind": "prep",
+    "a": "Derek Hale",
+    "b": "Stiles Stilinski",
+    "role": "bottom"
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Wrong person",
+    "Wish or dialogue treated as an act"
+   ],
+   "updatedAt": "2026-10-09T13:12:00.130Z"
+  },
+  {
+   "id": "D7",
+   "key": "bend-over#be426d83",
+   "fic": "sugar-alpha.html",
+   "paragraph": 234,
+   "sourceSha": "68a3c9d689b093806fb072b5e550e79a61eb9f16c1e79ca192ba24597338de5e",
+   "claim": {
+    "fic": "sugar-alpha.html",
+    "sourceSha": "68a3c9d689b093806fb072b5e550e79a61eb9f16c1e79ca192ba24597338de5e",
+    "paragraph": 234,
+    "pattern": "bend-over",
+    "act": "bending someone over",
+    "kind": "touch",
+    "a": "Derek Hale",
+    "b": "Stiles Stilinski",
+    "role": "top"
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Wish or dialogue treated as an act"
+   ],
+   "updatedAt": "2026-10-09T13:13:00.898Z"
+  },
+  {
+   "id": "D13",
+   "key": "dialogue:anal sex#61009c00",
+   "fic": "sugar-alpha.html",
+   "paragraph": 371,
+   "sourceSha": "68a3c9d689b093806fb072b5e550e79a61eb9f16c1e79ca192ba24597338de5e",
+   "claim": {
+    "fic": "sugar-alpha.html",
+    "sourceSha": "68a3c9d689b093806fb072b5e550e79a61eb9f16c1e79ca192ba24597338de5e",
+    "paragraph": 371,
+    "pattern": "dialogue:anal sex",
+    "act": "anal sex",
+    "kind": "said",
+    "a": "Stiles Stilinski",
+    "b": "Derek Hale",
+    "role": "bottom"
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Wrong person",
+    "Wish or dialogue treated as an act"
+   ],
+   "updatedAt": "2026-10-09T13:13:57.011Z"
+  },
+  {
+   "id": "D14",
+   "key": "mast-himself#8b0f0902",
+   "fic": "sugar-alpha.html",
+   "paragraph": 374,
+   "sourceSha": "68a3c9d689b093806fb072b5e550e79a61eb9f16c1e79ca192ba24597338de5e",
+   "claim": {
+    "fic": "sugar-alpha.html",
+    "sourceSha": "68a3c9d689b093806fb072b5e550e79a61eb9f16c1e79ca192ba24597338de5e",
+    "paragraph": 374,
+    "pattern": "mast-himself",
+    "act": "masturbation",
+    "kind": "masturbation",
+    "a": "Derek Hale",
+    "b": "Stiles Stilinski",
+    "role": "bottom"
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Wrong person",
+    "Wrong act or body part",
+    "No act happened"
+   ],
+   "updatedAt": "2026-10-09T13:14:01.835Z"
+  },
+  {
+   "id": "D19",
+   "key": "arch-back#e32e22fd",
+   "fic": "sugar-alpha.html",
+   "paragraph": 560,
+   "sourceSha": "68a3c9d689b093806fb072b5e550e79a61eb9f16c1e79ca192ba24597338de5e",
+   "claim": {
+    "fic": "sugar-alpha.html",
+    "sourceSha": "68a3c9d689b093806fb072b5e550e79a61eb9f16c1e79ca192ba24597338de5e",
+    "paragraph": 560,
+    "pattern": "arch-back",
+    "act": "arching their back",
+    "kind": "touch",
+    "a": "Derek Hale",
+    "b": "Stiles Stilinski",
+    "role": "bottom"
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Wrong person"
+   ],
+   "updatedAt": "2026-10-09T13:14:30.220Z"
+  },
+  {
+   "id": "D20",
+   "key": "grab-ass~elided#f0cb7957",
+   "fic": "sugar-alpha.html",
+   "paragraph": 569,
+   "sourceSha": "68a3c9d689b093806fb072b5e550e79a61eb9f16c1e79ca192ba24597338de5e",
+   "claim": {
+    "fic": "sugar-alpha.html",
+    "sourceSha": "68a3c9d689b093806fb072b5e550e79a61eb9f16c1e79ca192ba24597338de5e",
+    "paragraph": 569,
+    "pattern": "grab-ass~elided",
+    "act": "grabbing an ass",
+    "kind": "touch",
+    "a": "Stiles Stilinski",
+    "b": "Derek Hale",
+    "role": "top"
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Self-action assigned to a partner",
+    "Wrong act or body part"
+   ],
+   "updatedAt": "2026-10-09T13:15:16.088Z"
+  },
+  {
+   "id": "D22",
+   "key": "possessive-thrusts-grinding#8e6677b4",
+   "fic": "sugar-alpha.html",
+   "paragraph": 590,
+   "sourceSha": "68a3c9d689b093806fb072b5e550e79a61eb9f16c1e79ca192ba24597338de5e",
+   "claim": {
+    "fic": "sugar-alpha.html",
+    "sourceSha": "68a3c9d689b093806fb072b5e550e79a61eb9f16c1e79ca192ba24597338de5e",
+    "paragraph": 590,
+    "pattern": "possessive-thrusts-grinding",
+    "act": "anal sex",
+    "kind": "act",
+    "a": "Derek Hale",
+    "b": "Stiles Stilinski",
+    "role": ""
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Wrong act or body part",
+    "Contact mistaken for penetration"
+   ],
+   "updatedAt": "2026-10-09T13:16:55.133Z"
+  },
+  {
+   "id": "D23",
+   "key": "dd3-thrusts-deeper#8e6677b4",
+   "fic": "sugar-alpha.html",
+   "paragraph": 590,
+   "sourceSha": "68a3c9d689b093806fb072b5e550e79a61eb9f16c1e79ca192ba24597338de5e",
+   "claim": {
+    "fic": "sugar-alpha.html",
+    "sourceSha": "68a3c9d689b093806fb072b5e550e79a61eb9f16c1e79ca192ba24597338de5e",
+    "paragraph": 590,
+    "pattern": "dd3-thrusts-deeper",
+    "act": "anal sex",
+    "kind": "act",
+    "a": "Derek Hale",
+    "b": "Stiles Stilinski",
+    "role": ""
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Wrong act or body part",
+    "Contact mistaken for penetration"
+   ],
+   "updatedAt": "2026-10-09T13:17:00.462Z"
+  },
+  {
+   "id": "D24",
+   "key": "thrusts-push-him#8e6677b4",
+   "fic": "sugar-alpha.html",
+   "paragraph": 590,
+   "sourceSha": "68a3c9d689b093806fb072b5e550e79a61eb9f16c1e79ca192ba24597338de5e",
+   "claim": {
+    "fic": "sugar-alpha.html",
+    "sourceSha": "68a3c9d689b093806fb072b5e550e79a61eb9f16c1e79ca192ba24597338de5e",
+    "paragraph": 590,
+    "pattern": "thrusts-push-him",
+    "act": "anal sex",
+    "kind": "act",
+    "a": "Derek Hale",
+    "b": "Stiles Stilinski",
+    "role": ""
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Wrong act or body part",
+    "Contact mistaken for penetration"
+   ],
+   "updatedAt": "2026-10-09T13:17:23.164Z"
+  },
+  {
+   "id": "D25",
+   "key": "hj-stroke#b0743f31",
+   "fic": "sugar-alpha.html",
+   "paragraph": 590,
+   "sourceSha": "68a3c9d689b093806fb072b5e550e79a61eb9f16c1e79ca192ba24597338de5e",
+   "claim": {
+    "fic": "sugar-alpha.html",
+    "sourceSha": "68a3c9d689b093806fb072b5e550e79a61eb9f16c1e79ca192ba24597338de5e",
+    "paragraph": 590,
+    "pattern": "hj-stroke",
+    "act": "handjob",
+    "kind": "handjob",
+    "a": "Derek Hale",
+    "b": "Stiles Stilinski",
+    "role": "top"
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Wrong act or body part",
+    "Contact mistaken for penetration"
+   ],
+   "updatedAt": "2026-10-09T13:17:27.932Z"
+  },
+  {
+   "id": "D26",
+   "key": "fingers-into-mouth#223f257d",
+   "fic": "sugar-alpha.html",
+   "paragraph": 594,
+   "sourceSha": "68a3c9d689b093806fb072b5e550e79a61eb9f16c1e79ca192ba24597338de5e",
+   "claim": {
+    "fic": "sugar-alpha.html",
+    "sourceSha": "68a3c9d689b093806fb072b5e550e79a61eb9f16c1e79ca192ba24597338de5e",
+    "paragraph": 594,
+    "pattern": "fingers-into-mouth",
+    "act": "sucking on fingers",
+    "kind": "fingers",
+    "a": "Derek Hale",
+    "b": "Stiles Stilinski",
+    "role": "bottom"
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Wrong person"
+   ],
+   "updatedAt": "2026-10-09T13:17:33.204Z"
+  },
+  {
+   "id": "D27",
+   "key": "suck-fingers#eb55f737",
+   "fic": "sugar-alpha.html",
+   "paragraph": 595,
+   "sourceSha": "68a3c9d689b093806fb072b5e550e79a61eb9f16c1e79ca192ba24597338de5e",
+   "claim": {
+    "fic": "sugar-alpha.html",
+    "sourceSha": "68a3c9d689b093806fb072b5e550e79a61eb9f16c1e79ca192ba24597338de5e",
+    "paragraph": 595,
+    "pattern": "suck-fingers",
+    "act": "sucking on fingers",
+    "kind": "fingers",
+    "a": "Stiles Stilinski",
+    "b": "Derek Hale",
+    "role": "bottom"
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Wrong person"
+   ],
+   "updatedAt": "2026-10-09T13:17:39.864Z"
+  },
+  {
+   "id": "D28",
+   "key": "fuck~elided#19e0a74e",
+   "fic": "sugar-alpha.html",
+   "paragraph": 850,
+   "sourceSha": "68a3c9d689b093806fb072b5e550e79a61eb9f16c1e79ca192ba24597338de5e",
+   "claim": {
+    "fic": "sugar-alpha.html",
+    "sourceSha": "68a3c9d689b093806fb072b5e550e79a61eb9f16c1e79ca192ba24597338de5e",
+    "paragraph": 850,
+    "pattern": "fuck~elided",
+    "act": "anal sex",
+    "kind": "hypothetical",
+    "a": "Stiles Stilinski",
+    "b": "Derek Hale",
+    "role": "top"
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Roles reversed"
+   ],
+   "updatedAt": "2026-10-09T13:19:34.662Z"
+  },
+  {
+   "id": "D37",
+   "key": "fuck~elided#a97aa036",
+   "fic": "sugar-alpha.html",
+   "paragraph": 1739,
+   "sourceSha": "68a3c9d689b093806fb072b5e550e79a61eb9f16c1e79ca192ba24597338de5e",
+   "claim": {
+    "fic": "sugar-alpha.html",
+    "sourceSha": "68a3c9d689b093806fb072b5e550e79a61eb9f16c1e79ca192ba24597338de5e",
+    "paragraph": 1739,
+    "pattern": "fuck~elided",
+    "act": "anal sex",
+    "kind": "act",
+    "a": "Derek Hale",
+    "b": "Stiles Stilinski",
+    "role": ""
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Wish or dialogue treated as an act",
+    "No act happened"
+   ],
+   "updatedAt": "2026-10-09T13:20:06.530Z"
+  },
+  {
+   "id": "D38",
+   "key": "push-into#a97aa036",
+   "fic": "sugar-alpha.html",
+   "paragraph": 1739,
+   "sourceSha": "68a3c9d689b093806fb072b5e550e79a61eb9f16c1e79ca192ba24597338de5e",
+   "claim": {
+    "fic": "sugar-alpha.html",
+    "sourceSha": "68a3c9d689b093806fb072b5e550e79a61eb9f16c1e79ca192ba24597338de5e",
+    "paragraph": 1739,
+    "pattern": "push-into",
+    "act": "anal sex",
+    "kind": "act",
+    "a": "Derek Hale",
+    "b": "Stiles Stilinski",
+    "role": ""
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Wish or dialogue treated as an act",
+    "No act happened"
+   ],
+   "updatedAt": "2026-10-09T13:20:12.819Z"
+  },
+  {
+   "id": "D39",
+   "key": "dialogue:blowjob#ab2735a9",
+   "fic": "sugar-alpha.html",
+   "paragraph": 1739,
+   "sourceSha": "68a3c9d689b093806fb072b5e550e79a61eb9f16c1e79ca192ba24597338de5e",
+   "claim": {
+    "fic": "sugar-alpha.html",
+    "sourceSha": "68a3c9d689b093806fb072b5e550e79a61eb9f16c1e79ca192ba24597338de5e",
+    "paragraph": 1739,
+    "pattern": "dialogue:blowjob",
+    "act": "blowjob",
+    "kind": "said",
+    "a": "Stiles Stilinski",
+    "b": "Derek Hale",
+    "role": "bottom"
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Wrong act or body part"
+   ],
+   "updatedAt": "2026-10-09T13:20:37.724Z"
+  },
+  {
+   "id": "D40",
+   "key": "lines-up-hole#bac8b63e",
+   "fic": "sugar-alpha.html",
+   "paragraph": 1744,
+   "sourceSha": "68a3c9d689b093806fb072b5e550e79a61eb9f16c1e79ca192ba24597338de5e",
+   "claim": {
+    "fic": "sugar-alpha.html",
+    "sourceSha": "68a3c9d689b093806fb072b5e550e79a61eb9f16c1e79ca192ba24597338de5e",
+    "paragraph": 1744,
+    "pattern": "lines-up-hole",
+    "act": "anal sex",
+    "kind": "act",
+    "a": "Derek Hale",
+    "b": "Stiles Stilinski",
+    "role": ""
+   },
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-09T13:20:54.462Z"
+  },
+  {
+   "id": "D46",
+   "key": "plug-worn#5b42b061",
+   "fic": "sugar-alpha.html",
+   "paragraph": 1831,
+   "sourceSha": "68a3c9d689b093806fb072b5e550e79a61eb9f16c1e79ca192ba24597338de5e",
+   "claim": {
+    "fic": "sugar-alpha.html",
+    "sourceSha": "68a3c9d689b093806fb072b5e550e79a61eb9f16c1e79ca192ba24597338de5e",
+    "paragraph": 1831,
+    "pattern": "plug-worn",
+    "act": "wearing a plug",
+    "kind": "prep",
+    "a": "Isaac Lahey",
+    "b": "Stiles Stilinski",
+    "role": "bottom"
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Wrong person"
+   ],
+   "updatedAt": "2026-10-09T13:22:27.252Z"
+  },
+  {
+   "id": "D47",
+   "key": "dialogue:anal sex#21f09cc0",
+   "fic": "sugar-alpha.html",
+   "paragraph": 1831,
+   "sourceSha": "68a3c9d689b093806fb072b5e550e79a61eb9f16c1e79ca192ba24597338de5e",
+   "claim": {
+    "fic": "sugar-alpha.html",
+    "sourceSha": "68a3c9d689b093806fb072b5e550e79a61eb9f16c1e79ca192ba24597338de5e",
+    "paragraph": 1831,
+    "pattern": "dialogue:anal sex",
+    "act": "anal sex",
+    "kind": "said",
+    "a": "Stiles Stilinski",
+    "b": "Derek Hale",
+    "role": "top"
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Wrong person",
+    "Roles reversed"
+   ],
+   "updatedAt": "2026-10-09T13:22:38.833Z"
+  },
+  {
+   "id": "D48",
+   "key": "plug-worn#7f74a214",
+   "fic": "sugar-alpha.html",
+   "paragraph": 1834,
+   "sourceSha": "68a3c9d689b093806fb072b5e550e79a61eb9f16c1e79ca192ba24597338de5e",
+   "claim": {
+    "fic": "sugar-alpha.html",
+    "sourceSha": "68a3c9d689b093806fb072b5e550e79a61eb9f16c1e79ca192ba24597338de5e",
+    "paragraph": 1834,
+    "pattern": "plug-worn",
+    "act": "wearing a plug",
+    "kind": "prep",
+    "a": "Isaac Lahey",
+    "b": "Stiles Stilinski",
+    "role": "bottom"
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Wrong person"
+   ],
+   "updatedAt": "2026-10-09T13:22:47.754Z"
+  },
+  {
+   "id": "D52",
+   "key": "plug-worn#65c507e",
+   "fic": "sugar-alpha.html",
+   "paragraph": 2050,
+   "sourceSha": "68a3c9d689b093806fb072b5e550e79a61eb9f16c1e79ca192ba24597338de5e",
+   "claim": {
+    "fic": "sugar-alpha.html",
+    "sourceSha": "68a3c9d689b093806fb072b5e550e79a61eb9f16c1e79ca192ba24597338de5e",
+    "paragraph": 2050,
+    "pattern": "plug-worn",
+    "act": "wearing a plug",
+    "kind": "prep",
+    "a": "Isaac Lahey",
+    "b": "Derek Hale",
+    "role": "bottom"
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Wrong person"
+   ],
+   "updatedAt": "2026-10-09T13:23:11.871Z"
+  },
+  {
+   "id": "D54",
+   "key": "toy-in~elided#686b8f01",
+   "fic": "sugar-alpha.html",
+   "paragraph": 2231,
+   "sourceSha": "68a3c9d689b093806fb072b5e550e79a61eb9f16c1e79ca192ba24597338de5e",
+   "claim": {
+    "fic": "sugar-alpha.html",
+    "sourceSha": "68a3c9d689b093806fb072b5e550e79a61eb9f16c1e79ca192ba24597338de5e",
+    "paragraph": 2231,
+    "pattern": "toy-in~elided",
+    "act": "fingering",
+    "kind": "act",
+    "a": "Derek Hale",
+    "b": "Stiles Stilinski",
+    "role": ""
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Wrong act or body part"
+   ],
+   "updatedAt": "2026-10-09T13:23:56.146Z"
+  },
+  {
+   "id": "D55",
+   "key": "plug-worn#686b8f01",
+   "fic": "sugar-alpha.html",
+   "paragraph": 2231,
+   "sourceSha": "68a3c9d689b093806fb072b5e550e79a61eb9f16c1e79ca192ba24597338de5e",
+   "claim": {
+    "fic": "sugar-alpha.html",
+    "sourceSha": "68a3c9d689b093806fb072b5e550e79a61eb9f16c1e79ca192ba24597338de5e",
+    "paragraph": 2231,
+    "pattern": "plug-worn",
+    "act": "wearing a plug",
+    "kind": "prep",
+    "a": "Isaac Lahey",
+    "b": "Derek Hale",
+    "role": "bottom"
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Wrong person"
+   ],
+   "updatedAt": "2026-10-09T13:24:03.376Z"
+  },
+  {
+   "id": "D56",
+   "key": "pushed-in#13333298",
+   "fic": "sugar-alpha.html",
+   "paragraph": 2235,
+   "sourceSha": "68a3c9d689b093806fb072b5e550e79a61eb9f16c1e79ca192ba24597338de5e",
+   "claim": {
+    "fic": "sugar-alpha.html",
+    "sourceSha": "68a3c9d689b093806fb072b5e550e79a61eb9f16c1e79ca192ba24597338de5e",
+    "paragraph": 2235,
+    "pattern": "pushed-in",
+    "act": "anal sex",
+    "kind": "act",
+    "a": "Derek Hale",
+    "b": "Stiles Stilinski",
+    "role": ""
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Wrong act or body part"
+   ],
+   "updatedAt": "2026-10-09T13:24:08.347Z"
+  },
+  {
+   "id": "D57",
+   "key": "plug-worn#105ac322",
+   "fic": "sugar-alpha.html",
+   "paragraph": 2236,
+   "sourceSha": "68a3c9d689b093806fb072b5e550e79a61eb9f16c1e79ca192ba24597338de5e",
+   "claim": {
+    "fic": "sugar-alpha.html",
+    "sourceSha": "68a3c9d689b093806fb072b5e550e79a61eb9f16c1e79ca192ba24597338de5e",
+    "paragraph": 2236,
+    "pattern": "plug-worn",
+    "act": "wearing a plug",
+    "kind": "prep",
+    "a": "Isaac Lahey",
+    "b": "Derek Hale",
+    "role": "bottom"
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Wrong person"
+   ],
+   "updatedAt": "2026-10-09T13:24:31.466Z"
+  },
+  {
+   "id": "D58",
+   "key": "pushed-in#80c31cc1",
+   "fic": "sugar-alpha.html",
+   "paragraph": 2237,
+   "sourceSha": "68a3c9d689b093806fb072b5e550e79a61eb9f16c1e79ca192ba24597338de5e",
+   "claim": {
+    "fic": "sugar-alpha.html",
+    "sourceSha": "68a3c9d689b093806fb072b5e550e79a61eb9f16c1e79ca192ba24597338de5e",
+    "paragraph": 2237,
+    "pattern": "pushed-in",
+    "act": "anal sex",
+    "kind": "act",
+    "a": "Derek Hale",
+    "b": "Stiles Stilinski",
+    "role": ""
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Wrong act or body part"
+   ],
+   "updatedAt": "2026-10-09T13:24:49.532Z"
+  },
+  {
+   "id": "D59",
+   "key": "fuck~elided#ccb5ede9",
+   "fic": "sugar-alpha.html",
+   "paragraph": 2242,
+   "sourceSha": "68a3c9d689b093806fb072b5e550e79a61eb9f16c1e79ca192ba24597338de5e",
+   "claim": {
+    "fic": "sugar-alpha.html",
+    "sourceSha": "68a3c9d689b093806fb072b5e550e79a61eb9f16c1e79ca192ba24597338de5e",
+    "paragraph": 2242,
+    "pattern": "fuck~elided",
+    "act": "anal sex",
+    "kind": "act",
+    "a": "Derek Hale",
+    "b": "Stiles Stilinski",
+    "role": ""
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Wrong act or body part"
+   ],
+   "updatedAt": "2026-10-09T13:24:52.688Z"
+  },
+  {
+   "id": "D60",
+   "key": "dialogue:anal sex#1806f9c3",
+   "fic": "sugar-alpha.html",
+   "paragraph": 2243,
+   "sourceSha": "68a3c9d689b093806fb072b5e550e79a61eb9f16c1e79ca192ba24597338de5e",
+   "claim": {
+    "fic": "sugar-alpha.html",
+    "sourceSha": "68a3c9d689b093806fb072b5e550e79a61eb9f16c1e79ca192ba24597338de5e",
+    "paragraph": 2243,
+    "pattern": "dialogue:anal sex",
+    "act": "anal sex",
+    "kind": "said",
+    "a": "Derek Hale",
+    "b": "Stiles Stilinski",
+    "role": "top"
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Wrong act or body part"
+   ],
+   "updatedAt": "2026-10-09T13:25:07.876Z"
+  },
+  {
+   "id": "D61",
+   "key": "dialogue:anal sex#7e2595f3",
+   "fic": "sugar-alpha.html",
+   "paragraph": 2245,
+   "sourceSha": "68a3c9d689b093806fb072b5e550e79a61eb9f16c1e79ca192ba24597338de5e",
+   "claim": {
+    "fic": "sugar-alpha.html",
+    "sourceSha": "68a3c9d689b093806fb072b5e550e79a61eb9f16c1e79ca192ba24597338de5e",
+    "paragraph": 2245,
+    "pattern": "dialogue:anal sex",
+    "act": "anal sex",
+    "kind": "said",
+    "a": "Derek Hale",
+    "b": "Stiles Stilinski",
+    "role": "top"
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Wrong act or body part"
+   ],
+   "updatedAt": "2026-10-09T13:25:14.766Z"
+  },
+  {
+   "id": "D1",
+   "key": "ogle-crotch#29d72937",
+   "fic": "sugar-alpha.html",
+   "paragraph": 39,
+   "sourceSha": "68a3c9d689b093806fb072b5e550e79a61eb9f16c1e79ca192ba24597338de5e",
+   "claim": {
+    "fic": "sugar-alpha.html",
+    "sourceSha": "68a3c9d689b093806fb072b5e550e79a61eb9f16c1e79ca192ba24597338de5e",
+    "paragraph": 39,
+    "pattern": "ogle-crotch",
+    "act": "checking out a crotch",
+    "kind": "ogling",
+    "a": "Isaac Lahey",
+    "b": "Stiles Stilinski",
+    "role": "bottom"
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Roles reversed"
+   ],
+   "updatedAt": "2026-10-09T13:25:47.716Z"
+  },
+  {
+   "id": "D2",
+   "key": "ogle-crotch-oral#29d72937",
+   "fic": "sugar-alpha.html",
+   "paragraph": 39,
+   "sourceSha": "68a3c9d689b093806fb072b5e550e79a61eb9f16c1e79ca192ba24597338de5e",
+   "claim": {
+    "fic": "sugar-alpha.html",
+    "sourceSha": "68a3c9d689b093806fb072b5e550e79a61eb9f16c1e79ca192ba24597338de5e",
+    "paragraph": 39,
+    "pattern": "ogle-crotch-oral",
+    "act": "checking out a crotch",
+    "kind": "ogling",
+    "a": "Isaac Lahey",
+    "b": "Stiles Stilinski",
+    "role": "bottom"
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Roles reversed"
+   ],
+   "updatedAt": "2026-10-09T13:25:51.015Z"
+  },
+  {
+   "id": "D3",
+   "key": "fuck~elided#49eef1f6",
+   "fic": "sugar-alpha.html",
+   "paragraph": 156,
+   "sourceSha": "68a3c9d689b093806fb072b5e550e79a61eb9f16c1e79ca192ba24597338de5e",
+   "claim": {
+    "fic": "sugar-alpha.html",
+    "sourceSha": "68a3c9d689b093806fb072b5e550e79a61eb9f16c1e79ca192ba24597338de5e",
+    "paragraph": 156,
+    "pattern": "fuck~elided",
+    "act": "anal sex",
+    "kind": "wanted",
+    "a": "Stiles Stilinski",
+    "b": "Derek Hale",
+    "role": "top"
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Wrong person",
+    "Roles reversed"
+   ],
+   "updatedAt": "2026-10-09T13:29:48.218Z"
+  },
+  {
+   "id": "D4",
+   "key": "dialogue:anal sex#ca0da828",
+   "fic": "sugar-alpha.html",
+   "paragraph": 198,
+   "sourceSha": "68a3c9d689b093806fb072b5e550e79a61eb9f16c1e79ca192ba24597338de5e",
+   "claim": {
+    "fic": "sugar-alpha.html",
+    "sourceSha": "68a3c9d689b093806fb072b5e550e79a61eb9f16c1e79ca192ba24597338de5e",
+    "paragraph": 198,
+    "pattern": "dialogue:anal sex",
+    "act": "anal sex",
+    "kind": "said",
+    "a": "Isaac Lahey",
+    "b": "Stiles Stilinski",
+    "role": "bottom"
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Wrong person"
+   ],
+   "updatedAt": "2026-10-09T13:30:16.345Z"
+  },
+  {
+   "id": "D5",
+   "key": "be-fucked~elided#a1107784",
+   "fic": "sugar-alpha.html",
+   "paragraph": 204,
+   "sourceSha": "68a3c9d689b093806fb072b5e550e79a61eb9f16c1e79ca192ba24597338de5e",
+   "claim": {
+    "fic": "sugar-alpha.html",
+    "sourceSha": "68a3c9d689b093806fb072b5e550e79a61eb9f16c1e79ca192ba24597338de5e",
+    "paragraph": 204,
+    "pattern": "be-fucked~elided",
+    "act": "anal sex",
+    "kind": "act",
+    "a": "Isaac Lahey",
+    "b": "Stiles Stilinski",
+    "role": ""
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Wish or dialogue treated as an act",
+    "Wrong person",
+    "No act happened"
+   ],
+   "updatedAt": "2026-10-09T13:30:22.503Z"
+  },
+  {
+   "id": "D8",
+   "key": "knelt-between#822dcf79",
+   "fic": "sugar-alpha.html",
+   "paragraph": 276,
+   "sourceSha": "68a3c9d689b093806fb072b5e550e79a61eb9f16c1e79ca192ba24597338de5e",
+   "claim": {
+    "fic": "sugar-alpha.html",
+    "sourceSha": "68a3c9d689b093806fb072b5e550e79a61eb9f16c1e79ca192ba24597338de5e",
+    "paragraph": 276,
+    "pattern": "knelt-between",
+    "act": "kneeling between someone's legs",
+    "kind": "prep",
+    "a": "Stiles Stilinski",
+    "b": "Derek Hale",
+    "role": "bottom"
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Wish or dialogue treated as an act"
+   ],
+   "updatedAt": "2026-10-09T13:30:54.498Z"
+  },
+  {
+   "id": "D9",
+   "key": "spread-their-legs#6f2197f6",
+   "fic": "sugar-alpha.html",
+   "paragraph": 291,
+   "sourceSha": "68a3c9d689b093806fb072b5e550e79a61eb9f16c1e79ca192ba24597338de5e",
+   "claim": {
+    "fic": "sugar-alpha.html",
+    "sourceSha": "68a3c9d689b093806fb072b5e550e79a61eb9f16c1e79ca192ba24597338de5e",
+    "paragraph": 291,
+    "pattern": "spread-their-legs",
+    "act": "spreading someone's legs",
+    "kind": "prep",
+    "a": "Derek Hale",
+    "b": "Stiles Stilinski",
+    "role": "top"
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Self-action assigned to a partner"
+   ],
+   "updatedAt": "2026-10-09T13:31:16.520Z"
+  },
+  {
+   "id": "D10",
+   "key": "hollowed-cheeks~elided#fa5d3033",
+   "fic": "sugar-alpha.html",
+   "paragraph": 328,
+   "sourceSha": "68a3c9d689b093806fb072b5e550e79a61eb9f16c1e79ca192ba24597338de5e",
+   "claim": {
+    "fic": "sugar-alpha.html",
+    "sourceSha": "68a3c9d689b093806fb072b5e550e79a61eb9f16c1e79ca192ba24597338de5e",
+    "paragraph": 328,
+    "pattern": "hollowed-cheeks~elided",
+    "act": "blowjob",
+    "kind": "act",
+    "a": "Derek Hale",
+    "b": "Stiles Stilinski",
+    "role": ""
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Wrong act or body part"
+   ],
+   "updatedAt": "2026-10-09T13:31:26.483Z"
+  },
+  {
+   "id": "D11",
+   "key": "lips-around#da259066",
+   "fic": "sugar-alpha.html",
+   "paragraph": 351,
+   "sourceSha": "68a3c9d689b093806fb072b5e550e79a61eb9f16c1e79ca192ba24597338de5e",
+   "claim": {
+    "fic": "sugar-alpha.html",
+    "sourceSha": "68a3c9d689b093806fb072b5e550e79a61eb9f16c1e79ca192ba24597338de5e",
+    "paragraph": 351,
+    "pattern": "lips-around",
+    "act": "blowjob",
+    "kind": "act",
+    "a": "Derek Hale",
+    "b": "Stiles Stilinski",
+    "role": ""
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Roles reversed"
+   ],
+   "updatedAt": "2026-10-09T13:32:48.880Z"
+  },
+  {
+   "id": "D12",
+   "key": "licked-vulva~elided#96a5b37b",
+   "fic": "sugar-alpha.html",
+   "paragraph": 352,
+   "sourceSha": "68a3c9d689b093806fb072b5e550e79a61eb9f16c1e79ca192ba24597338de5e",
+   "claim": {
+    "fic": "sugar-alpha.html",
+    "sourceSha": "68a3c9d689b093806fb072b5e550e79a61eb9f16c1e79ca192ba24597338de5e",
+    "paragraph": 352,
+    "pattern": "licked-vulva~elided",
+    "act": "cunnilingus",
+    "kind": "act",
+    "a": "Derek Hale",
+    "b": "Stiles Stilinski",
+    "role": ""
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Wrong act or body part"
+   ],
+   "updatedAt": "2026-10-09T13:32:38.773Z"
+  },
+  {
+   "id": "D15",
+   "key": "sucked~elided#7cc25179",
+   "fic": "sugar-alpha.html",
+   "paragraph": 424,
+   "sourceSha": "68a3c9d689b093806fb072b5e550e79a61eb9f16c1e79ca192ba24597338de5e",
+   "claim": {
+    "fic": "sugar-alpha.html",
+    "sourceSha": "68a3c9d689b093806fb072b5e550e79a61eb9f16c1e79ca192ba24597338de5e",
+    "paragraph": 424,
+    "pattern": "sucked~elided",
+    "act": "blowjob",
+    "kind": "hypothetical",
+    "a": "Stiles Stilinski",
+    "b": "Isaac Lahey",
+    "role": "bottom"
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Wrong person"
+   ],
+   "updatedAt": "2026-10-09T13:33:01.456Z"
+  },
+  {
+   "id": "D16",
+   "key": "fuck#97a40fdf",
+   "fic": "sugar-alpha.html",
+   "paragraph": 431,
+   "sourceSha": "68a3c9d689b093806fb072b5e550e79a61eb9f16c1e79ca192ba24597338de5e",
+   "claim": {
+    "fic": "sugar-alpha.html",
+    "sourceSha": "68a3c9d689b093806fb072b5e550e79a61eb9f16c1e79ca192ba24597338de5e",
+    "paragraph": 431,
+    "pattern": "fuck",
+    "act": "anal sex",
+    "kind": "fantasy",
+    "a": "Stiles Stilinski",
+    "b": "Derek Hale",
+    "role": "bottom"
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Wrong act or body part"
+   ],
+   "updatedAt": "2026-10-09T13:33:10.207Z"
+  },
+  {
+   "id": "D17",
+   "key": "plug-worn#b9c4ff61",
+   "fic": "sugar-alpha.html",
+   "paragraph": 472,
+   "sourceSha": "68a3c9d689b093806fb072b5e550e79a61eb9f16c1e79ca192ba24597338de5e",
+   "claim": {
+    "fic": "sugar-alpha.html",
+    "sourceSha": "68a3c9d689b093806fb072b5e550e79a61eb9f16c1e79ca192ba24597338de5e",
+    "paragraph": 472,
+    "pattern": "plug-worn",
+    "act": "wearing a plug",
+    "kind": "prep",
+    "a": "Isaac Lahey",
+    "b": "Stiles Stilinski",
+    "role": "bottom"
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Wrong person"
+   ],
+   "updatedAt": "2026-10-09T13:33:39.838Z"
+  },
+  {
+   "id": "D18",
+   "key": "stretched-open~elided#9c262d89",
+   "fic": "sugar-alpha.html",
+   "paragraph": 553,
+   "sourceSha": "68a3c9d689b093806fb072b5e550e79a61eb9f16c1e79ca192ba24597338de5e",
+   "claim": {
+    "fic": "sugar-alpha.html",
+    "sourceSha": "68a3c9d689b093806fb072b5e550e79a61eb9f16c1e79ca192ba24597338de5e",
+    "paragraph": 553,
+    "pattern": "stretched-open~elided",
+    "act": "fingering",
+    "kind": "wanted",
+    "a": "Stiles Stilinski",
+    "b": "Derek Hale",
+    "role": "bottom"
+   },
+   "verdict": "uncertain",
+   "errors": [],
+   "updatedAt": "2026-10-09T13:51:18.854Z"
+  },
+  {
+   "id": "D29",
+   "key": "mast-word#a319bcd8",
+   "fic": "sugar-alpha.html",
+   "paragraph": 974,
+   "sourceSha": "68a3c9d689b093806fb072b5e550e79a61eb9f16c1e79ca192ba24597338de5e",
+   "claim": {
+    "fic": "sugar-alpha.html",
+    "sourceSha": "68a3c9d689b093806fb072b5e550e79a61eb9f16c1e79ca192ba24597338de5e",
+    "paragraph": 974,
+    "pattern": "mast-word",
+    "act": "masturbation",
+    "kind": "masturbation",
+    "a": "Stiles Stilinski",
+    "b": "Derek Hale",
+    "role": "bottom"
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Habit counted as a new scene"
+   ],
+   "updatedAt": "2026-10-09T13:51:30.174Z"
+  },
+  {
+   "id": "D31",
+   "key": "hj-stroke#158c35c7",
+   "fic": "sugar-alpha.html",
+   "paragraph": 1379,
+   "sourceSha": "68a3c9d689b093806fb072b5e550e79a61eb9f16c1e79ca192ba24597338de5e",
+   "claim": {
+    "fic": "sugar-alpha.html",
+    "sourceSha": "68a3c9d689b093806fb072b5e550e79a61eb9f16c1e79ca192ba24597338de5e",
+    "paragraph": 1379,
+    "pattern": "hj-stroke",
+    "act": "handjob",
+    "kind": "fantasy",
+    "a": "Derek Hale",
+    "b": "Stiles Stilinski",
+    "role": "top"
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Self-action assigned to a partner"
+   ],
+   "updatedAt": "2026-10-09T13:51:50.339Z"
+  },
+  {
+   "id": "D30",
+   "key": "fuck~elided#158c35c7",
+   "fic": "sugar-alpha.html",
+   "paragraph": 1379,
+   "sourceSha": "68a3c9d689b093806fb072b5e550e79a61eb9f16c1e79ca192ba24597338de5e",
+   "claim": {
+    "fic": "sugar-alpha.html",
+    "sourceSha": "68a3c9d689b093806fb072b5e550e79a61eb9f16c1e79ca192ba24597338de5e",
+    "paragraph": 1379,
+    "pattern": "fuck~elided",
+    "act": "anal sex",
+    "kind": "fantasy",
+    "a": "Peter Hale",
+    "b": "Stiles Stilinski",
+    "role": "top"
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Wrong person"
+   ],
+   "updatedAt": "2026-10-09T13:52:16.989Z"
+  },
+  {
+   "id": "D32",
+   "key": "dd2-finger-shoved-into#bd5c6c1b",
+   "fic": "sugar-alpha.html",
+   "paragraph": 1440,
+   "sourceSha": "68a3c9d689b093806fb072b5e550e79a61eb9f16c1e79ca192ba24597338de5e",
+   "claim": {
+    "fic": "sugar-alpha.html",
+    "sourceSha": "68a3c9d689b093806fb072b5e550e79a61eb9f16c1e79ca192ba24597338de5e",
+    "paragraph": 1440,
+    "pattern": "dd2-finger-shoved-into",
+    "act": "fingering",
+    "kind": "act",
+    "a": "Derek Hale",
+    "b": "Stiles Stilinski",
+    "role": ""
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Wrong act or body part",
+    "No act happened"
+   ],
+   "updatedAt": "2026-10-09T13:52:44.680Z"
+  },
+  {
+   "id": "D33",
+   "key": "push-into#c78a506c",
+   "fic": "sugar-alpha.html",
+   "paragraph": 1677,
+   "sourceSha": "68a3c9d689b093806fb072b5e550e79a61eb9f16c1e79ca192ba24597338de5e",
+   "claim": {
+    "fic": "sugar-alpha.html",
+    "sourceSha": "68a3c9d689b093806fb072b5e550e79a61eb9f16c1e79ca192ba24597338de5e",
+    "paragraph": 1677,
+    "pattern": "push-into",
+    "act": "anal sex",
+    "kind": "act",
+    "a": "Stiles Stilinski",
+    "b": "Derek Hale",
+    "role": ""
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Contact mistaken for penetration",
+    "Roles reversed",
+    "No act happened"
+   ],
+   "updatedAt": "2026-10-09T13:52:49.279Z"
+  },
+  {
+   "id": "D34",
+   "key": "dialogue:anal sex#77967bfe",
+   "fic": "sugar-alpha.html",
+   "paragraph": 1689,
+   "sourceSha": "68a3c9d689b093806fb072b5e550e79a61eb9f16c1e79ca192ba24597338de5e",
+   "claim": {
+    "fic": "sugar-alpha.html",
+    "sourceSha": "68a3c9d689b093806fb072b5e550e79a61eb9f16c1e79ca192ba24597338de5e",
+    "paragraph": 1689,
+    "pattern": "dialogue:anal sex",
+    "act": "anal sex",
+    "kind": "said",
+    "a": "Derek Hale",
+    "b": "Stiles Stilinski",
+    "role": "bottom"
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Wrong person"
+   ],
+   "updatedAt": "2026-10-09T13:53:37.740Z"
+  },
+  {
+   "id": "D35",
+   "key": "sucked~elided#a73a52cf",
+   "fic": "sugar-alpha.html",
+   "paragraph": 1699,
+   "sourceSha": "68a3c9d689b093806fb072b5e550e79a61eb9f16c1e79ca192ba24597338de5e",
+   "claim": {
+    "fic": "sugar-alpha.html",
+    "sourceSha": "68a3c9d689b093806fb072b5e550e79a61eb9f16c1e79ca192ba24597338de5e",
+    "paragraph": 1699,
+    "pattern": "sucked~elided",
+    "act": "blowjob",
+    "kind": "hypothetical",
+    "a": "Stiles Stilinski",
+    "b": "Derek Hale",
+    "role": "bottom"
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Act missed"
+   ],
+   "updatedAt": "2026-10-09T13:53:47.444Z"
+  },
+  {
+   "id": "D36",
+   "key": "pushed-in#294badf7",
+   "fic": "sugar-alpha.html",
+   "paragraph": 1707,
+   "sourceSha": "68a3c9d689b093806fb072b5e550e79a61eb9f16c1e79ca192ba24597338de5e",
+   "claim": {
+    "fic": "sugar-alpha.html",
+    "sourceSha": "68a3c9d689b093806fb072b5e550e79a61eb9f16c1e79ca192ba24597338de5e",
+    "paragraph": 1707,
+    "pattern": "pushed-in",
+    "act": "anal sex",
+    "kind": "act",
+    "a": "Derek Hale",
+    "b": "Stiles Stilinski",
+    "role": ""
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Wrong act or body part"
+   ],
+   "updatedAt": "2026-10-09T13:53:52.994Z"
+  },
+  {
+   "id": "D41",
+   "key": "dd2-finger-shoved-into~elided#4f82ddce",
+   "fic": "sugar-alpha.html",
+   "paragraph": 1776,
+   "sourceSha": "68a3c9d689b093806fb072b5e550e79a61eb9f16c1e79ca192ba24597338de5e",
+   "claim": {
+    "fic": "sugar-alpha.html",
+    "sourceSha": "68a3c9d689b093806fb072b5e550e79a61eb9f16c1e79ca192ba24597338de5e",
+    "paragraph": 1776,
+    "pattern": "dd2-finger-shoved-into~elided",
+    "act": "fingering",
+    "kind": "act",
+    "a": "Derek Hale",
+    "b": "Stiles Stilinski",
+    "role": ""
+   },
+   "verdict": "uncertain",
+   "errors": [
+    "Wrong act or body part",
+    "No act happened"
+   ],
+   "updatedAt": "2026-10-09T13:54:50.008Z"
+  },
+  {
+   "id": "D42",
+   "key": "hole-around#1103b22b",
+   "fic": "sugar-alpha.html",
+   "paragraph": 1780,
+   "sourceSha": "68a3c9d689b093806fb072b5e550e79a61eb9f16c1e79ca192ba24597338de5e",
+   "claim": {
+    "fic": "sugar-alpha.html",
+    "sourceSha": "68a3c9d689b093806fb072b5e550e79a61eb9f16c1e79ca192ba24597338de5e",
+    "paragraph": 1780,
+    "pattern": "hole-around",
+    "act": "anal sex",
+    "kind": "act",
+    "a": "Derek Hale",
+    "b": "Stiles Stilinski",
+    "role": ""
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Wrong act or body part",
+    "No act happened"
+   ],
+   "updatedAt": "2026-10-09T13:55:13.469Z"
+  },
+  {
+   "id": "D44",
+   "key": "rock-into#4e896f75",
+   "fic": "sugar-alpha.html",
+   "paragraph": 1792,
+   "sourceSha": "68a3c9d689b093806fb072b5e550e79a61eb9f16c1e79ca192ba24597338de5e",
+   "claim": {
+    "fic": "sugar-alpha.html",
+    "sourceSha": "68a3c9d689b093806fb072b5e550e79a61eb9f16c1e79ca192ba24597338de5e",
+    "paragraph": 1792,
+    "pattern": "rock-into",
+    "act": "anal sex",
+    "kind": "hypothetical",
+    "a": "Stiles Stilinski",
+    "b": "Derek Hale",
+    "role": "bottom"
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Act missed"
+   ],
+   "updatedAt": "2026-10-09T13:55:24.650Z"
+  },
+  {
+   "id": "D45",
+   "key": "stretched-open~elided#eea56194",
+   "fic": "sugar-alpha.html",
+   "paragraph": 1816,
+   "sourceSha": "68a3c9d689b093806fb072b5e550e79a61eb9f16c1e79ca192ba24597338de5e",
+   "claim": {
+    "fic": "sugar-alpha.html",
+    "sourceSha": "68a3c9d689b093806fb072b5e550e79a61eb9f16c1e79ca192ba24597338de5e",
+    "paragraph": 1816,
+    "pattern": "stretched-open~elided",
+    "act": "fingering",
+    "kind": "act",
+    "a": "Derek Hale",
+    "b": "Stiles Stilinski",
+    "role": ""
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Wish or dialogue treated as an act",
+    "No act happened"
+   ],
+   "updatedAt": "2026-10-09T13:56:32.127Z"
+  },
+  {
+   "id": "D49",
+   "key": "knot-owner#7ca30d0f",
+   "fic": "sugar-alpha.html",
+   "paragraph": 1863,
+   "sourceSha": "68a3c9d689b093806fb072b5e550e79a61eb9f16c1e79ca192ba24597338de5e",
+   "claim": {
+    "fic": "sugar-alpha.html",
+    "sourceSha": "68a3c9d689b093806fb072b5e550e79a61eb9f16c1e79ca192ba24597338de5e",
+    "paragraph": 1863,
+    "pattern": "knot-owner",
+    "act": "a knot (omegaverse)",
+    "kind": "touch",
+    "a": "Stiles Stilinski",
+    "b": "Derek Hale",
+    "role": "top"
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Roles reversed"
+   ],
+   "updatedAt": "2026-10-09T13:56:39.330Z"
+  },
+  {
+   "id": "D50",
+   "key": "mast-himself~elided#4ed8ceaf",
+   "fic": "sugar-alpha.html",
+   "paragraph": 1910,
+   "sourceSha": "68a3c9d689b093806fb072b5e550e79a61eb9f16c1e79ca192ba24597338de5e",
+   "claim": {
+    "fic": "sugar-alpha.html",
+    "sourceSha": "68a3c9d689b093806fb072b5e550e79a61eb9f16c1e79ca192ba24597338de5e",
+    "paragraph": 1910,
+    "pattern": "mast-himself~elided",
+    "act": "masturbation",
+    "kind": "masturbation",
+    "a": "Stiles Stilinski",
+    "b": "Derek Hale",
+    "role": "bottom"
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Wrong act or body part"
+   ],
+   "updatedAt": "2026-10-09T13:57:06.540Z"
+  },
+  {
+   "id": "D51",
+   "key": "penis-into#90532eb6",
+   "fic": "sugar-alpha.html",
+   "paragraph": 1926,
+   "sourceSha": "68a3c9d689b093806fb072b5e550e79a61eb9f16c1e79ca192ba24597338de5e",
+   "claim": {
+    "fic": "sugar-alpha.html",
+    "sourceSha": "68a3c9d689b093806fb072b5e550e79a61eb9f16c1e79ca192ba24597338de5e",
+    "paragraph": 1926,
+    "pattern": "penis-into",
+    "act": "anal sex",
+    "kind": "hypothetical",
+    "a": "Stiles Stilinski",
+    "b": "Derek Hale",
+    "role": "bottom"
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Act missed"
+   ],
+   "updatedAt": "2026-10-09T13:57:19.489Z"
+  },
+  {
+   "id": "D53",
+   "key": "plug-worn#c32bb244",
+   "fic": "sugar-alpha.html",
+   "paragraph": 2175,
+   "sourceSha": "68a3c9d689b093806fb072b5e550e79a61eb9f16c1e79ca192ba24597338de5e",
+   "claim": {
+    "fic": "sugar-alpha.html",
+    "sourceSha": "68a3c9d689b093806fb072b5e550e79a61eb9f16c1e79ca192ba24597338de5e",
+    "paragraph": 2175,
+    "pattern": "plug-worn",
+    "act": "wearing a plug",
+    "kind": "prep",
+    "a": "Isaac Lahey",
+    "b": "Peter Hale",
+    "role": "bottom"
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Wrong person"
+   ],
+   "updatedAt": "2026-10-09T13:57:41.309Z"
+  },
+  {
+   "id": "D62",
+   "key": "penis-against#5581db6b",
+   "fic": "sugar-alpha.html",
+   "paragraph": 2345,
+   "sourceSha": "68a3c9d689b093806fb072b5e550e79a61eb9f16c1e79ca192ba24597338de5e",
+   "claim": {
+    "fic": "sugar-alpha.html",
+    "sourceSha": "68a3c9d689b093806fb072b5e550e79a61eb9f16c1e79ca192ba24597338de5e",
+    "paragraph": 2345,
+    "pattern": "penis-against",
+    "act": "anal sex",
+    "kind": "act",
+    "a": "Derek Hale",
+    "b": "Stiles Stilinski",
+    "role": ""
+   },
+   "verdict": "uncertain",
+   "errors": [],
+   "updatedAt": "2026-10-09T13:58:27.107Z"
+  },
+  {
+   "id": "D63",
+   "key": "plug-worn#ab5df7",
+   "fic": "sugar-alpha.html",
+   "paragraph": 2402,
+   "sourceSha": "68a3c9d689b093806fb072b5e550e79a61eb9f16c1e79ca192ba24597338de5e",
+   "claim": {
+    "fic": "sugar-alpha.html",
+    "sourceSha": "68a3c9d689b093806fb072b5e550e79a61eb9f16c1e79ca192ba24597338de5e",
+    "paragraph": 2402,
+    "pattern": "plug-worn",
+    "act": "wearing a plug",
+    "kind": "prep",
+    "a": "Isaac Lahey",
+    "b": "Stiles Stilinski",
+    "role": "bottom"
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Wrong person"
+   ],
+   "updatedAt": "2026-10-09T13:58:33.919Z"
+  }
+ ],
+ "ambiguousReadingKeys": [],
+ "superseded": {
+  "stretched-open~elided#9c262d89": {
+   "reason": "The owner left this claim uncertain."
+  },
+  "dd2-finger-shoved-into~elided#4f82ddce": {
+   "reason": "The owner left this claim uncertain."
+  },
+  "penis-against#5581db6b": {
+   "reason": "The owner left this claim uncertain."
+  }
+ },
+ "feedbackSha": "edd6a8130f99753828fbca110f7c9de9c051284c4f926a536365fefbc89e08b2"
+}
