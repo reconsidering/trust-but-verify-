@@ -919,7 +919,8 @@
    },
    "seen": [
     "2026-10-05"
-   ]
+   ],
+   "retired": "owner judged this wrong in the October 4-5 review 2026-10-09"
   },
   {
    "kind": "hint",
@@ -978,7 +979,8 @@
    },
    "seen": [
     "2026-10-05"
-   ]
+   ],
+   "retired": "owner judged this wrong in the October 4-5 review 2026-10-09"
   },
   {
    "kind": "hint",
@@ -1018,7 +1020,8 @@
    "seen": [
     "2026-10-05",
     "2026-10-06"
-   ]
+   ],
+   "retired": "owner re-judged this wrong in the October 4-5 review 2026-10-09"
   },
   {
    "kind": "hint",
@@ -1058,7 +1061,8 @@
    },
    "seen": [
     "2026-10-05"
-   ]
+   ],
+   "retired": "owner judged this wrong in the October 4-5 review 2026-10-09"
   },
   {
    "kind": "solo",
@@ -1179,7 +1183,8 @@
    },
    "seen": [
     "2026-10-05"
-   ]
+   ],
+   "retired": "owner judged this wrong in the October 4-5 review 2026-10-09"
   },
   {
    "kind": "scene",
@@ -1235,7 +1240,8 @@
    },
    "seen": [
     "2026-10-05"
-   ]
+   ],
+   "retired": "owner judged this wrong in the October 4-5 review 2026-10-09"
   },
   {
    "kind": "scene",
@@ -1551,6 +1557,100 @@
    "seen": [
     "2026-10-05",
     "2026-10-06"
+   ]
+  },
+  {
+   "kind": "hint",
+   "card": "anal",
+   "pairing": "Antinous/Telemachus",
+   "who": "Antinous",
+   "role": "top",
+   "wants": true,
+   "via": "fuck",
+   "h": "aa3e4311",
+   "conf": 54,
+   "misread": true,
+   "source": "owner",
+   "seen": [
+    "2026-10-09"
+   ]
+  },
+  {
+   "kind": "hint",
+   "card": "anal",
+   "pairing": "Antinous/Telemachus",
+   "who": "Telemachus",
+   "role": "bottom",
+   "wants": true,
+   "via": "thrust-back",
+   "h": "27ab9d6c",
+   "conf": 36,
+   "misread": true,
+   "source": "owner",
+   "seen": [
+    "2026-10-09"
+   ]
+  },
+  {
+   "kind": "hint",
+   "card": "anal",
+   "pairing": "Antinous/Telemachus",
+   "who": "Telemachus",
+   "role": "bottom",
+   "wants": true,
+   "via": "fingers-inside",
+   "h": "9ff91d47",
+   "conf": 60,
+   "misread": true,
+   "source": "owner",
+   "seen": [
+    "2026-10-09"
+   ]
+  },
+  {
+   "kind": "scene",
+   "card": "anal",
+   "pairing": "Antinous/Telemachus",
+   "top": "Antinous",
+   "bottom": "Telemachus",
+   "via": "prostate",
+   "h": "b2f66bf3",
+   "conf": 56,
+   "misread": true,
+   "source": "owner",
+   "seen": [
+    "2026-10-09"
+   ]
+  },
+  {
+   "kind": "scene",
+   "card": "anal",
+   "pairing": "Antinous/Telemachus",
+   "top": "Antinous",
+   "bottom": "Telemachus",
+   "via": "fuck",
+   "h": "aa3e4311",
+   "conf": 85,
+   "misread": true,
+   "source": "owner",
+   "seen": [
+    "2026-10-09"
+   ]
+  },
+  {
+   "kind": "hint",
+   "card": "anal",
+   "pairing": "Antinous/Telemachus",
+   "who": "Telemachus",
+   "role": "bottom",
+   "wants": true,
+   "via": "body-sore-ass",
+   "h": "fd6a8187",
+   "conf": 47,
+   "misread": true,
+   "source": "owner",
+   "seen": [
+    "2026-10-09"
    ]
   }
  ]

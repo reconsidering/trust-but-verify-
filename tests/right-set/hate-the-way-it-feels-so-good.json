@@ -296,7 +296,8 @@
    },
    "seen": [
     "2026-10-05"
-   ]
+   ],
+   "retired": "owner judged this wrong in the October 4-5 review 2026-10-09"
   },
   {
    "kind": "hint",
@@ -457,7 +458,8 @@
    "seen": [
     "2026-10-05",
     "2026-10-06"
-   ]
+   ],
+   "retired": "owner re-judged this wrong in the October 4-5 review 2026-10-09"
   },
   {
    "kind": "hint",
@@ -537,7 +539,8 @@
    },
    "seen": [
     "2026-10-05"
-   ]
+   ],
+   "retired": "owner judged this wrong in the October 4-5 review 2026-10-09"
   },
   {
    "kind": "hint",
@@ -617,7 +620,8 @@
    "seen": [
     "2026-10-05",
     "2026-10-06"
-   ]
+   ],
+   "retired": "owner re-judged this wrong in the October 4-5 review 2026-10-09"
   },
   {
    "kind": "hint",
@@ -691,7 +695,8 @@
    "seen": [
     "2026-10-05",
     "2026-10-06"
-   ]
+   ],
+   "retired": "owner re-judged this wrong in the October 4-5 review 2026-10-09"
   },
   {
    "kind": "scene",
@@ -785,7 +790,8 @@
    },
    "seen": [
     "2026-10-05"
-   ]
+   ],
+   "retired": "owner judged this wrong in the October 4-5 review 2026-10-09"
   },
   {
    "kind": "scene",
@@ -914,10 +920,10 @@
    "conf": 39,
    "misread": true,
    "gone": false,
-   "weight": 0.3,
-   "source": "claude",
+   "source": "owner",
    "seen": [
-    "2026-10-05"
+    "2026-10-05",
+    "2026-10-09"
    ]
   },
   {
@@ -932,12 +938,11 @@
    "conf": 26,
    "misread": true,
    "gone": false,
-   "weight": 0.3,
-   "source": "claude",
+   "source": "owner",
    "seen": [
-    "2026-10-05"
-   ],
-   "retired": "owner judged this right in a blind spot-check 2026-10-06"
+    "2026-10-05",
+    "2026-10-09"
+   ]
   },
   {
    "kind": "hint",
@@ -988,10 +993,10 @@
    "conf": 77,
    "misread": true,
    "gone": false,
-   "weight": 0.3,
-   "source": "claude",
+   "source": "owner",
    "seen": [
-    "2026-10-05"
+    "2026-10-05",
+    "2026-10-09"
    ]
   },
   {
@@ -1047,7 +1052,8 @@
    "source": "claude",
    "seen": [
     "2026-10-05"
-   ]
+   ],
+   "retired": "owner judged this right in the October 4-5 review 2026-10-09"
   },
   {
    "kind": "hint",
@@ -1061,10 +1067,10 @@
    "conf": 37,
    "misread": true,
    "gone": false,
-   "weight": 0.3,
-   "source": "claude",
+   "source": "owner",
    "seen": [
-    "2026-10-05"
+    "2026-10-05",
+    "2026-10-09"
    ]
   },
   {
@@ -1143,12 +1149,11 @@
    "conf": 60,
    "misread": true,
    "gone": false,
-   "weight": 0.3,
-   "source": "claude",
+   "source": "owner",
    "seen": [
-    "2026-10-05"
-   ],
-   "retired": "owner judged this right in the blind spot-check 2026-10-05"
+    "2026-10-05",
+    "2026-10-09"
+   ]
   },
   {
    "kind": "scene",
@@ -1212,9 +1217,85 @@
    "misread": true,
    "source": "owner",
    "seen": [
-    "2026-10-05"
-   ],
-   "retired": "owner re-judged this right 2026-10-06"
+    "2026-10-05",
+    "2026-10-09"
+   ]
+  },
+  {
+   "kind": "hint",
+   "card": "anal",
+   "pairing": "Steve Harrington/Eddie Munson",
+   "who": "Steve Harrington",
+   "role": "bottom",
+   "wants": true,
+   "via": "dialogue:anal sex",
+   "h": "27480662",
+   "conf": 77,
+   "misread": true,
+   "source": "owner",
+   "seen": [
+    "2026-10-09"
+   ]
+  },
+  {
+   "kind": "hint",
+   "card": "anal",
+   "pairing": "Steve Harrington/Eddie Munson",
+   "who": "Eddie Munson",
+   "role": "top",
+   "wants": true,
+   "via": "push-into",
+   "h": "c98b1870",
+   "conf": 37,
+   "misread": true,
+   "source": "owner",
+   "seen": [
+    "2026-10-09"
+   ]
+  },
+  {
+   "kind": "scene",
+   "card": "anal",
+   "pairing": "Steve Harrington/Eddie Munson",
+   "top": "Eddie Munson",
+   "bottom": "Steve Harrington",
+   "via": "push-into",
+   "h": "458bdbbf",
+   "conf": 75,
+   "misread": true,
+   "source": "owner",
+   "seen": [
+    "2026-10-09"
+   ]
+  },
+  {
+   "kind": "hint",
+   "card": "anal",
+   "pairing": "Steve Harrington/Eddie Munson",
+   "who": "Eddie Munson",
+   "role": "top",
+   "wants": true,
+   "via": "lined-up",
+   "h": "bf372d4",
+   "conf": 27,
+   "misread": true,
+   "source": "owner",
+   "seen": [
+    "2026-10-09"
+   ]
+  },
+  {
+   "kind": "solo",
+   "card": "solo",
+   "pairing": "Steve Harrington/Eddie Munson",
+   "who": "Eddie Munson",
+   "via": "mast-own",
+   "h": "2e0e78a6",
+   "misread": true,
+   "source": "owner",
+   "seen": [
+    "2026-10-09"
+   ]
   }
  ]
 }

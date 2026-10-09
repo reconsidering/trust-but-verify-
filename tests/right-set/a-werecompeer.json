@@ -219,7 +219,8 @@
    },
    "seen": [
     "2026-10-05"
-   ]
+   ],
+   "retired": "owner judged this wrong in the October 4-5 review 2026-10-09"
   },
   {
    "kind": "hint",
@@ -359,7 +360,8 @@
    },
    "seen": [
     "2026-10-05"
-   ]
+   ],
+   "retired": "owner judged this wrong in the October 4-5 review 2026-10-09"
   },
   {
    "kind": "hint",
@@ -379,7 +381,8 @@
    },
    "seen": [
     "2026-10-05"
-   ]
+   ],
+   "retired": "owner judged this wrong in the October 4-5 review 2026-10-09"
   },
   {
    "kind": "hint",
@@ -459,7 +462,8 @@
    },
    "seen": [
     "2026-10-05"
-   ]
+   ],
+   "retired": "owner judged this wrong in the October 4-5 review 2026-10-09"
   },
   {
    "kind": "hint",
@@ -498,7 +502,8 @@
    },
    "seen": [
     "2026-10-05"
-   ]
+   ],
+   "retired": "owner re-judged this wrong in the October 4-5 review 2026-10-09"
   },
   {
    "kind": "hint",
@@ -558,7 +563,8 @@
    },
    "seen": [
     "2026-10-05"
-   ]
+   ],
+   "retired": "owner judged this wrong in the October 4-5 review 2026-10-09"
   },
   {
    "kind": "hint",
@@ -1059,10 +1065,10 @@
    "conf": 15,
    "misread": true,
    "gone": true,
-   "weight": 0.3,
-   "source": "claude",
+   "source": "owner",
    "seen": [
-    "2026-10-05"
+    "2026-10-05",
+    "2026-10-09"
    ]
   },
   {
@@ -1077,10 +1083,10 @@
    "conf": 25,
    "misread": true,
    "gone": true,
-   "weight": 0.3,
-   "source": "claude",
+   "source": "owner",
    "seen": [
-    "2026-10-05"
+    "2026-10-05",
+    "2026-10-09"
    ]
   },
   {
@@ -1167,10 +1173,10 @@
    "conf": 63,
    "misread": true,
    "gone": true,
-   "weight": 0.3,
-   "source": "claude",
+   "source": "owner",
    "seen": [
-    "2026-10-05"
+    "2026-10-05",
+    "2026-10-09"
    ]
   },
   {
@@ -1239,12 +1245,11 @@
    "conf": 27,
    "misread": true,
    "gone": false,
-   "weight": 0.3,
-   "source": "claude",
+   "source": "owner",
    "seen": [
-    "2026-10-05"
-   ],
-   "retired": "owner judged this right in a blind spot-check 2026-10-06"
+    "2026-10-05",
+    "2026-10-09"
+   ]
   },
   {
    "kind": "solo",
@@ -1405,10 +1410,10 @@
    "conf": 48,
    "misread": true,
    "gone": true,
-   "weight": 0.3,
-   "source": "claude",
+   "source": "owner",
    "seen": [
-    "2026-10-05"
+    "2026-10-05",
+    "2026-10-09"
    ]
   },
   {
@@ -1422,12 +1427,11 @@
    "conf": 25,
    "misread": true,
    "gone": true,
-   "weight": 0.3,
-   "source": "claude",
+   "source": "owner",
    "seen": [
-    "2026-10-05"
-   ],
-   "retired": "owner judged this right in a blind spot-check 2026-10-06"
+    "2026-10-05",
+    "2026-10-09"
+   ]
   },
   {
    "kind": "scene",
@@ -1457,10 +1461,10 @@
    "conf": 68,
    "misread": true,
    "gone": true,
-   "weight": 0.3,
-   "source": "claude",
+   "source": "owner",
    "seen": [
-    "2026-10-05"
+    "2026-10-05",
+    "2026-10-09"
    ]
   },
   {
@@ -1561,6 +1565,102 @@
    "source": "owner",
    "seen": [
     "2026-10-06"
+   ]
+  },
+  {
+   "kind": "hint",
+   "card": "anal",
+   "pairing": "Derek Hale/Stiles Stilinski",
+   "who": "Stiles Stilinski",
+   "role": "bottom",
+   "wants": true,
+   "via": "spread-legs",
+   "h": "cf839770",
+   "conf": 34,
+   "misread": true,
+   "source": "owner",
+   "seen": [
+    "2026-10-09"
+   ]
+  },
+  {
+   "kind": "hint",
+   "card": "anal",
+   "pairing": "Derek Hale/Stiles Stilinski",
+   "who": "Stiles Stilinski",
+   "role": "bottom",
+   "wants": true,
+   "via": "plug-worn",
+   "h": "102eb6e1",
+   "conf": 58,
+   "misread": true,
+   "source": "owner",
+   "seen": [
+    "2026-10-09"
+   ]
+  },
+  {
+   "kind": "hint",
+   "card": "anal",
+   "pairing": "Derek Hale/Stiles Stilinski",
+   "who": "Stiles Stilinski",
+   "role": "bottom",
+   "wants": true,
+   "via": "plug-worn",
+   "h": "7a623564",
+   "conf": 48,
+   "misread": true,
+   "source": "owner",
+   "seen": [
+    "2026-10-09"
+   ]
+  },
+  {
+   "kind": "hint",
+   "card": "anal",
+   "pairing": "Derek Hale/Stiles Stilinski",
+   "who": "Derek Hale",
+   "role": "top",
+   "wants": true,
+   "via": "toy-removed",
+   "h": "7802e1a8",
+   "conf": 33,
+   "misread": true,
+   "source": "owner",
+   "seen": [
+    "2026-10-09"
+   ]
+  },
+  {
+   "kind": "hint",
+   "card": "anal",
+   "pairing": "Derek Hale/Stiles Stilinski",
+   "who": "Stiles Stilinski",
+   "role": "bottom",
+   "wants": true,
+   "via": "riding",
+   "h": "73e231c7",
+   "conf": 80,
+   "misread": true,
+   "source": "owner",
+   "seen": [
+    "2026-10-09"
+   ]
+  },
+  {
+   "kind": "hint",
+   "card": "anal",
+   "pairing": "Derek Hale/Stiles Stilinski",
+   "who": "Stiles Stilinski",
+   "role": "bottom",
+   "wants": true,
+   "via": "bent-over-furniture",
+   "h": "5c477f2d",
+   "conf": 33,
+   "misread": true,
+   "source": "owner",
+   "seen": [
+    "2026-10-09"
    ]
   }
  ]

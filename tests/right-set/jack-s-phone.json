@@ -18,7 +18,8 @@
    },
    "seen": [
     "2026-10-05"
-   ]
+   ],
+   "retired": "owner judged this wrong in the October 4-5 review 2026-10-09"
   },
   {
    "kind": "hint",
@@ -58,7 +59,8 @@
    },
    "seen": [
     "2026-10-05"
-   ]
+   ],
+   "retired": "owner judged this wrong in the October 4-5 review 2026-10-09"
   },
   {
    "kind": "hint",
@@ -197,7 +199,8 @@
    },
    "seen": [
     "2026-10-05"
-   ]
+   ],
+   "retired": "owner judged this wrong in the October 4-5 review 2026-10-09"
   },
   {
    "kind": "hint",
@@ -256,7 +259,8 @@
    },
    "seen": [
     "2026-10-05"
-   ]
+   ],
+   "retired": "owner judged this wrong in the October 4-5 review 2026-10-09"
   },
   {
    "kind": "hint",
@@ -297,7 +301,8 @@
    },
    "seen": [
     "2026-10-05"
-   ]
+   ],
+   "retired": "owner judged this wrong in the October 4-5 review 2026-10-09"
   },
   {
    "kind": "hint",
@@ -674,7 +679,8 @@
    },
    "seen": [
     "2026-10-05"
-   ]
+   ],
+   "retired": "owner judged this wrong in the October 4-5 review 2026-10-09"
   },
   {
    "kind": "hint",
@@ -1003,7 +1009,8 @@
    },
    "seen": [
     "2026-10-05"
-   ]
+   ],
+   "retired": "owner re-judged this wrong in the October 4-5 review 2026-10-09"
   },
   {
    "kind": "solo",
@@ -1039,7 +1046,8 @@
    "seen": [
     "2026-10-05",
     "2026-10-06"
-   ]
+   ],
+   "retired": "owner re-judged this wrong in the October 4-5 review 2026-10-09"
   },
   {
    "kind": "scene",
@@ -1191,7 +1199,8 @@
    },
    "seen": [
     "2026-10-05"
-   ]
+   ],
+   "retired": "owner judged this wrong in the October 4-5 review 2026-10-09"
   },
   {
    "kind": "scene",
@@ -1343,7 +1352,8 @@
    },
    "seen": [
     "2026-10-05"
-   ]
+   ],
+   "retired": "owner judged this wrong in the October 4-5 review 2026-10-09"
   },
   {
    "kind": "scene",
@@ -1606,7 +1616,8 @@
    },
    "seen": [
     "2026-10-05"
-   ]
+   ],
+   "retired": "owner judged this wrong in the October 4-5 review 2026-10-09"
   },
   {
    "kind": "scene",
@@ -1644,7 +1655,8 @@
    },
    "seen": [
     "2026-10-05"
-   ]
+   ],
+   "retired": "owner judged this wrong in the October 4-5 review 2026-10-09"
   },
   {
    "kind": "scene",
@@ -1907,7 +1919,8 @@
    },
    "seen": [
     "2026-10-05"
-   ]
+   ],
+   "retired": "owner judged this wrong in the October 4-5 review 2026-10-09"
   },
   {
    "kind": "scene",
@@ -1964,7 +1977,8 @@
    },
    "seen": [
     "2026-10-05"
-   ]
+   ],
+   "retired": "owner judged this wrong in the October 4-5 review 2026-10-09"
   },
   {
    "kind": "scene",
@@ -2022,7 +2036,8 @@
    },
    "seen": [
     "2026-10-05"
-   ]
+   ],
+   "retired": "owner judged this wrong in the October 4-5 review 2026-10-09"
   },
   {
    "kind": "scene",
@@ -2147,7 +2162,8 @@
    "source": "claude",
    "seen": [
     "2026-10-05"
-   ]
+   ],
+   "retired": "owner judged this right in the October 4-5 review 2026-10-09"
   },
   {
    "kind": "scene",
@@ -2160,12 +2176,11 @@
    "conf": 63,
    "misread": true,
    "gone": false,
-   "weight": 0.3,
-   "source": "claude",
+   "source": "owner",
    "seen": [
-    "2026-10-05"
-   ],
-   "retired": "owner judged this right in a blind spot-check 2026-10-06"
+    "2026-10-05",
+    "2026-10-09"
+   ]
   },
   {
    "kind": "scene",
@@ -2407,6 +2422,234 @@
    "source": "owner",
    "seen": [
     "2026-10-06"
+   ]
+  },
+  {
+   "kind": "hint",
+   "card": "anal",
+   "pairing": "Dracula/Jack Seward",
+   "who": "Jack Seward",
+   "role": "bottom",
+   "wants": true,
+   "via": "fuck",
+   "h": "5c2a734c",
+   "conf": 41,
+   "misread": true,
+   "source": "owner",
+   "seen": [
+    "2026-10-09"
+   ]
+  },
+  {
+   "kind": "hint",
+   "card": "anal",
+   "pairing": "Dracula/Jack Seward",
+   "who": "Jack Seward",
+   "role": "bottom",
+   "wants": true,
+   "via": "arch-back",
+   "h": "874342d",
+   "conf": 27,
+   "misread": true,
+   "source": "owner",
+   "seen": [
+    "2026-10-09"
+   ]
+  },
+  {
+   "kind": "hint",
+   "card": "anal",
+   "pairing": "Dracula/Jack Seward",
+   "who": "Jack Seward",
+   "role": "bottom",
+   "wants": true,
+   "via": "push-into",
+   "h": "5bfbf0de",
+   "conf": 41,
+   "misread": true,
+   "source": "owner",
+   "seen": [
+    "2026-10-09"
+   ]
+  },
+  {
+   "kind": "hint",
+   "card": "anal",
+   "pairing": "Dracula/Jack Seward",
+   "who": "Jack Seward",
+   "role": "bottom",
+   "wants": true,
+   "via": "bottomed-out",
+   "h": "14fb10b5",
+   "conf": 26,
+   "misread": true,
+   "source": "owner",
+   "seen": [
+    "2026-10-09"
+   ]
+  },
+  {
+   "kind": "hint",
+   "card": "anal",
+   "pairing": "Dracula/Jack Seward",
+   "who": "Jack Seward",
+   "role": "bottom",
+   "wants": true,
+   "via": "spread-legs",
+   "h": "17fa4fb3",
+   "conf": 30,
+   "misread": true,
+   "source": "owner",
+   "seen": [
+    "2026-10-09"
+   ]
+  },
+  {
+   "kind": "hint",
+   "card": "anal",
+   "pairing": "Dracula/Jack Seward",
+   "who": "Jack Seward",
+   "role": "bottom",
+   "wants": true,
+   "via": "body-hole-ache",
+   "h": "3db0da5c",
+   "conf": 36,
+   "misread": true,
+   "source": "owner",
+   "seen": [
+    "2026-10-09"
+   ]
+  },
+  {
+   "kind": "scene",
+   "card": "anal",
+   "pairing": "Dracula/Jack Seward",
+   "top": "Dracula",
+   "bottom": "Jack Seward",
+   "via": "fuck",
+   "h": "b377e71f",
+   "conf": 68,
+   "misread": true,
+   "source": "owner",
+   "seen": [
+    "2026-10-09"
+   ]
+  },
+  {
+   "kind": "scene",
+   "card": "anal",
+   "pairing": "Dracula/Jack Seward",
+   "top": "Dracula",
+   "bottom": "Jack Seward",
+   "via": "dd2-pulled-out-of-him",
+   "h": "5518a375",
+   "conf": 60,
+   "misread": true,
+   "source": "owner",
+   "seen": [
+    "2026-10-09"
+   ]
+  },
+  {
+   "kind": "scene",
+   "card": "anal",
+   "pairing": "Dracula/Jack Seward",
+   "top": "Dracula",
+   "bottom": "Jack Seward",
+   "via": "dd2-finger-shoved-into",
+   "h": "992dcebc",
+   "misread": true,
+   "source": "owner",
+   "seen": [
+    "2026-10-09"
+   ]
+  },
+  {
+   "kind": "scene",
+   "card": "blowjob",
+   "pairing": "Dracula/Jack Seward",
+   "top": "Jack Seward",
+   "bottom": "Dracula",
+   "via": "licked-slit",
+   "h": "168ca342",
+   "conf": 71,
+   "misread": true,
+   "source": "owner",
+   "seen": [
+    "2026-10-09"
+   ]
+  },
+  {
+   "kind": "scene",
+   "card": "anal",
+   "pairing": "Dracula/Jack Seward",
+   "top": "Dracula",
+   "bottom": "Jack Seward",
+   "via": "press-cock-against",
+   "h": "50fdbe2c",
+   "conf": 56,
+   "misread": true,
+   "source": "owner",
+   "seen": [
+    "2026-10-09"
+   ]
+  },
+  {
+   "kind": "scene",
+   "card": "anal",
+   "pairing": "Dracula/Jack Seward",
+   "top": "Jack Seward",
+   "bottom": "Dracula",
+   "via": "riding",
+   "h": "345874c5",
+   "conf": 15,
+   "misread": true,
+   "source": "owner",
+   "seen": [
+    "2026-10-09"
+   ]
+  },
+  {
+   "kind": "scene",
+   "card": "anal",
+   "pairing": "Dracula/Jack Seward",
+   "top": "Dracula",
+   "bottom": "Jack Seward",
+   "via": "passive-fucked",
+   "h": "9904546d",
+   "conf": 40,
+   "misread": true,
+   "source": "owner",
+   "seen": [
+    "2026-10-09"
+   ]
+  },
+  {
+   "kind": "solo",
+   "card": "solo",
+   "pairing": "Dracula/Jack Seward",
+   "who": "Dracula",
+   "via": "mast-word",
+   "h": "3af17fd8",
+   "misread": true,
+   "source": "owner",
+   "seen": [
+    "2026-10-09"
+   ]
+  },
+  {
+   "kind": "scene",
+   "card": "rimming",
+   "pairing": "Dracula/Jack Seward",
+   "top": "Dracula",
+   "bottom": "Jack Seward",
+   "via": "tongue-inside-him",
+   "h": "254ed222",
+   "conf": 60,
+   "misread": true,
+   "source": "owner",
+   "seen": [
+    "2026-10-09"
    ]
   }
  ]
