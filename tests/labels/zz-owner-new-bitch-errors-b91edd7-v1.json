@@ -1,0 +1,430 @@
+{
+ "made": "2026-10-09",
+ "how": "Explicit owner judgments on current engine readings from a full-text deep review. Acts and hints are labelled only when explicitly judged. Uncertain answers are excluded from training. No label is inferred from a missed act, assistant confidence, or an omission.",
+ "batchId": "new-bitch-errors-b91edd7-v1",
+ "engineCommit": "b91edd7",
+ "labels": {
+  "hj-stroke#10cc6aa8": "wrong",
+  "dd-hj-pulled-out#69c4128": "wrong",
+  "dd2-mast-take-in-hand#69c4128": "wrong",
+  "passive-fucked~elided#565b4148": "wrong",
+  "fuck~elided#8e95f961": "wrong",
+  "dialogue:anal sex#9693b8f": "wrong",
+  "sucked#7fcd9132": "wrong",
+  "hj-stroke#efb21194": "wrong",
+  "push-into~elided#a494645d": "wrong",
+  "adds-finger#1cb28ecc": "wrong",
+  "pushed-in~elided#807375ba": "wrong",
+  "came-inside~one-sided#8f6146f4": "wrong",
+  "body-leaking-ass#f9c418ec": "wrong",
+  "dd5-fingers-circle-hole#ebf1ef6": "wrong",
+  "dialogue:checking out an ass#94b404b7": "wrong",
+  "fuck~elided#a069dcea": "wrong",
+  "sucked-harder#118ba14f": "wrong"
+ },
+ "answers": [
+  {
+   "id": "D7",
+   "key": "hj-stroke#10cc6aa8",
+   "fic": "new-bitch.html",
+   "paragraph": 2669,
+   "sourceSha": "035c7e5c68df50c2dc0d7e64a801001d3c59ccfadda9e1f8511960dd26a018e7",
+   "claim": {
+    "fic": "new-bitch.html",
+    "sourceSha": "035c7e5c68df50c2dc0d7e64a801001d3c59ccfadda9e1f8511960dd26a018e7",
+    "paragraph": 2669,
+    "pattern": "hj-stroke",
+    "act": "handjob",
+    "kind": "handjob",
+    "a": "Laurent",
+    "b": "Damen",
+    "role": "top"
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Self-action assigned to a partner"
+   ],
+   "updatedAt": "2026-10-09T14:06:04.278Z"
+  },
+  {
+   "id": "D17",
+   "key": "dd-hj-pulled-out#69c4128",
+   "fic": "new-bitch.html",
+   "paragraph": 6421,
+   "sourceSha": "035c7e5c68df50c2dc0d7e64a801001d3c59ccfadda9e1f8511960dd26a018e7",
+   "claim": {
+    "fic": "new-bitch.html",
+    "sourceSha": "035c7e5c68df50c2dc0d7e64a801001d3c59ccfadda9e1f8511960dd26a018e7",
+    "paragraph": 6421,
+    "pattern": "dd-hj-pulled-out",
+    "act": "handjob",
+    "kind": "handjob",
+    "a": "Damen",
+    "b": "Laurent",
+    "role": "top"
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Wrong act or body part",
+    "No act happened"
+   ],
+   "updatedAt": "2026-10-09T14:07:41.873Z"
+  },
+  {
+   "id": "D18",
+   "key": "dd2-mast-take-in-hand#69c4128",
+   "fic": "new-bitch.html",
+   "paragraph": 6421,
+   "sourceSha": "035c7e5c68df50c2dc0d7e64a801001d3c59ccfadda9e1f8511960dd26a018e7",
+   "claim": {
+    "fic": "new-bitch.html",
+    "sourceSha": "035c7e5c68df50c2dc0d7e64a801001d3c59ccfadda9e1f8511960dd26a018e7",
+    "paragraph": 6421,
+    "pattern": "dd2-mast-take-in-hand",
+    "act": "masturbation",
+    "kind": "masturbation",
+    "a": "Damen",
+    "b": "Laurent",
+    "role": "bottom"
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Wrong act or body part",
+    "No act happened"
+   ],
+   "updatedAt": "2026-10-09T14:07:48.933Z"
+  },
+  {
+   "id": "D1",
+   "key": "passive-fucked~elided#565b4148",
+   "fic": "new-bitch.html",
+   "paragraph": 1249,
+   "sourceSha": "035c7e5c68df50c2dc0d7e64a801001d3c59ccfadda9e1f8511960dd26a018e7",
+   "claim": {
+    "fic": "new-bitch.html",
+    "sourceSha": "035c7e5c68df50c2dc0d7e64a801001d3c59ccfadda9e1f8511960dd26a018e7",
+    "paragraph": 1249,
+    "pattern": "passive-fucked~elided",
+    "act": "anal sex",
+    "kind": "act",
+    "a": "Laurent",
+    "b": "Ancel",
+    "role": ""
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Wish or dialogue treated as an act",
+    "Wrong person",
+    "No act happened"
+   ],
+   "updatedAt": "2026-10-09T14:08:01.877Z"
+  },
+  {
+   "id": "D2",
+   "key": "fuck~elided#8e95f961",
+   "fic": "new-bitch.html",
+   "paragraph": 1752,
+   "sourceSha": "035c7e5c68df50c2dc0d7e64a801001d3c59ccfadda9e1f8511960dd26a018e7",
+   "claim": {
+    "fic": "new-bitch.html",
+    "sourceSha": "035c7e5c68df50c2dc0d7e64a801001d3c59ccfadda9e1f8511960dd26a018e7",
+    "paragraph": 1752,
+    "pattern": "fuck~elided",
+    "act": "anal sex",
+    "kind": "act",
+    "a": "Damen",
+    "b": "Laurent",
+    "role": ""
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Wish or dialogue treated as an act",
+    "No act happened"
+   ],
+   "updatedAt": "2026-10-09T14:08:11.740Z"
+  },
+  {
+   "id": "D3",
+   "key": "dialogue:anal sex#9693b8f",
+   "fic": "new-bitch.html",
+   "paragraph": 1859,
+   "sourceSha": "035c7e5c68df50c2dc0d7e64a801001d3c59ccfadda9e1f8511960dd26a018e7",
+   "claim": {
+    "fic": "new-bitch.html",
+    "sourceSha": "035c7e5c68df50c2dc0d7e64a801001d3c59ccfadda9e1f8511960dd26a018e7",
+    "paragraph": 1859,
+    "pattern": "dialogue:anal sex",
+    "act": "anal sex",
+    "kind": "said",
+    "a": "Damen",
+    "b": "Laurent",
+    "role": "bottom"
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Wrong person",
+    "Roles reversed"
+   ],
+   "updatedAt": "2026-10-09T14:08:47.882Z"
+  },
+  {
+   "id": "D4",
+   "key": "sucked#7fcd9132",
+   "fic": "new-bitch.html",
+   "paragraph": 1958,
+   "sourceSha": "035c7e5c68df50c2dc0d7e64a801001d3c59ccfadda9e1f8511960dd26a018e7",
+   "claim": {
+    "fic": "new-bitch.html",
+    "sourceSha": "035c7e5c68df50c2dc0d7e64a801001d3c59ccfadda9e1f8511960dd26a018e7",
+    "paragraph": 1958,
+    "pattern": "sucked",
+    "act": "blowjob",
+    "kind": "act",
+    "a": "Damen",
+    "b": "Laurent",
+    "role": ""
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Roles reversed"
+   ],
+   "updatedAt": "2026-10-09T14:09:01.935Z"
+  },
+  {
+   "id": "D5",
+   "key": "hj-stroke#efb21194",
+   "fic": "new-bitch.html",
+   "paragraph": 2610,
+   "sourceSha": "035c7e5c68df50c2dc0d7e64a801001d3c59ccfadda9e1f8511960dd26a018e7",
+   "claim": {
+    "fic": "new-bitch.html",
+    "sourceSha": "035c7e5c68df50c2dc0d7e64a801001d3c59ccfadda9e1f8511960dd26a018e7",
+    "paragraph": 2610,
+    "pattern": "hj-stroke",
+    "act": "handjob",
+    "kind": "handjob",
+    "a": "Damen",
+    "b": "Laurent",
+    "role": "top"
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Wrong act or body part"
+   ],
+   "updatedAt": "2026-10-09T14:09:12.591Z"
+  },
+  {
+   "id": "D6",
+   "key": "push-into~elided#a494645d",
+   "fic": "new-bitch.html",
+   "paragraph": 2634,
+   "sourceSha": "035c7e5c68df50c2dc0d7e64a801001d3c59ccfadda9e1f8511960dd26a018e7",
+   "claim": {
+    "fic": "new-bitch.html",
+    "sourceSha": "035c7e5c68df50c2dc0d7e64a801001d3c59ccfadda9e1f8511960dd26a018e7",
+    "paragraph": 2634,
+    "pattern": "push-into~elided",
+    "act": "anal sex",
+    "kind": "fantasy",
+    "a": "Damen",
+    "b": "Laurent",
+    "role": "top"
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Act missed"
+   ],
+   "updatedAt": "2026-10-09T14:09:40.103Z"
+  },
+  {
+   "id": "D8",
+   "key": "adds-finger#1cb28ecc",
+   "fic": "new-bitch.html",
+   "paragraph": 3004,
+   "sourceSha": "035c7e5c68df50c2dc0d7e64a801001d3c59ccfadda9e1f8511960dd26a018e7",
+   "claim": {
+    "fic": "new-bitch.html",
+    "sourceSha": "035c7e5c68df50c2dc0d7e64a801001d3c59ccfadda9e1f8511960dd26a018e7",
+    "paragraph": 3004,
+    "pattern": "adds-finger",
+    "act": "fingering",
+    "kind": "act",
+    "a": "Damen",
+    "b": "Laurent",
+    "role": ""
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Wrong act or body part"
+   ],
+   "updatedAt": "2026-10-09T14:09:50.588Z"
+  },
+  {
+   "id": "D9",
+   "key": "pushed-in~elided#807375ba",
+   "fic": "new-bitch.html",
+   "paragraph": 4747,
+   "sourceSha": "035c7e5c68df50c2dc0d7e64a801001d3c59ccfadda9e1f8511960dd26a018e7",
+   "claim": {
+    "fic": "new-bitch.html",
+    "sourceSha": "035c7e5c68df50c2dc0d7e64a801001d3c59ccfadda9e1f8511960dd26a018e7",
+    "paragraph": 4747,
+    "pattern": "pushed-in~elided",
+    "act": "anal sex",
+    "kind": "wanted",
+    "a": "Damen",
+    "b": "Laurent",
+    "role": "top"
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Act missed"
+   ],
+   "updatedAt": "2026-10-09T14:11:12.214Z"
+  },
+  {
+   "id": "D13",
+   "key": "came-inside~one-sided#8f6146f4",
+   "fic": "new-bitch.html",
+   "paragraph": 5243,
+   "sourceSha": "035c7e5c68df50c2dc0d7e64a801001d3c59ccfadda9e1f8511960dd26a018e7",
+   "claim": {
+    "fic": "new-bitch.html",
+    "sourceSha": "035c7e5c68df50c2dc0d7e64a801001d3c59ccfadda9e1f8511960dd26a018e7",
+    "paragraph": 5243,
+    "pattern": "came-inside~one-sided",
+    "act": "anal sex (partner unclear)",
+    "kind": "touch",
+    "a": "Laurent",
+    "b": "Damen",
+    "role": "bottom"
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Wrong person",
+    "Act missed"
+   ],
+   "updatedAt": "2026-10-09T14:11:45.467Z"
+  },
+  {
+   "id": "D14",
+   "key": "body-leaking-ass#f9c418ec",
+   "fic": "new-bitch.html",
+   "paragraph": 5266,
+   "sourceSha": "035c7e5c68df50c2dc0d7e64a801001d3c59ccfadda9e1f8511960dd26a018e7",
+   "claim": {
+    "fic": "new-bitch.html",
+    "sourceSha": "035c7e5c68df50c2dc0d7e64a801001d3c59ccfadda9e1f8511960dd26a018e7",
+    "paragraph": 5266,
+    "pattern": "body-leaking-ass",
+    "act": "leaking come",
+    "kind": "body",
+    "a": "Damen",
+    "b": "Laurent",
+    "role": "bottom"
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Wrong person",
+    "Wish or dialogue treated as an act"
+   ],
+   "updatedAt": "2026-10-09T14:11:58.215Z"
+  },
+  {
+   "id": "D15",
+   "key": "dd5-fingers-circle-hole#ebf1ef6",
+   "fic": "new-bitch.html",
+   "paragraph": 5449,
+   "sourceSha": "035c7e5c68df50c2dc0d7e64a801001d3c59ccfadda9e1f8511960dd26a018e7",
+   "claim": {
+    "fic": "new-bitch.html",
+    "sourceSha": "035c7e5c68df50c2dc0d7e64a801001d3c59ccfadda9e1f8511960dd26a018e7",
+    "paragraph": 5449,
+    "pattern": "dd5-fingers-circle-hole",
+    "act": "fingering",
+    "kind": "act",
+    "a": "Damen",
+    "b": "Laurent",
+    "role": ""
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Contact mistaken for penetration"
+   ],
+   "updatedAt": "2026-10-09T14:12:21.526Z"
+  },
+  {
+   "id": "D16",
+   "key": "dialogue:checking out an ass#94b404b7",
+   "fic": "new-bitch.html",
+   "paragraph": 5671,
+   "sourceSha": "035c7e5c68df50c2dc0d7e64a801001d3c59ccfadda9e1f8511960dd26a018e7",
+   "claim": {
+    "fic": "new-bitch.html",
+    "sourceSha": "035c7e5c68df50c2dc0d7e64a801001d3c59ccfadda9e1f8511960dd26a018e7",
+    "paragraph": 5671,
+    "pattern": "dialogue:checking out an ass",
+    "act": "checking out an ass",
+    "kind": "ogling",
+    "a": "Ancel",
+    "b": "Damen",
+    "role": "top"
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Wrong person"
+   ],
+   "updatedAt": "2026-10-09T14:12:32.719Z"
+  },
+  {
+   "id": "D19",
+   "key": "fuck~elided#a069dcea",
+   "fic": "new-bitch.html",
+   "paragraph": 6488,
+   "sourceSha": "035c7e5c68df50c2dc0d7e64a801001d3c59ccfadda9e1f8511960dd26a018e7",
+   "claim": {
+    "fic": "new-bitch.html",
+    "sourceSha": "035c7e5c68df50c2dc0d7e64a801001d3c59ccfadda9e1f8511960dd26a018e7",
+    "paragraph": 6488,
+    "pattern": "fuck~elided",
+    "act": "anal sex",
+    "kind": "wanted",
+    "a": "Laurent",
+    "b": "Damen",
+    "role": "top"
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Roles reversed",
+    "Act missed"
+   ],
+   "updatedAt": "2026-10-09T14:12:59.148Z"
+  },
+  {
+   "id": "D20",
+   "key": "sucked-harder#118ba14f",
+   "fic": "new-bitch.html",
+   "paragraph": 6578,
+   "sourceSha": "035c7e5c68df50c2dc0d7e64a801001d3c59ccfadda9e1f8511960dd26a018e7",
+   "claim": {
+    "fic": "new-bitch.html",
+    "sourceSha": "035c7e5c68df50c2dc0d7e64a801001d3c59ccfadda9e1f8511960dd26a018e7",
+    "paragraph": 6578,
+    "pattern": "sucked-harder",
+    "act": "blowjob",
+    "kind": "act",
+    "a": "Laurent",
+    "b": "Ancel",
+    "role": ""
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Wrong person"
+   ],
+   "updatedAt": "2026-10-09T14:13:04.212Z"
+  }
+ ],
+ "ambiguousReadingKeys": [],
+ "superseded": {},
+ "feedbackSha": "1c2560dc42c04b0b9c988cbea92d36c8ccb6cfd186a628c3e1e2d29020da9a0c"
+}

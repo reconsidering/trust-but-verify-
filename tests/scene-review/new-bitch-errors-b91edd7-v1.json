@@ -1,0 +1,131 @@
+{
+ "schema": "engine-suspect-act-review/v1",
+ "batchId": "new-bitch-errors-b91edd7-v1",
+ "referenceCommit": "b91edd7",
+ "scope": {
+  "coverage": "positive-only; even complete windows never imply missing-act or hint negatives",
+  "occurrence": "only explicitly confirmed performed acts become events",
+  "confidenceTraining": "separate explicit per-reading decisions only",
+  "privateText": "free text and assistant scores excluded"
+ },
+ "sources": [
+  {
+   "file": "new-bitch.html",
+   "title": "New Bitch",
+   "sourceSha": "035c7e5c68df50c2dc0d7e64a801001d3c59ccfadda9e1f8511960dd26a018e7",
+   "paragraphSha": "5527ed5d1e69500ba1329c931eafb505469a502764e91e796db95d4bceaee936",
+   "paragraphCount": 7944
+  }
+ ],
+ "windows": [
+  {
+   "id": "W7",
+   "fic": "new-bitch.html",
+   "sourceSha": "035c7e5c68df50c2dc0d7e64a801001d3c59ccfadda9e1f8511960dd26a018e7",
+   "from": 2656,
+   "to": 2678,
+   "coverage": "positive-only",
+   "coverageReviewed": false,
+   "reviews": [
+    {
+     "id": "A1",
+     "revision": "edd6193baea76cb1",
+     "verdict": "correct",
+     "act": "Solo masturbation",
+     "performer": "Laurent",
+     "receiver": "",
+     "occurrence": "performed",
+     "from": 2658,
+     "to": 2669,
+     "errors": [
+      "Act missed"
+     ]
+    }
+   ],
+   "events": [
+    {
+     "ownerActId": "A1",
+     "act": "Solo masturbation",
+     "performer": "Laurent",
+     "receiver": "",
+     "from": 2658,
+     "to": 2669,
+     "scored": true
+    }
+   ]
+  },
+  {
+   "id": "W11",
+   "fic": "new-bitch.html",
+   "sourceSha": "035c7e5c68df50c2dc0d7e64a801001d3c59ccfadda9e1f8511960dd26a018e7",
+   "from": 5216,
+   "to": 5228,
+   "coverage": "positive-only",
+   "coverageReviewed": false,
+   "reviews": [
+    {
+     "id": "A5",
+     "revision": "da10abe7448a30ec",
+     "verdict": "correct",
+     "act": "Penis against buttocks",
+     "performer": "Damen",
+     "receiver": "Laurent",
+     "occurrence": "performed",
+     "from": 5218,
+     "to": 5220,
+     "errors": [
+      "Wrong act or body part"
+     ]
+    }
+   ],
+   "events": [
+    {
+     "ownerActId": "A5",
+     "act": "Penis against buttocks",
+     "performer": "Damen",
+     "receiver": "Laurent",
+     "from": 5218,
+     "to": 5220,
+     "scored": false
+    }
+   ]
+  },
+  {
+   "id": "W16",
+   "fic": "new-bitch.html",
+   "sourceSha": "035c7e5c68df50c2dc0d7e64a801001d3c59ccfadda9e1f8511960dd26a018e7",
+   "from": 6319,
+   "to": 6328,
+   "coverage": "positive-only",
+   "coverageReviewed": false,
+   "reviews": [
+    {
+     "id": "A6",
+     "revision": "5755e053546e47f5",
+     "verdict": "correct",
+     "act": "Rimming",
+     "performer": "Damen",
+     "receiver": "Laurent",
+     "occurrence": "performed",
+     "from": 6321,
+     "to": 6324,
+     "errors": [
+      "Act missed"
+     ]
+    }
+   ],
+   "events": [
+    {
+     "ownerActId": "A6",
+     "act": "Rimming",
+     "performer": "Damen",
+     "receiver": "Laurent",
+     "from": 6321,
+     "to": 6324,
+     "scored": true
+    }
+   ]
+  }
+ ],
+ "feedbackSha": "1c2560dc42c04b0b9c988cbea92d36c8ccb6cfd186a628c3e1e2d29020da9a0c"
+}
