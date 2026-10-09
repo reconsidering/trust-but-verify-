@@ -37,7 +37,7 @@ const title = (f) => f.replace(/\.html$/, "").replace(/-/g, " ");
 let notes = {}; try { notes = JSON.parse(readFileSync(join(outDir, "annotations.json"), "utf8")); } catch {}
 const rows = picked.map((c, i) => ({
   n: i + 1, key: c.key, pn: c.para, fic: title(c.fic), pattern: "", before: c.before, para: mark(c.para_text), after: c.after,
-  claim: `Does ${c.bottom} come here without anyone (including themself) touching their penis, from anal or prostate stimulation alone?`,
+  claim: `Does ${c.detected && c.detectedCredit ? c.detectedCredit : c.bottom} come here without anyone (including themself) touching their penis, from anal or prostate stimulation alone?`,
   ...(notes[c.key] ?? {}),
 }));
 // How many unflagged, untouched-looking passages in the fic each sampled one stands for, so the answers can estimate how many the detector missed.

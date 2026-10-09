@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 // Reads the owner's answers on the hands-free page and reports how well the detector did (precision and an estimate of recall).
-//   node scripts/hands-free-import.mjs <answers dir> [round dir=ao3-samples/.hands-free/round-1] [--write tests/hands-free/round-1.json] [--include-peeked]
+//   node scripts/hands-free-import.mjs <answers dir> [round dir=ao3-samples/.hands-free/round-1] [--write tests/hands-free/round-1.json] [--include-peeked] [--as-yes n,n]
 // <answers dir> is the page's saved "reviews" collection (one JSON file per answer: { n, key, v, note }), saved with ArtifactData (out_dir).
 // --write keeps the answers (keys, verdicts, what the detector said; no story text or notes) as a record the next change can be measured against.
 import { existsSync, mkdirSync, readFileSync, readdirSync, writeFileSync } from "node:fs";
@@ -9,18 +9,22 @@ import { summarise } from "./hands-free-summary.mjs";
 
 const args = process.argv.slice(2);
 const includePeeked = args.includes("--include-peeked");
+// --as-yes 54,64: the owner's note on those answers says the question named the wrong person and the person the detector credited is the one who comes hands-free.
+const asYesAt = args.indexOf("--as-yes");
+const asYes = new Set(asYesAt >= 0 ? args[asYesAt + 1].split(",").map(Number) : []);
 const w = args.indexOf("--write");
 const writeTo = w >= 0 ? args[w + 1] : undefined;
-const pos = args.filter((a, i) => !a.startsWith("--") && args[i - 1] !== "--write");
+const pos = args.filter((a, i) => !a.startsWith("--") && args[i - 1] !== "--write" && args[i - 1] !== "--as-yes");
 const [answersDir, roundDir = "ao3-samples/.hands-free/round-1"] = pos;
 if (!answersDir) { console.error("usage: hands-free-import.mjs <answers dir> [round dir] [--write file]"); process.exit(2); }
 const manifest = JSON.parse(readFileSync(join(roundDir, "manifest.json"), "utf8"));
 const dir = existsSync(join(answersDir, "reviews")) ? join(answersDir, "reviews") : answersDir;
-const answers = {}, peeked = new Set();
+const answers = {}, peeked = new Set(), peekOf = {};
 for (const f of readdirSync(dir).filter((x) => x.endsWith(".json"))) {
   const d = JSON.parse(readFileSync(join(dir, f), "utf8")); const a = d.data ?? d;
-  if (a && a.n && a.v) { answers[a.n] = a.v; if (a.peek === "before") peeked.add(a.n); if (a.key && a.key !== manifest.picked.find((p) => p.n === a.n)?.key) { console.error(`answer ${a.n}: key does not match the page that was built`); process.exit(1); } }
+  if (a && a.n && a.v) { answers[a.n] = a.v; peekOf[a.n] = a.peek || ""; if (a.peek === "before") peeked.add(a.n); if (a.key && a.key !== manifest.picked.find((p) => p.n === a.n)?.key) { console.error(`answer ${a.n}: key does not match the page that was built`); process.exit(1); } }
 }
+for (const n of asYes) if (answers[n] === "unsure") answers[n] = "yes";
 // An answer given after opening the analyzer's and Claude's panel is not blind, so it is left out of the numbers unless --include-peeked is given.
 const dropped = includePeeked ? [] : [...peeked];
 for (const n of dropped) delete answers[n];
@@ -34,7 +38,7 @@ console.log(`Unflagged, a hand nearby: ${line(s.manual)}`);
 if (s.missedKeys.length) console.log(`Missed passages the owner marked hands-free (keys): ${s.missedKeys.join(", ")}`);
 if (writeTo) {
   mkdirSync(dirname(writeTo), { recursive: true });
-  const kept = manifest.picked.filter((p) => answers[p.n]).map((p) => ({ key: p.key, fic: p.fic, para: p.para, sourceSha256: p.sourceSha256, verdict: answers[p.n], detected: p.detected, detectedCredit: p.detectedCredit, manualNearby: p.manualNearby, stratumWeight: p.stratumWeight }));
+  const kept = manifest.picked.filter((p) => answers[p.n]).map((p) => ({ key: p.key, fic: p.fic, para: p.para, sourceSha256: p.sourceSha256, verdict: answers[p.n], ...(asYes.has(p.n) ? { overridden: "question named the wrong person; the credited person is the one who comes hands-free" } : {}), peek: peekOf[p.n] ?? "", detected: p.detected, detectedCredit: p.detectedCredit, questionNamed: p.bottom, manualNearby: p.manualNearby, stratumWeight: p.stratumWeight }));
   writeFileSync(writeTo, JSON.stringify({ made: new Date().toISOString().slice(0, 10), seed: manifest.seed, poolSize: manifest.poolSize, answers: kept }, null, 1) + "\n");
   console.log(`Saved ${kept.length} answers to ${writeTo} (no story text, no notes).`);
 }
