@@ -2259,19 +2259,38 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
         const ownerDoes = doing(bottom).test(before3) && !doing(top).test(before3);
         if ((recentB.some((a) => a.top === bottom && a.bottom === top) && !recentB.some((a) => a.top === top && a.bottom === bottom)) || ownerDoes) [top, bottom] = [bottom, top];
       }
-      if (NEG.test(m.groups?.aux ?? "") || NEG.test(prefix.slice(-40))) return;
+      // Hands-free orgasm: only a negation that governs the orgasm cancels it. "Rowan didn't come untouched" and "never came" do; "couldn't hold
+      // back and came untouched" and "can't hold on, comes untouched" don't, because the negated verb is a different one (a comma, "and", "but",
+      // "then" or another coordinator stands between the negation and the come verb).
+      if (pat.act === "hands-free orgasm" || pat.act === "prostate orgasm") {
+        // The text from the start of the sentence to the come verb (the match itself can hold the connector: ", comes untouched", "and came untouched").
+        const verb = /\b(?:came|comes?|coming|cum(?:s|med|ming)?|climax\w*|orgasm\w*|spill\w*|spurt\w*)\b/i.exec(m[0]);
+        const lead = (prefix + m[0]).slice(0, prefix.length + (verb?.index ?? 0)).slice(-60);
+        const neg = [...lead.matchAll(/\b(?:not|never|no longer|barely|hardly|without)\b|n['\u2019]t\b/gi)].pop();
+        const governs = pat.id !== "came-no-hand-needed" && neg && !/[,;:]|\b(?:and|but|then|so|or|while|as|until|because|although|though|who|that|which)\b/i.test(lead.slice(neg.index! + neg[0].length));
+        if (NEG.test(m.groups?.aux ?? "") || governs) return;
+        // "Cregan, Jacaerys realizes, has just come untouched": the subject is the name before the aside, not the person the aside is about. The
+        // elided subject picks the wrong one, so leave it out rather than credit the wrong person.
+        if (new RegExp(`(?:^|[.!?\u201d"]\\s+)(?:${NAMES})\\s*,\\s*(?:${NAMES})\\s+(?:realiz\\w+|know\\w*|knew|notic\\w+|see\\w*|saw|think\\w*|thought|feel\\w*|felt|say\\w*|said|decid\\w+|discover\\w+)\\b[^,]*,\\s*(?:\\w+\\s+){0,3}$`, "i").test((prefix + m[0]).slice(0, prefix.length + (verb?.index ?? 0)))) return;
+      } else if (NEG.test(m.groups?.aux ?? "") || NEG.test(prefix.slice(-40))) return;
       // Hands-free orgasm: "Rowan came untouched" says who receives only when something is happening to Rowan's ass. A wish ("wanted to
       // come untouched", "imagined making him come hands-free") is not an orgasm, and "came on Morgan's cock" needs "just" or "alone".
       if (act === "hands-free orgasm" || act === "prostate orgasm") {
         if (HYPO_AUX.test(m.groups?.aux ?? "") || /\b(?:want\w*|wanna|wish\w*|long\w*|need\w*|tri(?:ed|es)|try|can|must|able)\b/i.test(m.groups?.aux ?? "")) return;
-        if (/\b(?:want\w*|wish\w*|imagin\w*|fantas\w*|dream\w*|pictur\w*|thought\s+(?:about|of)|think\w*\s+(?:about|of)|if|unless|whether|promis\w*|tried|try|trying|could|would|ever\s+been\s+able)\b[^.!?]*$/i.test(prefix.slice(-80))) return;
+        if (/\b(?:want\w*|wish\w*|imagin\w*|fantas\w*|dream\w*|pictur\w*|thought\s+(?:about|of)|think\w*\s+(?:about|of)|if|unless|whether|promis\w*|tried|try|trying|could|would|ever\s+been\s+able)\b[^.!?]*$/i.test(prefix.slice(-80)) &&
+            // "delivered on his promise to make him come untouched" is a promise kept.
+            !/\b(?:deliver\w*|kept|keeps|keeping|fulfill?\w*|honou?r\w*)\s+(?:on\s+)?(?:his|her|their|the|that|a)\s+promise\b/i.test(prefix.slice(-80))) return;
         if (basePid === "came-from-partner-alone" && !m.groups?.hfOnly && !m.groups?.hfAlone) return;
         // Invented adults: "Rowan came untouched, thinking about Morgan's mouth": a fantasy brought it on, not anything anal.
         if (act === "hands-free orgasm" && /\b(?:thinking|thought|imagin\w*|pictur\w*|fantasi[sz]\w*|dream\w*|remember\w*|the\s+(?:thought|image|memory)\s+of)\b/i.test(sent)) return;
         if (act === "hands-free orgasm") {
           const near = `${paras[pi - 1] ?? ""} ${para}`;
-          const penetration = /\b(?:fuck(?:ed|ing|s)?|inside\s+(?:him|her|them|me)|thrust\w*|knot\w*|pound\w*|buried|filled|fingered|fingering)\b/i;
-          if (!ANAL_CTX.test(near) && !(penetration.test(near) && !VULVA_CTX.test(near))) return;
+          const penetration = /\b(?:fuck(?:ed|ing|s)?|inside\s+(?:him|her|them|me)|thrust\w*|knot\w*|pound\w*|buried|filled|fingered|fingering|(?:on|around)\s+(?:(?:his|her|their|the|a|my|your)\s+)?(?:cock|dick|knot))\b/i;
+          // An anal act between the same person and a partner a few paragraphs back still counts, if no scene or chapter break is in between:
+          // "Morgan fucked Rowan slowly. … (three paragraphs) … Rowan came untouched."
+          const ongoing = acts.some((a) => a.cat === "anal" && (a.act.startsWith("anal sex") || a.act === "fingering" || a.act === "rimming") && a.weight >= 0.2 && a.para >= pi - 8 && a.para <= pi &&
+            (a.top === bottom || a.bottom === bottom) && !paras.slice(a.para + 1, pi + 1).some((q) => SCENE_BREAK.test(q) || CHAPTER_RE.test(q)));
+          if (!ongoing && !ANAL_CTX.test(near) && !(penetration.test(near) && !VULVA_CTX.test(near))) return;
         }
       }
       if (pat.signal.kind === "fingers" && /\bown\b/i.test(matchText)) return;
