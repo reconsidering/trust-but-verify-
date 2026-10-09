@@ -1,0 +1,93 @@
+{
+ "schema": "engine-suspect-act-review/v1",
+ "batchId": "cock-cages-rental-agreement-8c745f1-v1",
+ "referenceCommit": "8c745f1",
+ "scope": {
+  "coverage": "positive-only; even complete windows never imply missing-act or hint negatives",
+  "occurrence": "only explicitly confirmed performed acts become events",
+  "confidenceTraining": "separate explicit per-reading decisions only",
+  "privateText": "free text and assistant scores excluded"
+ },
+ "sources": [
+  {
+   "file": "rental-agreement.html",
+   "title": "Rental Agreement",
+   "sourceSha": "6c50f2c632fb1643ccf4a210cb23c249e75f5dcc7d259572d0d712433eb20d82",
+   "paragraphSha": "26880f371f3cd475edbab58e2c1097366c5b8682534dc1222483c7ed8cd1a0ae",
+   "paragraphCount": 140
+  }
+ ],
+ "windows": [
+  {
+   "id": "W1",
+   "fic": "rental-agreement.html",
+   "sourceSha": "6c50f2c632fb1643ccf4a210cb23c249e75f5dcc7d259572d0d712433eb20d82",
+   "from": 53,
+   "to": 57,
+   "coverage": "positive-only",
+   "coverageReviewed": false,
+   "reviews": [
+    {
+     "id": "A1",
+     "revision": "387e625630088074",
+     "verdict": "correct",
+     "act": "Chastity device stimulation",
+     "performer": "Wade Wilson",
+     "receiver": "Peter Parker",
+     "occurrence": "performed",
+     "from": 55,
+     "to": 55,
+     "errors": []
+    }
+   ],
+   "events": [
+    {
+     "ownerActId": "A1",
+     "act": "Chastity device stimulation",
+     "performer": "Wade Wilson",
+     "receiver": "Peter Parker",
+     "from": 55,
+     "to": 55,
+     "scored": false
+    }
+   ]
+  },
+  {
+   "id": "W2",
+   "fic": "rental-agreement.html",
+   "sourceSha": "6c50f2c632fb1643ccf4a210cb23c249e75f5dcc7d259572d0d712433eb20d82",
+   "from": 104,
+   "to": 111,
+   "coverage": "positive-only",
+   "coverageReviewed": false,
+   "reviews": [
+    {
+     "id": "A2",
+     "revision": "fc25ecf52e96eda4",
+     "verdict": "correct",
+     "act": "Chastity device stimulation",
+     "performer": "Wade Wilson",
+     "receiver": "Peter Parker",
+     "occurrence": "performed",
+     "from": 106,
+     "to": 109,
+     "errors": [
+      "Act missed"
+     ]
+    }
+   ],
+   "events": [
+    {
+     "ownerActId": "A2",
+     "act": "Chastity device stimulation",
+     "performer": "Wade Wilson",
+     "receiver": "Peter Parker",
+     "from": 106,
+     "to": 109,
+     "scored": false
+    }
+   ]
+  }
+ ],
+ "feedbackSha": "6b83b511ef2551b38cb5ea80c5da7bfc281c79796e615b288e953f1d94e82546"
+}

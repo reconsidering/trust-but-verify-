@@ -1,0 +1,138 @@
+{
+  "made": "2026-10-09",
+  "how": "Explicit owner judgments from the tagged cock-cage passage review. Only separately judged engine cues become confidence labels. Uncertain answers are excluded from training. Confirmed device actions are stored separately as unscored events; omissions never imply negative labels. Free-text notes and assistant confidence are excluded.",
+  "batchId": "cock-cages-sugar-alpha-8c745f1-v1",
+  "engineCommit": "8c745f1",
+  "labels": {
+    "chastity-wearer#8eee158": "wrong",
+    "chastity-wearer#3f2c8de4": "unclear",
+    "chastity-wearer#5375c703": "wrong",
+    "chastity-wearer#ef7dfe96": "ok",
+    "chastity-wearer#1dc6125c": "wrong"
+  },
+  "answers": [
+    {
+      "id": "D1",
+      "key": "chastity-wearer#8eee158",
+      "fic": "sugar-alpha.html",
+      "paragraph": 42,
+      "sourceSha": "68a3c9d689b093806fb072b5e550e79a61eb9f16c1e79ca192ba24597338de5e",
+      "claim": {
+        "fic": "sugar-alpha.html",
+        "sourceSha": "68a3c9d689b093806fb072b5e550e79a61eb9f16c1e79ca192ba24597338de5e",
+        "paragraph": 42,
+        "pattern": "chastity-wearer",
+        "act": "wearing a chastity device",
+        "kind": "behavior",
+        "a": "Isaac Lahey",
+        "b": "Derek Hale",
+        "role": "bottom"
+      },
+      "verdict": "wrong",
+      "errors": [
+        "Wrong person"
+      ],
+      "updatedAt": "2026-10-09T14:45:45.828Z"
+    },
+    {
+      "id": "D2",
+      "key": "chastity-wearer#3f2c8de4",
+      "fic": "sugar-alpha.html",
+      "paragraph": 42,
+      "sourceSha": "68a3c9d689b093806fb072b5e550e79a61eb9f16c1e79ca192ba24597338de5e",
+      "claim": {
+        "fic": "sugar-alpha.html",
+        "sourceSha": "68a3c9d689b093806fb072b5e550e79a61eb9f16c1e79ca192ba24597338de5e",
+        "paragraph": 42,
+        "pattern": "chastity-wearer",
+        "act": "wearing a chastity device",
+        "kind": "behavior",
+        "a": "Isaac Lahey",
+        "b": "Stiles Stilinski",
+        "role": "bottom"
+      },
+      "verdict": "wrong",
+      "errors": [
+        "Wrong person"
+      ],
+      "updatedAt": "2026-10-09T14:45:45.828Z"
+    },
+    {
+      "id": "D3",
+      "key": "chastity-wearer#5375c703",
+      "fic": "sugar-alpha.html",
+      "paragraph": 164,
+      "sourceSha": "68a3c9d689b093806fb072b5e550e79a61eb9f16c1e79ca192ba24597338de5e",
+      "claim": {
+        "fic": "sugar-alpha.html",
+        "sourceSha": "68a3c9d689b093806fb072b5e550e79a61eb9f16c1e79ca192ba24597338de5e",
+        "paragraph": 164,
+        "pattern": "chastity-wearer",
+        "act": "wearing a chastity device",
+        "kind": "behavior",
+        "a": "Isaac Lahey",
+        "b": "Stiles Stilinski",
+        "role": "bottom"
+      },
+      "verdict": "wrong",
+      "errors": [
+        "Wrong person"
+      ],
+      "updatedAt": "2026-10-09T14:45:46.213Z"
+    },
+    {
+      "id": "D4",
+      "key": "chastity-wearer#ef7dfe96",
+      "fic": "sugar-alpha.html",
+      "paragraph": 424,
+      "sourceSha": "68a3c9d689b093806fb072b5e550e79a61eb9f16c1e79ca192ba24597338de5e",
+      "claim": {
+        "fic": "sugar-alpha.html",
+        "sourceSha": "68a3c9d689b093806fb072b5e550e79a61eb9f16c1e79ca192ba24597338de5e",
+        "paragraph": 424,
+        "pattern": "chastity-wearer",
+        "act": "wearing a chastity device",
+        "kind": "behavior",
+        "a": "Isaac Lahey",
+        "b": "Peter Hale",
+        "role": "bottom"
+      },
+      "verdict": "correct",
+      "errors": [],
+      "updatedAt": "2026-10-09T14:45:46.831Z"
+    },
+    {
+      "id": "D5",
+      "key": "chastity-wearer#1dc6125c",
+      "fic": "sugar-alpha.html",
+      "paragraph": 2174,
+      "sourceSha": "68a3c9d689b093806fb072b5e550e79a61eb9f16c1e79ca192ba24597338de5e",
+      "claim": {
+        "fic": "sugar-alpha.html",
+        "sourceSha": "68a3c9d689b093806fb072b5e550e79a61eb9f16c1e79ca192ba24597338de5e",
+        "paragraph": 2174,
+        "pattern": "chastity-wearer",
+        "act": "wearing a chastity device",
+        "kind": "behavior",
+        "a": "Isaac Lahey",
+        "b": "Peter Hale",
+        "role": "bottom"
+      },
+      "verdict": "wrong",
+      "errors": [
+        "Wrong person",
+        "Wish or dialogue treated as an act"
+      ],
+      "updatedAt": "2026-10-09T14:45:47.764Z"
+    }
+  ],
+  "ambiguousReadingKeys": [
+    "chastity-wearer#3f2c8de4"
+  ],
+  "superseded": {
+    "chastity-wearer#3f2c8de4": {
+      "reason": "Two distinct claims in this owner export share this legacy key. Preserve both answers but exclude the key from training to avoid assigning either judgment to a different claim."
+    }
+  },
+  "feedbackSha": "6b83b511ef2551b38cb5ea80c5da7bfc281c79796e615b288e953f1d94e82546"
+}

@@ -1,0 +1,651 @@
+{
+ "made": "2026-10-09",
+ "how": "Explicit owner judgments from the tagged cock-cage passage review. Only separately judged engine cues become confidence labels. Uncertain answers are excluded from training. Confirmed device actions are stored separately as unscored events; omissions never imply negative labels. Free-text notes and assistant confidence are excluded.",
+ "batchId": "cock-cages-were-compeer-8c745f1-v1",
+ "engineCommit": "8c745f1",
+ "labels": {
+  "chastity-wearer#ce65da56": "unclear",
+  "chastity-wearer#3eadef06": "unclear",
+  "chastity-wearer#5fd00a5f": "unclear",
+  "chastity-wearer#7cc04870": "unclear",
+  "chastity-wearer#9d18db10": "unclear",
+  "chastity-wearer#444892c4": "unclear",
+  "chastity-wearer#e79e1404": "unclear",
+  "chastity-wearer#9de1bcc4": "ok",
+  "chastity-lock-on#9de1bcc4": "wrong",
+  "chastity-wearer#b7c79245": "ok",
+  "chastity-wearer#48acb944": "ok",
+  "chastity-wearer#d2c14c7d": "ok",
+  "chastity-wearer#84be4ca0": "unclear",
+  "chastity-wearer#8a4839b0": "unclear",
+  "chastity-keyholder#8a4839b0": "ok",
+  "chastity-wearer#df424bbe": "unclear",
+  "chastity-keyholder#df424bbe": "ok",
+  "chastity-wearer#44693c9b": "unclear",
+  "chastity-keyholder#44693c9b": "ok",
+  "chastity-keyholder#77557881": "ok",
+  "chastity-wearer#97219c41": "ok",
+  "chastity-wearer#b26bd5eb": "ok",
+  "chastity-wearer#2b4a7533": "ok",
+  "chastity-wearer#bb67d241": "ok",
+  "chastity-wearer#42fe5516": "ok",
+  "chastity-wearer#5d65e7b5": "ok",
+  "chastity-keyholder~elided#b2fb8db7": "ok"
+ },
+ "answers": [
+  {
+   "id": "D1",
+   "key": "chastity-wearer#ce65da56",
+   "fic": "were-compeer.html",
+   "paragraph": 85,
+   "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+   "claim": {
+    "fic": "were-compeer.html",
+    "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+    "paragraph": 85,
+    "pattern": "chastity-wearer",
+    "act": "wearing a chastity device",
+    "kind": "behavior",
+    "a": "Stiles Stilinski",
+    "b": "Derek Hale",
+    "role": "bottom"
+   },
+   "verdict": "uncertain",
+   "errors": [],
+   "updatedAt": "2026-10-09T14:44:21.254Z"
+  },
+  {
+   "id": "D2",
+   "key": "chastity-wearer#3eadef06",
+   "fic": "were-compeer.html",
+   "paragraph": 87,
+   "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+   "claim": {
+    "fic": "were-compeer.html",
+    "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+    "paragraph": 87,
+    "pattern": "chastity-wearer",
+    "act": "wearing a chastity device",
+    "kind": "behavior",
+    "a": "Stiles Stilinski",
+    "b": "Derek Hale",
+    "role": "bottom"
+   },
+   "verdict": "uncertain",
+   "errors": [],
+   "updatedAt": "2026-10-09T14:44:21.254Z"
+  },
+  {
+   "id": "D3",
+   "key": "chastity-wearer#5fd00a5f",
+   "fic": "were-compeer.html",
+   "paragraph": 88,
+   "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+   "claim": {
+    "fic": "were-compeer.html",
+    "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+    "paragraph": 88,
+    "pattern": "chastity-wearer",
+    "act": "wearing a chastity device",
+    "kind": "behavior",
+    "a": "Stiles Stilinski",
+    "b": "Derek Hale",
+    "role": "bottom"
+   },
+   "verdict": "uncertain",
+   "errors": [],
+   "updatedAt": "2026-10-09T14:44:21.254Z"
+  },
+  {
+   "id": "D4",
+   "key": "chastity-wearer#7cc04870",
+   "fic": "were-compeer.html",
+   "paragraph": 89,
+   "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+   "claim": {
+    "fic": "were-compeer.html",
+    "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+    "paragraph": 89,
+    "pattern": "chastity-wearer",
+    "act": "wearing a chastity device",
+    "kind": "behavior",
+    "a": "Stiles Stilinski",
+    "b": "Derek Hale",
+    "role": "bottom"
+   },
+   "verdict": "uncertain",
+   "errors": [],
+   "updatedAt": "2026-10-09T14:44:21.254Z"
+  },
+  {
+   "id": "D5",
+   "key": "chastity-wearer#9d18db10",
+   "fic": "were-compeer.html",
+   "paragraph": 93,
+   "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+   "claim": {
+    "fic": "were-compeer.html",
+    "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+    "paragraph": 93,
+    "pattern": "chastity-wearer",
+    "act": "wearing a chastity device",
+    "kind": "behavior",
+    "a": "Stiles Stilinski",
+    "b": "Derek Hale",
+    "role": "bottom"
+   },
+   "verdict": "uncertain",
+   "errors": [],
+   "updatedAt": "2026-10-09T14:44:21.254Z"
+  },
+  {
+   "id": "D6",
+   "key": "chastity-wearer#444892c4",
+   "fic": "were-compeer.html",
+   "paragraph": 93,
+   "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+   "claim": {
+    "fic": "were-compeer.html",
+    "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+    "paragraph": 93,
+    "pattern": "chastity-wearer",
+    "act": "wearing a chastity device",
+    "kind": "behavior",
+    "a": "Stiles Stilinski",
+    "b": "Derek Hale",
+    "role": "bottom"
+   },
+   "verdict": "uncertain",
+   "errors": [],
+   "updatedAt": "2026-10-09T14:44:21.254Z"
+  },
+  {
+   "id": "D7",
+   "key": "chastity-wearer#e79e1404",
+   "fic": "were-compeer.html",
+   "paragraph": 95,
+   "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+   "claim": {
+    "fic": "were-compeer.html",
+    "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+    "paragraph": 95,
+    "pattern": "chastity-wearer",
+    "act": "wearing a chastity device",
+    "kind": "behavior",
+    "a": "Stiles Stilinski",
+    "b": "Derek Hale",
+    "role": "bottom"
+   },
+   "verdict": "uncertain",
+   "errors": [],
+   "updatedAt": "2026-10-09T14:44:21.254Z"
+  },
+  {
+   "id": "D8",
+   "key": "chastity-wearer#9de1bcc4",
+   "fic": "were-compeer.html",
+   "paragraph": 133,
+   "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+   "claim": {
+    "fic": "were-compeer.html",
+    "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+    "paragraph": 133,
+    "pattern": "chastity-wearer",
+    "act": "wearing a chastity device",
+    "kind": "behavior",
+    "a": "Stiles Stilinski",
+    "b": "Derek Hale",
+    "role": "bottom"
+   },
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-09T14:44:21.852Z"
+  },
+  {
+   "id": "D9",
+   "key": "chastity-lock-on#9de1bcc4",
+   "fic": "were-compeer.html",
+   "paragraph": 133,
+   "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+   "claim": {
+    "fic": "were-compeer.html",
+    "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+    "paragraph": 133,
+    "pattern": "chastity-lock-on",
+    "act": "locking a chastity device on their partner",
+    "kind": "behavior",
+    "a": "Vernon Boyd",
+    "b": "Derek Hale",
+    "role": "top"
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Wrong person"
+   ],
+   "updatedAt": "2026-10-09T14:44:21.852Z"
+  },
+  {
+   "id": "D10",
+   "key": "chastity-wearer#b7c79245",
+   "fic": "were-compeer.html",
+   "paragraph": 134,
+   "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+   "claim": {
+    "fic": "were-compeer.html",
+    "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+    "paragraph": 134,
+    "pattern": "chastity-wearer",
+    "act": "wearing a chastity device",
+    "kind": "behavior",
+    "a": "Stiles Stilinski",
+    "b": "Derek Hale",
+    "role": "bottom"
+   },
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-09T14:44:21.852Z"
+  },
+  {
+   "id": "D11",
+   "key": "chastity-wearer#48acb944",
+   "fic": "were-compeer.html",
+   "paragraph": 138,
+   "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+   "claim": {
+    "fic": "were-compeer.html",
+    "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+    "paragraph": 138,
+    "pattern": "chastity-wearer",
+    "act": "wearing a chastity device",
+    "kind": "behavior",
+    "a": "Stiles Stilinski",
+    "b": "Derek Hale",
+    "role": "bottom"
+   },
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-09T14:44:21.852Z"
+  },
+  {
+   "id": "D12",
+   "key": "chastity-wearer#d2c14c7d",
+   "fic": "were-compeer.html",
+   "paragraph": 140,
+   "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+   "claim": {
+    "fic": "were-compeer.html",
+    "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+    "paragraph": 140,
+    "pattern": "chastity-wearer",
+    "act": "wearing a chastity device",
+    "kind": "behavior",
+    "a": "Stiles Stilinski",
+    "b": "Derek Hale",
+    "role": "bottom"
+   },
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-09T14:44:21.852Z"
+  },
+  {
+   "id": "D13",
+   "key": "chastity-wearer#84be4ca0",
+   "fic": "were-compeer.html",
+   "paragraph": 212,
+   "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+   "claim": {
+    "fic": "were-compeer.html",
+    "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+    "paragraph": 212,
+    "pattern": "chastity-wearer",
+    "act": "wearing a chastity device",
+    "kind": "behavior",
+    "a": "Stiles Stilinski",
+    "b": "Derek Hale",
+    "role": "bottom"
+   },
+   "verdict": "uncertain",
+   "errors": [
+    "Needs more context"
+   ],
+   "updatedAt": "2026-10-09T14:44:22.321Z"
+  },
+  {
+   "id": "D14",
+   "key": "chastity-wearer#8a4839b0",
+   "fic": "were-compeer.html",
+   "paragraph": 212,
+   "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+   "claim": {
+    "fic": "were-compeer.html",
+    "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+    "paragraph": 212,
+    "pattern": "chastity-wearer",
+    "act": "wearing a chastity device",
+    "kind": "behavior",
+    "a": "Stiles Stilinski",
+    "b": "Derek Hale",
+    "role": "bottom"
+   },
+   "verdict": "uncertain",
+   "errors": [
+    "Needs more context"
+   ],
+   "updatedAt": "2026-10-09T14:44:22.321Z"
+  },
+  {
+   "id": "D15",
+   "key": "chastity-keyholder#8a4839b0",
+   "fic": "were-compeer.html",
+   "paragraph": 212,
+   "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+   "claim": {
+    "fic": "were-compeer.html",
+    "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+    "paragraph": 212,
+    "pattern": "chastity-keyholder",
+    "act": "controlling a chastity device",
+    "kind": "behavior",
+    "a": "Derek Hale",
+    "b": "Stiles Stilinski",
+    "role": "top"
+   },
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-09T14:44:22.321Z"
+  },
+  {
+   "id": "D16",
+   "key": "chastity-wearer#df424bbe",
+   "fic": "were-compeer.html",
+   "paragraph": 213,
+   "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+   "claim": {
+    "fic": "were-compeer.html",
+    "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+    "paragraph": 213,
+    "pattern": "chastity-wearer",
+    "act": "wearing a chastity device",
+    "kind": "behavior",
+    "a": "Stiles Stilinski",
+    "b": "Derek Hale",
+    "role": "bottom"
+   },
+   "verdict": "uncertain",
+   "errors": [
+    "Needs more context"
+   ],
+   "updatedAt": "2026-10-09T14:44:22.321Z"
+  },
+  {
+   "id": "D17",
+   "key": "chastity-keyholder#df424bbe",
+   "fic": "were-compeer.html",
+   "paragraph": 213,
+   "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+   "claim": {
+    "fic": "were-compeer.html",
+    "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+    "paragraph": 213,
+    "pattern": "chastity-keyholder",
+    "act": "controlling a chastity device",
+    "kind": "behavior",
+    "a": "Derek Hale",
+    "b": "Stiles Stilinski",
+    "role": "top"
+   },
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-09T14:44:22.321Z"
+  },
+  {
+   "id": "D18",
+   "key": "chastity-wearer#44693c9b",
+   "fic": "were-compeer.html",
+   "paragraph": 216,
+   "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+   "claim": {
+    "fic": "were-compeer.html",
+    "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+    "paragraph": 216,
+    "pattern": "chastity-wearer",
+    "act": "wearing a chastity device",
+    "kind": "behavior",
+    "a": "Stiles Stilinski",
+    "b": "Derek Hale",
+    "role": "bottom"
+   },
+   "verdict": "uncertain",
+   "errors": [
+    "Needs more context"
+   ],
+   "updatedAt": "2026-10-09T14:44:22.321Z"
+  },
+  {
+   "id": "D19",
+   "key": "chastity-keyholder#44693c9b",
+   "fic": "were-compeer.html",
+   "paragraph": 216,
+   "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+   "claim": {
+    "fic": "were-compeer.html",
+    "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+    "paragraph": 216,
+    "pattern": "chastity-keyholder",
+    "act": "controlling a chastity device",
+    "kind": "behavior",
+    "a": "Derek Hale",
+    "b": "Stiles Stilinski",
+    "role": "top"
+   },
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-09T14:44:22.321Z"
+  },
+  {
+   "id": "D20",
+   "key": "chastity-keyholder#77557881",
+   "fic": "were-compeer.html",
+   "paragraph": 296,
+   "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+   "claim": {
+    "fic": "were-compeer.html",
+    "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+    "paragraph": 296,
+    "pattern": "chastity-keyholder",
+    "act": "controlling a chastity device",
+    "kind": "behavior",
+    "a": "Derek Hale",
+    "b": "Stiles Stilinski",
+    "role": "top"
+   },
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-09T14:44:23.204Z"
+  },
+  {
+   "id": "D21",
+   "key": "chastity-wearer#97219c41",
+   "fic": "were-compeer.html",
+   "paragraph": 297,
+   "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+   "claim": {
+    "fic": "were-compeer.html",
+    "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+    "paragraph": 297,
+    "pattern": "chastity-wearer",
+    "act": "wearing a chastity device",
+    "kind": "behavior",
+    "a": "Stiles Stilinski",
+    "b": "Derek Hale",
+    "role": "bottom"
+   },
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-09T14:44:23.204Z"
+  },
+  {
+   "id": "D22",
+   "key": "chastity-wearer#b26bd5eb",
+   "fic": "were-compeer.html",
+   "paragraph": 298,
+   "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+   "claim": {
+    "fic": "were-compeer.html",
+    "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+    "paragraph": 298,
+    "pattern": "chastity-wearer",
+    "act": "wearing a chastity device",
+    "kind": "behavior",
+    "a": "Stiles Stilinski",
+    "b": "Derek Hale",
+    "role": "bottom"
+   },
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-09T14:44:23.204Z"
+  },
+  {
+   "id": "D23",
+   "key": "chastity-wearer#2b4a7533",
+   "fic": "were-compeer.html",
+   "paragraph": 302,
+   "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+   "claim": {
+    "fic": "were-compeer.html",
+    "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+    "paragraph": 302,
+    "pattern": "chastity-wearer",
+    "act": "wearing a chastity device",
+    "kind": "behavior",
+    "a": "Stiles Stilinski",
+    "b": "Derek Hale",
+    "role": "bottom"
+   },
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-09T14:44:23.204Z"
+  },
+  {
+   "id": "D24",
+   "key": "chastity-wearer#bb67d241",
+   "fic": "were-compeer.html",
+   "paragraph": 450,
+   "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+   "claim": {
+    "fic": "were-compeer.html",
+    "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+    "paragraph": 450,
+    "pattern": "chastity-wearer",
+    "act": "wearing a chastity device",
+    "kind": "behavior",
+    "a": "Stiles Stilinski",
+    "b": "Derek Hale",
+    "role": "bottom"
+   },
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-09T14:44:23.868Z"
+  },
+  {
+   "id": "D25",
+   "key": "chastity-wearer#42fe5516",
+   "fic": "were-compeer.html",
+   "paragraph": 451,
+   "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+   "claim": {
+    "fic": "were-compeer.html",
+    "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+    "paragraph": 451,
+    "pattern": "chastity-wearer",
+    "act": "wearing a chastity device",
+    "kind": "behavior",
+    "a": "Stiles Stilinski",
+    "b": "Derek Hale",
+    "role": "bottom"
+   },
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-09T14:44:23.868Z"
+  },
+  {
+   "id": "D26",
+   "key": "chastity-wearer#5d65e7b5",
+   "fic": "were-compeer.html",
+   "paragraph": 976,
+   "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+   "claim": {
+    "fic": "were-compeer.html",
+    "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+    "paragraph": 976,
+    "pattern": "chastity-wearer",
+    "act": "wearing a chastity device",
+    "kind": "behavior",
+    "a": "Stiles Stilinski",
+    "b": "Derek Hale",
+    "role": "bottom"
+   },
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-09T14:44:26.259Z"
+  },
+  {
+   "id": "D27",
+   "key": "chastity-keyholder~elided#b2fb8db7",
+   "fic": "were-compeer.html",
+   "paragraph": 986,
+   "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+   "claim": {
+    "fic": "were-compeer.html",
+    "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+    "paragraph": 986,
+    "pattern": "chastity-keyholder~elided",
+    "act": "holding the key to a chastity device",
+    "kind": "behavior",
+    "a": "Derek Hale",
+    "b": "Stiles Stilinski",
+    "role": "top"
+   },
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-09T14:44:26.259Z"
+  }
+ ],
+ "ambiguousReadingKeys": [],
+ "superseded": {
+  "chastity-wearer#ce65da56": {
+   "reason": "The owner left this claim uncertain."
+  },
+  "chastity-wearer#3eadef06": {
+   "reason": "The owner left this claim uncertain."
+  },
+  "chastity-wearer#5fd00a5f": {
+   "reason": "The owner left this claim uncertain."
+  },
+  "chastity-wearer#7cc04870": {
+   "reason": "The owner left this claim uncertain."
+  },
+  "chastity-wearer#9d18db10": {
+   "reason": "The owner left this claim uncertain."
+  },
+  "chastity-wearer#444892c4": {
+   "reason": "The owner left this claim uncertain."
+  },
+  "chastity-wearer#e79e1404": {
+   "reason": "The owner left this claim uncertain."
+  },
+  "chastity-wearer#84be4ca0": {
+   "reason": "The owner left this claim uncertain."
+  },
+  "chastity-wearer#8a4839b0": {
+   "reason": "The owner left this claim uncertain."
+  },
+  "chastity-wearer#df424bbe": {
+   "reason": "The owner left this claim uncertain."
+  },
+  "chastity-wearer#44693c9b": {
+   "reason": "The owner left this claim uncertain."
+  }
+ },
+ "feedbackSha": "6b83b511ef2551b38cb5ea80c5da7bfc281c79796e615b288e953f1d94e82546"
+}
