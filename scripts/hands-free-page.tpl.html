@@ -38,6 +38,10 @@ mark{background:var(--mark);color:var(--markink);padding:0 2px;border-radius:2px
 .b[aria-pressed="true"].u{background:var(--unsurebg);border-color:var(--unsure)}
 .b.u{flex:0 1 110px}
 textarea{width:100%;box-sizing:border-box;margin-top:10px;font:inherit;font-size:14px;padding:7px 9px;border:1px solid var(--line);border-radius:5px;background:var(--bg);color:var(--ink);min-height:38px;resize:vertical}
+.take{margin-top:10px;border:1px solid var(--line);border-radius:6px;background:var(--surface);padding:8px 12px}
+.take summary{cursor:pointer;color:var(--accent);font-size:14px}
+.take p{margin:8px 0 0;font-size:14px;line-height:1.45}
+.take .sub{color:var(--muted);font-size:13px}
 .out{margin-top:24px;padding:14px;background:var(--surface);border:1px solid var(--line);border-radius:6px}
 .out button{border:1px solid var(--accent);background:var(--accent);color:var(--bg);padding:7px 14px;border-radius:5px}
 .status{font-size:13px;color:var(--muted);margin-left:8px}
@@ -47,7 +51,7 @@ textarea{width:100%;box-sizing:border-box;margin-top:10px;font:inherit;font-size
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=IBM+Plex+Sans:wght@400;600&family=Newsreader:opsz,wght@6..72,400;6..72,500&display=swap">
 <div class="wrap">
 <h1>/*TITLE*/</h1>
-<p class="lede">/*LEDE*/ For each one, read the passage and say whether the person named comes <b>without anyone touching his penis</b> (from anal or prostate stimulation alone). The orgasm sentence is highlighted. The analyzer’s own answer is not shown.</p>
+<p class="lede">/*LEDE*/ For each one, read the passage and say whether the person named comes <b>without anyone touching his penis</b> (from anal or prostate stimulation alone). The orgasm sentence is highlighted. Each card has a closed panel with the analyzer’s answer and Claude’s. Answer first, then open it if you like: opening it before you answer is recorded, and those answers are left out of the recall and precision numbers.</p>
 <div class="key">
 <div><b>Hands-free</b><span>He comes and nobody touches his penis (no hand, mouth or toy on it).</span></div>
 <div><b>Touched</b><span>He comes, but his penis is stimulated, or he touches himself.</span></div>
@@ -97,7 +101,20 @@ function build() {
     }
     const note = el("textarea"); note.id = "note" + r.n; note.placeholder = "Note (optional)"; note.rows = 1;
     note.addEventListener("change", () => save(r.n, { note: note.value }));
-    card.append(head, rd, ctx, mine, btns, note); list.append(card);
+    card.append(head, rd, ctx, mine, btns, note);
+    if (r.engine && r.claude) {
+      const LAB = { yes: "Hands-free", touched: "Touched", other: "Not him", unsure: "Not sure" };
+      const pct = (x) => (x == null ? "no score" : Math.round(x * 100) + "%");
+      const d = el("details", "take"); d.append(el("summary", null, "Show the analyzer’s and Claude’s answers"));
+      const e = el("p"); e.append(el("b", null, "Analyzer: "), document.createTextNode(r.engine.verdict + " · " + pct(r.engine.confidence)));
+      d.append(e);
+      if (r.engine.reasons && r.engine.reasons.length) d.append(el("p", "sub", "Why: " + r.engine.reasons.join("; ") + "."));
+      const c = el("p"); c.append(el("b", null, "Claude: "), document.createTextNode((LAB[r.claude.verdict] || r.claude.verdict) + " · " + pct(r.claude.confidence) + ". " + r.claude.note));
+      d.append(c, el("p", "sub", "Claude’s answer is a second opinion, not a label. Only your answers count."));
+      d.addEventListener("toggle", () => { if (d.open) { const cur = state[r.n] || {}; if (!cur.peek) save(r.n, { peek: cur.v ? "after" : "before" }); } });
+      card.append(d);
+    }
+    list.append(card);
   }
 }
 function paint() {
@@ -120,7 +137,7 @@ function paint() {
 function choose(n, v) { const cur = state[n] && state[n].v; save(n, { v: cur === v ? "" : v }); }
 function save(n, patch) {
   state[n] = Object.assign({}, state[n], patch); persistLocal(); paint();
-  if (db) { const row = ROWS.find((r) => r.n === n); db.doc("reviews/r" + n).set({ n, key: row && row.key ? row.key : "", v: state[n].v || "", note: state[n].note || "" }).catch(() => {}); }
+  if (db) { const row = ROWS.find((r) => r.n === n); db.doc("reviews/r" + n).set({ n, key: row && row.key ? row.key : "", v: state[n].v || "", note: state[n].note || "", peek: state[n].peek || "" }).catch(() => {}); }
 }
 function filters() {
   const f = $("filters");
@@ -138,7 +155,7 @@ build(); filters(); paint();
   try {
     db = await claude.use("db"); if (!db) return;
     db.collection("reviews").onSnapshot((snap) => {
-      snap.docs.forEach((d) => { const x = d.data(); if (x && x.n) state[x.n] = { v: x.v || "", note: x.note || "" }; });
+      snap.docs.forEach((d) => { const x = d.data(); if (x && x.n) state[x.n] = { v: x.v || "", note: x.note || "", peek: x.peek || "" }; });
       persistLocal(); paint();
     });
   } catch (e) {}

@@ -33,9 +33,12 @@ const ORGASM = /\b(?:came|comes|coming(?!\s+(?:back|up|down|to|from|over|home|ou
 const narration = (p) => p.replace(/[“"][^”"]*[”"]/g, " ");
 const mark = (p) => { const s = p.split(/(?<=[.!?”"])\s+/).find((x) => ORGASM.test(narration(x))); return s ? p.replace(s, `【${s}】`) : p; };
 const title = (f) => f.replace(/\.html$/, "").replace(/-/g, " ");
+// annotations.json (optional, next to the page): per passage key, the analyzer's answer and Claude's, shown in a closed panel on each card.
+let notes = {}; try { notes = JSON.parse(readFileSync(join(outDir, "annotations.json"), "utf8")); } catch {}
 const rows = picked.map((c, i) => ({
   n: i + 1, key: c.key, pn: c.para, fic: title(c.fic), pattern: "", before: c.before, para: mark(c.para_text), after: c.after,
   claim: `Does ${c.bottom} come here without anyone (including themself) touching their penis, from anal or prostate stimulation alone?`,
+  ...(notes[c.key] ?? {}),
 }));
 // How many unflagged, untouched-looking passages in the fic each sampled one stands for, so the answers can estimate how many the detector missed.
 const poolBy = {}, pickBy = {};
