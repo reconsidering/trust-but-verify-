@@ -21,6 +21,7 @@ import { ORAL_KINDS, oralKindOf } from "../roles";
 import { escapeMarker, splitParagraphs, UNCERTAIN_NOTE_END, UNCERTAIN_NOTE_START } from "../text";
 import { ActHit, Basis, DesireHit } from "./hits";
 import { CHAPTER_RE, Quote, maskQuotes, sentenceSpans } from "./quotes";
+import { basisFactor, comerBasis, handsFreeScoring } from "./hands-free-confidence";
 import { ANAL_LINE_RE, ANAL_NEAR_RE, ANIMAL_NEAR, DANGER, DESIRE, DESIRE_LEAD, DESIRE_TAIL, FANTASY, FANTASY_PARA, FROTTAGE, HABIT_AUX, HYPO_AUX, HYPO_MATCH, HYPO_SENT, HYPO_WINDOW, IDIOM_ASS, IDIOM_SAFE, NEG, ORAL_LINE_RE, ORAL_NEAR_RE, ORAL_SCENE_RE, REFLEXIVE, SAY, SCENE_BREAK, SEX_STRICT, STRONG_FANTASY, contextAround, contextFor } from "./markers";
 import { AddressBook } from "./address";
 import { reliabilityOf } from "./reliability";
@@ -2359,6 +2360,11 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
       }
       if (desires.some((d) => d.sentence === original && d.cat === cat && d.kind === signalKind && d.who === actor)) return;
       const other = actor === top ? bottom : top;
+      // A hands-free orgasm hint is about the person who comes: how that person was found sets its basis (not the partner, who need not be in the
+      // sentence), and its score starts from what the wording states, not from the generic "bodily sign".
+      const hf = handsFreeScoring(pat.id, act);
+      const hint = hf ? { basis: comerBasis(attribution, actor === bottom), base: hf.base, note: hf.note } : undefined;
+      if (hint) weight = (weight / basisFactor(basis)) * basisFactor(hint.basis);
       desires.push({
         via: pat.id,
         feat,
@@ -2374,7 +2380,8 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
         para: pi,
         sentence: original,
         reflexive: pat.signal.kind === "solo" && REFLEXIVE.test(matchText) ? true : undefined,
-        basis,
+        basis: hint?.basis ?? basis,
+        ...(hint ? { base: hint.base, note: hint.note } : {}),
       });
       return;
     }
