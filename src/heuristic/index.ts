@@ -1494,6 +1494,11 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
     if (pat.cat === "vibe" && (pat.signal?.kind === "handjob" || pat.id.startsWith("dom-pin")) &&
         (/\b(?:want(?:ed|s|ing)?|wish(?:ed|es)?|long(?:ed|s|ing)?|crav(?:ed|es|ing)|hop(?:ed|es|ing)|need(?:ed|s)?)\s+(?:to|for)\b[^.!?;]*$/i.test(sent.slice(0, m.index!)) ||
          /\b(?:fantas(?:y|ies|ised|ized|ising|izing)|dream(?:s|ed|t|ing)?|imagin\w+|daydream\w*)\s+(?:of|about)\b[^.!?;]*$/i.test(sent.slice(0, m.index!)))) return;
+    // …and when the wish is the helper verb inside the match itself: "a drug that makes him want to kneel between Derek’s thighs".
+    if (pat.signal && /\b(?:want(?:s|ed|ing)?|wish(?:es|ed)?|long(?:s|ed|ing)?|crav(?:es|ed|ing)|urge|tempt\w*)\b/i.test(m.groups?.aux ?? "")) return;
+    // "makes Stiles want to hike his knees up and present his ass", "Stiles wants Derek to bend him over the sofa": a hint from a wish is not
+    // the gesture itself. The wish ends at a new sentence, a semicolon, a dash or a "so / then / but" clause.
+    if (pat.signal && /\b(?:want(?:s|ed|ing)?|wish(?:es|ed)?|long(?:s|ed|ing)?|crav(?:es|ed|ing)|ach(?:es|ed|ing)|yearn(?:s|ed|ing)?|urge|tempt\w*)\s+(?:(?:for\s+)?[\w'’-]+\s+){0,3}?to\b[^;—]*$/i.test((sent.slice(0, m.index!) + (/^(?:[\w'’-]+\s+)?to\s+/i.exec(m[0])?.[0] ?? "")).split(/,\s+(?:so|then|but|which|while|until)\b|\b(?:and then|but then)\b/).pop() ?? "")) return;
     // Arms around him pinning him to a chest is a hug, not a hold-down.
     if (pat.id.startsWith("dom-pin") && /\bto\s*$/i.test(m[0]) && /^\s*(?:the\s+|his\s+|her\s+|their\s+|my\s+)?(?:warm\s+|broad\s+|solid\s+|firm\s+)?(?:mass of\s+)?chest\b/i.test(sent.slice(m.index! + m[0].length)) && /\barms?\b[^.!?]*$/i.test(sent.slice(0, m.index!))) return;
     // "dropped to his knees and began pulling Molotovs out of his backpack": kneeling to do something.
@@ -2541,6 +2546,11 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
     else if (DESIRE_LEAD.test(sent) || DESIRE.test(window.replace(/\b(?:that|which|what it|it)\s+(?:want|need)(?:ed|s)?\s+to\b/gi, " ").replace(/\b(?:giv\w*|gave|got|get\w*|deliver\w*|provid\w*)\s+(?:(?:him|her|them|you|me)\s+)?(?:exactly\s+|just\s+|only\s+)?(?:what|all)\s+(?:he|she|they|you|I)(?:['’]d)?\s+(?:want|need)(?:ed|s)?\b/gi, " ").replace(/\b(?:does|did|do)(?:n['’]t| not)\s+(?:even\s+)?resist\s+the\s+(?:temptation|urge|impulse)\b(?:\s+(?:he|she|they)\s+(?:has|have|had|feels?|felt))?/gi, " ")) || DESIRE_TAIL.test(window) || DESIRE.test(aux) || DESIRE.test(m.groups?.lead ?? "") || /^(?:want|need|crav)/i.test(m.groups?.lead ?? "")) kind = "wanted";
     else if (/\b(?:want|need|wish|hope|long|crave)\w*\b[^.!?]*\b(?:and|but)\s+(?:then\s+)?(?:have|let|make|get)\s*$/i.test(prefix)) kind = "wanted";
     else if (/\b(?:want|need|wish|hope|long|crave)\w*\s+(?:\w+\s+){0,3}?to\b[^.!?]*\band\s+\w*(?:\s+\w*){0,2}$/i.test(prefix + matchText.slice(0, 14))) kind = "wanted";
+    // "he knows it won't stop until Derek sinks into him", "now he's expected to get fucked", "he plans to get railed that night",
+    // "so Derek can get what he needs to open Stiles up": something expected, planned or still to come, not done yet.
+    else if (/\b(?:won['’]t|wouldn['’]t|will not|would not|can['’]t|cannot|never)\s+(?:\w+\s+)?(?:stop|end|let up|ease|fade|go away|abate|be satisfied|be enough|be over)\w*\s+until\b[^.!?;]*$/i.test(prefix) ||
+      /\b(?:expect(?:s|ed|ing)?|suppos(?:ed)|plan(?:s|ned|ning)?|intend(?:s|ed|ing)?|dread(?:s|ed|ing)?|fear(?:s|ed|ing)?|afraid|worr(?:y|ies|ied|ying)|about)\s+to\s*$/i.test((prefix + (/^\s*to\s+/i.test(matchText) ? " to " : "")).slice(-60)) ||
+      /\b(?:get|fetch|gather|grab|bring|find)\w*\s+(?:what|everything|all)\s+(?:he|she|they)\s+needs?\s+to\s*$/i.test((prefix + (/^\s*to\s+/i.test(matchText) ? " to " : "")).slice(-70))) kind = "hypothetical";
     else if (HABIT_AUX.test(aux) && (pat.id === "bottomed-for" || pat.id === "topped")) kind = "identity";
     // "A routine was established, Dean would take Cas every morning": a would in a described routine is something that happened, not a maybe.
     else if (/^\s*would\b/i.test(aux) && /\b(?:routine|every (?:day|night|morning|evening|afternoon|time)|each (?:day|night|morning|evening|afternoon|time)|daily|nightly|usually|always|often|whenever|during those (?:\w+ )?(?:days|nights|weeks)|those (?:\w+ )?(?:days|nights|weeks)|most (?:days|nights|mornings))\b/i.test(para.slice(Math.max(0, para.indexOf(sent) - 220), para.indexOf(sent) + sent.length)) && !DESIRE.test(window) && !negated) kind = "act";
