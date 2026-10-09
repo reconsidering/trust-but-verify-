@@ -384,7 +384,7 @@ footer { margin-top: 32px; color: var(--muted); font-size: 0.85rem; text-align: 
 .ctx-right { margin: 4px 0 2px; }
 .ctx-right[hidden] { display: none; }
 
-.anal-switch-indicator {
+.anal-switch-indicator, .hands-free-orgasm-indicator {
   border: 1px solid var(--switch);
   border-left: 4px solid var(--switch);
   border-radius: 8px;
@@ -392,5 +392,6 @@ footer { margin-top: 32px; color: var(--muted); font-size: 0.85rem; text-align: 
   margin-bottom: 1rem;
   overflow-wrap: anywhere;
 }
-.anal-switch-indicator summary { color: var(--switch); font-weight: 700; cursor: pointer; }
-.anal-switch-indicator p, .anal-switch-indicator ul { margin-bottom: 0; }
+.anal-switch-indicator summary, .hands-free-orgasm-indicator summary { color: var(--switch); font-weight: 700; cursor: pointer; }
+.anal-switch-indicator p, .anal-switch-indicator ul,
+.hands-free-orgasm-indicator p, .hands-free-orgasm-indicator ul { margin-bottom: 0; }
