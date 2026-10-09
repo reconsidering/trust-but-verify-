@@ -26,12 +26,12 @@ describe("confidence of a hands-free orgasm hint", () => {
     const low = analyzeWithPatterns("Morgan and Rowan are adult men.\n\nMorgan fucked Rowan hard. Rowan had a prostate orgasm.", meta, { quiet: true }).pairings[0];
     expect(handsFreeOrgasmEvidence(low.anal, low.pairing)).toHaveLength(0);
   });
-  it("is lower when only a pronoun says who came, since “he” could be either man", () => {
-    const named = orgasm("Morgan fucked Rowan hard. Rowan came untouched.")!.confidence!;
-    const pronoun = orgasm("Morgan fucked Rowan hard. He came untouched.")!.confidence!;
-    expect(pronoun).toBeLessThan(named);
-    expect(pronoun).toBeLessThan(0.75);
-    expect(pronoun).toBeGreaterThan(0.38); // it was 0.38 before: the wording is still explicit
+  it("is a little lower when a pronoun says who came, as for every other line, and still shows in the indicator", () => {
+    const named = orgasm("Morgan fucked Rowan hard. Rowan came untouched.")!;
+    const pronoun = orgasm("Morgan fucked Rowan hard. He came untouched.")!;
+    expect(pronoun.confidence).toBeLessThan(named.confidence!);
+    expect(pronoun.confidence).toBeGreaterThanOrEqual(0.75);
+    expect(pronoun.reasons).toContain("people found through pronouns");
   });
   it.each([
     "Morgan fucked Rowan hard. Rowan came from the fucking alone.",
@@ -42,6 +42,11 @@ describe("confidence of a hands-free orgasm hint", () => {
     const d = orgasm(text)!;
     expect(d.confidence).toBeLessThan(0.75);
     expect(d.confidence).toBeGreaterThanOrEqual(0.6);
+  });
+  it("is lower again when the wording is only implied and a pronoun says who came", () => {
+    const d = orgasm("Morgan fucked Rowan hard. He came from the fucking alone.")!;
+    expect(d.confidence).toBeLessThan(0.7);
+    expect(d.confidence).toBeGreaterThanOrEqual(0.5);
   });
   it("does not change the score of any other hint", () => {
     const d = desires("Morgan rubbed his cock against Rowan’s ass. Rowan arched his back.");
@@ -64,6 +69,9 @@ describe("hands-free scoring rules", () => {
     expect(comerBasis(a("pronoun"), true)).toBe("pronoun");
     expect(comerBasis(a("pov"), true)).toBe("pronoun");
     expect(comerBasis(a("partner"), true)).toBe("inferred");
+    // A pronoun in the sentence counts as found through pronouns even when the engine settled who it means from the last subject.
+    expect(comerBasis({ ...a("partner"), bottomPronoun: true }, true)).toBe("pronoun");
+    expect(comerBasis({ ...a("rule"), bottomPronoun: false }, true)).toBe("inferred");
     expect(comerBasis({ ...a("name"), top: "name", bottom: "partner" }, false)).toBe("named");
   });
 });

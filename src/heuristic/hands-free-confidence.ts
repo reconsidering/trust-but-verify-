@@ -24,8 +24,10 @@ export function handsFreeScoring(patternId: string, act: string): { base: number
 /** How the person who comes was found. The partner is not part of this hint, so a partner who is not in the sentence does not make it "inferred". */
 export function comerBasis(attribution: AttributionEvidence, comerIsBottom: boolean): Basis {
   const origin = comerIsBottom ? attribution.bottom : attribution.top;
+  const pronounInSentence = comerIsBottom ? attribution.bottomPronoun : attribution.topPronoun;
   if (origin === "name") return "named";
-  if (origin === "pronoun" || origin === "pov" || origin === "clause") return "pronoun";
+  // A pronoun in the sentence is "found through pronouns" however the engine settled who it means (last subject, recent mention), as for every other line.
+  if (pronounInSentence || origin === "pronoun" || origin === "pov" || origin === "clause") return "pronoun";
   return "inferred";
 }
 export const basisFactor = (b: Basis | undefined) => (b === "named" ? 1 : b === "pronoun" ? 0.75 : 0.5);
