@@ -1,0 +1,308 @@
+{
+ "schema": "engine-suspect-act-review/v1",
+ "batchId": "sugar-alpha-errors-b91edd7-v1",
+ "referenceCommit": "b91edd7",
+ "scope": {
+  "coverage": "positive-only; even complete windows never imply missing-act or hint negatives",
+  "occurrence": "only explicitly confirmed performed acts become events",
+  "confidenceTraining": "separate explicit per-reading decisions only",
+  "privateText": "free text and assistant scores excluded"
+ },
+ "sources": [
+  {
+   "file": "sugar-alpha.html",
+   "title": "Sugar Alpha",
+   "sourceSha": "68a3c9d689b093806fb072b5e550e79a61eb9f16c1e79ca192ba24597338de5e",
+   "paragraphSha": "a45eb70114d525d57925d8f98cbdd975a8ae19a3be5dd2adcea51caa98ccc950",
+   "paragraphCount": 2428
+  }
+ ],
+ "windows": [
+  {
+   "id": "W4",
+   "fic": "sugar-alpha.html",
+   "sourceSha": "68a3c9d689b093806fb072b5e550e79a61eb9f16c1e79ca192ba24597338de5e",
+   "from": 217,
+   "to": 237,
+   "coverage": "positive-only",
+   "coverageReviewed": false,
+   "reviews": [
+    {
+     "id": "A1",
+     "revision": "1ef02f02af605298",
+     "verdict": "correct",
+     "act": "Blowjob",
+     "performer": "Isaac Lahey",
+     "receiver": "Peter Hale",
+     "occurrence": "performed",
+     "from": 219,
+     "to": 228,
+     "errors": [
+      "Act missed"
+     ]
+    }
+   ],
+   "events": [
+    {
+     "ownerActId": "A1",
+     "act": "Blowjob",
+     "performer": "Isaac Lahey",
+     "receiver": "Peter Hale",
+     "from": 219,
+     "to": 228,
+     "scored": true
+    }
+   ]
+  },
+  {
+   "id": "W19",
+   "fic": "sugar-alpha.html",
+   "sourceSha": "68a3c9d689b093806fb072b5e550e79a61eb9f16c1e79ca192ba24597338de5e",
+   "from": 847,
+   "to": 853,
+   "coverage": "positive-only",
+   "coverageReviewed": false,
+   "reviews": [
+    {
+     "id": "A8",
+     "revision": "4d22cbae520f08ad",
+     "verdict": "correct",
+     "act": "Toy insertion",
+     "performer": "Stiles Stilinski",
+     "receiver": "Stiles Stilinski",
+     "occurrence": "performed",
+     "from": 849,
+     "to": 849,
+     "errors": [
+      "Act missed"
+     ]
+    },
+    {
+     "id": "A9",
+     "revision": "495e74a44e7c97e6",
+     "verdict": "correct",
+     "act": "Solo masturbation",
+     "performer": "Stiles Stilinski",
+     "receiver": "",
+     "occurrence": "performed",
+     "from": 849,
+     "to": 851,
+     "errors": [
+      "Act missed"
+     ]
+    },
+    {
+     "id": "A10",
+     "revision": "30886970e1ef1ca0",
+     "verdict": "correct",
+     "act": "Fingering",
+     "performer": "Stiles Stilinski",
+     "receiver": "Stiles Stilinski",
+     "occurrence": "performed",
+     "from": 850,
+     "to": 850,
+     "errors": [
+      "Act missed"
+     ]
+    }
+   ],
+   "events": [
+    {
+     "ownerActId": "A8",
+     "act": "Toy insertion",
+     "performer": "Stiles Stilinski",
+     "receiver": "Stiles Stilinski",
+     "from": 849,
+     "to": 849,
+     "scored": true
+    },
+    {
+     "ownerActId": "A9",
+     "act": "Solo masturbation",
+     "performer": "Stiles Stilinski",
+     "receiver": "",
+     "from": 849,
+     "to": 851,
+     "scored": true
+    },
+    {
+     "ownerActId": "A10",
+     "act": "Fingering",
+     "performer": "Stiles Stilinski",
+     "receiver": "Stiles Stilinski",
+     "from": 850,
+     "to": 850,
+     "scored": true
+    }
+   ]
+  },
+  {
+   "id": "W29",
+   "fic": "sugar-alpha.html",
+   "sourceSha": "68a3c9d689b093806fb072b5e550e79a61eb9f16c1e79ca192ba24597338de5e",
+   "from": 1758,
+   "to": 1763,
+   "coverage": "positive-only",
+   "coverageReviewed": false,
+   "reviews": [
+    {
+     "id": "A13",
+     "revision": "e107b44e8c5a1d24",
+     "verdict": "correct",
+     "act": "Fingering",
+     "performer": "Stiles Stilinski",
+     "receiver": "Stiles Stilinski",
+     "occurrence": "performed",
+     "from": 1760,
+     "to": 1761,
+     "errors": [
+      "Act missed"
+     ]
+    }
+   ],
+   "events": [
+    {
+     "ownerActId": "A13",
+     "act": "Fingering",
+     "performer": "Stiles Stilinski",
+     "receiver": "Stiles Stilinski",
+     "from": 1760,
+     "to": 1761,
+     "scored": true
+    }
+   ]
+  },
+  {
+   "id": "W33",
+   "fic": "sugar-alpha.html",
+   "sourceSha": "68a3c9d689b093806fb072b5e550e79a61eb9f16c1e79ca192ba24597338de5e",
+   "from": 1828,
+   "to": 1849,
+   "coverage": "positive-only",
+   "coverageReviewed": false,
+   "reviews": [
+    {
+     "id": "A14",
+     "revision": "6b5b3a2bc9584424",
+     "verdict": "correct",
+     "act": "Toy insertion",
+     "performer": "Derek Hale",
+     "receiver": "Stiles Stilinski",
+     "occurrence": "performed",
+     "from": 1831,
+     "to": 1843,
+     "errors": [
+      "Act missed"
+     ]
+    },
+    {
+     "id": "A15",
+     "revision": "578bfa927df50752",
+     "verdict": "correct",
+     "act": "Fisting",
+     "performer": "Derek Hale",
+     "receiver": "Stiles Stilinski",
+     "occurrence": "performed",
+     "from": 1843,
+     "to": 1847,
+     "errors": [
+      "Act missed"
+     ]
+    }
+   ],
+   "events": [
+    {
+     "ownerActId": "A14",
+     "act": "Toy insertion",
+     "performer": "Derek Hale",
+     "receiver": "Stiles Stilinski",
+     "from": 1831,
+     "to": 1843,
+     "scored": true
+    },
+    {
+     "ownerActId": "A15",
+     "act": "Fisting",
+     "performer": "Derek Hale",
+     "receiver": "Stiles Stilinski",
+     "from": 1843,
+     "to": 1847,
+     "scored": false
+    }
+   ]
+  },
+  {
+   "id": "W36",
+   "fic": "sugar-alpha.html",
+   "sourceSha": "68a3c9d689b093806fb072b5e550e79a61eb9f16c1e79ca192ba24597338de5e",
+   "from": 2048,
+   "to": 2053,
+   "coverage": "positive-only",
+   "coverageReviewed": false,
+   "reviews": [
+    {
+     "id": "A16",
+     "revision": "ff894d6ff2a7058d",
+     "verdict": "correct",
+     "act": "Toy insertion",
+     "performer": "Derek Hale",
+     "receiver": "Stiles Stilinski",
+     "occurrence": "performed",
+     "from": 2050,
+     "to": 2050,
+     "errors": [
+      "Act missed"
+     ]
+    }
+   ],
+   "events": [
+    {
+     "ownerActId": "A16",
+     "act": "Toy insertion",
+     "performer": "Derek Hale",
+     "receiver": "Stiles Stilinski",
+     "from": 2050,
+     "to": 2050,
+     "scored": true
+    }
+   ]
+  },
+  {
+   "id": "W38",
+   "fic": "sugar-alpha.html",
+   "sourceSha": "68a3c9d689b093806fb072b5e550e79a61eb9f16c1e79ca192ba24597338de5e",
+   "from": 2191,
+   "to": 2246,
+   "coverage": "positive-only",
+   "coverageReviewed": false,
+   "reviews": [
+    {
+     "id": "A18",
+     "revision": "5582067921377a69",
+     "verdict": "correct",
+     "act": "Toy insertion",
+     "performer": "Derek Hale",
+     "receiver": "Stiles Stilinski",
+     "occurrence": "performed",
+     "from": 2231,
+     "to": 2231,
+     "errors": [
+      "Act missed"
+     ]
+    }
+   ],
+   "events": [
+    {
+     "ownerActId": "A18",
+     "act": "Toy insertion",
+     "performer": "Derek Hale",
+     "receiver": "Stiles Stilinski",
+     "from": 2231,
+     "to": 2231,
+     "scored": true
+    }
+   ]
+  }
+ ],
+ "feedbackSha": "edd6a8130f99753828fbca110f7c9de9c051284c4f926a536365fefbc89e08b2"
+}
