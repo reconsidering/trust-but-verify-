@@ -1490,6 +1490,18 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
     if (pat.id.startsWith("care-soothe") && /\bhands?\s+together\b/i.test(sent.slice(m.index!, m.index! + m[0].length + 20))) return;
     // A handjob on oneself ("fists his own cock") is solo.
     if (pat.id.startsWith("hj-") && /\b(?:his|her|their)\s+own\b/i.test(m[0])) return;
+    // "pictured Morgan gripping his swollen cock between his fingers", "Rowan rubs his cock under the sheet, egged on by Morgan's orders":
+    // a named subject, a bare "his" and nobody else named or pointed at before it. When his hand is on it, or the other man is only watching or
+    // urging, the cock is the subject's own, not the partner's. (Not "Morgan pushed Rowan down and gripped his cock between his fingers".)
+    if (pat.id.startsWith("hj-stroke") && !pat.elided && tTok && cast.byAlias.get(tTok) && /^(?:his|her|their)$/i.test(bTok ?? "") &&
+        !new RegExp(`\\b(?:${NAMES}|him|her|them)\\b`).test(sent.slice(0, m.index!)) &&
+        (/^\s*(?:in|between|with)\s+(?:his|her|their)\s+(?:\w+\s+)?(?:fingers?|fist|hands?|palm|grip)\b/i.test(sent.slice(m.index! + m[0].length)) ||
+         new RegExp(`^[^.!?]{0,40}?(?:\\b(?:egged|urged|spurred|goaded|encouraged)\\s+on\\s+by|\\b(?:for|at|in front of))\\s+(?:${NAMES})\\b`).test(sent.slice(m.index! + m[0].length)))) return;
+    // "Morgan's lust made him spread his legs wide in invitation": after make/let/have, "him" is the one spreading his own legs, not someone else's legs being spread.
+    if (pat.id.startsWith("spread-their-legs") && /^(?:him|her|them)$/i.test(tTok ?? "") && /^(?:him|her|them)\s+\w+\s+(?:his|her|their)\s/i.test(m[0]) &&
+        /\b(?:make|makes|made|making|let|lets|letting|has|had|have)\s+$/i.test(sent.slice(0, m.index!))) return;
+    // "Rowan flexed his muscles, squeezing his ass cheeks with a whimper": a squeeze that follows the subject's own muscles tensing is his own, not the partner's.
+    if (pat.id.startsWith("grab-ass") && pat.elided && /\b(?:flex|clench|tens|tighten|contract)\w*\s+(?:his|her|their)\s+(?:\w+\s+)?(?:muscles?|glutes?|thighs?|cheeks?|ass|butt|abs|stomach)\b[^.!?]*$/i.test(sent.slice(0, m.index!))) return;
     // A wish or fantasy before the verb: "wanted to hold him close and continue to stroke his cock", "fantasies of pressing him down".
     if (pat.cat === "vibe" && (pat.signal?.kind === "handjob" || pat.id.startsWith("dom-pin")) &&
         (/\b(?:want(?:ed|s|ing)?|wish(?:ed|es)?|long(?:ed|s|ing)?|crav(?:ed|es|ing)|hop(?:ed|es|ing)|need(?:ed|s)?)\s+(?:to|for)\b[^.!?;]*$/i.test(sent.slice(0, m.index!)) ||
