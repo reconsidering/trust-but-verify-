@@ -17,7 +17,8 @@
     "dive": "node scripts/dive.mjs",
     "setup-fics": "node scripts/setup-fics.mjs",
     "spotcheck": "node scripts/spotcheck.mjs",
-    "hands-free-harvest": "node scripts/hands-free-harvest.mjs"
+    "hands-free-harvest": "node scripts/hands-free-harvest.mjs",
+    "hands-free-check": "node scripts/hands-free-check.mjs"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.131.0",
