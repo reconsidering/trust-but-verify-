@@ -1599,7 +1599,9 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
         if (same) subjChar = same;
       }
     }
-    const causative = /^(?:him|her|them)$/.test(subjTok ?? "") && /\b(?:make|makes|made|making|let|lets|letting)\s+$/i.test(sent.slice(0, m.index));
+    // "Morgan catches him looking at his cock": after catch/notice, "him" is the one looking, and "his" belongs to the one who caught him.
+    const causative = /^(?:him|her|them)$/.test(subjTok ?? "") && (/\b(?:make|makes|made|making|let|lets|letting)\s+$/i.test(sent.slice(0, m.index)) ||
+      (pat.id.startsWith("ogle-") && /\b(?:catch|catches|caught|catching|notice|notices|noticed|noticing)\s+$/i.test(sent.slice(0, m.index))));
     let clauseOrigin: PersonOrigin = "clause";
     const clauseSubj =
       !pat.elided && subjTok && (pronoun(subjTok) || /^(?:[Hh]is|[Hh]er|[Tt]heir)$/.test(subjTok)) && m.index! > 0
@@ -1749,6 +1751,27 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
       if (wrong(tTok, r.top) || wrong(bTok, r.bottom)) return;
     }
     let { top, bottom } = resolved as { top: Character; bottom: Character };
+    // "He lives only for Morgan, for his knot to lock them together": the knot someone longs for is the other man's.
+    if (pat.id.startsWith("knot-owner") && /^(?:his|her|their)$/i.test(tTok ?? "") && /\b(?:for|want\w*|need\w*|crav\w*|beg\w*|long\w*|ach\w*)\s+$/i.test(sent.slice(0, m.index!))) [top, bottom] = [bottom, top];
+    // "No matter how many times he jerks off, it does nothing": a habit in passing, not an act at this moment.
+    if (pat.id.startsWith("mast-") && /\bno matter how (?:many times|often|much)\b/i.test(sent.slice(0, m.index!))) return;
+    // "…because he desperately wants to fuck Rowan": the "he" who wants is the subject; the bare "to fuck" is not a second person doing it.
+    if (pat.elided && pat.id.startsWith("fuck") && /\b(?:he|she|they)\s+(?:\w+ly\s+)?(?:wants?|needs?|wish(?:es)?|longs?|craves?)\s*$/i.test(sent.slice(0, m.index!))) return;
+    // "wondering who would come over and fuck him": an unnamed person's wish is not the thinker's act on the partner.
+    if (pat.elided && pat.id.startsWith("fuck") && /\bwho\s+(?:would|could|will|might|can)\s+(?:\w+\s+){0,3}$/i.test(sent.slice(0, m.index!))) return;
+    // "He watches Rowan suck on his cum-covered fingers": a named sucker and a bare "his" with no one else named or pointed at before it: his own fingers.
+    if (pat.id.startsWith("suck-fingers") && !pat.elided && bTok && cast.byAlias.get(bTok) && /^(?:his|her|their)$/i.test(tTok ?? "") &&
+        !new RegExp(`\\b(?:${NAMES}|him|her|them)\\b`).test(sent.slice(0, m.index!))) return;
+    // "He swallows eagerly, delighted Morgan lets him use his mouth": a bare oral clause whose chosen partner is not in the sentence, while exactly one other person is, is about that person.
+    if (pat.cat === "oral" && (resolved as { basis?: string }).basis === "inferred") {
+      const named = new Set(ctx.sentMentions.map((x) => x.c));
+      const missing = [top, bottom].filter((c) => !named.has(c));
+      const extra = [...named].filter((c) => c !== top && c !== bottom);
+      const gender: Gender = /\b(?:she|her)\b/i.test(sent) && !/\b(?:he|his|him)\b/i.test(sent) ? "f" : "m";
+      if (missing.length === 1 && extra.length === 1 && Ctx.compatible(extra[0], gender) && Ctx.compatible(missing[0], gender)) { if (missing[0] === top) top = extra[0]; else bottom = extra[0]; }
+    }
+    // "before he shoves his fingers into his mouth": his own fingers into his own mouth, not a partner's.
+    if (pat.id.startsWith("fingers-into-mouth") && /\b(?:he|she)\s+\w+\s+(?:his|her)\s+(?:\w+\s+)?fingers?\s+(?:in|into)\s+(?:his|her)\s+(?:own\s+)?mouth/i.test(m[0]) && /(?:\b(?:and|before|as|while|then)\s+|,\s*)$/i.test(sent.slice(0, m.index!))) return;
     // Arching in a pairing where neither has a penis is pleasure, not offering an ass: an anal hint needs anal words nearby.
     if (pat.id.startsWith("arch-") && top.penis === false && bottom.penis === false && !ANAL_CTX.test(para) && !ANAL_CTX.test(paras[pi - 1] ?? "") && !ANAL_CTX.test(paras[pi + 1] ?? "")) return;
     // "His eyes were glued to Buck's cock", "his hand wrapped around Steve's cock": the possessive pronoun in front is not the
