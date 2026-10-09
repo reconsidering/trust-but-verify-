@@ -419,12 +419,12 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
     const plainNames = (t: string) => [...t.matchAll(new RegExp(`\\b(${NAMES})\\b(?!['’](?:s\\b|\\s|$))`, "g"))].map((x) => cast.byAlias.get(x[1]));
     const nearNames = plainNames(`${paras[pi - 1] ?? ""} ${paras[pi] ?? ""}`);
     // A plan is not a plug being worn: "I want you plugged all evening", "you'll wear the plug tomorrow".
-    if (/\b(?:want(?:s|ed)?|will|['’]ll|gonna|going\s+to|would|should|plan\w*)\b[^.!?]{0,30}\b(?:plug(?:ged)?|vibe|vibrator)\b/i.test(sent)) return;
+    if (/\b(?:want(?:s|ed)?|need(?:s|ed)?|will|['’]ll|gonna|going\s+to|would|should|have\s+to|plan\w*)\s+(?:(?:you|him|her|them|me|that|this|the|a)\s+)?(?:(?:to\s+)?(?:wear|keep|take|put|get)\s+(?:\w+\s+){0,2}?)?(?:plug(?:ged)?|vibe|vibrator)\b/i.test(sent)) return;
     const wearerPartner = tagPartner(plugWearer);
     if (!nearNames.includes(plugWearer) && nearNames.some((c) => c && c !== plugWearer && c !== wearerPartner)) return;
     // …and a sentence about someone else ("Rowan shifts in his seat, remembering the plug") is theirs, even with the wearer nearby.
     const namedHere = plainNames(sent);
-    if (namedHere.length && !namedHere.includes(plugWearer)) return;
+    if (namedHere.length && !namedHere.includes(plugWearer) && namedHere.some((c) => c && c !== wearerPartner)) return;
     const other = tagPartner(plugWearer);
     if (!other || desires.some((d) => d.via === "plug-worn" && (d.sentence === original || d.para === pi)) || desires.filter((d) => d.via === "plug-worn").length >= 8) return;
     desires.push({ via: "plug-worn", cat: "anal", act: "wearing a plug", who: plugWearer, partner: other, role: "bottom", wants: true, kind: "prep", weight: 0.6, para: pi, sentence: original, basis: "named" });

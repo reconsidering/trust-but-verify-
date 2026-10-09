@@ -52,6 +52,12 @@ describe('the tagged wearer keeps a plug in a scene with their partner',()=>{
   const{hits}=run('Morgan told him to bend over.||He ends up over Morgan’s knee, a silicone plug nudging his prostate every time Morgan’s palm lands.',meta);
   expect(hits.filter(h=>h.via==='plug-worn'&&h.a==='Rowan Marsh').length).toBe(1);
  });
+ it('keeps the plug when the sentence names the partner pulling it out of the wearer',()=>{
+  expect(run('Rowan lay sprawled on the bed, wrung out.||Morgan crawled onto the bed, gently easing the plug from Rowan’s stretched hole.',meta).hits.filter(h=>h.via==='plug-worn'&&h.a==='Rowan Marsh').length).toBe(1);
+ });
+ it('keeps the plug when “want” is about something else in the sentence',()=>{
+  expect(run('Rowan’s lips desperately want to complain about the plug sitting deep in his ass.',meta).hits.filter(h=>h.via==='plug-worn'&&h.a==='Rowan Marsh').length).toBe(1);
+ });
  it('does not read a plan as a plug being worn',()=>{
   expect(run('“I want you plugged all evening,” Morgan said.',meta).hits.filter(h=>h.via==='plug-worn')).toEqual([]);
  });
