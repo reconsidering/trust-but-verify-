@@ -1,0 +1,311 @@
+{
+  "schema": "hands-free-orgasm-locations/v1",
+  "created": "2026-10-09",
+  "engineCodeReference": "cc919ee",
+  "definition": "Orgasm without manual penile stimulation at the climax. Earlier stimulation is recorded separately; rimming with manual testicular contact is a qualified match.",
+  "locationConvention": {
+    "base": 0,
+    "ranges": "inclusive",
+    "paragraphSource": "splitParagraphs(extractFromHtml(originalHtml).text), from src/text.ts and src/extract.ts at cc919ee. These are extracted paragraphs, not raw HTML p elements, line numbers or words.",
+    "hashes": "SHA-256 of original HTML bytes and of the exact UTF-8 extracted orgasm paragraph; no trailing newline added to the paragraph.",
+    "instructions": [
+      "Locate each file in ao3-samples/ and verify its sourceSha256 before using indices.",
+      "Read the complete inclusive fromParagraph..toParagraph range; orgasmParagraph identifies the key paragraph.",
+      "If source hashes differ, do not assume paragraph indices still match. Obtain the matching download or relocate using chapter, participants and paraphrased evidence.",
+      "These are reviewed passage findings, not imported owner labels or model confidence scores."
+    ]
+  },
+  "works": [
+    {
+      "file": "lock-it.html",
+      "title": "Better Lock It In Your Pocket",
+      "sourceSha256": "cefecea8f64bab5b5bbeee0fdf6cf6d8a7712191f584b965d3b8100cfec2a635",
+      "paragraphCount": 210,
+      "scenes": [
+        {
+          "fromParagraph": 185,
+          "toParagraph": 196,
+          "orgasmParagraph": 196,
+          "orgasmParagraphSha256": "d15b29beab1324568389d4c362795f044cef7bf5a34d5922ac540d884107e5d9",
+          "character": "Buck",
+          "partner": "Eddie",
+          "chapter": "One-shot",
+          "actAtOrgasm": "anal_intercourse",
+          "assessment": "confirmed",
+          "paraphrasedEvidence": "Buck remains caged; Eddie holds his wrists during intercourse. The orgasm follows a prostate-directed thrust. Earlier cage contact is separate from the climax.",
+          "occurrence": "performed"
+        }
+      ]
+    },
+    {
+      "file": "belonging.html",
+      "title": "Belonging is Longing is Now",
+      "sourceSha256": "d8fe352ab70bc0a8171fea0e069c43d776d3541d741cb74b2b66014ae64e874c",
+      "paragraphCount": 5783,
+      "scenes": [
+        {
+          "fromParagraph": 5408,
+          "toParagraph": 5420,
+          "orgasmParagraph": 5414,
+          "orgasmParagraphSha256": "7b94f58747e8a84ae0fbe27fd417314cd271b331ad7f9d405cf8eef064a37b65",
+          "character": "Dean",
+          "partner": "Castiel",
+          "chapter": "20",
+          "actAtOrgasm": "anal_intercourse",
+          "assessment": "confirmed",
+          "paraphrasedEvidence": "Dean climaxes during penetration; the narration explicitly excludes penile touch.",
+          "occurrence": "performed"
+        }
+      ]
+    },
+    {
+      "file": "tricks-of-the-trade.html",
+      "title": "Tricks of the Trade",
+      "sourceSha256": "25a15e806d8f6a55c030e78d50d58e71f2ca424674b33f7a56471178d4ab1bd3",
+      "paragraphCount": 3875,
+      "scenes": [
+        {
+          "fromParagraph": 839,
+          "toParagraph": 847,
+          "orgasmParagraph": 847,
+          "orgasmParagraphSha256": "ad6ab21914f83e17ed9c3b3015838de74ea088c84172e75ad6dba2ddf4afa641",
+          "character": "Dean",
+          "partner": "Castiel",
+          "chapter": "4",
+          "actAtOrgasm": "anal_intercourse",
+          "assessment": "confirmed",
+          "paraphrasedEvidence": "Dean is restrained and climaxes during penetration after earlier oral stimulation has stopped.",
+          "occurrence": "performed"
+        },
+        {
+          "fromParagraph": 2576,
+          "toParagraph": 2581,
+          "orgasmParagraph": 2581,
+          "orgasmParagraphSha256": "4a9f891a89a44fffecd33931b0cdb2053d04f6f4627ce28fbe817867246f4570",
+          "character": "Dean",
+          "partner": "Castiel",
+          "chapter": "12",
+          "actAtOrgasm": "anal_intercourse",
+          "assessment": "confirmed",
+          "paraphrasedEvidence": "Castiel prevents Dean from obtaining bed friction; Dean subsequently climaxes during intercourse.",
+          "occurrence": "performed"
+        }
+      ]
+    },
+    {
+      "file": "were-compeer.html",
+      "title": "A WereCompeer",
+      "sourceSha256": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+      "paragraphCount": 1220,
+      "scenes": [
+        {
+          "fromParagraph": 428,
+          "toParagraph": 432,
+          "orgasmParagraph": 432,
+          "orgasmParagraphSha256": "e0a9027fa9be5e40a7905695c905b4482780188c437bb61d1610be8ec94c050d",
+          "character": "Stiles",
+          "partner": "Derek",
+          "chapter": "6",
+          "actAtOrgasm": "anal_intercourse",
+          "assessment": "confirmed",
+          "paraphrasedEvidence": "The anal beads are removed and replaced by penile penetration before the orgasm. The narration explicitly excludes direct penile stimulation.",
+          "occurrence": "performed"
+        },
+        {
+          "fromParagraph": 600,
+          "toParagraph": 605,
+          "orgasmParagraph": 605,
+          "orgasmParagraphSha256": "4fea0040eead3fbc72ed6407a736f96ca09d489ebf9fdacc239d12f0d1b09833",
+          "character": "Stiles",
+          "partner": "Derek",
+          "chapter": "8",
+          "actAtOrgasm": "anal_fisting",
+          "assessment": "confirmed",
+          "paraphrasedEvidence": "Stiles experiences a prolonged orgasm during anal fisting without attention to his penis.",
+          "occurrence": "performed"
+        }
+      ]
+    },
+    {
+      "file": "knock-me-up.html",
+      "title": "knock me up",
+      "sourceSha256": "1f31aecc927247156da60df42dc0873b956cbbf46a8f6aaa4c69815c9a924305",
+      "paragraphCount": 142,
+      "scenes": [
+        {
+          "fromParagraph": 129,
+          "toParagraph": 136,
+          "orgasmParagraph": 136,
+          "orgasmParagraphSha256": "bfdee66d4bafefc94a9db2e55809b6ab05089aa61428b50ced4c036a6600fdd8",
+          "character": "Henry",
+          "partner": "Alex",
+          "chapter": "One-shot",
+          "actAtOrgasm": "anal_intercourse",
+          "assessment": "confirmed",
+          "paraphrasedEvidence": "Henry climaxes during penetration. His penis is explicitly untouched at the climax; earlier body rubbing does not establish manual stimulation then.",
+          "occurrence": "performed"
+        }
+      ]
+    },
+    {
+      "file": "autocorrect.html",
+      "title": "Damn You Auto Correct!",
+      "sourceSha256": "7bb7cfa0690ea42eea1d2220659ed798c400cf939cf0b28ef1c9fb99e76b7780",
+      "paragraphCount": 218,
+      "scenes": [
+        {
+          "fromParagraph": 179,
+          "toParagraph": 190,
+          "orgasmParagraph": 190,
+          "orgasmParagraphSha256": "7d85a4c47d4137c3fd0df5b926be1f79596d6c799ac8d1e21d4e8c065c6bad70",
+          "character": "Dean",
+          "partner": "Castiel",
+          "chapter": "One-shot",
+          "actAtOrgasm": "anal_intercourse",
+          "assessment": "confirmed",
+          "paraphrasedEvidence": "An attempt at self-stimulation is prevented. Dean holds onto Castiel while being penetrated and subsequently climaxes.",
+          "occurrence": "performed"
+        }
+      ]
+    },
+    {
+      "file": "quantum-leap.html",
+      "title": "Quantum Leap",
+      "sourceSha256": "837f64421cf3540f3eece3fbb6381166e4ef1cb6d438a3b10d7b1ce30efe9830",
+      "paragraphCount": 255,
+      "scenes": [
+        {
+          "fromParagraph": 60,
+          "toParagraph": 74,
+          "orgasmParagraph": 73,
+          "orgasmParagraphSha256": "8368d2d39fc5ee403d4a4755e66551fc51c0634dce24367aa7a0d2e13a4c0ab1",
+          "character": "Peter",
+          "partner": "Wade",
+          "chapter": "One-shot",
+          "actAtOrgasm": "anal_intercourse_plus_anal_vibrator",
+          "assessment": "confirmed",
+          "paraphrasedEvidence": "Wade prevents Peter from reaching his penis; penetration and an anal vibrator continue, producing the orgasm.",
+          "occurrence": "performed"
+        }
+      ]
+    },
+    {
+      "file": "innocent-until.html",
+      "title": "Innocent Until",
+      "sourceSha256": "ffa71a4c7726196bc68e41ceb1805c28b7de2698384e84270c5d0f1f6f4ef78c",
+      "paragraphCount": 4922,
+      "scenes": [
+        {
+          "fromParagraph": 4889,
+          "toParagraph": 4895,
+          "orgasmParagraph": 4894,
+          "orgasmParagraphSha256": "ea1b3719a7b7d587fd355f70911f959e1f4e684a752b2a8da7ff8fc080c8af01",
+          "character": "Steve",
+          "partner": "Bucky",
+          "chapter": "8",
+          "actAtOrgasm": "anal_intercourse",
+          "assessment": "confirmed",
+          "paraphrasedEvidence": "After an earlier separate toy orgasm, Steve receives penile penetration and climaxes again without penile touch.",
+          "occurrence": "performed"
+        }
+      ]
+    },
+    {
+      "file": "pact-of-ice-and-fire.html",
+      "title": "the Pact of Ice and Fire",
+      "sourceSha256": "997833dcfbe3192cbe4770c9eba16c74e756bcc4df4988b19a0a8826469e61d9",
+      "paragraphCount": 5851,
+      "scenes": [
+        {
+          "fromParagraph": 4630,
+          "toParagraph": 4637,
+          "orgasmParagraph": 4636,
+          "orgasmParagraphSha256": "e743800ebbecd8850916f428c832618903a3d4c3bbded85d8dcb3734a8c3641a",
+          "character": "Jacaerys",
+          "partner": "Cregan",
+          "chapter": "22",
+          "actAtOrgasm": "anal_intercourse",
+          "assessment": "confirmed",
+          "paraphrasedEvidence": "Jacaerys climaxes during intercourse; the narration explicitly excludes penile touch.",
+          "occurrence": "performed"
+        }
+      ]
+    },
+    {
+      "file": "prince-prisoner-puppy.html",
+      "title": "Prince, Prisoner, Puppy, Parent",
+      "sourceSha256": "cb68b9eaa778291f8ecbe13bcdb59ee9a7d3f0a170fa1ec35347e4663d6714fa",
+      "paragraphCount": 958,
+      "scenes": [
+        {
+          "fromParagraph": 375,
+          "toParagraph": 378,
+          "orgasmParagraph": 376,
+          "orgasmParagraphSha256": "651d8aaabe319edae2f49bfdce10e88b436342ba2a8cb951a553120ac455769e",
+          "character": "Telemachus",
+          "partner": "Antinous",
+          "chapter": "8",
+          "actAtOrgasm": "anal_intercourse",
+          "assessment": "confirmed",
+          "paraphrasedEvidence": "A narrative summary says Telemachus has begun climaxing from penetration alone. Treat this as a summary, rather than a precisely timed new scene.",
+          "occurrence": "summary"
+        },
+        {
+          "fromParagraph": 405,
+          "toParagraph": 407,
+          "orgasmParagraph": 407,
+          "orgasmParagraphSha256": "98513263b6b5c008102a7fe3b2b7036919b60ffbcc7137eac72850830568fad4",
+          "character": "Telemachus",
+          "partner": "Antinous",
+          "chapter": "9",
+          "actAtOrgasm": "anal_intercourse",
+          "assessment": "confirmed",
+          "paraphrasedEvidence": "Telemachus climaxes during penetration while responding to pregnancy-related talk. Manual penile stimulation is not described; this is supported by the earlier summary. The encounter is nonconsensual.",
+          "occurrence": "performed"
+        }
+      ]
+    },
+    {
+      "file": "more-views.html",
+      "title": "More Views. More Money.",
+      "sourceSha256": "61461060f56925872cb638627ee721273255d669032ded0d8562ffef4fc8601f",
+      "paragraphCount": 1018,
+      "scenes": [
+        {
+          "fromParagraph": 890,
+          "toParagraph": 904,
+          "orgasmParagraph": 904,
+          "orgasmParagraphSha256": "62f73d267ab778c91ad5ef687c4cf54cf0c2e573aa000a3a03275da6f7f99b9b",
+          "character": "Dean",
+          "partner": "Castiel",
+          "chapter": "10",
+          "actAtOrgasm": "anal_fingering",
+          "assessment": "confirmed",
+          "paraphrasedEvidence": "The orgasm occurs during anal fingering. Penile intercourse is discussed as a future act, not happening in this passage.",
+          "occurrence": "performed"
+        }
+      ]
+    },
+    {
+      "file": "sugar-alpha.html",
+      "title": "Sugar Alpha",
+      "sourceSha256": "68a3c9d689b093806fb072b5e550e79a61eb9f16c1e79ca192ba24597338de5e",
+      "paragraphCount": 2428,
+      "scenes": [
+        {
+          "fromParagraph": 575,
+          "toParagraph": 582,
+          "orgasmParagraph": 582,
+          "orgasmParagraphSha256": "cc8d0157c769fd8c2f77bce17f74b1469462415ef0bf8007ded4abbc789f39ba",
+          "character": "Stiles",
+          "partner": "Derek",
+          "chapter": "8",
+          "actAtOrgasm": "rimming",
+          "assessment": "qualified",
+          "paraphrasedEvidence": "Stiles climaxes during rimming after Derek prevents mattress rubbing. Manual testicular contact also occurs, so this is only a qualified hands-free match.",
+          "occurrence": "performed"
+        }
+      ]
+    }
+  ]
+}
