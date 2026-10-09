@@ -413,6 +413,13 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
     if (!plugWearer || !PLUG_WORN.test(sent) || !PLUG_BODY.test(`${sent} ${paras[pi] ?? ""}`) || /\b(?:power|electric|spark|bath|sink|tub|drain)\s+plug|plug\s+(?:in|into)\s+(?:the\s+)?(?:wall|socket|outlet|phone|charger)/i.test(sent)) return;
     // Taking one out or setting it down is someone else's hand, not the wearer's state.
     if (/\b(?:take|took|taking|pull|pulled|remov\w*|set|put)\s+(?:the\s+|a\s+|that\s+)?(?:\w+\s+)?plug\s+(?:out|down|away|aside)\b|\bplug\s+out\b/i.test(sent)) return;
+    // The tagged wearer is a guess about the whole work; a plug in a scene they are not in belongs to someone else. Invented adults:
+    // the tags lock Avery in a cage, but in a later chapter Morgan plugs Rowan while Avery is elsewhere.
+    const wearerNear = new RegExp(`\\b(?:${plugWearer.aliases.map((a) => a.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")).join("|")})\\b`, "i");
+    if (!wearerNear.test(`${paras[pi - 1] ?? ""} ${paras[pi] ?? ""} ${sent}`)) return;
+    // …and a sentence about someone else ("Rowan shifts in his seat, remembering the plug") is theirs, even with the wearer nearby.
+    const namedHere = [...sent.matchAll(new RegExp(`\\b(${NAMES})\\b`, "g"))].map((x) => cast.byAlias.get(x[1]));
+    if (namedHere.length && !namedHere.includes(plugWearer)) return;
     const other = tagPartner(plugWearer);
     if (!other || desires.some((d) => d.via === "plug-worn" && (d.sentence === original || d.para === pi)) || desires.filter((d) => d.via === "plug-worn").length >= 8) return;
     desires.push({ via: "plug-worn", cat: "anal", act: "wearing a plug", who: plugWearer, partner: other, role: "bottom", wants: true, kind: "prep", weight: 0.6, para: pi, sentence: original, basis: "named" });
@@ -1970,6 +1977,41 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
       if (/\b(?:palm|hand|hands|fingers?|thumb|arm|knee|elbow|shoulder|foot|leg|jaw|chest|fist|claws?|nails?)\s+\w+s?,?\s*$/i.test(prior)) return;
       if (/\b(?:can |could )?(?:feel|felt|feels)\b[^.!?]{0,50}\b(?:twitch|pulse|throb|shudder|swell|flex)\w*,?\s*$/i.test(prior)) return;
     }
+    // Invented adults: Rowan is on his knees taking Morgan in his mouth; "Morgan pushes all the way in", "he rocks in deep, holding
+    // his jaw", "not just fucking him" are the mouth, not an anal scene, when nothing anal is in the paragraph and no anal act came just before.
+    if (!pat.signal && cat === "anal" && (/^(?:pushed-in|push-into|slipped-in|rock-into)$/.test(basePid) || (basePid === "fuck" && pat.elided))) {
+      const MOUTH = /\b(?:mouth|throat|jaw|tongue|lips)\b/i;
+      const INTO_MOUTH = /\b(?:into|in|down)\s+(?:his|her|their|my|your|[\w'’]+['’]s)\s+(?:mouth|throat)\b/i;
+      const prev = paras[pi - 1] ?? "";
+      const oralHere = ORAL_SCENE_RE.test(para) || INTO_MOUTH.test(para);
+      const analWords = (t: string) => ANAL_CTX.test(t) || /\b(?:inside\s+(?:him|her|them|me)|lube[ds]?|slick(?:ed)?\s+(?:him|her|them)|prep(?:ped|ping|are\w*)?|lin(?:e|es|ed|ing)\s+(?:(?:him|her|them)sel(?:f|ves)\s+)?up)\b/i.test(t);
+      const recentAnal = acts.some((a) => a.cat === "anal" && a.act.startsWith("anal sex") && a.para >= pi - 3 && a.para < pi);
+      if (!analWords(sent) && !analWords(para) && !/\bkiss\w*/i.test(para) && !recentAnal &&
+          (oralHere || ORAL_SCENE_RE.test(prev)) && (oralHere ? MOUTH.test(para) || MOUTH.test(prev) : MOUTH.test(para))) return;
+    }
+    // Invented adults: Morgan, still fully clothed, grinds on Rowan until he comes in his trousers; "the force of his thrusts" there is
+    // rubbing through clothes, not penetration. Only thrust-only readings, and only when nothing anal is in the paragraph.
+    if (!pat.signal && cat === "anal" && /thrust|grind|rut/.test(basePid) &&
+        /\b(?:(?:fully|still|half)[\s-]+(?:clothed|dressed)|clothed|through\s+(?:his|her|their|the|both)\s+(?:\w+\s+)?(?:pants|jeans|trousers|slacks|clothes|boxers|briefs|underwear|fabric|denim)|(?:in|into)\s+(?:his|her|their)\s+(?:pants|jeans|trousers|slacks|boxers|briefs|underwear))\b/i.test(para) &&
+        !ANAL_CTX.test(para) && !/\b(?:buried|lube[ds]?|condom|pushe[sd]?\s+in(?:side)?|slid\w*\s+in(?:side)?)\b/i.test(para)) return;
+    {
+      const tail = sent.slice(m.index! + m[0].length);
+      // Invented adults: "Morgan jams his finger on the lift button": a control panel, not a body.
+      if (basePid === "dd2-finger-shoved-into" && /^[^.!?]{0,40}\b(?:button|buttons|elevator|lift|keypad|panel|control|switch|doorbell|intercom|screen|phone|key|lock)\b/i.test(tail)) return;
+      // Invented adults: "Morgan pushes in a finger alongside his cock" in Rowan's mouth: fingers in a mouth, not a hole.
+      if (basePid === "adds-finger" && !ANAL_CTX.test(sent) && !ANAL_CTX.test(para) && (/\b(?:mouth|lips|throat)\b/i.test(para) || ORAL_SCENE_RE.test(para)) && (ORAL_SCENE_RE.test(para) || ORAL_SCENE_RE.test(paras[pi - 1] ?? ""))) return;
+      // Invented adults: "Morgan's finger circles his rim, not pushing in yet": the paragraph says nothing went in.
+      if (basePid === "dd5-fingers-circle-hole" && /\b(?:without|not|doesn['’]t|don['’]t|didn['’]t|never|yet\s+to)\s+(?:\w+\s+){0,3}?(?:(?:push|press|slip|dip|sink|go)(?:es|ed|ing|s)?|put(?:s|ting)?)\s+(?:it\s+|them\s+)?in(?:side)?\b/i.test(para)) return;
+      // Invented adults: "tonguing his slit" with a cock in the sentence or the paragraph and no vulva: the slit of a cock.
+      if (basePid === "licked-vulva" && /\bslit\b/i.test(matchText) && PENIS_CTX.test(`${sent} ${para}`) && !VULVA_CTX.test(`${sent} ${para}`)) return;
+      // Invented adults: "Rowan clenches, squeezing himself around Morgan's knot": muscles around a knot, not a hand on himself.
+      if (basePid === "mast-himself" && /\b(?:squeez|clench|tighten|flutter|contract)\w*/i.test(matchText) && /\b(?:around|knot|inside|cock|dick)\b/i.test(sent)) return;
+      // Invented adults: "Morgan rubs his erection against Rowan's buttocks": the body-contact reading has it; not a hand on a cock.
+      if (pat.signal?.kind === "handjob" && basePid === "hj-stroke" && /^[^.!?]{0,40}\b(?:against|between|along|over)\s+(?:\w+['’]s?\s+|his\s+|her\s+|their\s+)?(?:\w+\s+)?(?:ass|arse|buttocks|butt|backside|cheeks|bum)\b/i.test(tail)) return;
+      // Invented adults: "Morgan takes his cock out, slicks it and lines up with Rowan": getting ready to go in, not a handjob or masturbation.
+      if ((pat.signal?.kind === "handjob" || pat.signal?.kind === "masturbation") && /\b(?:take|took|takes|taking|pull\w*|free\w*|draw\w*)\s+(?:out\s+)?(?:his|her|their)\s+(?:cock|dick|erection|length)\b/i.test(sent) &&
+          /\b(?:lin(?:e|es|ed|ing)\s+(?:himself\s+|herself\s+|themselves\s+)?up|push\w*\s+(?:in|into|inside)|sink\w*\s+(?:in|into)|slid\w*\s+(?:in|into|inside)|enter\w*|press\w*\s+(?:in|into))\b/i.test(sent)) return;
+    }
     // "pulled his lips off of Steve just enough to say": a kiss, not a cock.
     if (pat.id.startsWith("mouth-off") && /^\s*,?\s*just enough\b/i.test(sent.slice(m.index! + m[0].length))) return;
     // "dropped a hand between Jack's legs and sucked at the junction of his neck": a hand and a neck, not a mouth on a cock.
@@ -2141,7 +2183,9 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
     // "opened him up with two fingers, then fucked him": the fingers belong to the clause before; the fucking is a new clause.
     const fingersBeforeOnly = FINGER_CTX.test(sent.slice(0, m.index!)) && !FINGER_CTX.test(matchText + " " + sent.slice(m.index! + matchText.length)) &&
       /[,;]|\b(?:then|and then)\b/.test(sent.slice(Math.max(0, m.index! - 14), m.index!) + matchText.slice(0, 12)) && /\b(?:fuck|pound|rail|bang|plow|plough|screw|breed|took|take)\w*/i.test(matchText);
-    if (cat === "anal" && pat.id !== "worked-open-pushed-in" && act.startsWith("anal sex") && !PENIS_CTX.test(matchText) && FINGER_CTX.test(matchText + " " + fingerSent) && !PENIS_CTX.test(sent) && !fingersBeforeOnly) act = "fingering";
+    if (cat === "anal" && pat.id !== "worked-open-pushed-in" && act.startsWith("anal sex") && !PENIS_CTX.test(matchText) && FINGER_CTX.test(matchText + " " + fingerSent) && !PENIS_CTX.test(sent) && !fingersBeforeOnly &&
+        // Invented adults: "slicks his fingers, working a thick plug into Rowan": the plug goes in, the fingers only hold it.
+        !/\b(?:plug|dildo|toy|vibrator|vibe)\b/i.test(matchText)) act = "fingering";
     if (pat.id === "prostate" && FINGER_CTX.test(sent) && !PENIS_CTX.test(sent)) act = "fingering";
 
     // Adult synthetic: a lubricated thumb or plug keeps its identity through a bare insertion clause.
@@ -2183,7 +2227,7 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
     }
     // Adult synthetic: two penises rubbing together is frottage, not a manually performed act.
     if(pat.signal?.kind==="handjob" && basePid==="hj-stroke" &&
-       /\b(?:cock|dick)\s+against\b|\bcocks\s+aligning\b/i.test(sent)) act="frottage";
+       (/\b(?:cock|dick)\s+against\b|\bcocks\s+aligning\b/i.test(sent) || /\b(?:fully\s+|still\s+)?clothed\s+(?:length|cock|dick|erection|crotch|groin|bulge)\b/i.test(matchText))) act="frottage";
     // Adult synthetic: a self-grasp explicitly interrupted by the partner does not establish a handjob.
     if(pat.signal?.kind==="handjob" && /\bgrab\w*\b/i.test(matchText) &&
        /\b(?:smack|slap|bat|push)\w*\s+(?:his|her|their)\s+hand\s+away\b/i.test(after)) return;
