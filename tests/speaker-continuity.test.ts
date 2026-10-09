@@ -19,7 +19,7 @@ it("keeps a tagged speaker after a listener's perception of the speaker's touch"
   expect(speaker('“Lovely,” Morgan pants. He cannot help the sound he makes at the praise. “You look wonderful.” Morgan’s fingers trail across his belly. He feels Morgan’s hand settle at his throat. “I want to fuck you.”', "dialogue:anal sex")).toEqual(["Morgan Vale"]);
 });
 it("attributes speech to the performer rather than a named listener reacting as he acts", () => {
-  expect(speaker('Morgan cups Rowan’s face. “Stay with me.”\n\nRowan chokes on a moan as Morgan sucks his cock. “I could milk your pretty cock all evening.”', "dialogue:checking out a cock")).toEqual(["Morgan Vale", "Morgan Vale"]);
+  expect(speaker('Morgan cups Rowan’s face. “Stay with me.”\n\nRowan chokes on a moan as Morgan sucks his cock. “I could admire your pretty cock all evening.”', "dialogue:checking out a cock")).toEqual(["Morgan Vale", "Morgan Vale"]);
 });
 it("respects a new named speech tag after a reaction", () => {
   expect(speaker('“Nearly there,” Morgan rasps. Rowan hums in response. “I want you to fuck me,” Rowan says.', "dialogue:anal sex")).toEqual(["Rowan Marsh"]);

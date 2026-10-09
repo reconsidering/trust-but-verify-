@@ -1073,6 +1073,8 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
       if ((d.kind === "petname" || d.kind === "aftercare" || d.kind === "position" || d.kind === "stated") && around.explicit === false) continue;
       // “Please suck me off, Eddie… need your mouth on me” is about a cock, not an ass.
       if (d.act === "rimming" && /\b(?:suck|blow)\s+(?:me|my)\b|\bmouth on me\b/.test(lower) && !/\b(?:ass|arse|hole)\b/.test(lower)) continue;
+      // "I could milk your pretty cock all night": something done to the cock, not a compliment on it.
+      if (d.kind === "ogling" && /\b(?:milk|stroke|suck|lick|tease|edge|ruin|grab|squeeze|hold|touch|play with|keep|use|cage|lock|spank|slap|tie|bind|choke|jerk|pump|swallow|ride|worship|torment|torture|drain)\w*\s+(?:your|that|the)\s+$/.test(lower.slice(0, m.index!))) continue;
       if (d.cat === "anal" && IDIOM_ASS.test(lower)) continue;
       // "You're so big" over two cocks held together is frottage, not anal sex.
       if (d.cat === "anal" && d.role === "bottom" && around.frot && /\bso\s+(?:big|huge|thick)\b|you(?:'re| are| feel| felt)\s+(?:so\s+)?(?:big|huge|thick)\b/.test(m[0])) continue;
@@ -1297,6 +1299,12 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
     // "Jacaerys rocks back into Cregan's mouth … the lord's tongue delves deeper, licks into Jacaerys": backing onto a tongue is rimming, not a hint
     // of anal sex or of a blowjob. The rimming patterns read the same passage.
     if ((basePid === "thrust-back" || basePid === "fucked-mouth") && /\btongue\b[^.!?]{0,60}\b(?:delv\w*|lick\w*|lav\w*|swirl\w*|push\w*|press\w*)\b[^.!?]{0,40}\b(?:into|inside)\b|\b(?:pucker|rim)\b/i.test(sent)) return;
+    // "Peter rocks back, spraying come" with a throat being used around it: a man pulling out of a mouth as he comes, not a bottom pushing back onto a cock.
+    if (basePid === "thrust-back" && !pat.id.includes("elided")) {
+      const near = [pi - 1, pi, pi + 1].map((i) => paras[i] ?? "");
+      const wide = [pi - 2, pi + 2].map((i) => paras[i] ?? "").concat(near);
+      if (near.some((t) => /\b(?:gag\w*|swallow\w*|chok\w*|deep-?throat\w*)\b/i.test(t)) && !wide.some((t) => ANAL_CTX.test(t) || FINGER_CTX.test(t))) return;
+    }
     // "slips a finger between his boy's lips and pulls Jace's mouth open": a finger in a mouth.
     if (basePid === "adds-finger" && /\bfingers?\b[^.!?]{0,30}\b(?:between|past|into|in)\s+(?:[\w’']+\s+){0,3}(?:lips|mouth)\b/i.test(sent)) return;
     // "Cregan licks into his body like his arse is as wet as a cunt; humming as he works the boy open": the tongue is what opens him, so it is rimming.
