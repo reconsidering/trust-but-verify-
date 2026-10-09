@@ -1,0 +1,3888 @@
+{
+ "made": "2026-10-09",
+ "how": "Owner verdicts on today's engine readings in the October 4-5 Claude-label review. Only items with exactly one current reading that the engine still makes at the same paragraph, pattern, people and role. Groups, absences and uncertain answers are excluded; no free text is kept.",
+ "batchId": "claude-oct4-5-8401eaa99447",
+ "engineCommit": "90436791eefa5a0455648567d16a7f034fc72f24",
+ "labels": {
+  "dialogue:anal sex#730dd13a": "wrong",
+  "dialogue:anal sex#89944de4": "wrong",
+  "body-hole-ache#915b5f70": "wrong",
+  "fingers-inside#2c36548b": "wrong",
+  "thrusts-falter#d0f6575b": "wrong",
+  "grab-ass#5e87c247": "wrong",
+  "push-into~elided#ce682f98": "wrong",
+  "dialogue:anal sex#30aa3136": "wrong",
+  "body-hole-ache#98a64b3c": "wrong",
+  "dd2-cock-in-mouth#d1e77296": "wrong",
+  "dialogue:blowjob#f111031a": "wrong",
+  "dialogue:blowjob#1946f740": "wrong",
+  "mast-got-off#659b952c": "wrong",
+  "dd2-mast-take-in-hand#29a60975": "wrong",
+  "fingers-to-hole#b249daf8": "wrong",
+  "push-into#d7bf8d42": "wrong",
+  "push-into~elided#e13610cb": "wrong",
+  "adds-finger#264f1fa0": "wrong",
+  "sucked#a797dbc7": "wrong",
+  "took-in-mouth~elided#f1c6c458": "wrong",
+  "stretched-open~elided#db234e3": "wrong",
+  "stretched-open#23e1f1f5": "wrong",
+  "riding~elided#57c63cb5": "wrong",
+  "fill~elided#c9588eb8": "wrong",
+  "takes-it-inside~elided#d8d15f76": "wrong",
+  "penis-inside#facd657": "wrong",
+  "push-into#8f6e3b8d": "wrong",
+  "spread-legs~elided#bac64c05": "wrong",
+  "self-toy-it~elided#5e637fee": "wrong",
+  "dialogue:anal sex#87c2e678": "wrong",
+  "push-into~elided#21b804db": "wrong",
+  "dialogue:anal sex#8c1af397": "wrong",
+  "comes-on-face~elided#ca2f1d0a": "ok",
+  "knelt-between#624b3cb3": "wrong",
+  "passive-fucked~elided#e88b92f5": "wrong",
+  "push-into#b423fe09": "wrong",
+  "pushed-in~elided#76b11636": "wrong",
+  "pushed-in#8e5aacf7": "wrong",
+  "cum-in-throat#965e818b": "wrong",
+  "fed-cock~elided#138d4fd2": "wrong",
+  "pushed-in~elided#6462d66e": "wrong",
+  "rock-into#4b9d076d": "wrong",
+  "fuck#36b99705": "wrong",
+  "arch-back#1adacf82": "wrong",
+  "push-into#8909459": "wrong",
+  "bottomed-out~elided#4debe477": "wrong",
+  "spread-legs#1af2ee80": "wrong",
+  "body-hole-ache#bb627480": "wrong",
+  "come-in-mouth~elided#12986951": "wrong",
+  "mast-word#827bdabc": "wrong",
+  "tongue-inside-him#c9bca6df": "wrong",
+  "fuck#a8307d0f": "wrong",
+  "dd2-pulled-out-of-him#129bedc7": "wrong",
+  "riding#15398360": "wrong",
+  "sucked#b5b3f29c": "ok",
+  "passive-fucked#ae35a035": "wrong",
+  "passive-fucked~elided#dc29e": "wrong",
+  "sucked~elided#ff70360d": "wrong",
+  "mast-himself~elided#973ce6d0": "ok",
+  "fuck#1a69cb93": "wrong",
+  "mouth-off#73ad81b": "ok",
+  "pushed-in~elided#6648d63b": "ok",
+  "push-into#f161800d": "ok",
+  "came-in-mouth#85530c08": "ok",
+  "fill#c6cf4eae": "ok",
+  "push-into~elided#8f5cc374": "ok",
+  "push-into#bd94f662": "ok",
+  "penis-into#66fdc90c": "ok",
+  "sucked#42c6fc25": "ok",
+  "dialogue:anal sex#37044099": "wrong",
+  "lined-up#785146cf": "wrong",
+  "dialogue:anal sex#252859d4": "wrong",
+  "dialogue:anal sex#11fc76d6": "wrong",
+  "sinks-to-floor#10ffb861": "wrong",
+  "prostate#9324cc2e": "wrong",
+  "pushed-in#a9ab8ca1": "wrong",
+  "plug-worn#d15cdd4f": "ok",
+  "toy-removed#29984b02": "ok",
+  "grab-ass~elided#5c0e4c10": "ok",
+  "toy-at-hole#aaf65f74": "ok",
+  "self-finger~elided#a6d4cdfe": "ok",
+  "plug-in-ass#8c3a1aed": "wrong",
+  "fuck#57f0a96a": "ok",
+  "toy-removed#2eab69a3": "ok",
+  "dialogue:anal sex#a758bd61": "ok",
+  "slicked-self~elided#f5ea72e7": "ok",
+  "bottomed-out~elided#48d97ba": "wrong",
+  "fuck#86062f33": "ok",
+  "lined-up~elided#ee5bdf9e": "ok",
+  "dialogue:blowjob#d15d3b2c": "ok",
+  "dd2-mast-take-in-hand#9f56b93e": "ok",
+  "mast-word#e0d4365a": "wrong",
+  "fuck#9ddce961": "ok",
+  "lips-around#fb263830": "wrong",
+  "dd3-slipping-second#b3c14af0": "wrong",
+  "sucked#30b3ec21": "ok",
+  "riding#81c429a": "ok",
+  "adds-finger#563f9bb3": "ok",
+  "push-into#79d114e1": "ok",
+  "took-in-mouth#9b13371b": "ok",
+  "push-into#54aa5701": "ok",
+  "swallowed-down#7703208b": "ok",
+  "fingers-into#ce5c49ac": "ok",
+  "throat-around-cock#5cb94da4": "ok",
+  "dd2-licks-stripe-shaft#ac0f96ec": "ok",
+  "spread-legs#f5fb742d": "wrong",
+  "plug-worn#9ced4a7c": "wrong",
+  "plug-worn#f514871": "wrong",
+  "toy-removed#196e3e17": "wrong",
+  "bent-over-furniture#60dbd648": "wrong",
+  "riding~elided#4828d05a": "wrong",
+  "sinks-to-floor~elided#5f56bf7c": "wrong",
+  "dd2-finger-shoved-into#f74d678": "wrong",
+  "body-leaking-from#f74d678": "wrong",
+  "history#aa91c8a6": "wrong",
+  "suck-fingers~elided#e28b843c": "wrong",
+  "came-inside~elided#b20bdf27": "wrong",
+  "fuck~elided#b7ccd1ab": "wrong",
+  "thrusts-falter#172a376e": "wrong",
+  "fist-into#12688867": "wrong",
+  "dialogue:anal sex#d2f5788f": "wrong",
+  "lined-up#8eb959a0": "wrong",
+  "push-into#f62c18aa": "wrong",
+  "cum-in-throat#96ba10cc": "wrong",
+  "mast-own~elided#3eea2466": "wrong",
+  "dialogue:anal sex#738158c8": "wrong",
+  "spread-legs#eebb8575": "wrong",
+  "dialogue:anal sex#6864be15": "wrong",
+  "dialogue:blowjob#5e2d7d6": "ok",
+  "fill#3ee68696": "wrong",
+  "mast-himself#53ddbaad": "ok",
+  "mast-himself~elided#664945d": "ok",
+  "dd2-finger-shoved-into#ae9aefb9": "wrong",
+  "push-into~elided#a5a36664": "wrong",
+  "stretched-open#2210888f": "wrong",
+  "thrust-back~elided#b9c2ad9b": "wrong",
+  "body-sore-ass#1b168a0c": "wrong",
+  "fingers-inside~one-sided#12024a23": "wrong",
+  "prostate#1ddef398": "wrong",
+  "grab-ass#d399aea9": "ok",
+  "came-inside#ff0b155e": "wrong",
+  "cum-enters#85809687": "wrong",
+  "fuck#60428855": "ok",
+  "pushed-in~elided#f3cc741e": "wrong",
+  "eyes-on-crotch#817706": "ok",
+  "suck-fingers#496ebdd8": "ok",
+  "mast-himself~elided#97be54d8": "ok",
+  "riding#8946aae1": "ok",
+  "suck-fingers~elided#fcf4eb52": "wrong",
+  "prostate~elided#dce8267": "ok",
+  "pushed-in#f3cca6ae": "ok",
+  "arch-back#8b04edd2": "ok",
+  "ogle-crotch-where~elided#1efc7fe6": "wrong",
+  "prostate~elided#8672e3c3": "wrong",
+  "dialogue:blowjob#7bf580d": "ok",
+  "sinks-to-floor#73aba531": "wrong",
+  "takes-between-lips~elided#6d6a4e39": "ok",
+  "adds-finger#15a77f8c": "wrong",
+  "eyes-on-crotch#69796f81": "ok",
+  "hand-in-pants-poss#aa4b9921": "wrong",
+  "eyes-on-crotch-oral#69796f81": "ok",
+  "took-in-mouth#361d265c": "ok",
+  "dd2-licking-strip-up-length#805ef4f8": "ok"
+ },
+ "answers": [
+  {
+   "id": "C0001",
+   "key": "dialogue:anal sex#730dd13a",
+   "fic": "belonging.html",
+   "paragraph": 131,
+   "sourceSha": "d8fe352ab70bc0a8171fea0e069c43d776d3541d741cb74b2b66014ae64e874c",
+   "claim": {
+    "fic": "belonging.html",
+    "sourceSha": "d8fe352ab70bc0a8171fea0e069c43d776d3541d741cb74b2b66014ae64e874c",
+    "paragraph": 131,
+    "pattern": "dialogue:anal sex",
+    "act": "anal sex",
+    "kind": "said",
+    "a": "Castiel",
+    "b": "Dean Winchester",
+    "role": "top"
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Wrong act or body part"
+   ],
+   "updatedAt": "2026-10-09T23:13:31.962Z"
+  },
+  {
+   "id": "C0016",
+   "key": "dialogue:anal sex#89944de4",
+   "fic": "belonging.html",
+   "paragraph": 1208,
+   "sourceSha": "d8fe352ab70bc0a8171fea0e069c43d776d3541d741cb74b2b66014ae64e874c",
+   "claim": {
+    "fic": "belonging.html",
+    "sourceSha": "d8fe352ab70bc0a8171fea0e069c43d776d3541d741cb74b2b66014ae64e874c",
+    "paragraph": 1208,
+    "pattern": "dialogue:anal sex",
+    "act": "anal sex",
+    "kind": "said",
+    "a": "Dean Winchester",
+    "b": "Castiel",
+    "role": "bottom"
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Wrong act or body part"
+   ],
+   "updatedAt": "2026-10-09T23:13:45.880Z"
+  },
+  {
+   "id": "C0032",
+   "key": "body-hole-ache#915b5f70",
+   "fic": "belonging.html",
+   "paragraph": 2810,
+   "sourceSha": "d8fe352ab70bc0a8171fea0e069c43d776d3541d741cb74b2b66014ae64e874c",
+   "claim": {
+    "fic": "belonging.html",
+    "sourceSha": "d8fe352ab70bc0a8171fea0e069c43d776d3541d741cb74b2b66014ae64e874c",
+    "paragraph": 2810,
+    "pattern": "body-hole-ache",
+    "act": "aching hole",
+    "kind": "body",
+    "a": "Dean Winchester",
+    "b": "Castiel",
+    "role": "bottom"
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Wrong act or body part"
+   ],
+   "updatedAt": "2026-10-09T23:14:34.964Z"
+  },
+  {
+   "id": "C0041",
+   "key": "fingers-inside#2c36548b",
+   "fic": "belonging.html",
+   "paragraph": 3474,
+   "sourceSha": "d8fe352ab70bc0a8171fea0e069c43d776d3541d741cb74b2b66014ae64e874c",
+   "claim": {
+    "fic": "belonging.html",
+    "sourceSha": "d8fe352ab70bc0a8171fea0e069c43d776d3541d741cb74b2b66014ae64e874c",
+    "paragraph": 3474,
+    "pattern": "fingers-inside",
+    "act": "fingering himself",
+    "kind": "solo",
+    "a": "Dean Winchester",
+    "b": "Castiel",
+    "role": "bottom"
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Wrong person"
+   ],
+   "updatedAt": "2026-10-09T23:38:05.295Z"
+  },
+  {
+   "id": "C0190",
+   "key": "fingers-inside#2c36548b",
+   "fic": "belonging.html",
+   "paragraph": 3474,
+   "sourceSha": "d8fe352ab70bc0a8171fea0e069c43d776d3541d741cb74b2b66014ae64e874c",
+   "claim": {
+    "fic": "belonging.html",
+    "sourceSha": "d8fe352ab70bc0a8171fea0e069c43d776d3541d741cb74b2b66014ae64e874c",
+    "paragraph": 3474,
+    "pattern": "fingers-inside",
+    "act": "fingering himself",
+    "kind": "solo",
+    "a": "Dean Winchester",
+    "b": "Castiel",
+    "role": "bottom"
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Wrong person"
+   ],
+   "updatedAt": "2026-10-09T23:31:57.364Z"
+  },
+  {
+   "id": "C0043",
+   "key": "thrusts-falter#d0f6575b",
+   "fic": "belonging.html",
+   "paragraph": 3534,
+   "sourceSha": "d8fe352ab70bc0a8171fea0e069c43d776d3541d741cb74b2b66014ae64e874c",
+   "claim": {
+    "fic": "belonging.html",
+    "sourceSha": "d8fe352ab70bc0a8171fea0e069c43d776d3541d741cb74b2b66014ae64e874c",
+    "paragraph": 3534,
+    "pattern": "thrusts-falter",
+    "act": "anal sex",
+    "kind": "fantasy",
+    "a": "Castiel",
+    "b": "Dean Winchester",
+    "role": "top"
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Wish or dialogue treated as an act"
+   ],
+   "updatedAt": "2026-10-09T23:33:15.177Z"
+  },
+  {
+   "id": "C0044",
+   "key": "grab-ass#5e87c247",
+   "fic": "belonging.html",
+   "paragraph": 3735,
+   "sourceSha": "d8fe352ab70bc0a8171fea0e069c43d776d3541d741cb74b2b66014ae64e874c",
+   "claim": {
+    "fic": "belonging.html",
+    "sourceSha": "d8fe352ab70bc0a8171fea0e069c43d776d3541d741cb74b2b66014ae64e874c",
+    "paragraph": 3735,
+    "pattern": "grab-ass",
+    "act": "grabbing an ass",
+    "kind": "touch",
+    "a": "Castiel",
+    "b": "Dean Winchester",
+    "role": "top"
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Wrong act or body part"
+   ],
+   "updatedAt": "2026-10-09T23:15:19.696Z"
+  },
+  {
+   "id": "C0050",
+   "key": "push-into~elided#ce682f98",
+   "fic": "belonging.html",
+   "paragraph": 4017,
+   "sourceSha": "d8fe352ab70bc0a8171fea0e069c43d776d3541d741cb74b2b66014ae64e874c",
+   "claim": {
+    "fic": "belonging.html",
+    "sourceSha": "d8fe352ab70bc0a8171fea0e069c43d776d3541d741cb74b2b66014ae64e874c",
+    "paragraph": 4017,
+    "pattern": "push-into~elided",
+    "act": "anal sex",
+    "kind": "fantasy",
+    "a": "Castiel",
+    "b": "Dean Winchester",
+    "role": "top"
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Wish or dialogue treated as an act"
+   ],
+   "updatedAt": "2026-10-09T23:15:42.712Z"
+  },
+  {
+   "id": "C0070",
+   "key": "dialogue:anal sex#30aa3136",
+   "fic": "belonging.html",
+   "paragraph": 5084,
+   "sourceSha": "d8fe352ab70bc0a8171fea0e069c43d776d3541d741cb74b2b66014ae64e874c",
+   "claim": {
+    "fic": "belonging.html",
+    "sourceSha": "d8fe352ab70bc0a8171fea0e069c43d776d3541d741cb74b2b66014ae64e874c",
+    "paragraph": 5084,
+    "pattern": "dialogue:anal sex",
+    "act": "anal sex",
+    "kind": "said",
+    "a": "Dean Winchester",
+    "b": "Castiel",
+    "role": "bottom"
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Wrong negation or polarity"
+   ],
+   "updatedAt": "2026-10-09T23:15:50.714Z"
+  },
+  {
+   "id": "C0082",
+   "key": "body-hole-ache#98a64b3c",
+   "fic": "belonging.html",
+   "paragraph": 5428,
+   "sourceSha": "d8fe352ab70bc0a8171fea0e069c43d776d3541d741cb74b2b66014ae64e874c",
+   "claim": {
+    "fic": "belonging.html",
+    "sourceSha": "d8fe352ab70bc0a8171fea0e069c43d776d3541d741cb74b2b66014ae64e874c",
+    "paragraph": 5428,
+    "pattern": "body-hole-ache",
+    "act": "aching hole",
+    "kind": "body",
+    "a": "Dean Winchester",
+    "b": "Castiel",
+    "role": "bottom"
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Wrong act or body part"
+   ],
+   "updatedAt": "2026-10-09T23:33:26.496Z"
+  },
+  {
+   "id": "C0095",
+   "key": "dd2-cock-in-mouth#d1e77296",
+   "fic": "belonging.html",
+   "paragraph": 3354,
+   "sourceSha": "d8fe352ab70bc0a8171fea0e069c43d776d3541d741cb74b2b66014ae64e874c",
+   "claim": {
+    "fic": "belonging.html",
+    "sourceSha": "d8fe352ab70bc0a8171fea0e069c43d776d3541d741cb74b2b66014ae64e874c",
+    "paragraph": 3354,
+    "pattern": "dd2-cock-in-mouth",
+    "act": "blowjob",
+    "kind": "hypothetical",
+    "a": "Dean Winchester",
+    "b": "Castiel",
+    "role": "bottom"
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Wish or dialogue treated as an act"
+   ],
+   "updatedAt": "2026-10-09T23:33:05.497Z"
+  },
+  {
+   "id": "C0098",
+   "key": "dialogue:blowjob#f111031a",
+   "fic": "belonging.html",
+   "paragraph": 5542,
+   "sourceSha": "d8fe352ab70bc0a8171fea0e069c43d776d3541d741cb74b2b66014ae64e874c",
+   "claim": {
+    "fic": "belonging.html",
+    "sourceSha": "d8fe352ab70bc0a8171fea0e069c43d776d3541d741cb74b2b66014ae64e874c",
+    "paragraph": 5542,
+    "pattern": "dialogue:blowjob",
+    "act": "blowjob",
+    "kind": "said",
+    "a": "Dean Winchester",
+    "b": "Castiel",
+    "role": "top"
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Wrong speaker",
+    "Wrong act or body part"
+   ],
+   "updatedAt": "2026-10-09T23:16:58.700Z"
+  },
+  {
+   "id": "C0099",
+   "key": "dialogue:blowjob#1946f740",
+   "fic": "belonging.html",
+   "paragraph": 5569,
+   "sourceSha": "d8fe352ab70bc0a8171fea0e069c43d776d3541d741cb74b2b66014ae64e874c",
+   "claim": {
+    "fic": "belonging.html",
+    "sourceSha": "d8fe352ab70bc0a8171fea0e069c43d776d3541d741cb74b2b66014ae64e874c",
+    "paragraph": 5569,
+    "pattern": "dialogue:blowjob",
+    "act": "blowjob",
+    "kind": "said",
+    "a": "Castiel",
+    "b": "Dean Winchester",
+    "role": "top"
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Wrong act or body part"
+   ],
+   "updatedAt": "2026-10-09T23:17:06.355Z"
+  },
+  {
+   "id": "C0100",
+   "key": "mast-got-off#659b952c",
+   "fic": "belonging.html",
+   "paragraph": 233,
+   "sourceSha": "d8fe352ab70bc0a8171fea0e069c43d776d3541d741cb74b2b66014ae64e874c",
+   "claim": {
+    "fic": "belonging.html",
+    "sourceSha": "d8fe352ab70bc0a8171fea0e069c43d776d3541d741cb74b2b66014ae64e874c",
+    "paragraph": 233,
+    "pattern": "mast-got-off",
+    "act": "masturbation",
+    "kind": "masturbation",
+    "a": "Dean Winchester",
+    "b": "Castiel",
+    "role": "bottom"
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Wrong occurrence: memory / fantasy / habitual / recording"
+   ],
+   "updatedAt": "2026-10-09T23:33:01.830Z"
+  },
+  {
+   "id": "C0110",
+   "key": "dd2-mast-take-in-hand#29a60975",
+   "fic": "belonging.html",
+   "paragraph": 2468,
+   "sourceSha": "d8fe352ab70bc0a8171fea0e069c43d776d3541d741cb74b2b66014ae64e874c",
+   "claim": {
+    "fic": "belonging.html",
+    "sourceSha": "d8fe352ab70bc0a8171fea0e069c43d776d3541d741cb74b2b66014ae64e874c",
+    "paragraph": 2468,
+    "pattern": "dd2-mast-take-in-hand",
+    "act": "masturbation",
+    "kind": "masturbation",
+    "a": "Dean Winchester",
+    "b": "Castiel",
+    "role": "bottom"
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Wrong person",
+    "Wrong occurrence: memory / fantasy / habitual / recording"
+   ],
+   "updatedAt": "2026-10-09T23:33:03.630Z"
+  },
+  {
+   "id": "C0117",
+   "key": "fingers-to-hole#b249daf8",
+   "fic": "belonging.html",
+   "paragraph": 1227,
+   "sourceSha": "d8fe352ab70bc0a8171fea0e069c43d776d3541d741cb74b2b66014ae64e874c",
+   "claim": {
+    "fic": "belonging.html",
+    "sourceSha": "d8fe352ab70bc0a8171fea0e069c43d776d3541d741cb74b2b66014ae64e874c",
+    "paragraph": 1227,
+    "pattern": "fingers-to-hole",
+    "act": "fingering",
+    "kind": "act",
+    "a": "Castiel",
+    "b": "Dean Winchester",
+    "role": ""
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Contact mistaken for penetration"
+   ],
+   "updatedAt": "2026-10-09T23:33:02.380Z"
+  },
+  {
+   "id": "C0118",
+   "key": "push-into#d7bf8d42",
+   "fic": "belonging.html",
+   "paragraph": 1460,
+   "sourceSha": "d8fe352ab70bc0a8171fea0e069c43d776d3541d741cb74b2b66014ae64e874c",
+   "claim": {
+    "fic": "belonging.html",
+    "sourceSha": "d8fe352ab70bc0a8171fea0e069c43d776d3541d741cb74b2b66014ae64e874c",
+    "paragraph": 1460,
+    "pattern": "push-into",
+    "act": "anal sex",
+    "kind": "act",
+    "a": "Castiel",
+    "b": "Dean Winchester",
+    "role": ""
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Fingers or toy mistaken for a penis"
+   ],
+   "updatedAt": "2026-10-09T23:13:54.854Z"
+  },
+  {
+   "id": "C0120",
+   "key": "push-into~elided#e13610cb",
+   "fic": "belonging.html",
+   "paragraph": 2165,
+   "sourceSha": "d8fe352ab70bc0a8171fea0e069c43d776d3541d741cb74b2b66014ae64e874c",
+   "claim": {
+    "fic": "belonging.html",
+    "sourceSha": "d8fe352ab70bc0a8171fea0e069c43d776d3541d741cb74b2b66014ae64e874c",
+    "paragraph": 2165,
+    "pattern": "push-into~elided",
+    "act": "anal sex",
+    "kind": "act",
+    "a": "Castiel",
+    "b": "Dean Winchester",
+    "role": ""
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Fingers or toy mistaken for a penis"
+   ],
+   "updatedAt": "2026-10-09T23:14:02.200Z"
+  },
+  {
+   "id": "C0121",
+   "key": "adds-finger#264f1fa0",
+   "fic": "belonging.html",
+   "paragraph": 2439,
+   "sourceSha": "d8fe352ab70bc0a8171fea0e069c43d776d3541d741cb74b2b66014ae64e874c",
+   "claim": {
+    "fic": "belonging.html",
+    "sourceSha": "d8fe352ab70bc0a8171fea0e069c43d776d3541d741cb74b2b66014ae64e874c",
+    "paragraph": 2439,
+    "pattern": "adds-finger",
+    "act": "fingering",
+    "kind": "act",
+    "a": "Castiel",
+    "b": "Dean Winchester",
+    "role": ""
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Contact mistaken for penetration"
+   ],
+   "updatedAt": "2026-10-09T23:14:23.125Z"
+  },
+  {
+   "id": "C0122",
+   "key": "sucked#a797dbc7",
+   "fic": "belonging.html",
+   "paragraph": 2747,
+   "sourceSha": "d8fe352ab70bc0a8171fea0e069c43d776d3541d741cb74b2b66014ae64e874c",
+   "claim": {
+    "fic": "belonging.html",
+    "sourceSha": "d8fe352ab70bc0a8171fea0e069c43d776d3541d741cb74b2b66014ae64e874c",
+    "paragraph": 2747,
+    "pattern": "sucked",
+    "act": "blowjob",
+    "kind": "act",
+    "a": "Castiel",
+    "b": "Dean Winchester",
+    "role": ""
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Wish or dialogue treated as an act"
+   ],
+   "updatedAt": "2026-10-09T23:14:24.874Z"
+  },
+  {
+   "id": "C0128",
+   "key": "took-in-mouth~elided#f1c6c458",
+   "fic": "belonging.html",
+   "paragraph": 3393,
+   "sourceSha": "d8fe352ab70bc0a8171fea0e069c43d776d3541d741cb74b2b66014ae64e874c",
+   "claim": {
+    "fic": "belonging.html",
+    "sourceSha": "d8fe352ab70bc0a8171fea0e069c43d776d3541d741cb74b2b66014ae64e874c",
+    "paragraph": 3393,
+    "pattern": "took-in-mouth~elided",
+    "act": "blowjob",
+    "kind": "act",
+    "a": "Castiel",
+    "b": "Dean Winchester",
+    "role": ""
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Wish or dialogue treated as an act"
+   ],
+   "updatedAt": "2026-10-09T23:33:11.346Z"
+  },
+  {
+   "id": "C0130",
+   "key": "stretched-open~elided#db234e3",
+   "fic": "belonging.html",
+   "paragraph": 3446,
+   "sourceSha": "d8fe352ab70bc0a8171fea0e069c43d776d3541d741cb74b2b66014ae64e874c",
+   "claim": {
+    "fic": "belonging.html",
+    "sourceSha": "d8fe352ab70bc0a8171fea0e069c43d776d3541d741cb74b2b66014ae64e874c",
+    "paragraph": 3446,
+    "pattern": "stretched-open~elided",
+    "act": "fingering",
+    "kind": "act",
+    "a": "Castiel",
+    "b": "Dean Winchester",
+    "role": ""
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Fingers or toy mistaken for a penis"
+   ],
+   "updatedAt": "2026-10-09T23:33:12.882Z"
+  },
+  {
+   "id": "C0138",
+   "key": "stretched-open#23e1f1f5",
+   "fic": "belonging.html",
+   "paragraph": 3867,
+   "sourceSha": "d8fe352ab70bc0a8171fea0e069c43d776d3541d741cb74b2b66014ae64e874c",
+   "claim": {
+    "fic": "belonging.html",
+    "sourceSha": "d8fe352ab70bc0a8171fea0e069c43d776d3541d741cb74b2b66014ae64e874c",
+    "paragraph": 3867,
+    "pattern": "stretched-open",
+    "act": "fingering",
+    "kind": "act",
+    "a": "Castiel",
+    "b": "Dean Winchester",
+    "role": ""
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Fingers or toy mistaken for a penis"
+   ],
+   "updatedAt": "2026-10-09T23:15:33.582Z"
+  },
+  {
+   "id": "C0149",
+   "key": "riding~elided#57c63cb5",
+   "fic": "belonging.html",
+   "paragraph": 4708,
+   "sourceSha": "d8fe352ab70bc0a8171fea0e069c43d776d3541d741cb74b2b66014ae64e874c",
+   "claim": {
+    "fic": "belonging.html",
+    "sourceSha": "d8fe352ab70bc0a8171fea0e069c43d776d3541d741cb74b2b66014ae64e874c",
+    "paragraph": 4708,
+    "pattern": "riding~elided",
+    "act": "anal sex (riding)",
+    "kind": "act",
+    "a": "Castiel",
+    "b": "Dean Winchester",
+    "role": ""
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Fingers or toy mistaken for a penis"
+   ],
+   "updatedAt": "2026-10-09T23:15:44.862Z"
+  },
+  {
+   "id": "C0153",
+   "key": "fill~elided#c9588eb8",
+   "fic": "belonging.html",
+   "paragraph": 5047,
+   "sourceSha": "d8fe352ab70bc0a8171fea0e069c43d776d3541d741cb74b2b66014ae64e874c",
+   "claim": {
+    "fic": "belonging.html",
+    "sourceSha": "d8fe352ab70bc0a8171fea0e069c43d776d3541d741cb74b2b66014ae64e874c",
+    "paragraph": 5047,
+    "pattern": "fill~elided",
+    "act": "anal sex",
+    "kind": "act",
+    "a": "Castiel",
+    "b": "Dean Winchester",
+    "role": ""
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Fingers or toy mistaken for a penis"
+   ],
+   "updatedAt": "2026-10-09T23:33:18.228Z"
+  },
+  {
+   "id": "C0154",
+   "key": "takes-it-inside~elided#d8d15f76",
+   "fic": "belonging.html",
+   "paragraph": 5235,
+   "sourceSha": "d8fe352ab70bc0a8171fea0e069c43d776d3541d741cb74b2b66014ae64e874c",
+   "claim": {
+    "fic": "belonging.html",
+    "sourceSha": "d8fe352ab70bc0a8171fea0e069c43d776d3541d741cb74b2b66014ae64e874c",
+    "paragraph": 5235,
+    "pattern": "takes-it-inside~elided",
+    "act": "anal sex",
+    "kind": "act",
+    "a": "Castiel",
+    "b": "Dean Winchester",
+    "role": ""
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Fingers or toy mistaken for a penis",
+    "Wrong person"
+   ],
+   "updatedAt": "2026-10-09T23:33:21.596Z"
+  },
+  {
+   "id": "C0161",
+   "key": "penis-inside#facd657",
+   "fic": "belonging.html",
+   "paragraph": 5522,
+   "sourceSha": "d8fe352ab70bc0a8171fea0e069c43d776d3541d741cb74b2b66014ae64e874c",
+   "claim": {
+    "fic": "belonging.html",
+    "sourceSha": "d8fe352ab70bc0a8171fea0e069c43d776d3541d741cb74b2b66014ae64e874c",
+    "paragraph": 5522,
+    "pattern": "penis-inside",
+    "act": "anal sex",
+    "kind": "act",
+    "a": "Castiel",
+    "b": "Dean Winchester",
+    "role": ""
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Wish or dialogue treated as an act"
+   ],
+   "updatedAt": "2026-10-09T23:29:14.215Z"
+  },
+  {
+   "id": "C0164",
+   "key": "push-into#8f6e3b8d",
+   "fic": "belonging.html",
+   "paragraph": 5602,
+   "sourceSha": "d8fe352ab70bc0a8171fea0e069c43d776d3541d741cb74b2b66014ae64e874c",
+   "claim": {
+    "fic": "belonging.html",
+    "sourceSha": "d8fe352ab70bc0a8171fea0e069c43d776d3541d741cb74b2b66014ae64e874c",
+    "paragraph": 5602,
+    "pattern": "push-into",
+    "act": "anal sex",
+    "kind": "act",
+    "a": "Castiel",
+    "b": "Dean Winchester",
+    "role": ""
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Fingers or toy mistaken for a penis"
+   ],
+   "updatedAt": "2026-10-09T23:17:15.559Z"
+  },
+  {
+   "id": "C0170",
+   "key": "spread-legs~elided#bac64c05",
+   "fic": "belonging.html",
+   "paragraph": 524,
+   "sourceSha": "d8fe352ab70bc0a8171fea0e069c43d776d3541d741cb74b2b66014ae64e874c",
+   "claim": {
+    "fic": "belonging.html",
+    "sourceSha": "d8fe352ab70bc0a8171fea0e069c43d776d3541d741cb74b2b66014ae64e874c",
+    "paragraph": 524,
+    "pattern": "spread-legs~elided",
+    "act": "spreading their legs",
+    "kind": "prep",
+    "a": "Dean Winchester",
+    "b": "Castiel",
+    "role": "bottom"
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Wrong act or body part"
+   ],
+   "updatedAt": "2026-10-09T23:35:27.367Z"
+  },
+  {
+   "id": "C0172",
+   "key": "self-toy-it~elided#5e637fee",
+   "fic": "belonging.html",
+   "paragraph": 1228,
+   "sourceSha": "d8fe352ab70bc0a8171fea0e069c43d776d3541d741cb74b2b66014ae64e874c",
+   "claim": {
+    "fic": "belonging.html",
+    "sourceSha": "d8fe352ab70bc0a8171fea0e069c43d776d3541d741cb74b2b66014ae64e874c",
+    "paragraph": 1228,
+    "pattern": "self-toy-it~elided",
+    "act": "using a toy on himself",
+    "kind": "solo",
+    "a": "Castiel",
+    "b": "Dean Winchester",
+    "role": "bottom"
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Wrong person",
+    "Self-action assigned to a partner"
+   ],
+   "updatedAt": "2026-10-09T23:35:56.821Z"
+  },
+  {
+   "id": "C0188",
+   "key": "self-toy-it~elided#5e637fee",
+   "fic": "belonging.html",
+   "paragraph": 1228,
+   "sourceSha": "d8fe352ab70bc0a8171fea0e069c43d776d3541d741cb74b2b66014ae64e874c",
+   "claim": {
+    "fic": "belonging.html",
+    "sourceSha": "d8fe352ab70bc0a8171fea0e069c43d776d3541d741cb74b2b66014ae64e874c",
+    "paragraph": 1228,
+    "pattern": "self-toy-it~elided",
+    "act": "using a toy on himself",
+    "kind": "solo",
+    "a": "Castiel",
+    "b": "Dean Winchester",
+    "role": "bottom"
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Wrong person",
+    "Self-action assigned to a partner"
+   ],
+   "updatedAt": "2026-10-09T23:35:58.839Z"
+  },
+  {
+   "id": "C0179",
+   "key": "dialogue:anal sex#87c2e678",
+   "fic": "belonging.html",
+   "paragraph": 5185,
+   "sourceSha": "d8fe352ab70bc0a8171fea0e069c43d776d3541d741cb74b2b66014ae64e874c",
+   "claim": {
+    "fic": "belonging.html",
+    "sourceSha": "d8fe352ab70bc0a8171fea0e069c43d776d3541d741cb74b2b66014ae64e874c",
+    "paragraph": 5185,
+    "pattern": "dialogue:anal sex",
+    "act": "anal sex",
+    "kind": "said",
+    "a": "Castiel",
+    "b": "Dean Winchester",
+    "role": "top"
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Wrong act or body part",
+    "Wrong person"
+   ],
+   "updatedAt": "2026-10-09T23:30:41.232Z"
+  },
+  {
+   "id": "C0182",
+   "key": "push-into~elided#21b804db",
+   "fic": "belonging.html",
+   "paragraph": 5558,
+   "sourceSha": "d8fe352ab70bc0a8171fea0e069c43d776d3541d741cb74b2b66014ae64e874c",
+   "claim": {
+    "fic": "belonging.html",
+    "sourceSha": "d8fe352ab70bc0a8171fea0e069c43d776d3541d741cb74b2b66014ae64e874c",
+    "paragraph": 5558,
+    "pattern": "push-into~elided",
+    "act": "anal sex",
+    "kind": "wanted",
+    "a": "Castiel",
+    "b": "Dean Winchester",
+    "role": "top"
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Wrong person",
+    "Wrong act or body part"
+   ],
+   "updatedAt": "2026-10-09T23:35:39.210Z"
+  },
+  {
+   "id": "C0183",
+   "key": "dialogue:anal sex#8c1af397",
+   "fic": "belonging.html",
+   "paragraph": 5735,
+   "sourceSha": "d8fe352ab70bc0a8171fea0e069c43d776d3541d741cb74b2b66014ae64e874c",
+   "claim": {
+    "fic": "belonging.html",
+    "sourceSha": "d8fe352ab70bc0a8171fea0e069c43d776d3541d741cb74b2b66014ae64e874c",
+    "paragraph": 5735,
+    "pattern": "dialogue:anal sex",
+    "act": "anal sex",
+    "kind": "said",
+    "a": "Dean Winchester",
+    "b": "Castiel",
+    "role": "bottom"
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Wrong person",
+    "Fingers or toy mistaken for a penis"
+   ],
+   "updatedAt": "2026-10-09T23:31:09.537Z"
+  },
+  {
+   "id": "C0184",
+   "key": "comes-on-face~elided#ca2f1d0a",
+   "fic": "belonging.html",
+   "paragraph": 2661,
+   "sourceSha": "d8fe352ab70bc0a8171fea0e069c43d776d3541d741cb74b2b66014ae64e874c",
+   "claim": {
+    "fic": "belonging.html",
+    "sourceSha": "d8fe352ab70bc0a8171fea0e069c43d776d3541d741cb74b2b66014ae64e874c",
+    "paragraph": 2661,
+    "pattern": "comes-on-face~elided",
+    "act": "coming on someone's face",
+    "kind": "touch",
+    "a": "Castiel",
+    "b": "Dean Winchester",
+    "role": "top"
+   },
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-09T23:22:37.310Z"
+  },
+  {
+   "id": "C0187",
+   "key": "knelt-between#624b3cb3",
+   "fic": "belonging.html",
+   "paragraph": 4690,
+   "sourceSha": "d8fe352ab70bc0a8171fea0e069c43d776d3541d741cb74b2b66014ae64e874c",
+   "claim": {
+    "fic": "belonging.html",
+    "sourceSha": "d8fe352ab70bc0a8171fea0e069c43d776d3541d741cb74b2b66014ae64e874c",
+    "paragraph": 4690,
+    "pattern": "knelt-between",
+    "act": "kneeling between someone's legs",
+    "kind": "prep",
+    "a": "Castiel",
+    "b": "Dean Winchester",
+    "role": "bottom"
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Wrong act or body part"
+   ],
+   "updatedAt": "2026-10-09T23:32:10.405Z"
+  },
+  {
+   "id": "C0192",
+   "key": "passive-fucked~elided#e88b92f5",
+   "fic": "belonging.html",
+   "paragraph": 691,
+   "sourceSha": "d8fe352ab70bc0a8171fea0e069c43d776d3541d741cb74b2b66014ae64e874c",
+   "claim": {
+    "fic": "belonging.html",
+    "sourceSha": "d8fe352ab70bc0a8171fea0e069c43d776d3541d741cb74b2b66014ae64e874c",
+    "paragraph": 691,
+    "pattern": "passive-fucked~elided",
+    "act": "anal sex",
+    "kind": "act",
+    "a": "Castiel",
+    "b": "Dean Winchester",
+    "role": ""
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Wish or dialogue treated as an act",
+    "Wrong person",
+    "Fingers or toy mistaken for a penis"
+   ],
+   "updatedAt": "2026-10-09T23:35:31.301Z"
+  },
+  {
+   "id": "C0195",
+   "key": "push-into#b423fe09",
+   "fic": "belonging.html",
+   "paragraph": 1054,
+   "sourceSha": "d8fe352ab70bc0a8171fea0e069c43d776d3541d741cb74b2b66014ae64e874c",
+   "claim": {
+    "fic": "belonging.html",
+    "sourceSha": "d8fe352ab70bc0a8171fea0e069c43d776d3541d741cb74b2b66014ae64e874c",
+    "paragraph": 1054,
+    "pattern": "push-into",
+    "act": "anal sex",
+    "kind": "act",
+    "a": "Castiel",
+    "b": "Dean Winchester",
+    "role": ""
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Contact mistaken for penetration",
+    "Wrong act or body part"
+   ],
+   "updatedAt": "2026-10-09T23:31:44.384Z"
+  },
+  {
+   "id": "C0197",
+   "key": "pushed-in~elided#76b11636",
+   "fic": "belonging.html",
+   "paragraph": 1356,
+   "sourceSha": "d8fe352ab70bc0a8171fea0e069c43d776d3541d741cb74b2b66014ae64e874c",
+   "claim": {
+    "fic": "belonging.html",
+    "sourceSha": "d8fe352ab70bc0a8171fea0e069c43d776d3541d741cb74b2b66014ae64e874c",
+    "paragraph": 1356,
+    "pattern": "pushed-in~elided",
+    "act": "anal sex",
+    "kind": "act",
+    "a": "Castiel",
+    "b": "Dean Winchester",
+    "role": ""
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Wrong person",
+    "Fingers or toy mistaken for a penis"
+   ],
+   "updatedAt": "2026-10-09T23:30:15.774Z"
+  },
+  {
+   "id": "C0200",
+   "key": "pushed-in#8e5aacf7",
+   "fic": "belonging.html",
+   "paragraph": 2462,
+   "sourceSha": "d8fe352ab70bc0a8171fea0e069c43d776d3541d741cb74b2b66014ae64e874c",
+   "claim": {
+    "fic": "belonging.html",
+    "sourceSha": "d8fe352ab70bc0a8171fea0e069c43d776d3541d741cb74b2b66014ae64e874c",
+    "paragraph": 2462,
+    "pattern": "pushed-in",
+    "act": "anal sex",
+    "kind": "act",
+    "a": "Castiel",
+    "b": "Dean Winchester",
+    "role": ""
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Wrong act or body part",
+    "Wrong person"
+   ],
+   "updatedAt": "2026-10-09T23:30:22.124Z"
+  },
+  {
+   "id": "C0201",
+   "key": "cum-in-throat#965e818b",
+   "fic": "belonging.html",
+   "paragraph": 2491,
+   "sourceSha": "d8fe352ab70bc0a8171fea0e069c43d776d3541d741cb74b2b66014ae64e874c",
+   "claim": {
+    "fic": "belonging.html",
+    "sourceSha": "d8fe352ab70bc0a8171fea0e069c43d776d3541d741cb74b2b66014ae64e874c",
+    "paragraph": 2491,
+    "pattern": "cum-in-throat",
+    "act": "blowjob",
+    "kind": "act",
+    "a": "Castiel",
+    "b": "Dean Winchester",
+    "role": ""
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Wrong act or body part"
+   ],
+   "updatedAt": "2026-10-09T23:31:48.451Z"
+  },
+  {
+   "id": "C0202",
+   "key": "fed-cock~elided#138d4fd2",
+   "fic": "belonging.html",
+   "paragraph": 2826,
+   "sourceSha": "d8fe352ab70bc0a8171fea0e069c43d776d3541d741cb74b2b66014ae64e874c",
+   "claim": {
+    "fic": "belonging.html",
+    "sourceSha": "d8fe352ab70bc0a8171fea0e069c43d776d3541d741cb74b2b66014ae64e874c",
+    "paragraph": 2826,
+    "pattern": "fed-cock~elided",
+    "act": "blowjob",
+    "kind": "act",
+    "a": "Castiel",
+    "b": "Dean Winchester",
+    "role": ""
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Roles reversed"
+   ],
+   "updatedAt": "2026-10-09T23:31:54.368Z"
+  },
+  {
+   "id": "C0203",
+   "key": "pushed-in~elided#6462d66e",
+   "fic": "belonging.html",
+   "paragraph": 2863,
+   "sourceSha": "d8fe352ab70bc0a8171fea0e069c43d776d3541d741cb74b2b66014ae64e874c",
+   "claim": {
+    "fic": "belonging.html",
+    "sourceSha": "d8fe352ab70bc0a8171fea0e069c43d776d3541d741cb74b2b66014ae64e874c",
+    "paragraph": 2863,
+    "pattern": "pushed-in~elided",
+    "act": "anal sex",
+    "kind": "act",
+    "a": "Castiel",
+    "b": "Dean Winchester",
+    "role": ""
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Wrong act or body part"
+   ],
+   "updatedAt": "2026-10-09T23:36:02.056Z"
+  },
+  {
+   "id": "C0207",
+   "key": "rock-into#4b9d076d",
+   "fic": "belonging.html",
+   "paragraph": 5213,
+   "sourceSha": "d8fe352ab70bc0a8171fea0e069c43d776d3541d741cb74b2b66014ae64e874c",
+   "claim": {
+    "fic": "belonging.html",
+    "sourceSha": "d8fe352ab70bc0a8171fea0e069c43d776d3541d741cb74b2b66014ae64e874c",
+    "paragraph": 5213,
+    "pattern": "rock-into",
+    "act": "anal sex",
+    "kind": "act",
+    "a": "Castiel",
+    "b": "Dean Winchester",
+    "role": ""
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Wrong person",
+    "Fingers or toy mistaken for a penis"
+   ],
+   "updatedAt": "2026-10-09T23:30:44.567Z"
+  },
+  {
+   "id": "C0208",
+   "key": "fuck#36b99705",
+   "fic": "jacks.html",
+   "paragraph": 1393,
+   "sourceSha": "1c82d8bb62ab4aa836ffe8f4924db20c8420faddb9f3b0d75e08a9b35f18957d",
+   "claim": {
+    "fic": "jacks.html",
+    "sourceSha": "1c82d8bb62ab4aa836ffe8f4924db20c8420faddb9f3b0d75e08a9b35f18957d",
+    "paragraph": 1393,
+    "pattern": "fuck",
+    "act": "anal sex",
+    "kind": "hypothetical",
+    "a": "Jack Seward",
+    "b": "Dracula",
+    "role": "bottom"
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Wrong occurrence: memory / fantasy / habitual / recording"
+   ],
+   "updatedAt": "2026-10-09T23:18:19.955Z"
+  },
+  {
+   "id": "C0210",
+   "key": "arch-back#1adacf82",
+   "fic": "jacks.html",
+   "paragraph": 2067,
+   "sourceSha": "1c82d8bb62ab4aa836ffe8f4924db20c8420faddb9f3b0d75e08a9b35f18957d",
+   "claim": {
+    "fic": "jacks.html",
+    "sourceSha": "1c82d8bb62ab4aa836ffe8f4924db20c8420faddb9f3b0d75e08a9b35f18957d",
+    "paragraph": 2067,
+    "pattern": "arch-back",
+    "act": "arching their back",
+    "kind": "touch",
+    "a": "Jack Seward",
+    "b": "Dracula",
+    "role": "bottom"
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Wrong act or body part"
+   ],
+   "updatedAt": "2026-10-09T23:18:22.790Z"
+  },
+  {
+   "id": "C0217",
+   "key": "push-into#8909459",
+   "fic": "jacks.html",
+   "paragraph": 3750,
+   "sourceSha": "1c82d8bb62ab4aa836ffe8f4924db20c8420faddb9f3b0d75e08a9b35f18957d",
+   "claim": {
+    "fic": "jacks.html",
+    "sourceSha": "1c82d8bb62ab4aa836ffe8f4924db20c8420faddb9f3b0d75e08a9b35f18957d",
+    "paragraph": 3750,
+    "pattern": "push-into",
+    "act": "anal sex",
+    "kind": "hypothetical",
+    "a": "Jack Seward",
+    "b": "Dracula",
+    "role": "bottom"
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Wrong occurrence: memory / fantasy / habitual / recording"
+   ],
+   "updatedAt": "2026-10-09T23:18:38.284Z"
+  },
+  {
+   "id": "C0220",
+   "key": "bottomed-out~elided#4debe477",
+   "fic": "jacks.html",
+   "paragraph": 4135,
+   "sourceSha": "1c82d8bb62ab4aa836ffe8f4924db20c8420faddb9f3b0d75e08a9b35f18957d",
+   "claim": {
+    "fic": "jacks.html",
+    "sourceSha": "1c82d8bb62ab4aa836ffe8f4924db20c8420faddb9f3b0d75e08a9b35f18957d",
+    "paragraph": 4135,
+    "pattern": "bottomed-out~elided",
+    "act": "anal sex",
+    "kind": "hypothetical",
+    "a": "Jack Seward",
+    "b": "Dracula",
+    "role": "bottom"
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Wrong occurrence: memory / fantasy / habitual / recording"
+   ],
+   "updatedAt": "2026-10-09T23:18:54.785Z"
+  },
+  {
+   "id": "C0222",
+   "key": "spread-legs#1af2ee80",
+   "fic": "jacks.html",
+   "paragraph": 4147,
+   "sourceSha": "1c82d8bb62ab4aa836ffe8f4924db20c8420faddb9f3b0d75e08a9b35f18957d",
+   "claim": {
+    "fic": "jacks.html",
+    "sourceSha": "1c82d8bb62ab4aa836ffe8f4924db20c8420faddb9f3b0d75e08a9b35f18957d",
+    "paragraph": 4147,
+    "pattern": "spread-legs",
+    "act": "spreading their legs",
+    "kind": "prep",
+    "a": "Jack Seward",
+    "b": "Dracula",
+    "role": "bottom"
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Wrong occurrence: memory / fantasy / habitual / recording"
+   ],
+   "updatedAt": "2026-10-09T23:18:58.855Z"
+  },
+  {
+   "id": "C0241",
+   "key": "body-hole-ache#bb627480",
+   "fic": "jacks.html",
+   "paragraph": 9442,
+   "sourceSha": "1c82d8bb62ab4aa836ffe8f4924db20c8420faddb9f3b0d75e08a9b35f18957d",
+   "claim": {
+    "fic": "jacks.html",
+    "sourceSha": "1c82d8bb62ab4aa836ffe8f4924db20c8420faddb9f3b0d75e08a9b35f18957d",
+    "paragraph": 9442,
+    "pattern": "body-hole-ache",
+    "act": "aching hole",
+    "kind": "body",
+    "a": "Jack Seward",
+    "b": "Dracula",
+    "role": "bottom"
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Wrong act or body part"
+   ],
+   "updatedAt": "2026-10-09T23:19:05.900Z"
+  },
+  {
+   "id": "C0253",
+   "key": "come-in-mouth~elided#12986951",
+   "fic": "jacks.html",
+   "paragraph": 6061,
+   "sourceSha": "1c82d8bb62ab4aa836ffe8f4924db20c8420faddb9f3b0d75e08a9b35f18957d",
+   "claim": {
+    "fic": "jacks.html",
+    "sourceSha": "1c82d8bb62ab4aa836ffe8f4924db20c8420faddb9f3b0d75e08a9b35f18957d",
+    "paragraph": 6061,
+    "pattern": "come-in-mouth~elided",
+    "act": "blowjob",
+    "kind": "hypothetical",
+    "a": "Jack Seward",
+    "b": "Dracula",
+    "role": "bottom"
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Wrong occurrence: memory / fantasy / habitual / recording"
+   ],
+   "updatedAt": "2026-10-09T23:33:58.429Z"
+  },
+  {
+   "id": "C0258",
+   "key": "mast-word#827bdabc",
+   "fic": "jacks.html",
+   "paragraph": 10672,
+   "sourceSha": "1c82d8bb62ab4aa836ffe8f4924db20c8420faddb9f3b0d75e08a9b35f18957d",
+   "claim": {
+    "fic": "jacks.html",
+    "sourceSha": "1c82d8bb62ab4aa836ffe8f4924db20c8420faddb9f3b0d75e08a9b35f18957d",
+    "paragraph": 10672,
+    "pattern": "mast-word",
+    "act": "masturbation",
+    "kind": "masturbation",
+    "a": "Dracula",
+    "b": "Jack Seward",
+    "role": "bottom"
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Wrong occurrence: memory / fantasy / habitual / recording"
+   ],
+   "updatedAt": "2026-10-09T23:34:00.015Z"
+  },
+  {
+   "id": "C0260",
+   "key": "tongue-inside-him#c9bca6df",
+   "fic": "jacks.html",
+   "paragraph": 509,
+   "sourceSha": "1c82d8bb62ab4aa836ffe8f4924db20c8420faddb9f3b0d75e08a9b35f18957d",
+   "claim": {
+    "fic": "jacks.html",
+    "sourceSha": "1c82d8bb62ab4aa836ffe8f4924db20c8420faddb9f3b0d75e08a9b35f18957d",
+    "paragraph": 509,
+    "pattern": "tongue-inside-him",
+    "act": "rimming",
+    "kind": "act",
+    "a": "Dracula",
+    "b": "Jack Seward",
+    "role": ""
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Wrong act or body part"
+   ],
+   "updatedAt": "2026-10-09T23:33:55.964Z"
+  },
+  {
+   "id": "C0268",
+   "key": "fuck#a8307d0f",
+   "fic": "jacks.html",
+   "paragraph": 2219,
+   "sourceSha": "1c82d8bb62ab4aa836ffe8f4924db20c8420faddb9f3b0d75e08a9b35f18957d",
+   "claim": {
+    "fic": "jacks.html",
+    "sourceSha": "1c82d8bb62ab4aa836ffe8f4924db20c8420faddb9f3b0d75e08a9b35f18957d",
+    "paragraph": 2219,
+    "pattern": "fuck",
+    "act": "anal sex",
+    "kind": "act",
+    "a": "Dracula",
+    "b": "Jack Seward",
+    "role": ""
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Wrong occurrence: memory / fantasy / habitual / recording"
+   ],
+   "updatedAt": "2026-10-09T23:18:30.906Z"
+  },
+  {
+   "id": "C0276",
+   "key": "dd2-pulled-out-of-him#129bedc7",
+   "fic": "jacks.html",
+   "paragraph": 4108,
+   "sourceSha": "1c82d8bb62ab4aa836ffe8f4924db20c8420faddb9f3b0d75e08a9b35f18957d",
+   "claim": {
+    "fic": "jacks.html",
+    "sourceSha": "1c82d8bb62ab4aa836ffe8f4924db20c8420faddb9f3b0d75e08a9b35f18957d",
+    "paragraph": 4108,
+    "pattern": "dd2-pulled-out-of-him",
+    "act": "anal sex",
+    "kind": "act",
+    "a": "Dracula",
+    "b": "Jack Seward",
+    "role": ""
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Wrong act or body part"
+   ],
+   "updatedAt": "2026-10-09T23:18:43.183Z"
+  },
+  {
+   "id": "C0309",
+   "key": "riding#15398360",
+   "fic": "jacks.html",
+   "paragraph": 11598,
+   "sourceSha": "1c82d8bb62ab4aa836ffe8f4924db20c8420faddb9f3b0d75e08a9b35f18957d",
+   "claim": {
+    "fic": "jacks.html",
+    "sourceSha": "1c82d8bb62ab4aa836ffe8f4924db20c8420faddb9f3b0d75e08a9b35f18957d",
+    "paragraph": 11598,
+    "pattern": "riding",
+    "act": "anal sex (riding)",
+    "kind": "act",
+    "a": "Jack Seward",
+    "b": "Dracula",
+    "role": ""
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Roles reversed"
+   ],
+   "updatedAt": "2026-10-09T23:19:10.154Z"
+  },
+  {
+   "id": "C0310",
+   "key": "sucked#b5b3f29c",
+   "fic": "jacks.html",
+   "paragraph": 11792,
+   "sourceSha": "1c82d8bb62ab4aa836ffe8f4924db20c8420faddb9f3b0d75e08a9b35f18957d",
+   "claim": {
+    "fic": "jacks.html",
+    "sourceSha": "1c82d8bb62ab4aa836ffe8f4924db20c8420faddb9f3b0d75e08a9b35f18957d",
+    "paragraph": 11792,
+    "pattern": "sucked",
+    "act": "genital licking",
+    "kind": "handjob",
+    "a": "Dracula",
+    "b": "Jack Seward",
+    "role": "top"
+   },
+   "verdict": "correct",
+   "errors": [
+    "Wrong act or body part"
+   ],
+   "updatedAt": "2026-10-09T23:37:39.179Z"
+  },
+  {
+   "id": "C0312",
+   "key": "passive-fucked#ae35a035",
+   "fic": "jacks.html",
+   "paragraph": 12006,
+   "sourceSha": "1c82d8bb62ab4aa836ffe8f4924db20c8420faddb9f3b0d75e08a9b35f18957d",
+   "claim": {
+    "fic": "jacks.html",
+    "sourceSha": "1c82d8bb62ab4aa836ffe8f4924db20c8420faddb9f3b0d75e08a9b35f18957d",
+    "paragraph": 12006,
+    "pattern": "passive-fucked",
+    "act": "anal sex",
+    "kind": "act",
+    "a": "Dracula",
+    "b": "Jack Seward",
+    "role": ""
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Wrong occurrence: memory / fantasy / habitual / recording"
+   ],
+   "updatedAt": "2026-10-09T23:19:15.289Z"
+  },
+  {
+   "id": "C0315",
+   "key": "passive-fucked~elided#dc29e",
+   "fic": "jacks.html",
+   "paragraph": 1696,
+   "sourceSha": "1c82d8bb62ab4aa836ffe8f4924db20c8420faddb9f3b0d75e08a9b35f18957d",
+   "claim": {
+    "fic": "jacks.html",
+    "sourceSha": "1c82d8bb62ab4aa836ffe8f4924db20c8420faddb9f3b0d75e08a9b35f18957d",
+    "paragraph": 1696,
+    "pattern": "passive-fucked~elided",
+    "act": "anal sex",
+    "kind": "wanted",
+    "a": "Dracula",
+    "b": "Jack Seward",
+    "role": "bottom"
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Wrong person"
+   ],
+   "updatedAt": "2026-10-09T23:36:09.373Z"
+  },
+  {
+   "id": "C0317",
+   "key": "sucked~elided#ff70360d",
+   "fic": "jacks.html",
+   "paragraph": 10573,
+   "sourceSha": "1c82d8bb62ab4aa836ffe8f4924db20c8420faddb9f3b0d75e08a9b35f18957d",
+   "claim": {
+    "fic": "jacks.html",
+    "sourceSha": "1c82d8bb62ab4aa836ffe8f4924db20c8420faddb9f3b0d75e08a9b35f18957d",
+    "paragraph": 10573,
+    "pattern": "sucked~elided",
+    "act": "blowjob",
+    "kind": "hypothetical",
+    "a": "Jack Seward",
+    "b": "Dracula",
+    "role": "bottom"
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Wrong person",
+    "Wrong negation or polarity"
+   ],
+   "updatedAt": "2026-10-09T23:36:14.459Z"
+  },
+  {
+   "id": "C0319",
+   "key": "mast-himself~elided#973ce6d0",
+   "fic": "jacks.html",
+   "paragraph": 4751,
+   "sourceSha": "1c82d8bb62ab4aa836ffe8f4924db20c8420faddb9f3b0d75e08a9b35f18957d",
+   "claim": {
+    "fic": "jacks.html",
+    "sourceSha": "1c82d8bb62ab4aa836ffe8f4924db20c8420faddb9f3b0d75e08a9b35f18957d",
+    "paragraph": 4751,
+    "pattern": "mast-himself~elided",
+    "act": "masturbation",
+    "kind": "masturbation",
+    "a": "Jack Seward",
+    "b": "Dracula",
+    "role": "bottom"
+   },
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-09T23:24:53.478Z"
+  },
+  {
+   "id": "C0320",
+   "key": "fuck#1a69cb93",
+   "fic": "jacks.html",
+   "paragraph": 151,
+   "sourceSha": "1c82d8bb62ab4aa836ffe8f4924db20c8420faddb9f3b0d75e08a9b35f18957d",
+   "claim": {
+    "fic": "jacks.html",
+    "sourceSha": "1c82d8bb62ab4aa836ffe8f4924db20c8420faddb9f3b0d75e08a9b35f18957d",
+    "paragraph": 151,
+    "pattern": "fuck",
+    "act": "anal sex",
+    "kind": "act",
+    "a": "Zoe Van Helsing",
+    "b": "Jack Seward",
+    "role": ""
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Wrong person",
+    "Wrong occurrence: memory / fantasy / habitual / recording"
+   ],
+   "updatedAt": "2026-10-09T23:32:27.065Z"
+  },
+  {
+   "id": "C0321",
+   "key": "mouth-off#73ad81b",
+   "fic": "jacks.html",
+   "paragraph": 676,
+   "sourceSha": "1c82d8bb62ab4aa836ffe8f4924db20c8420faddb9f3b0d75e08a9b35f18957d",
+   "claim": {
+    "fic": "jacks.html",
+    "sourceSha": "1c82d8bb62ab4aa836ffe8f4924db20c8420faddb9f3b0d75e08a9b35f18957d",
+    "paragraph": 676,
+    "pattern": "mouth-off",
+    "act": "blowjob",
+    "kind": "act",
+    "a": "Jack Seward",
+    "b": "Dracula",
+    "role": ""
+   },
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-09T23:24:15.701Z"
+  },
+  {
+   "id": "C0322",
+   "key": "pushed-in~elided#6648d63b",
+   "fic": "jacks.html",
+   "paragraph": 1034,
+   "sourceSha": "1c82d8bb62ab4aa836ffe8f4924db20c8420faddb9f3b0d75e08a9b35f18957d",
+   "claim": {
+    "fic": "jacks.html",
+    "sourceSha": "1c82d8bb62ab4aa836ffe8f4924db20c8420faddb9f3b0d75e08a9b35f18957d",
+    "paragraph": 1034,
+    "pattern": "pushed-in~elided",
+    "act": "anal sex",
+    "kind": "act",
+    "a": "Dracula",
+    "b": "Jack Seward",
+    "role": ""
+   },
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-09T23:24:19.202Z"
+  },
+  {
+   "id": "C0323",
+   "key": "push-into#f161800d",
+   "fic": "jacks.html",
+   "paragraph": 1071,
+   "sourceSha": "1c82d8bb62ab4aa836ffe8f4924db20c8420faddb9f3b0d75e08a9b35f18957d",
+   "claim": {
+    "fic": "jacks.html",
+    "sourceSha": "1c82d8bb62ab4aa836ffe8f4924db20c8420faddb9f3b0d75e08a9b35f18957d",
+    "paragraph": 1071,
+    "pattern": "push-into",
+    "act": "anal sex",
+    "kind": "act",
+    "a": "Dracula",
+    "b": "Jack Seward",
+    "role": ""
+   },
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-09T23:24:43.635Z"
+  },
+  {
+   "id": "C0324",
+   "key": "came-in-mouth#85530c08",
+   "fic": "jacks.html",
+   "paragraph": 2072,
+   "sourceSha": "1c82d8bb62ab4aa836ffe8f4924db20c8420faddb9f3b0d75e08a9b35f18957d",
+   "claim": {
+    "fic": "jacks.html",
+    "sourceSha": "1c82d8bb62ab4aa836ffe8f4924db20c8420faddb9f3b0d75e08a9b35f18957d",
+    "paragraph": 2072,
+    "pattern": "came-in-mouth",
+    "act": "blowjob",
+    "kind": "act",
+    "a": "Jack Seward",
+    "b": "Dracula",
+    "role": ""
+   },
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-09T23:24:45.919Z"
+  },
+  {
+   "id": "C0325",
+   "key": "fill#c6cf4eae",
+   "fic": "jacks.html",
+   "paragraph": 2801,
+   "sourceSha": "1c82d8bb62ab4aa836ffe8f4924db20c8420faddb9f3b0d75e08a9b35f18957d",
+   "claim": {
+    "fic": "jacks.html",
+    "sourceSha": "1c82d8bb62ab4aa836ffe8f4924db20c8420faddb9f3b0d75e08a9b35f18957d",
+    "paragraph": 2801,
+    "pattern": "fill",
+    "act": "anal sex",
+    "kind": "act",
+    "a": "Dracula",
+    "b": "Jack Seward",
+    "role": ""
+   },
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-09T23:24:50.145Z"
+  },
+  {
+   "id": "C0326",
+   "key": "push-into~elided#8f5cc374",
+   "fic": "jacks.html",
+   "paragraph": 5354,
+   "sourceSha": "1c82d8bb62ab4aa836ffe8f4924db20c8420faddb9f3b0d75e08a9b35f18957d",
+   "claim": {
+    "fic": "jacks.html",
+    "sourceSha": "1c82d8bb62ab4aa836ffe8f4924db20c8420faddb9f3b0d75e08a9b35f18957d",
+    "paragraph": 5354,
+    "pattern": "push-into~elided",
+    "act": "anal sex",
+    "kind": "act",
+    "a": "Dracula",
+    "b": "Jack Seward",
+    "role": ""
+   },
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-09T23:25:01.476Z"
+  },
+  {
+   "id": "C0327",
+   "key": "push-into#bd94f662",
+   "fic": "jacks.html",
+   "paragraph": 7826,
+   "sourceSha": "1c82d8bb62ab4aa836ffe8f4924db20c8420faddb9f3b0d75e08a9b35f18957d",
+   "claim": {
+    "fic": "jacks.html",
+    "sourceSha": "1c82d8bb62ab4aa836ffe8f4924db20c8420faddb9f3b0d75e08a9b35f18957d",
+    "paragraph": 7826,
+    "pattern": "push-into",
+    "act": "anal sex",
+    "kind": "act",
+    "a": "Dracula",
+    "b": "Jack Seward",
+    "role": ""
+   },
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-09T23:25:04.292Z"
+  },
+  {
+   "id": "C0328",
+   "key": "penis-into#66fdc90c",
+   "fic": "jacks.html",
+   "paragraph": 11794,
+   "sourceSha": "1c82d8bb62ab4aa836ffe8f4924db20c8420faddb9f3b0d75e08a9b35f18957d",
+   "claim": {
+    "fic": "jacks.html",
+    "sourceSha": "1c82d8bb62ab4aa836ffe8f4924db20c8420faddb9f3b0d75e08a9b35f18957d",
+    "paragraph": 11794,
+    "pattern": "penis-into",
+    "act": "anal sex",
+    "kind": "act",
+    "a": "Dracula",
+    "b": "Jack Seward",
+    "role": ""
+   },
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-09T23:25:06.076Z"
+  },
+  {
+   "id": "C0329",
+   "key": "sucked#42c6fc25",
+   "fic": "jacks.html",
+   "paragraph": 12206,
+   "sourceSha": "1c82d8bb62ab4aa836ffe8f4924db20c8420faddb9f3b0d75e08a9b35f18957d",
+   "claim": {
+    "fic": "jacks.html",
+    "sourceSha": "1c82d8bb62ab4aa836ffe8f4924db20c8420faddb9f3b0d75e08a9b35f18957d",
+    "paragraph": 12206,
+    "pattern": "sucked",
+    "act": "blowjob",
+    "kind": "act",
+    "a": "Dracula",
+    "b": "Jack Seward",
+    "role": ""
+   },
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-09T23:25:07.527Z"
+  },
+  {
+   "id": "C0342",
+   "key": "dialogue:anal sex#37044099",
+   "fic": "tricks-of-the-trade.html",
+   "paragraph": 839,
+   "sourceSha": "25a15e806d8f6a55c030e78d50d58e71f2ca424674b33f7a56471178d4ab1bd3",
+   "claim": {
+    "fic": "tricks-of-the-trade.html",
+    "sourceSha": "25a15e806d8f6a55c030e78d50d58e71f2ca424674b33f7a56471178d4ab1bd3",
+    "paragraph": 839,
+    "pattern": "dialogue:anal sex",
+    "act": "anal sex",
+    "kind": "said",
+    "a": "Dean Winchester",
+    "b": "Castiel",
+    "role": "top"
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Wrong speaker",
+    "Roles reversed"
+   ],
+   "updatedAt": "2026-10-09T23:20:39.811Z"
+  },
+  {
+   "id": "C0345",
+   "key": "lined-up#785146cf",
+   "fic": "tricks-of-the-trade.html",
+   "paragraph": 1774,
+   "sourceSha": "25a15e806d8f6a55c030e78d50d58e71f2ca424674b33f7a56471178d4ab1bd3",
+   "claim": {
+    "fic": "tricks-of-the-trade.html",
+    "sourceSha": "25a15e806d8f6a55c030e78d50d58e71f2ca424674b33f7a56471178d4ab1bd3",
+    "paragraph": 1774,
+    "pattern": "lined-up",
+    "act": "lining up",
+    "kind": "prep",
+    "a": "Castiel",
+    "b": "Dean Winchester",
+    "role": "top"
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Roles reversed"
+   ],
+   "updatedAt": "2026-10-09T23:20:45.733Z"
+  },
+  {
+   "id": "C0347",
+   "key": "dialogue:anal sex#252859d4",
+   "fic": "tricks-of-the-trade.html",
+   "paragraph": 2094,
+   "sourceSha": "25a15e806d8f6a55c030e78d50d58e71f2ca424674b33f7a56471178d4ab1bd3",
+   "claim": {
+    "fic": "tricks-of-the-trade.html",
+    "sourceSha": "25a15e806d8f6a55c030e78d50d58e71f2ca424674b33f7a56471178d4ab1bd3",
+    "paragraph": 2094,
+    "pattern": "dialogue:anal sex",
+    "act": "anal sex",
+    "kind": "said",
+    "a": "Castiel",
+    "b": "Dean Winchester",
+    "role": "top"
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Wrong act or body part"
+   ],
+   "updatedAt": "2026-10-09T23:21:11.550Z"
+  },
+  {
+   "id": "C0355",
+   "key": "dialogue:anal sex#11fc76d6",
+   "fic": "tricks-of-the-trade.html",
+   "paragraph": 3593,
+   "sourceSha": "25a15e806d8f6a55c030e78d50d58e71f2ca424674b33f7a56471178d4ab1bd3",
+   "claim": {
+    "fic": "tricks-of-the-trade.html",
+    "sourceSha": "25a15e806d8f6a55c030e78d50d58e71f2ca424674b33f7a56471178d4ab1bd3",
+    "paragraph": 3593,
+    "pattern": "dialogue:anal sex",
+    "act": "anal sex",
+    "kind": "said",
+    "a": "Castiel",
+    "b": "Dean Winchester",
+    "role": "top"
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Wrong act or body part"
+   ],
+   "updatedAt": "2026-10-09T23:21:14.767Z"
+  },
+  {
+   "id": "C0359",
+   "key": "sinks-to-floor#10ffb861",
+   "fic": "tricks-of-the-trade.html",
+   "paragraph": 1426,
+   "sourceSha": "25a15e806d8f6a55c030e78d50d58e71f2ca424674b33f7a56471178d4ab1bd3",
+   "claim": {
+    "fic": "tricks-of-the-trade.html",
+    "sourceSha": "25a15e806d8f6a55c030e78d50d58e71f2ca424674b33f7a56471178d4ab1bd3",
+    "paragraph": 1426,
+    "pattern": "sinks-to-floor",
+    "act": "kneeling",
+    "kind": "prep",
+    "a": "Castiel",
+    "b": "Dean Winchester",
+    "role": "bottom"
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Wrong occurrence: memory / fantasy / habitual / recording"
+   ],
+   "updatedAt": "2026-10-09T23:35:10.768Z"
+  },
+  {
+   "id": "C0369",
+   "key": "prostate#9324cc2e",
+   "fic": "tricks-of-the-trade.html",
+   "paragraph": 415,
+   "sourceSha": "25a15e806d8f6a55c030e78d50d58e71f2ca424674b33f7a56471178d4ab1bd3",
+   "claim": {
+    "fic": "tricks-of-the-trade.html",
+    "sourceSha": "25a15e806d8f6a55c030e78d50d58e71f2ca424674b33f7a56471178d4ab1bd3",
+    "paragraph": 415,
+    "pattern": "prostate",
+    "act": "anal sex",
+    "kind": "act",
+    "a": "Castiel",
+    "b": "Dean Winchester",
+    "role": ""
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Fingers or toy mistaken for a penis"
+   ],
+   "updatedAt": "2026-10-09T23:34:20.743Z"
+  },
+  {
+   "id": "C0371",
+   "key": "pushed-in#a9ab8ca1",
+   "fic": "tricks-of-the-trade.html",
+   "paragraph": 456,
+   "sourceSha": "25a15e806d8f6a55c030e78d50d58e71f2ca424674b33f7a56471178d4ab1bd3",
+   "claim": {
+    "fic": "tricks-of-the-trade.html",
+    "sourceSha": "25a15e806d8f6a55c030e78d50d58e71f2ca424674b33f7a56471178d4ab1bd3",
+    "paragraph": 456,
+    "pattern": "pushed-in",
+    "act": "fingering",
+    "kind": "act",
+    "a": "Castiel",
+    "b": "Dean Winchester",
+    "role": ""
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Wrong instrument"
+   ],
+   "updatedAt": "2026-10-09T23:34:22.895Z"
+  },
+  {
+   "id": "C0388",
+   "key": "plug-worn#d15cdd4f",
+   "fic": "tricks-of-the-trade.html",
+   "paragraph": 793,
+   "sourceSha": "25a15e806d8f6a55c030e78d50d58e71f2ca424674b33f7a56471178d4ab1bd3",
+   "claim": {
+    "fic": "tricks-of-the-trade.html",
+    "sourceSha": "25a15e806d8f6a55c030e78d50d58e71f2ca424674b33f7a56471178d4ab1bd3",
+    "paragraph": 793,
+    "pattern": "plug-worn",
+    "act": "wearing a plug",
+    "kind": "prep",
+    "a": "Dean Winchester",
+    "b": "Castiel",
+    "role": "bottom"
+   },
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-09T23:27:33.706Z"
+  },
+  {
+   "id": "C0389",
+   "key": "toy-removed#29984b02",
+   "fic": "tricks-of-the-trade.html",
+   "paragraph": 844,
+   "sourceSha": "25a15e806d8f6a55c030e78d50d58e71f2ca424674b33f7a56471178d4ab1bd3",
+   "claim": {
+    "fic": "tricks-of-the-trade.html",
+    "sourceSha": "25a15e806d8f6a55c030e78d50d58e71f2ca424674b33f7a56471178d4ab1bd3",
+    "paragraph": 844,
+    "pattern": "toy-removed",
+    "act": "taking a toy out",
+    "kind": "touch",
+    "a": "Castiel",
+    "b": "Dean Winchester",
+    "role": "top"
+   },
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-09T23:27:37.156Z"
+  },
+  {
+   "id": "C0390",
+   "key": "grab-ass~elided#5c0e4c10",
+   "fic": "tricks-of-the-trade.html",
+   "paragraph": 1407,
+   "sourceSha": "25a15e806d8f6a55c030e78d50d58e71f2ca424674b33f7a56471178d4ab1bd3",
+   "claim": {
+    "fic": "tricks-of-the-trade.html",
+    "sourceSha": "25a15e806d8f6a55c030e78d50d58e71f2ca424674b33f7a56471178d4ab1bd3",
+    "paragraph": 1407,
+    "pattern": "grab-ass~elided",
+    "act": "grabbing an ass",
+    "kind": "touch",
+    "a": "Castiel",
+    "b": "Dean Winchester",
+    "role": "top"
+   },
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-09T23:27:41.190Z"
+  },
+  {
+   "id": "C0393",
+   "key": "toy-at-hole#aaf65f74",
+   "fic": "tricks-of-the-trade.html",
+   "paragraph": 1770,
+   "sourceSha": "25a15e806d8f6a55c030e78d50d58e71f2ca424674b33f7a56471178d4ab1bd3",
+   "claim": {
+    "fic": "tricks-of-the-trade.html",
+    "sourceSha": "25a15e806d8f6a55c030e78d50d58e71f2ca424674b33f7a56471178d4ab1bd3",
+    "paragraph": 1770,
+    "pattern": "toy-at-hole",
+    "act": "toy at the hole",
+    "kind": "prep",
+    "a": "Castiel",
+    "b": "Dean Winchester",
+    "role": "top"
+   },
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-09T23:37:51.128Z"
+  },
+  {
+   "id": "C0394",
+   "key": "self-finger~elided#a6d4cdfe",
+   "fic": "tricks-of-the-trade.html",
+   "paragraph": 1773,
+   "sourceSha": "25a15e806d8f6a55c030e78d50d58e71f2ca424674b33f7a56471178d4ab1bd3",
+   "claim": {
+    "fic": "tricks-of-the-trade.html",
+    "sourceSha": "25a15e806d8f6a55c030e78d50d58e71f2ca424674b33f7a56471178d4ab1bd3",
+    "paragraph": 1773,
+    "pattern": "self-finger~elided",
+    "act": "fingering himself",
+    "kind": "solo",
+    "a": "Castiel",
+    "b": "Dean Winchester",
+    "role": "bottom"
+   },
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-09T23:27:59.732Z"
+  },
+  {
+   "id": "C0395",
+   "key": "plug-in-ass#8c3a1aed",
+   "fic": "tricks-of-the-trade.html",
+   "paragraph": 2135,
+   "sourceSha": "25a15e806d8f6a55c030e78d50d58e71f2ca424674b33f7a56471178d4ab1bd3",
+   "claim": {
+    "fic": "tricks-of-the-trade.html",
+    "sourceSha": "25a15e806d8f6a55c030e78d50d58e71f2ca424674b33f7a56471178d4ab1bd3",
+    "paragraph": 2135,
+    "pattern": "plug-in-ass",
+    "act": "wearing a plug",
+    "kind": "prep",
+    "a": "Castiel",
+    "b": "Dean Winchester",
+    "role": "bottom"
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Wrong person"
+   ],
+   "updatedAt": "2026-10-09T23:36:39.195Z"
+  },
+  {
+   "id": "C0396",
+   "key": "fuck#57f0a96a",
+   "fic": "tricks-of-the-trade.html",
+   "paragraph": 2281,
+   "sourceSha": "25a15e806d8f6a55c030e78d50d58e71f2ca424674b33f7a56471178d4ab1bd3",
+   "claim": {
+    "fic": "tricks-of-the-trade.html",
+    "sourceSha": "25a15e806d8f6a55c030e78d50d58e71f2ca424674b33f7a56471178d4ab1bd3",
+    "paragraph": 2281,
+    "pattern": "fuck",
+    "act": "anal sex",
+    "kind": "hypothetical",
+    "a": "Dean Winchester",
+    "b": "Castiel",
+    "role": "bottom"
+   },
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-09T23:37:52.678Z"
+  },
+  {
+   "id": "C0397",
+   "key": "toy-removed#2eab69a3",
+   "fic": "tricks-of-the-trade.html",
+   "paragraph": 2292,
+   "sourceSha": "25a15e806d8f6a55c030e78d50d58e71f2ca424674b33f7a56471178d4ab1bd3",
+   "claim": {
+    "fic": "tricks-of-the-trade.html",
+    "sourceSha": "25a15e806d8f6a55c030e78d50d58e71f2ca424674b33f7a56471178d4ab1bd3",
+    "paragraph": 2292,
+    "pattern": "toy-removed",
+    "act": "taking a toy out",
+    "kind": "touch",
+    "a": "Castiel",
+    "b": "Dean Winchester",
+    "role": "top"
+   },
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-09T23:28:13.199Z"
+  },
+  {
+   "id": "C0398",
+   "key": "dialogue:anal sex#a758bd61",
+   "fic": "tricks-of-the-trade.html",
+   "paragraph": 2576,
+   "sourceSha": "25a15e806d8f6a55c030e78d50d58e71f2ca424674b33f7a56471178d4ab1bd3",
+   "claim": {
+    "fic": "tricks-of-the-trade.html",
+    "sourceSha": "25a15e806d8f6a55c030e78d50d58e71f2ca424674b33f7a56471178d4ab1bd3",
+    "paragraph": 2576,
+    "pattern": "dialogue:anal sex",
+    "act": "anal sex",
+    "kind": "said",
+    "a": "Castiel",
+    "b": "Dean Winchester",
+    "role": "top"
+   },
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-09T23:28:16.133Z"
+  },
+  {
+   "id": "C0399",
+   "key": "slicked-self~elided#f5ea72e7",
+   "fic": "tricks-of-the-trade.html",
+   "paragraph": 3604,
+   "sourceSha": "25a15e806d8f6a55c030e78d50d58e71f2ca424674b33f7a56471178d4ab1bd3",
+   "claim": {
+    "fic": "tricks-of-the-trade.html",
+    "sourceSha": "25a15e806d8f6a55c030e78d50d58e71f2ca424674b33f7a56471178d4ab1bd3",
+    "paragraph": 3604,
+    "pattern": "slicked-self~elided",
+    "act": "slicking up",
+    "kind": "prep",
+    "a": "Castiel",
+    "b": "Dean Winchester",
+    "role": "top"
+   },
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-09T23:37:27.260Z"
+  },
+  {
+   "id": "C0400",
+   "key": "bottomed-out~elided#48d97ba",
+   "fic": "tricks-of-the-trade.html",
+   "paragraph": 3604,
+   "sourceSha": "25a15e806d8f6a55c030e78d50d58e71f2ca424674b33f7a56471178d4ab1bd3",
+   "claim": {
+    "fic": "tricks-of-the-trade.html",
+    "sourceSha": "25a15e806d8f6a55c030e78d50d58e71f2ca424674b33f7a56471178d4ab1bd3",
+    "paragraph": 3604,
+    "pattern": "bottomed-out~elided",
+    "act": "fingering",
+    "kind": "act",
+    "a": "Castiel",
+    "b": "Dean Winchester",
+    "role": ""
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Wrong instrument"
+   ],
+   "updatedAt": "2026-10-09T23:35:50.554Z"
+  },
+  {
+   "id": "C0401",
+   "key": "fuck#86062f33",
+   "fic": "tricks-of-the-trade.html",
+   "paragraph": 3769,
+   "sourceSha": "25a15e806d8f6a55c030e78d50d58e71f2ca424674b33f7a56471178d4ab1bd3",
+   "claim": {
+    "fic": "tricks-of-the-trade.html",
+    "sourceSha": "25a15e806d8f6a55c030e78d50d58e71f2ca424674b33f7a56471178d4ab1bd3",
+    "paragraph": 3769,
+    "pattern": "fuck",
+    "act": "anal sex",
+    "kind": "wanted",
+    "a": "Dean Winchester",
+    "b": "Castiel",
+    "role": "bottom"
+   },
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-09T23:37:53.279Z"
+  },
+  {
+   "id": "C0402",
+   "key": "lined-up~elided#ee5bdf9e",
+   "fic": "tricks-of-the-trade.html",
+   "paragraph": 3772,
+   "sourceSha": "25a15e806d8f6a55c030e78d50d58e71f2ca424674b33f7a56471178d4ab1bd3",
+   "claim": {
+    "fic": "tricks-of-the-trade.html",
+    "sourceSha": "25a15e806d8f6a55c030e78d50d58e71f2ca424674b33f7a56471178d4ab1bd3",
+    "paragraph": 3772,
+    "pattern": "lined-up~elided",
+    "act": "lining up",
+    "kind": "prep",
+    "a": "Castiel",
+    "b": "Dean Winchester",
+    "role": "top"
+   },
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-09T23:37:29.345Z"
+  },
+  {
+   "id": "C0403",
+   "key": "dialogue:blowjob#d15d3b2c",
+   "fic": "tricks-of-the-trade.html",
+   "paragraph": 3277,
+   "sourceSha": "25a15e806d8f6a55c030e78d50d58e71f2ca424674b33f7a56471178d4ab1bd3",
+   "claim": {
+    "fic": "tricks-of-the-trade.html",
+    "sourceSha": "25a15e806d8f6a55c030e78d50d58e71f2ca424674b33f7a56471178d4ab1bd3",
+    "paragraph": 3277,
+    "pattern": "dialogue:blowjob",
+    "act": "blowjob",
+    "kind": "said",
+    "a": "Dean Winchester",
+    "b": "Castiel",
+    "role": "bottom"
+   },
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-09T23:37:24.445Z"
+  },
+  {
+   "id": "C0404",
+   "key": "dd2-mast-take-in-hand#9f56b93e",
+   "fic": "tricks-of-the-trade.html",
+   "paragraph": 1218,
+   "sourceSha": "25a15e806d8f6a55c030e78d50d58e71f2ca424674b33f7a56471178d4ab1bd3",
+   "claim": {
+    "fic": "tricks-of-the-trade.html",
+    "sourceSha": "25a15e806d8f6a55c030e78d50d58e71f2ca424674b33f7a56471178d4ab1bd3",
+    "paragraph": 1218,
+    "pattern": "dd2-mast-take-in-hand",
+    "act": "masturbation",
+    "kind": "masturbation",
+    "a": "Dean Winchester",
+    "b": "Castiel",
+    "role": "bottom"
+   },
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-09T23:27:38.324Z"
+  },
+  {
+   "id": "C0405",
+   "key": "mast-word#e0d4365a",
+   "fic": "tricks-of-the-trade.html",
+   "paragraph": 2060,
+   "sourceSha": "25a15e806d8f6a55c030e78d50d58e71f2ca424674b33f7a56471178d4ab1bd3",
+   "claim": {
+    "fic": "tricks-of-the-trade.html",
+    "sourceSha": "25a15e806d8f6a55c030e78d50d58e71f2ca424674b33f7a56471178d4ab1bd3",
+    "paragraph": 2060,
+    "pattern": "mast-word",
+    "act": "masturbation",
+    "kind": "masturbation",
+    "a": "Castiel",
+    "b": "Dean Winchester",
+    "role": "bottom"
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Wrong occurrence: memory / fantasy / habitual / recording"
+   ],
+   "updatedAt": "2026-10-09T23:32:31.516Z"
+  },
+  {
+   "id": "C0406",
+   "key": "fuck#9ddce961",
+   "fic": "tricks-of-the-trade.html",
+   "paragraph": 462,
+   "sourceSha": "25a15e806d8f6a55c030e78d50d58e71f2ca424674b33f7a56471178d4ab1bd3",
+   "claim": {
+    "fic": "tricks-of-the-trade.html",
+    "sourceSha": "25a15e806d8f6a55c030e78d50d58e71f2ca424674b33f7a56471178d4ab1bd3",
+    "paragraph": 462,
+    "pattern": "fuck",
+    "act": "anal sex",
+    "kind": "act",
+    "a": "Castiel",
+    "b": "Dean Winchester",
+    "role": ""
+   },
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-09T23:27:30.724Z"
+  },
+  {
+   "id": "C0408",
+   "key": "lips-around#fb263830",
+   "fic": "tricks-of-the-trade.html",
+   "paragraph": 1472,
+   "sourceSha": "25a15e806d8f6a55c030e78d50d58e71f2ca424674b33f7a56471178d4ab1bd3",
+   "claim": {
+    "fic": "tricks-of-the-trade.html",
+    "sourceSha": "25a15e806d8f6a55c030e78d50d58e71f2ca424674b33f7a56471178d4ab1bd3",
+    "paragraph": 1472,
+    "pattern": "lips-around",
+    "act": "blowjob",
+    "kind": "hypothetical",
+    "a": "Dean Winchester",
+    "b": "Castiel",
+    "role": "bottom"
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Wrong occurrence: memory / fantasy / habitual / recording"
+   ],
+   "updatedAt": "2026-10-09T23:35:49.605Z"
+  },
+  {
+   "id": "C0409",
+   "key": "dd3-slipping-second#b3c14af0",
+   "fic": "tricks-of-the-trade.html",
+   "paragraph": 1696,
+   "sourceSha": "25a15e806d8f6a55c030e78d50d58e71f2ca424674b33f7a56471178d4ab1bd3",
+   "claim": {
+    "fic": "tricks-of-the-trade.html",
+    "sourceSha": "25a15e806d8f6a55c030e78d50d58e71f2ca424674b33f7a56471178d4ab1bd3",
+    "paragraph": 1696,
+    "pattern": "dd3-slipping-second",
+    "act": "fingering",
+    "kind": "act",
+    "a": "Dean Winchester",
+    "b": "Castiel",
+    "role": ""
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Wrong person"
+   ],
+   "updatedAt": "2026-10-09T23:36:35.611Z"
+  },
+  {
+   "id": "C0410",
+   "key": "sucked#30b3ec21",
+   "fic": "tricks-of-the-trade.html",
+   "paragraph": 1761,
+   "sourceSha": "25a15e806d8f6a55c030e78d50d58e71f2ca424674b33f7a56471178d4ab1bd3",
+   "claim": {
+    "fic": "tricks-of-the-trade.html",
+    "sourceSha": "25a15e806d8f6a55c030e78d50d58e71f2ca424674b33f7a56471178d4ab1bd3",
+    "paragraph": 1761,
+    "pattern": "sucked",
+    "act": "blowjob",
+    "kind": "act",
+    "a": "Castiel",
+    "b": "Dean Winchester",
+    "role": ""
+   },
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-09T23:27:50.824Z"
+  },
+  {
+   "id": "C0412",
+   "key": "riding#81c429a",
+   "fic": "tricks-of-the-trade.html",
+   "paragraph": 1776,
+   "sourceSha": "25a15e806d8f6a55c030e78d50d58e71f2ca424674b33f7a56471178d4ab1bd3",
+   "claim": {
+    "fic": "tricks-of-the-trade.html",
+    "sourceSha": "25a15e806d8f6a55c030e78d50d58e71f2ca424674b33f7a56471178d4ab1bd3",
+    "paragraph": 1776,
+    "pattern": "riding",
+    "act": "anal sex (riding)",
+    "kind": "act",
+    "a": "Dean Winchester",
+    "b": "Castiel",
+    "role": ""
+   },
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-09T23:28:00.914Z"
+  },
+  {
+   "id": "C0413",
+   "key": "adds-finger#563f9bb3",
+   "fic": "tricks-of-the-trade.html",
+   "paragraph": 2287,
+   "sourceSha": "25a15e806d8f6a55c030e78d50d58e71f2ca424674b33f7a56471178d4ab1bd3",
+   "claim": {
+    "fic": "tricks-of-the-trade.html",
+    "sourceSha": "25a15e806d8f6a55c030e78d50d58e71f2ca424674b33f7a56471178d4ab1bd3",
+    "paragraph": 2287,
+    "pattern": "adds-finger",
+    "act": "fingering",
+    "kind": "act",
+    "a": "Castiel",
+    "b": "Dean Winchester",
+    "role": ""
+   },
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-09T23:28:10.115Z"
+  },
+  {
+   "id": "C0414",
+   "key": "push-into#79d114e1",
+   "fic": "tricks-of-the-trade.html",
+   "paragraph": 2578,
+   "sourceSha": "25a15e806d8f6a55c030e78d50d58e71f2ca424674b33f7a56471178d4ab1bd3",
+   "claim": {
+    "fic": "tricks-of-the-trade.html",
+    "sourceSha": "25a15e806d8f6a55c030e78d50d58e71f2ca424674b33f7a56471178d4ab1bd3",
+    "paragraph": 2578,
+    "pattern": "push-into",
+    "act": "anal sex",
+    "kind": "act",
+    "a": "Castiel",
+    "b": "Dean Winchester",
+    "role": ""
+   },
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-09T23:28:17.500Z"
+  },
+  {
+   "id": "C0415",
+   "key": "took-in-mouth#9b13371b",
+   "fic": "tricks-of-the-trade.html",
+   "paragraph": 2931,
+   "sourceSha": "25a15e806d8f6a55c030e78d50d58e71f2ca424674b33f7a56471178d4ab1bd3",
+   "claim": {
+    "fic": "tricks-of-the-trade.html",
+    "sourceSha": "25a15e806d8f6a55c030e78d50d58e71f2ca424674b33f7a56471178d4ab1bd3",
+    "paragraph": 2931,
+    "pattern": "took-in-mouth",
+    "act": "blowjob",
+    "kind": "act",
+    "a": "Castiel",
+    "b": "Dean Winchester",
+    "role": ""
+   },
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-09T23:28:20.386Z"
+  },
+  {
+   "id": "C0416",
+   "key": "push-into#54aa5701",
+   "fic": "tricks-of-the-trade.html",
+   "paragraph": 2941,
+   "sourceSha": "25a15e806d8f6a55c030e78d50d58e71f2ca424674b33f7a56471178d4ab1bd3",
+   "claim": {
+    "fic": "tricks-of-the-trade.html",
+    "sourceSha": "25a15e806d8f6a55c030e78d50d58e71f2ca424674b33f7a56471178d4ab1bd3",
+    "paragraph": 2941,
+    "pattern": "push-into",
+    "act": "anal sex",
+    "kind": "act",
+    "a": "Castiel",
+    "b": "Dean Winchester",
+    "role": ""
+   },
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-09T23:28:22.282Z"
+  },
+  {
+   "id": "C0417",
+   "key": "swallowed-down#7703208b",
+   "fic": "tricks-of-the-trade.html",
+   "paragraph": 3104,
+   "sourceSha": "25a15e806d8f6a55c030e78d50d58e71f2ca424674b33f7a56471178d4ab1bd3",
+   "claim": {
+    "fic": "tricks-of-the-trade.html",
+    "sourceSha": "25a15e806d8f6a55c030e78d50d58e71f2ca424674b33f7a56471178d4ab1bd3",
+    "paragraph": 3104,
+    "pattern": "swallowed-down",
+    "act": "blowjob",
+    "kind": "act",
+    "a": "Dean Winchester",
+    "b": "Castiel",
+    "role": ""
+   },
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-09T23:28:25.933Z"
+  },
+  {
+   "id": "C0418",
+   "key": "fingers-into#ce5c49ac",
+   "fic": "tricks-of-the-trade.html",
+   "paragraph": 3270,
+   "sourceSha": "25a15e806d8f6a55c030e78d50d58e71f2ca424674b33f7a56471178d4ab1bd3",
+   "claim": {
+    "fic": "tricks-of-the-trade.html",
+    "sourceSha": "25a15e806d8f6a55c030e78d50d58e71f2ca424674b33f7a56471178d4ab1bd3",
+    "paragraph": 3270,
+    "pattern": "fingers-into",
+    "act": "fingering",
+    "kind": "act",
+    "a": "Castiel",
+    "b": "Dean Winchester",
+    "role": ""
+   },
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-09T23:37:22.446Z"
+  },
+  {
+   "id": "C0419",
+   "key": "throat-around-cock#5cb94da4",
+   "fic": "tricks-of-the-trade.html",
+   "paragraph": 3280,
+   "sourceSha": "25a15e806d8f6a55c030e78d50d58e71f2ca424674b33f7a56471178d4ab1bd3",
+   "claim": {
+    "fic": "tricks-of-the-trade.html",
+    "sourceSha": "25a15e806d8f6a55c030e78d50d58e71f2ca424674b33f7a56471178d4ab1bd3",
+    "paragraph": 3280,
+    "pattern": "throat-around-cock",
+    "act": "blowjob",
+    "kind": "act",
+    "a": "Castiel",
+    "b": "Dean Winchester",
+    "role": ""
+   },
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-09T23:37:25.961Z"
+  },
+  {
+   "id": "C0420",
+   "key": "dd2-licks-stripe-shaft#ac0f96ec",
+   "fic": "tricks-of-the-trade.html",
+   "paragraph": 3751,
+   "sourceSha": "25a15e806d8f6a55c030e78d50d58e71f2ca424674b33f7a56471178d4ab1bd3",
+   "claim": {
+    "fic": "tricks-of-the-trade.html",
+    "sourceSha": "25a15e806d8f6a55c030e78d50d58e71f2ca424674b33f7a56471178d4ab1bd3",
+    "paragraph": 3751,
+    "pattern": "dd2-licks-stripe-shaft",
+    "act": "blowjob",
+    "kind": "act",
+    "a": "Dean Winchester",
+    "b": "Castiel",
+    "role": ""
+   },
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-09T23:37:28.596Z"
+  },
+  {
+   "id": "C0431",
+   "key": "spread-legs#f5fb742d",
+   "fic": "were-compeer.html",
+   "paragraph": 246,
+   "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+   "claim": {
+    "fic": "were-compeer.html",
+    "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+    "paragraph": 246,
+    "pattern": "spread-legs",
+    "act": "spreading their legs",
+    "kind": "prep",
+    "a": "Stiles Stilinski",
+    "b": "Derek Hale",
+    "role": "bottom"
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Wrong act or body part"
+   ],
+   "updatedAt": "2026-10-09T23:21:48.567Z"
+  },
+  {
+   "id": "C0438",
+   "key": "plug-worn#9ced4a7c",
+   "fic": "were-compeer.html",
+   "paragraph": 458,
+   "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+   "claim": {
+    "fic": "were-compeer.html",
+    "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+    "paragraph": 458,
+    "pattern": "plug-worn",
+    "act": "wearing a plug",
+    "kind": "prep",
+    "a": "Stiles Stilinski",
+    "b": "Derek Hale",
+    "role": "bottom"
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Wrong act or body part"
+   ],
+   "updatedAt": "2026-10-09T23:21:54.865Z"
+  },
+  {
+   "id": "C0439",
+   "key": "plug-worn#f514871",
+   "fic": "were-compeer.html",
+   "paragraph": 459,
+   "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+   "claim": {
+    "fic": "were-compeer.html",
+    "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+    "paragraph": 459,
+    "pattern": "plug-worn",
+    "act": "wearing a plug",
+    "kind": "prep",
+    "a": "Stiles Stilinski",
+    "b": "Derek Hale",
+    "role": "bottom"
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Wrong act or body part"
+   ],
+   "updatedAt": "2026-10-09T23:21:58.874Z"
+  },
+  {
+   "id": "C0443",
+   "key": "toy-removed#196e3e17",
+   "fic": "were-compeer.html",
+   "paragraph": 575,
+   "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+   "claim": {
+    "fic": "were-compeer.html",
+    "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+    "paragraph": 575,
+    "pattern": "toy-removed",
+    "act": "taking a toy out",
+    "kind": "touch",
+    "a": "Derek Hale",
+    "b": "Stiles Stilinski",
+    "role": "top"
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Wrong act or body part"
+   ],
+   "updatedAt": "2026-10-09T23:22:02.708Z"
+  },
+  {
+   "id": "C0445",
+   "key": "bent-over-furniture#60dbd648",
+   "fic": "were-compeer.html",
+   "paragraph": 613,
+   "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+   "claim": {
+    "fic": "were-compeer.html",
+    "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+    "paragraph": 613,
+    "pattern": "bent-over-furniture",
+    "act": "bending over",
+    "kind": "prep",
+    "a": "Stiles Stilinski",
+    "b": "Derek Hale",
+    "role": "bottom"
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Wrong act or body part"
+   ],
+   "updatedAt": "2026-10-09T23:35:19.241Z"
+  },
+  {
+   "id": "C0448",
+   "key": "riding~elided#4828d05a",
+   "fic": "were-compeer.html",
+   "paragraph": 1009,
+   "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+   "claim": {
+    "fic": "were-compeer.html",
+    "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+    "paragraph": 1009,
+    "pattern": "riding~elided",
+    "act": "anal sex (riding)",
+    "kind": "wanted",
+    "a": "Stiles Stilinski",
+    "b": "Derek Hale",
+    "role": "bottom"
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Wrong act or body part"
+   ],
+   "updatedAt": "2026-10-09T23:30:04.726Z"
+  },
+  {
+   "id": "C0458",
+   "key": "sinks-to-floor~elided#5f56bf7c",
+   "fic": "were-compeer.html",
+   "paragraph": 1096,
+   "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+   "claim": {
+    "fic": "were-compeer.html",
+    "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+    "paragraph": 1096,
+    "pattern": "sinks-to-floor~elided",
+    "act": "kneeling",
+    "kind": "prep",
+    "a": "Stiles Stilinski",
+    "b": "Derek Hale",
+    "role": "bottom"
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Wrong act or body part"
+   ],
+   "updatedAt": "2026-10-09T23:35:22.207Z"
+  },
+  {
+   "id": "C0474",
+   "key": "dd2-finger-shoved-into#f74d678",
+   "fic": "were-compeer.html",
+   "paragraph": 139,
+   "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+   "claim": {
+    "fic": "were-compeer.html",
+    "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+    "paragraph": 139,
+    "pattern": "dd2-finger-shoved-into",
+    "act": "fingering himself",
+    "kind": "solo",
+    "a": "Stiles Stilinski",
+    "b": "Derek Hale",
+    "role": "bottom"
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Wrong act or body part"
+   ],
+   "updatedAt": "2026-10-09T23:31:14.850Z"
+  },
+  {
+   "id": "C0475",
+   "key": "body-leaking-from#f74d678",
+   "fic": "were-compeer.html",
+   "paragraph": 139,
+   "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+   "claim": {
+    "fic": "were-compeer.html",
+    "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+    "paragraph": 139,
+    "pattern": "body-leaking-from",
+    "act": "leaking come",
+    "kind": "body",
+    "a": "Stiles Stilinski",
+    "b": "Derek Hale",
+    "role": "bottom"
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Wrong act or body part"
+   ],
+   "updatedAt": "2026-10-09T23:31:19.867Z"
+  },
+  {
+   "id": "C0480",
+   "key": "history#aa91c8a6",
+   "fic": "were-compeer.html",
+   "paragraph": 1162,
+   "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+   "claim": {
+    "fic": "were-compeer.html",
+    "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+    "paragraph": 1162,
+    "pattern": "history",
+    "act": "past experience with others",
+    "kind": "history",
+    "a": "Stiles Stilinski",
+    "b": "Derek Hale",
+    "role": "bottom"
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Wrong act or body part"
+   ],
+   "updatedAt": "2026-10-09T23:31:43.683Z"
+  },
+  {
+   "id": "C0484",
+   "key": "suck-fingers~elided#e28b843c",
+   "fic": "were-compeer.html",
+   "paragraph": 213,
+   "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+   "claim": {
+    "fic": "were-compeer.html",
+    "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+    "paragraph": 213,
+    "pattern": "suck-fingers~elided",
+    "act": "sucking on fingers",
+    "kind": "fingers",
+    "a": "Derek Hale",
+    "b": "Stiles Stilinski",
+    "role": "bottom"
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Wrong act or body part"
+   ],
+   "updatedAt": "2026-10-09T23:32:32.132Z"
+  },
+  {
+   "id": "C0489",
+   "key": "came-inside~elided#b20bdf27",
+   "fic": "were-compeer.html",
+   "paragraph": 248,
+   "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+   "claim": {
+    "fic": "were-compeer.html",
+    "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+    "paragraph": 248,
+    "pattern": "came-inside~elided",
+    "act": "anal sex",
+    "kind": "act",
+    "a": "Vernon Boyd",
+    "b": "Derek Hale",
+    "role": ""
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Wrong act or body part"
+   ],
+   "updatedAt": "2026-10-09T23:36:41.779Z"
+  },
+  {
+   "id": "C0494",
+   "key": "fuck~elided#b7ccd1ab",
+   "fic": "were-compeer.html",
+   "paragraph": 694,
+   "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+   "claim": {
+    "fic": "were-compeer.html",
+    "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+    "paragraph": 694,
+    "pattern": "fuck~elided",
+    "act": "anal sex",
+    "kind": "act",
+    "a": "Vernon Boyd",
+    "b": "Derek Hale",
+    "role": ""
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Wrong act or body part"
+   ],
+   "updatedAt": "2026-10-09T23:32:32.717Z"
+  },
+  {
+   "id": "C0495",
+   "key": "thrusts-falter#172a376e",
+   "fic": "were-compeer.html",
+   "paragraph": 696,
+   "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+   "claim": {
+    "fic": "were-compeer.html",
+    "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+    "paragraph": 696,
+    "pattern": "thrusts-falter",
+    "act": "anal sex",
+    "kind": "act",
+    "a": "Derek Hale",
+    "b": "Stiles Stilinski",
+    "role": ""
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Wrong act or body part"
+   ],
+   "updatedAt": "2026-10-09T23:31:28.131Z"
+  },
+  {
+   "id": "C0497",
+   "key": "fist-into#12688867",
+   "fic": "were-compeer.html",
+   "paragraph": 1115,
+   "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+   "claim": {
+    "fic": "were-compeer.html",
+    "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+    "paragraph": 1115,
+    "pattern": "fist-into",
+    "act": "fingering himself",
+    "kind": "solo",
+    "a": "Stiles Stilinski",
+    "b": "Derek Hale",
+    "role": "bottom"
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Wrong act or body part"
+   ],
+   "updatedAt": "2026-10-09T23:31:36.282Z"
+  },
+  {
+   "id": "C0513",
+   "key": "dialogue:anal sex#d2f5788f",
+   "fic": "hate.html",
+   "paragraph": 805,
+   "sourceSha": "a34987282302730c5cb9cf4350457713e847383ca411b02c726281de0863ab0b",
+   "claim": {
+    "fic": "hate.html",
+    "sourceSha": "a34987282302730c5cb9cf4350457713e847383ca411b02c726281de0863ab0b",
+    "paragraph": 805,
+    "pattern": "dialogue:anal sex",
+    "act": "anal sex",
+    "kind": "said",
+    "a": "Steve Harrington",
+    "b": "Eddie Munson",
+    "role": "bottom"
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Wrong person",
+    "Wrong speaker"
+   ],
+   "updatedAt": "2026-10-09T23:17:19.529Z"
+  },
+  {
+   "id": "C0521",
+   "key": "lined-up#8eb959a0",
+   "fic": "hate.html",
+   "paragraph": 1516,
+   "sourceSha": "a34987282302730c5cb9cf4350457713e847383ca411b02c726281de0863ab0b",
+   "claim": {
+    "fic": "hate.html",
+    "sourceSha": "a34987282302730c5cb9cf4350457713e847383ca411b02c726281de0863ab0b",
+    "paragraph": 1516,
+    "pattern": "lined-up",
+    "act": "lining up",
+    "kind": "prep",
+    "a": "Eddie Munson",
+    "b": "Steve Harrington",
+    "role": "top"
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Wrong person"
+   ],
+   "updatedAt": "2026-10-09T23:33:51.734Z"
+  },
+  {
+   "id": "C0525",
+   "key": "push-into#f62c18aa",
+   "fic": "hate.html",
+   "paragraph": 1705,
+   "sourceSha": "a34987282302730c5cb9cf4350457713e847383ca411b02c726281de0863ab0b",
+   "claim": {
+    "fic": "hate.html",
+    "sourceSha": "a34987282302730c5cb9cf4350457713e847383ca411b02c726281de0863ab0b",
+    "paragraph": 1705,
+    "pattern": "push-into",
+    "act": "anal sex",
+    "kind": "hypothetical",
+    "a": "Eddie Munson",
+    "b": "Steve Harrington",
+    "role": "top"
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Wrong occurrence: memory / fantasy / habitual / recording"
+   ],
+   "updatedAt": "2026-10-09T23:18:08.324Z"
+  },
+  {
+   "id": "C0529",
+   "key": "cum-in-throat#96ba10cc",
+   "fic": "hate.html",
+   "paragraph": 299,
+   "sourceSha": "a34987282302730c5cb9cf4350457713e847383ca411b02c726281de0863ab0b",
+   "claim": {
+    "fic": "hate.html",
+    "sourceSha": "a34987282302730c5cb9cf4350457713e847383ca411b02c726281de0863ab0b",
+    "paragraph": 299,
+    "pattern": "cum-in-throat",
+    "act": "blowjob",
+    "kind": "hypothetical",
+    "a": "Eddie Munson",
+    "b": "Steve Harrington",
+    "role": "bottom"
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Wrong occurrence: memory / fantasy / habitual / recording",
+    "Wrong person"
+   ],
+   "updatedAt": "2026-10-09T23:33:31.531Z"
+  },
+  {
+   "id": "C0533",
+   "key": "mast-own~elided#3eea2466",
+   "fic": "hate.html",
+   "paragraph": 1331,
+   "sourceSha": "a34987282302730c5cb9cf4350457713e847383ca411b02c726281de0863ab0b",
+   "claim": {
+    "fic": "hate.html",
+    "sourceSha": "a34987282302730c5cb9cf4350457713e847383ca411b02c726281de0863ab0b",
+    "paragraph": 1331,
+    "pattern": "mast-own~elided",
+    "act": "masturbation",
+    "kind": "masturbation",
+    "a": "Eddie Munson",
+    "b": "Steve Harrington",
+    "role": "bottom"
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Wrong occurrence: memory / fantasy / habitual / recording"
+   ],
+   "updatedAt": "2026-10-09T23:33:49.117Z"
+  },
+  {
+   "id": "C0545",
+   "key": "dialogue:anal sex#738158c8",
+   "fic": "hate.html",
+   "paragraph": 296,
+   "sourceSha": "a34987282302730c5cb9cf4350457713e847383ca411b02c726281de0863ab0b",
+   "claim": {
+    "fic": "hate.html",
+    "sourceSha": "a34987282302730c5cb9cf4350457713e847383ca411b02c726281de0863ab0b",
+    "paragraph": 296,
+    "pattern": "dialogue:anal sex",
+    "act": "anal sex",
+    "kind": "hypothetical",
+    "a": "Steve Harrington",
+    "b": "Eddie Munson",
+    "role": "top"
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Wrong speaker",
+    "Wrong person"
+   ],
+   "updatedAt": "2026-10-09T23:32:12.606Z"
+  },
+  {
+   "id": "C0546",
+   "key": "spread-legs#eebb8575",
+   "fic": "hate.html",
+   "paragraph": 314,
+   "sourceSha": "a34987282302730c5cb9cf4350457713e847383ca411b02c726281de0863ab0b",
+   "claim": {
+    "fic": "hate.html",
+    "sourceSha": "a34987282302730c5cb9cf4350457713e847383ca411b02c726281de0863ab0b",
+    "paragraph": 314,
+    "pattern": "spread-legs",
+    "act": "spreading their legs",
+    "kind": "prep",
+    "a": "Steve Harrington",
+    "b": "Eddie Munson",
+    "role": "bottom"
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Wrong act or body part"
+   ],
+   "updatedAt": "2026-10-09T23:32:18.580Z"
+  },
+  {
+   "id": "C0549",
+   "key": "dialogue:anal sex#6864be15",
+   "fic": "hate.html",
+   "paragraph": 1386,
+   "sourceSha": "a34987282302730c5cb9cf4350457713e847383ca411b02c726281de0863ab0b",
+   "claim": {
+    "fic": "hate.html",
+    "sourceSha": "a34987282302730c5cb9cf4350457713e847383ca411b02c726281de0863ab0b",
+    "paragraph": 1386,
+    "pattern": "dialogue:anal sex",
+    "act": "anal sex",
+    "kind": "said",
+    "a": "Eddie Munson",
+    "b": "Steve Harrington",
+    "role": "bottom"
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Wrong occurrence: memory / fantasy / habitual / recording",
+    "Wrong person"
+   ],
+   "updatedAt": "2026-10-09T23:32:23.398Z"
+  },
+  {
+   "id": "C0552",
+   "key": "dialogue:blowjob#5e2d7d6",
+   "fic": "hate.html",
+   "paragraph": 731,
+   "sourceSha": "a34987282302730c5cb9cf4350457713e847383ca411b02c726281de0863ab0b",
+   "claim": {
+    "fic": "hate.html",
+    "sourceSha": "a34987282302730c5cb9cf4350457713e847383ca411b02c726281de0863ab0b",
+    "paragraph": 731,
+    "pattern": "dialogue:blowjob",
+    "act": "blowjob",
+    "kind": "said",
+    "a": "Eddie Munson",
+    "b": "Steve Harrington",
+    "role": "top"
+   },
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-09T23:22:54.854Z"
+  },
+  {
+   "id": "C0553",
+   "key": "fill#3ee68696",
+   "fic": "hate.html",
+   "paragraph": 743,
+   "sourceSha": "a34987282302730c5cb9cf4350457713e847383ca411b02c726281de0863ab0b",
+   "claim": {
+    "fic": "hate.html",
+    "sourceSha": "a34987282302730c5cb9cf4350457713e847383ca411b02c726281de0863ab0b",
+    "paragraph": 743,
+    "pattern": "fill",
+    "act": "blowjob (face-fucking)",
+    "kind": "hypothetical",
+    "a": "Steve Harrington",
+    "b": "Eddie Munson",
+    "role": "top"
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Roles reversed",
+    "Wrong occurrence: memory / fantasy / habitual / recording"
+   ],
+   "updatedAt": "2026-10-09T23:32:22.365Z"
+  },
+  {
+   "id": "C0554",
+   "key": "mast-himself#53ddbaad",
+   "fic": "hate.html",
+   "paragraph": 334,
+   "sourceSha": "a34987282302730c5cb9cf4350457713e847383ca411b02c726281de0863ab0b",
+   "claim": {
+    "fic": "hate.html",
+    "sourceSha": "a34987282302730c5cb9cf4350457713e847383ca411b02c726281de0863ab0b",
+    "paragraph": 334,
+    "pattern": "mast-himself",
+    "act": "masturbation",
+    "kind": "masturbation",
+    "a": "Steve Harrington",
+    "b": "Eddie Munson",
+    "role": "bottom"
+   },
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-09T23:22:53.338Z"
+  },
+  {
+   "id": "C0555",
+   "key": "mast-himself~elided#664945d",
+   "fic": "hate.html",
+   "paragraph": 767,
+   "sourceSha": "a34987282302730c5cb9cf4350457713e847383ca411b02c726281de0863ab0b",
+   "claim": {
+    "fic": "hate.html",
+    "sourceSha": "a34987282302730c5cb9cf4350457713e847383ca411b02c726281de0863ab0b",
+    "paragraph": 767,
+    "pattern": "mast-himself~elided",
+    "act": "masturbation",
+    "kind": "masturbation",
+    "a": "Eddie Munson",
+    "b": "Steve Harrington",
+    "role": "bottom"
+   },
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-09T23:23:03.318Z"
+  },
+  {
+   "id": "C0557",
+   "key": "dd2-finger-shoved-into#ae9aefb9",
+   "fic": "hate.html",
+   "paragraph": 735,
+   "sourceSha": "a34987282302730c5cb9cf4350457713e847383ca411b02c726281de0863ab0b",
+   "claim": {
+    "fic": "hate.html",
+    "sourceSha": "a34987282302730c5cb9cf4350457713e847383ca411b02c726281de0863ab0b",
+    "paragraph": 735,
+    "pattern": "dd2-finger-shoved-into",
+    "act": "fingering",
+    "kind": "act",
+    "a": "Steve Harrington",
+    "b": "Eddie Munson",
+    "role": ""
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Wrong act or body part"
+   ],
+   "updatedAt": "2026-10-09T23:36:04.757Z"
+  },
+  {
+   "id": "C0558",
+   "key": "push-into~elided#a5a36664",
+   "fic": "hate.html",
+   "paragraph": 1423,
+   "sourceSha": "a34987282302730c5cb9cf4350457713e847383ca411b02c726281de0863ab0b",
+   "claim": {
+    "fic": "hate.html",
+    "sourceSha": "a34987282302730c5cb9cf4350457713e847383ca411b02c726281de0863ab0b",
+    "paragraph": 1423,
+    "pattern": "push-into~elided",
+    "act": "anal sex",
+    "kind": "act",
+    "a": "Eddie Munson",
+    "b": "Steve Harrington",
+    "role": ""
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Wrong occurrence: memory / fantasy / habitual / recording"
+   ],
+   "updatedAt": "2026-10-09T23:32:24.232Z"
+  },
+  {
+   "id": "C0559",
+   "key": "stretched-open#2210888f",
+   "fic": "hate.html",
+   "paragraph": 1507,
+   "sourceSha": "a34987282302730c5cb9cf4350457713e847383ca411b02c726281de0863ab0b",
+   "claim": {
+    "fic": "hate.html",
+    "sourceSha": "a34987282302730c5cb9cf4350457713e847383ca411b02c726281de0863ab0b",
+    "paragraph": 1507,
+    "pattern": "stretched-open",
+    "act": "fingering",
+    "kind": "act",
+    "a": "Steve Harrington",
+    "b": "Eddie Munson",
+    "role": ""
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Wrong act or body part"
+   ],
+   "updatedAt": "2026-10-09T23:36:07.206Z"
+  },
+  {
+   "id": "C0565",
+   "key": "thrust-back~elided#b9c2ad9b",
+   "fic": "prince-prisoner-puppy.html",
+   "paragraph": 502,
+   "sourceSha": "cb68b9eaa778291f8ecbe13bcdb59ee9a7d3f0a170fa1ec35347e4663d6714fa",
+   "claim": {
+    "fic": "prince-prisoner-puppy.html",
+    "sourceSha": "cb68b9eaa778291f8ecbe13bcdb59ee9a7d3f0a170fa1ec35347e4663d6714fa",
+    "paragraph": 502,
+    "pattern": "thrust-back~elided",
+    "act": "pushing back",
+    "kind": "touch",
+    "a": "Telemachus",
+    "b": "Antinous",
+    "role": "bottom"
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Wrong act or body part"
+   ],
+   "updatedAt": "2026-10-09T23:19:47.087Z"
+  },
+  {
+   "id": "C0567",
+   "key": "body-sore-ass#1b168a0c",
+   "fic": "prince-prisoner-puppy.html",
+   "paragraph": 667,
+   "sourceSha": "cb68b9eaa778291f8ecbe13bcdb59ee9a7d3f0a170fa1ec35347e4663d6714fa",
+   "claim": {
+    "fic": "prince-prisoner-puppy.html",
+    "sourceSha": "cb68b9eaa778291f8ecbe13bcdb59ee9a7d3f0a170fa1ec35347e4663d6714fa",
+    "paragraph": 667,
+    "pattern": "body-sore-ass",
+    "act": "loose or sore after sex",
+    "kind": "body",
+    "a": "Telemachus",
+    "b": "Antinous",
+    "role": "bottom"
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Wrong act or body part"
+   ],
+   "updatedAt": "2026-10-09T23:34:07.436Z"
+  },
+  {
+   "id": "C0569",
+   "key": "fingers-inside~one-sided#12024a23",
+   "fic": "prince-prisoner-puppy.html",
+   "paragraph": 896,
+   "sourceSha": "cb68b9eaa778291f8ecbe13bcdb59ee9a7d3f0a170fa1ec35347e4663d6714fa",
+   "claim": {
+    "fic": "prince-prisoner-puppy.html",
+    "sourceSha": "cb68b9eaa778291f8ecbe13bcdb59ee9a7d3f0a170fa1ec35347e4663d6714fa",
+    "paragraph": 896,
+    "pattern": "fingers-inside~one-sided",
+    "act": "fingering (partner unclear)",
+    "kind": "touch",
+    "a": "Telemachus",
+    "b": "Antinous",
+    "role": "bottom"
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Wrong person"
+   ],
+   "updatedAt": "2026-10-09T23:19:56.571Z"
+  },
+  {
+   "id": "C0576",
+   "key": "prostate#1ddef398",
+   "fic": "prince-prisoner-puppy.html",
+   "paragraph": 70,
+   "sourceSha": "cb68b9eaa778291f8ecbe13bcdb59ee9a7d3f0a170fa1ec35347e4663d6714fa",
+   "claim": {
+    "fic": "prince-prisoner-puppy.html",
+    "sourceSha": "cb68b9eaa778291f8ecbe13bcdb59ee9a7d3f0a170fa1ec35347e4663d6714fa",
+    "paragraph": 70,
+    "pattern": "prostate",
+    "act": "anal sex",
+    "kind": "act",
+    "a": "Antinous",
+    "b": "Telemachus",
+    "role": ""
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Fingers or toy mistaken for a penis"
+   ],
+   "updatedAt": "2026-10-09T23:38:08.449Z"
+  },
+  {
+   "id": "C0581",
+   "key": "grab-ass#d399aea9",
+   "fic": "prince-prisoner-puppy.html",
+   "paragraph": 160,
+   "sourceSha": "cb68b9eaa778291f8ecbe13bcdb59ee9a7d3f0a170fa1ec35347e4663d6714fa",
+   "claim": {
+    "fic": "prince-prisoner-puppy.html",
+    "sourceSha": "cb68b9eaa778291f8ecbe13bcdb59ee9a7d3f0a170fa1ec35347e4663d6714fa",
+    "paragraph": 160,
+    "pattern": "grab-ass",
+    "act": "grabbing an ass",
+    "kind": "touch",
+    "a": "Antinous",
+    "b": "Telemachus",
+    "role": "top"
+   },
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-09T23:25:49.992Z"
+  },
+  {
+   "id": "C0584",
+   "key": "came-inside#ff0b155e",
+   "fic": "prince-prisoner-puppy.html",
+   "paragraph": 507,
+   "sourceSha": "cb68b9eaa778291f8ecbe13bcdb59ee9a7d3f0a170fa1ec35347e4663d6714fa",
+   "claim": {
+    "fic": "prince-prisoner-puppy.html",
+    "sourceSha": "cb68b9eaa778291f8ecbe13bcdb59ee9a7d3f0a170fa1ec35347e4663d6714fa",
+    "paragraph": 507,
+    "pattern": "came-inside",
+    "act": "anal sex",
+    "kind": "act",
+    "a": "Telemachus",
+    "b": "Antinous",
+    "role": ""
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Roles reversed"
+   ],
+   "updatedAt": "2026-10-09T23:36:22.643Z"
+  },
+  {
+   "id": "C0602",
+   "key": "cum-enters#85809687",
+   "fic": "knock-me-up.html",
+   "paragraph": 115,
+   "sourceSha": "1f31aecc927247156da60df42dc0873b956cbbf46a8f6aaa4c69815c9a924305",
+   "claim": {
+    "fic": "knock-me-up.html",
+    "sourceSha": "1f31aecc927247156da60df42dc0873b956cbbf46a8f6aaa4c69815c9a924305",
+    "paragraph": 115,
+    "pattern": "cum-enters",
+    "act": "anal sex",
+    "kind": "act",
+    "a": "Henry Fox-Mountchristen-Windsor",
+    "b": "Alex Claremont-Diaz",
+    "role": ""
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Roles reversed"
+   ],
+   "updatedAt": "2026-10-09T23:34:02.853Z"
+  },
+  {
+   "id": "C0605",
+   "key": "fuck#60428855",
+   "fic": "knock-me-up.html",
+   "paragraph": 114,
+   "sourceSha": "1f31aecc927247156da60df42dc0873b956cbbf46a8f6aaa4c69815c9a924305",
+   "claim": {
+    "fic": "knock-me-up.html",
+    "sourceSha": "1f31aecc927247156da60df42dc0873b956cbbf46a8f6aaa4c69815c9a924305",
+    "paragraph": 114,
+    "pattern": "fuck",
+    "act": "anal sex",
+    "kind": "act",
+    "a": "Alex Claremont-Diaz",
+    "b": "Henry Fox-Mountchristen-Windsor",
+    "role": ""
+   },
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-09T23:25:37.373Z"
+  },
+  {
+   "id": "C0612",
+   "key": "pushed-in~elided#f3cc741e",
+   "fic": "shawnee.html",
+   "paragraph": 5009,
+   "sourceSha": "cf8b28049c599f96ddf1055ba3aece1810d6f1fb44db46dea1e5f2522b860140",
+   "claim": {
+    "fic": "shawnee.html",
+    "sourceSha": "cf8b28049c599f96ddf1055ba3aece1810d6f1fb44db46dea1e5f2522b860140",
+    "paragraph": 5009,
+    "pattern": "pushed-in~elided",
+    "act": "anal sex",
+    "kind": "wanted",
+    "a": "Castiel",
+    "b": "Dean Winchester",
+    "role": "top"
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Real act treated as hypothetical"
+   ],
+   "updatedAt": "2026-10-09T23:35:26.089Z"
+  },
+  {
+   "id": "C0618",
+   "key": "eyes-on-crotch#817706",
+   "fic": "shawnee.html",
+   "paragraph": 2387,
+   "sourceSha": "cf8b28049c599f96ddf1055ba3aece1810d6f1fb44db46dea1e5f2522b860140",
+   "claim": {
+    "fic": "shawnee.html",
+    "sourceSha": "cf8b28049c599f96ddf1055ba3aece1810d6f1fb44db46dea1e5f2522b860140",
+    "paragraph": 2387,
+    "pattern": "eyes-on-crotch",
+    "act": "checking out a crotch",
+    "kind": "ogling",
+    "a": "Dean Winchester",
+    "b": "Castiel",
+    "role": "bottom"
+   },
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-09T23:26:36.671Z"
+  },
+  {
+   "id": "C0619",
+   "key": "suck-fingers#496ebdd8",
+   "fic": "shawnee.html",
+   "paragraph": 5000,
+   "sourceSha": "cf8b28049c599f96ddf1055ba3aece1810d6f1fb44db46dea1e5f2522b860140",
+   "claim": {
+    "fic": "shawnee.html",
+    "sourceSha": "cf8b28049c599f96ddf1055ba3aece1810d6f1fb44db46dea1e5f2522b860140",
+    "paragraph": 5000,
+    "pattern": "suck-fingers",
+    "act": "sucking on fingers",
+    "kind": "fingers",
+    "a": "Dean Winchester",
+    "b": "Castiel",
+    "role": "bottom"
+   },
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-09T23:26:43.722Z"
+  },
+  {
+   "id": "C0620",
+   "key": "mast-himself~elided#97be54d8",
+   "fic": "shawnee.html",
+   "paragraph": 5018,
+   "sourceSha": "cf8b28049c599f96ddf1055ba3aece1810d6f1fb44db46dea1e5f2522b860140",
+   "claim": {
+    "fic": "shawnee.html",
+    "sourceSha": "cf8b28049c599f96ddf1055ba3aece1810d6f1fb44db46dea1e5f2522b860140",
+    "paragraph": 5018,
+    "pattern": "mast-himself~elided",
+    "act": "masturbation",
+    "kind": "masturbation",
+    "a": "Dean Winchester",
+    "b": "Castiel",
+    "role": "bottom"
+   },
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-09T23:26:48.689Z"
+  },
+  {
+   "id": "C0621",
+   "key": "riding#8946aae1",
+   "fic": "shawnee.html",
+   "paragraph": 277,
+   "sourceSha": "cf8b28049c599f96ddf1055ba3aece1810d6f1fb44db46dea1e5f2522b860140",
+   "claim": {
+    "fic": "shawnee.html",
+    "sourceSha": "cf8b28049c599f96ddf1055ba3aece1810d6f1fb44db46dea1e5f2522b860140",
+    "paragraph": 277,
+    "pattern": "riding",
+    "act": "anal sex (riding)",
+    "kind": "act",
+    "a": "Castiel",
+    "b": "Dean Winchester",
+    "role": ""
+   },
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-09T23:26:32.987Z"
+  },
+  {
+   "id": "C0631",
+   "key": "suck-fingers~elided#fcf4eb52",
+   "fic": "rwrb-balls.html",
+   "paragraph": 179,
+   "sourceSha": "972bdceeca54c37e7f9298ac9621b9155bf28745a076c5d5124e55a38b1a9474",
+   "claim": {
+    "fic": "rwrb-balls.html",
+    "sourceSha": "972bdceeca54c37e7f9298ac9621b9155bf28745a076c5d5124e55a38b1a9474",
+    "paragraph": 179,
+    "pattern": "suck-fingers~elided",
+    "act": "sucking on fingers",
+    "kind": "fingers",
+    "a": "Henry Fox-Mountchristen-Windsor",
+    "b": "Alex Claremont-Diaz",
+    "role": "bottom"
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Wrong person"
+   ],
+   "updatedAt": "2026-10-09T23:32:30.250Z"
+  },
+  {
+   "id": "C0632",
+   "key": "prostate~elided#dce8267",
+   "fic": "rwrb-balls.html",
+   "paragraph": 194,
+   "sourceSha": "972bdceeca54c37e7f9298ac9621b9155bf28745a076c5d5124e55a38b1a9474",
+   "claim": {
+    "fic": "rwrb-balls.html",
+    "sourceSha": "972bdceeca54c37e7f9298ac9621b9155bf28745a076c5d5124e55a38b1a9474",
+    "paragraph": 194,
+    "pattern": "prostate~elided",
+    "act": "anal sex",
+    "kind": "act",
+    "a": "Alex Claremont-Diaz",
+    "b": "Henry Fox-Mountchristen-Windsor",
+    "role": ""
+   },
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-09T23:26:20.035Z"
+  },
+  {
+   "id": "C0633",
+   "key": "pushed-in#f3cca6ae",
+   "fic": "rwrb-balls.html",
+   "paragraph": 220,
+   "sourceSha": "972bdceeca54c37e7f9298ac9621b9155bf28745a076c5d5124e55a38b1a9474",
+   "claim": {
+    "fic": "rwrb-balls.html",
+    "sourceSha": "972bdceeca54c37e7f9298ac9621b9155bf28745a076c5d5124e55a38b1a9474",
+    "paragraph": 220,
+    "pattern": "pushed-in",
+    "act": "anal sex",
+    "kind": "act",
+    "a": "Alex Claremont-Diaz",
+    "b": "Henry Fox-Mountchristen-Windsor",
+    "role": ""
+   },
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-09T23:26:27.969Z"
+  },
+  {
+   "id": "C0645",
+   "key": "arch-back#8b04edd2",
+   "fic": "rental-agreement.html",
+   "paragraph": 54,
+   "sourceSha": "6c50f2c632fb1643ccf4a210cb23c249e75f5dcc7d259572d0d712433eb20d82",
+   "claim": {
+    "fic": "rental-agreement.html",
+    "sourceSha": "6c50f2c632fb1643ccf4a210cb23c249e75f5dcc7d259572d0d712433eb20d82",
+    "paragraph": 54,
+    "pattern": "arch-back",
+    "act": "arching their back",
+    "kind": "touch",
+    "a": "Peter Parker",
+    "b": "Wade Wilson",
+    "role": "bottom"
+   },
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-09T23:26:06.907Z"
+  },
+  {
+   "id": "C0650",
+   "key": "ogle-crotch-where~elided#1efc7fe6",
+   "fic": "whisper.html",
+   "paragraph": 449,
+   "sourceSha": "52b242a237c19a643a886b07c3f6b64eab70c1e6df16357a5099174bc76116bd",
+   "claim": {
+    "fic": "whisper.html",
+    "sourceSha": "52b242a237c19a643a886b07c3f6b64eab70c1e6df16357a5099174bc76116bd",
+    "paragraph": 449,
+    "pattern": "ogle-crotch-where~elided",
+    "act": "staring at a bulge",
+    "kind": "ogling",
+    "a": "Alex Claremont-Diaz",
+    "b": "Henry Fox-Mountchristen-Windsor",
+    "role": "bottom"
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Wrong person",
+    "Wrong act or body part"
+   ],
+   "updatedAt": "2026-10-09T23:36:42.514Z"
+  },
+  {
+   "id": "C0651",
+   "key": "prostate~elided#8672e3c3",
+   "fic": "whisper.html",
+   "paragraph": 452,
+   "sourceSha": "52b242a237c19a643a886b07c3f6b64eab70c1e6df16357a5099174bc76116bd",
+   "claim": {
+    "fic": "whisper.html",
+    "sourceSha": "52b242a237c19a643a886b07c3f6b64eab70c1e6df16357a5099174bc76116bd",
+    "paragraph": 452,
+    "pattern": "prostate~elided",
+    "act": "anal sex",
+    "kind": "wanted",
+    "a": "Henry Fox-Mountchristen-Windsor",
+    "b": "Alex Claremont-Diaz",
+    "role": "top"
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Roles reversed",
+    "Real act treated as hypothetical"
+   ],
+   "updatedAt": "2026-10-09T23:36:43.329Z"
+  },
+  {
+   "id": "C0652",
+   "key": "dialogue:blowjob#7bf580d",
+   "fic": "whisper.html",
+   "paragraph": 426,
+   "sourceSha": "52b242a237c19a643a886b07c3f6b64eab70c1e6df16357a5099174bc76116bd",
+   "claim": {
+    "fic": "whisper.html",
+    "sourceSha": "52b242a237c19a643a886b07c3f6b64eab70c1e6df16357a5099174bc76116bd",
+    "paragraph": 426,
+    "pattern": "dialogue:blowjob",
+    "act": "blowjob",
+    "kind": "said",
+    "a": "Alex Claremont-Diaz",
+    "b": "Henry Fox-Mountchristen-Windsor",
+    "role": "bottom"
+   },
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-09T23:37:30.962Z"
+  },
+  {
+   "id": "C0653",
+   "key": "sinks-to-floor#73aba531",
+   "fic": "whisper.html",
+   "paragraph": 443,
+   "sourceSha": "52b242a237c19a643a886b07c3f6b64eab70c1e6df16357a5099174bc76116bd",
+   "claim": {
+    "fic": "whisper.html",
+    "sourceSha": "52b242a237c19a643a886b07c3f6b64eab70c1e6df16357a5099174bc76116bd",
+    "paragraph": 443,
+    "pattern": "sinks-to-floor",
+    "act": "kneeling",
+    "kind": "prep",
+    "a": "Alex Claremont-Diaz",
+    "b": "Henry Fox-Mountchristen-Windsor",
+    "role": "bottom"
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Wrong act or body part"
+   ],
+   "updatedAt": "2026-10-09T23:32:49.457Z"
+  },
+  {
+   "id": "C0654",
+   "key": "takes-between-lips~elided#6d6a4e39",
+   "fic": "whisper.html",
+   "paragraph": 431,
+   "sourceSha": "52b242a237c19a643a886b07c3f6b64eab70c1e6df16357a5099174bc76116bd",
+   "claim": {
+    "fic": "whisper.html",
+    "sourceSha": "52b242a237c19a643a886b07c3f6b64eab70c1e6df16357a5099174bc76116bd",
+    "paragraph": 431,
+    "pattern": "takes-between-lips~elided",
+    "act": "blowjob",
+    "kind": "act",
+    "a": "Henry Fox-Mountchristen-Windsor",
+    "b": "Alex Claremont-Diaz",
+    "role": ""
+   },
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-09T23:37:32.095Z"
+  },
+  {
+   "id": "C0655",
+   "key": "adds-finger#15a77f8c",
+   "fic": "whisper.html",
+   "paragraph": 434,
+   "sourceSha": "52b242a237c19a643a886b07c3f6b64eab70c1e6df16357a5099174bc76116bd",
+   "claim": {
+    "fic": "whisper.html",
+    "sourceSha": "52b242a237c19a643a886b07c3f6b64eab70c1e6df16357a5099174bc76116bd",
+    "paragraph": 434,
+    "pattern": "adds-finger",
+    "act": "fingering",
+    "kind": "act",
+    "a": "Alex Claremont-Diaz",
+    "b": "Henry Fox-Mountchristen-Windsor",
+    "role": ""
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Wrong act or body part"
+   ],
+   "updatedAt": "2026-10-09T23:32:41.232Z"
+  },
+  {
+   "id": "C0658",
+   "key": "eyes-on-crotch#69796f81",
+   "fic": "steady-eddie.html",
+   "paragraph": 1430,
+   "sourceSha": "6df06eafa0879c71bd9d3e7401cb3ce8c878e3da07d39265d9c4357c3c00dec8",
+   "claim": {
+    "fic": "steady-eddie.html",
+    "sourceSha": "6df06eafa0879c71bd9d3e7401cb3ce8c878e3da07d39265d9c4357c3c00dec8",
+    "paragraph": 1430,
+    "pattern": "eyes-on-crotch",
+    "act": "checking out a crotch",
+    "kind": "ogling",
+    "a": "Steve Harrington",
+    "b": "Eddie Munson",
+    "role": "bottom"
+   },
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-09T23:27:02.591Z"
+  },
+  {
+   "id": "C0659",
+   "key": "hand-in-pants-poss#aa4b9921",
+   "fic": "steady-eddie.html",
+   "paragraph": 2023,
+   "sourceSha": "6df06eafa0879c71bd9d3e7401cb3ce8c878e3da07d39265d9c4357c3c00dec8",
+   "claim": {
+    "fic": "steady-eddie.html",
+    "sourceSha": "6df06eafa0879c71bd9d3e7401cb3ce8c878e3da07d39265d9c4357c3c00dec8",
+    "paragraph": 2023,
+    "pattern": "hand-in-pants-poss",
+    "act": "hand down the back of the pants",
+    "kind": "touch",
+    "a": "Eddie Munson",
+    "b": "Steve Harrington",
+    "role": "top"
+   },
+   "verdict": "wrong",
+   "errors": [
+    "Wrong act or body part"
+   ],
+   "updatedAt": "2026-10-09T23:36:34.710Z"
+  },
+  {
+   "id": "C0660",
+   "key": "eyes-on-crotch-oral#69796f81",
+   "fic": "steady-eddie.html",
+   "paragraph": 1430,
+   "sourceSha": "6df06eafa0879c71bd9d3e7401cb3ce8c878e3da07d39265d9c4357c3c00dec8",
+   "claim": {
+    "fic": "steady-eddie.html",
+    "sourceSha": "6df06eafa0879c71bd9d3e7401cb3ce8c878e3da07d39265d9c4357c3c00dec8",
+    "paragraph": 1430,
+    "pattern": "eyes-on-crotch-oral",
+    "act": "checking out a crotch",
+    "kind": "ogling",
+    "a": "Steve Harrington",
+    "b": "Eddie Munson",
+    "role": "bottom"
+   },
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-09T23:27:09.026Z"
+  },
+  {
+   "id": "C0661",
+   "key": "took-in-mouth#361d265c",
+   "fic": "steady-eddie.html",
+   "paragraph": 1775,
+   "sourceSha": "6df06eafa0879c71bd9d3e7401cb3ce8c878e3da07d39265d9c4357c3c00dec8",
+   "claim": {
+    "fic": "steady-eddie.html",
+    "sourceSha": "6df06eafa0879c71bd9d3e7401cb3ce8c878e3da07d39265d9c4357c3c00dec8",
+    "paragraph": 1775,
+    "pattern": "took-in-mouth",
+    "act": "blowjob",
+    "kind": "act",
+    "a": "Eddie Munson",
+    "b": "Steve Harrington",
+    "role": ""
+   },
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-09T23:27:11.709Z"
+  },
+  {
+   "id": "C0662",
+   "key": "dd2-licking-strip-up-length#805ef4f8",
+   "fic": "steady-eddie.html",
+   "paragraph": 2036,
+   "sourceSha": "6df06eafa0879c71bd9d3e7401cb3ce8c878e3da07d39265d9c4357c3c00dec8",
+   "claim": {
+    "fic": "steady-eddie.html",
+    "sourceSha": "6df06eafa0879c71bd9d3e7401cb3ce8c878e3da07d39265d9c4357c3c00dec8",
+    "paragraph": 2036,
+    "pattern": "dd2-licking-strip-up-length",
+    "act": "blowjob",
+    "kind": "act",
+    "a": "Steve Harrington",
+    "b": "Eddie Munson",
+    "role": ""
+   },
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-09T23:27:13.977Z"
+  }
+ ],
+ "superseded": {},
+ "feedbackSha": "a5e8f1ef0b691277bd4bc414d9c9796be2c5d088f03a0fe64e6d8776a0719a4a"
+}
