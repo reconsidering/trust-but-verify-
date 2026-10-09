@@ -45,3 +45,8 @@ describe('hands-free and prostate orgasms',()=>{
   expect(run(text).hits.filter(orgasm)).toEqual([]);
  });
 });
+describe('a fantasy-driven orgasm',()=>{
+ it('is not a hands-free anal orgasm: coming untouched while thinking about a mouth',()=>{
+  expect(run('Morgan fucked Rowan once, weeks ago.||Rowan came untouched, thinking about Morgan’s mouth on him.').hits.filter(orgasm)).toEqual([]);
+ });
+});

@@ -24,6 +24,13 @@ describe('oral scenes are not anal sex',()=>{
  it('“rocks in deep, holding his jaw” after a blowjob is the mouth',()=>{
   expect(anal(run('Rowan swallowed around Morgan’s cock, gagging.||“That’s it,” Morgan said, holding his jaw steady while he rocked in deep.').hits)).toEqual([]);
  });
+ it.each([
+  'Rowan blinked up at Morgan as he thrust into him, then licked the come from his lips.',
+  'Morgan’s hand flew up to cover Rowan’s mouth as Morgan thrust his cock into Rowan in one stroke.',
+  'Rowan was sucking a mark into Morgan’s neck. Morgan thrust into him with abandon.',
+ ])('keeps anal sex when a mouth, a gasp or a sucked finger is only nearby: %s',text=>{
+  expect(anal(run(text).hits).length).toBeGreaterThan(0);
+ });
  it('keeps a real anal scene that follows a blowjob and names the hole',()=>{
   expect(anal(run('Rowan sucked Morgan’s cock until he was hard.||Morgan lubed up, lined up with Rowan’s hole and pushed all the way in.').hits).length).toBeGreaterThan(0);
  });
@@ -36,6 +43,17 @@ describe('clothed rubbing is not penetration',()=>{
  it('rubbing a clothed length along a cock is frottage, not a handjob',()=>{
   const{hits}=run('Morgan kissed Rowan hard on the bed. Morgan rubbed his fully clothed length along Rowan’s cock.');
   expect(hits.filter(h=>h.via.startsWith('hj-stroke')).map(h=>h.act)).not.toContain('handjob');
+ });
+});
+
+describe('the tagged wearer keeps a plug in a scene with their partner',()=>{
+ const meta:Ao3Meta={...META,freeforms:['Dom/sub','Sub Rowan']};
+ it('keeps the plug when the partner is named only with a possessive or as the one acting',()=>{
+  const{hits}=run('Morgan told him to bend over.||He ends up over Morgan’s knee, a silicone plug nudging his prostate every time Morgan’s palm lands.',meta);
+  expect(hits.filter(h=>h.via==='plug-worn'&&h.a==='Rowan Marsh').length).toBe(1);
+ });
+ it('does not read a plan as a plug being worn',()=>{
+  expect(run('“I want you plugged all evening,” Morgan said.',meta).hits.filter(h=>h.via==='plug-worn')).toEqual([]);
  });
 });
 

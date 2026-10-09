@@ -415,10 +415,15 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
     if (/\b(?:take|took|taking|pull|pulled|remov\w*|set|put)\s+(?:the\s+|a\s+|that\s+)?(?:\w+\s+)?plug\s+(?:out|down|away|aside)\b|\bplug\s+out\b/i.test(sent)) return;
     // The tagged wearer is a guess about the whole work; a plug in a scene they are not in belongs to someone else. Invented adults:
     // the tags lock Avery in a cage, but in a later chapter Morgan plugs Rowan while Avery is elsewhere.
-    const wearerNear = new RegExp(`\\b(?:${plugWearer.aliases.map((a) => a.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")).join("|")})\\b`, "i");
-    if (!wearerNear.test(`${paras[pi - 1] ?? ""} ${paras[pi] ?? ""} ${sent}`)) return;
+    // Names used plainly (a possessive is a body part or a place: "over Morgan's knee", "Morgan's fingers" keep the wearer's plug).
+    const plainNames = (t: string) => [...t.matchAll(new RegExp(`\\b(${NAMES})\\b(?!['’](?:s\\b|\\s|$))`, "g"))].map((x) => cast.byAlias.get(x[1]));
+    const nearNames = plainNames(`${paras[pi - 1] ?? ""} ${paras[pi] ?? ""}`);
+    // A plan is not a plug being worn: "I want you plugged all evening", "you'll wear the plug tomorrow".
+    if (/\b(?:want(?:s|ed)?|will|['’]ll|gonna|going\s+to|would|should|plan\w*)\b[^.!?]{0,30}\b(?:plug(?:ged)?|vibe|vibrator)\b/i.test(sent)) return;
+    const wearerPartner = tagPartner(plugWearer);
+    if (!nearNames.includes(plugWearer) && nearNames.some((c) => c && c !== plugWearer && c !== wearerPartner)) return;
     // …and a sentence about someone else ("Rowan shifts in his seat, remembering the plug") is theirs, even with the wearer nearby.
-    const namedHere = [...sent.matchAll(new RegExp(`\\b(${NAMES})\\b`, "g"))].map((x) => cast.byAlias.get(x[1]));
+    const namedHere = plainNames(sent);
     if (namedHere.length && !namedHere.includes(plugWearer)) return;
     const other = tagPartner(plugWearer);
     if (!other || desires.some((d) => d.via === "plug-worn" && (d.sentence === original || d.para === pi)) || desires.filter((d) => d.via === "plug-worn").length >= 8) return;
@@ -1981,13 +1986,15 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
     // his jaw", "not just fucking him" are the mouth, not an anal scene, when nothing anal is in the paragraph and no anal act came just before.
     if (!pat.signal && cat === "anal" && (/^(?:pushed-in|push-into|slipped-in|rock-into)$/.test(basePid) || (basePid === "fuck" && pat.elided))) {
       const MOUTH = /\b(?:mouth|throat|jaw|tongue|lips)\b/i;
-      const INTO_MOUTH = /\b(?:into|in|down)\s+(?:his|her|their|my|your|[\w'’]+['’]s)\s+(?:mouth|throat)\b/i;
+      // A cock at a mouth, not just swallowing, choking or a kiss: "his cock heavy across Rowan's tongue", "pushes into his mouth", "fuck my face".
+      const ORAL_ENTRY = /\b(?:cock|dick|prick|length|shaft|erection|knot)\b[^.!?]{0,60}\b(?:mouth|throat|tongue|lips)\b|\b(?:swallow\w*|gag\w*|chok\w*|suck\w*)\s+(?:\w+\s+){0,2}?(?:around|on)\s+(?:his|her|their|[\w'’]+['’]s)\s+(?:cock|dick|prick|length|shaft|erection|knot)\b|\b(?:mouth|throat|lips)\b[^.!?]{0,60}\b(?:cock|dick|prick|length|shaft|erection|knot)\b|\b(?:push|thrust|fuck|slid|slide|shov|drove|drive|rock)\w*\s+(?:\w+\s+){0,2}?(?:into|in|down)\s+(?:his|her|their|[\w'’]+['’]s)\s+(?:mouth|throat)\b|\bface[- ]?fuck\w*|\bfuck\w*\s+(?:my|his|her|their|your)\s+(?:face|mouth|throat)\b|\bdeep-?throat\w*|\bblow\s?jobs?\b/i;
       const prev = paras[pi - 1] ?? "";
-      const oralHere = ORAL_SCENE_RE.test(para) || INTO_MOUTH.test(para);
-      const analWords = (t: string) => ANAL_CTX.test(t) || /\b(?:inside\s+(?:him|her|them|me)|lube[ds]?|slick(?:ed)?\s+(?:him|her|them)|prep(?:ped|ping|are\w*)?|lin(?:e|es|ed|ing)\s+(?:(?:him|her|them)sel(?:f|ves)\s+)?up)\b/i.test(t);
-      const recentAnal = acts.some((a) => a.cat === "anal" && a.act.startsWith("anal sex") && a.para >= pi - 3 && a.para < pi);
+      // Going into a person, not a mouth: "thrusts into him", "slid inside of him", "lined his cock up", "guided himself into Rowan".
+      const ANAL_ENTRY = new RegExp(`\\b(?:inside\\s+(?:of\\s+)?(?:him|her|them|me)|lube[ds]?|slick(?:ed)?\\s+(?:him|her|them)|prep(?:ped|ping|are\\w*)?|lin(?:e|es|ed|ing)\\s+(?:\\w+\\s+){0,2}?up|buried\\s+(?:him|her|them)sel(?:f|ves)|(?:thrust|push|slid|slide|sink|sank|sunk|drove|drive|guid|ease|eas)\\w*\\s+(?:\\w+\\s+){0,3}?(?:into|inside(?:\\s+of)?)\\s+(?:him|her|them|me|(?:${NAMES})(?!['’]s)))\\b`, "i");
+      const analWords = (t: string) => ANAL_CTX.test(t) || ANAL_ENTRY.test(t);
+      const recentAnal = acts.some((a) => a.cat === "anal" && a.act === "anal sex" && a.para >= pi - 3 && a.para < pi);
       if (!analWords(sent) && !analWords(para) && !/\bkiss\w*/i.test(para) && !recentAnal &&
-          (oralHere || ORAL_SCENE_RE.test(prev)) && (oralHere ? MOUTH.test(para) || MOUTH.test(prev) : MOUTH.test(para))) return;
+          (ORAL_ENTRY.test(para) || (ORAL_ENTRY.test(prev) && (MOUTH.test(para) || ORAL_SCENE_RE.test(para))))) return;
     }
     // Invented adults: Morgan, still fully clothed, grinds on Rowan until he comes in his trousers; "the force of his thrusts" there is
     // rubbing through clothes, not penetration. Only thrust-only readings, and only when nothing anal is in the paragraph.
@@ -2259,6 +2266,8 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
         if (HYPO_AUX.test(m.groups?.aux ?? "") || /\b(?:want\w*|wanna|wish\w*|long\w*|need\w*|tri(?:ed|es)|try|can|must|able)\b/i.test(m.groups?.aux ?? "")) return;
         if (/\b(?:want\w*|wish\w*|imagin\w*|fantas\w*|dream\w*|pictur\w*|thought\s+(?:about|of)|think\w*\s+(?:about|of)|if|unless|whether|promis\w*|tried|try|trying|could|would|ever\s+been\s+able)\b[^.!?]*$/i.test(prefix.slice(-80))) return;
         if (basePid === "came-from-partner-alone" && !m.groups?.hfOnly && !m.groups?.hfAlone) return;
+        // Invented adults: "Rowan came untouched, thinking about Morgan's mouth": a fantasy brought it on, not anything anal.
+        if (act === "hands-free orgasm" && /\b(?:thinking|thought|imagin\w*|pictur\w*|fantasi[sz]\w*|dream\w*|remember\w*|the\s+(?:thought|image|memory)\s+of)\b/i.test(sent)) return;
         if (act === "hands-free orgasm") {
           const near = `${paras[pi - 1] ?? ""} ${para}`;
           const penetration = /\b(?:fuck(?:ed|ing|s)?|inside\s+(?:him|her|them|me)|thrust\w*|knot\w*|pound\w*|buried|filled|fingered|fingering)\b/i;
