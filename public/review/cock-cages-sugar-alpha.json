@@ -1,0 +1,268 @@
+{
+  "schema": "engine-fic-deep-review/v1",
+  "batchId": "cock-cages-sugar-alpha-8c745f1-v1",
+  "engineCommit": "8c745f1",
+  "source": {
+    "file": "sugar-alpha.html",
+    "title": "Sugar Alpha",
+    "sourceSha": "68a3c9d689b093806fb072b5e550e79a61eb9f16c1e79ca192ba24597338de5e",
+    "paragraphSha": "a45eb70114d525d57925d8f98cbdd975a8ae19a3be5dd2adcea51caa98ccc950",
+    "paragraphCount": 2428
+  },
+  "answerFile": "cock-cages-sugar-alpha-answers.json",
+  "method": "Cage vocabulary screened independently, selected passages and surrounding context read closely, then compared against a fresh tagged audit. Adult context checked. Includes supported cues, proposed errors, explicit non-wearing and missed device actions. Eligibility requires a cock-cage tag: Cock Cages. Tags are not evidence that an action happens. Cage wearer/keyholder cues describe device dynamics, not penetrative top/bottom roles. A proposal, remembered fitting, actual fitting, wearing, key transfer and removal remain distinct. Source size is not an assertion of exhaustive review. Assistant confidence is subjective.",
+  "statistics": {
+    "paragraphsRead": 2428,
+    "words": 81224,
+    "engineReadings": 254,
+    "reviewWindows": 5,
+    "actProposals": 2,
+    "readingAssessments": {
+      "wrong": 4,
+      "correct": 1,
+      "uncertain": 0
+    }
+  },
+  "verdicts": [],
+  "windows": [
+    {
+      "id": "W1",
+      "fic": "sugar-alpha.html",
+      "from": 38,
+      "to": 44,
+      "title": "An observer is not the keyholder",
+      "chapter": 1,
+      "detectionIds": [
+        "D1",
+        "D2"
+      ],
+      "actIds": [
+        "A1"
+      ]
+    },
+    {
+      "id": "W2",
+      "fic": "sugar-alpha.html",
+      "from": 162,
+      "to": 165,
+      "title": "Stiles considers a lifestyle he does not want",
+      "chapter": 2,
+      "detectionIds": [
+        "D3"
+      ],
+      "actIds": []
+    },
+    {
+      "id": "W3",
+      "fic": "sugar-alpha.html",
+      "from": 423,
+      "to": 425,
+      "title": "Remembered wearer and partner",
+      "chapter": 6,
+      "detectionIds": [
+        "D4"
+      ],
+      "actIds": []
+    },
+    {
+      "id": "W4",
+      "fic": "sugar-alpha.html",
+      "from": 2172,
+      "to": 2176,
+      "title": "A cage suggested instead of another instrument",
+      "chapter": 21,
+      "detectionIds": [
+        "D5"
+      ],
+      "actIds": []
+    },
+    {
+      "id": "W5",
+      "fic": "sugar-alpha.html",
+      "from": 2400,
+      "to": 2403,
+      "title": "Plug chosen instead of a cage",
+      "chapter": 22,
+      "detectionIds": [],
+      "actIds": [
+        "A2"
+      ]
+    }
+  ],
+  "readings": [
+    {
+      "id": "D1",
+      "key": "chastity-wearer#8eee158",
+      "fic": "sugar-alpha.html",
+      "para": 42,
+      "pattern": "chastity-wearer",
+      "a": "Isaac Lahey",
+      "b": "Derek Hale",
+      "role": "bottom",
+      "act": "wearing a chastity device",
+      "kind": "behavior",
+      "claim": "Isaac Lahey is credited as cage wearer in the pairing Isaac Lahey/Derek Hale (a device-role cue, not proof of who fitted it).",
+      "engineConfidence": null,
+      "confidenceBasis": "The current engine does not expose an individual confidence score for this cue. No score is invented from a pairing score or a vibe weight.",
+      "features": [],
+      "proposal": {
+        "revision": "31e2a07d40842c16",
+        "verdict": "wrong",
+        "reading": "Isaac wears the cage belonging to his dynamic with Peter. Stiles is observing; Derek is not this cage partner.",
+        "rationale": "The nearby observer has entered a relationship slot. Isaac’s alpha is identified as Peter elsewhere.",
+        "confidence": 0.98,
+        "errors": [
+          "Wrong person"
+        ]
+      }
+    },
+    {
+      "id": "D2",
+      "key": "chastity-wearer#3f2c8de4",
+      "fic": "sugar-alpha.html",
+      "para": 42,
+      "pattern": "chastity-wearer",
+      "a": "Isaac Lahey",
+      "b": "Stiles Stilinski",
+      "role": "bottom",
+      "act": "wearing a chastity device",
+      "kind": "behavior",
+      "claim": "Isaac Lahey is credited as cage wearer in the pairing Isaac Lahey/Stiles Stilinski (a device-role cue, not proof of who fitted it).",
+      "engineConfidence": null,
+      "confidenceBasis": "The current engine does not expose an individual confidence score for this cue. No score is invented from a pairing score or a vibe weight.",
+      "features": [],
+      "proposal": {
+        "revision": "31e2a07d40842c16",
+        "verdict": "wrong",
+        "reading": "Isaac wears the cage belonging to his dynamic with Peter. Stiles is observing; Derek is not this cage partner.",
+        "rationale": "The nearby observer has entered a relationship slot. Isaac’s alpha is identified as Peter elsewhere.",
+        "confidence": 0.98,
+        "errors": [
+          "Wrong person"
+        ]
+      }
+    },
+    {
+      "id": "D3",
+      "key": "chastity-wearer#5375c703",
+      "fic": "sugar-alpha.html",
+      "para": 164,
+      "pattern": "chastity-wearer",
+      "a": "Isaac Lahey",
+      "b": "Stiles Stilinski",
+      "role": "bottom",
+      "act": "wearing a chastity device",
+      "kind": "behavior",
+      "claim": "Isaac Lahey is credited as cage wearer in the pairing Isaac Lahey/Stiles Stilinski (a device-role cue, not proof of who fitted it).",
+      "engineConfidence": null,
+      "confidenceBasis": "The current engine does not expose an individual confidence score for this cue. No score is invented from a pairing score or a vibe weight.",
+      "features": [],
+      "proposal": {
+        "revision": "67c8f6f3eaa21275",
+        "verdict": "wrong",
+        "reading": "Stiles considers and rejects that kind of submission. Isaac’s cage does not make Stiles his device partner.",
+        "rationale": "The passage describes Stiles’s preferences while Isaac is nearby.",
+        "confidence": 0.98,
+        "errors": [
+          "Wrong person"
+        ]
+      }
+    },
+    {
+      "id": "D4",
+      "key": "chastity-wearer#ef7dfe96",
+      "fic": "sugar-alpha.html",
+      "para": 424,
+      "pattern": "chastity-wearer",
+      "a": "Isaac Lahey",
+      "b": "Peter Hale",
+      "role": "bottom",
+      "act": "wearing a chastity device",
+      "kind": "behavior",
+      "claim": "Isaac Lahey is credited as cage wearer in the pairing Isaac Lahey/Peter Hale (a device-role cue, not proof of who fitted it).",
+      "engineConfidence": null,
+      "confidenceBasis": "The current engine does not expose an individual confidence score for this cue. No score is invented from a pairing score or a vibe weight.",
+      "features": [],
+      "proposal": {
+        "revision": "5bbf8915bcb6c5b9",
+        "verdict": "correct",
+        "reading": "Stiles remembers Isaac’s cage and submission to Peter.",
+        "rationale": "This is evidence of Isaac and Peter’s device dynamic, not a second present-day fitting.",
+        "confidence": 0.98,
+        "errors": []
+      }
+    },
+    {
+      "id": "D5",
+      "key": "chastity-wearer#1dc6125c",
+      "fic": "sugar-alpha.html",
+      "para": 2174,
+      "pattern": "chastity-wearer",
+      "a": "Isaac Lahey",
+      "b": "Peter Hale",
+      "role": "bottom",
+      "act": "wearing a chastity device",
+      "kind": "behavior",
+      "claim": "Isaac Lahey is credited as cage wearer in the pairing Isaac Lahey/Peter Hale (a device-role cue, not proof of who fitted it).",
+      "engineConfidence": null,
+      "confidenceBasis": "The current engine does not expose an individual confidence score for this cue. No score is invented from a pairing score or a vibe weight.",
+      "features": [],
+      "proposal": {
+        "revision": "47f1509cf124a344",
+        "verdict": "wrong",
+        "reading": "Stiles proposes a cage or ring to Derek; Derek instead chooses urethral sounding. Isaac and Peter are not the participants.",
+        "rationale": "The discussed alternative is not carried out.",
+        "confidence": 0.98,
+        "errors": [
+          "Wrong person",
+          "Wish or dialogue treated as an act"
+        ]
+      }
+    }
+  ],
+  "acts": [
+    {
+      "id": "A1",
+      "windowId": "W1",
+      "revision": "789b640bc5e2afff",
+      "act": "Chastity device wearing",
+      "performer": "Isaac Lahey",
+      "receiver": "Isaac Lahey",
+      "occurrence": "performed",
+      "evidence": {
+        "from": 42,
+        "to": 42
+      },
+      "reviewerConfidence": 0.99,
+      "note": "Isaac shows the cage he is actually wearing. Do not infer that Stiles or Derek fitted it.",
+      "engineStatus": "specific device action/state missing or only indirectly detected",
+      "engineConfidence": null,
+      "engineReadingKeys": [
+        "chastity-wearer#8eee158",
+        "chastity-wearer#3f2c8de4"
+      ],
+      "errors": [
+        "Act missed"
+      ]
+    },
+    {
+      "id": "A2",
+      "windowId": "W5",
+      "revision": "6b535a050464d766",
+      "act": "Chastity device wearing",
+      "performer": "Stiles Stilinski",
+      "receiver": "Stiles Stilinski",
+      "occurrence": "not performed",
+      "evidence": {
+        "from": 2402,
+        "to": 2403
+      },
+      "reviewerConfidence": 0.99,
+      "note": "Stiles declines cage wearing and uses an anal plug instead. This is an explicit non-wearing control, not a missed cage act.",
+      "engineStatus": "no wearer detection (appropriate)",
+      "engineConfidence": null,
+      "engineReadingKeys": [],
+      "errors": []
+    }
+  ]
+}

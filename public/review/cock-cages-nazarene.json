@@ -1,0 +1,502 @@
+{
+  "schema": "engine-fic-deep-review/v1",
+  "batchId": "cock-cages-nazarene-8c745f1-v1",
+  "engineCommit": "8c745f1",
+  "source": {
+    "file": "nazarene.html",
+    "title": "you're stumbling like the nazarene",
+    "sourceSha": "9934e4a24bca12b547ded612ec10150dcb42360604b94aa37652c981f6419b45",
+    "paragraphSha": "01bc51da36098dd220058ef9a5cbc34ae887f4aef1ddf0c08b776a1cdad2f7c4",
+    "paragraphCount": 365
+  },
+  "answerFile": "cock-cages-nazarene-answers.json",
+  "method": "Cage vocabulary screened independently, selected passages and surrounding context read closely, then compared against a fresh tagged audit. Adult context checked. Includes supported cues, proposed errors, explicit non-wearing and missed device actions. Eligibility requires a cock-cage tag: Cock Cages. Tags are not evidence that an action happens. Cage wearer/keyholder cues describe device dynamics, not penetrative top/bottom roles. A proposal, remembered fitting, actual fitting, wearing, key transfer and removal remain distinct. Source size is not an assertion of exhaustive review. Assistant confidence is subjective.",
+  "statistics": {
+    "paragraphsRead": 365,
+    "words": 13213,
+    "engineReadings": 85,
+    "reviewWindows": 6,
+    "actProposals": 5,
+    "readingAssessments": {
+      "wrong": 4,
+      "correct": 3,
+      "uncertain": 0
+    }
+  },
+  "verdicts": [],
+  "windows": [
+    {
+      "id": "W1",
+      "fic": "nazarene.html",
+      "from": 18,
+      "to": 23,
+      "title": "Wearing during a social gathering",
+      "chapter": 1,
+      "detectionIds": [
+        "D1",
+        "D2"
+      ],
+      "actIds": []
+    },
+    {
+      "id": "W2",
+      "fic": "nazarene.html",
+      "from": 80,
+      "to": 92,
+      "title": "Unlocking and immediate relocking",
+      "chapter": 1,
+      "detectionIds": [],
+      "actIds": [
+        "A1",
+        "A2"
+      ]
+    },
+    {
+      "id": "W3",
+      "fic": "nazarene.html",
+      "from": 135,
+      "to": 162,
+      "title": "Key transfer and imagined self-release",
+      "chapter": 1,
+      "detectionIds": [
+        "D3",
+        "D4",
+        "D5"
+      ],
+      "actIds": [
+        "A3"
+      ]
+    },
+    {
+      "id": "W4",
+      "fic": "nazarene.html",
+      "from": 220,
+      "to": 225,
+      "title": "Kissing the cage and taking it off",
+      "chapter": 1,
+      "detectionIds": [],
+      "actIds": [
+        "A4",
+        "A5"
+      ]
+    },
+    {
+      "id": "W5",
+      "fic": "nazarene.html",
+      "from": 307,
+      "to": 311,
+      "title": "Self-touch after release",
+      "chapter": 1,
+      "detectionIds": [
+        "D6"
+      ],
+      "actIds": []
+    },
+    {
+      "id": "W6",
+      "fic": "nazarene.html",
+      "from": 332,
+      "to": 336,
+      "title": "Past restraint during later penetration",
+      "chapter": 1,
+      "detectionIds": [
+        "D7"
+      ],
+      "actIds": []
+    }
+  ],
+  "readings": [
+    {
+      "id": "D1",
+      "key": "chastity-wearer#c0473c0e",
+      "fic": "nazarene.html",
+      "para": 18,
+      "pattern": "chastity-wearer",
+      "a": "Harry Styles",
+      "b": "Louis Tomlinson",
+      "role": "bottom",
+      "act": "wearing a chastity device",
+      "kind": "behavior",
+      "claim": "Harry Styles is credited as cage wearer in the pairing Harry Styles/Louis Tomlinson (a device-role cue, not proof of who fitted it).",
+      "engineConfidence": null,
+      "confidenceBasis": "The current engine does not expose an individual confidence score for this cue. No score is invented from a pairing score or a vibe weight.",
+      "features": [],
+      "proposal": {
+        "revision": "d2c8d28817ea0722",
+        "verdict": "correct",
+        "reading": "Harry wears the cage; Louis is his device partner.",
+        "rationale": "The genital device is explicit; it does not establish anal penetration.",
+        "confidence": 0.98,
+        "errors": []
+      }
+    },
+    {
+      "id": "D2",
+      "key": "chastity-wearer#c58576f",
+      "fic": "nazarene.html",
+      "para": 22,
+      "pattern": "chastity-wearer",
+      "a": "Harry Styles",
+      "b": "Louis Tomlinson",
+      "role": "bottom",
+      "act": "wearing a chastity device",
+      "kind": "behavior",
+      "claim": "Harry Styles is credited as cage wearer in the pairing Harry Styles/Louis Tomlinson (a device-role cue, not proof of who fitted it).",
+      "engineConfidence": null,
+      "confidenceBasis": "The current engine does not expose an individual confidence score for this cue. No score is invented from a pairing score or a vibe weight.",
+      "features": [],
+      "proposal": {
+        "revision": "d2c8d28817ea0722",
+        "verdict": "correct",
+        "reading": "Harry wears the cage; Louis is his device partner.",
+        "rationale": "The genital device is explicit; it does not establish anal penetration.",
+        "confidence": 0.98,
+        "errors": []
+      }
+    },
+    {
+      "id": "D3",
+      "key": "chastity-wearer#6c6668cb",
+      "fic": "nazarene.html",
+      "para": 135,
+      "pattern": "chastity-wearer",
+      "a": "Harry Styles",
+      "b": "Louis Tomlinson",
+      "role": "bottom",
+      "act": "wearing a chastity device",
+      "kind": "behavior",
+      "claim": "Harry Styles is credited as cage wearer in the pairing Harry Styles/Louis Tomlinson (a device-role cue, not proof of who fitted it).",
+      "engineConfidence": null,
+      "confidenceBasis": "The current engine does not expose an individual confidence score for this cue. No score is invented from a pairing score or a vibe weight.",
+      "features": [],
+      "proposal": {
+        "revision": "df83395d9a76ff6a",
+        "verdict": "wrong",
+        "reading": "Louis is the controller of Harry’s cage. Louis gives Harry the key; Harry considers self-unlocking but does not do it.",
+        "rationale": "The key can pass to its wearer without making Louis the wearer or proving removal.",
+        "confidence": 0.98,
+        "errors": [
+          "Wrong person",
+          "Roles reversed",
+          "Self-action assigned to a partner"
+        ]
+      }
+    },
+    {
+      "id": "D4",
+      "key": "chastity-keyholder#4ff33157",
+      "fic": "nazarene.html",
+      "para": 137,
+      "pattern": "chastity-keyholder",
+      "a": "Harry Styles",
+      "b": "Louis Tomlinson",
+      "role": "top",
+      "act": "holding the key to a chastity device",
+      "kind": "behavior",
+      "claim": "Harry Styles is holding the key to Louis Tomlinson's chastity device",
+      "engineConfidence": 0.9492077280440828,
+      "confidenceBasis": "Committed model probability for this exact pattern record and context.",
+      "features": [
+        1.791759469228055,
+        1.9459101490553132,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        3.4339872044851463,
+        1,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        1.0986122886681096,
+        0.6931471805599453,
+        1.0986122886681096,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "proposal": {
+        "revision": "df83395d9a76ff6a",
+        "verdict": "wrong",
+        "reading": "Louis is the controller of Harry’s cage. Louis gives Harry the key; Harry considers self-unlocking but does not do it.",
+        "rationale": "The key can pass to its wearer without making Louis the wearer or proving removal.",
+        "confidence": 0.98,
+        "errors": [
+          "Wrong person",
+          "Roles reversed",
+          "Self-action assigned to a partner"
+        ]
+      }
+    },
+    {
+      "id": "D5",
+      "key": "chastity-keyholder~elided#7f3dbbcc",
+      "fic": "nazarene.html",
+      "para": 160,
+      "pattern": "chastity-keyholder~elided",
+      "a": "Harry Styles",
+      "b": "Louis Tomlinson",
+      "role": "top",
+      "act": "holding the key to a chastity device",
+      "kind": "behavior",
+      "claim": "Harry Styles is holding the key to Louis Tomlinson's chastity device",
+      "engineConfidence": 0.9636504971375641,
+      "confidenceBasis": "Committed model probability for this exact pattern record and context.",
+      "features": [
+        1.6094379124341003,
+        1.791759469228055,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        3.1354942159291497,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        1.0986122886681096,
+        0.6931471805599453,
+        1.0986122886681096,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1
+      ],
+      "proposal": {
+        "revision": "df83395d9a76ff6a",
+        "verdict": "wrong",
+        "reading": "Louis is the controller of Harry’s cage. Louis gives Harry the key; Harry considers self-unlocking but does not do it.",
+        "rationale": "The key can pass to its wearer without making Louis the wearer or proving removal.",
+        "confidence": 0.98,
+        "errors": [
+          "Wrong person",
+          "Roles reversed",
+          "Self-action assigned to a partner"
+        ]
+      }
+    },
+    {
+      "id": "D6",
+      "key": "chastity-wearer#9df65dde",
+      "fic": "nazarene.html",
+      "para": 309,
+      "pattern": "chastity-wearer",
+      "a": "Harry Styles",
+      "b": "Louis Tomlinson",
+      "role": "bottom",
+      "act": "wearing a chastity device",
+      "kind": "behavior",
+      "claim": "Harry Styles is credited as cage wearer in the pairing Harry Styles/Louis Tomlinson (a device-role cue, not proof of who fitted it).",
+      "engineConfidence": null,
+      "confidenceBasis": "The current engine does not expose an individual confidence score for this cue. No score is invented from a pairing score or a vibe weight.",
+      "features": [],
+      "proposal": {
+        "revision": "335d37e870aea668",
+        "verdict": "wrong",
+        "reading": "Harry is uncaged and touches his own penis in the car.",
+        "rationale": "The narration explicitly contrasts freedom with earlier restraint.",
+        "confidence": 0.98,
+        "errors": [
+          "No act happened",
+          "Self-action assigned to a partner"
+        ]
+      }
+    },
+    {
+      "id": "D7",
+      "key": "chastity-wearer#c94cbb6",
+      "fic": "nazarene.html",
+      "para": 334,
+      "pattern": "chastity-wearer",
+      "a": "Harry Styles",
+      "b": "Louis Tomlinson",
+      "role": "bottom",
+      "act": "wearing a chastity device",
+      "kind": "behavior",
+      "claim": "Harry Styles is credited as cage wearer in the pairing Harry Styles/Louis Tomlinson (a device-role cue, not proof of who fitted it).",
+      "engineConfidence": null,
+      "confidenceBasis": "The current engine does not expose an individual confidence score for this cue. No score is invented from a pairing score or a vibe weight.",
+      "features": [],
+      "proposal": {
+        "revision": "49eaa1d49c606b96",
+        "verdict": "correct",
+        "reading": "Harry is uncaged during this penetration, but the reference supports his earlier cage-wearer role with Louis.",
+        "rationale": "A real remembered device dynamic is legitimate behavior evidence; it does not mean the cage is currently on.",
+        "confidence": 0.98,
+        "errors": []
+      }
+    }
+  ],
+  "acts": [
+    {
+      "id": "A1",
+      "windowId": "W2",
+      "revision": "c7052db68082e05a",
+      "act": "Chastity keyholding",
+      "performer": "Louis Tomlinson",
+      "receiver": "Harry Styles",
+      "occurrence": "performed",
+      "evidence": {
+        "from": 82,
+        "to": 84
+      },
+      "reviewerConfidence": 0.99,
+      "note": "Louis retrieves and uses Harry’s cage key.",
+      "engineStatus": "specific device action/state missing or only indirectly detected",
+      "engineConfidence": null,
+      "engineReadingKeys": [],
+      "errors": [
+        "Act missed"
+      ]
+    },
+    {
+      "id": "A2",
+      "windowId": "W2",
+      "revision": "00ef4f6f45fea6c7",
+      "act": "Chastity device relocking",
+      "performer": "Louis Tomlinson",
+      "receiver": "Harry Styles",
+      "occurrence": "performed",
+      "evidence": {
+        "from": 86,
+        "to": 91
+      },
+      "reviewerConfidence": 0.99,
+      "note": "Louis opens the lock, then fastens it again while the cage stays on. Record relocking, not removal.",
+      "engineStatus": "specific device action/state missing or only indirectly detected",
+      "engineConfidence": null,
+      "engineReadingKeys": [],
+      "errors": [
+        "Act missed"
+      ]
+    },
+    {
+      "id": "A3",
+      "windowId": "W3",
+      "revision": "f71740e88cdd2740",
+      "act": "Chastity keyholding",
+      "performer": "Harry Styles",
+      "receiver": "Harry Styles",
+      "occurrence": "performed",
+      "evidence": {
+        "from": 156,
+        "to": 162
+      },
+      "reviewerConfidence": 0.99,
+      "note": "Harry receives the key to his own cage and puts it down without freeing himself. This does not make Louis the cage wearer.",
+      "engineStatus": "specific device action/state missing or only indirectly detected",
+      "engineConfidence": null,
+      "engineReadingKeys": [
+        "chastity-keyholder~elided#7f3dbbcc"
+      ],
+      "errors": [
+        "Act missed"
+      ]
+    },
+    {
+      "id": "A4",
+      "windowId": "W4",
+      "revision": "5e692aa0953499da",
+      "act": "Chastity device stimulation",
+      "performer": "Louis Tomlinson",
+      "receiver": "Harry Styles",
+      "occurrence": "performed",
+      "evidence": {
+        "from": 222,
+        "to": 222
+      },
+      "reviewerConfidence": 0.99,
+      "note": "Louis kisses the cage itself; do not automatically infer a penile blowjob from this contact.",
+      "engineStatus": "specific device action/state missing or only indirectly detected",
+      "engineConfidence": null,
+      "engineReadingKeys": [],
+      "errors": [
+        "Act missed"
+      ]
+    },
+    {
+      "id": "A5",
+      "windowId": "W4",
+      "revision": "21ee2d64800fc095",
+      "act": "Chastity device removal",
+      "performer": "Louis Tomlinson",
+      "receiver": "Harry Styles",
+      "occurrence": "performed",
+      "evidence": {
+        "from": 223,
+        "to": 224
+      },
+      "reviewerConfidence": 0.99,
+      "note": "Louis removes the lock, cage and ring, leaving Harry uncaged.",
+      "engineStatus": "specific device action/state missing or only indirectly detected",
+      "engineConfidence": null,
+      "engineReadingKeys": [],
+      "errors": [
+        "Act missed"
+      ]
+    }
+  ]
+}

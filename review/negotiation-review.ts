@@ -2,11 +2,11 @@ import {storyBytes,verifyStory} from './review-batch-data';
 import {validateDeepFeedback} from '../scripts/deep-review-validation.mjs';
 import {ACT_CHOICES,COMMON_ERRORS,OCCURRENCES,blankFeedback,readingAgreement,actAgreement,withdrawAgreement,type DeepAct,type DeepActAnswer,type DeepAnswer,type DeepBatch,type DeepFeedback,type DeepWindow} from './deep-review-data';
 const percent=(p:number|null)=>p===null?'unavailable':Math.round(p*100)+'%';
-export async function mountDeepReview(batch:DeepBatch,loadedParagraphs?:string[]){
+export async function mountDeepReview(batch:DeepBatch,loadedParagraphs?:string[],initialFeedback?:DeepFeedback){
  const el=<T extends HTMLElement=HTMLElement>(id:string)=>document.getElementById(id) as T;
- const storageKey='fic-deep-review:'+batch.batchId;let feedback=blankFeedback(batch),paras=loadedParagraphs,at=0,storageOK=true;
+ const storageKey='fic-deep-review:'+batch.batchId;let feedback=initialFeedback?validateDeepFeedback(batch,initialFeedback):blankFeedback(batch),paras=loadedParagraphs,at=0,storageOK=true;
  const notice=(text:string)=>{el('status').textContent=text;};
- try{const saved=localStorage.getItem(storageKey);if(saved)feedback=validateDeepFeedback(batch,JSON.parse(saved));}catch{notice('Saved answers could not be restored. Your current decisions will still be exportable.');}
+ try{const saved=localStorage.getItem(storageKey);if(saved&&!initialFeedback)feedback=validateDeepFeedback(batch,JSON.parse(saved));}catch{notice('Saved answers could not be restored. Your current decisions will still be exportable.');}
  function save(){try{localStorage.setItem(storageKey,JSON.stringify(feedback));}catch{storageOK=false;el('autosave-note').textContent='Browser saving is unavailable. Export your answers before leaving this page.';}progress();}
  const verdictById=new Map(batch.readings.map(r=>[r.id,r.proposal.verdict]));
  const issue=(w:DeepWindow)=>w.detectionIds.some(id=>verdictById.get(id)!=='correct')||w.actIds.some(id=>/missing|wrong|error/.test(batch.acts.find(a=>a.id===id)!.engineStatus));

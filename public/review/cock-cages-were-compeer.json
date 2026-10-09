@@ -1,0 +1,1121 @@
+{
+  "schema": "engine-fic-deep-review/v1",
+  "batchId": "cock-cages-were-compeer-8c745f1-v1",
+  "engineCommit": "8c745f1",
+  "source": {
+    "file": "were-compeer.html",
+    "title": "A WereCompeer",
+    "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+    "paragraphSha": "db8942d563fe592c068945be850d2bc5ed6f9abcf355f4b74bc0962bcd4d71dc",
+    "paragraphCount": 1220
+  },
+  "answerFile": "cock-cages-were-compeer-answers.json",
+  "method": "Cage vocabulary screened independently, selected passages and surrounding context read closely, then compared against a fresh tagged audit. Adult context checked. Includes supported cues, proposed errors, explicit non-wearing and missed device actions. Eligibility requires a cock-cage tag: Cock Cages. Tags are not evidence that an action happens. Cage wearer/keyholder cues describe device dynamics, not penetrative top/bottom roles. A proposal, remembered fitting, actual fitting, wearing, key transfer and removal remain distinct. Source size is not an assertion of exhaustive review. Assistant confidence is subjective.",
+  "statistics": {
+    "paragraphsRead": 1220,
+    "words": 46460,
+    "engineReadings": 210,
+    "reviewWindows": 8,
+    "actProposals": 9,
+    "readingAssessments": {
+      "wrong": 1,
+      "correct": 15,
+      "uncertain": 11
+    }
+  },
+  "verdicts": [],
+  "windows": [
+    {
+      "id": "W1",
+      "fic": "were-compeer.html",
+      "from": 85,
+      "to": 96,
+      "title": "Butler assists with fitting",
+      "chapter": 2,
+      "detectionIds": [
+        "D1",
+        "D2",
+        "D3",
+        "D4",
+        "D5",
+        "D6",
+        "D7"
+      ],
+      "actIds": [
+        "A1",
+        "A2"
+      ]
+    },
+    {
+      "id": "W2",
+      "fic": "were-compeer.html",
+      "from": 131,
+      "to": 140,
+      "title": "Recollection chooses the wrong receiver",
+      "chapter": 3,
+      "detectionIds": [
+        "D8",
+        "D9",
+        "D10",
+        "D11",
+        "D12"
+      ],
+      "actIds": []
+    },
+    {
+      "id": "W3",
+      "fic": "were-compeer.html",
+      "from": 207,
+      "to": 216,
+      "title": "Removal before manual stimulation",
+      "chapter": 4,
+      "detectionIds": [
+        "D13",
+        "D14",
+        "D15",
+        "D16",
+        "D17",
+        "D18",
+        "D19"
+      ],
+      "actIds": [
+        "A3",
+        "A4"
+      ]
+    },
+    {
+      "id": "W4",
+      "fic": "were-compeer.html",
+      "from": 254,
+      "to": 257,
+      "title": "A cage without a lock",
+      "chapter": 5,
+      "detectionIds": [],
+      "actIds": [
+        "A5"
+      ]
+    },
+    {
+      "id": "W5",
+      "fic": "were-compeer.html",
+      "from": 294,
+      "to": 307,
+      "title": "Caged stimulation followed by release",
+      "chapter": 5,
+      "detectionIds": [
+        "D20",
+        "D21",
+        "D22",
+        "D23"
+      ],
+      "actIds": [
+        "A6"
+      ]
+    },
+    {
+      "id": "W6",
+      "fic": "were-compeer.html",
+      "from": 449,
+      "to": 452,
+      "title": "Fitting a smaller cage",
+      "chapter": 7,
+      "detectionIds": [
+        "D24",
+        "D25"
+      ],
+      "actIds": [
+        "A7"
+      ]
+    },
+    {
+      "id": "W7",
+      "fic": "were-compeer.html",
+      "from": 944,
+      "to": 948,
+      "title": "Removal before entering the spa",
+      "chapter": 11,
+      "detectionIds": [],
+      "actIds": [
+        "A8"
+      ]
+    },
+    {
+      "id": "W8",
+      "fic": "were-compeer.html",
+      "from": 974,
+      "to": 986,
+      "title": "Caged at work, then released",
+      "chapter": 12,
+      "detectionIds": [
+        "D26",
+        "D27"
+      ],
+      "actIds": [
+        "A9"
+      ]
+    }
+  ],
+  "readings": [
+    {
+      "id": "D1",
+      "key": "chastity-wearer#ce65da56",
+      "fic": "were-compeer.html",
+      "para": 85,
+      "pattern": "chastity-wearer",
+      "a": "Stiles Stilinski",
+      "b": "Derek Hale",
+      "role": "bottom",
+      "act": "wearing a chastity device",
+      "kind": "behavior",
+      "claim": "Stiles Stilinski is credited as cage wearer in the pairing Stiles Stilinski/Derek Hale (a device-role cue, not proof of who fitted it).",
+      "engineConfidence": null,
+      "confidenceBasis": "The current engine does not expose an individual confidence score for this cue. No score is invented from a pairing score or a vibe weight.",
+      "features": [],
+      "proposal": {
+        "revision": "4330af4e80e550c3",
+        "verdict": "uncertain",
+        "reading": "Stiles places the base ring himself; Boyd fits and locks the cage under Derek’s instructions.",
+        "rationale": "Derek is the relationship controller, but Boyd is the physical fitter. The initial plan is followed by actual fitting.",
+        "confidence": 0.65,
+        "errors": []
+      }
+    },
+    {
+      "id": "D2",
+      "key": "chastity-wearer#3eadef06",
+      "fic": "were-compeer.html",
+      "para": 87,
+      "pattern": "chastity-wearer",
+      "a": "Stiles Stilinski",
+      "b": "Derek Hale",
+      "role": "bottom",
+      "act": "wearing a chastity device",
+      "kind": "behavior",
+      "claim": "Stiles Stilinski is credited as cage wearer in the pairing Stiles Stilinski/Derek Hale (a device-role cue, not proof of who fitted it).",
+      "engineConfidence": null,
+      "confidenceBasis": "The current engine does not expose an individual confidence score for this cue. No score is invented from a pairing score or a vibe weight.",
+      "features": [],
+      "proposal": {
+        "revision": "4330af4e80e550c3",
+        "verdict": "uncertain",
+        "reading": "Stiles places the base ring himself; Boyd fits and locks the cage under Derek’s instructions.",
+        "rationale": "Derek is the relationship controller, but Boyd is the physical fitter. The initial plan is followed by actual fitting.",
+        "confidence": 0.65,
+        "errors": []
+      }
+    },
+    {
+      "id": "D3",
+      "key": "chastity-wearer#5fd00a5f",
+      "fic": "were-compeer.html",
+      "para": 88,
+      "pattern": "chastity-wearer",
+      "a": "Stiles Stilinski",
+      "b": "Derek Hale",
+      "role": "bottom",
+      "act": "wearing a chastity device",
+      "kind": "behavior",
+      "claim": "Stiles Stilinski is credited as cage wearer in the pairing Stiles Stilinski/Derek Hale (a device-role cue, not proof of who fitted it).",
+      "engineConfidence": null,
+      "confidenceBasis": "The current engine does not expose an individual confidence score for this cue. No score is invented from a pairing score or a vibe weight.",
+      "features": [],
+      "proposal": {
+        "revision": "4330af4e80e550c3",
+        "verdict": "uncertain",
+        "reading": "Stiles places the base ring himself; Boyd fits and locks the cage under Derek’s instructions.",
+        "rationale": "Derek is the relationship controller, but Boyd is the physical fitter. The initial plan is followed by actual fitting.",
+        "confidence": 0.65,
+        "errors": []
+      }
+    },
+    {
+      "id": "D4",
+      "key": "chastity-wearer#7cc04870",
+      "fic": "were-compeer.html",
+      "para": 89,
+      "pattern": "chastity-wearer",
+      "a": "Stiles Stilinski",
+      "b": "Derek Hale",
+      "role": "bottom",
+      "act": "wearing a chastity device",
+      "kind": "behavior",
+      "claim": "Stiles Stilinski is credited as cage wearer in the pairing Stiles Stilinski/Derek Hale (a device-role cue, not proof of who fitted it).",
+      "engineConfidence": null,
+      "confidenceBasis": "The current engine does not expose an individual confidence score for this cue. No score is invented from a pairing score or a vibe weight.",
+      "features": [],
+      "proposal": {
+        "revision": "4330af4e80e550c3",
+        "verdict": "uncertain",
+        "reading": "Stiles places the base ring himself; Boyd fits and locks the cage under Derek’s instructions.",
+        "rationale": "Derek is the relationship controller, but Boyd is the physical fitter. The initial plan is followed by actual fitting.",
+        "confidence": 0.65,
+        "errors": []
+      }
+    },
+    {
+      "id": "D5",
+      "key": "chastity-wearer#9d18db10",
+      "fic": "were-compeer.html",
+      "para": 93,
+      "pattern": "chastity-wearer",
+      "a": "Stiles Stilinski",
+      "b": "Derek Hale",
+      "role": "bottom",
+      "act": "wearing a chastity device",
+      "kind": "behavior",
+      "claim": "Stiles Stilinski is credited as cage wearer in the pairing Stiles Stilinski/Derek Hale (a device-role cue, not proof of who fitted it).",
+      "engineConfidence": null,
+      "confidenceBasis": "The current engine does not expose an individual confidence score for this cue. No score is invented from a pairing score or a vibe weight.",
+      "features": [],
+      "proposal": {
+        "revision": "4330af4e80e550c3",
+        "verdict": "uncertain",
+        "reading": "Stiles places the base ring himself; Boyd fits and locks the cage under Derek’s instructions.",
+        "rationale": "Derek is the relationship controller, but Boyd is the physical fitter. The initial plan is followed by actual fitting.",
+        "confidence": 0.65,
+        "errors": []
+      }
+    },
+    {
+      "id": "D6",
+      "key": "chastity-wearer#444892c4",
+      "fic": "were-compeer.html",
+      "para": 93,
+      "pattern": "chastity-wearer",
+      "a": "Stiles Stilinski",
+      "b": "Derek Hale",
+      "role": "bottom",
+      "act": "wearing a chastity device",
+      "kind": "behavior",
+      "claim": "Stiles Stilinski is credited as cage wearer in the pairing Stiles Stilinski/Derek Hale (a device-role cue, not proof of who fitted it).",
+      "engineConfidence": null,
+      "confidenceBasis": "The current engine does not expose an individual confidence score for this cue. No score is invented from a pairing score or a vibe weight.",
+      "features": [],
+      "proposal": {
+        "revision": "4330af4e80e550c3",
+        "verdict": "uncertain",
+        "reading": "Stiles places the base ring himself; Boyd fits and locks the cage under Derek’s instructions.",
+        "rationale": "Derek is the relationship controller, but Boyd is the physical fitter. The initial plan is followed by actual fitting.",
+        "confidence": 0.65,
+        "errors": []
+      }
+    },
+    {
+      "id": "D7",
+      "key": "chastity-wearer#e79e1404",
+      "fic": "were-compeer.html",
+      "para": 95,
+      "pattern": "chastity-wearer",
+      "a": "Stiles Stilinski",
+      "b": "Derek Hale",
+      "role": "bottom",
+      "act": "wearing a chastity device",
+      "kind": "behavior",
+      "claim": "Stiles Stilinski is credited as cage wearer in the pairing Stiles Stilinski/Derek Hale (a device-role cue, not proof of who fitted it).",
+      "engineConfidence": null,
+      "confidenceBasis": "The current engine does not expose an individual confidence score for this cue. No score is invented from a pairing score or a vibe weight.",
+      "features": [],
+      "proposal": {
+        "revision": "4330af4e80e550c3",
+        "verdict": "uncertain",
+        "reading": "Stiles places the base ring himself; Boyd fits and locks the cage under Derek’s instructions.",
+        "rationale": "Derek is the relationship controller, but Boyd is the physical fitter. The initial plan is followed by actual fitting.",
+        "confidence": 0.65,
+        "errors": []
+      }
+    },
+    {
+      "id": "D8",
+      "key": "chastity-wearer#9de1bcc4",
+      "fic": "were-compeer.html",
+      "para": 133,
+      "pattern": "chastity-wearer",
+      "a": "Stiles Stilinski",
+      "b": "Derek Hale",
+      "role": "bottom",
+      "act": "wearing a chastity device",
+      "kind": "behavior",
+      "claim": "Stiles Stilinski is credited as cage wearer in the pairing Stiles Stilinski/Derek Hale (a device-role cue, not proof of who fitted it).",
+      "engineConfidence": null,
+      "confidenceBasis": "The current engine does not expose an individual confidence score for this cue. No score is invented from a pairing score or a vibe weight.",
+      "features": [],
+      "proposal": {
+        "revision": "a73302bfaa849fde",
+        "verdict": "correct",
+        "reading": "Stiles displays his already fitted cage to Derek’s camera. Boyd was the fitter and Stiles the wearer.",
+        "rationale": "The remembered fitting does not mean Boyd fitted a cage on Derek.",
+        "confidence": 0.98,
+        "errors": []
+      }
+    },
+    {
+      "id": "D9",
+      "key": "chastity-lock-on#9de1bcc4",
+      "fic": "were-compeer.html",
+      "para": 133,
+      "pattern": "chastity-lock-on",
+      "a": "Vernon Boyd",
+      "b": "Derek Hale",
+      "role": "top",
+      "act": "locking a chastity device on their partner",
+      "kind": "behavior",
+      "claim": "Vernon Boyd is locking a chastity device on Derek Hale",
+      "engineConfidence": 0.8108353833699531,
+      "confidenceBasis": "Committed model probability for this exact pattern record and context.",
+      "features": [
+        1.9459101490553132,
+        2.0794415416798357,
+        0,
+        1,
+        0,
+        0,
+        1,
+        0,
+        0,
+        3.6375861597263857,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1.3862943611198906,
+        1.6094379124341003,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "proposal": {
+        "revision": "1b045152a931200a",
+        "verdict": "wrong",
+        "reading": "Boyd fitted Stiles’s cage, not Derek’s.",
+        "rationale": "Derek may have watched through the camera, but he was not the wearer.",
+        "confidence": 0.98,
+        "errors": [
+          "Wrong person"
+        ]
+      }
+    },
+    {
+      "id": "D10",
+      "key": "chastity-wearer#b7c79245",
+      "fic": "were-compeer.html",
+      "para": 134,
+      "pattern": "chastity-wearer",
+      "a": "Stiles Stilinski",
+      "b": "Derek Hale",
+      "role": "bottom",
+      "act": "wearing a chastity device",
+      "kind": "behavior",
+      "claim": "Stiles Stilinski is credited as cage wearer in the pairing Stiles Stilinski/Derek Hale (a device-role cue, not proof of who fitted it).",
+      "engineConfidence": null,
+      "confidenceBasis": "The current engine does not expose an individual confidence score for this cue. No score is invented from a pairing score or a vibe weight.",
+      "features": [],
+      "proposal": {
+        "revision": "a73302bfaa849fde",
+        "verdict": "correct",
+        "reading": "Stiles displays his already fitted cage to Derek’s camera. Boyd was the fitter and Stiles the wearer.",
+        "rationale": "The remembered fitting does not mean Boyd fitted a cage on Derek.",
+        "confidence": 0.98,
+        "errors": []
+      }
+    },
+    {
+      "id": "D11",
+      "key": "chastity-wearer#48acb944",
+      "fic": "were-compeer.html",
+      "para": 138,
+      "pattern": "chastity-wearer",
+      "a": "Stiles Stilinski",
+      "b": "Derek Hale",
+      "role": "bottom",
+      "act": "wearing a chastity device",
+      "kind": "behavior",
+      "claim": "Stiles Stilinski is credited as cage wearer in the pairing Stiles Stilinski/Derek Hale (a device-role cue, not proof of who fitted it).",
+      "engineConfidence": null,
+      "confidenceBasis": "The current engine does not expose an individual confidence score for this cue. No score is invented from a pairing score or a vibe weight.",
+      "features": [],
+      "proposal": {
+        "revision": "a73302bfaa849fde",
+        "verdict": "correct",
+        "reading": "Stiles displays his already fitted cage to Derek’s camera. Boyd was the fitter and Stiles the wearer.",
+        "rationale": "The remembered fitting does not mean Boyd fitted a cage on Derek.",
+        "confidence": 0.98,
+        "errors": []
+      }
+    },
+    {
+      "id": "D12",
+      "key": "chastity-wearer#d2c14c7d",
+      "fic": "were-compeer.html",
+      "para": 140,
+      "pattern": "chastity-wearer",
+      "a": "Stiles Stilinski",
+      "b": "Derek Hale",
+      "role": "bottom",
+      "act": "wearing a chastity device",
+      "kind": "behavior",
+      "claim": "Stiles Stilinski is credited as cage wearer in the pairing Stiles Stilinski/Derek Hale (a device-role cue, not proof of who fitted it).",
+      "engineConfidence": null,
+      "confidenceBasis": "The current engine does not expose an individual confidence score for this cue. No score is invented from a pairing score or a vibe weight.",
+      "features": [],
+      "proposal": {
+        "revision": "a73302bfaa849fde",
+        "verdict": "correct",
+        "reading": "Stiles displays his already fitted cage to Derek’s camera. Boyd was the fitter and Stiles the wearer.",
+        "rationale": "The remembered fitting does not mean Boyd fitted a cage on Derek.",
+        "confidence": 0.98,
+        "errors": []
+      }
+    },
+    {
+      "id": "D13",
+      "key": "chastity-wearer#84be4ca0",
+      "fic": "were-compeer.html",
+      "para": 212,
+      "pattern": "chastity-wearer",
+      "a": "Stiles Stilinski",
+      "b": "Derek Hale",
+      "role": "bottom",
+      "act": "wearing a chastity device",
+      "kind": "behavior",
+      "claim": "Stiles Stilinski is credited as cage wearer in the pairing Stiles Stilinski/Derek Hale (a device-role cue, not proof of who fitted it).",
+      "engineConfidence": null,
+      "confidenceBasis": "The current engine does not expose an individual confidence score for this cue. No score is invented from a pairing score or a vibe weight.",
+      "features": [],
+      "proposal": {
+        "revision": "e3bf9b78ab11b898",
+        "verdict": "uncertain",
+        "reading": "Derek removes Stiles’s cage, then gives manual and finger stimulation while discussing future caging.",
+        "rationale": "The penis is free. A device-dynamic cue can still be reasonable, but it must not imply current wearing.",
+        "confidence": 0.65,
+        "errors": [
+          "Needs more context"
+        ]
+      }
+    },
+    {
+      "id": "D14",
+      "key": "chastity-wearer#8a4839b0",
+      "fic": "were-compeer.html",
+      "para": 212,
+      "pattern": "chastity-wearer",
+      "a": "Stiles Stilinski",
+      "b": "Derek Hale",
+      "role": "bottom",
+      "act": "wearing a chastity device",
+      "kind": "behavior",
+      "claim": "Stiles Stilinski is credited as cage wearer in the pairing Stiles Stilinski/Derek Hale (a device-role cue, not proof of who fitted it).",
+      "engineConfidence": null,
+      "confidenceBasis": "The current engine does not expose an individual confidence score for this cue. No score is invented from a pairing score or a vibe weight.",
+      "features": [],
+      "proposal": {
+        "revision": "e3bf9b78ab11b898",
+        "verdict": "uncertain",
+        "reading": "Derek removes Stiles’s cage, then gives manual and finger stimulation while discussing future caging.",
+        "rationale": "The penis is free. A device-dynamic cue can still be reasonable, but it must not imply current wearing.",
+        "confidence": 0.65,
+        "errors": [
+          "Needs more context"
+        ]
+      }
+    },
+    {
+      "id": "D15",
+      "key": "chastity-keyholder#8a4839b0",
+      "fic": "were-compeer.html",
+      "para": 212,
+      "pattern": "chastity-keyholder",
+      "a": "Derek Hale",
+      "b": "Stiles Stilinski",
+      "role": "top",
+      "act": "controlling a chastity device",
+      "kind": "behavior",
+      "claim": "Derek Hale → Stiles Stilinski: controlling a chastity device (the first name is the one the engine credited)",
+      "engineConfidence": null,
+      "confidenceBasis": "The current engine does not expose an individual confidence score for this cue. No score is invented from a pairing score or a vibe weight.",
+      "features": [],
+      "proposal": {
+        "revision": "70780da741e9a1ae",
+        "verdict": "correct",
+        "reading": "Derek explains his intended control of Stiles’s cage use.",
+        "rationale": "This supports their control dynamic, but does not mean Stiles is currently wearing the removed device.",
+        "confidence": 0.98,
+        "errors": []
+      }
+    },
+    {
+      "id": "D16",
+      "key": "chastity-wearer#df424bbe",
+      "fic": "were-compeer.html",
+      "para": 213,
+      "pattern": "chastity-wearer",
+      "a": "Stiles Stilinski",
+      "b": "Derek Hale",
+      "role": "bottom",
+      "act": "wearing a chastity device",
+      "kind": "behavior",
+      "claim": "Stiles Stilinski is credited as cage wearer in the pairing Stiles Stilinski/Derek Hale (a device-role cue, not proof of who fitted it).",
+      "engineConfidence": null,
+      "confidenceBasis": "The current engine does not expose an individual confidence score for this cue. No score is invented from a pairing score or a vibe weight.",
+      "features": [],
+      "proposal": {
+        "revision": "e3bf9b78ab11b898",
+        "verdict": "uncertain",
+        "reading": "Derek removes Stiles’s cage, then gives manual and finger stimulation while discussing future caging.",
+        "rationale": "The penis is free. A device-dynamic cue can still be reasonable, but it must not imply current wearing.",
+        "confidence": 0.65,
+        "errors": [
+          "Needs more context"
+        ]
+      }
+    },
+    {
+      "id": "D17",
+      "key": "chastity-keyholder#df424bbe",
+      "fic": "were-compeer.html",
+      "para": 213,
+      "pattern": "chastity-keyholder",
+      "a": "Derek Hale",
+      "b": "Stiles Stilinski",
+      "role": "top",
+      "act": "controlling a chastity device",
+      "kind": "behavior",
+      "claim": "Derek Hale → Stiles Stilinski: controlling a chastity device (the first name is the one the engine credited)",
+      "engineConfidence": null,
+      "confidenceBasis": "The current engine does not expose an individual confidence score for this cue. No score is invented from a pairing score or a vibe weight.",
+      "features": [],
+      "proposal": {
+        "revision": "70780da741e9a1ae",
+        "verdict": "correct",
+        "reading": "Derek explains his intended control of Stiles’s cage use.",
+        "rationale": "This supports their control dynamic, but does not mean Stiles is currently wearing the removed device.",
+        "confidence": 0.98,
+        "errors": []
+      }
+    },
+    {
+      "id": "D18",
+      "key": "chastity-wearer#44693c9b",
+      "fic": "were-compeer.html",
+      "para": 216,
+      "pattern": "chastity-wearer",
+      "a": "Stiles Stilinski",
+      "b": "Derek Hale",
+      "role": "bottom",
+      "act": "wearing a chastity device",
+      "kind": "behavior",
+      "claim": "Stiles Stilinski is credited as cage wearer in the pairing Stiles Stilinski/Derek Hale (a device-role cue, not proof of who fitted it).",
+      "engineConfidence": null,
+      "confidenceBasis": "The current engine does not expose an individual confidence score for this cue. No score is invented from a pairing score or a vibe weight.",
+      "features": [],
+      "proposal": {
+        "revision": "e3bf9b78ab11b898",
+        "verdict": "uncertain",
+        "reading": "Derek removes Stiles’s cage, then gives manual and finger stimulation while discussing future caging.",
+        "rationale": "The penis is free. A device-dynamic cue can still be reasonable, but it must not imply current wearing.",
+        "confidence": 0.65,
+        "errors": [
+          "Needs more context"
+        ]
+      }
+    },
+    {
+      "id": "D19",
+      "key": "chastity-keyholder#44693c9b",
+      "fic": "were-compeer.html",
+      "para": 216,
+      "pattern": "chastity-keyholder",
+      "a": "Derek Hale",
+      "b": "Stiles Stilinski",
+      "role": "top",
+      "act": "controlling a chastity device",
+      "kind": "behavior",
+      "claim": "Derek Hale → Stiles Stilinski: controlling a chastity device (the first name is the one the engine credited)",
+      "engineConfidence": null,
+      "confidenceBasis": "The current engine does not expose an individual confidence score for this cue. No score is invented from a pairing score or a vibe weight.",
+      "features": [],
+      "proposal": {
+        "revision": "70780da741e9a1ae",
+        "verdict": "correct",
+        "reading": "Derek explains his intended control of Stiles’s cage use.",
+        "rationale": "This supports their control dynamic, but does not mean Stiles is currently wearing the removed device.",
+        "confidence": 0.98,
+        "errors": []
+      }
+    },
+    {
+      "id": "D20",
+      "key": "chastity-keyholder#77557881",
+      "fic": "were-compeer.html",
+      "para": 296,
+      "pattern": "chastity-keyholder",
+      "a": "Derek Hale",
+      "b": "Stiles Stilinski",
+      "role": "top",
+      "act": "controlling a chastity device",
+      "kind": "behavior",
+      "claim": "Derek Hale → Stiles Stilinski: controlling a chastity device (the first name is the one the engine credited)",
+      "engineConfidence": null,
+      "confidenceBasis": "The current engine does not expose an individual confidence score for this cue. No score is invented from a pairing score or a vibe weight.",
+      "features": [],
+      "proposal": {
+        "revision": "13e5948c426a85d3",
+        "verdict": "correct",
+        "reading": "Stiles is caged during Derek’s prostate stimulation, then Derek frees his penis and strokes it.",
+        "rationale": "The state changes in the passage; earlier wearing remains supported.",
+        "confidence": 0.98,
+        "errors": []
+      }
+    },
+    {
+      "id": "D21",
+      "key": "chastity-wearer#97219c41",
+      "fic": "were-compeer.html",
+      "para": 297,
+      "pattern": "chastity-wearer",
+      "a": "Stiles Stilinski",
+      "b": "Derek Hale",
+      "role": "bottom",
+      "act": "wearing a chastity device",
+      "kind": "behavior",
+      "claim": "Stiles Stilinski is credited as cage wearer in the pairing Stiles Stilinski/Derek Hale (a device-role cue, not proof of who fitted it).",
+      "engineConfidence": null,
+      "confidenceBasis": "The current engine does not expose an individual confidence score for this cue. No score is invented from a pairing score or a vibe weight.",
+      "features": [],
+      "proposal": {
+        "revision": "13e5948c426a85d3",
+        "verdict": "correct",
+        "reading": "Stiles is caged during Derek’s prostate stimulation, then Derek frees his penis and strokes it.",
+        "rationale": "The state changes in the passage; earlier wearing remains supported.",
+        "confidence": 0.98,
+        "errors": []
+      }
+    },
+    {
+      "id": "D22",
+      "key": "chastity-wearer#b26bd5eb",
+      "fic": "were-compeer.html",
+      "para": 298,
+      "pattern": "chastity-wearer",
+      "a": "Stiles Stilinski",
+      "b": "Derek Hale",
+      "role": "bottom",
+      "act": "wearing a chastity device",
+      "kind": "behavior",
+      "claim": "Stiles Stilinski is credited as cage wearer in the pairing Stiles Stilinski/Derek Hale (a device-role cue, not proof of who fitted it).",
+      "engineConfidence": null,
+      "confidenceBasis": "The current engine does not expose an individual confidence score for this cue. No score is invented from a pairing score or a vibe weight.",
+      "features": [],
+      "proposal": {
+        "revision": "13e5948c426a85d3",
+        "verdict": "correct",
+        "reading": "Stiles is caged during Derek’s prostate stimulation, then Derek frees his penis and strokes it.",
+        "rationale": "The state changes in the passage; earlier wearing remains supported.",
+        "confidence": 0.98,
+        "errors": []
+      }
+    },
+    {
+      "id": "D23",
+      "key": "chastity-wearer#2b4a7533",
+      "fic": "were-compeer.html",
+      "para": 302,
+      "pattern": "chastity-wearer",
+      "a": "Stiles Stilinski",
+      "b": "Derek Hale",
+      "role": "bottom",
+      "act": "wearing a chastity device",
+      "kind": "behavior",
+      "claim": "Stiles Stilinski is credited as cage wearer in the pairing Stiles Stilinski/Derek Hale (a device-role cue, not proof of who fitted it).",
+      "engineConfidence": null,
+      "confidenceBasis": "The current engine does not expose an individual confidence score for this cue. No score is invented from a pairing score or a vibe weight.",
+      "features": [],
+      "proposal": {
+        "revision": "13e5948c426a85d3",
+        "verdict": "correct",
+        "reading": "Stiles is caged during Derek’s prostate stimulation, then Derek frees his penis and strokes it.",
+        "rationale": "The state changes in the passage; earlier wearing remains supported.",
+        "confidence": 0.98,
+        "errors": []
+      }
+    },
+    {
+      "id": "D24",
+      "key": "chastity-wearer#bb67d241",
+      "fic": "were-compeer.html",
+      "para": 450,
+      "pattern": "chastity-wearer",
+      "a": "Stiles Stilinski",
+      "b": "Derek Hale",
+      "role": "bottom",
+      "act": "wearing a chastity device",
+      "kind": "behavior",
+      "claim": "Stiles Stilinski is credited as cage wearer in the pairing Stiles Stilinski/Derek Hale (a device-role cue, not proof of who fitted it).",
+      "engineConfidence": null,
+      "confidenceBasis": "The current engine does not expose an individual confidence score for this cue. No score is invented from a pairing score or a vibe weight.",
+      "features": [],
+      "proposal": {
+        "revision": "665d2a38986be4e7",
+        "verdict": "correct",
+        "reading": "Derek fits and locks a smaller cage around Stiles.",
+        "rationale": "The surrounding desire does not make the separately narrated fitting hypothetical.",
+        "confidence": 0.98,
+        "errors": []
+      }
+    },
+    {
+      "id": "D25",
+      "key": "chastity-wearer#42fe5516",
+      "fic": "were-compeer.html",
+      "para": 451,
+      "pattern": "chastity-wearer",
+      "a": "Stiles Stilinski",
+      "b": "Derek Hale",
+      "role": "bottom",
+      "act": "wearing a chastity device",
+      "kind": "behavior",
+      "claim": "Stiles Stilinski is credited as cage wearer in the pairing Stiles Stilinski/Derek Hale (a device-role cue, not proof of who fitted it).",
+      "engineConfidence": null,
+      "confidenceBasis": "The current engine does not expose an individual confidence score for this cue. No score is invented from a pairing score or a vibe weight.",
+      "features": [],
+      "proposal": {
+        "revision": "665d2a38986be4e7",
+        "verdict": "correct",
+        "reading": "Derek fits and locks a smaller cage around Stiles.",
+        "rationale": "The surrounding desire does not make the separately narrated fitting hypothetical.",
+        "confidence": 0.98,
+        "errors": []
+      }
+    },
+    {
+      "id": "D26",
+      "key": "chastity-wearer#5d65e7b5",
+      "fic": "were-compeer.html",
+      "para": 976,
+      "pattern": "chastity-wearer",
+      "a": "Stiles Stilinski",
+      "b": "Derek Hale",
+      "role": "bottom",
+      "act": "wearing a chastity device",
+      "kind": "behavior",
+      "claim": "Stiles Stilinski is credited as cage wearer in the pairing Stiles Stilinski/Derek Hale (a device-role cue, not proof of who fitted it).",
+      "engineConfidence": null,
+      "confidenceBasis": "The current engine does not expose an individual confidence score for this cue. No score is invented from a pairing score or a vibe weight.",
+      "features": [],
+      "proposal": {
+        "revision": "56f85a927d59ac5a",
+        "verdict": "correct",
+        "reading": "Stiles wears the morning cage while servicing Derek; Derek later removes it.",
+        "rationale": "The earlier fitting is remembered; the current wearing and later removal are distinct.",
+        "confidence": 0.98,
+        "errors": []
+      }
+    },
+    {
+      "id": "D27",
+      "key": "chastity-keyholder~elided#b2fb8db7",
+      "fic": "were-compeer.html",
+      "para": 986,
+      "pattern": "chastity-keyholder~elided",
+      "a": "Derek Hale",
+      "b": "Stiles Stilinski",
+      "role": "top",
+      "act": "holding the key to a chastity device",
+      "kind": "behavior",
+      "claim": "Derek Hale is holding the key to Stiles Stilinski's chastity device",
+      "engineConfidence": 0.9432566763326597,
+      "confidenceBasis": "Committed model probability for this exact pattern record and context.",
+      "features": [
+        1.9459101490553132,
+        2.5649493574615367,
+        1,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        2.8903717578961645,
+        1,
+        1,
+        0,
+        1,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        1.9459101490553132,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        0,
+        0,
+        1,
+        0,
+        0,
+        1
+      ],
+      "proposal": {
+        "revision": "56f85a927d59ac5a",
+        "verdict": "correct",
+        "reading": "Stiles wears the morning cage while servicing Derek; Derek later removes it.",
+        "rationale": "The earlier fitting is remembered; the current wearing and later removal are distinct.",
+        "confidence": 0.98,
+        "errors": []
+      }
+    }
+  ],
+  "acts": [
+    {
+      "id": "A1",
+      "windowId": "W1",
+      "revision": "1066d3d6a5b70972",
+      "act": "Chastity device fitting",
+      "performer": "Stiles Stilinski",
+      "receiver": "Stiles Stilinski",
+      "occurrence": "performed",
+      "evidence": {
+        "from": 93,
+        "to": 93
+      },
+      "reviewerConfidence": 0.99,
+      "note": "Stiles first places the base ring himself.",
+      "engineStatus": "specific device action/state missing or only indirectly detected",
+      "engineConfidence": null,
+      "engineReadingKeys": [
+        "chastity-wearer#9d18db10",
+        "chastity-wearer#444892c4"
+      ],
+      "errors": [
+        "Act missed"
+      ]
+    },
+    {
+      "id": "A2",
+      "windowId": "W1",
+      "revision": "001debcbb11304c3",
+      "act": "Chastity device fitting",
+      "performer": "Vernon Boyd",
+      "receiver": "Stiles Stilinski",
+      "occurrence": "performed",
+      "evidence": {
+        "from": 93,
+        "to": 93
+      },
+      "reviewerConfidence": 0.99,
+      "note": "Boyd positions and locks the cage over Stiles’s penis. Derek is not physically performing this fitting.",
+      "engineStatus": "specific device action/state missing or only indirectly detected",
+      "engineConfidence": null,
+      "engineReadingKeys": [
+        "chastity-wearer#9d18db10",
+        "chastity-wearer#444892c4"
+      ],
+      "errors": [
+        "Act missed"
+      ]
+    },
+    {
+      "id": "A3",
+      "windowId": "W3",
+      "revision": "94ad483ed4532d5e",
+      "act": "Chastity device removal",
+      "performer": "Derek Hale",
+      "receiver": "Stiles Stilinski",
+      "occurrence": "performed",
+      "evidence": {
+        "from": 209,
+        "to": 209
+      },
+      "reviewerConfidence": 0.99,
+      "note": "Derek removes the cage before the following genital stimulation.",
+      "engineStatus": "specific device action/state missing or only indirectly detected",
+      "engineConfidence": null,
+      "engineReadingKeys": [],
+      "errors": [
+        "Act missed"
+      ]
+    },
+    {
+      "id": "A4",
+      "windowId": "W3",
+      "revision": "4c2f1e31da89be70",
+      "act": "Handjob",
+      "performer": "Derek Hale",
+      "receiver": "Stiles Stilinski",
+      "occurrence": "performed",
+      "evidence": {
+        "from": 211,
+        "to": 212
+      },
+      "reviewerConfidence": 0.99,
+      "note": "Derek strokes Stiles’s penis after uncaging, while also inserting fingers anally. This is actual direct manual stimulation after release.",
+      "engineStatus": "specific device action/state missing or only indirectly detected",
+      "engineConfidence": null,
+      "engineReadingKeys": [
+        "chastity-wearer#84be4ca0",
+        "chastity-wearer#8a4839b0",
+        "chastity-keyholder#8a4839b0"
+      ],
+      "errors": [
+        "Act missed"
+      ]
+    },
+    {
+      "id": "A5",
+      "windowId": "W4",
+      "revision": "f0f85e9ea6c35aae",
+      "act": "Chastity device fitting",
+      "performer": "Derek Hale",
+      "receiver": "Stiles Stilinski",
+      "occurrence": "performed",
+      "evidence": {
+        "from": 255,
+        "to": 255
+      },
+      "reviewerConfidence": 0.99,
+      "note": "Derek fits a lock-free cage. Wearing and fitting are real, but keyholding is not established.",
+      "engineStatus": "specific device action/state missing or only indirectly detected",
+      "engineConfidence": null,
+      "engineReadingKeys": [],
+      "errors": [
+        "Act missed"
+      ]
+    },
+    {
+      "id": "A6",
+      "windowId": "W5",
+      "revision": "f7148475161a0166",
+      "act": "Chastity device removal",
+      "performer": "Derek Hale",
+      "receiver": "Stiles Stilinski",
+      "occurrence": "performed",
+      "evidence": {
+        "from": 305,
+        "to": 305
+      },
+      "reviewerConfidence": 0.96,
+      "note": "Derek adjusts the lock-free cage to free Stiles’s penis before stroking it. This removal is inferred from the restored erection and hand access.",
+      "engineStatus": "specific device action/state missing or only indirectly detected",
+      "engineConfidence": null,
+      "engineReadingKeys": [],
+      "errors": [
+        "Act missed"
+      ]
+    },
+    {
+      "id": "A7",
+      "windowId": "W6",
+      "revision": "1de117595caab91e",
+      "act": "Chastity device fitting",
+      "performer": "Derek Hale",
+      "receiver": "Stiles Stilinski",
+      "occurrence": "performed",
+      "evidence": {
+        "from": 450,
+        "to": 450
+      },
+      "reviewerConfidence": 0.99,
+      "note": "Derek fits and locks the smaller device around Stiles.",
+      "engineStatus": "specific device action/state missing or only indirectly detected",
+      "engineConfidence": null,
+      "engineReadingKeys": [
+        "chastity-wearer#bb67d241"
+      ],
+      "errors": [
+        "Act missed"
+      ]
+    },
+    {
+      "id": "A8",
+      "windowId": "W7",
+      "revision": "db3ff0b486c30c67",
+      "act": "Chastity device removal",
+      "performer": "Derek Hale",
+      "receiver": "Stiles Stilinski",
+      "occurrence": "performed",
+      "evidence": {
+        "from": 946,
+        "to": 946
+      },
+      "reviewerConfidence": 0.99,
+      "note": "Derek removes Stiles’s cage before they enter the spa.",
+      "engineStatus": "specific device action/state missing or only indirectly detected",
+      "engineConfidence": null,
+      "engineReadingKeys": [],
+      "errors": [
+        "Act missed"
+      ]
+    },
+    {
+      "id": "A9",
+      "windowId": "W8",
+      "revision": "8bb9cfec9218fd85",
+      "act": "Chastity device removal",
+      "performer": "Derek Hale",
+      "receiver": "Stiles Stilinski",
+      "occurrence": "performed",
+      "evidence": {
+        "from": 986,
+        "to": 986
+      },
+      "reviewerConfidence": 0.99,
+      "note": "Derek removes Stiles’s cage after their office encounter.",
+      "engineStatus": "related hint detected; specific device action reviewed separately",
+      "engineConfidence": 0.9432566763326597,
+      "engineReadingKeys": [
+        "chastity-keyholder~elided#b2fb8db7"
+      ],
+      "errors": []
+    }
+  ]
+}

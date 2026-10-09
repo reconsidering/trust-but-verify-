@@ -1,0 +1,414 @@
+{
+  "schema": "engine-fic-deep-review/v1",
+  "batchId": "cock-cages-prince-prisoner-puppy-8c745f1-v1",
+  "engineCommit": "8c745f1",
+  "source": {
+    "file": "prince-prisoner-puppy.html",
+    "title": "Prince, Prisoner, Puppy, Parent",
+    "sourceSha": "cb68b9eaa778291f8ecbe13bcdb59ee9a7d3f0a170fa1ec35347e4663d6714fa",
+    "paragraphSha": "9cd533d1f684a763a828c7145a87d767ffe3b70d60bdcc1e05f76542a1281393",
+    "paragraphCount": 958
+  },
+  "answerFile": "cock-cages-prince-prisoner-puppy-answers.json",
+  "method": "Cage vocabulary screened independently, selected passages and surrounding context read closely, then compared against a fresh tagged audit. Adult context checked. Includes supported cues, proposed errors, explicit non-wearing and missed device actions. Eligibility requires a cock-cage tag: Cock Cages. Tags are not evidence that an action happens. Cage wearer/keyholder cues describe device dynamics, not penetrative top/bottom roles. A proposal, remembered fitting, actual fitting, wearing, key transfer and removal remain distinct. Source size is not an assertion of exhaustive review. Assistant confidence is subjective.",
+  "statistics": {
+    "paragraphsRead": 958,
+    "words": 39567,
+    "engineReadings": 237,
+    "reviewWindows": 3,
+    "actProposals": 2,
+    "readingAssessments": {
+      "wrong": 0,
+      "correct": 10,
+      "uncertain": 0
+    }
+  },
+  "verdicts": [],
+  "windows": [
+    {
+      "id": "W1",
+      "fic": "prince-prisoner-puppy.html",
+      "from": 427,
+      "to": 434,
+      "title": "Wearing and cage contact",
+      "chapter": 1,
+      "detectionIds": [
+        "D1",
+        "D2",
+        "D3"
+      ],
+      "actIds": [
+        "A1"
+      ]
+    },
+    {
+      "id": "W2",
+      "fic": "prince-prisoner-puppy.html",
+      "from": 450,
+      "to": 456,
+      "title": "Self-stimulation while caged",
+      "chapter": 1,
+      "detectionIds": [
+        "D4",
+        "D5",
+        "D6",
+        "D7",
+        "D8",
+        "D9"
+      ],
+      "actIds": []
+    },
+    {
+      "id": "W3",
+      "fic": "prince-prisoner-puppy.html",
+      "from": 463,
+      "to": 467,
+      "title": "Partner removes the cage",
+      "chapter": 1,
+      "detectionIds": [
+        "D10"
+      ],
+      "actIds": [
+        "A2"
+      ]
+    }
+  ],
+  "readings": [
+    {
+      "id": "D1",
+      "key": "chastity-wearer#855a9308",
+      "fic": "prince-prisoner-puppy.html",
+      "para": 429,
+      "pattern": "chastity-wearer",
+      "a": "Telemachus",
+      "b": "Antinous",
+      "role": "bottom",
+      "act": "wearing a chastity device",
+      "kind": "behavior",
+      "claim": "Telemachus is credited as cage wearer in the pairing Telemachus/Antinous (a device-role cue, not proof of who fitted it).",
+      "engineConfidence": null,
+      "confidenceBasis": "The current engine does not expose an individual confidence score for this cue. No score is invented from a pairing score or a vibe weight.",
+      "features": [],
+      "proposal": {
+        "revision": "8843d464dd67fa9d",
+        "verdict": "correct",
+        "reading": "Telemachus wears the cage while Antinous rubs over it and massages his testicles.",
+        "rationale": "External genital contact is not a new anal penetration.",
+        "confidence": 0.98,
+        "errors": []
+      }
+    },
+    {
+      "id": "D2",
+      "key": "chastity-wearer#a34f0040",
+      "fic": "prince-prisoner-puppy.html",
+      "para": 432,
+      "pattern": "chastity-wearer",
+      "a": "Telemachus",
+      "b": "Antinous",
+      "role": "bottom",
+      "act": "wearing a chastity device",
+      "kind": "behavior",
+      "claim": "Telemachus is credited as cage wearer in the pairing Telemachus/Antinous (a device-role cue, not proof of who fitted it).",
+      "engineConfidence": null,
+      "confidenceBasis": "The current engine does not expose an individual confidence score for this cue. No score is invented from a pairing score or a vibe weight.",
+      "features": [],
+      "proposal": {
+        "revision": "8843d464dd67fa9d",
+        "verdict": "correct",
+        "reading": "Telemachus wears the cage while Antinous rubs over it and massages his testicles.",
+        "rationale": "External genital contact is not a new anal penetration.",
+        "confidence": 0.98,
+        "errors": []
+      }
+    },
+    {
+      "id": "D3",
+      "key": "chastity-wearer#aa1c98b2",
+      "fic": "prince-prisoner-puppy.html",
+      "para": 433,
+      "pattern": "chastity-wearer",
+      "a": "Telemachus",
+      "b": "Antinous",
+      "role": "bottom",
+      "act": "wearing a chastity device",
+      "kind": "behavior",
+      "claim": "Telemachus is credited as cage wearer in the pairing Telemachus/Antinous (a device-role cue, not proof of who fitted it).",
+      "engineConfidence": null,
+      "confidenceBasis": "The current engine does not expose an individual confidence score for this cue. No score is invented from a pairing score or a vibe weight.",
+      "features": [],
+      "proposal": {
+        "revision": "8843d464dd67fa9d",
+        "verdict": "correct",
+        "reading": "Telemachus wears the cage while Antinous rubs over it and massages his testicles.",
+        "rationale": "External genital contact is not a new anal penetration.",
+        "confidence": 0.98,
+        "errors": []
+      }
+    },
+    {
+      "id": "D4",
+      "key": "chastity-wearer#b3d236c1",
+      "fic": "prince-prisoner-puppy.html",
+      "para": 450,
+      "pattern": "chastity-wearer",
+      "a": "Telemachus",
+      "b": "Antinous",
+      "role": "bottom",
+      "act": "wearing a chastity device",
+      "kind": "behavior",
+      "claim": "Telemachus is credited as cage wearer in the pairing Telemachus/Antinous (a device-role cue, not proof of who fitted it).",
+      "engineConfidence": null,
+      "confidenceBasis": "The current engine does not expose an individual confidence score for this cue. No score is invented from a pairing score or a vibe weight.",
+      "features": [],
+      "proposal": {
+        "revision": "8b5d4d3b4cd8001d",
+        "verdict": "correct",
+        "reading": "Telemachus remains caged while touching his testicles and fingering his own anus to orgasm.",
+        "rationale": "Antinous is away. Self-fingering and wearing a cage are separate facts.",
+        "confidence": 0.98,
+        "errors": []
+      }
+    },
+    {
+      "id": "D5",
+      "key": "chastity-wearer#d981aeba",
+      "fic": "prince-prisoner-puppy.html",
+      "para": 451,
+      "pattern": "chastity-wearer",
+      "a": "Telemachus",
+      "b": "Antinous",
+      "role": "bottom",
+      "act": "wearing a chastity device",
+      "kind": "behavior",
+      "claim": "Telemachus is credited as cage wearer in the pairing Telemachus/Antinous (a device-role cue, not proof of who fitted it).",
+      "engineConfidence": null,
+      "confidenceBasis": "The current engine does not expose an individual confidence score for this cue. No score is invented from a pairing score or a vibe weight.",
+      "features": [],
+      "proposal": {
+        "revision": "8b5d4d3b4cd8001d",
+        "verdict": "correct",
+        "reading": "Telemachus remains caged while touching his testicles and fingering his own anus to orgasm.",
+        "rationale": "Antinous is away. Self-fingering and wearing a cage are separate facts.",
+        "confidence": 0.98,
+        "errors": []
+      }
+    },
+    {
+      "id": "D6",
+      "key": "chastity-wearer#214e3e3a",
+      "fic": "prince-prisoner-puppy.html",
+      "para": 452,
+      "pattern": "chastity-wearer",
+      "a": "Telemachus",
+      "b": "Antinous",
+      "role": "bottom",
+      "act": "wearing a chastity device",
+      "kind": "behavior",
+      "claim": "Telemachus is credited as cage wearer in the pairing Telemachus/Antinous (a device-role cue, not proof of who fitted it).",
+      "engineConfidence": null,
+      "confidenceBasis": "The current engine does not expose an individual confidence score for this cue. No score is invented from a pairing score or a vibe weight.",
+      "features": [],
+      "proposal": {
+        "revision": "8b5d4d3b4cd8001d",
+        "verdict": "correct",
+        "reading": "Telemachus remains caged while touching his testicles and fingering his own anus to orgasm.",
+        "rationale": "Antinous is away. Self-fingering and wearing a cage are separate facts.",
+        "confidence": 0.98,
+        "errors": []
+      }
+    },
+    {
+      "id": "D7",
+      "key": "chastity-wearer#17b11f3d",
+      "fic": "prince-prisoner-puppy.html",
+      "para": 453,
+      "pattern": "chastity-wearer",
+      "a": "Telemachus",
+      "b": "Antinous",
+      "role": "bottom",
+      "act": "wearing a chastity device",
+      "kind": "behavior",
+      "claim": "Telemachus is credited as cage wearer in the pairing Telemachus/Antinous (a device-role cue, not proof of who fitted it).",
+      "engineConfidence": null,
+      "confidenceBasis": "The current engine does not expose an individual confidence score for this cue. No score is invented from a pairing score or a vibe weight.",
+      "features": [],
+      "proposal": {
+        "revision": "8b5d4d3b4cd8001d",
+        "verdict": "correct",
+        "reading": "Telemachus remains caged while touching his testicles and fingering his own anus to orgasm.",
+        "rationale": "Antinous is away. Self-fingering and wearing a cage are separate facts.",
+        "confidence": 0.98,
+        "errors": []
+      }
+    },
+    {
+      "id": "D8",
+      "key": "chastity-wearer#e6c8c299",
+      "fic": "prince-prisoner-puppy.html",
+      "para": 455,
+      "pattern": "chastity-wearer",
+      "a": "Telemachus",
+      "b": "Antinous",
+      "role": "bottom",
+      "act": "wearing a chastity device",
+      "kind": "behavior",
+      "claim": "Telemachus is credited as cage wearer in the pairing Telemachus/Antinous (a device-role cue, not proof of who fitted it).",
+      "engineConfidence": null,
+      "confidenceBasis": "The current engine does not expose an individual confidence score for this cue. No score is invented from a pairing score or a vibe weight.",
+      "features": [],
+      "proposal": {
+        "revision": "8b5d4d3b4cd8001d",
+        "verdict": "correct",
+        "reading": "Telemachus remains caged while touching his testicles and fingering his own anus to orgasm.",
+        "rationale": "Antinous is away. Self-fingering and wearing a cage are separate facts.",
+        "confidence": 0.98,
+        "errors": []
+      }
+    },
+    {
+      "id": "D9",
+      "key": "chastity-wearer#df175c0f",
+      "fic": "prince-prisoner-puppy.html",
+      "para": 455,
+      "pattern": "chastity-wearer",
+      "a": "Telemachus",
+      "b": "Antinous",
+      "role": "bottom",
+      "act": "wearing a chastity device",
+      "kind": "behavior",
+      "claim": "Telemachus is credited as cage wearer in the pairing Telemachus/Antinous (a device-role cue, not proof of who fitted it).",
+      "engineConfidence": null,
+      "confidenceBasis": "The current engine does not expose an individual confidence score for this cue. No score is invented from a pairing score or a vibe weight.",
+      "features": [],
+      "proposal": {
+        "revision": "8b5d4d3b4cd8001d",
+        "verdict": "correct",
+        "reading": "Telemachus remains caged while touching his testicles and fingering his own anus to orgasm.",
+        "rationale": "Antinous is away. Self-fingering and wearing a cage are separate facts.",
+        "confidence": 0.98,
+        "errors": []
+      }
+    },
+    {
+      "id": "D10",
+      "key": "chastity-keyholder~elided#4a9803f2",
+      "fic": "prince-prisoner-puppy.html",
+      "para": 465,
+      "pattern": "chastity-keyholder~elided",
+      "a": "Antinous",
+      "b": "Telemachus",
+      "role": "top",
+      "act": "holding the key to a chastity device",
+      "kind": "behavior",
+      "claim": "Antinous is holding the key to Telemachus's chastity device",
+      "engineConfidence": 0.9485332799069448,
+      "confidenceBasis": "Committed model probability for this exact pattern record and context.",
+      "features": [
+        1.9459101490553132,
+        2.5649493574615367,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        2.772588722239781,
+        1,
+        1,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        1,
+        0,
+        1,
+        1.3862943611198906,
+        1.0986122886681096,
+        1.3862943611198906,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "proposal": {
+        "revision": "8d9c79166f0c45b9",
+        "verdict": "correct",
+        "reading": "Antinous unlocks and removes Telemachus’s cage.",
+        "rationale": "The subsequent erection follows removal; Telemachus does not remove it himself.",
+        "confidence": 0.98,
+        "errors": []
+      }
+    }
+  ],
+  "acts": [
+    {
+      "id": "A1",
+      "windowId": "W1",
+      "revision": "9449e9cb961647a3",
+      "act": "Chastity device stimulation",
+      "performer": "Antinous",
+      "receiver": "Telemachus",
+      "occurrence": "performed",
+      "evidence": {
+        "from": 432,
+        "to": 432
+      },
+      "reviewerConfidence": 0.99,
+      "note": "Antinous rubs the cage before separately massaging Telemachus’s testicles.",
+      "engineStatus": "specific device action/state missing or only indirectly detected",
+      "engineConfidence": null,
+      "engineReadingKeys": [
+        "chastity-wearer#a34f0040"
+      ],
+      "errors": [
+        "Act missed"
+      ]
+    },
+    {
+      "id": "A2",
+      "windowId": "W3",
+      "revision": "59f693d43e7e5db0",
+      "act": "Chastity device removal",
+      "performer": "Antinous",
+      "receiver": "Telemachus",
+      "occurrence": "performed",
+      "evidence": {
+        "from": 465,
+        "to": 465
+      },
+      "reviewerConfidence": 0.99,
+      "note": "Antinous unlocks and takes the cage off Telemachus.",
+      "engineStatus": "related hint detected; specific device action reviewed separately",
+      "engineConfidence": 0.9485332799069448,
+      "engineReadingKeys": [
+        "chastity-keyholder~elided#4a9803f2"
+      ],
+      "errors": []
+    }
+  ]
+}
