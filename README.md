@@ -27,6 +27,13 @@ A small web app: drop in an AO3 download (PDF, EPUB, HTML, or TXT) and it tells 
    Pattern-engine scores are heuristic estimates; optional Claude scores are its
    own estimates, not measured accuracy guarantees.
 
+   Under **Anal**, a **Bottom has a hands-free orgasm** indicator appears when
+   at least one explicit hands-free orgasm reading scores 75% or higher. Expand
+   it for the character, confidence, location and evidence. Wishes, fantasies,
+   historical mentions and unscored readings do not trigger it. A prostate
+   orgasm alone does not establish that the orgasm was hands-free. This display
+   does not add an anal penetration scene.
+
    Every act also shows a **by-person** confidence for each partner in each role (e.g. Dunk tops 97% /
    bottoms 9%; Aerion sucks cock 97% / gets sucked 97%). The roles are scored independently, so someone who
    switches scores high on both. Each score is built from that person's scenes in the role (scenes worked

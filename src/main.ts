@@ -1,5 +1,6 @@
 import "./style.css";
 import { renderAnalSwitchIndicator } from "./anal-switch";
+import { renderHandsFreeOrgasmIndicator } from "./hands-free-orgasm";
 import Anthropic from "@anthropic-ai/sdk";
 import { hasAo3Meta, romanticPairings } from "./ao3";
 import { MODELS, type ModelId, RefusalError, analyzeWork, estimateTokens, excerptExplicit } from "./analyze";
@@ -929,6 +930,10 @@ function renderAct(kind: ActKind, act: ActResult, pairing: string, source: strin
   }
   card.append(el("p", "summary", act.summary));
   card.append(renderConfidence(act.confidence));
+  if (kind === "anal") {
+    const orgasm = renderHandsFreeOrgasmIndicator(act, pairing);
+    if (orgasm) card.append(orgasm);
+  }
   if (act.people?.some((p) => p.top > 0.05 || p.bottom > 0.05)) card.append(renderOdds(kind, act.people));
   if (act.desires.length) card.append(renderDesires(act.desires, kind, pairing, source));
 
