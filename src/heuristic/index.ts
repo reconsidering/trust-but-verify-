@@ -123,6 +123,7 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
   }
   const allTags = [...meta.freeforms, ...noteTags];
   const NAMES = cast.aliasPattern || "(?!)";
+  const reactionLead = new RegExp(`^\\W*(?:${NAMES}|[Hh]e|[Ss]he|[Tt]hey|I)\\s+(?:can\\s+|could\\s+|can['’]t\\s+|cannot\\s+|doesn['’]t\\s+|didn['’]t\\s+)?(?:help(?:\\s+the)?\\s+(?:noise|sound)|stop\\s+(?:the\\s+)?(?:noise|sound)|feel(?:s|ing)?|felt|hear(?:s|ing)?|heard|shiver(?:s|ed)?|shudder(?:s|ed)?|tremble(?:s|d)?|swallow(?:s|ed)?|blush(?:es|ed)?|flush(?:es|ed)?|hum(?:s|med)?|moan(?:s|ed)?|whine(?:s|d)?|gasp(?:s|ed)?|choke(?:s|d)?)\\b`);
   const nameRe = new RegExp(`\\b(?:${NAMES})(?:['’]s)?\\b`, "g");
   // Who is on the page besides the cast: names that keep turning up as the subject of a sentence ("Sam smiled", "Greg had pulled") but
   // aren't cast members, and stand-ins for strangers ("the waiter", "the twink"). A he or a left-out subject right after one of
@@ -217,6 +218,7 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
   let chapters: string[] = [];
   let chapter = "";
   let prevSpeaker: Character | undefined;
+  let prevSpeakerPara = -1;
   /** For a paragraph opening with a quote tagged only "he says": whoever didn't speak last. */
   let turnSpeaker: Character | undefined;
   let turnQuote: Quote | undefined;
@@ -652,6 +654,7 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
     const strictHits = new Set((near.toLowerCase().match(SEX_STRICT) ?? []).map((w) => w.replace(/(?:s|es|ed|ing)$/, "")));
     const narrationSexy = strictHits.size >= 1 || (near.match(SEX_CTX) ?? []).length >= 4 || /\b(?:nipples?|pleasure|arous\w*|undress\w*|thighs?|lube|fingers? (?:in|inside)|crotch|bulge)\b/i.test(near);
     let paraSpeaker: Character | undefined;
+    let paraSpeakerExplicit = false;
     let lastQ: Quote | undefined;
     let lastQPrev: Quote | undefined;
     for (const q of quotes) {
@@ -665,15 +668,19 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
       const continues = lastQ && paraSpeaker && q.start - lastQ.end < 50 && ((!/[.!?]["”]?\s*$/.test(para.slice(lastQ.end, q.start).trim() || ".") && !(gapWho && gapWho !== paraSpeaker)) || (tagOnly && !gapWho));
       lastQPrev = lastQ;
       lastQ = q;
-      const speaker = (continues ? paraSpeaker : undefined) ?? attributeSpeaker(para, mp, q, paraSpeaker, lastQPrev) ?? paraSpeaker ?? (mp.trim().length < 6 && prevSpeaker ? ctx.partnerOf(prevSpeaker) : undefined);
+      const speaker: Character | undefined = (continues ? paraSpeaker : undefined) ?? attributeSpeaker(para, mp, q, paraSpeaker, lastQPrev, paraSpeakerExplicit, prevSpeakerPara === pi - 1 ? prevSpeaker : undefined) ?? paraSpeaker ?? (mp.trim().length < 6 && prevSpeaker ? ctx.partnerOf(prevSpeaker) : undefined);
       chastityScan(q.text, `“${q.text.trim()}”`, pi);
       plugScan(q.text, `“${q.text.trim()}”`, pi);
       if (!speaker) continue;
+      const namedTag = new RegExp(`^[,.!?—–\\s]*(${NAMES})\\s+(?:\\w+ly\\s+)?(?:${SAY})\\b`).exec(para.slice(q.end, q.end + 80)) ??
+        new RegExp(`(${NAMES})\\s+(?:\\w+ly\\s+)?(?:${SAY})(?:\\s+[\\w’']+){0,4}?[,:.]?\\s*["“‘]?\\s*$`).exec(mp.slice(Math.max(0, q.start - 80), q.start));
+      paraSpeakerExplicit = (speaker === paraSpeaker && paraSpeakerExplicit && (!!continues || attribExplicit)) ||
+        (!!namedTag && cast.byAlias.get(stripPoss(namedTag[1])) === speaker);
       paraSpeaker = speaker;
       if (continues || attribExplicit) addressBook.record(speaker, ctx.partnerOf(speaker), q.text, pi, q.text, isNameWord);
       scanDialogue(q.text, speaker, pi, { animal: ANIMAL_NEAR.test(near), explicit: !!continues || attribExplicit, sexy: narrationSexy, oral: ORAL_SCENE_RE.test(near) && !ANAL_NEAR_RE.test(near), frot: FROTTAGE.test(near) && !/\b(?:hole|entrance|stretch\w*|prepar\w*|opens? (?:him|her|them)|inside (?:me|him|you))\b/i.test(near), after: para.slice(q.end, q.end + 60), before: para.slice(Math.max(0, q.start - 60), q.start) });
     }
-    if (paraSpeaker) prevSpeaker = paraSpeaker;
+    if (paraSpeaker) { prevSpeaker = paraSpeaker; prevSpeakerPara = pi; }
   }
   // Lopsided titles and endearments between the pair are hints about who defers and who looks after whom.
   for (const [x, y] of cast.pairings) {
@@ -861,9 +868,9 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
   }
 
   /** The speaker, unless the line speaks to that very person ("Your dick, Damianos." or "Yes, Alpha."), which makes it the other one. */
-  function attributeSpeaker(para: string, mp: string, q: Quote, prevSpeaker?: Character, prevQ?: Quote): Character | undefined {
+  function attributeSpeaker(para: string, mp: string, q: Quote, prevSpeaker?: Character, prevQ?: Quote, prevExplicit = false, paragraphSpeaker?: Character): Character | undefined {
     attribExplicit = false;
-    const who = attributeSpeakerFrom(para, mp, q, prevSpeaker, prevQ);
+    const who = attributeSpeakerFrom(para, mp, q, prevSpeaker, prevQ, prevExplicit, paragraphSpeaker);
     if (!who) return who;
     // A tag that names the speaker ("…," Steve said) is not overruled by a term of address; a bare "he" or a guess is.
     const named = new RegExp(`^[,.!?—–\\s]*(?:${NAMES})\\s+(?:\\w+ly\\s+)?(?:${SAY})\\b`).test(para.slice(q.end, q.end + 80)) ||
@@ -872,7 +879,7 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
     return to && to === who ? (ctx.partnerOf(to) ?? who) : who;
   }
 
-  function attributeSpeakerFrom(para: string, mp: string, q: Quote, prevSpeaker?: Character, prevQ?: Quote): Character | undefined {
+  function attributeSpeakerFrom(para: string, mp: string, q: Quote, prevSpeaker?: Character, prevQ?: Quote, prevExplicit = false, paragraphSpeaker?: Character): Character | undefined {
     const after = para.slice(q.end, q.end + 80);
     const before = mp.slice(Math.max(0, q.start - 80), q.start);
     const resolve = (tok: string | undefined) => {
@@ -943,6 +950,34 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
       const prevWho = resolve(b1[1]);
       const other = prevWho && ctx.partnerOf(prevWho);
       if (other) { attribExplicit = true; return other; }
+    }
+    // Invented adults: “Almost,” Morgan says. Rowan shivers. He feels Morgan's hand move. “Suck me.”
+    // Reactions do not establish a new voice. Keep an explicitly established speaker only when every
+    // intervening sentence is a reaction/perception or an action by that speaker; new speech tags above win.
+    if (prevQ && prevSpeaker && prevExplicit) {
+      const gap = mp.slice(prevQ.end, q.start).trim().split(/(?<=[.!?])\s+/).filter(s => /\w/.test(s));
+      // The first sentence can be the tag belonging to the preceding quote.
+      if (gap.length && new RegExp(`^\\W*(?:${NAMES}|[Hh]e|[Ss]he|[Tt]hey|I)\\s+(?:\\w+ly\\s+)?(?:${SAY})\\b`).test(gap[0]) &&
+          firstEntity(gap[0]) === prevSpeaker) gap.shift();
+      const speakerLead = new RegExp(`^\\W*(?:${prevSpeaker.aliases.map(escapeRe).join("|")})(?:['’]s)?\\b`);
+      const namedPeople = gap.flatMap(s => (s.match(nameRe) ?? []).map(name => cast.byAlias.get(stripPoss(name)))).filter(Boolean);
+      const carriesSpeaker = namedPeople.length === 0 || namedPeople.includes(prevSpeaker);
+      if (gap.length && carriesSpeaker && gap.some(s => reactionLead.test(s)) && gap.every(s => reactionLead.test(s) || speakerLead.test(s))) {
+        attribExplicit = true;
+        return prevSpeaker;
+      }
+    }
+    // “Rowan shivers as Morgan strokes him. ‘Suck me.’”: a reaction is not a speech tag.
+    // Keep the preceding paragraph’s voice only if it is also the named performer, after real tags.
+    if (!prevQ) {
+      const prefix = mp.slice(0, q.start).trim();
+      const reactiveAction = new RegExp(`\\bas\\s+(${NAMES})\\s+(?:suck(?:s|ed)?|stroke(?:s|d)?|kiss(?:es|ed)?|touch(?:es|ed)?)\\b`).exec(prefix);
+      if (reactionLead.test(prefix) && reactiveAction && !/[.!?]\s+\S/.test(prefix) &&
+          /\byour\s+(?:[a-z-]+\s+){0,2}(?:cock|dick|mouth|lips|body|ass)\b/i.test(q.text) &&
+          !/\b(?:fuck|suck|fill|take|use|kiss|touch|stroke)\s+me\b/i.test(q.text)) {
+        const performer = cast.byAlias.get(stripPoss(reactiveAction[1]));
+        if (performer && performer === paragraphSpeaker) { attribExplicit = true; return performer; }
+      }
     }
     // "“Want you to fuck me. You bring stuff?” ¶ “Yep.” Spencer didn’t seem in any hurry": the beat after the reply names who replied, so the line before it was the other one's.
     if (!para.slice(q.end).trim() && curParaIdx >= 0) {
