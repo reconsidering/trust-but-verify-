@@ -415,8 +415,8 @@ export function scoreDesires(sig: DesireHit[], pointsTo: (d: DesireHit) => strin
   const out = new Map<DesireHit, { conf: number; reasons: string[] }>();
   for (const d of sig) {
     const reasons: string[] = [];
-    let conf = (DESIRE_BASE[d.kind] ?? 0.5) * (0.7 + 0.3 * Math.min(1, d.weight));
-    if (DESIRE_NOTE[d.kind]) reasons.push(DESIRE_NOTE[d.kind]!);
+    let conf = (d.base ?? DESIRE_BASE[d.kind] ?? 0.5) * (0.7 + 0.3 * Math.min(1, d.weight));
+    if (d.note ?? DESIRE_NOTE[d.kind]) reasons.push((d.note ?? DESIRE_NOTE[d.kind])!);
     if (d.guessed) { conf -= 0.2; reasons.push("speaker guessed from the narration"); }
     else if (d.basis === "named") { conf += 0.05; reasons.push("person named directly"); }
     else if (d.basis === "inferred") { conf -= 0.15; reasons.push("people inferred, not named"); }

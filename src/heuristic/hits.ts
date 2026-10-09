@@ -51,6 +51,9 @@ export interface DesireHit {
   reflexive?: boolean;
   /** How the people in the sentence were found (names, pronouns, inference). */
   basis?: Basis;
+  /** A base score and reason for hints that are not an ordinary "bodily sign" (a hands-free orgasm states the event outright). */
+  base?: number;
+  note?: string;
   /** The pattern that produced it (for the audit report). */
   via?: string;
   /** Context features (learned.ts), kept for the audit and the model's training. */
