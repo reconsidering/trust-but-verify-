@@ -70,8 +70,9 @@ describe('single readings from the reviews',()=>{
  it('a finger alongside a cock in a mouth is not anal fingering',()=>{
   expect(run('Rowan sucked Morgan’s cock, lips swollen.||Morgan pushed in a finger and Rowan gagged around both.').hits.filter(h=>h.act==='fingering')).toEqual([]);
  });
- it('a fingertip at the rim with insertion explicitly denied is not fingering',()=>{
-  expect(run('Morgan’s finger circled his rim, pressing but not putting it in.').hits.filter(h=>h.act==='fingering')).toEqual([]);
+ it('a fingertip at the rim with insertion explicitly denied is still contact, so fingering (AGENTS.md); one that never touched is not',()=>{
+  expect(run('Morgan’s finger circled his rim, pressing but not putting it in.').hits.filter(h=>h.act==='fingering').length).toBeGreaterThan(0);
+  expect(run('Morgan’s finger circled his rim, stopping short of touching it.').hits.filter(h=>h.act==='fingering')).toEqual([]);
  });
  it('the slit of a cock is not a vulva',()=>{
   expect(run('Morgan took the head of Rowan’s cock in his mouth, tonguing his slit.').hits.filter(h=>h.act==='cunnilingus')).toEqual([]);

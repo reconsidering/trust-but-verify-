@@ -10,12 +10,14 @@ export function continuationInstrument(match:string,before:string,after:string):
   const later=/^\s*[,;]?[^.!?]{0,65}\b(?:with|using|by)\s+(?:his|her|their|a|the)\s+(thumb|finger|plug|dildo|tongue|cock|dick|penis)\b/i.exec(after);
   if(later) return type(later[1].toLowerCase());
   const prior=before.slice(-650);
+  // The last finger or toy named has since been taken out or replaced: what follows is a new act.
+  if(instrumentEnded(prior)) return;
   // Named instruments used on hair/clothes or explicitly removed cannot continue insertion.
   const candidates=[...prior.matchAll(PART)].filter(m=>{
     const tail=prior.slice(m.index!+m[0].length);
     // A verb such as "let me plug the opening" does not name an inserted plug.
     if(/^plugs?$/i.test(m[0]) && !/\b(?:a|the|his|her|their|my|your)\b[^.!?]{0,35}\s$/i.test(prior.slice(Math.max(0,m.index!-40),m.index!))) return false;
-    const selectedToy=/plug|dildo|vibrator|toy/i.test(m[0]) && /\b(?:pick(?:s|ed|ing)?\s+up|grabb?\w*|hold\w*)\s+(?:a|the|his|her|their)\s*$/i.test(prior.slice(Math.max(0,m.index!-45),m.index!));
+    const selectedToy=/plug|dildo|vibrator|toy/i.test(m[0]) && /\b(?:pick(?:s|ed|ing)?\s+up|grabb?\w*|hold\w*|reach\w*\s+for|fetch\w*|retriev\w*|g[eo]t|got|took|take|bring|brought|produc\w*)\s+(?:a|the|his|her|their|that|this)\s*$/i.test(prior.slice(Math.max(0,m.index!-45),m.index!));
     return !/\bhad\s+(?:helped|stretched|loosened)\b/i.test(tail.slice(0,45)) && !/\b(?:hair|curls|sheets|shirt|jaw|scalp|lips|mouth|face)\b/i.test(tail.slice(0,50)) &&
       !/\b(?:withdraw|remov|pull\w*\s+(?:out|free)|take\w*\s+out)\w*/i.test(tail) &&
       (selectedToy || /\b(?:rim|anus|asshole|hole|ass|arse|inside|lube|lubricant|lubricat\w*)\b/i.test(prior.slice(Math.max(0,m.index!-80),m.index!+150)));
@@ -65,4 +67,15 @@ export function restraintOnlyHold(match:string,following:string):boolean {
   return /\b(?:grip|grab|hold|held|clutch|seiz)\w*\b/i.test(match) &&
     /\b(?:holds?|held|keep\w*|kept)\b[^.!?]{0,50}\b(?:steady|still|in place)\b/i.test(following.slice(0,170)) &&
     !/\b(?:strok|pump|jerk|rub|work)\w*\b/i.test(match+' '+following.slice(0,170));
+}
+
+/**
+ * True when the text before a match says the finger or toy last used has been taken out or replaced, so a bare "pushed in" after it is a new act:
+ * "pulled his fingers out, rolled on a condom and pushed in", "took the plug out, lined himself up and pushed inside".
+ */
+export function instrumentEnded(before:string):boolean {
+  const last=[...before.matchAll(/\b(?:thumbs?|fingers?|digits?|knuckles?|plugs?|dildos?|vibrators?|toys?)\b/gi)].pop();
+  if(!last) return false;
+  const tail=before.slice(last.index!+last[0].length);
+  return /\b(?:out|free|away|aside)\b/i.test(tail.slice(0,25)) || /\b(?:withdr[ae]w\w*|remov\w*|replac\w*|rolled?\s+on\s+(?:a|the)\s+condom|lin(?:ed|es|ing)\s+(?:him|her|them|it|himself|herself|themselves)\s*(?:self\s*)?up|slick(?:ed|s|ing)\s+(?:his|her|their)\s+(?:cock|dick|length))/i.test(tail);
 }
