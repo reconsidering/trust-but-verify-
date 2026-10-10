@@ -23,3 +23,24 @@ describe("round 92: self-touch is not comfort", () => {
     expect(run("Morgan rubs Rowan’s back and murmurs to him.")(/^care-soothe/).length).toBeGreaterThan(0);
   });
 });
+
+describe("round 92: context for kneeling, shoving, blushing and neck hints", () => {
+  it("dropping to his knees in a fight or from fear is not oral preparation", () => {
+    expect(run("Rowan dropped to his knees on the cold tiles, retching and shaking with fear.")(/^sinks-to-floor/)).toEqual([]);
+    expect(run("Rowan dropped to his knees and reached for Morgan’s belt, mouth already open.")(/^sinks-to-floor/).length).toBeGreaterThan(0);
+  });
+  it("a shove with a shoulder, a thigh or gloves is not pushing back onto a cock", () => {
+    expect(run("Morgan shoved back, slamming his shoulder into Rowan’s chest.")(/^thrust-back/)).toEqual([]);
+    expect(run("Rowan moans into the pillow and rocks back onto Morgan’s cock, hard and aching.")(/^thrust-back/).length).toBeGreaterThan(0);
+  });
+  it("a flushed cock, flushing with heat, or sputtering on water is not a blush", () => {
+    expect(run("Rowan looks down at Morgan’s cock, hard and flushed.")(/^flustered/)).toEqual([]);
+    expect(run("Rowan came up sputtering and choking on a mouthful of pool water.")(/^flustered/)).toEqual([]);
+    expect(run("Rowan blushes and looks away from Morgan.")(/^flustered/).length).toBeGreaterThan(0);
+  });
+  it("craning his neck to look out of a window is not baring it", () => {
+    const abo = (t: string) => { const hits: AuditHit[] = []; analyzeWithPatterns(lead + t, { ...META, freeforms: ["Alpha/Beta/Omega Dynamics"] }, { quiet: true, audit: (h) => hits.push(h) }); return hits.filter((h) => /^abo-bare-neck/.test(h.via)); };
+    expect(abo("Rowan cranes his neck back, peering out of the window.")).toEqual([]);
+    expect(abo("Rowan bares his neck to Morgan, whimpering.").length).toBeGreaterThan(0);
+  });
+});

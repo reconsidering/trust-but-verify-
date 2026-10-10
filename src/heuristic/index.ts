@@ -1307,6 +1307,14 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
     }
     // "He feels his slick trickling out of his hole": slick is arousal, not what is left after sex, unless come is named.
     if (basePid === "body-leaking-from" && /\bslick\b/i.test(sent) && !/\b(?:come|cum|seed|spunk|knot\w*|fuck\w*)\b/i.test(sent)) return;
+    // "Anakin drops to his knees, panting" in a fight, a rescue or a fit of fear: kneeling is oral preparation only with something sexual in this paragraph or the next.
+    if (basePid === "sinks-to-floor" && !/\b(?:cock|dick|prick|erection|hard-?on|bulge|suck\w*|blow\s?job|mouth|lips|tongue|zipper|unzip\w*|unbutton\w*|belt|pants|jeans|trousers|naked|lube\w*|kiss\w*|moan\w*|arous\w*|desire|thighs|crotch|groin|hips)\b/i.test(`${para} ${paras[pi + 1] ?? ""}`)) return;
+    // "slamming his shoulder into Cas' chest", "presses back against him with his own thigh", "shoves back, hard, with all the adrenaline": a shove with a limb or a weapon, not pushing back onto a cock.
+    if (basePid === "thrust-back" && /\b(?:(?:with|using)\s+(?:his|her|their)\s+(?:own\s+)?(?:thigh|knee|elbow|shoulder|hand|fist)|(?:slamm|driv|ramm)\w*\s+(?:his|her|their)\s+(?:shoulder|elbow|fist)|adrenaline|gloves?|referee|ropes)\b/i.test(sent)) return;
+    // "flushed an angry red" on a cock, "flushed with heat", "sputtering when the water hits him": a body part or a physical state, not a blush.
+    if (basePid.startsWith("flustered") && (/\b(?:cock|dick|prick|erection|shaft)\b[^.!?]{0,30}\b(?:flush\w*|red)\b/i.test(sent) || /\bflush\w*\s+(?:all over\s+)?(?:with|from)\s+(?:the\s+)?(?:heat|exertion|fever|cold|wine|running|effort)\b/i.test(sent) || (/\bsputter\w*\b/i.test(sent) && /\b(?:chok\w*|cough\w*|water|laugh\w*|swallow\w*|spit\w*)\b/i.test(sent)))) return;
+    // "cranes his neck back, peering out the window", "tilting his neck to mouth at the head of his cock": a neck turned for something else, not a bared neck.
+    if (basePid === "abo-bare-neck" && /\b(?:peer\w*|window)\b|\bto\s+(?:mouth|lick|suck|kiss)\s+at\b/i.test(sent)) return;
     // "slips a finger between his boy's lips and pulls Jace's mouth open": a finger in a mouth.
     if (basePid === "adds-finger" && /\bfingers?\b[^.!?]{0,30}\b(?:between|past|into|in)\s+(?:[\w’']+\s+){0,3}(?:lips|mouth)\b/i.test(sent)) return;
     // "Cregan licks into his body like his arse is as wet as a cunt; humming as he works the boy open": the tongue is what opens him, so it is rimming.
