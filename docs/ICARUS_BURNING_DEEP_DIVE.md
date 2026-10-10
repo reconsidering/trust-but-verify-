@@ -54,10 +54,10 @@ These are raw-claim judgments; a wrong raw reading can sit inside an otherwise c
 | icarus-burning-1 | 2700 | sucked / act | 99% | Both men are sheltering behind vehicles in an armed standoff; moving his lips to signal words has no sexual contact. | 0.9 |
 | icarus-burning-4 | 3260 | penis-against / act | 99% | Morgan is the mover established3258–3259, and Morgan inserts in the following sentence. The named receiver inside the clause was chosen as penis owner, reversing roles. | 0.9 |
 | icarus-burning-6 | 3263 | stretched-open~elided / act | 99% | Fingers were withdrawn3254; penis insertion3260 overrides the earlier finger instrument. No renewed finger use occurs here. | 0.9 |
-| icarus-burning-17 | 8024 | push-into~elided / act | 99% | Penetration only starts after undressing and Rowan preparing himself at8045. | 0.9 |
+| icarus-burning-17 | 8024 | push-into~elided / act | 99% | Penetration only starts after undressing and Rowan preparing himself at 8045. | 0.9 |
 | icarus-burning-19 | 8047 | pushed-in~elided / act | 99% | A metaphor about taste and throat causes a face-fucking reading. Morgan is penetrating Rowan anally. | 0.9 |
-| icarus-burning-23 | 8063 | stretched-open~elided / act | 99% | A hand under the thigh opens Rowan’s posture. No fingers enter the anus; penis reentry occurs at8065. | 0.9 |
-| icarus-burning-24 | 8063 | thrusts-filling / act | 97% | Opening the leg position is not itself insertion or thrusting; the explicit withdrawal at8063 and reentry at8065 bound the gap. | 0.9 |
+| icarus-burning-23 | 8063 | stretched-open~elided / act | 99% | A hand under the thigh opens Rowan’s posture. No fingers enter the anus; penis reentry occurs at 8065. | 0.9 |
+| icarus-burning-24 | 8063 | thrusts-filling / act | 97% | Opening the leg position is not itself insertion or thrusting; the explicit withdrawal at 8063 and reentry at 8065 bound the gap. | 0.9 |
 | icarus-burning-26 | 645 | care-soothe~elided / behavior | 99% | There is no comforting of Morgan: the touched forehead belongs to the performer, and Morgan is absent from the scene. | 0.9 |
 | icarus-burning-29 | 1281 | care-soothe~elided / behavior | 99% | The performer is explicitly the governor. Engine Rowan/Rowan pair is actually two aliases of the same person, not the actor and recipient. | 0.9 |
 | icarus-burning-30 | 1322 | care-soothe / behavior | 99% | The action is self-directed, and Morgan has already left the room, so the claimed comforting of Morgan is unsupported. | 0.9 |
@@ -97,15 +97,15 @@ These eight inventory records identify absent act readings in the cited ranges. 
 | 8014–8015 | body rubbing | 99% | Naked Rowan rubs against Morgan’s still-clothed lap. |
 | 8062–8062 | handjob | 99% | Morgan assists Rowan’s penis stimulation with his own hand. |
 
-Separate corrections: masturbation at8026–8029 is already detected as a handjob for the wrong recipient; self-fingering at8037–8040 is already detected but assigned to the wrong person. The manual stimulation at8005–8009 adds earlier evidence to an encounter with a later detected handjob. Self-friction against bedding at3287–3289 is retained as inventory evidence without claiming a missing supported detector category.
+Separate corrections: masturbation at 8026–8029 is already detected as a handjob for the wrong recipient; self-fingering at 8037–8040 is already detected but assigned to the wrong person. The manual stimulation at 8005–8009 adds earlier evidence to an encounter with a later detected handjob. Self-friction against bedding at 3287–3289 is retained as inventory evidence without claiming a missing supported detector category.
 
-A brief genital brush at8013 was reduced below95% after independent QA and withheld as a separate masturbation judgment. Ordinary backward cuddling at7026 remains uncertain under the broad role-hint taxonomy. Desired acts and remembered fantasies are not counted as performed misses.
+A brief genital brush at 8013 was reduced below 95% after independent QA and withheld as a separate masturbation judgment. Ordinary backward cuddling at 7026 remains uncertain under the broad role-hint taxonomy. Desired acts and remembered fantasies are not counted as performed misses.
 
 ## Files and label safety
 
-- `tests/right-set/icarus-burning.json`: qualifying positive and negative judgments at0.9, with reviewer confidence recorded.
+- `tests/right-set/icarus-burning.json`: qualifying positive and negative judgments at 0.9, with reviewer confidence recorded.
 - `tests/labels/chatgpt-icarus-burning-claims.json`: identity metadata only; the labels map is empty so these judgments are not accidentally trained at unit weight. Each is bound to the source hash, paragraph, pattern, act, occurrence, participants and role.
-- `tests/scene-review/chatgpt-icarus-burning-deep-dive.json`: all87 assessments, current engine and reviewer verdicts/confidences,48 inventories, paragraph hashes, QA decisions and withheld reasons.
+- `tests/scene-review/chatgpt-icarus-burning-deep-dive.json`: all 87 assessments, current engine and reviewer verdicts/confidences,48 inventories, paragraph hashes, QA decisions and withheld reasons.
 - `tests/icarus-burning-deep-dive.test.ts`: complete coverage, confidence/weight/provenance checks, protection of prior audit judgments and optional raw-claim replay against the private HTML.
 
 Existing owner/AI labels and the generated model, reliability table and METRICS.md are unchanged. Importing these labels does not itself fix detection or change live confidence. Retrain separately after merging.
@@ -121,10 +121,10 @@ The helper uses the application’s PDF joining and extraction. HTML extraction 
 
 ## Validation
 
-- Full `npm run check -- --jobs 3 <eligible corpus>` passed: unit suite, build and all three gold/right-set shards. The script recovered each shard from its initial 3GB memory limit by rerunning it alone with8GB.
-- Gold verdicts15/15; scenes right80, flipped0, missed0; false positives5; text senders27/27. No worse than the accepted baseline. Those five false positives are pre-existing accepted totals.
-- Raw-claim replay: all76 accepted identities found exactly;4 tests passed.
-- PDF/HTML parity: all87 audit claims, sentences, features and ordering identical.
+- Full `npm run check -- --jobs 3 <eligible corpus>` passed: unit suite, build and all three gold/right-set shards. The script recovered each shard from its initial 3GB memory limit by rerunning it alone with 8GB.
+- Gold verdicts 15/15; scenes right 80, flipped 0, missed 0; false positives 5; text senders 27/27. No worse than the accepted baseline. Those five false positives are pre-existing accepted totals.
+- Raw-claim replay: all 76 accepted identities found exactly;4  tests passed.
+- PDF/HTML parity: all 87 audit claims, sentences, features and ordering identical.
 - `git diff --check` passed.
 
-The corpus contains54 eligible/private samples. Previously declined Negotiation is excluded; other earlier declined works are absent. Existing gold files lacking a supplied eligible sample remain outside this run. No generated production model or sample file is committed.
+The corpus contains 54 eligible/private samples. Previously declined Negotiation is excluded; other earlier declined works are absent. Existing gold files lacking a supplied eligible sample remain outside this run. No generated production model or sample file is committed.
