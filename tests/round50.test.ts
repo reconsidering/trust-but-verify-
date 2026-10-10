@@ -21,7 +21,7 @@ describe("a third person moving someone else’s cock, and role locking in a thr
   });
   it("a real flip between two people, with no third person, is left alone", () => {
     const m2: Ao3Meta = { ...M, relationships: ["Scott McCall/Stiles Stilinski"], characters: ["Scott McCall", "Stiles Stilinski"] };
-    const text = "Scott pushed his cock into Stiles’ ass and thrust hard. Scott fucked Stiles slowly.\n\nThen Stiles flipped him onto his back. He pushed into him and thrust deep. He fucked him hard.";
+    const text = "Scott pushed his cock into Stiles’ ass and thrust hard. Scott fucked Stiles slowly.\n\nThen Stiles flipped Scott onto his back. Stiles pushed into Scott and thrust deep. Stiles fucked Scott hard.";
     const r = analyzeWithPatterns(`${lead}\n\n${text}`, m2, { quiet: true });
     expect(r.pairings[0].anal.verdict).toBe("switch");
   });
