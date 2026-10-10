@@ -1259,6 +1259,8 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
         !/\b(?:anus|ass|hole|rim|plug)\b/i.test(reviewBefore+m[0]) ||
         /^\s+(?:(?:the|a|his|her|their|its)\s+)?(?:box|case|mouth|drawer|bag|sleeve)\b/i.test(sent.slice(m.index!+m[0].length)))) return;
     if(basePid==="review-self-toy-pronoun" && !/\b(?:pick\w*\s+up|select\w*|lubricat\w*|slick\w*|lube\w*|coat\w*|largest|larger)\b/i.test(reviewBefore)) return;
+    // Lubricant used for earlier partner placement is not current self-insertion.
+    if(basePid==="review-self-toy-pronoun" && /\b(?:lube|lubricant)\s+(?:that\s+)?$/i.test(sent.slice(0,m.index!)) && /\bused\s+to\b/i.test(m[0])) return;
     if(basePid==="review-self-fake-cock" && !/\b(?:dildo|silicone toy)\b/i.test(reviewBefore)) return;
     if(basePid==="review-fingertip-entry" &&
        (!/\b(?:anus|asshole|hole|rim|prostate)\b/i.test(reviewBefore+m[0]+sent.slice(m.index!+m[0].length)) ||

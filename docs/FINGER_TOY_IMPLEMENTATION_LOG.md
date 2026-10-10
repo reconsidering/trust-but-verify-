@@ -68,3 +68,9 @@ Started a fresh full frozen-inventory replay on the final source. Stopped the st
 ## Iteration 8: explicit replacement instrument wins
 
 Final code review found the reinsertion fallback could override an explicitly named penis later in the entry clause. Reproduced it with a failing adult clinical withdrawal/entry test. Reordered instrument selection so direct match/explicit trailing evidence wins, then the reinsertion fallback, then earlier context. Combined tests: 46/46 passed. This is the last source change before final validation; restarted stale full checks/replay so their fingerprints and results correspond to the final source.
+
+## Corpus audit: partner removal is not self-use
+
+The 64-fic audit found an extra self-toy reading in Nazarene p325. Surrounding paragraphs identify one partner removing the other person's plug; an embedded lubricant-purpose clause describes earlier placement. The initial synthetic named-target case passed because an existing foreign-target guard already handled it. A closer pronoun-owned-target paraphrase failed, correctly reproducing the new error. Added a narrow rejection for the lubricant-purpose clause in the new self-toy-pronoun rule. The combined target suite passed 47/47. The broad regression on the preceding source is retained as an intermediate diagnostic, not final validation; rerun final checks/replay/regression after this actual detected error fix.
+
+The first completed full check passed (unit suite, both gold/right-set shards, build), with 15/15 gold verdicts and 80 right scenes. It found no existing accepted gold-baseline file and automatically saved one privately; that alone is not a comparison with main. Do not mistake it for a prior-main baseline. No accepted baseline is committed or intentionally updated by this PR.

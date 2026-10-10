@@ -83,6 +83,10 @@ describe('finger/toy handoff: bounded toy references',()=>{
     const hits=run('Morgan lubricated a plug for Rowan’s anus. Morgan pushes it in.');
     expect(hits.some(h=>toy(h)&&h.kind==='solo'&&h.a==='Morgan Vale')).toBe(false);
   });
+  it('partner toy removal and an embedded lubricant explanation are not self-use',()=>{
+    const hits=run('Rowan has a plug in his anus. Morgan spreads lube around his entrance.\n\nMorgan pulls the plug out of Rowan. The plug slides out with the lube Morgan used to push it inside.');
+    expect(hits.some(h=>toy(h)&&h.kind==='solo')).toBe(false);
+  });
   it('a later finger referent cannot inherit an earlier toy',()=>{
     const hits=run('Morgan held a plug near Rowan’s anus, then set it down. Morgan lubricated one finger at Rowan’s anus. It slides in.');
     expect(hits.some(h=>toy(h))).toBe(false);
