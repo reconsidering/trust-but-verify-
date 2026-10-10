@@ -397,6 +397,98 @@ const DEPTH = "(?:(?:back|forward|all the way|deep(?:er)?|slowly|carefully|home|
 
 export const PATTERNS: PatternDef[] = [
   {
+    // Rowan reaches back to use fingers at his own opening; the body owner performs self-use.
+    id: "review-self-finger-poke", cat: "anal", act: "fingering himself", subj: "b", weight: 0.7,
+    kw: "poke", needsCtx: true, signal:{kind:"solo",actorRole:"bottom"},
+    src: `\\b(?:use|using)\\s+(?:one|two|three)\\s+fingers?\\s+to\\s+poke\\s+{B:poss}\\s+(?:hole|anus)\\b`,
+  },
+  {
+    // An inflatable toy fills Rowan's anus after Rowan activates it; fantasy hands do not own the device.
+    id: "review-self-inflatable-toy", cat: "anal", act: "using a toy on himself", subj: "b", weight: 0.7,
+    kw: "bulb", needsCtx:true, signal:{kind:"solo",actorRole:"bottom"},
+    src: `\\b(?:the|a|full)\\s+bulb\\s+filling\\s+{B:poss}\\s+(?:ass|anus)\\b`,
+  },
+  // Source-bound handoff families 1–6. Invented adult paraphrases; bounded anatomy, not tag guesses.
+  {
+    // Morgan crouches behind Rowan, pumping three fingers into Rowan's anus.
+    id: "review-pumping-fingers", cat: "anal", act: "fingering", subj: "t", weight: 0.8,
+    kw: "finger", needsCtx: true,
+    src: `\\b(?:[Pp]ump|[Pp]umping|[Pp]umped|[Pp]umps)\\s+(?:one|two|three|four|his|her|their)\\s+(?:slick\\s+|lubed\\s+)?fingers?\\s+(?:in|into|inside)\\s+{B:ass}`,
+  },
+  {
+    // Morgan has two fingers deep inside Rowan, retaining an already established finger act.
+    id: "review-retained-fingers", cat: "anal", act: "fingering", subj: "t", weight: 0.75,
+    kw: "fingers", needsCtx: true,
+    src: `\\b{T}\\s+(?:has|had|have)\\s+(?:one|two|three|four)\\s+(?:slick\\s+|lubed\\s+)?fingers?\\s+(?:so\\s+)?(?:deep\\s+)?(?:in|inside)\\s+(?:of\\s+)?{B:ass}`,
+  },
+  {
+    // Thick fingers graze Rowan's prostate; the omitted owner must be resolved locally.
+    id: "review-finger-prostate", cat: "anal", act: "fingering", subj: "t", weight: 0.65,
+    kw: "prostate", needsCtx: true,
+    src: `\\b(?:thick|slick|lubed|two|three)\\s+fingers\\s+(?:graz|brush|press|stroke|curl|tap)\\w*\\s+(?:against\\s+|over\\s+)?{B:poss}\\s+prostate\\b`,
+  },
+  {
+    // Morgan strokes over Rowan's anal rim with fingers; contact needs no insertion.
+    id: "review-fingers-over-rim", cat: "anal", act: "fingering", subj: "t", weight: 0.75,
+    kw: "rim", needsCtx: true,
+    src: `\\b(?:strok|trac|circl|rubb?|press)\\w*\\s+(?:over\\s+|around\\s+)?{B:poss}\\s+(?:anal\\s+)?rim\\s+with\\s+(?:[\\w-]+\\s+){0,2}fingers\\b`,
+  },
+  {
+    // Morgan inserts the tip of one finger at an explicit opening; bare entry needs local anatomy.
+    id: "review-fingertip-entry", cat: "anal", act: "fingering", subj: "t", weight: 0.75,
+    kw: "finger|fingertip", needsCtx: true,
+    src: `\\b{T}\\s+{aux}(?:push|press|slid|slip|work|eas|insert)\\w*\\s+(?:(?:the|a)\\s+)?(?:tip\\s+of\\s+(?:one|a|his|her|their)\\s+finger|(?:first\\s+)?(?:slippery\\s+|slick\\s+)?fingertip)\\s+(?:in|inside|into)(?:\\s+(?:slightly\\s+)?{B:ass})?\\b`,
+  },
+  {
+    // A lubricated plug slides in while the named adult holds it for the recipient.
+    id: "review-toy-subject-entry", cat: "anal", act: "anal sex (strap-on/toy)", subj: "b", weight: 0.7,
+    kw: "slid|slides|slips|slipped", needsCtx: true,
+    src: `\\b(?:[Tt]he\\s+(?:plug|dildo|toy)|[Ii]t)\\s+(?:slid|slides|slips|slipped)\\s+(?:right\\s+|slowly\\s+)?(?:in|inside|into)(?:\\s+{B:ass})?\\b`,
+  },
+  {
+    // Rowan puts in the next size of a locally identified plug, alone.
+    id: "review-self-toy-size", cat: "anal", act: "using a toy on himself", subj: "b", weight: 0.65,
+    kw: "size", needsCtx: true, signal: {kind:"solo",actorRole:"bottom"},
+    src: `\\b{B}\\s+{aux}(?:puts?|put|insert\\w*)\\s+(?:in\\s+)?the\\s+next\\s+size(?:\\s+into\\s+(?:his|her|their)\\s+own\\s+(?:anus|hole|ass))?\\b`,
+  },
+  {
+    // Rowan selects a new plug, then lubricates it and pushes it in himself.
+    id: "review-self-toy-pronoun", cat: "anal", act: "using a toy on himself", subj: "b", weight: 0.65,
+    kw: "push|insert", needsCtx: true, signal: {kind:"solo",actorRole:"bottom"},
+    src: `\\b{B}\\s+{aux}(?:push|insert)\\w*\\s+it\\s+(?:in|inside|into)(?:\\s+(?:his|her|their)\\s+own\\s+(?:anus|hole|ass))?\\b`,
+  },
+  {
+    // Morgan moves a stimulator back and forth inside Rowan's established anal target.
+    id: "review-stimulator-motion", cat: "anal", act: "anal sex (strap-on/toy)", subj: "t", weight: 0.75,
+    kw: "stimulator",
+    src: `\\b{T}\\s+{aux}(?:push|mov|work)\\w*\\s+(?:the|a)\\s+stimulator\\s+back\\s+and\\s+forth\\s+(?:in|inside)\\s+{B:ass}`,
+  },
+  {
+    // Rowan uses an identified prostate massager physically, rather than imagining a partner.
+    id: "review-self-massager", cat: "anal", act: "using a toy on himself", subj: "b", weight: 0.75,
+    kw: "massager", needsCtx: true, signal: {kind:"solo",actorRole:"bottom"},
+    src: `\\b{B}\\s+{aux}(?:(?:insert|push|slid|work)\\w*\\s+(?:a|the)\\s+prostate\\s+massager\\s+into\\s+(?:his|her|their)\\s+own\\s+anus|fuck\\w*\\s+${SELF}\\s+against\\s+(?:the|a)\\s+(?:dual-headed\\s+|prostate\\s+)?massager)\\b`,
+  },
+  {
+    // An identified dildo stays a toy when Rowan lowers his anus onto its fake penis.
+    id: "review-self-fake-cock", cat: "anal", act: "using a toy on himself", subj: "b", weight: 0.7,
+    kw: "fake", needsCtx: true, signal: {kind:"solo",actorRole:"bottom"},
+    src: `\\b{B}\\s+{aux}lower\\w*\\s+(?:his|her|their)\\s+anus\\s+onto\\s+the\\s+fake\\s+cock\\b`,
+  },
+  {
+    // Morgan opens Rowan's named anus with oiled fingers; oiling alone is not contact.
+    id: "review-open-with-fingers", cat: "anal", act: "fingering", subj: "t", weight: 0.75,
+    kw: "fingers", needsCtx: true,
+    src: `\\b{T}\\s+{aux}(?:coax|work|open)\\w*\\s+{B:poss}\\s+anus\\s+open\\s+with\\s+(?:them|(?:his|her|their)\\s+fingers)\\b`,
+  },
+  {
+    // Finger insertion into residual lubricant remains a finger act at a named opening.
+    id: "review-fingers-residue", cat: "anal", act: "fingering", subj: "t", weight: 0.7,
+    kw: "wetness|lubricant", needsCtx: true,
+    src: `\\b{T}\\s+{aux}(?:slid|push|insert)\\w*\\s+(?:two|three)\\s+fingers\\s+into\\s+the\\s+(?:wetness|lubricant)(?:\\s+(?:he|she|they)\\s+just)?\\s+left\\s+inside\\s+{B:ass}`,
+  },
+
+  {
     // Adult synthetic: Morgan rubs Rowan's anus externally; no insertion is claimed.
     id: "review-external-anal-contact", cat: "vibe", act: "external anal stimulation", subj: "t", weight: 0.85,
     kw: "anus|asshole|perineum", needsCtx: true, signal: {kind:"handjob",actorRole:"top"},

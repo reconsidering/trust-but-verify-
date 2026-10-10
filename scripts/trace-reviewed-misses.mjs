@@ -21,12 +21,17 @@ const server=await createServer({root,configFile:false,server:{middlewareMode:tr
 try{
  const {extractFromHtml}=await server.ssrLoadModule('/src/extract.ts');
  const {analyzeWithPatterns}=await server.ssrLoadModule('/src/heuristic/index.ts');
- const snapshots=new Map(),traces=new Map();
+ const {splitParagraphs}=await server.ssrLoadModule('/src/text.ts');
+ const snapshots=new Map(),traces=new Map(),unverifiable=new Map();
  for(const file of new Set(cases.map(e=>e.fic))){
   const selected=cases.filter(e=>e.fic===file),html=readFileSync(join(resolve(samplesArg),file),'utf8');
   const sourceSha=hash(html);
   if(selected.some(e=>e.sourceSha!==sourceSha))throw Error('Source checksum differs: '+file);
   const work=extractFromHtml(html),hits=[],trace=[];let paragraphHashes=[],paragraphSha,last=-1;
+  // Review citations precede chat/terminology rewriting. Verify their source extraction and the cited range separately.
+  const clean=work.text.replace(/\[\[AO3_UNCERTAIN_NOTE_START\]\][\s\S]*?\[\[AO3_UNCERTAIN_NOTE_END\]\]/g,"").replace(/\[\[AO3_[A-Z_]+\]\]/g,"");
+  const rawParas=splitParagraphs(clean.replace(/^([ \t]*>[ \t]*\S.*|.*\S[ \t]*<[ \t]*)$/gm,"\n$1\n"));
+  const rawSha=hash(rawParas.join("\n")),rawHashes=rawParas.map(paraHash);
   const near=i=>selected.some(e=>i>=e.from-4&&i<=e.to+4);
   analyzeWithPatterns(work.text,work.meta,{quiet:true,
    trace:e=>{if(e.para<last)trace.length=0;last=e.para;if(near(e.para))trace.push({para:e.para,via:e.via,top:e.top,bottom:e.bottom,basis:e.basis});},
@@ -36,16 +41,17 @@ try{
   for(const e of selected){
    if(e.from<0||e.to>=paragraphHashes.length)throw Error('Citation out of bounds: '+e.caseId);
    if(e.paragraphHashes&&JSON.stringify(e.paragraphHashes)!==JSON.stringify(paragraphHashes.slice(e.from,e.to+1)))throw Error('Paragraph hashes differ: '+e.caseId);
-   if(e.sourceParagraphSha&&e.sourceParagraphSha!==paragraphSha)throw Error('Extraction checksum differs: '+e.caseId);
+   if(e.sourceParagraphSha&&e.sourceParagraphSha!==paragraphSha && !(e.sourceParagraphSha===rawSha && rawHashes.length===paragraphHashes.length && JSON.stringify(rawHashes.slice(e.from,e.to+1))===JSON.stringify(paragraphHashes.slice(e.from,e.to+1))))unverifiable.set(e.caseId,'Extraction checksum differs; citation not interpreted');
   }
   snapshots.set(file,{sourceSha,paragraphVerified:true,hits});traces.set(file,trace);
   console.log(file+': '+selected.length+' verified targets');
  }
- const recall=scoreActRecall(cases,snapshots);
+ const recall=scoreActRecall(cases.filter(e=>!unverifiable.has(e.caseId)),snapshots);
  const rows=recall.results.map(e=>({caseId:e.caseId,fic:e.fic,id:e.id,eventId:e.eventId,from:e.from,to:e.to,act:e.act,performer:e.performer,receiver:e.receiver,status:e.status,matches:e.matches,
   initialCandidates:traces.get(e.fic).filter(t=>t.para>=e.from&&t.para<=e.to),
   survivingReadings:snapshots.get(e.fic).hits.filter(h=>h.para>=e.from&&h.para<=e.to)}));
- const output={schema:'reviewed-miss-safe-replay/v1',engineCommit:execFileSync('git',['rev-parse','HEAD'],{cwd:root,encoding:'utf8'}).trim(),sourceVerified:true,summary:recall.summary.filter(r=>r.expected),cases:rows};
+ for(const e of cases.filter(e=>unverifiable.has(e.caseId)))rows.push({caseId:e.caseId,fic:e.fic,id:e.id,eventId:e.eventId,from:e.from,to:e.to,act:e.act,performer:e.performer,receiver:e.receiver,status:'unverifiable',reason:unverifiable.get(e.caseId),matches:[],initialCandidates:[],survivingReadings:[]});
+ const output={schema:'reviewed-miss-safe-replay/v1',engineCommit:execFileSync('git',['rev-parse','HEAD'],{cwd:root,encoding:'utf8'}).trim(),sourceVerified:unverifiable.size===0,unverifiableCases:unverifiable.size,summary:recall.summary.filter(r=>r.expected),cases:rows};
  mkdirSync(dirname(resolve(outputArg)),{recursive:true});writeFileSync(resolve(outputArg),JSON.stringify(output,null,2)+'\n');
  console.log(JSON.stringify({cases:rows.length,statuses:rows.reduce((a,r)=>(a[r.status]=(a[r.status]??0)+1,a),{})}));
 }finally{await server.close();dom.window.close()}

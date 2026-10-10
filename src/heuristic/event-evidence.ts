@@ -79,3 +79,10 @@ export function instrumentEnded(before:string):boolean {
   const tail=before.slice(last.index!+last[0].length);
   return /\b(?:out|free|away|aside)\b/i.test(tail.slice(0,25)) || /\b(?:withdr[ae]w\w*|remov\w*|replac\w*|rolled?\s+on\s+(?:a|the)\s+condom|lin(?:ed|es|ing)\s+(?:him|her|them|it|himself|herself|themselves)\s*(?:self\s*)?up|slick(?:ed|s|ing)\s+(?:his|her|their)\s+(?:cock|dick|length))/i.test(tail);
 }
+
+
+/** Same finger is deliberately reinserted, without an intervening replacement instrument. */
+export function reinsertedFinger(match:string,before:string):boolean {
+  return /\b(?:press|push)\w*\s+in\s+again\b/i.test(match) &&
+    /\b(?:draw|draws|drew|pull|pulls|pulled)\s+(?:his|her|their|the)\s+finger\s+out\s*$/i.test(before);
+}
