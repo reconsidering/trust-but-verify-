@@ -533,7 +533,10 @@ export function buildAct(
     // A shaky scene adds a little weight but doesn't on its own make someone a switch.
     if (conf >= 0.4) entry.scenes++;
     entry.weight += Math.min(w, 3) * (0.4 + 0.6 * conf);
-    entry.strong ||= (hs.some((h) => h.basis === "named") || w >= 1.5) && conf >= 0.5;
+    // Invented adults: Rowan enters Morgan, then a separate sentence confirms his thrusts.
+    // A retrain can lower their summed weights below 1.5 without making this firm scene a lone contrary hit.
+    const corroborated = new Set(hs.map((h) => h.sentence)).size >= 2 && conf >= 0.75 && best.basis !== "inferred" && !hs.some((h) => h.shaky);
+    entry.strong ||= ((hs.some((h) => h.basis === "named") || w >= 1.5) && conf >= 0.5) || corroborated;
     sceneTops.set(best.top.name, entry);
   }
   for (const scene of groupScenes(fingering, where)) {
