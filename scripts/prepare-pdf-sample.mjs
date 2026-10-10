@@ -35,7 +35,8 @@ try{
   const fields=[['Rating',work.meta.rating],['Fandoms',work.meta.fandoms.join(', ')],['Relationships',work.meta.relationships.join(', ')],['Characters',work.meta.characters.join(', ')],['Additional Tags',work.meta.freeforms.join(', ')],['Categories',work.meta.categories.join(', ')],['Stats',`Words: ${work.meta.words} Chapters: ${work.meta.chapters}`]];
   const html='<!doctype html><html><head><meta charset="UTF-8"><title>'+esc(work.meta.title)+'</title></head><body><div id="preface"><h2 class="title">'+esc(work.meta.title)+'</h2><a href="'+esc(work.meta.url)+'">Original work</a><dl>'+fields.map(([k,v])=>'<dt>'+k+':</dt><dd>'+esc(v)+'</dd>').join('')+'</dl></div><div id="chapters"><div class="userstuff">'+work.text.split(/\n\s*\n/).map(p=>'<p>'+esc(p)+'</p>').join('\n')+'</div></div></body></html>';
   const normalized=extractFromHtml(html);
-  if(normalized.text!==work.text)throw Error('HTML normalization changed the extracted story text.');
+  // HTML extraction collapses horizontal whitespace; retain all words and paragraph boundaries.
+  if(normalized.text!==work.text.replace(/[ \t\u00a0]+/g,' '))throw Error('HTML normalization changed the extracted story text.');
   if(existsSync(output)&&readFileSync(output,'utf8')!==html)throw Error('The output already exists with different content; choose a new path.');
   mkdirSync(dirname(resolve(output)),{recursive:true});writeFileSync(output,html);
   const sha=value=>createHash('sha256').update(value).digest('hex');
