@@ -14,8 +14,8 @@ const dynTier = (s: string, who: string, name: string, tags: string[] = []) => d
 describe("a woman sodomizing a man is anal, not vaginal", () => {
   const m: Ao3Meta = { ...emptyMeta(), rating: "Explicit", categories: ["M/M", "F/M"], fandoms: ["Dracula (TV 2020)"], relationships: ["Dracula/Jack Seward", "Zoe Van Helsing/Jack Seward"], characters: ["Dracula", "Jack Seward", "Zoe Van Helsing"] };
   const b = ("Zoe and Jack were friends. Zoe smiled at Jack. Jack smiled back at Zoe. Dracula kissed Jack. ").repeat(3);
-  it("She had sodomized him with some regularity", () => {
-    const a = analyzeWithPatterns(b + "She had sodomized him with some regularity and taught him to enjoy it.", m, { quiet: true });
+  it("She had sodomized him twice", () => {
+    const a = analyzeWithPatterns(b + "She had sodomized him twice and taught him to enjoy it.", m, { quiet: true });
     const zoe = a.pairings.find((p) => /Zoe/.test(p.pairing))!;
     expect(zoe.vaginal.instances).toHaveLength(0);
     expect(zoe.anal.instances[0]).toMatchObject({ top: "Zoe Van Helsing", bottom: "Jack Seward" });

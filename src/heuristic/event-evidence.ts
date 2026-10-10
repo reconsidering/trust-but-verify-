@@ -47,6 +47,14 @@ export function occurrenceContext(prefix:string,sentence:string,previous:string,
   if(/\bneed(?:ed|s)?\s+to\s*$/i.test(prefix)) return 'wanted';
   if(/\b(?:orders?|ordered|asks?|asked|tells?|told)\s+(?:[\w'’-]+\s+){1,2}to\s*$/i.test(prefix.slice(-100))) return 'wanted';
   if(/\b(?:every night|each morning|habitually|usually|routinely)\b/i.test(prefix) && /\bwould\b/i.test(sentence)) return 'habitual';
+  // "She had sodomized him with some regularity", "Swears some nights when he closes his eyes and fists his own cock": a habit, not one event.
+  if(/\b(?:some|most|many|certain)\s+nights?\b|\bwith (?:some|great|considerable|any) regularity\b|\bregularly\b/i.test(sentence)) return 'habitual';
+  // "Dean heard him jerking off in the shower last night", "Like his show this morning when he got himself off": an earlier occasion, mentioned.
+  if(/\b(?:last night|yesterday|this morning|earlier today|the other (?:day|night))\b/i.test(sentence) && (/\b(?:heard|overheard|remember\w*|recall\w*)\b/i.test(sentence) || /^\W*(?:just )?like\b/i.test(sentence))) return 'history';
+  // "He had masturbated furiously on the shirt": a past perfect looks back at an earlier occasion.
+  if(/\bhad\s+(?:\w+ly\s+)?(?:masturbated|jerked(?: off)?|wanked|stroked himself)\b/i.test(sentence)) return 'history';
+  // "if he knew a little more about the Alpha, he might stick his fingers inside himself": a conditional, not an act.
+  if(/\b(?:if|unless)\b[^.!?]{0,80},\s*(?:he|she|they|[A-Z][\w'’-]+)\s+(?:might|could|would|may)\b[^.!?]{0,30}$/i.test(prefix)) return 'wanted';
   if(/\b(?:video|recording|film)\b[^.!?]{0,70}\b(?:shows?|showed|of)\s*$/i.test(prefix.slice(-130))) return 'recording';
   // An explicit retrospective dating sentence applies to the preceding description only.
   if(/^\s*That was (?:almost |nearly |over )?(?:\w+\s+){0,3}(?:days?|weeks?|months?|years?) ago\b/i.test(next) && /\b(?:had|hadn['’]t|earlier|since)\b/i.test(sentence)) return 'history';
