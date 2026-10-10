@@ -9,7 +9,7 @@ const lead = "Morgan and Rowan are adult men. Morgan kissed Rowan, naked and har
 const run = (t: string) => {
   const hits: AuditHit[] = [];
   analyzeWithPatterns(lead + t.split("||").join("\n\n"), META, { quiet: true, audit: (h) => hits.push(h) });
-  const acts = (re: RegExp) => hits.filter((h) => h.kind === "act" && re.test(h.act)).map((h) => `${h.act}:${h.a.split(" ")[0]}>${h.b.split(" ")[0]}`);
+  const acts = (re: RegExp) => hits.filter((h) => h.kind === "act" && re.test(h.act)).map((h) => `${h.act}:${h.a.split(" ")[0]}>${(h.b ?? "").split(" ")[0]}`);
   const solos = (re: RegExp) => hits.filter((h) => h.kind === "solo" && re.test(h.act)).map((h) => `${h.act}:${h.a.split(" ")[0]}`);
   return { acts, solos };
 };

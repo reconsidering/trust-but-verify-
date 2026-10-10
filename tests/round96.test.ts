@@ -10,7 +10,7 @@ const run = (t: string) => {
   const hits: AuditHit[] = [];
   analyzeWithPatterns(lead + t.split("||").join("\n\n"), META, { quiet: true, audit: (h) => hits.push(h) });
   // acts in paragraph i of the test text (the lead is paragraph 0)
-  const at = (i: number) => hits.filter((h) => h.kind === "act" && h.cat === "anal" && h.para === i).map((h) => `${h.act}:${h.a.split(" ")[0]}>${h.b.split(" ")[0]}`);
+  const at = (i: number) => hits.filter((h) => h.kind === "act" && h.cat === "anal" && h.para === i).map((h) => `${h.act}:${h.a.split(" ")[0]}>${(h.b ?? "").split(" ")[0]}`);
   return { at };
 };
 

@@ -2531,8 +2531,14 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
       // "Jay is sloppy; uncoordinated as he scissors his fingers, trying to stretch himself": a self-act belongs to the one pair member the sentence names
       // before it, not to whoever the elided subject last was (his partner, named in the sentence before).
       if (pat.signal.kind === "solo" && REFLEXIVE.test(matchText)) {
+        // Only a name in subject position counts: not "Eddie's hand" (a possessive) and not the object of "asked him to prep himself" / "nudge Eddie".
         const named = [...new Set(ctx.sentMentions.filter((x) => x.at < m.index!).map((x) => x.c))].filter((c) => c === top || c === bottom);
-        if (named.length === 1) actor = named[0];
+        const subjectLike = (c: Character) => {
+          const at = ctx.sentMentions.find((x) => x.c === c && x.at < m.index!)!.at;
+          const seg = sent.slice(at, m.index!);
+          return !/^[^\s]+['’]s\b/.test(seg) && !/\b(?:ask|tell|told|order|beg|make|made|let|have|had|want|need|nudg|mov|pull|push)\w*\s/i.test(seg);
+        };
+        if (named.length === 1 && subjectLike(named[0])) actor = named[0];
       }
       if(pat.signal.kind==="solo" && act==="fingering himself") {
         const target=holeType(matchText,sent,para,actor,actor);
