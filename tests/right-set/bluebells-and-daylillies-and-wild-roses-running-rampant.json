@@ -492,7 +492,7 @@
       "pairing": "Brother Diarmuid/The Mute",
       "h": "4408d5ee",
       "via": "lead-by-hand",
-      "weight": 0.9,
+      "weight": 0.3,
       "source": "chatgpt",
       "marks": {
         "right": 1,
@@ -576,7 +576,7 @@
       "pairing": "Brother Diarmuid/The Mute",
       "h": "f3216536",
       "via": "push-into",
-      "weight": 0.9,
+      "weight": 0.3,
       "source": "chatgpt",
       "marks": {
         "right": 0,
