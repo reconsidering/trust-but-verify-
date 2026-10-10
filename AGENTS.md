@@ -23,6 +23,8 @@ that happened to match (the pattern that reads a sentence can change after a ret
   waistband, hair or mouth do not.
 - **A cock at the anal entrance counts as anal sex**, with no insertion needed: a penis against, catching on, nudging or pressing at the hole, rim or entrance. A penis between the
   cheeks or thighs, or rubbing the buttocks without touching the opening, is body contact, not anal sex.
+- **A toy at the anal entrance counts** the same way, with no insertion needed: a plug, dildo or vibrator held, pressed or rubbed at the hole, rim or entrance. Tag it as a **toy act**
+  ("anal sex (strap-on/toy)", or a toy used on himself), not as penile anal sex and not as fingering.
 - **If it never reached the opening** (stopped, refused or interrupted before contact), it is not performed. Contact at the opening counts even if it goes no further.
 - Labels made before this rule (2026-10-10) that called entrance contact "mistaken for insertion" (the 20 "external contact" readings in `docs/CURRENT_ANAL_ERROR_REVIEW.md`, and
   some owner labels on "presses fingers to his rim") may need re-review; do not change them without the owner's say-so.
