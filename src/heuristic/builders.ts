@@ -555,7 +555,12 @@ export function buildAct(
     });
   }
 
-  const ranked = [...sceneTops.values()].sort((a, b) => b.weight - a.weight);
+  // Two people whose summed weights are within 5% are a near-tie: the one on top in more scenes is the main top. A retrain moves a
+  // sum by a few hundredths, which must not swap who tops "more" when one person tops two scenes and the other one.
+  const ranked = [...sceneTops.values()].sort((a, b) => {
+    const nearTie = Math.abs(a.weight - b.weight) <= 0.05 * Math.max(a.weight, b.weight);
+    return nearTie && a.scenes !== b.scenes ? b.scenes - a.scenes : b.weight - a.weight;
+  });
   const major = ranked[0];
   const minor = ranked[1];
 
