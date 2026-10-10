@@ -1,42 +1,60 @@
-# Five uploaded fics: full-text label pass
+# Deep-dive label pass: HTML and PDF uploads
 
-Reviewed against main at `9ad2225b8e15807e5d7e03095489eb596153c797` on 2026-10-10. Each eligible work was read from beginning to end, with act inventories made independently of detections, followed by review of every engine audit reading in context. AI judgments have weight **0.9**, separately from the reviewer’s confidence. They are not human gold labels. The JSON also records the engine’s current per-hit model probability where features are available; that is distinct from a displayed, aggregated scene score.
+Reviewed against main at `9ad2225b8e15807e5d7e03095489eb596153c797` on 2026-10-10. Each eligible work was read from beginning to end, followed by contextual review of every engine audit reading. **Only definite judgments with reviewer confidence ≥95% enter training, at weight 0.9.** The confidence cutoff applies to this conversation and future additions; older AI and owner judgments are not retroactively filtered. Weight is distinct from reviewer confidence and engine confidence. These are AI judgments, not human gold labels.
 
-| Fic | Paragraphs read | Right | Wrong | Uncertain | Imported at 0.9 (right / wrong) | Act inventory | Candidate missed performed acts |
+| Fic | Paragraphs read | Right | Wrong | Uncertain | Imported at 0.9 (right / wrong) | Act inventory | Candidate missed performed acts ≥95% |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
 | Bluebells and Daylillies and Wild Roses Running Rampant | 1747 | 58 | 8 | 0 | 33 (27 / 6) | 29 | 7 |
-| A WereCompeer | 1220 | 165 | 27 | 18 | 154 (136 / 18) | 53 | 11 |
-| like a dog with a bird at your door | 1474 | 52 | 16 | 4 | 40 (31 / 9) | 36 | 6 |
+| A WereCompeer | 1220 | 165 | 27 | 18 | 146 (128 / 18) | 53 | 11 |
+| like a dog with a bird at your door | 1474 | 52 | 16 | 4 | 39 (30 / 9) | 36 | 6 |
+| Needing the Knot | 1858 | 53 | 18 | 11 | 67 (53 / 14) | 56 | 23 |
+| wicked thing | 4321 | 27 | 12 | 4 | 34 (22 / 12) | 29 | 6 |
 
-Across the three eligible works: **348 readings assessed; 227 accepted training judgments (194 right, 33 wrong); 121 withheld; 118 inventory records.** The inventory includes retrospective summaries, requests and broader contact. Its size is not a false-negative count. No wholly missed scene is inferred merely from an uncovered sentence within an already-detected scene.
+Across the five eligible works: **473 readings assessed; 319 accepted training judgments (260 right, 59 wrong); 154 withheld; 203 inventory records.** Inventory size is not a false-negative count: it includes retrospective summaries, requests, broader contact and uncovered passages within already-detected scenes. Lower-confidence assessments remain report-only.
 
-Negotiation and Strawberry Mama are declined under AGENTS.md (“Decline fics where minors appear in sexual content”). The former includes a minor witnessing adult sexual contact; the latter includes an erotic recollection explicitly set at age 14. No new labels or inventories were added for those works; their older repository records remain untouched.
+The cutoff removes nine judgments from the previous version of this PR (eight WereCompeer and one Dogbird). Two had replaced older Claude records, which were restored unchanged. Older records are archived when replaced by qualifying judgments, not counted twice. All 47 protected human/retired/disputed WereCompeer right-set records remain identical as JSON objects.
 
-## What was found
+## Exclusions
 
-- Bluebells: a clear tree-side penile-anal scene is absent from the audit; reciprocal hand stimulation and intercrural sex also have coverage gaps. Several soothing cues credit the observer instead of the person touching, and self-stroking is assigned to the partner. A current penetration clause is incorrectly demoted by a preceding dream clause.
-- A WereCompeer: fingers are mistaken for penile penetration; external rubbing is counted as anal intercourse; an absent attendant is selected for a sexual action; actual oral and anal riding clauses are demoted by surrounding intentions. Confirmed fisting, toy use and some manual stimulation lack correct matching act detections. Initial oral warming and later explicit anal warming are distinct events; both are supported.
-- Dogbird: stopped attempts to resume oral contact are counted as performed; a guided handjob and partnered postcoital fingers have ownership errors. Figurative collars and a shirt collar become kink cues. The main anal direction is correct. An initial oral passage is uncovered, but its later continuation is detected, so this is not an entirely missed oral scene. The receiving partner’s climax is manually assisted, not hands-free.
+AGENTS.md says “Decline fics where minors appear in sexual content.” Negotiation includes a minor witnessing adult sexual contact; Strawberry Mama includes an erotic recollection explicitly set at age 14; (best/str8/room)mate explicitly recalls sexual activity at ages 12 and 14. Those works receive no new labels or inventories. Existing repository records are unchanged.
 
-The broad anal-touch pattern intentionally includes spanking: four apparent wording errors were retained as correct cues. Intended preparations, clothing-mediated oral contact, hand-as-collar imagery and resisted blushing were left uncertain where the label’s scope was not clear. Dynamic cues were assessed as cues, not automatically rejected because they were not sex acts.
+## Findings
 
-## How the labels enter training
+- Bluebells: missed tree-side penile-anal intercourse, reciprocal hand stimulation and intercrural contact; caring cues credited to observers; self-stroking assigned to the partner; a current penetration clause demoted by a preceding dream clause.
+- A WereCompeer: fingers mistaken for penile penetration; external rubbing counted as anal intercourse; an absent attendant selected for sexual actions; actual oral and anal riding demoted by nearby intentions; missed fisting, toy and manual stimulation. Initial oral warming and later explicit anal warming are distinct supported events.
+- Dogbird: stopped oral attempts counted as performed; guided handjob and partnered postcoital fingers have ownership errors; figurative and clothing collars become kink cues. Initial oral contact is uncovered but its continuation is detected. The receiving partner’s climax is manually assisted.
+- Needing the Knot: self-fingering assigned to a partner; fingers mistaken for penile penetration; oral stimulation credited to an absent brother; hand-carried semen mistaken for a blowjob; requests and mental resistance have attribution/type errors. A supported anal reversal has Dean penetrating Castiel at paragraphs1232–1238. Multiple real toy, oral, anal and manual acts appear only as weaker hints or lack matching detections.
+- Wicked thing: two supported anal encounters are missing at249–251 and3113–3123; actual oral contact is demoted to wanted; Force/mind metaphors become physical penetration; an outsider is selected in the first adult encounter; clothing and figurative leashes become collar cues. Custodial following, genuine comforting after trauma and an actual punitive collar remain uncertain, because their physical descriptions may be accurate broad dynamic hints.
 
-- `tests/right-set`: definite, unambiguous new judgments, with `source: chatgpt` and `weight: 0.9` on both positives and negatives. Existing unit-weight/human, disputed and retired judgments are preserved. Earlier automated entries replaced by this pass are archived in the inventory file, without adding a second vote.
-- `tests/labels/chatgpt-five-fic-deep-dives-claims.json`: **identity metadata only, with an empty `labels` map**. This binds the right-set judgment to the reviewed source hash, paragraph, pattern, act, occurrence class, participants and role. It deliberately does not create a unit-weight audit label. A future changed claim is quarantined by existing learning code. Raw readings that are not the displayed representative scene use an `audit-` card; manual and dynamic records use separate cards. The existing grouped-scene checker cannot replay those individually, so the new corpus test replays all 227 exact raw claims. Training already ignores the card field; no loader or engine change is needed.
-- `tests/scene-review/chatgpt-five-fic-deep-dives.json`: all assessments, confidence, corrected paraphrase, rationale, withheld reason, precise act ranges, paragraph hashes and prior automated history. Undetected acts are retained as candidate recall evidence; no synthetic detected-hit training row is fabricated.
+The broad anal-touch pattern intentionally includes spanking, so those accurate cues are not false sex acts. Other accurate everyday hints are not rejected merely for being nonsexual. Weak/categorical ambiguity is withheld rather than forced to 95% confidence.
 
-**171 of the 227 accepted judgments have feature vectors and can enter the current context-model retrain. The other 56 remain weighted pattern-reliability evidence, but the current learner skips them because the engine did not record a feature vector.** Their engine model confidence is null; no score was invented.
+## Training and provenance
 
-All three upload bodies, metadata, paragraph arrays and source hashes matched the existing private sample files exactly. Source paragraph indices below are **zero-based**, using `reviewParagraphs` from `review/review-batch-data.ts`. Open the named private HTML and extract paragraphs with that helper to find the same evidence. No fic text is committed.
+- Definite qualifying judgments live in `tests/right-set`, with `source: chatgpt`, `weight: 0.9`, and `reviewerConfidence` stored separately from the engine’s `conf` field. Both positives and negatives use the same 0.9 weight.
+- `tests/labels/chatgpt-five-fic-deep-dives-claims.json` contains **identity metadata only and an empty labels map**. This avoids unit-weight audit votes while binding each judgment to its reviewed source hash, paragraph, pattern, act, occurrence class, participants and role. A later changed claim is quarantined by the existing learner.
+- Raw readings not represented by a grouped scene use an `audit-` card; manual and dynamic readings use separate cards. The existing grouped-scene checker cannot replay those individually, so the new corpus test replays every accepted raw claim. The existing learner ignores the card field; no loader change is required.
+- `tests/scene-review/chatgpt-five-fic-deep-dives.json` retains all assessments, original reviewer confidence, current per-hit model probability where available, rationale, withheld reasons, act ranges, paragraph hashes and prior automated history. Undetected acts are candidate recall evidence; no synthetic hit-training row or human gold label is fabricated. Structured act actor means performer (for oral acts this differs from legacy oral top).
 
-Prior audit labels and existing identity guards were not overwritten. All 47 protected human/retired/disputed A WereCompeer right-set entries were preserved exactly as JSON objects. No engine rules, gold labels, production confidence model, reliability table or METRICS row changed. Retraining is a separate step after merging.
+**246 of 319 accepted judgments have feature vectors for the current context-model retrain. The remaining 73 contribute weighted pattern-reliability evidence but are skipped by the current context learner because features were not recorded.** Engine model confidence is null for those records. These per-hit probabilities are distinct from aggregated displayed scene scores.
+
+## Reproducing private PDF samples
+
+The original three HTML upload hashes, paragraph arrays, body and metadata exactly match the existing private samples. The two PDFs use the application’s PDF line/page joining and story extraction. The resulting story text is identical when serialized into private HTML for the HTML-only learning/check tools. Both original PDF hash and normalized HTML hash are retained. Different AO3 downloads or reassemblies intentionally require re-review instead of silently reusing a label.
+
+After installing dependencies, keep the PDFs and outputs private and run:
+
+```sh
+node scripts/prepare-pdf-sample.mjs Needing_the_Knot.pdf ao3-samples/needing-the-knot.html --title 'Needing the Knot' --chapters 32/32
+node scripts/prepare-pdf-sample.mjs wicked_thing.pdf ao3-samples/wicked-thing.html --title 'wicked thing' --chapters 20/20
+```
+
+The helper prints hashes and refuses to overwrite different output content. Re-running the same PDF is safe. Paragraph indices below are zero-based, using `reviewParagraphs` from `review/review-batch-data.ts` on the private HTML. The normalized files and fic text are not committed.
 
 ## Wrong readings
 
-The names in these explanations are invented adult aliases. The machine-readable identity fields retain the actual names needed to match engine claims. A wrong hint is not necessarily a false-positive performed scene: the exact kind is listed.
+These explanations use invented adult aliases. Machine-readable identity fields retain the actual names needed for matching. A wrong hint is not necessarily a false-positive performed scene; its exact kind is listed.
 
-| Fic / item | Paragraph | Pattern / kind | Why wrong | Training |
+| Item | Paragraph | Pattern / kind | Why wrong | Training |
 | --- | ---: | --- | --- | --- |
 | bluebells-33 | 12 | dom-grip / behavior | The grip recipient is the surgeon, not Rowan; this is a confrontational medical memory, not behavior between the pairing. | 0.9 |
 | bluebells-42 | 798 | care-soothe / behavior | The actual touching is Rowan toward Morgan, while the reported comforting direction is Morgan toward Rowan. The tone is erotic exploration rather than reassurance. | 0.9 |
@@ -89,10 +107,40 @@ The names in these explanations are invented adult aliases. The machine-readable
 | dogbird-56 | 1302 | dialogue:anal sex / said | Speaker is Blake, not Arden. The engine credits receptive desire to the wrong adult and reverses the counterpart. | 0.9 |
 | dogbird-61 | 1324 | dd2-hj-hand-to-dick / handjob | The hand belongs to Arden and the stimulated penis belongs to Blake. Engine reverses handjob giver/receiver by making the directing recipient the manual actor. | 0.9 |
 | dogbird-66 | 1344 | self-own-fingers / solo | Fingers are Arden own, but the anus is Blake. This is partnered anal finger contact, not Arden self-fingering. | Withheld: Existing audit label or claim identity takes precedence |
+| needing-the-knot-0 | 168 | fingers-into / act | Self-fingering; Adrian has already left. | Withheld: More than one detected claim shares the legacy pattern/short-hash key |
+| needing-the-knot-1 | 168 | fingers-into~elided / act | Self-fingering, with no partner performing it. | Withheld: More than one detected claim shares the legacy pattern/short-hash key |
+| needing-the-knot-2 | 168 | dd-finger-slips-into / act | Duplicate pattern repeats the incorrect partner recipient. | Withheld: More than one detected claim shares the legacy pattern/short-hash key |
+| needing-the-knot-3 | 168 | dd-finger-slips-into~elided / act | Duplicate elision invents an absent actor. | Withheld: More than one detected claim shares the legacy pattern/short-hash key |
+| needing-the-knot-5 | 606 | rock-into / act | Withdrawal of fingers in the next paragraph resolves the instrument; intercourse begins later. | 0.9 |
+| needing-the-knot-6 | 607 | mouth-off~elided / act | The adult brother is absent; continuous subject is Adrian. | 0.9 |
+| needing-the-knot-20 | 1111 | cum-in-throat / act | Previous sentence establishes transfer by hand; no mouth-to-penis act here. | 0.9 |
+| needing-the-knot-24 | 1133 | fuck / act | Fingers transport semen to his mouth; they are not entering the recipient. | 0.9 |
+| needing-the-knot-29 | 1225 | hole-around-name / act | Penile penetration does not begin until seven paragraphs later. | 0.9 |
+| needing-the-knot-32 | 19 | fuck~elided / wanted | Wanted-role top reverses the requesting recipient; desired actor is Adrian. | 0.9 |
+| needing-the-knot-34 | 86 | hj-stroke / handjob | Self-touch; Adrian is absent. | 0.9 |
+| needing-the-knot-38 | 169 | suck-fingers~elided / fingers | Finger owner is Rowan, not Adrian; fantasy does not change ownership. | 0.9 |
+| needing-the-knot-40 | 202 | hj-stroke / handjob | Handjob to a partner is invented; the sheet bears only the partner’s scent. | 0.9 |
+| needing-the-knot-43 | 293 | plug-worn / prep | The word for atmosphere is unrelated to any vibrator or plug. | 0.9 |
+| needing-the-knot-47 | 439 | thrust-back / touch | Pushing back is psychological resistance, not bodily motion toward penetration. | 0.9 |
+| needing-the-knot-59 | 1048 | abo-bare-neck~elided / behavior | The credited neck-offering person is reversed; the desire belongs to Rowan. | 0.9 |
+| needing-the-knot-63 | 1106 | hole-around / touch | This is insertion and riding, not merely penis against buttocks; next paragraph confirms intercourse. | 0.9 |
+| needing-the-knot-68 | 1133 | suck-fingers~elided / fingers | Self finger licking must not make Rowan the finger owner; licking also differs from sucking. | 0.9 |
+| wicked-thing-11 | 3121 | push-into~elided / act | The fingers are figurative elements of a presence entering a mind. No physical anal fingers are described in the matched sentence. Separate surrounding intercourse is penile, established at paragraph 3113. | 0.9 |
+| wicked-thing-12 | 3673 | pushed-in~elided / act | No sexual action or partner is present; figurative effort is converted into penile anal penetration. | 0.9 |
+| wicked-thing-13 | 237 | dom-pin~elided / behavior | The continuous nightclub-to-bedroom scene identifies the older participant as Morgan, whose identity is confirmed by the following morning. Ellis is absent. The physical pinning is real, but its reported actor is an outsider. | 0.9 |
+| wicked-thing-14 | 244 | knelt-between~elided / prep | Morgan is the kneeling performer, and Rowan is the seated recipient. Ellis is absent. This specific match is preparation, with oral activity subsequently established at248; it must not independently count as a completed oral act. | 0.9 |
+| wicked-thing-18 | 1407 | collar-wearer / behavior | No collar, leash or gag is worn. The imagined restraints concern the Council rather than Morgan. | 0.9 |
+| wicked-thing-22 | 1796 | sub-melt~elided / behavior | The person going limp is the unrelated pirate during a violent escape. Neither member of the romantic pair goes pliant here. | 0.9 |
+| wicked-thing-27 | 2531 | collar-wearer / behavior | The collar is part of clothing, not a sexual collar or leash. The observer notices adult neck marks, not an ongoing sex act. | 0.9 |
+| wicked-thing-28 | 2863 | collar-wearer / behavior | The collar is the ordinary robe neckline. No separate collar or leash is worn. | 0.9 |
+| wicked-thing-32 | 3100 | mouth-around-him~elided / wanted | The sentence expresses desire while describing present, actual mouth contact begun in the preceding paragraph. The wanted classification wrongly demotes an ongoing act; hint a is the mouth performer because its role is bottom. | 0.9 |
+| wicked-thing-36 | 3660 | sinks-to-floor / prep | Full surrounding context is a solitary escape attempt, not oral preparation; no sexual partner is present. | 0.9 |
+| wicked-thing-40 | 4194 | collar-wearer / behavior | A figurative leash describes combat domination of Morgan and a third fighter, not a collar worn by Rowan in sexual submission. | 0.9 |
+| wicked-thing-41 | 4244 | collar-wearer / behavior | The target is the adversary, not Rowan; no sexual leash or sexual partner relation is described. | 0.9 |
 
-## Candidate missed performed acts
+## Candidate missed performed acts at ≥95% confidence
 
-These are independently supported performed events or act components without a correctly matched detection in the cited range. They require human confirmation before becoming gold recall tests. Historic summaries, broader inventory-only contact, and corrected already-detected claims are separately identified in the JSON.
+These performed acts or components lack a correctly matched act detection in the cited range. They need human confirmation before becoming gold recall tests. Historic summaries, broader inventory-only contact, incorrect existing claims and lower-confidence proposals are separately identified in the JSON.
 
 | Item | Paragraphs | Act | Note |
 | --- | --- | --- | --- |
@@ -120,7 +168,36 @@ These are independently supported performed events or act components without a c
 | dogbird-act-14 | 1260–1262 | grinding | Inventory item outside the central penile-anal/oral detector scope; absence of an act hit does not establish a regression. |
 | dogbird-act-19 | 1280–1282 | manual-self-contact | Palm pressure against own erection; brief non-orgasmic touch. Inventory item outside the central penile-anal/oral detector scope; absence of an act hit does not establish a regression. |
 | dogbird-act-27 | 1308–1308 | masturbation | Buck strokes own penis twice to spread lube; no self-orgasm. |
+| needing-the-knot-act-0 | 86–88 | masturbation | Solo penile stroking; raw partner-handjob hit is wrong. |
+| needing-the-knot-act-8 | 168–169 | fingering | Self-fingering while partner absent; all raw act hits misattribute partner. |
+| needing-the-knot-act-10 | 202–203 | masturbation | Solo stroking and friction against a scented sheet. |
+| needing-the-knot-act-11 | 213–213 | masturbation | Solo shower orgasm, summarized in narration. |
+| needing-the-knot-act-16 | 603–603 | rimming | Tongue across and into anal opening. |
+| needing-the-knot-act-17 | 606–607 | fingering | Inferred instrument confirmed by finger withdrawal; raw penis reading wrong. |
+| needing-the-knot-act-18 | 615–615 | handjob | Rowan manually strokes Adrian’s penis; performer ownership retained. |
+| needing-the-knot-act-21 | 668–671 | handjob | Simultaneous stroking of Rowan by Adrian. |
+| needing-the-knot-act-22 | 776–778 | blowjob | Adrian penis owner/oral top; Rowan performer; detected only as grip hint. |
+| needing-the-knot-act-23 | 781–781 | rimming | Mouth replaces torn underwear at rear. |
+| needing-the-knot-act-24 | 783–783 | fingering | Three fingers explicitly penetrate. |
+| needing-the-knot-act-27 | 1029–1038 | anal sex | Seated riding encounter, onset compressed; next chapter confirms knot and multiple climaxes. |
+| needing-the-knot-act-28 | 1091–1091 | blowjob | Rowan receives oral penile contact, including swallowing. |
+| needing-the-knot-act-29 | 1091–1091 | rimming | Tongue at and through entrance before fingers. |
+| needing-the-knot-act-33 | 1102–1104 | blowjob | Rowan wakes Adrian with oral stimulation; Adrian penis owner. |
+| needing-the-knot-act-35 | 1109–1111 | masturbation | Rowan grasps and strokes his own penis while riding partner. |
+| needing-the-knot-act-40 | 1132–1140 | anal sex | Table penetration and knot followed by carry to sofa; raw fingering hit is wrong. |
+| needing-the-knot-act-41 | 1132–1132 | handjob | Adrian touches Rowan’s penis beneath lace at climax. |
+| needing-the-knot-act-44 | 1173–1173 | anal sex | Actual insertion, thrusts and knot; detected only as hints, not a correct strong act. |
+| needing-the-knot-act-45 | 1173–1173 | handjob | Adrian strokes Rowan during intercourse. |
+| needing-the-knot-act-49 | 1219–1219 | rimming | Rowan performs first receptive oral-anal stimulation on Adrian. |
+| needing-the-knot-act-51 | 1232–1238 | anal sex | Rowan penetrates Adrian and ejaculates internally. Matched nudging onset uncertain; later insertion and completion certain. |
+| needing-the-knot-act-53 | 1415–1423 | anal sex | Later penetrative intercourse, knot and sustained bite; dialogue hit only. |
+| wicked-thing-act-4 | 249–249 | fingering | One, then multiple fingers enter before a distinct penile insertion. |
+| wicked-thing-act-5 | 249–251 | anal sex | The adult partner's insertion follows explicit finger preparation, and sustained intercourse follows. The younger adult's mistaken belief that he is dreaming is disproved the next morning at264–268. |
+| wicked-thing-act-18 | 2152–2152 | masturbation | One hand initially encloses both adults’ penises, including the performer’s own. |
+| wicked-thing-act-19 | 2152–2164 | manual | Manual genital stimulation continues through mutual climax. Praise hit does not itself detect this act. Only praise is detected, not the manual act. |
+| wicked-thing-act-20 | 2156–2164 | manual | Reciprocal hand stimulation begins after partner guides his hand; both climax. |
+| wicked-thing-act-27 | 3113–3123 | anal sex | The younger adult lowers onto the older adult’s penis, then rides him to mutual climax. Anatomical site is established by the adult male pairing and continuous insertion/hip motion context. The metaphorical mind fingers at 3121 are not physical fingering; lap position hit 33 is only a hint. |
 
 ## Validation
 
-Validation results are recorded in the pull request. The focused corpus check covers the three eligible uploaded works. A full-corpus sexual-content review was not performed, because two requested works are excluded. The new dataset tests verify full paragraph coverage, fractional-weight routing, exact claim identity, uncertainty exclusion, and preservation of earlier audit judgments.
+Results are recorded in the pull request. Dataset checks verify whole-text coverage, exact identities, uncertainty and confidence-cutoff exclusion, fractional-weight routing, restored earlier automated records and prior audit protections. A separate corpus test replays every accepted raw claim against the five private samples. The focused gold/right-set check covers the eligible works; excluded works were not analyzed. No engine detection rules, gold labels, production model, reliability table or METRICS row changed. Retraining remains separate after merging.

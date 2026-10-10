@@ -13,8 +13,8 @@ const provenance=JSON.parse(readFileSync(join(__dirname,'labels/chatgpt-five-fic
 const sets:RightSet[]=readdirSync(join(__dirname,'right-set')).filter(f=>f.endsWith('.json')).map(f=>JSON.parse(readFileSync(join(__dirname,'right-set',f),'utf8')));
 
 describe('five-fic deep dives: training provenance and coverage',()=>{
-  it('covers every detected claim and every paragraph of the three eligible works',()=>{
-    expect(data.fics.map((f:any)=>f.file).sort()).toEqual(['bluebells.html','dogbird.html','were-compeer.html']);
+  it('covers every detected claim and every paragraph of the five eligible works',()=>{
+    expect(data.fics.map((f:any)=>f.file).sort()).toEqual(['bluebells.html','dogbird.html','needing-the-knot.html','were-compeer.html','wicked-thing.html']);
     for(const f of data.fics){
       const covered=new Set<number>();
       for(const r of f.readCoverage)for(let p=r.from;p<=r.to;p++)covered.add(p);
@@ -26,10 +26,11 @@ describe('five-fic deep dives: training provenance and coverage',()=>{
         expect(r.claim.paragraph).toBeGreaterThanOrEqual(0);expect(r.claim.paragraph).toBeLessThan(f.paragraphs);
         expect(r.weight).toBe(0.9);expect(r.confidence).toBeGreaterThan(0);expect(r.confidence).toBeLessThanOrEqual(1);
         if(r.verdict==='uncertain')expect(r.training).toBe('withheld');
+        if(r.confidence<0.95)expect(r.training).toBe('withheld');
       }
       for(const a of f.acts){expect(a.weight).toBe(0.9);expect(a.paragraphHashes.length).toBe(a.to-a.from+1)}
     }
-    expect(data.excluded.map((f:any)=>f.file).sort()).toEqual(['Negotiation.html','Strawberry_Mama.html']);
+    expect(data.excluded.map((f:any)=>f.file).sort()).toEqual(['Negotiation.html','Strawberry_Mama.html','beststr8roommate.pdf']);
   });
   it('keeps the audit-label path empty so each accepted judgment retains its fractional weight',()=>{
     expect(provenance.labels).toEqual({});
@@ -42,6 +43,8 @@ describe('five-fic deep dives: training provenance and coverage',()=>{
       const entries=pool.filter(e=>e.source==='chatgpt'&&e.via===baseVia(r.claim.pattern)&&e.h===r.reportHash);
       expect(entries).toHaveLength(1);
       expect(weightOf(entries[0])).toBe(0.9);
+      expect(entries[0].reviewerConfidence).toBe(r.confidence);
+      expect(r.confidence).toBeGreaterThanOrEqual(0.95);
       expect(sameReportedPeople(entries[0],r.claim)).toBe(true);
       expect(sameClaim(claims.get(r.key)!,r.claim)).toBe(true);
       if(r.verdict==='correct')expect(strengthOf(entries[0])).toBe('weighted');
@@ -61,6 +64,14 @@ describe('five-fic deep dives: training provenance and coverage',()=>{
     expect(sameClaim(original,{...original,act:'fingering'})).toBe(false);
     expect(sameClaim(original,{...original,a:'Rowan',b:'Morgan'})).toBe(false);
     expect(sameClaim(original,{...original,kind:'wanted'})).toBe(false);
+  });
+  it('keeps the confidence cutoff separate from weight and preserves earlier automated judgments',()=>{
+    expect(data.minimumReviewerConfidence).toBe(0.95);
+    expect(provenance.minimumReviewerConfidence).toBe(0.95);
+    for(const old of data.priorAutomatedEntries.filter((a:any)=>a.restoredAfterConfidenceCutoff)){
+      const set=sets.find(s=>s.fic===old.fic)!;
+      expect([...set.entries,...set.negatives??[]]).toContainEqual(old.entry);
+    }
   });
 });
 

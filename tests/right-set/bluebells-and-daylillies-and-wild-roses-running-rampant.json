@@ -18,7 +18,8 @@
         "2026-10-10"
       ],
       "top": "David Shepherd",
-      "bottom": "Brother Diarmuid"
+      "bottom": "Brother Diarmuid",
+      "reviewerConfidence": 1
     },
     {
       "kind": "scene",
@@ -36,7 +37,8 @@
         "2026-10-10"
       ],
       "top": "David Shepherd",
-      "bottom": "Brother Diarmuid"
+      "bottom": "Brother Diarmuid",
+      "reviewerConfidence": 1
     },
     {
       "kind": "scene",
@@ -54,7 +56,8 @@
         "2026-10-10"
       ],
       "top": "David Shepherd",
-      "bottom": "Brother Diarmuid"
+      "bottom": "Brother Diarmuid",
+      "reviewerConfidence": 1
     },
     {
       "kind": "scene",
@@ -72,7 +75,8 @@
         "2026-10-10"
       ],
       "top": "David Shepherd",
-      "bottom": "Brother Diarmuid"
+      "bottom": "Brother Diarmuid",
+      "reviewerConfidence": 1
     },
     {
       "kind": "scene",
@@ -90,7 +94,8 @@
         "2026-10-10"
       ],
       "top": "David Shepherd",
-      "bottom": "Brother Diarmuid"
+      "bottom": "Brother Diarmuid",
+      "reviewerConfidence": 1
     },
     {
       "kind": "scene",
@@ -108,7 +113,8 @@
         "2026-10-10"
       ],
       "top": "David Shepherd",
-      "bottom": "Brother Diarmuid"
+      "bottom": "Brother Diarmuid",
+      "reviewerConfidence": 1
     },
     {
       "kind": "scene",
@@ -126,7 +132,8 @@
         "2026-10-10"
       ],
       "top": "David Shepherd",
-      "bottom": "Brother Diarmuid"
+      "bottom": "Brother Diarmuid",
+      "reviewerConfidence": 1
     },
     {
       "kind": "scene",
@@ -144,7 +151,8 @@
         "2026-10-10"
       ],
       "top": "David Shepherd",
-      "bottom": "Brother Diarmuid"
+      "bottom": "Brother Diarmuid",
+      "reviewerConfidence": 1
     },
     {
       "kind": "scene",
@@ -162,7 +170,8 @@
         "2026-10-10"
       ],
       "top": "David Shepherd",
-      "bottom": "Brother Diarmuid"
+      "bottom": "Brother Diarmuid",
+      "reviewerConfidence": 1
     },
     {
       "kind": "scene",
@@ -180,7 +189,8 @@
         "2026-10-10"
       ],
       "top": "David Shepherd",
-      "bottom": "Brother Diarmuid"
+      "bottom": "Brother Diarmuid",
+      "reviewerConfidence": 1
     },
     {
       "kind": "scene",
@@ -198,7 +208,8 @@
         "2026-10-10"
       ],
       "top": "David Shepherd",
-      "bottom": "Brother Diarmuid"
+      "bottom": "Brother Diarmuid",
+      "reviewerConfidence": 1
     },
     {
       "kind": "scene",
@@ -216,7 +227,8 @@
         "2026-10-10"
       ],
       "top": "David Shepherd",
-      "bottom": "Brother Diarmuid"
+      "bottom": "Brother Diarmuid",
+      "reviewerConfidence": 1
     },
     {
       "kind": "scene",
@@ -234,7 +246,8 @@
         "2026-10-10"
       ],
       "top": "David Shepherd",
-      "bottom": "Brother Diarmuid"
+      "bottom": "Brother Diarmuid",
+      "reviewerConfidence": 1
     },
     {
       "kind": "scene",
@@ -252,7 +265,8 @@
         "2026-10-10"
       ],
       "top": "David Shepherd",
-      "bottom": "Brother Diarmuid"
+      "bottom": "Brother Diarmuid",
+      "reviewerConfidence": 1
     },
     {
       "kind": "scene",
@@ -270,7 +284,8 @@
         "2026-10-10"
       ],
       "top": "Brother Diarmuid",
-      "bottom": "David Shepherd"
+      "bottom": "David Shepherd",
+      "reviewerConfidence": 1
     },
     {
       "kind": "hint",
@@ -289,7 +304,8 @@
       ],
       "who": "Brother Diarmuid",
       "role": "bottom",
-      "wants": true
+      "wants": true,
+      "reviewerConfidence": 0.98
     },
     {
       "kind": "hint",
@@ -308,7 +324,8 @@
       ],
       "who": "Brother Diarmuid",
       "role": "bottom",
-      "wants": true
+      "wants": true,
+      "reviewerConfidence": 1
     },
     {
       "kind": "hint",
@@ -327,7 +344,8 @@
       ],
       "who": "David Shepherd",
       "role": "bottom",
-      "wants": true
+      "wants": true,
+      "reviewerConfidence": 0.98
     },
     {
       "kind": "hint",
@@ -346,7 +364,8 @@
       ],
       "who": "Brother Diarmuid",
       "role": "bottom",
-      "wants": true
+      "wants": true,
+      "reviewerConfidence": 1
     },
     {
       "kind": "hint",
@@ -365,7 +384,8 @@
       ],
       "who": "Brother Diarmuid",
       "role": "bottom",
-      "wants": true
+      "wants": true,
+      "reviewerConfidence": 1
     },
     {
       "kind": "scene",
@@ -383,7 +403,8 @@
         "2026-10-10"
       ],
       "who": "David Shepherd",
-      "role": "top"
+      "role": "top",
+      "reviewerConfidence": 1
     },
     {
       "kind": "hint",
@@ -402,7 +423,8 @@
       ],
       "who": "Brother Diarmuid",
       "role": "bottom",
-      "wants": true
+      "wants": true,
+      "reviewerConfidence": 1
     },
     {
       "kind": "hint",
@@ -421,7 +443,8 @@
       ],
       "who": "David Shepherd",
       "role": "top",
-      "wants": true
+      "wants": true,
+      "reviewerConfidence": 1
     },
     {
       "kind": "hint",
@@ -440,7 +463,8 @@
       ],
       "who": "David Shepherd",
       "role": "top",
-      "wants": true
+      "wants": true,
+      "reviewerConfidence": 1
     },
     {
       "kind": "hint",
@@ -459,7 +483,8 @@
       ],
       "who": "David Shepherd",
       "role": "bottom",
-      "wants": true
+      "wants": true,
+      "reviewerConfidence": 1
     },
     {
       "kind": "hint",
@@ -478,7 +503,8 @@
       ],
       "who": "Brother Diarmuid",
       "role": "top",
-      "wants": true
+      "wants": true,
+      "reviewerConfidence": 1
     },
     {
       "kind": "hint",
@@ -497,7 +523,8 @@
       ],
       "who": "Brother Diarmuid",
       "role": "top",
-      "wants": true
+      "wants": true,
+      "reviewerConfidence": 0.98
     }
   ],
   "negatives": [
@@ -519,7 +546,8 @@
       "who": "David Shepherd",
       "role": "top",
       "wants": true,
-      "misread": true
+      "misread": true,
+      "reviewerConfidence": 1
     },
     {
       "kind": "hint",
@@ -539,7 +567,8 @@
       "who": "David Shepherd",
       "role": "top",
       "wants": true,
-      "misread": true
+      "misread": true,
+      "reviewerConfidence": 1
     },
     {
       "kind": "hint",
@@ -559,7 +588,8 @@
       "who": "David Shepherd",
       "role": "top",
       "wants": true,
-      "misread": true
+      "misread": true,
+      "reviewerConfidence": 0.98
     },
     {
       "kind": "hint",
@@ -579,7 +609,8 @@
       "who": "Brother Diarmuid",
       "role": "top",
       "wants": true,
-      "misread": true
+      "misread": true,
+      "reviewerConfidence": 1
     },
     {
       "kind": "hint",
@@ -599,7 +630,8 @@
       "who": "Brother Diarmuid",
       "role": "top",
       "wants": true,
-      "misread": true
+      "misread": true,
+      "reviewerConfidence": 1
     },
     {
       "kind": "hint",
@@ -619,7 +651,8 @@
       "who": "David Shepherd",
       "role": "bottom",
       "wants": true,
-      "misread": true
+      "misread": true,
+      "reviewerConfidence": 1
     }
   ]
 }

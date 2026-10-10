@@ -18,6 +18,8 @@ export interface RightEntry {
   /** Below 1 for labels from an unverified pass; absent = the owner's own mark (1). */
   weight?: number;
   source?: string;
+  /** The AI reviewer's confidence in its judgment, distinct from the engine score in conf. */
+  reviewerConfidence?: number;
 }
 export interface RightSet { fic: string; title: string; entries: RightEntry[]; negatives?: RightEntry[] }
 export const MISREAD_LABELS: string[];

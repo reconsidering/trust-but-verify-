@@ -1102,21 +1102,6 @@
       "id": "were-compeer-48"
     },
     {
-      "key": "lips-around#288d00b4",
-      "claim": {
-        "fic": "were-compeer.html",
-        "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
-        "paragraph": 977,
-        "pattern": "lips-around",
-        "act": "blowjob",
-        "kind": "act",
-        "a": "Derek Hale",
-        "b": "Stiles Stilinski",
-        "role": ""
-      },
-      "id": "were-compeer-49"
-    },
-    {
       "key": "hole-around#43c10d6c",
       "claim": {
         "fic": "were-compeer.html",
@@ -1265,36 +1250,6 @@
         "role": ""
       },
       "id": "were-compeer-63"
-    },
-    {
-      "key": "fill~elided#e93c9acb",
-      "claim": {
-        "fic": "were-compeer.html",
-        "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
-        "paragraph": 1199,
-        "pattern": "fill~elided",
-        "act": "anal sex",
-        "kind": "act",
-        "a": "Derek Hale",
-        "b": "Stiles Stilinski",
-        "role": ""
-      },
-      "id": "were-compeer-66"
-    },
-    {
-      "key": "passive-fucked~elided#52878409",
-      "claim": {
-        "fic": "were-compeer.html",
-        "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
-        "paragraph": 1205,
-        "pattern": "passive-fucked~elided",
-        "act": "anal sex",
-        "kind": "act",
-        "a": "Derek Hale",
-        "b": "Stiles Stilinski",
-        "role": ""
-      },
-      "id": "were-compeer-69"
     },
     {
       "key": "ogle-crotch~elided#511dda45",
@@ -1672,21 +1627,6 @@
       "id": "were-compeer-108"
     },
     {
-      "key": "dialogue:anal sex#a9438829",
-      "claim": {
-        "fic": "were-compeer.html",
-        "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
-        "paragraph": 234,
-        "pattern": "dialogue:anal sex",
-        "act": "anal sex",
-        "kind": "said",
-        "a": "Stiles Stilinski",
-        "b": "Derek Hale",
-        "role": "bottom"
-      },
-      "id": "were-compeer-109"
-    },
-    {
       "key": "fuck#28951766",
       "claim": {
         "fic": "were-compeer.html",
@@ -1852,21 +1792,6 @@
       "id": "were-compeer-121"
     },
     {
-      "key": "chastity-keyholder#32302200",
-      "claim": {
-        "fic": "were-compeer.html",
-        "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
-        "paragraph": 296,
-        "pattern": "chastity-keyholder",
-        "act": "controlling a chastity device",
-        "kind": "behavior",
-        "a": "Derek Hale",
-        "b": "Stiles Stilinski",
-        "role": "top"
-      },
-      "id": "were-compeer-122"
-    },
-    {
       "key": "chastity-wearer#bc96bafe",
       "claim": {
         "fic": "were-compeer.html",
@@ -2030,21 +1955,6 @@
         "role": "top"
       },
       "id": "were-compeer-133"
-    },
-    {
-      "key": "chastity-keyholder#8fffbbc4",
-      "claim": {
-        "fic": "were-compeer.html",
-        "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
-        "paragraph": 399,
-        "pattern": "chastity-keyholder",
-        "act": "controlling a chastity device",
-        "kind": "behavior",
-        "a": "Derek Hale",
-        "b": "Stiles Stilinski",
-        "role": "top"
-      },
-      "id": "were-compeer-134"
     },
     {
       "key": "dd2-hj-rubbed-over~elided#467849ff",
@@ -2602,21 +2512,6 @@
       "id": "were-compeer-182"
     },
     {
-      "key": "abo-bare-neck~elided#97e75044",
-      "claim": {
-        "fic": "were-compeer.html",
-        "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
-        "paragraph": 1009,
-        "pattern": "abo-bare-neck~elided",
-        "act": "baring their neck",
-        "kind": "behavior",
-        "a": "Derek Hale",
-        "b": "Stiles Stilinski",
-        "role": "bottom"
-      },
-      "id": "were-compeer-183"
-    },
-    {
       "key": "care-soothe#6a60afe",
       "claim": {
         "fic": "were-compeer.html",
@@ -2690,21 +2585,6 @@
         "role": "top"
       },
       "id": "were-compeer-193"
-    },
-    {
-      "key": "care-soothe~elided#b427c0f8",
-      "claim": {
-        "fic": "were-compeer.html",
-        "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
-        "paragraph": 1116,
-        "pattern": "care-soothe~elided",
-        "act": "comforting someone",
-        "kind": "behavior",
-        "a": "Derek Hale",
-        "b": "Stiles Stilinski",
-        "role": "top"
-      },
-      "id": "were-compeer-196"
     },
     {
       "key": "dialogue:anal sex#c118d0c6",
@@ -3097,21 +2977,6 @@
       "id": "dogbird-32"
     },
     {
-      "key": "sub-let-lead#fa5c3a4b",
-      "claim": {
-        "fic": "dogbird.html",
-        "sourceSha": "b66dcf4730e681942787b9d280bc8b2825005e179cfe09179a82e935a4f036fb",
-        "paragraph": 754,
-        "pattern": "sub-let-lead",
-        "act": "letting someone lead",
-        "kind": "behavior",
-        "a": "Eddie Diaz",
-        "b": "Evan \"Buck\" Buckley",
-        "role": "bottom"
-      },
-      "id": "dogbird-35"
-    },
-    {
       "key": "collar-wearer#e0871ad",
       "claim": {
         "fic": "dogbird.html",
@@ -3410,6 +3275,1522 @@
         "role": "top"
       },
       "id": "dogbird-70"
+    },
+    {
+      "id": "needing-the-knot-4",
+      "key": "sucked~elided#2eb4324f",
+      "claim": {
+        "fic": "needing-the-knot.html",
+        "sourceSha": "cfb383bc85de918fc26b4650ec53f3026374462949105db48bc0cab52feba727",
+        "paragraph": 600,
+        "pattern": "sucked~elided",
+        "act": "blowjob",
+        "kind": "act",
+        "a": "Dean Winchester",
+        "b": "Castiel",
+        "role": ""
+      }
+    },
+    {
+      "id": "needing-the-knot-5",
+      "key": "rock-into#19824871",
+      "claim": {
+        "fic": "needing-the-knot.html",
+        "sourceSha": "cfb383bc85de918fc26b4650ec53f3026374462949105db48bc0cab52feba727",
+        "paragraph": 606,
+        "pattern": "rock-into",
+        "act": "anal sex",
+        "kind": "act",
+        "a": "Castiel",
+        "b": "Dean Winchester",
+        "role": ""
+      }
+    },
+    {
+      "id": "needing-the-knot-6",
+      "key": "mouth-off~elided#2b63f8e6",
+      "claim": {
+        "fic": "needing-the-knot.html",
+        "sourceSha": "cfb383bc85de918fc26b4650ec53f3026374462949105db48bc0cab52feba727",
+        "paragraph": 607,
+        "pattern": "mouth-off~elided",
+        "act": "blowjob",
+        "kind": "act",
+        "a": "Dean Winchester",
+        "b": "Sam Winchester",
+        "role": ""
+      }
+    },
+    {
+      "id": "needing-the-knot-7",
+      "key": "push-into#a88f2e45",
+      "claim": {
+        "fic": "needing-the-knot.html",
+        "sourceSha": "cfb383bc85de918fc26b4650ec53f3026374462949105db48bc0cab52feba727",
+        "paragraph": 616,
+        "pattern": "push-into",
+        "act": "anal sex",
+        "kind": "act",
+        "a": "Castiel",
+        "b": "Dean Winchester",
+        "role": ""
+      }
+    },
+    {
+      "id": "needing-the-knot-8",
+      "key": "penis-against#476c310b",
+      "claim": {
+        "fic": "needing-the-knot.html",
+        "sourceSha": "cfb383bc85de918fc26b4650ec53f3026374462949105db48bc0cab52feba727",
+        "paragraph": 619,
+        "pattern": "penis-against",
+        "act": "anal sex",
+        "kind": "act",
+        "a": "Castiel",
+        "b": "Dean Winchester",
+        "role": ""
+      }
+    },
+    {
+      "id": "needing-the-knot-9",
+      "key": "cock-on-prostate#476c310b",
+      "claim": {
+        "fic": "needing-the-knot.html",
+        "sourceSha": "cfb383bc85de918fc26b4650ec53f3026374462949105db48bc0cab52feba727",
+        "paragraph": 619,
+        "pattern": "cock-on-prostate",
+        "act": "anal sex",
+        "kind": "act",
+        "a": "Castiel",
+        "b": "Dean Winchester",
+        "role": ""
+      }
+    },
+    {
+      "id": "needing-the-knot-10",
+      "key": "push-into#d5aab0ed",
+      "claim": {
+        "fic": "needing-the-knot.html",
+        "sourceSha": "cfb383bc85de918fc26b4650ec53f3026374462949105db48bc0cab52feba727",
+        "paragraph": 619,
+        "pattern": "push-into",
+        "act": "anal sex",
+        "kind": "act",
+        "a": "Castiel",
+        "b": "Dean Winchester",
+        "role": ""
+      }
+    },
+    {
+      "id": "needing-the-knot-11",
+      "key": "fingers-into#71a18043",
+      "claim": {
+        "fic": "needing-the-knot.html",
+        "sourceSha": "cfb383bc85de918fc26b4650ec53f3026374462949105db48bc0cab52feba727",
+        "paragraph": 668,
+        "pattern": "fingers-into",
+        "act": "fingering",
+        "kind": "act",
+        "a": "Castiel",
+        "b": "Dean Winchester",
+        "role": ""
+      }
+    },
+    {
+      "id": "needing-the-knot-12",
+      "key": "dd-finger-slips-into#71a18043",
+      "claim": {
+        "fic": "needing-the-knot.html",
+        "sourceSha": "cfb383bc85de918fc26b4650ec53f3026374462949105db48bc0cab52feba727",
+        "paragraph": 668,
+        "pattern": "dd-finger-slips-into",
+        "act": "fingering",
+        "kind": "act",
+        "a": "Castiel",
+        "b": "Dean Winchester",
+        "role": ""
+      }
+    },
+    {
+      "id": "needing-the-knot-13",
+      "key": "prostate#12ae3768",
+      "claim": {
+        "fic": "needing-the-knot.html",
+        "sourceSha": "cfb383bc85de918fc26b4650ec53f3026374462949105db48bc0cab52feba727",
+        "paragraph": 668,
+        "pattern": "prostate",
+        "act": "fingering",
+        "kind": "act",
+        "a": "Castiel",
+        "b": "Dean Winchester",
+        "role": ""
+      }
+    },
+    {
+      "id": "needing-the-knot-14",
+      "key": "push-into#8260792b",
+      "claim": {
+        "fic": "needing-the-knot.html",
+        "sourceSha": "cfb383bc85de918fc26b4650ec53f3026374462949105db48bc0cab52feba727",
+        "paragraph": 784,
+        "pattern": "push-into",
+        "act": "anal sex",
+        "kind": "act",
+        "a": "Castiel",
+        "b": "Dean Winchester",
+        "role": ""
+      }
+    },
+    {
+      "id": "needing-the-knot-15",
+      "key": "clenched-around#c3db8b7f",
+      "claim": {
+        "fic": "needing-the-knot.html",
+        "sourceSha": "cfb383bc85de918fc26b4650ec53f3026374462949105db48bc0cab52feba727",
+        "paragraph": 1091,
+        "pattern": "clenched-around",
+        "act": "fingering",
+        "kind": "act",
+        "a": "Castiel",
+        "b": "Dean Winchester",
+        "role": ""
+      }
+    },
+    {
+      "id": "needing-the-knot-16",
+      "key": "penis-fills#59b9cc24",
+      "claim": {
+        "fic": "needing-the-knot.html",
+        "sourceSha": "cfb383bc85de918fc26b4650ec53f3026374462949105db48bc0cab52feba727",
+        "paragraph": 1099,
+        "pattern": "penis-fills",
+        "act": "anal sex",
+        "kind": "act",
+        "a": "Castiel",
+        "b": "Dean Winchester",
+        "role": ""
+      }
+    },
+    {
+      "id": "needing-the-knot-17",
+      "key": "riding#40b901ac",
+      "claim": {
+        "fic": "needing-the-knot.html",
+        "sourceSha": "cfb383bc85de918fc26b4650ec53f3026374462949105db48bc0cab52feba727",
+        "paragraph": 1107,
+        "pattern": "riding",
+        "act": "anal sex (riding)",
+        "kind": "act",
+        "a": "Castiel",
+        "b": "Dean Winchester",
+        "role": ""
+      }
+    },
+    {
+      "id": "needing-the-knot-18",
+      "key": "penis-into#a009cde7",
+      "claim": {
+        "fic": "needing-the-knot.html",
+        "sourceSha": "cfb383bc85de918fc26b4650ec53f3026374462949105db48bc0cab52feba727",
+        "paragraph": 1111,
+        "pattern": "penis-into",
+        "act": "anal sex",
+        "kind": "act",
+        "a": "Castiel",
+        "b": "Dean Winchester",
+        "role": ""
+      }
+    },
+    {
+      "id": "needing-the-knot-19",
+      "key": "hole-around#adf12b31",
+      "claim": {
+        "fic": "needing-the-knot.html",
+        "sourceSha": "cfb383bc85de918fc26b4650ec53f3026374462949105db48bc0cab52feba727",
+        "paragraph": 1111,
+        "pattern": "hole-around",
+        "act": "anal sex",
+        "kind": "act",
+        "a": "Castiel",
+        "b": "Dean Winchester",
+        "role": ""
+      }
+    },
+    {
+      "id": "needing-the-knot-20",
+      "key": "cum-in-throat#127b93f1",
+      "claim": {
+        "fic": "needing-the-knot.html",
+        "sourceSha": "cfb383bc85de918fc26b4650ec53f3026374462949105db48bc0cab52feba727",
+        "paragraph": 1111,
+        "pattern": "cum-in-throat",
+        "act": "blowjob",
+        "kind": "act",
+        "a": "Dean Winchester",
+        "b": "Castiel",
+        "role": ""
+      }
+    },
+    {
+      "id": "needing-the-knot-23",
+      "key": "licked-hole~elided#a7c9f2f2",
+      "claim": {
+        "fic": "needing-the-knot.html",
+        "sourceSha": "cfb383bc85de918fc26b4650ec53f3026374462949105db48bc0cab52feba727",
+        "paragraph": 1132,
+        "pattern": "licked-hole~elided",
+        "act": "rimming",
+        "kind": "act",
+        "a": "Castiel",
+        "b": "Dean Winchester",
+        "role": ""
+      }
+    },
+    {
+      "id": "needing-the-knot-24",
+      "key": "fuck#e858e9e4",
+      "claim": {
+        "fic": "needing-the-knot.html",
+        "sourceSha": "cfb383bc85de918fc26b4650ec53f3026374462949105db48bc0cab52feba727",
+        "paragraph": 1133,
+        "pattern": "fuck",
+        "act": "fingering",
+        "kind": "act",
+        "a": "Castiel",
+        "b": "Dean Winchester",
+        "role": ""
+      }
+    },
+    {
+      "id": "needing-the-knot-25",
+      "key": "licked-cock#1896f781",
+      "claim": {
+        "fic": "needing-the-knot.html",
+        "sourceSha": "cfb383bc85de918fc26b4650ec53f3026374462949105db48bc0cab52feba727",
+        "paragraph": 1213,
+        "pattern": "licked-cock",
+        "act": "blowjob",
+        "kind": "act",
+        "a": "Castiel",
+        "b": "Dean Winchester",
+        "role": ""
+      }
+    },
+    {
+      "id": "needing-the-knot-26",
+      "key": "lips-around#efb94f19",
+      "claim": {
+        "fic": "needing-the-knot.html",
+        "sourceSha": "cfb383bc85de918fc26b4650ec53f3026374462949105db48bc0cab52feba727",
+        "paragraph": 1219,
+        "pattern": "lips-around",
+        "act": "blowjob",
+        "kind": "act",
+        "a": "Castiel",
+        "b": "Dean Winchester",
+        "role": ""
+      }
+    },
+    {
+      "id": "needing-the-knot-29",
+      "key": "hole-around-name#8a328328",
+      "claim": {
+        "fic": "needing-the-knot.html",
+        "sourceSha": "cfb383bc85de918fc26b4650ec53f3026374462949105db48bc0cab52feba727",
+        "paragraph": 1225,
+        "pattern": "hole-around-name",
+        "act": "anal sex",
+        "kind": "act",
+        "a": "Dean Winchester",
+        "b": "Castiel",
+        "role": ""
+      }
+    },
+    {
+      "id": "needing-the-knot-30",
+      "key": "dd3-slipping-second#e637bc41",
+      "claim": {
+        "fic": "needing-the-knot.html",
+        "sourceSha": "cfb383bc85de918fc26b4650ec53f3026374462949105db48bc0cab52feba727",
+        "paragraph": 1227,
+        "pattern": "dd3-slipping-second",
+        "act": "fingering",
+        "kind": "act",
+        "a": "Dean Winchester",
+        "b": "Castiel",
+        "role": ""
+      }
+    },
+    {
+      "id": "needing-the-knot-32",
+      "key": "fuck~elided#1d5d327c",
+      "claim": {
+        "fic": "needing-the-knot.html",
+        "sourceSha": "cfb383bc85de918fc26b4650ec53f3026374462949105db48bc0cab52feba727",
+        "paragraph": 19,
+        "pattern": "fuck~elided",
+        "act": "anal sex",
+        "kind": "wanted",
+        "a": "Dean Winchester",
+        "b": "Castiel",
+        "role": "top"
+      }
+    },
+    {
+      "id": "needing-the-knot-34",
+      "key": "hj-stroke#3a3873a7",
+      "claim": {
+        "fic": "needing-the-knot.html",
+        "sourceSha": "cfb383bc85de918fc26b4650ec53f3026374462949105db48bc0cab52feba727",
+        "paragraph": 86,
+        "pattern": "hj-stroke",
+        "act": "handjob",
+        "kind": "handjob",
+        "a": "Castiel",
+        "b": "Dean Winchester",
+        "role": "top"
+      }
+    },
+    {
+      "id": "needing-the-knot-35",
+      "key": "plug-worn#a035c4bf",
+      "claim": {
+        "fic": "needing-the-knot.html",
+        "sourceSha": "cfb383bc85de918fc26b4650ec53f3026374462949105db48bc0cab52feba727",
+        "paragraph": 88,
+        "pattern": "plug-worn",
+        "act": "wearing a plug",
+        "kind": "prep",
+        "a": "Dean Winchester",
+        "b": "Castiel",
+        "role": "bottom"
+      }
+    },
+    {
+      "id": "needing-the-knot-36",
+      "key": "body-hole-ache#cf2535bd",
+      "claim": {
+        "fic": "needing-the-knot.html",
+        "sourceSha": "cfb383bc85de918fc26b4650ec53f3026374462949105db48bc0cab52feba727",
+        "paragraph": 118,
+        "pattern": "body-hole-ache",
+        "act": "aching hole",
+        "kind": "body",
+        "a": "Dean Winchester",
+        "b": "Castiel",
+        "role": "bottom"
+      }
+    },
+    {
+      "id": "needing-the-knot-38",
+      "key": "suck-fingers~elided#d7dde617",
+      "claim": {
+        "fic": "needing-the-knot.html",
+        "sourceSha": "cfb383bc85de918fc26b4650ec53f3026374462949105db48bc0cab52feba727",
+        "paragraph": 169,
+        "pattern": "suck-fingers~elided",
+        "act": "sucking on fingers",
+        "kind": "fingers",
+        "a": "Dean Winchester",
+        "b": "Castiel",
+        "role": "bottom"
+      }
+    },
+    {
+      "id": "needing-the-knot-39",
+      "key": "dialogue:anal sex#eb9f2bbf",
+      "claim": {
+        "fic": "needing-the-knot.html",
+        "sourceSha": "cfb383bc85de918fc26b4650ec53f3026374462949105db48bc0cab52feba727",
+        "paragraph": 169,
+        "pattern": "dialogue:anal sex",
+        "act": "anal sex",
+        "kind": "said",
+        "a": "Dean Winchester",
+        "b": "Castiel",
+        "role": "bottom"
+      }
+    },
+    {
+      "id": "needing-the-knot-40",
+      "key": "hj-stroke#f7769b85",
+      "claim": {
+        "fic": "needing-the-knot.html",
+        "sourceSha": "cfb383bc85de918fc26b4650ec53f3026374462949105db48bc0cab52feba727",
+        "paragraph": 202,
+        "pattern": "hj-stroke",
+        "act": "handjob",
+        "kind": "handjob",
+        "a": "Castiel",
+        "b": "Dean Winchester",
+        "role": "top"
+      }
+    },
+    {
+      "id": "needing-the-knot-42",
+      "key": "mast-himself~elided#4765bab9",
+      "claim": {
+        "fic": "needing-the-knot.html",
+        "sourceSha": "cfb383bc85de918fc26b4650ec53f3026374462949105db48bc0cab52feba727",
+        "paragraph": 203,
+        "pattern": "mast-himself~elided",
+        "act": "masturbation",
+        "kind": "masturbation",
+        "a": "Castiel",
+        "b": "Dean Winchester",
+        "role": "bottom"
+      }
+    },
+    {
+      "id": "needing-the-knot-43",
+      "key": "plug-worn#5a9a784d",
+      "claim": {
+        "fic": "needing-the-knot.html",
+        "sourceSha": "cfb383bc85de918fc26b4650ec53f3026374462949105db48bc0cab52feba727",
+        "paragraph": 293,
+        "pattern": "plug-worn",
+        "act": "wearing a plug",
+        "kind": "prep",
+        "a": "Dean Winchester",
+        "b": "Castiel",
+        "role": "bottom"
+      }
+    },
+    {
+      "id": "needing-the-knot-44",
+      "key": "care-wrap#8fee6abf",
+      "claim": {
+        "fic": "needing-the-knot.html",
+        "sourceSha": "cfb383bc85de918fc26b4650ec53f3026374462949105db48bc0cab52feba727",
+        "paragraph": 339,
+        "pattern": "care-wrap",
+        "act": "looking after someone",
+        "kind": "behavior",
+        "a": "Castiel",
+        "b": "Dean Winchester",
+        "role": "top"
+      }
+    },
+    {
+      "id": "needing-the-knot-45",
+      "key": "dom-grip#f4d924b7",
+      "claim": {
+        "fic": "needing-the-knot.html",
+        "sourceSha": "cfb383bc85de918fc26b4650ec53f3026374462949105db48bc0cab52feba727",
+        "paragraph": 376,
+        "pattern": "dom-grip",
+        "act": "gripping firmly",
+        "kind": "behavior",
+        "a": "Castiel",
+        "b": "Dean Winchester",
+        "role": "top"
+      }
+    },
+    {
+      "id": "needing-the-knot-46",
+      "key": "abo-bare-neck~elided#8c951a23",
+      "claim": {
+        "fic": "needing-the-knot.html",
+        "sourceSha": "cfb383bc85de918fc26b4650ec53f3026374462949105db48bc0cab52feba727",
+        "paragraph": 422,
+        "pattern": "abo-bare-neck~elided",
+        "act": "baring their neck",
+        "kind": "behavior",
+        "a": "Dean Winchester",
+        "b": "Castiel",
+        "role": "bottom"
+      }
+    },
+    {
+      "id": "needing-the-knot-47",
+      "key": "thrust-back#c03e4250",
+      "claim": {
+        "fic": "needing-the-knot.html",
+        "sourceSha": "cfb383bc85de918fc26b4650ec53f3026374462949105db48bc0cab52feba727",
+        "paragraph": 439,
+        "pattern": "thrust-back",
+        "act": "pushing back",
+        "kind": "touch",
+        "a": "Castiel",
+        "b": "Dean Winchester",
+        "role": "bottom"
+      }
+    },
+    {
+      "id": "needing-the-knot-48",
+      "key": "dialogue:anal sex#bfdaaa25",
+      "claim": {
+        "fic": "needing-the-knot.html",
+        "sourceSha": "cfb383bc85de918fc26b4650ec53f3026374462949105db48bc0cab52feba727",
+        "paragraph": 567,
+        "pattern": "dialogue:anal sex",
+        "act": "anal sex",
+        "kind": "said",
+        "a": "Dean Winchester",
+        "b": "Castiel",
+        "role": "bottom"
+      }
+    },
+    {
+      "id": "needing-the-knot-49",
+      "key": "grab-ass~elided#c01d8e93",
+      "claim": {
+        "fic": "needing-the-knot.html",
+        "sourceSha": "cfb383bc85de918fc26b4650ec53f3026374462949105db48bc0cab52feba727",
+        "paragraph": 573,
+        "pattern": "grab-ass~elided",
+        "act": "grabbing an ass",
+        "kind": "touch",
+        "a": "Castiel",
+        "b": "Dean Winchester",
+        "role": "top"
+      }
+    },
+    {
+      "id": "needing-the-knot-50",
+      "key": "dialogue:anal sex#3014f7f5",
+      "claim": {
+        "fic": "needing-the-knot.html",
+        "sourceSha": "cfb383bc85de918fc26b4650ec53f3026374462949105db48bc0cab52feba727",
+        "paragraph": 620,
+        "pattern": "dialogue:anal sex",
+        "act": "anal sex",
+        "kind": "said",
+        "a": "Dean Winchester",
+        "b": "Castiel",
+        "role": "bottom"
+      }
+    },
+    {
+      "id": "needing-the-knot-51",
+      "key": "dialogue:anal sex#68c11de5",
+      "claim": {
+        "fic": "needing-the-knot.html",
+        "sourceSha": "cfb383bc85de918fc26b4650ec53f3026374462949105db48bc0cab52feba727",
+        "paragraph": 632,
+        "pattern": "dialogue:anal sex",
+        "act": "anal sex",
+        "kind": "said",
+        "a": "Dean Winchester",
+        "b": "Castiel",
+        "role": "bottom"
+      }
+    },
+    {
+      "id": "needing-the-knot-52",
+      "key": "abo-bare-neck#bafa7fa8",
+      "claim": {
+        "fic": "needing-the-knot.html",
+        "sourceSha": "cfb383bc85de918fc26b4650ec53f3026374462949105db48bc0cab52feba727",
+        "paragraph": 634,
+        "pattern": "abo-bare-neck",
+        "act": "baring their neck",
+        "kind": "behavior",
+        "a": "Dean Winchester",
+        "b": "Castiel",
+        "role": "bottom"
+      }
+    },
+    {
+      "id": "needing-the-knot-53",
+      "key": "dom-tilt#532e01ed",
+      "claim": {
+        "fic": "needing-the-knot.html",
+        "sourceSha": "cfb383bc85de918fc26b4650ec53f3026374462949105db48bc0cab52feba727",
+        "paragraph": 700,
+        "pattern": "dom-tilt",
+        "act": "tilting someone's face up",
+        "kind": "behavior",
+        "a": "Castiel",
+        "b": "Dean Winchester",
+        "role": "top"
+      }
+    },
+    {
+      "id": "needing-the-knot-54",
+      "key": "dom-grip~elided#6e2fcc11",
+      "claim": {
+        "fic": "needing-the-knot.html",
+        "sourceSha": "cfb383bc85de918fc26b4650ec53f3026374462949105db48bc0cab52feba727",
+        "paragraph": 778,
+        "pattern": "dom-grip~elided",
+        "act": "gripping firmly",
+        "kind": "behavior",
+        "a": "Castiel",
+        "b": "Dean Winchester",
+        "role": "top"
+      }
+    },
+    {
+      "id": "needing-the-knot-55",
+      "key": "dom-grip#479d05ee",
+      "claim": {
+        "fic": "needing-the-knot.html",
+        "sourceSha": "cfb383bc85de918fc26b4650ec53f3026374462949105db48bc0cab52feba727",
+        "paragraph": 869,
+        "pattern": "dom-grip",
+        "act": "gripping firmly",
+        "kind": "behavior",
+        "a": "Dean Winchester",
+        "b": "Castiel",
+        "role": "top"
+      }
+    },
+    {
+      "id": "needing-the-knot-56",
+      "key": "dom-protect#22f8759e",
+      "claim": {
+        "fic": "needing-the-knot.html",
+        "sourceSha": "cfb383bc85de918fc26b4650ec53f3026374462949105db48bc0cab52feba727",
+        "paragraph": 875,
+        "pattern": "dom-protect",
+        "act": "protecting someone",
+        "kind": "behavior",
+        "a": "Castiel",
+        "b": "Dean Winchester",
+        "role": "top"
+      }
+    },
+    {
+      "id": "needing-the-knot-57",
+      "key": "flustered-verb#f30390f",
+      "claim": {
+        "fic": "needing-the-knot.html",
+        "sourceSha": "cfb383bc85de918fc26b4650ec53f3026374462949105db48bc0cab52feba727",
+        "paragraph": 959,
+        "pattern": "flustered-verb",
+        "act": "flustered or blushing",
+        "kind": "behavior",
+        "a": "Dean Winchester",
+        "b": "Castiel",
+        "role": "bottom"
+      }
+    },
+    {
+      "id": "needing-the-knot-58",
+      "key": "aftercare-held#ffe5a7cd",
+      "claim": {
+        "fic": "needing-the-knot.html",
+        "sourceSha": "cfb383bc85de918fc26b4650ec53f3026374462949105db48bc0cab52feba727",
+        "paragraph": 1033,
+        "pattern": "aftercare-held",
+        "act": "being held afterwards",
+        "kind": "aftercare",
+        "a": "Dean Winchester",
+        "b": "Castiel",
+        "role": "bottom"
+      }
+    },
+    {
+      "id": "needing-the-knot-59",
+      "key": "abo-bare-neck~elided#f1a4fb4",
+      "claim": {
+        "fic": "needing-the-knot.html",
+        "sourceSha": "cfb383bc85de918fc26b4650ec53f3026374462949105db48bc0cab52feba727",
+        "paragraph": 1048,
+        "pattern": "abo-bare-neck~elided",
+        "act": "baring their neck",
+        "kind": "behavior",
+        "a": "Castiel",
+        "b": "Dean Winchester",
+        "role": "bottom"
+      }
+    },
+    {
+      "id": "needing-the-knot-60",
+      "key": "suck-fingers~elided#e2cb2d45",
+      "claim": {
+        "fic": "needing-the-knot.html",
+        "sourceSha": "cfb383bc85de918fc26b4650ec53f3026374462949105db48bc0cab52feba727",
+        "paragraph": 1096,
+        "pattern": "suck-fingers~elided",
+        "act": "sucking on fingers",
+        "kind": "fingers",
+        "a": "Dean Winchester",
+        "b": "Castiel",
+        "role": "bottom"
+      }
+    },
+    {
+      "id": "needing-the-knot-61",
+      "key": "dialogue:anal sex#74ba477e",
+      "claim": {
+        "fic": "needing-the-knot.html",
+        "sourceSha": "cfb383bc85de918fc26b4650ec53f3026374462949105db48bc0cab52feba727",
+        "paragraph": 1098,
+        "pattern": "dialogue:anal sex",
+        "act": "anal sex",
+        "kind": "said",
+        "a": "Dean Winchester",
+        "b": "Castiel",
+        "role": "bottom"
+      }
+    },
+    {
+      "id": "needing-the-knot-62",
+      "key": "dialogue:anal sex#7031ade1",
+      "claim": {
+        "fic": "needing-the-knot.html",
+        "sourceSha": "cfb383bc85de918fc26b4650ec53f3026374462949105db48bc0cab52feba727",
+        "paragraph": 1098,
+        "pattern": "dialogue:anal sex",
+        "act": "anal sex",
+        "kind": "said",
+        "a": "Dean Winchester",
+        "b": "Castiel",
+        "role": "bottom"
+      }
+    },
+    {
+      "id": "needing-the-knot-63",
+      "key": "hole-around#39258cd3",
+      "claim": {
+        "fic": "needing-the-knot.html",
+        "sourceSha": "cfb383bc85de918fc26b4650ec53f3026374462949105db48bc0cab52feba727",
+        "paragraph": 1106,
+        "pattern": "hole-around",
+        "act": "penis against buttocks",
+        "kind": "touch",
+        "a": "Castiel",
+        "b": "Dean Winchester",
+        "role": "top"
+      }
+    },
+    {
+      "id": "needing-the-knot-64",
+      "key": "dialogue:anal sex#c715f5c5",
+      "claim": {
+        "fic": "needing-the-knot.html",
+        "sourceSha": "cfb383bc85de918fc26b4650ec53f3026374462949105db48bc0cab52feba727",
+        "paragraph": 1109,
+        "pattern": "dialogue:anal sex",
+        "act": "anal sex",
+        "kind": "said",
+        "a": "Dean Winchester",
+        "b": "Castiel",
+        "role": "bottom"
+      }
+    },
+    {
+      "id": "needing-the-knot-67",
+      "key": "sinks-to-floor#1556d431",
+      "claim": {
+        "fic": "needing-the-knot.html",
+        "sourceSha": "cfb383bc85de918fc26b4650ec53f3026374462949105db48bc0cab52feba727",
+        "paragraph": 1127,
+        "pattern": "sinks-to-floor",
+        "act": "kneeling",
+        "kind": "prep",
+        "a": "Castiel",
+        "b": "Dean Winchester",
+        "role": "bottom"
+      }
+    },
+    {
+      "id": "needing-the-knot-68",
+      "key": "suck-fingers~elided#e858e9e4",
+      "claim": {
+        "fic": "needing-the-knot.html",
+        "sourceSha": "cfb383bc85de918fc26b4650ec53f3026374462949105db48bc0cab52feba727",
+        "paragraph": 1133,
+        "pattern": "suck-fingers~elided",
+        "act": "sucking on fingers",
+        "kind": "fingers",
+        "a": "Castiel",
+        "b": "Dean Winchester",
+        "role": "bottom"
+      }
+    },
+    {
+      "id": "needing-the-knot-69",
+      "key": "flustered-verb#a9b1ccae",
+      "claim": {
+        "fic": "needing-the-knot.html",
+        "sourceSha": "cfb383bc85de918fc26b4650ec53f3026374462949105db48bc0cab52feba727",
+        "paragraph": 1168,
+        "pattern": "flustered-verb",
+        "act": "flustered or blushing",
+        "kind": "behavior",
+        "a": "Castiel",
+        "b": "Dean Winchester",
+        "role": "bottom"
+      }
+    },
+    {
+      "id": "needing-the-knot-70",
+      "key": "dd-frot-rut-against~elided#1d71261b",
+      "claim": {
+        "fic": "needing-the-knot.html",
+        "sourceSha": "cfb383bc85de918fc26b4650ec53f3026374462949105db48bc0cab52feba727",
+        "paragraph": 1173,
+        "pattern": "dd-frot-rut-against~elided",
+        "act": "penis against buttocks",
+        "kind": "touch",
+        "a": "Castiel",
+        "b": "Dean Winchester",
+        "role": "top"
+      }
+    },
+    {
+      "id": "needing-the-knot-71",
+      "key": "knot-owner#329c85c1",
+      "claim": {
+        "fic": "needing-the-knot.html",
+        "sourceSha": "cfb383bc85de918fc26b4650ec53f3026374462949105db48bc0cab52feba727",
+        "paragraph": 1173,
+        "pattern": "knot-owner",
+        "act": "a knot (omegaverse)",
+        "kind": "touch",
+        "a": "Castiel",
+        "b": "Dean Winchester",
+        "role": "top"
+      }
+    },
+    {
+      "id": "needing-the-knot-72",
+      "key": "aftercare-held#37e09f59",
+      "claim": {
+        "fic": "needing-the-knot.html",
+        "sourceSha": "cfb383bc85de918fc26b4650ec53f3026374462949105db48bc0cab52feba727",
+        "paragraph": 1174,
+        "pattern": "aftercare-held",
+        "act": "being held afterwards",
+        "kind": "aftercare",
+        "a": "Dean Winchester",
+        "b": "Castiel",
+        "role": "bottom"
+      }
+    },
+    {
+      "id": "needing-the-knot-73",
+      "key": "dialogue:anal sex#931a00a6",
+      "claim": {
+        "fic": "needing-the-knot.html",
+        "sourceSha": "cfb383bc85de918fc26b4650ec53f3026374462949105db48bc0cab52feba727",
+        "paragraph": 1204,
+        "pattern": "dialogue:anal sex",
+        "act": "anal sex",
+        "kind": "said",
+        "a": "Castiel",
+        "b": "Dean Winchester",
+        "role": "bottom"
+      }
+    },
+    {
+      "id": "needing-the-knot-74",
+      "key": "dom-pin#c53899f8",
+      "claim": {
+        "fic": "needing-the-knot.html",
+        "sourceSha": "cfb383bc85de918fc26b4650ec53f3026374462949105db48bc0cab52feba727",
+        "paragraph": 1213,
+        "pattern": "dom-pin",
+        "act": "pinning someone",
+        "kind": "behavior",
+        "a": "Dean Winchester",
+        "b": "Castiel",
+        "role": "top"
+      }
+    },
+    {
+      "id": "needing-the-knot-75",
+      "key": "dialogue:anal sex#1f2c3554",
+      "claim": {
+        "fic": "needing-the-knot.html",
+        "sourceSha": "cfb383bc85de918fc26b4650ec53f3026374462949105db48bc0cab52feba727",
+        "paragraph": 1216,
+        "pattern": "dialogue:anal sex",
+        "act": "anal sex",
+        "kind": "said",
+        "a": "Castiel",
+        "b": "Dean Winchester",
+        "role": "bottom"
+      }
+    },
+    {
+      "id": "needing-the-knot-76",
+      "key": "sucked#41c4ab55",
+      "claim": {
+        "fic": "needing-the-knot.html",
+        "sourceSha": "cfb383bc85de918fc26b4650ec53f3026374462949105db48bc0cab52feba727",
+        "paragraph": 1219,
+        "pattern": "sucked",
+        "act": "blowjob",
+        "kind": "hypothetical",
+        "a": "Castiel",
+        "b": "Dean Winchester",
+        "role": "top"
+      }
+    },
+    {
+      "id": "needing-the-knot-77",
+      "key": "finger-at-entrance#d4f1cfa3",
+      "claim": {
+        "fic": "needing-the-knot.html",
+        "sourceSha": "cfb383bc85de918fc26b4650ec53f3026374462949105db48bc0cab52feba727",
+        "paragraph": 1222,
+        "pattern": "finger-at-entrance",
+        "act": "touching the hole",
+        "kind": "touch",
+        "a": "Dean Winchester",
+        "b": "Castiel",
+        "role": "top"
+      }
+    },
+    {
+      "id": "needing-the-knot-78",
+      "key": "dialogue:anal sex#1e694d86",
+      "claim": {
+        "fic": "needing-the-knot.html",
+        "sourceSha": "cfb383bc85de918fc26b4650ec53f3026374462949105db48bc0cab52feba727",
+        "paragraph": 1233,
+        "pattern": "dialogue:anal sex",
+        "act": "anal sex",
+        "kind": "said",
+        "a": "Castiel",
+        "b": "Dean Winchester",
+        "role": "bottom"
+      }
+    },
+    {
+      "id": "needing-the-knot-79",
+      "key": "dialogue:anal sex#aabe2065",
+      "claim": {
+        "fic": "needing-the-knot.html",
+        "sourceSha": "cfb383bc85de918fc26b4650ec53f3026374462949105db48bc0cab52feba727",
+        "paragraph": 1420,
+        "pattern": "dialogue:anal sex",
+        "act": "anal sex",
+        "kind": "said",
+        "a": "Dean Winchester",
+        "b": "Castiel",
+        "role": "bottom"
+      }
+    },
+    {
+      "id": "needing-the-knot-80",
+      "key": "dom-carry~elided#d549af58",
+      "claim": {
+        "fic": "needing-the-knot.html",
+        "sourceSha": "cfb383bc85de918fc26b4650ec53f3026374462949105db48bc0cab52feba727",
+        "paragraph": 1793,
+        "pattern": "dom-carry~elided",
+        "act": "lifting or carrying someone",
+        "kind": "behavior",
+        "a": "Castiel",
+        "b": "Dean Winchester",
+        "role": "top"
+      }
+    },
+    {
+      "id": "wicked-thing-0",
+      "key": "took-in-mouth~elided#57ec4e96",
+      "claim": {
+        "fic": "wicked-thing.html",
+        "sourceSha": "9e420c5f8b014510b08073e4447f8081bf5680b5787eeb8bc32cab6199b35a68",
+        "paragraph": 1572,
+        "pattern": "took-in-mouth~elided",
+        "act": "blowjob",
+        "kind": "act",
+        "a": "Anakin Skywalker",
+        "b": "Obi-Wan Kenobi",
+        "role": ""
+      }
+    },
+    {
+      "id": "wicked-thing-1",
+      "key": "dd-takes-into-mouth~elided#57ec4e96",
+      "claim": {
+        "fic": "wicked-thing.html",
+        "sourceSha": "9e420c5f8b014510b08073e4447f8081bf5680b5787eeb8bc32cab6199b35a68",
+        "paragraph": 1572,
+        "pattern": "dd-takes-into-mouth~elided",
+        "act": "blowjob",
+        "kind": "act",
+        "a": "Anakin Skywalker",
+        "b": "Obi-Wan Kenobi",
+        "role": ""
+      }
+    },
+    {
+      "id": "wicked-thing-2",
+      "key": "took-in-mouth~elided#8b75b903",
+      "claim": {
+        "fic": "wicked-thing.html",
+        "sourceSha": "9e420c5f8b014510b08073e4447f8081bf5680b5787eeb8bc32cab6199b35a68",
+        "paragraph": 1581,
+        "pattern": "took-in-mouth~elided",
+        "act": "blowjob",
+        "kind": "act",
+        "a": "Anakin Skywalker",
+        "b": "Obi-Wan Kenobi",
+        "role": ""
+      }
+    },
+    {
+      "id": "wicked-thing-3",
+      "key": "dd-takes-into-mouth~elided#8b75b903",
+      "claim": {
+        "fic": "wicked-thing.html",
+        "sourceSha": "9e420c5f8b014510b08073e4447f8081bf5680b5787eeb8bc32cab6199b35a68",
+        "paragraph": 1581,
+        "pattern": "dd-takes-into-mouth~elided",
+        "act": "blowjob",
+        "kind": "act",
+        "a": "Anakin Skywalker",
+        "b": "Obi-Wan Kenobi",
+        "role": ""
+      }
+    },
+    {
+      "id": "wicked-thing-4",
+      "key": "come-in-mouth#a4ac3226",
+      "claim": {
+        "fic": "wicked-thing.html",
+        "sourceSha": "9e420c5f8b014510b08073e4447f8081bf5680b5787eeb8bc32cab6199b35a68",
+        "paragraph": 1584,
+        "pattern": "come-in-mouth",
+        "act": "blowjob",
+        "kind": "act",
+        "a": "Anakin Skywalker",
+        "b": "Obi-Wan Kenobi",
+        "role": ""
+      }
+    },
+    {
+      "id": "wicked-thing-5",
+      "key": "came-in-mouth#a4ac3226",
+      "claim": {
+        "fic": "wicked-thing.html",
+        "sourceSha": "9e420c5f8b014510b08073e4447f8081bf5680b5787eeb8bc32cab6199b35a68",
+        "paragraph": 1584,
+        "pattern": "came-in-mouth",
+        "act": "blowjob",
+        "kind": "act",
+        "a": "Anakin Skywalker",
+        "b": "Obi-Wan Kenobi",
+        "role": ""
+      }
+    },
+    {
+      "id": "wicked-thing-6",
+      "key": "took-in-mouth~elided#8993fca1",
+      "claim": {
+        "fic": "wicked-thing.html",
+        "sourceSha": "9e420c5f8b014510b08073e4447f8081bf5680b5787eeb8bc32cab6199b35a68",
+        "paragraph": 3099,
+        "pattern": "took-in-mouth~elided",
+        "act": "blowjob",
+        "kind": "act",
+        "a": "Obi-Wan Kenobi",
+        "b": "Anakin Skywalker",
+        "role": ""
+      }
+    },
+    {
+      "id": "wicked-thing-7",
+      "key": "dd-takes-into-mouth~elided#8993fca1",
+      "claim": {
+        "fic": "wicked-thing.html",
+        "sourceSha": "9e420c5f8b014510b08073e4447f8081bf5680b5787eeb8bc32cab6199b35a68",
+        "paragraph": 3099,
+        "pattern": "dd-takes-into-mouth~elided",
+        "act": "blowjob",
+        "kind": "act",
+        "a": "Obi-Wan Kenobi",
+        "b": "Anakin Skywalker",
+        "role": ""
+      }
+    },
+    {
+      "id": "wicked-thing-10",
+      "key": "groaned-around#6995eab0",
+      "claim": {
+        "fic": "wicked-thing.html",
+        "sourceSha": "9e420c5f8b014510b08073e4447f8081bf5680b5787eeb8bc32cab6199b35a68",
+        "paragraph": 3103,
+        "pattern": "groaned-around",
+        "act": "blowjob",
+        "kind": "act",
+        "a": "Obi-Wan Kenobi",
+        "b": "Anakin Skywalker",
+        "role": ""
+      }
+    },
+    {
+      "id": "wicked-thing-11",
+      "key": "push-into~elided#42b534fb",
+      "claim": {
+        "fic": "wicked-thing.html",
+        "sourceSha": "9e420c5f8b014510b08073e4447f8081bf5680b5787eeb8bc32cab6199b35a68",
+        "paragraph": 3121,
+        "pattern": "push-into~elided",
+        "act": "fingering",
+        "kind": "act",
+        "a": "Obi-Wan Kenobi",
+        "b": "Anakin Skywalker",
+        "role": ""
+      }
+    },
+    {
+      "id": "wicked-thing-12",
+      "key": "pushed-in~elided#b2682c96",
+      "claim": {
+        "fic": "wicked-thing.html",
+        "sourceSha": "9e420c5f8b014510b08073e4447f8081bf5680b5787eeb8bc32cab6199b35a68",
+        "paragraph": 3673,
+        "pattern": "pushed-in~elided",
+        "act": "anal sex",
+        "kind": "act",
+        "a": "Anakin Skywalker",
+        "b": "Obi-Wan Kenobi",
+        "role": ""
+      }
+    },
+    {
+      "id": "wicked-thing-13",
+      "key": "dom-pin~elided#8187d8e2",
+      "claim": {
+        "fic": "wicked-thing.html",
+        "sourceSha": "9e420c5f8b014510b08073e4447f8081bf5680b5787eeb8bc32cab6199b35a68",
+        "paragraph": 237,
+        "pattern": "dom-pin~elided",
+        "act": "pinning someone",
+        "kind": "behavior",
+        "a": "Dooku | Darth Tyranus",
+        "b": "Anakin Skywalker",
+        "role": "top"
+      }
+    },
+    {
+      "id": "wicked-thing-14",
+      "key": "knelt-between~elided#8f75c35d",
+      "claim": {
+        "fic": "wicked-thing.html",
+        "sourceSha": "9e420c5f8b014510b08073e4447f8081bf5680b5787eeb8bc32cab6199b35a68",
+        "paragraph": 244,
+        "pattern": "knelt-between~elided",
+        "act": "kneeling between someone's legs",
+        "kind": "prep",
+        "a": "Dooku | Darth Tyranus",
+        "b": "Anakin Skywalker",
+        "role": "bottom"
+      }
+    },
+    {
+      "id": "wicked-thing-15",
+      "key": "flustered-verb#e3e01303",
+      "claim": {
+        "fic": "wicked-thing.html",
+        "sourceSha": "9e420c5f8b014510b08073e4447f8081bf5680b5787eeb8bc32cab6199b35a68",
+        "paragraph": 755,
+        "pattern": "flustered-verb",
+        "act": "flustered or blushing",
+        "kind": "behavior",
+        "a": "Obi-Wan Kenobi",
+        "b": "Anakin Skywalker",
+        "role": "bottom"
+      }
+    },
+    {
+      "id": "wicked-thing-17",
+      "key": "dom-pin~elided#536879e2",
+      "claim": {
+        "fic": "wicked-thing.html",
+        "sourceSha": "9e420c5f8b014510b08073e4447f8081bf5680b5787eeb8bc32cab6199b35a68",
+        "paragraph": 1129,
+        "pattern": "dom-pin~elided",
+        "act": "pinning someone",
+        "kind": "behavior",
+        "a": "Obi-Wan Kenobi",
+        "b": "Anakin Skywalker",
+        "role": "top"
+      }
+    },
+    {
+      "id": "wicked-thing-18",
+      "key": "collar-wearer#a33a4a56",
+      "claim": {
+        "fic": "wicked-thing.html",
+        "sourceSha": "9e420c5f8b014510b08073e4447f8081bf5680b5787eeb8bc32cab6199b35a68",
+        "paragraph": 1407,
+        "pattern": "collar-wearer",
+        "act": "wearing a collar or leash",
+        "kind": "behavior",
+        "a": "Anakin Skywalker",
+        "b": "Obi-Wan Kenobi",
+        "role": "bottom"
+      }
+    },
+    {
+      "id": "wicked-thing-19",
+      "key": "dom-grip~elided#69186bf3",
+      "claim": {
+        "fic": "wicked-thing.html",
+        "sourceSha": "9e420c5f8b014510b08073e4447f8081bf5680b5787eeb8bc32cab6199b35a68",
+        "paragraph": 1536,
+        "pattern": "dom-grip~elided",
+        "act": "gripping firmly",
+        "kind": "behavior",
+        "a": "Obi-Wan Kenobi",
+        "b": "Anakin Skywalker",
+        "role": "top"
+      }
+    },
+    {
+      "id": "wicked-thing-20",
+      "key": "knelt-before~elided#bb87bf7c",
+      "claim": {
+        "fic": "wicked-thing.html",
+        "sourceSha": "9e420c5f8b014510b08073e4447f8081bf5680b5787eeb8bc32cab6199b35a68",
+        "paragraph": 1560,
+        "pattern": "knelt-before~elided",
+        "act": "kneeling in front of someone",
+        "kind": "prep",
+        "a": "Obi-Wan Kenobi",
+        "b": "Anakin Skywalker",
+        "role": "bottom"
+      }
+    },
+    {
+      "id": "wicked-thing-21",
+      "key": "dd2-hj-took-in-hand#6d7df8d9",
+      "claim": {
+        "fic": "wicked-thing.html",
+        "sourceSha": "9e420c5f8b014510b08073e4447f8081bf5680b5787eeb8bc32cab6199b35a68",
+        "paragraph": 1579,
+        "pattern": "dd2-hj-took-in-hand",
+        "act": "handjob",
+        "kind": "handjob",
+        "a": "Obi-Wan Kenobi",
+        "b": "Anakin Skywalker",
+        "role": "top"
+      }
+    },
+    {
+      "id": "wicked-thing-22",
+      "key": "sub-melt~elided#94770771",
+      "claim": {
+        "fic": "wicked-thing.html",
+        "sourceSha": "9e420c5f8b014510b08073e4447f8081bf5680b5787eeb8bc32cab6199b35a68",
+        "paragraph": 1796,
+        "pattern": "sub-melt~elided",
+        "act": "going pliant",
+        "kind": "behavior",
+        "a": "Obi-Wan Kenobi",
+        "b": "Anakin Skywalker",
+        "role": "bottom"
+      }
+    },
+    {
+      "id": "wicked-thing-23",
+      "key": "dialogue:calling someone a good boy/girl#eabc2a19",
+      "claim": {
+        "fic": "wicked-thing.html",
+        "sourceSha": "9e420c5f8b014510b08073e4447f8081bf5680b5787eeb8bc32cab6199b35a68",
+        "paragraph": 2155,
+        "pattern": "dialogue:calling someone a good boy/girl",
+        "act": "calling someone a good boy/girl",
+        "kind": "petname",
+        "a": "Obi-Wan Kenobi",
+        "b": "Anakin Skywalker",
+        "role": "top"
+      }
+    },
+    {
+      "id": "wicked-thing-24",
+      "key": "flustered-verb~elided#f89c7a93",
+      "claim": {
+        "fic": "wicked-thing.html",
+        "sourceSha": "9e420c5f8b014510b08073e4447f8081bf5680b5787eeb8bc32cab6199b35a68",
+        "paragraph": 2177,
+        "pattern": "flustered-verb~elided",
+        "act": "flustered or blushing",
+        "kind": "behavior",
+        "a": "Anakin Skywalker",
+        "b": "Obi-Wan Kenobi",
+        "role": "bottom"
+      }
+    },
+    {
+      "id": "wicked-thing-25",
+      "key": "dom-grip#e1e52e37",
+      "claim": {
+        "fic": "wicked-thing.html",
+        "sourceSha": "9e420c5f8b014510b08073e4447f8081bf5680b5787eeb8bc32cab6199b35a68",
+        "paragraph": 2379,
+        "pattern": "dom-grip",
+        "act": "gripping firmly",
+        "kind": "behavior",
+        "a": "Obi-Wan Kenobi",
+        "b": "Anakin Skywalker",
+        "role": "top"
+      }
+    },
+    {
+      "id": "wicked-thing-26",
+      "key": "dialogue:checking in or leading#1123b3a8",
+      "claim": {
+        "fic": "wicked-thing.html",
+        "sourceSha": "9e420c5f8b014510b08073e4447f8081bf5680b5787eeb8bc32cab6199b35a68",
+        "paragraph": 2438,
+        "pattern": "dialogue:checking in or leading",
+        "act": "checking in or leading",
+        "kind": "position",
+        "a": "Obi-Wan Kenobi",
+        "b": "Anakin Skywalker",
+        "role": "top"
+      }
+    },
+    {
+      "id": "wicked-thing-27",
+      "key": "collar-wearer#48b7bd71",
+      "claim": {
+        "fic": "wicked-thing.html",
+        "sourceSha": "9e420c5f8b014510b08073e4447f8081bf5680b5787eeb8bc32cab6199b35a68",
+        "paragraph": 2531,
+        "pattern": "collar-wearer",
+        "act": "wearing a collar or leash",
+        "kind": "behavior",
+        "a": "Anakin Skywalker",
+        "b": "Obi-Wan Kenobi",
+        "role": "bottom"
+      }
+    },
+    {
+      "id": "wicked-thing-28",
+      "key": "collar-wearer#f00dec60",
+      "claim": {
+        "fic": "wicked-thing.html",
+        "sourceSha": "9e420c5f8b014510b08073e4447f8081bf5680b5787eeb8bc32cab6199b35a68",
+        "paragraph": 2863,
+        "pattern": "collar-wearer",
+        "act": "wearing a collar or leash",
+        "kind": "behavior",
+        "a": "Anakin Skywalker",
+        "b": "Obi-Wan Kenobi",
+        "role": "bottom"
+      }
+    },
+    {
+      "id": "wicked-thing-30",
+      "key": "sinks-to-floor~elided#e454d72b",
+      "claim": {
+        "fic": "wicked-thing.html",
+        "sourceSha": "9e420c5f8b014510b08073e4447f8081bf5680b5787eeb8bc32cab6199b35a68",
+        "paragraph": 3091,
+        "pattern": "sinks-to-floor~elided",
+        "act": "kneeling",
+        "kind": "prep",
+        "a": "Anakin Skywalker",
+        "b": "Obi-Wan Kenobi",
+        "role": "bottom"
+      }
+    },
+    {
+      "id": "wicked-thing-31",
+      "key": "suck-fingers~elided#348514b6",
+      "claim": {
+        "fic": "wicked-thing.html",
+        "sourceSha": "9e420c5f8b014510b08073e4447f8081bf5680b5787eeb8bc32cab6199b35a68",
+        "paragraph": 3093,
+        "pattern": "suck-fingers~elided",
+        "act": "sucking on fingers",
+        "kind": "fingers",
+        "a": "Anakin Skywalker",
+        "b": "Obi-Wan Kenobi",
+        "role": "bottom"
+      }
+    },
+    {
+      "id": "wicked-thing-32",
+      "key": "mouth-around-him~elided#46139be4",
+      "claim": {
+        "fic": "wicked-thing.html",
+        "sourceSha": "9e420c5f8b014510b08073e4447f8081bf5680b5787eeb8bc32cab6199b35a68",
+        "paragraph": 3100,
+        "pattern": "mouth-around-him~elided",
+        "act": "blowjob",
+        "kind": "wanted",
+        "a": "Anakin Skywalker",
+        "b": "Obi-Wan Kenobi",
+        "role": "bottom"
+      }
+    },
+    {
+      "id": "wicked-thing-33",
+      "key": "pos-climb-lap#1215009c",
+      "claim": {
+        "fic": "wicked-thing.html",
+        "sourceSha": "9e420c5f8b014510b08073e4447f8081bf5680b5787eeb8bc32cab6199b35a68",
+        "paragraph": 3120,
+        "pattern": "pos-climb-lap",
+        "act": "climbing into someone's lap",
+        "kind": "position",
+        "a": "Anakin Skywalker",
+        "b": "Obi-Wan Kenobi",
+        "role": "bottom"
+      }
+    },
+    {
+      "id": "wicked-thing-34",
+      "key": "care-soothe~elided#af44b0d",
+      "claim": {
+        "fic": "wicked-thing.html",
+        "sourceSha": "9e420c5f8b014510b08073e4447f8081bf5680b5787eeb8bc32cab6199b35a68",
+        "paragraph": 3313,
+        "pattern": "care-soothe~elided",
+        "act": "comforting someone",
+        "kind": "behavior",
+        "a": "Anakin Skywalker",
+        "b": "Obi-Wan Kenobi",
+        "role": "top"
+      }
+    },
+    {
+      "id": "wicked-thing-36",
+      "key": "sinks-to-floor#784e8354",
+      "claim": {
+        "fic": "wicked-thing.html",
+        "sourceSha": "9e420c5f8b014510b08073e4447f8081bf5680b5787eeb8bc32cab6199b35a68",
+        "paragraph": 3660,
+        "pattern": "sinks-to-floor",
+        "act": "kneeling",
+        "kind": "prep",
+        "a": "Anakin Skywalker",
+        "b": "Obi-Wan Kenobi",
+        "role": "bottom"
+      }
+    },
+    {
+      "id": "wicked-thing-40",
+      "key": "collar-wearer#c4489b3c",
+      "claim": {
+        "fic": "wicked-thing.html",
+        "sourceSha": "9e420c5f8b014510b08073e4447f8081bf5680b5787eeb8bc32cab6199b35a68",
+        "paragraph": 4194,
+        "pattern": "collar-wearer",
+        "act": "wearing a collar or leash",
+        "kind": "behavior",
+        "a": "Anakin Skywalker",
+        "b": "Obi-Wan Kenobi",
+        "role": "bottom"
+      }
+    },
+    {
+      "id": "wicked-thing-41",
+      "key": "collar-wearer#742d7ab6",
+      "claim": {
+        "fic": "wicked-thing.html",
+        "sourceSha": "9e420c5f8b014510b08073e4447f8081bf5680b5787eeb8bc32cab6199b35a68",
+        "paragraph": 4244,
+        "pattern": "collar-wearer",
+        "act": "wearing a collar or leash",
+        "kind": "behavior",
+        "a": "Anakin Skywalker",
+        "b": "Obi-Wan Kenobi",
+        "role": "bottom"
+      }
     }
-  ]
+  ],
+  "minimumReviewerConfidence": 0.95
 }
