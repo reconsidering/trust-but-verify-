@@ -36,3 +36,13 @@ describe("round 93: a person outside every tagged pairing, reached only by fallb
     expect(h.length).toBeGreaterThan(0);
   });
 });
+
+describe("round 93: pushing back with nothing sexual around it", () => {
+  const back = (t: string) => { const hits: AuditHit[] = []; analyzeWithPatterns(t, META, { quiet: true, audit: (h) => hits.push(h) }); return hits.filter((h) => /^thrust-back/.test(h.via)); };
+  it("pushing back in an argument is not a reading", () => {
+    expect(back("Rowan told Morgan about the old system while they sat on the bed, hips touching. Morgan pressed back, “The old system is not so different from yours,” the table edge tight and wet against his shoulders.")).toEqual([]);
+  });
+  it("pushing back onto a cock is still read", () => {
+    expect(back("Rowan moans into the pillow and rocks back onto Morgan’s cock, hard and aching.").length).toBeGreaterThan(0);
+  });
+});
