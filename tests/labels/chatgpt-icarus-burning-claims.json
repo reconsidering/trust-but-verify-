@@ -1,0 +1,1150 @@
+{
+  "schema": "reviewed-claims/v1",
+  "date": "2026-10-10",
+  "reviewer": "chatgpt",
+  "weight": 0.9,
+  "minimumReviewerConfidence": 0.95,
+  "labels": {},
+  "answers": [
+    {
+      "id": "icarus-burning-0",
+      "key": "lips-around#a7f8eefc",
+      "claim": {
+        "fic": "icarus-burning.html",
+        "sourceSha": "e0ff0d5513abc84e473a0cdb4e422c3801bd0740b9c3d37b1bd24b4f5b6dd6be",
+        "paragraph": 2181,
+        "pattern": "lips-around",
+        "act": "blowjob",
+        "kind": "act",
+        "a": "Samiel Tremark",
+        "b": "Jay",
+        "role": ""
+      }
+    },
+    {
+      "id": "icarus-burning-1",
+      "key": "sucked#74bd5d63",
+      "claim": {
+        "fic": "icarus-burning.html",
+        "sourceSha": "e0ff0d5513abc84e473a0cdb4e422c3801bd0740b9c3d37b1bd24b4f5b6dd6be",
+        "paragraph": 2700,
+        "pattern": "sucked",
+        "act": "blowjob",
+        "kind": "act",
+        "a": "Samiel Tremark",
+        "b": "Jason Lane",
+        "role": ""
+      }
+    },
+    {
+      "id": "icarus-burning-2",
+      "key": "dd2-finger-shoved-into#8a0d92e2",
+      "claim": {
+        "fic": "icarus-burning.html",
+        "sourceSha": "e0ff0d5513abc84e473a0cdb4e422c3801bd0740b9c3d37b1bd24b4f5b6dd6be",
+        "paragraph": 3248,
+        "pattern": "dd2-finger-shoved-into",
+        "act": "fingering",
+        "kind": "act",
+        "a": "Samiel Tremark",
+        "b": "Jason Lane",
+        "role": ""
+      }
+    },
+    {
+      "id": "icarus-burning-3",
+      "key": "stretched-open#d6059cfc",
+      "claim": {
+        "fic": "icarus-burning.html",
+        "sourceSha": "e0ff0d5513abc84e473a0cdb4e422c3801bd0740b9c3d37b1bd24b4f5b6dd6be",
+        "paragraph": 3253,
+        "pattern": "stretched-open",
+        "act": "fingering",
+        "kind": "act",
+        "a": "Samiel Tremark",
+        "b": "Jason Lane",
+        "role": ""
+      }
+    },
+    {
+      "id": "icarus-burning-4",
+      "key": "penis-against#5cc8ed69",
+      "claim": {
+        "fic": "icarus-burning.html",
+        "sourceSha": "e0ff0d5513abc84e473a0cdb4e422c3801bd0740b9c3d37b1bd24b4f5b6dd6be",
+        "paragraph": 3260,
+        "pattern": "penis-against",
+        "act": "anal sex",
+        "kind": "act",
+        "a": "Jay",
+        "b": "Samiel Tremark",
+        "role": ""
+      }
+    },
+    {
+      "id": "icarus-burning-5",
+      "key": "pushed-in#cf04579e",
+      "claim": {
+        "fic": "icarus-burning.html",
+        "sourceSha": "e0ff0d5513abc84e473a0cdb4e422c3801bd0740b9c3d37b1bd24b4f5b6dd6be",
+        "paragraph": 3260,
+        "pattern": "pushed-in",
+        "act": "anal sex",
+        "kind": "act",
+        "a": "Samiel Tremark",
+        "b": "Jason Lane",
+        "role": ""
+      }
+    },
+    {
+      "id": "icarus-burning-6",
+      "key": "stretched-open~elided#f6ac4163",
+      "claim": {
+        "fic": "icarus-burning.html",
+        "sourceSha": "e0ff0d5513abc84e473a0cdb4e422c3801bd0740b9c3d37b1bd24b4f5b6dd6be",
+        "paragraph": 3263,
+        "pattern": "stretched-open~elided",
+        "act": "fingering",
+        "kind": "act",
+        "a": "Samiel Tremark",
+        "b": "Jay",
+        "role": ""
+      }
+    },
+    {
+      "id": "icarus-burning-7",
+      "key": "push-into#e660dcaf",
+      "claim": {
+        "fic": "icarus-burning.html",
+        "sourceSha": "e0ff0d5513abc84e473a0cdb4e422c3801bd0740b9c3d37b1bd24b4f5b6dd6be",
+        "paragraph": 3273,
+        "pattern": "push-into",
+        "act": "anal sex",
+        "kind": "act",
+        "a": "Samiel Tremark",
+        "b": "Jay",
+        "role": ""
+      }
+    },
+    {
+      "id": "icarus-burning-8",
+      "key": "push-into#f5bb44f2",
+      "claim": {
+        "fic": "icarus-burning.html",
+        "sourceSha": "e0ff0d5513abc84e473a0cdb4e422c3801bd0740b9c3d37b1bd24b4f5b6dd6be",
+        "paragraph": 3279,
+        "pattern": "push-into",
+        "act": "anal sex",
+        "kind": "act",
+        "a": "Samiel Tremark",
+        "b": "Jay",
+        "role": ""
+      }
+    },
+    {
+      "id": "icarus-burning-9",
+      "key": "push-into~elided#9465b21c",
+      "claim": {
+        "fic": "icarus-burning.html",
+        "sourceSha": "e0ff0d5513abc84e473a0cdb4e422c3801bd0740b9c3d37b1bd24b4f5b6dd6be",
+        "paragraph": 3286,
+        "pattern": "push-into~elided",
+        "act": "anal sex",
+        "kind": "act",
+        "a": "Samiel Tremark",
+        "b": "Jay",
+        "role": ""
+      }
+    },
+    {
+      "id": "icarus-burning-10",
+      "key": "push-into#aae77ba2",
+      "claim": {
+        "fic": "icarus-burning.html",
+        "sourceSha": "e0ff0d5513abc84e473a0cdb4e422c3801bd0740b9c3d37b1bd24b4f5b6dd6be",
+        "paragraph": 3294,
+        "pattern": "push-into",
+        "act": "anal sex",
+        "kind": "act",
+        "a": "Samiel Tremark",
+        "b": "Jay",
+        "role": ""
+      }
+    },
+    {
+      "id": "icarus-burning-11",
+      "key": "push-into#569556c4",
+      "claim": {
+        "fic": "icarus-burning.html",
+        "sourceSha": "e0ff0d5513abc84e473a0cdb4e422c3801bd0740b9c3d37b1bd24b4f5b6dd6be",
+        "paragraph": 3296,
+        "pattern": "push-into",
+        "act": "anal sex",
+        "kind": "act",
+        "a": "Samiel Tremark",
+        "b": "Jay",
+        "role": ""
+      }
+    },
+    {
+      "id": "icarus-burning-12",
+      "key": "inside#1a512d11",
+      "claim": {
+        "fic": "icarus-burning.html",
+        "sourceSha": "e0ff0d5513abc84e473a0cdb4e422c3801bd0740b9c3d37b1bd24b4f5b6dd6be",
+        "paragraph": 3298,
+        "pattern": "inside",
+        "act": "anal sex",
+        "kind": "act",
+        "a": "Samiel Tremark",
+        "b": "Jason Lane",
+        "role": ""
+      }
+    },
+    {
+      "id": "icarus-burning-13",
+      "key": "having-inside#1a512d11",
+      "claim": {
+        "fic": "icarus-burning.html",
+        "sourceSha": "e0ff0d5513abc84e473a0cdb4e422c3801bd0740b9c3d37b1bd24b4f5b6dd6be",
+        "paragraph": 3298,
+        "pattern": "having-inside",
+        "act": "anal sex",
+        "kind": "act",
+        "a": "Samiel Tremark",
+        "b": "Jason Lane",
+        "role": ""
+      }
+    },
+    {
+      "id": "icarus-burning-14",
+      "key": "penis-into#eafad547",
+      "claim": {
+        "fic": "icarus-burning.html",
+        "sourceSha": "e0ff0d5513abc84e473a0cdb4e422c3801bd0740b9c3d37b1bd24b4f5b6dd6be",
+        "paragraph": 3311,
+        "pattern": "penis-into",
+        "act": "anal sex",
+        "kind": "act",
+        "a": "Samiel Tremark",
+        "b": "Jay",
+        "role": ""
+      }
+    },
+    {
+      "id": "icarus-burning-15",
+      "key": "penis-inside#eafad547",
+      "claim": {
+        "fic": "icarus-burning.html",
+        "sourceSha": "e0ff0d5513abc84e473a0cdb4e422c3801bd0740b9c3d37b1bd24b4f5b6dd6be",
+        "paragraph": 3311,
+        "pattern": "penis-inside",
+        "act": "anal sex",
+        "kind": "act",
+        "a": "Samiel Tremark",
+        "b": "Jay",
+        "role": ""
+      }
+    },
+    {
+      "id": "icarus-burning-16",
+      "key": "riding#83ff8f31",
+      "claim": {
+        "fic": "icarus-burning.html",
+        "sourceSha": "e0ff0d5513abc84e473a0cdb4e422c3801bd0740b9c3d37b1bd24b4f5b6dd6be",
+        "paragraph": 3323,
+        "pattern": "riding",
+        "act": "anal sex (riding)",
+        "kind": "act",
+        "a": "Samiel Tremark",
+        "b": "Jay",
+        "role": ""
+      }
+    },
+    {
+      "id": "icarus-burning-17",
+      "key": "push-into~elided#23733bb4",
+      "claim": {
+        "fic": "icarus-burning.html",
+        "sourceSha": "e0ff0d5513abc84e473a0cdb4e422c3801bd0740b9c3d37b1bd24b4f5b6dd6be",
+        "paragraph": 8024,
+        "pattern": "push-into~elided",
+        "act": "anal sex",
+        "kind": "act",
+        "a": "Samiel Tremark",
+        "b": "Jason Lane",
+        "role": ""
+      }
+    },
+    {
+      "id": "icarus-burning-18",
+      "key": "riding#666ffb4d",
+      "claim": {
+        "fic": "icarus-burning.html",
+        "sourceSha": "e0ff0d5513abc84e473a0cdb4e422c3801bd0740b9c3d37b1bd24b4f5b6dd6be",
+        "paragraph": 8045,
+        "pattern": "riding",
+        "act": "anal sex (riding)",
+        "kind": "act",
+        "a": "Samiel Tremark",
+        "b": "Jay",
+        "role": ""
+      }
+    },
+    {
+      "id": "icarus-burning-19",
+      "key": "pushed-in~elided#bdf5ee8f",
+      "claim": {
+        "fic": "icarus-burning.html",
+        "sourceSha": "e0ff0d5513abc84e473a0cdb4e422c3801bd0740b9c3d37b1bd24b4f5b6dd6be",
+        "paragraph": 8047,
+        "pattern": "pushed-in~elided",
+        "act": "blowjob (face-fucking)",
+        "kind": "act",
+        "a": "Jay",
+        "b": "Samiel Tremark",
+        "role": ""
+      }
+    },
+    {
+      "id": "icarus-burning-20",
+      "key": "riding~elided#76cbfc53",
+      "claim": {
+        "fic": "icarus-burning.html",
+        "sourceSha": "e0ff0d5513abc84e473a0cdb4e422c3801bd0740b9c3d37b1bd24b4f5b6dd6be",
+        "paragraph": 8056,
+        "pattern": "riding~elided",
+        "act": "anal sex (riding)",
+        "kind": "act",
+        "a": "Samiel Tremark",
+        "b": "Jason Lane",
+        "role": ""
+      }
+    },
+    {
+      "id": "icarus-burning-21",
+      "key": "fuck~elided#d6d853e",
+      "claim": {
+        "fic": "icarus-burning.html",
+        "sourceSha": "e0ff0d5513abc84e473a0cdb4e422c3801bd0740b9c3d37b1bd24b4f5b6dd6be",
+        "paragraph": 8057,
+        "pattern": "fuck~elided",
+        "act": "anal sex",
+        "kind": "act",
+        "a": "Samiel Tremark",
+        "b": "Jay",
+        "role": ""
+      }
+    },
+    {
+      "id": "icarus-burning-22",
+      "key": "penis-against#c4e81781",
+      "claim": {
+        "fic": "icarus-burning.html",
+        "sourceSha": "e0ff0d5513abc84e473a0cdb4e422c3801bd0740b9c3d37b1bd24b4f5b6dd6be",
+        "paragraph": 8058,
+        "pattern": "penis-against",
+        "act": "anal sex",
+        "kind": "act",
+        "a": "Samiel Tremark",
+        "b": "Jason Lane",
+        "role": ""
+      }
+    },
+    {
+      "id": "icarus-burning-23",
+      "key": "stretched-open~elided#1edf3764",
+      "claim": {
+        "fic": "icarus-burning.html",
+        "sourceSha": "e0ff0d5513abc84e473a0cdb4e422c3801bd0740b9c3d37b1bd24b4f5b6dd6be",
+        "paragraph": 8063,
+        "pattern": "stretched-open~elided",
+        "act": "fingering",
+        "kind": "act",
+        "a": "Samiel Tremark",
+        "b": "Jay",
+        "role": ""
+      }
+    },
+    {
+      "id": "icarus-burning-24",
+      "key": "thrusts-filling#1edf3764",
+      "claim": {
+        "fic": "icarus-burning.html",
+        "sourceSha": "e0ff0d5513abc84e473a0cdb4e422c3801bd0740b9c3d37b1bd24b4f5b6dd6be",
+        "paragraph": 8063,
+        "pattern": "thrusts-filling",
+        "act": "anal sex",
+        "kind": "act",
+        "a": "Samiel Tremark",
+        "b": "Jay",
+        "role": ""
+      }
+    },
+    {
+      "id": "icarus-burning-25",
+      "key": "flustered-verb#1bffe3",
+      "claim": {
+        "fic": "icarus-burning.html",
+        "sourceSha": "e0ff0d5513abc84e473a0cdb4e422c3801bd0740b9c3d37b1bd24b4f5b6dd6be",
+        "paragraph": 631,
+        "pattern": "flustered-verb",
+        "act": "flustered or blushing",
+        "kind": "behavior",
+        "a": "Jay",
+        "b": "Samiel Tremark",
+        "role": "bottom"
+      }
+    },
+    {
+      "id": "icarus-burning-26",
+      "key": "care-soothe~elided#f31ff3a8",
+      "claim": {
+        "fic": "icarus-burning.html",
+        "sourceSha": "e0ff0d5513abc84e473a0cdb4e422c3801bd0740b9c3d37b1bd24b4f5b6dd6be",
+        "paragraph": 645,
+        "pattern": "care-soothe~elided",
+        "act": "comforting someone",
+        "kind": "behavior",
+        "a": "Jay",
+        "b": "Samiel Tremark",
+        "role": "top"
+      }
+    },
+    {
+      "id": "icarus-burning-27",
+      "key": "dom-grip~elided#cf5723d6",
+      "claim": {
+        "fic": "icarus-burning.html",
+        "sourceSha": "e0ff0d5513abc84e473a0cdb4e422c3801bd0740b9c3d37b1bd24b4f5b6dd6be",
+        "paragraph": 1233,
+        "pattern": "dom-grip~elided",
+        "act": "gripping firmly",
+        "kind": "behavior",
+        "a": "Jay",
+        "b": "Samiel Tremark",
+        "role": "top"
+      }
+    },
+    {
+      "id": "icarus-burning-28",
+      "key": "dom-take-control#b71471ef",
+      "claim": {
+        "fic": "icarus-burning.html",
+        "sourceSha": "e0ff0d5513abc84e473a0cdb4e422c3801bd0740b9c3d37b1bd24b4f5b6dd6be",
+        "paragraph": 1239,
+        "pattern": "dom-take-control",
+        "act": "taking control",
+        "kind": "behavior",
+        "a": "Jay",
+        "b": "Samiel Tremark",
+        "role": "top"
+      }
+    },
+    {
+      "id": "icarus-burning-29",
+      "key": "care-soothe~elided#c0bb619f",
+      "claim": {
+        "fic": "icarus-burning.html",
+        "sourceSha": "e0ff0d5513abc84e473a0cdb4e422c3801bd0740b9c3d37b1bd24b4f5b6dd6be",
+        "paragraph": 1281,
+        "pattern": "care-soothe~elided",
+        "act": "comforting someone",
+        "kind": "behavior",
+        "a": "Jason Lane",
+        "b": "Jay",
+        "role": "top"
+      }
+    },
+    {
+      "id": "icarus-burning-30",
+      "key": "care-soothe#10f88334",
+      "claim": {
+        "fic": "icarus-burning.html",
+        "sourceSha": "e0ff0d5513abc84e473a0cdb4e422c3801bd0740b9c3d37b1bd24b4f5b6dd6be",
+        "paragraph": 1322,
+        "pattern": "care-soothe",
+        "act": "comforting someone",
+        "kind": "behavior",
+        "a": "Jay",
+        "b": "Samiel Tremark",
+        "role": "top"
+      }
+    },
+    {
+      "id": "icarus-burning-32",
+      "key": "care-soothe#5f2d95dd",
+      "claim": {
+        "fic": "icarus-burning.html",
+        "sourceSha": "e0ff0d5513abc84e473a0cdb4e422c3801bd0740b9c3d37b1bd24b4f5b6dd6be",
+        "paragraph": 1394,
+        "pattern": "care-soothe",
+        "act": "comforting someone",
+        "kind": "behavior",
+        "a": "Jay",
+        "b": "Venndred Liesen",
+        "role": "top"
+      }
+    },
+    {
+      "id": "icarus-burning-33",
+      "key": "care-soothe#c855612",
+      "claim": {
+        "fic": "icarus-burning.html",
+        "sourceSha": "e0ff0d5513abc84e473a0cdb4e422c3801bd0740b9c3d37b1bd24b4f5b6dd6be",
+        "paragraph": 1442,
+        "pattern": "care-soothe",
+        "act": "comforting someone",
+        "kind": "behavior",
+        "a": "Jay",
+        "b": "Venndred Liesen",
+        "role": "top"
+      }
+    },
+    {
+      "id": "icarus-burning-34",
+      "key": "care-soothe~elided#ff2e9180",
+      "claim": {
+        "fic": "icarus-burning.html",
+        "sourceSha": "e0ff0d5513abc84e473a0cdb4e422c3801bd0740b9c3d37b1bd24b4f5b6dd6be",
+        "paragraph": 1454,
+        "pattern": "care-soothe~elided",
+        "act": "comforting someone",
+        "kind": "behavior",
+        "a": "Venndred Liesen",
+        "b": "Jay",
+        "role": "top"
+      }
+    },
+    {
+      "id": "icarus-burning-35",
+      "key": "sub-pinned#66ded82f",
+      "claim": {
+        "fic": "icarus-burning.html",
+        "sourceSha": "e0ff0d5513abc84e473a0cdb4e422c3801bd0740b9c3d37b1bd24b4f5b6dd6be",
+        "paragraph": 1888,
+        "pattern": "sub-pinned",
+        "act": "being pinned",
+        "kind": "behavior",
+        "a": "Jay",
+        "b": "Samiel Tremark",
+        "role": "bottom"
+      }
+    },
+    {
+      "id": "icarus-burning-37",
+      "key": "sub-pinned#bed40317",
+      "claim": {
+        "fic": "icarus-burning.html",
+        "sourceSha": "e0ff0d5513abc84e473a0cdb4e422c3801bd0740b9c3d37b1bd24b4f5b6dd6be",
+        "paragraph": 2106,
+        "pattern": "sub-pinned",
+        "act": "being pinned",
+        "kind": "behavior",
+        "a": "Jay",
+        "b": "Samiel Tremark",
+        "role": "bottom"
+      }
+    },
+    {
+      "id": "icarus-burning-38",
+      "key": "care-soothe#cb153bca",
+      "claim": {
+        "fic": "icarus-burning.html",
+        "sourceSha": "e0ff0d5513abc84e473a0cdb4e422c3801bd0740b9c3d37b1bd24b4f5b6dd6be",
+        "paragraph": 2134,
+        "pattern": "care-soothe",
+        "act": "comforting someone",
+        "kind": "behavior",
+        "a": "Jay",
+        "b": "Samiel Tremark",
+        "role": "top"
+      }
+    },
+    {
+      "id": "icarus-burning-39",
+      "key": "hj-stroke~elided#655e449c",
+      "claim": {
+        "fic": "icarus-burning.html",
+        "sourceSha": "e0ff0d5513abc84e473a0cdb4e422c3801bd0740b9c3d37b1bd24b4f5b6dd6be",
+        "paragraph": 2171,
+        "pattern": "hj-stroke~elided",
+        "act": "handjob",
+        "kind": "handjob",
+        "a": "Samiel Tremark",
+        "b": "Jay",
+        "role": "top"
+      }
+    },
+    {
+      "id": "icarus-burning-40",
+      "key": "care-soothe~elided#c1913d8e",
+      "claim": {
+        "fic": "icarus-burning.html",
+        "sourceSha": "e0ff0d5513abc84e473a0cdb4e422c3801bd0740b9c3d37b1bd24b4f5b6dd6be",
+        "paragraph": 2231,
+        "pattern": "care-soothe~elided",
+        "act": "comforting someone",
+        "kind": "behavior",
+        "a": "Jay",
+        "b": "Samiel Tremark",
+        "role": "top"
+      }
+    },
+    {
+      "id": "icarus-burning-41",
+      "key": "dom-tilt~elided#37a0a312",
+      "claim": {
+        "fic": "icarus-burning.html",
+        "sourceSha": "e0ff0d5513abc84e473a0cdb4e422c3801bd0740b9c3d37b1bd24b4f5b6dd6be",
+        "paragraph": 2253,
+        "pattern": "dom-tilt~elided",
+        "act": "tilting someone's face up",
+        "kind": "behavior",
+        "a": "Samiel Tremark",
+        "b": "Jay",
+        "role": "top"
+      }
+    },
+    {
+      "id": "icarus-burning-43",
+      "key": "dom-pin~elided#870cf3d2",
+      "claim": {
+        "fic": "icarus-burning.html",
+        "sourceSha": "e0ff0d5513abc84e473a0cdb4e422c3801bd0740b9c3d37b1bd24b4f5b6dd6be",
+        "paragraph": 2797,
+        "pattern": "dom-pin~elided",
+        "act": "pinning someone",
+        "kind": "behavior",
+        "a": "Samiel Tremark",
+        "b": "Jason Lane",
+        "role": "top"
+      }
+    },
+    {
+      "id": "icarus-burning-44",
+      "key": "dom-grip~elided#594dde61",
+      "claim": {
+        "fic": "icarus-burning.html",
+        "sourceSha": "e0ff0d5513abc84e473a0cdb4e422c3801bd0740b9c3d37b1bd24b4f5b6dd6be",
+        "paragraph": 3091,
+        "pattern": "dom-grip~elided",
+        "act": "gripping firmly",
+        "kind": "behavior",
+        "a": "Jay",
+        "b": "Samiel Tremark",
+        "role": "top"
+      }
+    },
+    {
+      "id": "icarus-burning-45",
+      "key": "care-soothe~elided#66e3bf77",
+      "claim": {
+        "fic": "icarus-burning.html",
+        "sourceSha": "e0ff0d5513abc84e473a0cdb4e422c3801bd0740b9c3d37b1bd24b4f5b6dd6be",
+        "paragraph": 3142,
+        "pattern": "care-soothe~elided",
+        "act": "comforting someone",
+        "kind": "behavior",
+        "a": "Jay",
+        "b": "Samiel Tremark",
+        "role": "top"
+      }
+    },
+    {
+      "id": "icarus-burning-49",
+      "key": "dom-tilt~elided#ccf33328",
+      "claim": {
+        "fic": "icarus-burning.html",
+        "sourceSha": "e0ff0d5513abc84e473a0cdb4e422c3801bd0740b9c3d37b1bd24b4f5b6dd6be",
+        "paragraph": 3218,
+        "pattern": "dom-tilt~elided",
+        "act": "tilting someone's face up",
+        "kind": "behavior",
+        "a": "Jay",
+        "b": "Samiel Tremark",
+        "role": "top"
+      }
+    },
+    {
+      "id": "icarus-burning-50",
+      "key": "dd2-hj-hand-to-dick#2b6afe36",
+      "claim": {
+        "fic": "icarus-burning.html",
+        "sourceSha": "e0ff0d5513abc84e473a0cdb4e422c3801bd0740b9c3d37b1bd24b4f5b6dd6be",
+        "paragraph": 3226,
+        "pattern": "dd2-hj-hand-to-dick",
+        "act": "handjob",
+        "kind": "handjob",
+        "a": "Samiel Tremark",
+        "b": "Jay",
+        "role": "top"
+      }
+    },
+    {
+      "id": "icarus-burning-51",
+      "key": "hj-stroke~elided#39a696ed",
+      "claim": {
+        "fic": "icarus-burning.html",
+        "sourceSha": "e0ff0d5513abc84e473a0cdb4e422c3801bd0740b9c3d37b1bd24b4f5b6dd6be",
+        "paragraph": 3231,
+        "pattern": "hj-stroke~elided",
+        "act": "handjob",
+        "kind": "handjob",
+        "a": "Jason Lane",
+        "b": "Jay",
+        "role": "top"
+      }
+    },
+    {
+      "id": "icarus-burning-52",
+      "key": "dialogue:blowjob#b72ab1f",
+      "claim": {
+        "fic": "icarus-burning.html",
+        "sourceSha": "e0ff0d5513abc84e473a0cdb4e422c3801bd0740b9c3d37b1bd24b4f5b6dd6be",
+        "paragraph": 3231,
+        "pattern": "dialogue:blowjob",
+        "act": "blowjob",
+        "kind": "said",
+        "a": "Samiel Tremark",
+        "b": "Jay",
+        "role": "bottom"
+      }
+    },
+    {
+      "id": "icarus-burning-53",
+      "key": "adds-finger~elided#752eeb59",
+      "claim": {
+        "fic": "icarus-burning.html",
+        "sourceSha": "e0ff0d5513abc84e473a0cdb4e422c3801bd0740b9c3d37b1bd24b4f5b6dd6be",
+        "paragraph": 3242,
+        "pattern": "adds-finger~elided",
+        "act": "fingering",
+        "kind": "hypothetical",
+        "a": "Samiel Tremark",
+        "b": "Jay",
+        "role": "bottom"
+      }
+    },
+    {
+      "id": "icarus-burning-54",
+      "key": "pressure-at-hole~elided#752eeb59",
+      "claim": {
+        "fic": "icarus-burning.html",
+        "sourceSha": "e0ff0d5513abc84e473a0cdb4e422c3801bd0740b9c3d37b1bd24b4f5b6dd6be",
+        "paragraph": 3242,
+        "pattern": "pressure-at-hole~elided",
+        "act": "teasing a hole",
+        "kind": "touch",
+        "a": "Jay",
+        "b": "Samiel Tremark",
+        "role": "top"
+      }
+    },
+    {
+      "id": "icarus-burning-55",
+      "key": "slicked-self#3bf50da8",
+      "claim": {
+        "fic": "icarus-burning.html",
+        "sourceSha": "e0ff0d5513abc84e473a0cdb4e422c3801bd0740b9c3d37b1bd24b4f5b6dd6be",
+        "paragraph": 3257,
+        "pattern": "slicked-self",
+        "act": "slicking up",
+        "kind": "prep",
+        "a": "Samiel Tremark",
+        "b": "Jason Lane",
+        "role": "top"
+      }
+    },
+    {
+      "id": "icarus-burning-56",
+      "key": "fuck~elided#4d12af02",
+      "claim": {
+        "fic": "icarus-burning.html",
+        "sourceSha": "e0ff0d5513abc84e473a0cdb4e422c3801bd0740b9c3d37b1bd24b4f5b6dd6be",
+        "paragraph": 3265,
+        "pattern": "fuck~elided",
+        "act": "anal sex",
+        "kind": "wanted",
+        "a": "Samiel Tremark",
+        "b": "Jason Lane",
+        "role": "top"
+      }
+    },
+    {
+      "id": "icarus-burning-57",
+      "key": "thrust-back~elided#ab268163",
+      "claim": {
+        "fic": "icarus-burning.html",
+        "sourceSha": "e0ff0d5513abc84e473a0cdb4e422c3801bd0740b9c3d37b1bd24b4f5b6dd6be",
+        "paragraph": 3275,
+        "pattern": "thrust-back~elided",
+        "act": "pushing back",
+        "kind": "touch",
+        "a": "Jason Lane",
+        "b": "Samiel Tremark",
+        "role": "bottom"
+      }
+    },
+    {
+      "id": "icarus-burning-58",
+      "key": "hj-stroke~elided#f551cfe0",
+      "claim": {
+        "fic": "icarus-burning.html",
+        "sourceSha": "e0ff0d5513abc84e473a0cdb4e422c3801bd0740b9c3d37b1bd24b4f5b6dd6be",
+        "paragraph": 3279,
+        "pattern": "hj-stroke~elided",
+        "act": "handjob",
+        "kind": "handjob",
+        "a": "Samiel Tremark",
+        "b": "Jay",
+        "role": "top"
+      }
+    },
+    {
+      "id": "icarus-burning-59",
+      "key": "hj-stroke#ee5d483",
+      "claim": {
+        "fic": "icarus-burning.html",
+        "sourceSha": "e0ff0d5513abc84e473a0cdb4e422c3801bd0740b9c3d37b1bd24b4f5b6dd6be",
+        "paragraph": 3293,
+        "pattern": "hj-stroke",
+        "act": "handjob",
+        "kind": "handjob",
+        "a": "Samiel Tremark",
+        "b": "Jay",
+        "role": "top"
+      }
+    },
+    {
+      "id": "icarus-burning-60",
+      "key": "dd-grinds-onto-cock~elided#5d984997",
+      "claim": {
+        "fic": "icarus-burning.html",
+        "sourceSha": "e0ff0d5513abc84e473a0cdb4e422c3801bd0740b9c3d37b1bd24b4f5b6dd6be",
+        "paragraph": 3318,
+        "pattern": "dd-grinds-onto-cock~elided",
+        "act": "anal sex",
+        "kind": "wanted",
+        "a": "Jay",
+        "b": "Samiel Tremark",
+        "role": "bottom"
+      }
+    },
+    {
+      "id": "icarus-burning-61",
+      "key": "care-soothe~elided#1325647e",
+      "claim": {
+        "fic": "icarus-burning.html",
+        "sourceSha": "e0ff0d5513abc84e473a0cdb4e422c3801bd0740b9c3d37b1bd24b4f5b6dd6be",
+        "paragraph": 3632,
+        "pattern": "care-soothe~elided",
+        "act": "comforting someone",
+        "kind": "behavior",
+        "a": "Jay",
+        "b": "Samiel Tremark",
+        "role": "top"
+      }
+    },
+    {
+      "id": "icarus-burning-62",
+      "key": "dialogue:calling someone a good boy/girl#366f400e",
+      "claim": {
+        "fic": "icarus-burning.html",
+        "sourceSha": "e0ff0d5513abc84e473a0cdb4e422c3801bd0740b9c3d37b1bd24b4f5b6dd6be",
+        "paragraph": 3850,
+        "pattern": "dialogue:calling someone a good boy/girl",
+        "act": "calling someone a good boy/girl",
+        "kind": "petname",
+        "a": "Jay",
+        "b": "Samiel Tremark",
+        "role": "top"
+      }
+    },
+    {
+      "id": "icarus-burning-63",
+      "key": "sinks-to-floor#329b65",
+      "claim": {
+        "fic": "icarus-burning.html",
+        "sourceSha": "e0ff0d5513abc84e473a0cdb4e422c3801bd0740b9c3d37b1bd24b4f5b6dd6be",
+        "paragraph": 4193,
+        "pattern": "sinks-to-floor",
+        "act": "kneeling",
+        "kind": "prep",
+        "a": "Jay",
+        "b": "Samiel Tremark",
+        "role": "bottom"
+      }
+    },
+    {
+      "id": "icarus-burning-64",
+      "key": "dialogue:anal sex#c685f56",
+      "claim": {
+        "fic": "icarus-burning.html",
+        "sourceSha": "e0ff0d5513abc84e473a0cdb4e422c3801bd0740b9c3d37b1bd24b4f5b6dd6be",
+        "paragraph": 4278,
+        "pattern": "dialogue:anal sex",
+        "act": "anal sex",
+        "kind": "said",
+        "a": "Samiel Tremark",
+        "b": "Jason Lane",
+        "role": "bottom"
+      }
+    },
+    {
+      "id": "icarus-burning-65",
+      "key": "care-soothe#cd9474bd",
+      "claim": {
+        "fic": "icarus-burning.html",
+        "sourceSha": "e0ff0d5513abc84e473a0cdb4e422c3801bd0740b9c3d37b1bd24b4f5b6dd6be",
+        "paragraph": 4319,
+        "pattern": "care-soothe",
+        "act": "comforting someone",
+        "kind": "behavior",
+        "a": "Jason Lane",
+        "b": "Samiel Tremark",
+        "role": "top"
+      }
+    },
+    {
+      "id": "icarus-burning-66",
+      "key": "dom-grip#18d86352",
+      "claim": {
+        "fic": "icarus-burning.html",
+        "sourceSha": "e0ff0d5513abc84e473a0cdb4e422c3801bd0740b9c3d37b1bd24b4f5b6dd6be",
+        "paragraph": 4352,
+        "pattern": "dom-grip",
+        "act": "gripping firmly",
+        "kind": "behavior",
+        "a": "Jay",
+        "b": "Samiel Tremark",
+        "role": "top"
+      }
+    },
+    {
+      "id": "icarus-burning-67",
+      "key": "care-soothe#ff8161ae",
+      "claim": {
+        "fic": "icarus-burning.html",
+        "sourceSha": "e0ff0d5513abc84e473a0cdb4e422c3801bd0740b9c3d37b1bd24b4f5b6dd6be",
+        "paragraph": 4651,
+        "pattern": "care-soothe",
+        "act": "comforting someone",
+        "kind": "behavior",
+        "a": "Jay",
+        "b": "Samiel Tremark",
+        "role": "top"
+      }
+    },
+    {
+      "id": "icarus-burning-68",
+      "key": "sinks-to-floor#af5a6014",
+      "claim": {
+        "fic": "icarus-burning.html",
+        "sourceSha": "e0ff0d5513abc84e473a0cdb4e422c3801bd0740b9c3d37b1bd24b4f5b6dd6be",
+        "paragraph": 5767,
+        "pattern": "sinks-to-floor",
+        "act": "kneeling",
+        "kind": "prep",
+        "a": "Jay",
+        "b": "Samiel Tremark",
+        "role": "bottom"
+      }
+    },
+    {
+      "id": "icarus-burning-69",
+      "key": "care-soothe#1c09c098",
+      "claim": {
+        "fic": "icarus-burning.html",
+        "sourceSha": "e0ff0d5513abc84e473a0cdb4e422c3801bd0740b9c3d37b1bd24b4f5b6dd6be",
+        "paragraph": 6678,
+        "pattern": "care-soothe",
+        "act": "comforting someone",
+        "kind": "behavior",
+        "a": "Jay",
+        "b": "Samiel Tremark",
+        "role": "top"
+      }
+    },
+    {
+      "id": "icarus-burning-73",
+      "key": "dom-protect~elided#106591c2",
+      "claim": {
+        "fic": "icarus-burning.html",
+        "sourceSha": "e0ff0d5513abc84e473a0cdb4e422c3801bd0740b9c3d37b1bd24b4f5b6dd6be",
+        "paragraph": 7553,
+        "pattern": "dom-protect~elided",
+        "act": "protecting someone",
+        "kind": "behavior",
+        "a": "Jay",
+        "b": "Samiel Tremark",
+        "role": "top"
+      }
+    },
+    {
+      "id": "icarus-burning-74",
+      "key": "pos-climb-lap#7b9243be",
+      "claim": {
+        "fic": "icarus-burning.html",
+        "sourceSha": "e0ff0d5513abc84e473a0cdb4e422c3801bd0740b9c3d37b1bd24b4f5b6dd6be",
+        "paragraph": 8014,
+        "pattern": "pos-climb-lap",
+        "act": "climbing into someone's lap",
+        "kind": "position",
+        "a": "Jay",
+        "b": "Samiel Tremark",
+        "role": "bottom"
+      }
+    },
+    {
+      "id": "icarus-burning-75",
+      "key": "dialogue:calling someone a good boy/girl#4ad98ea7",
+      "claim": {
+        "fic": "icarus-burning.html",
+        "sourceSha": "e0ff0d5513abc84e473a0cdb4e422c3801bd0740b9c3d37b1bd24b4f5b6dd6be",
+        "paragraph": 8022,
+        "pattern": "dialogue:calling someone a good boy/girl",
+        "act": "calling someone a good boy/girl",
+        "kind": "petname",
+        "a": "Jay",
+        "b": "Samiel Tremark",
+        "role": "top"
+      }
+    },
+    {
+      "id": "icarus-burning-76",
+      "key": "dd-hj-fingers-around~elided#8ce7aac4",
+      "claim": {
+        "fic": "icarus-burning.html",
+        "sourceSha": "e0ff0d5513abc84e473a0cdb4e422c3801bd0740b9c3d37b1bd24b4f5b6dd6be",
+        "paragraph": 8026,
+        "pattern": "dd-hj-fingers-around~elided",
+        "act": "handjob",
+        "kind": "handjob",
+        "a": "Jay",
+        "b": "Samiel Tremark",
+        "role": "top"
+      }
+    },
+    {
+      "id": "icarus-burning-77",
+      "key": "dd2-hj-hand-to-dick~elided#637beede",
+      "claim": {
+        "fic": "icarus-burning.html",
+        "sourceSha": "e0ff0d5513abc84e473a0cdb4e422c3801bd0740b9c3d37b1bd24b4f5b6dd6be",
+        "paragraph": 8032,
+        "pattern": "dd2-hj-hand-to-dick~elided",
+        "act": "handjob",
+        "kind": "handjob",
+        "a": "Jay",
+        "b": "Samiel Tremark",
+        "role": "top"
+      }
+    },
+    {
+      "id": "icarus-burning-78",
+      "key": "passive-fucked#582083e8",
+      "claim": {
+        "fic": "icarus-burning.html",
+        "sourceSha": "e0ff0d5513abc84e473a0cdb4e422c3801bd0740b9c3d37b1bd24b4f5b6dd6be",
+        "paragraph": 8038,
+        "pattern": "passive-fucked",
+        "act": "anal sex",
+        "kind": "hypothetical",
+        "a": "Samiel Tremark",
+        "b": "Jason Lane",
+        "role": "top"
+      }
+    },
+    {
+      "id": "icarus-burning-79",
+      "key": "self-finger~elided#86c0a1ef",
+      "claim": {
+        "fic": "icarus-burning.html",
+        "sourceSha": "e0ff0d5513abc84e473a0cdb4e422c3801bd0740b9c3d37b1bd24b4f5b6dd6be",
+        "paragraph": 8038,
+        "pattern": "self-finger~elided",
+        "act": "fingering himself",
+        "kind": "solo",
+        "a": "Samiel Tremark",
+        "b": "Jay",
+        "role": "bottom"
+      }
+    },
+    {
+      "id": "icarus-burning-80",
+      "key": "having-inside#b0e8960d",
+      "claim": {
+        "fic": "icarus-burning.html",
+        "sourceSha": "e0ff0d5513abc84e473a0cdb4e422c3801bd0740b9c3d37b1bd24b4f5b6dd6be",
+        "paragraph": 8038,
+        "pattern": "having-inside",
+        "act": "anal sex",
+        "kind": "wanted",
+        "a": "Jason Lane",
+        "b": "Samiel Tremark",
+        "role": "bottom"
+      }
+    },
+    {
+      "id": "icarus-burning-81",
+      "key": "thrust-back#3c9853f8",
+      "claim": {
+        "fic": "icarus-burning.html",
+        "sourceSha": "e0ff0d5513abc84e473a0cdb4e422c3801bd0740b9c3d37b1bd24b4f5b6dd6be",
+        "paragraph": 8039,
+        "pattern": "thrust-back",
+        "act": "pushing back",
+        "kind": "touch",
+        "a": "Jason Lane",
+        "b": "Samiel Tremark",
+        "role": "bottom"
+      }
+    },
+    {
+      "id": "icarus-burning-84",
+      "key": "mast-own-fist~elided#3f61694b",
+      "claim": {
+        "fic": "icarus-burning.html",
+        "sourceSha": "e0ff0d5513abc84e473a0cdb4e422c3801bd0740b9c3d37b1bd24b4f5b6dd6be",
+        "paragraph": 8055,
+        "pattern": "mast-own-fist~elided",
+        "act": "masturbation",
+        "kind": "masturbation",
+        "a": "Jay",
+        "b": "Samiel Tremark",
+        "role": "bottom"
+      }
+    },
+    {
+      "id": "icarus-burning-85",
+      "key": "mast-own#20ca5b81",
+      "claim": {
+        "fic": "icarus-burning.html",
+        "sourceSha": "e0ff0d5513abc84e473a0cdb4e422c3801bd0740b9c3d37b1bd24b4f5b6dd6be",
+        "paragraph": 8065,
+        "pattern": "mast-own",
+        "act": "masturbation",
+        "kind": "masturbation",
+        "a": "Jay",
+        "b": "Samiel Tremark",
+        "role": "bottom"
+      }
+    },
+    {
+      "id": "icarus-burning-86",
+      "key": "address-endearment#d7e11c16",
+      "claim": {
+        "fic": "icarus-burning.html",
+        "sourceSha": "e0ff0d5513abc84e473a0cdb4e422c3801bd0740b9c3d37b1bd24b4f5b6dd6be",
+        "paragraph": 2072,
+        "pattern": "address-endearment",
+        "act": "pet name “sweetheart” for Jason",
+        "kind": "petname",
+        "a": "Samiel Tremark",
+        "b": "Jason Lane",
+        "role": "top"
+      }
+    }
+  ]
+}
