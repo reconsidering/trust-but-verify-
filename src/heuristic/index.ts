@@ -2203,6 +2203,16 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
     if (pat.id.startsWith("pushed-in") && /\b(?:door|car|truck|van|cab|taxi|room|house|building|shop|store|bar|elevator|lift|tent|cabin|Impala|apartment|office|kitchen|bathroom)\b/.test(sent.slice(0, m.index))) return;
     // "…slipped in just before the doors closed"
     if (pat.id.startsWith("pushed-in") && /\b(?:doors?|elevator|lift|train|bus|subway|tube|taxi|cab|car)\b/i.test(sent) && !ANAL_CTX.test(sent) && !PENIS_CTX.test(sent)) return;
+    // "hope … snapped in two", "sank in up to his chin" (a bath), "pressed in again, shoving their chests together" (a hug), "reached the Chevy and slid
+    // back inside, the heater blasting" / "unlocked it and pushed inside, stepping aside": a break, water, an embrace or walking into a place, with
+    // no anal, penis or finger word in the sentence.
+    if (pat.id.startsWith("pushed-in") && !PENIS_CTX.test(sent) && !FINGER_CTX.test(sent) &&
+        /\b(?:sank|sunk|slid|slipped)\s+(?:back\s+)?in(?:to)?\s+up\s+to\s+(?:his|her|their|the)\s+(?:chin|neck|waist|shoulders?|knees|ears|nose|eyes)\b/i.test(sent)) return;
+    if (pat.id.startsWith("pushed-in") && !ANAL_CTX.test(sent) && !PENIS_CTX.test(sent) && !FINGER_CTX.test(sent) &&
+        (/\b(?:snap\w*|press\w*|push\w*)\s+in\s+(?:two|half|pieces)\b/i.test(sent.slice(m.index!)) ||
+         /\b(?:press|push|squeez)\w*\s+in\b[^.!?]{0,40}\b(?:chests?|bodies|torsos?)\s+together\b/i.test(sent) ||
+         /\b(?:(?:reached|arrived at|got to|made it to|pulled up (?:to|at)|parked (?:at|by|outside))\s+(?:the|his|her|their)\s+(?:[\w-]+\s+)?(?:car|truck|Chevy|Impala|Jeep|pickup|SUV|sedan|van|porch|driveway|lobby|hotel|building|apartment|house)|unlocked\s+(?:it|the|his|her|their))\b/i.test(sent.slice(0, m.index!)) ||
+         /^\s*,?\s*(?:stepping|walking|heading|moving|turning|closing|shutting|holding|leaving)\b/i.test(sent.slice(m.index! + matchText.length)))) return;
     // "He hollowed his cheeks, creating a suction for Cas": the one named after "for" is getting sucked.
     // "They were so screwed", "He was fucked": the idiom, unless a person does it ("by Dean"), it says how, or the
     // sentence has anatomy or a sex word.
