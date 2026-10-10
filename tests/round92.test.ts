@@ -44,3 +44,13 @@ describe("round 92: context for kneeling, shoving, blushing and neck hints", () 
     expect(abo("Rowan bares his neck to Morgan, whimpering.").length).toBeGreaterThan(0);
   });
 });
+
+describe("round 92: more reports from the deep dives", () => {
+  it("rubbing the back of his own neck, or his own thighs, is not comforting the partner", () => {
+    expect(run("Morgan rubs his free hand across the back of his neck, thinking.")(/^care-soothe/)).toEqual([]);
+    expect(run("Morgan breathed out and rubbed his hands up and down his thighs.")(/^care-soothe/)).toEqual([]);
+  });
+  it("entering a named mouth is oral, not anal", () => {
+    expect(run("Morgan pushed in deeper, fucking Rowan’s mouth.")(/^push(?:ed)?-in/).filter((h) => h.act.startsWith("anal"))).toEqual([]);
+  });
+});
