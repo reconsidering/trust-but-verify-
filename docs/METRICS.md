@@ -32,3 +32,14 @@ Seven extra features were recorded on every hit and scored on unseen fics: prono
 Claude's labels are not equally good in both directions. Of the readings Claude called **right**, the owner agreed with 48 of 57 (84%). Of the readings Claude called **wrong**, the owner agreed with only 10 of 37 (27%); the other 27 were judged fine. The disagreements are spread over many patterns and fics, mostly narrated acts, so Claude was too ready to call a reading wrong. (Six readings were marked not sure.) So Claude-made labels are now stored at weight 0.85 when right and 0.3 when wrong (`npm run dive -- import --weight 0.85 --weight-wrong 0.3`), and the 662 existing ones were migrated.
 
 The context model and the pattern record learn from the weights, but they were *scored* with every label counting 1, so the noisy "wrong" labels still counted in full as ground truth. The unseen-fics rows are now scored with each label counted by its trust. With the new weights, on fics the model has not seen: log loss 0.2091 → 0.1889 and AUC 0.555 → 0.681 (record alone → with context), against 0.2686 → 0.2523 and 0.536 → 0.612 before; wrong hits among the 10% least-trusted 16% → 25%.
+
+## Tried and dropped: mouth-without-ass and habit/earlier features (Oct 10)
+
+Two features were added to the decision features: `mouthNoAnal` (an anal reading with a mouth or throat word in the paragraph and no ass word) and `habitOrEarlier` ("used to", "every night", "had fucked", "last night", "remembered"). Same labels (2,080 hits, 190 wrong), same engine, with and without them:
+
+| | Without | With |
+|---|---|---|
+| Random split, record → +context | 0.3102 → 0.2851 log loss, AUC 0.582 → 0.695 | 0.3102 → 0.2858, AUC 0.582 → 0.692 |
+| Unseen fics, record → +context | 0.3090 → 0.2923, AUC 0.586 → 0.671 | 0.3090 → 0.2926, AUC 0.586 → 0.670 |
+
+The learned weights were 0.067 and -0.004: the model gives them nothing. The wrong readings left after the guards need the scene (which person, which instrument, which act), not these surface cues, which matches the Oct 5 result for the other surface features. Not merged.
