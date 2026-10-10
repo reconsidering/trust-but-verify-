@@ -1,0 +1,370 @@
+{
+  "schema": "reviewed-claims/v1",
+  "date": "2026-10-10",
+  "reviewer": "chatgpt",
+  "weight": 0.9,
+  "minimumReviewerConfidence": 0.95,
+  "labels": {},
+  "answers": [
+    {
+      "id": "apogee-0",
+      "key": "took-in-mouth~elided#b82ee115",
+      "claim": {
+        "fic": "apogee.html",
+        "sourceSha": "5af10ecb7953b4f680acd589542e95f0e4f81c48fefcba758919d6f9ee704f1d",
+        "paragraph": 800,
+        "pattern": "took-in-mouth~elided",
+        "act": "blowjob",
+        "kind": "act",
+        "a": "Shane Hollander",
+        "b": "Ilya Rozanov",
+        "role": ""
+      }
+    },
+    {
+      "id": "apogee-1",
+      "key": "lips-around#3581d532",
+      "claim": {
+        "fic": "apogee.html",
+        "sourceSha": "5af10ecb7953b4f680acd589542e95f0e4f81c48fefcba758919d6f9ee704f1d",
+        "paragraph": 802,
+        "pattern": "lips-around",
+        "act": "blowjob",
+        "kind": "act",
+        "a": "Shane Hollander",
+        "b": "Ilya Rozanov",
+        "role": ""
+      }
+    },
+    {
+      "id": "apogee-2",
+      "key": "swallowed-down~elided#f1474daa",
+      "claim": {
+        "fic": "apogee.html",
+        "sourceSha": "5af10ecb7953b4f680acd589542e95f0e4f81c48fefcba758919d6f9ee704f1d",
+        "paragraph": 816,
+        "pattern": "swallowed-down~elided",
+        "act": "blowjob",
+        "kind": "act",
+        "a": "Shane Hollander",
+        "b": "Ilya Rozanov",
+        "role": ""
+      }
+    },
+    {
+      "id": "apogee-3",
+      "key": "took-to-root~elided#f1474daa",
+      "claim": {
+        "fic": "apogee.html",
+        "sourceSha": "5af10ecb7953b4f680acd589542e95f0e4f81c48fefcba758919d6f9ee704f1d",
+        "paragraph": 816,
+        "pattern": "took-to-root~elided",
+        "act": "blowjob",
+        "kind": "act",
+        "a": "Shane Hollander",
+        "b": "Ilya Rozanov",
+        "role": ""
+      }
+    },
+    {
+      "id": "apogee-4",
+      "key": "come-in-mouth#52e619ca",
+      "claim": {
+        "fic": "apogee.html",
+        "sourceSha": "5af10ecb7953b4f680acd589542e95f0e4f81c48fefcba758919d6f9ee704f1d",
+        "paragraph": 816,
+        "pattern": "come-in-mouth",
+        "act": "blowjob",
+        "kind": "act",
+        "a": "Ilya Rozanov",
+        "b": "Shane Hollander",
+        "role": ""
+      }
+    },
+    {
+      "id": "apogee-5",
+      "key": "came-in-mouth#52e619ca",
+      "claim": {
+        "fic": "apogee.html",
+        "sourceSha": "5af10ecb7953b4f680acd589542e95f0e4f81c48fefcba758919d6f9ee704f1d",
+        "paragraph": 816,
+        "pattern": "came-in-mouth",
+        "act": "blowjob",
+        "kind": "act",
+        "a": "Ilya Rozanov",
+        "b": "Shane Hollander",
+        "role": ""
+      }
+    },
+    {
+      "id": "apogee-6",
+      "key": "inside#7b6f8b0d",
+      "claim": {
+        "fic": "apogee.html",
+        "sourceSha": "5af10ecb7953b4f680acd589542e95f0e4f81c48fefcba758919d6f9ee704f1d",
+        "paragraph": 863,
+        "pattern": "inside",
+        "act": "anal sex",
+        "kind": "act",
+        "a": "Ilya Rozanov",
+        "b": "Shane Hollander",
+        "role": ""
+      }
+    },
+    {
+      "id": "apogee-7",
+      "key": "fingers-inside#88cb3f62",
+      "claim": {
+        "fic": "apogee.html",
+        "sourceSha": "5af10ecb7953b4f680acd589542e95f0e4f81c48fefcba758919d6f9ee704f1d",
+        "paragraph": 868,
+        "pattern": "fingers-inside",
+        "act": "fingering",
+        "kind": "act",
+        "a": "Ilya Rozanov",
+        "b": "Shane Hollander",
+        "role": ""
+      }
+    },
+    {
+      "id": "apogee-8",
+      "key": "fingers-enter-hole#88cb3f62",
+      "claim": {
+        "fic": "apogee.html",
+        "sourceSha": "5af10ecb7953b4f680acd589542e95f0e4f81c48fefcba758919d6f9ee704f1d",
+        "paragraph": 868,
+        "pattern": "fingers-enter-hole",
+        "act": "fingering",
+        "kind": "act",
+        "a": "Ilya Rozanov",
+        "b": "Shane Hollander",
+        "role": ""
+      }
+    },
+    {
+      "id": "apogee-9",
+      "key": "pushed-in#d04e9a11",
+      "claim": {
+        "fic": "apogee.html",
+        "sourceSha": "5af10ecb7953b4f680acd589542e95f0e4f81c48fefcba758919d6f9ee704f1d",
+        "paragraph": 875,
+        "pattern": "pushed-in",
+        "act": "anal sex",
+        "kind": "act",
+        "a": "Ilya Rozanov",
+        "b": "Shane Hollander",
+        "role": ""
+      }
+    },
+    {
+      "id": "apogee-10",
+      "key": "passive-fucked#8d01c62a",
+      "claim": {
+        "fic": "apogee.html",
+        "sourceSha": "5af10ecb7953b4f680acd589542e95f0e4f81c48fefcba758919d6f9ee704f1d",
+        "paragraph": 899,
+        "pattern": "passive-fucked",
+        "act": "anal sex",
+        "kind": "act",
+        "a": "Ilya Rozanov",
+        "b": "Shane Hollander",
+        "role": ""
+      }
+    },
+    {
+      "id": "apogee-11",
+      "key": "mast-word~elided#62005dfa",
+      "claim": {
+        "fic": "apogee.html",
+        "sourceSha": "5af10ecb7953b4f680acd589542e95f0e4f81c48fefcba758919d6f9ee704f1d",
+        "paragraph": 291,
+        "pattern": "mast-word~elided",
+        "act": "masturbation",
+        "kind": "masturbation",
+        "a": "Cliff Marlow | Cliff Marleau",
+        "b": "Ilya Rozanov",
+        "role": "bottom"
+      }
+    },
+    {
+      "id": "apogee-12",
+      "key": "flustered-face#c9fe4cdd",
+      "claim": {
+        "fic": "apogee.html",
+        "sourceSha": "5af10ecb7953b4f680acd589542e95f0e4f81c48fefcba758919d6f9ee704f1d",
+        "paragraph": 656,
+        "pattern": "flustered-face",
+        "act": "flustered or blushing",
+        "kind": "behavior",
+        "a": "Shane Hollander",
+        "b": "Ilya Rozanov",
+        "role": "bottom"
+      }
+    },
+    {
+      "id": "apogee-13",
+      "key": "arch-back#77f130",
+      "claim": {
+        "fic": "apogee.html",
+        "sourceSha": "5af10ecb7953b4f680acd589542e95f0e4f81c48fefcba758919d6f9ee704f1d",
+        "paragraph": 770,
+        "pattern": "arch-back",
+        "act": "arching their back",
+        "kind": "touch",
+        "a": "Shane Hollander",
+        "b": "Ilya Rozanov",
+        "role": "bottom"
+      }
+    },
+    {
+      "id": "apogee-14",
+      "key": "flustered-verb#b0217905",
+      "claim": {
+        "fic": "apogee.html",
+        "sourceSha": "5af10ecb7953b4f680acd589542e95f0e4f81c48fefcba758919d6f9ee704f1d",
+        "paragraph": 777,
+        "pattern": "flustered-verb",
+        "act": "flustered or blushing",
+        "kind": "behavior",
+        "a": "Ilya Rozanov",
+        "b": "Shane Hollander",
+        "role": "bottom"
+      }
+    },
+    {
+      "id": "apogee-15",
+      "key": "hj-hand-subject#834b0803",
+      "claim": {
+        "fic": "apogee.html",
+        "sourceSha": "5af10ecb7953b4f680acd589542e95f0e4f81c48fefcba758919d6f9ee704f1d",
+        "paragraph": 808,
+        "pattern": "hj-hand-subject",
+        "act": "handjob",
+        "kind": "handjob",
+        "a": "Ilya Rozanov",
+        "b": "Shane Hollander",
+        "role": "top"
+      }
+    },
+    {
+      "id": "apogee-16",
+      "key": "dd-hj-fist-works#f1b2385c",
+      "claim": {
+        "fic": "apogee.html",
+        "sourceSha": "5af10ecb7953b4f680acd589542e95f0e4f81c48fefcba758919d6f9ee704f1d",
+        "paragraph": 814,
+        "pattern": "dd-hj-fist-works",
+        "act": "handjob",
+        "kind": "handjob",
+        "a": "Ilya Rozanov",
+        "b": "Shane Hollander",
+        "role": "top"
+      }
+    },
+    {
+      "id": "apogee-18",
+      "key": "dialogue:checking in or leading#1a22e3f0",
+      "claim": {
+        "fic": "apogee.html",
+        "sourceSha": "5af10ecb7953b4f680acd589542e95f0e4f81c48fefcba758919d6f9ee704f1d",
+        "paragraph": 862,
+        "pattern": "dialogue:checking in or leading",
+        "act": "checking in or leading",
+        "kind": "position",
+        "a": "Ilya Rozanov",
+        "b": "Shane Hollander",
+        "role": "top"
+      }
+    },
+    {
+      "id": "apogee-19",
+      "key": "fingers-inside#bad428aa",
+      "claim": {
+        "fic": "apogee.html",
+        "sourceSha": "5af10ecb7953b4f680acd589542e95f0e4f81c48fefcba758919d6f9ee704f1d",
+        "paragraph": 873,
+        "pattern": "fingers-inside",
+        "act": "fingering",
+        "kind": "hypothetical",
+        "a": "Shane Hollander",
+        "b": "Ilya Rozanov",
+        "role": "bottom"
+      }
+    },
+    {
+      "id": "apogee-20",
+      "key": "flustered-verb~elided#bad428aa",
+      "claim": {
+        "fic": "apogee.html",
+        "sourceSha": "5af10ecb7953b4f680acd589542e95f0e4f81c48fefcba758919d6f9ee704f1d",
+        "paragraph": 873,
+        "pattern": "flustered-verb~elided",
+        "act": "flustered or blushing",
+        "kind": "behavior",
+        "a": "Shane Hollander",
+        "b": "Ilya Rozanov",
+        "role": "bottom"
+      }
+    },
+    {
+      "id": "apogee-21",
+      "key": "dialogue:asking to be held#c58a57b6",
+      "claim": {
+        "fic": "apogee.html",
+        "sourceSha": "5af10ecb7953b4f680acd589542e95f0e4f81c48fefcba758919d6f9ee704f1d",
+        "paragraph": 874,
+        "pattern": "dialogue:asking to be held",
+        "act": "asking to be held",
+        "kind": "aftercare",
+        "a": "Ilya Rozanov",
+        "b": "Shane Hollander",
+        "role": "bottom"
+      }
+    },
+    {
+      "id": "apogee-22",
+      "key": "thrust-back#a5245f7a",
+      "claim": {
+        "fic": "apogee.html",
+        "sourceSha": "5af10ecb7953b4f680acd589542e95f0e4f81c48fefcba758919d6f9ee704f1d",
+        "paragraph": 885,
+        "pattern": "thrust-back",
+        "act": "pushing back",
+        "kind": "touch",
+        "a": "Shane Hollander",
+        "b": "Ilya Rozanov",
+        "role": "bottom"
+      }
+    },
+    {
+      "id": "apogee-23",
+      "key": "hj-hand-subject#5ce694eb",
+      "claim": {
+        "fic": "apogee.html",
+        "sourceSha": "5af10ecb7953b4f680acd589542e95f0e4f81c48fefcba758919d6f9ee704f1d",
+        "paragraph": 900,
+        "pattern": "hj-hand-subject",
+        "act": "handjob",
+        "kind": "handjob",
+        "a": "Ilya Rozanov",
+        "b": "Shane Hollander",
+        "role": "top"
+      }
+    },
+    {
+      "id": "apogee-24",
+      "key": "dialogue:anal sex#d5497a8d",
+      "claim": {
+        "fic": "apogee.html",
+        "sourceSha": "5af10ecb7953b4f680acd589542e95f0e4f81c48fefcba758919d6f9ee704f1d",
+        "paragraph": 1103,
+        "pattern": "dialogue:anal sex",
+        "act": "anal sex",
+        "kind": "said",
+        "a": "Ilya Rozanov",
+        "b": "Shane Hollander",
+        "role": "top"
+      }
+    }
+  ]
+}
