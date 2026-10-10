@@ -217,7 +217,7 @@
       "pairing": "Corbin Scargill/Lauchlan Huxley",
       "h": "3c98f6db",
       "via": "sub-let-lead",
-      "weight": 0.3,
+      "weight": 0.9,
       "source": "chatgpt",
       "reviewerConfidence": 0.98,
       "seen": [
@@ -837,7 +837,7 @@
       "pairing": "Corbin Scargill/Lauchlan Huxley",
       "h": "aeefbc13",
       "via": "care-soothe",
-      "weight": 0.3,
+      "weight": 0.9,
       "source": "chatgpt",
       "reviewerConfidence": 0.98,
       "seen": [
@@ -950,6 +950,23 @@
         "right": 1,
         "wrong": 0
       }
+    },
+    {
+      "kind": "scene",
+      "card": "audit-vibe",
+      "pairing": "Corbin Scargill/Lauchlan Huxley",
+      "h": "dabbf65b",
+      "via": "frottage",
+      "top": "Lauchlan Huxley",
+      "bottom": "Corbin Scargill",
+      "marks": {
+        "right": 1,
+        "wrong": 0
+      },
+      "source": "owner",
+      "seen": [
+        "2026-10-10"
+      ]
     }
   ],
   "negatives": [
@@ -1007,7 +1024,7 @@
       "pairing": "Corbin Scargill/Lauchlan Huxley",
       "h": "27544f4b",
       "via": "sank-down",
-      "weight": 0.3,
+      "weight": 0.9,
       "source": "chatgpt",
       "reviewerConfidence": 0.97,
       "seen": [
@@ -1081,7 +1098,8 @@
       ],
       "top": "Lauchlan Huxley",
       "bottom": "Corbin Scargill",
-      "misread": true
+      "misread": true,
+      "retired": "owner ruled right in the review of Claude/ChatGPT disagreements 2026-10-10"
     },
     {
       "kind": "hint",
@@ -1106,7 +1124,7 @@
       "pairing": "Corbin Scargill/Lauchlan Huxley",
       "h": "f3483d5a",
       "via": "dialogue:anal sex",
-      "weight": 0.3,
+      "weight": 0.9,
       "source": "chatgpt",
       "reviewerConfidence": 0.98,
       "seen": [

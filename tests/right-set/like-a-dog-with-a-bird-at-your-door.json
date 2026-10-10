@@ -255,7 +255,7 @@
       "pairing": "Evan \"Buck\" Buckley/Eddie Diaz (9-1-1 TV)",
       "h": "c1f7c414",
       "via": "dom-carry",
-      "weight": 0.3,
+      "weight": 0.9,
       "source": "chatgpt",
       "marks": {
         "right": 1,
@@ -287,7 +287,8 @@
       "who": "Eddie Diaz",
       "role": "top",
       "wants": true,
-      "reviewerConfidence": 1
+      "reviewerConfidence": 1,
+      "retired": "owner ruled wrong in the review of Claude/ChatGPT disagreements 2026-10-10"
     },
     {
       "kind": "hint",
@@ -295,7 +296,7 @@
       "pairing": "Evan \"Buck\" Buckley/Eddie Diaz (9-1-1 TV)",
       "h": "e300a76",
       "via": "care-soothe",
-      "weight": 0.3,
+      "weight": 0.9,
       "source": "chatgpt",
       "marks": {
         "right": 1,
@@ -613,6 +614,23 @@
         "reason": "Contact at the anal opening is performed fingering under the new convention; later insertion is not required.",
         "ownerApproved": true
       }
+    },
+    {
+      "kind": "scene",
+      "card": "manual-act",
+      "pairing": "Evan \"Buck\" Buckley/Eddie Diaz (9-1-1 TV)",
+      "h": "591e8ab5",
+      "via": "dd2-hj-hand-to-dick",
+      "who": "Eddie Diaz",
+      "role": "top",
+      "marks": {
+        "right": 1,
+        "wrong": 0
+      },
+      "source": "owner",
+      "seen": [
+        "2026-10-10"
+      ]
     }
   ],
   "negatives": [
@@ -780,7 +798,23 @@
       "who": "Eddie Diaz",
       "role": "top",
       "misread": true,
-      "reviewerConfidence": 1
+      "reviewerConfidence": 1,
+      "retired": "owner ruled right in the review of Claude/ChatGPT disagreements 2026-10-10"
+    },
+    {
+      "kind": "hint",
+      "card": "dynamic-cue",
+      "pairing": "Evan \"Buck\" Buckley/Eddie Diaz (9-1-1 TV)",
+      "h": "7e4de59c",
+      "via": "care-soothe",
+      "who": "Eddie Diaz",
+      "role": "top",
+      "wants": true,
+      "misread": true,
+      "source": "owner",
+      "seen": [
+        "2026-10-10"
+      ]
     }
   ]
 }

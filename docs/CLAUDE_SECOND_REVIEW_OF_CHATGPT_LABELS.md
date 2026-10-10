@@ -79,3 +79,18 @@ Scenes are almost all in agreement. Nearly all the disagreement is in hints.
 2. The unit tests that pinned every ChatGPT label at 0.9 (`five-fic-deep-dives`, `four-pdf-deep-dives`, `foxden-park-deep-dive`, `icarus-burning-deep-dive`, `panuelo-melody-deep-dive`, `six-upload-deep-dives`) now accept 0.9 or 0.3.
 
 The generated files (`reliability.ts`, `learned.ts`) are not regenerated here; the reliability workflow and a later `npm run regen` pick up the new weights.
+
+## Owner rulings on the 107 disagreements (2026-10-10)
+
+The owner ruled on 62 of the 107 on a review page. The outcome:
+
+| Ruling | Count | What was done |
+| --- | ---: | --- |
+| ChatGPT was right | 36 (28 where Claude had said wrong, 8 where Claude had said right) | Weight put back to 0.9 |
+| Claude was right | 20 (18 where ChatGPT had said wrong, 2 where it had said right) | The ChatGPT label is retired and the owner's verdict stored as a full-weight owner label on the other side |
+| Unsure | 6 | Left at 0.3 |
+| Not ruled | 45 | Left at 0.3 |
+
+So 51 labels remain at 0.3. The owner sided with ChatGPT on most of the everyday-behaviour hints that Claude had marked wrong.
+
+The unit tests for the deep dives now allow a retired ChatGPT entry and an owner entry on the opposite side of the same reading. The generated files are still not regenerated.

@@ -949,7 +949,7 @@
       "pairing": "Alex Claremont-Diaz/Henry Fox-Mountchristen-Windsor",
       "h": "730881fc",
       "via": "dom-carry",
-      "weight": 0.3,
+      "weight": 0.9,
       "source": "chatgpt",
       "reviewerConfidence": 0.99,
       "marks": {
@@ -982,6 +982,24 @@
       "who": "Henry Fox-Mountchristen-Windsor",
       "role": "bottom",
       "wants": true
+    },
+    {
+      "kind": "hint",
+      "card": "anal",
+      "pairing": "Alex Claremont-Diaz/Henry Fox-Mountchristen-Windsor",
+      "h": "3cbb9a64",
+      "via": "dd2-pulled-out-of-him",
+      "who": "Alex Claremont-Diaz",
+      "role": "top",
+      "wants": true,
+      "marks": {
+        "right": 1,
+        "wrong": 0
+      },
+      "source": "owner",
+      "seen": [
+        "2026-10-10"
+      ]
     }
   ],
   "negatives": [
@@ -1334,7 +1352,7 @@
       "pairing": "Alex Claremont-Diaz/Henry Fox-Mountchristen-Windsor",
       "h": "36c8e4e7",
       "via": "body-hole-ache",
-      "weight": 0.3,
+      "weight": 0.9,
       "source": "chatgpt",
       "reviewerConfidence": 0.97,
       "marks": {
@@ -1368,7 +1386,8 @@
       "who": "Alex Claremont-Diaz",
       "role": "top",
       "wants": true,
-      "misread": true
+      "misread": true,
+      "retired": "owner ruled right in the review of Claude/ChatGPT disagreements 2026-10-10"
     }
   ]
 }

@@ -47,8 +47,8 @@ describe('five-fic deep dives: training provenance and coverage',()=>{
       expect(r.confidence).toBeGreaterThanOrEqual(0.95);
       expect(sameReportedPeople(entries[0],r.claim)).toBe(true);
       expect(sameClaim(claims.get(r.key)!,r.claim)).toBe(true);
-      if(r.verdict==='correct')expect(strengthOf(entries[0])).toBe('weighted');
-      else{expect(entries[0].misread).toBe(true);expect(set.entries.some(e=>e.via===entries[0].via&&e.h===entries[0].h)).toBe(false)}
+      if(r.verdict==='correct')expect(strengthOf(entries[0])).toBe(entries[0].retired?'retired':'weighted');
+      else{expect(entries[0].misread).toBe(true);expect(set.entries.some(e=>e.source!=="owner"&&e.via===entries[0].via&&e.h===entries[0].h)).toBe(false)}
     }
   });
   it('does not overwrite earlier audit judgments or archive human right-set judgments',()=>{

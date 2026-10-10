@@ -34,7 +34,7 @@ it('keeps definite adult claim judgments fractional, source-bound and separate f
   if(!reviewed)throw new Error(`Missing reviewed claim: ${r.id}`);
   expect(sameClaim(reviewed,r.claim)).toBe(true);expect(existing.has(r.key)).toBe(false);
   expect(entries[0].card).not.toBe('vibe');
-  if(r.verdict==='wrong'){expect(entries[0].misread).toBe(true);expect(set.entries.some((e:any)=>e.h===r.reportHash&&e.via===baseVia(r.claim.pattern))).toBe(false);}
+  if(r.verdict==='wrong'){expect(entries[0].misread).toBe(true);expect(set.entries.some((e:any)=>e.source!=="owner"&&e.h===r.reportHash&&e.via===baseVia(r.claim.pattern))).toBe(false);}
  }
  for(const a of fic.acts)expect(a.paragraphHashes).toHaveLength(a.to-a.from+1);
  }

@@ -492,7 +492,7 @@
       "pairing": "Brother Diarmuid/The Mute",
       "h": "4408d5ee",
       "via": "lead-by-hand",
-      "weight": 0.3,
+      "weight": 0.9,
       "source": "chatgpt",
       "marks": {
         "right": 1,
@@ -525,6 +525,24 @@
       "role": "top",
       "wants": true,
       "reviewerConfidence": 0.98
+    },
+    {
+      "kind": "hint",
+      "card": "anal",
+      "pairing": "Brother Diarmuid/The Mute",
+      "h": "f3216536",
+      "via": "push-into",
+      "who": "David Shepherd",
+      "role": "top",
+      "wants": true,
+      "marks": {
+        "right": 1,
+        "wrong": 0
+      },
+      "source": "owner",
+      "seen": [
+        "2026-10-10"
+      ]
     }
   ],
   "negatives": [
@@ -589,7 +607,8 @@
       "role": "top",
       "wants": true,
       "misread": true,
-      "reviewerConfidence": 0.98
+      "reviewerConfidence": 0.98,
+      "retired": "owner ruled right in the review of Claude/ChatGPT disagreements 2026-10-10"
     },
     {
       "kind": "hint",

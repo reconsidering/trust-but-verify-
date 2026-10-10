@@ -411,7 +411,7 @@
       "pairing": "Samiel Tremark/Jason Lane",
       "h": "c7e6c6bf",
       "via": "sub-pinned",
-      "weight": 0.3,
+      "weight": 0.9,
       "source": "chatgpt",
       "reviewerConfidence": 0.97,
       "marks": {
@@ -826,7 +826,7 @@
       "pairing": "Samiel Tremark/Jason Lane",
       "h": "53033c13",
       "via": "thrust-back",
-      "weight": 0.3,
+      "weight": 0.9,
       "source": "chatgpt",
       "reviewerConfidence": 0.96,
       "marks": {
@@ -1046,7 +1046,7 @@
       "pairing": "Samiel Tremark/Jason Lane",
       "h": "3c1fa750",
       "via": "thrusts-filling",
-      "weight": 0.3,
+      "weight": 0.9,
       "source": "chatgpt",
       "reviewerConfidence": 0.97,
       "marks": {
