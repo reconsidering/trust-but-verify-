@@ -1,0 +1,2055 @@
+{
+  "schema": "finger-toy-evidence-handoff/v1",
+  "generatedDate": "2026-10-10",
+  "branchBase": "e780d91",
+  "engineEvidenceCommit": "68338708cd8d600ace41dea533892d3af564b043",
+  "selectionCommit": "7f77a765cea99589cb8d75c4d5da67ba3da3e787",
+  "paragraphIndexing": "Zero-based indices from analyzeWithPatterns debug paras, identical extractor to the history report.",
+  "scope": "Report only. Six proposal families, 16 primary cases and one secondary crosscheck. Facts are ChatGPT analysis of previously inspected adult source context, not new training labels or new owner judgments.",
+  "evidenceLevels": {
+    "explicit": "Instrument, contact, action or participant stated directly in the cited context.",
+    "local-context": "Resolution supported by nearby action, anatomy or chronology.",
+    "inferred": "Plausible interpretation not stated directly; preserve uncertainty.",
+    "unresolved": "Fine-grained facet needs adjudication or stronger contact evidence.",
+    "identity-check": "Verify alias against source-bound cast before scoring.",
+    "observed-engine": "Existing trace or replay observation, not a patch result.",
+    "reproduced-synthetic": "Previously executed minimal paraphrased reproduction on unchanged engine."
+  },
+  "cases": [
+    {
+      "caseId": "F01",
+      "family": 1,
+      "role": "primary",
+      "reference": {
+        "eventIndex": 63,
+        "inventory": "chatgpt-five-fic-deep-dives.json",
+        "batchId": "chatgpt-five-fic-deep-dives.json",
+        "id": "needing-the-knot-act-24",
+        "eventId": 24,
+        "fic": "needing-the-knot.html",
+        "sourceSha": "cfb383bc85de918fc26b4650ec53f3026374462949105db48bc0cab52feba727",
+        "from": 783,
+        "to": 783,
+        "act": "Fingering",
+        "originalAct": "fingering",
+        "performer": "Castiel",
+        "receiver": "Dean Winchester",
+        "reviewer": "ChatGPT",
+        "coverage": "selected deep-dive inventory",
+        "paragraphHashes": [
+          "166f3777"
+        ]
+      },
+      "facts": [
+        {
+          "level": "explicit",
+          "paragraphs": [
+            783
+          ],
+          "paraphrase": "Three fingers enter the receiver’s anal opening; pumping is a participial action attached to the named performer."
+        },
+        {
+          "level": "local-context",
+          "paragraphs": [
+            781,
+            783,
+            784
+          ],
+          "paraphrase": "The same performer also provides oral contact. Paragraph 784 changes to penile entry; preserve both act types and stop inheriting fingers into that new instrument."
+        }
+      ],
+      "proposedChange": "Add a narrow finger-object gerund pattern for pumping into an explicit target, resolving the omitted performer from the preceding named clause. Preserve concurrent oral activity.",
+      "codePointers": [
+        "patterns.ts: fingers-into / fingers-enter-hole",
+        "index.ts: elidedSubject / namedActionOwner"
+      ],
+      "syntheticPositive": "Morgan moves behind Rowan. Pumping two fingers into Rowan’s anus, he continues oral stimulation. → fingering, Morgan → Rowan.",
+      "syntheticNegative": "Morgan pumps lotion into his hand. → no fingering."
+    },
+    {
+      "caseId": "F03",
+      "family": 1,
+      "role": "primary",
+      "reference": {
+        "eventIndex": 131,
+        "inventory": "chatgpt-four-pdf-deep-dives.json",
+        "batchId": "chatgpt-four-pdf-deep-dives.json",
+        "id": "wretched-rhetoric-act-10",
+        "eventId": 10,
+        "fic": "wretched-rhetoric.html",
+        "sourceSha": "b1dce7a7c533d0c425e5bb2c2159d3fbc9a110f864fe4b7bebcdb4c45ed8a477",
+        "from": 644,
+        "to": 657,
+        "act": "Fingering",
+        "originalAct": "anal-fingering",
+        "performer": "Obi-Wan Kenobi",
+        "receiver": "Anakin Skywalker",
+        "reviewer": "ChatGPT",
+        "coverage": "selected deep-dive inventory",
+        "paragraphHashes": [
+          "af7e80c9",
+          "d3a93461",
+          "da1dc85",
+          "f8258ca0",
+          "bfe32a8",
+          "f4af77ad",
+          "3adc2787",
+          "7ce9f0fb",
+          "93de040a",
+          "2f716f12",
+          "85868e5d",
+          "2b79baca",
+          "2128c649",
+          "71d7c0ef"
+        ]
+      },
+      "facts": [
+        {
+          "level": "explicit",
+          "paragraphs": [
+            644,
+            646,
+            650,
+            654,
+            657
+          ],
+          "paraphrase": "Two lubricated fingers are retained inside the receiver, curled and moved, then withdrawn before oral anal contact."
+        },
+        {
+          "level": "local-context",
+          "paragraphs": [
+            644,
+            657
+          ],
+          "paraphrase": "Anal location and performer identity require the surrounding adult encounter. Ordinary past tense describes a scene, not an explicit memory frame. Several movements belong to one ongoing finger episode."
+        },
+        {
+          "level": "observed-engine",
+          "paragraphs": [
+            657
+          ],
+          "paraphrase": "The surviving rimming reading reverses participants. Do not treat it as a successful fingering recovery or a control."
+        }
+      ],
+      "proposedChange": "Add owned/held finger-state forms, including has/had fingers inside, inside of, intervening depth modifiers and retained motion. Use ownership and local receiver references. Do not count every continuation as another scene.",
+      "codePointers": [
+        "patterns.ts: fingers-inside / fingers-enter-hole",
+        "index.ts: occurrenceContext / ownership refinements",
+        "builders.ts: groupScenes"
+      ],
+      "syntheticPositive": "Morgan has two fingers deep inside Rowan’s anus. They remain inside as Morgan curls them. → one ongoing fingering scene.",
+      "syntheticNegative": "Morgan has two fingers inside his glove. → no sexual act."
+    },
+    {
+      "caseId": "F04",
+      "family": 1,
+      "role": "primary",
+      "reference": {
+        "eventIndex": 141,
+        "inventory": "chatgpt-four-pdf-deep-dives.json",
+        "batchId": "chatgpt-four-pdf-deep-dives.json",
+        "id": "wretched-rhetoric-act-34",
+        "eventId": 34,
+        "fic": "wretched-rhetoric.html",
+        "sourceSha": "b1dce7a7c533d0c425e5bb2c2159d3fbc9a110f864fe4b7bebcdb4c45ed8a477",
+        "from": 605,
+        "to": 605,
+        "act": "Fingering",
+        "originalAct": "anal-fingering",
+        "performer": "Obi-Wan Kenobi",
+        "receiver": "Anakin Skywalker",
+        "reviewer": "ChatGPT",
+        "coverage": "selected deep-dive inventory",
+        "paragraphHashes": [
+          "65771f44"
+        ]
+      },
+      "facts": [
+        {
+          "level": "explicit",
+          "paragraphs": [
+            605
+          ],
+          "paraphrase": "Finger contact with the receiver’s prostate is stated; the instrument is not owned by a named person in that clause."
+        },
+        {
+          "level": "inferred",
+          "paragraphs": [
+            605,
+            606
+          ],
+          "paraphrase": "The active partner is inferred from the local two-person encounter. Nearby fingers gripping furniture belong to the receiver and must not supply ownership of the inserted fingers."
+        }
+      ],
+      "proposedChange": "Add a prostate-contact finger-noun pattern that resolves an omitted owner only from an established local actor. Preserve ambiguity if several actors remain possible; do not invent penile penetration from prostate contact.",
+      "codePointers": [
+        "patterns.ts: fingers-find-prostate",
+        "index.ts: namedActionOwner / resolvePair"
+      ],
+      "syntheticPositive": "Morgan positions himself behind Rowan. Two fingers brush Rowan’s prostate. → fingering, Morgan → Rowan.",
+      "syntheticNegative": "Several adults surround Rowan; an unidentified hand reaches for him. → do not assign a confident named performer."
+    },
+    {
+      "caseId": "F08",
+      "family": 1,
+      "role": "primary",
+      "reference": {
+        "eventIndex": 161,
+        "inventory": "chatgpt-icarus-burning-deep-dive.json",
+        "batchId": "chatgpt-icarus-burning-deep-dive.json",
+        "id": "icarus-burning-act-23",
+        "eventId": 23,
+        "fic": "icarus-burning.html",
+        "sourceSha": "e0ff0d5513abc84e473a0cdb4e422c3801bd0740b9c3d37b1bd24b4f5b6dd6be",
+        "from": 3311,
+        "to": 3311,
+        "act": "Fingering",
+        "originalAct": "fingering",
+        "performer": "Samiel Tremark",
+        "receiver": "Jason Lane",
+        "reviewer": "ChatGPT",
+        "coverage": "selected deep-dive inventory",
+        "paragraphHashes": [
+          "fae7eb4c"
+        ]
+      },
+      "facts": [
+        {
+          "level": "explicit",
+          "paragraphs": [
+            3311
+          ],
+          "paraphrase": "A named performer places finger pads at the receiver’s anal opening and adds a fingertip alongside an already inserted penis. Both acts occur concurrently."
+        },
+        {
+          "level": "identity-check",
+          "paragraphs": [
+            3311
+          ],
+          "paraphrase": "Inventory receiver Jason Lane appears as Jay in engine output. Verify the source-bound alias before diagnosing an attribution failure; do not silently change the scorer or labels."
+        }
+      ],
+      "proposedChange": "Add supported tip-of-finger entry and pads-of-fingers entrance contact, resolving the action separately. Do not retype the valid penile reading or let a deduplication rule collapse different acts in one sentence.",
+      "codePointers": [
+        "patterns.ts: fingers-into / finger entrance-contact families",
+        "index.ts: act refinement / dedupe",
+        "builders.ts: per-act grouping"
+      ],
+      "syntheticPositive": "Morgan’s penis remains inside Rowan. Morgan presses a fingertip against Rowan’s anal opening beside it. → both penile anal sex and fingering.",
+      "syntheticNegative": "Morgan’s penis remains inside Rowan while his fingers touch Rowan’s shoulder. → penile act only."
+    },
+    {
+      "caseId": "F12",
+      "family": 1,
+      "role": "primary",
+      "reference": {
+        "eventIndex": 298,
+        "inventory": "suspect-two-569919fdfb5e.json",
+        "batchId": "suspect-two-569919fdfb5e",
+        "id": "T16",
+        "eventId": "A10",
+        "fic": "innocent-until.html",
+        "sourceSha": "ffa71a4c7726196bc68e41ceb1805c28b7de2698384e84270c5d0f1f6f4ef78c",
+        "from": 4889,
+        "to": 4889,
+        "act": "Fingering",
+        "performer": "James \"Bucky\" Barnes",
+        "receiver": "Steve Rogers",
+        "reviewer": "Owner",
+        "coverage": "positive-only",
+        "sourceParagraphSha": "1b144bbdaf9d60d9c1ed0bb6efc2a0618b0b1187845bbf7d1b1d3e10d8a3b9e2"
+      },
+      "facts": [
+        {
+          "level": "explicit",
+          "paragraphs": [
+            4889
+          ],
+          "paraphrase": "The named performer strokes the receiver’s anal rim with fingers. Entrance contact is sufficient under AGENTS.md; insertion depth is unnecessary."
+        },
+        {
+          "level": "local-context",
+          "paragraphs": [
+            4889
+          ],
+          "paraphrase": "Coordinated oral contact and later penile activity must remain separately typed. Do not turn contact on buttocks or kissing a face into fingering."
+        }
+      ],
+      "proposedChange": "Add verb-over-receiver-rim-with-fingers order and a tightly bounded anatomical anaphor for coordinated actions. First recover the explicit rim contact; do not let kissing suppress simultaneous finger stimulation or reinterpret cheek contact as entrance contact.",
+      "codePointers": [
+        "patterns.ts: finger-noun-to-hole / fingers-to-hole / finger contact families",
+        "index.ts: anatomy and oral guards"
+      ],
+      "syntheticPositive": "Morgan strokes Rowan’s anal rim with his fingers while kissing the same opening. → fingering plus any independently supported oral contact.",
+      "syntheticNegative": "Morgan strokes Rowan’s buttock with his fingers while kissing Rowan’s cheek. → no anal fingering."
+    },
+    {
+      "caseId": "F05",
+      "family": 2,
+      "role": "primary",
+      "reference": {
+        "eventIndex": 150,
+        "inventory": "chatgpt-foxden-park-deep-dive.json",
+        "batchId": "chatgpt-foxden-park-deep-dive.json",
+        "id": "foxden-park-act-32",
+        "eventId": 32,
+        "fic": "foxden-park.html",
+        "sourceSha": "0967cc1dbfbb72de0587bb34011435ac3814f9becbbf788353232e37846db0ba",
+        "from": 1133,
+        "to": 1144,
+        "act": "Fingering",
+        "originalAct": "fingering",
+        "performer": "Alex Claremont-Diaz",
+        "receiver": "Henry Fox-Mountchristen-Windsor",
+        "reviewer": "ChatGPT",
+        "coverage": "selected deep-dive inventory",
+        "paragraphHashes": [
+          "f45dbb00",
+          "115f4aeb",
+          "1954c141",
+          "f403d06a",
+          "1872de3f",
+          "b531bbf5",
+          "36d49186",
+          "2c815948",
+          "a94efb0",
+          "9d66ce10",
+          "fed0b978",
+          "b88177e7"
+        ]
+      },
+      "facts": [
+        {
+          "level": "explicit",
+          "paragraphs": [
+            1134,
+            1135,
+            1137,
+            1139
+          ],
+          "paraphrase": "Finger entry, withdrawal and reinsertion precede a second finger entering at the anal opening. Withdrawal depth is unspecified."
+        },
+        {
+          "level": "local-context",
+          "paragraphs": [
+            1131,
+            1144,
+            1145,
+            1148
+          ],
+          "paraphrase": "Preparation establishes the target; later removal and preparation for penile sex end finger carryover."
+        },
+        {
+          "level": "observed-engine",
+          "paragraphs": [
+            1135
+          ],
+          "paraphrase": "The elided insertion candidate has the correct participants but is dropped by a body-part/reaction guard. The guard also accepts a body part followed by an ordinary word ending in s, so a withdrawal description can be mistaken for a reaction."
+        },
+        {
+          "level": "reproduced-synthetic",
+          "paragraphs": [
+            1135
+          ],
+          "paraphrase": "On unchanged main, a synthetic withdrawal/reinsertion sentence loses a correctly attributed candidate; changing only the withdrawal wording restores the finger act. A fingers-flexing-on-cushion control stays negative. No fix has been tested."
+        },
+        {
+          "level": "observed-engine",
+          "paragraphs": [
+            1139
+          ],
+          "paraphrase": "A separate stretching candidate reverses people; its object refers to fingers. Recovering that candidate without resolving its referent would create a new error."
+        }
+      ],
+      "proposedChange": "Narrow the pushed-in elided body-part-reaction guard to an actual body-part subject/reaction; do not reject a person withdrawing a finger and inserting it again. Preserve the finger instrument through reinsertion. Add a bounded fingertip-entry form with a locally established receiver. The open-them-up match at 1139 refers to fingers; do not salvage it as a person being opened.",
+      "codePointers": [
+        "index.ts: pushed-in elided guard after slicked-self / before ORAL_ENTRY",
+        "patterns.ts: fingers-into / FINGERS",
+        "event-evidence.ts: continuationInstrument"
+      ],
+      "syntheticPositive": "Morgan’s finger is inside Rowan’s anus. Morgan draws his finger out and presses in again. → fingering, same pair.",
+      "syntheticNegative": "Morgan’s palm flexes, pressing into a cushion. → no penetration."
+    },
+    {
+      "caseId": "F10",
+      "family": 3,
+      "role": "primary",
+      "reference": {
+        "eventIndex": 245,
+        "inventory": "sugar-alpha-errors-b91edd7-v1.json",
+        "batchId": "sugar-alpha-errors-b91edd7-v1",
+        "id": "W19",
+        "eventId": "A10",
+        "fic": "sugar-alpha.html",
+        "sourceSha": "68a3c9d689b093806fb072b5e550e79a61eb9f16c1e79ca192ba24597338de5e",
+        "from": 850,
+        "to": 850,
+        "act": "Fingering",
+        "performer": "Stiles Stilinski",
+        "receiver": "Stiles Stilinski",
+        "reviewer": "Owner",
+        "coverage": "positive-only",
+        "sourceParagraphSha": "a45eb70114d525d57925d8f98cbdd975a8ae19a3be5dd2adcea51caa98ccc950"
+      },
+      "facts": [
+        {
+          "level": "local-context",
+          "paragraphs": [
+            850
+          ],
+          "paraphrase": "An isolated adult reaches to put his own fingers inside while manually stimulating himself. A desired partner is absent, so partner attribution is unsupported."
+        },
+        {
+          "level": "unresolved",
+          "paragraphs": [
+            850
+          ],
+          "paraphrase": "The wording emphasizes effort. Owner inventory calls this performed fingering, but achieved contact versus attempt and the exact anatomical target are less direct than in F11. Preserve that owner judgment; a general pattern must still require contact evidence."
+        }
+      ],
+      "proposedChange": "Recognize get-own-fingers-inside-of-self only with local physical/contact evidence. Resolve self-use from the actor and body ownership, not the later imagined partner. Distinguish achieved contact from failed reach or a mere plan.",
+      "codePointers": [
+        "patterns.ts: self-finger / fingers-inside",
+        "index.ts: self-fingering routing / occurrenceContext"
+      ],
+      "syntheticPositive": "Rowan’s fingers are inside his own anus; reaching around strains his back. → self-fingering.",
+      "syntheticNegative": "Rowan tries to reach his anus but cannot touch it. → no performed self-fingering."
+    },
+    {
+      "caseId": "F11",
+      "family": 3,
+      "role": "primary",
+      "reference": {
+        "eventIndex": 246,
+        "inventory": "sugar-alpha-errors-b91edd7-v1.json",
+        "batchId": "sugar-alpha-errors-b91edd7-v1",
+        "id": "W29",
+        "eventId": "A13",
+        "fic": "sugar-alpha.html",
+        "sourceSha": "68a3c9d689b093806fb072b5e550e79a61eb9f16c1e79ca192ba24597338de5e",
+        "from": 1760,
+        "to": 1761,
+        "act": "Fingering",
+        "performer": "Stiles Stilinski",
+        "receiver": "Stiles Stilinski",
+        "reviewer": "Owner",
+        "coverage": "positive-only",
+        "sourceParagraphSha": "a45eb70114d525d57925d8f98cbdd975a8ae19a3be5dd2adcea51caa98ccc950"
+      },
+      "facts": [
+        {
+          "level": "explicit",
+          "paragraphs": [
+            1760,
+            1761
+          ],
+          "paraphrase": "The adult uses fingers on his own opening and achieves entry. The partner is asleep initially; waking does not make that partner the performer. Fingers slip out afterward."
+        },
+        {
+          "level": "local-context",
+          "paragraphs": [
+            1759,
+            1764
+          ],
+          "paraphrase": "Sleeping context precedes the cited range; the partner takes the adult’s hands away later. These anchors limit self-use and its endpoint."
+        }
+      ],
+      "proposedChange": "Cover use-fingers-to-poke an explicit opening and a bare fingers-slide-in continuation with verified self target. Contact already counts; do not require deeper insertion. Preserve self-use until an explicit new actor intervenes.",
+      "codePointers": [
+        "patterns.ts: self-finger / fingers-enter-hole / entrance contact",
+        "index.ts: local reflexive ownership"
+      ],
+      "syntheticPositive": "Rowan uses two fingers to touch his own anal opening. They slide in while Morgan sleeps. → self-fingering, Rowan → Rowan.",
+      "syntheticNegative": "Rowan pokes Morgan’s shoulder to wake him. → no fingering."
+    },
+    {
+      "caseId": "T01",
+      "family": 4,
+      "role": "primary",
+      "reference": {
+        "eventIndex": 26,
+        "inventory": "chatgpt-five-fic-deep-dives.json",
+        "batchId": "chatgpt-five-fic-deep-dives.json",
+        "id": "were-compeer-act-23",
+        "eventId": 23,
+        "fic": "were-compeer.html",
+        "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+        "from": 462,
+        "to": 462,
+        "act": "Toy insertion",
+        "originalAct": "anal toy insertion",
+        "performer": "Derek Hale",
+        "receiver": "Stiles Stilinski",
+        "reviewer": "ChatGPT",
+        "coverage": "selected deep-dive inventory",
+        "paragraphHashes": [
+          "aad46147"
+        ]
+      },
+      "facts": [
+        {
+          "level": "explicit",
+          "paragraphs": [
+            462
+          ],
+          "paraphrase": "A partner lubricates an established plug and the receiver; the toy slides into the receiver and settles beyond the rim."
+        },
+        {
+          "level": "local-context",
+          "paragraphs": [
+            458,
+            461,
+            462
+          ],
+          "paraphrase": "The receiver requested that partner’s insertion. The toy is the grammatical subject of entry, while the preceding manipulation identifies the human performer."
+        }
+      ],
+      "proposedChange": "Add a bounded toy-subject entry pattern. Resolve the receiver from explicit body ownership and the performer from the preceding named manipulation, rather than treating the toy as a person.",
+      "codePointers": [
+        "patterns.ts: review-inserts-named-toy / review-toy-tip-inside",
+        "index.ts: handleMatch / namedActionOwner"
+      ],
+      "syntheticPositive": "Morgan lubricates a plug for Rowan. The plug slides into Rowan’s anus. → partnered toy act, Morgan → Rowan.",
+      "syntheticNegative": "Morgan lubricates a plug and puts it in its storage case. → no toy act."
+    },
+    {
+      "caseId": "T02",
+      "family": 4,
+      "role": "primary",
+      "reference": {
+        "eventIndex": 27,
+        "inventory": "chatgpt-five-fic-deep-dives.json",
+        "batchId": "chatgpt-five-fic-deep-dives.json",
+        "id": "were-compeer-act-25",
+        "eventId": 25,
+        "fic": "were-compeer.html",
+        "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+        "from": 473,
+        "to": 473,
+        "act": "Toy insertion",
+        "originalAct": "self anal toy insertion",
+        "performer": "Stiles Stilinski",
+        "receiver": "Stiles Stilinski",
+        "reviewer": "ChatGPT",
+        "coverage": "selected deep-dive inventory",
+        "paragraphHashes": [
+          "a458b588"
+        ]
+      },
+      "facts": [
+        {
+          "level": "explicit",
+          "paragraphs": [
+            473
+          ],
+          "paraphrase": "The solo adult inserts the next larger size after a shower; a retained metal base confirms completed placement."
+        },
+        {
+          "level": "local-context",
+          "paragraphs": [
+            471,
+            472,
+            473,
+            474,
+            475
+          ],
+          "paraphrase": "The size reference refers to a previously introduced plug. The partner has left; remote observation does not make that partner the performer. Prior removal is not explicitly narrated, so do not invent it."
+        },
+        {
+          "level": "observed-engine",
+          "paragraphs": [
+            473
+          ],
+          "paraphrase": "A wearing-a-plug hint survives. Do not promote all wearing hints to insertion; this paragraph additionally describes a new placement."
+        }
+      ],
+      "proposedChange": "Recognize a new insertion with a size/reference phrase only when the same local passage explicitly establishes a plug and the wearer. Do not promote every wearing-plug hint to an insertion.",
+      "codePointers": [
+        "patterns.ts: self-toy-own-hole / self-toy-it",
+        "index.ts: plugScan"
+      ],
+      "syntheticPositive": "Rowan removes his small plug and inserts the larger one into himself. → self toy act.",
+      "syntheticNegative": "Rowan leaves his plug in and selects a larger one for tomorrow. → no new insertion."
+    },
+    {
+      "caseId": "T03",
+      "family": 4,
+      "role": "primary",
+      "reference": {
+        "eventIndex": 28,
+        "inventory": "chatgpt-five-fic-deep-dives.json",
+        "batchId": "chatgpt-five-fic-deep-dives.json",
+        "id": "were-compeer-act-26",
+        "eventId": 26,
+        "fic": "were-compeer.html",
+        "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+        "from": 532,
+        "to": 533,
+        "act": "Toy insertion",
+        "originalAct": "self anal toy insertion",
+        "performer": "Stiles Stilinski",
+        "receiver": "Stiles Stilinski",
+        "reviewer": "ChatGPT",
+        "coverage": "selected deep-dive inventory",
+        "paragraphHashes": [
+          "afae23a6",
+          "4ad1b3ab"
+        ]
+      },
+      "facts": [
+        {
+          "level": "explicit",
+          "paragraphs": [
+            532,
+            533
+          ],
+          "paraphrase": "A medium plug is removed; the adult selects and lubricates a larger plug, then succeeds in placing it after several attempts."
+        },
+        {
+          "level": "local-context",
+          "paragraphs": [
+            531,
+            532,
+            533
+          ],
+          "paraphrase": "Earlier intent is not completion. Removal clears the old device state; new selection establishes the referent of the later pronoun. Cleaning actions intervene but no scene break separates selection and insertion."
+        }
+      ],
+      "proposedChange": "Support a bare pronoun-object insertion continuation across a short paragraph boundary, with verified toy referent and self receiver. Reset old instrument state after removal, then establish the newly selected toy.",
+      "codePointers": [
+        "patterns.ts: self-toy-it",
+        "event-evidence.ts: continuationInstrument",
+        "index.ts: scene boundary checks"
+      ],
+      "syntheticPositive": "Rowan removes a plug and lubricates a larger anal plug. Next paragraph: He finally pushes it in. → self toy act.",
+      "syntheticNegative": "Rowan removes a plug, picks up a charging cable and pushes it in. → no insertion continuation."
+    },
+    {
+      "caseId": "T04",
+      "family": 5,
+      "role": "primary",
+      "reference": {
+        "eventIndex": 49,
+        "inventory": "chatgpt-five-fic-deep-dives.json",
+        "batchId": "chatgpt-five-fic-deep-dives.json",
+        "id": "needing-the-knot-act-1",
+        "eventId": 1,
+        "fic": "needing-the-knot.html",
+        "sourceSha": "cfb383bc85de918fc26b4650ec53f3026374462949105db48bc0cab52feba727",
+        "from": 86,
+        "to": 88,
+        "act": "Toy insertion",
+        "originalAct": "toy penetration",
+        "performer": "Dean Winchester",
+        "receiver": "Dean Winchester",
+        "reviewer": "ChatGPT",
+        "coverage": "selected deep-dive inventory",
+        "paragraphHashes": [
+          "60c0e717",
+          "72a4ab70",
+          "35e35a4b"
+        ]
+      },
+      "facts": [
+        {
+          "level": "explicit",
+          "paragraphs": [
+            86,
+            87,
+            88
+          ],
+          "paraphrase": "A solo adult installs and activates a prostate device, moves against it, and experiences anal contraction around the retained device."
+        },
+        {
+          "level": "local-context",
+          "paragraphs": [
+            84,
+            86,
+            88
+          ],
+          "paraphrase": "The partner has left. Prostate massager, dual-head device and plug refer locally to the device, not to a partner’s penis. Setup and continued stimulation form one activity, not three insertion scenes."
+        },
+        {
+          "level": "observed-engine",
+          "paragraphs": [
+            86,
+            88
+          ],
+          "paraphrase": "A misattributed handjob candidate and a wearing hint do not cover this physical toy activity."
+        }
+      ],
+      "proposedChange": "Add prostate-massager and dual-headed-massager aliases when the physical target is supported. Cover putting an established massager in place and moving against it. Keep ongoing use separate from a newly counted insertion.",
+      "codePointers": [
+        "patterns.ts: self-toy / toy vocabulary",
+        "index.ts: solo routing",
+        "event-evidence.ts: PART / type"
+      ],
+      "syntheticPositive": "Rowan settles an anal prostate massager inside himself, switches it on and rocks against it. → self toy use.",
+      "syntheticNegative": "Rowan switches on a massage device resting against his shoulder. → no anal toy act."
+    },
+    {
+      "caseId": "T05",
+      "family": 5,
+      "role": "primary",
+      "reference": {
+        "eventIndex": 50,
+        "inventory": "chatgpt-five-fic-deep-dives.json",
+        "batchId": "chatgpt-five-fic-deep-dives.json",
+        "id": "needing-the-knot-act-2",
+        "eventId": 2,
+        "fic": "needing-the-knot.html",
+        "sourceSha": "cfb383bc85de918fc26b4650ec53f3026374462949105db48bc0cab52feba727",
+        "from": 118,
+        "to": 123,
+        "act": "Toy insertion",
+        "originalAct": "toy penetration",
+        "performer": "Dean Winchester",
+        "receiver": "Dean Winchester",
+        "reviewer": "ChatGPT",
+        "coverage": "selected deep-dive inventory",
+        "paragraphHashes": [
+          "8686344e",
+          "76fbe644",
+          "1fc57f9",
+          "55792a49",
+          "d6d3ba36",
+          "93b378f1"
+        ]
+      },
+      "facts": [
+        {
+          "level": "explicit",
+          "paragraphs": [
+            118,
+            120,
+            122,
+            123
+          ],
+          "paraphrase": "A dildo is introduced, used orally, then used anally by the solo adult. Later expansion inside the anus confirms physical anal use; withdrawal ends it."
+        },
+        {
+          "level": "local-context",
+          "paragraphs": [
+            119,
+            120,
+            121,
+            124
+          ],
+          "paraphrase": "Oral toy use is not a penile blowjob. Imagined partner activity between physical toy actions does not give the absent partner ownership of those actions. Preserve toy identity through fake-penis wording and handle the change of body site."
+        }
+      ],
+      "proposedChange": "Retain the established artificial instrument across cock/knot references, track the mouth-to-anus target change, and classify physical self-use separately from imagined partner actions. Do not treat the imagined partner as the performer.",
+      "codePointers": [
+        "patterns.ts: self-toy / riding-it",
+        "event-evidence.ts: continuationInstrument / occurrenceContext",
+        "index.ts: solo versus partnered routing"
+      ],
+      "syntheticPositive": "Rowan holds a silicone dildo, briefly mouths it, then lowers his anus onto it while imagining Morgan. → performed self anal toy use; imagined Morgan remains contextual.",
+      "syntheticNegative": "Rowan only imagines sitting on the dildo while holding it. → contextual reading, no performed act."
+    },
+    {
+      "caseId": "T06",
+      "family": 5,
+      "role": "primary",
+      "reference": {
+        "eventIndex": 225,
+        "inventory": "missed-2051db5b4e06.json",
+        "batchId": "missed-2051db5b4e06",
+        "id": "M10",
+        "eventId": 0,
+        "fic": "innocent-until.html",
+        "sourceSha": "ffa71a4c7726196bc68e41ceb1805c28b7de2698384e84270c5d0f1f6f4ef78c",
+        "from": 1234,
+        "to": 1234,
+        "act": "Toy insertion",
+        "performer": "James \"Bucky\" Barnes",
+        "receiver": "Steve Rogers",
+        "reviewer": "Owner",
+        "coverage": "reviewed window",
+        "sourceParagraphSha": "1b144bbdaf9d60d9c1ed0bb6efc2a0618b0b1187845bbf7d1b1d3e10d8a3b9e2"
+      },
+      "facts": [
+        {
+          "level": "explicit",
+          "paragraphs": [
+            1234
+          ],
+          "paraphrase": "Movement drives an already placed stimulator within the receiver. This is ongoing toy stimulation, not a newly described insertion."
+        },
+        {
+          "level": "local-context",
+          "paragraphs": [
+            1230,
+            1234
+          ],
+          "paraphrase": "Earlier placement inside the anal recipient establishes location and partnered control. The device name alone must not imply anal use; a surface stimulator is a negative control."
+        }
+      ],
+      "proposedChange": "Recognize stimulator as a toy only when physical anal placement is established locally. Add ongoing movement of an inserted toy, distinct from a new insertion event.",
+      "codePointers": [
+        "patterns.ts: toy vocabulary / review-inserts-named-toy",
+        "event-evidence.ts: PART / type",
+        "builders.ts: scene grouping"
+      ],
+      "syntheticPositive": "Morgan has placed an anal stimulator inside Rowan and moves it back and forth. → ongoing partnered toy act.",
+      "syntheticNegative": "Morgan adjusts a muscle stimulator attached to Rowan’s arm. → no anal toy act."
+    },
+    {
+      "caseId": "F06",
+      "family": 6,
+      "role": "primary",
+      "reference": {
+        "eventIndex": 152,
+        "inventory": "chatgpt-foxden-park-deep-dive.json",
+        "batchId": "chatgpt-foxden-park-deep-dive.json",
+        "id": "foxden-park-act-39",
+        "eventId": 39,
+        "fic": "foxden-park.html",
+        "sourceSha": "0967cc1dbfbb72de0587bb34011435ac3814f9becbbf788353232e37846db0ba",
+        "from": 1331,
+        "to": 1332,
+        "act": "Fingering",
+        "originalAct": "fingering",
+        "performer": "Alex Claremont-Diaz",
+        "receiver": "Henry Fox-Mountchristen-Windsor",
+        "reviewer": "ChatGPT",
+        "coverage": "selected deep-dive inventory",
+        "paragraphHashes": [
+          "67ffa761",
+          "ba4a20d4"
+        ]
+      },
+      "facts": [
+        {
+          "level": "explicit",
+          "paragraphs": [
+            1331,
+            1332
+          ],
+          "paraphrase": "The performer oils his fingers and opens the receiver in the same action sequence."
+        },
+        {
+          "level": "inferred",
+          "paragraphs": [
+            1331,
+            1332,
+            1333
+          ],
+          "paraphrase": "Finger contact and anal target are inferred from preparation plus the local sexual sequence, rather than a literal finger-entry clause. Oiling alone or opening a nonbody object is insufficient. If private replay cannot establish contact, queue for owner adjudication instead of forcing a match."
+        },
+        {
+          "level": "observed-engine",
+          "paragraphs": [
+            1331,
+            1332
+          ],
+          "paraphrase": "The existing unrelated bystander/self candidate does not survive and must not be resurrected to satisfy recall."
+        }
+      ],
+      "proposedChange": "Recognize coax/coaxes/coaxed someone open only with same-action finger preparation and sexual target context. Resolve the explicit main-clause actor/receiver, without reusing the rejected self-touch candidate.",
+      "codePointers": [
+        "patterns.ts: stretched-open",
+        "index.ts: elidedSubject / self-own-fingers guards"
+      ],
+      "syntheticPositive": "Morgan lubricates his fingers, then gently coaxes Rowan’s anus open with them. → partnered fingering.",
+      "syntheticNegative": "Morgan oils his fingers before coaxing a stuck jar open. → no fingering."
+    },
+    {
+      "caseId": "F07",
+      "family": 6,
+      "role": "primary",
+      "reference": {
+        "eventIndex": 154,
+        "inventory": "chatgpt-foxden-park-deep-dive.json",
+        "batchId": "chatgpt-foxden-park-deep-dive.json",
+        "id": "foxden-park-act-41",
+        "eventId": 41,
+        "fic": "foxden-park.html",
+        "sourceSha": "0967cc1dbfbb72de0587bb34011435ac3814f9becbbf788353232e37846db0ba",
+        "from": 1334,
+        "to": 1338,
+        "act": "Fingering",
+        "originalAct": "fingering",
+        "performer": "Alex Claremont-Diaz",
+        "receiver": "Henry Fox-Mountchristen-Windsor",
+        "reviewer": "ChatGPT",
+        "coverage": "selected deep-dive inventory",
+        "paragraphHashes": [
+          "837dc23a",
+          "1fe70da7",
+          "dae150c6",
+          "22339e28",
+          "9c6b56c4"
+        ]
+      },
+      "facts": [
+        {
+          "level": "explicit",
+          "paragraphs": [
+            1334,
+            1335,
+            1338
+          ],
+          "paraphrase": "After penile withdrawal, the receiver guides the performer’s hand back; the performer inserts two fingers, holds them still, and the receiver later withdraws from them."
+        },
+        {
+          "level": "local-context",
+          "paragraphs": [
+            1333,
+            1334,
+            1336,
+            1338
+          ],
+          "paraphrase": "Residual lubricant and ejaculate refer to the previously established bodily site. Generic wetness is insufficient. Receiver dialogue does not transfer action ownership. Change instrument from penis to fingers and end it at removal."
+        }
+      ],
+      "proposedChange": "Support finger insertion into a locally established anatomical target described by residue/wetness. Prefer the named finger inserter and established receiver over stale recent-character fallback. Do not infer an opening from wetness alone.",
+      "codePointers": [
+        "patterns.ts: fingers-into",
+        "index.ts: resolvePair / bodyPair / outsider fallback",
+        "event-evidence.ts: namedActionOwner"
+      ],
+      "syntheticPositive": "Morgan withdraws from Rowan’s anus. Rowan guides Morgan’s hand back there; Morgan slides two fingers into the remaining lubricant. → fingering, Morgan → Rowan.",
+      "syntheticNegative": "Morgan slides two fingers into spilled lubricant on a table. → no fingering."
+    },
+    {
+      "caseId": "F09",
+      "family": 2,
+      "role": "secondary-crosscheck-primary-family-8",
+      "reference": {
+        "eventIndex": 204,
+        "inventory": "chatgpt-six-upload-deep-dives.json",
+        "batchId": "chatgpt-six-upload-deep-dives.json",
+        "id": "wolfbird-primary-inv-28",
+        "eventId": 28,
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "from": 1889,
+        "to": 1889,
+        "act": "Fingering",
+        "originalAct": "vaginal fingering",
+        "performer": "Ilya Rozanov",
+        "receiver": "Claire",
+        "reviewer": "ChatGPT",
+        "coverage": "selected deep-dive inventory",
+        "paragraphHashes": [
+          "651f97c3"
+        ],
+        "sourceParagraphSha": "0f50fe76e320c7a43bd421f6dbd2ffa2dc09c9f0ed775e61df73d625fcddc68f"
+      },
+      "facts": [
+        {
+          "level": "explicit",
+          "paragraphs": [
+            1885,
+            1889
+          ],
+          "paraphrase": "An explicitly adult female client receives finger contact between the legs followed by lubricated finger entry."
+        },
+        {
+          "level": "local-context",
+          "paragraphs": [
+            1887,
+            1889
+          ],
+          "paraphrase": "The named practitioner performs the action; vaginal anatomy follows the client context. A main-pair partner must not replace the client simply because the client is absent from the initial cast."
+        },
+        {
+          "level": "observed-engine",
+          "paragraphs": [
+            1889
+          ],
+          "paraphrase": "The trace chooses the main-pair receiver instead of the client and produces no surviving finger act. Guard relaxation alone cannot fix participant selection or body-site typing."
+        }
+      ],
+      "proposedChange": "First establish the local named adult client as receiver and retain the performer from the session. Then recognize finger-noun sliding-in with the locally stated between-legs target. Narrow the same reaction guard without permitting fingers in nonsexual targets. Do not credit the main male partner or classify this as anal.",
+      "codePointers": [
+        "characters.ts: buildCast / local participant discovery",
+        "index.ts: resolvePair / pushed-in elided reaction guard / holeType",
+        "patterns.ts: fingers-enter-hole"
+      ],
+      "syntheticPositive": "Morgan’s adult client is Rowan, a woman. Morgan touches her between her legs; his lubricated fingers slide in. → vaginal fingering, Morgan → Rowan.",
+      "syntheticNegative": "Morgan adjusts a female client’s sleeve; his fingers slide into the fabric. → no sexual act and no attribution to his usual partner."
+    }
+  ],
+  "benchmarkCoveredControls": [
+    {
+      "eventIndex": 2,
+      "statusAtSelection": "matched",
+      "inventory": "chatgpt-five-fic-deep-dives.json",
+      "batchId": "chatgpt-five-fic-deep-dives.json",
+      "id": "bluebells-act-5",
+      "eventId": 5,
+      "fic": "bluebells.html",
+      "sourceSha": "ed9e8f48d2ed52e7c6f9a2ee3fc00dc5ad9e38f897fbc2f4fa60ffd193ba1a89",
+      "from": 825,
+      "to": 829,
+      "act": "Fingering",
+      "originalAct": "fingering",
+      "performer": "Brother Diarmuid",
+      "receiver": "Brother Diarmuid",
+      "reviewer": "ChatGPT",
+      "coverage": "selected deep-dive inventory",
+      "paragraphHashes": [
+        "28b8a664",
+        "bf10c0a7",
+        "61d6b2ee",
+        "d7c1bdf9",
+        "16144df0"
+      ]
+    },
+    {
+      "eventIndex": 9,
+      "statusAtSelection": "matched",
+      "inventory": "chatgpt-five-fic-deep-dives.json",
+      "batchId": "chatgpt-five-fic-deep-dives.json",
+      "id": "bluebells-act-25",
+      "eventId": 25,
+      "fic": "bluebells.html",
+      "sourceSha": "ed9e8f48d2ed52e7c6f9a2ee3fc00dc5ad9e38f897fbc2f4fa60ffd193ba1a89",
+      "from": 1647,
+      "to": 1650,
+      "act": "Fingering",
+      "originalAct": "fingering",
+      "performer": "David Shepherd",
+      "receiver": "Brother Diarmuid",
+      "reviewer": "Both",
+      "coverage": "selected deep-dive inventory",
+      "paragraphHashes": [
+        "8563a9d9",
+        "9667ef50",
+        "ae587637",
+        "28022e2f"
+      ]
+    },
+    {
+      "eventIndex": 12,
+      "statusAtSelection": "matched",
+      "inventory": "chatgpt-five-fic-deep-dives.json",
+      "batchId": "chatgpt-five-fic-deep-dives.json",
+      "id": "were-compeer-act-3",
+      "eventId": 3,
+      "fic": "were-compeer.html",
+      "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+      "from": 159,
+      "to": 164,
+      "act": "Fingering",
+      "originalAct": "anal fingering",
+      "performer": "Derek Hale",
+      "receiver": "Stiles Stilinski",
+      "reviewer": "Both",
+      "coverage": "selected deep-dive inventory",
+      "paragraphHashes": [
+        "5f9852fa",
+        "9c8ab0d6",
+        "48f919d3",
+        "230d7c54",
+        "48f919d3",
+        "f9169174"
+      ]
+    },
+    {
+      "eventIndex": 16,
+      "statusAtSelection": "matched",
+      "inventory": "chatgpt-five-fic-deep-dives.json",
+      "batchId": "chatgpt-five-fic-deep-dives.json",
+      "id": "were-compeer-act-8",
+      "eventId": 8,
+      "fic": "were-compeer.html",
+      "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+      "from": 212,
+      "to": 212,
+      "act": "Fingering",
+      "originalAct": "anal fingering",
+      "performer": "Derek Hale",
+      "receiver": "Stiles Stilinski",
+      "reviewer": "Both",
+      "coverage": "selected deep-dive inventory",
+      "paragraphHashes": [
+        "e7996a05"
+      ]
+    },
+    {
+      "eventIndex": 21,
+      "statusAtSelection": "matched",
+      "inventory": "chatgpt-five-fic-deep-dives.json",
+      "batchId": "chatgpt-five-fic-deep-dives.json",
+      "id": "were-compeer-act-14",
+      "eventId": 14,
+      "fic": "were-compeer.html",
+      "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+      "from": 293,
+      "to": 305,
+      "act": "Fingering",
+      "originalAct": "anal fingering / prostate massage",
+      "performer": "Derek Hale",
+      "receiver": "Stiles Stilinski",
+      "reviewer": "Both",
+      "coverage": "selected deep-dive inventory",
+      "paragraphHashes": [
+        "a1819d67",
+        "60e8146d",
+        "3385d3cd",
+        "1714a39d",
+        "9571abb5",
+        "c90e4625",
+        "76d4a084",
+        "17444e30",
+        "522c39a8",
+        "1af1a204",
+        "d21f4142",
+        "b0c92cac",
+        "56f5285d"
+      ]
+    },
+    {
+      "eventIndex": 23,
+      "statusAtSelection": "matched",
+      "inventory": "chatgpt-five-fic-deep-dives.json",
+      "batchId": "chatgpt-five-fic-deep-dives.json",
+      "id": "were-compeer-act-16",
+      "eventId": 16,
+      "fic": "were-compeer.html",
+      "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+      "from": 380,
+      "to": 391,
+      "act": "Fingering",
+      "originalAct": "anal fingering",
+      "performer": "Derek Hale",
+      "receiver": "Stiles Stilinski",
+      "reviewer": "Owner",
+      "coverage": "selected deep-dive inventory",
+      "paragraphHashes": [
+        "cdcff1ac",
+        "a18c6a5b",
+        "350c6733",
+        "f63ae50c",
+        "8791e3ae",
+        "b4adf171",
+        "bdadf846",
+        "6bd3ff6f",
+        "34a8ba6a",
+        "8a4492c0",
+        "a5ac060e",
+        "9e8d355"
+      ]
+    },
+    {
+      "eventIndex": 24,
+      "statusAtSelection": "matched",
+      "inventory": "chatgpt-five-fic-deep-dives.json",
+      "batchId": "chatgpt-five-fic-deep-dives.json",
+      "id": "were-compeer-act-18",
+      "eventId": 18,
+      "fic": "were-compeer.html",
+      "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+      "from": 403,
+      "to": 408,
+      "act": "Fingering",
+      "originalAct": "anal fingering",
+      "performer": "Derek Hale",
+      "receiver": "Stiles Stilinski",
+      "reviewer": "Both",
+      "coverage": "selected deep-dive inventory",
+      "paragraphHashes": [
+        "d9a22a34",
+        "f77493c2",
+        "b7b8ead6",
+        "f4a97ec2",
+        "b8ab7bb2",
+        "c375b143"
+      ]
+    },
+    {
+      "eventIndex": 30,
+      "statusAtSelection": "matched",
+      "inventory": "chatgpt-five-fic-deep-dives.json",
+      "batchId": "chatgpt-five-fic-deep-dives.json",
+      "id": "were-compeer-act-31",
+      "eventId": 31,
+      "fic": "were-compeer.html",
+      "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+      "from": 581,
+      "to": 584,
+      "act": "Fingering",
+      "originalAct": "anal fingering",
+      "performer": "Derek Hale",
+      "receiver": "Stiles Stilinski",
+      "reviewer": "Both",
+      "coverage": "selected deep-dive inventory",
+      "paragraphHashes": [
+        "c14c6b35",
+        "9436b2b7",
+        "5ee1c701",
+        "dc49648c"
+      ]
+    },
+    {
+      "eventIndex": 32,
+      "statusAtSelection": "matched",
+      "inventory": "chatgpt-five-fic-deep-dives.json",
+      "batchId": "chatgpt-five-fic-deep-dives.json",
+      "id": "were-compeer-act-33",
+      "eventId": 33,
+      "fic": "were-compeer.html",
+      "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+      "from": 594,
+      "to": 601,
+      "act": "Fingering",
+      "originalAct": "anal fingering",
+      "performer": "Derek Hale",
+      "receiver": "Stiles Stilinski",
+      "reviewer": "Both",
+      "coverage": "selected deep-dive inventory",
+      "paragraphHashes": [
+        "e140173c",
+        "57218739",
+        "328b900e",
+        "d677cb34",
+        "d77243e6",
+        "8cb5404b",
+        "12ea7229",
+        "2fa9edff"
+      ]
+    },
+    {
+      "eventIndex": 43,
+      "statusAtSelection": "matched",
+      "inventory": "chatgpt-five-fic-deep-dives.json",
+      "batchId": "chatgpt-five-fic-deep-dives.json",
+      "id": "dogbird-act-24",
+      "eventId": 24,
+      "fic": "dogbird.html",
+      "sourceSha": "b66dcf4730e681942787b9d280bc8b2825005e179cfe09179a82e935a4f036fb",
+      "from": 1291,
+      "to": 1306,
+      "act": "Fingering",
+      "originalAct": "anal-fingering",
+      "performer": "Evan \"Buck\" Buckley",
+      "receiver": "Eddie Diaz",
+      "reviewer": "Both",
+      "coverage": "selected deep-dive inventory",
+      "paragraphHashes": [
+        "74a54bb",
+        "578c7f6b",
+        "3d409d7a",
+        "bfdc2401",
+        "3d7d16c0",
+        "5e2eca11",
+        "6ca8b48e",
+        "874b9d56",
+        "b0bc3352",
+        "7eb51f40",
+        "42d5153b",
+        "5018df7d",
+        "77c8218b",
+        "b7bfe150",
+        "2e48c360",
+        "b85ccaf0"
+      ]
+    },
+    {
+      "eventIndex": 59,
+      "statusAtSelection": "matched",
+      "inventory": "chatgpt-five-fic-deep-dives.json",
+      "batchId": "chatgpt-five-fic-deep-dives.json",
+      "id": "needing-the-knot-act-20",
+      "eventId": 20,
+      "fic": "needing-the-knot.html",
+      "sourceSha": "cfb383bc85de918fc26b4650ec53f3026374462949105db48bc0cab52feba727",
+      "from": 668,
+      "to": 671,
+      "act": "Fingering",
+      "originalAct": "fingering",
+      "performer": "Castiel",
+      "receiver": "Dean Winchester",
+      "reviewer": "Both",
+      "coverage": "selected deep-dive inventory",
+      "paragraphHashes": [
+        "3d3d35c",
+        "29c7ef6b",
+        "dd1a6d5b",
+        "80e30ffe"
+      ]
+    },
+    {
+      "eventIndex": 69,
+      "statusAtSelection": "matched",
+      "inventory": "chatgpt-five-fic-deep-dives.json",
+      "batchId": "chatgpt-five-fic-deep-dives.json",
+      "id": "needing-the-knot-act-30",
+      "eventId": 30,
+      "fic": "needing-the-knot.html",
+      "sourceSha": "cfb383bc85de918fc26b4650ec53f3026374462949105db48bc0cab52feba727",
+      "from": 1091,
+      "to": 1091,
+      "act": "Fingering",
+      "originalAct": "fingering",
+      "performer": "Castiel",
+      "receiver": "Dean Winchester",
+      "reviewer": "Both",
+      "coverage": "selected deep-dive inventory",
+      "paragraphHashes": [
+        "54f98823"
+      ]
+    },
+    {
+      "eventIndex": 82,
+      "statusAtSelection": "matched",
+      "inventory": "chatgpt-five-fic-deep-dives.json",
+      "batchId": "chatgpt-five-fic-deep-dives.json",
+      "id": "needing-the-knot-act-50",
+      "eventId": 50,
+      "fic": "needing-the-knot.html",
+      "sourceSha": "cfb383bc85de918fc26b4650ec53f3026374462949105db48bc0cab52feba727",
+      "from": 1222,
+      "to": 1232,
+      "act": "Fingering",
+      "originalAct": "fingering",
+      "performer": "Dean Winchester",
+      "receiver": "Castiel",
+      "reviewer": "Both",
+      "coverage": "selected deep-dive inventory",
+      "paragraphHashes": [
+        "31fbf4f8",
+        "64ec8db8",
+        "64c70e2b",
+        "82e590b3",
+        "74bbc6bd",
+        "63bca0c4",
+        "c60c96b5",
+        "39a128bd",
+        "399c7bd2",
+        "862741c2",
+        "acf5bb14"
+      ]
+    },
+    {
+      "eventIndex": 104,
+      "statusAtSelection": "matched",
+      "inventory": "chatgpt-four-pdf-deep-dives.json",
+      "batchId": "chatgpt-four-pdf-deep-dives.json",
+      "id": "lover-you-cant-be-wrong-act-52",
+      "eventId": 52,
+      "fic": "lover-you-cant-be-wrong.html",
+      "sourceSha": "abafdc25821c5d78ba1706ec3c3462d7c2c04e68c50958b9a399225ea56d6a43",
+      "from": 1396,
+      "to": 1440,
+      "act": "Fingering",
+      "originalAct": "fingering",
+      "performer": "Eddie Munson",
+      "receiver": "Steve Harrington",
+      "reviewer": "Both",
+      "coverage": "selected deep-dive inventory",
+      "paragraphHashes": [
+        "2778b1f8",
+        "fd94df3d",
+        "118771f4",
+        "6825b4de",
+        "d3bf84cc",
+        "bdd5ab08",
+        "706cb118",
+        "92a8c0f1",
+        "de04dd4f",
+        "166c1a8f",
+        "918ff03a",
+        "633c9187",
+        "78b2c9b0",
+        "61c23864",
+        "7050da3d",
+        "110bd186",
+        "b0fbab9d",
+        "26459737",
+        "5d105051",
+        "15c159bc",
+        "39dc7e35",
+        "d79af673",
+        "e1cbaf6",
+        "a06a421c",
+        "4c5be7b5",
+        "475b800b",
+        "812c9c45",
+        "dd117d8a",
+        "cdf6fa04",
+        "d8eb53db",
+        "3a71a042",
+        "83afd58c",
+        "e816169c",
+        "3557f06f",
+        "407b39bc",
+        "787069a",
+        "4bab8f95",
+        "77225c61",
+        "1077350d",
+        "c907d9b0",
+        "2b545bd3",
+        "a2e4bc9b",
+        "36022f62",
+        "a8e3f905",
+        "53f2cdc1"
+      ]
+    },
+    {
+      "eventIndex": 108,
+      "statusAtSelection": "matched",
+      "inventory": "chatgpt-four-pdf-deep-dives.json",
+      "batchId": "chatgpt-four-pdf-deep-dives.json",
+      "id": "lover-you-cant-be-wrong-act-59",
+      "eventId": 59,
+      "fic": "lover-you-cant-be-wrong.html",
+      "sourceSha": "abafdc25821c5d78ba1706ec3c3462d7c2c04e68c50958b9a399225ea56d6a43",
+      "from": 1491,
+      "to": 1506,
+      "act": "Fingering",
+      "originalAct": "fingering",
+      "performer": "Eddie Munson",
+      "receiver": "Steve Harrington",
+      "reviewer": "Owner",
+      "coverage": "selected deep-dive inventory",
+      "paragraphHashes": [
+        "d6fa8094",
+        "752af0ba",
+        "7d0ce0c4",
+        "b3b31a0d",
+        "7bb7bb6e",
+        "2d32c967",
+        "6fe07dd9",
+        "4412b85",
+        "e98e9f90",
+        "3a977f93",
+        "1ccc57ff",
+        "652e4b00",
+        "54a83278",
+        "323e291f",
+        "3f87c0d2",
+        "11261b2"
+      ]
+    },
+    {
+      "eventIndex": 117,
+      "statusAtSelection": "matched",
+      "inventory": "chatgpt-four-pdf-deep-dives.json",
+      "batchId": "chatgpt-four-pdf-deep-dives.json",
+      "id": "heavyweight-act-36",
+      "eventId": 36,
+      "fic": "heavyweight.html",
+      "sourceSha": "f9922cef6eaa9180354b739a0bfd8367ce100d24dc88ffe37b402edcfe0b5c81",
+      "from": 3215,
+      "to": 3226,
+      "act": "Fingering",
+      "originalAct": "fingering",
+      "performer": "Castiel",
+      "receiver": "Dean Winchester",
+      "reviewer": "Both",
+      "coverage": "selected deep-dive inventory",
+      "paragraphHashes": [
+        "76f2cac5",
+        "6f4ca5a5",
+        "5a1adef0",
+        "4f62c1d8",
+        "f60a2f98",
+        "e91c1dbb",
+        "11c35336",
+        "cd7570d5",
+        "e4f544cf",
+        "3e25c5ea",
+        "3ccb354b",
+        "a2439491"
+      ]
+    },
+    {
+      "eventIndex": 123,
+      "statusAtSelection": "matched",
+      "inventory": "chatgpt-four-pdf-deep-dives.json",
+      "batchId": "chatgpt-four-pdf-deep-dives.json",
+      "id": "heavyweight-act-58",
+      "eventId": 58,
+      "fic": "heavyweight.html",
+      "sourceSha": "f9922cef6eaa9180354b739a0bfd8367ce100d24dc88ffe37b402edcfe0b5c81",
+      "from": 4108,
+      "to": 4118,
+      "act": "Fingering",
+      "originalAct": "fingering",
+      "performer": "Castiel",
+      "receiver": "Dean Winchester",
+      "reviewer": "Both",
+      "coverage": "selected deep-dive inventory",
+      "paragraphHashes": [
+        "be702a56",
+        "fcd9a62d",
+        "2117257",
+        "b8fbb7f0",
+        "bf52ae96",
+        "d9e644f1",
+        "952dd473",
+        "18490c7d",
+        "111710d0",
+        "b2c8a",
+        "c96dd74e"
+      ]
+    },
+    {
+      "eventIndex": 127,
+      "statusAtSelection": "matched",
+      "inventory": "chatgpt-four-pdf-deep-dives.json",
+      "batchId": "chatgpt-four-pdf-deep-dives.json",
+      "id": "heavyweight-act-78",
+      "eventId": 78,
+      "fic": "heavyweight.html",
+      "sourceSha": "f9922cef6eaa9180354b739a0bfd8367ce100d24dc88ffe37b402edcfe0b5c81",
+      "from": 6351,
+      "to": 6353,
+      "act": "Fingering",
+      "originalAct": "fingering",
+      "performer": "Castiel",
+      "receiver": "Dean Winchester",
+      "reviewer": "Both",
+      "coverage": "selected deep-dive inventory",
+      "paragraphHashes": [
+        "e60508dc",
+        "1a427ebb",
+        "c451c4b2"
+      ]
+    },
+    {
+      "eventIndex": 157,
+      "statusAtSelection": "matched",
+      "inventory": "chatgpt-icarus-burning-deep-dive.json",
+      "batchId": "chatgpt-icarus-burning-deep-dive.json",
+      "id": "icarus-burning-act-16",
+      "eventId": 16,
+      "fic": "icarus-burning.html",
+      "sourceSha": "e0ff0d5513abc84e473a0cdb4e422c3801bd0740b9c3d37b1bd24b4f5b6dd6be",
+      "from": 3245,
+      "to": 3254,
+      "act": "Fingering",
+      "originalAct": "fingering",
+      "performer": "Samiel Tremark",
+      "receiver": "Jason Lane",
+      "reviewer": "Both",
+      "coverage": "selected deep-dive inventory",
+      "paragraphHashes": [
+        "770d89c4",
+        "2254220e",
+        "ec4e03c0",
+        "8a0d92e2",
+        "346cc1aa",
+        "4cfa4ac5",
+        "d82b58e3",
+        "cc6020a2",
+        "4d7fc16c",
+        "9c7b99f5"
+      ]
+    },
+    {
+      "eventIndex": 175,
+      "statusAtSelection": "matched",
+      "inventory": "chatgpt-panuelo-melody-deep-dive.json",
+      "batchId": "chatgpt-panuelo-melody-deep-dive.json",
+      "id": "panuelo-melody-act-14",
+      "eventId": 14,
+      "fic": "panuelo-melody.html",
+      "sourceSha": "c48052e7c79f1fc28b75b6cbbc2bda5cffc74c6ceec69867e9f3981999d3dad6",
+      "from": 1448,
+      "to": 1473,
+      "act": "Fingering",
+      "originalAct": "fingering",
+      "performer": "Alex Claremont-Diaz",
+      "receiver": "Henry Fox-Mountchristen-Windsor",
+      "reviewer": "Both",
+      "coverage": "selected deep-dive inventory",
+      "paragraphHashes": [
+        "8a0cc2d",
+        "a135d74e",
+        "15f28687",
+        "e2d664a2",
+        "26974b2d",
+        "89e1da87",
+        "909f92fe",
+        "5d20dcc5",
+        "831f84a4",
+        "8b512718",
+        "e72005f8",
+        "ba5ee5c0",
+        "f5ba3ff0",
+        "dbb4efcf",
+        "f29c2a6",
+        "67300405",
+        "51f91098",
+        "de65a758",
+        "818a8044",
+        "71704d12",
+        "ca71a8c0",
+        "7ce0c191",
+        "1320f476",
+        "df894313",
+        "117e728",
+        "8c442a79"
+      ]
+    },
+    {
+      "eventIndex": 184,
+      "statusAtSelection": "matched",
+      "inventory": "chatgpt-six-upload-deep-dives.json",
+      "batchId": "chatgpt-six-upload-deep-dives.json",
+      "id": "apogee-inv-12",
+      "eventId": 12,
+      "fic": "apogee.html",
+      "sourceSha": "5af10ecb7953b4f680acd589542e95f0e4f81c48fefcba758919d6f9ee704f1d",
+      "from": 860,
+      "to": 873,
+      "act": "Fingering",
+      "originalAct": "anal fingering",
+      "performer": "Ilya Rozanov",
+      "receiver": "Shane Hollander",
+      "reviewer": "Both",
+      "coverage": "selected deep-dive inventory",
+      "paragraphHashes": [
+        "529b0639",
+        "1f28d8f3",
+        "cf609bba",
+        "e7f50850",
+        "c3f33678",
+        "17b6e9d",
+        "98926f6c",
+        "fdd5761a",
+        "901bcee3",
+        "b61e9607",
+        "1a86127d",
+        "2ecf5b8f",
+        "3ce5de66",
+        "bad428aa"
+      ],
+      "sourceParagraphSha": "6a88929c937878ded20fadfefe1d53c6aedc7076190d536565f4253ef4f15405"
+    },
+    {
+      "eventIndex": 212,
+      "statusAtSelection": "matched",
+      "inventory": "chatgpt-six-upload-deep-dives.json",
+      "batchId": "chatgpt-six-upload-deep-dives.json",
+      "id": "wolfbird-qa-inv-1",
+      "eventId": 52,
+      "fic": "wolfbird.html",
+      "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+      "from": 3082,
+      "to": 3106,
+      "act": "Fingering",
+      "originalAct": "fingering",
+      "performer": "Ilya Rozanov",
+      "receiver": "Shane Hollander",
+      "reviewer": "Both",
+      "coverage": "selected deep-dive inventory",
+      "paragraphHashes": [
+        "dde6071d",
+        "f0f1c03e",
+        "25907a0f",
+        "e43d00e",
+        "b78f542b",
+        "900d7c37",
+        "cb69ed35",
+        "f9f43944",
+        "c4decf6f",
+        "8c6e42d1",
+        "53b39f2c",
+        "b265e6d2",
+        "93290efa",
+        "5e593d5a",
+        "90de2de3",
+        "c7f610d7",
+        "a6f227c7",
+        "429ef361",
+        "207c77",
+        "15da8719",
+        "dc6ad254",
+        "300b15ae",
+        "6c1c177c",
+        "4974711e",
+        "5edcb864"
+      ],
+      "sourceParagraphSha": "0f50fe76e320c7a43bd421f6dbd2ffa2dc09c9f0ed775e61df73d625fcddc68f"
+    },
+    {
+      "eventIndex": 215,
+      "statusAtSelection": "matched",
+      "inventory": "chatgpt-six-upload-deep-dives.json",
+      "batchId": "chatgpt-six-upload-deep-dives.json",
+      "id": "wolfbird-qa-inv-7",
+      "eventId": 57,
+      "fic": "wolfbird.html",
+      "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+      "from": 4086,
+      "to": 4095,
+      "act": "Fingering",
+      "originalAct": "fingering",
+      "performer": "Ilya Rozanov",
+      "receiver": "Shane Hollander",
+      "reviewer": "Both",
+      "coverage": "selected deep-dive inventory",
+      "paragraphHashes": [
+        "3aa9768f",
+        "e3708e65",
+        "d50d0dfb",
+        "d3a4d523",
+        "f427fda1",
+        "6a8a3c9c",
+        "37f50ce4",
+        "a0e625a6",
+        "1f5ecb95",
+        "39920a56"
+      ],
+      "sourceParagraphSha": "0f50fe76e320c7a43bd421f6dbd2ffa2dc09c9f0ed775e61df73d625fcddc68f"
+    },
+    {
+      "eventIndex": 249,
+      "statusAtSelection": "matched",
+      "inventory": "sugar-alpha-errors-b91edd7-v1.json",
+      "batchId": "sugar-alpha-errors-b91edd7-v1",
+      "id": "W38",
+      "eventId": "A18",
+      "fic": "sugar-alpha.html",
+      "sourceSha": "68a3c9d689b093806fb072b5e550e79a61eb9f16c1e79ca192ba24597338de5e",
+      "from": 2231,
+      "to": 2231,
+      "act": "Toy insertion",
+      "performer": "Derek Hale",
+      "receiver": "Stiles Stilinski",
+      "reviewer": "Owner",
+      "coverage": "positive-only",
+      "sourceParagraphSha": "a45eb70114d525d57925d8f98cbdd975a8ae19a3be5dd2adcea51caa98ccc950"
+    },
+    {
+      "eventIndex": 258,
+      "statusAtSelection": "matched",
+      "inventory": "suspect-three-4dd3a27d25b0.json",
+      "batchId": "suspect-three-4dd3a27d25b0",
+      "id": "U22",
+      "eventId": "A1",
+      "fic": "hate.html",
+      "sourceSha": "a34987282302730c5cb9cf4350457713e847383ca411b02c726281de0863ab0b",
+      "from": 1387,
+      "to": 1391,
+      "act": "Fingering",
+      "performer": "Eddie Munson",
+      "receiver": "Steve Harrington",
+      "reviewer": "Owner",
+      "coverage": "positive-only",
+      "sourceParagraphSha": "5043e33ae248b134c4e0770ce09f249d64a0331a0cd82425f12a2a3242135316"
+    },
+    {
+      "eventIndex": 263,
+      "statusAtSelection": "matched",
+      "inventory": "suspect-three-4dd3a27d25b0.json",
+      "batchId": "suspect-three-4dd3a27d25b0",
+      "id": "U28",
+      "eventId": "A2",
+      "fic": "sugar-alpha.html",
+      "sourceSha": "68a3c9d689b093806fb072b5e550e79a61eb9f16c1e79ca192ba24597338de5e",
+      "from": 1740,
+      "to": 1743,
+      "act": "Fingering",
+      "performer": "Derek Hale",
+      "receiver": "Stiles Stilinski",
+      "reviewer": "Owner",
+      "coverage": "positive-only",
+      "sourceParagraphSha": "a45eb70114d525d57925d8f98cbdd975a8ae19a3be5dd2adcea51caa98ccc950"
+    },
+    {
+      "eventIndex": 266,
+      "statusAtSelection": "matched",
+      "inventory": "suspect-three-4dd3a27d25b0.json",
+      "batchId": "suspect-three-4dd3a27d25b0",
+      "id": "U29",
+      "eventId": "A2",
+      "fic": "sugar-alpha.html",
+      "sourceSha": "68a3c9d689b093806fb072b5e550e79a61eb9f16c1e79ca192ba24597338de5e",
+      "from": 1843,
+      "to": 1843,
+      "act": "Fingering",
+      "performer": "Derek Hale",
+      "receiver": "Stiles Stilinski",
+      "reviewer": "Owner",
+      "coverage": "positive-only",
+      "sourceParagraphSha": "a45eb70114d525d57925d8f98cbdd975a8ae19a3be5dd2adcea51caa98ccc950"
+    },
+    {
+      "eventIndex": 275,
+      "statusAtSelection": "matched",
+      "inventory": "suspect-two-569919fdfb5e.json",
+      "batchId": "suspect-two-569919fdfb5e",
+      "id": "T2",
+      "eventId": "A1",
+      "fic": "belonging.html",
+      "sourceSha": "d8fe352ab70bc0a8171fea0e069c43d776d3541d741cb74b2b66014ae64e874c",
+      "from": 3054,
+      "to": 3059,
+      "act": "Toy insertion",
+      "performer": "Castiel",
+      "receiver": "Dean Winchester",
+      "reviewer": "Owner",
+      "coverage": "positive-only",
+      "sourceParagraphSha": "f9bf52ddcb708de72d8df74649d6976fa2ed62ddba1e55df553729ba32589409"
+    },
+    {
+      "eventIndex": 286,
+      "statusAtSelection": "matched",
+      "inventory": "suspect-two-569919fdfb5e.json",
+      "batchId": "suspect-two-569919fdfb5e",
+      "id": "T11",
+      "eventId": "A2",
+      "fic": "mars.html",
+      "sourceSha": "43ef00b3070686ea49aed427155aa8c42f88c242698d4dbdf25ec95f4a8c0432",
+      "from": 1282,
+      "to": 1286,
+      "act": "Fingering",
+      "performer": "Dean Winchester",
+      "receiver": "Castiel",
+      "reviewer": "Owner",
+      "coverage": "positive-only",
+      "sourceParagraphSha": "31b1d90d66cd9a817127ba1d93e71720eeea8aa4f5fb87291b46cf4018963af5"
+    },
+    {
+      "eventIndex": 292,
+      "statusAtSelection": "matched",
+      "inventory": "suspect-two-569919fdfb5e.json",
+      "batchId": "suspect-two-569919fdfb5e",
+      "id": "T14",
+      "eventId": "A1",
+      "fic": "belonging.html",
+      "sourceSha": "d8fe352ab70bc0a8171fea0e069c43d776d3541d741cb74b2b66014ae64e874c",
+      "from": 4704,
+      "to": 4713,
+      "act": "Fingering",
+      "performer": "Castiel",
+      "receiver": "Dean Winchester",
+      "reviewer": "Owner",
+      "coverage": "positive-only",
+      "sourceParagraphSha": "f9bf52ddcb708de72d8df74649d6976fa2ed62ddba1e55df553729ba32589409"
+    },
+    {
+      "eventIndex": 303,
+      "statusAtSelection": "matched",
+      "inventory": "suspect-two-569919fdfb5e.json",
+      "batchId": "suspect-two-569919fdfb5e",
+      "id": "T18",
+      "eventId": "A4",
+      "fic": "tricks-of-the-trade.html",
+      "sourceSha": "25a15e806d8f6a55c030e78d50d58e71f2ca424674b33f7a56471178d4ab1bd3",
+      "from": 3768,
+      "to": 3769,
+      "act": "Fingering",
+      "performer": "Castiel",
+      "receiver": "Dean Winchester",
+      "reviewer": "Owner",
+      "coverage": "positive-only",
+      "sourceParagraphSha": "56e605751373cfe88dc1f6a48760f8625a143c8157e758778c2f64929a65e8d7"
+    },
+    {
+      "eventIndex": 306,
+      "statusAtSelection": "matched",
+      "inventory": "suspect-two-569919fdfb5e.json",
+      "batchId": "suspect-two-569919fdfb5e",
+      "id": "T19",
+      "eventId": "A2",
+      "fic": "lock-it.html",
+      "sourceSha": "cefecea8f64bab5b5bbeee0fdf6cf6d8a7712191f584b965d3b8100cfec2a635",
+      "from": 171,
+      "to": 171,
+      "act": "Fingering",
+      "performer": "Eddie Diaz",
+      "receiver": "Evan \"Buck\" Buckley",
+      "reviewer": "Owner",
+      "coverage": "positive-only",
+      "sourceParagraphSha": "bdd1ce138123d589ef0c128fb91373a304bb1cb3dfc53ed3596201124270e73c"
+    },
+    {
+      "eventIndex": 308,
+      "statusAtSelection": "matched",
+      "inventory": "suspect-two-569919fdfb5e.json",
+      "batchId": "suspect-two-569919fdfb5e",
+      "id": "T20",
+      "eventId": "A1",
+      "fic": "rwrb-balls.html",
+      "sourceSha": "972bdceeca54c37e7f9298ac9621b9155bf28745a076c5d5124e55a38b1a9474",
+      "from": 182,
+      "to": 184,
+      "act": "Fingering",
+      "performer": "Alex Claremont-Diaz",
+      "receiver": "Henry Fox-Mountchristen-Windsor",
+      "reviewer": "Owner",
+      "coverage": "positive-only",
+      "sourceParagraphSha": "ac2603b094d8fccc28763cab1621c7bd53c3c32cf37d63667293cb991935f7f8"
+    },
+    {
+      "eventIndex": 311,
+      "statusAtSelection": "matched",
+      "inventory": "suspect-two-569919fdfb5e.json",
+      "batchId": "suspect-two-569919fdfb5e",
+      "id": "T24",
+      "eventId": "A1",
+      "fic": "tricks-of-the-trade.html",
+      "sourceSha": "25a15e806d8f6a55c030e78d50d58e71f2ca424674b33f7a56471178d4ab1bd3",
+      "from": 3269,
+      "to": 3278,
+      "act": "Fingering",
+      "performer": "Castiel",
+      "receiver": "Dean Winchester",
+      "reviewer": "Owner",
+      "coverage": "positive-only",
+      "sourceParagraphSha": "56e605751373cfe88dc1f6a48760f8625a143c8157e758778c2f64929a65e8d7"
+    },
+    {
+      "eventIndex": 312,
+      "statusAtSelection": "matched",
+      "inventory": "suspect-two-569919fdfb5e.json",
+      "batchId": "suspect-two-569919fdfb5e",
+      "id": "T24",
+      "eventId": "A2",
+      "fic": "tricks-of-the-trade.html",
+      "sourceSha": "25a15e806d8f6a55c030e78d50d58e71f2ca424674b33f7a56471178d4ab1bd3",
+      "from": 3278,
+      "to": 3287,
+      "act": "Toy insertion",
+      "performer": "Castiel",
+      "receiver": "Dean Winchester",
+      "reviewer": "Owner",
+      "coverage": "positive-only",
+      "sourceParagraphSha": "56e605751373cfe88dc1f6a48760f8625a143c8157e758778c2f64929a65e8d7"
+    },
+    {
+      "eventIndex": 316,
+      "statusAtSelection": "matched",
+      "inventory": "suspect-two-569919fdfb5e.json",
+      "batchId": "suspect-two-569919fdfb5e",
+      "id": "T25",
+      "eventId": "A3",
+      "fic": "tricks-of-the-trade.html",
+      "sourceSha": "25a15e806d8f6a55c030e78d50d58e71f2ca424674b33f7a56471178d4ab1bd3",
+      "from": 2282,
+      "to": 2287,
+      "act": "Fingering",
+      "performer": "Castiel",
+      "receiver": "Dean Winchester",
+      "reviewer": "Owner",
+      "coverage": "positive-only",
+      "sourceParagraphSha": "56e605751373cfe88dc1f6a48760f8625a143c8157e758778c2f64929a65e8d7"
+    },
+    {
+      "eventIndex": 318,
+      "statusAtSelection": "matched",
+      "inventory": "suspect-two-569919fdfb5e.json",
+      "batchId": "suspect-two-569919fdfb5e",
+      "id": "T25",
+      "eventId": "A5",
+      "fic": "tricks-of-the-trade.html",
+      "sourceSha": "25a15e806d8f6a55c030e78d50d58e71f2ca424674b33f7a56471178d4ab1bd3",
+      "from": 2287,
+      "to": 2292,
+      "act": "Toy insertion",
+      "performer": "Castiel",
+      "receiver": "Dean Winchester",
+      "reviewer": "Owner",
+      "coverage": "positive-only",
+      "sourceParagraphSha": "56e605751373cfe88dc1f6a48760f8625a143c8157e758778c2f64929a65e8d7"
+    },
+    {
+      "eventIndex": 323,
+      "statusAtSelection": "matched",
+      "inventory": "suspect-two-569919fdfb5e.json",
+      "batchId": "suspect-two-569919fdfb5e",
+      "id": "T29",
+      "eventId": "A1",
+      "fic": "mars.html",
+      "sourceSha": "43ef00b3070686ea49aed427155aa8c42f88c242698d4dbdf25ec95f4a8c0432",
+      "from": 635,
+      "to": 647,
+      "act": "Fingering",
+      "performer": "Dean Winchester",
+      "receiver": "Dean Winchester",
+      "reviewer": "Owner",
+      "coverage": "positive-only",
+      "sourceParagraphSha": "31b1d90d66cd9a817127ba1d93e71720eeea8aa4f5fb87291b46cf4018963af5"
+    },
+    {
+      "eventIndex": 327,
+      "statusAtSelection": "matched",
+      "inventory": "suspect-two-569919fdfb5e.json",
+      "batchId": "suspect-two-569919fdfb5e",
+      "id": "T30",
+      "eventId": "A2",
+      "fic": "starting-place.html",
+      "sourceSha": "62fbf6258405fce5dc103deef1fb478214cd0b7c032a93fcd032cbd3c3436fd2",
+      "from": 620,
+      "to": 622,
+      "act": "Fingering",
+      "performer": "Castiel",
+      "receiver": "Dean Winchester",
+      "reviewer": "Owner",
+      "coverage": "positive-only",
+      "sourceParagraphSha": "e46756bde3782b58c979ef1412c896957972266c8bb1a99fd27158953d2bead9"
+    },
+    {
+      "eventIndex": 330,
+      "statusAtSelection": "matched",
+      "inventory": "suspect-two-569919fdfb5e.json",
+      "batchId": "suspect-two-569919fdfb5e",
+      "id": "T31",
+      "eventId": "A2",
+      "fic": "belonging.html",
+      "sourceSha": "d8fe352ab70bc0a8171fea0e069c43d776d3541d741cb74b2b66014ae64e874c",
+      "from": 732,
+      "to": 747,
+      "act": "Fingering",
+      "performer": "Castiel",
+      "receiver": "Dean Winchester",
+      "reviewer": "Owner",
+      "coverage": "positive-only",
+      "sourceParagraphSha": "f9bf52ddcb708de72d8df74649d6976fa2ed62ddba1e55df553729ba32589409"
+    },
+    {
+      "eventIndex": 345,
+      "statusAtSelection": "matched",
+      "inventory": "suspect-two-569919fdfb5e.json",
+      "batchId": "suspect-two-569919fdfb5e",
+      "id": "T39",
+      "eventId": "A2",
+      "fic": "innocent-until.html",
+      "sourceSha": "ffa71a4c7726196bc68e41ceb1805c28b7de2698384e84270c5d0f1f6f4ef78c",
+      "from": 2533,
+      "to": 2533,
+      "act": "Fingering",
+      "performer": "James \"Bucky\" Barnes",
+      "receiver": "Steve Rogers",
+      "reviewer": "Owner",
+      "coverage": "positive-only",
+      "sourceParagraphSha": "1b144bbdaf9d60d9c1ed0bb6efc2a0618b0b1187845bbf7d1b1d3e10d8a3b9e2"
+    }
+  ],
+  "controlsCaveat": "41 previously matched benchmark entries at the selection commit, not newly re-adjudicated gold or a fresh current-main replay. Protect their act, participants, occurrence and source identity. Owner/Both controls provide stronger review provenance.",
+  "remainingScopeCases": [
+    {
+      "caseId": "F02",
+      "fic": "wicked-thing.html",
+      "from": 249,
+      "to": 249,
+      "interpretation": "The passage repeatedly frames the event as remembered, including enumerated fingers entering. The saved inventory marks it current. No target-range match is traced.",
+      "classification": "inventory-scope"
+    },
+    {
+      "caseId": "T07",
+      "fic": "innocent-until.html",
+      "from": 1693,
+      "to": 1695,
+      "interpretation": "The passage explicitly identifies a urethral sound and its target. This is a real toy activity, but actualActOf currently represents anal/self toy acts, not urethral sounding. No candidate is traced.",
+      "classification": "inventory-scope"
+    }
+  ],
+  "overlap": {
+    "pr": 196,
+    "url": "https://github.com/reconsidering/trust-but-verify-/pull/196",
+    "head": "096551f3ec14f0829be2958d7e279b4f3d712788",
+    "statusAtInspection": "merged during report preparation",
+    "verifiedHere": false,
+    "instruction": "Inspect and replay overlapping entrance-contact, continuity, self-use and lexical fixes before duplicating work. Its claimed 42/63 fingering and 4/18 toy totals use a different inventory from this fixed 61/17 benchmark; compare case identities, not percentages."
+  },
+  "noLabelChanges": true
+}
