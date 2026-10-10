@@ -210,7 +210,9 @@ export function detectPov(paras: string[], isChapterHead: (p: string) => boolean
   return { at, source };
 }
 
+// "He only hopes…", "He heard himself moaning…", "He sees himself, naked and flushed…": more inner experience, and the small adverbs that come before it.
+const INNER_MORE = "(?:hopes|hopes|wishes|needs|loves|hates|worries|fears|figures|suspects|(?:heard|hears|saw|sees|watched|watches)\\s+(?:himself|herself))";
 /** A sentence whose "he" / "his" is the point-of-view character: inner experience, or their body reacting. */
 export const POV_SENTENCE = new RegExp(
-  `^\\W*(?:He|She)\\s+(?:\\w+ly\\s+)?${INNER}\\b|^\\W*(?:His|Her)\\s+(?:heart|stomach|chest|cheeks|face|hands|mind|thoughts|breath|pulse|throat|knees|skin)\\b`,
+  `^\\W*(?:He|She)\\s+(?:(?:\\w+ly|only|just|still|also|even|really|always|never|barely|almost|already|too)\\s+)*(?:${INNER}|${INNER_MORE})\\b|^\\W*(?:His|Her)\\s+(?:heart|stomach|chest|cheeks|face|hands|mind|thoughts|breath|pulse|throat|knees|skin)\\b`,
 );
