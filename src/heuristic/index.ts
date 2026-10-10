@@ -2203,6 +2203,25 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
     if (pat.id.startsWith("pushed-in") && /\b(?:door|car|truck|van|cab|taxi|room|house|building|shop|store|bar|elevator|lift|tent|cabin|Impala|apartment|office|kitchen|bathroom)\b/.test(sent.slice(0, m.index))) return;
     // "…slipped in just before the doors closed"
     if (pat.id.startsWith("pushed-in") && /\b(?:doors?|elevator|lift|train|bus|subway|tube|taxi|cab|car)\b/i.test(sent) && !ANAL_CTX.test(sent) && !PENIS_CTX.test(sent)) return;
+    // "hope … snapped in two", "sank in up to his chin" (a bath), "pressed in again, shoving their chests together" (a hug), "reached the Chevy and slid
+    // back inside, the heater blasting" / "unlocked it and pushed inside, stepping aside": a break, water, an embrace or walking into a place, with
+    // no anal, penis or finger word in the sentence.
+    if (pat.id.startsWith("pushed-in") && !PENIS_CTX.test(sent) && !FINGER_CTX.test(sent) &&
+        /\b(?:sank|sunk|slid|slipped)\s+(?:back\s+)?in(?:to)?\s+up\s+to\s+(?:his|her|their|the)\s+(?:chin|neck|waist|shoulders?|knees|ears|nose|eyes)\b/i.test(sent)) return;
+    if (pat.id.startsWith("pushed-in") && !ANAL_CTX.test(sent) && !PENIS_CTX.test(sent) && !FINGER_CTX.test(sent) &&
+        (/\b(?:snap\w*|press\w*|push\w*)\s+in\s+(?:two|half|pieces)\b/i.test(sent.slice(m.index!)) ||
+         /\b(?:press|push|squeez)\w*\s+in\b[^.!?]{0,40}\b(?:chests?|bodies|torsos?)\s+together\b/i.test(sent) ||
+         /\b(?:(?:reached|arrived at|got to|made it to|pulled up (?:to|at)|parked (?:at|by|outside))\s+(?:the|his|her|their)\s+(?:[\w-]+\s+)?(?:car|truck|Chevy|Impala|Jeep|pickup|SUV|sedan|van|porch|driveway|lobby|hotel|building|apartment|house)|unlocked\s+(?:it|the|his|her|their))\b/i.test(sent.slice(0, m.index!)) ||
+         /^\s*,?\s*(?:stepping|walking|heading|moving|turning|closing|shutting|holding|leaving)\b/i.test(sent.slice(m.index! + matchText.length)))) return;
+    // "sliding his thumb out and ramming into Steve": the thumb is leaving, so these words are not fingers going in; what follows is another act.
+    if (pat.id.startsWith("fingers-inside") && /\b(?:fingers?|thumbs?|digits?|knuckles?)\s+out\b/i.test(matchText)) return;
+    // "Steve surges up into him, presses him back into the couch … as they kiss": a body moving into a kiss, with no anal, penis or finger word about.
+    if (/^push-into/.test(pat.id) && /\bup\s+into\s+(?:him|her|them)\s*$/i.test(matchText) && !/\b(?:fuck|thrust|rut|pound|slam|ram|drill|bang|rail|plow|plough)\w*/i.test(matchText) && /\bkiss\w*/i.test(para) &&
+        ![pi - 1, pi, pi + 1].some((i) => ANAL_CTX.test(paras[i] ?? "") || PENIS_CTX.test(paras[i] ?? "") || FINGER_CTX.test(paras[i] ?? ""))) return;
+    // "He shoves bodily into Steve, knocks him into the wall": a shove, not a penetration, when no anal, penis or finger word is in the sentence.
+    if (/^push-into/.test(pat.id) && /\b(?:shov|push|slam|crash|barrel)\w*\s+bodily\s+(?:in|into)\b/i.test(matchText) && !ANAL_CTX.test(sent) && !PENIS_CTX.test(sent) && !FINGER_CTX.test(sent)) return;
+    // "Samiel arches a little, pushing up into him in desperation": the one who arches up is the one being touched; he does not penetrate.
+    if (/^push-into/.test(pat.id) && /\barch\w*\b[^.!?]{0,40}$/i.test(sent.slice(0, m.index!)) && /\bup\s+into\b/i.test(matchText) && !PENIS_CTX.test(sent)) return;
     // "He hollowed his cheeks, creating a suction for Cas": the one named after "for" is getting sucked.
     // "They were so screwed", "He was fucked": the idiom, unless a person does it ("by Dean"), it says how, or the
     // sentence has anatomy or a sex word.
@@ -2328,7 +2347,9 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
     const fingerSent = sent.replace(/\bas\s+(?:he|she|they)\s+finger\w*\s+(?:himself|herself|themselves)\b[^.!?]*/gi, "").replace(/\b(?:fingers?|fingertips?|digits?|knuckles?)\b[^,.;]{0,40}?\b(?:hair|curls|locks|sheets?|pillows?|shoulders?|back|neck|jaw|cheeks?|face|scalp|nape|arms?|biceps?|hands?|chest|headboard|blankets?)\b/gi, "");
     // "opened him up with two fingers, then fucked him": the fingers belong to the clause before; the fucking is a new clause.
     const fingersBeforeOnly = FINGER_CTX.test(sent.slice(0, m.index!)) && !FINGER_CTX.test(matchText + " " + sent.slice(m.index! + matchText.length)) &&
-      /[,;]|\b(?:then|and then)\b/.test(sent.slice(Math.max(0, m.index! - 14), m.index!) + matchText.slice(0, 12)) && /\b(?:fuck|pound|rail|bang|plow|plough|screw|breed|took|take)\w*/i.test(matchText);
+      /[,;]|\b(?:then|and then)\b/.test(sent.slice(Math.max(0, m.index! - 14), m.index!) + matchText.slice(0, 12)) && /\b(?:fuck|pound|rail|bang|plow|plough|screw|breed|took|take)\w*/i.test(matchText)
+    // "sliding his thumb out and ramming into Steve": a finger that has just come out is not the one going in.
+      || /\b(?:fingers?|thumbs?|digits?)\s+out\s+(?:and\s+)?$/i.test(sent.slice(0, m.index!));
     if (cat === "anal" && pat.id !== "worked-open-pushed-in" && act.startsWith("anal sex") && !PENIS_CTX.test(matchText) && FINGER_CTX.test(matchText + " " + fingerSent) && !PENIS_CTX.test(sent) && !fingersBeforeOnly &&
         // Invented adults: "slicks his fingers, working a thick plug into Rowan": the plug goes in, the fingers only hold it.
         !/\b(?:plug|dildo|toy|vibrator|vibe)\b/i.test(matchText)) act = "fingering";

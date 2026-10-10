@@ -25,6 +25,7 @@ that happened to match (the pattern that reads a sentence can change after a ret
   cheeks or thighs, or rubbing the buttocks without touching the opening, is body contact, not anal sex.
 - **A toy at the anal entrance counts** the same way, with no insertion needed: a plug, dildo or vibrator held, pressed or rubbed at the hole, rim or entrance. Tag it as a **toy act**
   ("anal sex (strap-on/toy)", or a toy used on himself), not as penile anal sex and not as fingering.
+- **A correctly credited act that the engine marks hypothetical, fantasy or wanted is a right reading** (the person and the act are right; the engine already weakens such readings). The owner ruled this way in 9 of 11 cases on 2026-10-10 (`docs/CLAUDE_SECOND_REVIEW_OF_CHATGPT_LABELS.md`). Mark it wrong only when the act or the person is wrong, or when nothing sexual is being talked about.
 - **If it never reached the opening** (stopped, refused or interrupted before contact), it is not performed. Contact at the opening counts even if it goes no further.
 - Labels made before this rule (2026-10-10) that called entrance contact "mistaken for insertion" (the 20 "external contact" readings in `docs/CURRENT_ANAL_ERROR_REVIEW.md`, and
   some owner labels on "presses fingers to his rim") may need re-review; do not change them without the owner's say-so.
@@ -57,6 +58,14 @@ that happened to match (the pattern that reads a sentence can change after a ret
 - A guard that drops an act can hide real flashback scenes; prefer demoting to a weaker reading (kind "hypothetical") when the act really happened.
 - Claim wording on review pages once said the opposite of what the engine meant for readings crediting the *receiver*; wording lives in `scripts/review-claims.mjs`.
 - Widening a regex that decides "this sentence starts with an outsider's name" made sentences starting "Though," look like outsiders: test the regex against ordinary sentence openers.
+
+## Working efficiently (speed and tokens, without losing accuracy)
+- **Narrowest check first, full check once.** While iterating: one test file, or `npm run check -- --only <fic>` (the fast loop in `docs/TESTING.md`). Before pushing an engine change: the full `npm run check` and `npm run regress -- --hits --all`, once. They answer different questions (`check` = labelled readings are right and the build passes; `regress` = what else moved), so neither replaces the other.
+- **Don't re-read fics or re-run what is cached.** `setup-fics`, `eval` and `regress` cache per engine version in `ao3-samples/.eval/`; an unchanged tree is free. Use `npm run trace` to see why one reading came out as it did, not a patched bundle.
+- **Script the counting, read only the sample.** To find which patterns are weak, group the label files (`tests/right-set/*.json`: `via`, `kind`, `weight`, `retired`, `misread`) with a short script and print counts. Then read a handful of sentences per group. Print aggregates first and cap output (`head`, `slice`); don't paste hundreds of labels or whole fics into the conversation. Eight samples shows what kinds of mistake exist, not how common each is: count the whole group before ranking causes.
+- **Keep scratch work out of the repo and reuse it.** Dumps, chunk files and patches belong in the scratchpad; re-use an earlier dump instead of re-extracting. Save a regen patch before a risky branch change.
+- **Parallelise independent work, delegate bulk reading.** Independent commands go in one call. For a read of hundreds of sentences, a subagent that returns a grouped table keeps the raw text out of the main thread; test it on a small group first, since its mistakes read as confidently as its findings.
+- **What not to trade away.** Blind review (never show a reviewer the other verdict), the right-set replay, the `regress` baseline comparison, and reading the actual sentences before naming a cause. A guess about why a pattern fails has been wrong before.
 
 ## Where the numbers are
 `docs/METRICS.md` (the context model's log loss and AUC over time) and `docs/EVALUATION.md` (what each kind of evidence is). Current state: gold 17/17 verdicts,
