@@ -14,6 +14,21 @@ change is checked). Claude Code (`CLAUDE.md`) also works in this repository, so 
 - For blowjobs "top" means the one *being sucked* and "bottom" the one sucking; for rimming "top" is the one doing it.
 - The owner is a beginner with code and GitHub: explain changes in plain language and keep what they must do small. The owner merges pull requests.
 
+## How to judge a reading (tagging conventions)
+Use these whenever you label a reading, review a scene, or judge a mistake report, so the labels stay consistent. Judge the **act in the text**, not the name of the pattern
+that happened to match (the pattern that reads a sentence can change after a retrain, as `sucked` became `took-in-mouth` and `penis-into` became `penis-inside`).
+- **Oral on a penis is one act: a blowjob**, however it is worded ("took him in his mouth", "swallowed him down", "lips around", "sucked", "went down on him"). Do not treat
+  "took in mouth" or any other wording as a separate act. Top is the one being sucked, bottom the one sucking.
+- **Fingers at the anal entrance count as fingering**, with no insertion needed: teasing, circling, rubbing or pressing at the hole, rim or entrance. Fingers on the cheeks, thighs,
+  waistband, hair or mouth do not.
+- **A cock at the anal entrance counts as anal sex**, with no insertion needed: a penis against, catching on, nudging or pressing at the hole, rim or entrance. A penis between the
+  cheeks or thighs, or rubbing the buttocks without touching the opening, is body contact, not anal sex.
+- **A toy at the anal entrance counts** the same way, with no insertion needed: a plug, dildo or vibrator held, pressed or rubbed at the hole, rim or entrance. Tag it as a **toy act**
+  ("anal sex (strap-on/toy)", or a toy used on himself), not as penile anal sex and not as fingering.
+- **If it never reached the opening** (stopped, refused or interrupted before contact), it is not performed. Contact at the opening counts even if it goes no further.
+- Labels made before this rule (2026-10-10) that called entrance contact "mistaken for insertion" (the 20 "external contact" readings in `docs/CURRENT_ANAL_ERROR_REVIEW.md`, and
+  some owner labels on "presses fingers to his rim") may need re-review; do not change them without the owner's say-so.
+
 ## What you can and cannot run
 - Works anywhere: `npm install`, `npm test` (the unit suite, about a minute), `npm run build` (type-check and build), `npm run dev`.
 - Needs the owner's fics (kept on the owner's machine, not here): `npm run check` (gold and right-set runs), `npm run regress` (what else changed across all
