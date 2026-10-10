@@ -588,9 +588,7 @@
       "role": "top",
       "wants": true,
       "reviewerConfidence": 1
-    }
-  ],
-  "negatives": [
+    },
     {
       "kind": "scene",
       "card": "anal",
@@ -600,7 +598,7 @@
       "weight": 0.9,
       "source": "chatgpt",
       "marks": {
-        "right": 0,
+        "right": 1,
         "wrong": 0
       },
       "seen": [
@@ -608,9 +606,16 @@
       ],
       "top": "Evan \"Buck\" Buckley",
       "bottom": "Eddie Diaz",
-      "misread": true,
-      "reviewerConfidence": 0.97
-    },
+      "reviewerConfidence": 0.99,
+      "correction": {
+        "date": "2026-10-10",
+        "previousVerdict": "wrong",
+        "reason": "Contact at the anal opening is performed fingering under the new convention; later insertion is not required.",
+        "ownerApproved": true
+      }
+    }
+  ],
+  "negatives": [
     {
       "kind": "scene",
       "card": "blowjob",

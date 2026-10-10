@@ -435,18 +435,27 @@
             "role": ""
           },
           "reportHash": "6ba3dc1c",
-          "verdict": "wrong",
-          "confidence": 0.99,
+          "verdict": "correct",
+          "confidence": 0.96,
           "weight": 0.9,
           "reading": "Marcus rubs his anal area against Daniel\u2019s penis before insertion.",
-          "rationale": "Finger preparation follows this contact, then fingers are explicitly removed and the penis is positioned and inserted. The cited grinding therefore precedes penile penetration.",
-          "errors": [
-            "wrong-act",
-            "external-contact-as-penetration"
-          ],
+          "rationale": "Contact at the anal opening is performed anal sex under the new convention; later insertion is not required.",
+          "errors": [],
           "training": "right-set",
           "contextModelEligible": true,
-          "engineConfidence": 0.9626372585128592
+          "engineConfidence": 0.9626372585128592,
+          "correction": {
+            "date": "2026-10-10",
+            "previousVerdict": "wrong",
+            "previousConfidence": 0.99,
+            "previousRationale": "Finger preparation follows this contact, then fingers are explicitly removed and the penis is positioned and inserted. The cited grinding therefore precedes penile penetration.",
+            "previousErrors": [
+              "wrong-act",
+              "external-contact-as-penetration"
+            ],
+            "reason": "Contact at the anal opening is performed anal sex under the new convention; later insertion is not required.",
+            "ownerApproved": true
+          }
         },
         {
           "id": "foxden-park-16",
@@ -2206,13 +2215,13 @@
         }
       ],
       "counts": {
-        "correct": 25,
-        "wrong": 11,
+        "correct": 26,
+        "wrong": 10,
         "uncertain": 1,
         "imported": 32,
         "withheld": 5,
-        "importedCorrect": 22,
-        "importedWrong": 10,
+        "importedCorrect": 23,
+        "importedWrong": 9,
         "contextModelEligible": 32,
         "inventory": 43,
         "candidateGaps": 17,

@@ -425,6 +425,31 @@
       "who": "Alex Claremont-Diaz",
       "role": "top",
       "wants": true
+    },
+    {
+      "kind": "scene",
+      "card": "anal",
+      "pairing": "Alex Claremont-Diaz/Henry Fox-Mountchristen-Windsor",
+      "h": "6ba3dc1c",
+      "via": "dd-grinds-onto-cock",
+      "weight": 0.9,
+      "source": "chatgpt",
+      "reviewerConfidence": 0.96,
+      "marks": {
+        "right": 1,
+        "wrong": 0
+      },
+      "seen": [
+        "2026-10-10"
+      ],
+      "top": "Alex Claremont-Diaz",
+      "bottom": "Henry Fox-Mountchristen-Windsor",
+      "correction": {
+        "date": "2026-10-10",
+        "previousVerdict": "wrong",
+        "reason": "Contact at the anal opening is performed anal sex under the new convention; later insertion is not required.",
+        "ownerApproved": true
+      }
     }
   ],
   "negatives": [
@@ -434,26 +459,6 @@
       "pairing": "Alex Claremont-Diaz/Henry Fox-Mountchristen-Windsor",
       "h": "8a9a9a62",
       "via": "takes-between-lips",
-      "weight": 0.9,
-      "source": "chatgpt",
-      "reviewerConfidence": 0.99,
-      "marks": {
-        "right": 0,
-        "wrong": 0
-      },
-      "seen": [
-        "2026-10-10"
-      ],
-      "top": "Alex Claremont-Diaz",
-      "bottom": "Henry Fox-Mountchristen-Windsor",
-      "misread": true
-    },
-    {
-      "kind": "scene",
-      "card": "anal",
-      "pairing": "Alex Claremont-Diaz/Henry Fox-Mountchristen-Windsor",
-      "h": "6ba3dc1c",
-      "via": "dd-grinds-onto-cock",
       "weight": 0.9,
       "source": "chatgpt",
       "reviewerConfidence": 0.99,

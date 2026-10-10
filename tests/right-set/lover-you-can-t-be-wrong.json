@@ -1223,6 +1223,31 @@
       "who": "Steve Harrington",
       "role": "bottom",
       "wants": true
+    },
+    {
+      "kind": "scene",
+      "card": "anal",
+      "pairing": "Steve Harrington/Eddie Munson",
+      "h": "a4d7af55",
+      "via": "fingers-into",
+      "weight": 0.9,
+      "source": "chatgpt",
+      "reviewerConfidence": 0.99,
+      "marks": {
+        "right": 1,
+        "wrong": 0
+      },
+      "seen": [
+        "2026-10-10"
+      ],
+      "top": "Eddie Munson",
+      "bottom": "Steve Harrington",
+      "correction": {
+        "date": "2026-10-10",
+        "previousVerdict": "wrong",
+        "reason": "Contact at the anal opening is performed fingering under the new convention; later insertion is not required.",
+        "ownerApproved": true
+      }
     }
   ],
   "negatives": [
@@ -1444,26 +1469,6 @@
       ],
       "top": "Steve Harrington",
       "bottom": "Eddie Munson",
-      "misread": true
-    },
-    {
-      "kind": "scene",
-      "card": "anal",
-      "pairing": "Steve Harrington/Eddie Munson",
-      "h": "a4d7af55",
-      "via": "fingers-into",
-      "weight": 0.9,
-      "source": "chatgpt",
-      "reviewerConfidence": 0.99,
-      "marks": {
-        "right": 0,
-        "wrong": 0
-      },
-      "seen": [
-        "2026-10-10"
-      ],
-      "top": "Eddie Munson",
-      "bottom": "Steve Harrington",
       "misread": true
     },
     {

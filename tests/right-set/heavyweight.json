@@ -1215,6 +1215,56 @@
       "who": "Dean Winchester",
       "role": "top",
       "wants": true
+    },
+    {
+      "kind": "scene",
+      "card": "anal",
+      "pairing": "Castiel/Dean Winchester",
+      "h": "8925e2cb",
+      "via": "fingers-inside",
+      "weight": 0.9,
+      "source": "chatgpt",
+      "reviewerConfidence": 0.99,
+      "marks": {
+        "right": 1,
+        "wrong": 0
+      },
+      "seen": [
+        "2026-10-10"
+      ],
+      "top": "Castiel",
+      "bottom": "Dean Winchester",
+      "correction": {
+        "date": "2026-10-10",
+        "previousVerdict": "wrong",
+        "reason": "Contact at the anal opening is performed fingering under the new convention; later insertion is not required.",
+        "ownerApproved": true
+      }
+    },
+    {
+      "kind": "scene",
+      "card": "anal",
+      "pairing": "Castiel/Dean Winchester",
+      "h": "8925e2cb",
+      "via": "dd-finger-slips-into",
+      "weight": 0.9,
+      "source": "chatgpt",
+      "reviewerConfidence": 0.99,
+      "marks": {
+        "right": 1,
+        "wrong": 0
+      },
+      "seen": [
+        "2026-10-10"
+      ],
+      "top": "Castiel",
+      "bottom": "Dean Winchester",
+      "correction": {
+        "date": "2026-10-10",
+        "previousVerdict": "wrong",
+        "reason": "Contact at the anal opening is performed fingering under the new convention; later insertion is not required.",
+        "ownerApproved": true
+      }
     }
   ],
   "negatives": [
@@ -1304,46 +1354,6 @@
       "pairing": "Castiel/Dean Winchester",
       "h": "d0c74b9d",
       "via": "pushed-in",
-      "weight": 0.9,
-      "source": "chatgpt",
-      "reviewerConfidence": 0.99,
-      "marks": {
-        "right": 0,
-        "wrong": 0
-      },
-      "seen": [
-        "2026-10-10"
-      ],
-      "top": "Castiel",
-      "bottom": "Dean Winchester",
-      "misread": true
-    },
-    {
-      "kind": "scene",
-      "card": "anal",
-      "pairing": "Castiel/Dean Winchester",
-      "h": "8925e2cb",
-      "via": "fingers-inside",
-      "weight": 0.9,
-      "source": "chatgpt",
-      "reviewerConfidence": 0.99,
-      "marks": {
-        "right": 0,
-        "wrong": 0
-      },
-      "seen": [
-        "2026-10-10"
-      ],
-      "top": "Castiel",
-      "bottom": "Dean Winchester",
-      "misread": true
-    },
-    {
-      "kind": "scene",
-      "card": "anal",
-      "pairing": "Castiel/Dean Winchester",
-      "h": "8925e2cb",
-      "via": "dd-finger-slips-into",
       "weight": 0.9,
       "source": "chatgpt",
       "reviewerConfidence": 0.99,

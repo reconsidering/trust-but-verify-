@@ -1008,17 +1008,26 @@
             "role": ""
           },
           "reportHash": "a4d7af55",
-          "verdict": "wrong",
+          "verdict": "correct",
           "confidence": 0.99,
           "weight": 0.9,
           "reading": "Eddie presses his thumb against Steve\u2019s anus while his penis remains inside.",
-          "rationale": "Thumb insertion happens later; the cited moment establishes external pressure only.",
-          "errors": [
-            "external-versus-insertion"
-          ],
+          "rationale": "Contact at the anal opening is performed fingering under the new convention; later insertion is not required.",
+          "errors": [],
           "training": "right-set",
           "contextModelEligible": true,
-          "engineConfidence": 0.9601528293833232
+          "engineConfidence": 0.9601528293833232,
+          "correction": {
+            "date": "2026-10-10",
+            "previousVerdict": "wrong",
+            "previousConfidence": 0.99,
+            "previousRationale": "Thumb insertion happens later; the cited moment establishes external pressure only.",
+            "previousErrors": [
+              "external-versus-insertion"
+            ],
+            "reason": "Contact at the anal opening is performed fingering under the new convention; later insertion is not required.",
+            "ownerApproved": true
+          }
         },
         {
           "id": "lover-you-cant-be-wrong-38",
@@ -5082,13 +5091,13 @@
         }
       ],
       "counts": {
-        "correct": 67,
-        "wrong": 33,
+        "correct": 68,
+        "wrong": 32,
         "uncertain": 4,
         "imported": 94,
         "withheld": 10,
-        "importedCorrect": 63,
-        "importedWrong": 31,
+        "importedCorrect": 64,
+        "importedWrong": 30,
         "contextModelEligible": 85,
         "inventory": 63,
         "candidateGaps": 35,
@@ -6811,18 +6820,27 @@
             "role": ""
           },
           "reportHash": "8925e2cb",
-          "verdict": "wrong",
+          "verdict": "correct",
           "confidence": 0.99,
           "weight": 0.9,
           "reading": "Castiel circles Dean\u2019s anal opening externally before inserting a finger later.",
-          "rationale": "The next paragraph explicitly says the fingertips have not yet entered; actual insertion starts4108.",
-          "errors": [
-            "wrong-occurrence",
-            "external-contact-not-insertion"
-          ],
+          "rationale": "Contact at the anal opening is performed fingering under the new convention; later insertion is not required.",
+          "errors": [],
           "training": "right-set",
           "contextModelEligible": true,
-          "engineConfidence": 0.9206092694726441
+          "engineConfidence": 0.9206092694726441,
+          "correction": {
+            "date": "2026-10-10",
+            "previousVerdict": "wrong",
+            "previousConfidence": 0.99,
+            "previousRationale": "The next paragraph explicitly says the fingertips have not yet entered; actual insertion starts4108.",
+            "previousErrors": [
+              "wrong-occurrence",
+              "external-contact-not-insertion"
+            ],
+            "reason": "Contact at the anal opening is performed fingering under the new convention; later insertion is not required.",
+            "ownerApproved": true
+          }
         },
         {
           "id": "heavyweight-19",
@@ -6839,18 +6857,27 @@
             "role": ""
           },
           "reportHash": "8925e2cb",
-          "verdict": "wrong",
+          "verdict": "correct",
           "confidence": 0.99,
           "weight": 0.9,
           "reading": "Castiel circles Dean\u2019s anal opening externally before inserting a finger later.",
-          "rationale": "Forward context explicitly negates insertion so far despite the ambiguous verb in this sentence.",
-          "errors": [
-            "wrong-occurrence",
-            "external-contact-not-insertion"
-          ],
+          "rationale": "Contact at the anal opening is performed fingering under the new convention; later insertion is not required.",
+          "errors": [],
           "training": "right-set",
           "contextModelEligible": true,
-          "engineConfidence": 0.9115642060805746
+          "engineConfidence": 0.9115642060805746,
+          "correction": {
+            "date": "2026-10-10",
+            "previousVerdict": "wrong",
+            "previousConfidence": 0.99,
+            "previousRationale": "Forward context explicitly negates insertion so far despite the ambiguous verb in this sentence.",
+            "previousErrors": [
+              "wrong-occurrence",
+              "external-contact-not-insertion"
+            ],
+            "reason": "Contact at the anal opening is performed fingering under the new convention; later insertion is not required.",
+            "ownerApproved": true
+          }
         },
         {
           "id": "heavyweight-20",
@@ -11512,13 +11539,13 @@
         }
       ],
       "counts": {
-        "correct": 67,
-        "wrong": 30,
+        "correct": 69,
+        "wrong": 28,
         "uncertain": 4,
         "imported": 92,
         "withheld": 9,
-        "importedCorrect": 62,
-        "importedWrong": 30,
+        "importedCorrect": 64,
+        "importedWrong": 28,
         "contextModelEligible": 85,
         "inventory": 88,
         "candidateGaps": 49,

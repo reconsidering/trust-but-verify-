@@ -9507,19 +9507,28 @@
             "b": "Eddie Diaz",
             "role": ""
           },
-          "verdict": "wrong",
-          "confidence": 0.97,
+          "verdict": "correct",
+          "confidence": 0.99,
           "weight": 0.9,
           "reading": "Arden brushes Blake anal rim externally before inserting a finger in the next paragraph.",
-          "rationale": "This sentence reports contact to the hole, not inserted fingers. External anal teasing is true but performed penetrative fingering is premature.",
-          "errors": [
-            "act-type",
-            "penetration-not-yet-performed"
-          ],
+          "rationale": "Contact at the anal opening is performed fingering under the new convention; later insertion is not required.",
+          "errors": [],
           "training": "right-set",
           "reportHash": "104596f9",
           "engineConfidence": 0.9705759443680045,
-          "contextModelEligible": true
+          "contextModelEligible": true,
+          "correction": {
+            "date": "2026-10-10",
+            "previousVerdict": "wrong",
+            "previousConfidence": 0.97,
+            "previousRationale": "This sentence reports contact to the hole, not inserted fingers. External anal teasing is true but performed penetrative fingering is premature.",
+            "previousErrors": [
+              "act-type",
+              "penetration-not-yet-performed"
+            ],
+            "reason": "Contact at the anal opening is performed fingering under the new convention; later insertion is not required.",
+            "ownerApproved": true
+          }
         },
         {
           "id": "dogbird-3",
@@ -12217,13 +12226,13 @@
         }
       ],
       "counts": {
-        "correct": 52,
-        "wrong": 16,
+        "correct": 53,
+        "wrong": 15,
         "uncertain": 4,
         "imported": 39,
         "withheld": 33,
-        "importedCorrect": 30,
-        "importedWrong": 9,
+        "importedCorrect": 31,
+        "importedWrong": 8,
         "inventory": 36,
         "candidateGaps": 25,
         "candidateMissedActs": 6,
