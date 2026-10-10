@@ -42,6 +42,11 @@ describe('finger/toy handoff: direct finger anatomy',()=>{
 describe('finger/toy handoff: reinsertion guard',()=>{
   it('F05: withdrawal and explicit reinsertion retain the finger instrument',()=>paired('Morgan pushed one finger into Rowan’s anus.\n\nMorgan draws his finger out and presses in again.',finger,2));
   it('a body-part reaction does not become penetration',()=>none('Morgan’s fingers flex, pressing into a cushion.',finger));
+  it('an explicit penis after withdrawal overrides finger reinsertion wording',()=>{
+    const hits=run('Morgan pushed one finger into Rowan’s anus.\n\nMorgan draws his finger out and presses in again with his cock.');
+    expect(hits.some(h=>h.para===2&&finger(h))).toBe(false);
+    expect(hits.some(h=>h.para===2&&h.kind==='act'&&h.act==='anal sex')).toBe(true);
+  });
   it('a condom after withdrawal ends fingers',()=>{
     const hits=run('Morgan pushed one finger into Rowan’s anus.\n\nMorgan draws his finger out, puts on a condom and presses in again.');
     expect(hits.filter(h=>h.para===2&&finger(h))).toEqual([]);

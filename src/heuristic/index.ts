@@ -2440,7 +2440,8 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
       const boundary=preceding.reduce((last,p,i)=>SCENE_BREAK.test(p)||CHAPTER_RE.test(p)?i:last,-1);
       const prior = [...preceding.slice(boundary+1),para.slice(0,at),sent.slice(0,m.index!)].join(" ");
       const trailing=sent.slice(m.index!+matchText.length);
-      const instrument=(reinsertedFinger(matchText+sent.slice(m.index!+matchText.length,m.index!+matchText.length+15),sent.slice(0,m.index!)) ? "finger" : undefined) ?? continuationInstrument(matchText,"",trailing) ??
+      const instrument=continuationInstrument(matchText,"",trailing) ??
+        (reinsertedFinger(matchText+sent.slice(m.index!+matchText.length,m.index!+matchText.length+15),sent.slice(0,m.index!)) ? "finger" : undefined) ??
         (!PENIS_CTX.test(para) ? continuationInstrument(matchText,prior,trailing) : undefined);
       const following=paras.slice(pi+1,pi+3);
       const confirmedFinger=!instrument && !PENIS_CTX.test(para) && following.some(p=>/^\s*(?:one|two|three|\d+)\s+fingers?\s+(?:in|inside)\b/i.test(p));

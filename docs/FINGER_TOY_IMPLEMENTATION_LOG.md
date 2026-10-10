@@ -64,3 +64,7 @@ The reproduction failed before the correction and the combined target/round95/96
 Added an explicit remembered-finger control (historical, not performed) and a future toy-size control with an explicit anal target so the pattern actually fires. The planning test reproduced a false performed self-use reading. New `review-self-*` patterns now retain conditional/future/attempt auxiliaries as wanted readings, while actual placement remains performed. This is scoped to the new wording, not a rewrite of all legacy self-use behavior. Combined targeted suite: 45/45 passed.
 
 Started a fresh full frozen-inventory replay on the final source. Stopped the stale first `check` after two default-heap failures/code changes and restarted the full check with `--jobs 2 --heap 8000`; stale output is not a final pass. Full tagged/tag-free regression against `97d8341` continues, reusing its completed baseline cache where available. No model regeneration, label import or accepted-baseline update was run.
+
+## Iteration 8: explicit replacement instrument wins
+
+Final code review found the reinsertion fallback could override an explicitly named penis later in the entry clause. Reproduced it with a failing adult clinical withdrawal/entry test. Reordered instrument selection so direct match/explicit trailing evidence wins, then the reinsertion fallback, then earlier context. Combined tests: 46/46 passed. This is the last source change before final validation; restarted stale full checks/replay so their fingerprints and results correspond to the final source.
