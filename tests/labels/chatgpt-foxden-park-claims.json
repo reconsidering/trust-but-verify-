@@ -1,0 +1,490 @@
+{
+  "schema": "reviewed-claims/v1",
+  "date": "2026-10-10",
+  "reviewer": "chatgpt",
+  "weight": 0.9,
+  "minimumReviewerConfidence": 0.95,
+  "labels": {},
+  "answers": [
+    {
+      "id": "foxden-park-0",
+      "key": "sucked~elided#d704d691",
+      "claim": {
+        "fic": "foxden-park.html",
+        "sourceSha": "0967cc1dbfbb72de0587bb34011435ac3814f9becbbf788353232e37846db0ba",
+        "paragraph": 716,
+        "pattern": "sucked~elided",
+        "act": "blowjob",
+        "kind": "act",
+        "a": "Alex Claremont-Diaz",
+        "b": "Henry Fox-Mountchristen-Windsor",
+        "role": ""
+      }
+    },
+    {
+      "id": "foxden-park-1",
+      "key": "took-in-mouth~elided#d704d691",
+      "claim": {
+        "fic": "foxden-park.html",
+        "sourceSha": "0967cc1dbfbb72de0587bb34011435ac3814f9becbbf788353232e37846db0ba",
+        "paragraph": 716,
+        "pattern": "took-in-mouth~elided",
+        "act": "blowjob",
+        "kind": "act",
+        "a": "Alex Claremont-Diaz",
+        "b": "Henry Fox-Mountchristen-Windsor",
+        "role": ""
+      }
+    },
+    {
+      "id": "foxden-park-2",
+      "key": "takes-between-lips~elided#d704d691",
+      "claim": {
+        "fic": "foxden-park.html",
+        "sourceSha": "0967cc1dbfbb72de0587bb34011435ac3814f9becbbf788353232e37846db0ba",
+        "paragraph": 716,
+        "pattern": "takes-between-lips~elided",
+        "act": "blowjob",
+        "kind": "act",
+        "a": "Alex Claremont-Diaz",
+        "b": "Henry Fox-Mountchristen-Windsor",
+        "role": ""
+      }
+    },
+    {
+      "id": "foxden-park-3",
+      "key": "sucked#ab68acc9",
+      "claim": {
+        "fic": "foxden-park.html",
+        "sourceSha": "0967cc1dbfbb72de0587bb34011435ac3814f9becbbf788353232e37846db0ba",
+        "paragraph": 717,
+        "pattern": "sucked",
+        "act": "blowjob",
+        "kind": "act",
+        "a": "Alex Claremont-Diaz",
+        "b": "Henry Fox-Mountchristen-Windsor",
+        "role": ""
+      }
+    },
+    {
+      "id": "foxden-park-4",
+      "key": "took-in-mouth~elided#c8c14365",
+      "claim": {
+        "fic": "foxden-park.html",
+        "sourceSha": "0967cc1dbfbb72de0587bb34011435ac3814f9becbbf788353232e37846db0ba",
+        "paragraph": 912,
+        "pattern": "took-in-mouth~elided",
+        "act": "blowjob",
+        "kind": "act",
+        "a": "Henry Fox-Mountchristen-Windsor",
+        "b": "Alex Claremont-Diaz",
+        "role": ""
+      }
+    },
+    {
+      "id": "foxden-park-5",
+      "key": "bobbed-head#aba16bf8",
+      "claim": {
+        "fic": "foxden-park.html",
+        "sourceSha": "0967cc1dbfbb72de0587bb34011435ac3814f9becbbf788353232e37846db0ba",
+        "paragraph": 913,
+        "pattern": "bobbed-head",
+        "act": "blowjob",
+        "kind": "act",
+        "a": "Henry Fox-Mountchristen-Windsor",
+        "b": "Alex Claremont-Diaz",
+        "role": ""
+      }
+    },
+    {
+      "id": "foxden-park-6",
+      "key": "come-in-mouth~elided#fba318f6",
+      "claim": {
+        "fic": "foxden-park.html",
+        "sourceSha": "0967cc1dbfbb72de0587bb34011435ac3814f9becbbf788353232e37846db0ba",
+        "paragraph": 915,
+        "pattern": "come-in-mouth~elided",
+        "act": "blowjob",
+        "kind": "act",
+        "a": "Henry Fox-Mountchristen-Windsor",
+        "b": "Alex Claremont-Diaz",
+        "role": ""
+      }
+    },
+    {
+      "id": "foxden-park-7",
+      "key": "came-in-mouth~elided#fba318f6",
+      "claim": {
+        "fic": "foxden-park.html",
+        "sourceSha": "0967cc1dbfbb72de0587bb34011435ac3814f9becbbf788353232e37846db0ba",
+        "paragraph": 915,
+        "pattern": "came-in-mouth~elided",
+        "act": "blowjob",
+        "kind": "act",
+        "a": "Henry Fox-Mountchristen-Windsor",
+        "b": "Alex Claremont-Diaz",
+        "role": ""
+      }
+    },
+    {
+      "id": "foxden-park-8",
+      "key": "sucked#dc4058f9",
+      "claim": {
+        "fic": "foxden-park.html",
+        "sourceSha": "0967cc1dbfbb72de0587bb34011435ac3814f9becbbf788353232e37846db0ba",
+        "paragraph": 916,
+        "pattern": "sucked",
+        "act": "blowjob",
+        "kind": "act",
+        "a": "Henry Fox-Mountchristen-Windsor",
+        "b": "Alex Claremont-Diaz",
+        "role": ""
+      }
+    },
+    {
+      "id": "foxden-park-9",
+      "key": "took-in-mouth~elided#776bb9a4",
+      "claim": {
+        "fic": "foxden-park.html",
+        "sourceSha": "0967cc1dbfbb72de0587bb34011435ac3814f9becbbf788353232e37846db0ba",
+        "paragraph": 922,
+        "pattern": "took-in-mouth~elided",
+        "act": "blowjob",
+        "kind": "act",
+        "a": "Alex Claremont-Diaz",
+        "b": "Henry Fox-Mountchristen-Windsor",
+        "role": ""
+      }
+    },
+    {
+      "id": "foxden-park-10",
+      "key": "dd-takes-into-mouth~elided#776bb9a4",
+      "claim": {
+        "fic": "foxden-park.html",
+        "sourceSha": "0967cc1dbfbb72de0587bb34011435ac3814f9becbbf788353232e37846db0ba",
+        "paragraph": 922,
+        "pattern": "dd-takes-into-mouth~elided",
+        "act": "blowjob",
+        "kind": "act",
+        "a": "Alex Claremont-Diaz",
+        "b": "Henry Fox-Mountchristen-Windsor",
+        "role": ""
+      }
+    },
+    {
+      "id": "foxden-park-14",
+      "key": "takes-between-lips#3869eabd",
+      "claim": {
+        "fic": "foxden-park.html",
+        "sourceSha": "0967cc1dbfbb72de0587bb34011435ac3814f9becbbf788353232e37846db0ba",
+        "paragraph": 1117,
+        "pattern": "takes-between-lips",
+        "act": "blowjob",
+        "kind": "act",
+        "a": "Alex Claremont-Diaz",
+        "b": "Henry Fox-Mountchristen-Windsor",
+        "role": ""
+      }
+    },
+    {
+      "id": "foxden-park-15",
+      "key": "dd-grinds-onto-cock#af6573df",
+      "claim": {
+        "fic": "foxden-park.html",
+        "sourceSha": "0967cc1dbfbb72de0587bb34011435ac3814f9becbbf788353232e37846db0ba",
+        "paragraph": 1129,
+        "pattern": "dd-grinds-onto-cock",
+        "act": "anal sex",
+        "kind": "act",
+        "a": "Alex Claremont-Diaz",
+        "b": "Henry Fox-Mountchristen-Windsor",
+        "role": ""
+      }
+    },
+    {
+      "id": "foxden-park-16",
+      "key": "fuck~elided#59a5f04f",
+      "claim": {
+        "fic": "foxden-park.html",
+        "sourceSha": "0967cc1dbfbb72de0587bb34011435ac3814f9becbbf788353232e37846db0ba",
+        "paragraph": 1155,
+        "pattern": "fuck~elided",
+        "act": "anal sex",
+        "kind": "act",
+        "a": "Catherine Fox-Mountchristen-Windsor",
+        "b": "Henry Fox-Mountchristen-Windsor",
+        "role": ""
+      }
+    },
+    {
+      "id": "foxden-park-17",
+      "key": "push-into#59a5f04f",
+      "claim": {
+        "fic": "foxden-park.html",
+        "sourceSha": "0967cc1dbfbb72de0587bb34011435ac3814f9becbbf788353232e37846db0ba",
+        "paragraph": 1155,
+        "pattern": "push-into",
+        "act": "anal sex",
+        "kind": "act",
+        "a": "Alex Claremont-Diaz",
+        "b": "Henry Fox-Mountchristen-Windsor",
+        "role": ""
+      }
+    },
+    {
+      "id": "foxden-park-18",
+      "key": "fill#f0bb2108",
+      "claim": {
+        "fic": "foxden-park.html",
+        "sourceSha": "0967cc1dbfbb72de0587bb34011435ac3814f9becbbf788353232e37846db0ba",
+        "paragraph": 1157,
+        "pattern": "fill",
+        "act": "anal sex",
+        "kind": "act",
+        "a": "Henry Fox-Mountchristen-Windsor",
+        "b": "Alex Claremont-Diaz",
+        "role": ""
+      }
+    },
+    {
+      "id": "foxden-park-19",
+      "key": "dd2-pulled-out-of-him#db598754",
+      "claim": {
+        "fic": "foxden-park.html",
+        "sourceSha": "0967cc1dbfbb72de0587bb34011435ac3814f9becbbf788353232e37846db0ba",
+        "paragraph": 1161,
+        "pattern": "dd2-pulled-out-of-him",
+        "act": "anal sex",
+        "kind": "act",
+        "a": "Henry Fox-Mountchristen-Windsor",
+        "b": "Alex Claremont-Diaz",
+        "role": ""
+      }
+    },
+    {
+      "id": "foxden-park-20",
+      "key": "fuck#a53cd3d7",
+      "claim": {
+        "fic": "foxden-park.html",
+        "sourceSha": "0967cc1dbfbb72de0587bb34011435ac3814f9becbbf788353232e37846db0ba",
+        "paragraph": 1333,
+        "pattern": "fuck",
+        "act": "anal sex",
+        "kind": "act",
+        "a": "Alex Claremont-Diaz",
+        "b": "Henry Fox-Mountchristen-Windsor",
+        "role": ""
+      }
+    },
+    {
+      "id": "foxden-park-21",
+      "key": "push-into~elided#6263de3f",
+      "claim": {
+        "fic": "foxden-park.html",
+        "sourceSha": "0967cc1dbfbb72de0587bb34011435ac3814f9becbbf788353232e37846db0ba",
+        "paragraph": 1334,
+        "pattern": "push-into~elided",
+        "act": "fingering",
+        "kind": "act",
+        "a": "Percy \"Pez\" Okonjo",
+        "b": "Alex Claremont-Diaz",
+        "role": ""
+      }
+    },
+    {
+      "id": "foxden-park-22",
+      "key": "sub-yield-self#ee2dcfeb",
+      "claim": {
+        "fic": "foxden-park.html",
+        "sourceSha": "0967cc1dbfbb72de0587bb34011435ac3814f9becbbf788353232e37846db0ba",
+        "paragraph": 174,
+        "pattern": "sub-yield-self",
+        "act": "submitting",
+        "kind": "behavior",
+        "a": "Henry Fox-Mountchristen-Windsor",
+        "b": "Alex Claremont-Diaz",
+        "role": "bottom"
+      }
+    },
+    {
+      "id": "foxden-park-25",
+      "key": "grab-ass~elided#32a49985",
+      "claim": {
+        "fic": "foxden-park.html",
+        "sourceSha": "0967cc1dbfbb72de0587bb34011435ac3814f9becbbf788353232e37846db0ba",
+        "paragraph": 701,
+        "pattern": "grab-ass~elided",
+        "act": "grabbing an ass",
+        "kind": "touch",
+        "a": "Alex Claremont-Diaz",
+        "b": "Henry Fox-Mountchristen-Windsor",
+        "role": "top"
+      }
+    },
+    {
+      "id": "foxden-park-26",
+      "key": "sinks-to-floor#48a5b273",
+      "claim": {
+        "fic": "foxden-park.html",
+        "sourceSha": "0967cc1dbfbb72de0587bb34011435ac3814f9becbbf788353232e37846db0ba",
+        "paragraph": 708,
+        "pattern": "sinks-to-floor",
+        "act": "kneeling",
+        "kind": "prep",
+        "a": "Henry Fox-Mountchristen-Windsor",
+        "b": "Alex Claremont-Diaz",
+        "role": "bottom"
+      }
+    },
+    {
+      "id": "foxden-park-27",
+      "key": "dd-hj-fingers-around~elided#186bed4c",
+      "claim": {
+        "fic": "foxden-park.html",
+        "sourceSha": "0967cc1dbfbb72de0587bb34011435ac3814f9becbbf788353232e37846db0ba",
+        "paragraph": 713,
+        "pattern": "dd-hj-fingers-around~elided",
+        "act": "handjob",
+        "kind": "handjob",
+        "a": "Henry Fox-Mountchristen-Windsor",
+        "b": "Alex Claremont-Diaz",
+        "role": "top"
+      }
+    },
+    {
+      "id": "foxden-park-28",
+      "key": "care-soothe~elided#b5023fed",
+      "claim": {
+        "fic": "foxden-park.html",
+        "sourceSha": "0967cc1dbfbb72de0587bb34011435ac3814f9becbbf788353232e37846db0ba",
+        "paragraph": 721,
+        "pattern": "care-soothe~elided",
+        "act": "comforting someone",
+        "kind": "behavior",
+        "a": "Henry Fox-Mountchristen-Windsor",
+        "b": "Alex Claremont-Diaz",
+        "role": "top"
+      }
+    },
+    {
+      "id": "foxden-park-29",
+      "key": "hj-stroke~elided#3ac6b753",
+      "claim": {
+        "fic": "foxden-park.html",
+        "sourceSha": "0967cc1dbfbb72de0587bb34011435ac3814f9becbbf788353232e37846db0ba",
+        "paragraph": 730,
+        "pattern": "hj-stroke~elided",
+        "act": "handjob",
+        "kind": "handjob",
+        "a": "Alex Claremont-Diaz",
+        "b": "Henry Fox-Mountchristen-Windsor",
+        "role": "top"
+      }
+    },
+    {
+      "id": "foxden-park-30",
+      "key": "suck-fingers~elided#42041bda",
+      "claim": {
+        "fic": "foxden-park.html",
+        "sourceSha": "0967cc1dbfbb72de0587bb34011435ac3814f9becbbf788353232e37846db0ba",
+        "paragraph": 786,
+        "pattern": "suck-fingers~elided",
+        "act": "sucking on fingers",
+        "kind": "fingers",
+        "a": "Henry Fox-Mountchristen-Windsor",
+        "b": "Alex Claremont-Diaz",
+        "role": "bottom"
+      }
+    },
+    {
+      "id": "foxden-park-31",
+      "key": "dd-hj-fingers-around~elided#f8b4d15e",
+      "claim": {
+        "fic": "foxden-park.html",
+        "sourceSha": "0967cc1dbfbb72de0587bb34011435ac3814f9becbbf788353232e37846db0ba",
+        "paragraph": 830,
+        "pattern": "dd-hj-fingers-around~elided",
+        "act": "handjob",
+        "kind": "handjob",
+        "a": "Alex Claremont-Diaz",
+        "b": "Henry Fox-Mountchristen-Windsor",
+        "role": "top"
+      }
+    },
+    {
+      "id": "foxden-park-32",
+      "key": "sub-squirm#5fa62a52",
+      "claim": {
+        "fic": "foxden-park.html",
+        "sourceSha": "0967cc1dbfbb72de0587bb34011435ac3814f9becbbf788353232e37846db0ba",
+        "paragraph": 892,
+        "pattern": "sub-squirm",
+        "act": "squirming under someone",
+        "kind": "behavior",
+        "a": "Alex Claremont-Diaz",
+        "b": "Henry Fox-Mountchristen-Windsor",
+        "role": "bottom"
+      }
+    },
+    {
+      "id": "foxden-park-33",
+      "key": "sub-let-lead#dd7f952c",
+      "claim": {
+        "fic": "foxden-park.html",
+        "sourceSha": "0967cc1dbfbb72de0587bb34011435ac3814f9becbbf788353232e37846db0ba",
+        "paragraph": 1102,
+        "pattern": "sub-let-lead",
+        "act": "letting someone lead",
+        "kind": "behavior",
+        "a": "Alex Claremont-Diaz",
+        "b": "Henry Fox-Mountchristen-Windsor",
+        "role": "bottom"
+      }
+    },
+    {
+      "id": "foxden-park-34",
+      "key": "care-soothe#825dae45",
+      "claim": {
+        "fic": "foxden-park.html",
+        "sourceSha": "0967cc1dbfbb72de0587bb34011435ac3814f9becbbf788353232e37846db0ba",
+        "paragraph": 1160,
+        "pattern": "care-soothe",
+        "act": "comforting someone",
+        "kind": "behavior",
+        "a": "Alex Claremont-Diaz",
+        "b": "Henry Fox-Mountchristen-Windsor",
+        "role": "top"
+      }
+    },
+    {
+      "id": "foxden-park-35",
+      "key": "care-soothe~elided#dde47682",
+      "claim": {
+        "fic": "foxden-park.html",
+        "sourceSha": "0967cc1dbfbb72de0587bb34011435ac3814f9becbbf788353232e37846db0ba",
+        "paragraph": 1205,
+        "pattern": "care-soothe~elided",
+        "act": "comforting someone",
+        "kind": "behavior",
+        "a": "Alex Claremont-Diaz",
+        "b": "Henry Fox-Mountchristen-Windsor",
+        "role": "top"
+      }
+    },
+    {
+      "id": "foxden-park-36",
+      "key": "self-own-fingers#420faba0",
+      "claim": {
+        "fic": "foxden-park.html",
+        "sourceSha": "0967cc1dbfbb72de0587bb34011435ac3814f9becbbf788353232e37846db0ba",
+        "paragraph": 1331,
+        "pattern": "self-own-fingers",
+        "act": "fingering himself",
+        "kind": "solo",
+        "a": "Percy \"Pez\" Okonjo",
+        "b": "Henry Fox-Mountchristen-Windsor",
+        "role": "bottom"
+      }
+    }
+  ]
+}

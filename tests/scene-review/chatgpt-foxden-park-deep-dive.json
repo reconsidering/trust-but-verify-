@@ -1,0 +1,2323 @@
+{
+  "schema": "chatgpt-deep-dive-labels/v1",
+  "date": "2026-10-10",
+  "baseCommit": "ca48e3a63251f8705fd0c67d8586c34431db0598",
+  "reviewer": "chatgpt",
+  "weight": 0.9,
+  "minimumReviewerConfidence": 0.95,
+  "cutoffScope": "This conversation and future additions; earlier AI and owner labels unchanged",
+  "fics": [
+    {
+      "file": "foxden-park.html",
+      "title": "Foxden Park",
+      "sourceSha": "0967cc1dbfbb72de0587bb34011435ac3814f9becbbf788353232e37846db0ba",
+      "originalPdfSha": "997da0e1f8f36bad9789f20ce4707f63113016b4e2bee58ddc645be1051faa8a",
+      "pdfPages": 116,
+      "inputFormat": "pdf",
+      "normalization": "scripts/prepare-pdf-sample.mjs; application PDF text joining and extraction, serialized to private HTML. Original PDF title and chapter total supplied from its header.",
+      "paragraphs": 1429,
+      "readCoverage": [
+        {
+          "to": 1428,
+          "from": 0
+        }
+      ],
+      "safety": {
+        "eligible": true,
+        "evidenceParagraphs": [
+          56,
+          516,
+          584,
+          847,
+          1291,
+          1353,
+          1390
+        ],
+        "notes": "Daniel is explicitly21 in current story. Marcus has completed boarding school and attends Oxford, with adult club accommodation and independently owned income-producing property; no numeric age claimed. Children appear only in ordinary family contexts and cannot enter sexual-role training. Adult encounter in hidden study occurs privately behind locked concealed door; a child passes outside without witnessing or participating. Rhetorical self-touch history at518 withheld because temporal age scope is unresolved."
+      },
+      "readings": [
+        {
+          "id": "foxden-park-0",
+          "key": "sucked~elided#d704d691",
+          "claim": {
+            "fic": "foxden-park.html",
+            "sourceSha": "0967cc1dbfbb72de0587bb34011435ac3814f9becbbf788353232e37846db0ba",
+            "paragraph": 716,
+            "pattern": "sucked~elided",
+            "act": "blowjob",
+            "kind": "act",
+            "a": "Alex Claremont-Diaz",
+            "b": "Henry Fox-Mountchristen-Windsor",
+            "role": ""
+          },
+          "reportHash": "4c76b126",
+          "verdict": "correct",
+          "confidence": 0.99,
+          "weight": 0.9,
+          "reading": "Marcus performs oral sex on Daniel in the greenhouse.",
+          "rationale": "The sequence begins with genital hand contact, then mouth contact and oral climax. The roles are stable across the surrounding paragraphs.",
+          "errors": [],
+          "training": "right-set",
+          "contextModelEligible": true,
+          "engineConfidence": 0.8899975218526142
+        },
+        {
+          "id": "foxden-park-1",
+          "key": "took-in-mouth~elided#d704d691",
+          "claim": {
+            "fic": "foxden-park.html",
+            "sourceSha": "0967cc1dbfbb72de0587bb34011435ac3814f9becbbf788353232e37846db0ba",
+            "paragraph": 716,
+            "pattern": "took-in-mouth~elided",
+            "act": "blowjob",
+            "kind": "act",
+            "a": "Alex Claremont-Diaz",
+            "b": "Henry Fox-Mountchristen-Windsor",
+            "role": ""
+          },
+          "reportHash": "4c76b126",
+          "verdict": "correct",
+          "confidence": 0.99,
+          "weight": 0.9,
+          "reading": "Marcus performs oral sex on Daniel in the greenhouse.",
+          "rationale": "The sequence begins with genital hand contact, then mouth contact and oral climax. The roles are stable across the surrounding paragraphs.",
+          "errors": [],
+          "training": "right-set",
+          "contextModelEligible": true,
+          "engineConfidence": 0.9431078696819865
+        },
+        {
+          "id": "foxden-park-2",
+          "key": "takes-between-lips~elided#d704d691",
+          "claim": {
+            "fic": "foxden-park.html",
+            "sourceSha": "0967cc1dbfbb72de0587bb34011435ac3814f9becbbf788353232e37846db0ba",
+            "paragraph": 716,
+            "pattern": "takes-between-lips~elided",
+            "act": "blowjob",
+            "kind": "act",
+            "a": "Alex Claremont-Diaz",
+            "b": "Henry Fox-Mountchristen-Windsor",
+            "role": ""
+          },
+          "reportHash": "4c76b126",
+          "verdict": "correct",
+          "confidence": 0.99,
+          "weight": 0.9,
+          "reading": "Marcus performs oral sex on Daniel in the greenhouse.",
+          "rationale": "The sequence begins with genital hand contact, then mouth contact and oral climax. The roles are stable across the surrounding paragraphs.",
+          "errors": [],
+          "training": "right-set",
+          "contextModelEligible": true,
+          "engineConfidence": 0.9401860453972845
+        },
+        {
+          "id": "foxden-park-3",
+          "key": "sucked#ab68acc9",
+          "claim": {
+            "fic": "foxden-park.html",
+            "sourceSha": "0967cc1dbfbb72de0587bb34011435ac3814f9becbbf788353232e37846db0ba",
+            "paragraph": 717,
+            "pattern": "sucked",
+            "act": "blowjob",
+            "kind": "act",
+            "a": "Alex Claremont-Diaz",
+            "b": "Henry Fox-Mountchristen-Windsor",
+            "role": ""
+          },
+          "reportHash": "d176b4e3",
+          "verdict": "correct",
+          "confidence": 0.99,
+          "weight": 0.9,
+          "reading": "Marcus performs oral sex on Daniel in the greenhouse.",
+          "rationale": "The sequence begins with genital hand contact, then mouth contact and oral climax. The roles are stable across the surrounding paragraphs.",
+          "errors": [],
+          "training": "right-set",
+          "contextModelEligible": true,
+          "engineConfidence": 0.9445562471105455
+        },
+        {
+          "id": "foxden-park-4",
+          "key": "took-in-mouth~elided#c8c14365",
+          "claim": {
+            "fic": "foxden-park.html",
+            "sourceSha": "0967cc1dbfbb72de0587bb34011435ac3814f9becbbf788353232e37846db0ba",
+            "paragraph": 912,
+            "pattern": "took-in-mouth~elided",
+            "act": "blowjob",
+            "kind": "act",
+            "a": "Henry Fox-Mountchristen-Windsor",
+            "b": "Alex Claremont-Diaz",
+            "role": ""
+          },
+          "reportHash": "57d1465a",
+          "verdict": "correct",
+          "confidence": 0.99,
+          "weight": 0.9,
+          "reading": "Daniel performs oral sex on Marcus in the bedroom.",
+          "rationale": "Direct mouth contact, rhythmic oral stimulation and ejaculation into the mouth all agree on the participants.",
+          "errors": [],
+          "training": "right-set",
+          "contextModelEligible": true,
+          "engineConfidence": 0.9586869989184968
+        },
+        {
+          "id": "foxden-park-5",
+          "key": "bobbed-head#aba16bf8",
+          "claim": {
+            "fic": "foxden-park.html",
+            "sourceSha": "0967cc1dbfbb72de0587bb34011435ac3814f9becbbf788353232e37846db0ba",
+            "paragraph": 913,
+            "pattern": "bobbed-head",
+            "act": "blowjob",
+            "kind": "act",
+            "a": "Henry Fox-Mountchristen-Windsor",
+            "b": "Alex Claremont-Diaz",
+            "role": ""
+          },
+          "reportHash": "8f3fc2f0",
+          "verdict": "correct",
+          "confidence": 0.99,
+          "weight": 0.9,
+          "reading": "Daniel performs oral sex on Marcus in the bedroom.",
+          "rationale": "Direct mouth contact, rhythmic oral stimulation and ejaculation into the mouth all agree on the participants.",
+          "errors": [],
+          "training": "right-set",
+          "contextModelEligible": true,
+          "engineConfidence": 0.9444155272649933
+        },
+        {
+          "id": "foxden-park-6",
+          "key": "come-in-mouth~elided#fba318f6",
+          "claim": {
+            "fic": "foxden-park.html",
+            "sourceSha": "0967cc1dbfbb72de0587bb34011435ac3814f9becbbf788353232e37846db0ba",
+            "paragraph": 915,
+            "pattern": "come-in-mouth~elided",
+            "act": "blowjob",
+            "kind": "act",
+            "a": "Henry Fox-Mountchristen-Windsor",
+            "b": "Alex Claremont-Diaz",
+            "role": ""
+          },
+          "reportHash": "27aef70f",
+          "verdict": "correct",
+          "confidence": 0.99,
+          "weight": 0.9,
+          "reading": "Daniel performs oral sex on Marcus in the bedroom.",
+          "rationale": "Direct mouth contact, rhythmic oral stimulation and ejaculation into the mouth all agree on the participants.",
+          "errors": [],
+          "training": "right-set",
+          "contextModelEligible": true,
+          "engineConfidence": 0.8337075026216747
+        },
+        {
+          "id": "foxden-park-7",
+          "key": "came-in-mouth~elided#fba318f6",
+          "claim": {
+            "fic": "foxden-park.html",
+            "sourceSha": "0967cc1dbfbb72de0587bb34011435ac3814f9becbbf788353232e37846db0ba",
+            "paragraph": 915,
+            "pattern": "came-in-mouth~elided",
+            "act": "blowjob",
+            "kind": "act",
+            "a": "Henry Fox-Mountchristen-Windsor",
+            "b": "Alex Claremont-Diaz",
+            "role": ""
+          },
+          "reportHash": "27aef70f",
+          "verdict": "correct",
+          "confidence": 0.99,
+          "weight": 0.9,
+          "reading": "Daniel performs oral sex on Marcus in the bedroom.",
+          "rationale": "Direct mouth contact, rhythmic oral stimulation and ejaculation into the mouth all agree on the participants.",
+          "errors": [],
+          "training": "right-set",
+          "contextModelEligible": true,
+          "engineConfidence": 0.8566851151185498
+        },
+        {
+          "id": "foxden-park-8",
+          "key": "sucked#dc4058f9",
+          "claim": {
+            "fic": "foxden-park.html",
+            "sourceSha": "0967cc1dbfbb72de0587bb34011435ac3814f9becbbf788353232e37846db0ba",
+            "paragraph": 916,
+            "pattern": "sucked",
+            "act": "blowjob",
+            "kind": "act",
+            "a": "Henry Fox-Mountchristen-Windsor",
+            "b": "Alex Claremont-Diaz",
+            "role": ""
+          },
+          "reportHash": "6ae7b426",
+          "verdict": "correct",
+          "confidence": 0.99,
+          "weight": 0.9,
+          "reading": "Daniel performs oral sex on Marcus in the bedroom.",
+          "rationale": "Direct mouth contact, rhythmic oral stimulation and ejaculation into the mouth all agree on the participants.",
+          "errors": [],
+          "training": "right-set",
+          "contextModelEligible": true,
+          "engineConfidence": 0.8906110091481726
+        },
+        {
+          "id": "foxden-park-9",
+          "key": "took-in-mouth~elided#776bb9a4",
+          "claim": {
+            "fic": "foxden-park.html",
+            "sourceSha": "0967cc1dbfbb72de0587bb34011435ac3814f9becbbf788353232e37846db0ba",
+            "paragraph": 922,
+            "pattern": "took-in-mouth~elided",
+            "act": "blowjob",
+            "kind": "act",
+            "a": "Alex Claremont-Diaz",
+            "b": "Henry Fox-Mountchristen-Windsor",
+            "role": ""
+          },
+          "reportHash": "c8141c70",
+          "verdict": "correct",
+          "confidence": 0.99,
+          "weight": 0.9,
+          "reading": "Marcus performs oral sex on Daniel in the bedroom.",
+          "rationale": "Following the opposite-direction oral encounter, Marcus moves down Daniel\u2019s body and takes his penis into his mouth.",
+          "errors": [],
+          "training": "right-set",
+          "contextModelEligible": true,
+          "engineConfidence": 0.9651630806508618
+        },
+        {
+          "id": "foxden-park-10",
+          "key": "dd-takes-into-mouth~elided#776bb9a4",
+          "claim": {
+            "fic": "foxden-park.html",
+            "sourceSha": "0967cc1dbfbb72de0587bb34011435ac3814f9becbbf788353232e37846db0ba",
+            "paragraph": 922,
+            "pattern": "dd-takes-into-mouth~elided",
+            "act": "blowjob",
+            "kind": "act",
+            "a": "Alex Claremont-Diaz",
+            "b": "Henry Fox-Mountchristen-Windsor",
+            "role": ""
+          },
+          "reportHash": "c8141c70",
+          "verdict": "correct",
+          "confidence": 0.99,
+          "weight": 0.9,
+          "reading": "Marcus performs oral sex on Daniel in the bedroom.",
+          "rationale": "Following the opposite-direction oral encounter, Marcus moves down Daniel\u2019s body and takes his penis into his mouth.",
+          "errors": [],
+          "training": "right-set",
+          "contextModelEligible": true,
+          "engineConfidence": 0.9353904445069692
+        },
+        {
+          "id": "foxden-park-11",
+          "key": "sucked#3869eabd",
+          "claim": {
+            "fic": "foxden-park.html",
+            "sourceSha": "0967cc1dbfbb72de0587bb34011435ac3814f9becbbf788353232e37846db0ba",
+            "paragraph": 1117,
+            "pattern": "sucked",
+            "act": "blowjob",
+            "kind": "act",
+            "a": "Alex Claremont-Diaz",
+            "b": "Henry Fox-Mountchristen-Windsor",
+            "role": ""
+          },
+          "reportHash": "8a9a9a62",
+          "verdict": "wrong",
+          "confidence": 0.99,
+          "weight": 0.9,
+          "reading": "Daniel performs oral sex on Marcus in the cottage.",
+          "rationale": "The opening subject carries over from Daniel sitting up; Marcus is standing and receives the oral stimulation. This duplicate assigns the opposite direction.",
+          "errors": [
+            "roles-reversed",
+            "pronoun-resolution"
+          ],
+          "training": "withheld",
+          "contextModelEligible": false,
+          "reason": "More than one detected claim shares the legacy pattern/short-hash key",
+          "engineConfidence": 0.922406461489195
+        },
+        {
+          "id": "foxden-park-12",
+          "key": "sucked#3869eabd",
+          "claim": {
+            "fic": "foxden-park.html",
+            "sourceSha": "0967cc1dbfbb72de0587bb34011435ac3814f9becbbf788353232e37846db0ba",
+            "paragraph": 1117,
+            "pattern": "sucked",
+            "act": "blowjob",
+            "kind": "act",
+            "a": "Henry Fox-Mountchristen-Windsor",
+            "b": "Alex Claremont-Diaz",
+            "role": ""
+          },
+          "reportHash": "8a9a9a62",
+          "verdict": "correct",
+          "confidence": 0.99,
+          "weight": 0.9,
+          "reading": "Daniel performs oral sex on Marcus in the cottage.",
+          "rationale": "The preceding action identifies Daniel as the person sitting up and reaching toward Marcus; Marcus stands above him receiving oral sex.",
+          "errors": [],
+          "training": "withheld",
+          "contextModelEligible": false,
+          "reason": "More than one detected claim shares the legacy pattern/short-hash key",
+          "engineConfidence": 0.9417283860494531
+        },
+        {
+          "id": "foxden-park-13",
+          "key": "sucked~elided#3869eabd",
+          "claim": {
+            "fic": "foxden-park.html",
+            "sourceSha": "0967cc1dbfbb72de0587bb34011435ac3814f9becbbf788353232e37846db0ba",
+            "paragraph": 1117,
+            "pattern": "sucked~elided",
+            "act": "blowjob",
+            "kind": "act",
+            "a": "Henry Fox-Mountchristen-Windsor",
+            "b": "Alex Claremont-Diaz",
+            "role": ""
+          },
+          "reportHash": "8a9a9a62",
+          "verdict": "correct",
+          "confidence": 0.99,
+          "weight": 0.9,
+          "reading": "Daniel performs oral sex on Marcus in the cottage.",
+          "rationale": "The preceding action identifies Daniel as the person sitting up and reaching toward Marcus; Marcus stands above him receiving oral sex.",
+          "errors": [],
+          "training": "withheld",
+          "contextModelEligible": false,
+          "reason": "More than one detected claim shares the legacy pattern/short-hash key",
+          "engineConfidence": 0.9158230329281402
+        },
+        {
+          "id": "foxden-park-14",
+          "key": "takes-between-lips#3869eabd",
+          "claim": {
+            "fic": "foxden-park.html",
+            "sourceSha": "0967cc1dbfbb72de0587bb34011435ac3814f9becbbf788353232e37846db0ba",
+            "paragraph": 1117,
+            "pattern": "takes-between-lips",
+            "act": "blowjob",
+            "kind": "act",
+            "a": "Alex Claremont-Diaz",
+            "b": "Henry Fox-Mountchristen-Windsor",
+            "role": ""
+          },
+          "reportHash": "8a9a9a62",
+          "verdict": "wrong",
+          "confidence": 0.99,
+          "weight": 0.9,
+          "reading": "Daniel performs oral sex on Marcus in the cottage.",
+          "rationale": "This duplicate of the same oral sentence reverses the clearly established performer and receiver.",
+          "errors": [
+            "roles-reversed",
+            "pronoun-resolution"
+          ],
+          "training": "right-set",
+          "contextModelEligible": true,
+          "engineConfidence": 0.9593488961258901
+        },
+        {
+          "id": "foxden-park-15",
+          "key": "dd-grinds-onto-cock#af6573df",
+          "claim": {
+            "fic": "foxden-park.html",
+            "sourceSha": "0967cc1dbfbb72de0587bb34011435ac3814f9becbbf788353232e37846db0ba",
+            "paragraph": 1129,
+            "pattern": "dd-grinds-onto-cock",
+            "act": "anal sex",
+            "kind": "act",
+            "a": "Alex Claremont-Diaz",
+            "b": "Henry Fox-Mountchristen-Windsor",
+            "role": ""
+          },
+          "reportHash": "6ba3dc1c",
+          "verdict": "wrong",
+          "confidence": 0.99,
+          "weight": 0.9,
+          "reading": "Marcus rubs his anal area against Daniel\u2019s penis before insertion.",
+          "rationale": "Finger preparation follows this contact, then fingers are explicitly removed and the penis is positioned and inserted. The cited grinding therefore precedes penile penetration.",
+          "errors": [
+            "wrong-act",
+            "external-contact-as-penetration"
+          ],
+          "training": "right-set",
+          "contextModelEligible": true,
+          "engineConfidence": 0.9626372585128592
+        },
+        {
+          "id": "foxden-park-16",
+          "key": "fuck~elided#59a5f04f",
+          "claim": {
+            "fic": "foxden-park.html",
+            "sourceSha": "0967cc1dbfbb72de0587bb34011435ac3814f9becbbf788353232e37846db0ba",
+            "paragraph": 1155,
+            "pattern": "fuck~elided",
+            "act": "anal sex",
+            "kind": "act",
+            "a": "Catherine Fox-Mountchristen-Windsor",
+            "b": "Henry Fox-Mountchristen-Windsor",
+            "role": ""
+          },
+          "reportHash": "6284c9b4",
+          "verdict": "wrong",
+          "confidence": 0.99,
+          "weight": 0.9,
+          "reading": "Daniel penetrates Marcus anally in the cottage.",
+          "rationale": "The passage directly names Daniel as the person whose penis is inside Marcus. The engine chooses an absent mother instead.",
+          "errors": [
+            "wrong-character",
+            "bystander-selected"
+          ],
+          "training": "right-set",
+          "contextModelEligible": true,
+          "engineConfidence": 0.5429190319677758
+        },
+        {
+          "id": "foxden-park-17",
+          "key": "push-into#59a5f04f",
+          "claim": {
+            "fic": "foxden-park.html",
+            "sourceSha": "0967cc1dbfbb72de0587bb34011435ac3814f9becbbf788353232e37846db0ba",
+            "paragraph": 1155,
+            "pattern": "push-into",
+            "act": "anal sex",
+            "kind": "act",
+            "a": "Alex Claremont-Diaz",
+            "b": "Henry Fox-Mountchristen-Windsor",
+            "role": ""
+          },
+          "reportHash": "6284c9b4",
+          "verdict": "correct",
+          "confidence": 0.99,
+          "weight": 0.9,
+          "reading": "Daniel penetrates Marcus anally in the cottage.",
+          "rationale": "Earlier insertion and continued movement establish Daniel\u2019s penis inside Marcus; this upward thrusting continues the same act.",
+          "errors": [],
+          "training": "right-set",
+          "contextModelEligible": true,
+          "engineConfidence": 0.8747775628865734
+        },
+        {
+          "id": "foxden-park-18",
+          "key": "fill#f0bb2108",
+          "claim": {
+            "fic": "foxden-park.html",
+            "sourceSha": "0967cc1dbfbb72de0587bb34011435ac3814f9becbbf788353232e37846db0ba",
+            "paragraph": 1157,
+            "pattern": "fill",
+            "act": "anal sex",
+            "kind": "act",
+            "a": "Henry Fox-Mountchristen-Windsor",
+            "b": "Alex Claremont-Diaz",
+            "role": ""
+          },
+          "reportHash": "d3b0e627",
+          "verdict": "wrong",
+          "confidence": 0.99,
+          "weight": 0.9,
+          "reading": "Daniel ejaculates while penetrating Marcus anally.",
+          "rationale": "The earlier penetration direction persists and the same paragraph explicitly identifies Daniel\u2019s penis remaining inside Marcus.",
+          "errors": [
+            "roles-reversed"
+          ],
+          "training": "right-set",
+          "contextModelEligible": true,
+          "engineConfidence": 0.8553741616764852
+        },
+        {
+          "id": "foxden-park-19",
+          "key": "dd2-pulled-out-of-him#db598754",
+          "claim": {
+            "fic": "foxden-park.html",
+            "sourceSha": "0967cc1dbfbb72de0587bb34011435ac3814f9becbbf788353232e37846db0ba",
+            "paragraph": 1161,
+            "pattern": "dd2-pulled-out-of-him",
+            "act": "anal sex",
+            "kind": "act",
+            "a": "Henry Fox-Mountchristen-Windsor",
+            "b": "Alex Claremont-Diaz",
+            "role": ""
+          },
+          "reportHash": "66a5612f",
+          "verdict": "wrong",
+          "confidence": 0.99,
+          "weight": 0.9,
+          "reading": "Daniel withdraws his penis from Marcus after anal sex.",
+          "rationale": "Daniel\u2019s softening and withdrawal end the previously established penetration; the engine reverses the participants.",
+          "errors": [
+            "roles-reversed"
+          ],
+          "training": "right-set",
+          "contextModelEligible": true,
+          "engineConfidence": 0.9503543953780408
+        },
+        {
+          "id": "foxden-park-20",
+          "key": "fuck#a53cd3d7",
+          "claim": {
+            "fic": "foxden-park.html",
+            "sourceSha": "0967cc1dbfbb72de0587bb34011435ac3814f9becbbf788353232e37846db0ba",
+            "paragraph": 1333,
+            "pattern": "fuck",
+            "act": "anal sex",
+            "kind": "act",
+            "a": "Alex Claremont-Diaz",
+            "b": "Henry Fox-Mountchristen-Windsor",
+            "role": ""
+          },
+          "reportHash": "1359c369",
+          "verdict": "correct",
+          "confidence": 0.99,
+          "weight": 0.9,
+          "reading": "Daniel penetrates Marcus anally during their reunion.",
+          "rationale": "Manual preparation precedes entry and later withdrawal confirms penile penetration, with Daniel above and Marcus receiving.",
+          "errors": [],
+          "training": "right-set",
+          "contextModelEligible": true,
+          "engineConfidence": 0.8846424205759783
+        },
+        {
+          "id": "foxden-park-21",
+          "key": "push-into~elided#6263de3f",
+          "claim": {
+            "fic": "foxden-park.html",
+            "sourceSha": "0967cc1dbfbb72de0587bb34011435ac3814f9becbbf788353232e37846db0ba",
+            "paragraph": 1334,
+            "pattern": "push-into~elided",
+            "act": "fingering",
+            "kind": "act",
+            "a": "Percy \"Pez\" Okonjo",
+            "b": "Alex Claremont-Diaz",
+            "role": ""
+          },
+          "reportHash": "4cdf6415",
+          "verdict": "wrong",
+          "confidence": 0.99,
+          "weight": 0.9,
+          "reading": "Daniel inserts two fingers into Marcus after their reunion anal encounter.",
+          "rationale": "Marcus requests Daniel\u2019s hand, and Daniel\u2019s fingers enter Marcus. The friend is absent and Daniel is not the recipient.",
+          "errors": [
+            "wrong-character",
+            "roles-reversed",
+            "bystander-selected"
+          ],
+          "training": "right-set",
+          "contextModelEligible": true,
+          "engineConfidence": 0.6433656206911631
+        },
+        {
+          "id": "foxden-park-22",
+          "key": "sub-yield-self#ee2dcfeb",
+          "claim": {
+            "fic": "foxden-park.html",
+            "sourceSha": "0967cc1dbfbb72de0587bb34011435ac3814f9becbbf788353232e37846db0ba",
+            "paragraph": 174,
+            "pattern": "sub-yield-self",
+            "act": "submitting",
+            "kind": "behavior",
+            "a": "Henry Fox-Mountchristen-Windsor",
+            "b": "Alex Claremont-Diaz",
+            "role": "bottom"
+          },
+          "reportHash": "60b31912",
+          "verdict": "wrong",
+          "confidence": 0.98,
+          "weight": 0.9,
+          "reading": "Marcus accepts a small corrective shove from his friend.",
+          "rationale": "The friend is the one shoving Marcus during their whispered discussion; Daniel only watches from a distance. The submitted posture exists but is assigned to the wrong interaction.",
+          "errors": [
+            "wrong-partner"
+          ],
+          "training": "right-set",
+          "contextModelEligible": true,
+          "engineConfidence": 0.7749919941890616
+        },
+        {
+          "id": "foxden-park-23",
+          "key": "dom-take-control#bd7a0e93",
+          "claim": {
+            "fic": "foxden-park.html",
+            "sourceSha": "0967cc1dbfbb72de0587bb34011435ac3814f9becbbf788353232e37846db0ba",
+            "paragraph": 199,
+            "pattern": "dom-take-control",
+            "act": "taking control",
+            "kind": "behavior",
+            "a": "Beatrice Fox- Mountchristen-Windsor",
+            "b": "Alex Claremont-Diaz",
+            "role": "top"
+          },
+          "reportHash": "61e8cd6",
+          "verdict": "correct",
+          "confidence": 0.99,
+          "weight": 0.9,
+          "reading": "An adult sister organises a family croquet game.",
+          "rationale": "She clearly directs the teams and participants, but this is ordinary mixed-age family recreation and should not train sexual-role associations.",
+          "errors": [],
+          "training": "withheld",
+          "contextModelEligible": false,
+          "reason": "Mixed-age family-game leadership; exclude from sexual-role training despite literal correct behavior.",
+          "engineConfidence": 0.6072640503171007
+        },
+        {
+          "id": "foxden-park-24",
+          "key": "mast-himself#5fe4cf4e",
+          "claim": {
+            "fic": "foxden-park.html",
+            "sourceSha": "0967cc1dbfbb72de0587bb34011435ac3814f9becbbf788353232e37846db0ba",
+            "paragraph": 518,
+            "pattern": "mast-himself",
+            "act": "masturbation",
+            "kind": "fantasy",
+            "a": "Alex Claremont-Diaz",
+            "b": "Henry Fox-Mountchristen-Windsor",
+            "role": "bottom"
+          },
+          "reportHash": "8fdbce6c",
+          "verdict": "uncertain",
+          "confidence": 0.86,
+          "weight": 0.9,
+          "reading": "Daniel considers the gender of people imagined during private self-touch.",
+          "rationale": "A rhetorical retrospective does not establish a specific current event or reliable temporal age scope. The preceding teenage swimming reflection is separate but makes retrospective scope unsafe to infer.",
+          "errors": [],
+          "training": "withheld",
+          "contextModelEligible": false,
+          "reason": "Unresolved rhetorical and historical-age scope; no positive or negative training label.",
+          "engineConfidence": 0.7550305661106186
+        },
+        {
+          "id": "foxden-park-25",
+          "key": "grab-ass~elided#32a49985",
+          "claim": {
+            "fic": "foxden-park.html",
+            "sourceSha": "0967cc1dbfbb72de0587bb34011435ac3814f9becbbf788353232e37846db0ba",
+            "paragraph": 701,
+            "pattern": "grab-ass~elided",
+            "act": "grabbing an ass",
+            "kind": "touch",
+            "a": "Alex Claremont-Diaz",
+            "b": "Henry Fox-Mountchristen-Windsor",
+            "role": "top"
+          },
+          "reportHash": "6be43d65",
+          "verdict": "wrong",
+          "confidence": 0.99,
+          "weight": 0.9,
+          "reading": "Marcus grabs Daniel\u2019s buttocks while kissing him.",
+          "rationale": "The grabbing hands belong explicitly to Marcus; Daniel is kissing Marcus and receives the buttock touch.",
+          "errors": [
+            "wrong-character",
+            "roles-reversed"
+          ],
+          "training": "right-set",
+          "contextModelEligible": true,
+          "engineConfidence": 0.9102879484744081
+        },
+        {
+          "id": "foxden-park-26",
+          "key": "sinks-to-floor#48a5b273",
+          "claim": {
+            "fic": "foxden-park.html",
+            "sourceSha": "0967cc1dbfbb72de0587bb34011435ac3814f9becbbf788353232e37846db0ba",
+            "paragraph": 708,
+            "pattern": "sinks-to-floor",
+            "act": "kneeling",
+            "kind": "prep",
+            "a": "Henry Fox-Mountchristen-Windsor",
+            "b": "Alex Claremont-Diaz",
+            "role": "bottom"
+          },
+          "reportHash": "101c45c5",
+          "verdict": "correct",
+          "confidence": 0.99,
+          "weight": 0.9,
+          "reading": "Marcus kneels to prepare to perform oral sex on Daniel.",
+          "rationale": "He opens Daniel\u2019s clothing while kneeling and subsequently performs oral sex in the same sequence.",
+          "errors": [],
+          "training": "right-set",
+          "contextModelEligible": true,
+          "engineConfidence": 0.8884057269844863
+        },
+        {
+          "id": "foxden-park-27",
+          "key": "dd-hj-fingers-around~elided#186bed4c",
+          "claim": {
+            "fic": "foxden-park.html",
+            "sourceSha": "0967cc1dbfbb72de0587bb34011435ac3814f9becbbf788353232e37846db0ba",
+            "paragraph": 713,
+            "pattern": "dd-hj-fingers-around~elided",
+            "act": "handjob",
+            "kind": "handjob",
+            "a": "Henry Fox-Mountchristen-Windsor",
+            "b": "Alex Claremont-Diaz",
+            "role": "top"
+          },
+          "reportHash": "71d6bbbf",
+          "verdict": "correct",
+          "confidence": 0.99,
+          "weight": 0.9,
+          "reading": "Marcus manually stimulates Daniel\u2019s penis.",
+          "rationale": "The grip is followed immediately by lubricated up-and-down stroking, establishing a handjob rather than an isolated neutral grasp.",
+          "errors": [],
+          "training": "right-set",
+          "contextModelEligible": true,
+          "engineConfidence": 0.9541187134559135
+        },
+        {
+          "id": "foxden-park-28",
+          "key": "care-soothe~elided#b5023fed",
+          "claim": {
+            "fic": "foxden-park.html",
+            "sourceSha": "0967cc1dbfbb72de0587bb34011435ac3814f9becbbf788353232e37846db0ba",
+            "paragraph": 721,
+            "pattern": "care-soothe~elided",
+            "act": "comforting someone",
+            "kind": "behavior",
+            "a": "Henry Fox-Mountchristen-Windsor",
+            "b": "Alex Claremont-Diaz",
+            "role": "top"
+          },
+          "reportHash": "cf9e67e1",
+          "verdict": "correct",
+          "confidence": 0.99,
+          "weight": 0.9,
+          "reading": "Marcus comforts Daniel after his orgasm.",
+          "rationale": "Daniel rests against Marcus, who kisses and strokes him in a clearly soothing aftercare sequence.",
+          "errors": [],
+          "training": "right-set",
+          "contextModelEligible": true,
+          "engineConfidence": 0.9179784046067204
+        },
+        {
+          "id": "foxden-park-29",
+          "key": "hj-stroke~elided#3ac6b753",
+          "claim": {
+            "fic": "foxden-park.html",
+            "sourceSha": "0967cc1dbfbb72de0587bb34011435ac3814f9becbbf788353232e37846db0ba",
+            "paragraph": 730,
+            "pattern": "hj-stroke~elided",
+            "act": "handjob",
+            "kind": "handjob",
+            "a": "Alex Claremont-Diaz",
+            "b": "Henry Fox-Mountchristen-Windsor",
+            "role": "top"
+          },
+          "reportHash": "cceae5c1",
+          "verdict": "correct",
+          "confidence": 0.99,
+          "weight": 0.9,
+          "reading": "Daniel manually stimulates Marcus\u2019s penis.",
+          "rationale": "Marcus initially guides Daniel\u2019s hand, then releases it and Daniel continues stroking until Marcus climaxes.",
+          "errors": [],
+          "training": "right-set",
+          "contextModelEligible": true,
+          "engineConfidence": 0.8379971671648222
+        },
+        {
+          "id": "foxden-park-30",
+          "key": "suck-fingers~elided#42041bda",
+          "claim": {
+            "fic": "foxden-park.html",
+            "sourceSha": "0967cc1dbfbb72de0587bb34011435ac3814f9becbbf788353232e37846db0ba",
+            "paragraph": 786,
+            "pattern": "suck-fingers~elided",
+            "act": "sucking on fingers",
+            "kind": "fingers",
+            "a": "Henry Fox-Mountchristen-Windsor",
+            "b": "Alex Claremont-Diaz",
+            "role": "bottom"
+          },
+          "reportHash": "3c7cb984",
+          "verdict": "wrong",
+          "confidence": 0.99,
+          "weight": 0.9,
+          "reading": "An adult deliberately licks his own fingers; the partner does not supply those fingers.",
+          "rationale": "The exact claim credits the partner as finger owner. The erotic self-display is real, but it does not support that partnered ownership.",
+          "errors": [
+            "wrong ownership",
+            "self-versus-partner"
+          ],
+          "training": "right-set",
+          "contextModelEligible": true,
+          "engineConfidence": 0.8657451376800052,
+          "initialAssessment": {
+            "verdict": "correct",
+            "confidence": 0.96,
+            "rationale": "The text explicitly presents exaggerated finger licking with held eye contact as flirtation. It is a fingers-in-mouth hint, not partnered oral sex; food-cleaning context alone does not erase the stated erotic intent."
+          }
+        },
+        {
+          "id": "foxden-park-31",
+          "key": "dd-hj-fingers-around~elided#f8b4d15e",
+          "claim": {
+            "fic": "foxden-park.html",
+            "sourceSha": "0967cc1dbfbb72de0587bb34011435ac3814f9becbbf788353232e37846db0ba",
+            "paragraph": 830,
+            "pattern": "dd-hj-fingers-around~elided",
+            "act": "handjob",
+            "kind": "handjob",
+            "a": "Alex Claremont-Diaz",
+            "b": "Henry Fox-Mountchristen-Windsor",
+            "role": "top"
+          },
+          "reportHash": "5ee310a4",
+          "verdict": "correct",
+          "confidence": 0.99,
+          "weight": 0.9,
+          "reading": "Daniel manually stimulates Marcus\u2019s penis in the hidden study.",
+          "rationale": "His hand reaches inside the waistband, grasps the penis and continues stroking. No penetration is established.",
+          "errors": [],
+          "training": "right-set",
+          "contextModelEligible": true,
+          "engineConfidence": 0.9482900761714748
+        },
+        {
+          "id": "foxden-park-32",
+          "key": "sub-squirm#5fa62a52",
+          "claim": {
+            "fic": "foxden-park.html",
+            "sourceSha": "0967cc1dbfbb72de0587bb34011435ac3814f9becbbf788353232e37846db0ba",
+            "paragraph": 892,
+            "pattern": "sub-squirm",
+            "act": "squirming under someone",
+            "kind": "behavior",
+            "a": "Alex Claremont-Diaz",
+            "b": "Henry Fox-Mountchristen-Windsor",
+            "role": "bottom"
+          },
+          "reportHash": "bd07af8",
+          "verdict": "correct",
+          "confidence": 0.97,
+          "weight": 0.9,
+          "reading": "Daniel squirms under Marcus\u2019s sexual attention.",
+          "rationale": "The explicit bedroom undressing context establishes Daniel reacting bodily to Marcus\u2019s focused gaze; the engine identifies the reaction and participants correctly.",
+          "errors": [],
+          "training": "right-set",
+          "contextModelEligible": true,
+          "engineConfidence": 0.9433960330974642
+        },
+        {
+          "id": "foxden-park-33",
+          "key": "sub-let-lead#dd7f952c",
+          "claim": {
+            "fic": "foxden-park.html",
+            "sourceSha": "0967cc1dbfbb72de0587bb34011435ac3814f9becbbf788353232e37846db0ba",
+            "paragraph": 1102,
+            "pattern": "sub-let-lead",
+            "act": "letting someone lead",
+            "kind": "behavior",
+            "a": "Alex Claremont-Diaz",
+            "b": "Henry Fox-Mountchristen-Windsor",
+            "role": "bottom"
+          },
+          "reportHash": "681bc7de",
+          "verdict": "correct",
+          "confidence": 0.98,
+          "weight": 0.9,
+          "reading": "Daniel allows Marcus to lead him to bed and warm him.",
+          "rationale": "Marcus undresses and tucks Daniel into blankets to help after the rain. The acted acceptance is real and roles agree; it does not establish an anal position or permanent dominance.",
+          "errors": [],
+          "training": "right-set",
+          "contextModelEligible": true,
+          "engineConfidence": 0.9472353076002572
+        },
+        {
+          "id": "foxden-park-34",
+          "key": "care-soothe#825dae45",
+          "claim": {
+            "fic": "foxden-park.html",
+            "sourceSha": "0967cc1dbfbb72de0587bb34011435ac3814f9becbbf788353232e37846db0ba",
+            "paragraph": 1160,
+            "pattern": "care-soothe",
+            "act": "comforting someone",
+            "kind": "behavior",
+            "a": "Alex Claremont-Diaz",
+            "b": "Henry Fox-Mountchristen-Windsor",
+            "role": "top"
+          },
+          "reportHash": "8d287b40",
+          "verdict": "correct",
+          "confidence": 0.99,
+          "weight": 0.9,
+          "reading": "Daniel comforts Marcus after anal sex.",
+          "rationale": "Daniel rubs Marcus\u2019s back and kisses him during an explicitly tender recovery scene.",
+          "errors": [],
+          "training": "right-set",
+          "contextModelEligible": true,
+          "engineConfidence": 0.7830660184727783
+        },
+        {
+          "id": "foxden-park-35",
+          "key": "care-soothe~elided#dde47682",
+          "claim": {
+            "fic": "foxden-park.html",
+            "sourceSha": "0967cc1dbfbb72de0587bb34011435ac3814f9becbbf788353232e37846db0ba",
+            "paragraph": 1205,
+            "pattern": "care-soothe~elided",
+            "act": "comforting someone",
+            "kind": "behavior",
+            "a": "Alex Claremont-Diaz",
+            "b": "Henry Fox-Mountchristen-Windsor",
+            "role": "top"
+          },
+          "reportHash": "f8232bd2",
+          "verdict": "correct",
+          "confidence": 0.99,
+          "weight": 0.9,
+          "reading": "Daniel comforts Marcus after helping him warm up.",
+          "rationale": "Marcus is the chilled person curled around Daniel; Daniel strokes his hair and checks that he feels warmer.",
+          "errors": [],
+          "training": "right-set",
+          "contextModelEligible": true,
+          "engineConfidence": 0.8655930636546026
+        },
+        {
+          "id": "foxden-park-36",
+          "key": "self-own-fingers#420faba0",
+          "claim": {
+            "fic": "foxden-park.html",
+            "sourceSha": "0967cc1dbfbb72de0587bb34011435ac3814f9becbbf788353232e37846db0ba",
+            "paragraph": 1331,
+            "pattern": "self-own-fingers",
+            "act": "fingering himself",
+            "kind": "solo",
+            "a": "Percy \"Pez\" Okonjo",
+            "b": "Henry Fox-Mountchristen-Windsor",
+            "role": "bottom"
+          },
+          "reportHash": "b3f94aa3",
+          "verdict": "wrong",
+          "confidence": 0.99,
+          "weight": 0.9,
+          "reading": "Daniel uses lubricated fingers to prepare Marcus for anal penetration.",
+          "rationale": "Oil is applied to Daniel\u2019s own fingers before Daniel opens Marcus. Ownership of fingers does not mean self-insertion, and the friend is absent.",
+          "errors": [
+            "wrong-character",
+            "self-versus-partner",
+            "ownership-versus-recipient"
+          ],
+          "training": "right-set",
+          "contextModelEligible": true,
+          "engineConfidence": 0.53589774743181
+        }
+      ],
+      "acts": [
+        {
+          "to": 424,
+          "act": "looking-at-ass",
+          "a": "Alex Claremont-Diaz",
+          "b": "Henry Fox-Mountchristen-Windsor",
+          "occurrence": "performed",
+          "confidence": 0.98,
+          "reading": "Daniel notices Marcus\u2019s buttocks while they ride horses.",
+          "notes": "Actual visual-interest hint; does not establish penetration.",
+          "missing": true,
+          "from": 423,
+          "independentQA": {
+            "status": "confirmed-hint",
+            "rationale": "The visual or buttock-touch hint is supported; distinguish missed hint evidence from an omitted performed sex act."
+          },
+          "id": "foxden-park-act-0",
+          "source": "chatgpt",
+          "weight": 0.9,
+          "paragraphHashes": [
+            "a97e3738",
+            "cded8bcc"
+          ],
+          "engineClaimKeys": [],
+          "labelEligible": true,
+          "detectionStatus": "candidate-detection-gap",
+          "gapScope": "inventory-only"
+        },
+        {
+          "to": 494,
+          "act": "kissing",
+          "a": "Henry Fox-Mountchristen-Windsor",
+          "b": "Alex Claremont-Diaz",
+          "occurrence": "performed",
+          "confidence": 0.99,
+          "reading": "Marcus kisses Daniel outdoors.",
+          "notes": "Kissing only; inventory category may be unsupported.",
+          "missing": false,
+          "from": 491,
+          "id": "foxden-park-act-1",
+          "source": "chatgpt",
+          "weight": 0.9,
+          "paragraphHashes": [
+            "fe7b78f7",
+            "e6564133",
+            "7de8e30b",
+            "b1a1dfcb"
+          ],
+          "engineClaimKeys": [],
+          "labelEligible": true,
+          "detectionStatus": "detected-or-related-hint",
+          "gapScope": "none"
+        },
+        {
+          "to": 706,
+          "act": "body rubbing",
+          "a": "Henry Fox-Mountchristen-Windsor",
+          "b": "Alex Claremont-Diaz",
+          "occurrence": "performed",
+          "confidence": 0.99,
+          "reading": "Marcus rubs his erect penis against Daniel\u2019s thigh while kissing.",
+          "notes": "External genital contact, no insertion.",
+          "missing": true,
+          "from": 700,
+          "independentQA": {
+            "status": "confirmed",
+            "rationale": "The surrounding adult passage supports this activity, direction and occurrence; no corresponding raw reading covers this event."
+          },
+          "id": "foxden-park-act-2",
+          "source": "chatgpt",
+          "weight": 0.9,
+          "paragraphHashes": [
+            "894cc897",
+            "9ec7e986",
+            "9f2c07bd",
+            "d01b9e29",
+            "7ed5a59d",
+            "ddad8ef5",
+            "bc23021"
+          ],
+          "engineClaimKeys": [],
+          "labelEligible": true,
+          "detectionStatus": "candidate-detection-gap",
+          "gapScope": "inventory-only"
+        },
+        {
+          "to": 701,
+          "act": "grabbing an ass",
+          "a": "Henry Fox-Mountchristen-Windsor",
+          "b": "Alex Claremont-Diaz",
+          "occurrence": "performed",
+          "confidence": 0.99,
+          "reading": "Marcus grasps Daniel\u2019s buttocks.",
+          "notes": "Raw hint25 exists but reverses actor.",
+          "missing": false,
+          "from": 701,
+          "id": "foxden-park-act-3",
+          "source": "chatgpt",
+          "weight": 0.9,
+          "paragraphHashes": [
+            "9ec7e986"
+          ],
+          "engineClaimKeys": [
+            "grab-ass~elided#32a49985"
+          ],
+          "labelEligible": true,
+          "detectionStatus": "detected-or-related-hint",
+          "gapScope": "none"
+        },
+        {
+          "to": 712,
+          "act": "kneeling",
+          "a": "Henry Fox-Mountchristen-Windsor",
+          "b": "Alex Claremont-Diaz",
+          "occurrence": "prep",
+          "confidence": 0.99,
+          "reading": "Marcus kneels and opens Daniel\u2019s clothing before oral sex.",
+          "notes": "",
+          "missing": false,
+          "from": 708,
+          "id": "foxden-park-act-4",
+          "source": "chatgpt",
+          "weight": 0.9,
+          "paragraphHashes": [
+            "324d0c16",
+            "98415f29",
+            "2e60edd5",
+            "f7a7cd4b",
+            "6b07a34f"
+          ],
+          "engineClaimKeys": [
+            "sinks-to-floor#48a5b273"
+          ],
+          "labelEligible": false,
+          "detectionStatus": "detected-or-related-hint",
+          "gapScope": "none"
+        },
+        {
+          "to": 719,
+          "act": "handjob",
+          "a": "Henry Fox-Mountchristen-Windsor",
+          "b": "Alex Claremont-Diaz",
+          "occurrence": "performed",
+          "confidence": 0.99,
+          "reading": "Marcus strokes Daniel\u2019s penis before and during oral sex.",
+          "notes": "The handjob and oral episode overlap; not an additional scene.",
+          "missing": false,
+          "from": 713,
+          "id": "foxden-park-act-5",
+          "source": "chatgpt",
+          "weight": 0.9,
+          "paragraphHashes": [
+            "186bed4c",
+            "c3f84e78",
+            "4d587f09",
+            "3a893d6b",
+            "162072a3",
+            "374b6281",
+            "515a44aa"
+          ],
+          "engineClaimKeys": [
+            "dd-hj-fingers-around~elided#186bed4c"
+          ],
+          "labelEligible": true,
+          "detectionStatus": "detected-or-related-hint",
+          "gapScope": "none"
+        },
+        {
+          "to": 719,
+          "act": "blowjob",
+          "a": "Henry Fox-Mountchristen-Windsor",
+          "b": "Alex Claremont-Diaz",
+          "occurrence": "performed",
+          "confidence": 0.99,
+          "reading": "Marcus performs oral sex on Daniel through ejaculation.",
+          "notes": "",
+          "missing": false,
+          "from": 716,
+          "id": "foxden-park-act-6",
+          "source": "chatgpt",
+          "weight": 0.9,
+          "paragraphHashes": [
+            "3a893d6b",
+            "162072a3",
+            "374b6281",
+            "515a44aa"
+          ],
+          "engineClaimKeys": [
+            "sucked~elided#d704d691",
+            "took-in-mouth~elided#d704d691",
+            "takes-between-lips~elided#d704d691",
+            "sucked#ab68acc9"
+          ],
+          "labelEligible": true,
+          "detectionStatus": "detected-or-related-hint",
+          "gapScope": "none"
+        },
+        {
+          "to": 731,
+          "act": "handjob",
+          "a": "Alex Claremont-Diaz",
+          "b": "Henry Fox-Mountchristen-Windsor",
+          "occurrence": "performed",
+          "confidence": 0.99,
+          "reading": "Daniel strokes Marcus\u2019s penis until Marcus climaxes.",
+          "notes": "Marcus guides the hand initially, then Daniel continues independently.",
+          "missing": false,
+          "from": 724,
+          "id": "foxden-park-act-7",
+          "source": "chatgpt",
+          "weight": 0.9,
+          "paragraphHashes": [
+            "ae57dd5",
+            "f1e9047c",
+            "4d0b0c26",
+            "c3758473",
+            "337d9467",
+            "426c0de5",
+            "8a54fb7d",
+            "9df0d886"
+          ],
+          "engineClaimKeys": [
+            "hj-stroke~elided#3ac6b753"
+          ],
+          "labelEligible": true,
+          "detectionStatus": "detected-or-related-hint",
+          "gapScope": "none"
+        },
+        {
+          "to": 786,
+          "act": "looking-at-ass",
+          "a": "Henry Fox-Mountchristen-Windsor",
+          "b": "Alex Claremont-Diaz",
+          "occurrence": "performed",
+          "confidence": 0.97,
+          "reading": "Marcus watches Daniel\u2019s buttocks during billiards.",
+          "notes": "Narrator explicitly presents this as a known sexual look, though it is his inference rather than quoted speech.",
+          "missing": true,
+          "from": 786,
+          "independentQA": {
+            "status": "confirmed-hint",
+            "rationale": "The visual or buttock-touch hint is supported; distinguish missed hint evidence from an omitted performed sex act."
+          },
+          "id": "foxden-park-act-8",
+          "source": "chatgpt",
+          "weight": 0.9,
+          "paragraphHashes": [
+            "62005ed8"
+          ],
+          "engineClaimKeys": [],
+          "labelEligible": true,
+          "detectionStatus": "candidate-detection-gap",
+          "gapScope": "inventory-only"
+        },
+        {
+          "to": 786,
+          "act": "sucking on fingers",
+          "a": "Henry Fox-Mountchristen-Windsor",
+          "b": null,
+          "occurrence": "performed",
+          "confidence": 0.96,
+          "reading": "Marcus deliberately licks his own fingers while holding Daniel\u2019s gaze.",
+          "notes": "Erotic display hint, not partnered oral sex.",
+          "missing": false,
+          "from": 786,
+          "id": "foxden-park-act-9",
+          "source": "chatgpt",
+          "weight": 0.9,
+          "paragraphHashes": [
+            "62005ed8"
+          ],
+          "engineClaimKeys": [
+            "suck-fingers~elided#42041bda"
+          ],
+          "labelEligible": true,
+          "detectionStatus": "detected-or-related-hint",
+          "gapScope": "none"
+        },
+        {
+          "to": 798,
+          "act": "body rubbing",
+          "a": "Alex Claremont-Diaz",
+          "b": "Henry Fox-Mountchristen-Windsor",
+          "occurrence": "performed",
+          "confidence": 0.98,
+          "reading": "Daniel presses his thigh between Marcus\u2019s legs while kissing.",
+          "notes": "Genital-area pressure, no penetration.",
+          "missing": true,
+          "from": 798,
+          "independentQA": {
+            "status": "confirmed",
+            "rationale": "The surrounding adult passage supports this activity, direction and occurrence; no corresponding raw reading covers this event."
+          },
+          "id": "foxden-park-act-10",
+          "source": "chatgpt",
+          "weight": 0.9,
+          "paragraphHashes": [
+            "c9ef4c8a"
+          ],
+          "engineClaimKeys": [],
+          "labelEligible": true,
+          "detectionStatus": "candidate-detection-gap",
+          "gapScope": "inventory-only"
+        },
+        {
+          "to": 809,
+          "act": "grabbing an ass",
+          "a": "Henry Fox-Mountchristen-Windsor",
+          "b": "Alex Claremont-Diaz",
+          "occurrence": "performed",
+          "confidence": 0.99,
+          "reading": "Marcus cups Daniel\u2019s buttocks.",
+          "notes": "Additional evidence for buttock-touch hint, distinct episode.",
+          "missing": true,
+          "from": 809,
+          "independentQA": {
+            "status": "confirmed-hint",
+            "rationale": "The visual or buttock-touch hint is supported; distinguish missed hint evidence from an omitted performed sex act."
+          },
+          "id": "foxden-park-act-11",
+          "source": "chatgpt",
+          "weight": 0.9,
+          "paragraphHashes": [
+            "8da953b4"
+          ],
+          "engineClaimKeys": [],
+          "labelEligible": true,
+          "detectionStatus": "candidate-detection-gap",
+          "gapScope": "inventory-only"
+        },
+        {
+          "to": 811,
+          "act": "looking-at-ass",
+          "a": "Henry Fox-Mountchristen-Windsor",
+          "b": "Alex Claremont-Diaz",
+          "occurrence": "historical",
+          "confidence": 0.96,
+          "reading": "Marcus describes wanting to touch Daniel while watching him horseback.",
+          "notes": "Interest in tight clothing and buttocks is established in context; not performed sex.",
+          "missing": false,
+          "from": 811,
+          "id": "foxden-park-act-12",
+          "source": "chatgpt",
+          "weight": 0.9,
+          "paragraphHashes": [
+            "da59f586"
+          ],
+          "engineClaimKeys": [],
+          "labelEligible": true,
+          "detectionStatus": "detected-or-related-hint",
+          "gapScope": "none"
+        },
+        {
+          "to": 829,
+          "act": "cock-against-ass rubbing",
+          "a": "Alex Claremont-Diaz",
+          "b": "Henry Fox-Mountchristen-Windsor",
+          "occurrence": "performed",
+          "confidence": 0.99,
+          "reading": "Marcus presses his buttocks against Daniel\u2019s erect penis.",
+          "notes": "External contact; separate from other body rubbing.",
+          "missing": true,
+          "from": 828,
+          "independentQA": {
+            "status": "confirmed",
+            "rationale": "The surrounding adult passage supports this activity, direction and occurrence; no corresponding raw reading covers this event."
+          },
+          "id": "foxden-park-act-13",
+          "source": "chatgpt",
+          "weight": 0.9,
+          "paragraphHashes": [
+            "40e83a6d",
+            "b2e4509e"
+          ],
+          "engineClaimKeys": [],
+          "labelEligible": true,
+          "detectionStatus": "candidate-detection-gap",
+          "gapScope": "inventory-only"
+        },
+        {
+          "to": 834,
+          "act": "handjob",
+          "a": "Alex Claremont-Diaz",
+          "b": "Henry Fox-Mountchristen-Windsor",
+          "occurrence": "performed",
+          "confidence": 0.99,
+          "reading": "Daniel strokes Marcus\u2019s penis in the concealed study.",
+          "notes": "",
+          "missing": false,
+          "from": 830,
+          "id": "foxden-park-act-14",
+          "source": "chatgpt",
+          "weight": 0.9,
+          "paragraphHashes": [
+            "3929881b",
+            "594c0f2b",
+            "ac964ca7",
+            "824d8a96",
+            "4943ef68"
+          ],
+          "engineClaimKeys": [
+            "dd-hj-fingers-around~elided#f8b4d15e"
+          ],
+          "labelEligible": true,
+          "detectionStatus": "detected-or-related-hint",
+          "gapScope": "none"
+        },
+        {
+          "to": 852,
+          "act": "body rubbing",
+          "a": "Alex Claremont-Diaz",
+          "b": "Henry Fox-Mountchristen-Windsor",
+          "occurrence": "performed",
+          "confidence": 0.99,
+          "reading": "Daniel rubs his penis against Marcus\u2019s thigh while manually stimulating him.",
+          "notes": "No climax described in this interrupted episode.",
+          "missing": true,
+          "from": 831,
+          "independentQA": {
+            "status": "confirmed",
+            "rationale": "The surrounding adult passage supports this activity, direction and occurrence; no corresponding raw reading covers this event."
+          },
+          "id": "foxden-park-act-15",
+          "source": "chatgpt",
+          "weight": 0.9,
+          "paragraphHashes": [
+            "594c0f2b",
+            "ac964ca7",
+            "824d8a96",
+            "4943ef68",
+            "9e28fa80",
+            "8d4c4627",
+            "b439e740",
+            "53cf5a0d",
+            "1d6c3b29",
+            "39a49320",
+            "45f8b8d5",
+            "7148e9f6",
+            "4cd630ae",
+            "81ce62de",
+            "6d2f079f",
+            "32777604",
+            "b68e3099",
+            "9856a593",
+            "9497f62b",
+            "8d0d1537",
+            "ff9d2af1",
+            "6fde1e39"
+          ],
+          "engineClaimKeys": [],
+          "labelEligible": true,
+          "detectionStatus": "candidate-detection-gap",
+          "gapScope": "inventory-only"
+        },
+        {
+          "to": 887,
+          "act": "body rubbing",
+          "a": "Alex Claremont-Diaz",
+          "b": "Henry Fox-Mountchristen-Windsor",
+          "occurrence": "performed",
+          "confidence": 0.99,
+          "reading": "Daniel presses his thigh between Marcus\u2019s legs in bed.",
+          "notes": "External genital-area stimulation.",
+          "missing": true,
+          "from": 884,
+          "independentQA": {
+            "status": "confirmed",
+            "rationale": "The surrounding adult passage supports this activity, direction and occurrence; no corresponding raw reading covers this event."
+          },
+          "id": "foxden-park-act-16",
+          "source": "chatgpt",
+          "weight": 0.9,
+          "paragraphHashes": [
+            "ec432115",
+            "68e3031d",
+            "b32cd15",
+            "202ecfaa"
+          ],
+          "engineClaimKeys": [],
+          "labelEligible": true,
+          "detectionStatus": "candidate-detection-gap",
+          "gapScope": "inventory-only"
+        },
+        {
+          "to": 887,
+          "act": "nipple stimulation",
+          "a": "Alex Claremont-Diaz",
+          "b": "Henry Fox-Mountchristen-Windsor",
+          "occurrence": "performed",
+          "confidence": 0.99,
+          "reading": "Daniel stimulates Marcus\u2019s nipple with his mouth.",
+          "notes": "Inventory-only category; not blowjob.",
+          "missing": false,
+          "from": 887,
+          "id": "foxden-park-act-17",
+          "source": "chatgpt",
+          "weight": 0.9,
+          "paragraphHashes": [
+            "202ecfaa"
+          ],
+          "engineClaimKeys": [],
+          "labelEligible": true,
+          "detectionStatus": "detected-or-related-hint",
+          "gapScope": "none"
+        },
+        {
+          "to": 891,
+          "act": "body touching",
+          "a": "Henry Fox-Mountchristen-Windsor",
+          "b": "Alex Claremont-Diaz",
+          "occurrence": "performed",
+          "confidence": 0.98,
+          "reading": "Marcus explores Daniel\u2019s thighs and torso with lips and hands.",
+          "notes": "Nonpenetrative erotic exploration; do not promote vague touches to handjob.",
+          "missing": false,
+          "from": 890,
+          "id": "foxden-park-act-18",
+          "source": "chatgpt",
+          "weight": 0.9,
+          "paragraphHashes": [
+            "fee80e8c",
+            "7ab510ff"
+          ],
+          "engineClaimKeys": [],
+          "labelEligible": true,
+          "detectionStatus": "detected-or-related-hint",
+          "gapScope": "none"
+        },
+        {
+          "to": 897,
+          "act": "frottage",
+          "a": "Henry Fox-Mountchristen-Windsor",
+          "b": "Alex Claremont-Diaz",
+          "occurrence": "performed",
+          "confidence": 0.99,
+          "reading": "Marcus rubs their penises together, holding both in one hand.",
+          "notes": "Manual grip plus thrusting friction; precise frottage episode is missing.",
+          "missing": true,
+          "from": 893,
+          "independentQA": {
+            "status": "confirmed",
+            "rationale": "The surrounding adult passage supports this activity, direction and occurrence; no corresponding raw reading covers this event."
+          },
+          "id": "foxden-park-act-19",
+          "source": "chatgpt",
+          "weight": 0.9,
+          "paragraphHashes": [
+            "68107621",
+            "ee3bbbc9",
+            "10cb5f8f",
+            "f75c0ff5",
+            "10518f32"
+          ],
+          "engineClaimKeys": [],
+          "labelEligible": true,
+          "detectionStatus": "candidate-detection-gap",
+          "gapScope": "candidate-additional-act"
+        },
+        {
+          "to": 898,
+          "act": "grabbing an ass",
+          "a": "Alex Claremont-Diaz",
+          "b": "Henry Fox-Mountchristen-Windsor",
+          "occurrence": "performed",
+          "confidence": 0.99,
+          "reading": "Daniel squeezes Marcus\u2019s buttocks to stop before climax.",
+          "notes": "",
+          "missing": true,
+          "from": 898,
+          "independentQA": {
+            "status": "confirmed-hint",
+            "rationale": "The visual or buttock-touch hint is supported; distinguish missed hint evidence from an omitted performed sex act."
+          },
+          "id": "foxden-park-act-20",
+          "source": "chatgpt",
+          "weight": 0.9,
+          "paragraphHashes": [
+            "fc3f9bd3"
+          ],
+          "engineClaimKeys": [],
+          "labelEligible": true,
+          "detectionStatus": "candidate-detection-gap",
+          "gapScope": "inventory-only"
+        },
+        {
+          "to": 910,
+          "act": "manual-genital-contact",
+          "a": "Alex Claremont-Diaz",
+          "b": "Henry Fox-Mountchristen-Windsor",
+          "occurrence": "prep",
+          "confidence": 0.98,
+          "reading": "Daniel manually handles and retracts the foreskin of Marcus\u2019s penis before oral sex.",
+          "notes": "Brief grasp and foreskin retraction before oral contact; does not establish repetitive handjob strokes.",
+          "missing": true,
+          "from": 909,
+          "independentQA": {
+            "status": "reclassify",
+            "rationale": "Grip and preparation, without definite repeated stroking"
+          },
+          "id": "foxden-park-act-21",
+          "source": "chatgpt",
+          "weight": 0.9,
+          "paragraphHashes": [
+            "7c948971",
+            "a3001157"
+          ],
+          "engineClaimKeys": [],
+          "labelEligible": false,
+          "detectionStatus": "not-performed",
+          "gapScope": "not-performed"
+        },
+        {
+          "to": 916,
+          "act": "blowjob",
+          "a": "Alex Claremont-Diaz",
+          "b": "Henry Fox-Mountchristen-Windsor",
+          "occurrence": "performed",
+          "confidence": 0.99,
+          "reading": "Daniel performs oral sex on Marcus through ejaculation.",
+          "notes": "",
+          "missing": false,
+          "from": 910,
+          "id": "foxden-park-act-22",
+          "source": "chatgpt",
+          "weight": 0.9,
+          "paragraphHashes": [
+            "a3001157",
+            "59449915",
+            "bfd5a755",
+            "aba16bf8",
+            "2e5ea0ff",
+            "fba318f6",
+            "6a2dd268"
+          ],
+          "engineClaimKeys": [
+            "took-in-mouth~elided#c8c14365",
+            "bobbed-head#aba16bf8",
+            "come-in-mouth~elided#fba318f6",
+            "came-in-mouth~elided#fba318f6",
+            "sucked#dc4058f9"
+          ],
+          "labelEligible": true,
+          "detectionStatus": "detected-or-related-hint",
+          "gapScope": "none"
+        },
+        {
+          "to": 924,
+          "act": "blowjob",
+          "a": "Henry Fox-Mountchristen-Windsor",
+          "b": "Alex Claremont-Diaz",
+          "occurrence": "performed",
+          "confidence": 0.99,
+          "reading": "Marcus performs oral sex on Daniel through Daniel\u2019s orgasm.",
+          "notes": "",
+          "missing": false,
+          "from": 922,
+          "id": "foxden-park-act-23",
+          "source": "chatgpt",
+          "weight": 0.9,
+          "paragraphHashes": [
+            "41ee564b",
+            "7ec719a1",
+            "c96167cf"
+          ],
+          "engineClaimKeys": [
+            "took-in-mouth~elided#776bb9a4",
+            "dd-takes-into-mouth~elided#776bb9a4"
+          ],
+          "labelEligible": true,
+          "detectionStatus": "detected-or-related-hint",
+          "gapScope": "none"
+        },
+        {
+          "to": 931,
+          "act": "blowjob",
+          "a": "Henry Fox-Mountchristen-Windsor",
+          "b": null,
+          "occurrence": "historical-summary",
+          "confidence": 0.96,
+          "reading": "Marcus confirms having performed oral sex before meeting Daniel.",
+          "notes": "The earlier partner is unspecified; do not invent partner identity.",
+          "missing": false,
+          "from": 928,
+          "id": "foxden-park-act-24",
+          "source": "chatgpt",
+          "weight": 0.9,
+          "paragraphHashes": [
+            "a5910887",
+            "227cd342",
+            "57fa8e86",
+            "e6da6aeb"
+          ],
+          "engineClaimKeys": [],
+          "labelEligible": true,
+          "detectionStatus": "detected-or-related-hint",
+          "gapScope": "none"
+        },
+        {
+          "to": 965,
+          "act": "masturbation",
+          "a": "Alex Claremont-Diaz",
+          "b": null,
+          "occurrence": "wanted",
+          "confidence": 0.99,
+          "reading": "Daniel considers but deliberately avoids touching his penis while waiting for later.",
+          "notes": "Negated performed masturbation; no current solo act.",
+          "missing": false,
+          "from": 964,
+          "id": "foxden-park-act-25",
+          "source": "chatgpt",
+          "weight": 0.9,
+          "paragraphHashes": [
+            "47244ca5",
+            "fa78f930"
+          ],
+          "engineClaimKeys": [],
+          "labelEligible": false,
+          "detectionStatus": "detected-or-related-hint",
+          "gapScope": "none"
+        },
+        {
+          "to": 1086,
+          "act": "body rubbing",
+          "a": "Alex Claremont-Diaz",
+          "b": "Henry Fox-Mountchristen-Windsor",
+          "occurrence": "performed",
+          "confidence": 0.98,
+          "reading": "Daniel presses their hips together in the stable before interruption.",
+          "notes": "Brief clothed external contact; no penetration.",
+          "missing": true,
+          "from": 1085,
+          "independentQA": {
+            "status": "confirmed",
+            "rationale": "The surrounding adult passage supports this activity, direction and occurrence; no corresponding raw reading covers this event."
+          },
+          "id": "foxden-park-act-26",
+          "source": "chatgpt",
+          "weight": 0.9,
+          "paragraphHashes": [
+            "deab1546",
+            "32740a84"
+          ],
+          "engineClaimKeys": [],
+          "labelEligible": true,
+          "detectionStatus": "candidate-detection-gap",
+          "gapScope": "inventory-only"
+        },
+        {
+          "to": 1116,
+          "act": "external anal stimulation",
+          "a": "Alex Claremont-Diaz",
+          "b": "Henry Fox-Mountchristen-Windsor",
+          "occurrence": "performed",
+          "confidence": 0.99,
+          "reading": "Daniel explores Marcus\u2019s anal area externally with fingers.",
+          "notes": "External contact precedes insertion.",
+          "missing": true,
+          "from": 1110,
+          "independentQA": {
+            "status": "confirmed",
+            "rationale": "The surrounding adult passage supports this activity, direction and occurrence; no corresponding raw reading covers this event."
+          },
+          "id": "foxden-park-act-27",
+          "source": "chatgpt",
+          "weight": 0.9,
+          "paragraphHashes": [
+            "a7e9d6f9",
+            "5f2ff25a",
+            "b9c54d38",
+            "355a6458",
+            "f35fa5a7",
+            "18c0265e",
+            "2a0bc40b"
+          ],
+          "engineClaimKeys": [],
+          "labelEligible": true,
+          "detectionStatus": "candidate-detection-gap",
+          "gapScope": "candidate-additional-act"
+        },
+        {
+          "to": 1118,
+          "act": "fingering",
+          "a": "Alex Claremont-Diaz",
+          "b": "Henry Fox-Mountchristen-Windsor",
+          "occurrence": "performed",
+          "confidence": 0.99,
+          "reading": "Daniel starts inserting a fingertip into Marcus while performing oral sex.",
+          "notes": "The first fingertip enters; subsequent fingers are still seeking entry. No complete multi-finger insertion assumed.",
+          "missing": true,
+          "from": 1117,
+          "independentQA": {
+            "status": "confirmed",
+            "rationale": "The surrounding adult passage supports this activity, direction and occurrence; no corresponding raw reading covers this event."
+          },
+          "id": "foxden-park-act-28",
+          "source": "chatgpt",
+          "weight": 0.9,
+          "paragraphHashes": [
+            "b7b60dbc",
+            "a28eda45"
+          ],
+          "engineClaimKeys": [],
+          "labelEligible": true,
+          "detectionStatus": "candidate-detection-gap",
+          "gapScope": "candidate-additional-act"
+        },
+        {
+          "to": 1119,
+          "act": "blowjob",
+          "a": "Alex Claremont-Diaz",
+          "b": "Henry Fox-Mountchristen-Windsor",
+          "occurrence": "performed",
+          "confidence": 0.99,
+          "reading": "Daniel performs oral sex on Marcus until Marcus pauses to fetch lubricant.",
+          "notes": "Correct and reversed raw duplicates coexist.",
+          "missing": false,
+          "from": 1117,
+          "id": "foxden-park-act-29",
+          "source": "chatgpt",
+          "weight": 0.9,
+          "paragraphHashes": [
+            "b7b60dbc",
+            "a28eda45",
+            "ae7df3e4"
+          ],
+          "engineClaimKeys": [
+            "sucked#3869eabd",
+            "sucked#3869eabd",
+            "sucked~elided#3869eabd",
+            "takes-between-lips#3869eabd"
+          ],
+          "labelEligible": true,
+          "detectionStatus": "detected-or-related-hint",
+          "gapScope": "none"
+        },
+        {
+          "to": 1131,
+          "act": "cock-against-ass rubbing",
+          "a": "Alex Claremont-Diaz",
+          "b": "Henry Fox-Mountchristen-Windsor",
+          "occurrence": "performed",
+          "confidence": 0.99,
+          "reading": "Marcus grinds his anal area against Daniel\u2019s penis before preparation.",
+          "notes": "Raw15 incorrectly promotes this to penetration; correction of detected contact rather than wholly absent event.",
+          "missing": false,
+          "from": 1128,
+          "id": "foxden-park-act-30",
+          "source": "chatgpt",
+          "weight": 0.9,
+          "paragraphHashes": [
+            "852ab2b",
+            "5b2ae0a2",
+            "1e37937f",
+            "f200ac8"
+          ],
+          "engineClaimKeys": [
+            "dd-grinds-onto-cock#af6573df"
+          ],
+          "labelEligible": true,
+          "detectionStatus": "detected-or-related-hint",
+          "gapScope": "none"
+        },
+        {
+          "to": 1129,
+          "act": "nipple stimulation",
+          "a": "Henry Fox-Mountchristen-Windsor",
+          "b": "Alex Claremont-Diaz",
+          "occurrence": "performed",
+          "confidence": 0.99,
+          "reading": "Marcus rubs Daniel\u2019s nipple with a thumb.",
+          "notes": "Inventory-only category.",
+          "missing": false,
+          "from": 1129,
+          "id": "foxden-park-act-31",
+          "source": "chatgpt",
+          "weight": 0.9,
+          "paragraphHashes": [
+            "5b2ae0a2"
+          ],
+          "engineClaimKeys": [],
+          "labelEligible": true,
+          "detectionStatus": "detected-or-related-hint",
+          "gapScope": "none"
+        },
+        {
+          "to": 1144,
+          "act": "fingering",
+          "a": "Alex Claremont-Diaz",
+          "b": "Henry Fox-Mountchristen-Windsor",
+          "occurrence": "performed",
+          "confidence": 0.99,
+          "reading": "Daniel inserts and moves one then two lubricated fingers inside Marcus.",
+          "notes": "Continuous anal preparation, fingers explicitly removed before penile insertion.",
+          "missing": true,
+          "from": 1133,
+          "independentQA": {
+            "status": "confirmed",
+            "rationale": "The surrounding adult passage supports this activity, direction and occurrence; no corresponding raw reading covers this event."
+          },
+          "id": "foxden-park-act-32",
+          "source": "chatgpt",
+          "weight": 0.9,
+          "paragraphHashes": [
+            "f45dbb00",
+            "115f4aeb",
+            "1954c141",
+            "f403d06a",
+            "1872de3f",
+            "b531bbf5",
+            "36d49186",
+            "2c815948",
+            "a94efb0",
+            "9d66ce10",
+            "fed0b978",
+            "b88177e7"
+          ],
+          "engineClaimKeys": [],
+          "labelEligible": true,
+          "detectionStatus": "candidate-detection-gap",
+          "gapScope": "candidate-additional-act"
+        },
+        {
+          "to": 1145,
+          "act": "manual-genital-contact",
+          "a": "Henry Fox-Mountchristen-Windsor",
+          "b": "Alex Claremont-Diaz",
+          "occurrence": "performed",
+          "confidence": 0.99,
+          "reading": "Marcus lubricates and positions Daniel\u2019s penis.",
+          "notes": "Prep contact, not evidence of a separate stroking-to-climax handjob.",
+          "missing": true,
+          "from": 1144,
+          "independentQA": {
+            "status": "inventory-only",
+            "rationale": "Lubricating and positioning a penis is definite manual preparation. It does not establish a separate handjob and is unsupported as a distinct engine act category."
+          },
+          "id": "foxden-park-act-33",
+          "source": "chatgpt",
+          "weight": 0.9,
+          "paragraphHashes": [
+            "b88177e7",
+            "b1e52c08"
+          ],
+          "engineClaimKeys": [],
+          "labelEligible": true,
+          "detectionStatus": "candidate-detection-gap",
+          "gapScope": "inventory-only"
+        },
+        {
+          "to": 1161,
+          "act": "anal sex",
+          "a": "Alex Claremont-Diaz",
+          "b": "Henry Fox-Mountchristen-Windsor",
+          "occurrence": "performed",
+          "confidence": 0.99,
+          "reading": "Daniel penetrates Marcus anally as Marcus rides him, then Daniel thrusts and withdraws.",
+          "notes": "Anal scene correctly exists, but earlier external contact and reversed/bystander records contaminate evidence.",
+          "missing": false,
+          "from": 1146,
+          "id": "foxden-park-act-34",
+          "source": "chatgpt",
+          "weight": 0.9,
+          "paragraphHashes": [
+            "70816298",
+            "5b259988",
+            "a759fdf6",
+            "2ee56205",
+            "bb640f2a",
+            "fdbe8bc7",
+            "7167c1e7",
+            "a70014da",
+            "7e5119f5",
+            "af5bad6d",
+            "c7ff37dd",
+            "f0bb2108",
+            "32ee9d8d",
+            "4b5e888d",
+            "825dae45",
+            "b34678d3"
+          ],
+          "engineClaimKeys": [
+            "dd-grinds-onto-cock#af6573df",
+            "fuck~elided#59a5f04f",
+            "push-into#59a5f04f",
+            "fill#f0bb2108",
+            "dd2-pulled-out-of-him#db598754"
+          ],
+          "labelEligible": true,
+          "detectionStatus": "detected-or-related-hint",
+          "gapScope": "none"
+        },
+        {
+          "to": 1153,
+          "act": "hands-free orgasm",
+          "a": "Henry Fox-Mountchristen-Windsor",
+          "b": "Alex Claremont-Diaz",
+          "occurrence": "performed",
+          "confidence": 0.97,
+          "reading": "Marcus climaxes while receiving anal penetration without a hand stimulating his penis.",
+          "notes": "The narration explicitly excludes deliberate penile touching; the penis brushes Daniel\u2019s stomach beforehand, so distinguish no manual stimulation from zero incidental external contact.",
+          "missing": true,
+          "from": 1151,
+          "independentQA": {
+            "status": "inventory-only-marker",
+            "rationale": "An explicit receiving-anal climax without manual penile stimulation is supported at97%. Passive penis-to-belly contact is noted, with no affirmative active penile friction. Raw-hit absence cannot demonstrate an absent frontend orgasm indicator; verify its separate marker output before calling detector a miss."
+          },
+          "id": "foxden-park-act-35",
+          "source": "chatgpt",
+          "weight": 0.9,
+          "paragraphHashes": [
+            "fdbe8bc7",
+            "7167c1e7",
+            "a70014da"
+          ],
+          "engineClaimKeys": [],
+          "labelEligible": true,
+          "detectionStatus": "candidate-marker-gap",
+          "gapScope": "candidate-missed-marker"
+        },
+        {
+          "to": 1157,
+          "act": "anal ejaculation",
+          "a": "Alex Claremont-Diaz",
+          "b": "Henry Fox-Mountchristen-Windsor",
+          "occurrence": "performed",
+          "confidence": 0.99,
+          "reading": "Daniel ejaculates while his penis remains inside Marcus.",
+          "notes": "Supported by detected anal episode; additional event attribute, not an absent scene.",
+          "missing": false,
+          "from": 1155,
+          "id": "foxden-park-act-36",
+          "source": "chatgpt",
+          "weight": 0.9,
+          "paragraphHashes": [
+            "af5bad6d",
+            "c7ff37dd",
+            "f0bb2108"
+          ],
+          "engineClaimKeys": [
+            "push-into#59a5f04f",
+            "fill#f0bb2108"
+          ],
+          "labelEligible": true,
+          "detectionStatus": "detected-or-related-hint",
+          "gapScope": "none"
+        },
+        {
+          "to": 1207,
+          "act": "body rubbing",
+          "a": "Alex Claremont-Diaz",
+          "b": "Henry Fox-Mountchristen-Windsor",
+          "occurrence": "performed",
+          "confidence": 0.97,
+          "reading": "Daniel presses his thigh between Marcus\u2019s legs while cuddling.",
+          "notes": "Flirtatious external pressure; no insertion established.",
+          "missing": true,
+          "from": 1207,
+          "independentQA": {
+            "status": "confirmed",
+            "rationale": "The surrounding adult passage supports this activity, direction and occurrence; no corresponding raw reading covers this event."
+          },
+          "id": "foxden-park-act-37",
+          "source": "chatgpt",
+          "weight": 0.9,
+          "paragraphHashes": [
+            "c5e32de8"
+          ],
+          "engineClaimKeys": [],
+          "labelEligible": true,
+          "detectionStatus": "candidate-detection-gap",
+          "gapScope": "inventory-only"
+        },
+        {
+          "to": 1246,
+          "act": "blowjob",
+          "a": null,
+          "b": null,
+          "occurrence": "hypothetical",
+          "confidence": 0.98,
+          "reading": "An adult sister guesses that the couple spent the cottage visit performing oral sex.",
+          "notes": "Banter about inferred events, not evidence of a new current oral act.",
+          "missing": false,
+          "from": 1244,
+          "id": "foxden-park-act-38",
+          "source": "chatgpt",
+          "weight": 0.9,
+          "paragraphHashes": [
+            "1e941559",
+            "e7b16f49",
+            "86e1c6e8"
+          ],
+          "engineClaimKeys": [],
+          "labelEligible": false,
+          "detectionStatus": "detected-or-related-hint",
+          "gapScope": "none"
+        },
+        {
+          "to": 1332,
+          "act": "fingering",
+          "a": "Alex Claremont-Diaz",
+          "b": "Henry Fox-Mountchristen-Windsor",
+          "occurrence": "performed",
+          "confidence": 0.99,
+          "reading": "Daniel uses lubricated fingers to prepare Marcus during their reunion.",
+          "notes": "Raw36 mistakes ownership for self-fingering and invents absent friend.",
+          "missing": false,
+          "from": 1331,
+          "id": "foxden-park-act-39",
+          "source": "chatgpt",
+          "weight": 0.9,
+          "paragraphHashes": [
+            "67ffa761",
+            "ba4a20d4"
+          ],
+          "engineClaimKeys": [
+            "self-own-fingers#420faba0"
+          ],
+          "labelEligible": true,
+          "detectionStatus": "detected-or-related-hint",
+          "gapScope": "none"
+        },
+        {
+          "to": 1334,
+          "act": "anal sex",
+          "a": "Alex Claremont-Diaz",
+          "b": "Henry Fox-Mountchristen-Windsor",
+          "occurrence": "performed",
+          "confidence": 0.99,
+          "reading": "Daniel penetrates Marcus anally during their reunion, then withdraws.",
+          "notes": "",
+          "missing": false,
+          "from": 1333,
+          "id": "foxden-park-act-40",
+          "source": "chatgpt",
+          "weight": 0.9,
+          "paragraphHashes": [
+            "afd38e2",
+            "837dc23a"
+          ],
+          "engineClaimKeys": [
+            "fuck#a53cd3d7"
+          ],
+          "labelEligible": true,
+          "detectionStatus": "detected-or-related-hint",
+          "gapScope": "none"
+        },
+        {
+          "to": 1338,
+          "act": "fingering",
+          "a": "Alex Claremont-Diaz",
+          "b": "Henry Fox-Mountchristen-Windsor",
+          "occurrence": "performed",
+          "confidence": 0.99,
+          "reading": "Daniel inserts two fingers into Marcus after intercourse and holds them there.",
+          "notes": "Marcus explicitly guides Daniel\u2019s hand; raw21 has wrong participants.",
+          "missing": false,
+          "from": 1334,
+          "id": "foxden-park-act-41",
+          "source": "chatgpt",
+          "weight": 0.9,
+          "paragraphHashes": [
+            "837dc23a",
+            "1fe70da7",
+            "dae150c6",
+            "22339e28",
+            "9c6b56c4"
+          ],
+          "engineClaimKeys": [
+            "push-into~elided#6263de3f"
+          ],
+          "labelEligible": true,
+          "detectionStatus": "detected-or-related-hint",
+          "gapScope": "none"
+        },
+        {
+          "to": 1383,
+          "act": "checking-out-crotch",
+          "a": "Alex Claremont-Diaz",
+          "b": "Henry Fox-Mountchristen-Windsor",
+          "occurrence": "performed",
+          "confidence": 0.98,
+          "reading": "Daniel glances deliberately at Marcus\u2019s crotch while alluding to their habitual sex.",
+          "notes": "Visual hint only; no new sex act or specified habitual oral/anal act.",
+          "missing": true,
+          "from": 1383,
+          "independentQA": {
+            "status": "confirmed-hint",
+            "rationale": "The visual or buttock-touch hint is supported; distinguish missed hint evidence from an omitted performed sex act."
+          },
+          "id": "foxden-park-act-42",
+          "source": "chatgpt",
+          "weight": 0.9,
+          "paragraphHashes": [
+            "8ec8e9fc"
+          ],
+          "engineClaimKeys": [],
+          "labelEligible": true,
+          "detectionStatus": "candidate-detection-gap",
+          "gapScope": "inventory-only"
+        }
+      ],
+      "counts": {
+        "correct": 25,
+        "wrong": 11,
+        "uncertain": 1,
+        "imported": 32,
+        "withheld": 5,
+        "importedCorrect": 22,
+        "importedWrong": 10,
+        "contextModelEligible": 32,
+        "inventory": 43,
+        "candidateGaps": 17,
+        "candidateMissedActs": 4,
+        "candidateMarkerGaps": 1
+      },
+      "independentQA": {
+        "checkedHitIndices": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35,
+          36
+        ],
+        "challenges": [
+          {
+            "index": 30,
+            "recommendation": "wrong",
+            "confidence": 0.99,
+            "rationale": "The self-directed flirtatious finger lick is real, but the identity claim names the other adult as finger owner. Existing review-claims template says the performer is sucking the selected partner\u2019s fingers. Actual fingers belong to the performer. Preserve self-directed hint inventory while rejecting wrong-partner ownership."
+          }
+        ]
+      },
+      "engineConfidenceMeaning": "Pattern-record plus context-model probability for this raw claim on the recorded base commit; not the aggregated scene/card confidence. Null means the raw claim has no context features.",
+      "engineVerdicts": [
+        {
+          "pairing": "Alex Claremont-Diaz/Henry Fox-Mountchristen-Windsor",
+          "acts": {
+            "anal": {
+              "verdict": "one_way",
+              "top": "Alex Claremont-Diaz",
+              "bottom": "Henry Fox-Mountchristen-Windsor",
+              "confidence": 0.6040016598482979
+            },
+            "blowjob": {
+              "verdict": "switch",
+              "top": "Henry Fox-Mountchristen-Windsor",
+              "bottom": "Alex Claremont-Diaz",
+              "confidence": 0.8874601495203769
+            },
+            "rimming": {
+              "verdict": "none",
+              "top": "",
+              "bottom": "",
+              "confidence": 0.45
+            }
+          }
+        }
+      ],
+      "markerChecks": [
+        {
+          "marker": "bottom hands-free orgasm",
+          "from": 1151,
+          "to": 1153,
+          "who": "Henry Fox-Mountchristen-Windsor",
+          "reviewerConfidence": 0.97,
+          "reviewerVerdict": "supported",
+          "engineReadings": 0,
+          "highConfidenceEvidence": 0,
+          "indicatorWouldRender": false,
+          "scope": "marker detection, separate from performed-act and confidence-training counts",
+          "caveat": "Passive penis-to-belly contact is narrated; no active penile friction is established and lack of penile touch is explicit."
+        }
+      ]
+    }
+  ],
+  "priorAutomatedEntries": [],
+  "excluded": [
+    {
+      "file": "dog_teeth.pdf",
+      "reason": "Real-person sexual fiction; excluded from explicit sexual-scene annotation and labels.",
+      "evidenceLocation": "PDF fandom and relationship metadata"
+    }
+  ],
+  "inventoryParticipantConvention": "a is the actor/performer and b the recipient for specified activities; nonspecific sex assigns no direction. Raw claims/right-set keep legacy conventions: blowjob top is the adult receiving oral sex."
+}
