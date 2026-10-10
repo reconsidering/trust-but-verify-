@@ -110,3 +110,7 @@ context remain unscored. Assistant confidence is subjective and uncalibrated.
 This supplementary evidence is not consumed by confidence training, gold checks
 or the detector; a future recall comparison must handle its positive-only scope
 explicitly. The original importer continues to skip incomplete windows.
+
+## Per-act inventory recall
+
+`npm run recall -- ao3-samples` now replays independent act inventories with source and paragraph identity checks, writes per-act counts and missed-event locations, and retains a local history. Owner, AI and partial-review evidence are reported separately. See [ACT_RECALL.md](ACT_RECALL.md) for scoring rules and limitations. This measures reviewed performed-act coverage, not the precision of hints or full-corpus recall.
