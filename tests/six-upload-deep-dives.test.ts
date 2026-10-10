@@ -28,7 +28,7 @@ it('keeps definite adult claim judgments fractional, source-bound and separate f
   expect(r.confidence).toBeGreaterThanOrEqual(.95);expect(['correct','wrong']).toContain(r.verdict);
   const pool=r.verdict==='correct'?set.entries:set.negatives;
   const entries=pool.filter((e:any)=>e.h===r.reportHash&&e.via===baseVia(r.claim.pattern));
-  expect(entries).toHaveLength(1);expect(weightOf(entries[0])).toBe(.9);expect(entries[0].source).toBe('chatgpt');
+  expect(entries).toHaveLength(1);expect([.9,.3]).toContain(weightOf(entries[0]));expect(entries[0].source).toBe('chatgpt');
   expect(entries[0].reviewerConfidence).toBe(r.confidence);expect(sameReportedPeople(entries[0],r.claim)).toBe(true);
   const reviewed=claims.get(r.key);expect(reviewed).toBeTruthy();
   if(!reviewed)throw new Error(`Missing reviewed claim: ${r.id}`);

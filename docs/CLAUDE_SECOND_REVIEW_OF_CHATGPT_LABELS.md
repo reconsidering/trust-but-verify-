@@ -11,10 +11,9 @@ How it was done: every ChatGPT label (source `chatgpt`, seen 2026-10-10, weight 
 | ChatGPT labels added 10-09/10-10 (all at 0.9) | 1,037 |
 | of which ChatGPT called the reading right (`entries`) | 728 |
 | of which ChatGPT called it wrong (`negatives`) | 309 |
-| **Reviewed by Claude** | **730** |
-| Not reviewable here (four fics are not in the uploaded zip) | 307 |
+| **Reviewed by Claude (all of them)** | **1,037** |
 
-Not reviewed, still at 0.9: Wolfbird (195), Dog Roses, Marigolds… (78), Apogee (24), the full spectrum of human emotion (10). Upload those four fics and the same pass can be run on them.
+The review ran in two passes because the fics arrived in two zips: 730 labels on the 12 fics in the first zip, then the 307 labels on Wolfbird, Dog Roses, Apogee and the full spectrum of human emotion once they were supplied.
 
 Not touched: the owner's own labels (full weight, 5 of them dated 10-09/10-10) and Claude's earlier labels (0.85 / 0.3, dated 10-05).
 
@@ -22,25 +21,27 @@ Not touched: the owner's own labels (full weight, 5 of them dated 10-09/10-10) a
 
 | | Count | Share |
 | --- | ---: | ---: |
-| Agree (weight kept at 0.9) | 669 | 91.6% |
-| Disagree (reweighted to 0.3) | 61 | 8.4% |
+| Agree (weight kept at 0.9) | 930 | 89.7% |
+| Disagree (reweighted to 0.3) | 107 | 10.3% |
 
 | ChatGPT said | Claude said | Count |
 | --- | --- | ---: |
-| right | right | 489 |
-| wrong | wrong | 180 |
-| right | **wrong** | **44** |
-| wrong | **right** | **17** |
+| right | right | 657 |
+| wrong | wrong | 273 |
+| right | **wrong** | **71** |
+| wrong | **right** | **36** |
 
-Match rate of the 730: 681 readings were found again by the current engine, and 49 labelled-wrong readings the engine no longer produces were found by searching the fic text for their sentence. Those 49 were judged too (48 wrong, 1 right; all agreed).
+Of the 1,037, 1,006 were found again by the current engine; 49 labelled-wrong readings the engine no longer produces were found by searching the fic text for their sentence and were judged too (all 49 agreed).
 
 ## By fic
 
 | Fic | Reviewed | Agree | Reweighted | ChatGPT right → Claude wrong | ChatGPT wrong → Claude right |
 | --- | ---: | ---: | ---: | ---: | ---: |
 | A WereCompeer | 146 | 140 | 6 | 3 | 3 |
+| Wolfbird | 195 | 181 | 14 | 2 | 12 |
 | lover, you can’t be wrong | 94 | 88 | 6 | 0 | 6 |
 | Heavyweight | 92 | 81 | 11 | 11 | 0 |
+| Dog Roses, Marigolds… | 78 | 53 | 25 | 20 | 5 |
 | Icarus, Burning | 76 | 66 | 10 | 8 | 2 |
 | pañuelo melody | 70 | 67 | 3 | 1 | 2 |
 | Needing the Knot | 67 | 61 | 6 | 6 | 0 |
@@ -49,30 +50,32 @@ Match rate of the 730: 681 readings were found again by the current engine, and 
 | Bluebells and Daylillies… | 33 | 31 | 2 | 1 | 1 |
 | Foxden Park | 32 | 31 | 1 | 1 | 0 |
 | wretched rhetoric | 26 | 24 | 2 | 1 | 1 |
+| Apogee | 24 | 22 | 2 | 0 | 2 |
 | the lathe | 21 | 16 | 5 | 5 | 0 |
-| **Total** | **730** | **669** | **61** | **44** | **17** |
+| the full spectrum of human emotion | 10 | 5 | 5 | 5 | 0 |
+| **Total** | **1,037** | **930** | **107** | **71** | **36** |
 
 ## By kind of label
 
 | Kind | Reviewed | Agree | Disagree | Agreement |
 | --- | ---: | ---: | ---: | ---: |
-| Scene (a performed act) | 323 | 315 | 8 | 97.5% |
-| Hint (a cue that points at top or bottom) | 387 | 335 | 52 | 86.6% |
-| Solo | 20 | 19 | 1 | 95.0% |
+| Scene (a performed act) | 455 | 442 | 13 | 97.1% |
+| Hint (a cue that points at top or bottom) | 555 | 462 | 93 | 83.2% |
+| Solo | 27 | 26 | 1 | 96.3% |
 
 Scenes are almost all in agreement. Nearly all the disagreement is in hints.
 
 ## Where they disagree
 
-**ChatGPT right, Claude wrong (44).** 42 are behaviour or position cues taken as sexual role evidence when the passage is not sexual, or when the engine credited the wrong person: comforting (11), gripping firmly (11), leading by the hand (4), lifting or carrying (3), protecting (2), and 11 others (pinning, tilting a face up, head on a chest, kneeling, pushing back, blushing, checking in). Examples of the situations: a pat on the arm in a fight scene, gripping a chin to check an injury, a rescue carry, a hand squeeze during an argument, a blush at an embarrassing question. Under "an everyday action, not in a sexual scene" these are wrong readings. The remaining 2 are anal-sex readings credited to the wrong act or person.
+**ChatGPT right, Claude wrong (71).** Almost all are behaviour or position hints taken as sexual role evidence when the passage is not sexual, or when the engine credited the wrong person: comforting someone (20 across both passes), gripping firmly (11), leading by the hand (10), looking after someone (6), carrying or protecting (5), letting someone lead (3), plus pinning, face tilting, head on a chest, kneeling, blushing and similar. Typical situations: a pat or arm squeeze in a market or a fight, gripping a chin to check an injury, tea and cake, a rescue carry, being led to a stall or a settee for a cuddle. Under "an everyday action, not in a sexual scene" these are wrong readings. A few are readings credited to the wrong act or person.
 
-**ChatGPT wrong, Claude right (17).** Most are readings where the act really happens (or is clearly wanted) and the person is right, but the engine called it a hypothetical, a fantasy or "wanted". ChatGPT marked the reading wrong because of that mislabel; Claude counted the role evidence as right. These are a judgement call on strictness, and the owner may want to settle the convention (a correctly credited act labelled as "wanted" or "fantasy": right, or wrong?).
+**ChatGPT wrong, Claude right (36).** Most are readings where the act really happens (or is clearly wanted) and the person is right, but the engine called it a hypothetical, a fantasy or "wanted". ChatGPT marked the reading wrong because of that mislabel; Claude counted the role evidence as right. These are a judgement call on strictness, and the owner may want to settle the convention (a correctly credited act labelled as "wanted" or "fantasy": right, or wrong?).
 
-**Where both said wrong (180)** the dominant causes were: roles reversed (for example the person sucking credited as the one sucked), a solo act credited to a partner, two spellings of one person treated as two people, metaphors (collars, leashes) taken literally, and acts in the wrong category (fingers or tongue read as a penis).
+**Where both said wrong (273)** the dominant causes were: roles reversed (for example the person sucking credited as the one sucked), a solo act credited to a partner, two spellings of one person treated as two people, metaphors (collars, leashes) taken literally, and acts in the wrong category (fingers or tongue read as a penis).
 
 ## Two things for the owner
 
-1. The 0.3 weight is a "Claude disagreed" marker, not a verdict: some of the 61 are probably right. The 17 mislabel cases in particular could go back to 0.9 if the owner rules that way.
-2. The unit tests that pinned every ChatGPT label at 0.9 (`five-fic-deep-dives`, `four-pdf-deep-dives`, `foxden-park-deep-dive`, `icarus-burning-deep-dive`, `panuelo-melody-deep-dive`) now accept 0.9 or 0.3.
+1. The 0.3 weight is a "Claude disagreed" marker, not a verdict: some of the 107 are probably right. The 36 mislabel cases in particular could go back to 0.9 if the owner rules that way.
+2. The unit tests that pinned every ChatGPT label at 0.9 (`five-fic-deep-dives`, `four-pdf-deep-dives`, `foxden-park-deep-dive`, `icarus-burning-deep-dive`, `panuelo-melody-deep-dive`, `six-upload-deep-dives`) now accept 0.9 or 0.3.
 
 The generated files (`reliability.ts`, `learned.ts`) are not regenerated here; the reliability workflow and a later `npm run regen` pick up the new weights.
