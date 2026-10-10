@@ -91,7 +91,8 @@ const results = await Promise.all(tasks);
 for (let k = 0; k < results.length; k++) {
   const m = /^gold \+ right-set (\d+)\//.exec(results[k].label);
   if (m && results[k].code && /OOMErrorHandler|heap out of memory|SIGKILL|SIGABRT/.test(results[k].log)) {
-    console.log(`${results[k].label} ran out of memory; running it again alone with a bigger heap`);
+    console.log(`${results[k].label} ran out of memory; running it again alone with a bigger heap (first attempt's log: ${join(outDir, `shard-${m[1]}-oom.log`)})`);
+    writeFileSync(join(outDir, `shard-${m[1]}-oom.log`), `${results[k].log.slice(-6000)}\n`);
     results[k] = await shardTask(shards[Number(m[1]) - 1], Number(m[1]) - 1, 8000);
   }
 }
