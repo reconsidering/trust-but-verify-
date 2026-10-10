@@ -1787,8 +1787,9 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
     if (cast.pairings.length && (pat.cat === "anal" || pat.cat === "oral")) {
       const isNamed = (c: Character) => [c.name, ...c.aliases].some((a) => a.length > 2 && new RegExp(`\\b${escapeRe(a)}\\b`).test(sent));
       const weak = (o: string | undefined) => o === "last-subject" || o === "recent" || o === "partner" || o === "rule" || o === "clause";
-      const outside = (c: Character, o: string | undefined) => !cast.pairings.some((pr) => pr.includes(c)) && !isNamed(c) && weak(o);
-      if (outside(top, attribution.top) || outside(bottom, attribution.bottom)) return;
+      // A different gender from the other person (a "her" in a story of men) is a real second partner, not a fallback.
+      const outside = (c: Character, o: string | undefined, other: Character) => !cast.pairings.some((pr) => pr.includes(c)) && !isNamed(c) && weak(o) && c.gender === other.gender;
+      if (outside(top, attribution.top, bottom) || outside(bottom, attribution.bottom, top)) return;
     }
     // "He lives only for Morgan, for his knot to lock them together": the knot someone longs for is the other man's.
     if (pat.id.startsWith("knot-owner") && /^(?:his|her|their)$/i.test(tTok ?? "") && /\b(?:for|want\w*|need\w*|crav\w*|beg\w*|long\w*|ach\w*)\s+$/i.test(sent.slice(0, m.index!))) [top, bottom] = [bottom, top];
