@@ -1,0 +1,3415 @@
+{
+  "made": "2026-10-10",
+  "source": "chatgpt",
+  "weight": 0.9,
+  "engineCommit": "9ad2225b8e15807e5d7e03095489eb596153c797",
+  "how": "Claim identity only: labels is deliberately empty. The weighted judgments live in tests/right-set, so existing training loaders use weight 0.9 rather than the unit-weight audit-label path. Existing audit reviews and claim guards take precedence.",
+  "labels": {},
+  "answers": [
+    {
+      "key": "push-into~elided#6139b420",
+      "claim": {
+        "fic": "bluebells.html",
+        "sourceSha": "ed9e8f48d2ed52e7c6f9a2ee3fc00dc5ad9e38f897fbc2f4fa60ffd193ba1a89",
+        "paragraph": 832,
+        "pattern": "push-into~elided",
+        "act": "anal sex",
+        "kind": "act",
+        "a": "David Shepherd",
+        "b": "Brother Diarmuid",
+        "role": ""
+      },
+      "id": "bluebells-0"
+    },
+    {
+      "key": "dd6-presses-past-rim~elided#6139b420",
+      "claim": {
+        "fic": "bluebells.html",
+        "sourceSha": "ed9e8f48d2ed52e7c6f9a2ee3fc00dc5ad9e38f897fbc2f4fa60ffd193ba1a89",
+        "paragraph": 832,
+        "pattern": "dd6-presses-past-rim~elided",
+        "act": "anal sex",
+        "kind": "act",
+        "a": "David Shepherd",
+        "b": "Brother Diarmuid",
+        "role": ""
+      },
+      "id": "bluebells-1"
+    },
+    {
+      "key": "push-into#9ad2518b",
+      "claim": {
+        "fic": "bluebells.html",
+        "sourceSha": "ed9e8f48d2ed52e7c6f9a2ee3fc00dc5ad9e38f897fbc2f4fa60ffd193ba1a89",
+        "paragraph": 838,
+        "pattern": "push-into",
+        "act": "anal sex",
+        "kind": "act",
+        "a": "David Shepherd",
+        "b": "Brother Diarmuid",
+        "role": ""
+      },
+      "id": "bluebells-2"
+    },
+    {
+      "key": "inside#9ad2518b",
+      "claim": {
+        "fic": "bluebells.html",
+        "sourceSha": "ed9e8f48d2ed52e7c6f9a2ee3fc00dc5ad9e38f897fbc2f4fa60ffd193ba1a89",
+        "paragraph": 838,
+        "pattern": "inside",
+        "act": "anal sex",
+        "kind": "act",
+        "a": "David Shepherd",
+        "b": "Brother Diarmuid",
+        "role": ""
+      },
+      "id": "bluebells-3"
+    },
+    {
+      "key": "is-locked-inside#9ad2518b",
+      "claim": {
+        "fic": "bluebells.html",
+        "sourceSha": "ed9e8f48d2ed52e7c6f9a2ee3fc00dc5ad9e38f897fbc2f4fa60ffd193ba1a89",
+        "paragraph": 838,
+        "pattern": "is-locked-inside",
+        "act": "anal sex",
+        "kind": "act",
+        "a": "David Shepherd",
+        "b": "Brother Diarmuid",
+        "role": ""
+      },
+      "id": "bluebells-4"
+    },
+    {
+      "key": "dd-hole-strangles-cock#cbbdef35",
+      "claim": {
+        "fic": "bluebells.html",
+        "sourceSha": "ed9e8f48d2ed52e7c6f9a2ee3fc00dc5ad9e38f897fbc2f4fa60ffd193ba1a89",
+        "paragraph": 840,
+        "pattern": "dd-hole-strangles-cock",
+        "act": "anal sex",
+        "kind": "act",
+        "a": "David Shepherd",
+        "b": "Brother Diarmuid",
+        "role": ""
+      },
+      "id": "bluebells-7"
+    },
+    {
+      "key": "clenched-around#8194485",
+      "claim": {
+        "fic": "bluebells.html",
+        "sourceSha": "ed9e8f48d2ed52e7c6f9a2ee3fc00dc5ad9e38f897fbc2f4fa60ffd193ba1a89",
+        "paragraph": 846,
+        "pattern": "clenched-around",
+        "act": "anal sex",
+        "kind": "act",
+        "a": "David Shepherd",
+        "b": "Brother Diarmuid",
+        "role": ""
+      },
+      "id": "bluebells-10"
+    },
+    {
+      "key": "push-into#21069a66",
+      "claim": {
+        "fic": "bluebells.html",
+        "sourceSha": "ed9e8f48d2ed52e7c6f9a2ee3fc00dc5ad9e38f897fbc2f4fa60ffd193ba1a89",
+        "paragraph": 1066,
+        "pattern": "push-into",
+        "act": "anal sex",
+        "kind": "act",
+        "a": "David Shepherd",
+        "b": "Brother Diarmuid",
+        "role": ""
+      },
+      "id": "bluebells-14"
+    },
+    {
+      "key": "clenched-around#303fbff",
+      "claim": {
+        "fic": "bluebells.html",
+        "sourceSha": "ed9e8f48d2ed52e7c6f9a2ee3fc00dc5ad9e38f897fbc2f4fa60ffd193ba1a89",
+        "paragraph": 1273,
+        "pattern": "clenched-around",
+        "act": "anal sex",
+        "kind": "act",
+        "a": "David Shepherd",
+        "b": "Brother Diarmuid",
+        "role": ""
+      },
+      "id": "bluebells-21"
+    },
+    {
+      "key": "fingers-inside#1031919b",
+      "claim": {
+        "fic": "bluebells.html",
+        "sourceSha": "ed9e8f48d2ed52e7c6f9a2ee3fc00dc5ad9e38f897fbc2f4fa60ffd193ba1a89",
+        "paragraph": 1647,
+        "pattern": "fingers-inside",
+        "act": "fingering",
+        "kind": "act",
+        "a": "David Shepherd",
+        "b": "Brother Diarmuid",
+        "role": ""
+      },
+      "id": "bluebells-24"
+    },
+    {
+      "key": "dd-finger-slips-into#1031919b",
+      "claim": {
+        "fic": "bluebells.html",
+        "sourceSha": "ed9e8f48d2ed52e7c6f9a2ee3fc00dc5ad9e38f897fbc2f4fa60ffd193ba1a89",
+        "paragraph": 1647,
+        "pattern": "dd-finger-slips-into",
+        "act": "fingering",
+        "kind": "act",
+        "a": "David Shepherd",
+        "b": "Brother Diarmuid",
+        "role": ""
+      },
+      "id": "bluebells-25"
+    },
+    {
+      "key": "dd5-pushes-finger-in#1031919b",
+      "claim": {
+        "fic": "bluebells.html",
+        "sourceSha": "ed9e8f48d2ed52e7c6f9a2ee3fc00dc5ad9e38f897fbc2f4fa60ffd193ba1a89",
+        "paragraph": 1647,
+        "pattern": "dd5-pushes-finger-in",
+        "act": "fingering",
+        "kind": "act",
+        "a": "David Shepherd",
+        "b": "Brother Diarmuid",
+        "role": ""
+      },
+      "id": "bluebells-26"
+    },
+    {
+      "key": "push-into#b6e2fe3c",
+      "claim": {
+        "fic": "bluebells.html",
+        "sourceSha": "ed9e8f48d2ed52e7c6f9a2ee3fc00dc5ad9e38f897fbc2f4fa60ffd193ba1a89",
+        "paragraph": 1651,
+        "pattern": "push-into",
+        "act": "anal sex",
+        "kind": "act",
+        "a": "David Shepherd",
+        "b": "Brother Diarmuid",
+        "role": ""
+      },
+      "id": "bluebells-27"
+    },
+    {
+      "key": "pushed-in#b6e2fe3c",
+      "claim": {
+        "fic": "bluebells.html",
+        "sourceSha": "ed9e8f48d2ed52e7c6f9a2ee3fc00dc5ad9e38f897fbc2f4fa60ffd193ba1a89",
+        "paragraph": 1651,
+        "pattern": "pushed-in",
+        "act": "anal sex",
+        "kind": "act",
+        "a": "David Shepherd",
+        "b": "Brother Diarmuid",
+        "role": ""
+      },
+      "id": "bluebells-28"
+    },
+    {
+      "key": "dd-takes-into-mouth#d7944865",
+      "claim": {
+        "fic": "bluebells.html",
+        "sourceSha": "ed9e8f48d2ed52e7c6f9a2ee3fc00dc5ad9e38f897fbc2f4fa60ffd193ba1a89",
+        "paragraph": 1656,
+        "pattern": "dd-takes-into-mouth",
+        "act": "blowjob",
+        "kind": "act",
+        "a": "Brother Diarmuid",
+        "b": "David Shepherd",
+        "role": ""
+      },
+      "id": "bluebells-30"
+    },
+    {
+      "key": "dom-grip#167925ad",
+      "claim": {
+        "fic": "bluebells.html",
+        "sourceSha": "ed9e8f48d2ed52e7c6f9a2ee3fc00dc5ad9e38f897fbc2f4fa60ffd193ba1a89",
+        "paragraph": 12,
+        "pattern": "dom-grip",
+        "act": "gripping firmly",
+        "kind": "behavior",
+        "a": "David Shepherd",
+        "b": "Brother Diarmuid",
+        "role": "top"
+      },
+      "id": "bluebells-33"
+    },
+    {
+      "key": "flustered-verb#8d135475",
+      "claim": {
+        "fic": "bluebells.html",
+        "sourceSha": "ed9e8f48d2ed52e7c6f9a2ee3fc00dc5ad9e38f897fbc2f4fa60ffd193ba1a89",
+        "paragraph": 228,
+        "pattern": "flustered-verb",
+        "act": "flustered or blushing",
+        "kind": "behavior",
+        "a": "Brother Diarmuid",
+        "b": "David Shepherd",
+        "role": "bottom"
+      },
+      "id": "bluebells-35"
+    },
+    {
+      "key": "flustered-verb~elided#b31a55c9",
+      "claim": {
+        "fic": "bluebells.html",
+        "sourceSha": "ed9e8f48d2ed52e7c6f9a2ee3fc00dc5ad9e38f897fbc2f4fa60ffd193ba1a89",
+        "paragraph": 447,
+        "pattern": "flustered-verb~elided",
+        "act": "flustered or blushing",
+        "kind": "behavior",
+        "a": "Brother Diarmuid",
+        "b": "David Shepherd",
+        "role": "bottom"
+      },
+      "id": "bluebells-36"
+    },
+    {
+      "key": "flustered-verb#644bdda6",
+      "claim": {
+        "fic": "bluebells.html",
+        "sourceSha": "ed9e8f48d2ed52e7c6f9a2ee3fc00dc5ad9e38f897fbc2f4fa60ffd193ba1a89",
+        "paragraph": 593,
+        "pattern": "flustered-verb",
+        "act": "flustered or blushing",
+        "kind": "behavior",
+        "a": "David Shepherd",
+        "b": "Brother Diarmuid",
+        "role": "bottom"
+      },
+      "id": "bluebells-38"
+    },
+    {
+      "key": "flustered-verb#1938d361",
+      "claim": {
+        "fic": "bluebells.html",
+        "sourceSha": "ed9e8f48d2ed52e7c6f9a2ee3fc00dc5ad9e38f897fbc2f4fa60ffd193ba1a89",
+        "paragraph": 601,
+        "pattern": "flustered-verb",
+        "act": "flustered or blushing",
+        "kind": "behavior",
+        "a": "Brother Diarmuid",
+        "b": "David Shepherd",
+        "role": "bottom"
+      },
+      "id": "bluebells-39"
+    },
+    {
+      "key": "flustered-verb#db9517cc",
+      "claim": {
+        "fic": "bluebells.html",
+        "sourceSha": "ed9e8f48d2ed52e7c6f9a2ee3fc00dc5ad9e38f897fbc2f4fa60ffd193ba1a89",
+        "paragraph": 640,
+        "pattern": "flustered-verb",
+        "act": "flustered or blushing",
+        "kind": "behavior",
+        "a": "Brother Diarmuid",
+        "b": "David Shepherd",
+        "role": "bottom"
+      },
+      "id": "bluebells-40"
+    },
+    {
+      "key": "care-soothe#58ac186d",
+      "claim": {
+        "fic": "bluebells.html",
+        "sourceSha": "ed9e8f48d2ed52e7c6f9a2ee3fc00dc5ad9e38f897fbc2f4fa60ffd193ba1a89",
+        "paragraph": 798,
+        "pattern": "care-soothe",
+        "act": "comforting someone",
+        "kind": "behavior",
+        "a": "David Shepherd",
+        "b": "Brother Diarmuid",
+        "role": "top"
+      },
+      "id": "bluebells-42"
+    },
+    {
+      "key": "dd-hj-fingers-around#ef910ed9",
+      "claim": {
+        "fic": "bluebells.html",
+        "sourceSha": "ed9e8f48d2ed52e7c6f9a2ee3fc00dc5ad9e38f897fbc2f4fa60ffd193ba1a89",
+        "paragraph": 809,
+        "pattern": "dd-hj-fingers-around",
+        "act": "handjob",
+        "kind": "handjob",
+        "a": "David Shepherd",
+        "b": "Brother Diarmuid",
+        "role": "top"
+      },
+      "id": "bluebells-43"
+    },
+    {
+      "key": "spread-legs#2b7a6286",
+      "claim": {
+        "fic": "bluebells.html",
+        "sourceSha": "ed9e8f48d2ed52e7c6f9a2ee3fc00dc5ad9e38f897fbc2f4fa60ffd193ba1a89",
+        "paragraph": 829,
+        "pattern": "spread-legs",
+        "act": "spreading their legs",
+        "kind": "prep",
+        "a": "Brother Diarmuid",
+        "b": "David Shepherd",
+        "role": "bottom"
+      },
+      "id": "bluebells-47"
+    },
+    {
+      "key": "push-into~elided#69034915",
+      "claim": {
+        "fic": "bluebells.html",
+        "sourceSha": "ed9e8f48d2ed52e7c6f9a2ee3fc00dc5ad9e38f897fbc2f4fa60ffd193ba1a89",
+        "paragraph": 841,
+        "pattern": "push-into~elided",
+        "act": "anal sex",
+        "kind": "fantasy",
+        "a": "David Shepherd",
+        "b": "Brother Diarmuid",
+        "role": "top"
+      },
+      "id": "bluebells-49"
+    },
+    {
+      "key": "bend-over~elided#8e2c78d2",
+      "claim": {
+        "fic": "bluebells.html",
+        "sourceSha": "ed9e8f48d2ed52e7c6f9a2ee3fc00dc5ad9e38f897fbc2f4fa60ffd193ba1a89",
+        "paragraph": 868,
+        "pattern": "bend-over~elided",
+        "act": "bending someone over",
+        "kind": "touch",
+        "a": "David Shepherd",
+        "b": "Brother Diarmuid",
+        "role": "top"
+      },
+      "id": "bluebells-51"
+    },
+    {
+      "key": "care-soothe#7107a5c3",
+      "claim": {
+        "fic": "bluebells.html",
+        "sourceSha": "ed9e8f48d2ed52e7c6f9a2ee3fc00dc5ad9e38f897fbc2f4fa60ffd193ba1a89",
+        "paragraph": 922,
+        "pattern": "care-soothe",
+        "act": "comforting someone",
+        "kind": "behavior",
+        "a": "Brother Diarmuid",
+        "b": "David Shepherd",
+        "role": "top"
+      },
+      "id": "bluebells-53"
+    },
+    {
+      "key": "care-soothe#9c6950a4",
+      "claim": {
+        "fic": "bluebells.html",
+        "sourceSha": "ed9e8f48d2ed52e7c6f9a2ee3fc00dc5ad9e38f897fbc2f4fa60ffd193ba1a89",
+        "paragraph": 979,
+        "pattern": "care-soothe",
+        "act": "comforting someone",
+        "kind": "behavior",
+        "a": "Brother Diarmuid",
+        "b": "David Shepherd",
+        "role": "top"
+      },
+      "id": "bluebells-54"
+    },
+    {
+      "key": "grab-ass#92a7507b",
+      "claim": {
+        "fic": "bluebells.html",
+        "sourceSha": "ed9e8f48d2ed52e7c6f9a2ee3fc00dc5ad9e38f897fbc2f4fa60ffd193ba1a89",
+        "paragraph": 1066,
+        "pattern": "grab-ass",
+        "act": "grabbing an ass",
+        "kind": "touch",
+        "a": "David Shepherd",
+        "b": "Brother Diarmuid",
+        "role": "top"
+      },
+      "id": "bluebells-55"
+    },
+    {
+      "key": "flustered-verb~elided#6d60033",
+      "claim": {
+        "fic": "bluebells.html",
+        "sourceSha": "ed9e8f48d2ed52e7c6f9a2ee3fc00dc5ad9e38f897fbc2f4fa60ffd193ba1a89",
+        "paragraph": 1235,
+        "pattern": "flustered-verb~elided",
+        "act": "flustered or blushing",
+        "kind": "behavior",
+        "a": "David Shepherd",
+        "b": "Brother Diarmuid",
+        "role": "bottom"
+      },
+      "id": "bluebells-58"
+    },
+    {
+      "key": "lead-by-hand#b55d1795",
+      "claim": {
+        "fic": "bluebells.html",
+        "sourceSha": "ed9e8f48d2ed52e7c6f9a2ee3fc00dc5ad9e38f897fbc2f4fa60ffd193ba1a89",
+        "paragraph": 1295,
+        "pattern": "lead-by-hand",
+        "act": "leading someone",
+        "kind": "behavior",
+        "a": "Brother Diarmuid",
+        "b": "David Shepherd",
+        "role": "top"
+      },
+      "id": "bluebells-59"
+    },
+    {
+      "key": "aftercare-held~elided#d5f29368",
+      "claim": {
+        "fic": "bluebells.html",
+        "sourceSha": "ed9e8f48d2ed52e7c6f9a2ee3fc00dc5ad9e38f897fbc2f4fa60ffd193ba1a89",
+        "paragraph": 1509,
+        "pattern": "aftercare-held~elided",
+        "act": "being held afterwards",
+        "kind": "aftercare",
+        "a": "David Shepherd",
+        "b": "Brother Diarmuid",
+        "role": "bottom"
+      },
+      "id": "bluebells-60"
+    },
+    {
+      "key": "care-soothe#8d9f17ea",
+      "claim": {
+        "fic": "bluebells.html",
+        "sourceSha": "ed9e8f48d2ed52e7c6f9a2ee3fc00dc5ad9e38f897fbc2f4fa60ffd193ba1a89",
+        "paragraph": 1658,
+        "pattern": "care-soothe",
+        "act": "comforting someone",
+        "kind": "behavior",
+        "a": "Brother Diarmuid",
+        "b": "David Shepherd",
+        "role": "top"
+      },
+      "id": "bluebells-64"
+    },
+    {
+      "key": "fingers-into#25f0423a",
+      "claim": {
+        "fic": "were-compeer.html",
+        "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+        "paragraph": 162,
+        "pattern": "fingers-into",
+        "act": "fingering",
+        "kind": "act",
+        "a": "Derek Hale",
+        "b": "Stiles Stilinski",
+        "role": ""
+      },
+      "id": "were-compeer-0"
+    },
+    {
+      "key": "fingers-inside#25f0423a",
+      "claim": {
+        "fic": "were-compeer.html",
+        "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+        "paragraph": 162,
+        "pattern": "fingers-inside",
+        "act": "fingering",
+        "kind": "act",
+        "a": "Derek Hale",
+        "b": "Stiles Stilinski",
+        "role": ""
+      },
+      "id": "were-compeer-1"
+    },
+    {
+      "key": "dd5-pushes-finger-in#25f0423a",
+      "claim": {
+        "fic": "were-compeer.html",
+        "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+        "paragraph": 162,
+        "pattern": "dd5-pushes-finger-in",
+        "act": "fingering",
+        "kind": "act",
+        "a": "Derek Hale",
+        "b": "Stiles Stilinski",
+        "role": ""
+      },
+      "id": "were-compeer-2"
+    },
+    {
+      "key": "fingers-into~elided#7ed825cd",
+      "claim": {
+        "fic": "were-compeer.html",
+        "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+        "paragraph": 162,
+        "pattern": "fingers-into~elided",
+        "act": "fingering",
+        "kind": "act",
+        "a": "Derek Hale",
+        "b": "Stiles Stilinski",
+        "role": ""
+      },
+      "id": "were-compeer-3"
+    },
+    {
+      "key": "fingers-inside#7ed825cd",
+      "claim": {
+        "fic": "were-compeer.html",
+        "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+        "paragraph": 162,
+        "pattern": "fingers-inside",
+        "act": "fingering",
+        "kind": "act",
+        "a": "Derek Hale",
+        "b": "Stiles Stilinski",
+        "role": ""
+      },
+      "id": "were-compeer-4"
+    },
+    {
+      "key": "take-x#cbfd213d",
+      "claim": {
+        "fic": "were-compeer.html",
+        "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+        "paragraph": 208,
+        "pattern": "take-x",
+        "act": "anal sex",
+        "kind": "act",
+        "a": "Derek Hale",
+        "b": "Stiles Stilinski",
+        "role": ""
+      },
+      "id": "were-compeer-5"
+    },
+    {
+      "key": "penis-inside#4958eb",
+      "claim": {
+        "fic": "were-compeer.html",
+        "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+        "paragraph": 209,
+        "pattern": "penis-inside",
+        "act": "anal sex",
+        "kind": "act",
+        "a": "Derek Hale",
+        "b": "Stiles Stilinski",
+        "role": ""
+      },
+      "id": "were-compeer-7"
+    },
+    {
+      "key": "dd-shoves-cock-deep#4958eb",
+      "claim": {
+        "fic": "were-compeer.html",
+        "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+        "paragraph": 209,
+        "pattern": "dd-shoves-cock-deep",
+        "act": "anal sex",
+        "kind": "act",
+        "a": "Derek Hale",
+        "b": "Stiles Stilinski",
+        "role": ""
+      },
+      "id": "were-compeer-8"
+    },
+    {
+      "key": "dd6-slips-cock-inside#4958eb",
+      "claim": {
+        "fic": "were-compeer.html",
+        "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+        "paragraph": 209,
+        "pattern": "dd6-slips-cock-inside",
+        "act": "anal sex",
+        "kind": "act",
+        "a": "Derek Hale",
+        "b": "Stiles Stilinski",
+        "role": ""
+      },
+      "id": "were-compeer-9"
+    },
+    {
+      "key": "fingers-into~elided#9d31dd8a",
+      "claim": {
+        "fic": "were-compeer.html",
+        "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+        "paragraph": 212,
+        "pattern": "fingers-into~elided",
+        "act": "fingering",
+        "kind": "act",
+        "a": "Derek Hale",
+        "b": "Stiles Stilinski",
+        "role": ""
+      },
+      "id": "were-compeer-10"
+    },
+    {
+      "key": "prostate~elided#9d31dd8a",
+      "claim": {
+        "fic": "were-compeer.html",
+        "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+        "paragraph": 212,
+        "pattern": "prostate~elided",
+        "act": "anal sex",
+        "kind": "act",
+        "a": "Derek Hale",
+        "b": "Stiles Stilinski",
+        "role": ""
+      },
+      "id": "were-compeer-11"
+    },
+    {
+      "key": "dd-finger-slips-into~elided#9d31dd8a",
+      "claim": {
+        "fic": "were-compeer.html",
+        "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+        "paragraph": 212,
+        "pattern": "dd-finger-slips-into~elided",
+        "act": "fingering",
+        "kind": "act",
+        "a": "Derek Hale",
+        "b": "Stiles Stilinski",
+        "role": ""
+      },
+      "id": "were-compeer-12"
+    },
+    {
+      "key": "dd5-pushes-finger-in~elided#9d31dd8a",
+      "claim": {
+        "fic": "were-compeer.html",
+        "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+        "paragraph": 212,
+        "pattern": "dd5-pushes-finger-in~elided",
+        "act": "fingering",
+        "kind": "act",
+        "a": "Derek Hale",
+        "b": "Stiles Stilinski",
+        "role": ""
+      },
+      "id": "were-compeer-13"
+    },
+    {
+      "key": "licked-cock#486bd6df",
+      "claim": {
+        "fic": "were-compeer.html",
+        "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+        "paragraph": 223,
+        "pattern": "licked-cock",
+        "act": "blowjob",
+        "kind": "act",
+        "a": "Derek Hale",
+        "b": "Stiles Stilinski",
+        "role": ""
+      },
+      "id": "were-compeer-14"
+    },
+    {
+      "key": "swallowed-down#9f50d801",
+      "claim": {
+        "fic": "were-compeer.html",
+        "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+        "paragraph": 225,
+        "pattern": "swallowed-down",
+        "act": "blowjob",
+        "kind": "act",
+        "a": "Derek Hale",
+        "b": "Stiles Stilinski",
+        "role": ""
+      },
+      "id": "were-compeer-15"
+    },
+    {
+      "key": "took-in-mouth#7afbaf07",
+      "claim": {
+        "fic": "were-compeer.html",
+        "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+        "paragraph": 225,
+        "pattern": "took-in-mouth",
+        "act": "blowjob",
+        "kind": "act",
+        "a": "Derek Hale",
+        "b": "Stiles Stilinski",
+        "role": ""
+      },
+      "id": "were-compeer-16"
+    },
+    {
+      "key": "took-to-root#7afbaf07",
+      "claim": {
+        "fic": "were-compeer.html",
+        "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+        "paragraph": 225,
+        "pattern": "took-to-root",
+        "act": "blowjob",
+        "kind": "act",
+        "a": "Derek Hale",
+        "b": "Stiles Stilinski",
+        "role": ""
+      },
+      "id": "were-compeer-17"
+    },
+    {
+      "key": "took-down#7afbaf07",
+      "claim": {
+        "fic": "were-compeer.html",
+        "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+        "paragraph": 225,
+        "pattern": "took-down",
+        "act": "blowjob",
+        "kind": "act",
+        "a": "Derek Hale",
+        "b": "Stiles Stilinski",
+        "role": ""
+      },
+      "id": "were-compeer-18"
+    },
+    {
+      "key": "sucked~elided#6142e0ba",
+      "claim": {
+        "fic": "were-compeer.html",
+        "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+        "paragraph": 225,
+        "pattern": "sucked~elided",
+        "act": "blowjob",
+        "kind": "act",
+        "a": "Derek Hale",
+        "b": "Stiles Stilinski",
+        "role": ""
+      },
+      "id": "were-compeer-19"
+    },
+    {
+      "key": "enter#b1da4fab",
+      "claim": {
+        "fic": "were-compeer.html",
+        "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+        "paragraph": 231,
+        "pattern": "enter",
+        "act": "anal sex",
+        "kind": "act",
+        "a": "Derek Hale",
+        "b": "Stiles Stilinski",
+        "role": ""
+      },
+      "id": "were-compeer-20"
+    },
+    {
+      "key": "licked-cock~elided#92916a45",
+      "claim": {
+        "fic": "were-compeer.html",
+        "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+        "paragraph": 283,
+        "pattern": "licked-cock~elided",
+        "act": "blowjob",
+        "kind": "act",
+        "a": "Derek Hale",
+        "b": "Stiles Stilinski",
+        "role": ""
+      },
+      "id": "were-compeer-23"
+    },
+    {
+      "key": "dd5-fingers-circle-hole#56591a95",
+      "claim": {
+        "fic": "were-compeer.html",
+        "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+        "paragraph": 293,
+        "pattern": "dd5-fingers-circle-hole",
+        "act": "fingering",
+        "kind": "act",
+        "a": "Derek Hale",
+        "b": "Stiles Stilinski",
+        "role": ""
+      },
+      "id": "were-compeer-24"
+    },
+    {
+      "key": "fingers-inside#61076f72",
+      "claim": {
+        "fic": "were-compeer.html",
+        "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+        "paragraph": 305,
+        "pattern": "fingers-inside",
+        "act": "fingering",
+        "kind": "act",
+        "a": "Derek Hale",
+        "b": "Stiles Stilinski",
+        "role": ""
+      },
+      "id": "were-compeer-26"
+    },
+    {
+      "key": "dd2-finger-shoved-into#61076f72",
+      "claim": {
+        "fic": "were-compeer.html",
+        "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+        "paragraph": 305,
+        "pattern": "dd2-finger-shoved-into",
+        "act": "fingering",
+        "kind": "act",
+        "a": "Derek Hale",
+        "b": "Stiles Stilinski",
+        "role": ""
+      },
+      "id": "were-compeer-27"
+    },
+    {
+      "key": "dd5-pushes-finger-in#9e8d355",
+      "claim": {
+        "fic": "were-compeer.html",
+        "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+        "paragraph": 391,
+        "pattern": "dd5-pushes-finger-in",
+        "act": "fingering",
+        "kind": "act",
+        "a": "Derek Hale",
+        "b": "Stiles Stilinski",
+        "role": ""
+      },
+      "id": "were-compeer-29"
+    },
+    {
+      "key": "stretched-open~elided#a44a3eb1",
+      "claim": {
+        "fic": "were-compeer.html",
+        "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+        "paragraph": 408,
+        "pattern": "stretched-open~elided",
+        "act": "fingering",
+        "kind": "act",
+        "a": "Derek Hale",
+        "b": "Stiles Stilinski",
+        "role": ""
+      },
+      "id": "were-compeer-30"
+    },
+    {
+      "key": "push-into~elided#e17266b1",
+      "claim": {
+        "fic": "were-compeer.html",
+        "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+        "paragraph": 428,
+        "pattern": "push-into~elided",
+        "act": "anal sex",
+        "kind": "act",
+        "a": "Derek Hale",
+        "b": "Stiles Stilinski",
+        "role": ""
+      },
+      "id": "were-compeer-31"
+    },
+    {
+      "key": "fuck~elided#205c02bd",
+      "claim": {
+        "fic": "were-compeer.html",
+        "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+        "paragraph": 430,
+        "pattern": "fuck~elided",
+        "act": "anal sex",
+        "kind": "act",
+        "a": "Derek Hale",
+        "b": "Stiles Stilinski",
+        "role": ""
+      },
+      "id": "were-compeer-32"
+    },
+    {
+      "key": "push-into#240e71f8",
+      "claim": {
+        "fic": "were-compeer.html",
+        "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+        "paragraph": 438,
+        "pattern": "push-into",
+        "act": "anal sex",
+        "kind": "act",
+        "a": "Derek Hale",
+        "b": "Stiles Stilinski",
+        "role": ""
+      },
+      "id": "were-compeer-33"
+    },
+    {
+      "key": "dd6-slips-cock-inside#240e71f8",
+      "claim": {
+        "fic": "were-compeer.html",
+        "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+        "paragraph": 438,
+        "pattern": "dd6-slips-cock-inside",
+        "act": "anal sex",
+        "kind": "act",
+        "a": "Derek Hale",
+        "b": "Stiles Stilinski",
+        "role": ""
+      },
+      "id": "were-compeer-34"
+    },
+    {
+      "key": "dd2-finger-shoved-into#f496609d",
+      "claim": {
+        "fic": "were-compeer.html",
+        "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+        "paragraph": 581,
+        "pattern": "dd2-finger-shoved-into",
+        "act": "fingering",
+        "kind": "act",
+        "a": "Derek Hale",
+        "b": "Stiles Stilinski",
+        "role": ""
+      },
+      "id": "were-compeer-36"
+    },
+    {
+      "key": "dd5-fingers-in-and-out#f496609d",
+      "claim": {
+        "fic": "were-compeer.html",
+        "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+        "paragraph": 581,
+        "pattern": "dd5-fingers-in-and-out",
+        "act": "fingering",
+        "kind": "act",
+        "a": "Derek Hale",
+        "b": "Stiles Stilinski",
+        "role": ""
+      },
+      "id": "were-compeer-37"
+    },
+    {
+      "key": "dd5-pushes-finger-in#1e803f8b",
+      "claim": {
+        "fic": "were-compeer.html",
+        "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+        "paragraph": 581,
+        "pattern": "dd5-pushes-finger-in",
+        "act": "fingering",
+        "kind": "act",
+        "a": "Derek Hale",
+        "b": "Stiles Stilinski",
+        "role": ""
+      },
+      "id": "were-compeer-38"
+    },
+    {
+      "key": "dd5-feel-of-tongue-inside#d6a696dc",
+      "claim": {
+        "fic": "were-compeer.html",
+        "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+        "paragraph": 592,
+        "pattern": "dd5-feel-of-tongue-inside",
+        "act": "rimming",
+        "kind": "act",
+        "a": "Derek Hale",
+        "b": "Stiles Stilinski",
+        "role": ""
+      },
+      "id": "were-compeer-39"
+    },
+    {
+      "key": "finds-spot~elided#d677cb34",
+      "claim": {
+        "fic": "were-compeer.html",
+        "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+        "paragraph": 597,
+        "pattern": "finds-spot~elided",
+        "act": "fingering",
+        "kind": "act",
+        "a": "Derek Hale",
+        "b": "Stiles Stilinski",
+        "role": ""
+      },
+      "id": "were-compeer-40"
+    },
+    {
+      "key": "penis-into-him#be2b35eb",
+      "claim": {
+        "fic": "were-compeer.html",
+        "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+        "paragraph": 964,
+        "pattern": "penis-into-him",
+        "act": "anal sex",
+        "kind": "act",
+        "a": "Derek Hale",
+        "b": "Stiles Stilinski",
+        "role": ""
+      },
+      "id": "were-compeer-44"
+    },
+    {
+      "key": "fuck#4c599784",
+      "claim": {
+        "fic": "were-compeer.html",
+        "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+        "paragraph": 965,
+        "pattern": "fuck",
+        "act": "anal sex",
+        "kind": "act",
+        "a": "Derek Hale",
+        "b": "Stiles Stilinski",
+        "role": ""
+      },
+      "id": "were-compeer-45"
+    },
+    {
+      "key": "push-into~elided#22233c0",
+      "claim": {
+        "fic": "were-compeer.html",
+        "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+        "paragraph": 966,
+        "pattern": "push-into~elided",
+        "act": "anal sex",
+        "kind": "act",
+        "a": "Derek Hale",
+        "b": "Stiles Stilinski",
+        "role": ""
+      },
+      "id": "were-compeer-46"
+    },
+    {
+      "key": "dd2-clenching-around-cock~elided#2259fa8c",
+      "claim": {
+        "fic": "were-compeer.html",
+        "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+        "paragraph": 966,
+        "pattern": "dd2-clenching-around-cock~elided",
+        "act": "anal sex",
+        "kind": "act",
+        "a": "Derek Hale",
+        "b": "Stiles Stilinski",
+        "role": ""
+      },
+      "id": "were-compeer-47"
+    },
+    {
+      "key": "clenched-around~elided#2259fa8c",
+      "claim": {
+        "fic": "were-compeer.html",
+        "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+        "paragraph": 966,
+        "pattern": "clenched-around~elided",
+        "act": "anal sex",
+        "kind": "act",
+        "a": "Derek Hale",
+        "b": "Stiles Stilinski",
+        "role": ""
+      },
+      "id": "were-compeer-48"
+    },
+    {
+      "key": "lips-around#288d00b4",
+      "claim": {
+        "fic": "were-compeer.html",
+        "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+        "paragraph": 977,
+        "pattern": "lips-around",
+        "act": "blowjob",
+        "kind": "act",
+        "a": "Derek Hale",
+        "b": "Stiles Stilinski",
+        "role": ""
+      },
+      "id": "were-compeer-49"
+    },
+    {
+      "key": "hole-around#43c10d6c",
+      "claim": {
+        "fic": "were-compeer.html",
+        "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+        "paragraph": 982,
+        "pattern": "hole-around",
+        "act": "anal sex",
+        "kind": "act",
+        "a": "Derek Hale",
+        "b": "Stiles Stilinski",
+        "role": ""
+      },
+      "id": "were-compeer-50"
+    },
+    {
+      "key": "push-into#1c23e1a7",
+      "claim": {
+        "fic": "were-compeer.html",
+        "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+        "paragraph": 982,
+        "pattern": "push-into",
+        "act": "anal sex",
+        "kind": "act",
+        "a": "Derek Hale",
+        "b": "Stiles Stilinski",
+        "role": ""
+      },
+      "id": "were-compeer-51"
+    },
+    {
+      "key": "fill~elided#1c23e1a7",
+      "claim": {
+        "fic": "were-compeer.html",
+        "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+        "paragraph": 982,
+        "pattern": "fill~elided",
+        "act": "anal sex",
+        "kind": "act",
+        "a": "Derek Hale",
+        "b": "Stiles Stilinski",
+        "role": ""
+      },
+      "id": "were-compeer-52"
+    },
+    {
+      "key": "pushed-in#1c23e1a7",
+      "claim": {
+        "fic": "were-compeer.html",
+        "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+        "paragraph": 982,
+        "pattern": "pushed-in",
+        "act": "anal sex",
+        "kind": "act",
+        "a": "Derek Hale",
+        "b": "Stiles Stilinski",
+        "role": ""
+      },
+      "id": "were-compeer-53"
+    },
+    {
+      "key": "penis-into#c05d8c4d",
+      "claim": {
+        "fic": "were-compeer.html",
+        "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+        "paragraph": 985,
+        "pattern": "penis-into",
+        "act": "anal sex",
+        "kind": "act",
+        "a": "Derek Hale",
+        "b": "Stiles Stilinski",
+        "role": ""
+      },
+      "id": "were-compeer-54"
+    },
+    {
+      "key": "penis-inside#c05d8c4d",
+      "claim": {
+        "fic": "were-compeer.html",
+        "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+        "paragraph": 985,
+        "pattern": "penis-inside",
+        "act": "anal sex",
+        "kind": "act",
+        "a": "Derek Hale",
+        "b": "Stiles Stilinski",
+        "role": ""
+      },
+      "id": "were-compeer-55"
+    },
+    {
+      "key": "push-into~elided#8451bade",
+      "claim": {
+        "fic": "were-compeer.html",
+        "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+        "paragraph": 985,
+        "pattern": "push-into~elided",
+        "act": "anal sex",
+        "kind": "act",
+        "a": "Derek Hale",
+        "b": "Stiles Stilinski",
+        "role": ""
+      },
+      "id": "were-compeer-56"
+    },
+    {
+      "key": "fill#2add321c",
+      "claim": {
+        "fic": "were-compeer.html",
+        "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+        "paragraph": 1010,
+        "pattern": "fill",
+        "act": "anal sex",
+        "kind": "act",
+        "a": "Derek Hale",
+        "b": "Stiles Stilinski",
+        "role": ""
+      },
+      "id": "were-compeer-58"
+    },
+    {
+      "key": "licked-hole~elided#19cda906",
+      "claim": {
+        "fic": "were-compeer.html",
+        "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+        "paragraph": 1155,
+        "pattern": "licked-hole~elided",
+        "act": "rimming",
+        "kind": "act",
+        "a": "Derek Hale",
+        "b": "Stiles Stilinski",
+        "role": ""
+      },
+      "id": "were-compeer-59"
+    },
+    {
+      "key": "riding~elided#abdbe5e6",
+      "claim": {
+        "fic": "were-compeer.html",
+        "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+        "paragraph": 1199,
+        "pattern": "riding~elided",
+        "act": "anal sex (riding)",
+        "kind": "act",
+        "a": "Derek Hale",
+        "b": "Stiles Stilinski",
+        "role": ""
+      },
+      "id": "were-compeer-63"
+    },
+    {
+      "key": "fill~elided#e93c9acb",
+      "claim": {
+        "fic": "were-compeer.html",
+        "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+        "paragraph": 1199,
+        "pattern": "fill~elided",
+        "act": "anal sex",
+        "kind": "act",
+        "a": "Derek Hale",
+        "b": "Stiles Stilinski",
+        "role": ""
+      },
+      "id": "were-compeer-66"
+    },
+    {
+      "key": "passive-fucked~elided#52878409",
+      "claim": {
+        "fic": "were-compeer.html",
+        "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+        "paragraph": 1205,
+        "pattern": "passive-fucked~elided",
+        "act": "anal sex",
+        "kind": "act",
+        "a": "Derek Hale",
+        "b": "Stiles Stilinski",
+        "role": ""
+      },
+      "id": "were-compeer-69"
+    },
+    {
+      "key": "ogle-crotch~elided#511dda45",
+      "claim": {
+        "fic": "were-compeer.html",
+        "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+        "paragraph": 66,
+        "pattern": "ogle-crotch~elided",
+        "act": "checking out a crotch",
+        "kind": "ogling",
+        "a": "Stiles Stilinski",
+        "b": "Derek Hale",
+        "role": "bottom"
+      },
+      "id": "were-compeer-70"
+    },
+    {
+      "key": "ogle-crotch-oral~elided#511dda45",
+      "claim": {
+        "fic": "were-compeer.html",
+        "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+        "paragraph": 66,
+        "pattern": "ogle-crotch-oral~elided",
+        "act": "checking out a crotch",
+        "kind": "ogling",
+        "a": "Stiles Stilinski",
+        "b": "Derek Hale",
+        "role": "bottom"
+      },
+      "id": "were-compeer-71"
+    },
+    {
+      "key": "penis-into#14bf2a41",
+      "claim": {
+        "fic": "were-compeer.html",
+        "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+        "paragraph": 87,
+        "pattern": "penis-into",
+        "act": "anal sex",
+        "kind": "fantasy",
+        "a": "Vernon Boyd",
+        "b": "Stiles Stilinski",
+        "role": "top"
+      },
+      "id": "were-compeer-74"
+    },
+    {
+      "key": "chastity-wearer#f8a43e7d",
+      "claim": {
+        "fic": "were-compeer.html",
+        "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+        "paragraph": 93,
+        "pattern": "chastity-wearer",
+        "act": "wearing a chastity device",
+        "kind": "behavior",
+        "a": "Stiles Stilinski",
+        "b": "Derek Hale",
+        "role": "bottom"
+      },
+      "id": "were-compeer-77"
+    },
+    {
+      "key": "chastity-wearer#d5b69dd",
+      "claim": {
+        "fic": "were-compeer.html",
+        "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+        "paragraph": 93,
+        "pattern": "chastity-wearer",
+        "act": "wearing a chastity device",
+        "kind": "behavior",
+        "a": "Stiles Stilinski",
+        "b": "Derek Hale",
+        "role": "bottom"
+      },
+      "id": "were-compeer-78"
+    },
+    {
+      "key": "chastity-wearer#8b11902d",
+      "claim": {
+        "fic": "were-compeer.html",
+        "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+        "paragraph": 95,
+        "pattern": "chastity-wearer",
+        "act": "wearing a chastity device",
+        "kind": "behavior",
+        "a": "Stiles Stilinski",
+        "b": "Derek Hale",
+        "role": "bottom"
+      },
+      "id": "were-compeer-79"
+    },
+    {
+      "key": "chastity-wearer#97ab8833",
+      "claim": {
+        "fic": "were-compeer.html",
+        "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+        "paragraph": 133,
+        "pattern": "chastity-wearer",
+        "act": "wearing a chastity device",
+        "kind": "behavior",
+        "a": "Stiles Stilinski",
+        "b": "Derek Hale",
+        "role": "bottom"
+      },
+      "id": "were-compeer-80"
+    },
+    {
+      "key": "chastity-lock-on#97ab8833",
+      "claim": {
+        "fic": "were-compeer.html",
+        "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+        "paragraph": 133,
+        "pattern": "chastity-lock-on",
+        "act": "locking a chastity device on their partner",
+        "kind": "behavior",
+        "a": "Vernon Boyd",
+        "b": "Derek Hale",
+        "role": "top"
+      },
+      "id": "were-compeer-81"
+    },
+    {
+      "key": "chastity-wearer#ba0017ec",
+      "claim": {
+        "fic": "were-compeer.html",
+        "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+        "paragraph": 134,
+        "pattern": "chastity-wearer",
+        "act": "wearing a chastity device",
+        "kind": "behavior",
+        "a": "Stiles Stilinski",
+        "b": "Derek Hale",
+        "role": "bottom"
+      },
+      "id": "were-compeer-82"
+    },
+    {
+      "key": "chastity-wearer#84e13135",
+      "claim": {
+        "fic": "were-compeer.html",
+        "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+        "paragraph": 138,
+        "pattern": "chastity-wearer",
+        "act": "wearing a chastity device",
+        "kind": "behavior",
+        "a": "Stiles Stilinski",
+        "b": "Derek Hale",
+        "role": "bottom"
+      },
+      "id": "were-compeer-83"
+    },
+    {
+      "key": "chastity-wearer#f7982a36",
+      "claim": {
+        "fic": "were-compeer.html",
+        "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+        "paragraph": 140,
+        "pattern": "chastity-wearer",
+        "act": "wearing a chastity device",
+        "kind": "behavior",
+        "a": "Stiles Stilinski",
+        "b": "Derek Hale",
+        "role": "bottom"
+      },
+      "id": "were-compeer-86"
+    },
+    {
+      "key": "chastity-wearer#39a67606",
+      "claim": {
+        "fic": "were-compeer.html",
+        "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+        "paragraph": 157,
+        "pattern": "chastity-wearer",
+        "act": "wearing a chastity device",
+        "kind": "behavior",
+        "a": "Stiles Stilinski",
+        "b": "Derek Hale",
+        "role": "bottom"
+      },
+      "id": "were-compeer-88"
+    },
+    {
+      "key": "plug-worn#c6bfee71",
+      "claim": {
+        "fic": "were-compeer.html",
+        "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+        "paragraph": 166,
+        "pattern": "plug-worn",
+        "act": "wearing a plug",
+        "kind": "prep",
+        "a": "Stiles Stilinski",
+        "b": "Derek Hale",
+        "role": "bottom"
+      },
+      "id": "were-compeer-90"
+    },
+    {
+      "key": "chastity-wearer#f84a01ce",
+      "claim": {
+        "fic": "were-compeer.html",
+        "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+        "paragraph": 166,
+        "pattern": "chastity-wearer",
+        "act": "wearing a chastity device",
+        "kind": "behavior",
+        "a": "Stiles Stilinski",
+        "b": "Derek Hale",
+        "role": "bottom"
+      },
+      "id": "were-compeer-91"
+    },
+    {
+      "key": "chastity-wearer#fe7f0c38",
+      "claim": {
+        "fic": "were-compeer.html",
+        "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+        "paragraph": 168,
+        "pattern": "chastity-wearer",
+        "act": "wearing a chastity device",
+        "kind": "behavior",
+        "a": "Stiles Stilinski",
+        "b": "Derek Hale",
+        "role": "bottom"
+      },
+      "id": "were-compeer-92"
+    },
+    {
+      "key": "dialogue:anal sex#606ba030",
+      "claim": {
+        "fic": "were-compeer.html",
+        "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+        "paragraph": 198,
+        "pattern": "dialogue:anal sex",
+        "act": "anal sex",
+        "kind": "said",
+        "a": "Stiles Stilinski",
+        "b": "Derek Hale",
+        "role": "bottom"
+      },
+      "id": "were-compeer-93"
+    },
+    {
+      "key": "dialogue:anal sex#87b5afe0",
+      "claim": {
+        "fic": "were-compeer.html",
+        "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+        "paragraph": 205,
+        "pattern": "dialogue:anal sex",
+        "act": "anal sex",
+        "kind": "said",
+        "a": "Derek Hale",
+        "b": "Stiles Stilinski",
+        "role": "top"
+      },
+      "id": "were-compeer-94"
+    },
+    {
+      "key": "plug-worn#4958eb",
+      "claim": {
+        "fic": "were-compeer.html",
+        "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+        "paragraph": 209,
+        "pattern": "plug-worn",
+        "act": "wearing a plug",
+        "kind": "prep",
+        "a": "Stiles Stilinski",
+        "b": "Derek Hale",
+        "role": "bottom"
+      },
+      "id": "were-compeer-95"
+    },
+    {
+      "key": "dom-carry#fb394d13",
+      "claim": {
+        "fic": "were-compeer.html",
+        "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+        "paragraph": 209,
+        "pattern": "dom-carry",
+        "act": "lifting or carrying someone",
+        "kind": "behavior",
+        "a": "Derek Hale",
+        "b": "Stiles Stilinski",
+        "role": "top"
+      },
+      "id": "were-compeer-96"
+    },
+    {
+      "key": "abo-bare-neck~elided#507bf18",
+      "claim": {
+        "fic": "were-compeer.html",
+        "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+        "paragraph": 211,
+        "pattern": "abo-bare-neck~elided",
+        "act": "baring their neck",
+        "kind": "behavior",
+        "a": "Derek Hale",
+        "b": "Stiles Stilinski",
+        "role": "bottom"
+      },
+      "id": "were-compeer-97"
+    },
+    {
+      "key": "hj-stroke~elided#9d31dd8a",
+      "claim": {
+        "fic": "were-compeer.html",
+        "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+        "paragraph": 212,
+        "pattern": "hj-stroke~elided",
+        "act": "handjob",
+        "kind": "handjob",
+        "a": "Derek Hale",
+        "b": "Stiles Stilinski",
+        "role": "top"
+      },
+      "id": "were-compeer-98"
+    },
+    {
+      "key": "chastity-keyholder#748315a1",
+      "claim": {
+        "fic": "were-compeer.html",
+        "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+        "paragraph": 212,
+        "pattern": "chastity-keyholder",
+        "act": "controlling a chastity device",
+        "kind": "behavior",
+        "a": "Derek Hale",
+        "b": "Stiles Stilinski",
+        "role": "top"
+      },
+      "id": "were-compeer-101"
+    },
+    {
+      "key": "chastity-keyholder#2a1e398c",
+      "claim": {
+        "fic": "were-compeer.html",
+        "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+        "paragraph": 213,
+        "pattern": "chastity-keyholder",
+        "act": "controlling a chastity device",
+        "kind": "behavior",
+        "a": "Derek Hale",
+        "b": "Stiles Stilinski",
+        "role": "top"
+      },
+      "id": "were-compeer-104"
+    },
+    {
+      "key": "chastity-keyholder#f0900a14",
+      "claim": {
+        "fic": "were-compeer.html",
+        "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+        "paragraph": 216,
+        "pattern": "chastity-keyholder",
+        "act": "controlling a chastity device",
+        "kind": "behavior",
+        "a": "Derek Hale",
+        "b": "Stiles Stilinski",
+        "role": "top"
+      },
+      "id": "were-compeer-106"
+    },
+    {
+      "key": "abo-bare-neck~elided#c5601b95",
+      "claim": {
+        "fic": "were-compeer.html",
+        "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+        "paragraph": 232,
+        "pattern": "abo-bare-neck~elided",
+        "act": "baring their neck",
+        "kind": "behavior",
+        "a": "Stiles Stilinski",
+        "b": "Derek Hale",
+        "role": "bottom"
+      },
+      "id": "were-compeer-108"
+    },
+    {
+      "key": "dialogue:anal sex#a9438829",
+      "claim": {
+        "fic": "were-compeer.html",
+        "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+        "paragraph": 234,
+        "pattern": "dialogue:anal sex",
+        "act": "anal sex",
+        "kind": "said",
+        "a": "Stiles Stilinski",
+        "b": "Derek Hale",
+        "role": "bottom"
+      },
+      "id": "were-compeer-109"
+    },
+    {
+      "key": "fuck#28951766",
+      "claim": {
+        "fic": "were-compeer.html",
+        "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+        "paragraph": 236,
+        "pattern": "fuck",
+        "act": "anal sex",
+        "kind": "hypothetical",
+        "a": "Stiles Stilinski",
+        "b": "Derek Hale",
+        "role": "bottom"
+      },
+      "id": "were-compeer-110"
+    },
+    {
+      "key": "dialogue:anal sex#bad9488b",
+      "claim": {
+        "fic": "were-compeer.html",
+        "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+        "paragraph": 236,
+        "pattern": "dialogue:anal sex",
+        "act": "anal sex",
+        "kind": "said",
+        "a": "Stiles Stilinski",
+        "b": "Derek Hale",
+        "role": "bottom"
+      },
+      "id": "were-compeer-111"
+    },
+    {
+      "key": "dialogue:anal sex#300a75b4",
+      "claim": {
+        "fic": "were-compeer.html",
+        "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+        "paragraph": 238,
+        "pattern": "dialogue:anal sex",
+        "act": "anal sex",
+        "kind": "said",
+        "a": "Stiles Stilinski",
+        "b": "Derek Hale",
+        "role": "bottom"
+      },
+      "id": "were-compeer-112"
+    },
+    {
+      "key": "dialogue:anal sex#afa92bbf",
+      "claim": {
+        "fic": "were-compeer.html",
+        "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+        "paragraph": 244,
+        "pattern": "dialogue:anal sex",
+        "act": "anal sex",
+        "kind": "hypothetical",
+        "a": "Derek Hale",
+        "b": "Stiles Stilinski",
+        "role": "top"
+      },
+      "id": "were-compeer-113"
+    },
+    {
+      "key": "grind-cock-on-ass~elided#4b60c9a5",
+      "claim": {
+        "fic": "were-compeer.html",
+        "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+        "paragraph": 248,
+        "pattern": "grind-cock-on-ass~elided",
+        "act": "penis against buttocks",
+        "kind": "touch",
+        "a": "Derek Hale",
+        "b": "Stiles Stilinski",
+        "role": "top"
+      },
+      "id": "were-compeer-115"
+    },
+    {
+      "key": "grab-ass#796f2958",
+      "claim": {
+        "fic": "were-compeer.html",
+        "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+        "paragraph": 254,
+        "pattern": "grab-ass",
+        "act": "grabbing an ass",
+        "kind": "touch",
+        "a": "Derek Hale",
+        "b": "Stiles Stilinski",
+        "role": "top"
+      },
+      "id": "were-compeer-116"
+    },
+    {
+      "key": "spread-legs~elided#80703e5d",
+      "claim": {
+        "fic": "were-compeer.html",
+        "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+        "paragraph": 270,
+        "pattern": "spread-legs~elided",
+        "act": "spreading their legs",
+        "kind": "prep",
+        "a": "Stiles Stilinski",
+        "b": "Derek Hale",
+        "role": "bottom"
+      },
+      "id": "were-compeer-117"
+    },
+    {
+      "key": "fucked-mouth#e0923c8f",
+      "claim": {
+        "fic": "were-compeer.html",
+        "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+        "paragraph": 286,
+        "pattern": "fucked-mouth",
+        "act": "face-fucking",
+        "kind": "hypothetical",
+        "a": "Stiles Stilinski",
+        "b": "Derek Hale",
+        "role": "bottom"
+      },
+      "id": "were-compeer-118"
+    },
+    {
+      "key": "dom-pin~elided#f7a30df1",
+      "claim": {
+        "fic": "were-compeer.html",
+        "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+        "paragraph": 286,
+        "pattern": "dom-pin~elided",
+        "act": "pinning someone",
+        "kind": "behavior",
+        "a": "Derek Hale",
+        "b": "Stiles Stilinski",
+        "role": "top"
+      },
+      "id": "were-compeer-119"
+    },
+    {
+      "key": "dom-carry#659c7ca",
+      "claim": {
+        "fic": "were-compeer.html",
+        "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+        "paragraph": 292,
+        "pattern": "dom-carry",
+        "act": "lifting or carrying someone",
+        "kind": "behavior",
+        "a": "Derek Hale",
+        "b": "Stiles Stilinski",
+        "role": "top"
+      },
+      "id": "were-compeer-120"
+    },
+    {
+      "key": "pos-climb-lap#b6d01017",
+      "claim": {
+        "fic": "were-compeer.html",
+        "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+        "paragraph": 292,
+        "pattern": "pos-climb-lap",
+        "act": "climbing into someone's lap",
+        "kind": "position",
+        "a": "Derek Hale",
+        "b": "Stiles Stilinski",
+        "role": "bottom"
+      },
+      "id": "were-compeer-121"
+    },
+    {
+      "key": "chastity-keyholder#32302200",
+      "claim": {
+        "fic": "were-compeer.html",
+        "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+        "paragraph": 296,
+        "pattern": "chastity-keyholder",
+        "act": "controlling a chastity device",
+        "kind": "behavior",
+        "a": "Derek Hale",
+        "b": "Stiles Stilinski",
+        "role": "top"
+      },
+      "id": "were-compeer-122"
+    },
+    {
+      "key": "chastity-wearer#bc96bafe",
+      "claim": {
+        "fic": "were-compeer.html",
+        "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+        "paragraph": 297,
+        "pattern": "chastity-wearer",
+        "act": "wearing a chastity device",
+        "kind": "behavior",
+        "a": "Stiles Stilinski",
+        "b": "Derek Hale",
+        "role": "bottom"
+      },
+      "id": "were-compeer-123"
+    },
+    {
+      "key": "chastity-wearer#cee3399a",
+      "claim": {
+        "fic": "were-compeer.html",
+        "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+        "paragraph": 298,
+        "pattern": "chastity-wearer",
+        "act": "wearing a chastity device",
+        "kind": "behavior",
+        "a": "Stiles Stilinski",
+        "b": "Derek Hale",
+        "role": "bottom"
+      },
+      "id": "were-compeer-124"
+    },
+    {
+      "key": "chastity-wearer#1af1a204",
+      "claim": {
+        "fic": "were-compeer.html",
+        "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+        "paragraph": 302,
+        "pattern": "chastity-wearer",
+        "act": "wearing a chastity device",
+        "kind": "behavior",
+        "a": "Stiles Stilinski",
+        "b": "Derek Hale",
+        "role": "bottom"
+      },
+      "id": "were-compeer-125"
+    },
+    {
+      "key": "dom-carry#c394f6ae",
+      "claim": {
+        "fic": "were-compeer.html",
+        "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+        "paragraph": 305,
+        "pattern": "dom-carry",
+        "act": "lifting or carrying someone",
+        "kind": "behavior",
+        "a": "Derek Hale",
+        "b": "Stiles Stilinski",
+        "role": "top"
+      },
+      "id": "were-compeer-126"
+    },
+    {
+      "key": "dialogue:looking after someone#adc46ad6",
+      "claim": {
+        "fic": "were-compeer.html",
+        "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+        "paragraph": 305,
+        "pattern": "dialogue:looking after someone",
+        "act": "looking after someone",
+        "kind": "aftercare",
+        "a": "Derek Hale",
+        "b": "Stiles Stilinski",
+        "role": "top"
+      },
+      "id": "were-compeer-127"
+    },
+    {
+      "key": "dialogue:looking after someone#68b15642",
+      "claim": {
+        "fic": "were-compeer.html",
+        "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+        "paragraph": 305,
+        "pattern": "dialogue:looking after someone",
+        "act": "looking after someone",
+        "kind": "aftercare",
+        "a": "Derek Hale",
+        "b": "Stiles Stilinski",
+        "role": "top"
+      },
+      "id": "were-compeer-128"
+    },
+    {
+      "key": "arch-back#e3cf31e7",
+      "claim": {
+        "fic": "were-compeer.html",
+        "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+        "paragraph": 306,
+        "pattern": "arch-back",
+        "act": "arching their back",
+        "kind": "touch",
+        "a": "Stiles Stilinski",
+        "b": "Derek Hale",
+        "role": "bottom"
+      },
+      "id": "were-compeer-129"
+    },
+    {
+      "key": "finger-at-entrance#cdcff1ac",
+      "claim": {
+        "fic": "were-compeer.html",
+        "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+        "paragraph": 380,
+        "pattern": "finger-at-entrance",
+        "act": "touching the hole",
+        "kind": "touch",
+        "a": "Derek Hale",
+        "b": "Stiles Stilinski",
+        "role": "top"
+      },
+      "id": "were-compeer-130"
+    },
+    {
+      "key": "dialogue:checking in or leading#b0b7ee1d",
+      "claim": {
+        "fic": "were-compeer.html",
+        "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+        "paragraph": 393,
+        "pattern": "dialogue:checking in or leading",
+        "act": "checking in or leading",
+        "kind": "position",
+        "a": "Derek Hale",
+        "b": "Stiles Stilinski",
+        "role": "top"
+      },
+      "id": "were-compeer-131"
+    },
+    {
+      "key": "dialogue:anal sex#9db0158e",
+      "claim": {
+        "fic": "were-compeer.html",
+        "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+        "paragraph": 394,
+        "pattern": "dialogue:anal sex",
+        "act": "anal sex",
+        "kind": "said",
+        "a": "Stiles Stilinski",
+        "b": "Derek Hale",
+        "role": "bottom"
+      },
+      "id": "were-compeer-132"
+    },
+    {
+      "key": "dom-carry~elided#3c74cbcf",
+      "claim": {
+        "fic": "were-compeer.html",
+        "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+        "paragraph": 397,
+        "pattern": "dom-carry~elided",
+        "act": "lifting or carrying someone",
+        "kind": "behavior",
+        "a": "Derek Hale",
+        "b": "Stiles Stilinski",
+        "role": "top"
+      },
+      "id": "were-compeer-133"
+    },
+    {
+      "key": "chastity-keyholder#8fffbbc4",
+      "claim": {
+        "fic": "were-compeer.html",
+        "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+        "paragraph": 399,
+        "pattern": "chastity-keyholder",
+        "act": "controlling a chastity device",
+        "kind": "behavior",
+        "a": "Derek Hale",
+        "b": "Stiles Stilinski",
+        "role": "top"
+      },
+      "id": "were-compeer-134"
+    },
+    {
+      "key": "dd2-hj-rubbed-over~elided#467849ff",
+      "claim": {
+        "fic": "were-compeer.html",
+        "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+        "paragraph": 406,
+        "pattern": "dd2-hj-rubbed-over~elided",
+        "act": "handjob",
+        "kind": "handjob",
+        "a": "Stiles Stilinski",
+        "b": "Derek Hale",
+        "role": "top"
+      },
+      "id": "were-compeer-135"
+    },
+    {
+      "key": "dialogue:anal sex#b4d8048c",
+      "claim": {
+        "fic": "were-compeer.html",
+        "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+        "paragraph": 414,
+        "pattern": "dialogue:anal sex",
+        "act": "anal sex",
+        "kind": "said",
+        "a": "Derek Hale",
+        "b": "Stiles Stilinski",
+        "role": "top"
+      },
+      "id": "were-compeer-136"
+    },
+    {
+      "key": "care-soothe~elided#71bde653",
+      "claim": {
+        "fic": "were-compeer.html",
+        "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+        "paragraph": 420,
+        "pattern": "care-soothe~elided",
+        "act": "comforting someone",
+        "kind": "behavior",
+        "a": "Derek Hale",
+        "b": "Stiles Stilinski",
+        "role": "top"
+      },
+      "id": "were-compeer-138"
+    },
+    {
+      "key": "flustered-verb#b869d008",
+      "claim": {
+        "fic": "were-compeer.html",
+        "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+        "paragraph": 423,
+        "pattern": "flustered-verb",
+        "act": "flustered or blushing",
+        "kind": "behavior",
+        "a": "Stiles Stilinski",
+        "b": "Derek Hale",
+        "role": "bottom"
+      },
+      "id": "were-compeer-139"
+    },
+    {
+      "key": "dialogue:anal sex#ad848078",
+      "claim": {
+        "fic": "were-compeer.html",
+        "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+        "paragraph": 429,
+        "pattern": "dialogue:anal sex",
+        "act": "anal sex",
+        "kind": "said",
+        "a": "Stiles Stilinski",
+        "b": "Derek Hale",
+        "role": "bottom"
+      },
+      "id": "were-compeer-140"
+    },
+    {
+      "key": "came-untouched#9f8969f",
+      "claim": {
+        "fic": "were-compeer.html",
+        "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+        "paragraph": 432,
+        "pattern": "came-untouched",
+        "act": "hands-free orgasm",
+        "kind": "body",
+        "a": "Stiles Stilinski",
+        "b": "Derek Hale",
+        "role": "bottom"
+      },
+      "id": "were-compeer-141"
+    },
+    {
+      "key": "chastity-wearer#3dd72c13",
+      "claim": {
+        "fic": "were-compeer.html",
+        "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+        "paragraph": 450,
+        "pattern": "chastity-wearer",
+        "act": "wearing a chastity device",
+        "kind": "behavior",
+        "a": "Stiles Stilinski",
+        "b": "Derek Hale",
+        "role": "bottom"
+      },
+      "id": "were-compeer-144"
+    },
+    {
+      "key": "chastity-wearer#38095400",
+      "claim": {
+        "fic": "were-compeer.html",
+        "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+        "paragraph": 451,
+        "pattern": "chastity-wearer",
+        "act": "wearing a chastity device",
+        "kind": "behavior",
+        "a": "Stiles Stilinski",
+        "b": "Derek Hale",
+        "role": "bottom"
+      },
+      "id": "were-compeer-145"
+    },
+    {
+      "key": "chastity-wearer#c134ac0e",
+      "claim": {
+        "fic": "were-compeer.html",
+        "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+        "paragraph": 458,
+        "pattern": "chastity-wearer",
+        "act": "wearing a chastity device",
+        "kind": "behavior",
+        "a": "Stiles Stilinski",
+        "b": "Derek Hale",
+        "role": "bottom"
+      },
+      "id": "were-compeer-148"
+    },
+    {
+      "key": "fingers-into#4047a7db",
+      "claim": {
+        "fic": "were-compeer.html",
+        "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+        "paragraph": 459,
+        "pattern": "fingers-into",
+        "act": "fingering",
+        "kind": "hypothetical",
+        "a": "Stiles Stilinski",
+        "b": "Derek Hale",
+        "role": "bottom"
+      },
+      "id": "were-compeer-150"
+    },
+    {
+      "key": "grab-ass#d7105f38",
+      "claim": {
+        "fic": "were-compeer.html",
+        "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+        "paragraph": 464,
+        "pattern": "grab-ass",
+        "act": "grabbing an ass",
+        "kind": "touch",
+        "a": "Derek Hale",
+        "b": "Stiles Stilinski",
+        "role": "top"
+      },
+      "id": "were-compeer-151"
+    },
+    {
+      "key": "plug-worn#6fb6ba11",
+      "claim": {
+        "fic": "were-compeer.html",
+        "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+        "paragraph": 465,
+        "pattern": "plug-worn",
+        "act": "wearing a plug",
+        "kind": "prep",
+        "a": "Stiles Stilinski",
+        "b": "Derek Hale",
+        "role": "bottom"
+      },
+      "id": "were-compeer-152"
+    },
+    {
+      "key": "plug-worn#b099f93b",
+      "claim": {
+        "fic": "were-compeer.html",
+        "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+        "paragraph": 473,
+        "pattern": "plug-worn",
+        "act": "wearing a plug",
+        "kind": "prep",
+        "a": "Stiles Stilinski",
+        "b": "Derek Hale",
+        "role": "bottom"
+      },
+      "id": "were-compeer-153"
+    },
+    {
+      "key": "chastity-wearer#2b948dae",
+      "claim": {
+        "fic": "were-compeer.html",
+        "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+        "paragraph": 473,
+        "pattern": "chastity-wearer",
+        "act": "wearing a chastity device",
+        "kind": "behavior",
+        "a": "Stiles Stilinski",
+        "b": "Derek Hale",
+        "role": "bottom"
+      },
+      "id": "were-compeer-154"
+    },
+    {
+      "key": "chastity-wearer#4c1a3924",
+      "claim": {
+        "fic": "were-compeer.html",
+        "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+        "paragraph": 487,
+        "pattern": "chastity-wearer",
+        "act": "wearing a chastity device",
+        "kind": "behavior",
+        "a": "Stiles Stilinski",
+        "b": "Derek Hale",
+        "role": "bottom"
+      },
+      "id": "were-compeer-155"
+    },
+    {
+      "key": "plug-worn#ebca5707",
+      "claim": {
+        "fic": "were-compeer.html",
+        "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+        "paragraph": 487,
+        "pattern": "plug-worn",
+        "act": "wearing a plug",
+        "kind": "prep",
+        "a": "Stiles Stilinski",
+        "b": "Derek Hale",
+        "role": "bottom"
+      },
+      "id": "were-compeer-156"
+    },
+    {
+      "key": "dom-grip#28f11427",
+      "claim": {
+        "fic": "were-compeer.html",
+        "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+        "paragraph": 561,
+        "pattern": "dom-grip",
+        "act": "gripping firmly",
+        "kind": "behavior",
+        "a": "Derek Hale",
+        "b": "Stiles Stilinski",
+        "role": "top"
+      },
+      "id": "were-compeer-157"
+    },
+    {
+      "key": "thrust-back#f07317ca",
+      "claim": {
+        "fic": "were-compeer.html",
+        "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+        "paragraph": 572,
+        "pattern": "thrust-back",
+        "act": "pushing back",
+        "kind": "touch",
+        "a": "Stiles Stilinski",
+        "b": "Derek Hale",
+        "role": "bottom"
+      },
+      "id": "were-compeer-158"
+    },
+    {
+      "key": "grab-ass#8fd12a39",
+      "claim": {
+        "fic": "were-compeer.html",
+        "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+        "paragraph": 575,
+        "pattern": "grab-ass",
+        "act": "grabbing an ass",
+        "kind": "touch",
+        "a": "Derek Hale",
+        "b": "Stiles Stilinski",
+        "role": "top"
+      },
+      "id": "were-compeer-159"
+    },
+    {
+      "key": "grab-ass#ca2d9e",
+      "claim": {
+        "fic": "were-compeer.html",
+        "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+        "paragraph": 575,
+        "pattern": "grab-ass",
+        "act": "grabbing an ass",
+        "kind": "touch",
+        "a": "Derek Hale",
+        "b": "Stiles Stilinski",
+        "role": "top"
+      },
+      "id": "were-compeer-160"
+    },
+    {
+      "key": "arch-back#1338e981",
+      "claim": {
+        "fic": "were-compeer.html",
+        "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+        "paragraph": 582,
+        "pattern": "arch-back",
+        "act": "arching their back",
+        "kind": "touch",
+        "a": "Stiles Stilinski",
+        "b": "Derek Hale",
+        "role": "bottom"
+      },
+      "id": "were-compeer-162"
+    },
+    {
+      "key": "chastity-wearer#9f8914e9",
+      "claim": {
+        "fic": "were-compeer.html",
+        "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+        "paragraph": 597,
+        "pattern": "chastity-wearer",
+        "act": "wearing a chastity device",
+        "kind": "behavior",
+        "a": "Stiles Stilinski",
+        "b": "Derek Hale",
+        "role": "bottom"
+      },
+      "id": "were-compeer-165"
+    },
+    {
+      "key": "arch-back#e0bfef01",
+      "claim": {
+        "fic": "were-compeer.html",
+        "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+        "paragraph": 691,
+        "pattern": "arch-back",
+        "act": "arching their back",
+        "kind": "touch",
+        "a": "Stiles Stilinski",
+        "b": "Derek Hale",
+        "role": "bottom"
+      },
+      "id": "were-compeer-167"
+    },
+    {
+      "key": "dom-carry#a3557bda",
+      "claim": {
+        "fic": "were-compeer.html",
+        "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+        "paragraph": 703,
+        "pattern": "dom-carry",
+        "act": "lifting or carrying someone",
+        "kind": "behavior",
+        "a": "Derek Hale",
+        "b": "Stiles Stilinski",
+        "role": "top"
+      },
+      "id": "were-compeer-168"
+    },
+    {
+      "key": "dialogue:anal sex#55573f7",
+      "claim": {
+        "fic": "were-compeer.html",
+        "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+        "paragraph": 750,
+        "pattern": "dialogue:anal sex",
+        "act": "anal sex",
+        "kind": "said",
+        "a": "Stiles Stilinski",
+        "b": "Derek Hale",
+        "role": "bottom"
+      },
+      "id": "were-compeer-169"
+    },
+    {
+      "key": "flustered-verb~elided#81563227",
+      "claim": {
+        "fic": "were-compeer.html",
+        "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+        "paragraph": 915,
+        "pattern": "flustered-verb~elided",
+        "act": "flustered or blushing",
+        "kind": "behavior",
+        "a": "Stiles Stilinski",
+        "b": "Derek Hale",
+        "role": "bottom"
+      },
+      "id": "were-compeer-170"
+    },
+    {
+      "key": "pos-pull-lap~elided#4e96ba31",
+      "claim": {
+        "fic": "were-compeer.html",
+        "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+        "paragraph": 960,
+        "pattern": "pos-pull-lap~elided",
+        "act": "pulling someone onto their lap",
+        "kind": "position",
+        "a": "Derek Hale",
+        "b": "Stiles Stilinski",
+        "role": "top"
+      },
+      "id": "were-compeer-171"
+    },
+    {
+      "key": "dd-frot-rut-against#ed10c04c",
+      "claim": {
+        "fic": "were-compeer.html",
+        "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+        "paragraph": 966,
+        "pattern": "dd-frot-rut-against",
+        "act": "frottage",
+        "kind": "handjob",
+        "a": "Derek Hale",
+        "b": "Stiles Stilinski",
+        "role": "top"
+      },
+      "id": "were-compeer-173"
+    },
+    {
+      "key": "aftercare-held~elided#a4dd24e3",
+      "claim": {
+        "fic": "were-compeer.html",
+        "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+        "paragraph": 967,
+        "pattern": "aftercare-held~elided",
+        "act": "being held afterwards",
+        "kind": "aftercare",
+        "a": "Stiles Stilinski",
+        "b": "Derek Hale",
+        "role": "bottom"
+      },
+      "id": "were-compeer-174"
+    },
+    {
+      "key": "self-finger~elided#69112a1f",
+      "claim": {
+        "fic": "were-compeer.html",
+        "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+        "paragraph": 975,
+        "pattern": "self-finger~elided",
+        "act": "fingering himself",
+        "kind": "solo",
+        "a": "Stiles Stilinski",
+        "b": "Derek Hale",
+        "role": "bottom"
+      },
+      "id": "were-compeer-175"
+    },
+    {
+      "key": "chastity-wearer#a4544bb4",
+      "claim": {
+        "fic": "were-compeer.html",
+        "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+        "paragraph": 976,
+        "pattern": "chastity-wearer",
+        "act": "wearing a chastity device",
+        "kind": "behavior",
+        "a": "Stiles Stilinski",
+        "b": "Derek Hale",
+        "role": "bottom"
+      },
+      "id": "were-compeer-176"
+    },
+    {
+      "key": "dom-carry#43c10d6c",
+      "claim": {
+        "fic": "were-compeer.html",
+        "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+        "paragraph": 982,
+        "pattern": "dom-carry",
+        "act": "lifting or carrying someone",
+        "kind": "behavior",
+        "a": "Derek Hale",
+        "b": "Stiles Stilinski",
+        "role": "top"
+      },
+      "id": "were-compeer-177"
+    },
+    {
+      "key": "pos-pull-lap#43c10d6c",
+      "claim": {
+        "fic": "were-compeer.html",
+        "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+        "paragraph": 982,
+        "pattern": "pos-pull-lap",
+        "act": "pulling someone onto their lap",
+        "kind": "position",
+        "a": "Derek Hale",
+        "b": "Stiles Stilinski",
+        "role": "top"
+      },
+      "id": "were-compeer-178"
+    },
+    {
+      "key": "dom-carry#c05d8c4d",
+      "claim": {
+        "fic": "were-compeer.html",
+        "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+        "paragraph": 985,
+        "pattern": "dom-carry",
+        "act": "lifting or carrying someone",
+        "kind": "behavior",
+        "a": "Derek Hale",
+        "b": "Stiles Stilinski",
+        "role": "top"
+      },
+      "id": "were-compeer-179"
+    },
+    {
+      "key": "chastity-keyholder~elided#3ea9e08e",
+      "claim": {
+        "fic": "were-compeer.html",
+        "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+        "paragraph": 986,
+        "pattern": "chastity-keyholder~elided",
+        "act": "holding the key to a chastity device",
+        "kind": "behavior",
+        "a": "Derek Hale",
+        "b": "Stiles Stilinski",
+        "role": "top"
+      },
+      "id": "were-compeer-180"
+    },
+    {
+      "key": "grind-ass-back~elided#681a82f1",
+      "claim": {
+        "fic": "were-compeer.html",
+        "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+        "paragraph": 1007,
+        "pattern": "grind-ass-back~elided",
+        "act": "grinding back",
+        "kind": "touch",
+        "a": "Stiles Stilinski",
+        "b": "Derek Hale",
+        "role": "bottom"
+      },
+      "id": "were-compeer-181"
+    },
+    {
+      "key": "flustered-verb#d73d4b03",
+      "claim": {
+        "fic": "were-compeer.html",
+        "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+        "paragraph": 1008,
+        "pattern": "flustered-verb",
+        "act": "flustered or blushing",
+        "kind": "behavior",
+        "a": "Derek Hale",
+        "b": "Stiles Stilinski",
+        "role": "bottom"
+      },
+      "id": "were-compeer-182"
+    },
+    {
+      "key": "abo-bare-neck~elided#97e75044",
+      "claim": {
+        "fic": "were-compeer.html",
+        "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+        "paragraph": 1009,
+        "pattern": "abo-bare-neck~elided",
+        "act": "baring their neck",
+        "kind": "behavior",
+        "a": "Derek Hale",
+        "b": "Stiles Stilinski",
+        "role": "bottom"
+      },
+      "id": "were-compeer-183"
+    },
+    {
+      "key": "care-soothe#6a60afe",
+      "claim": {
+        "fic": "were-compeer.html",
+        "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+        "paragraph": 1009,
+        "pattern": "care-soothe",
+        "act": "comforting someone",
+        "kind": "behavior",
+        "a": "Derek Hale",
+        "b": "Stiles Stilinski",
+        "role": "top"
+      },
+      "id": "were-compeer-185"
+    },
+    {
+      "key": "arch-back#83f2c950",
+      "claim": {
+        "fic": "were-compeer.html",
+        "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+        "paragraph": 1009,
+        "pattern": "arch-back",
+        "act": "arching their back",
+        "kind": "touch",
+        "a": "Stiles Stilinski",
+        "b": "Derek Hale",
+        "role": "bottom"
+      },
+      "id": "were-compeer-186"
+    },
+    {
+      "key": "hj-stroke#f557116",
+      "claim": {
+        "fic": "were-compeer.html",
+        "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+        "paragraph": 1030,
+        "pattern": "hj-stroke",
+        "act": "handjob",
+        "kind": "handjob",
+        "a": "Derek Hale",
+        "b": "Stiles Stilinski",
+        "role": "top"
+      },
+      "id": "were-compeer-189"
+    },
+    {
+      "key": "dom-carry#699dcc17",
+      "claim": {
+        "fic": "were-compeer.html",
+        "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+        "paragraph": 1097,
+        "pattern": "dom-carry",
+        "act": "lifting or carrying someone",
+        "kind": "behavior",
+        "a": "Derek Hale",
+        "b": "Stiles Stilinski",
+        "role": "top"
+      },
+      "id": "were-compeer-192"
+    },
+    {
+      "key": "dom-carry#8476d322",
+      "claim": {
+        "fic": "were-compeer.html",
+        "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+        "paragraph": 1097,
+        "pattern": "dom-carry",
+        "act": "lifting or carrying someone",
+        "kind": "behavior",
+        "a": "Vernon Boyd",
+        "b": "Derek Hale",
+        "role": "top"
+      },
+      "id": "were-compeer-193"
+    },
+    {
+      "key": "care-soothe~elided#b427c0f8",
+      "claim": {
+        "fic": "were-compeer.html",
+        "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+        "paragraph": 1116,
+        "pattern": "care-soothe~elided",
+        "act": "comforting someone",
+        "kind": "behavior",
+        "a": "Derek Hale",
+        "b": "Stiles Stilinski",
+        "role": "top"
+      },
+      "id": "were-compeer-196"
+    },
+    {
+      "key": "dialogue:anal sex#c118d0c6",
+      "claim": {
+        "fic": "were-compeer.html",
+        "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+        "paragraph": 1157,
+        "pattern": "dialogue:anal sex",
+        "act": "anal sex",
+        "kind": "said",
+        "a": "Stiles Stilinski",
+        "b": "Derek Hale",
+        "role": "bottom"
+      },
+      "id": "were-compeer-198"
+    },
+    {
+      "key": "dom-grip#a00ce001",
+      "claim": {
+        "fic": "were-compeer.html",
+        "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+        "paragraph": 1158,
+        "pattern": "dom-grip",
+        "act": "gripping firmly",
+        "kind": "behavior",
+        "a": "Derek Hale",
+        "b": "Stiles Stilinski",
+        "role": "top"
+      },
+      "id": "were-compeer-199"
+    },
+    {
+      "key": "care-soothe#7bcb3015",
+      "claim": {
+        "fic": "were-compeer.html",
+        "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+        "paragraph": 1169,
+        "pattern": "care-soothe",
+        "act": "comforting someone",
+        "kind": "behavior",
+        "a": "Stiles Stilinski",
+        "b": "Derek Hale",
+        "role": "top"
+      },
+      "id": "were-compeer-202"
+    },
+    {
+      "key": "having-inside#bc8b5a3f",
+      "claim": {
+        "fic": "were-compeer.html",
+        "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+        "paragraph": 1198,
+        "pattern": "having-inside",
+        "act": "anal sex",
+        "kind": "wanted",
+        "a": "Stiles Stilinski",
+        "b": "Derek Hale",
+        "role": "bottom"
+      },
+      "id": "were-compeer-204"
+    },
+    {
+      "key": "dialogue:anal sex#aa93a28e",
+      "claim": {
+        "fic": "were-compeer.html",
+        "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+        "paragraph": 1200,
+        "pattern": "dialogue:anal sex",
+        "act": "anal sex",
+        "kind": "said",
+        "a": "Stiles Stilinski",
+        "b": "Derek Hale",
+        "role": "bottom"
+      },
+      "id": "were-compeer-206"
+    },
+    {
+      "key": "abo-bare-neck#8c32b333",
+      "claim": {
+        "fic": "were-compeer.html",
+        "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+        "paragraph": 1201,
+        "pattern": "abo-bare-neck",
+        "act": "baring their neck",
+        "kind": "behavior",
+        "a": "Stiles Stilinski",
+        "b": "Derek Hale",
+        "role": "bottom"
+      },
+      "id": "were-compeer-207"
+    },
+    {
+      "key": "body-full#937059ac",
+      "claim": {
+        "fic": "were-compeer.html",
+        "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+        "paragraph": 1201,
+        "pattern": "body-full",
+        "act": "feeling full",
+        "kind": "body",
+        "a": "Stiles Stilinski",
+        "b": "Derek Hale",
+        "role": "bottom"
+      },
+      "id": "were-compeer-208"
+    },
+    {
+      "key": "finger-noun-to-hole#60e2c4bd",
+      "claim": {
+        "fic": "dogbird.html",
+        "sourceSha": "b66dcf4730e681942787b9d280bc8b2825005e179cfe09179a82e935a4f036fb",
+        "paragraph": 1290,
+        "pattern": "finger-noun-to-hole",
+        "act": "fingering",
+        "kind": "act",
+        "a": "Evan \"Buck\" Buckley",
+        "b": "Eddie Diaz",
+        "role": ""
+      },
+      "id": "dogbird-2"
+    },
+    {
+      "key": "sucked#4366c1b1",
+      "claim": {
+        "fic": "dogbird.html",
+        "sourceSha": "b66dcf4730e681942787b9d280bc8b2825005e179cfe09179a82e935a4f036fb",
+        "paragraph": 1290,
+        "pattern": "sucked",
+        "act": "blowjob",
+        "kind": "act",
+        "a": "Eddie Diaz",
+        "b": "Evan \"Buck\" Buckley",
+        "role": ""
+      },
+      "id": "dogbird-4"
+    },
+    {
+      "key": "dd-finger-slips-into~elided#44d53a72",
+      "claim": {
+        "fic": "dogbird.html",
+        "sourceSha": "b66dcf4730e681942787b9d280bc8b2825005e179cfe09179a82e935a4f036fb",
+        "paragraph": 1291,
+        "pattern": "dd-finger-slips-into~elided",
+        "act": "fingering",
+        "kind": "act",
+        "a": "Evan \"Buck\" Buckley",
+        "b": "Eddie Diaz",
+        "role": ""
+      },
+      "id": "dogbird-7"
+    },
+    {
+      "key": "fingers-inside#874b9d56",
+      "claim": {
+        "fic": "dogbird.html",
+        "sourceSha": "b66dcf4730e681942787b9d280bc8b2825005e179cfe09179a82e935a4f036fb",
+        "paragraph": 1298,
+        "pattern": "fingers-inside",
+        "act": "fingering",
+        "kind": "act",
+        "a": "Evan \"Buck\" Buckley",
+        "b": "Eddie Diaz",
+        "role": ""
+      },
+      "id": "dogbird-12"
+    },
+    {
+      "key": "licked-cock~elided#5018df7d",
+      "claim": {
+        "fic": "dogbird.html",
+        "sourceSha": "b66dcf4730e681942787b9d280bc8b2825005e179cfe09179a82e935a4f036fb",
+        "paragraph": 1302,
+        "pattern": "licked-cock~elided",
+        "act": "blowjob",
+        "kind": "act",
+        "a": "Eddie Diaz",
+        "b": "Evan \"Buck\" Buckley",
+        "role": ""
+      },
+      "id": "dogbird-14"
+    },
+    {
+      "key": "inside#9e1a3ac5",
+      "claim": {
+        "fic": "dogbird.html",
+        "sourceSha": "b66dcf4730e681942787b9d280bc8b2825005e179cfe09179a82e935a4f036fb",
+        "paragraph": 1319,
+        "pattern": "inside",
+        "act": "anal sex",
+        "kind": "act",
+        "a": "Evan \"Buck\" Buckley",
+        "b": "Eddie Diaz",
+        "role": ""
+      },
+      "id": "dogbird-16"
+    },
+    {
+      "key": "dd-fucks-into-him#f9bb0861",
+      "claim": {
+        "fic": "dogbird.html",
+        "sourceSha": "b66dcf4730e681942787b9d280bc8b2825005e179cfe09179a82e935a4f036fb",
+        "paragraph": 1321,
+        "pattern": "dd-fucks-into-him",
+        "act": "anal sex",
+        "kind": "act",
+        "a": "Evan \"Buck\" Buckley",
+        "b": "Eddie Diaz",
+        "role": ""
+      },
+      "id": "dogbird-18"
+    },
+    {
+      "key": "fuck#cbf38f0c",
+      "claim": {
+        "fic": "dogbird.html",
+        "sourceSha": "b66dcf4730e681942787b9d280bc8b2825005e179cfe09179a82e935a4f036fb",
+        "paragraph": 1324,
+        "pattern": "fuck",
+        "act": "anal sex",
+        "kind": "act",
+        "a": "Evan \"Buck\" Buckley",
+        "b": "Eddie Diaz",
+        "role": ""
+      },
+      "id": "dogbird-19"
+    },
+    {
+      "key": "push-into#5fae36be",
+      "claim": {
+        "fic": "dogbird.html",
+        "sourceSha": "b66dcf4730e681942787b9d280bc8b2825005e179cfe09179a82e935a4f036fb",
+        "paragraph": 1326,
+        "pattern": "push-into",
+        "act": "anal sex",
+        "kind": "act",
+        "a": "Evan \"Buck\" Buckley",
+        "b": "Eddie Diaz",
+        "role": ""
+      },
+      "id": "dogbird-20"
+    },
+    {
+      "key": "clenched-around#9052ef2e",
+      "claim": {
+        "fic": "dogbird.html",
+        "sourceSha": "b66dcf4730e681942787b9d280bc8b2825005e179cfe09179a82e935a4f036fb",
+        "paragraph": 1328,
+        "pattern": "clenched-around",
+        "act": "anal sex",
+        "kind": "act",
+        "a": "Evan \"Buck\" Buckley",
+        "b": "Eddie Diaz",
+        "role": ""
+      },
+      "id": "dogbird-21"
+    },
+    {
+      "key": "fuck#5ebcb11d",
+      "claim": {
+        "fic": "dogbird.html",
+        "sourceSha": "b66dcf4730e681942787b9d280bc8b2825005e179cfe09179a82e935a4f036fb",
+        "paragraph": 1329,
+        "pattern": "fuck",
+        "act": "anal sex",
+        "kind": "act",
+        "a": "Evan \"Buck\" Buckley",
+        "b": "Eddie Diaz",
+        "role": ""
+      },
+      "id": "dogbird-22"
+    },
+    {
+      "key": "push-into#42e69206",
+      "claim": {
+        "fic": "dogbird.html",
+        "sourceSha": "b66dcf4730e681942787b9d280bc8b2825005e179cfe09179a82e935a4f036fb",
+        "paragraph": 1335,
+        "pattern": "push-into",
+        "act": "anal sex",
+        "kind": "act",
+        "a": "Evan \"Buck\" Buckley",
+        "b": "Eddie Diaz",
+        "role": ""
+      },
+      "id": "dogbird-23"
+    },
+    {
+      "key": "dd-fucks-into-him#42e69206",
+      "claim": {
+        "fic": "dogbird.html",
+        "sourceSha": "b66dcf4730e681942787b9d280bc8b2825005e179cfe09179a82e935a4f036fb",
+        "paragraph": 1335,
+        "pattern": "dd-fucks-into-him",
+        "act": "anal sex",
+        "kind": "act",
+        "a": "Evan \"Buck\" Buckley",
+        "b": "Eddie Diaz",
+        "role": ""
+      },
+      "id": "dogbird-24"
+    },
+    {
+      "key": "rock-into~elided#6d88489c",
+      "claim": {
+        "fic": "dogbird.html",
+        "sourceSha": "b66dcf4730e681942787b9d280bc8b2825005e179cfe09179a82e935a4f036fb",
+        "paragraph": 1337,
+        "pattern": "rock-into~elided",
+        "act": "anal sex",
+        "kind": "act",
+        "a": "Evan \"Buck\" Buckley",
+        "b": "Eddie Diaz",
+        "role": ""
+      },
+      "id": "dogbird-25"
+    },
+    {
+      "key": "dd-cock-out-of#e3a2d257",
+      "claim": {
+        "fic": "dogbird.html",
+        "sourceSha": "b66dcf4730e681942787b9d280bc8b2825005e179cfe09179a82e935a4f036fb",
+        "paragraph": 1338,
+        "pattern": "dd-cock-out-of",
+        "act": "anal sex",
+        "kind": "act",
+        "a": "Evan \"Buck\" Buckley",
+        "b": "Eddie Diaz",
+        "role": ""
+      },
+      "id": "dogbird-26"
+    },
+    {
+      "key": "dom-carry#1846f9d1",
+      "claim": {
+        "fic": "dogbird.html",
+        "sourceSha": "b66dcf4730e681942787b9d280bc8b2825005e179cfe09179a82e935a4f036fb",
+        "paragraph": 220,
+        "pattern": "dom-carry",
+        "act": "lifting or carrying someone",
+        "kind": "behavior",
+        "a": "Evan \"Buck\" Buckley",
+        "b": "Eddie Diaz",
+        "role": "top"
+      },
+      "id": "dogbird-27"
+    },
+    {
+      "key": "collar-holder#7f134eb1",
+      "claim": {
+        "fic": "dogbird.html",
+        "sourceSha": "b66dcf4730e681942787b9d280bc8b2825005e179cfe09179a82e935a4f036fb",
+        "paragraph": 314,
+        "pattern": "collar-holder",
+        "act": "leading or controlling a collared partner",
+        "kind": "behavior",
+        "a": "Eddie Diaz",
+        "b": "Evan \"Buck\" Buckley",
+        "role": "top"
+      },
+      "id": "dogbird-29"
+    },
+    {
+      "key": "care-soothe~elided#43cca342",
+      "claim": {
+        "fic": "dogbird.html",
+        "sourceSha": "b66dcf4730e681942787b9d280bc8b2825005e179cfe09179a82e935a4f036fb",
+        "paragraph": 329,
+        "pattern": "care-soothe~elided",
+        "act": "comforting someone",
+        "kind": "behavior",
+        "a": "Eddie Diaz",
+        "b": "Evan \"Buck\" Buckley",
+        "role": "top"
+      },
+      "id": "dogbird-30"
+    },
+    {
+      "key": "collar-wearer#b2372a6",
+      "claim": {
+        "fic": "dogbird.html",
+        "sourceSha": "b66dcf4730e681942787b9d280bc8b2825005e179cfe09179a82e935a4f036fb",
+        "paragraph": 394,
+        "pattern": "collar-wearer",
+        "act": "wearing a collar or leash",
+        "kind": "behavior",
+        "a": "Evan \"Buck\" Buckley",
+        "b": "Eddie Diaz",
+        "role": "bottom"
+      },
+      "id": "dogbird-32"
+    },
+    {
+      "key": "sub-let-lead#fa5c3a4b",
+      "claim": {
+        "fic": "dogbird.html",
+        "sourceSha": "b66dcf4730e681942787b9d280bc8b2825005e179cfe09179a82e935a4f036fb",
+        "paragraph": 754,
+        "pattern": "sub-let-lead",
+        "act": "letting someone lead",
+        "kind": "behavior",
+        "a": "Eddie Diaz",
+        "b": "Evan \"Buck\" Buckley",
+        "role": "bottom"
+      },
+      "id": "dogbird-35"
+    },
+    {
+      "key": "collar-wearer#e0871ad",
+      "claim": {
+        "fic": "dogbird.html",
+        "sourceSha": "b66dcf4730e681942787b9d280bc8b2825005e179cfe09179a82e935a4f036fb",
+        "paragraph": 964,
+        "pattern": "collar-wearer",
+        "act": "wearing a collar or leash",
+        "kind": "behavior",
+        "a": "Evan \"Buck\" Buckley",
+        "b": "Eddie Diaz",
+        "role": "bottom"
+      },
+      "id": "dogbird-36"
+    },
+    {
+      "key": "care-soothe~elided#3a3cb76c",
+      "claim": {
+        "fic": "dogbird.html",
+        "sourceSha": "b66dcf4730e681942787b9d280bc8b2825005e179cfe09179a82e935a4f036fb",
+        "paragraph": 1072,
+        "pattern": "care-soothe~elided",
+        "act": "comforting someone",
+        "kind": "behavior",
+        "a": "Eddie Diaz",
+        "b": "Evan \"Buck\" Buckley",
+        "role": "top"
+      },
+      "id": "dogbird-37"
+    },
+    {
+      "key": "collar-wearer#c2f93dbb",
+      "claim": {
+        "fic": "dogbird.html",
+        "sourceSha": "b66dcf4730e681942787b9d280bc8b2825005e179cfe09179a82e935a4f036fb",
+        "paragraph": 1102,
+        "pattern": "collar-wearer",
+        "act": "wearing a collar or leash",
+        "kind": "behavior",
+        "a": "Evan \"Buck\" Buckley",
+        "b": "Eddie Diaz",
+        "role": "bottom"
+      },
+      "id": "dogbird-38"
+    },
+    {
+      "key": "care-soothe~elided#8dbad4a3",
+      "claim": {
+        "fic": "dogbird.html",
+        "sourceSha": "b66dcf4730e681942787b9d280bc8b2825005e179cfe09179a82e935a4f036fb",
+        "paragraph": 1112,
+        "pattern": "care-soothe~elided",
+        "act": "comforting someone",
+        "kind": "behavior",
+        "a": "Eddie Diaz",
+        "b": "Evan \"Buck\" Buckley",
+        "role": "top"
+      },
+      "id": "dogbird-39"
+    },
+    {
+      "key": "care-soothe#e9d48063",
+      "claim": {
+        "fic": "dogbird.html",
+        "sourceSha": "b66dcf4730e681942787b9d280bc8b2825005e179cfe09179a82e935a4f036fb",
+        "paragraph": 1141,
+        "pattern": "care-soothe",
+        "act": "comforting someone",
+        "kind": "behavior",
+        "a": "Eddie Diaz",
+        "b": "Evan \"Buck\" Buckley",
+        "role": "top"
+      },
+      "id": "dogbird-43"
+    },
+    {
+      "key": "flustered-verb#3c913d77",
+      "claim": {
+        "fic": "dogbird.html",
+        "sourceSha": "b66dcf4730e681942787b9d280bc8b2825005e179cfe09179a82e935a4f036fb",
+        "paragraph": 1152,
+        "pattern": "flustered-verb",
+        "act": "flustered or blushing",
+        "kind": "behavior",
+        "a": "Eddie Diaz",
+        "b": "Evan \"Buck\" Buckley",
+        "role": "bottom"
+      },
+      "id": "dogbird-44"
+    },
+    {
+      "key": "dom-pin~elided#25f44fe2",
+      "claim": {
+        "fic": "dogbird.html",
+        "sourceSha": "b66dcf4730e681942787b9d280bc8b2825005e179cfe09179a82e935a4f036fb",
+        "paragraph": 1223,
+        "pattern": "dom-pin~elided",
+        "act": "pinning someone",
+        "kind": "behavior",
+        "a": "Evan \"Buck\" Buckley",
+        "b": "Eddie Diaz",
+        "role": "top"
+      },
+      "id": "dogbird-45"
+    },
+    {
+      "key": "dialogue:anal sex#404a68e3",
+      "claim": {
+        "fic": "dogbird.html",
+        "sourceSha": "b66dcf4730e681942787b9d280bc8b2825005e179cfe09179a82e935a4f036fb",
+        "paragraph": 1272,
+        "pattern": "dialogue:anal sex",
+        "act": "anal sex",
+        "kind": "said",
+        "a": "Eddie Diaz",
+        "b": "Evan \"Buck\" Buckley",
+        "role": "bottom"
+      },
+      "id": "dogbird-48"
+    },
+    {
+      "key": "dialogue:anal sex#b7884687",
+      "claim": {
+        "fic": "dogbird.html",
+        "sourceSha": "b66dcf4730e681942787b9d280bc8b2825005e179cfe09179a82e935a4f036fb",
+        "paragraph": 1279,
+        "pattern": "dialogue:anal sex",
+        "act": "anal sex",
+        "kind": "said",
+        "a": "Eddie Diaz",
+        "b": "Evan \"Buck\" Buckley",
+        "role": "bottom"
+      },
+      "id": "dogbird-49"
+    },
+    {
+      "key": "flustered-verb~elided#5018df7d",
+      "claim": {
+        "fic": "dogbird.html",
+        "sourceSha": "b66dcf4730e681942787b9d280bc8b2825005e179cfe09179a82e935a4f036fb",
+        "paragraph": 1302,
+        "pattern": "flustered-verb~elided",
+        "act": "flustered or blushing",
+        "kind": "behavior",
+        "a": "Eddie Diaz",
+        "b": "Evan \"Buck\" Buckley",
+        "role": "bottom"
+      },
+      "id": "dogbird-55"
+    },
+    {
+      "key": "dialogue:anal sex#f2d91b02",
+      "claim": {
+        "fic": "dogbird.html",
+        "sourceSha": "b66dcf4730e681942787b9d280bc8b2825005e179cfe09179a82e935a4f036fb",
+        "paragraph": 1302,
+        "pattern": "dialogue:anal sex",
+        "act": "anal sex",
+        "kind": "said",
+        "a": "Evan \"Buck\" Buckley",
+        "b": "Eddie Diaz",
+        "role": "bottom"
+      },
+      "id": "dogbird-56"
+    },
+    {
+      "key": "fuck#c39aaf73",
+      "claim": {
+        "fic": "dogbird.html",
+        "sourceSha": "b66dcf4730e681942787b9d280bc8b2825005e179cfe09179a82e935a4f036fb",
+        "paragraph": 1319,
+        "pattern": "fuck",
+        "act": "anal sex",
+        "kind": "wanted",
+        "a": "Eddie Diaz",
+        "b": "Evan \"Buck\" Buckley",
+        "role": "bottom"
+      },
+      "id": "dogbird-59"
+    },
+    {
+      "key": "dialogue:anal sex#36df1265",
+      "claim": {
+        "fic": "dogbird.html",
+        "sourceSha": "b66dcf4730e681942787b9d280bc8b2825005e179cfe09179a82e935a4f036fb",
+        "paragraph": 1320,
+        "pattern": "dialogue:anal sex",
+        "act": "anal sex",
+        "kind": "said",
+        "a": "Eddie Diaz",
+        "b": "Evan \"Buck\" Buckley",
+        "role": "bottom"
+      },
+      "id": "dogbird-60"
+    },
+    {
+      "key": "dd2-hj-hand-to-dick#abdf7f6f",
+      "claim": {
+        "fic": "dogbird.html",
+        "sourceSha": "b66dcf4730e681942787b9d280bc8b2825005e179cfe09179a82e935a4f036fb",
+        "paragraph": 1324,
+        "pattern": "dd2-hj-hand-to-dick",
+        "act": "handjob",
+        "kind": "handjob",
+        "a": "Eddie Diaz",
+        "b": "Evan \"Buck\" Buckley",
+        "role": "top"
+      },
+      "id": "dogbird-61"
+    },
+    {
+      "key": "arch-back#9052ef2e",
+      "claim": {
+        "fic": "dogbird.html",
+        "sourceSha": "b66dcf4730e681942787b9d280bc8b2825005e179cfe09179a82e935a4f036fb",
+        "paragraph": 1328,
+        "pattern": "arch-back",
+        "act": "arching their back",
+        "kind": "touch",
+        "a": "Eddie Diaz",
+        "b": "Evan \"Buck\" Buckley",
+        "role": "bottom"
+      },
+      "id": "dogbird-63"
+    },
+    {
+      "key": "dialogue:anal sex#ab4ab7ae",
+      "claim": {
+        "fic": "dogbird.html",
+        "sourceSha": "b66dcf4730e681942787b9d280bc8b2825005e179cfe09179a82e935a4f036fb",
+        "paragraph": 1334,
+        "pattern": "dialogue:anal sex",
+        "act": "anal sex",
+        "kind": "said",
+        "a": "Eddie Diaz",
+        "b": "Evan \"Buck\" Buckley",
+        "role": "bottom"
+      },
+      "id": "dogbird-64"
+    },
+    {
+      "key": "dialogue:calling someone a good boy/girl#1081983b",
+      "claim": {
+        "fic": "dogbird.html",
+        "sourceSha": "b66dcf4730e681942787b9d280bc8b2825005e179cfe09179a82e935a4f036fb",
+        "paragraph": 1336,
+        "pattern": "dialogue:calling someone a good boy/girl",
+        "act": "calling someone a good boy/girl",
+        "kind": "petname",
+        "a": "Eddie Diaz",
+        "b": "Evan \"Buck\" Buckley",
+        "role": "top"
+      },
+      "id": "dogbird-65"
+    },
+    {
+      "key": "dialogue:anal sex#fe0a7aaf",
+      "claim": {
+        "fic": "dogbird.html",
+        "sourceSha": "b66dcf4730e681942787b9d280bc8b2825005e179cfe09179a82e935a4f036fb",
+        "paragraph": 1345,
+        "pattern": "dialogue:anal sex",
+        "act": "anal sex",
+        "kind": "said",
+        "a": "Eddie Diaz",
+        "b": "Evan \"Buck\" Buckley",
+        "role": "bottom"
+      },
+      "id": "dogbird-67"
+    },
+    {
+      "key": "care-soothe#1365e264",
+      "claim": {
+        "fic": "dogbird.html",
+        "sourceSha": "b66dcf4730e681942787b9d280bc8b2825005e179cfe09179a82e935a4f036fb",
+        "paragraph": 1348,
+        "pattern": "care-soothe",
+        "act": "comforting someone",
+        "kind": "behavior",
+        "a": "Eddie Diaz",
+        "b": "Evan \"Buck\" Buckley",
+        "role": "top"
+      },
+      "id": "dogbird-68"
+    },
+    {
+      "key": "dom-pin~elided#f362b5ea",
+      "claim": {
+        "fic": "dogbird.html",
+        "sourceSha": "b66dcf4730e681942787b9d280bc8b2825005e179cfe09179a82e935a4f036fb",
+        "paragraph": 1423,
+        "pattern": "dom-pin~elided",
+        "act": "pinning someone",
+        "kind": "behavior",
+        "a": "Eddie Diaz",
+        "b": "Evan \"Buck\" Buckley",
+        "role": "top"
+      },
+      "id": "dogbird-70"
+    }
+  ]
+}

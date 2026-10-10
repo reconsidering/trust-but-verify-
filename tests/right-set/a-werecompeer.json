@@ -48,166 +48,6 @@
    "who": "Stiles Stilinski",
    "role": "bottom",
    "wants": true,
-   "via": "plug-worn",
-   "h": "259fd9db",
-   "conf": 58,
-   "weight": 0.85,
-   "source": "claude",
-   "marks": {
-    "right": 1,
-    "wrong": 0
-   },
-   "seen": [
-    "2026-10-05"
-   ]
-  },
-  {
-   "kind": "hint",
-   "card": "anal",
-   "pairing": "Derek Hale/Stiles Stilinski",
-   "who": "Stiles Stilinski",
-   "role": "bottom",
-   "wants": true,
-   "via": "dialogue:anal sex",
-   "h": "b893358d",
-   "conf": 85,
-   "weight": 0.85,
-   "source": "claude",
-   "marks": {
-    "right": 1,
-    "wrong": 0
-   },
-   "seen": [
-    "2026-10-05"
-   ]
-  },
-  {
-   "kind": "hint",
-   "card": "anal",
-   "pairing": "Derek Hale/Stiles Stilinski",
-   "who": "Derek Hale",
-   "role": "top",
-   "wants": true,
-   "via": "dialogue:anal sex",
-   "h": "aedef6b8",
-   "conf": 85,
-   "weight": 0.85,
-   "source": "claude",
-   "marks": {
-    "right": 1,
-    "wrong": 0
-   },
-   "seen": [
-    "2026-10-05"
-   ]
-  },
-  {
-   "kind": "hint",
-   "card": "anal",
-   "pairing": "Derek Hale/Stiles Stilinski",
-   "who": "Stiles Stilinski",
-   "role": "bottom",
-   "wants": true,
-   "via": "plug-worn",
-   "h": "d28d4d0d",
-   "conf": 58,
-   "weight": 0.85,
-   "source": "claude",
-   "marks": {
-    "right": 1,
-    "wrong": 0
-   },
-   "seen": [
-    "2026-10-05"
-   ]
-  },
-  {
-   "kind": "hint",
-   "card": "anal",
-   "pairing": "Derek Hale/Stiles Stilinski",
-   "who": "Stiles Stilinski",
-   "role": "bottom",
-   "wants": true,
-   "via": "dialogue:anal sex",
-   "h": "84ac5f1a",
-   "conf": 80,
-   "weight": 0.85,
-   "source": "claude",
-   "marks": {
-    "right": 1,
-    "wrong": 0
-   },
-   "seen": [
-    "2026-10-05"
-   ]
-  },
-  {
-   "kind": "hint",
-   "card": "anal",
-   "pairing": "Derek Hale/Stiles Stilinski",
-   "who": "Stiles Stilinski",
-   "role": "bottom",
-   "wants": true,
-   "via": "dialogue:anal sex",
-   "h": "a5b1f872",
-   "conf": 53,
-   "weight": 0.85,
-   "source": "claude",
-   "marks": {
-    "right": 1,
-    "wrong": 0
-   },
-   "seen": [
-    "2026-10-05"
-   ]
-  },
-  {
-   "kind": "hint",
-   "card": "anal",
-   "pairing": "Derek Hale/Stiles Stilinski",
-   "who": "Stiles Stilinski",
-   "role": "bottom",
-   "wants": true,
-   "via": "dialogue:anal sex",
-   "h": "c448d1b8",
-   "conf": 53,
-   "weight": 0.85,
-   "source": "claude",
-   "marks": {
-    "right": 1,
-    "wrong": 0
-   },
-   "seen": [
-    "2026-10-05"
-   ]
-  },
-  {
-   "kind": "hint",
-   "card": "anal",
-   "pairing": "Derek Hale/Stiles Stilinski",
-   "who": "Derek Hale",
-   "role": "top",
-   "wants": true,
-   "via": "dialogue:anal sex",
-   "h": "ebecc65c",
-   "conf": 50,
-   "weight": 0.85,
-   "source": "claude",
-   "marks": {
-    "right": 1,
-    "wrong": 0
-   },
-   "seen": [
-    "2026-10-05"
-   ]
-  },
-  {
-   "kind": "hint",
-   "card": "anal",
-   "pairing": "Derek Hale/Stiles Stilinski",
-   "who": "Stiles Stilinski",
-   "role": "bottom",
-   "wants": true,
    "via": "spread-legs",
    "h": "cf839770",
    "conf": 34,
@@ -221,66 +61,6 @@
     "2026-10-05"
    ],
    "retired": "owner judged this wrong in the October 4-5 review 2026-10-09"
-  },
-  {
-   "kind": "hint",
-   "card": "anal",
-   "pairing": "Derek Hale/Stiles Stilinski",
-   "who": "Derek Hale",
-   "role": "top",
-   "wants": true,
-   "via": "finger-at-entrance",
-   "h": "864117b7",
-   "conf": 48,
-   "weight": 0.85,
-   "source": "claude",
-   "marks": {
-    "right": 1,
-    "wrong": 0
-   },
-   "seen": [
-    "2026-10-05"
-   ]
-  },
-  {
-   "kind": "hint",
-   "card": "anal",
-   "pairing": "Derek Hale/Stiles Stilinski",
-   "who": "Stiles Stilinski",
-   "role": "bottom",
-   "wants": true,
-   "via": "dialogue:anal sex",
-   "h": "c10d284f",
-   "conf": 83,
-   "weight": 0.85,
-   "source": "claude",
-   "marks": {
-    "right": 1,
-    "wrong": 0
-   },
-   "seen": [
-    "2026-10-05"
-   ]
-  },
-  {
-   "kind": "hint",
-   "card": "anal",
-   "pairing": "Derek Hale/Stiles Stilinski",
-   "who": "Derek Hale",
-   "role": "top",
-   "wants": true,
-   "via": "dialogue:anal sex",
-   "h": "7ac959d4",
-   "conf": 53,
-   "weight": 0.85,
-   "source": "claude",
-   "marks": {
-    "right": 1,
-    "wrong": 0
-   },
-   "seen": [
-    "2026-10-05"
-   ]
   },
   {
    "kind": "hint",
@@ -300,26 +80,6 @@
    "seen": [
     "2026-10-05",
     "2026-10-06"
-   ]
-  },
-  {
-   "kind": "hint",
-   "card": "anal",
-   "pairing": "Derek Hale/Stiles Stilinski",
-   "who": "Stiles Stilinski",
-   "role": "bottom",
-   "wants": true,
-   "via": "dialogue:anal sex",
-   "h": "f678140d",
-   "conf": 85,
-   "weight": 0.85,
-   "source": "claude",
-   "marks": {
-    "right": 1,
-    "wrong": 0
-   },
-   "seen": [
-    "2026-10-05"
    ]
   },
   {
@@ -388,66 +148,6 @@
    "kind": "hint",
    "card": "anal",
    "pairing": "Derek Hale/Stiles Stilinski",
-   "who": "Stiles Stilinski",
-   "role": "bottom",
-   "wants": true,
-   "via": "plug-worn",
-   "h": "2da87837",
-   "conf": 58,
-   "weight": 0.85,
-   "source": "claude",
-   "marks": {
-    "right": 1,
-    "wrong": 0
-   },
-   "seen": [
-    "2026-10-05"
-   ]
-  },
-  {
-   "kind": "hint",
-   "card": "anal",
-   "pairing": "Derek Hale/Stiles Stilinski",
-   "who": "Stiles Stilinski",
-   "role": "bottom",
-   "wants": true,
-   "via": "plug-worn",
-   "h": "68359040",
-   "conf": 58,
-   "weight": 0.85,
-   "source": "claude",
-   "marks": {
-    "right": 1,
-    "wrong": 0
-   },
-   "seen": [
-    "2026-10-05"
-   ]
-  },
-  {
-   "kind": "hint",
-   "card": "anal",
-   "pairing": "Derek Hale/Stiles Stilinski",
-   "who": "Stiles Stilinski",
-   "role": "bottom",
-   "wants": true,
-   "via": "plug-worn",
-   "h": "693c38fb",
-   "conf": 58,
-   "weight": 0.85,
-   "source": "claude",
-   "marks": {
-    "right": 1,
-    "wrong": 0
-   },
-   "seen": [
-    "2026-10-05"
-   ]
-  },
-  {
-   "kind": "hint",
-   "card": "anal",
-   "pairing": "Derek Hale/Stiles Stilinski",
    "who": "Derek Hale",
    "role": "top",
    "wants": true,
@@ -504,46 +204,6 @@
     "2026-10-05"
    ],
    "retired": "owner re-judged this wrong in the October 4-5 review 2026-10-09"
-  },
-  {
-   "kind": "hint",
-   "card": "anal",
-   "pairing": "Derek Hale/Stiles Stilinski",
-   "who": "Stiles Stilinski",
-   "role": "bottom",
-   "wants": true,
-   "via": "dialogue:anal sex",
-   "h": "e7dad6",
-   "conf": 53,
-   "weight": 0.85,
-   "source": "claude",
-   "marks": {
-    "right": 1,
-    "wrong": 0
-   },
-   "seen": [
-    "2026-10-05"
-   ]
-  },
-  {
-   "kind": "hint",
-   "card": "anal",
-   "pairing": "Derek Hale/Stiles Stilinski",
-   "who": "Stiles Stilinski",
-   "role": "bottom",
-   "wants": true,
-   "via": "self-finger",
-   "h": "e0a3f774",
-   "conf": 36,
-   "weight": 0.85,
-   "source": "claude",
-   "marks": {
-    "right": 1,
-    "wrong": 0
-   },
-   "seen": [
-    "2026-10-05"
-   ]
   },
   {
    "kind": "hint",
@@ -634,26 +294,6 @@
    "who": "Stiles Stilinski",
    "role": "bottom",
    "wants": true,
-   "via": "dialogue:anal sex",
-   "h": "e3d06316",
-   "conf": 53,
-   "weight": 0.85,
-   "source": "claude",
-   "marks": {
-    "right": 1,
-    "wrong": 0
-   },
-   "seen": [
-    "2026-10-05"
-   ]
-  },
-  {
-   "kind": "hint",
-   "card": "anal",
-   "pairing": "Derek Hale/Stiles Stilinski",
-   "who": "Stiles Stilinski",
-   "role": "bottom",
-   "wants": true,
    "via": "spread-legs",
    "h": "275bf9ef",
    "conf": 33,
@@ -689,26 +329,6 @@
     "2026-10-05"
    ],
    "retired": "owner judged this wrong in a blind spot-check 2026-10-06"
-  },
-  {
-   "kind": "hint",
-   "card": "anal",
-   "pairing": "Derek Hale/Stiles Stilinski",
-   "who": "Stiles Stilinski",
-   "role": "bottom",
-   "wants": true,
-   "via": "body-full",
-   "h": "d9309c0",
-   "conf": 42,
-   "weight": 0.85,
-   "source": "claude",
-   "marks": {
-    "right": 1,
-    "wrong": 0
-   },
-   "seen": [
-    "2026-10-05"
-   ]
   },
   {
    "kind": "hint",
@@ -772,97 +392,6 @@
    "retired": "owner judged this wrong in a blind spot-check 2026-10-06"
   },
   {
-   "kind": "solo",
-   "card": "solo",
-   "pairing": "Derek Hale/Stiles Stilinski",
-   "who": "Stiles Stilinski",
-   "via": "self-finger",
-   "h": "e0a3f774",
-   "weight": 0.85,
-   "source": "claude",
-   "marks": {
-    "right": 1,
-    "wrong": 0
-   },
-   "seen": [
-    "2026-10-05"
-   ]
-  },
-  {
-   "kind": "scene",
-   "card": "anal",
-   "pairing": "Derek Hale/Stiles Stilinski",
-   "top": "Derek Hale",
-   "bottom": "Stiles Stilinski",
-   "via": "fingers-into",
-   "h": "7d33c0c4",
-   "weight": 0.85,
-   "source": "claude",
-   "marks": {
-    "right": 1,
-    "wrong": 0
-   },
-   "seen": [
-    "2026-10-05"
-   ]
-  },
-  {
-   "kind": "scene",
-   "card": "anal",
-   "pairing": "Derek Hale/Stiles Stilinski",
-   "top": "Derek Hale",
-   "bottom": "Stiles Stilinski",
-   "via": "fingers-into",
-   "h": "6da4e9e8",
-   "weight": 0.85,
-   "source": "claude",
-   "marks": {
-    "right": 1,
-    "wrong": 0
-   },
-   "seen": [
-    "2026-10-05"
-   ]
-  },
-  {
-   "kind": "scene",
-   "card": "blowjob",
-   "pairing": "Derek Hale/Stiles Stilinski",
-   "top": "Derek Hale",
-   "bottom": "Stiles Stilinski",
-   "via": "licked-cock",
-   "h": "d779dd70",
-   "conf": 95,
-   "weight": 0.85,
-   "source": "claude",
-   "marks": {
-    "right": 1,
-    "wrong": 0
-   },
-   "seen": [
-    "2026-10-05"
-   ]
-  },
-  {
-   "kind": "scene",
-   "card": "blowjob",
-   "pairing": "Derek Hale/Stiles Stilinski",
-   "top": "Derek Hale",
-   "bottom": "Stiles Stilinski",
-   "via": "licked-cock",
-   "h": "79825af2",
-   "conf": 71,
-   "weight": 0.85,
-   "source": "claude",
-   "marks": {
-    "right": 1,
-    "wrong": 0
-   },
-   "seen": [
-    "2026-10-05"
-   ]
-  },
-  {
    "kind": "scene",
    "card": "anal",
    "pairing": "Derek Hale/Stiles Stilinski",
@@ -878,25 +407,6 @@
    "seen": [
     "2026-10-05",
     "2026-10-06"
-   ]
-  },
-  {
-   "kind": "scene",
-   "card": "anal",
-   "pairing": "Derek Hale/Stiles Stilinski",
-   "top": "Derek Hale",
-   "bottom": "Stiles Stilinski",
-   "via": "fuck",
-   "h": "8bf910dd",
-   "conf": 85,
-   "weight": 0.85,
-   "source": "claude",
-   "marks": {
-    "right": 1,
-    "wrong": 0
-   },
-   "seen": [
-    "2026-10-05"
    ]
   },
   {
@@ -935,44 +445,6 @@
    "seen": [
     "2026-10-05",
     "2026-10-06"
-   ]
-  },
-  {
-   "kind": "scene",
-   "card": "blowjob",
-   "pairing": "Derek Hale/Stiles Stilinski",
-   "top": "Derek Hale",
-   "bottom": "Stiles Stilinski",
-   "via": "lips-around",
-   "h": "1a21f2c7",
-   "conf": 68,
-   "weight": 0.85,
-   "source": "claude",
-   "marks": {
-    "right": 1,
-    "wrong": 0
-   },
-   "seen": [
-    "2026-10-05"
-   ]
-  },
-  {
-   "kind": "scene",
-   "card": "anal",
-   "pairing": "Derek Hale/Stiles Stilinski",
-   "top": "Derek Hale",
-   "bottom": "Stiles Stilinski",
-   "via": "push-into",
-   "h": "9daed647",
-   "conf": 90,
-   "weight": 0.85,
-   "source": "claude",
-   "marks": {
-    "right": 1,
-    "wrong": 0
-   },
-   "seen": [
-    "2026-10-05"
    ]
   },
   {
@@ -1048,6 +520,2538 @@
    "seen": [
     "2026-10-05"
    ]
+  },
+  {
+   "kind": "scene",
+   "card": "anal",
+   "pairing": "Derek Hale/Stiles Stilinski",
+   "h": "7d33c0c4",
+   "via": "fingers-into",
+   "weight": 0.9,
+   "source": "chatgpt",
+   "marks": {
+    "right": 1,
+    "wrong": 0
+   },
+   "seen": [
+    "2026-10-10"
+   ],
+   "top": "Derek Hale",
+   "bottom": "Stiles Stilinski"
+  },
+  {
+   "kind": "scene",
+   "card": "audit-anal",
+   "pairing": "Derek Hale/Stiles Stilinski",
+   "h": "7d33c0c4",
+   "via": "fingers-inside",
+   "weight": 0.9,
+   "source": "chatgpt",
+   "marks": {
+    "right": 1,
+    "wrong": 0
+   },
+   "seen": [
+    "2026-10-10"
+   ],
+   "top": "Derek Hale",
+   "bottom": "Stiles Stilinski"
+  },
+  {
+   "kind": "scene",
+   "card": "audit-anal",
+   "pairing": "Derek Hale/Stiles Stilinski",
+   "h": "7d33c0c4",
+   "via": "dd5-pushes-finger-in",
+   "weight": 0.9,
+   "source": "chatgpt",
+   "marks": {
+    "right": 1,
+    "wrong": 0
+   },
+   "seen": [
+    "2026-10-10"
+   ],
+   "top": "Derek Hale",
+   "bottom": "Stiles Stilinski"
+  },
+  {
+   "kind": "scene",
+   "card": "audit-anal",
+   "pairing": "Derek Hale/Stiles Stilinski",
+   "h": "34e288f1",
+   "via": "fingers-into",
+   "weight": 0.9,
+   "source": "chatgpt",
+   "marks": {
+    "right": 1,
+    "wrong": 0
+   },
+   "seen": [
+    "2026-10-10"
+   ],
+   "top": "Derek Hale",
+   "bottom": "Stiles Stilinski"
+  },
+  {
+   "kind": "scene",
+   "card": "audit-anal",
+   "pairing": "Derek Hale/Stiles Stilinski",
+   "h": "34e288f1",
+   "via": "fingers-inside",
+   "weight": 0.9,
+   "source": "chatgpt",
+   "marks": {
+    "right": 1,
+    "wrong": 0
+   },
+   "seen": [
+    "2026-10-10"
+   ],
+   "top": "Derek Hale",
+   "bottom": "Stiles Stilinski"
+  },
+  {
+   "kind": "scene",
+   "card": "audit-anal",
+   "pairing": "Derek Hale/Stiles Stilinski",
+   "h": "626743f5",
+   "via": "take-x",
+   "weight": 0.9,
+   "source": "chatgpt",
+   "marks": {
+    "right": 1,
+    "wrong": 0
+   },
+   "seen": [
+    "2026-10-10"
+   ],
+   "top": "Derek Hale",
+   "bottom": "Stiles Stilinski"
+  },
+  {
+   "kind": "scene",
+   "card": "anal",
+   "pairing": "Derek Hale/Stiles Stilinski",
+   "h": "d28d4d0d",
+   "via": "penis-inside",
+   "weight": 0.9,
+   "source": "chatgpt",
+   "marks": {
+    "right": 1,
+    "wrong": 0
+   },
+   "seen": [
+    "2026-10-10"
+   ],
+   "top": "Derek Hale",
+   "bottom": "Stiles Stilinski"
+  },
+  {
+   "kind": "scene",
+   "card": "audit-anal",
+   "pairing": "Derek Hale/Stiles Stilinski",
+   "h": "d28d4d0d",
+   "via": "dd-shoves-cock-deep",
+   "weight": 0.9,
+   "source": "chatgpt",
+   "marks": {
+    "right": 1,
+    "wrong": 0
+   },
+   "seen": [
+    "2026-10-10"
+   ],
+   "top": "Derek Hale",
+   "bottom": "Stiles Stilinski"
+  },
+  {
+   "kind": "scene",
+   "card": "audit-anal",
+   "pairing": "Derek Hale/Stiles Stilinski",
+   "h": "d28d4d0d",
+   "via": "dd6-slips-cock-inside",
+   "weight": 0.9,
+   "source": "chatgpt",
+   "marks": {
+    "right": 1,
+    "wrong": 0
+   },
+   "seen": [
+    "2026-10-10"
+   ],
+   "top": "Derek Hale",
+   "bottom": "Stiles Stilinski"
+  },
+  {
+   "kind": "scene",
+   "card": "anal",
+   "pairing": "Derek Hale/Stiles Stilinski",
+   "h": "6da4e9e8",
+   "via": "fingers-into",
+   "weight": 0.9,
+   "source": "chatgpt",
+   "marks": {
+    "right": 1,
+    "wrong": 0
+   },
+   "seen": [
+    "2026-10-10"
+   ],
+   "top": "Derek Hale",
+   "bottom": "Stiles Stilinski"
+  },
+  {
+   "kind": "scene",
+   "card": "audit-anal",
+   "pairing": "Derek Hale/Stiles Stilinski",
+   "h": "6da4e9e8",
+   "via": "dd-finger-slips-into",
+   "weight": 0.9,
+   "source": "chatgpt",
+   "marks": {
+    "right": 1,
+    "wrong": 0
+   },
+   "seen": [
+    "2026-10-10"
+   ],
+   "top": "Derek Hale",
+   "bottom": "Stiles Stilinski"
+  },
+  {
+   "kind": "scene",
+   "card": "audit-anal",
+   "pairing": "Derek Hale/Stiles Stilinski",
+   "h": "6da4e9e8",
+   "via": "dd5-pushes-finger-in",
+   "weight": 0.9,
+   "source": "chatgpt",
+   "marks": {
+    "right": 1,
+    "wrong": 0
+   },
+   "seen": [
+    "2026-10-10"
+   ],
+   "top": "Derek Hale",
+   "bottom": "Stiles Stilinski"
+  },
+  {
+   "kind": "scene",
+   "card": "blowjob",
+   "pairing": "Derek Hale/Stiles Stilinski",
+   "h": "d779dd70",
+   "via": "licked-cock",
+   "weight": 0.9,
+   "source": "chatgpt",
+   "marks": {
+    "right": 1,
+    "wrong": 0
+   },
+   "seen": [
+    "2026-10-10"
+   ],
+   "top": "Derek Hale",
+   "bottom": "Stiles Stilinski"
+  },
+  {
+   "kind": "scene",
+   "card": "audit-blowjob",
+   "pairing": "Derek Hale/Stiles Stilinski",
+   "h": "cde1c20f",
+   "via": "swallowed-down",
+   "weight": 0.9,
+   "source": "chatgpt",
+   "marks": {
+    "right": 1,
+    "wrong": 0
+   },
+   "seen": [
+    "2026-10-10"
+   ],
+   "top": "Derek Hale",
+   "bottom": "Stiles Stilinski"
+  },
+  {
+   "kind": "scene",
+   "card": "audit-blowjob",
+   "pairing": "Derek Hale/Stiles Stilinski",
+   "h": "aa50f864",
+   "via": "took-in-mouth",
+   "weight": 0.9,
+   "source": "chatgpt",
+   "marks": {
+    "right": 1,
+    "wrong": 0
+   },
+   "seen": [
+    "2026-10-10"
+   ],
+   "top": "Derek Hale",
+   "bottom": "Stiles Stilinski"
+  },
+  {
+   "kind": "scene",
+   "card": "audit-blowjob",
+   "pairing": "Derek Hale/Stiles Stilinski",
+   "h": "aa50f864",
+   "via": "took-to-root",
+   "weight": 0.9,
+   "source": "chatgpt",
+   "marks": {
+    "right": 1,
+    "wrong": 0
+   },
+   "seen": [
+    "2026-10-10"
+   ],
+   "top": "Derek Hale",
+   "bottom": "Stiles Stilinski"
+  },
+  {
+   "kind": "scene",
+   "card": "audit-blowjob",
+   "pairing": "Derek Hale/Stiles Stilinski",
+   "h": "aa50f864",
+   "via": "took-down",
+   "weight": 0.9,
+   "source": "chatgpt",
+   "marks": {
+    "right": 1,
+    "wrong": 0
+   },
+   "seen": [
+    "2026-10-10"
+   ],
+   "top": "Derek Hale",
+   "bottom": "Stiles Stilinski"
+  },
+  {
+   "kind": "scene",
+   "card": "audit-blowjob",
+   "pairing": "Derek Hale/Stiles Stilinski",
+   "h": "3da0fe33",
+   "via": "sucked",
+   "weight": 0.9,
+   "source": "chatgpt",
+   "marks": {
+    "right": 1,
+    "wrong": 0
+   },
+   "seen": [
+    "2026-10-10"
+   ],
+   "top": "Derek Hale",
+   "bottom": "Stiles Stilinski"
+  },
+  {
+   "kind": "scene",
+   "card": "audit-anal",
+   "pairing": "Derek Hale/Stiles Stilinski",
+   "h": "9e1ba3c4",
+   "via": "enter",
+   "weight": 0.9,
+   "source": "chatgpt",
+   "marks": {
+    "right": 1,
+    "wrong": 0
+   },
+   "seen": [
+    "2026-10-10"
+   ],
+   "top": "Derek Hale",
+   "bottom": "Stiles Stilinski"
+  },
+  {
+   "kind": "scene",
+   "card": "blowjob",
+   "pairing": "Derek Hale/Stiles Stilinski",
+   "h": "79825af2",
+   "via": "licked-cock",
+   "weight": 0.9,
+   "source": "chatgpt",
+   "marks": {
+    "right": 1,
+    "wrong": 0
+   },
+   "seen": [
+    "2026-10-10"
+   ],
+   "top": "Derek Hale",
+   "bottom": "Stiles Stilinski"
+  },
+  {
+   "kind": "scene",
+   "card": "audit-anal",
+   "pairing": "Derek Hale/Stiles Stilinski",
+   "h": "fac831b0",
+   "via": "dd5-fingers-circle-hole",
+   "weight": 0.9,
+   "source": "chatgpt",
+   "marks": {
+    "right": 1,
+    "wrong": 0
+   },
+   "seen": [
+    "2026-10-10"
+   ],
+   "top": "Derek Hale",
+   "bottom": "Stiles Stilinski"
+  },
+  {
+   "kind": "scene",
+   "card": "audit-anal",
+   "pairing": "Derek Hale/Stiles Stilinski",
+   "h": "3b00bd3c",
+   "via": "fingers-inside",
+   "weight": 0.9,
+   "source": "chatgpt",
+   "marks": {
+    "right": 1,
+    "wrong": 0
+   },
+   "seen": [
+    "2026-10-10"
+   ],
+   "top": "Derek Hale",
+   "bottom": "Stiles Stilinski"
+  },
+  {
+   "kind": "scene",
+   "card": "audit-anal",
+   "pairing": "Derek Hale/Stiles Stilinski",
+   "h": "3b00bd3c",
+   "via": "dd2-finger-shoved-into",
+   "weight": 0.9,
+   "source": "chatgpt",
+   "marks": {
+    "right": 1,
+    "wrong": 0
+   },
+   "seen": [
+    "2026-10-10"
+   ],
+   "top": "Derek Hale",
+   "bottom": "Stiles Stilinski"
+  },
+  {
+   "kind": "scene",
+   "card": "audit-anal",
+   "pairing": "Derek Hale/Stiles Stilinski",
+   "h": "be7b715c",
+   "via": "dd5-pushes-finger-in",
+   "weight": 0.9,
+   "source": "chatgpt",
+   "marks": {
+    "right": 1,
+    "wrong": 0
+   },
+   "seen": [
+    "2026-10-10"
+   ],
+   "top": "Derek Hale",
+   "bottom": "Stiles Stilinski"
+  },
+  {
+   "kind": "scene",
+   "card": "audit-anal",
+   "pairing": "Derek Hale/Stiles Stilinski",
+   "h": "e96cae9b",
+   "via": "stretched-open",
+   "weight": 0.9,
+   "source": "chatgpt",
+   "marks": {
+    "right": 1,
+    "wrong": 0
+   },
+   "seen": [
+    "2026-10-10"
+   ],
+   "top": "Derek Hale",
+   "bottom": "Stiles Stilinski"
+  },
+  {
+   "kind": "scene",
+   "card": "audit-anal",
+   "pairing": "Derek Hale/Stiles Stilinski",
+   "h": "6348f2",
+   "via": "push-into",
+   "weight": 0.9,
+   "source": "chatgpt",
+   "marks": {
+    "right": 1,
+    "wrong": 0
+   },
+   "seen": [
+    "2026-10-10"
+   ],
+   "top": "Derek Hale",
+   "bottom": "Stiles Stilinski"
+  },
+  {
+   "kind": "scene",
+   "card": "anal",
+   "pairing": "Derek Hale/Stiles Stilinski",
+   "h": "8bf910dd",
+   "via": "fuck",
+   "weight": 0.9,
+   "source": "chatgpt",
+   "marks": {
+    "right": 1,
+    "wrong": 0
+   },
+   "seen": [
+    "2026-10-10"
+   ],
+   "top": "Derek Hale",
+   "bottom": "Stiles Stilinski"
+  },
+  {
+   "kind": "scene",
+   "card": "anal",
+   "pairing": "Derek Hale/Stiles Stilinski",
+   "h": "4b771b61",
+   "via": "push-into",
+   "weight": 0.9,
+   "source": "chatgpt",
+   "marks": {
+    "right": 1,
+    "wrong": 0
+   },
+   "seen": [
+    "2026-10-10"
+   ],
+   "top": "Derek Hale",
+   "bottom": "Stiles Stilinski"
+  },
+  {
+   "kind": "scene",
+   "card": "audit-anal",
+   "pairing": "Derek Hale/Stiles Stilinski",
+   "h": "4b771b61",
+   "via": "dd6-slips-cock-inside",
+   "weight": 0.9,
+   "source": "chatgpt",
+   "marks": {
+    "right": 1,
+    "wrong": 0
+   },
+   "seen": [
+    "2026-10-10"
+   ],
+   "top": "Derek Hale",
+   "bottom": "Stiles Stilinski"
+  },
+  {
+   "kind": "scene",
+   "card": "audit-anal",
+   "pairing": "Derek Hale/Stiles Stilinski",
+   "h": "bfb2f529",
+   "via": "dd2-finger-shoved-into",
+   "weight": 0.9,
+   "source": "chatgpt",
+   "marks": {
+    "right": 1,
+    "wrong": 0
+   },
+   "seen": [
+    "2026-10-10"
+   ],
+   "top": "Derek Hale",
+   "bottom": "Stiles Stilinski"
+  },
+  {
+   "kind": "scene",
+   "card": "anal",
+   "pairing": "Derek Hale/Stiles Stilinski",
+   "h": "bfb2f529",
+   "via": "dd5-fingers-in-and-out",
+   "weight": 0.9,
+   "source": "chatgpt",
+   "marks": {
+    "right": 1,
+    "wrong": 0
+   },
+   "seen": [
+    "2026-10-10"
+   ],
+   "top": "Derek Hale",
+   "bottom": "Stiles Stilinski"
+  },
+  {
+   "kind": "scene",
+   "card": "audit-anal",
+   "pairing": "Derek Hale/Stiles Stilinski",
+   "h": "63d672f",
+   "via": "dd5-pushes-finger-in",
+   "weight": 0.9,
+   "source": "chatgpt",
+   "marks": {
+    "right": 1,
+    "wrong": 0
+   },
+   "seen": [
+    "2026-10-10"
+   ],
+   "top": "Derek Hale",
+   "bottom": "Stiles Stilinski"
+  },
+  {
+   "kind": "scene",
+   "card": "rimming",
+   "pairing": "Derek Hale/Stiles Stilinski",
+   "h": "22567d08",
+   "via": "dd5-feel-of-tongue-inside",
+   "weight": 0.9,
+   "source": "chatgpt",
+   "marks": {
+    "right": 1,
+    "wrong": 0
+   },
+   "seen": [
+    "2026-10-10"
+   ],
+   "top": "Derek Hale",
+   "bottom": "Stiles Stilinski"
+  },
+  {
+   "kind": "scene",
+   "card": "audit-anal",
+   "pairing": "Derek Hale/Stiles Stilinski",
+   "h": "9674ef2e",
+   "via": "finds-spot",
+   "weight": 0.9,
+   "source": "chatgpt",
+   "marks": {
+    "right": 1,
+    "wrong": 0
+   },
+   "seen": [
+    "2026-10-10"
+   ],
+   "top": "Derek Hale",
+   "bottom": "Stiles Stilinski"
+  },
+  {
+   "kind": "scene",
+   "card": "audit-anal",
+   "pairing": "Derek Hale/Stiles Stilinski",
+   "h": "5db200fb",
+   "via": "penis-into-him",
+   "weight": 0.9,
+   "source": "chatgpt",
+   "marks": {
+    "right": 1,
+    "wrong": 0
+   },
+   "seen": [
+    "2026-10-10"
+   ],
+   "top": "Derek Hale",
+   "bottom": "Stiles Stilinski"
+  },
+  {
+   "kind": "scene",
+   "card": "audit-anal",
+   "pairing": "Derek Hale/Stiles Stilinski",
+   "h": "636ce92e",
+   "via": "fuck",
+   "weight": 0.9,
+   "source": "chatgpt",
+   "marks": {
+    "right": 1,
+    "wrong": 0
+   },
+   "seen": [
+    "2026-10-10"
+   ],
+   "top": "Derek Hale",
+   "bottom": "Stiles Stilinski"
+  },
+  {
+   "kind": "scene",
+   "card": "audit-anal",
+   "pairing": "Derek Hale/Stiles Stilinski",
+   "h": "ba21a53d",
+   "via": "push-into",
+   "weight": 0.9,
+   "source": "chatgpt",
+   "marks": {
+    "right": 1,
+    "wrong": 0
+   },
+   "seen": [
+    "2026-10-10"
+   ],
+   "top": "Derek Hale",
+   "bottom": "Stiles Stilinski"
+  },
+  {
+   "kind": "scene",
+   "card": "audit-anal",
+   "pairing": "Derek Hale/Stiles Stilinski",
+   "h": "9ab8fbd5",
+   "via": "dd2-clenching-around-cock",
+   "weight": 0.9,
+   "source": "chatgpt",
+   "marks": {
+    "right": 1,
+    "wrong": 0
+   },
+   "seen": [
+    "2026-10-10"
+   ],
+   "top": "Derek Hale",
+   "bottom": "Stiles Stilinski"
+  },
+  {
+   "kind": "scene",
+   "card": "audit-anal",
+   "pairing": "Derek Hale/Stiles Stilinski",
+   "h": "9ab8fbd5",
+   "via": "clenched-around",
+   "weight": 0.9,
+   "source": "chatgpt",
+   "marks": {
+    "right": 1,
+    "wrong": 0
+   },
+   "seen": [
+    "2026-10-10"
+   ],
+   "top": "Derek Hale",
+   "bottom": "Stiles Stilinski"
+  },
+  {
+   "kind": "scene",
+   "card": "blowjob",
+   "pairing": "Derek Hale/Stiles Stilinski",
+   "h": "1a21f2c7",
+   "via": "lips-around",
+   "weight": 0.9,
+   "source": "chatgpt",
+   "marks": {
+    "right": 1,
+    "wrong": 0
+   },
+   "seen": [
+    "2026-10-10"
+   ],
+   "top": "Derek Hale",
+   "bottom": "Stiles Stilinski"
+  },
+  {
+   "kind": "scene",
+   "card": "audit-anal",
+   "pairing": "Derek Hale/Stiles Stilinski",
+   "h": "c305f167",
+   "via": "hole-around",
+   "weight": 0.9,
+   "source": "chatgpt",
+   "marks": {
+    "right": 1,
+    "wrong": 0
+   },
+   "seen": [
+    "2026-10-10"
+   ],
+   "top": "Derek Hale",
+   "bottom": "Stiles Stilinski"
+  },
+  {
+   "kind": "scene",
+   "card": "audit-anal",
+   "pairing": "Derek Hale/Stiles Stilinski",
+   "h": "5a5a7980",
+   "via": "push-into",
+   "weight": 0.9,
+   "source": "chatgpt",
+   "marks": {
+    "right": 1,
+    "wrong": 0
+   },
+   "seen": [
+    "2026-10-10"
+   ],
+   "top": "Derek Hale",
+   "bottom": "Stiles Stilinski"
+  },
+  {
+   "kind": "scene",
+   "card": "audit-anal",
+   "pairing": "Derek Hale/Stiles Stilinski",
+   "h": "5a5a7980",
+   "via": "fill",
+   "weight": 0.9,
+   "source": "chatgpt",
+   "marks": {
+    "right": 1,
+    "wrong": 0
+   },
+   "seen": [
+    "2026-10-10"
+   ],
+   "top": "Derek Hale",
+   "bottom": "Stiles Stilinski"
+  },
+  {
+   "kind": "scene",
+   "card": "audit-anal",
+   "pairing": "Derek Hale/Stiles Stilinski",
+   "h": "5a5a7980",
+   "via": "pushed-in",
+   "weight": 0.9,
+   "source": "chatgpt",
+   "marks": {
+    "right": 1,
+    "wrong": 0
+   },
+   "seen": [
+    "2026-10-10"
+   ],
+   "top": "Derek Hale",
+   "bottom": "Stiles Stilinski"
+  },
+  {
+   "kind": "scene",
+   "card": "audit-anal",
+   "pairing": "Derek Hale/Stiles Stilinski",
+   "h": "62d04511",
+   "via": "penis-into",
+   "weight": 0.9,
+   "source": "chatgpt",
+   "marks": {
+    "right": 1,
+    "wrong": 0
+   },
+   "seen": [
+    "2026-10-10"
+   ],
+   "top": "Derek Hale",
+   "bottom": "Stiles Stilinski"
+  },
+  {
+   "kind": "scene",
+   "card": "audit-anal",
+   "pairing": "Derek Hale/Stiles Stilinski",
+   "h": "62d04511",
+   "via": "penis-inside",
+   "weight": 0.9,
+   "source": "chatgpt",
+   "marks": {
+    "right": 1,
+    "wrong": 0
+   },
+   "seen": [
+    "2026-10-10"
+   ],
+   "top": "Derek Hale",
+   "bottom": "Stiles Stilinski"
+  },
+  {
+   "kind": "scene",
+   "card": "anal",
+   "pairing": "Derek Hale/Stiles Stilinski",
+   "h": "9daed647",
+   "via": "push-into",
+   "weight": 0.9,
+   "source": "chatgpt",
+   "marks": {
+    "right": 1,
+    "wrong": 0
+   },
+   "seen": [
+    "2026-10-10"
+   ],
+   "top": "Derek Hale",
+   "bottom": "Stiles Stilinski"
+  },
+  {
+   "kind": "scene",
+   "card": "audit-rimming",
+   "pairing": "Derek Hale/Stiles Stilinski",
+   "h": "6cede7a5",
+   "via": "licked-hole",
+   "weight": 0.9,
+   "source": "chatgpt",
+   "marks": {
+    "right": 1,
+    "wrong": 0
+   },
+   "seen": [
+    "2026-10-10"
+   ],
+   "top": "Derek Hale",
+   "bottom": "Stiles Stilinski"
+  },
+  {
+   "kind": "scene",
+   "card": "audit-anal",
+   "pairing": "Derek Hale/Stiles Stilinski",
+   "h": "fa6fad45",
+   "via": "riding",
+   "weight": 0.9,
+   "source": "chatgpt",
+   "marks": {
+    "right": 1,
+    "wrong": 0
+   },
+   "seen": [
+    "2026-10-10"
+   ],
+   "top": "Derek Hale",
+   "bottom": "Stiles Stilinski"
+  },
+  {
+   "kind": "scene",
+   "card": "audit-anal",
+   "pairing": "Derek Hale/Stiles Stilinski",
+   "h": "16d7ac6",
+   "via": "fill",
+   "weight": 0.9,
+   "source": "chatgpt",
+   "marks": {
+    "right": 1,
+    "wrong": 0
+   },
+   "seen": [
+    "2026-10-10"
+   ],
+   "top": "Derek Hale",
+   "bottom": "Stiles Stilinski"
+  },
+  {
+   "kind": "scene",
+   "card": "audit-anal",
+   "pairing": "Derek Hale/Stiles Stilinski",
+   "h": "66c67268",
+   "via": "passive-fucked",
+   "weight": 0.9,
+   "source": "chatgpt",
+   "marks": {
+    "right": 1,
+    "wrong": 0
+   },
+   "seen": [
+    "2026-10-10"
+   ],
+   "top": "Derek Hale",
+   "bottom": "Stiles Stilinski"
+  },
+  {
+   "kind": "hint",
+   "card": "dynamic-cue",
+   "pairing": "Derek Hale/Stiles Stilinski",
+   "h": "9d18db10",
+   "via": "chastity-wearer",
+   "weight": 0.9,
+   "source": "chatgpt",
+   "marks": {
+    "right": 1,
+    "wrong": 0
+   },
+   "seen": [
+    "2026-10-10"
+   ],
+   "who": "Stiles Stilinski",
+   "role": "bottom",
+   "wants": true
+  },
+  {
+   "kind": "hint",
+   "card": "dynamic-cue",
+   "pairing": "Derek Hale/Stiles Stilinski",
+   "h": "444892c4",
+   "via": "chastity-wearer",
+   "weight": 0.9,
+   "source": "chatgpt",
+   "marks": {
+    "right": 1,
+    "wrong": 0
+   },
+   "seen": [
+    "2026-10-10"
+   ],
+   "who": "Stiles Stilinski",
+   "role": "bottom",
+   "wants": true
+  },
+  {
+   "kind": "hint",
+   "card": "dynamic-cue",
+   "pairing": "Derek Hale/Stiles Stilinski",
+   "h": "e79e1404",
+   "via": "chastity-wearer",
+   "weight": 0.9,
+   "source": "chatgpt",
+   "marks": {
+    "right": 1,
+    "wrong": 0
+   },
+   "seen": [
+    "2026-10-10"
+   ],
+   "who": "Stiles Stilinski",
+   "role": "bottom",
+   "wants": true
+  },
+  {
+   "kind": "hint",
+   "card": "dynamic-cue",
+   "pairing": "Derek Hale/Stiles Stilinski",
+   "h": "9de1bcc4",
+   "via": "chastity-wearer",
+   "weight": 0.9,
+   "source": "chatgpt",
+   "marks": {
+    "right": 1,
+    "wrong": 0
+   },
+   "seen": [
+    "2026-10-10"
+   ],
+   "who": "Stiles Stilinski",
+   "role": "bottom",
+   "wants": true
+  },
+  {
+   "kind": "hint",
+   "card": "dynamic-cue",
+   "pairing": "Derek Hale/Stiles Stilinski",
+   "h": "b7c79245",
+   "via": "chastity-wearer",
+   "weight": 0.9,
+   "source": "chatgpt",
+   "marks": {
+    "right": 1,
+    "wrong": 0
+   },
+   "seen": [
+    "2026-10-10"
+   ],
+   "who": "Stiles Stilinski",
+   "role": "bottom",
+   "wants": true
+  },
+  {
+   "kind": "hint",
+   "card": "dynamic-cue",
+   "pairing": "Derek Hale/Stiles Stilinski",
+   "h": "48acb944",
+   "via": "chastity-wearer",
+   "weight": 0.9,
+   "source": "chatgpt",
+   "marks": {
+    "right": 1,
+    "wrong": 0
+   },
+   "seen": [
+    "2026-10-10"
+   ],
+   "who": "Stiles Stilinski",
+   "role": "bottom",
+   "wants": true
+  },
+  {
+   "kind": "hint",
+   "card": "dynamic-cue",
+   "pairing": "Derek Hale/Stiles Stilinski",
+   "h": "d2c14c7d",
+   "via": "chastity-wearer",
+   "weight": 0.9,
+   "source": "chatgpt",
+   "marks": {
+    "right": 1,
+    "wrong": 0
+   },
+   "seen": [
+    "2026-10-10"
+   ],
+   "who": "Stiles Stilinski",
+   "role": "bottom",
+   "wants": true
+  },
+  {
+   "kind": "hint",
+   "card": "dynamic-cue",
+   "pairing": "Derek Hale/Stiles Stilinski",
+   "h": "b12a1a04",
+   "via": "chastity-wearer",
+   "weight": 0.9,
+   "source": "chatgpt",
+   "marks": {
+    "right": 1,
+    "wrong": 0
+   },
+   "seen": [
+    "2026-10-10"
+   ],
+   "who": "Stiles Stilinski",
+   "role": "bottom",
+   "wants": true
+  },
+  {
+   "kind": "hint",
+   "card": "anal",
+   "pairing": "Derek Hale/Stiles Stilinski",
+   "h": "259fd9db",
+   "via": "plug-worn",
+   "weight": 0.9,
+   "source": "chatgpt",
+   "marks": {
+    "right": 1,
+    "wrong": 0
+   },
+   "seen": [
+    "2026-10-10"
+   ],
+   "who": "Stiles Stilinski",
+   "role": "bottom",
+   "wants": true
+  },
+  {
+   "kind": "hint",
+   "card": "dynamic-cue",
+   "pairing": "Derek Hale/Stiles Stilinski",
+   "h": "ec1c6f77",
+   "via": "chastity-wearer",
+   "weight": 0.9,
+   "source": "chatgpt",
+   "marks": {
+    "right": 1,
+    "wrong": 0
+   },
+   "seen": [
+    "2026-10-10"
+   ],
+   "who": "Stiles Stilinski",
+   "role": "bottom",
+   "wants": true
+  },
+  {
+   "kind": "hint",
+   "card": "dynamic-cue",
+   "pairing": "Derek Hale/Stiles Stilinski",
+   "h": "276729f2",
+   "via": "chastity-wearer",
+   "weight": 0.9,
+   "source": "chatgpt",
+   "marks": {
+    "right": 1,
+    "wrong": 0
+   },
+   "seen": [
+    "2026-10-10"
+   ],
+   "who": "Stiles Stilinski",
+   "role": "bottom",
+   "wants": true
+  },
+  {
+   "kind": "hint",
+   "card": "anal",
+   "pairing": "Derek Hale/Stiles Stilinski",
+   "h": "b893358d",
+   "via": "dialogue:anal sex",
+   "weight": 0.9,
+   "source": "chatgpt",
+   "marks": {
+    "right": 1,
+    "wrong": 0
+   },
+   "seen": [
+    "2026-10-10"
+   ],
+   "who": "Stiles Stilinski",
+   "role": "bottom",
+   "wants": true
+  },
+  {
+   "kind": "hint",
+   "card": "anal",
+   "pairing": "Derek Hale/Stiles Stilinski",
+   "h": "aedef6b8",
+   "via": "dialogue:anal sex",
+   "weight": 0.9,
+   "source": "chatgpt",
+   "marks": {
+    "right": 1,
+    "wrong": 0
+   },
+   "seen": [
+    "2026-10-10"
+   ],
+   "who": "Derek Hale",
+   "role": "top",
+   "wants": true
+  },
+  {
+   "kind": "hint",
+   "card": "anal",
+   "pairing": "Derek Hale/Stiles Stilinski",
+   "h": "d28d4d0d",
+   "via": "plug-worn",
+   "weight": 0.9,
+   "source": "chatgpt",
+   "marks": {
+    "right": 1,
+    "wrong": 0
+   },
+   "seen": [
+    "2026-10-10"
+   ],
+   "who": "Stiles Stilinski",
+   "role": "bottom",
+   "wants": true
+  },
+  {
+   "kind": "hint",
+   "card": "dynamic-cue",
+   "pairing": "Derek Hale/Stiles Stilinski",
+   "h": "efe317d9",
+   "via": "dom-carry",
+   "weight": 0.9,
+   "source": "chatgpt",
+   "marks": {
+    "right": 1,
+    "wrong": 0
+   },
+   "seen": [
+    "2026-10-10"
+   ],
+   "who": "Derek Hale",
+   "role": "top",
+   "wants": true
+  },
+  {
+   "kind": "scene",
+   "card": "manual-act",
+   "pairing": "Derek Hale/Stiles Stilinski",
+   "h": "6da4e9e8",
+   "via": "hj-stroke",
+   "weight": 0.9,
+   "source": "chatgpt",
+   "marks": {
+    "right": 1,
+    "wrong": 0
+   },
+   "seen": [
+    "2026-10-10"
+   ],
+   "who": "Derek Hale",
+   "role": "top"
+  },
+  {
+   "kind": "hint",
+   "card": "dynamic-cue",
+   "pairing": "Derek Hale/Stiles Stilinski",
+   "h": "8a4839b0",
+   "via": "chastity-keyholder",
+   "weight": 0.9,
+   "source": "chatgpt",
+   "marks": {
+    "right": 1,
+    "wrong": 0
+   },
+   "seen": [
+    "2026-10-10"
+   ],
+   "who": "Derek Hale",
+   "role": "top",
+   "wants": true
+  },
+  {
+   "kind": "hint",
+   "card": "dynamic-cue",
+   "pairing": "Derek Hale/Stiles Stilinski",
+   "h": "df424bbe",
+   "via": "chastity-keyholder",
+   "weight": 0.9,
+   "source": "chatgpt",
+   "marks": {
+    "right": 1,
+    "wrong": 0
+   },
+   "seen": [
+    "2026-10-10"
+   ],
+   "who": "Derek Hale",
+   "role": "top",
+   "wants": true
+  },
+  {
+   "kind": "hint",
+   "card": "dynamic-cue",
+   "pairing": "Derek Hale/Stiles Stilinski",
+   "h": "44693c9b",
+   "via": "chastity-keyholder",
+   "weight": 0.9,
+   "source": "chatgpt",
+   "marks": {
+    "right": 1,
+    "wrong": 0
+   },
+   "seen": [
+    "2026-10-10"
+   ],
+   "who": "Derek Hale",
+   "role": "top",
+   "wants": true
+  },
+  {
+   "kind": "hint",
+   "card": "dynamic-cue",
+   "pairing": "Derek Hale/Stiles Stilinski",
+   "h": "5c329b20",
+   "via": "abo-bare-neck",
+   "weight": 0.9,
+   "source": "chatgpt",
+   "marks": {
+    "right": 1,
+    "wrong": 0
+   },
+   "seen": [
+    "2026-10-10"
+   ],
+   "who": "Stiles Stilinski",
+   "role": "bottom",
+   "wants": true
+  },
+  {
+   "kind": "hint",
+   "card": "anal",
+   "pairing": "Derek Hale/Stiles Stilinski",
+   "h": "84ac5f1a",
+   "via": "dialogue:anal sex",
+   "weight": 0.9,
+   "source": "chatgpt",
+   "marks": {
+    "right": 1,
+    "wrong": 0
+   },
+   "seen": [
+    "2026-10-10"
+   ],
+   "who": "Stiles Stilinski",
+   "role": "bottom",
+   "wants": true
+  },
+  {
+   "kind": "hint",
+   "card": "anal",
+   "pairing": "Derek Hale/Stiles Stilinski",
+   "h": "1696b77",
+   "via": "fuck",
+   "weight": 0.9,
+   "source": "chatgpt",
+   "marks": {
+    "right": 1,
+    "wrong": 0
+   },
+   "seen": [
+    "2026-10-10"
+   ],
+   "who": "Stiles Stilinski",
+   "role": "bottom",
+   "wants": true
+  },
+  {
+   "kind": "hint",
+   "card": "anal",
+   "pairing": "Derek Hale/Stiles Stilinski",
+   "h": "a5b1f872",
+   "via": "dialogue:anal sex",
+   "weight": 0.9,
+   "source": "chatgpt",
+   "marks": {
+    "right": 1,
+    "wrong": 0
+   },
+   "seen": [
+    "2026-10-10"
+   ],
+   "who": "Stiles Stilinski",
+   "role": "bottom",
+   "wants": true
+  },
+  {
+   "kind": "hint",
+   "card": "anal",
+   "pairing": "Derek Hale/Stiles Stilinski",
+   "h": "c448d1b8",
+   "via": "dialogue:anal sex",
+   "weight": 0.9,
+   "source": "chatgpt",
+   "marks": {
+    "right": 1,
+    "wrong": 0
+   },
+   "seen": [
+    "2026-10-10"
+   ],
+   "who": "Stiles Stilinski",
+   "role": "bottom",
+   "wants": true
+  },
+  {
+   "kind": "hint",
+   "card": "anal",
+   "pairing": "Derek Hale/Stiles Stilinski",
+   "h": "ebecc65c",
+   "via": "dialogue:anal sex",
+   "weight": 0.9,
+   "source": "chatgpt",
+   "marks": {
+    "right": 1,
+    "wrong": 0
+   },
+   "seen": [
+    "2026-10-10"
+   ],
+   "who": "Derek Hale",
+   "role": "top",
+   "wants": true
+  },
+  {
+   "kind": "hint",
+   "card": "anal",
+   "pairing": "Derek Hale/Stiles Stilinski",
+   "h": "2cf0a724",
+   "via": "grind-cock-on-ass",
+   "weight": 0.9,
+   "source": "chatgpt",
+   "marks": {
+    "right": 1,
+    "wrong": 0
+   },
+   "seen": [
+    "2026-10-10"
+   ],
+   "who": "Derek Hale",
+   "role": "top",
+   "wants": true
+  },
+  {
+   "kind": "hint",
+   "card": "anal",
+   "pairing": "Derek Hale/Stiles Stilinski",
+   "h": "4e322e2e",
+   "via": "grab-ass",
+   "weight": 0.9,
+   "source": "chatgpt",
+   "marks": {
+    "right": 1,
+    "wrong": 0
+   },
+   "seen": [
+    "2026-10-10"
+   ],
+   "who": "Derek Hale",
+   "role": "top",
+   "wants": true
+  },
+  {
+   "kind": "hint",
+   "card": "anal",
+   "pairing": "Derek Hale/Stiles Stilinski",
+   "h": "c7d1b43b",
+   "via": "spread-legs",
+   "weight": 0.9,
+   "source": "chatgpt",
+   "marks": {
+    "right": 1,
+    "wrong": 0
+   },
+   "seen": [
+    "2026-10-10"
+   ],
+   "who": "Stiles Stilinski",
+   "role": "bottom",
+   "wants": true
+  },
+  {
+   "kind": "hint",
+   "card": "dynamic-cue",
+   "pairing": "Derek Hale/Stiles Stilinski",
+   "h": "db088f92",
+   "via": "dom-pin",
+   "weight": 0.9,
+   "source": "chatgpt",
+   "marks": {
+    "right": 1,
+    "wrong": 0
+   },
+   "seen": [
+    "2026-10-10"
+   ],
+   "who": "Derek Hale",
+   "role": "top",
+   "wants": true
+  },
+  {
+   "kind": "hint",
+   "card": "dynamic-cue",
+   "pairing": "Derek Hale/Stiles Stilinski",
+   "h": "5dfb7e79",
+   "via": "dom-carry",
+   "weight": 0.9,
+   "source": "chatgpt",
+   "marks": {
+    "right": 1,
+    "wrong": 0
+   },
+   "seen": [
+    "2026-10-10"
+   ],
+   "who": "Derek Hale",
+   "role": "top",
+   "wants": true
+  },
+  {
+   "kind": "hint",
+   "card": "dynamic-cue",
+   "pairing": "Derek Hale/Stiles Stilinski",
+   "h": "77557881",
+   "via": "chastity-keyholder",
+   "weight": 0.9,
+   "source": "chatgpt",
+   "marks": {
+    "right": 1,
+    "wrong": 0
+   },
+   "seen": [
+    "2026-10-10"
+   ],
+   "who": "Derek Hale",
+   "role": "top",
+   "wants": true
+  },
+  {
+   "kind": "hint",
+   "card": "dynamic-cue",
+   "pairing": "Derek Hale/Stiles Stilinski",
+   "h": "97219c41",
+   "via": "chastity-wearer",
+   "weight": 0.9,
+   "source": "chatgpt",
+   "marks": {
+    "right": 1,
+    "wrong": 0
+   },
+   "seen": [
+    "2026-10-10"
+   ],
+   "who": "Stiles Stilinski",
+   "role": "bottom",
+   "wants": true
+  },
+  {
+   "kind": "hint",
+   "card": "dynamic-cue",
+   "pairing": "Derek Hale/Stiles Stilinski",
+   "h": "b26bd5eb",
+   "via": "chastity-wearer",
+   "weight": 0.9,
+   "source": "chatgpt",
+   "marks": {
+    "right": 1,
+    "wrong": 0
+   },
+   "seen": [
+    "2026-10-10"
+   ],
+   "who": "Stiles Stilinski",
+   "role": "bottom",
+   "wants": true
+  },
+  {
+   "kind": "hint",
+   "card": "dynamic-cue",
+   "pairing": "Derek Hale/Stiles Stilinski",
+   "h": "2b4a7533",
+   "via": "chastity-wearer",
+   "weight": 0.9,
+   "source": "chatgpt",
+   "marks": {
+    "right": 1,
+    "wrong": 0
+   },
+   "seen": [
+    "2026-10-10"
+   ],
+   "who": "Stiles Stilinski",
+   "role": "bottom",
+   "wants": true
+  },
+  {
+   "kind": "hint",
+   "card": "dynamic-cue",
+   "pairing": "Derek Hale/Stiles Stilinski",
+   "h": "27ee4682",
+   "via": "dom-carry",
+   "weight": 0.9,
+   "source": "chatgpt",
+   "marks": {
+    "right": 1,
+    "wrong": 0
+   },
+   "seen": [
+    "2026-10-10"
+   ],
+   "who": "Derek Hale",
+   "role": "top",
+   "wants": true
+  },
+  {
+   "kind": "hint",
+   "card": "dynamic-cue",
+   "pairing": "Derek Hale/Stiles Stilinski",
+   "h": "6fa2f800",
+   "via": "dialogue:looking after someone",
+   "weight": 0.9,
+   "source": "chatgpt",
+   "marks": {
+    "right": 1,
+    "wrong": 0
+   },
+   "seen": [
+    "2026-10-10"
+   ],
+   "who": "Derek Hale",
+   "role": "top",
+   "wants": true
+  },
+  {
+   "kind": "hint",
+   "card": "dynamic-cue",
+   "pairing": "Derek Hale/Stiles Stilinski",
+   "h": "1116fe07",
+   "via": "dialogue:looking after someone",
+   "weight": 0.9,
+   "source": "chatgpt",
+   "marks": {
+    "right": 1,
+    "wrong": 0
+   },
+   "seen": [
+    "2026-10-10"
+   ],
+   "who": "Derek Hale",
+   "role": "top",
+   "wants": true
+  },
+  {
+   "kind": "hint",
+   "card": "anal",
+   "pairing": "Derek Hale/Stiles Stilinski",
+   "h": "3fdb54ab",
+   "via": "arch-back",
+   "weight": 0.9,
+   "source": "chatgpt",
+   "marks": {
+    "right": 1,
+    "wrong": 0
+   },
+   "seen": [
+    "2026-10-10"
+   ],
+   "who": "Stiles Stilinski",
+   "role": "bottom",
+   "wants": true
+  },
+  {
+   "kind": "hint",
+   "card": "anal",
+   "pairing": "Derek Hale/Stiles Stilinski",
+   "h": "864117b7",
+   "via": "finger-at-entrance",
+   "weight": 0.9,
+   "source": "chatgpt",
+   "marks": {
+    "right": 1,
+    "wrong": 0
+   },
+   "seen": [
+    "2026-10-10"
+   ],
+   "who": "Derek Hale",
+   "role": "top",
+   "wants": true
+  },
+  {
+   "kind": "hint",
+   "card": "dynamic-cue",
+   "pairing": "Derek Hale/Stiles Stilinski",
+   "h": "2cf495c7",
+   "via": "dialogue:checking in or leading",
+   "weight": 0.9,
+   "source": "chatgpt",
+   "marks": {
+    "right": 1,
+    "wrong": 0
+   },
+   "seen": [
+    "2026-10-10"
+   ],
+   "who": "Derek Hale",
+   "role": "top",
+   "wants": true
+  },
+  {
+   "kind": "hint",
+   "card": "anal",
+   "pairing": "Derek Hale/Stiles Stilinski",
+   "h": "c10d284f",
+   "via": "dialogue:anal sex",
+   "weight": 0.9,
+   "source": "chatgpt",
+   "marks": {
+    "right": 1,
+    "wrong": 0
+   },
+   "seen": [
+    "2026-10-10"
+   ],
+   "who": "Stiles Stilinski",
+   "role": "bottom",
+   "wants": true
+  },
+  {
+   "kind": "hint",
+   "card": "dynamic-cue",
+   "pairing": "Derek Hale/Stiles Stilinski",
+   "h": "ba179fd7",
+   "via": "dom-carry",
+   "weight": 0.9,
+   "source": "chatgpt",
+   "marks": {
+    "right": 1,
+    "wrong": 0
+   },
+   "seen": [
+    "2026-10-10"
+   ],
+   "who": "Derek Hale",
+   "role": "top",
+   "wants": true
+  },
+  {
+   "kind": "hint",
+   "card": "dynamic-cue",
+   "pairing": "Derek Hale/Stiles Stilinski",
+   "h": "f9753cb9",
+   "via": "chastity-keyholder",
+   "weight": 0.9,
+   "source": "chatgpt",
+   "marks": {
+    "right": 1,
+    "wrong": 0
+   },
+   "seen": [
+    "2026-10-10"
+   ],
+   "who": "Derek Hale",
+   "role": "top",
+   "wants": true
+  },
+  {
+   "kind": "hint",
+   "card": "anal",
+   "pairing": "Derek Hale/Stiles Stilinski",
+   "h": "7ac959d4",
+   "via": "dialogue:anal sex",
+   "weight": 0.9,
+   "source": "chatgpt",
+   "marks": {
+    "right": 1,
+    "wrong": 0
+   },
+   "seen": [
+    "2026-10-10"
+   ],
+   "who": "Derek Hale",
+   "role": "top",
+   "wants": true
+  },
+  {
+   "kind": "hint",
+   "card": "dynamic-cue",
+   "pairing": "Derek Hale/Stiles Stilinski",
+   "h": "64a44164",
+   "via": "care-soothe",
+   "weight": 0.9,
+   "source": "chatgpt",
+   "marks": {
+    "right": 1,
+    "wrong": 0
+   },
+   "seen": [
+    "2026-10-10"
+   ],
+   "who": "Derek Hale",
+   "role": "top",
+   "wants": true
+  },
+  {
+   "kind": "hint",
+   "card": "dynamic-cue",
+   "pairing": "Derek Hale/Stiles Stilinski",
+   "h": "265d7b6e",
+   "via": "flustered-verb",
+   "weight": 0.9,
+   "source": "chatgpt",
+   "marks": {
+    "right": 1,
+    "wrong": 0
+   },
+   "seen": [
+    "2026-10-10"
+   ],
+   "who": "Stiles Stilinski",
+   "role": "bottom",
+   "wants": true
+  },
+  {
+   "kind": "hint",
+   "card": "anal",
+   "pairing": "Derek Hale/Stiles Stilinski",
+   "h": "f678140d",
+   "via": "dialogue:anal sex",
+   "weight": 0.9,
+   "source": "chatgpt",
+   "marks": {
+    "right": 1,
+    "wrong": 0
+   },
+   "seen": [
+    "2026-10-10"
+   ],
+   "who": "Stiles Stilinski",
+   "role": "bottom",
+   "wants": true
+  },
+  {
+   "kind": "hint",
+   "card": "anal",
+   "pairing": "Derek Hale/Stiles Stilinski",
+   "h": "82f07e6f",
+   "via": "came-untouched",
+   "weight": 0.9,
+   "source": "chatgpt",
+   "marks": {
+    "right": 1,
+    "wrong": 0
+   },
+   "seen": [
+    "2026-10-10"
+   ],
+   "who": "Stiles Stilinski",
+   "role": "bottom",
+   "wants": true
+  },
+  {
+   "kind": "hint",
+   "card": "dynamic-cue",
+   "pairing": "Derek Hale/Stiles Stilinski",
+   "h": "bb67d241",
+   "via": "chastity-wearer",
+   "weight": 0.9,
+   "source": "chatgpt",
+   "marks": {
+    "right": 1,
+    "wrong": 0
+   },
+   "seen": [
+    "2026-10-10"
+   ],
+   "who": "Stiles Stilinski",
+   "role": "bottom",
+   "wants": true
+  },
+  {
+   "kind": "hint",
+   "card": "dynamic-cue",
+   "pairing": "Derek Hale/Stiles Stilinski",
+   "h": "42fe5516",
+   "via": "chastity-wearer",
+   "weight": 0.9,
+   "source": "chatgpt",
+   "marks": {
+    "right": 1,
+    "wrong": 0
+   },
+   "seen": [
+    "2026-10-10"
+   ],
+   "who": "Stiles Stilinski",
+   "role": "bottom",
+   "wants": true
+  },
+  {
+   "kind": "hint",
+   "card": "dynamic-cue",
+   "pairing": "Derek Hale/Stiles Stilinski",
+   "h": "548a818d",
+   "via": "chastity-wearer",
+   "weight": 0.9,
+   "source": "chatgpt",
+   "marks": {
+    "right": 1,
+    "wrong": 0
+   },
+   "seen": [
+    "2026-10-10"
+   ],
+   "who": "Stiles Stilinski",
+   "role": "bottom",
+   "wants": true
+  },
+  {
+   "kind": "hint",
+   "card": "anal",
+   "pairing": "Derek Hale/Stiles Stilinski",
+   "h": "e1980850",
+   "via": "fingers-into",
+   "weight": 0.9,
+   "source": "chatgpt",
+   "marks": {
+    "right": 1,
+    "wrong": 0
+   },
+   "seen": [
+    "2026-10-10"
+   ],
+   "who": "Stiles Stilinski",
+   "role": "bottom",
+   "wants": true
+  },
+  {
+   "kind": "hint",
+   "card": "anal",
+   "pairing": "Derek Hale/Stiles Stilinski",
+   "h": "3e2114b9",
+   "via": "grab-ass",
+   "weight": 0.9,
+   "source": "chatgpt",
+   "marks": {
+    "right": 1,
+    "wrong": 0
+   },
+   "seen": [
+    "2026-10-10"
+   ],
+   "who": "Derek Hale",
+   "role": "top",
+   "wants": true
+  },
+  {
+   "kind": "hint",
+   "card": "anal",
+   "pairing": "Derek Hale/Stiles Stilinski",
+   "h": "2da87837",
+   "via": "plug-worn",
+   "weight": 0.9,
+   "source": "chatgpt",
+   "marks": {
+    "right": 1,
+    "wrong": 0
+   },
+   "seen": [
+    "2026-10-10"
+   ],
+   "who": "Stiles Stilinski",
+   "role": "bottom",
+   "wants": true
+  },
+  {
+   "kind": "hint",
+   "card": "anal",
+   "pairing": "Derek Hale/Stiles Stilinski",
+   "h": "68359040",
+   "via": "plug-worn",
+   "weight": 0.9,
+   "source": "chatgpt",
+   "marks": {
+    "right": 1,
+    "wrong": 0
+   },
+   "seen": [
+    "2026-10-10"
+   ],
+   "who": "Stiles Stilinski",
+   "role": "bottom",
+   "wants": true
+  },
+  {
+   "kind": "hint",
+   "card": "dynamic-cue",
+   "pairing": "Derek Hale/Stiles Stilinski",
+   "h": "3ea426d0",
+   "via": "chastity-wearer",
+   "weight": 0.9,
+   "source": "chatgpt",
+   "marks": {
+    "right": 1,
+    "wrong": 0
+   },
+   "seen": [
+    "2026-10-10"
+   ],
+   "who": "Stiles Stilinski",
+   "role": "bottom",
+   "wants": true
+  },
+  {
+   "kind": "hint",
+   "card": "dynamic-cue",
+   "pairing": "Derek Hale/Stiles Stilinski",
+   "h": "36c474b7",
+   "via": "chastity-wearer",
+   "weight": 0.9,
+   "source": "chatgpt",
+   "marks": {
+    "right": 1,
+    "wrong": 0
+   },
+   "seen": [
+    "2026-10-10"
+   ],
+   "who": "Stiles Stilinski",
+   "role": "bottom",
+   "wants": true
+  },
+  {
+   "kind": "hint",
+   "card": "anal",
+   "pairing": "Derek Hale/Stiles Stilinski",
+   "h": "693c38fb",
+   "via": "plug-worn",
+   "weight": 0.9,
+   "source": "chatgpt",
+   "marks": {
+    "right": 1,
+    "wrong": 0
+   },
+   "seen": [
+    "2026-10-10"
+   ],
+   "who": "Stiles Stilinski",
+   "role": "bottom",
+   "wants": true
+  },
+  {
+   "kind": "hint",
+   "card": "dynamic-cue",
+   "pairing": "Derek Hale/Stiles Stilinski",
+   "h": "eaf85921",
+   "via": "dom-grip",
+   "weight": 0.9,
+   "source": "chatgpt",
+   "marks": {
+    "right": 1,
+    "wrong": 0
+   },
+   "seen": [
+    "2026-10-10"
+   ],
+   "who": "Derek Hale",
+   "role": "top",
+   "wants": true
+  },
+  {
+   "kind": "hint",
+   "card": "anal",
+   "pairing": "Derek Hale/Stiles Stilinski",
+   "h": "be7d6515",
+   "via": "thrust-back",
+   "weight": 0.9,
+   "source": "chatgpt",
+   "marks": {
+    "right": 1,
+    "wrong": 0
+   },
+   "seen": [
+    "2026-10-10"
+   ],
+   "who": "Stiles Stilinski",
+   "role": "bottom",
+   "wants": true
+  },
+  {
+   "kind": "hint",
+   "card": "anal",
+   "pairing": "Derek Hale/Stiles Stilinski",
+   "h": "f161dd0b",
+   "via": "grab-ass",
+   "weight": 0.9,
+   "source": "chatgpt",
+   "marks": {
+    "right": 1,
+    "wrong": 0
+   },
+   "seen": [
+    "2026-10-10"
+   ],
+   "who": "Derek Hale",
+   "role": "top",
+   "wants": true
+  },
+  {
+   "kind": "hint",
+   "card": "anal",
+   "pairing": "Derek Hale/Stiles Stilinski",
+   "h": "56ae72c0",
+   "via": "grab-ass",
+   "weight": 0.9,
+   "source": "chatgpt",
+   "marks": {
+    "right": 1,
+    "wrong": 0
+   },
+   "seen": [
+    "2026-10-10"
+   ],
+   "who": "Derek Hale",
+   "role": "top",
+   "wants": true
+  },
+  {
+   "kind": "hint",
+   "card": "anal",
+   "pairing": "Derek Hale/Stiles Stilinski",
+   "h": "3be4481f",
+   "via": "arch-back",
+   "weight": 0.9,
+   "source": "chatgpt",
+   "marks": {
+    "right": 1,
+    "wrong": 0
+   },
+   "seen": [
+    "2026-10-10"
+   ],
+   "who": "Stiles Stilinski",
+   "role": "bottom",
+   "wants": true
+  },
+  {
+   "kind": "hint",
+   "card": "dynamic-cue",
+   "pairing": "Derek Hale/Stiles Stilinski",
+   "h": "81838efb",
+   "via": "chastity-wearer",
+   "weight": 0.9,
+   "source": "chatgpt",
+   "marks": {
+    "right": 1,
+    "wrong": 0
+   },
+   "seen": [
+    "2026-10-10"
+   ],
+   "who": "Stiles Stilinski",
+   "role": "bottom",
+   "wants": true
+  },
+  {
+   "kind": "hint",
+   "card": "anal",
+   "pairing": "Derek Hale/Stiles Stilinski",
+   "h": "7268e54c",
+   "via": "arch-back",
+   "weight": 0.9,
+   "source": "chatgpt",
+   "marks": {
+    "right": 1,
+    "wrong": 0
+   },
+   "seen": [
+    "2026-10-10"
+   ],
+   "who": "Stiles Stilinski",
+   "role": "bottom",
+   "wants": true
+  },
+  {
+   "kind": "hint",
+   "card": "dynamic-cue",
+   "pairing": "Derek Hale/Stiles Stilinski",
+   "h": "e7c7293f",
+   "via": "dom-carry",
+   "weight": 0.9,
+   "source": "chatgpt",
+   "marks": {
+    "right": 1,
+    "wrong": 0
+   },
+   "seen": [
+    "2026-10-10"
+   ],
+   "who": "Derek Hale",
+   "role": "top",
+   "wants": true
+  },
+  {
+   "kind": "hint",
+   "card": "anal",
+   "pairing": "Derek Hale/Stiles Stilinski",
+   "h": "e7dad6",
+   "via": "dialogue:anal sex",
+   "weight": 0.9,
+   "source": "chatgpt",
+   "marks": {
+    "right": 1,
+    "wrong": 0
+   },
+   "seen": [
+    "2026-10-10"
+   ],
+   "who": "Stiles Stilinski",
+   "role": "bottom",
+   "wants": true
+  },
+  {
+   "kind": "hint",
+   "card": "dynamic-cue",
+   "pairing": "Derek Hale/Stiles Stilinski",
+   "h": "7bf92de1",
+   "via": "pos-pull-lap",
+   "weight": 0.9,
+   "source": "chatgpt",
+   "marks": {
+    "right": 1,
+    "wrong": 0
+   },
+   "seen": [
+    "2026-10-10"
+   ],
+   "who": "Derek Hale",
+   "role": "top",
+   "wants": true
+  },
+  {
+   "kind": "hint",
+   "card": "dynamic-cue",
+   "pairing": "Derek Hale/Stiles Stilinski",
+   "h": "723c3eb5",
+   "via": "aftercare-held",
+   "weight": 0.9,
+   "source": "chatgpt",
+   "marks": {
+    "right": 1,
+    "wrong": 0
+   },
+   "seen": [
+    "2026-10-10"
+   ],
+   "who": "Stiles Stilinski",
+   "role": "bottom",
+   "wants": true
+  },
+  {
+   "kind": "hint",
+   "card": "dynamic-cue",
+   "pairing": "Derek Hale/Stiles Stilinski",
+   "h": "5d65e7b5",
+   "via": "chastity-wearer",
+   "weight": 0.9,
+   "source": "chatgpt",
+   "marks": {
+    "right": 1,
+    "wrong": 0
+   },
+   "seen": [
+    "2026-10-10"
+   ],
+   "who": "Stiles Stilinski",
+   "role": "bottom",
+   "wants": true
+  },
+  {
+   "kind": "hint",
+   "card": "dynamic-cue",
+   "pairing": "Derek Hale/Stiles Stilinski",
+   "h": "c305f167",
+   "via": "dom-carry",
+   "weight": 0.9,
+   "source": "chatgpt",
+   "marks": {
+    "right": 1,
+    "wrong": 0
+   },
+   "seen": [
+    "2026-10-10"
+   ],
+   "who": "Derek Hale",
+   "role": "top",
+   "wants": true
+  },
+  {
+   "kind": "hint",
+   "card": "dynamic-cue",
+   "pairing": "Derek Hale/Stiles Stilinski",
+   "h": "c305f167",
+   "via": "pos-pull-lap",
+   "weight": 0.9,
+   "source": "chatgpt",
+   "marks": {
+    "right": 1,
+    "wrong": 0
+   },
+   "seen": [
+    "2026-10-10"
+   ],
+   "who": "Derek Hale",
+   "role": "top",
+   "wants": true
+  },
+  {
+   "kind": "hint",
+   "card": "dynamic-cue",
+   "pairing": "Derek Hale/Stiles Stilinski",
+   "h": "62d04511",
+   "via": "dom-carry",
+   "weight": 0.9,
+   "source": "chatgpt",
+   "marks": {
+    "right": 1,
+    "wrong": 0
+   },
+   "seen": [
+    "2026-10-10"
+   ],
+   "who": "Derek Hale",
+   "role": "top",
+   "wants": true
+  },
+  {
+   "kind": "hint",
+   "card": "dynamic-cue",
+   "pairing": "Derek Hale/Stiles Stilinski",
+   "h": "b2fb8db7",
+   "via": "chastity-keyholder",
+   "weight": 0.9,
+   "source": "chatgpt",
+   "marks": {
+    "right": 1,
+    "wrong": 0
+   },
+   "seen": [
+    "2026-10-10"
+   ],
+   "who": "Derek Hale",
+   "role": "top",
+   "wants": true
+  },
+  {
+   "kind": "hint",
+   "card": "anal",
+   "pairing": "Derek Hale/Stiles Stilinski",
+   "h": "23f2f85f",
+   "via": "grind-ass-back",
+   "weight": 0.9,
+   "source": "chatgpt",
+   "marks": {
+    "right": 1,
+    "wrong": 0
+   },
+   "seen": [
+    "2026-10-10"
+   ],
+   "who": "Stiles Stilinski",
+   "role": "bottom",
+   "wants": true
+  },
+  {
+   "kind": "hint",
+   "card": "dynamic-cue",
+   "pairing": "Derek Hale/Stiles Stilinski",
+   "h": "6c826f2a",
+   "via": "abo-bare-neck",
+   "weight": 0.9,
+   "source": "chatgpt",
+   "marks": {
+    "right": 1,
+    "wrong": 0
+   },
+   "seen": [
+    "2026-10-10"
+   ],
+   "who": "Derek Hale",
+   "role": "bottom",
+   "wants": true
+  },
+  {
+   "kind": "hint",
+   "card": "anal",
+   "pairing": "Derek Hale/Stiles Stilinski",
+   "h": "6d00cc3",
+   "via": "arch-back",
+   "weight": 0.9,
+   "source": "chatgpt",
+   "marks": {
+    "right": 1,
+    "wrong": 0
+   },
+   "seen": [
+    "2026-10-10"
+   ],
+   "who": "Stiles Stilinski",
+   "role": "bottom",
+   "wants": true
+  },
+  {
+   "kind": "hint",
+   "card": "dynamic-cue",
+   "pairing": "Derek Hale/Stiles Stilinski",
+   "h": "8ef3dec0",
+   "via": "care-soothe",
+   "weight": 0.9,
+   "source": "chatgpt",
+   "marks": {
+    "right": 1,
+    "wrong": 0
+   },
+   "seen": [
+    "2026-10-10"
+   ],
+   "who": "Derek Hale",
+   "role": "top",
+   "wants": true
+  },
+  {
+   "kind": "hint",
+   "card": "anal",
+   "pairing": "Derek Hale/Stiles Stilinski",
+   "h": "e3d06316",
+   "via": "dialogue:anal sex",
+   "weight": 0.9,
+   "source": "chatgpt",
+   "marks": {
+    "right": 1,
+    "wrong": 0
+   },
+   "seen": [
+    "2026-10-10"
+   ],
+   "who": "Stiles Stilinski",
+   "role": "bottom",
+   "wants": true
+  },
+  {
+   "kind": "hint",
+   "card": "dynamic-cue",
+   "pairing": "Derek Hale/Stiles Stilinski",
+   "h": "95ea535d",
+   "via": "dom-grip",
+   "weight": 0.9,
+   "source": "chatgpt",
+   "marks": {
+    "right": 1,
+    "wrong": 0
+   },
+   "seen": [
+    "2026-10-10"
+   ],
+   "who": "Derek Hale",
+   "role": "top",
+   "wants": true
+  },
+  {
+   "kind": "hint",
+   "card": "dynamic-cue",
+   "pairing": "Derek Hale/Stiles Stilinski",
+   "h": "86fd39af",
+   "via": "care-soothe",
+   "weight": 0.9,
+   "source": "chatgpt",
+   "marks": {
+    "right": 1,
+    "wrong": 0
+   },
+   "seen": [
+    "2026-10-10"
+   ],
+   "who": "Stiles Stilinski",
+   "role": "top",
+   "wants": true
+  },
+  {
+   "kind": "hint",
+   "card": "anal",
+   "pairing": "Derek Hale/Stiles Stilinski",
+   "h": "8902df48",
+   "via": "having-inside",
+   "weight": 0.9,
+   "source": "chatgpt",
+   "marks": {
+    "right": 1,
+    "wrong": 0
+   },
+   "seen": [
+    "2026-10-10"
+   ],
+   "who": "Stiles Stilinski",
+   "role": "bottom",
+   "wants": false
+  },
+  {
+   "kind": "hint",
+   "card": "anal",
+   "pairing": "Derek Hale/Stiles Stilinski",
+   "h": "8ef88be3",
+   "via": "dialogue:anal sex",
+   "weight": 0.9,
+   "source": "chatgpt",
+   "marks": {
+    "right": 1,
+    "wrong": 0
+   },
+   "seen": [
+    "2026-10-10"
+   ],
+   "who": "Stiles Stilinski",
+   "role": "bottom",
+   "wants": true
+  },
+  {
+   "kind": "hint",
+   "card": "dynamic-cue",
+   "pairing": "Derek Hale/Stiles Stilinski",
+   "h": "3cb67d7",
+   "via": "abo-bare-neck",
+   "weight": 0.9,
+   "source": "chatgpt",
+   "marks": {
+    "right": 1,
+    "wrong": 0
+   },
+   "seen": [
+    "2026-10-10"
+   ],
+   "who": "Stiles Stilinski",
+   "role": "bottom",
+   "wants": true
+  },
+  {
+   "kind": "hint",
+   "card": "anal",
+   "pairing": "Derek Hale/Stiles Stilinski",
+   "h": "d9309c0",
+   "via": "body-full",
+   "weight": 0.9,
+   "source": "chatgpt",
+   "marks": {
+    "right": 1,
+    "wrong": 0
+   },
+   "seen": [
+    "2026-10-10"
+   ],
+   "who": "Stiles Stilinski",
+   "role": "bottom",
+   "wants": true
   }
  ],
  "fic": "a-werecompeer",
@@ -1195,24 +3199,6 @@
    "seen": [
     "2026-10-05",
     "2026-10-06"
-   ]
-  },
-  {
-   "kind": "hint",
-   "card": "anal",
-   "pairing": "Derek Hale/Stiles Stilinski",
-   "who": "Derek Hale",
-   "role": "bottom",
-   "wants": true,
-   "via": "dialogue:anal sex",
-   "h": "8ef88be3",
-   "conf": 77,
-   "misread": true,
-   "gone": true,
-   "weight": 0.3,
-   "source": "claude",
-   "seen": [
-    "2026-10-05"
    ]
   },
   {
@@ -1662,6 +3648,360 @@
    "seen": [
     "2026-10-09"
    ]
+  },
+  {
+   "kind": "scene",
+   "card": "anal",
+   "pairing": "Derek Hale/Stiles Stilinski",
+   "h": "6da4e9e8",
+   "via": "prostate",
+   "weight": 0.9,
+   "source": "chatgpt",
+   "marks": {
+    "right": 0,
+    "wrong": 0
+   },
+   "seen": [
+    "2026-10-10"
+   ],
+   "top": "Derek Hale",
+   "bottom": "Stiles Stilinski",
+   "misread": true
+  },
+  {
+   "kind": "scene",
+   "card": "anal",
+   "pairing": "Derek Hale/Stiles Stilinski",
+   "h": "6205208d",
+   "via": "fill",
+   "weight": 0.9,
+   "source": "chatgpt",
+   "marks": {
+    "right": 0,
+    "wrong": 0
+   },
+   "seen": [
+    "2026-10-10"
+   ],
+   "top": "Derek Hale",
+   "bottom": "Stiles Stilinski",
+   "misread": true
+  },
+  {
+   "kind": "hint",
+   "card": "anal",
+   "pairing": "Derek Hale/Stiles Stilinski",
+   "h": "724628e9",
+   "via": "ogle-crotch",
+   "weight": 0.9,
+   "source": "chatgpt",
+   "marks": {
+    "right": 0,
+    "wrong": 0
+   },
+   "seen": [
+    "2026-10-10"
+   ],
+   "who": "Stiles Stilinski",
+   "role": "bottom",
+   "wants": true,
+   "misread": true
+  },
+  {
+   "kind": "hint",
+   "card": "blowjob",
+   "pairing": "Derek Hale/Stiles Stilinski",
+   "h": "724628e9",
+   "via": "ogle-crotch-oral",
+   "weight": 0.9,
+   "source": "chatgpt",
+   "marks": {
+    "right": 0,
+    "wrong": 0
+   },
+   "seen": [
+    "2026-10-10"
+   ],
+   "who": "Stiles Stilinski",
+   "role": "bottom",
+   "wants": true,
+   "misread": true
+  },
+  {
+   "kind": "hint",
+   "card": "anal",
+   "pairing": "Derek Hale/Stiles Stilinski",
+   "h": "3eadef06",
+   "via": "penis-into",
+   "weight": 0.9,
+   "source": "chatgpt",
+   "marks": {
+    "right": 0,
+    "wrong": 0
+   },
+   "seen": [
+    "2026-10-10"
+   ],
+   "who": "Vernon Boyd",
+   "role": "top",
+   "wants": true,
+   "misread": true
+  },
+  {
+   "kind": "hint",
+   "card": "dynamic-cue",
+   "pairing": "Derek Hale/Stiles Stilinski",
+   "h": "9de1bcc4",
+   "via": "chastity-lock-on",
+   "weight": 0.9,
+   "source": "chatgpt",
+   "marks": {
+    "right": 0,
+    "wrong": 0
+   },
+   "seen": [
+    "2026-10-10"
+   ],
+   "who": "Vernon Boyd",
+   "role": "top",
+   "wants": true,
+   "misread": true
+  },
+  {
+   "kind": "hint",
+   "card": "dynamic-cue",
+   "pairing": "Derek Hale/Stiles Stilinski",
+   "h": "3ef02b8a",
+   "via": "abo-bare-neck",
+   "weight": 0.9,
+   "source": "chatgpt",
+   "marks": {
+    "right": 0,
+    "wrong": 0
+   },
+   "seen": [
+    "2026-10-10"
+   ],
+   "who": "Derek Hale",
+   "role": "bottom",
+   "wants": true,
+   "misread": true
+  },
+  {
+   "kind": "hint",
+   "card": "blowjob",
+   "pairing": "Derek Hale/Stiles Stilinski",
+   "h": "70d011d3",
+   "via": "fucked-mouth",
+   "weight": 0.9,
+   "source": "chatgpt",
+   "marks": {
+    "right": 0,
+    "wrong": 0
+   },
+   "seen": [
+    "2026-10-10"
+   ],
+   "who": "Stiles Stilinski",
+   "role": "bottom",
+   "wants": true,
+   "misread": true
+  },
+  {
+   "kind": "hint",
+   "card": "dynamic-cue",
+   "pairing": "Derek Hale/Stiles Stilinski",
+   "h": "8e001c0b",
+   "via": "pos-climb-lap",
+   "weight": 0.9,
+   "source": "chatgpt",
+   "marks": {
+    "right": 0,
+    "wrong": 0
+   },
+   "seen": [
+    "2026-10-10"
+   ],
+   "who": "Derek Hale",
+   "role": "bottom",
+   "wants": true,
+   "misread": true
+  },
+  {
+   "kind": "scene",
+   "card": "manual-act",
+   "pairing": "Derek Hale/Stiles Stilinski",
+   "h": "f7807e33",
+   "via": "dd2-hj-rubbed-over",
+   "weight": 0.9,
+   "source": "chatgpt",
+   "marks": {
+    "right": 0,
+    "wrong": 0
+   },
+   "seen": [
+    "2026-10-10"
+   ],
+   "who": "Stiles Stilinski",
+   "role": "top",
+   "misread": true
+  },
+  {
+   "kind": "hint",
+   "card": "dynamic-cue",
+   "pairing": "Derek Hale/Stiles Stilinski",
+   "h": "9fa70a07",
+   "via": "flustered-verb",
+   "weight": 0.9,
+   "source": "chatgpt",
+   "marks": {
+    "right": 0,
+    "wrong": 0
+   },
+   "seen": [
+    "2026-10-10"
+   ],
+   "who": "Stiles Stilinski",
+   "role": "bottom",
+   "wants": true,
+   "misread": true
+  },
+  {
+   "kind": "scene",
+   "card": "manual-act",
+   "pairing": "Derek Hale/Stiles Stilinski",
+   "h": "f65465ef",
+   "via": "dd-frot-rut-against",
+   "weight": 0.9,
+   "source": "chatgpt",
+   "marks": {
+    "right": 0,
+    "wrong": 0
+   },
+   "seen": [
+    "2026-10-10"
+   ],
+   "who": "Derek Hale",
+   "role": "top",
+   "misread": true
+  },
+  {
+   "kind": "solo",
+   "card": "anal",
+   "pairing": "Derek Hale/Stiles Stilinski",
+   "h": "e0a3f774",
+   "via": "self-finger",
+   "weight": 0.9,
+   "source": "chatgpt",
+   "marks": {
+    "right": 0,
+    "wrong": 0
+   },
+   "seen": [
+    "2026-10-10"
+   ],
+   "who": "Stiles Stilinski",
+   "role": "bottom",
+   "misread": true
+  },
+  {
+   "kind": "hint",
+   "card": "dynamic-cue",
+   "pairing": "Derek Hale/Stiles Stilinski",
+   "h": "e642970d",
+   "via": "flustered-verb",
+   "weight": 0.9,
+   "source": "chatgpt",
+   "marks": {
+    "right": 0,
+    "wrong": 0
+   },
+   "seen": [
+    "2026-10-10"
+   ],
+   "who": "Derek Hale",
+   "role": "bottom",
+   "wants": true,
+   "misread": true
+  },
+  {
+   "kind": "hint",
+   "card": "dynamic-cue",
+   "pairing": "Derek Hale/Stiles Stilinski",
+   "h": "aeb7e7e5",
+   "via": "care-soothe",
+   "weight": 0.9,
+   "source": "chatgpt",
+   "marks": {
+    "right": 0,
+    "wrong": 0
+   },
+   "seen": [
+    "2026-10-10"
+   ],
+   "who": "Derek Hale",
+   "role": "top",
+   "wants": true,
+   "misread": true
+  },
+  {
+   "kind": "scene",
+   "card": "manual-act",
+   "pairing": "Derek Hale/Stiles Stilinski",
+   "h": "bf168472",
+   "via": "hj-stroke",
+   "weight": 0.9,
+   "source": "chatgpt",
+   "marks": {
+    "right": 0,
+    "wrong": 0
+   },
+   "seen": [
+    "2026-10-10"
+   ],
+   "who": "Derek Hale",
+   "role": "top",
+   "misread": true
+  },
+  {
+   "kind": "hint",
+   "card": "dynamic-cue",
+   "pairing": "Derek Hale/Stiles Stilinski",
+   "h": "6059a41c",
+   "via": "dom-carry",
+   "weight": 0.9,
+   "source": "chatgpt",
+   "marks": {
+    "right": 0,
+    "wrong": 0
+   },
+   "seen": [
+    "2026-10-10"
+   ],
+   "who": "Derek Hale",
+   "role": "top",
+   "wants": true,
+   "misread": true
+  },
+  {
+   "kind": "hint",
+   "card": "dynamic-cue",
+   "pairing": "Derek Hale/Stiles Stilinski",
+   "h": "654cec5",
+   "via": "dom-carry",
+   "weight": 0.9,
+   "source": "chatgpt",
+   "marks": {
+    "right": 0,
+    "wrong": 0
+   },
+   "seen": [
+    "2026-10-10"
+   ],
+   "who": "Vernon Boyd",
+   "role": "top",
+   "wants": true,
+   "misread": true
   }
  ]
 }
