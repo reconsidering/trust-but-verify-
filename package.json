@@ -18,7 +18,8 @@
     "setup-fics": "node scripts/setup-fics.mjs",
     "spotcheck": "node scripts/spotcheck.mjs",
     "hands-free-harvest": "node scripts/hands-free-harvest.mjs",
-    "hands-free-check": "node scripts/hands-free-check.mjs"
+    "hands-free-check": "node scripts/hands-free-check.mjs",
+    "recall": "node scripts/act-recall-report.mjs"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.131.0",
