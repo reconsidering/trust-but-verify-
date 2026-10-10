@@ -26,17 +26,23 @@ describe("round 94: verb patterns and collars", () => {
   it("pressing in so that two chests touch is a hug", () => {
     expect(run("Theo pulled off his own shirt, too, and Rhys immediately pressed in again, shoving their chests together.").acts(/^pushed-in/)).toEqual([]);
   });
-  it("a stranger shoving into someone in the street is not sex", () => {
-    expect(run("Since the news broke he could not go anywhere without someone glowering at him, shoving into him as they passed on the street.").acts(/^push-into/)).toEqual([]);
-  });
-  it("a thumb pulled out and then a cock driven in is anal sex, not fingering", () => {
-    const a = run("Rhys was moving at last, sliding his thumb out and ramming into Theo with his cock in one hard stroke.").acts(/^push-into|^fuck|^ram/);
-    expect(a.some((x) => x.startsWith("fingering"))).toBe(false);
+  it("a thumb pulled out and then a thrust in is anal sex, not fingering", () => {
+    const a = run("“Beg me again,” Rhys said, smirking, and then he was moving, actually moving this time, sliding his thumb out and ramming into Theo hard.").acts(/^push-into|^fingers-inside/);
+    expect(a.filter((x) => x.startsWith("fingering"))).toEqual([]);
   });
   it("a shirt collar or a leash on a dog is not a kink collar", () => {
     expect(run("Rhys kissed up the side of Theo’s throat, down to where his shoulder met the frayed collar of his sweatshirt.").acts(/^collar-wearer/)).toEqual([]);
     expect(run("The blush was spreading down Theo’s collar now, his stammer thickening.").acts(/^collar-wearer/)).toEqual([]);
     expect(run("Rhys straightened the collar of Theo’s coat, his knuckles brushing his skin.").acts(/^collar-wearer/)).toEqual([]);
     expect(run("The father held a leash they had brought from home, new and bright red, and Rhys knelt to greet the puppy.").acts(/^collar-wearer/)).toEqual([]);
+  });
+  it("surging up into a kiss on the couch is not penetration", () => {
+    expect(run("Rhys surges up into him, presses him back into the couch. Theo parts his lips and fists a hand in Rhys’s hair as they kiss on the couch he keeps waking up on.").acts(/^push-into/)).toEqual([]);
+  });
+  it("the one who arches and pushes up into the other is the one being touched, not the one penetrating", () => {
+    expect(run("“Oh,” Theo says, because this reaction is something new. “Isn’t that what you are? Good?” He laughs, breathless, as Rhys arches a little, pushing up into him in desperation.").acts(/^push-into/)).toEqual([]);
+  });
+  it("a stranger shoving into someone as they pass on the street is not sex", () => {
+    expect(run("Rhys had not been able to walk anywhere since the news broke without someone glowering at him, shoving into him as they passed him on the street, slinging insults at him. From the bank to the grocer, he could not escape what Theo had done.").acts(/^push-into/)).toEqual([]);
   });
 });

@@ -25,6 +25,7 @@ that happened to match (the pattern that reads a sentence can change after a ret
   cheeks or thighs, or rubbing the buttocks without touching the opening, is body contact, not anal sex.
 - **A toy at the anal entrance counts** the same way, with no insertion needed: a plug, dildo or vibrator held, pressed or rubbed at the hole, rim or entrance. Tag it as a **toy act**
   ("anal sex (strap-on/toy)", or a toy used on himself), not as penile anal sex and not as fingering.
+- **A correctly credited act that the engine marks hypothetical, fantasy or wanted is a right reading** (the person and the act are right; the engine already weakens such readings). The owner ruled this way in 9 of 11 cases on 2026-10-10 (`docs/CLAUDE_SECOND_REVIEW_OF_CHATGPT_LABELS.md`). Mark it wrong only when the act or the person is wrong, or when nothing sexual is being talked about.
 - **If it never reached the opening** (stopped, refused or interrupted before contact), it is not performed. Contact at the opening counts even if it goes no further.
 - Labels made before this rule (2026-10-10) that called entrance contact "mistaken for insertion" (the 20 "external contact" readings in `docs/CURRENT_ANAL_ERROR_REVIEW.md`, and
   some owner labels on "presses fingers to his rim") may need re-review; do not change them without the owner's say-so.
