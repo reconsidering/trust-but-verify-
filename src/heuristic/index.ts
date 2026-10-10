@@ -1309,6 +1309,8 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
     if (basePid === "body-leaking-from" && /\bslick\b/i.test(sent) && !/\b(?:come|cum|seed|spunk|knot\w*|fuck\w*)\b/i.test(sent)) return;
     // "Castiel pushed in deeper, fucking Dean's mouth", "parted his lips, letting Castiel push inside": the mouth is named as what is being entered, so this is oral, not anal.
     if ((basePid === "push-into" || basePid === "pushed-in") && /\bfuck\w*\s+(?:\w+['’]s\s+|his\s+|her\s+|their\s+)(?:mouth|throat|face)\b|\b(?:parted|opened|opening|open)\s+(?:his|her|their)\s+(?:lips|mouth)\b[^.!?]{0,40}\bpush\w*\s+in/i.test(sent)) return;
+    // "his presence gathers and crowds around Anakin, pushing into his mind", "reaches for the Force … pushed": the Force is not a body.
+    if ((basePid === "push-into" || basePid === "pushed-in") && /\bthe\s+Force\b/.test(sent) && !/\b(?:cock|dick|prick|hole|ass|rim|fingers?|inside\s+(?:him|her|them))\b/i.test(sent)) return;
     // "Anakin drops to his knees, panting" in a fight, a rescue or a fit of fear: kneeling is oral preparation only with something sexual in this paragraph or the next.
     if (basePid === "sinks-to-floor" && !/\b(?:cock|dick|prick|erection|hard-?on|bulge|suck\w*|blow\s?job|mouth|lips|tongue|zipper|unzip\w*|unbutton\w*|belt|pants|jeans|trousers|naked|lube\w*|kiss\w*|moan\w*|arous\w*|desire|thighs|crotch|groin|hips)\b/i.test(`${para} ${paras[pi + 1] ?? ""}`)) return;
     // "slamming his shoulder into Cas' chest", "presses back against him with his own thigh", "shoves back, hard, with all the adrenaline": a shove with a limb or a weapon, not pushing back onto a cock.
@@ -2396,6 +2398,11 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
         // elided subject picks the wrong one, so leave it out rather than credit the wrong person.
         if (new RegExp(`(?:^|[.!?\u201d"]\\s+)(?:${NAMES})\\s*,\\s*(?:${NAMES})\\s+(?:realiz\\w+|know\\w*|knew|notic\\w+|see\\w*|saw|think\\w*|thought|feel\\w*|felt|say\\w*|said|decid\\w+|discover\\w+)\\b[^,]*,\\s*(?:\\w+\\s+){0,3}$`, "i").test((prefix + m[0]).slice(0, prefix.length + (verb?.index ?? 0)))) return;
       } else if (NEG.test(m.groups?.aux ?? "") || NEG.test(prefix.slice(-40))) return;
+      // "He rubbed at his arm." with the man it would comfort named nowhere in this paragraph or its neighbours: self-care, not comfort of someone who is not there.
+      if (pat.id.startsWith("care-soothe") && /^(?:his|her|their)$/i.test(bTok ?? "")) {
+        const near = [pi - 1, pi, pi + 1].map((i) => paras[i] ?? "").join(" ");
+        if (!bottom.aliases.some((a) => a.length > 2 && new RegExp(`\\b${escapeRe(a)}\\b`).test(near))) return;
+      }
       // "Castiel would drop to his knees right there and suck him off", "Jack would have spread his legs wider if he could": a promise or a what-if, not kneeling or spreading now.
       if ((pat.signal.kind === "prep" || pat.signal.kind === "touch") && (/\b(?:would|could|might|will)\b/i.test(m.groups?.aux ?? "") || /\b(?:would|could|might|will)\s+(?:have\s+)?$/i.test(prefix.slice(-25)))) return;
       // "He spreads his legs, grips his cock … 'I want you to suck me.'": legs opened for a blowjob, with no ass anywhere near.

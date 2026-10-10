@@ -54,3 +54,13 @@ describe("round 92: more reports from the deep dives", () => {
     expect(run("Morgan pushed in deeper, fucking Rowan’s mouth.")(/^push(?:ed)?-in/).filter((h) => h.act.startsWith("anal"))).toEqual([]);
   });
 });
+
+describe("round 92: partner not present, the Force, a finger named in the next sentence", () => {
+  it("rubbing his own arm with the partner named nowhere near is self-care", () => {
+    const far = "The night was long and cold.||Morgan stood by the window for a while.||Morgan rubbed at his arm.||He thought about the road ahead.";
+    expect(run(far)(/^care-soothe/)).toEqual([]);
+  });
+  it("the Force pushing into a mind is not penetration", () => {
+    expect(run("Rowan feels Morgan pushing into him through the Force, a presence filling his thoughts.")(/^push(?:ed)?-in/).filter((h) => h.act.startsWith("anal"))).toEqual([]);
+  });
+});
