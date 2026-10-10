@@ -1,0 +1,1058 @@
+{
+  "schema": "finger-toy-miss-implementation-handoff/v1",
+  "engineCommit": "68338708cd8d600ace41dea533892d3af564b043",
+  "selectionCommit": "7f77a765cea99589cb8d75c4d5da67ba3da3e787",
+  "generatedDate": "2026-10-10",
+  "scope": "The 12 fingering and 8 toy entries scored missed in the fixed-history report. Current main replay still scores all 20 missed. Two require scope adjudication, not recovery as current anal acts. No labels or detector changes.",
+  "paragraphIndexing": "Zero-based indices from analyzeWithPatterns debug paras, identical extractor to the history report.",
+  "cases": [
+    {
+      "eventIndex": 26,
+      "inventory": "chatgpt-five-fic-deep-dives.json",
+      "batchId": "chatgpt-five-fic-deep-dives.json",
+      "id": "were-compeer-act-23",
+      "eventId": 23,
+      "fic": "were-compeer.html",
+      "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+      "from": 462,
+      "to": 462,
+      "act": "Toy insertion",
+      "originalAct": "anal toy insertion",
+      "performer": "Derek Hale",
+      "receiver": "Stiles Stilinski",
+      "reviewer": "ChatGPT",
+      "coverage": "selected deep-dive inventory",
+      "paragraphHashes": [
+        "aad46147"
+      ],
+      "caseId": "T01",
+      "classification": "lexical-gap",
+      "title": "Toy as grammatical subject",
+      "currentReplayStatus": "missed",
+      "trace": [],
+      "survivingReadings": [],
+      "interpretation": "A named partner lubricates an established plug; the toy then slides into the receiver and settles beyond the rim. There is no relevant traced match at paragraph 462.",
+      "proposedChange": "Add a bounded toy-subject entry pattern. Resolve the receiver from explicit body ownership and the performer from the preceding named manipulation, rather than treating the toy as a person.",
+      "codePointers": [
+        "patterns.ts: review-inserts-named-toy / review-toy-tip-inside",
+        "index.ts: handleMatch / namedActionOwner"
+      ],
+      "positiveTest": "Morgan lubricates a plug for Rowan. The plug slides into Rowan’s anus. → partnered toy act, Morgan → Rowan.",
+      "negativeTest": "Morgan lubricates a plug and puts it in its storage case. → no toy act.",
+      "implementationStatus": "proposal only",
+      "prosePolicy": "Paraphrases with invented adult names; no source prose.",
+      "supplementalLexicalCandidates": []
+    },
+    {
+      "eventIndex": 27,
+      "inventory": "chatgpt-five-fic-deep-dives.json",
+      "batchId": "chatgpt-five-fic-deep-dives.json",
+      "id": "were-compeer-act-25",
+      "eventId": 25,
+      "fic": "were-compeer.html",
+      "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+      "from": 473,
+      "to": 473,
+      "act": "Toy insertion",
+      "originalAct": "self anal toy insertion",
+      "performer": "Stiles Stilinski",
+      "receiver": "Stiles Stilinski",
+      "reviewer": "ChatGPT",
+      "coverage": "selected deep-dive inventory",
+      "paragraphHashes": [
+        "a458b588"
+      ],
+      "caseId": "T02",
+      "classification": "lexical-gap",
+      "title": "Replacement by size reference",
+      "currentReplayStatus": "missed",
+      "trace": [],
+      "survivingReadings": [
+        {
+          "para": 473,
+          "via": "plug-worn",
+          "kind": "prep",
+          "cat": "anal",
+          "act": "wearing a plug",
+          "a": "Stiles Stilinski",
+          "b": "Derek Hale",
+          "role": "bottom"
+        },
+        {
+          "para": 473,
+          "via": "chastity-wearer",
+          "kind": "behavior",
+          "cat": "vibe",
+          "act": "wearing a chastity device",
+          "a": "Stiles Stilinski",
+          "b": "Derek Hale",
+          "role": "bottom"
+        }
+      ],
+      "interpretation": "The adult wearer replaces an earlier plug with a larger size and describes it entering. A plug-worn prep reading survives, but the new self-use act does not.",
+      "proposedChange": "Recognize a new insertion with a size/reference phrase only when the same local passage explicitly establishes a plug and the wearer. Do not promote every wearing-plug hint to an insertion.",
+      "codePointers": [
+        "patterns.ts: self-toy-own-hole / self-toy-it",
+        "index.ts: plugScan"
+      ],
+      "positiveTest": "Rowan removes his small plug and inserts the larger one into himself. → self toy act.",
+      "negativeTest": "Rowan leaves his plug in and selects a larger one for tomorrow. → no new insertion.",
+      "implementationStatus": "proposal only",
+      "prosePolicy": "Paraphrases with invented adult names; no source prose.",
+      "supplementalLexicalCandidates": []
+    },
+    {
+      "eventIndex": 28,
+      "inventory": "chatgpt-five-fic-deep-dives.json",
+      "batchId": "chatgpt-five-fic-deep-dives.json",
+      "id": "were-compeer-act-26",
+      "eventId": 26,
+      "fic": "were-compeer.html",
+      "sourceSha": "9d831ae1772b7f42bd7853f2d0fd1f11ba654ebaabdcd52cfc89a45bf374334b",
+      "from": 532,
+      "to": 533,
+      "act": "Toy insertion",
+      "originalAct": "self anal toy insertion",
+      "performer": "Stiles Stilinski",
+      "receiver": "Stiles Stilinski",
+      "reviewer": "ChatGPT",
+      "coverage": "selected deep-dive inventory",
+      "paragraphHashes": [
+        "afae23a6",
+        "4ad1b3ab"
+      ],
+      "caseId": "T03",
+      "classification": "lexical-gap",
+      "title": "Bare it-in after toy preparation",
+      "currentReplayStatus": "missed",
+      "trace": [],
+      "survivingReadings": [],
+      "interpretation": "The adult removes one plug, lubricates another, and succeeds in inserting it in the next paragraph. No target-range match survives. self-toy-it currently requires a target after the insertion words.",
+      "proposedChange": "Support a bare pronoun-object insertion continuation across a short paragraph boundary, with verified toy referent and self receiver. Reset old instrument state after removal, then establish the newly selected toy.",
+      "codePointers": [
+        "patterns.ts: self-toy-it",
+        "event-evidence.ts: continuationInstrument",
+        "index.ts: scene boundary checks"
+      ],
+      "positiveTest": "Rowan removes a plug and lubricates a larger anal plug. Next paragraph: He finally pushes it in. → self toy act.",
+      "negativeTest": "Rowan removes a plug, picks up a charging cable and pushes it in. → no insertion continuation.",
+      "implementationStatus": "proposal only",
+      "prosePolicy": "Paraphrases with invented adult names; no source prose.",
+      "supplementalLexicalCandidates": []
+    },
+    {
+      "eventIndex": 49,
+      "inventory": "chatgpt-five-fic-deep-dives.json",
+      "batchId": "chatgpt-five-fic-deep-dives.json",
+      "id": "needing-the-knot-act-1",
+      "eventId": 1,
+      "fic": "needing-the-knot.html",
+      "sourceSha": "cfb383bc85de918fc26b4650ec53f3026374462949105db48bc0cab52feba727",
+      "from": 86,
+      "to": 88,
+      "act": "Toy insertion",
+      "originalAct": "toy penetration",
+      "performer": "Dean Winchester",
+      "receiver": "Dean Winchester",
+      "reviewer": "ChatGPT",
+      "coverage": "selected deep-dive inventory",
+      "paragraphHashes": [
+        "60c0e717",
+        "72a4ab70",
+        "35e35a4b"
+      ],
+      "caseId": "T04",
+      "classification": "lexical-gap",
+      "title": "Prostate massager identity and ongoing use",
+      "currentReplayStatus": "missed",
+      "trace": [
+        {
+          "para": 86,
+          "via": "hj-stroke",
+          "top": "Castiel",
+          "bottom": "Dean Winchester",
+          "basis": "pronoun"
+        }
+      ],
+      "survivingReadings": [
+        {
+          "para": 86,
+          "via": "hj-stroke",
+          "kind": "handjob",
+          "cat": "vibe",
+          "act": "handjob",
+          "a": "Castiel",
+          "b": "Dean Winchester",
+          "role": "top"
+        },
+        {
+          "para": 88,
+          "via": "plug-worn",
+          "kind": "prep",
+          "cat": "anal",
+          "act": "wearing a plug",
+          "a": "Dean Winchester",
+          "b": "Castiel",
+          "role": "bottom"
+        }
+      ],
+      "interpretation": "A solo adult installs a prostate massager, activates it and moves against it. The trace finds an unrelated handjob candidate and a later plug-worn hint; neither covers the self toy use.",
+      "proposedChange": "Add prostate-massager and dual-headed-massager aliases when the physical target is supported. Cover putting an established massager in place and moving against it. Keep ongoing use separate from a newly counted insertion.",
+      "codePointers": [
+        "patterns.ts: self-toy / toy vocabulary",
+        "index.ts: solo routing",
+        "event-evidence.ts: PART / type"
+      ],
+      "positiveTest": "Rowan settles an anal prostate massager inside himself, switches it on and rocks against it. → self toy use.",
+      "negativeTest": "Rowan switches on a massage device resting against his shoulder. → no anal toy act.",
+      "implementationStatus": "proposal only",
+      "prosePolicy": "Paraphrases with invented adult names; no source prose.",
+      "supplementalLexicalCandidates": [
+        {
+          "para": 86,
+          "via": "hj-stroke",
+          "gate": true,
+          "needs": true
+        }
+      ]
+    },
+    {
+      "eventIndex": 50,
+      "inventory": "chatgpt-five-fic-deep-dives.json",
+      "batchId": "chatgpt-five-fic-deep-dives.json",
+      "id": "needing-the-knot-act-2",
+      "eventId": 2,
+      "fic": "needing-the-knot.html",
+      "sourceSha": "cfb383bc85de918fc26b4650ec53f3026374462949105db48bc0cab52feba727",
+      "from": 118,
+      "to": 123,
+      "act": "Toy insertion",
+      "originalAct": "toy penetration",
+      "performer": "Dean Winchester",
+      "receiver": "Dean Winchester",
+      "reviewer": "ChatGPT",
+      "coverage": "selected deep-dive inventory",
+      "paragraphHashes": [
+        "8686344e",
+        "76fbe644",
+        "1fc57f9",
+        "55792a49",
+        "d6d3ba36",
+        "93b378f1"
+      ],
+      "caseId": "T05",
+      "classification": "lexical-gap",
+      "title": "A dildo described as a cock during solo fantasy",
+      "currentReplayStatus": "missed",
+      "trace": [
+        {
+          "para": 118,
+          "via": "body-hole-ache",
+          "top": "Castiel",
+          "bottom": "Dean Winchester",
+          "basis": "inferred"
+        }
+      ],
+      "survivingReadings": [
+        {
+          "para": 118,
+          "via": "body-hole-ache",
+          "kind": "body",
+          "cat": "anal",
+          "act": "aching hole",
+          "a": "Dean Winchester",
+          "b": "Castiel",
+          "role": "bottom"
+        }
+      ],
+      "interpretation": "The adult first uses an identified silicone dildo orally, then lowers his anus onto it and activates its inflatable knot. Imagined partner actions are interleaved with physical solo use.",
+      "proposedChange": "Retain the established artificial instrument across cock/knot references, track the mouth-to-anus target change, and classify physical self-use separately from imagined partner actions. Do not treat the imagined partner as the performer.",
+      "codePointers": [
+        "patterns.ts: self-toy / riding-it",
+        "event-evidence.ts: continuationInstrument / occurrenceContext",
+        "index.ts: solo versus partnered routing"
+      ],
+      "positiveTest": "Rowan holds a silicone dildo, briefly mouths it, then lowers his anus onto it while imagining Morgan. → performed self anal toy use; imagined Morgan remains contextual.",
+      "negativeTest": "Rowan only imagines sitting on the dildo while holding it. → contextual reading, no performed act.",
+      "implementationStatus": "proposal only",
+      "prosePolicy": "Paraphrases with invented adult names; no source prose.",
+      "supplementalLexicalCandidates": [
+        {
+          "para": 118,
+          "via": "body-hole-ache",
+          "gate": true,
+          "needs": true
+        }
+      ]
+    },
+    {
+      "eventIndex": 63,
+      "inventory": "chatgpt-five-fic-deep-dives.json",
+      "batchId": "chatgpt-five-fic-deep-dives.json",
+      "id": "needing-the-knot-act-24",
+      "eventId": 24,
+      "fic": "needing-the-knot.html",
+      "sourceSha": "cfb383bc85de918fc26b4650ec53f3026374462949105db48bc0cab52feba727",
+      "from": 783,
+      "to": 783,
+      "act": "Fingering",
+      "originalAct": "fingering",
+      "performer": "Castiel",
+      "receiver": "Dean Winchester",
+      "reviewer": "ChatGPT",
+      "coverage": "selected deep-dive inventory",
+      "paragraphHashes": [
+        "166f3777"
+      ],
+      "caseId": "F01",
+      "classification": "lexical-gap",
+      "title": "Sentence-opening pumping gerund",
+      "currentReplayStatus": "missed",
+      "trace": [],
+      "survivingReadings": [],
+      "interpretation": "A named adult begins pumping three fingers into the receiver’s explicitly named opening while also giving oral stimulation. No candidate is traced in paragraph 783.",
+      "proposedChange": "Add a narrow finger-object gerund pattern for pumping into an explicit target, resolving the omitted performer from the preceding named clause. Preserve concurrent oral activity.",
+      "codePointers": [
+        "patterns.ts: fingers-into / fingers-enter-hole",
+        "index.ts: elidedSubject / namedActionOwner"
+      ],
+      "positiveTest": "Morgan moves behind Rowan. Pumping two fingers into Rowan’s anus, he continues oral stimulation. → fingering, Morgan → Rowan.",
+      "negativeTest": "Morgan pumps lotion into his hand. → no fingering.",
+      "implementationStatus": "proposal only",
+      "prosePolicy": "Paraphrases with invented adult names; no source prose.",
+      "supplementalLexicalCandidates": []
+    },
+    {
+      "eventIndex": 85,
+      "inventory": "chatgpt-five-fic-deep-dives.json",
+      "batchId": "chatgpt-five-fic-deep-dives.json",
+      "id": "wicked-thing-act-4",
+      "eventId": 4,
+      "fic": "wicked-thing.html",
+      "sourceSha": "9e420c5f8b014510b08073e4447f8081bf5680b5787eeb8bc32cab6199b35a68",
+      "from": 249,
+      "to": 249,
+      "act": "Fingering",
+      "originalAct": "fingering",
+      "performer": "Obi-Wan Kenobi",
+      "receiver": "Anakin Skywalker",
+      "reviewer": "ChatGPT",
+      "coverage": "selected deep-dive inventory",
+      "paragraphHashes": [
+        "3efaa74c"
+      ],
+      "caseId": "F02",
+      "classification": "inventory-scope",
+      "title": "Explicit remembered event",
+      "currentReplayStatus": "missed",
+      "trace": [],
+      "survivingReadings": [],
+      "interpretation": "The passage repeatedly frames the event as remembered, including enumerated fingers entering. The saved inventory marks it current. No target-range match is traced.",
+      "proposedChange": "Do not create a current-act reading to satisfy this inventory. Queue occurrence adjudication without changing the label here. A new enumeration pattern may recover a correctly attributed historical hint, which AGENTS.md considers a right interpretation, but it must not count toward current-act recall.",
+      "codePointers": [
+        "inventory: chatgpt-five-fic-deep-dives.json / wicked-thing-act-4",
+        "patterns.ts: fingers-enter-hole",
+        "event-evidence.ts: occurrenceContext",
+        "index.ts: remembered / kind selection"
+      ],
+      "positiveTest": "Rowan remembers Morgan inserting one finger and then a second. → historical fingering reading, no current scene.",
+      "negativeTest": "Morgan inserts two fingers into Rowan’s anus now. → performed fingering; ordinary past-tense narration must also remain performed.",
+      "implementationStatus": "proposal only",
+      "prosePolicy": "Paraphrases with invented adult names; no source prose.",
+      "supplementalLexicalCandidates": []
+    },
+    {
+      "eventIndex": 131,
+      "inventory": "chatgpt-four-pdf-deep-dives.json",
+      "batchId": "chatgpt-four-pdf-deep-dives.json",
+      "id": "wretched-rhetoric-act-10",
+      "eventId": 10,
+      "fic": "wretched-rhetoric.html",
+      "sourceSha": "b1dce7a7c533d0c425e5bb2c2159d3fbc9a110f864fe4b7bebcdb4c45ed8a477",
+      "from": 644,
+      "to": 657,
+      "act": "Fingering",
+      "originalAct": "anal-fingering",
+      "performer": "Obi-Wan Kenobi",
+      "receiver": "Anakin Skywalker",
+      "reviewer": "ChatGPT",
+      "coverage": "selected deep-dive inventory",
+      "paragraphHashes": [
+        "af7e80c9",
+        "d3a93461",
+        "da1dc85",
+        "f8258ca0",
+        "bfe32a8",
+        "f4af77ad",
+        "3adc2787",
+        "7ce9f0fb",
+        "93de040a",
+        "2f716f12",
+        "85868e5d",
+        "2b79baca",
+        "2128c649",
+        "71d7c0ef"
+      ],
+      "caseId": "F03",
+      "classification": "lexical-gap",
+      "title": "Finger state, retained fingers and motion",
+      "currentReplayStatus": "missed",
+      "trace": [
+        {
+          "para": 657,
+          "via": "licked-hole~elided",
+          "top": "Anakin Skywalker",
+          "bottom": "Obi-Wan Kenobi",
+          "basis": "pronoun"
+        }
+      ],
+      "survivingReadings": [
+        {
+          "para": 657,
+          "via": "licked-hole~elided",
+          "kind": "act",
+          "cat": "oral",
+          "act": "rimming",
+          "a": "Anakin Skywalker",
+          "b": "Obi-Wan Kenobi"
+        }
+      ],
+      "interpretation": "A named adult has fingers deep inside the receiver; later they remain there, move and are withdrawn. Only an unrelated, reversed rimming reading is traced at the end of the range. The explicit finger state is not recognized.",
+      "proposedChange": "Add owned/held finger-state forms, including has/had fingers inside, inside of, intervening depth modifiers and retained motion. Use ownership and local receiver references. Do not count every continuation as another scene.",
+      "codePointers": [
+        "patterns.ts: fingers-inside / fingers-enter-hole",
+        "index.ts: occurrenceContext / ownership refinements",
+        "builders.ts: groupScenes"
+      ],
+      "positiveTest": "Morgan has two fingers deep inside Rowan’s anus. They remain inside as Morgan curls them. → one ongoing fingering scene.",
+      "negativeTest": "Morgan has two fingers inside his glove. → no sexual act.",
+      "implementationStatus": "proposal only",
+      "prosePolicy": "Paraphrases with invented adult names; no source prose.",
+      "supplementalLexicalCandidates": [
+        {
+          "para": 657,
+          "via": "licked-hole~elided",
+          "gate": true,
+          "needs": true
+        }
+      ]
+    },
+    {
+      "eventIndex": 141,
+      "inventory": "chatgpt-four-pdf-deep-dives.json",
+      "batchId": "chatgpt-four-pdf-deep-dives.json",
+      "id": "wretched-rhetoric-act-34",
+      "eventId": 34,
+      "fic": "wretched-rhetoric.html",
+      "sourceSha": "b1dce7a7c533d0c425e5bb2c2159d3fbc9a110f864fe4b7bebcdb4c45ed8a477",
+      "from": 605,
+      "to": 605,
+      "act": "Fingering",
+      "originalAct": "anal-fingering",
+      "performer": "Obi-Wan Kenobi",
+      "receiver": "Anakin Skywalker",
+      "reviewer": "ChatGPT",
+      "coverage": "selected deep-dive inventory",
+      "paragraphHashes": [
+        "65771f44"
+      ],
+      "caseId": "F04",
+      "classification": "lexical-gap",
+      "title": "Unowned finger noun with explicit prostate target",
+      "currentReplayStatus": "missed",
+      "trace": [],
+      "survivingReadings": [],
+      "interpretation": "The receiver reacts as fingers contact his prostate. Existing fingers-find-prostate expects a possessive owner token; this noun phrase has none. The surrounding active scene identifies the performer.",
+      "proposedChange": "Add a prostate-contact finger-noun pattern that resolves an omitted owner only from an established local actor. Preserve ambiguity if several actors remain possible; do not invent penile penetration from prostate contact.",
+      "codePointers": [
+        "patterns.ts: fingers-find-prostate",
+        "index.ts: namedActionOwner / resolvePair"
+      ],
+      "positiveTest": "Morgan positions himself behind Rowan. Two fingers brush Rowan’s prostate. → fingering, Morgan → Rowan.",
+      "negativeTest": "Several adults surround Rowan; an unidentified hand reaches for him. → do not assign a confident named performer.",
+      "implementationStatus": "proposal only",
+      "prosePolicy": "Paraphrases with invented adult names; no source prose.",
+      "supplementalLexicalCandidates": []
+    },
+    {
+      "eventIndex": 150,
+      "inventory": "chatgpt-foxden-park-deep-dive.json",
+      "batchId": "chatgpt-foxden-park-deep-dive.json",
+      "id": "foxden-park-act-32",
+      "eventId": 32,
+      "fic": "foxden-park.html",
+      "sourceSha": "0967cc1dbfbb72de0587bb34011435ac3814f9becbbf788353232e37846db0ba",
+      "from": 1133,
+      "to": 1144,
+      "act": "Fingering",
+      "originalAct": "fingering",
+      "performer": "Alex Claremont-Diaz",
+      "receiver": "Henry Fox-Mountchristen-Windsor",
+      "reviewer": "ChatGPT",
+      "coverage": "selected deep-dive inventory",
+      "paragraphHashes": [
+        "f45dbb00",
+        "115f4aeb",
+        "1954c141",
+        "f403d06a",
+        "1872de3f",
+        "b531bbf5",
+        "36d49186",
+        "2c815948",
+        "a94efb0",
+        "9d66ce10",
+        "fed0b978",
+        "b88177e7"
+      ],
+      "caseId": "F05",
+      "classification": "guard-and-lexical",
+      "title": "Reinsertion mistaken for a body-part reaction",
+      "currentReplayStatus": "missed",
+      "trace": [
+        {
+          "para": 1135,
+          "via": "pushed-in~elided",
+          "top": "Alex Claremont-Diaz",
+          "bottom": "Henry Fox-Mountchristen-Windsor",
+          "basis": "inferred"
+        },
+        {
+          "para": 1139,
+          "via": "stretched-open~elided",
+          "top": "Henry Fox-Mountchristen-Windsor",
+          "bottom": "Alex Claremont-Diaz",
+          "basis": "pronoun"
+        }
+      ],
+      "survivingReadings": [],
+      "interpretation": "pushed-in~elided initially resolves Alex → Henry at paragraph 1135, but no reading survives. The body-part reaction guard’s prefix regex also accepts finger followed by out, so it rejects an explicit withdrawal-and-reinsertion. Other sentences in the range describe fingertip insertion and second-finger contact but do not yield a finger act.",
+      "proposedChange": "Narrow the pushed-in elided body-part-reaction guard to an actual body-part subject/reaction; do not reject a person withdrawing a finger and inserting it again. Preserve the finger instrument through reinsertion. Add a bounded fingertip-entry form with a locally established receiver. The open-them-up match at 1139 refers to fingers; do not salvage it as a person being opened.",
+      "codePointers": [
+        "index.ts: pushed-in elided guard after slicked-self / before ORAL_ENTRY",
+        "patterns.ts: fingers-into / FINGERS",
+        "event-evidence.ts: continuationInstrument"
+      ],
+      "positiveTest": "Morgan’s finger is inside Rowan’s anus. Morgan draws his finger out and presses in again. → fingering, same pair.",
+      "negativeTest": "Morgan’s palm flexes, pressing into a cushion. → no penetration.",
+      "implementationStatus": "proposal only",
+      "prosePolicy": "Paraphrases with invented adult names; no source prose.",
+      "supplementalLexicalCandidates": [
+        {
+          "para": 1135,
+          "via": "pushed-in~elided",
+          "gate": true,
+          "needs": true
+        },
+        {
+          "para": 1139,
+          "via": "stretched-open~elided",
+          "gate": true,
+          "needs": true
+        }
+      ],
+      "reproductionEvidence": {
+        "engineUnmodified": true,
+        "withFingerOutPrefix": "initial candidate, no surviving act",
+        "withEquivalentWithdrawalVerb": "surviving fingering, Morgan to Rowan",
+        "nonsexualCushionBoundary": "no act",
+        "causeEvidence": "The elided pushed-in body-part prefix guard accepts finger followed by out."
+      }
+    },
+    {
+      "eventIndex": 152,
+      "inventory": "chatgpt-foxden-park-deep-dive.json",
+      "batchId": "chatgpt-foxden-park-deep-dive.json",
+      "id": "foxden-park-act-39",
+      "eventId": 39,
+      "fic": "foxden-park.html",
+      "sourceSha": "0967cc1dbfbb72de0587bb34011435ac3814f9becbbf788353232e37846db0ba",
+      "from": 1331,
+      "to": 1332,
+      "act": "Fingering",
+      "originalAct": "fingering",
+      "performer": "Alex Claremont-Diaz",
+      "receiver": "Henry Fox-Mountchristen-Windsor",
+      "reviewer": "ChatGPT",
+      "coverage": "selected deep-dive inventory",
+      "paragraphHashes": [
+        "67ffa761",
+        "ba4a20d4"
+      ],
+      "caseId": "F06",
+      "classification": "lexical-gap",
+      "title": "Lubricated fingers plus coaxes-open summary",
+      "currentReplayStatus": "missed",
+      "trace": [
+        {
+          "para": 1331,
+          "via": "self-own-fingers",
+          "top": "Henry Fox-Mountchristen-Windsor",
+          "bottom": "Percy \"Pez\" Okonjo",
+          "basis": "inferred"
+        }
+      ],
+      "survivingReadings": [],
+      "interpretation": "The active pair is explicit and the performer oils his fingers before opening the receiver. The sole trace is self-own-fingers with an absent bystander attribution, which does not survive. Oil on one’s own fingers is not self-fingering.",
+      "proposedChange": "Recognize coax/coaxes/coaxed someone open only with same-action finger preparation and sexual target context. Resolve the explicit main-clause actor/receiver, without reusing the rejected self-touch candidate.",
+      "codePointers": [
+        "patterns.ts: stretched-open",
+        "index.ts: elidedSubject / self-own-fingers guards"
+      ],
+      "positiveTest": "Morgan lubricates his fingers, then gently coaxes Rowan’s anus open with them. → partnered fingering.",
+      "negativeTest": "Morgan oils his fingers before coaxing a stuck jar open. → no fingering.",
+      "implementationStatus": "proposal only",
+      "prosePolicy": "Paraphrases with invented adult names; no source prose.",
+      "supplementalLexicalCandidates": [
+        {
+          "para": 1331,
+          "via": "self-own-fingers",
+          "gate": true,
+          "needs": true
+        }
+      ]
+    },
+    {
+      "eventIndex": 154,
+      "inventory": "chatgpt-foxden-park-deep-dive.json",
+      "batchId": "chatgpt-foxden-park-deep-dive.json",
+      "id": "foxden-park-act-41",
+      "eventId": 41,
+      "fic": "foxden-park.html",
+      "sourceSha": "0967cc1dbfbb72de0587bb34011435ac3814f9becbbf788353232e37846db0ba",
+      "from": 1334,
+      "to": 1338,
+      "act": "Fingering",
+      "originalAct": "fingering",
+      "performer": "Alex Claremont-Diaz",
+      "receiver": "Henry Fox-Mountchristen-Windsor",
+      "reviewer": "ChatGPT",
+      "coverage": "selected deep-dive inventory",
+      "paragraphHashes": [
+        "837dc23a",
+        "1fe70da7",
+        "dae150c6",
+        "22339e28",
+        "9c6b56c4"
+      ],
+      "caseId": "F07",
+      "classification": "lexical-and-attribution",
+      "title": "Insertion into locally established wetness",
+      "currentReplayStatus": "missed",
+      "trace": [
+        {
+          "para": 1334,
+          "via": "push-into~elided",
+          "top": "Percy \"Pez\" Okonjo",
+          "bottom": "Alex Claremont-Diaz",
+          "basis": "pronoun"
+        }
+      ],
+      "survivingReadings": [],
+      "interpretation": "After penile withdrawal, the receiver guides the partner’s hand back into his body and the named partner inserts two fingers into the residue there. push-into~elided resolves an absent bystander → Alex and is discarded; the explicit finger-object action is missed.",
+      "proposedChange": "Support finger insertion into a locally established anatomical target described by residue/wetness. Prefer the named finger inserter and established receiver over stale recent-character fallback. Do not infer an opening from wetness alone.",
+      "codePointers": [
+        "patterns.ts: fingers-into",
+        "index.ts: resolvePair / bodyPair / outsider fallback",
+        "event-evidence.ts: namedActionOwner"
+      ],
+      "positiveTest": "Morgan withdraws from Rowan’s anus. Rowan guides Morgan’s hand back there; Morgan slides two fingers into the remaining lubricant. → fingering, Morgan → Rowan.",
+      "negativeTest": "Morgan slides two fingers into spilled lubricant on a table. → no fingering.",
+      "implementationStatus": "proposal only",
+      "prosePolicy": "Paraphrases with invented adult names; no source prose.",
+      "supplementalLexicalCandidates": [
+        {
+          "para": 1334,
+          "via": "push-into~elided",
+          "gate": true,
+          "needs": true
+        },
+        {
+          "para": 1334,
+          "via": "self-toy-it~elided",
+          "gate": true,
+          "needs": false
+        }
+      ]
+    },
+    {
+      "eventIndex": 161,
+      "inventory": "chatgpt-icarus-burning-deep-dive.json",
+      "batchId": "chatgpt-icarus-burning-deep-dive.json",
+      "id": "icarus-burning-act-23",
+      "eventId": 23,
+      "fic": "icarus-burning.html",
+      "sourceSha": "e0ff0d5513abc84e473a0cdb4e422c3801bd0740b9c3d37b1bd24b4f5b6dd6be",
+      "from": 3311,
+      "to": 3311,
+      "act": "Fingering",
+      "originalAct": "fingering",
+      "performer": "Samiel Tremark",
+      "receiver": "Jason Lane",
+      "reviewer": "ChatGPT",
+      "coverage": "selected deep-dive inventory",
+      "paragraphHashes": [
+        "fae7eb4c"
+      ],
+      "caseId": "F08",
+      "classification": "lexical-gap",
+      "title": "Simultaneous finger and penis contact",
+      "currentReplayStatus": "missed",
+      "trace": [
+        {
+          "para": 3311,
+          "via": "penis-into",
+          "top": "Samiel Tremark",
+          "bottom": "Jay",
+          "basis": "pronoun"
+        },
+        {
+          "para": 3311,
+          "via": "penis-inside",
+          "top": "Samiel Tremark",
+          "bottom": "Jay",
+          "basis": "pronoun"
+        }
+      ],
+      "survivingReadings": [
+        {
+          "para": 3311,
+          "via": "penis-into",
+          "kind": "act",
+          "cat": "anal",
+          "act": "anal sex",
+          "a": "Samiel Tremark",
+          "b": "Jay"
+        },
+        {
+          "para": 3311,
+          "via": "penis-inside",
+          "kind": "act",
+          "cat": "anal",
+          "act": "anal sex",
+          "a": "Samiel Tremark",
+          "b": "Jay"
+        }
+      ],
+      "interpretation": "The paragraph correctly retains two penile-act readings. It also describes finger contact at the receiver’s opening and slight fingertip entry alongside the penis. No separate fingering reading survives.",
+      "proposedChange": "Add supported tip-of-finger entry and pads-of-fingers entrance contact, resolving the action separately. Do not retype the valid penile reading or let a deduplication rule collapse different acts in one sentence.",
+      "codePointers": [
+        "patterns.ts: fingers-into / finger entrance-contact families",
+        "index.ts: act refinement / dedupe",
+        "builders.ts: per-act grouping"
+      ],
+      "positiveTest": "Morgan’s penis remains inside Rowan. Morgan presses a fingertip against Rowan’s anal opening beside it. → both penile anal sex and fingering.",
+      "negativeTest": "Morgan’s penis remains inside Rowan while his fingers touch Rowan’s shoulder. → penile act only.",
+      "implementationStatus": "proposal only",
+      "prosePolicy": "Paraphrases with invented adult names; no source prose.",
+      "supplementalLexicalCandidates": [
+        {
+          "para": 3311,
+          "via": "penis-into",
+          "gate": true,
+          "needs": true
+        },
+        {
+          "para": 3311,
+          "via": "penis-inside",
+          "gate": true,
+          "needs": true
+        }
+      ]
+    },
+    {
+      "eventIndex": 204,
+      "inventory": "chatgpt-six-upload-deep-dives.json",
+      "batchId": "chatgpt-six-upload-deep-dives.json",
+      "id": "wolfbird-primary-inv-28",
+      "eventId": 28,
+      "fic": "wolfbird.html",
+      "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+      "from": 1889,
+      "to": 1889,
+      "act": "Fingering",
+      "originalAct": "vaginal fingering",
+      "performer": "Ilya Rozanov",
+      "receiver": "Claire",
+      "reviewer": "ChatGPT",
+      "coverage": "selected deep-dive inventory",
+      "paragraphHashes": [
+        "651f97c3"
+      ],
+      "sourceParagraphSha": "0f50fe76e320c7a43bd421f6dbd2ffa2dc09c9f0ed775e61df73d625fcddc68f",
+      "caseId": "F09",
+      "classification": "attribution-and-guard",
+      "title": "Adult client outside the main pairing",
+      "currentReplayStatus": "missed",
+      "trace": [
+        {
+          "para": 1889,
+          "via": "pushed-in~elided",
+          "top": "Ilya Rozanov",
+          "bottom": "Shane Hollander",
+          "basis": "inferred"
+        }
+      ],
+      "survivingReadings": [],
+      "interpretation": "The surrounding passage names an adult female client. pushed-in~elided initially resolves Ilya → Shane instead. The candidate has a fingers-slick prefix and is discarded; no vaginal fingering survives. The current body-part-reaction guard also matches this prefix.",
+      "proposedChange": "First establish the local named adult client as receiver and retain the performer from the session. Then recognize finger-noun sliding-in with the locally stated between-legs target. Narrow the same reaction guard without permitting fingers in nonsexual targets. Do not credit the main male partner or classify this as anal.",
+      "codePointers": [
+        "characters.ts: buildCast / local participant discovery",
+        "index.ts: resolvePair / pushed-in elided reaction guard / holeType",
+        "patterns.ts: fingers-enter-hole"
+      ],
+      "positiveTest": "Morgan’s adult client is Rowan, a woman. Morgan touches her between her legs; his lubricated fingers slide in. → vaginal fingering, Morgan → Rowan.",
+      "negativeTest": "Morgan adjusts a female client’s sleeve; his fingers slide into the fabric. → no sexual act and no attribution to his usual partner.",
+      "implementationStatus": "proposal only",
+      "prosePolicy": "Paraphrases with invented adult names; no source prose.",
+      "supplementalLexicalCandidates": [
+        {
+          "para": 1889,
+          "via": "pushed-in~elided",
+          "gate": true,
+          "needs": true
+        }
+      ]
+    },
+    {
+      "eventIndex": 225,
+      "inventory": "missed-2051db5b4e06.json",
+      "batchId": "missed-2051db5b4e06",
+      "id": "M10",
+      "eventId": 0,
+      "fic": "innocent-until.html",
+      "sourceSha": "ffa71a4c7726196bc68e41ceb1805c28b7de2698384e84270c5d0f1f6f4ef78c",
+      "from": 1234,
+      "to": 1234,
+      "act": "Toy insertion",
+      "performer": "James \"Bucky\" Barnes",
+      "receiver": "Steve Rogers",
+      "reviewer": "Owner",
+      "coverage": "reviewed window",
+      "sourceParagraphSha": "1b144bbdaf9d60d9c1ed0bb6efc2a0618b0b1187845bbf7d1b1d3e10d8a3b9e2",
+      "caseId": "T06",
+      "classification": "lexical-gap",
+      "title": "Stimulator alias and motion of an existing toy",
+      "currentReplayStatus": "missed",
+      "trace": [],
+      "survivingReadings": [],
+      "interpretation": "An already inserted stimulator moves back and forth inside the named receiver under the performer’s control. No candidate is traced at the citation.",
+      "proposedChange": "Recognize stimulator as a toy only when physical anal placement is established locally. Add ongoing movement of an inserted toy, distinct from a new insertion event.",
+      "codePointers": [
+        "patterns.ts: toy vocabulary / review-inserts-named-toy",
+        "event-evidence.ts: PART / type",
+        "builders.ts: scene grouping"
+      ],
+      "positiveTest": "Morgan has placed an anal stimulator inside Rowan and moves it back and forth. → ongoing partnered toy act.",
+      "negativeTest": "Morgan adjusts a muscle stimulator attached to Rowan’s arm. → no anal toy act.",
+      "implementationStatus": "proposal only",
+      "prosePolicy": "Paraphrases with invented adult names; no source prose.",
+      "supplementalLexicalCandidates": []
+    },
+    {
+      "eventIndex": 227,
+      "inventory": "missed-2051db5b4e06.json",
+      "batchId": "missed-2051db5b4e06",
+      "id": "M17",
+      "eventId": 1,
+      "fic": "innocent-until.html",
+      "sourceSha": "ffa71a4c7726196bc68e41ceb1805c28b7de2698384e84270c5d0f1f6f4ef78c",
+      "from": 1693,
+      "to": 1695,
+      "act": "Toy insertion",
+      "performer": "James \"Bucky\" Barnes",
+      "receiver": "Steve Rogers",
+      "reviewer": "Owner",
+      "coverage": "reviewed window",
+      "sourceParagraphSha": "1b144bbdaf9d60d9c1ed0bb6efc2a0618b0b1187845bbf7d1b1d3e10d8a3b9e2",
+      "caseId": "T07",
+      "classification": "inventory-scope",
+      "title": "Urethral sounding outside the scored anal-toy category",
+      "currentReplayStatus": "missed",
+      "trace": [],
+      "survivingReadings": [],
+      "interpretation": "The passage explicitly identifies a urethral sound and its target. This is a real toy activity, but actualActOf currently represents anal/self toy acts, not urethral sounding. No candidate is traced.",
+      "proposedChange": "Do not make anal toy patterns capture this to improve anal recall. Preserve the owner judgment and queue a taxonomy decision: represent sounding as a separate unscored activity or add a separate evaluated category with its own inventory and tests. Do not silently delete or recast the owner event.",
+      "codePointers": [
+        "scripts/scene-review-scope.mjs: actualActOf / SCORED_ACTS",
+        "inventory: missed-2051db5b4e06.json / M17 event 1",
+        "future dedicated sounding pattern / UI category"
+      ],
+      "positiveTest": "Morgan places a urethral sound into adult Rowan’s urethra. → sounding category if supported; never anal toy sex.",
+      "negativeTest": "Morgan places a plug at Rowan’s anal opening. → anal toy act, not sounding.",
+      "implementationStatus": "proposal only",
+      "prosePolicy": "Paraphrases with invented adult names; no source prose.",
+      "supplementalLexicalCandidates": []
+    },
+    {
+      "eventIndex": 243,
+      "inventory": "sugar-alpha-errors-b91edd7-v1.json",
+      "batchId": "sugar-alpha-errors-b91edd7-v1",
+      "id": "W19",
+      "eventId": "A8",
+      "fic": "sugar-alpha.html",
+      "sourceSha": "68a3c9d689b093806fb072b5e550e79a61eb9f16c1e79ca192ba24597338de5e",
+      "from": 849,
+      "to": 849,
+      "act": "Toy insertion",
+      "performer": "Stiles Stilinski",
+      "receiver": "Stiles Stilinski",
+      "reviewer": "Owner",
+      "coverage": "positive-only",
+      "sourceParagraphSha": "a45eb70114d525d57925d8f98cbdd975a8ae19a3be5dd2adcea51caa98ccc950",
+      "caseId": "T08",
+      "classification": "lexical-and-occurrence",
+      "title": "Negative relief statement contains an actual self toy act",
+      "currentReplayStatus": "missed",
+      "trace": [],
+      "survivingReadings": [],
+      "interpretation": "The adult tries multiple forms of relief, including an explicitly identified dildo in his own anus; the sentence negates relief, not performance. No target-range match is traced.",
+      "proposedChange": "Add a self-use gerund form that supports the local negated-relief construction. Keep negation scoped to its predicate: unsuccessful relief does not mean the attempted stimulation never occurred. Do not weaken genuine no-contact or refusal guards.",
+      "codePointers": [
+        "patterns.ts: self-toy-own-hole / elided variants",
+        "index.ts: NEG / notOnly / occurrence classification"
+      ],
+      "positiveTest": "Rowan tries an anal dildo, but even inserting it into himself does not ease the ache. → performed self toy act.",
+      "negativeTest": "Rowan decides not to insert the dildo and leaves it in its case. → no performed toy act.",
+      "implementationStatus": "proposal only",
+      "prosePolicy": "Paraphrases with invented adult names; no source prose.",
+      "supplementalLexicalCandidates": []
+    },
+    {
+      "eventIndex": 245,
+      "inventory": "sugar-alpha-errors-b91edd7-v1.json",
+      "batchId": "sugar-alpha-errors-b91edd7-v1",
+      "id": "W19",
+      "eventId": "A10",
+      "fic": "sugar-alpha.html",
+      "sourceSha": "68a3c9d689b093806fb072b5e550e79a61eb9f16c1e79ca192ba24597338de5e",
+      "from": 850,
+      "to": 850,
+      "act": "Fingering",
+      "performer": "Stiles Stilinski",
+      "receiver": "Stiles Stilinski",
+      "reviewer": "Owner",
+      "coverage": "positive-only",
+      "sourceParagraphSha": "a45eb70114d525d57925d8f98cbdd975a8ae19a3be5dd2adcea51caa98ccc950",
+      "caseId": "F10",
+      "classification": "lexical-gap",
+      "title": "Self fingers inside of him in an effort/result construction",
+      "currentReplayStatus": "missed",
+      "trace": [
+        {
+          "para": 850,
+          "via": "fuck~elided",
+          "top": "Stiles Stilinski",
+          "bottom": "Derek Hale",
+          "basis": "pronoun"
+        }
+      ],
+      "survivingReadings": [],
+      "interpretation": "The isolated adult describes straining to get his own fingers inside himself. No fingering candidate is traced; the only traced candidate is an unrelated wish for a partner, correctly discarded.",
+      "proposedChange": "Recognize get-own-fingers-inside-of-self only with local physical/contact evidence. Resolve self-use from the actor and body ownership, not the later imagined partner. Distinguish achieved contact from failed reach or a mere plan.",
+      "codePointers": [
+        "patterns.ts: self-finger / fingers-inside",
+        "index.ts: self-fingering routing / occurrenceContext"
+      ],
+      "positiveTest": "Rowan’s fingers are inside his own anus; reaching around strains his back. → self-fingering.",
+      "negativeTest": "Rowan tries to reach his anus but cannot touch it. → no performed self-fingering.",
+      "implementationStatus": "proposal only",
+      "prosePolicy": "Paraphrases with invented adult names; no source prose.",
+      "supplementalLexicalCandidates": [
+        {
+          "para": 850,
+          "via": "fuck~elided",
+          "gate": true,
+          "needs": true
+        }
+      ]
+    },
+    {
+      "eventIndex": 246,
+      "inventory": "sugar-alpha-errors-b91edd7-v1.json",
+      "batchId": "sugar-alpha-errors-b91edd7-v1",
+      "id": "W29",
+      "eventId": "A13",
+      "fic": "sugar-alpha.html",
+      "sourceSha": "68a3c9d689b093806fb072b5e550e79a61eb9f16c1e79ca192ba24597338de5e",
+      "from": 1760,
+      "to": 1761,
+      "act": "Fingering",
+      "performer": "Stiles Stilinski",
+      "receiver": "Stiles Stilinski",
+      "reviewer": "Owner",
+      "coverage": "positive-only",
+      "sourceParagraphSha": "a45eb70114d525d57925d8f98cbdd975a8ae19a3be5dd2adcea51caa98ccc950",
+      "caseId": "F11",
+      "classification": "lexical-gap",
+      "title": "Poking the opening and bare finger continuation",
+      "currentReplayStatus": "missed",
+      "trace": [],
+      "survivingReadings": [],
+      "interpretation": "The adult uses fingers at his own opening and then describes them sliding in while the partner sleeps. No relevant trace or audit reading appears. The later waking partner does not become the performer.",
+      "proposedChange": "Cover use-fingers-to-poke an explicit opening and a bare fingers-slide-in continuation with verified self target. Contact already counts; do not require deeper insertion. Preserve self-use until an explicit new actor intervenes.",
+      "codePointers": [
+        "patterns.ts: self-finger / fingers-enter-hole / entrance contact",
+        "index.ts: local reflexive ownership"
+      ],
+      "positiveTest": "Rowan uses two fingers to touch his own anal opening. They slide in while Morgan sleeps. → self-fingering, Rowan → Rowan.",
+      "negativeTest": "Rowan pokes Morgan’s shoulder to wake him. → no fingering.",
+      "implementationStatus": "proposal only",
+      "prosePolicy": "Paraphrases with invented adult names; no source prose.",
+      "supplementalLexicalCandidates": [
+        {
+          "para": 1760,
+          "via": "stretched-open~elided",
+          "gate": true,
+          "needs": true
+        }
+      ]
+    },
+    {
+      "eventIndex": 298,
+      "inventory": "suspect-two-569919fdfb5e.json",
+      "batchId": "suspect-two-569919fdfb5e",
+      "id": "T16",
+      "eventId": "A10",
+      "fic": "innocent-until.html",
+      "sourceSha": "ffa71a4c7726196bc68e41ceb1805c28b7de2698384e84270c5d0f1f6f4ef78c",
+      "from": 4889,
+      "to": 4889,
+      "act": "Fingering",
+      "performer": "James \"Bucky\" Barnes",
+      "receiver": "Steve Rogers",
+      "reviewer": "Owner",
+      "coverage": "positive-only",
+      "sourceParagraphSha": "1b144bbdaf9d60d9c1ed0bb6efc2a0618b0b1187845bbf7d1b1d3e10d8a3b9e2",
+      "caseId": "F12",
+      "classification": "lexical-gap",
+      "title": "Reverse-order rim contact and coordinated gerunds",
+      "currentReplayStatus": "missed",
+      "trace": [],
+      "survivingReadings": [],
+      "interpretation": "The named performer strokes the receiver’s rim using fingers, followed by coordinated fingering/kissing at an anaphoric hole. No candidate is traced in paragraph 4889.",
+      "proposedChange": "Add verb-over-receiver-rim-with-fingers order and a tightly bounded anatomical anaphor for coordinated actions. First recover the explicit rim contact; do not let kissing suppress simultaneous finger stimulation or reinterpret cheek contact as entrance contact.",
+      "codePointers": [
+        "patterns.ts: finger-noun-to-hole / fingers-to-hole / finger contact families",
+        "index.ts: anatomy and oral guards"
+      ],
+      "positiveTest": "Morgan strokes Rowan’s anal rim with his fingers while kissing the same opening. → fingering plus any independently supported oral contact.",
+      "negativeTest": "Morgan strokes Rowan’s buttock with his fingers while kissing Rowan’s cheek. → no anal fingering.",
+      "implementationStatus": "proposal only",
+      "prosePolicy": "Paraphrases with invented adult names; no source prose.",
+      "supplementalLexicalCandidates": [
+        {
+          "para": 4889,
+          "via": "passive-fucked~elided",
+          "gate": true,
+          "needs": true
+        },
+        {
+          "para": 4889,
+          "via": "be-fucked~elided",
+          "gate": true,
+          "needs": true
+        }
+      ]
+    }
+  ]
+}
