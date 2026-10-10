@@ -429,7 +429,7 @@
       "pairing": "Castiel/Dean Winchester",
       "h": "bdb7d735",
       "via": "care-wrap",
-      "weight": 0.9,
+      "weight": 0.3,
       "source": "chatgpt",
       "reviewerConfidence": 0.98,
       "marks": {
@@ -449,7 +449,7 @@
       "pairing": "Castiel/Dean Winchester",
       "h": "c77554da",
       "via": "dom-grip",
-      "weight": 0.9,
+      "weight": 0.3,
       "source": "chatgpt",
       "reviewerConfidence": 0.97,
       "marks": {
@@ -629,7 +629,7 @@
       "pairing": "Castiel/Dean Winchester",
       "h": "3338f91e",
       "via": "dom-grip",
-      "weight": 0.9,
+      "weight": 0.3,
       "source": "chatgpt",
       "reviewerConfidence": 0.97,
       "marks": {
@@ -649,7 +649,7 @@
       "pairing": "Castiel/Dean Winchester",
       "h": "984c05c0",
       "via": "dom-protect",
-      "weight": 0.9,
+      "weight": 0.3,
       "source": "chatgpt",
       "reviewerConfidence": 0.98,
       "marks": {
@@ -789,7 +789,7 @@
       "pairing": "Castiel/Dean Winchester",
       "h": "400dc5b2",
       "via": "sinks-to-floor",
-      "weight": 0.9,
+      "weight": 0.3,
       "source": "chatgpt",
       "reviewerConfidence": 0.96,
       "marks": {
@@ -1029,7 +1029,7 @@
       "pairing": "Castiel/Dean Winchester",
       "h": "f80a649",
       "via": "dom-carry",
-      "weight": 0.9,
+      "weight": 0.3,
       "source": "chatgpt",
       "reviewerConfidence": 0.98,
       "marks": {

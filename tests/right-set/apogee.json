@@ -371,7 +371,7 @@
       "pairing": "Shane Hollander/Ilya Rozanov",
       "h": "4dd69afb",
       "via": "inside",
-      "weight": 0.9,
+      "weight": 0.3,
       "source": "chatgpt",
       "reviewerConfidence": 0.99,
       "seen": [
@@ -421,7 +421,7 @@
       "pairing": "Shane Hollander/Ilya Rozanov",
       "h": "1c72dca7",
       "via": "fingers-inside",
-      "weight": 0.9,
+      "weight": 0.3,
       "source": "chatgpt",
       "reviewerConfidence": 0.99,
       "seen": [

@@ -179,7 +179,7 @@
       "pairing": "Obi-Wan Kenobi/Anakin Skywalker",
       "h": "3ae8ac9b",
       "via": "flustered-verb",
-      "weight": 0.9,
+      "weight": 0.3,
       "source": "chatgpt",
       "reviewerConfidence": 0.98,
       "marks": {
@@ -199,7 +199,7 @@
       "pairing": "Obi-Wan Kenobi/Anakin Skywalker",
       "h": "a455f7ad",
       "via": "dom-pin",
-      "weight": 0.9,
+      "weight": 0.3,
       "source": "chatgpt",
       "reviewerConfidence": 0.98,
       "marks": {
@@ -338,7 +338,7 @@
       "pairing": "Obi-Wan Kenobi/Anakin Skywalker",
       "h": "45e1d580",
       "via": "dialogue:checking in or leading",
-      "weight": 0.9,
+      "weight": 0.3,
       "source": "chatgpt",
       "reviewerConfidence": 0.98,
       "marks": {
@@ -418,7 +418,7 @@
       "pairing": "Obi-Wan Kenobi/Anakin Skywalker",
       "h": "7e314bae",
       "via": "care-soothe",
-      "weight": 0.9,
+      "weight": 0.3,
       "source": "chatgpt",
       "reviewerConfidence": 0.97,
       "marks": {
@@ -606,7 +606,7 @@
       "pairing": "Obi-Wan Kenobi/Anakin Skywalker",
       "h": "1213b341",
       "via": "mouth-around-him",
-      "weight": 0.9,
+      "weight": 0.3,
       "source": "chatgpt",
       "reviewerConfidence": 0.99,
       "marks": {

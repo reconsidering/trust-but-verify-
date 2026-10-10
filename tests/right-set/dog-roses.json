@@ -217,7 +217,7 @@
       "pairing": "Corbin Scargill/Lauchlan Huxley",
       "h": "3c98f6db",
       "via": "sub-let-lead",
-      "weight": 0.9,
+      "weight": 0.3,
       "source": "chatgpt",
       "reviewerConfidence": 0.98,
       "seen": [
@@ -237,7 +237,7 @@
       "pairing": "Corbin Scargill/Lauchlan Huxley",
       "h": "73eaacd5",
       "via": "lead-by-hand",
-      "weight": 0.9,
+      "weight": 0.3,
       "source": "chatgpt",
       "reviewerConfidence": 0.98,
       "seen": [
@@ -297,7 +297,7 @@
       "pairing": "Corbin Scargill/Lauchlan Huxley",
       "h": "7bc20127",
       "via": "care-soothe",
-      "weight": 0.9,
+      "weight": 0.3,
       "source": "chatgpt",
       "reviewerConfidence": 0.98,
       "seen": [
@@ -317,7 +317,7 @@
       "pairing": "Corbin Scargill/Lauchlan Huxley",
       "h": "8ea6ff9a",
       "via": "lead-by-hand",
-      "weight": 0.9,
+      "weight": 0.3,
       "source": "chatgpt",
       "reviewerConfidence": 0.98,
       "seen": [
@@ -497,7 +497,7 @@
       "pairing": "Corbin Scargill/Lauchlan Huxley",
       "h": "1a6f038b",
       "via": "lead-by-hand",
-      "weight": 0.9,
+      "weight": 0.3,
       "source": "chatgpt",
       "reviewerConfidence": 0.98,
       "seen": [
@@ -517,7 +517,7 @@
       "pairing": "Corbin Scargill/Lauchlan Huxley",
       "h": "3c42e7eb",
       "via": "flustered-verb",
-      "weight": 0.9,
+      "weight": 0.3,
       "source": "chatgpt",
       "reviewerConfidence": 0.98,
       "seen": [
@@ -537,7 +537,7 @@
       "pairing": "Corbin Scargill/Lauchlan Huxley",
       "h": "b1dbd0d0",
       "via": "care-soothe",
-      "weight": 0.9,
+      "weight": 0.3,
       "source": "chatgpt",
       "reviewerConfidence": 0.98,
       "seen": [
@@ -557,7 +557,7 @@
       "pairing": "Corbin Scargill/Lauchlan Huxley",
       "h": "5098287b",
       "via": "care-bring",
-      "weight": 0.9,
+      "weight": 0.3,
       "source": "chatgpt",
       "reviewerConfidence": 0.98,
       "seen": [
@@ -637,7 +637,7 @@
       "pairing": "Corbin Scargill/Lauchlan Huxley",
       "h": "128f102",
       "via": "care-soothe",
-      "weight": 0.9,
+      "weight": 0.3,
       "source": "chatgpt",
       "reviewerConfidence": 0.98,
       "seen": [
@@ -677,7 +677,7 @@
       "pairing": "Corbin Scargill/Lauchlan Huxley",
       "h": "c2c52028",
       "via": "care-soothe",
-      "weight": 0.9,
+      "weight": 0.3,
       "source": "chatgpt",
       "reviewerConfidence": 0.98,
       "seen": [
@@ -737,7 +737,7 @@
       "pairing": "Corbin Scargill/Lauchlan Huxley",
       "h": "f1723fa8",
       "via": "care-soothe",
-      "weight": 0.9,
+      "weight": 0.3,
       "source": "chatgpt",
       "reviewerConfidence": 0.98,
       "seen": [
@@ -757,7 +757,7 @@
       "pairing": "Corbin Scargill/Lauchlan Huxley",
       "h": "f1ed902f",
       "via": "lead-by-hand",
-      "weight": 0.9,
+      "weight": 0.3,
       "source": "chatgpt",
       "reviewerConfidence": 0.98,
       "seen": [
@@ -777,7 +777,7 @@
       "pairing": "Corbin Scargill/Lauchlan Huxley",
       "h": "77799687",
       "via": "sub-let-lead",
-      "weight": 0.9,
+      "weight": 0.3,
       "source": "chatgpt",
       "reviewerConfidence": 0.98,
       "seen": [
@@ -797,7 +797,7 @@
       "pairing": "Corbin Scargill/Lauchlan Huxley",
       "h": "cce2644c",
       "via": "care-soothe",
-      "weight": 0.9,
+      "weight": 0.3,
       "source": "chatgpt",
       "reviewerConfidence": 0.98,
       "seen": [
@@ -817,7 +817,7 @@
       "pairing": "Corbin Scargill/Lauchlan Huxley",
       "h": "f0143bdf",
       "via": "sub-let-lead",
-      "weight": 0.9,
+      "weight": 0.3,
       "source": "chatgpt",
       "reviewerConfidence": 0.98,
       "seen": [
@@ -837,7 +837,7 @@
       "pairing": "Corbin Scargill/Lauchlan Huxley",
       "h": "aeefbc13",
       "via": "care-soothe",
-      "weight": 0.9,
+      "weight": 0.3,
       "source": "chatgpt",
       "reviewerConfidence": 0.98,
       "seen": [
@@ -857,7 +857,7 @@
       "pairing": "Corbin Scargill/Lauchlan Huxley",
       "h": "544f8a49",
       "via": "lead-by-hand",
-      "weight": 0.9,
+      "weight": 0.3,
       "source": "chatgpt",
       "reviewerConfidence": 0.98,
       "seen": [
@@ -877,7 +877,7 @@
       "pairing": "Corbin Scargill/Lauchlan Huxley",
       "h": "3a7c5ffd",
       "via": "care-soothe",
-      "weight": 0.9,
+      "weight": 0.3,
       "source": "chatgpt",
       "reviewerConfidence": 0.98,
       "seen": [
@@ -897,7 +897,7 @@
       "pairing": "Corbin Scargill/Lauchlan Huxley",
       "h": "6a59faa2",
       "via": "cuddle-head-on-chest",
-      "weight": 0.9,
+      "weight": 0.3,
       "source": "chatgpt",
       "reviewerConfidence": 0.98,
       "seen": [
@@ -917,7 +917,7 @@
       "pairing": "Corbin Scargill/Lauchlan Huxley",
       "h": "6820f1d2",
       "via": "care-soothe",
-      "weight": 0.9,
+      "weight": 0.3,
       "source": "chatgpt",
       "reviewerConfidence": 0.98,
       "seen": [
@@ -1007,7 +1007,7 @@
       "pairing": "Corbin Scargill/Lauchlan Huxley",
       "h": "27544f4b",
       "via": "sank-down",
-      "weight": 0.9,
+      "weight": 0.3,
       "source": "chatgpt",
       "reviewerConfidence": 0.97,
       "seen": [
@@ -1073,7 +1073,7 @@
       "pairing": "Corbin Scargill/Lauchlan Huxley",
       "h": "dabbf65b",
       "via": "frottage",
-      "weight": 0.9,
+      "weight": 0.3,
       "source": "chatgpt",
       "reviewerConfidence": 0.98,
       "seen": [
@@ -1106,7 +1106,7 @@
       "pairing": "Corbin Scargill/Lauchlan Huxley",
       "h": "f3483d5a",
       "via": "dialogue:anal sex",
-      "weight": 0.9,
+      "weight": 0.3,
       "source": "chatgpt",
       "reviewerConfidence": 0.98,
       "seen": [
@@ -1140,7 +1140,7 @@
       "pairing": "Corbin Scargill/Lauchlan Huxley",
       "h": "81ae2041",
       "via": "flustered-verb",
-      "weight": 0.9,
+      "weight": 0.3,
       "source": "chatgpt",
       "reviewerConfidence": 0.98,
       "seen": [
@@ -1378,7 +1378,7 @@
       "pairing": "Corbin Scargill/Lauchlan Huxley",
       "h": "1f89d3ae",
       "via": "flustered-verb",
-      "weight": 0.9,
+      "weight": 0.3,
       "source": "chatgpt",
       "reviewerConfidence": 0.98,
       "seen": [
