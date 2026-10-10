@@ -1,0 +1,1060 @@
+{
+  "schema": "reviewed-claims/v1",
+  "date": "2026-10-10",
+  "reviewer": "chatgpt",
+  "weight": 0.9,
+  "minimumReviewerConfidence": 0.95,
+  "labels": {},
+  "answers": [
+    {
+      "id": "panuelo-melody-0",
+      "key": "sucked#bccded2e",
+      "claim": {
+        "fic": "panuelo-melody.html",
+        "sourceSha": "c48052e7c79f1fc28b75b6cbbc2bda5cffc74c6ceec69867e9f3981999d3dad6",
+        "paragraph": 1353,
+        "pattern": "sucked",
+        "act": "blowjob",
+        "kind": "act",
+        "a": "Alex Claremont-Diaz",
+        "b": "Henry Fox-Mountchristen-Windsor",
+        "role": ""
+      }
+    },
+    {
+      "id": "panuelo-melody-1",
+      "key": "lips-around#bccded2e",
+      "claim": {
+        "fic": "panuelo-melody.html",
+        "sourceSha": "c48052e7c79f1fc28b75b6cbbc2bda5cffc74c6ceec69867e9f3981999d3dad6",
+        "paragraph": 1353,
+        "pattern": "lips-around",
+        "act": "blowjob",
+        "kind": "act",
+        "a": "Alex Claremont-Diaz",
+        "b": "Beatrice Fox-Mountchristen-Windsor",
+        "role": ""
+      }
+    },
+    {
+      "id": "panuelo-melody-2",
+      "key": "mouth-around-him#bccded2e",
+      "claim": {
+        "fic": "panuelo-melody.html",
+        "sourceSha": "c48052e7c79f1fc28b75b6cbbc2bda5cffc74c6ceec69867e9f3981999d3dad6",
+        "paragraph": 1353,
+        "pattern": "mouth-around-him",
+        "act": "blowjob",
+        "kind": "act",
+        "a": "Henry Fox-Mountchristen-Windsor",
+        "b": "Alex Claremont-Diaz",
+        "role": ""
+      }
+    },
+    {
+      "id": "panuelo-melody-3",
+      "key": "sucked~elided#1cc3cc7e",
+      "claim": {
+        "fic": "panuelo-melody.html",
+        "sourceSha": "c48052e7c79f1fc28b75b6cbbc2bda5cffc74c6ceec69867e9f3981999d3dad6",
+        "paragraph": 1361,
+        "pattern": "sucked~elided",
+        "act": "blowjob",
+        "kind": "act",
+        "a": "Henry Fox-Mountchristen-Windsor",
+        "b": "Alex Claremont-Diaz",
+        "role": ""
+      }
+    },
+    {
+      "id": "panuelo-melody-4",
+      "key": "riding#a2e20e16",
+      "claim": {
+        "fic": "panuelo-melody.html",
+        "sourceSha": "c48052e7c79f1fc28b75b6cbbc2bda5cffc74c6ceec69867e9f3981999d3dad6",
+        "paragraph": 1371,
+        "pattern": "riding",
+        "act": "blowjob (face-fucking)",
+        "kind": "act",
+        "a": "Alex Claremont-Diaz",
+        "b": "Henry Fox-Mountchristen-Windsor",
+        "role": ""
+      }
+    },
+    {
+      "id": "panuelo-melody-5",
+      "key": "took-in-mouth#a2e20e16",
+      "claim": {
+        "fic": "panuelo-melody.html",
+        "sourceSha": "c48052e7c79f1fc28b75b6cbbc2bda5cffc74c6ceec69867e9f3981999d3dad6",
+        "paragraph": 1371,
+        "pattern": "took-in-mouth",
+        "act": "blowjob",
+        "kind": "act",
+        "a": "Alex Claremont-Diaz",
+        "b": "Henry Fox-Mountchristen-Windsor",
+        "role": ""
+      }
+    },
+    {
+      "id": "panuelo-melody-6",
+      "key": "takes-between-lips#a2e20e16",
+      "claim": {
+        "fic": "panuelo-melody.html",
+        "sourceSha": "c48052e7c79f1fc28b75b6cbbc2bda5cffc74c6ceec69867e9f3981999d3dad6",
+        "paragraph": 1371,
+        "pattern": "takes-between-lips",
+        "act": "blowjob",
+        "kind": "act",
+        "a": "Alex Claremont-Diaz",
+        "b": "Henry Fox-Mountchristen-Windsor",
+        "role": ""
+      }
+    },
+    {
+      "id": "panuelo-melody-7",
+      "key": "fucked-mouth~elided#ab1d26d",
+      "claim": {
+        "fic": "panuelo-melody.html",
+        "sourceSha": "c48052e7c79f1fc28b75b6cbbc2bda5cffc74c6ceec69867e9f3981999d3dad6",
+        "paragraph": 1377,
+        "pattern": "fucked-mouth~elided",
+        "act": "face-fucking",
+        "kind": "act",
+        "a": "Alex Claremont-Diaz",
+        "b": "Henry Fox-Mountchristen-Windsor",
+        "role": ""
+      }
+    },
+    {
+      "id": "panuelo-melody-8",
+      "key": "took-in-mouth#c8e41ac8",
+      "claim": {
+        "fic": "panuelo-melody.html",
+        "sourceSha": "c48052e7c79f1fc28b75b6cbbc2bda5cffc74c6ceec69867e9f3981999d3dad6",
+        "paragraph": 1378,
+        "pattern": "took-in-mouth",
+        "act": "blowjob",
+        "kind": "act",
+        "a": "Henry Fox-Mountchristen-Windsor",
+        "b": "Alex Claremont-Diaz",
+        "role": ""
+      }
+    },
+    {
+      "id": "panuelo-melody-9",
+      "key": "takes-between-lips#c8e41ac8",
+      "claim": {
+        "fic": "panuelo-melody.html",
+        "sourceSha": "c48052e7c79f1fc28b75b6cbbc2bda5cffc74c6ceec69867e9f3981999d3dad6",
+        "paragraph": 1378,
+        "pattern": "takes-between-lips",
+        "act": "blowjob",
+        "kind": "act",
+        "a": "Henry Fox-Mountchristen-Windsor",
+        "b": "Alex Claremont-Diaz",
+        "role": ""
+      }
+    },
+    {
+      "id": "panuelo-melody-10",
+      "key": "went-down-on#e0277c9e",
+      "claim": {
+        "fic": "panuelo-melody.html",
+        "sourceSha": "c48052e7c79f1fc28b75b6cbbc2bda5cffc74c6ceec69867e9f3981999d3dad6",
+        "paragraph": 1379,
+        "pattern": "went-down-on",
+        "act": "blowjob",
+        "kind": "act",
+        "a": "Alex Claremont-Diaz",
+        "b": "Henry Fox-Mountchristen-Windsor",
+        "role": ""
+      }
+    },
+    {
+      "id": "panuelo-melody-11",
+      "key": "sank-down#e0277c9e",
+      "claim": {
+        "fic": "panuelo-melody.html",
+        "sourceSha": "c48052e7c79f1fc28b75b6cbbc2bda5cffc74c6ceec69867e9f3981999d3dad6",
+        "paragraph": 1379,
+        "pattern": "sank-down",
+        "act": "anal sex (riding)",
+        "kind": "act",
+        "a": "Alex Claremont-Diaz",
+        "b": "Henry Fox-Mountchristen-Windsor",
+        "role": ""
+      }
+    },
+    {
+      "id": "panuelo-melody-12",
+      "key": "riding#8c83589e",
+      "claim": {
+        "fic": "panuelo-melody.html",
+        "sourceSha": "c48052e7c79f1fc28b75b6cbbc2bda5cffc74c6ceec69867e9f3981999d3dad6",
+        "paragraph": 1379,
+        "pattern": "riding",
+        "act": "anal sex (riding)",
+        "kind": "act",
+        "a": "Alex Claremont-Diaz",
+        "b": "Henry Fox-Mountchristen-Windsor",
+        "role": ""
+      }
+    },
+    {
+      "id": "panuelo-melody-13",
+      "key": "swallowed-down#d649240",
+      "claim": {
+        "fic": "panuelo-melody.html",
+        "sourceSha": "c48052e7c79f1fc28b75b6cbbc2bda5cffc74c6ceec69867e9f3981999d3dad6",
+        "paragraph": 1386,
+        "pattern": "swallowed-down",
+        "act": "blowjob",
+        "kind": "act",
+        "a": "Alex Claremont-Diaz",
+        "b": "Henry Fox-Mountchristen-Windsor",
+        "role": ""
+      }
+    },
+    {
+      "id": "panuelo-melody-14",
+      "key": "passive-fucked~elided#dd9758fc",
+      "claim": {
+        "fic": "panuelo-melody.html",
+        "sourceSha": "c48052e7c79f1fc28b75b6cbbc2bda5cffc74c6ceec69867e9f3981999d3dad6",
+        "paragraph": 1391,
+        "pattern": "passive-fucked~elided",
+        "act": "anal sex",
+        "kind": "act",
+        "a": "Alex Claremont-Diaz",
+        "b": "Henry Fox-Mountchristen-Windsor",
+        "role": ""
+      }
+    },
+    {
+      "id": "panuelo-melody-15",
+      "key": "lips-around#58bca872",
+      "claim": {
+        "fic": "panuelo-melody.html",
+        "sourceSha": "c48052e7c79f1fc28b75b6cbbc2bda5cffc74c6ceec69867e9f3981999d3dad6",
+        "paragraph": 1433,
+        "pattern": "lips-around",
+        "act": "blowjob",
+        "kind": "act",
+        "a": "Henry Fox-Mountchristen-Windsor",
+        "b": "Alex Claremont-Diaz",
+        "role": ""
+      }
+    },
+    {
+      "id": "panuelo-melody-16",
+      "key": "sucked#2bd4c303",
+      "claim": {
+        "fic": "panuelo-melody.html",
+        "sourceSha": "c48052e7c79f1fc28b75b6cbbc2bda5cffc74c6ceec69867e9f3981999d3dad6",
+        "paragraph": 1446,
+        "pattern": "sucked",
+        "act": "blowjob",
+        "kind": "act",
+        "a": "Henry Fox-Mountchristen-Windsor",
+        "b": "Alex Claremont-Diaz",
+        "role": ""
+      }
+    },
+    {
+      "id": "panuelo-melody-17",
+      "key": "dd5-pushes-finger-in#8a0cc2d",
+      "claim": {
+        "fic": "panuelo-melody.html",
+        "sourceSha": "c48052e7c79f1fc28b75b6cbbc2bda5cffc74c6ceec69867e9f3981999d3dad6",
+        "paragraph": 1448,
+        "pattern": "dd5-pushes-finger-in",
+        "act": "fingering",
+        "kind": "act",
+        "a": "Alex Claremont-Diaz",
+        "b": "Henry Fox-Mountchristen-Windsor",
+        "role": ""
+      }
+    },
+    {
+      "id": "panuelo-melody-18",
+      "key": "bobbed-head~elided#ee030564",
+      "claim": {
+        "fic": "panuelo-melody.html",
+        "sourceSha": "c48052e7c79f1fc28b75b6cbbc2bda5cffc74c6ceec69867e9f3981999d3dad6",
+        "paragraph": 1478,
+        "pattern": "bobbed-head~elided",
+        "act": "blowjob",
+        "kind": "act",
+        "a": "Henry Fox-Mountchristen-Windsor",
+        "b": "Alex Claremont-Diaz",
+        "role": ""
+      }
+    },
+    {
+      "id": "panuelo-melody-19",
+      "key": "push-into#b0415a75",
+      "claim": {
+        "fic": "panuelo-melody.html",
+        "sourceSha": "c48052e7c79f1fc28b75b6cbbc2bda5cffc74c6ceec69867e9f3981999d3dad6",
+        "paragraph": 1500,
+        "pattern": "push-into",
+        "act": "anal sex",
+        "kind": "act",
+        "a": "Alex Claremont-Diaz",
+        "b": "Henry Fox-Mountchristen-Windsor",
+        "role": ""
+      }
+    },
+    {
+      "id": "panuelo-melody-20",
+      "key": "push-into#6c4f4237",
+      "claim": {
+        "fic": "panuelo-melody.html",
+        "sourceSha": "c48052e7c79f1fc28b75b6cbbc2bda5cffc74c6ceec69867e9f3981999d3dad6",
+        "paragraph": 1504,
+        "pattern": "push-into",
+        "act": "anal sex",
+        "kind": "act",
+        "a": "Alex Claremont-Diaz",
+        "b": "Henry Fox-Mountchristen-Windsor",
+        "role": ""
+      }
+    },
+    {
+      "id": "panuelo-melody-21",
+      "key": "penis-inside#6c4f4237",
+      "claim": {
+        "fic": "panuelo-melody.html",
+        "sourceSha": "c48052e7c79f1fc28b75b6cbbc2bda5cffc74c6ceec69867e9f3981999d3dad6",
+        "paragraph": 1504,
+        "pattern": "penis-inside",
+        "act": "anal sex",
+        "kind": "act",
+        "a": "Alex Claremont-Diaz",
+        "b": "Henry Fox-Mountchristen-Windsor",
+        "role": ""
+      }
+    },
+    {
+      "id": "panuelo-melody-22",
+      "key": "push-into~elided#2a55d8e2",
+      "claim": {
+        "fic": "panuelo-melody.html",
+        "sourceSha": "c48052e7c79f1fc28b75b6cbbc2bda5cffc74c6ceec69867e9f3981999d3dad6",
+        "paragraph": 1509,
+        "pattern": "push-into~elided",
+        "act": "anal sex",
+        "kind": "act",
+        "a": "Alex Claremont-Diaz",
+        "b": "Henry Fox-Mountchristen-Windsor",
+        "role": ""
+      }
+    },
+    {
+      "id": "panuelo-melody-23",
+      "key": "clenched-around#2a55d8e2",
+      "claim": {
+        "fic": "panuelo-melody.html",
+        "sourceSha": "c48052e7c79f1fc28b75b6cbbc2bda5cffc74c6ceec69867e9f3981999d3dad6",
+        "paragraph": 1509,
+        "pattern": "clenched-around",
+        "act": "anal sex",
+        "kind": "act",
+        "a": "Alex Claremont-Diaz",
+        "b": "Henry Fox-Mountchristen-Windsor",
+        "role": ""
+      }
+    },
+    {
+      "id": "panuelo-melody-24",
+      "key": "fuck#5812059d",
+      "claim": {
+        "fic": "panuelo-melody.html",
+        "sourceSha": "c48052e7c79f1fc28b75b6cbbc2bda5cffc74c6ceec69867e9f3981999d3dad6",
+        "paragraph": 1514,
+        "pattern": "fuck",
+        "act": "anal sex",
+        "kind": "act",
+        "a": "Alex Claremont-Diaz",
+        "b": "Henry Fox-Mountchristen-Windsor",
+        "role": ""
+      }
+    },
+    {
+      "id": "panuelo-melody-25",
+      "key": "took-head-mouth#759f7678",
+      "claim": {
+        "fic": "panuelo-melody.html",
+        "sourceSha": "c48052e7c79f1fc28b75b6cbbc2bda5cffc74c6ceec69867e9f3981999d3dad6",
+        "paragraph": 1526,
+        "pattern": "took-head-mouth",
+        "act": "blowjob",
+        "kind": "act",
+        "a": "Alex Claremont-Diaz",
+        "b": "Henry Fox-Mountchristen-Windsor",
+        "role": ""
+      }
+    },
+    {
+      "id": "panuelo-melody-26",
+      "key": "push-into#8bfa84e6",
+      "claim": {
+        "fic": "panuelo-melody.html",
+        "sourceSha": "c48052e7c79f1fc28b75b6cbbc2bda5cffc74c6ceec69867e9f3981999d3dad6",
+        "paragraph": 1532,
+        "pattern": "push-into",
+        "act": "anal sex",
+        "kind": "act",
+        "a": "Alex Claremont-Diaz",
+        "b": "Henry Fox-Mountchristen-Windsor",
+        "role": ""
+      }
+    },
+    {
+      "id": "panuelo-melody-27",
+      "key": "penis-into#4d2cf395",
+      "claim": {
+        "fic": "panuelo-melody.html",
+        "sourceSha": "c48052e7c79f1fc28b75b6cbbc2bda5cffc74c6ceec69867e9f3981999d3dad6",
+        "paragraph": 1545,
+        "pattern": "penis-into",
+        "act": "anal sex",
+        "kind": "act",
+        "a": "Alex Claremont-Diaz",
+        "b": "Henry Fox-Mountchristen-Windsor",
+        "role": ""
+      }
+    },
+    {
+      "id": "panuelo-melody-28",
+      "key": "penis-into-him#4d2cf395",
+      "claim": {
+        "fic": "panuelo-melody.html",
+        "sourceSha": "c48052e7c79f1fc28b75b6cbbc2bda5cffc74c6ceec69867e9f3981999d3dad6",
+        "paragraph": 1545,
+        "pattern": "penis-into-him",
+        "act": "anal sex",
+        "kind": "act",
+        "a": "Alex Claremont-Diaz",
+        "b": "Henry Fox-Mountchristen-Windsor",
+        "role": ""
+      }
+    },
+    {
+      "id": "panuelo-melody-29",
+      "key": "push-into#daa29068",
+      "claim": {
+        "fic": "panuelo-melody.html",
+        "sourceSha": "c48052e7c79f1fc28b75b6cbbc2bda5cffc74c6ceec69867e9f3981999d3dad6",
+        "paragraph": 1554,
+        "pattern": "push-into",
+        "act": "anal sex",
+        "kind": "act",
+        "a": "Alex Claremont-Diaz",
+        "b": "Henry Fox-Mountchristen-Windsor",
+        "role": ""
+      }
+    },
+    {
+      "id": "panuelo-melody-30",
+      "key": "clenched-around#caf612f6",
+      "claim": {
+        "fic": "panuelo-melody.html",
+        "sourceSha": "c48052e7c79f1fc28b75b6cbbc2bda5cffc74c6ceec69867e9f3981999d3dad6",
+        "paragraph": 1572,
+        "pattern": "clenched-around",
+        "act": "fingering",
+        "kind": "act",
+        "a": "Henry Fox-Mountchristen-Windsor",
+        "b": "Alex Claremont-Diaz",
+        "role": ""
+      }
+    },
+    {
+      "id": "panuelo-melody-33",
+      "key": "dd2-clenching-around-cock#c9a25a9c",
+      "claim": {
+        "fic": "panuelo-melody.html",
+        "sourceSha": "c48052e7c79f1fc28b75b6cbbc2bda5cffc74c6ceec69867e9f3981999d3dad6",
+        "paragraph": 1623,
+        "pattern": "dd2-clenching-around-cock",
+        "act": "anal sex",
+        "kind": "act",
+        "a": "Alex Claremont-Diaz",
+        "b": "Henry Fox-Mountchristen-Windsor",
+        "role": ""
+      }
+    },
+    {
+      "id": "panuelo-melody-34",
+      "key": "clenched-around#c9a25a9c",
+      "claim": {
+        "fic": "panuelo-melody.html",
+        "sourceSha": "c48052e7c79f1fc28b75b6cbbc2bda5cffc74c6ceec69867e9f3981999d3dad6",
+        "paragraph": 1623,
+        "pattern": "clenched-around",
+        "act": "anal sex",
+        "kind": "act",
+        "a": "Alex Claremont-Diaz",
+        "b": "Henry Fox-Mountchristen-Windsor",
+        "role": ""
+      }
+    },
+    {
+      "id": "panuelo-melody-35",
+      "key": "riding#fe1d736a",
+      "claim": {
+        "fic": "panuelo-melody.html",
+        "sourceSha": "c48052e7c79f1fc28b75b6cbbc2bda5cffc74c6ceec69867e9f3981999d3dad6",
+        "paragraph": 1634,
+        "pattern": "riding",
+        "act": "anal sex (riding)",
+        "kind": "act",
+        "a": "Alex Claremont-Diaz",
+        "b": "Henry Fox-Mountchristen-Windsor",
+        "role": ""
+      }
+    },
+    {
+      "id": "panuelo-melody-36",
+      "key": "dd-grinds-onto-cock#fe1d736a",
+      "claim": {
+        "fic": "panuelo-melody.html",
+        "sourceSha": "c48052e7c79f1fc28b75b6cbbc2bda5cffc74c6ceec69867e9f3981999d3dad6",
+        "paragraph": 1634,
+        "pattern": "dd-grinds-onto-cock",
+        "act": "anal sex",
+        "kind": "act",
+        "a": "Alex Claremont-Diaz",
+        "b": "Henry Fox-Mountchristen-Windsor",
+        "role": ""
+      }
+    },
+    {
+      "id": "panuelo-melody-37",
+      "key": "inside#25a487e4",
+      "claim": {
+        "fic": "panuelo-melody.html",
+        "sourceSha": "c48052e7c79f1fc28b75b6cbbc2bda5cffc74c6ceec69867e9f3981999d3dad6",
+        "paragraph": 1640,
+        "pattern": "inside",
+        "act": "anal sex",
+        "kind": "act",
+        "a": "Alex Claremont-Diaz",
+        "b": "Henry Fox-Mountchristen-Windsor",
+        "role": ""
+      }
+    },
+    {
+      "id": "panuelo-melody-38",
+      "key": "clenched-around#cd51ba14",
+      "claim": {
+        "fic": "panuelo-melody.html",
+        "sourceSha": "c48052e7c79f1fc28b75b6cbbc2bda5cffc74c6ceec69867e9f3981999d3dad6",
+        "paragraph": 1677,
+        "pattern": "clenched-around",
+        "act": "anal sex",
+        "kind": "act",
+        "a": "Alex Claremont-Diaz",
+        "b": "Henry Fox-Mountchristen-Windsor",
+        "role": ""
+      }
+    },
+    {
+      "id": "panuelo-melody-39",
+      "key": "bounce-in-lap#2b2d14bf",
+      "claim": {
+        "fic": "panuelo-melody.html",
+        "sourceSha": "c48052e7c79f1fc28b75b6cbbc2bda5cffc74c6ceec69867e9f3981999d3dad6",
+        "paragraph": 1686,
+        "pattern": "bounce-in-lap",
+        "act": "anal sex (riding)",
+        "kind": "act",
+        "a": "Alex Claremont-Diaz",
+        "b": "Henry Fox-Mountchristen-Windsor",
+        "role": ""
+      }
+    },
+    {
+      "id": "panuelo-melody-42",
+      "key": "dd-grinds-onto-cock#e1190fd5",
+      "claim": {
+        "fic": "panuelo-melody.html",
+        "sourceSha": "c48052e7c79f1fc28b75b6cbbc2bda5cffc74c6ceec69867e9f3981999d3dad6",
+        "paragraph": 1686,
+        "pattern": "dd-grinds-onto-cock",
+        "act": "anal sex",
+        "kind": "act",
+        "a": "Alex Claremont-Diaz",
+        "b": "Henry Fox-Mountchristen-Windsor",
+        "role": ""
+      }
+    },
+    {
+      "id": "panuelo-melody-43",
+      "key": "passive-fucked#2bb12ca6",
+      "claim": {
+        "fic": "panuelo-melody.html",
+        "sourceSha": "c48052e7c79f1fc28b75b6cbbc2bda5cffc74c6ceec69867e9f3981999d3dad6",
+        "paragraph": 1689,
+        "pattern": "passive-fucked",
+        "act": "anal sex",
+        "kind": "act",
+        "a": "Alex Claremont-Diaz",
+        "b": "Henry Fox-Mountchristen-Windsor",
+        "role": ""
+      }
+    },
+    {
+      "id": "panuelo-melody-44",
+      "key": "passive-fucked#7148fa8d",
+      "claim": {
+        "fic": "panuelo-melody.html",
+        "sourceSha": "c48052e7c79f1fc28b75b6cbbc2bda5cffc74c6ceec69867e9f3981999d3dad6",
+        "paragraph": 1691,
+        "pattern": "passive-fucked",
+        "act": "anal sex",
+        "kind": "act",
+        "a": "Alex Claremont-Diaz",
+        "b": "Henry Fox-Mountchristen-Windsor",
+        "role": ""
+      }
+    },
+    {
+      "id": "panuelo-melody-45",
+      "key": "fuck#ddb5e626",
+      "claim": {
+        "fic": "panuelo-melody.html",
+        "sourceSha": "c48052e7c79f1fc28b75b6cbbc2bda5cffc74c6ceec69867e9f3981999d3dad6",
+        "paragraph": 1694,
+        "pattern": "fuck",
+        "act": "anal sex",
+        "kind": "act",
+        "a": "Alex Claremont-Diaz",
+        "b": "Henry Fox-Mountchristen-Windsor",
+        "role": ""
+      }
+    },
+    {
+      "id": "panuelo-melody-46",
+      "key": "riding#ecda584b",
+      "claim": {
+        "fic": "panuelo-melody.html",
+        "sourceSha": "c48052e7c79f1fc28b75b6cbbc2bda5cffc74c6ceec69867e9f3981999d3dad6",
+        "paragraph": 1694,
+        "pattern": "riding",
+        "act": "anal sex (riding)",
+        "kind": "act",
+        "a": "Alex Claremont-Diaz",
+        "b": "Henry Fox-Mountchristen-Windsor",
+        "role": ""
+      }
+    },
+    {
+      "id": "panuelo-melody-47",
+      "key": "push-into#e026e96b",
+      "claim": {
+        "fic": "panuelo-melody.html",
+        "sourceSha": "c48052e7c79f1fc28b75b6cbbc2bda5cffc74c6ceec69867e9f3981999d3dad6",
+        "paragraph": 1698,
+        "pattern": "push-into",
+        "act": "anal sex",
+        "kind": "act",
+        "a": "Alex Claremont-Diaz",
+        "b": "Henry Fox-Mountchristen-Windsor",
+        "role": ""
+      }
+    },
+    {
+      "id": "panuelo-melody-48",
+      "key": "rock-into#e4270918",
+      "claim": {
+        "fic": "panuelo-melody.html",
+        "sourceSha": "c48052e7c79f1fc28b75b6cbbc2bda5cffc74c6ceec69867e9f3981999d3dad6",
+        "paragraph": 1732,
+        "pattern": "rock-into",
+        "act": "anal sex",
+        "kind": "act",
+        "a": "Henry Fox-Mountchristen-Windsor",
+        "b": "Alex Claremont-Diaz",
+        "role": ""
+      }
+    },
+    {
+      "id": "panuelo-melody-49",
+      "key": "hole-around#3a9a2f7f",
+      "claim": {
+        "fic": "panuelo-melody.html",
+        "sourceSha": "c48052e7c79f1fc28b75b6cbbc2bda5cffc74c6ceec69867e9f3981999d3dad6",
+        "paragraph": 1740,
+        "pattern": "hole-around",
+        "act": "anal sex",
+        "kind": "act",
+        "a": "Alex Claremont-Diaz",
+        "b": "Henry Fox-Mountchristen-Windsor",
+        "role": ""
+      }
+    },
+    {
+      "id": "panuelo-melody-50",
+      "key": "rock-into#2bf7ba6b",
+      "claim": {
+        "fic": "panuelo-melody.html",
+        "sourceSha": "c48052e7c79f1fc28b75b6cbbc2bda5cffc74c6ceec69867e9f3981999d3dad6",
+        "paragraph": 1744,
+        "pattern": "rock-into",
+        "act": "anal sex",
+        "kind": "act",
+        "a": "Alex Claremont-Diaz",
+        "b": "Henry Fox-Mountchristen-Windsor",
+        "role": ""
+      }
+    },
+    {
+      "id": "panuelo-melody-51",
+      "key": "penis-inside#44350d2f",
+      "claim": {
+        "fic": "panuelo-melody.html",
+        "sourceSha": "c48052e7c79f1fc28b75b6cbbc2bda5cffc74c6ceec69867e9f3981999d3dad6",
+        "paragraph": 1776,
+        "pattern": "penis-inside",
+        "act": "anal sex",
+        "kind": "act",
+        "a": "Alex Claremont-Diaz",
+        "b": "Henry Fox-Mountchristen-Windsor",
+        "role": ""
+      }
+    },
+    {
+      "id": "panuelo-melody-55",
+      "key": "dd-hj-fist-works#983a977c",
+      "claim": {
+        "fic": "panuelo-melody.html",
+        "sourceSha": "c48052e7c79f1fc28b75b6cbbc2bda5cffc74c6ceec69867e9f3981999d3dad6",
+        "paragraph": 819,
+        "pattern": "dd-hj-fist-works",
+        "act": "handjob",
+        "kind": "handjob",
+        "a": "Alex Claremont-Diaz",
+        "b": "Henry Fox-Mountchristen-Windsor",
+        "role": "top"
+      }
+    },
+    {
+      "id": "panuelo-melody-56",
+      "key": "sub-let-lead~elided#836ea5b5",
+      "claim": {
+        "fic": "panuelo-melody.html",
+        "sourceSha": "c48052e7c79f1fc28b75b6cbbc2bda5cffc74c6ceec69867e9f3981999d3dad6",
+        "paragraph": 1230,
+        "pattern": "sub-let-lead~elided",
+        "act": "letting someone lead",
+        "kind": "behavior",
+        "a": "Henry Fox-Mountchristen-Windsor",
+        "b": "Alex Claremont-Diaz",
+        "role": "bottom"
+      }
+    },
+    {
+      "id": "panuelo-melody-59",
+      "key": "dialogue:anal sex#c99af14b",
+      "claim": {
+        "fic": "panuelo-melody.html",
+        "sourceSha": "c48052e7c79f1fc28b75b6cbbc2bda5cffc74c6ceec69867e9f3981999d3dad6",
+        "paragraph": 1282,
+        "pattern": "dialogue:anal sex",
+        "act": "anal sex",
+        "kind": "said",
+        "a": "Henry Fox-Mountchristen-Windsor",
+        "b": "Alex Claremont-Diaz",
+        "role": "bottom"
+      }
+    },
+    {
+      "id": "panuelo-melody-60",
+      "key": "dd-hj-fingers-around~elided#6d9965b8",
+      "claim": {
+        "fic": "panuelo-melody.html",
+        "sourceSha": "c48052e7c79f1fc28b75b6cbbc2bda5cffc74c6ceec69867e9f3981999d3dad6",
+        "paragraph": 1339,
+        "pattern": "dd-hj-fingers-around~elided",
+        "act": "handjob",
+        "kind": "handjob",
+        "a": "Henry Fox-Mountchristen-Windsor",
+        "b": "Alex Claremont-Diaz",
+        "role": "top"
+      }
+    },
+    {
+      "id": "panuelo-melody-61",
+      "key": "dialogue:asking to be fed a cock#7cc76666",
+      "claim": {
+        "fic": "panuelo-melody.html",
+        "sourceSha": "c48052e7c79f1fc28b75b6cbbc2bda5cffc74c6ceec69867e9f3981999d3dad6",
+        "paragraph": 1368,
+        "pattern": "dialogue:asking to be fed a cock",
+        "act": "asking to be fed a cock",
+        "kind": "said",
+        "a": "Henry Fox-Mountchristen-Windsor",
+        "b": "Alex Claremont-Diaz",
+        "role": "bottom"
+      }
+    },
+    {
+      "id": "panuelo-melody-62",
+      "key": "dialogue:blowjob#7cc76666",
+      "claim": {
+        "fic": "panuelo-melody.html",
+        "sourceSha": "c48052e7c79f1fc28b75b6cbbc2bda5cffc74c6ceec69867e9f3981999d3dad6",
+        "paragraph": 1368,
+        "pattern": "dialogue:blowjob",
+        "act": "blowjob",
+        "kind": "said",
+        "a": "Henry Fox-Mountchristen-Windsor",
+        "b": "Alex Claremont-Diaz",
+        "role": "bottom"
+      }
+    },
+    {
+      "id": "panuelo-melody-63",
+      "key": "push-into~elided#ab1d26d",
+      "claim": {
+        "fic": "panuelo-melody.html",
+        "sourceSha": "c48052e7c79f1fc28b75b6cbbc2bda5cffc74c6ceec69867e9f3981999d3dad6",
+        "paragraph": 1377,
+        "pattern": "push-into~elided",
+        "act": "anal sex",
+        "kind": "hypothetical",
+        "a": "Alex Claremont-Diaz",
+        "b": "Beatrice Fox-Mountchristen-Windsor",
+        "role": "bottom"
+      }
+    },
+    {
+      "id": "panuelo-melody-64",
+      "key": "fuck~elided#dd9758fc",
+      "claim": {
+        "fic": "panuelo-melody.html",
+        "sourceSha": "c48052e7c79f1fc28b75b6cbbc2bda5cffc74c6ceec69867e9f3981999d3dad6",
+        "paragraph": 1391,
+        "pattern": "fuck~elided",
+        "act": "anal sex",
+        "kind": "wanted",
+        "a": "Henry Fox-Mountchristen-Windsor",
+        "b": "Alex Claremont-Diaz",
+        "role": "top"
+      }
+    },
+    {
+      "id": "panuelo-melody-65",
+      "key": "arch-back#dd9758fc",
+      "claim": {
+        "fic": "panuelo-melody.html",
+        "sourceSha": "c48052e7c79f1fc28b75b6cbbc2bda5cffc74c6ceec69867e9f3981999d3dad6",
+        "paragraph": 1391,
+        "pattern": "arch-back",
+        "act": "arching their back",
+        "kind": "touch",
+        "a": "Henry Fox-Mountchristen-Windsor",
+        "b": "Alex Claremont-Diaz",
+        "role": "bottom"
+      }
+    },
+    {
+      "id": "panuelo-melody-66",
+      "key": "fingers-inside#df894313",
+      "claim": {
+        "fic": "panuelo-melody.html",
+        "sourceSha": "c48052e7c79f1fc28b75b6cbbc2bda5cffc74c6ceec69867e9f3981999d3dad6",
+        "paragraph": 1471,
+        "pattern": "fingers-inside",
+        "act": "fingering himself",
+        "kind": "solo",
+        "a": "Alex Claremont-Diaz",
+        "b": "Henry Fox-Mountchristen-Windsor",
+        "role": "bottom"
+      }
+    },
+    {
+      "id": "panuelo-melody-67",
+      "key": "dd-hj-fingers-around#42178210",
+      "claim": {
+        "fic": "panuelo-melody.html",
+        "sourceSha": "c48052e7c79f1fc28b75b6cbbc2bda5cffc74c6ceec69867e9f3981999d3dad6",
+        "paragraph": 1492,
+        "pattern": "dd-hj-fingers-around",
+        "act": "handjob",
+        "kind": "handjob",
+        "a": "Alex Claremont-Diaz",
+        "b": "Henry Fox-Mountchristen-Windsor",
+        "role": "top"
+      }
+    },
+    {
+      "id": "panuelo-melody-68",
+      "key": "hj-stroke~elided#2a55d8e2",
+      "claim": {
+        "fic": "panuelo-melody.html",
+        "sourceSha": "c48052e7c79f1fc28b75b6cbbc2bda5cffc74c6ceec69867e9f3981999d3dad6",
+        "paragraph": 1509,
+        "pattern": "hj-stroke~elided",
+        "act": "handjob",
+        "kind": "handjob",
+        "a": "Alex Claremont-Diaz",
+        "b": "Henry Fox-Mountchristen-Windsor",
+        "role": "top"
+      }
+    },
+    {
+      "id": "panuelo-melody-71",
+      "key": "push-into~elided#3d40867c",
+      "claim": {
+        "fic": "panuelo-melody.html",
+        "sourceSha": "c48052e7c79f1fc28b75b6cbbc2bda5cffc74c6ceec69867e9f3981999d3dad6",
+        "paragraph": 1644,
+        "pattern": "push-into~elided",
+        "act": "anal sex",
+        "kind": "wanted",
+        "a": "Alex Claremont-Diaz",
+        "b": "Henry Fox-Mountchristen-Windsor",
+        "role": "top"
+      }
+    },
+    {
+      "id": "panuelo-melody-72",
+      "key": "aftercare-held~elided#e026e96b",
+      "claim": {
+        "fic": "panuelo-melody.html",
+        "sourceSha": "c48052e7c79f1fc28b75b6cbbc2bda5cffc74c6ceec69867e9f3981999d3dad6",
+        "paragraph": 1698,
+        "pattern": "aftercare-held~elided",
+        "act": "being held afterwards",
+        "kind": "aftercare",
+        "a": "Henry Fox-Mountchristen-Windsor",
+        "b": "Alex Claremont-Diaz",
+        "role": "bottom"
+      }
+    },
+    {
+      "id": "panuelo-melody-73",
+      "key": "body-hole-ache#3a9a2f7f",
+      "claim": {
+        "fic": "panuelo-melody.html",
+        "sourceSha": "c48052e7c79f1fc28b75b6cbbc2bda5cffc74c6ceec69867e9f3981999d3dad6",
+        "paragraph": 1740,
+        "pattern": "body-hole-ache",
+        "act": "aching hole",
+        "kind": "body",
+        "a": "Henry Fox-Mountchristen-Windsor",
+        "b": "Alex Claremont-Diaz",
+        "role": "bottom"
+      }
+    },
+    {
+      "id": "panuelo-melody-74",
+      "key": "dialogue:looking after someone#11524c16",
+      "claim": {
+        "fic": "panuelo-melody.html",
+        "sourceSha": "c48052e7c79f1fc28b75b6cbbc2bda5cffc74c6ceec69867e9f3981999d3dad6",
+        "paragraph": 1775,
+        "pattern": "dialogue:looking after someone",
+        "act": "looking after someone",
+        "kind": "aftercare",
+        "a": "Alex Claremont-Diaz",
+        "b": "Henry Fox-Mountchristen-Windsor",
+        "role": "top"
+      }
+    },
+    {
+      "id": "panuelo-melody-75",
+      "key": "dd2-pulled-out-of-him~elided#f3872f8b",
+      "claim": {
+        "fic": "panuelo-melody.html",
+        "sourceSha": "c48052e7c79f1fc28b75b6cbbc2bda5cffc74c6ceec69867e9f3981999d3dad6",
+        "paragraph": 1786,
+        "pattern": "dd2-pulled-out-of-him~elided",
+        "act": "anal sex",
+        "kind": "fantasy",
+        "a": "Alex Claremont-Diaz",
+        "b": "Henry Fox-Mountchristen-Windsor",
+        "role": "top"
+      }
+    },
+    {
+      "id": "panuelo-melody-76",
+      "key": "flustered-verb#f4b2dcb",
+      "claim": {
+        "fic": "panuelo-melody.html",
+        "sourceSha": "c48052e7c79f1fc28b75b6cbbc2bda5cffc74c6ceec69867e9f3981999d3dad6",
+        "paragraph": 1786,
+        "pattern": "flustered-verb",
+        "act": "flustered or blushing",
+        "kind": "behavior",
+        "a": "Henry Fox-Mountchristen-Windsor",
+        "b": "Alex Claremont-Diaz",
+        "role": "bottom"
+      }
+    },
+    {
+      "id": "panuelo-melody-77",
+      "key": "aftercare-clean~elided#6b6e1d5d",
+      "claim": {
+        "fic": "panuelo-melody.html",
+        "sourceSha": "c48052e7c79f1fc28b75b6cbbc2bda5cffc74c6ceec69867e9f3981999d3dad6",
+        "paragraph": 1788,
+        "pattern": "aftercare-clean~elided",
+        "act": "cleaning someone up",
+        "kind": "aftercare",
+        "a": "Alex Claremont-Diaz",
+        "b": "Henry Fox-Mountchristen-Windsor",
+        "role": "top"
+      }
+    },
+    {
+      "id": "panuelo-melody-78",
+      "key": "aftercare-clean#684a799c",
+      "claim": {
+        "fic": "panuelo-melody.html",
+        "sourceSha": "c48052e7c79f1fc28b75b6cbbc2bda5cffc74c6ceec69867e9f3981999d3dad6",
+        "paragraph": 1790,
+        "pattern": "aftercare-clean",
+        "act": "cleaning someone up",
+        "kind": "aftercare",
+        "a": "Alex Claremont-Diaz",
+        "b": "Henry Fox-Mountchristen-Windsor",
+        "role": "top"
+      }
+    },
+    {
+      "id": "panuelo-melody-79",
+      "key": "dom-carry#d25ba3e9",
+      "claim": {
+        "fic": "panuelo-melody.html",
+        "sourceSha": "c48052e7c79f1fc28b75b6cbbc2bda5cffc74c6ceec69867e9f3981999d3dad6",
+        "paragraph": 2395,
+        "pattern": "dom-carry",
+        "act": "lifting or carrying someone",
+        "kind": "behavior",
+        "a": "Alex Claremont-Diaz",
+        "b": "Henry Fox-Mountchristen-Windsor",
+        "role": "top"
+      }
+    },
+    {
+      "id": "panuelo-melody-80",
+      "key": "flustered-verb~elided#268476ad",
+      "claim": {
+        "fic": "panuelo-melody.html",
+        "sourceSha": "c48052e7c79f1fc28b75b6cbbc2bda5cffc74c6ceec69867e9f3981999d3dad6",
+        "paragraph": 2449,
+        "pattern": "flustered-verb~elided",
+        "act": "flustered or blushing",
+        "kind": "behavior",
+        "a": "Henry Fox-Mountchristen-Windsor",
+        "b": "Alex Claremont-Diaz",
+        "role": "bottom"
+      }
+    }
+  ]
+}
