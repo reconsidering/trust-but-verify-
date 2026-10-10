@@ -18,10 +18,10 @@
   "dialogue:blowjob#1946f740": "wrong",
   "mast-got-off#659b952c": "wrong",
   "dd2-mast-take-in-hand#29a60975": "wrong",
-  "fingers-to-hole#b249daf8": "wrong",
+  "fingers-to-hole#b249daf8": "ok",
   "push-into#d7bf8d42": "wrong",
   "push-into~elided#e13610cb": "wrong",
-  "adds-finger#264f1fa0": "wrong",
+  "adds-finger#264f1fa0": "ok",
   "sucked#a797dbc7": "wrong",
   "took-in-mouth~elided#f1c6c458": "wrong",
   "stretched-open~elided#db234e3": "wrong",
@@ -161,7 +161,7 @@
   "dialogue:blowjob#7bf580d": "ok",
   "sinks-to-floor#73aba531": "wrong",
   "takes-between-lips~elided#6d6a4e39": "ok",
-  "adds-finger#15a77f8c": "wrong",
+  "adds-finger#15a77f8c": "ok",
   "eyes-on-crotch#69796f81": "ok",
   "hand-in-pants-poss#aa4b9921": "wrong",
   "eyes-on-crotch-oral#69796f81": "ok",
@@ -533,11 +533,18 @@
     "b": "Dean Winchester",
     "role": ""
    },
-   "verdict": "wrong",
-   "errors": [
-    "Contact mistaken for penetration"
-   ],
-   "updatedAt": "2026-10-09T23:33:02.380Z"
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-09T23:33:02.380Z",
+   "correction": {
+    "date": "2026-10-10",
+    "previousVerdict": "wrong",
+    "previousErrors": [
+     "Contact mistaken for penetration"
+    ],
+    "reason": "The named performer contacts the receiver's anal rim with fingers. The new convention counts this as fingering without requiring insertion.",
+    "ownerApproved": true
+   }
   },
   {
    "id": "C0118",
@@ -602,11 +609,18 @@
     "b": "Dean Winchester",
     "role": ""
    },
-   "verdict": "wrong",
-   "errors": [
-    "Contact mistaken for penetration"
-   ],
-   "updatedAt": "2026-10-09T23:14:23.125Z"
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-09T23:14:23.125Z",
+   "correction": {
+    "date": "2026-10-10",
+    "previousVerdict": "wrong",
+    "previousErrors": [
+     "Contact mistaken for penetration"
+    ],
+    "reason": "The named performer contacts the receiver's anal rim with fingers. The new convention counts this as fingering without requiring insertion.",
+    "ownerApproved": true
+   }
   },
   {
    "id": "C0122",
@@ -3769,11 +3783,18 @@
     "b": "Henry Fox-Mountchristen-Windsor",
     "role": ""
    },
-   "verdict": "wrong",
-   "errors": [
-    "Wrong act or body part"
-   ],
-   "updatedAt": "2026-10-09T23:32:41.232Z"
+   "verdict": "correct",
+   "errors": [],
+   "updatedAt": "2026-10-09T23:32:41.232Z",
+   "correction": {
+    "date": "2026-10-10",
+    "previousVerdict": "wrong",
+    "previousErrors": [
+     "Wrong act or body part"
+    ],
+    "reason": "The named performer contacts the receiver's anal rim with fingers. The new convention counts this as fingering without requiring insertion.",
+    "ownerApproved": true
+   }
   },
   {
    "id": "C0658",

@@ -2295,9 +2295,19 @@
    },
    "seen": [
     "2026-10-05",
-    "2026-10-06"
+    "2026-10-06",
+    "2026-10-09",
+    "2026-10-10"
    ],
-   "retired": "owner re-judged this wrong in the October 4-5 review 2026-10-09"
+   "correction": {
+    "date": "2026-10-10",
+    "previousVerdict": "wrong",
+    "reason": "The named performer contacts the receiver's anal rim with fingers. The new convention counts this as fingering without requiring insertion.",
+    "ownerApproved": true,
+    "previousSource": "owner",
+    "previousWeight": 1,
+    "previousRetirement": "owner re-judged this wrong in the October 4-5 review 2026-10-09"
+   }
   },
   {
    "kind": "scene",
@@ -2366,16 +2376,25 @@
    "bottom": "Dean Winchester",
    "via": "adds-finger",
    "h": "a5a75e45",
-   "weight": 0.85,
-   "source": "claude",
+   "source": "owner",
    "marks": {
     "right": 1,
     "wrong": 0
    },
    "seen": [
-    "2026-10-05"
+    "2026-10-05",
+    "2026-10-09",
+    "2026-10-10"
    ],
-   "retired": "owner judged this wrong in the October 4-5 review 2026-10-09"
+   "correction": {
+    "date": "2026-10-10",
+    "previousVerdict": "wrong",
+    "reason": "The named performer contacts the receiver's anal rim with fingers. The new convention counts this as fingering without requiring insertion.",
+    "ownerApproved": true,
+    "previousSource": "claude",
+    "previousWeight": 0.85,
+    "previousRetirement": "owner judged this wrong in the October 4-5 review 2026-10-09"
+   }
   },
   {
    "kind": "scene",
@@ -4303,20 +4322,6 @@
   },
   {
    "kind": "scene",
-   "card": "anal",
-   "pairing": "Castiel/Dean Winchester",
-   "top": "Castiel",
-   "bottom": "Dean Winchester",
-   "via": "adds-finger",
-   "h": "a5a75e45",
-   "misread": true,
-   "source": "owner",
-   "seen": [
-    "2026-10-09"
-   ]
-  },
-  {
-   "kind": "scene",
    "card": "blowjob",
    "pairing": "Castiel/Dean Winchester",
    "top": "Castiel",
@@ -4444,20 +4449,6 @@
    "via": "body-hole-ache",
    "h": "dad4c221",
    "conf": 36,
-   "misread": true,
-   "source": "owner",
-   "seen": [
-    "2026-10-09"
-   ]
-  },
-  {
-   "kind": "scene",
-   "card": "anal",
-   "pairing": "Castiel/Dean Winchester",
-   "top": "Castiel",
-   "bottom": "Dean Winchester",
-   "via": "fingers-to-hole",
-   "h": "f157ecc3",
    "misread": true,
    "source": "owner",
    "seen": [
