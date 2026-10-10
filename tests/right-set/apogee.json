@@ -330,6 +330,41 @@
         "right": 1,
         "wrong": 0
       }
+    },
+    {
+      "kind": "scene",
+      "card": "anal",
+      "pairing": "Shane Hollander/Ilya Rozanov",
+      "h": "4dd69afb",
+      "via": "inside",
+      "top": "Ilya Rozanov",
+      "bottom": "Shane Hollander",
+      "marks": {
+        "right": 1,
+        "wrong": 0
+      },
+      "source": "owner",
+      "seen": [
+        "2026-10-10"
+      ]
+    },
+    {
+      "kind": "hint",
+      "card": "anal",
+      "pairing": "Shane Hollander/Ilya Rozanov",
+      "h": "1c72dca7",
+      "via": "fingers-inside",
+      "who": "Shane Hollander",
+      "role": "bottom",
+      "wants": true,
+      "marks": {
+        "right": 1,
+        "wrong": 0
+      },
+      "source": "owner",
+      "seen": [
+        "2026-10-10"
+      ]
     }
   ],
   "negatives": [
@@ -379,7 +414,8 @@
       ],
       "top": "Ilya Rozanov",
       "bottom": "Shane Hollander",
-      "misread": true
+      "misread": true,
+      "retired": "owner ruled right in the review of Claude/ChatGPT disagreements 2026-10-10"
     },
     {
       "kind": "solo",
@@ -430,7 +466,8 @@
       "who": "Shane Hollander",
       "role": "bottom",
       "wants": true,
-      "misread": true
+      "misread": true,
+      "retired": "owner ruled right in the review of Claude/ChatGPT disagreements 2026-10-10"
     },
     {
       "kind": "hint",

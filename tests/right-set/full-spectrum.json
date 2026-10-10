@@ -28,7 +28,7 @@
       "pairing": "Alex Claremont-Diaz/Henry Fox-Mountchristen-Windsor",
       "h": "ae41eb1c",
       "via": "care-bring",
-      "weight": 0.3,
+      "weight": 0.9,
       "source": "chatgpt",
       "reviewerConfidence": 0.999,
       "seen": [
@@ -68,7 +68,7 @@
       "pairing": "Alex Claremont-Diaz/Henry Fox-Mountchristen-Windsor",
       "h": "f18b1562",
       "via": "care-bring",
-      "weight": 0.3,
+      "weight": 0.9,
       "source": "chatgpt",
       "reviewerConfidence": 0.99,
       "seen": [
@@ -108,7 +108,7 @@
       "pairing": "Alex Claremont-Diaz/Henry Fox-Mountchristen-Windsor",
       "h": "b1576b84",
       "via": "address-endearment",
-      "weight": 0.3,
+      "weight": 0.9,
       "source": "chatgpt",
       "reviewerConfidence": 0.999,
       "seen": [

@@ -1248,6 +1248,77 @@
         "reason": "Contact at the anal opening is performed fingering under the new convention; later insertion is not required.",
         "ownerApproved": true
       }
+    },
+    {
+      "kind": "hint",
+      "card": "anal",
+      "pairing": "Steve Harrington/Eddie Munson",
+      "h": "39c26af",
+      "via": "push-into",
+      "who": "Steve Harrington",
+      "role": "bottom",
+      "wants": true,
+      "marks": {
+        "right": 1,
+        "wrong": 0
+      },
+      "source": "owner",
+      "seen": [
+        "2026-10-10"
+      ]
+    },
+    {
+      "kind": "hint",
+      "card": "anal",
+      "pairing": "Steve Harrington/Eddie Munson",
+      "h": "8f0b0628",
+      "via": "dialogue:anal sex",
+      "who": "Eddie Munson",
+      "role": "top",
+      "wants": true,
+      "marks": {
+        "right": 1,
+        "wrong": 0
+      },
+      "source": "owner",
+      "seen": [
+        "2026-10-10"
+      ]
+    },
+    {
+      "kind": "hint",
+      "card": "anal",
+      "pairing": "Steve Harrington/Eddie Munson",
+      "h": "b6a140f9",
+      "via": "dd-grinds-onto-cock",
+      "who": "Eddie Munson",
+      "role": "top",
+      "wants": true,
+      "marks": {
+        "right": 1,
+        "wrong": 0
+      },
+      "source": "owner",
+      "seen": [
+        "2026-10-10"
+      ]
+    },
+    {
+      "kind": "scene",
+      "card": "anal",
+      "pairing": "Steve Harrington/Eddie Munson",
+      "h": "b004d042",
+      "via": "fingers-inside",
+      "top": "Eddie Munson",
+      "bottom": "Steve Harrington",
+      "marks": {
+        "right": 1,
+        "wrong": 0
+      },
+      "source": "owner",
+      "seen": [
+        "2026-10-10"
+      ]
     }
   ],
   "negatives": [
@@ -1529,7 +1600,8 @@
       ],
       "top": "Eddie Munson",
       "bottom": "Steve Harrington",
-      "misread": true
+      "misread": true,
+      "retired": "owner ruled right in the review of Claude/ChatGPT disagreements 2026-10-10"
     },
     {
       "kind": "scene",
@@ -1714,7 +1786,8 @@
       "who": "Eddie Munson",
       "role": "top",
       "wants": true,
-      "misread": true
+      "misread": true,
+      "retired": "owner ruled right in the review of Claude/ChatGPT disagreements 2026-10-10"
     },
     {
       "kind": "hint",
@@ -1756,7 +1829,8 @@
       "who": "Steve Harrington",
       "role": "bottom",
       "wants": true,
-      "misread": true
+      "misread": true,
+      "retired": "owner ruled right in the review of Claude/ChatGPT disagreements 2026-10-10"
     },
     {
       "kind": "hint",
@@ -1798,7 +1872,8 @@
       "who": "Eddie Munson",
       "role": "top",
       "wants": true,
-      "misread": true
+      "misread": true,
+      "retired": "owner ruled right in the review of Claude/ChatGPT disagreements 2026-10-10"
     },
     {
       "kind": "hint",
@@ -1827,7 +1902,7 @@
       "pairing": "Steve Harrington/Eddie Munson",
       "h": "b004d042",
       "via": "push-into",
-      "weight": 0.3,
+      "weight": 0.9,
       "source": "chatgpt",
       "reviewerConfidence": 0.99,
       "marks": {
