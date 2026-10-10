@@ -19,8 +19,9 @@ const flag = (n) => args.includes(`--${n}`);
 const opt = (n) => { const i = args.indexOf(`--${n}`); return i >= 0 ? args[i + 1] : undefined; };
 const dir = resolve(args.filter((a, i) => !a.startsWith("--") && !(i > 0 && ["--jobs", "--only", "--heap"].includes(args[i - 1])))[0] ?? "ao3-samples");
 // Reading even the longest fic takes about 1.3 GB (measured, scripts/profile.mjs), and a shard replays several fics one after another, so the
-// number of jobs is capped by memory at one per 3 GB (the unit suite counts as one); --jobs overrides it.
-const memJobs = Math.max(2, Math.floor(totalmem() / 2 ** 30 / 3));
+// number of jobs is capped by memory: the unit suite runs alongside and keeps about 3 GB, and a shard's process measured about 4 GB (a 3 GB heap plus the rest);
+// with one per 3 GB on a 15 GB machine all four shards were killed and re-run one at a time. --jobs overrides it.
+const memJobs = Math.max(2, Math.floor((totalmem() / 2 ** 30 - 3) / 4));
 const jobs = Math.max(2, Number(opt("jobs") ?? Math.min(cpus().length, memJobs)));
 const heapMb = Number(opt("heap") ?? 3000); // per shard: makes V8 collect garbage between fics instead of growing to several GB
 const hasSamples = existsSync(dir);

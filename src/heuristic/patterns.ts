@@ -3322,15 +3322,15 @@ export const PATTERNS: PatternDef[] = [
     src: `\\b(?:being|getting|get|got)\\s+(?:pound|slamm?|fuck|rail|drill|ravish|plow)\\w*\\s+(?:into\\s+)?by\\s+{T}\\b`,
   },
   {
-    // "pressed the vibrator against Dean's hole", "teased the plug at her entrance"
+    // "pressed the vibrator against Dean's hole", "teased the plug at her entrance", "pressed the head of the plug against his hole":
+    // contact at the opening counts as a toy act, with no insertion needed (AGENTS.md).
     id: "toy-at-hole",
     cat: "anal",
-    act: "toy at the hole",
+    act: "anal sex (strap-on/toy)",
     subj: "t",
     weight: 0.6,
     needsCtx: true,
-    signal: { kind: "prep", actorRole: "top" },
-    src: `\\b{T}\\s+{aux}(?:press|nudg|rub|trac|circl|teas|touch|brush|line|lin)\\w*\\s+(?:up\\s+)?(?:(?:a|an|the|his|her|their|that|this|my|your)\\s+)?(?:[\\w-]+\\s+){0,2}?(?:dildo|vibrator|vibe|butt\\s*plug|plug|beads|wand|bullet|toy|strap-?on|strap)\\s+(?:\\w+\\s+)?(?:against|to|at|along|over|between)\\s+{B:assReq}`,
+    src: `\\b{T}\\s+{aux}(?:press|nudg|rub|trac|circl|teas|touch|brush|line|lin)\\w*\\s+(?:up\\s+)?(?:(?:a|an|the|his|her|their|that|this|my|your)\\s+)?(?:(?:head|tip|end|base|flared base)\\s+of\\s+(?:the|a|his|her|their|that|this)\\s+)?(?:[\\w-]+\\s+){0,2}?(?:dildo|vibrator|vibe|butt\\s*plug|plug|beads|wand|bullet|toy|strap-?on|strap)\\s+(?:\\w+\\s+)?(?:against|to|at|along|over|between)\\s+{B:assReq}`,
   },
   {
     // "Dean was wearing a plug", "had a vibrator in him all day"
@@ -4137,6 +4137,52 @@ export const PATTERNS: PatternDef[] = [
     src: `\\b{B:poss}\\s+body\\s+(?:clench|tighten|grip|squeez|milk|flutter|clamp|suck)\\w*\\s+(?:down\\s+)?(?:on|around)\\s+(?:the\\s+|his\\s+|her\\s+|their\\s+)?(?:\\w+\\s+)?(?:cock|dick|knot|length|shaft)`,
   },
   {
+    // "a second finger stretches into him": a counted finger entering the receiver (fingers maintaining or increasing contact).
+    id: "counted-finger-into",
+    cat: "anal",
+    kw: "finger",
+    act: "fingering",
+    subj: "b",
+    weight: 0.8,
+    needsCtx: true,
+    src: `\\b(?:another|a\\s+(?:second|third|fourth)|the\\s+(?:second|third|fourth))\\s+(?:slick\\s+|slender\\s+|thick\\s+|lubed\\s+)?finger\\s+(?:\\w+ly\\s+)?(?:stretch|press|push|slid|slip|work|sink|enter|join|breach)\\w*\\s+(?:in(?:to|side)?|up)\\s+{B}(?![\\w-])(?!\\s+(?:the|a|an|his|her|their|my|your)\\b)`,
+  },
+  {
+    // "slicked his fingers with lube and pressed two inside": the count after fingers named in the same sentence.
+    id: "pressed-two-inside",
+    cat: "anal",
+    act: "fingering",
+    subj: "t",
+    weight: 0.7,
+    needsCtx: true,
+    needs: /\b(?:fingers?|knuckles?)\b/i,
+    src: `\\b{T}\\s+{aux}(?:press|push|slid|slip|work|eas|sink)\\w*\\s+(?:in\\s+)?(?:two|three)(?:\\s+of\\s+them)?\\s+(?:in|inside)(?![\\w-])(?!\\s+(?:the|a|an|his|her|their|my|your)\\b)`,
+  },
+  {
+    // "pressed the tip of his finger into himself", "worked two fingers into himself": the finger goes into the same person.
+    id: "self-finger-into-himself",
+    cat: "anal",
+    kw: "fingers?|fingertip",
+    act: "fingering himself",
+    subj: "b",
+    weight: 0.7,
+    needsCtx: true,
+    signal: { kind: "solo", actorRole: "bottom" },
+    src: `\\b{B}\\s+{aux}(?:press|push|slid|slip|work|eas|sink|ram|shov)\\w*\\s+(?:(?:the\\s+)?tip\\s+of\\s+)?(?:(?:a|an|one|two|three|his|her|their)\\s+)?(?:[\\w-]+\\s+){0,2}?(?:fingers?|fingertips?)\\s+(?:in|into|inside)\\s+${SELF}`,
+  },
+  {
+    // "reaches behind him to work fingers into his dripping hole": reaching behind or between his own legs is his own hole.
+    id: "self-finger-reach-behind",
+    cat: "anal",
+    kw: "fingers?",
+    act: "fingering himself",
+    subj: "b",
+    weight: 0.7,
+    needsCtx: true,
+    signal: { kind: "solo", actorRole: "bottom" },
+    src: `\\b{B}\\s+{aux}reach\\w*\\s+(?:back\\s+)?(?:behind\\s+(?:him|her|them|himself|herself)|between\\s+(?:his|her|their)\\s+(?:legs|thighs|cheeks))\\s+(?:and\\s+|to\\s+)?(?:[\\w-]+\\s+){0,3}?(?:push|press|slid|slip|work|eas|sink)\\w*\\s+(?:(?:a|an|one|two|three|his|her|their)\\s+)?(?:[\\w-]+\\s+){0,2}?fingers?\\s+(?:in|into|inside)\\s+(?:(?:his|her|their)\\s+)?(?:[\\w-]+\\s+){0,2}?(?:hole|ass|arse|entrance|rim)\\b`,
+  },
+  {
     // "the alpha sinks in a third finger", "adds a second finger"
     id: "adds-finger",
     cat: "anal",
@@ -4840,6 +4886,17 @@ export const PATTERNS: PatternDef[] = [
     weight: 0.6,
     needsCtx: true,
     src: `\\b{T:poss}\\s+(?:[\\w-]+\\s+)?${FINGERS}\\s+(?:\\w+\\s+){0,4}?circl\\w*\\s+{B:poss}\\s+(?:hole|entrance|rim)\\b`,
+  },
+  {
+    // "Morgan circled Rowan's opening with a finger": the instrument after the object; contact at the opening counts without insertion (AGENTS.md).
+    id: "circle-opening-with-finger",
+    cat: "anal",
+    kw: "fingers?",
+    act: "fingering",
+    subj: "t",
+    weight: 0.6,
+    needsCtx: true,
+    src: `\\b{T}\\s+{aux}(?:circl|trac|rubb?|press|tapp?|teas|brush|strok)\\w*\\s+{B:poss}\\s+(?:[\\w-]+\\s+)?(?:hole|entrance|rim|pucker)\\s+with\\s+(?:a|an|one|two|three|his|her|their)\\s+(?:[\\w-]+\\s+)?(?:fingers?|thumb|fingertips?)\\b`,
   },
   {
     // "His fingers move in and out of Stiles"

@@ -10,7 +10,7 @@ import { type Analysis, type Desire, type PairingResult, type Role } from "../ty
 import { tagPriors } from "./ao3-prior";
 import { type Character, type Gender, buildCast, escapeRe } from "./characters";
 import { ANAL_CTX, type Cat, VULVA_CTX, type CompiledPattern, DIALOGUE, type DialogueDef, EPITHET_TOKEN, FINGER_CTX, PATTERNS, PENIS_CTX, SEX_CTX, compilePatterns } from "./patterns";
-import { continuationInstrument, namedActionOwner, occurrenceContext, restraintOnlyHold } from "./event-evidence";
+import { continuationInstrument, instrumentEnded, namedActionOwner, occurrenceContext, restraintOnlyHold } from "./event-evidence";
 import { EPITHET, canonEpithet, learnEpithets } from "./epithets";
 import { readTags } from "./tags";
 import { noteContext } from "./notes";
@@ -583,6 +583,12 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
       // character, not whoever it names further on.
       const subj = firstEntity(sent);
       if (subj && !povLed) ctx.lastSubject = subj;
+      // "“Now reach back. Slowly.” He obeyed with slicked fingers, reaching between his legs": a sentence that opens "He obeyed / complied" straight after a
+      // spoken command is the one told, not the one who spoke; giving instructions (a call, a spoken order) does not make the speaker the performer.
+      if (!povLed && prevSpeaker && prevSpeakerPara === pi - 1 && /^\W*(?:He|She|They)\s+(?:obeyed|complied|did\s+(?:so|as|what)\b|followed\s+(?:the|his|her|their)\s+(?:orders?|instructions?|commands?))/i.test(sent)) {
+        const told = ctx.partnerOf(prevSpeaker);
+        if (told) ctx.lastSubject = told;
+      }
       // "Sam's hand rests on Lee's back while he moves": an established penetrating actor keeps moving;
       // the hand's owner is touching his back, not taking over the act.
       const backContact = new RegExp(`^\\W*(${NAMES})['’]s\\s+hand\\b[^.!?;]{0,90}?\\b(?:on|onto)\\s+(${NAMES})['’]s\\s+back\\b[^.!?;]{0,30}?\\b(?:as|while)\\s+he\\s+moves?\\b`).exec(sent);
@@ -2146,8 +2152,11 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
       if (basePid === "dd2-finger-shoved-into" && /^[^.!?]{0,40}\b(?:button|buttons|elevator|lift|keypad|panel|control|switch|doorbell|intercom|screen|phone|key|lock)\b/i.test(tail)) return;
       // Invented adults: "Morgan pushes in a finger alongside his cock" in Rowan's mouth: fingers in a mouth, not a hole.
       if (basePid === "adds-finger" && !ANAL_CTX.test(sent) && !ANAL_CTX.test(para) && (/\b(?:mouth|lips|throat)\b/i.test(para) || ORAL_SCENE_RE.test(para)) && (ORAL_SCENE_RE.test(para) || ORAL_SCENE_RE.test(paras[pi - 1] ?? ""))) return;
-      // Invented adults: "Morgan's finger circles his rim, not pushing in yet": the paragraph says nothing went in.
-      if (basePid === "dd5-fingers-circle-hole" && /\b(?:without|not|doesn['’]t|don['’]t|didn['’]t|never|yet\s+to)\s+(?:\w+\s+){0,3}?(?:(?:push|press|slip|dip|sink|go)(?:es|ed|ing|s)?|put(?:s|ting)?)\s+(?:it\s+|them\s+)?in(?:side)?\b/i.test(para)) return;
+      // "Morgan's finger circles his rim, not pushing in yet": contact at the opening counts as fingering without insertion (AGENTS.md). Only a paragraph that
+      // says the finger never touched ("stopping short of touching", "without touching") is not performed.
+      if (basePid === "dd5-fingers-circle-hole" && /\b(?:without|not|never|n['’]t|short\s+of|before|instead\s+of)\s+(?:\w+\s+){0,3}?(?:touch|reach|contact|brush|graz)\w*/i.test(para)) return;
+      // "Morgan pressed the head of the plug against Rowan's hole": someone is holding it there (toy-at-hole), it is not a plug Rowan is wearing.
+      if (basePid === "plug-in-ass" && /\b(?:press|nudg|rub|trac|circl|teas|touch|brush|hold|held|line|lin)\w*\s+(?:up\s+)?(?:(?:a|an|the|his|her|their|that|this)\s+)?(?:(?:head|tip|end|base)\s+of\s+(?:the|a|his|her|their|that|this)\s+)?(?:[\w-]+\s+){0,2}?plug\s*$/i.test(sent.slice(0, m.index! + matchText.search(/\bplug\b/i) + 4))) return;
       // Invented adults: "tonguing his slit" with a cock in the sentence or the paragraph and no vulva: the slit of a cock.
       if (basePid === "licked-vulva" && /\bslit\b/i.test(matchText) && PENIS_CTX.test(`${sent} ${para}`) && !VULVA_CTX.test(`${sent} ${para}`)) return;
       // Invented adults: "Rowan clenches, squeezing himself around Morgan's knot": muscles around a knot, not a hand on himself.
@@ -2220,6 +2229,10 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
         ![pi - 1, pi, pi + 1].some((i) => ANAL_CTX.test(paras[i] ?? "") || PENIS_CTX.test(paras[i] ?? "") || FINGER_CTX.test(paras[i] ?? ""))) return;
     // "He shoves bodily into Steve, knocks him into the wall": a shove, not a penetration, when no anal, penis or finger word is in the sentence.
     if (/^push-into/.test(pat.id) && /\b(?:shov|push|slam|crash|barrel)\w*\s+bodily\s+(?:in|into)\b/i.test(matchText) && !ANAL_CTX.test(sent) && !PENIS_CTX.test(sent) && !FINGER_CTX.test(sent)) return;
+    // "pressed the tip of his finger into himself", "reaches behind him to work two fingers into his hole": the finger goes into the same person, so a
+    // reading that credits the other man (or the other way round) is wrong; self-finger-into-himself / self-finger-reach-behind carry it.
+    if (pat.act === "fingering" && !pat.signal &&
+        /\b(?:fingers?|fingertips?)\s+(?:\w+\s+){0,2}?(?:in|into|inside)\s+(?:himself|herself|themselves)\b|\breach\w*\s+(?:back\s+)?behind\s+(?:him|her|them|himself|herself)\b[^.!?]{0,60}\bfingers?\b/i.test(sent)) return;
     // "Samiel arches a little, pushing up into him in desperation": the one who arches up is the one being touched; he does not penetrate.
     if (/^push-into/.test(pat.id) && /\barch\w*\b[^.!?]{0,40}$/i.test(sent.slice(0, m.index!)) && /\bup\s+into\b/i.test(matchText) && !PENIS_CTX.test(sent)) return;
     // "He hollowed his cheeks, creating a suction for Cas": the one named after "for" is getting sucked.
@@ -2349,7 +2362,7 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
     const fingersBeforeOnly = FINGER_CTX.test(sent.slice(0, m.index!)) && !FINGER_CTX.test(matchText + " " + sent.slice(m.index! + matchText.length)) &&
       /[,;]|\b(?:then|and then)\b/.test(sent.slice(Math.max(0, m.index! - 14), m.index!) + matchText.slice(0, 12)) && /\b(?:fuck|pound|rail|bang|plow|plough|screw|breed|took|take)\w*/i.test(matchText)
     // "sliding his thumb out and ramming into Steve": a finger that has just come out is not the one going in.
-      || /\b(?:fingers?|thumbs?|digits?)\s+out\s+(?:and\s+)?$/i.test(sent.slice(0, m.index!));
+      || (FINGER_CTX.test(sent.slice(0, m.index!)) && !FINGER_CTX.test(matchText + " " + sent.slice(m.index! + matchText.length)) && instrumentEnded(sent.slice(0, m.index!)));
     if (cat === "anal" && pat.id !== "worked-open-pushed-in" && act.startsWith("anal sex") && !PENIS_CTX.test(matchText) && FINGER_CTX.test(matchText + " " + fingerSent) && !PENIS_CTX.test(sent) && !fingersBeforeOnly &&
         // Invented adults: "slicks his fingers, working a thick plug into Rowan": the plug goes in, the fingers only hold it.
         !/\b(?:plug|dildo|toy|vibrator|vibe)\b/i.test(matchText)) act = "fingering";
@@ -2514,7 +2527,19 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
         const subject=command && cast.byAlias.get(command[1]);
         if(subject) {if((pat.signal.actor ?? pat.subj)==="t") top=subject;else bottom=subject;}
       }
-      const actor = (pat.signal.actor ?? pat.subj) === "t" ? top : bottom;
+      let actor = (pat.signal.actor ?? pat.subj) === "t" ? top : bottom;
+      // "Jay is sloppy; uncoordinated as he scissors his fingers, trying to stretch himself": a self-act belongs to the one pair member the sentence names
+      // before it, not to whoever the elided subject last was (his partner, named in the sentence before).
+      if (pat.signal.kind === "solo" && REFLEXIVE.test(matchText)) {
+        // Only a name in subject position counts: not "Eddie's hand" (a possessive) and not the object of "asked him to prep himself" / "nudge Eddie".
+        const named = [...new Set(ctx.sentMentions.filter((x) => x.at < m.index!).map((x) => x.c))].filter((c) => c === top || c === bottom);
+        const subjectLike = (c: Character) => {
+          const at = ctx.sentMentions.find((x) => x.c === c && x.at < m.index!)!.at;
+          const seg = sent.slice(at, m.index!);
+          return !/^[^\s]+['’]s\b/.test(seg) && !/\b(?:ask|tell|told|order|beg|make|made|let|have|had|want|need|nudg|mov|pull|push)\w*\s/i.test(seg);
+        };
+        if (named.length === 1 && subjectLike(named[0])) actor = named[0];
+      }
       if(pat.signal.kind==="solo" && act==="fingering himself") {
         const target=holeType(matchText,sent,para,actor,actor);
         cat=target==="ambiguous"?"vibe":target;
