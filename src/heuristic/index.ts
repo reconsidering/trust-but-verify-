@@ -1105,7 +1105,7 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
       const sentLead = lead.split(/[.!?;]\s+/).pop() ?? lead;
       const conditional =
         /\bif\b[^.!?;]{2,70},\s*(?:(?:then|and|so)\s+)?(?:i|we|you)\b[^.!?;]{0,30}$/.test(lead) ||
-        /\b(?:what if|some ?day|one day|one of these days|next time|sometime|someday|maybe|perhaps|once (?:i|we|you|this)|when(?:ever)? (?:i|we|you) (?:get|got|can|could|finally|win|won|lose|lost|are|am)|i wonder|i bet|imagine|suppose|pretend|if i ever|if we ever|some other time)\b/.test(sentLead);
+        /\b(?:what if|what (?:would |will )?happens? if|some ?day|one day|one of these days|next time|sometime|someday|maybe|perhaps|once (?:i|we|you|this)|when(?:ever)? (?:i|we|you) (?:get|got|can|could|finally|win|won|lose|lost|are|am)|i wonder|i bet|imagine|suppose|pretend|if i ever|if we ever|some other time)\b/.test(sentLead);
       const kind = d.kind === "said" && conditional ? "hypothetical" : d.kind;
       let listener = ctx.partnerOf(speaker);
       // A named kissing respondent answering an oral offer is its listener, rather than a third person from the last act.
@@ -1305,6 +1305,8 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
       const wide = [pi - 2, pi + 2].map((i) => paras[i] ?? "").concat(near);
       if (near.some((t) => /\b(?:gag\w*|swallow\w*|chok\w*|deep-?throat\w*)\b/i.test(t)) && !wide.some((t) => ANAL_CTX.test(t) || FINGER_CTX.test(t))) return;
     }
+    // "He feels his slick trickling out of his hole": slick is arousal, not what is left after sex, unless come is named.
+    if (basePid === "body-leaking-from" && /\bslick\b/i.test(sent) && !/\b(?:come|cum|seed|spunk|knot\w*|fuck\w*)\b/i.test(sent)) return;
     // "slips a finger between his boy's lips and pulls Jace's mouth open": a finger in a mouth.
     if (basePid === "adds-finger" && /\bfingers?\b[^.!?]{0,30}\b(?:between|past|into|in)\s+(?:[\w’']+\s+){0,3}(?:lips|mouth)\b/i.test(sent)) return;
     // "Cregan licks into his body like his arse is as wet as a cunt; humming as he works the boy open": the tongue is what opens him, so it is rimming.
@@ -2375,6 +2377,10 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
         // elided subject picks the wrong one, so leave it out rather than credit the wrong person.
         if (new RegExp(`(?:^|[.!?\u201d"]\\s+)(?:${NAMES})\\s*,\\s*(?:${NAMES})\\s+(?:realiz\\w+|know\\w*|knew|notic\\w+|see\\w*|saw|think\\w*|thought|feel\\w*|felt|say\\w*|said|decid\\w+|discover\\w+)\\b[^,]*,\\s*(?:\\w+\\s+){0,3}$`, "i").test((prefix + m[0]).slice(0, prefix.length + (verb?.index ?? 0)))) return;
       } else if (NEG.test(m.groups?.aux ?? "") || NEG.test(prefix.slice(-40))) return;
+      // "Castiel would drop to his knees right there and suck him off", "Jack would have spread his legs wider if he could": a promise or a what-if, not kneeling or spreading now.
+      if ((pat.signal.kind === "prep" || pat.signal.kind === "touch") && (/\b(?:would|could|might|will)\b/i.test(m.groups?.aux ?? "") || /\b(?:would|could|might|will)\s+(?:have\s+)?$/i.test(prefix.slice(-25)))) return;
+      // "He spreads his legs, grips his cock … 'I want you to suck me.'": legs opened for a blowjob, with no ass anywhere near.
+      if (basePid.startsWith("spread-legs") && /\b(?:suck(?:s|ed|ing)?\s+(?:me|him|her|them|my|his|your|cock|dick)|blow\s+(?:me|him|you)|blowjob|deep-?throat\w*)\b/i.test(`${para} ${paras[pi + 1] ?? ""}`) && ![pi - 1, pi, pi + 1].some((i) => ANAL_CTX.test(paras[i] ?? "") || FINGER_CTX.test(paras[i] ?? ""))) return;
       // Hands-free orgasm: "Rowan came untouched" says who receives only when something is happening to Rowan's ass. A wish ("wanted to
       // come untouched", "imagined making him come hands-free") is not an orgasm, and "came on Morgan's cock" needs "just" or "alone".
       if (act === "hands-free orgasm" || act === "prostate orgasm") {
@@ -2608,6 +2614,7 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
     else if (remembered && !pat.signal) kind = "hypothetical";
     else if (occurrence==="history" || occurrence==="recording") kind="history";
     else if (occurrence==="wanted") kind="wanted";
+    else if (occurrence==="habitual") kind="identity";
     else if (DESIRE_LEAD.test(sent) || DESIRE.test(window.replace(/\b(?:that|which|what it|it)\s+(?:want|need)(?:ed|s)?\s+to\b/gi, " ").replace(/\b(?:giv\w*|gave|got|get\w*|deliver\w*|provid\w*)\s+(?:(?:him|her|them|you|me)\s+)?(?:exactly\s+|just\s+|only\s+)?(?:what|all)\s+(?:he|she|they|you|I)(?:['’]d)?\s+(?:want|need)(?:ed|s)?\b/gi, " ").replace(/\b(?:does|did|do)(?:n['’]t| not)\s+(?:even\s+)?resist\s+the\s+(?:temptation|urge|impulse)\b(?:\s+(?:he|she|they)\s+(?:has|have|had|feels?|felt))?/gi, " ")) || DESIRE_TAIL.test(window) || DESIRE.test(aux) || DESIRE.test(m.groups?.lead ?? "") || /^(?:want|need|crav)/i.test(m.groups?.lead ?? "")) kind = "wanted";
     else if (/\b(?:want|need|wish|hope|long|crave)\w*\b[^.!?]*\b(?:and|but)\s+(?:then\s+)?(?:have|let|make|get)\s*$/i.test(prefix)) kind = "wanted";
     // "suddenly wanting to see him lube up, only to be kissed as he lines up and pushes in": a new clause between the wish and the "and" means the "and" joins that clause.
