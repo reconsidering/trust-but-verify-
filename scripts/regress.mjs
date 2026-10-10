@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 // Did this change alter any verdict on the sample fics? One command instead of two eval runs and a compare.
-//   npm run regress -- [--base <git ref>] [--hits] [--full] [--all] [--quick] [--jobs N] [--fast] [--only name,name] [dir=ao3-samples]
+//   npm run regress -- [--base <git ref>] [--hits] [--full] [--all] [--quick] [--jobs N] [--fast] [--only name,name] [--skip name,name] [dir=ao3-samples]
 // Compares the working tree with a baseline over ALL the sample fics. It finds unlabelled changes; it cannot say whether a change is right, so
 // read what moved (--hits lists each reading that appeared or disappeared) and, for ones you judge correct, add them to tests/gold.
 // Per-change checks that DO say right/wrong (units, gold labels, right-set) are `npm run check`.
@@ -9,6 +9,7 @@
 // are kept per engine version (<dir>/.eval/), so a baseline you have already run costs nothing; only the working tree is run each time.
 // --hits prints a short summary per fic and writes every moved reading to ao3-samples/.eval/regress-hits.txt; --full prints them all.
 // --only name,name compares just those fics (exact file names): the fast loop while working on one fic; run the full thing before committing.
+// --skip name,name leaves those fics out of both sides of the comparison (for a fic too big for the machine): not a full check.
 // --quick runs only the tagged pass (about half the time). Exit status 1 when a verdict changed.
 import { execFileSync, spawnSync } from "node:child_process";
 import { cpSync, existsSync, mkdtempSync, readFileSync, readdirSync, rmSync, symlinkSync, writeFileSync } from "node:fs";
@@ -19,7 +20,7 @@ import { join, resolve } from "node:path";
 const args = process.argv.slice(2);
 const flag = (n) => args.includes(`--${n}`);
 const opt = (n) => { const i = args.indexOf(`--${n}`); return i >= 0 ? args[i + 1] : undefined; };
-const dir = resolve(args.filter((a, i) => !a.startsWith("--") && !(i > 0 && ["--base", "--jobs", "--only"].includes(args[i - 1])))[0] ?? "ao3-samples");
+const dir = resolve(args.filter((a, i) => !a.startsWith("--") && !(i > 0 && ["--base", "--jobs", "--only", "--skip"].includes(args[i - 1])))[0] ?? "ao3-samples");
 const quick = flag("quick");
 const git = (...a) => execFileSync("git", a, { encoding: "utf8" }).trim();
 const dirty = git("status", "--porcelain", "--", "src").length > 0;
@@ -41,9 +42,12 @@ const rightSlugs = existsSync("tests/right-set") ? readdirSync("tests/right-set"
 const fromReport = (n) => rightSlugs.some((r) => r === n || r.includes(n) || n.includes(r));
 const slowest = new Set([...names].sort((a, b) => timeOf(b) - timeOf(a)).slice(0, FAST_SKIP).filter((n) => !fromReport(n)));
 const fastSet = names.filter((n) => !slowest.has(n));
-const onlyArg = opt("only")?.split(",").filter(Boolean);
+const skipArg = opt("skip")?.split(",").filter(Boolean);
+if (skipArg) { const bad = skipArg.filter((n) => !names.includes(n)); if (bad.length) { console.error(`No such fic in ${dir}: ${bad.join(", ")}`); process.exit(2); } }
+// --skip is --only for everything else, so the baseline comparison covers the same fics on both sides.
+const onlyArg = opt("only")?.split(",").filter(Boolean) ?? (skipArg ? names.filter((n) => !skipArg.includes(n)) : undefined);
 const only = onlyArg ?? (full ? undefined : fastSet);
-if (onlyArg) { const bad = onlyArg.filter((n) => !names.includes(n)); if (bad.length) { console.error(`No such fic in ${dir}: ${bad.join(", ")}`); process.exit(2); } console.log(`ONLY ${onlyArg.join(", ")}: not a full check.`); }
+if (onlyArg) { const bad = onlyArg.filter((n) => !names.includes(n)); if (bad.length) { console.error(`No such fic in ${dir}: ${bad.join(", ")}`); process.exit(2); } console.log(skipArg ? `SKIPPING ${skipArg.join(", ")}: not a full check.` : `ONLY ${onlyArg.join(", ")}: not a full check.`); }
 else if (!full) console.log(`FAST SET, NOT A SAFE CHECK: ${fastSet.length} of ${names.length} fics (left out: ${[...slowest].join(", ")}).`);
 const evalArgs = (extra = []) => [dir, ...(quick ? ["--quick"] : []), ...(only ? ["--only", only.join(",")] : []), ...(opt("jobs") ? ["--jobs", opt("jobs")] : []), ...extra];
 

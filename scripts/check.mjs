@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 // The checks that say whether a change is RIGHT, run on every change.
-//   npm run check -- [--accept] [--jobs N] [--quick] [--only name,name] [dir=ao3-samples]
+//   npm run check -- [--accept] [--jobs N] [--quick] [--only name,name] [--skip name,name] [dir=ao3-samples]
 //   1. the unit suite and the build,
 //   2. the gold labels (tests/gold: hand-checked verdicts, scenes, point of view, text senders), scored against the last accepted totals,
 //   3. the right-set replay (the readings you marked right in mistake reports; a "strong" one that changed fails).
@@ -17,7 +17,7 @@ import { join, resolve } from "node:path";
 const args = process.argv.slice(2);
 const flag = (n) => args.includes(`--${n}`);
 const opt = (n) => { const i = args.indexOf(`--${n}`); return i >= 0 ? args[i + 1] : undefined; };
-const dir = resolve(args.filter((a, i) => !a.startsWith("--") && !(i > 0 && ["--jobs", "--only", "--heap"].includes(args[i - 1])))[0] ?? "ao3-samples");
+const dir = resolve(args.filter((a, i) => !a.startsWith("--") && !(i > 0 && ["--jobs", "--only", "--heap", "--skip"].includes(args[i - 1])))[0] ?? "ao3-samples");
 // Reading even the longest fic takes about 1.3 GB (measured, scripts/profile.mjs), and a shard replays several fics one after another, so the
 // number of jobs is capped by memory: the unit suite runs alongside and keeps about 3 GB, and the shard that holds the largest fic needs a heap sized to it
 // (measured: the 16 MB fic needs about 4.5 GB and ran out of memory at 3 GB; roughly 300 MB per MB of html). With one shard per 3 GB on a 15 GB machine all
@@ -26,7 +26,8 @@ const heapMb = Number(opt("heap") ?? 3000); // per shard, as a floor: makes V8 c
 const MB_PER_HTML_MB = 300;
 const heapForBytes = (bytes) => Math.min(8000, Math.max(heapMb, Math.ceil((bytes / 1e6) * MB_PER_HTML_MB)));
 const hasSamples = existsSync(dir);
-const maxFicBytes = hasSamples ? Math.max(0, ...readdirSync(dir).filter((f) => f.endsWith(".html")).map((f) => statSync(join(dir, f)).size)) : 0;
+const skippedFics = opt("skip")?.split(",") ?? [];
+const maxFicBytes = hasSamples ? Math.max(0, ...readdirSync(dir).filter((f) => f.endsWith(".html") && !skippedFics.includes(f.replace(/\.html$/, ""))).map((f) => statSync(join(dir, f)).size)) : 0;
 const memJobs = Math.max(2, 1 + Math.floor((0.9 * (totalmem() / 2 ** 20) - 3072 - heapForBytes(maxFicBytes)) / heapMb));
 const jobs = Math.max(2, Number(opt("jobs") ?? Math.min(cpus().length, memJobs)));
 const outDir = join(dir, ".check");
@@ -43,9 +44,11 @@ const run = (label, cmd, cmdArgs, env = {}) =>
   });
 
 const onlyNames = opt("only")?.split(",").filter(Boolean);
+const skipNames = opt("skip")?.split(",").filter(Boolean); // leave these fics out of the gold and right-set runs: NOT a full check
 const squash = (x) => x.toLowerCase().replace(/[^a-z0-9]/g, "");
-const wanted = (n) => !onlyNames || onlyNames.some((o) => squash(n).includes(squash(o)) || squash(o).includes(squash(n)));
-const quickMode = flag("quick") || !!onlyNames;
+const wanted = (n) => (!onlyNames || onlyNames.some((o) => squash(n).includes(squash(o)) || squash(o).includes(squash(n)))) && !skipNames?.some((x) => squash(n) === squash(x));
+const quickMode = flag("quick") || !!onlyNames || !!skipNames;
+if (skipNames) console.log(`SKIPPING ${skipNames.join(", ")}: not a full check (their gold and right-set labels are not replayed, and the gold totals are not compared with the baseline).`);
 const goldFics = existsSync("tests/gold") ? readdirSync("tests/gold").filter((f) => f.endsWith(".json")).map((f) => JSON.parse(readFileSync(join("tests/gold", f), "utf8")).fic).filter(wanted) : [];
 const sets = existsSync("tests/right-set") ? readdirSync("tests/right-set").filter((f) => f.endsWith(".json")).map((f) => f.replace(/\.json$/, "")).filter(wanted) : [];
 const shardCount = hasSamples && (!quickMode || goldFics.length + sets.length) ? Math.max(1, Math.min(jobs, quickMode ? goldFics.length + sets.length : Infinity)) : 0;

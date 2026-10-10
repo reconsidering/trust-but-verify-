@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 // Run the sample-fic evaluation in parallel and merge the results.
-//   npm run eval -- [dir=ao3-samples] [--jobs N] [--force] [--quick] [--only name,name]
+//   npm run eval -- [dir=ao3-samples] [--jobs N] [--force] [--quick] [--only name,name] [--skip name,name]
 // Results are kept per engine version (<dir>/.eval/<version>/), so going back to a version already run (a baseline) costs nothing.
 // --quick skips the "blind" pass (no tags) and runs only the tagged one: about half the time, for a fast before/after check.
 // Splits the fics into N shards (longest first, by the time they took last run, else file size) and runs one vitest process
@@ -18,10 +18,11 @@ import { mergeEval, readResults } from "./eval-merge.mjs";
 const args = process.argv.slice(2);
 const flag = (n) => args.includes(`--${n}`);
 const opt = (n) => { const i = args.indexOf(`--${n}`); return i >= 0 ? args[i + 1] : undefined; };
-const positional = args.filter((a, i) => !a.startsWith("--") && !(i > 0 && ["--jobs", "--only"].includes(args[i - 1])));
+const positional = args.filter((a, i) => !a.startsWith("--") && !(i > 0 && ["--jobs", "--only", "--skip"].includes(args[i - 1])));
 const dir = resolve(positional[0] ?? "ao3-samples");
 const jobs = Number(opt("jobs") ?? Math.max(1, cpus().length));
 const only = opt("only")?.split(",");
+const skip = opt("skip")?.split(",").filter(Boolean); // leave these fics out (e.g. the 16 MB one that needs 4.5 GB): NOT a full run
 if (!existsSync(dir)) { console.error(`No such folder: ${dir}`); process.exit(2); }
 
 const sha = (b) => createHash("sha1").update(b).digest("hex").slice(0, 16);
@@ -39,7 +40,8 @@ if (existsSync(evalRoot)) {
   const versions = readdirSync(evalRoot, { withFileTypes: true }).filter((e) => e.isDirectory()).map((e) => ({ n: e.name, t: statSync(join(evalRoot, e.name)).mtimeMs })).sort((a, b) => b.t - a.t);
   for (const v of versions.slice(6)) { rmSync(join(evalRoot, v.n), { recursive: true, force: true }); rmSync(join(evalRoot, `v-${v.n}.json`), { force: true }); }
 }
-const files = readdirSync(dir).filter((f) => f.endsWith(".html")).map((f) => f.replace(/\.html$/, "")).filter((n) => !only || only.includes(n)).sort();
+const files = readdirSync(dir).filter((f) => f.endsWith(".html")).map((f) => f.replace(/\.html$/, "")).filter((n) => !only || only.includes(n)).filter((n) => !skip?.includes(n)).sort();
+if (skip) console.log(`SKIPPING ${skip.join(", ")}: not a full run.`);
 const prev = new Map(readResults(outDir).map((r) => [r.file, r]));
 const keys = Object.fromEntries(files.map((n) => [n, `${engineKey}:${sha(readFileSync(join(dir, `${n}.html`)))}`]));
 const todo = files.filter((n) => flag("force") || prev.get(n)?.key !== keys[n]);
