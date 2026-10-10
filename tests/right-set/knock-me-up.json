@@ -10,7 +10,7 @@
    "via": "penis-fills",
    "h": "83693b35",
    "conf": 84,
-   "weight": 0.85,
+   "weight": 0.9,
    "source": "claude",
    "marks": {
     "right": 1,
@@ -18,7 +18,15 @@
    },
    "seen": [
     "2026-10-05"
-   ]
+   ],
+   "trainingDelegated": true,
+   "corroboration": {
+    "id": "C0586",
+    "batchId": "claude-oct4-5-8401eaa99447",
+    "confidence": 0.99,
+    "engineCommit": "9ad2225b8e15807e5d7e03095489eb596153c797"
+   },
+   "retired": "AI-corroborated historical judgment only; current claim is separate or unavailable (2026-10-10)"
   },
   {
    "kind": "hint",
@@ -30,7 +38,7 @@
    "via": "self-own-fingers",
    "h": "7b5b54df",
    "conf": 40,
-   "weight": 0.85,
+   "weight": 0.9,
    "source": "claude",
    "marks": {
     "right": 1,
@@ -38,7 +46,15 @@
    },
    "seen": [
     "2026-10-05"
-   ]
+   ],
+   "trainingDelegated": true,
+   "corroboration": {
+    "id": "C0587",
+    "batchId": "claude-oct4-5-8401eaa99447",
+    "confidence": 0.99,
+    "engineCommit": "9ad2225b8e15807e5d7e03095489eb596153c797"
+   },
+   "retired": "AI-corroborated historical judgment only; current claim is separate or unavailable (2026-10-10)"
   },
   {
    "kind": "hint",
@@ -50,7 +66,7 @@
    "via": "dialogue:anal sex",
    "h": "2af8de7b",
    "conf": 57,
-   "weight": 0.85,
+   "weight": 0.9,
    "source": "claude",
    "marks": {
     "right": 1,
@@ -58,7 +74,15 @@
    },
    "seen": [
     "2026-10-05"
-   ]
+   ],
+   "trainingDelegated": true,
+   "corroboration": {
+    "id": "C0588",
+    "batchId": "claude-oct4-5-8401eaa99447",
+    "confidence": 0.99,
+    "engineCommit": "9ad2225b8e15807e5d7e03095489eb596153c797"
+   },
+   "retired": "AI-corroborated historical judgment only; current claim is separate or unavailable (2026-10-10)"
   },
   {
    "kind": "hint",
@@ -130,7 +154,7 @@
    "via": "dialogue:anal sex",
    "h": "f6e4ffad",
    "conf": 89,
-   "weight": 0.85,
+   "weight": 0.9,
    "source": "claude",
    "marks": {
     "right": 1,
@@ -138,7 +162,15 @@
    },
    "seen": [
     "2026-10-05"
-   ]
+   ],
+   "trainingDelegated": true,
+   "corroboration": {
+    "id": "C0592",
+    "batchId": "claude-oct4-5-8401eaa99447",
+    "confidence": 0.99,
+    "engineCommit": "9ad2225b8e15807e5d7e03095489eb596153c797"
+   },
+   "retired": "AI-corroborated historical judgment only; current claim is separate or unavailable (2026-10-10)"
   },
   {
    "kind": "hint",
@@ -150,7 +182,7 @@
    "via": "dialogue:anal sex",
    "h": "f8c449d0",
    "conf": 57,
-   "weight": 0.85,
+   "weight": 0.9,
    "source": "claude",
    "marks": {
     "right": 1,
@@ -158,7 +190,15 @@
    },
    "seen": [
     "2026-10-05"
-   ]
+   ],
+   "trainingDelegated": true,
+   "corroboration": {
+    "id": "C0593",
+    "batchId": "claude-oct4-5-8401eaa99447",
+    "confidence": 0.99,
+    "engineCommit": "9ad2225b8e15807e5d7e03095489eb596153c797"
+   },
+   "retired": "AI-corroborated historical judgment only; current claim is separate or unavailable (2026-10-10)"
   },
   {
    "kind": "hint",
@@ -170,7 +210,7 @@
    "via": "dialogue:anal sex",
    "h": "bda74266",
    "conf": 56,
-   "weight": 0.85,
+   "weight": 0.9,
    "source": "claude",
    "marks": {
     "right": 1,
@@ -178,7 +218,15 @@
    },
    "seen": [
     "2026-10-05"
-   ]
+   ],
+   "trainingDelegated": true,
+   "corroboration": {
+    "id": "C0594",
+    "batchId": "claude-oct4-5-8401eaa99447",
+    "confidence": 0.99,
+    "engineCommit": "9ad2225b8e15807e5d7e03095489eb596153c797"
+   },
+   "retired": "AI-corroborated historical judgment only; current claim is separate or unavailable (2026-10-10)"
   },
   {
    "kind": "solo",
@@ -187,7 +235,7 @@
    "who": "Henry Fox-Mountchristen-Windsor",
    "via": "self-own-fingers",
    "h": "7b5b54df",
-   "weight": 0.85,
+   "weight": 0.9,
    "source": "claude",
    "marks": {
     "right": 1,
@@ -195,7 +243,15 @@
    },
    "seen": [
     "2026-10-05"
-   ]
+   ],
+   "trainingDelegated": true,
+   "corroboration": {
+    "id": "C0595",
+    "batchId": "claude-oct4-5-8401eaa99447",
+    "confidence": 0.99,
+    "engineCommit": "9ad2225b8e15807e5d7e03095489eb596153c797"
+   },
+   "retired": "AI-corroborated historical judgment only; current claim is separate or unavailable (2026-10-10)"
   },
   {
    "kind": "scene",
@@ -243,7 +299,7 @@
    "via": "inside",
    "h": "5de61a2",
    "conf": 71,
-   "weight": 0.85,
+   "weight": 0.9,
    "source": "claude",
    "marks": {
     "right": 1,
@@ -251,7 +307,14 @@
    },
    "seen": [
     "2026-10-05"
-   ]
+   ],
+   "trainingDelegated": true,
+   "corroboration": {
+    "id": "C0598",
+    "batchId": "claude-oct4-5-8401eaa99447",
+    "confidence": 0.99,
+    "engineCommit": "9ad2225b8e15807e5d7e03095489eb596153c797"
+   }
   },
   {
    "kind": "scene",
@@ -338,7 +401,7 @@
    "via": "lines-up-hole",
    "h": "18252e8a",
    "conf": 75,
-   "weight": 0.85,
+   "weight": 0.9,
    "source": "claude",
    "marks": {
     "right": 1,
@@ -346,7 +409,14 @@
    },
    "seen": [
     "2026-10-05"
-   ]
+   ],
+   "trainingDelegated": true,
+   "corroboration": {
+    "id": "C0603",
+    "batchId": "claude-oct4-5-8401eaa99447",
+    "confidence": 0.99,
+    "engineCommit": "9ad2225b8e15807e5d7e03095489eb596153c797"
+   }
   }
  ],
  "fic": "knock-me-up",
@@ -362,11 +432,19 @@
    "h": "6ebbda54",
    "misread": true,
    "gone": true,
-   "weight": 0.3,
+   "weight": 0.9,
    "source": "claude",
    "seen": [
     "2026-10-05"
-   ]
+   ],
+   "trainingDelegated": true,
+   "corroboration": {
+    "id": "C0604",
+    "batchId": "claude-oct4-5-8401eaa99447",
+    "confidence": 0.99,
+    "engineCommit": "9ad2225b8e15807e5d7e03095489eb596153c797"
+   },
+   "retired": "AI-corroborated historical judgment only; current claim is separate or unavailable (2026-10-10)"
   },
   {
    "kind": "scene",

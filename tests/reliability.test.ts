@@ -1,3 +1,4 @@
+import { trainingLabels } from '../scripts/training-labels.mjs';
 // Turns the labelled audit samples (tests/labels/*.json) into the per-pattern reliability table the engine uses
 // (src/heuristic/reliability.ts), and fails when the committed table no longer matches the labels.
 //   WRITE_RELIABILITY=1 npx vitest run tests/reliability.test.ts     rewrites the table
@@ -15,16 +16,18 @@ const dir = join(__dirname, "labels");
 /** ok / wrong counts per pattern from every labels file (unclear labels are left out). */
 export function countLabels(): Map<string, { ok: number; wrong: number }> {
   const counts = new Map<string, { ok: number; wrong: number }>();
-  for (const f of readdirSync(dir).filter((x) => x.endsWith(".json")).sort()) {
-    const { labels } = JSON.parse(readFileSync(join(dir, f), "utf8")) as { labels: Record<string, "ok" | "wrong" | "unclear"> };
-    for (const [key, label] of Object.entries(labels)) {
-      if (label === "unclear") continue;
-      const id = key.slice(0, key.lastIndexOf("#")).replace(/~elided$/, "");
-      const c = counts.get(id) ?? { ok: 0, wrong: 0 };
-      c[label]++;
-      counts.set(id, c);
-    }
+  const files = readdirSync(dir).filter(f=>f.endsWith(".json")).sort().map(f=>JSON.parse(readFileSync(join(dir,f),"utf8")));
+  // Only the new claim-bound weighted keys replace older audit assignments.
+  // Preserve the existing accounting for unrelated legacy labels.
+  const replaced = new Set<string>(files.filter(d=>d.weights).flatMap(d=>[...Object.keys(d.weights),...Object.keys(d.superseded ?? {})]));
+  const bumpAudit = (key:string,label:"ok"|"wrong",weight:number) => {
+    const id = key.slice(0,key.lastIndexOf("#")).replace(/~elided$/, "");
+    const c = counts.get(id) ?? {ok:0,wrong:0}; c[label] += weight; counts.set(id,c);
+  };
+  for (const data of files) for (const [key,label] of Object.entries(data.labels) as [string,"ok"|"wrong"|"unclear"][]) {
+    if (label !== "unclear" && !replaced.has(key)) bumpAudit(key,label,1);
   }
+  for (const [key,{label,weight}] of trainingLabels(dir)) if (replaced.has(key)) bumpAudit(key,label,weight);
   // Mistake reports (tests/right-set): a "looks right" reading counts as right; one reported wrong because it was misread counts as wrong.
   // Disputed or retired readings, and anything marked both ways, are left out so one mistaken mark cannot move a pattern.
   const setDir = join(__dirname, "right-set");
@@ -41,8 +44,8 @@ export function countLabels(): Map<string, { ok: number; wrong: number }> {
         c[label] += w;
         counts.set(id, c);
       };
-      for (const e of set.entries) { const st = strengthOf(e); if (st === "strong" || st === "single" || st === "weighted") bump(e.via, "ok", weightOf(e)); }
-      for (const n of set.negatives ?? []) if (n.misread && !rightKeys.has(k(n)) && !n.retired) bump(n.via, "wrong", weightOf(n));
+      for (const e of set.entries) { if (e.trainingDelegated) continue; const st = strengthOf(e); if (st === "strong" || st === "single" || st === "weighted") bump(e.via, "ok", weightOf(e)); }
+      for (const n of set.negatives ?? []) if (!n.trainingDelegated && n.misread && !rightKeys.has(k(n)) && !n.retired) bump(n.via, "wrong", weightOf(n));
     }
   }
   return counts;

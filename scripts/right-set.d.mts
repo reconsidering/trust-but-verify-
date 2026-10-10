@@ -17,6 +17,9 @@ export interface RightEntry {
   misread?: boolean;
   /** Below 1 for labels from an unverified pass; absent = the owner's own mark (1). */
   weight?: number;
+  /** Exact claim-bound audit record supplies this observation; do not count twice. */
+  trainingDelegated?: boolean;
+  corroboration?: {id:string;batchId:string;confidence:number;engineCommit:string};
   source?: string;
 }
 export interface RightSet { fic: string; title: string; entries: RightEntry[]; negatives?: RightEntry[] }

@@ -19,8 +19,11 @@ export function reviewedClaims(root) {
     if (batch.schema === 'engine-review-batch/v1') manifests.set(batch.batchId,batch);
   }
   const out = new Map();
-  for (const file of readdirSync(join(root,'tests/labels')).filter(f => f.endsWith('.json')).sort()) {
-    const labels = JSON.parse(readFileSync(join(root,'tests/labels',file),'utf8'));
+  const files = readdirSync(join(root,'tests/labels')).filter(f => f.endsWith('.json')).sort()
+    .map(file => ({file,labels:JSON.parse(readFileSync(join(root,'tests/labels',file),'utf8'))}));
+  // Full-weight owner reviews override provisional AI identities, regardless of filename.
+  files.sort((a,b)=>Number(!!b.labels.weights)-Number(!!a.labels.weights)||a.file.localeCompare(b.file));
+  for (const {labels} of files) {
     const batch = manifests.get(labels.batchId);
     for (const answer of labels.answers ?? []) {
       if (!answer.key) continue;

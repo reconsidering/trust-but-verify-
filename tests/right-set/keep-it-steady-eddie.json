@@ -10,7 +10,7 @@
    "via": "grab-ass",
    "h": "eabc5cd2",
    "conf": 60,
-   "weight": 0.85,
+   "weight": 0.9,
    "source": "claude",
    "marks": {
     "right": 1,
@@ -18,7 +18,15 @@
    },
    "seen": [
     "2026-10-05"
-   ]
+   ],
+   "trainingDelegated": true,
+   "corroboration": {
+    "id": "C0656",
+    "batchId": "claude-oct4-5-8401eaa99447",
+    "confidence": 0.99,
+    "engineCommit": "9ad2225b8e15807e5d7e03095489eb596153c797"
+   },
+   "retired": "AI-corroborated historical judgment only; current claim is separate or unavailable (2026-10-10)"
   },
   {
    "kind": "hint",

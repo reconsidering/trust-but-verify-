@@ -10,7 +10,7 @@
    "via": "spread-legs",
    "h": "5730ffd4",
    "conf": 34,
-   "weight": 0.85,
+   "weight": 0.9,
    "source": "claude",
    "marks": {
     "right": 1,
@@ -18,7 +18,15 @@
    },
    "seen": [
     "2026-10-05"
-   ]
+   ],
+   "trainingDelegated": true,
+   "corroboration": {
+    "id": "C0606",
+    "batchId": "claude-oct4-5-8401eaa99447",
+    "confidence": 0.99,
+    "engineCommit": "9ad2225b8e15807e5d7e03095489eb596153c797"
+   },
+   "retired": "AI-corroborated historical judgment only; current claim is separate or unavailable (2026-10-10)"
   },
   {
    "kind": "hint",
@@ -51,7 +59,7 @@
    "via": "grab-ass",
    "h": "5666f822",
    "conf": 49,
-   "weight": 0.85,
+   "weight": 0.9,
    "source": "claude",
    "marks": {
     "right": 1,
@@ -59,7 +67,15 @@
    },
    "seen": [
     "2026-10-05"
-   ]
+   ],
+   "trainingDelegated": true,
+   "corroboration": {
+    "id": "C0608",
+    "batchId": "claude-oct4-5-8401eaa99447",
+    "confidence": 0.99,
+    "engineCommit": "9ad2225b8e15807e5d7e03095489eb596153c797"
+   },
+   "retired": "AI-corroborated historical judgment only; current claim is separate or unavailable (2026-10-10)"
   },
   {
    "kind": "hint",
@@ -91,7 +107,7 @@
    "via": "spread-legs",
    "h": "8a85a352",
    "conf": 34,
-   "weight": 0.85,
+   "weight": 0.9,
    "source": "claude",
    "marks": {
     "right": 1,
@@ -99,7 +115,15 @@
    },
    "seen": [
     "2026-10-05"
-   ]
+   ],
+   "trainingDelegated": true,
+   "corroboration": {
+    "id": "C0610",
+    "batchId": "claude-oct4-5-8401eaa99447",
+    "confidence": 0.99,
+    "engineCommit": "9ad2225b8e15807e5d7e03095489eb596153c797"
+   },
+   "retired": "AI-corroborated historical judgment only; current claim is separate or unavailable (2026-10-10)"
   },
   {
    "kind": "hint",
@@ -111,7 +135,7 @@
    "via": "grab-ass",
    "h": "8a85a352",
    "conf": 56,
-   "weight": 0.85,
+   "weight": 0.9,
    "source": "claude",
    "marks": {
     "right": 1,
@@ -119,7 +143,15 @@
    },
    "seen": [
     "2026-10-05"
-   ]
+   ],
+   "trainingDelegated": true,
+   "corroboration": {
+    "id": "C0611",
+    "batchId": "claude-oct4-5-8401eaa99447",
+    "confidence": 0.99,
+    "engineCommit": "9ad2225b8e15807e5d7e03095489eb596153c797"
+   },
+   "retired": "AI-corroborated historical judgment only; current claim is separate or unavailable (2026-10-10)"
   },
   {
    "kind": "hint",
@@ -168,7 +200,7 @@
    "bottom": "Dean Winchester",
    "via": "push-into",
    "h": "4f2071dc",
-   "weight": 0.85,
+   "weight": 0.9,
    "source": "claude",
    "marks": {
     "right": 1,
@@ -176,7 +208,14 @@
    },
    "seen": [
     "2026-10-05"
-   ]
+   ],
+   "trainingDelegated": true,
+   "corroboration": {
+    "id": "C0614",
+    "batchId": "claude-oct4-5-8401eaa99447",
+    "confidence": 0.99,
+    "engineCommit": "9ad2225b8e15807e5d7e03095489eb596153c797"
+   }
   },
   {
    "kind": "scene",

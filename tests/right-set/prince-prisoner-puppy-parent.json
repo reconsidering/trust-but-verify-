@@ -891,7 +891,7 @@
    "via": "lines-up-hole",
    "h": "bc39f6e9",
    "conf": 58,
-   "weight": 0.85,
+   "weight": 0.9,
    "source": "claude",
    "marks": {
     "right": 1,
@@ -899,7 +899,15 @@
    },
    "seen": [
     "2026-10-05"
-   ]
+   ],
+   "trainingDelegated": true,
+   "corroboration": {
+    "id": "C0561",
+    "batchId": "claude-oct4-5-8401eaa99447",
+    "confidence": 0.99,
+    "engineCommit": "9ad2225b8e15807e5d7e03095489eb596153c797"
+   },
+   "retired": "AI-corroborated historical judgment only; current claim is separate or unavailable (2026-10-10)"
   },
   {
    "kind": "hint",
@@ -951,7 +959,7 @@
    "via": "dialogue:anal sex",
    "h": "4b054ed",
    "conf": 55,
-   "weight": 0.85,
+   "weight": 0.9,
    "source": "claude",
    "marks": {
     "right": 1,
@@ -959,7 +967,15 @@
    },
    "seen": [
     "2026-10-05"
-   ]
+   ],
+   "trainingDelegated": true,
+   "corroboration": {
+    "id": "C0564",
+    "batchId": "claude-oct4-5-8401eaa99447",
+    "confidence": 0.99,
+    "engineCommit": "9ad2225b8e15807e5d7e03095489eb596153c797"
+   },
+   "retired": "AI-corroborated historical judgment only; current claim is separate or unavailable (2026-10-10)"
   },
   {
    "kind": "hint",
@@ -1033,7 +1049,7 @@
    "via": "dialogue:anal sex",
    "h": "43cf12f3",
    "conf": 89,
-   "weight": 0.85,
+   "weight": 0.9,
    "source": "claude",
    "marks": {
     "right": 1,
@@ -1041,7 +1057,15 @@
    },
    "seen": [
     "2026-10-05"
-   ]
+   ],
+   "trainingDelegated": true,
+   "corroboration": {
+    "id": "C0568",
+    "batchId": "claude-oct4-5-8401eaa99447",
+    "confidence": 0.97,
+    "engineCommit": "9ad2225b8e15807e5d7e03095489eb596153c797"
+   },
+   "retired": "AI-corroborated historical judgment only; current claim is separate or unavailable (2026-10-10)"
   },
   {
    "kind": "hint",
@@ -1088,7 +1112,7 @@
    "who": "Antinous",
    "via": "mast-himself",
    "h": "ed3d745",
-   "weight": 0.85,
+   "weight": 0.9,
    "source": "claude",
    "marks": {
     "right": 1,
@@ -1096,7 +1120,15 @@
    },
    "seen": [
     "2026-10-05"
-   ]
+   ],
+   "trainingDelegated": true,
+   "corroboration": {
+    "id": "C0571",
+    "batchId": "claude-oct4-5-8401eaa99447",
+    "confidence": 0.99,
+    "engineCommit": "9ad2225b8e15807e5d7e03095489eb596153c797"
+   },
+   "retired": "AI-corroborated historical judgment only; current claim is separate or unavailable (2026-10-10)"
   },
   {
    "kind": "solo",
@@ -1105,7 +1137,7 @@
    "who": "Antinous",
    "via": "mast-himself",
    "h": "169b1e82",
-   "weight": 0.85,
+   "weight": 0.9,
    "source": "claude",
    "marks": {
     "right": 1,
@@ -1113,7 +1145,15 @@
    },
    "seen": [
     "2026-10-05"
-   ]
+   ],
+   "trainingDelegated": true,
+   "corroboration": {
+    "id": "C0572",
+    "batchId": "claude-oct4-5-8401eaa99447",
+    "confidence": 0.99,
+    "engineCommit": "9ad2225b8e15807e5d7e03095489eb596153c797"
+   },
+   "retired": "AI-corroborated historical judgment only; current claim is separate or unavailable (2026-10-10)"
   },
   {
    "kind": "solo",
@@ -1122,7 +1162,7 @@
    "who": "Telemachus",
    "via": "mast-himself",
    "h": "355139da",
-   "weight": 0.85,
+   "weight": 0.9,
    "source": "claude",
    "marks": {
     "right": 1,
@@ -1130,7 +1170,15 @@
    },
    "seen": [
     "2026-10-05"
-   ]
+   ],
+   "trainingDelegated": true,
+   "corroboration": {
+    "id": "C0573",
+    "batchId": "claude-oct4-5-8401eaa99447",
+    "confidence": 0.99,
+    "engineCommit": "9ad2225b8e15807e5d7e03095489eb596153c797"
+   },
+   "retired": "AI-corroborated historical judgment only; current claim is separate or unavailable (2026-10-10)"
   },
   {
    "kind": "solo",
@@ -1156,7 +1204,7 @@
    "who": "Telemachus",
    "via": "mast-himself",
    "h": "4ac3817b",
-   "weight": 0.85,
+   "weight": 0.9,
    "source": "claude",
    "marks": {
     "right": 1,
@@ -1164,7 +1212,15 @@
    },
    "seen": [
     "2026-10-05"
-   ]
+   ],
+   "trainingDelegated": true,
+   "corroboration": {
+    "id": "C0575",
+    "batchId": "claude-oct4-5-8401eaa99447",
+    "confidence": 0.99,
+    "engineCommit": "9ad2225b8e15807e5d7e03095489eb596153c797"
+   },
+   "retired": "AI-corroborated historical judgment only; current claim is separate or unavailable (2026-10-10)"
   },
   {
    "kind": "scene",
@@ -1194,7 +1250,7 @@
    "bottom": "Telemachus",
    "via": "dd2-finger-shoved-into",
    "h": "42e98421",
-   "weight": 0.85,
+   "weight": 0.9,
    "source": "claude",
    "marks": {
     "right": 1,
@@ -1202,7 +1258,15 @@
    },
    "seen": [
     "2026-10-05"
-   ]
+   ],
+   "trainingDelegated": true,
+   "corroboration": {
+    "id": "C0577",
+    "batchId": "claude-oct4-5-8401eaa99447",
+    "confidence": 0.99,
+    "engineCommit": "9ad2225b8e15807e5d7e03095489eb596153c797"
+   },
+   "retired": "AI-corroborated historical judgment only; current claim is separate or unavailable (2026-10-10)"
   },
   {
    "kind": "scene",
@@ -1213,7 +1277,7 @@
    "via": "dd2-pulled-out-of-him",
    "h": "f908733c",
    "conf": 90,
-   "weight": 0.85,
+   "weight": 0.9,
    "source": "claude",
    "marks": {
     "right": 1,
@@ -1221,7 +1285,14 @@
    },
    "seen": [
     "2026-10-05"
-   ]
+   ],
+   "trainingDelegated": true,
+   "corroboration": {
+    "id": "C0578",
+    "batchId": "claude-oct4-5-8401eaa99447",
+    "confidence": 0.99,
+    "engineCommit": "9ad2225b8e15807e5d7e03095489eb596153c797"
+   }
   },
   {
    "kind": "scene",
@@ -1252,7 +1323,7 @@
    "via": "push-into",
    "h": "c3d78cbe",
    "conf": 60,
-   "weight": 0.85,
+   "weight": 0.9,
    "source": "claude",
    "marks": {
     "right": 1,
@@ -1263,7 +1334,14 @@
    ],
    "disputedOn": [
     "2026-10-05"
-   ]
+   ],
+   "trainingDelegated": true,
+   "corroboration": {
+    "id": "C0580",
+    "batchId": "claude-oct4-5-8401eaa99447",
+    "confidence": 0.99,
+    "engineCommit": "9ad2225b8e15807e5d7e03095489eb596153c797"
+   }
   }
  ],
  "fic": "prince-prisoner-puppy-parent",
@@ -1519,11 +1597,19 @@
    "conf": 68,
    "misread": true,
    "gone": true,
-   "weight": 0.3,
+   "weight": 0.9,
    "source": "claude",
    "seen": [
     "2026-10-05"
-   ]
+   ],
+   "trainingDelegated": true,
+   "corroboration": {
+    "id": "C0583",
+    "batchId": "claude-oct4-5-8401eaa99447",
+    "confidence": 0.99,
+    "engineCommit": "9ad2225b8e15807e5d7e03095489eb596153c797"
+   },
+   "retired": "AI-corroborated historical judgment only; current claim is separate or unavailable (2026-10-10)"
   },
   {
    "kind": "scene",

@@ -1,3 +1,4 @@
+import { trainingLabels } from '../scripts/training-labels.mjs';
 // Trains the context model in src/heuristic/learned.ts from the hand-labelled audit samples (tests/labels/*.json), and says
 // whether it beats the plain per-pattern record on held-out labels.
 //   AO3_DIR=ao3-samples npx vitest run tests/learn.test.ts --testTimeout=1500000          cross-validation report only
@@ -23,13 +24,9 @@ const PRIOR_MEAN = 0.9, PRIOR_STRENGTH = 4;
 /** `wt` is how far the label is trusted (1 for the owner's own marks; less for an unverified pass). */
 type Row = { key: string; id: string; f: number[]; y: number; wt: number; src?: "audit" | "report" | "weighted"; fic?: string; outcome?:DecisionOutcome };
 
+const auditAssignments = trainingLabels(labelDir);
 function loadLabels(): Map<string, "ok" | "wrong"> {
-  const out = new Map<string, "ok" | "wrong">();
-  for (const f of readdirSync(labelDir).filter((x) => x.endsWith(".json")).sort()) {
-    const { labels } = JSON.parse(readFileSync(join(labelDir, f), "utf8")) as { labels: Record<string, "ok" | "wrong" | "unclear"> };
-    for (const [k, v] of Object.entries(labels)) if (v !== "unclear") out.set(k, v);
-  }
-  return out;
+  return new Map([...auditAssignments].map(([key,row]) => [key,row.label]));
 }
 
 /**
@@ -187,7 +184,7 @@ describe.skipIf(!dir)("context model", () => {
             if (!h.f) { if (lab) missing[key] = h.kind; return; }
             if (!lab || seen.has(key)) return;
             seen.add(key);
-            rows.push({ key, id: h.via, f: h.f, outcome:h.decisionOutcome, y: lab === "ok" ? 1 : 0, wt: !labels.get(key) && rep ? rep.wt : 1, src: labels.get(key) ? "audit" : rep && rep.wt < 1 ? "weighted" : "report", fic: f });
+            rows.push({ key, id: h.via, f: h.f, outcome:h.decisionOutcome, y: lab === "ok" ? 1 : 0, wt: labels.get(key) ? auditAssignments.get(key)!.weight : rep ? rep.wt : 1, src: labels.get(key) ? (auditAssignments.get(key)!.weight < 1 ? "weighted" : "audit") : rep && rep.wt < 1 ? "weighted" : "report", fic: f });
           },
         });
       }

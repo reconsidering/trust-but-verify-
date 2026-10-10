@@ -103,7 +103,7 @@
    "via": "plug-worn",
    "h": "b164b2ba",
    "conf": 62,
-   "weight": 0.85,
+   "weight": 0.9,
    "source": "claude",
    "marks": {
     "right": 1,
@@ -111,7 +111,15 @@
    },
    "seen": [
     "2026-10-05"
-   ]
+   ],
+   "trainingDelegated": true,
+   "corroboration": {
+    "id": "C0634",
+    "batchId": "claude-oct4-5-8401eaa99447",
+    "confidence": 0.99,
+    "engineCommit": "9ad2225b8e15807e5d7e03095489eb596153c797"
+   },
+   "retired": "AI-corroborated historical judgment only; current claim is separate or unavailable (2026-10-10)"
   },
   {
    "kind": "hint",
@@ -183,7 +191,7 @@
    "via": "plug-worn",
    "h": "d3dcabd0",
    "conf": 62,
-   "weight": 0.85,
+   "weight": 0.9,
    "source": "claude",
    "marks": {
     "right": 1,
@@ -191,7 +199,15 @@
    },
    "seen": [
     "2026-10-05"
-   ]
+   ],
+   "trainingDelegated": true,
+   "corroboration": {
+    "id": "C0638",
+    "batchId": "claude-oct4-5-8401eaa99447",
+    "confidence": 0.99,
+    "engineCommit": "9ad2225b8e15807e5d7e03095489eb596153c797"
+   },
+   "retired": "AI-corroborated historical judgment only; current claim is separate or unavailable (2026-10-10)"
   },
   {
    "kind": "scene",
@@ -240,7 +256,7 @@
    "via": "push-into",
    "h": "b2bd7833",
    "conf": 75,
-   "weight": 0.85,
+   "weight": 0.9,
    "source": "claude",
    "marks": {
     "right": 1,
@@ -248,7 +264,14 @@
    },
    "seen": [
     "2026-10-05"
-   ]
+   ],
+   "trainingDelegated": true,
+   "corroboration": {
+    "id": "C0641",
+    "batchId": "claude-oct4-5-8401eaa99447",
+    "confidence": 0.99,
+    "engineCommit": "9ad2225b8e15807e5d7e03095489eb596153c797"
+   }
   },
   {
    "kind": "scene",

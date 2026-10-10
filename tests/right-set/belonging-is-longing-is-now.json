@@ -2405,7 +2405,7 @@
    "bottom": "Dean Winchester",
    "via": "fingers-into",
    "h": "905c02ce",
-   "weight": 0.85,
+   "weight": 0.9,
    "source": "claude",
    "marks": {
     "right": 1,
@@ -2413,7 +2413,14 @@
    },
    "seen": [
     "2026-10-05"
-   ]
+   ],
+   "trainingDelegated": true,
+   "corroboration": {
+    "id": "C0123",
+    "batchId": "claude-oct4-5-8401eaa99447",
+    "confidence": 0.97,
+    "engineCommit": "9ad2225b8e15807e5d7e03095489eb596153c797"
+   }
   },
   {
    "kind": "scene",
@@ -3641,11 +3648,19 @@
    "h": "aa6fd2f4",
    "misread": true,
    "gone": true,
-   "weight": 0.3,
+   "weight": 0.9,
    "source": "claude",
    "seen": [
     "2026-10-05"
-   ]
+   ],
+   "trainingDelegated": true,
+   "corroboration": {
+    "id": "C0189",
+    "batchId": "claude-oct4-5-8401eaa99447",
+    "confidence": 0.97,
+    "engineCommit": "9ad2225b8e15807e5d7e03095489eb596153c797"
+   },
+   "retired": "AI-corroborated historical judgment only; current claim is separate or unavailable (2026-10-10)"
   },
   {
    "kind": "solo",
@@ -3673,11 +3688,19 @@
    "conf": 32,
    "misread": true,
    "gone": true,
-   "weight": 0.3,
+   "weight": 0.9,
    "source": "claude",
    "seen": [
     "2026-10-05"
-   ]
+   ],
+   "trainingDelegated": true,
+   "corroboration": {
+    "id": "C0191",
+    "batchId": "claude-oct4-5-8401eaa99447",
+    "confidence": 0.97,
+    "engineCommit": "9ad2225b8e15807e5d7e03095489eb596153c797"
+   },
+   "retired": "AI-corroborated historical judgment only; current claim is separate or unavailable (2026-10-10)"
   },
   {
    "kind": "scene",
@@ -3757,11 +3780,19 @@
    "conf": 32,
    "misread": true,
    "gone": true,
-   "weight": 0.3,
+   "weight": 0.9,
    "source": "claude",
    "seen": [
     "2026-10-05"
-   ]
+   ],
+   "trainingDelegated": true,
+   "corroboration": {
+    "id": "C0196",
+    "batchId": "claude-oct4-5-8401eaa99447",
+    "confidence": 0.97,
+    "engineCommit": "9ad2225b8e15807e5d7e03095489eb596153c797"
+   },
+   "retired": "AI-corroborated historical judgment only; current claim is separate or unavailable (2026-10-10)"
   },
   {
    "kind": "scene",
@@ -3791,11 +3822,19 @@
    "conf": 32,
    "misread": true,
    "gone": true,
-   "weight": 0.3,
+   "weight": 0.9,
    "source": "claude",
    "seen": [
     "2026-10-05"
-   ]
+   ],
+   "trainingDelegated": true,
+   "corroboration": {
+    "id": "C0198",
+    "batchId": "claude-oct4-5-8401eaa99447",
+    "confidence": 0.97,
+    "engineCommit": "9ad2225b8e15807e5d7e03095489eb596153c797"
+   },
+   "retired": "AI-corroborated historical judgment only; current claim is separate or unavailable (2026-10-10)"
   },
   {
    "kind": "scene",
@@ -3807,11 +3846,19 @@
    "h": "3c926dc6",
    "misread": true,
    "gone": false,
-   "weight": 0.3,
+   "weight": 0.9,
    "source": "claude",
    "seen": [
     "2026-10-05"
-   ]
+   ],
+   "trainingDelegated": true,
+   "corroboration": {
+    "id": "C0199",
+    "batchId": "claude-oct4-5-8401eaa99447",
+    "confidence": 0.97,
+    "engineCommit": "9ad2225b8e15807e5d7e03095489eb596153c797"
+   },
+   "retired": "AI-corroborated historical judgment only; current claim is separate or unavailable (2026-10-10)"
   },
   {
    "kind": "scene",
@@ -3925,11 +3972,19 @@
    "h": "bd5a8ad5",
    "misread": true,
    "gone": true,
-   "weight": 0.3,
+   "weight": 0.9,
    "source": "claude",
    "seen": [
     "2026-10-05"
-   ]
+   ],
+   "trainingDelegated": true,
+   "corroboration": {
+    "id": "C0206",
+    "batchId": "claude-oct4-5-8401eaa99447",
+    "confidence": 0.97,
+    "engineCommit": "9ad2225b8e15807e5d7e03095489eb596153c797"
+   },
+   "retired": "AI-corroborated historical judgment only; current claim is separate or unavailable (2026-10-10)"
   },
   {
    "kind": "scene",
