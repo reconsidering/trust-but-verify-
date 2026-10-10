@@ -1,0 +1,4615 @@
+{
+  "schema": "reviewed-claims/v1",
+  "date": "2026-10-10",
+  "reviewer": "chatgpt",
+  "weight": 0.9,
+  "minimumReviewerConfidence": 0.95,
+  "labels": {},
+  "answers": [
+    {
+      "id": "apogee-0",
+      "key": "took-in-mouth~elided#b82ee115",
+      "claim": {
+        "fic": "apogee.html",
+        "sourceSha": "5af10ecb7953b4f680acd589542e95f0e4f81c48fefcba758919d6f9ee704f1d",
+        "paragraph": 800,
+        "pattern": "took-in-mouth~elided",
+        "act": "blowjob",
+        "kind": "act",
+        "a": "Shane Hollander",
+        "b": "Ilya Rozanov",
+        "role": ""
+      }
+    },
+    {
+      "id": "apogee-1",
+      "key": "lips-around#3581d532",
+      "claim": {
+        "fic": "apogee.html",
+        "sourceSha": "5af10ecb7953b4f680acd589542e95f0e4f81c48fefcba758919d6f9ee704f1d",
+        "paragraph": 802,
+        "pattern": "lips-around",
+        "act": "blowjob",
+        "kind": "act",
+        "a": "Shane Hollander",
+        "b": "Ilya Rozanov",
+        "role": ""
+      }
+    },
+    {
+      "id": "apogee-2",
+      "key": "swallowed-down~elided#f1474daa",
+      "claim": {
+        "fic": "apogee.html",
+        "sourceSha": "5af10ecb7953b4f680acd589542e95f0e4f81c48fefcba758919d6f9ee704f1d",
+        "paragraph": 816,
+        "pattern": "swallowed-down~elided",
+        "act": "blowjob",
+        "kind": "act",
+        "a": "Shane Hollander",
+        "b": "Ilya Rozanov",
+        "role": ""
+      }
+    },
+    {
+      "id": "apogee-3",
+      "key": "took-to-root~elided#f1474daa",
+      "claim": {
+        "fic": "apogee.html",
+        "sourceSha": "5af10ecb7953b4f680acd589542e95f0e4f81c48fefcba758919d6f9ee704f1d",
+        "paragraph": 816,
+        "pattern": "took-to-root~elided",
+        "act": "blowjob",
+        "kind": "act",
+        "a": "Shane Hollander",
+        "b": "Ilya Rozanov",
+        "role": ""
+      }
+    },
+    {
+      "id": "apogee-4",
+      "key": "come-in-mouth#52e619ca",
+      "claim": {
+        "fic": "apogee.html",
+        "sourceSha": "5af10ecb7953b4f680acd589542e95f0e4f81c48fefcba758919d6f9ee704f1d",
+        "paragraph": 816,
+        "pattern": "come-in-mouth",
+        "act": "blowjob",
+        "kind": "act",
+        "a": "Ilya Rozanov",
+        "b": "Shane Hollander",
+        "role": ""
+      }
+    },
+    {
+      "id": "apogee-5",
+      "key": "came-in-mouth#52e619ca",
+      "claim": {
+        "fic": "apogee.html",
+        "sourceSha": "5af10ecb7953b4f680acd589542e95f0e4f81c48fefcba758919d6f9ee704f1d",
+        "paragraph": 816,
+        "pattern": "came-in-mouth",
+        "act": "blowjob",
+        "kind": "act",
+        "a": "Ilya Rozanov",
+        "b": "Shane Hollander",
+        "role": ""
+      }
+    },
+    {
+      "id": "apogee-6",
+      "key": "inside#7b6f8b0d",
+      "claim": {
+        "fic": "apogee.html",
+        "sourceSha": "5af10ecb7953b4f680acd589542e95f0e4f81c48fefcba758919d6f9ee704f1d",
+        "paragraph": 863,
+        "pattern": "inside",
+        "act": "anal sex",
+        "kind": "act",
+        "a": "Ilya Rozanov",
+        "b": "Shane Hollander",
+        "role": ""
+      }
+    },
+    {
+      "id": "apogee-7",
+      "key": "fingers-inside#88cb3f62",
+      "claim": {
+        "fic": "apogee.html",
+        "sourceSha": "5af10ecb7953b4f680acd589542e95f0e4f81c48fefcba758919d6f9ee704f1d",
+        "paragraph": 868,
+        "pattern": "fingers-inside",
+        "act": "fingering",
+        "kind": "act",
+        "a": "Ilya Rozanov",
+        "b": "Shane Hollander",
+        "role": ""
+      }
+    },
+    {
+      "id": "apogee-8",
+      "key": "fingers-enter-hole#88cb3f62",
+      "claim": {
+        "fic": "apogee.html",
+        "sourceSha": "5af10ecb7953b4f680acd589542e95f0e4f81c48fefcba758919d6f9ee704f1d",
+        "paragraph": 868,
+        "pattern": "fingers-enter-hole",
+        "act": "fingering",
+        "kind": "act",
+        "a": "Ilya Rozanov",
+        "b": "Shane Hollander",
+        "role": ""
+      }
+    },
+    {
+      "id": "apogee-9",
+      "key": "pushed-in#d04e9a11",
+      "claim": {
+        "fic": "apogee.html",
+        "sourceSha": "5af10ecb7953b4f680acd589542e95f0e4f81c48fefcba758919d6f9ee704f1d",
+        "paragraph": 875,
+        "pattern": "pushed-in",
+        "act": "anal sex",
+        "kind": "act",
+        "a": "Ilya Rozanov",
+        "b": "Shane Hollander",
+        "role": ""
+      }
+    },
+    {
+      "id": "apogee-10",
+      "key": "passive-fucked#8d01c62a",
+      "claim": {
+        "fic": "apogee.html",
+        "sourceSha": "5af10ecb7953b4f680acd589542e95f0e4f81c48fefcba758919d6f9ee704f1d",
+        "paragraph": 899,
+        "pattern": "passive-fucked",
+        "act": "anal sex",
+        "kind": "act",
+        "a": "Ilya Rozanov",
+        "b": "Shane Hollander",
+        "role": ""
+      }
+    },
+    {
+      "id": "apogee-11",
+      "key": "mast-word~elided#62005dfa",
+      "claim": {
+        "fic": "apogee.html",
+        "sourceSha": "5af10ecb7953b4f680acd589542e95f0e4f81c48fefcba758919d6f9ee704f1d",
+        "paragraph": 291,
+        "pattern": "mast-word~elided",
+        "act": "masturbation",
+        "kind": "masturbation",
+        "a": "Cliff Marlow | Cliff Marleau",
+        "b": "Ilya Rozanov",
+        "role": "bottom"
+      }
+    },
+    {
+      "id": "apogee-12",
+      "key": "flustered-face#c9fe4cdd",
+      "claim": {
+        "fic": "apogee.html",
+        "sourceSha": "5af10ecb7953b4f680acd589542e95f0e4f81c48fefcba758919d6f9ee704f1d",
+        "paragraph": 656,
+        "pattern": "flustered-face",
+        "act": "flustered or blushing",
+        "kind": "behavior",
+        "a": "Shane Hollander",
+        "b": "Ilya Rozanov",
+        "role": "bottom"
+      }
+    },
+    {
+      "id": "apogee-13",
+      "key": "arch-back#77f130",
+      "claim": {
+        "fic": "apogee.html",
+        "sourceSha": "5af10ecb7953b4f680acd589542e95f0e4f81c48fefcba758919d6f9ee704f1d",
+        "paragraph": 770,
+        "pattern": "arch-back",
+        "act": "arching their back",
+        "kind": "touch",
+        "a": "Shane Hollander",
+        "b": "Ilya Rozanov",
+        "role": "bottom"
+      }
+    },
+    {
+      "id": "apogee-14",
+      "key": "flustered-verb#b0217905",
+      "claim": {
+        "fic": "apogee.html",
+        "sourceSha": "5af10ecb7953b4f680acd589542e95f0e4f81c48fefcba758919d6f9ee704f1d",
+        "paragraph": 777,
+        "pattern": "flustered-verb",
+        "act": "flustered or blushing",
+        "kind": "behavior",
+        "a": "Ilya Rozanov",
+        "b": "Shane Hollander",
+        "role": "bottom"
+      }
+    },
+    {
+      "id": "apogee-15",
+      "key": "hj-hand-subject#834b0803",
+      "claim": {
+        "fic": "apogee.html",
+        "sourceSha": "5af10ecb7953b4f680acd589542e95f0e4f81c48fefcba758919d6f9ee704f1d",
+        "paragraph": 808,
+        "pattern": "hj-hand-subject",
+        "act": "handjob",
+        "kind": "handjob",
+        "a": "Ilya Rozanov",
+        "b": "Shane Hollander",
+        "role": "top"
+      }
+    },
+    {
+      "id": "apogee-16",
+      "key": "dd-hj-fist-works#f1b2385c",
+      "claim": {
+        "fic": "apogee.html",
+        "sourceSha": "5af10ecb7953b4f680acd589542e95f0e4f81c48fefcba758919d6f9ee704f1d",
+        "paragraph": 814,
+        "pattern": "dd-hj-fist-works",
+        "act": "handjob",
+        "kind": "handjob",
+        "a": "Ilya Rozanov",
+        "b": "Shane Hollander",
+        "role": "top"
+      }
+    },
+    {
+      "id": "apogee-18",
+      "key": "dialogue:checking in or leading#1a22e3f0",
+      "claim": {
+        "fic": "apogee.html",
+        "sourceSha": "5af10ecb7953b4f680acd589542e95f0e4f81c48fefcba758919d6f9ee704f1d",
+        "paragraph": 862,
+        "pattern": "dialogue:checking in or leading",
+        "act": "checking in or leading",
+        "kind": "position",
+        "a": "Ilya Rozanov",
+        "b": "Shane Hollander",
+        "role": "top"
+      }
+    },
+    {
+      "id": "apogee-19",
+      "key": "fingers-inside#bad428aa",
+      "claim": {
+        "fic": "apogee.html",
+        "sourceSha": "5af10ecb7953b4f680acd589542e95f0e4f81c48fefcba758919d6f9ee704f1d",
+        "paragraph": 873,
+        "pattern": "fingers-inside",
+        "act": "fingering",
+        "kind": "hypothetical",
+        "a": "Shane Hollander",
+        "b": "Ilya Rozanov",
+        "role": "bottom"
+      }
+    },
+    {
+      "id": "apogee-20",
+      "key": "flustered-verb~elided#bad428aa",
+      "claim": {
+        "fic": "apogee.html",
+        "sourceSha": "5af10ecb7953b4f680acd589542e95f0e4f81c48fefcba758919d6f9ee704f1d",
+        "paragraph": 873,
+        "pattern": "flustered-verb~elided",
+        "act": "flustered or blushing",
+        "kind": "behavior",
+        "a": "Shane Hollander",
+        "b": "Ilya Rozanov",
+        "role": "bottom"
+      }
+    },
+    {
+      "id": "apogee-21",
+      "key": "dialogue:asking to be held#c58a57b6",
+      "claim": {
+        "fic": "apogee.html",
+        "sourceSha": "5af10ecb7953b4f680acd589542e95f0e4f81c48fefcba758919d6f9ee704f1d",
+        "paragraph": 874,
+        "pattern": "dialogue:asking to be held",
+        "act": "asking to be held",
+        "kind": "aftercare",
+        "a": "Ilya Rozanov",
+        "b": "Shane Hollander",
+        "role": "bottom"
+      }
+    },
+    {
+      "id": "apogee-22",
+      "key": "thrust-back#a5245f7a",
+      "claim": {
+        "fic": "apogee.html",
+        "sourceSha": "5af10ecb7953b4f680acd589542e95f0e4f81c48fefcba758919d6f9ee704f1d",
+        "paragraph": 885,
+        "pattern": "thrust-back",
+        "act": "pushing back",
+        "kind": "touch",
+        "a": "Shane Hollander",
+        "b": "Ilya Rozanov",
+        "role": "bottom"
+      }
+    },
+    {
+      "id": "apogee-23",
+      "key": "hj-hand-subject#5ce694eb",
+      "claim": {
+        "fic": "apogee.html",
+        "sourceSha": "5af10ecb7953b4f680acd589542e95f0e4f81c48fefcba758919d6f9ee704f1d",
+        "paragraph": 900,
+        "pattern": "hj-hand-subject",
+        "act": "handjob",
+        "kind": "handjob",
+        "a": "Ilya Rozanov",
+        "b": "Shane Hollander",
+        "role": "top"
+      }
+    },
+    {
+      "id": "apogee-24",
+      "key": "dialogue:anal sex#d5497a8d",
+      "claim": {
+        "fic": "apogee.html",
+        "sourceSha": "5af10ecb7953b4f680acd589542e95f0e4f81c48fefcba758919d6f9ee704f1d",
+        "paragraph": 1103,
+        "pattern": "dialogue:anal sex",
+        "act": "anal sex",
+        "kind": "said",
+        "a": "Ilya Rozanov",
+        "b": "Shane Hollander",
+        "role": "top"
+      }
+    },
+    {
+      "id": "spectrum-0",
+      "key": "fuck#d496fa6f",
+      "claim": {
+        "fic": "full-spectrum.html",
+        "sourceSha": "21b20ea24f5e465f94f40be16d4793c16494d0bb619187d3abf86f8a218e45ab",
+        "paragraph": 1025,
+        "pattern": "fuck",
+        "act": "anal sex",
+        "kind": "act",
+        "a": "Henry Fox-Mountchristen-Windsor",
+        "b": "Alex Claremont-Diaz",
+        "role": ""
+      }
+    },
+    {
+      "id": "spectrum-2",
+      "key": "flustered-verb#8cef9eb0",
+      "claim": {
+        "fic": "full-spectrum.html",
+        "sourceSha": "21b20ea24f5e465f94f40be16d4793c16494d0bb619187d3abf86f8a218e45ab",
+        "paragraph": 363,
+        "pattern": "flustered-verb",
+        "act": "flustered or blushing",
+        "kind": "behavior",
+        "a": "Henry Fox-Mountchristen-Windsor",
+        "b": "Alex Claremont-Diaz",
+        "role": "bottom"
+      }
+    },
+    {
+      "id": "spectrum-3",
+      "key": "care-soothe~elided#796e1cc2",
+      "claim": {
+        "fic": "full-spectrum.html",
+        "sourceSha": "21b20ea24f5e465f94f40be16d4793c16494d0bb619187d3abf86f8a218e45ab",
+        "paragraph": 523,
+        "pattern": "care-soothe~elided",
+        "act": "comforting someone",
+        "kind": "behavior",
+        "a": "Henry Fox-Mountchristen-Windsor",
+        "b": "Alex Claremont-Diaz",
+        "role": "top"
+      }
+    },
+    {
+      "id": "spectrum-4",
+      "key": "care-bring#4fbc74b2",
+      "claim": {
+        "fic": "full-spectrum.html",
+        "sourceSha": "21b20ea24f5e465f94f40be16d4793c16494d0bb619187d3abf86f8a218e45ab",
+        "paragraph": 647,
+        "pattern": "care-bring",
+        "act": "looking after someone",
+        "kind": "behavior",
+        "a": "Henry Fox-Mountchristen-Windsor",
+        "b": "Alex Claremont-Diaz",
+        "role": "top"
+      }
+    },
+    {
+      "id": "spectrum-6",
+      "key": "dom-grip#1f4bd4c1",
+      "claim": {
+        "fic": "full-spectrum.html",
+        "sourceSha": "21b20ea24f5e465f94f40be16d4793c16494d0bb619187d3abf86f8a218e45ab",
+        "paragraph": 971,
+        "pattern": "dom-grip",
+        "act": "gripping firmly",
+        "kind": "behavior",
+        "a": "Henry Fox-Mountchristen-Windsor",
+        "b": "Alex Claremont-Diaz",
+        "role": "top"
+      }
+    },
+    {
+      "id": "spectrum-7",
+      "key": "care-soothe#3eaddd63",
+      "claim": {
+        "fic": "full-spectrum.html",
+        "sourceSha": "21b20ea24f5e465f94f40be16d4793c16494d0bb619187d3abf86f8a218e45ab",
+        "paragraph": 1178,
+        "pattern": "care-soothe",
+        "act": "comforting someone",
+        "kind": "behavior",
+        "a": "Henry Fox-Mountchristen-Windsor",
+        "b": "Alex Claremont-Diaz",
+        "role": "top"
+      }
+    },
+    {
+      "id": "spectrum-8",
+      "key": "care-bring#382b11be",
+      "claim": {
+        "fic": "full-spectrum.html",
+        "sourceSha": "21b20ea24f5e465f94f40be16d4793c16494d0bb619187d3abf86f8a218e45ab",
+        "paragraph": 1225,
+        "pattern": "care-bring",
+        "act": "looking after someone",
+        "kind": "behavior",
+        "a": "Alex Claremont-Diaz",
+        "b": "Henry Fox-Mountchristen-Windsor",
+        "role": "top"
+      }
+    },
+    {
+      "id": "spectrum-9",
+      "key": "dom-grip#e045628f",
+      "claim": {
+        "fic": "full-spectrum.html",
+        "sourceSha": "21b20ea24f5e465f94f40be16d4793c16494d0bb619187d3abf86f8a218e45ab",
+        "paragraph": 1574,
+        "pattern": "dom-grip",
+        "act": "gripping firmly",
+        "kind": "behavior",
+        "a": "Henry Fox-Mountchristen-Windsor",
+        "b": "Alex Claremont-Diaz",
+        "role": "top"
+      }
+    },
+    {
+      "id": "spectrum-11",
+      "key": "dom-protect~elided#c115edba",
+      "claim": {
+        "fic": "full-spectrum.html",
+        "sourceSha": "21b20ea24f5e465f94f40be16d4793c16494d0bb619187d3abf86f8a218e45ab",
+        "paragraph": 1872,
+        "pattern": "dom-protect~elided",
+        "act": "protecting someone",
+        "kind": "behavior",
+        "a": "Henry Fox-Mountchristen-Windsor",
+        "b": "Alex Claremont-Diaz",
+        "role": "top"
+      }
+    },
+    {
+      "id": "spectrum-12",
+      "key": "address-endearment#e21e0d10",
+      "claim": {
+        "fic": "full-spectrum.html",
+        "sourceSha": "21b20ea24f5e465f94f40be16d4793c16494d0bb619187d3abf86f8a218e45ab",
+        "paragraph": 318,
+        "pattern": "address-endearment",
+        "act": "pet name “sweetheart” for Henry",
+        "kind": "petname",
+        "a": "Alex Claremont-Diaz",
+        "b": "Henry Fox-Mountchristen-Windsor",
+        "role": "top"
+      }
+    },
+    {
+      "id": "roses-0",
+      "key": "pushed-in~elided#f9183b48",
+      "claim": {
+        "fic": "dog-roses.html",
+        "sourceSha": "c784ea2a3481b2f74616799b5690e26c5688afe544886a748d78b1c89443a777",
+        "paragraph": 8,
+        "pattern": "pushed-in~elided",
+        "act": "anal sex",
+        "kind": "act",
+        "a": "Corbin Scargill",
+        "b": "Lauchlan Huxley",
+        "role": ""
+      }
+    },
+    {
+      "id": "roses-1",
+      "key": "dd2-finger-shoved-into~elided#c479ead1",
+      "claim": {
+        "fic": "dog-roses.html",
+        "sourceSha": "c784ea2a3481b2f74616799b5690e26c5688afe544886a748d78b1c89443a777",
+        "paragraph": 39,
+        "pattern": "dd2-finger-shoved-into~elided",
+        "act": "fingering",
+        "kind": "act",
+        "a": "Lauchlan Huxley",
+        "b": "Corbin Scargill",
+        "role": ""
+      }
+    },
+    {
+      "id": "roses-2",
+      "key": "fuck~elided#61e9a71e",
+      "claim": {
+        "fic": "dog-roses.html",
+        "sourceSha": "c784ea2a3481b2f74616799b5690e26c5688afe544886a748d78b1c89443a777",
+        "paragraph": 59,
+        "pattern": "fuck~elided",
+        "act": "anal sex",
+        "kind": "act",
+        "a": "Corbin Scargill",
+        "b": "Lauchlan Huxley",
+        "role": ""
+      }
+    },
+    {
+      "id": "roses-3",
+      "key": "took-head-mouth#966ee0b8",
+      "claim": {
+        "fic": "dog-roses.html",
+        "sourceSha": "c784ea2a3481b2f74616799b5690e26c5688afe544886a748d78b1c89443a777",
+        "paragraph": 144,
+        "pattern": "took-head-mouth",
+        "act": "blowjob",
+        "kind": "act",
+        "a": "Lauchlan Huxley",
+        "b": "Corbin Scargill",
+        "role": ""
+      }
+    },
+    {
+      "id": "roses-4",
+      "key": "sucked#cead61a8",
+      "claim": {
+        "fic": "dog-roses.html",
+        "sourceSha": "c784ea2a3481b2f74616799b5690e26c5688afe544886a748d78b1c89443a777",
+        "paragraph": 145,
+        "pattern": "sucked",
+        "act": "blowjob",
+        "kind": "act",
+        "a": "Lauchlan Huxley",
+        "b": "Corbin Scargill",
+        "role": ""
+      }
+    },
+    {
+      "id": "roses-5",
+      "key": "licked-shaft#d2c595ae",
+      "claim": {
+        "fic": "dog-roses.html",
+        "sourceSha": "c784ea2a3481b2f74616799b5690e26c5688afe544886a748d78b1c89443a777",
+        "paragraph": 145,
+        "pattern": "licked-shaft",
+        "act": "blowjob",
+        "kind": "act",
+        "a": "Lauchlan Huxley",
+        "b": "Corbin Scargill",
+        "role": ""
+      }
+    },
+    {
+      "id": "roses-6",
+      "key": "licked-cock~elided#867ad121",
+      "claim": {
+        "fic": "dog-roses.html",
+        "sourceSha": "c784ea2a3481b2f74616799b5690e26c5688afe544886a748d78b1c89443a777",
+        "paragraph": 145,
+        "pattern": "licked-cock~elided",
+        "act": "blowjob",
+        "kind": "act",
+        "a": "Lauchlan Huxley",
+        "b": "Corbin Scargill",
+        "role": ""
+      }
+    },
+    {
+      "id": "roses-7",
+      "key": "took-in-mouth~elided#8e78e8ba",
+      "claim": {
+        "fic": "dog-roses.html",
+        "sourceSha": "c784ea2a3481b2f74616799b5690e26c5688afe544886a748d78b1c89443a777",
+        "paragraph": 147,
+        "pattern": "took-in-mouth~elided",
+        "act": "blowjob",
+        "kind": "act",
+        "a": "Lauchlan Huxley",
+        "b": "Corbin Scargill",
+        "role": ""
+      }
+    },
+    {
+      "id": "roses-8",
+      "key": "swallowed-down~elided#92b70640",
+      "claim": {
+        "fic": "dog-roses.html",
+        "sourceSha": "c784ea2a3481b2f74616799b5690e26c5688afe544886a748d78b1c89443a777",
+        "paragraph": 152,
+        "pattern": "swallowed-down~elided",
+        "act": "blowjob",
+        "kind": "act",
+        "a": "Lauchlan Huxley",
+        "b": "Corbin Scargill",
+        "role": ""
+      }
+    },
+    {
+      "id": "roses-9",
+      "key": "lips-around-him#92b70640",
+      "claim": {
+        "fic": "dog-roses.html",
+        "sourceSha": "c784ea2a3481b2f74616799b5690e26c5688afe544886a748d78b1c89443a777",
+        "paragraph": 152,
+        "pattern": "lips-around-him",
+        "act": "blowjob",
+        "kind": "act",
+        "a": "Lauchlan Huxley",
+        "b": "Corbin Scargill",
+        "role": ""
+      }
+    },
+    {
+      "id": "roses-10",
+      "key": "sank-down#92b70640",
+      "claim": {
+        "fic": "dog-roses.html",
+        "sourceSha": "c784ea2a3481b2f74616799b5690e26c5688afe544886a748d78b1c89443a777",
+        "paragraph": 152,
+        "pattern": "sank-down",
+        "act": "blowjob (face-fucking)",
+        "kind": "act",
+        "a": "Lauchlan Huxley",
+        "b": "Corbin Scargill",
+        "role": ""
+      }
+    },
+    {
+      "id": "roses-11",
+      "key": "review-orgasm-down-throat#c72434bd",
+      "claim": {
+        "fic": "dog-roses.html",
+        "sourceSha": "c784ea2a3481b2f74616799b5690e26c5688afe544886a748d78b1c89443a777",
+        "paragraph": 152,
+        "pattern": "review-orgasm-down-throat",
+        "act": "blowjob",
+        "kind": "act",
+        "a": "Lauchlan Huxley",
+        "b": "Corbin Scargill",
+        "role": ""
+      }
+    },
+    {
+      "id": "roses-12",
+      "key": "come-in-mouth#c72434bd",
+      "claim": {
+        "fic": "dog-roses.html",
+        "sourceSha": "c784ea2a3481b2f74616799b5690e26c5688afe544886a748d78b1c89443a777",
+        "paragraph": 152,
+        "pattern": "come-in-mouth",
+        "act": "blowjob",
+        "kind": "act",
+        "a": "Lauchlan Huxley",
+        "b": "Corbin Scargill",
+        "role": ""
+      }
+    },
+    {
+      "id": "roses-13",
+      "key": "came-in-mouth#c72434bd",
+      "claim": {
+        "fic": "dog-roses.html",
+        "sourceSha": "c784ea2a3481b2f74616799b5690e26c5688afe544886a748d78b1c89443a777",
+        "paragraph": 152,
+        "pattern": "came-in-mouth",
+        "act": "blowjob",
+        "kind": "act",
+        "a": "Lauchlan Huxley",
+        "b": "Corbin Scargill",
+        "role": ""
+      }
+    },
+    {
+      "id": "roses-14",
+      "key": "sucked#119e48ac",
+      "claim": {
+        "fic": "dog-roses.html",
+        "sourceSha": "c784ea2a3481b2f74616799b5690e26c5688afe544886a748d78b1c89443a777",
+        "paragraph": 215,
+        "pattern": "sucked",
+        "act": "blowjob",
+        "kind": "act",
+        "a": "Lauchlan Huxley",
+        "b": "Corbin Scargill",
+        "role": ""
+      }
+    },
+    {
+      "id": "roses-15",
+      "key": "riding#2c9ae8e8",
+      "claim": {
+        "fic": "dog-roses.html",
+        "sourceSha": "c784ea2a3481b2f74616799b5690e26c5688afe544886a748d78b1c89443a777",
+        "paragraph": 849,
+        "pattern": "riding",
+        "act": "anal sex (riding)",
+        "kind": "act",
+        "a": "Corbin Scargill",
+        "b": "Lauchlan Huxley",
+        "role": ""
+      }
+    },
+    {
+      "id": "roses-16",
+      "key": "sub-let-lead#b7e57099",
+      "claim": {
+        "fic": "dog-roses.html",
+        "sourceSha": "c784ea2a3481b2f74616799b5690e26c5688afe544886a748d78b1c89443a777",
+        "paragraph": 27,
+        "pattern": "sub-let-lead",
+        "act": "letting someone lead",
+        "kind": "behavior",
+        "a": "Corbin Scargill",
+        "b": "Lauchlan Huxley",
+        "role": "bottom"
+      }
+    },
+    {
+      "id": "roses-17",
+      "key": "lead-by-hand~elided#9b7c9624",
+      "claim": {
+        "fic": "dog-roses.html",
+        "sourceSha": "c784ea2a3481b2f74616799b5690e26c5688afe544886a748d78b1c89443a777",
+        "paragraph": 97,
+        "pattern": "lead-by-hand~elided",
+        "act": "leading someone",
+        "kind": "behavior",
+        "a": "Lauchlan Huxley",
+        "b": "Corbin Scargill",
+        "role": "top"
+      }
+    },
+    {
+      "id": "roses-18",
+      "key": "collar-wearer#8004ec8e",
+      "claim": {
+        "fic": "dog-roses.html",
+        "sourceSha": "c784ea2a3481b2f74616799b5690e26c5688afe544886a748d78b1c89443a777",
+        "paragraph": 120,
+        "pattern": "collar-wearer",
+        "act": "wearing a collar or leash",
+        "kind": "behavior",
+        "a": "Lauchlan Huxley",
+        "b": "Corbin Scargill",
+        "role": "bottom"
+      }
+    },
+    {
+      "id": "roses-21",
+      "key": "sinks-to-floor~elided#cb352ca8",
+      "claim": {
+        "fic": "dog-roses.html",
+        "sourceSha": "c784ea2a3481b2f74616799b5690e26c5688afe544886a748d78b1c89443a777",
+        "paragraph": 139,
+        "pattern": "sinks-to-floor~elided",
+        "act": "kneeling",
+        "kind": "prep",
+        "a": "Corbin Scargill",
+        "b": "Lauchlan Huxley",
+        "role": "bottom"
+      }
+    },
+    {
+      "id": "roses-22",
+      "key": "flustered-verb~elided#5a507993",
+      "claim": {
+        "fic": "dog-roses.html",
+        "sourceSha": "c784ea2a3481b2f74616799b5690e26c5688afe544886a748d78b1c89443a777",
+        "paragraph": 143,
+        "pattern": "flustered-verb~elided",
+        "act": "flustered or blushing",
+        "kind": "behavior",
+        "a": "Lauchlan Huxley",
+        "b": "Corbin Scargill",
+        "role": "bottom"
+      }
+    },
+    {
+      "id": "roses-24",
+      "key": "care-soothe~elided#6a514e7",
+      "claim": {
+        "fic": "dog-roses.html",
+        "sourceSha": "c784ea2a3481b2f74616799b5690e26c5688afe544886a748d78b1c89443a777",
+        "paragraph": 152,
+        "pattern": "care-soothe~elided",
+        "act": "comforting someone",
+        "kind": "behavior",
+        "a": "Lauchlan Huxley",
+        "b": "Corbin Scargill",
+        "role": "top"
+      }
+    },
+    {
+      "id": "roses-26",
+      "key": "flustered-verb#5cdc2ed5",
+      "claim": {
+        "fic": "dog-roses.html",
+        "sourceSha": "c784ea2a3481b2f74616799b5690e26c5688afe544886a748d78b1c89443a777",
+        "paragraph": 241,
+        "pattern": "flustered-verb",
+        "act": "flustered or blushing",
+        "kind": "behavior",
+        "a": "Lauchlan Huxley",
+        "b": "Corbin Scargill",
+        "role": "bottom"
+      }
+    },
+    {
+      "id": "roses-27",
+      "key": "frottage#5a709d08",
+      "claim": {
+        "fic": "dog-roses.html",
+        "sourceSha": "c784ea2a3481b2f74616799b5690e26c5688afe544886a748d78b1c89443a777",
+        "paragraph": 244,
+        "pattern": "frottage",
+        "act": "frottage",
+        "kind": "handjob",
+        "a": "Lauchlan Huxley",
+        "b": "Corbin Scargill",
+        "role": "top"
+      }
+    },
+    {
+      "id": "roses-28",
+      "key": "fingers-into-mouth~elided#a829cf69",
+      "claim": {
+        "fic": "dog-roses.html",
+        "sourceSha": "c784ea2a3481b2f74616799b5690e26c5688afe544886a748d78b1c89443a777",
+        "paragraph": 245,
+        "pattern": "fingers-into-mouth~elided",
+        "act": "sucking on fingers",
+        "kind": "fingers",
+        "a": "Lauchlan Huxley",
+        "b": "Corbin Scargill",
+        "role": "bottom"
+      }
+    },
+    {
+      "id": "roses-29",
+      "key": "dialogue:anal sex#923747dd",
+      "claim": {
+        "fic": "dog-roses.html",
+        "sourceSha": "c784ea2a3481b2f74616799b5690e26c5688afe544886a748d78b1c89443a777",
+        "paragraph": 245,
+        "pattern": "dialogue:anal sex",
+        "act": "anal sex",
+        "kind": "said",
+        "a": "Corbin Scargill",
+        "b": "Lauchlan Huxley",
+        "role": "bottom"
+      }
+    },
+    {
+      "id": "roses-30",
+      "key": "dom-grip~elided#dbe1f4f8",
+      "claim": {
+        "fic": "dog-roses.html",
+        "sourceSha": "c784ea2a3481b2f74616799b5690e26c5688afe544886a748d78b1c89443a777",
+        "paragraph": 259,
+        "pattern": "dom-grip~elided",
+        "act": "gripping firmly",
+        "kind": "behavior",
+        "a": "Corbin Scargill",
+        "b": "Lauchlan Huxley",
+        "role": "top"
+      }
+    },
+    {
+      "id": "roses-31",
+      "key": "lead-by-hand~elided#e3621418",
+      "claim": {
+        "fic": "dog-roses.html",
+        "sourceSha": "c784ea2a3481b2f74616799b5690e26c5688afe544886a748d78b1c89443a777",
+        "paragraph": 278,
+        "pattern": "lead-by-hand~elided",
+        "act": "leading someone",
+        "kind": "behavior",
+        "a": "Corbin Scargill",
+        "b": "Lauchlan Huxley",
+        "role": "top"
+      }
+    },
+    {
+      "id": "roses-32",
+      "key": "flustered-verb~elided#5f94aca6",
+      "claim": {
+        "fic": "dog-roses.html",
+        "sourceSha": "c784ea2a3481b2f74616799b5690e26c5688afe544886a748d78b1c89443a777",
+        "paragraph": 283,
+        "pattern": "flustered-verb~elided",
+        "act": "flustered or blushing",
+        "kind": "behavior",
+        "a": "Lauchlan Huxley",
+        "b": "Corbin Scargill",
+        "role": "bottom"
+      }
+    },
+    {
+      "id": "roses-33",
+      "key": "flustered-verb~elided#1b89bdf2",
+      "claim": {
+        "fic": "dog-roses.html",
+        "sourceSha": "c784ea2a3481b2f74616799b5690e26c5688afe544886a748d78b1c89443a777",
+        "paragraph": 291,
+        "pattern": "flustered-verb~elided",
+        "act": "flustered or blushing",
+        "kind": "behavior",
+        "a": "Lauchlan Huxley",
+        "b": "Corbin Scargill",
+        "role": "bottom"
+      }
+    },
+    {
+      "id": "roses-34",
+      "key": "flustered-verb#f657c8e6",
+      "claim": {
+        "fic": "dog-roses.html",
+        "sourceSha": "c784ea2a3481b2f74616799b5690e26c5688afe544886a748d78b1c89443a777",
+        "paragraph": 321,
+        "pattern": "flustered-verb",
+        "act": "flustered or blushing",
+        "kind": "behavior",
+        "a": "Lauchlan Huxley",
+        "b": "Corbin Scargill",
+        "role": "bottom"
+      }
+    },
+    {
+      "id": "roses-35",
+      "key": "flustered-verb~elided#37d93b7f",
+      "claim": {
+        "fic": "dog-roses.html",
+        "sourceSha": "c784ea2a3481b2f74616799b5690e26c5688afe544886a748d78b1c89443a777",
+        "paragraph": 330,
+        "pattern": "flustered-verb~elided",
+        "act": "flustered or blushing",
+        "kind": "behavior",
+        "a": "Corbin Scargill",
+        "b": "Lauchlan Huxley",
+        "role": "bottom"
+      }
+    },
+    {
+      "id": "roses-36",
+      "key": "flustered-verb~elided#d127dfcf",
+      "claim": {
+        "fic": "dog-roses.html",
+        "sourceSha": "c784ea2a3481b2f74616799b5690e26c5688afe544886a748d78b1c89443a777",
+        "paragraph": 342,
+        "pattern": "flustered-verb~elided",
+        "act": "flustered or blushing",
+        "kind": "behavior",
+        "a": "Corbin Scargill",
+        "b": "Lauchlan Huxley",
+        "role": "bottom"
+      }
+    },
+    {
+      "id": "roses-37",
+      "key": "flustered-verb#7c3cb56",
+      "claim": {
+        "fic": "dog-roses.html",
+        "sourceSha": "c784ea2a3481b2f74616799b5690e26c5688afe544886a748d78b1c89443a777",
+        "paragraph": 421,
+        "pattern": "flustered-verb",
+        "act": "flustered or blushing",
+        "kind": "behavior",
+        "a": "Peaky",
+        "b": "Lauchlan Huxley",
+        "role": "bottom"
+      }
+    },
+    {
+      "id": "roses-38",
+      "key": "flustered-verb#f5753ebe",
+      "claim": {
+        "fic": "dog-roses.html",
+        "sourceSha": "c784ea2a3481b2f74616799b5690e26c5688afe544886a748d78b1c89443a777",
+        "paragraph": 487,
+        "pattern": "flustered-verb",
+        "act": "flustered or blushing",
+        "kind": "behavior",
+        "a": "Lauchlan Huxley",
+        "b": "Corbin Scargill",
+        "role": "bottom"
+      }
+    },
+    {
+      "id": "roses-39",
+      "key": "flustered-verb#61444e5c",
+      "claim": {
+        "fic": "dog-roses.html",
+        "sourceSha": "c784ea2a3481b2f74616799b5690e26c5688afe544886a748d78b1c89443a777",
+        "paragraph": 489,
+        "pattern": "flustered-verb",
+        "act": "flustered or blushing",
+        "kind": "behavior",
+        "a": "Lauchlan Huxley",
+        "b": "Corbin Scargill",
+        "role": "bottom"
+      }
+    },
+    {
+      "id": "roses-40",
+      "key": "flustered-verb#fc67ae43",
+      "claim": {
+        "fic": "dog-roses.html",
+        "sourceSha": "c784ea2a3481b2f74616799b5690e26c5688afe544886a748d78b1c89443a777",
+        "paragraph": 491,
+        "pattern": "flustered-verb",
+        "act": "flustered or blushing",
+        "kind": "behavior",
+        "a": "Lauchlan Huxley",
+        "b": "Corbin Scargill",
+        "role": "bottom"
+      }
+    },
+    {
+      "id": "roses-41",
+      "key": "sub-lashes~elided#9dd63ee1",
+      "claim": {
+        "fic": "dog-roses.html",
+        "sourceSha": "c784ea2a3481b2f74616799b5690e26c5688afe544886a748d78b1c89443a777",
+        "paragraph": 549,
+        "pattern": "sub-lashes~elided",
+        "act": "looking up through lashes",
+        "kind": "behavior",
+        "a": "Lauchlan Huxley",
+        "b": "Corbin Scargill",
+        "role": "bottom"
+      }
+    },
+    {
+      "id": "roses-42",
+      "key": "flustered-verb#9278bc15",
+      "claim": {
+        "fic": "dog-roses.html",
+        "sourceSha": "c784ea2a3481b2f74616799b5690e26c5688afe544886a748d78b1c89443a777",
+        "paragraph": 569,
+        "pattern": "flustered-verb",
+        "act": "flustered or blushing",
+        "kind": "behavior",
+        "a": "Lauchlan Huxley",
+        "b": "Corbin Scargill",
+        "role": "bottom"
+      }
+    },
+    {
+      "id": "roses-43",
+      "key": "lead-by-hand~elided#2f858342",
+      "claim": {
+        "fic": "dog-roses.html",
+        "sourceSha": "c784ea2a3481b2f74616799b5690e26c5688afe544886a748d78b1c89443a777",
+        "paragraph": 644,
+        "pattern": "lead-by-hand~elided",
+        "act": "leading someone",
+        "kind": "behavior",
+        "a": "Corbin Scargill",
+        "b": "Lauchlan Huxley",
+        "role": "top"
+      }
+    },
+    {
+      "id": "roses-44",
+      "key": "flustered-verb#c3ae5e2c",
+      "claim": {
+        "fic": "dog-roses.html",
+        "sourceSha": "c784ea2a3481b2f74616799b5690e26c5688afe544886a748d78b1c89443a777",
+        "paragraph": 665,
+        "pattern": "flustered-verb",
+        "act": "flustered or blushing",
+        "kind": "behavior",
+        "a": "Lauchlan Huxley",
+        "b": "Corbin Scargill",
+        "role": "bottom"
+      }
+    },
+    {
+      "id": "roses-45",
+      "key": "care-soothe~elided#570c5fd6",
+      "claim": {
+        "fic": "dog-roses.html",
+        "sourceSha": "c784ea2a3481b2f74616799b5690e26c5688afe544886a748d78b1c89443a777",
+        "paragraph": 683,
+        "pattern": "care-soothe~elided",
+        "act": "comforting someone",
+        "kind": "behavior",
+        "a": "Corbin Scargill",
+        "b": "Lauchlan Huxley",
+        "role": "top"
+      }
+    },
+    {
+      "id": "roses-46",
+      "key": "self-finger#1678917a",
+      "claim": {
+        "fic": "dog-roses.html",
+        "sourceSha": "c784ea2a3481b2f74616799b5690e26c5688afe544886a748d78b1c89443a777",
+        "paragraph": 725,
+        "pattern": "self-finger",
+        "act": "fingering himself",
+        "kind": "solo",
+        "a": "Corbin Scargill",
+        "b": "Lauchlan Huxley",
+        "role": "bottom"
+      }
+    },
+    {
+      "id": "roses-47",
+      "key": "mast-himself~elided#19116f2",
+      "claim": {
+        "fic": "dog-roses.html",
+        "sourceSha": "c784ea2a3481b2f74616799b5690e26c5688afe544886a748d78b1c89443a777",
+        "paragraph": 728,
+        "pattern": "mast-himself~elided",
+        "act": "masturbation",
+        "kind": "masturbation",
+        "a": "Lauchlan Huxley",
+        "b": "Corbin Scargill",
+        "role": "bottom"
+      }
+    },
+    {
+      "id": "roses-48",
+      "key": "care-bring#3374edb9",
+      "claim": {
+        "fic": "dog-roses.html",
+        "sourceSha": "c784ea2a3481b2f74616799b5690e26c5688afe544886a748d78b1c89443a777",
+        "paragraph": 741,
+        "pattern": "care-bring",
+        "act": "looking after someone",
+        "kind": "behavior",
+        "a": "Lauchlan Huxley",
+        "b": "Corbin Scargill",
+        "role": "top"
+      }
+    },
+    {
+      "id": "roses-49",
+      "key": "flustered-verb#10cf0484",
+      "claim": {
+        "fic": "dog-roses.html",
+        "sourceSha": "c784ea2a3481b2f74616799b5690e26c5688afe544886a748d78b1c89443a777",
+        "paragraph": 756,
+        "pattern": "flustered-verb",
+        "act": "flustered or blushing",
+        "kind": "behavior",
+        "a": "Lauchlan Huxley",
+        "b": "Corbin Scargill",
+        "role": "bottom"
+      }
+    },
+    {
+      "id": "roses-51",
+      "key": "flustered-verb#d50d7c00",
+      "claim": {
+        "fic": "dog-roses.html",
+        "sourceSha": "c784ea2a3481b2f74616799b5690e26c5688afe544886a748d78b1c89443a777",
+        "paragraph": 876,
+        "pattern": "flustered-verb",
+        "act": "flustered or blushing",
+        "kind": "behavior",
+        "a": "Lauchlan Huxley",
+        "b": "Corbin Scargill",
+        "role": "bottom"
+      }
+    },
+    {
+      "id": "roses-52",
+      "key": "aftercare-held~elided#2c5c89ac",
+      "claim": {
+        "fic": "dog-roses.html",
+        "sourceSha": "c784ea2a3481b2f74616799b5690e26c5688afe544886a748d78b1c89443a777",
+        "paragraph": 912,
+        "pattern": "aftercare-held~elided",
+        "act": "being held afterwards",
+        "kind": "aftercare",
+        "a": "Lauchlan Huxley",
+        "b": "Corbin Scargill",
+        "role": "bottom"
+      }
+    },
+    {
+      "id": "roses-54",
+      "key": "dialogue:anal sex#708be94c",
+      "claim": {
+        "fic": "dog-roses.html",
+        "sourceSha": "c784ea2a3481b2f74616799b5690e26c5688afe544886a748d78b1c89443a777",
+        "paragraph": 1041,
+        "pattern": "dialogue:anal sex",
+        "act": "anal sex",
+        "kind": "stated",
+        "a": "Corbin Scargill",
+        "b": "Lauchlan Huxley",
+        "role": "bottom"
+      }
+    },
+    {
+      "id": "roses-55",
+      "key": "care-soothe~elided#be617cef",
+      "claim": {
+        "fic": "dog-roses.html",
+        "sourceSha": "c784ea2a3481b2f74616799b5690e26c5688afe544886a748d78b1c89443a777",
+        "paragraph": 1092,
+        "pattern": "care-soothe~elided",
+        "act": "comforting someone",
+        "kind": "behavior",
+        "a": "Corbin Scargill",
+        "b": "Lauchlan Huxley",
+        "role": "top"
+      }
+    },
+    {
+      "id": "roses-56",
+      "key": "mast-word~elided#73be431f",
+      "claim": {
+        "fic": "dog-roses.html",
+        "sourceSha": "c784ea2a3481b2f74616799b5690e26c5688afe544886a748d78b1c89443a777",
+        "paragraph": 1133,
+        "pattern": "mast-word~elided",
+        "act": "masturbation",
+        "kind": "masturbation",
+        "a": "Corbin Scargill",
+        "b": "Lauchlan Huxley",
+        "role": "bottom"
+      }
+    },
+    {
+      "id": "roses-57",
+      "key": "flustered-verb~elided#26081358",
+      "claim": {
+        "fic": "dog-roses.html",
+        "sourceSha": "c784ea2a3481b2f74616799b5690e26c5688afe544886a748d78b1c89443a777",
+        "paragraph": 1141,
+        "pattern": "flustered-verb~elided",
+        "act": "flustered or blushing",
+        "kind": "behavior",
+        "a": "Lauchlan Huxley",
+        "b": "Corbin Scargill",
+        "role": "bottom"
+      }
+    },
+    {
+      "id": "roses-58",
+      "key": "care-soothe#ffa1a131",
+      "claim": {
+        "fic": "dog-roses.html",
+        "sourceSha": "c784ea2a3481b2f74616799b5690e26c5688afe544886a748d78b1c89443a777",
+        "paragraph": 1216,
+        "pattern": "care-soothe",
+        "act": "comforting someone",
+        "kind": "behavior",
+        "a": "Corbin Scargill",
+        "b": "Lauchlan Huxley",
+        "role": "top"
+      }
+    },
+    {
+      "id": "roses-60",
+      "key": "pos-climb-lap~elided#858575bd",
+      "claim": {
+        "fic": "dog-roses.html",
+        "sourceSha": "c784ea2a3481b2f74616799b5690e26c5688afe544886a748d78b1c89443a777",
+        "paragraph": 1338,
+        "pattern": "pos-climb-lap~elided",
+        "act": "climbing into someone's lap",
+        "kind": "position",
+        "a": "Corbin Scargill",
+        "b": "Lauchlan Huxley",
+        "role": "bottom"
+      }
+    },
+    {
+      "id": "roses-62",
+      "key": "aftercare-held~elided#2cce9601",
+      "claim": {
+        "fic": "dog-roses.html",
+        "sourceSha": "c784ea2a3481b2f74616799b5690e26c5688afe544886a748d78b1c89443a777",
+        "paragraph": 1339,
+        "pattern": "aftercare-held~elided",
+        "act": "being held afterwards",
+        "kind": "aftercare",
+        "a": "Lauchlan Huxley",
+        "b": "Corbin Scargill",
+        "role": "bottom"
+      }
+    },
+    {
+      "id": "roses-64",
+      "key": "flustered-verb#a31c4b9c",
+      "claim": {
+        "fic": "dog-roses.html",
+        "sourceSha": "c784ea2a3481b2f74616799b5690e26c5688afe544886a748d78b1c89443a777",
+        "paragraph": 1348,
+        "pattern": "flustered-verb",
+        "act": "flustered or blushing",
+        "kind": "behavior",
+        "a": "Lauchlan Huxley",
+        "b": "Corbin Scargill",
+        "role": "bottom"
+      }
+    },
+    {
+      "id": "roses-65",
+      "key": "care-soothe#7417fde5",
+      "claim": {
+        "fic": "dog-roses.html",
+        "sourceSha": "c784ea2a3481b2f74616799b5690e26c5688afe544886a748d78b1c89443a777",
+        "paragraph": 1376,
+        "pattern": "care-soothe",
+        "act": "comforting someone",
+        "kind": "behavior",
+        "a": "Lauchlan Huxley",
+        "b": "Corbin Scargill",
+        "role": "top"
+      }
+    },
+    {
+      "id": "roses-66",
+      "key": "flustered-verb~elided#d29b2de8",
+      "claim": {
+        "fic": "dog-roses.html",
+        "sourceSha": "c784ea2a3481b2f74616799b5690e26c5688afe544886a748d78b1c89443a777",
+        "paragraph": 1439,
+        "pattern": "flustered-verb~elided",
+        "act": "flustered or blushing",
+        "kind": "behavior",
+        "a": "Corbin Scargill",
+        "b": "Lauchlan Huxley",
+        "role": "bottom"
+      }
+    },
+    {
+      "id": "roses-67",
+      "key": "flustered-verb~elided#35f975eb",
+      "claim": {
+        "fic": "dog-roses.html",
+        "sourceSha": "c784ea2a3481b2f74616799b5690e26c5688afe544886a748d78b1c89443a777",
+        "paragraph": 1452,
+        "pattern": "flustered-verb~elided",
+        "act": "flustered or blushing",
+        "kind": "behavior",
+        "a": "Lauchlan Huxley",
+        "b": "Corbin Scargill",
+        "role": "bottom"
+      }
+    },
+    {
+      "id": "roses-68",
+      "key": "collar-wearer#f880408c",
+      "claim": {
+        "fic": "dog-roses.html",
+        "sourceSha": "c784ea2a3481b2f74616799b5690e26c5688afe544886a748d78b1c89443a777",
+        "paragraph": 1529,
+        "pattern": "collar-wearer",
+        "act": "wearing a collar or leash",
+        "kind": "behavior",
+        "a": "Lauchlan Huxley",
+        "b": "Corbin Scargill",
+        "role": "bottom"
+      }
+    },
+    {
+      "id": "roses-69",
+      "key": "lead-by-hand#8b3d8583",
+      "claim": {
+        "fic": "dog-roses.html",
+        "sourceSha": "c784ea2a3481b2f74616799b5690e26c5688afe544886a748d78b1c89443a777",
+        "paragraph": 1553,
+        "pattern": "lead-by-hand",
+        "act": "leading someone",
+        "kind": "behavior",
+        "a": "Corbin Scargill",
+        "b": "Lauchlan Huxley",
+        "role": "top"
+      }
+    },
+    {
+      "id": "roses-70",
+      "key": "sub-let-lead~elided#f8c54d5f",
+      "claim": {
+        "fic": "dog-roses.html",
+        "sourceSha": "c784ea2a3481b2f74616799b5690e26c5688afe544886a748d78b1c89443a777",
+        "paragraph": 1562,
+        "pattern": "sub-let-lead~elided",
+        "act": "letting someone lead",
+        "kind": "behavior",
+        "a": "Lauchlan Huxley",
+        "b": "Corbin Scargill",
+        "role": "bottom"
+      }
+    },
+    {
+      "id": "roses-71",
+      "key": "care-soothe~elided#f11dda7d",
+      "claim": {
+        "fic": "dog-roses.html",
+        "sourceSha": "c784ea2a3481b2f74616799b5690e26c5688afe544886a748d78b1c89443a777",
+        "paragraph": 1569,
+        "pattern": "care-soothe~elided",
+        "act": "comforting someone",
+        "kind": "behavior",
+        "a": "Corbin Scargill",
+        "b": "Lauchlan Huxley",
+        "role": "top"
+      }
+    },
+    {
+      "id": "roses-72",
+      "key": "flustered-verb#c38453ed",
+      "claim": {
+        "fic": "dog-roses.html",
+        "sourceSha": "c784ea2a3481b2f74616799b5690e26c5688afe544886a748d78b1c89443a777",
+        "paragraph": 1688,
+        "pattern": "flustered-verb",
+        "act": "flustered or blushing",
+        "kind": "behavior",
+        "a": "Corbin Scargill",
+        "b": "Lauchlan Huxley",
+        "role": "bottom"
+      }
+    },
+    {
+      "id": "roses-73",
+      "key": "sub-let-lead#f5e14a9",
+      "claim": {
+        "fic": "dog-roses.html",
+        "sourceSha": "c784ea2a3481b2f74616799b5690e26c5688afe544886a748d78b1c89443a777",
+        "paragraph": 1800,
+        "pattern": "sub-let-lead",
+        "act": "letting someone lead",
+        "kind": "behavior",
+        "a": "Corbin Scargill",
+        "b": "Lauchlan Huxley",
+        "role": "bottom"
+      }
+    },
+    {
+      "id": "roses-74",
+      "key": "collar-holder#4e9a9819",
+      "claim": {
+        "fic": "dog-roses.html",
+        "sourceSha": "c784ea2a3481b2f74616799b5690e26c5688afe544886a748d78b1c89443a777",
+        "paragraph": 1800,
+        "pattern": "collar-holder",
+        "act": "leading or controlling a collared partner",
+        "kind": "behavior",
+        "a": "Corbin Scargill",
+        "b": "Lauchlan Huxley",
+        "role": "top"
+      }
+    },
+    {
+      "id": "roses-75",
+      "key": "care-soothe~elided#eee5ccd",
+      "claim": {
+        "fic": "dog-roses.html",
+        "sourceSha": "c784ea2a3481b2f74616799b5690e26c5688afe544886a748d78b1c89443a777",
+        "paragraph": 1816,
+        "pattern": "care-soothe~elided",
+        "act": "comforting someone",
+        "kind": "behavior",
+        "a": "Lauchlan Huxley",
+        "b": "Corbin Scargill",
+        "role": "top"
+      }
+    },
+    {
+      "id": "roses-76",
+      "key": "care-soothe~elided#419925a1",
+      "claim": {
+        "fic": "dog-roses.html",
+        "sourceSha": "c784ea2a3481b2f74616799b5690e26c5688afe544886a748d78b1c89443a777",
+        "paragraph": 1823,
+        "pattern": "care-soothe~elided",
+        "act": "comforting someone",
+        "kind": "behavior",
+        "a": "Corbin Scargill",
+        "b": "Lauchlan Huxley",
+        "role": "top"
+      }
+    },
+    {
+      "id": "roses-77",
+      "key": "lead-by-hand~elided#e1f555bb",
+      "claim": {
+        "fic": "dog-roses.html",
+        "sourceSha": "c784ea2a3481b2f74616799b5690e26c5688afe544886a748d78b1c89443a777",
+        "paragraph": 1826,
+        "pattern": "lead-by-hand~elided",
+        "act": "leading someone",
+        "kind": "behavior",
+        "a": "Lauchlan Huxley",
+        "b": "Corbin Scargill",
+        "role": "top"
+      }
+    },
+    {
+      "id": "roses-78",
+      "key": "flustered-verb~elided#38bbb19f",
+      "claim": {
+        "fic": "dog-roses.html",
+        "sourceSha": "c784ea2a3481b2f74616799b5690e26c5688afe544886a748d78b1c89443a777",
+        "paragraph": 1888,
+        "pattern": "flustered-verb~elided",
+        "act": "flustered or blushing",
+        "kind": "behavior",
+        "a": "Corbin Scargill",
+        "b": "Lauchlan Huxley",
+        "role": "bottom"
+      }
+    },
+    {
+      "id": "roses-79",
+      "key": "pos-climb-lap#d900577d",
+      "claim": {
+        "fic": "dog-roses.html",
+        "sourceSha": "c784ea2a3481b2f74616799b5690e26c5688afe544886a748d78b1c89443a777",
+        "paragraph": 1928,
+        "pattern": "pos-climb-lap",
+        "act": "climbing into someone's lap",
+        "kind": "position",
+        "a": "Lauchlan Huxley",
+        "b": "Corbin Scargill",
+        "role": "bottom"
+      }
+    },
+    {
+      "id": "roses-80",
+      "key": "dom-pin~elided#1dc6054",
+      "claim": {
+        "fic": "dog-roses.html",
+        "sourceSha": "c784ea2a3481b2f74616799b5690e26c5688afe544886a748d78b1c89443a777",
+        "paragraph": 1951,
+        "pattern": "dom-pin~elided",
+        "act": "pinning someone",
+        "kind": "behavior",
+        "a": "Lauchlan Huxley",
+        "b": "Corbin Scargill",
+        "role": "top"
+      }
+    },
+    {
+      "id": "roses-81",
+      "key": "sub-pinned#4a160859",
+      "claim": {
+        "fic": "dog-roses.html",
+        "sourceSha": "c784ea2a3481b2f74616799b5690e26c5688afe544886a748d78b1c89443a777",
+        "paragraph": 2329,
+        "pattern": "sub-pinned",
+        "act": "being pinned",
+        "kind": "behavior",
+        "a": "Corbin Scargill",
+        "b": "Lauchlan Huxley",
+        "role": "bottom"
+      }
+    },
+    {
+      "id": "roses-82",
+      "key": "care-soothe#db37e0d7",
+      "claim": {
+        "fic": "dog-roses.html",
+        "sourceSha": "c784ea2a3481b2f74616799b5690e26c5688afe544886a748d78b1c89443a777",
+        "paragraph": 2380,
+        "pattern": "care-soothe",
+        "act": "comforting someone",
+        "kind": "behavior",
+        "a": "Lauchlan Huxley",
+        "b": "Corbin Scargill",
+        "role": "top"
+      }
+    },
+    {
+      "id": "roses-86",
+      "key": "care-soothe~elided#cb82f3b9",
+      "claim": {
+        "fic": "dog-roses.html",
+        "sourceSha": "c784ea2a3481b2f74616799b5690e26c5688afe544886a748d78b1c89443a777",
+        "paragraph": 2532,
+        "pattern": "care-soothe~elided",
+        "act": "comforting someone",
+        "kind": "behavior",
+        "a": "Corbin Scargill",
+        "b": "Lauchlan Huxley",
+        "role": "top"
+      }
+    },
+    {
+      "id": "roses-87",
+      "key": "cuddle-head-on-chest~elided#e038437",
+      "claim": {
+        "fic": "dog-roses.html",
+        "sourceSha": "c784ea2a3481b2f74616799b5690e26c5688afe544886a748d78b1c89443a777",
+        "paragraph": 2565,
+        "pattern": "cuddle-head-on-chest~elided",
+        "act": "resting their head on someone's chest",
+        "kind": "position",
+        "a": "Corbin Scargill",
+        "b": "Lauchlan Huxley",
+        "role": "bottom"
+      }
+    },
+    {
+      "id": "roses-88",
+      "key": "care-soothe#5e95b947",
+      "claim": {
+        "fic": "dog-roses.html",
+        "sourceSha": "c784ea2a3481b2f74616799b5690e26c5688afe544886a748d78b1c89443a777",
+        "paragraph": 2565,
+        "pattern": "care-soothe",
+        "act": "comforting someone",
+        "kind": "behavior",
+        "a": "Lauchlan Huxley",
+        "b": "Corbin Scargill",
+        "role": "top"
+      }
+    },
+    {
+      "id": "roses-89",
+      "key": "flustered-verb#e5d748aa",
+      "claim": {
+        "fic": "dog-roses.html",
+        "sourceSha": "c784ea2a3481b2f74616799b5690e26c5688afe544886a748d78b1c89443a777",
+        "paragraph": 2838,
+        "pattern": "flustered-verb",
+        "act": "flustered or blushing",
+        "kind": "behavior",
+        "a": "Lauchlan Huxley",
+        "b": "Corbin Scargill",
+        "role": "bottom"
+      }
+    },
+    {
+      "id": "wolfbird-0",
+      "key": "pushed-in#f19933b3",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 355,
+        "pattern": "pushed-in",
+        "act": "anal sex",
+        "kind": "act",
+        "a": "Ilya Rozanov",
+        "b": "Shane Hollander",
+        "role": ""
+      }
+    },
+    {
+      "id": "wolfbird-1",
+      "key": "hollowed-cheeks~elided#6959c140",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 491,
+        "pattern": "hollowed-cheeks~elided",
+        "act": "blowjob",
+        "kind": "act",
+        "a": "Shane Hollander",
+        "b": "Ilya Rozanov",
+        "role": ""
+      }
+    },
+    {
+      "id": "wolfbird-2",
+      "key": "lips-around#69cd62ba",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 494,
+        "pattern": "lips-around",
+        "act": "blowjob",
+        "kind": "act",
+        "a": "Shane Hollander",
+        "b": "Ilya Rozanov",
+        "role": ""
+      }
+    },
+    {
+      "id": "wolfbird-3",
+      "key": "bottomed-for~elided#f6ccb18a",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 509,
+        "pattern": "bottomed-for~elided",
+        "act": "anal sex",
+        "kind": "act",
+        "a": "Shane Hollander",
+        "b": "Ilya Rozanov",
+        "role": ""
+      }
+    },
+    {
+      "id": "wolfbird-4",
+      "key": "topped~elided#f6ccb18a",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 509,
+        "pattern": "topped~elided",
+        "act": "anal sex",
+        "kind": "act",
+        "a": "Ilya Rozanov",
+        "b": "Shane Hollander",
+        "role": ""
+      }
+    },
+    {
+      "id": "wolfbird-5",
+      "key": "pushed-in~elided#33276c88",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 715,
+        "pattern": "pushed-in~elided",
+        "act": "anal sex",
+        "kind": "act",
+        "a": "Shane Hollander",
+        "b": "Ilya Rozanov",
+        "role": ""
+      }
+    },
+    {
+      "id": "wolfbird-6",
+      "key": "fucked-mouth#a92398f6",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 1143,
+        "pattern": "fucked-mouth",
+        "act": "face-fucking",
+        "kind": "act",
+        "a": "Ilya Rozanov",
+        "b": "Shane Hollander",
+        "role": ""
+      }
+    },
+    {
+      "id": "wolfbird-7",
+      "key": "fuck#e9d74c0c",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 1154,
+        "pattern": "fuck",
+        "act": "anal sex",
+        "kind": "act",
+        "a": "Ilya Rozanov",
+        "b": "Shane Hollander",
+        "role": ""
+      }
+    },
+    {
+      "id": "wolfbird-8",
+      "key": "pushed-in~elided#1e04ce1a",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 1360,
+        "pattern": "pushed-in~elided",
+        "act": "anal sex",
+        "kind": "act",
+        "a": "Ilya Rozanov",
+        "b": "Shane Hollander",
+        "role": ""
+      }
+    },
+    {
+      "id": "wolfbird-9",
+      "key": "pushed-in#ace7ae7",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 1376,
+        "pattern": "pushed-in",
+        "act": "anal sex",
+        "kind": "act",
+        "a": "Ilya Rozanov",
+        "b": "Shane Hollander",
+        "role": ""
+      }
+    },
+    {
+      "id": "wolfbird-10",
+      "key": "took-to-root#aa58af47",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 1545,
+        "pattern": "took-to-root",
+        "act": "blowjob",
+        "kind": "act",
+        "a": "Ilya Rozanov",
+        "b": "Shane Hollander",
+        "role": ""
+      }
+    },
+    {
+      "id": "wolfbird-11",
+      "key": "lips-around#b861ab6f",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 1554,
+        "pattern": "lips-around",
+        "act": "blowjob",
+        "kind": "act",
+        "a": "Ilya Rozanov",
+        "b": "Shane Hollander",
+        "role": ""
+      }
+    },
+    {
+      "id": "wolfbird-12",
+      "key": "swallowed-down~elided#5e5ad8ce",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 1554,
+        "pattern": "swallowed-down~elided",
+        "act": "blowjob",
+        "kind": "act",
+        "a": "Ilya Rozanov",
+        "b": "Shane Hollander",
+        "role": ""
+      }
+    },
+    {
+      "id": "wolfbird-13",
+      "key": "lips-around#2f4f7c89",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 1558,
+        "pattern": "lips-around",
+        "act": "blowjob",
+        "kind": "act",
+        "a": "Ilya Rozanov",
+        "b": "Shane Hollander",
+        "role": ""
+      }
+    },
+    {
+      "id": "wolfbird-14",
+      "key": "took-to-root~elided#921e554a",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 1571,
+        "pattern": "took-to-root~elided",
+        "act": "blowjob",
+        "kind": "act",
+        "a": "Ilya Rozanov",
+        "b": "Shane Hollander",
+        "role": ""
+      }
+    },
+    {
+      "id": "wolfbird-15",
+      "key": "sucked#ded2c0fe",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 1575,
+        "pattern": "sucked",
+        "act": "blowjob",
+        "kind": "act",
+        "a": "Ilya Rozanov",
+        "b": "Shane Hollander",
+        "role": ""
+      }
+    },
+    {
+      "id": "wolfbird-16",
+      "key": "groaned-around#6e3f92ea",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 1579,
+        "pattern": "groaned-around",
+        "act": "blowjob",
+        "kind": "act",
+        "a": "Ilya Rozanov",
+        "b": "Shane Hollander",
+        "role": ""
+      }
+    },
+    {
+      "id": "wolfbird-17",
+      "key": "hollowed-cheeks#5fc30679",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 1583,
+        "pattern": "hollowed-cheeks",
+        "act": "blowjob",
+        "kind": "act",
+        "a": "Ilya Rozanov",
+        "b": "Shane Hollander",
+        "role": ""
+      }
+    },
+    {
+      "id": "wolfbird-18",
+      "key": "passive-sucked#906a9b09",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 2014,
+        "pattern": "passive-sucked",
+        "act": "blowjob",
+        "kind": "act",
+        "a": "Shane Hollander",
+        "b": "Ilya Rozanov",
+        "role": ""
+      }
+    },
+    {
+      "id": "wolfbird-19",
+      "key": "passive-fucked~elided#7e1fd286",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 2267,
+        "pattern": "passive-fucked~elided",
+        "act": "anal sex",
+        "kind": "act",
+        "a": "Ilya Rozanov",
+        "b": "Shane Hollander",
+        "role": ""
+      }
+    },
+    {
+      "id": "wolfbird-20",
+      "key": "pushed-in#b1b1cb19",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 2638,
+        "pattern": "pushed-in",
+        "act": "fingering",
+        "kind": "act",
+        "a": "Ilya Rozanov",
+        "b": "Shane Hollander",
+        "role": ""
+      }
+    },
+    {
+      "id": "wolfbird-21",
+      "key": "toy-in-bare#fc00744",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 2697,
+        "pattern": "toy-in-bare",
+        "act": "anal sex (toy)",
+        "kind": "act",
+        "a": "Ilya Rozanov",
+        "b": "Shane Hollander",
+        "role": ""
+      }
+    },
+    {
+      "id": "wolfbird-24",
+      "key": "took-to-root~elided#82b330c0",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 3046,
+        "pattern": "took-to-root~elided",
+        "act": "blowjob",
+        "kind": "act",
+        "a": "Ilya Rozanov",
+        "b": "Shane Hollander",
+        "role": ""
+      }
+    },
+    {
+      "id": "wolfbird-25",
+      "key": "took-deep#717a0dac",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 3046,
+        "pattern": "took-deep",
+        "act": "anal sex (riding)",
+        "kind": "act",
+        "a": "Ilya Rozanov",
+        "b": "Shane Hollander",
+        "role": ""
+      }
+    },
+    {
+      "id": "wolfbird-26",
+      "key": "swallowed-down~elided#10784fa7",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 3050,
+        "pattern": "swallowed-down~elided",
+        "act": "blowjob",
+        "kind": "act",
+        "a": "Ilya Rozanov",
+        "b": "Shane Hollander",
+        "role": ""
+      }
+    },
+    {
+      "id": "wolfbird-27",
+      "key": "sucked~elided#8682fb59",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 3053,
+        "pattern": "sucked~elided",
+        "act": "blowjob",
+        "kind": "act",
+        "a": "Ilya Rozanov",
+        "b": "Shane Hollander",
+        "role": ""
+      }
+    },
+    {
+      "id": "wolfbird-28",
+      "key": "lips-around#ae816d5d",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 3059,
+        "pattern": "lips-around",
+        "act": "blowjob",
+        "kind": "act",
+        "a": "Ilya Rozanov",
+        "b": "Shane Hollander",
+        "role": ""
+      }
+    },
+    {
+      "id": "wolfbird-29",
+      "key": "pushed-in#b2802760",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 3083,
+        "pattern": "pushed-in",
+        "act": "fingering",
+        "kind": "act",
+        "a": "Ilya Rozanov",
+        "b": "Shane Hollander",
+        "role": ""
+      }
+    },
+    {
+      "id": "wolfbird-30",
+      "key": "prostate#4f8db12b",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 3083,
+        "pattern": "prostate",
+        "act": "fingering",
+        "kind": "act",
+        "a": "Ilya Rozanov",
+        "b": "Shane Hollander",
+        "role": ""
+      }
+    },
+    {
+      "id": "wolfbird-33",
+      "key": "adds-finger~elided#780a52f1",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 3087,
+        "pattern": "adds-finger~elided",
+        "act": "fingering",
+        "kind": "act",
+        "a": "Ilya Rozanov",
+        "b": "Shane Hollander",
+        "role": ""
+      }
+    },
+    {
+      "id": "wolfbird-34",
+      "key": "dd5-pushes-finger-in~elided#780a52f1",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 3087,
+        "pattern": "dd5-pushes-finger-in~elided",
+        "act": "fingering",
+        "kind": "act",
+        "a": "Ilya Rozanov",
+        "b": "Shane Hollander",
+        "role": ""
+      }
+    },
+    {
+      "id": "wolfbird-35",
+      "key": "mouth-closed-around#9d4af1fc",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 3095,
+        "pattern": "mouth-closed-around",
+        "act": "blowjob",
+        "kind": "act",
+        "a": "Ilya Rozanov",
+        "b": "Shane Hollander",
+        "role": ""
+      }
+    },
+    {
+      "id": "wolfbird-36",
+      "key": "took-to-root#ac4ecb1f",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 3096,
+        "pattern": "took-to-root",
+        "act": "blowjob",
+        "kind": "act",
+        "a": "Shane Hollander",
+        "b": "Ilya Rozanov",
+        "role": ""
+      }
+    },
+    {
+      "id": "wolfbird-37",
+      "key": "took-in-mouth~elided#ba3f0322",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 3100,
+        "pattern": "took-in-mouth~elided",
+        "act": "blowjob",
+        "kind": "act",
+        "a": "Shane Hollander",
+        "b": "Ilya Rozanov",
+        "role": ""
+      }
+    },
+    {
+      "id": "wolfbird-38",
+      "key": "fingers-inside#eecc086c",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 3100,
+        "pattern": "fingers-inside",
+        "act": "fingering",
+        "kind": "act",
+        "a": "Ilya Rozanov",
+        "b": "Shane Hollander",
+        "role": ""
+      }
+    },
+    {
+      "id": "wolfbird-39",
+      "key": "swallowed-down~elided#fe48d61f",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 3100,
+        "pattern": "swallowed-down~elided",
+        "act": "blowjob",
+        "kind": "act",
+        "a": "Shane Hollander",
+        "b": "Ilya Rozanov",
+        "role": ""
+      }
+    },
+    {
+      "id": "wolfbird-40",
+      "key": "mouth-off~elided#dc6ad254",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 3102,
+        "pattern": "mouth-off~elided",
+        "act": "blowjob",
+        "kind": "act",
+        "a": "Shane Hollander",
+        "b": "Ilya Rozanov",
+        "role": ""
+      }
+    },
+    {
+      "id": "wolfbird-41",
+      "key": "swallowed-down#a4ebe9b6",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 3103,
+        "pattern": "swallowed-down",
+        "act": "blowjob",
+        "kind": "act",
+        "a": "Shane Hollander",
+        "b": "Ilya Rozanov",
+        "role": ""
+      }
+    },
+    {
+      "id": "wolfbird-42",
+      "key": "fingers-inside#b40959e0",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 3103,
+        "pattern": "fingers-inside",
+        "act": "fingering",
+        "kind": "act",
+        "a": "Ilya Rozanov",
+        "b": "Shane Hollander",
+        "role": ""
+      }
+    },
+    {
+      "id": "wolfbird-43",
+      "key": "prostate~elided#b40959e0",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 3103,
+        "pattern": "prostate~elided",
+        "act": "fingering",
+        "kind": "act",
+        "a": "Ilya Rozanov",
+        "b": "Shane Hollander",
+        "role": ""
+      }
+    },
+    {
+      "id": "wolfbird-44",
+      "key": "lips-around#50c91312",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 3104,
+        "pattern": "lips-around",
+        "act": "blowjob",
+        "kind": "act",
+        "a": "Shane Hollander",
+        "b": "Ilya Rozanov",
+        "role": ""
+      }
+    },
+    {
+      "id": "wolfbird-45",
+      "key": "press-cock-against#eda266d1",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 3121,
+        "pattern": "press-cock-against",
+        "act": "anal sex",
+        "kind": "act",
+        "a": "Ilya Rozanov",
+        "b": "Shane Hollander",
+        "role": ""
+      }
+    },
+    {
+      "id": "wolfbird-46",
+      "key": "pushed-in~elided#eda266d1",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 3121,
+        "pattern": "pushed-in~elided",
+        "act": "anal sex",
+        "kind": "act",
+        "a": "Ilya Rozanov",
+        "b": "Shane Hollander",
+        "role": ""
+      }
+    },
+    {
+      "id": "wolfbird-47",
+      "key": "stretched-open~elided#1e189521",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 3138,
+        "pattern": "stretched-open~elided",
+        "act": "fingering",
+        "kind": "act",
+        "a": "Ilya Rozanov",
+        "b": "Shane Hollander",
+        "role": ""
+      }
+    },
+    {
+      "id": "wolfbird-48",
+      "key": "hole-around#2b2d57df",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 3139,
+        "pattern": "hole-around",
+        "act": "anal sex",
+        "kind": "act",
+        "a": "Ilya Rozanov",
+        "b": "Shane Hollander",
+        "role": ""
+      }
+    },
+    {
+      "id": "wolfbird-49",
+      "key": "dd-hole-strangles-cock#2b2d57df",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 3139,
+        "pattern": "dd-hole-strangles-cock",
+        "act": "anal sex",
+        "kind": "act",
+        "a": "Ilya Rozanov",
+        "b": "Shane Hollander",
+        "role": ""
+      }
+    },
+    {
+      "id": "wolfbird-50",
+      "key": "ass-grips-cock#2b2d57df",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 3139,
+        "pattern": "ass-grips-cock",
+        "act": "anal sex",
+        "kind": "act",
+        "a": "Ilya Rozanov",
+        "b": "Shane Hollander",
+        "role": ""
+      }
+    },
+    {
+      "id": "wolfbird-51",
+      "key": "pushed-in~elided#5fa997c0",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 3144,
+        "pattern": "pushed-in~elided",
+        "act": "anal sex",
+        "kind": "act",
+        "a": "Ilya Rozanov",
+        "b": "Shane Hollander",
+        "role": ""
+      }
+    },
+    {
+      "id": "wolfbird-52",
+      "key": "hips-against-ass#9f9e946f",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 3147,
+        "pattern": "hips-against-ass",
+        "act": "anal sex",
+        "kind": "act",
+        "a": "Ilya Rozanov",
+        "b": "Shane Hollander",
+        "role": ""
+      }
+    },
+    {
+      "id": "wolfbird-53",
+      "key": "clenched-around#2f1dd93b",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 3150,
+        "pattern": "clenched-around",
+        "act": "anal sex",
+        "kind": "act",
+        "a": "Ilya Rozanov",
+        "b": "Shane Hollander",
+        "role": ""
+      }
+    },
+    {
+      "id": "wolfbird-54",
+      "key": "pushed-in~elided#915fe2b",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 3164,
+        "pattern": "pushed-in~elided",
+        "act": "anal sex",
+        "kind": "act",
+        "a": "Ilya Rozanov",
+        "b": "Shane Hollander",
+        "role": ""
+      }
+    },
+    {
+      "id": "wolfbird-55",
+      "key": "riding~elided#17c06250",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 3165,
+        "pattern": "riding~elided",
+        "act": "anal sex (riding)",
+        "kind": "act",
+        "a": "Ilya Rozanov",
+        "b": "Shane Hollander",
+        "role": ""
+      }
+    },
+    {
+      "id": "wolfbird-56",
+      "key": "push-into#ae65bc6d",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 3170,
+        "pattern": "push-into",
+        "act": "anal sex",
+        "kind": "act",
+        "a": "Ilya Rozanov",
+        "b": "Shane Hollander",
+        "role": ""
+      }
+    },
+    {
+      "id": "wolfbird-57",
+      "key": "dd-fucks-into-him#ae65bc6d",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 3170,
+        "pattern": "dd-fucks-into-him",
+        "act": "anal sex",
+        "kind": "act",
+        "a": "Ilya Rozanov",
+        "b": "Shane Hollander",
+        "role": ""
+      }
+    },
+    {
+      "id": "wolfbird-58",
+      "key": "push-into#4cfcd6fa",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 3173,
+        "pattern": "push-into",
+        "act": "anal sex",
+        "kind": "act",
+        "a": "Ilya Rozanov",
+        "b": "Shane Hollander",
+        "role": ""
+      }
+    },
+    {
+      "id": "wolfbird-59",
+      "key": "hole-around-name#4e9c8f27",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 3174,
+        "pattern": "hole-around-name",
+        "act": "anal sex",
+        "kind": "act",
+        "a": "Ilya Rozanov",
+        "b": "Shane Hollander",
+        "role": ""
+      }
+    },
+    {
+      "id": "wolfbird-60",
+      "key": "hole-around-name#bd4bb016",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 3179,
+        "pattern": "hole-around-name",
+        "act": "anal sex",
+        "kind": "act",
+        "a": "Ilya Rozanov",
+        "b": "Shane Hollander",
+        "role": ""
+      }
+    },
+    {
+      "id": "wolfbird-61",
+      "key": "fuck#12ad5ca5",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 3181,
+        "pattern": "fuck",
+        "act": "anal sex",
+        "kind": "act",
+        "a": "Ilya Rozanov",
+        "b": "Shane Hollander",
+        "role": ""
+      }
+    },
+    {
+      "id": "wolfbird-62",
+      "key": "riding#12ad5ca5",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 3181,
+        "pattern": "riding",
+        "act": "anal sex (riding)",
+        "kind": "act",
+        "a": "Ilya Rozanov",
+        "b": "Shane Hollander",
+        "role": ""
+      }
+    },
+    {
+      "id": "wolfbird-63",
+      "key": "hole-around#b45fa0bc",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 3182,
+        "pattern": "hole-around",
+        "act": "anal sex",
+        "kind": "act",
+        "a": "Ilya Rozanov",
+        "b": "Shane Hollander",
+        "role": ""
+      }
+    },
+    {
+      "id": "wolfbird-64",
+      "key": "fuck#ee27b77d",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 3182,
+        "pattern": "fuck",
+        "act": "anal sex",
+        "kind": "act",
+        "a": "Ilya Rozanov",
+        "b": "Shane Hollander",
+        "role": ""
+      }
+    },
+    {
+      "id": "wolfbird-65",
+      "key": "fuck~elided#bf194d0",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 3183,
+        "pattern": "fuck~elided",
+        "act": "anal sex",
+        "kind": "act",
+        "a": "Ilya Rozanov",
+        "b": "Shane Hollander",
+        "role": ""
+      }
+    },
+    {
+      "id": "wolfbird-66",
+      "key": "licked-head-at~elided#2ed66b40",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 4018,
+        "pattern": "licked-head-at~elided",
+        "act": "blowjob",
+        "kind": "act",
+        "a": "Shane Hollander",
+        "b": "Ilya Rozanov",
+        "role": ""
+      }
+    },
+    {
+      "id": "wolfbird-67",
+      "key": "cock-to-lips#cb3861ee",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 4026,
+        "pattern": "cock-to-lips",
+        "act": "blowjob",
+        "kind": "act",
+        "a": "Ilya Rozanov",
+        "b": "Shane Hollander",
+        "role": ""
+      }
+    },
+    {
+      "id": "wolfbird-68",
+      "key": "fed-cock#cb3861ee",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 4026,
+        "pattern": "fed-cock",
+        "act": "blowjob",
+        "kind": "act",
+        "a": "Ilya Rozanov",
+        "b": "Shane Hollander",
+        "role": ""
+      }
+    },
+    {
+      "id": "wolfbird-69",
+      "key": "groaned-around#f8f13f7c",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 4037,
+        "pattern": "groaned-around",
+        "act": "blowjob",
+        "kind": "act",
+        "a": "Ilya Rozanov",
+        "b": "Shane Hollander",
+        "role": ""
+      }
+    },
+    {
+      "id": "wolfbird-70",
+      "key": "sucked~elided#f9b9010e",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 4040,
+        "pattern": "sucked~elided",
+        "act": "blowjob",
+        "kind": "act",
+        "a": "Ilya Rozanov",
+        "b": "Shane Hollander",
+        "role": ""
+      }
+    },
+    {
+      "id": "wolfbird-71",
+      "key": "penis-into#4dc35468",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 4062,
+        "pattern": "penis-into",
+        "act": "anal sex",
+        "kind": "act",
+        "a": "Ilya Rozanov",
+        "b": "Shane Hollander",
+        "role": ""
+      }
+    },
+    {
+      "id": "wolfbird-72",
+      "key": "penis-into-him#4dc35468",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 4062,
+        "pattern": "penis-into-him",
+        "act": "anal sex",
+        "kind": "act",
+        "a": "Ilya Rozanov",
+        "b": "Shane Hollander",
+        "role": ""
+      }
+    },
+    {
+      "id": "wolfbird-73",
+      "key": "dd2-finger-shoved-into#c0cf02a8",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 4090,
+        "pattern": "dd2-finger-shoved-into",
+        "act": "fingering",
+        "kind": "act",
+        "a": "Ilya Rozanov",
+        "b": "Shane Hollander",
+        "role": ""
+      }
+    },
+    {
+      "id": "wolfbird-74",
+      "key": "dd3-slipping-second#c0cf02a8",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 4090,
+        "pattern": "dd3-slipping-second",
+        "act": "fingering",
+        "kind": "act",
+        "a": "Ilya Rozanov",
+        "b": "Shane Hollander",
+        "role": ""
+      }
+    },
+    {
+      "id": "wolfbird-75",
+      "key": "adds-finger#c0cf02a8",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 4090,
+        "pattern": "adds-finger",
+        "act": "fingering",
+        "kind": "act",
+        "a": "Ilya Rozanov",
+        "b": "Shane Hollander",
+        "role": ""
+      }
+    },
+    {
+      "id": "wolfbird-76",
+      "key": "fingers-inside#2d657b15",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 4094,
+        "pattern": "fingers-inside",
+        "act": "fingering",
+        "kind": "act",
+        "a": "Ilya Rozanov",
+        "b": "Shane Hollander",
+        "role": ""
+      }
+    },
+    {
+      "id": "wolfbird-77",
+      "key": "push-into#3d73d4ed",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 4103,
+        "pattern": "push-into",
+        "act": "anal sex",
+        "kind": "act",
+        "a": "Ilya Rozanov",
+        "b": "Shane Hollander",
+        "role": ""
+      }
+    },
+    {
+      "id": "wolfbird-78",
+      "key": "inside#3d73d4ed",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 4103,
+        "pattern": "inside",
+        "act": "anal sex",
+        "kind": "act",
+        "a": "Ilya Rozanov",
+        "b": "Shane Hollander",
+        "role": ""
+      }
+    },
+    {
+      "id": "wolfbird-79",
+      "key": "penis-against#61ab744a",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 4120,
+        "pattern": "penis-against",
+        "act": "anal sex",
+        "kind": "act",
+        "a": "Ilya Rozanov",
+        "b": "Shane Hollander",
+        "role": ""
+      }
+    },
+    {
+      "id": "wolfbird-80",
+      "key": "cock-on-prostate#61ab744a",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 4120,
+        "pattern": "cock-on-prostate",
+        "act": "anal sex",
+        "kind": "act",
+        "a": "Ilya Rozanov",
+        "b": "Shane Hollander",
+        "role": ""
+      }
+    },
+    {
+      "id": "wolfbird-81",
+      "key": "fuck#a7a31b2a",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 4142,
+        "pattern": "fuck",
+        "act": "anal sex",
+        "kind": "act",
+        "a": "Ilya Rozanov",
+        "b": "Shane Hollander",
+        "role": ""
+      }
+    },
+    {
+      "id": "wolfbird-82",
+      "key": "bottomed-out~elided#a7a31b2a",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 4142,
+        "pattern": "bottomed-out~elided",
+        "act": "anal sex",
+        "kind": "act",
+        "a": "Ilya Rozanov",
+        "b": "Shane Hollander",
+        "role": ""
+      }
+    },
+    {
+      "id": "wolfbird-83",
+      "key": "clenched-around#d4b056ab",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 4296,
+        "pattern": "clenched-around",
+        "act": "anal sex",
+        "kind": "act",
+        "a": "Shane Hollander",
+        "b": "Ilya Rozanov",
+        "role": ""
+      }
+    },
+    {
+      "id": "wolfbird-84",
+      "key": "licked-open~elided#84522a04",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 4451,
+        "pattern": "licked-open~elided",
+        "act": "rimming",
+        "kind": "act",
+        "a": "Ilya Rozanov",
+        "b": "Shane Hollander",
+        "role": ""
+      }
+    },
+    {
+      "id": "wolfbird-85",
+      "key": "fuck#4b3375db",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 4486,
+        "pattern": "fuck",
+        "act": "anal sex",
+        "kind": "act",
+        "a": "Ilya Rozanov",
+        "b": "Shane Hollander",
+        "role": ""
+      }
+    },
+    {
+      "id": "wolfbird-86",
+      "key": "clenched-around#4c930a28",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 4493,
+        "pattern": "clenched-around",
+        "act": "fingering",
+        "kind": "act",
+        "a": "Ilya Rozanov",
+        "b": "Shane Hollander",
+        "role": ""
+      }
+    },
+    {
+      "id": "wolfbird-87",
+      "key": "fuck~elided#3f2afba0",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 4501,
+        "pattern": "fuck~elided",
+        "act": "anal sex",
+        "kind": "act",
+        "a": "Ilya Rozanov",
+        "b": "Shane Hollander",
+        "role": ""
+      }
+    },
+    {
+      "id": "wolfbird-88",
+      "key": "collar-wearer#2ef64517",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 297,
+        "pattern": "collar-wearer",
+        "act": "wearing a collar or leash",
+        "kind": "behavior",
+        "a": "Shane Hollander",
+        "b": "Ilya Rozanov",
+        "role": "bottom"
+      }
+    },
+    {
+      "id": "wolfbird-89",
+      "key": "dd2-hj-took-in-hand~elided#47dd1788",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 464,
+        "pattern": "dd2-hj-took-in-hand~elided",
+        "act": "handjob",
+        "kind": "handjob",
+        "a": "Ilya Rozanov",
+        "b": "Shane Hollander",
+        "role": "top"
+      }
+    },
+    {
+      "id": "wolfbird-90",
+      "key": "hj-hand-subject#a5ba381",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 471,
+        "pattern": "hj-hand-subject",
+        "act": "handjob",
+        "kind": "handjob",
+        "a": "Ilya Rozanov",
+        "b": "Shane Hollander",
+        "role": "top"
+      }
+    },
+    {
+      "id": "wolfbird-91",
+      "key": "care-bring#f7569a28",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 519,
+        "pattern": "care-bring",
+        "act": "looking after someone",
+        "kind": "behavior",
+        "a": "Ilya Rozanov",
+        "b": "Shane Hollander",
+        "role": "top"
+      }
+    },
+    {
+      "id": "wolfbird-92",
+      "key": "collar-wearer#630629b5",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 542,
+        "pattern": "collar-wearer",
+        "act": "wearing a collar or leash",
+        "kind": "behavior",
+        "a": "Shane Hollander",
+        "b": "Ilya Rozanov",
+        "role": "bottom"
+      }
+    },
+    {
+      "id": "wolfbird-93",
+      "key": "knelt-between#b416b2cf",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 804,
+        "pattern": "knelt-between",
+        "act": "kneeling between someone's legs",
+        "kind": "prep",
+        "a": "Ilya Rozanov",
+        "b": "Shane Hollander",
+        "role": "bottom"
+      }
+    },
+    {
+      "id": "wolfbird-94",
+      "key": "collar-wearer#f9219d4f",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 968,
+        "pattern": "collar-wearer",
+        "act": "wearing a collar or leash",
+        "kind": "behavior",
+        "a": "Shane Hollander",
+        "b": "Ilya Rozanov",
+        "role": "bottom"
+      }
+    },
+    {
+      "id": "wolfbird-95",
+      "key": "collar-wearer#9ff03db9",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 1060,
+        "pattern": "collar-wearer",
+        "act": "wearing a collar or leash",
+        "kind": "behavior",
+        "a": "Shane Hollander",
+        "b": "Ilya Rozanov",
+        "role": "bottom"
+      }
+    },
+    {
+      "id": "wolfbird-96",
+      "key": "collar-wearer#e8b62c4a",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 1061,
+        "pattern": "collar-wearer",
+        "act": "wearing a collar or leash",
+        "kind": "behavior",
+        "a": "Shane Hollander",
+        "b": "Ilya Rozanov",
+        "role": "bottom"
+      }
+    },
+    {
+      "id": "wolfbird-97",
+      "key": "collar-holder#2257e38b",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 1064,
+        "pattern": "collar-holder",
+        "act": "leading or controlling a collared partner",
+        "kind": "behavior",
+        "a": "Ilya Rozanov",
+        "b": "Shane Hollander",
+        "role": "top"
+      }
+    },
+    {
+      "id": "wolfbird-98",
+      "key": "collar-wearer#53e2bdf6",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 1070,
+        "pattern": "collar-wearer",
+        "act": "wearing a collar or leash",
+        "kind": "behavior",
+        "a": "Shane Hollander",
+        "b": "Ilya Rozanov",
+        "role": "bottom"
+      }
+    },
+    {
+      "id": "wolfbird-99",
+      "key": "collar-wearer#ed9c7218",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 1074,
+        "pattern": "collar-wearer",
+        "act": "wearing a collar or leash",
+        "kind": "behavior",
+        "a": "Shane Hollander",
+        "b": "Ilya Rozanov",
+        "role": "bottom"
+      }
+    },
+    {
+      "id": "wolfbird-100",
+      "key": "lined-up#474cc221",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 1100,
+        "pattern": "lined-up",
+        "act": "lining up",
+        "kind": "prep",
+        "a": "Ilya Rozanov",
+        "b": "Shane Hollander",
+        "role": "top"
+      }
+    },
+    {
+      "id": "wolfbird-101",
+      "key": "knelt-between#4ab52d49",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 1126,
+        "pattern": "knelt-between",
+        "act": "kneeling between someone's legs",
+        "kind": "prep",
+        "a": "Shane Hollander",
+        "b": "Ilya Rozanov",
+        "role": "bottom"
+      }
+    },
+    {
+      "id": "wolfbird-102",
+      "key": "mast-himself#9e901067",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 1126,
+        "pattern": "mast-himself",
+        "act": "masturbation",
+        "kind": "masturbation",
+        "a": "Ilya Rozanov",
+        "b": "Shane Hollander",
+        "role": "bottom"
+      }
+    },
+    {
+      "id": "wolfbird-103",
+      "key": "took-to-root#13d0747b",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 1130,
+        "pattern": "took-to-root",
+        "act": "blowjob",
+        "kind": "fantasy",
+        "a": "Shane Hollander",
+        "b": "Ilya Rozanov",
+        "role": "bottom"
+      }
+    },
+    {
+      "id": "wolfbird-104",
+      "key": "hj-stroke#7cefa7d3",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 1143,
+        "pattern": "hj-stroke",
+        "act": "handjob",
+        "kind": "handjob",
+        "a": "Shane Hollander",
+        "b": "Ilya Rozanov",
+        "role": "top"
+      }
+    },
+    {
+      "id": "wolfbird-105",
+      "key": "bent-over-furniture~elided#e9d74c0c",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 1154,
+        "pattern": "bent-over-furniture~elided",
+        "act": "bending over",
+        "kind": "prep",
+        "a": "Ilya Rozanov",
+        "b": "Shane Hollander",
+        "role": "bottom"
+      }
+    },
+    {
+      "id": "wolfbird-106",
+      "key": "mast-word#8936076b",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 1218,
+        "pattern": "mast-word",
+        "act": "masturbation",
+        "kind": "history",
+        "a": "Shane Hollander",
+        "b": "Ilya Rozanov",
+        "role": "bottom"
+      }
+    },
+    {
+      "id": "wolfbird-107",
+      "key": "lead-by-hand#63ac60a1",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 1378,
+        "pattern": "lead-by-hand",
+        "act": "leading someone",
+        "kind": "behavior",
+        "a": "Ilya Rozanov",
+        "b": "Shane Hollander",
+        "role": "top"
+      }
+    },
+    {
+      "id": "wolfbird-108",
+      "key": "knelt-between#a812bc7f",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 1418,
+        "pattern": "knelt-between",
+        "act": "kneeling between someone's legs",
+        "kind": "prep",
+        "a": "Shane Hollander",
+        "b": "Ilya Rozanov",
+        "role": "bottom"
+      }
+    },
+    {
+      "id": "wolfbird-109",
+      "key": "mast-word~elided#48978d6",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 1450,
+        "pattern": "mast-word~elided",
+        "act": "masturbation",
+        "kind": "masturbation",
+        "a": "Shane Hollander",
+        "b": "Ilya Rozanov",
+        "role": "bottom"
+      }
+    },
+    {
+      "id": "wolfbird-110",
+      "key": "knelt-between~elided#a92490a9",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 1467,
+        "pattern": "knelt-between~elided",
+        "act": "kneeling between someone's legs",
+        "kind": "prep",
+        "a": "Shane Hollander",
+        "b": "Ilya Rozanov",
+        "role": "bottom"
+      }
+    },
+    {
+      "id": "wolfbird-111",
+      "key": "hj-hand-subject#617a617c",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 1538,
+        "pattern": "hj-hand-subject",
+        "act": "handjob",
+        "kind": "handjob",
+        "a": "Shane Hollander",
+        "b": "Ilya Rozanov",
+        "role": "top"
+      }
+    },
+    {
+      "id": "wolfbird-112",
+      "key": "dd-hj-fist-works#508a3675",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 1557,
+        "pattern": "dd-hj-fist-works",
+        "act": "handjob",
+        "kind": "handjob",
+        "a": "Ilya Rozanov",
+        "b": "Shane Hollander",
+        "role": "top"
+      }
+    },
+    {
+      "id": "wolfbird-113",
+      "key": "hj-hand-subject#be8e8fad",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 1588,
+        "pattern": "hj-hand-subject",
+        "act": "handjob",
+        "kind": "handjob",
+        "a": "Ilya Rozanov",
+        "b": "Shane Hollander",
+        "role": "top"
+      }
+    },
+    {
+      "id": "wolfbird-114",
+      "key": "collar-wearer#e25708bf",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 1837,
+        "pattern": "collar-wearer",
+        "act": "wearing a collar or leash",
+        "kind": "behavior",
+        "a": "Shane Hollander",
+        "b": "Ilya Rozanov",
+        "role": "bottom"
+      }
+    },
+    {
+      "id": "wolfbird-115",
+      "key": "collar-wearer#d11bef40",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 1841,
+        "pattern": "collar-wearer",
+        "act": "wearing a collar or leash",
+        "kind": "behavior",
+        "a": "Shane Hollander",
+        "b": "Ilya Rozanov",
+        "role": "bottom"
+      }
+    },
+    {
+      "id": "wolfbird-116",
+      "key": "collar-wearer#52ca12f1",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 1842,
+        "pattern": "collar-wearer",
+        "act": "wearing a collar or leash",
+        "kind": "behavior",
+        "a": "Shane Hollander",
+        "b": "Ilya Rozanov",
+        "role": "bottom"
+      }
+    },
+    {
+      "id": "wolfbird-117",
+      "key": "spread-legs~elided#3aded3ed",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 2368,
+        "pattern": "spread-legs~elided",
+        "act": "spreading their legs",
+        "kind": "prep",
+        "a": "Ilya Rozanov",
+        "b": "Shane Hollander",
+        "role": "bottom"
+      }
+    },
+    {
+      "id": "wolfbird-118",
+      "key": "mast-himself~elided#3aded3ed",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 2368,
+        "pattern": "mast-himself~elided",
+        "act": "masturbation",
+        "kind": "masturbation",
+        "a": "Ilya Rozanov",
+        "b": "Shane Hollander",
+        "role": "bottom"
+      }
+    },
+    {
+      "id": "wolfbird-119",
+      "key": "dialogue:calling someone a good boy/girl#5f9d2ed1",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 2659,
+        "pattern": "dialogue:calling someone a good boy/girl",
+        "act": "calling someone a good boy/girl",
+        "kind": "petname",
+        "a": "Ilya Rozanov",
+        "b": "Shane Hollander",
+        "role": "top"
+      }
+    },
+    {
+      "id": "wolfbird-120",
+      "key": "dd-hj-fist-works#6c35de2e",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 2665,
+        "pattern": "dd-hj-fist-works",
+        "act": "handjob",
+        "kind": "handjob",
+        "a": "Ilya Rozanov",
+        "b": "Shane Hollander",
+        "role": "top"
+      }
+    },
+    {
+      "id": "wolfbird-121",
+      "key": "dialogue:checking in or leading#5e94aad1",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 2665,
+        "pattern": "dialogue:checking in or leading",
+        "act": "checking in or leading",
+        "kind": "position",
+        "a": "Ilya Rozanov",
+        "b": "Shane Hollander",
+        "role": "top"
+      }
+    },
+    {
+      "id": "wolfbird-122",
+      "key": "toy-inside-him#55aad7f1",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 2680,
+        "pattern": "toy-inside-him",
+        "act": "toy inside",
+        "kind": "prep",
+        "a": "Shane Hollander",
+        "b": "Ilya Rozanov",
+        "role": "bottom"
+      }
+    },
+    {
+      "id": "wolfbird-124",
+      "key": "dialogue:anal sex#1db65e27",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 2691,
+        "pattern": "dialogue:anal sex",
+        "act": "anal sex",
+        "kind": "said",
+        "a": "Shane Hollander",
+        "b": "Ilya Rozanov",
+        "role": "bottom"
+      }
+    },
+    {
+      "id": "wolfbird-125",
+      "key": "toy-removed#fc00744",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 2697,
+        "pattern": "toy-removed",
+        "act": "taking a toy out",
+        "kind": "touch",
+        "a": "Ilya Rozanov",
+        "b": "Shane Hollander",
+        "role": "top"
+      }
+    },
+    {
+      "id": "wolfbird-126",
+      "key": "toy-inside-him#7376e101",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 2714,
+        "pattern": "toy-inside-him",
+        "act": "toy inside",
+        "kind": "prep",
+        "a": "Ilya Rozanov",
+        "b": "Shane Hollander",
+        "role": "bottom"
+      }
+    },
+    {
+      "id": "wolfbird-127",
+      "key": "arch-back#5cfcf9c5",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 2726,
+        "pattern": "arch-back",
+        "act": "arching their back",
+        "kind": "touch",
+        "a": "Shane Hollander",
+        "b": "Ilya Rozanov",
+        "role": "bottom"
+      }
+    },
+    {
+      "id": "wolfbird-128",
+      "key": "collar-wearer#6a533a8f",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 2814,
+        "pattern": "collar-wearer",
+        "act": "wearing a collar or leash",
+        "kind": "behavior",
+        "a": "Shane Hollander",
+        "b": "Ilya Rozanov",
+        "role": "bottom"
+      }
+    },
+    {
+      "id": "wolfbird-129",
+      "key": "dom-protect~elided#e7a3fb8c",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 2848,
+        "pattern": "dom-protect~elided",
+        "act": "protecting someone",
+        "kind": "behavior",
+        "a": "Ilya Rozanov",
+        "b": "Shane Hollander",
+        "role": "top"
+      }
+    },
+    {
+      "id": "wolfbird-130",
+      "key": "sub-melt#9d1208f7",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 2895,
+        "pattern": "sub-melt",
+        "act": "going pliant",
+        "kind": "behavior",
+        "a": "Shane Hollander",
+        "b": "Ilya Rozanov",
+        "role": "bottom"
+      }
+    },
+    {
+      "id": "wolfbird-131",
+      "key": "dialogue:anal sex#56b7162d",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 2971,
+        "pattern": "dialogue:anal sex",
+        "act": "anal sex",
+        "kind": "said",
+        "a": "Ilya Rozanov",
+        "b": "Shane Hollander",
+        "role": "top"
+      }
+    },
+    {
+      "id": "wolfbird-132",
+      "key": "dom-carry#33f588c5",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 2974,
+        "pattern": "dom-carry",
+        "act": "lifting or carrying someone",
+        "kind": "behavior",
+        "a": "Ilya Rozanov",
+        "b": "Shane Hollander",
+        "role": "top"
+      }
+    },
+    {
+      "id": "wolfbird-133",
+      "key": "collar-wearer#1c7eba4d",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 2991,
+        "pattern": "collar-wearer",
+        "act": "wearing a collar or leash",
+        "kind": "behavior",
+        "a": "Shane Hollander",
+        "b": "Ilya Rozanov",
+        "role": "bottom"
+      }
+    },
+    {
+      "id": "wolfbird-134",
+      "key": "dd-hj-fingers-around#e2d5b172",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 3014,
+        "pattern": "dd-hj-fingers-around",
+        "act": "handjob",
+        "kind": "handjob",
+        "a": "Ilya Rozanov",
+        "b": "Shane Hollander",
+        "role": "top"
+      }
+    },
+    {
+      "id": "wolfbird-135",
+      "key": "flustered-face#bf15be6a",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 3025,
+        "pattern": "flustered-face",
+        "act": "flustered or blushing",
+        "kind": "behavior",
+        "a": "Shane Hollander",
+        "b": "Ilya Rozanov",
+        "role": "bottom"
+      }
+    },
+    {
+      "id": "wolfbird-136",
+      "key": "sucked#bad4cbeb",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 3026,
+        "pattern": "sucked",
+        "act": "blowjob",
+        "kind": "hypothetical",
+        "a": "Ilya Rozanov",
+        "b": "Shane Hollander",
+        "role": "top"
+      }
+    },
+    {
+      "id": "wolfbird-137",
+      "key": "dd-hj-fingers-around~elided#3060dd8c",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 3039,
+        "pattern": "dd-hj-fingers-around~elided",
+        "act": "handjob",
+        "kind": "handjob",
+        "a": "Shane Hollander",
+        "b": "Ilya Rozanov",
+        "role": "top"
+      }
+    },
+    {
+      "id": "wolfbird-138",
+      "key": "suck-fingers~elided#7aedf1ac",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 3048,
+        "pattern": "suck-fingers~elided",
+        "act": "sucking on fingers",
+        "kind": "fingers",
+        "a": "Shane Hollander",
+        "b": "Ilya Rozanov",
+        "role": "bottom"
+      }
+    },
+    {
+      "id": "wolfbird-139",
+      "key": "dialogue:blowjob#219f00e9",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 3054,
+        "pattern": "dialogue:blowjob",
+        "act": "blowjob",
+        "kind": "said",
+        "a": "Ilya Rozanov",
+        "b": "Shane Hollander",
+        "role": "top"
+      }
+    },
+    {
+      "id": "wolfbird-140",
+      "key": "collar-holder#f28f2fa7",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 3057,
+        "pattern": "collar-holder",
+        "act": "leading or controlling a collared partner",
+        "kind": "behavior",
+        "a": "Ilya Rozanov",
+        "b": "Shane Hollander",
+        "role": "top"
+      }
+    },
+    {
+      "id": "wolfbird-141",
+      "key": "sub-melt#f28f2fa7",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 3057,
+        "pattern": "sub-melt",
+        "act": "going pliant",
+        "kind": "behavior",
+        "a": "Shane Hollander",
+        "b": "Ilya Rozanov",
+        "role": "bottom"
+      }
+    },
+    {
+      "id": "wolfbird-142",
+      "key": "pushed-head-down~elided#149adb52",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 3061,
+        "pattern": "pushed-head-down~elided",
+        "act": "pushing a head down",
+        "kind": "prep",
+        "a": "Ilya Rozanov",
+        "b": "Shane Hollander",
+        "role": "top"
+      }
+    },
+    {
+      "id": "wolfbird-143",
+      "key": "come-in-mouth#2b28955",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 3062,
+        "pattern": "come-in-mouth",
+        "act": "blowjob",
+        "kind": "wanted",
+        "a": "Ilya Rozanov",
+        "b": "Shane Hollander",
+        "role": "top"
+      }
+    },
+    {
+      "id": "wolfbird-144",
+      "key": "dd-hj-fist-works#40b87ad0",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 3065,
+        "pattern": "dd-hj-fist-works",
+        "act": "handjob",
+        "kind": "handjob",
+        "a": "Ilya Rozanov",
+        "b": "Shane Hollander",
+        "role": "top"
+      }
+    },
+    {
+      "id": "wolfbird-145",
+      "key": "dialogue:anal sex#4ce6d19d",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 3075,
+        "pattern": "dialogue:anal sex",
+        "act": "anal sex",
+        "kind": "said",
+        "a": "Shane Hollander",
+        "b": "Ilya Rozanov",
+        "role": "top"
+      }
+    },
+    {
+      "id": "wolfbird-146",
+      "key": "dialogue:blowjob#4ce6d19d",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 3075,
+        "pattern": "dialogue:blowjob",
+        "act": "blowjob",
+        "kind": "said",
+        "a": "Shane Hollander",
+        "b": "Ilya Rozanov",
+        "role": "top"
+      }
+    },
+    {
+      "id": "wolfbird-147",
+      "key": "arch-back#4f8db12b",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 3083,
+        "pattern": "arch-back",
+        "act": "arching their back",
+        "kind": "touch",
+        "a": "Shane Hollander",
+        "b": "Ilya Rozanov",
+        "role": "bottom"
+      }
+    },
+    {
+      "id": "wolfbird-148",
+      "key": "dd-hj-fist-works#f76f3705",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 3088,
+        "pattern": "dd-hj-fist-works",
+        "act": "handjob",
+        "kind": "handjob",
+        "a": "Ilya Rozanov",
+        "b": "Shane Hollander",
+        "role": "top"
+      }
+    },
+    {
+      "id": "wolfbird-149",
+      "key": "swallowed-down#eccec00b",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 3096,
+        "pattern": "swallowed-down",
+        "act": "blowjob",
+        "kind": "hypothetical",
+        "a": "Ilya Rozanov",
+        "b": "Shane Hollander",
+        "role": "bottom"
+      }
+    },
+    {
+      "id": "wolfbird-150",
+      "key": "body-hole-ache#b4a91e98",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 3107,
+        "pattern": "body-hole-ache",
+        "act": "aching hole",
+        "kind": "body",
+        "a": "Shane Hollander",
+        "b": "Ilya Rozanov",
+        "role": "bottom"
+      }
+    },
+    {
+      "id": "wolfbird-151",
+      "key": "slicked-self~elided#b23f94d7",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 3111,
+        "pattern": "slicked-self~elided",
+        "act": "slicking up",
+        "kind": "prep",
+        "a": "Ilya Rozanov",
+        "b": "Shane Hollander",
+        "role": "top"
+      }
+    },
+    {
+      "id": "wolfbird-152",
+      "key": "dialogue:anal sex#a2d48c52",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 3113,
+        "pattern": "dialogue:anal sex",
+        "act": "anal sex",
+        "kind": "said",
+        "a": "Ilya Rozanov",
+        "b": "Shane Hollander",
+        "role": "top"
+      }
+    },
+    {
+      "id": "wolfbird-153",
+      "key": "fill~elided#7374c08a",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 3129,
+        "pattern": "fill~elided",
+        "act": "anal sex",
+        "kind": "fantasy",
+        "a": "Ilya Rozanov",
+        "b": "Shane Hollander",
+        "role": "top"
+      }
+    },
+    {
+      "id": "wolfbird-154",
+      "key": "flustered-verb~elided#7fd4fd6b",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 3146,
+        "pattern": "flustered-verb~elided",
+        "act": "flustered or blushing",
+        "kind": "behavior",
+        "a": "Shane Hollander",
+        "b": "Ilya Rozanov",
+        "role": "bottom"
+      }
+    },
+    {
+      "id": "wolfbird-155",
+      "key": "hj-hand-subject#c991820f",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 3158,
+        "pattern": "hj-hand-subject",
+        "act": "handjob",
+        "kind": "handjob",
+        "a": "Ilya Rozanov",
+        "b": "Shane Hollander",
+        "role": "top"
+      }
+    },
+    {
+      "id": "wolfbird-156",
+      "key": "dd3-hj-strokes-in-time#bb79f2f6",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 3160,
+        "pattern": "dd3-hj-strokes-in-time",
+        "act": "handjob",
+        "kind": "handjob",
+        "a": "Ilya Rozanov",
+        "b": "Shane Hollander",
+        "role": "top"
+      }
+    },
+    {
+      "id": "wolfbird-157",
+      "key": "dialogue:anal sex#3af6daec",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 3160,
+        "pattern": "dialogue:anal sex",
+        "act": "anal sex",
+        "kind": "said",
+        "a": "Ilya Rozanov",
+        "b": "Shane Hollander",
+        "role": "top"
+      }
+    },
+    {
+      "id": "wolfbird-158",
+      "key": "flustered-verb#17c06250",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 3165,
+        "pattern": "flustered-verb",
+        "act": "flustered or blushing",
+        "kind": "behavior",
+        "a": "Shane Hollander",
+        "b": "Ilya Rozanov",
+        "role": "bottom"
+      }
+    },
+    {
+      "id": "wolfbird-159",
+      "key": "arch-back#6539f558",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 3167,
+        "pattern": "arch-back",
+        "act": "arching their back",
+        "kind": "touch",
+        "a": "Shane Hollander",
+        "b": "Ilya Rozanov",
+        "role": "bottom"
+      }
+    },
+    {
+      "id": "wolfbird-160",
+      "key": "dialogue:praising how well someone takes it#83f409a5",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 3171,
+        "pattern": "dialogue:praising how well someone takes it",
+        "act": "praising how well someone takes it",
+        "kind": "said",
+        "a": "Ilya Rozanov",
+        "b": "Shane Hollander",
+        "role": "top"
+      }
+    },
+    {
+      "id": "wolfbird-161",
+      "key": "dd-hj-fist-works#4cfcd6fa",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 3173,
+        "pattern": "dd-hj-fist-works",
+        "act": "handjob",
+        "kind": "handjob",
+        "a": "Ilya Rozanov",
+        "b": "Shane Hollander",
+        "role": "top"
+      }
+    },
+    {
+      "id": "wolfbird-162",
+      "key": "flustered-verb~elided#4e9c8f27",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 3174,
+        "pattern": "flustered-verb~elided",
+        "act": "flustered or blushing",
+        "kind": "behavior",
+        "a": "Shane Hollander",
+        "b": "Ilya Rozanov",
+        "role": "bottom"
+      }
+    },
+    {
+      "id": "wolfbird-163",
+      "key": "dialogue:anal sex#82b67226",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 3181,
+        "pattern": "dialogue:anal sex",
+        "act": "anal sex",
+        "kind": "said",
+        "a": "Ilya Rozanov",
+        "b": "Shane Hollander",
+        "role": "top"
+      }
+    },
+    {
+      "id": "wolfbird-164",
+      "key": "dialogue:calling someone a good boy/girl#5838332c",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 3183,
+        "pattern": "dialogue:calling someone a good boy/girl",
+        "act": "calling someone a good boy/girl",
+        "kind": "petname",
+        "a": "Ilya Rozanov",
+        "b": "Shane Hollander",
+        "role": "top"
+      }
+    },
+    {
+      "id": "wolfbird-165",
+      "key": "body-clench-empty#3bae22b7",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 3193,
+        "pattern": "body-clench-empty",
+        "act": "clenching around nothing",
+        "kind": "body",
+        "a": "Shane Hollander",
+        "b": "Ilya Rozanov",
+        "role": "bottom"
+      }
+    },
+    {
+      "id": "wolfbird-166",
+      "key": "care-soothe#1b2273d",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 3196,
+        "pattern": "care-soothe",
+        "act": "comforting someone",
+        "kind": "behavior",
+        "a": "Ilya Rozanov",
+        "b": "Shane Hollander",
+        "role": "top"
+      }
+    },
+    {
+      "id": "wolfbird-167",
+      "key": "dialogue:looking after someone#29f5d4b6",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 3196,
+        "pattern": "dialogue:looking after someone",
+        "act": "looking after someone",
+        "kind": "aftercare",
+        "a": "Ilya Rozanov",
+        "b": "Shane Hollander",
+        "role": "top"
+      }
+    },
+    {
+      "id": "wolfbird-168",
+      "key": "care-wrap~elided#bbee10dd",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 3218,
+        "pattern": "care-wrap~elided",
+        "act": "looking after someone",
+        "kind": "behavior",
+        "a": "Ilya Rozanov",
+        "b": "Shane Hollander",
+        "role": "top"
+      }
+    },
+    {
+      "id": "wolfbird-169",
+      "key": "cuddle-head-on-chest-poss#10a5d88a",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 3253,
+        "pattern": "cuddle-head-on-chest-poss",
+        "act": "resting their head on someone's chest",
+        "kind": "position",
+        "a": "Shane Hollander",
+        "b": "Ilya Rozanov",
+        "role": "bottom"
+      }
+    },
+    {
+      "id": "wolfbird-171",
+      "key": "dialogue:looking after someone#5de8a11f",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 3757,
+        "pattern": "dialogue:looking after someone",
+        "act": "looking after someone",
+        "kind": "aftercare",
+        "a": "Ilya Rozanov",
+        "b": "Shane Hollander",
+        "role": "top"
+      }
+    },
+    {
+      "id": "wolfbird-172",
+      "key": "pos-pin-wrists#51671a2a",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 3779,
+        "pattern": "pos-pin-wrists",
+        "act": "pinning someone's wrists",
+        "kind": "position",
+        "a": "Ilya Rozanov",
+        "b": "Shane Hollander",
+        "role": "top"
+      }
+    },
+    {
+      "id": "wolfbird-173",
+      "key": "collar-wearer#7c7f91da",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 3863,
+        "pattern": "collar-wearer",
+        "act": "wearing a collar or leash",
+        "kind": "behavior",
+        "a": "Shane Hollander",
+        "b": "Ilya Rozanov",
+        "role": "bottom"
+      }
+    },
+    {
+      "id": "wolfbird-174",
+      "key": "dialogue:blowjob#f3440945",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 4036,
+        "pattern": "dialogue:blowjob",
+        "act": "blowjob",
+        "kind": "said",
+        "a": "Ilya Rozanov",
+        "b": "Shane Hollander",
+        "role": "top"
+      }
+    },
+    {
+      "id": "wolfbird-176",
+      "key": "dd-hj-fingers-around~elided#fb73560d",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 4079,
+        "pattern": "dd-hj-fingers-around~elided",
+        "act": "handjob",
+        "kind": "handjob",
+        "a": "Ilya Rozanov",
+        "b": "Shane Hollander",
+        "role": "top"
+      }
+    },
+    {
+      "id": "wolfbird-177",
+      "key": "dialogue:anal sex#c79f49a0",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 4106,
+        "pattern": "dialogue:anal sex",
+        "act": "anal sex",
+        "kind": "said",
+        "a": "Ilya Rozanov",
+        "b": "Shane Hollander",
+        "role": "top"
+      }
+    },
+    {
+      "id": "wolfbird-178",
+      "key": "penis-into#a10ed505",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 4111,
+        "pattern": "penis-into",
+        "act": "anal sex",
+        "kind": "fantasy",
+        "a": "Ilya Rozanov",
+        "b": "Shane Hollander",
+        "role": "top"
+      }
+    },
+    {
+      "id": "wolfbird-179",
+      "key": "dom-grip#21daf06e",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 4120,
+        "pattern": "dom-grip",
+        "act": "gripping firmly",
+        "kind": "behavior",
+        "a": "Ilya Rozanov",
+        "b": "Shane Hollander",
+        "role": "top"
+      }
+    },
+    {
+      "id": "wolfbird-180",
+      "key": "dom-grip#773ac4b8",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 4121,
+        "pattern": "dom-grip",
+        "act": "gripping firmly",
+        "kind": "behavior",
+        "a": "Ilya Rozanov",
+        "b": "Shane Hollander",
+        "role": "top"
+      }
+    },
+    {
+      "id": "wolfbird-181",
+      "key": "dialogue:anal sex#e6863339",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 4122,
+        "pattern": "dialogue:anal sex",
+        "act": "anal sex",
+        "kind": "said",
+        "a": "Ilya Rozanov",
+        "b": "Shane Hollander",
+        "role": "top"
+      }
+    },
+    {
+      "id": "wolfbird-182",
+      "key": "body-hole-ache#84f5d840",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 4129,
+        "pattern": "body-hole-ache",
+        "act": "aching hole",
+        "kind": "body",
+        "a": "Ilya Rozanov",
+        "b": "Shane Hollander",
+        "role": "bottom"
+      }
+    },
+    {
+      "id": "wolfbird-183",
+      "key": "collar-wearer#ae134717",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 4131,
+        "pattern": "collar-wearer",
+        "act": "wearing a collar or leash",
+        "kind": "behavior",
+        "a": "Shane Hollander",
+        "b": "Ilya Rozanov",
+        "role": "bottom"
+      }
+    },
+    {
+      "id": "wolfbird-184",
+      "key": "came-untouched#34652654",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 4133,
+        "pattern": "came-untouched",
+        "act": "hands-free orgasm",
+        "kind": "body",
+        "a": "Shane Hollander",
+        "b": "Ilya Rozanov",
+        "role": "bottom"
+      }
+    },
+    {
+      "id": "wolfbird-185",
+      "key": "dialogue:anal sex#2ad6cb9c",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 4138,
+        "pattern": "dialogue:anal sex",
+        "act": "anal sex",
+        "kind": "said",
+        "a": "Ilya Rozanov",
+        "b": "Shane Hollander",
+        "role": "top"
+      }
+    },
+    {
+      "id": "wolfbird-186",
+      "key": "lead-by-hand~elided#4b39cb15",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 4139,
+        "pattern": "lead-by-hand~elided",
+        "act": "leading someone",
+        "kind": "behavior",
+        "a": "Ilya Rozanov",
+        "b": "Shane Hollander",
+        "role": "top"
+      }
+    },
+    {
+      "id": "wolfbird-187",
+      "key": "dialogue:calling someone a good boy/girl#28b6c82a",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 4157,
+        "pattern": "dialogue:calling someone a good boy/girl",
+        "act": "calling someone a good boy/girl",
+        "kind": "petname",
+        "a": "Ilya Rozanov",
+        "b": "Shane Hollander",
+        "role": "top"
+      }
+    },
+    {
+      "id": "wolfbird-188",
+      "key": "collar-wearer#6f6d585",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 4310,
+        "pattern": "collar-wearer",
+        "act": "wearing a collar or leash",
+        "kind": "behavior",
+        "a": "Shane Hollander",
+        "b": "Ilya Rozanov",
+        "role": "bottom"
+      }
+    },
+    {
+      "id": "wolfbird-191",
+      "key": "dialogue:anal sex#2f5ed7a5",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 4411,
+        "pattern": "dialogue:anal sex",
+        "act": "anal sex",
+        "kind": "said",
+        "a": "Ilya Rozanov",
+        "b": "Shane Hollander",
+        "role": "top"
+      }
+    },
+    {
+      "id": "wolfbird-192",
+      "key": "grab-ass#b6222597",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 4429,
+        "pattern": "grab-ass",
+        "act": "grabbing an ass",
+        "kind": "touch",
+        "a": "Ilya Rozanov",
+        "b": "Shane Hollander",
+        "role": "top"
+      }
+    },
+    {
+      "id": "wolfbird-193",
+      "key": "care-soothe#bab9bc38",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 4436,
+        "pattern": "care-soothe",
+        "act": "comforting someone",
+        "kind": "behavior",
+        "a": "Ilya Rozanov",
+        "b": "Shane Hollander",
+        "role": "top"
+      }
+    },
+    {
+      "id": "wolfbird-195",
+      "key": "body-sore-ass#80525c91",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 4484,
+        "pattern": "body-sore-ass",
+        "act": "loose or sore after sex",
+        "kind": "body",
+        "a": "Ilya Rozanov",
+        "b": "Shane Hollander",
+        "role": "bottom"
+      }
+    },
+    {
+      "id": "wolfbird-196",
+      "key": "slicked-self~elided#ce71186b",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 4485,
+        "pattern": "slicked-self~elided",
+        "act": "slicking up",
+        "kind": "prep",
+        "a": "Ilya Rozanov",
+        "b": "Shane Hollander",
+        "role": "top"
+      }
+    },
+    {
+      "id": "wolfbird-197",
+      "key": "dialogue:blowjob#87652dc1",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 4490,
+        "pattern": "dialogue:blowjob",
+        "act": "blowjob",
+        "kind": "said",
+        "a": "Shane Hollander",
+        "b": "Ilya Rozanov",
+        "role": "bottom"
+      }
+    },
+    {
+      "id": "wolfbird-198",
+      "key": "thrust-back#d74c8d2c",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 4504,
+        "pattern": "thrust-back",
+        "act": "pushing back",
+        "kind": "touch",
+        "a": "Shane Hollander",
+        "b": "Ilya Rozanov",
+        "role": "bottom"
+      }
+    },
+    {
+      "id": "wolfbird-199",
+      "key": "arch-back#d37c6c78",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 4516,
+        "pattern": "arch-back",
+        "act": "arching their back",
+        "kind": "touch",
+        "a": "Shane Hollander",
+        "b": "Ilya Rozanov",
+        "role": "bottom"
+      }
+    },
+    {
+      "id": "wolfbird-200",
+      "key": "hj-hand-subject#eae2e56e",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 4532,
+        "pattern": "hj-hand-subject",
+        "act": "handjob",
+        "kind": "handjob",
+        "a": "Ilya Rozanov",
+        "b": "Shane Hollander",
+        "role": "top"
+      }
+    },
+    {
+      "id": "wolfbird-201",
+      "key": "aftercare-clean#da557320",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 4539,
+        "pattern": "aftercare-clean",
+        "act": "cleaning someone up",
+        "kind": "aftercare",
+        "a": "Ilya Rozanov",
+        "b": "Shane Hollander",
+        "role": "top"
+      }
+    },
+    {
+      "id": "wolfbird-202",
+      "key": "flustered-verb#60364a15",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 4638,
+        "pattern": "flustered-verb",
+        "act": "flustered or blushing",
+        "kind": "behavior",
+        "a": "Ilya Rozanov",
+        "b": "Shane Hollander",
+        "role": "bottom"
+      }
+    },
+    {
+      "id": "wolfbird-203",
+      "key": "flustered-face#658588a8",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 4899,
+        "pattern": "flustered-face",
+        "act": "flustered or blushing",
+        "kind": "behavior",
+        "a": "Shane Hollander",
+        "b": "Ilya Rozanov",
+        "role": "bottom"
+      }
+    },
+    {
+      "id": "wolfbird-204",
+      "key": "flustered-verb#a6dd098e",
+      "claim": {
+        "fic": "wolfbird.html",
+        "sourceSha": "72d34b2f2070ef9ac7df14ab630b19ba6a610a26effec731b71cdd9f5a44cfed",
+        "paragraph": 4925,
+        "pattern": "flustered-verb",
+        "act": "flustered or blushing",
+        "kind": "behavior",
+        "a": "Shane Hollander",
+        "b": "Ilya Rozanov",
+        "role": "bottom"
+      }
+    }
+  ]
+}
