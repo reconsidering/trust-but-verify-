@@ -1534,6 +1534,8 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
     // "still slightly sore from being stretched open" is a bodily sign after sex, not a scene: it belongs with the soreness hints.
     // "had to restrain himself from pinning Dean to the wall": the act is held back, not done.
     if (pat.signal && /\b(?:(?:restrain\w*|resist\w*|stop\w*|prevent\w*|keep\w*|hold(?:ing)?\s+back)\s+(?:himself|herself|themselves)|refrain\w*|abstain\w*)\s+from\s*$/i.test(sent.slice(Math.max(0, m.index! - 60), m.index!) + (/^\s*from\b/i.exec(m[0])?.[0] ?? ""))) return;
+    // "Steve closes his eyes, rubs his forehead", "his own hand": a gesture on his own head is not comforting the other man.
+    if (pat.id.startsWith("care-soothe") && (/\bown\b/i.test(m[0]) || (/\b(?:rub\w*|squeez\w*|pinch\w*|massag\w*)\b/i.test(m[0]) && /\b(?:his|her|their)\s+(?:\w+\s+)?(?:forehead|temples?|brow|eyes|nose)\b/i.test(m[0])))) return;
     // "ran his hands through his hair in frustration", "smoothing his hands down the front of his suit": his own hair, his own clothes.
     if (pat.id.startsWith("care-soothe") && (
       // His own hair, when the same sentence says it is about his own state (in frustration, fixing it, trying to stop his hands shaking…); with two men the same "his" can be either.
