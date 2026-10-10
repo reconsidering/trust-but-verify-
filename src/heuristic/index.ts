@@ -2216,8 +2216,10 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
     // "sliding his thumb out and ramming into Steve": the thumb is leaving, so these words are not fingers going in; what follows is another act.
     if (pat.id.startsWith("fingers-inside") && /\b(?:fingers?|thumbs?|digits?|knuckles?)\s+out\b/i.test(matchText)) return;
     // "Steve surges up into him, presses him back into the couch … as they kiss": a body moving into a kiss, with no anal, penis or finger word about.
-    if (/^push-into/.test(pat.id) && /\bup\s+into\s+(?:him|her|them)\s*$/i.test(matchText) && /\bkiss\w*/i.test(para) &&
+    if (/^push-into/.test(pat.id) && /\bup\s+into\s+(?:him|her|them)\s*$/i.test(matchText) && !/\b(?:fuck|thrust|rut|pound|slam|ram|drill|bang|rail|plow|plough)\w*/i.test(matchText) && /\bkiss\w*/i.test(para) &&
         ![pi - 1, pi, pi + 1].some((i) => ANAL_CTX.test(paras[i] ?? "") || PENIS_CTX.test(paras[i] ?? "") || FINGER_CTX.test(paras[i] ?? ""))) return;
+    // "He shoves bodily into Steve, knocks him into the wall": a shove, not a penetration, when no anal, penis or finger word is in the sentence.
+    if (/^push-into/.test(pat.id) && /\b(?:shov|push|slam|crash|barrel)\w*\s+bodily\s+(?:in|into)\b/i.test(matchText) && !ANAL_CTX.test(sent) && !PENIS_CTX.test(sent) && !FINGER_CTX.test(sent)) return;
     // "Samiel arches a little, pushing up into him in desperation": the one who arches up is the one being touched; he does not penetrate.
     if (/^push-into/.test(pat.id) && /\barch\w*\b[^.!?]{0,40}$/i.test(sent.slice(0, m.index!)) && /\bup\s+into\b/i.test(matchText) && !PENIS_CTX.test(sent)) return;
     // "He hollowed his cheeks, creating a suction for Cas": the one named after "for" is getting sucked.

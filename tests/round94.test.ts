@@ -45,4 +45,10 @@ describe("round 94: verb patterns and collars", () => {
   it("a stranger shoving into someone as they pass on the street is not sex", () => {
     expect(run("Rhys had not been able to walk anywhere since the news broke without someone glowering at him, shoving into him as they passed him on the street, slinging insults at him. From the bank to the grocer, he could not escape what Theo had done.").acts(/^push-into/)).toEqual([]);
   });
+  it("…but ‘fucks up into him’ while kissing is still sex", () => {
+    expect(run("Rhys fucks up into him, holding him close, kissing him, touching him everywhere he could reach.").acts(/^push-into/).length).toBeGreaterThan(0);
+  });
+  it("shoving bodily into someone and knocking him into the wall is a fight or a rush, not sex", () => {
+    expect(run("Rhys shoves bodily into Theo, knocks him into the wall.").acts(/^push-into/)).toEqual([]);
+  });
 });
