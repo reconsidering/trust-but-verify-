@@ -1009,4 +1009,3 @@ Patterns involved: `fuck` (1), `pushed-in` (1).
 - Past label: **wrong**. Current engine: anal sex; act; credited person: Castiel; other person: Dean Winchester.
 - My assessment: **Current reading supported; label needs re-review**, 99.9% confidence.
 - Reason: The current reading is explicitly supported: finger preparation ends, the partner lubricates his penis, then penetrates and thrusts. A later owner-confirmed anal range also covers this passage; the old hash-only wrong label needs reconciliation.
-
