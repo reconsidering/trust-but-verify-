@@ -344,7 +344,7 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
   );
   // ── collars and leashes: the one collared reads as the bottom, the one who leads, tugs, buckles or unlocks reads as the top ──
   const COLLAR_RE = /\b(?:collars?|collared|leash(?:es|ed)?)\b/i;
-  const NOT_COLLAR = /\b(?:shirt|jacket|coat|button\w*|cologne|polo|dress|blouse|uniform|suit|sweater|hoodie|starch\w*|turtle\w*)\b|\bby\s+(?:his|her|their|the|[A-Z][\w-]*['’]s)\s+collar\b|\bcollar\s+of\s+(?:his|her|their|the)\s+(?:shirt|jacket|coat|dress)|\bcollar\s*bone/i;
+  const NOT_COLLAR = /\b(?:shirt|jacket|coat|button\w*|cologne|polo|dress|blouse|uniform|suit|sweater|hoodie|starch\w*|turtle\w*)\b|\bby\s+(?:his|her|their|the|[A-Z][\w-]*['’]s)\s+collar\b|\bcollar\s+of\s+(?:his|her|their|the)\s+(?:shirt|jacket|coat|dress)|\bcollar\s*bone|\b(?:robes?|tunic|cloak|cardigan|overcoat|scarf)\b|\b(?:like|as (?:if|though))\s+(?:a|an)\s+(?:\w+\s+)?(?:dog|pet|animal|puppy|noose)\b|\bthe\s+Force\b|\bneeds?\s+to\s+be\s+on\s+a\s+leash\b|\bhis\s+own\s+leash\b/i;
   const collarMentions = paras.reduce((n, p) => n + (COLLAR_RE.test(p) && !NOT_COLLAR.test(p) ? 1 : 0), 0);
   const isCollar = (/\bcollar|\bleash|\bchoker|pet ?play|(?:pup|puppy|kitten) play|human pet|master\/pet|owner\/pet/i.test(meta.freeforms.join(" | ")) || noteCtx.collar || collarMentions >= 8) && (meta.categories.length === 0 || meta.categories.includes("M/M"));
   const collarWearer: Character | undefined = !isCollar ? undefined : deviceWearer(
@@ -1307,6 +1307,18 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
     }
     // "He feels his slick trickling out of his hole": slick is arousal, not what is left after sex, unless come is named.
     if (basePid === "body-leaking-from" && /\bslick\b/i.test(sent) && !/\b(?:come|cum|seed|spunk|knot\w*|fuck\w*)\b/i.test(sent)) return;
+    // "Castiel pushed in deeper, fucking Dean's mouth", "parted his lips, letting Castiel push inside": the mouth is named as what is being entered, so this is oral, not anal.
+    if ((basePid === "push-into" || basePid === "pushed-in") && /\bfuck\w*\s+(?:\w+['’]s\s+|his\s+|her\s+|their\s+)(?:mouth|throat|face)\b|\b(?:parted|opened|opening|open)\s+(?:his|her|their)\s+(?:lips|mouth)\b[^.!?]{0,40}\bpush\w*\s+in/i.test(sent)) return;
+    // "his presence gathers and crowds around Anakin, pushing into his mind", "reaches for the Force … pushed": the Force is not a body.
+    if ((basePid === "push-into" || basePid === "pushed-in") && /\bthe\s+Force\b/.test(sent) && !/\b(?:cock|dick|prick|hole|ass|rim|fingers?|inside\s+(?:him|her|them))\b/i.test(sent)) return;
+    // "Anakin drops to his knees, panting" in a fight, a rescue or a fit of fear: kneeling is oral preparation only with something sexual in this paragraph or the next.
+    if (basePid === "sinks-to-floor" && !/\b(?:cock|dick|prick|erection|hard-?on|bulge|suck\w*|blow\s?job|mouth|lips|tongue|zipper|unzip\w*|unbutton\w*|belt|pants|jeans|trousers|naked|lube\w*|kiss\w*|moan\w*|arous\w*|desire|thighs|crotch|groin|hips)\b/i.test(`${para} ${paras[pi + 1] ?? ""}`)) return;
+    // "slamming his shoulder into Cas' chest", "presses back against him with his own thigh", "shoves back, hard, with all the adrenaline": a shove with a limb or a weapon, not pushing back onto a cock.
+    if (basePid === "thrust-back" && /\b(?:(?:with|using)\s+(?:his|her|their)\s+(?:own\s+)?(?:thigh|knee|elbow|shoulder|hand|fist)|(?:slamm|driv|ramm)\w*\s+(?:his|her|their)\s+(?:shoulder|elbow|fist)|adrenaline|gloves?|referee|ropes)\b/i.test(sent)) return;
+    // "flushed an angry red" on a cock, "flushed with heat", "sputtering when the water hits him": a body part or a physical state, not a blush.
+    if (basePid.startsWith("flustered") && (/\b(?:cock|dick|prick|erection|shaft)\b[^.!?]{0,30}\b(?:flush\w*|red)\b/i.test(sent) || /\bflush\w*\s+(?:all over\s+)?(?:with|from)\s+(?:the\s+)?(?:heat|exertion|fever|cold|wine|running|effort)\b/i.test(sent) || (/\bsputter\w*\b/i.test(sent) && /\b(?:chok\w*|cough\w*|water|laugh\w*|swallow\w*|spit\w*)\b/i.test(sent)))) return;
+    // "cranes his neck back, peering out the window", "tilting his neck to mouth at the head of his cock": a neck turned for something else, not a bared neck.
+    if (basePid === "abo-bare-neck" && /\b(?:peer\w*|window)\b|\bto\s+(?:mouth|lick|suck|kiss)\s+at\b/i.test(sent)) return;
     // "slips a finger between his boy's lips and pulls Jace's mouth open": a finger in a mouth.
     if (basePid === "adds-finger" && /\bfingers?\b[^.!?]{0,30}\b(?:between|past|into|in)\s+(?:[\w’']+\s+){0,3}(?:lips|mouth)\b/i.test(sent)) return;
     // "Cregan licks into his body like his arse is as wet as a cunt; humming as he works the boy open": the tongue is what opens him, so it is rimming.
@@ -1534,6 +1546,8 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
     // "still slightly sore from being stretched open" is a bodily sign after sex, not a scene: it belongs with the soreness hints.
     // "had to restrain himself from pinning Dean to the wall": the act is held back, not done.
     if (pat.signal && /\b(?:(?:restrain\w*|resist\w*|stop\w*|prevent\w*|keep\w*|hold(?:ing)?\s+back)\s+(?:himself|herself|themselves)|refrain\w*|abstain\w*)\s+from\s*$/i.test(sent.slice(Math.max(0, m.index! - 60), m.index!) + (/^\s*from\b/i.exec(m[0])?.[0] ?? ""))) return;
+    // "Steve closes his eyes, rubs his forehead", "his own hand": a gesture on his own head is not comforting the other man.
+    if (pat.id.startsWith("care-soothe") && (/\bown\b/i.test(m[0]) || (/\b(?:rub\w*|squeez\w*|pinch\w*|massag\w*)\b/i.test(m[0]) && /\b(?:his|her|their)\s+(?:\w+\s+)?(?:forehead|temples?|brow|eyes|nose)\b/i.test(m[0])) || /\bback\s+of\s+(?:his|her|their)\s+neck\b/i.test(sent.slice(m.index!, m.index! + m[0].length + 40)) || /\bhands?\s+(?:up\s+and\s+down|over|along)\s+(?:his|her|their)\s+(?:thighs?|legs?|knees?)\b/i.test(sent.slice(m.index!, m.index! + m[0].length + 40)))) return;
     // "ran his hands through his hair in frustration", "smoothing his hands down the front of his suit": his own hair, his own clothes.
     if (pat.id.startsWith("care-soothe") && (
       // His own hair, when the same sentence says it is about his own state (in frustration, fixing it, trying to stop his hands shaking…); with two men the same "his" can be either.
@@ -2384,6 +2398,11 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
         // elided subject picks the wrong one, so leave it out rather than credit the wrong person.
         if (new RegExp(`(?:^|[.!?\u201d"]\\s+)(?:${NAMES})\\s*,\\s*(?:${NAMES})\\s+(?:realiz\\w+|know\\w*|knew|notic\\w+|see\\w*|saw|think\\w*|thought|feel\\w*|felt|say\\w*|said|decid\\w+|discover\\w+)\\b[^,]*,\\s*(?:\\w+\\s+){0,3}$`, "i").test((prefix + m[0]).slice(0, prefix.length + (verb?.index ?? 0)))) return;
       } else if (NEG.test(m.groups?.aux ?? "") || NEG.test(prefix.slice(-40))) return;
+      // "He rubbed at his arm." with the man it would comfort named nowhere in this paragraph or its neighbours: self-care, not comfort of someone who is not there.
+      if (pat.id.startsWith("care-soothe") && /^(?:his|her|their)$/i.test(bTok ?? "")) {
+        const near = [pi - 1, pi, pi + 1].map((i) => paras[i] ?? "").join(" ");
+        if (!bottom.aliases.some((a) => a.length > 2 && new RegExp(`\\b${escapeRe(a)}\\b`).test(near))) return;
+      }
       // "Castiel would drop to his knees right there and suck him off", "Jack would have spread his legs wider if he could": a promise or a what-if, not kneeling or spreading now.
       if ((pat.signal.kind === "prep" || pat.signal.kind === "touch") && (/\b(?:would|could|might|will)\b/i.test(m.groups?.aux ?? "") || /\b(?:would|could|might|will)\s+(?:have\s+)?$/i.test(prefix.slice(-25)))) return;
       // "He spreads his legs, grips his cock … 'I want you to suck me.'": legs opened for a blowjob, with no ass anywhere near.
