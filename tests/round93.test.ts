@@ -23,3 +23,16 @@ describe("round 93: point-of-view wishes", () => {
     expect(hits.map((h) => `${h.a.split(" ")[0]}>${(h.b ?? "").split(" ")[0]}`)).toEqual(["Rowan>Morgan"]);
   });
 });
+
+describe("round 93: a person outside every tagged pairing, reached only by fallback", () => {
+  const META3: Ao3Meta = { ...META, characters: ["Morgan Vale", "Rowan Marsh", "Tommy Cole"], freeforms: [] };
+  const hits3 = (t: string) => { const hits: AuditHit[] = []; analyzeWithPatterns("Morgan and Rowan were in bed, naked and kissing, hard and aching. Morgan kissed Rowan. Rowan kissed Morgan back, moaning. ".repeat(3) + "\n\n" + t.split("||").join("\n\n"), META3, { quiet: true, audit: (h) => hits.push(h) }); return hits; };
+  it("the former friend who was last named is not credited with the act on the partner", () => {
+    const h = hits3("Rowan remembered Tommy, who used to laugh at him. Tommy stood up and left.||He pushed into him and thrust deep, hard and slow.").filter((x) => /push/.test(x.via));
+    expect(h.filter((x) => /Tommy/.test(x.a) || /Tommy/.test(x.b ?? ""))).toEqual([]);
+  });
+  it("the tagged pair is still read", () => {
+    const h = hits3("Morgan pushed Rowan onto the bed.||Morgan pushed into Rowan and thrust deep.").filter((x) => /push/.test(x.via));
+    expect(h.length).toBeGreaterThan(0);
+  });
+});

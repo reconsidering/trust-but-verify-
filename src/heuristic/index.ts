@@ -1782,6 +1782,14 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
       if (wrong(tTok, r.top) || wrong(bTok, r.bottom)) return;
     }
     let { top, bottom } = resolved as { top: Character; bottom: Character };
+    // "Tommy" (a former friend who is in no tagged pairing) credited only because he was the last one named: a person outside every tagged pairing, not named in this sentence and
+    // reached by a fallback (last subject, recent person, inferred partner), is not who is meant.
+    if (cast.pairings.length && (pat.cat === "anal" || pat.cat === "oral")) {
+      const isNamed = (c: Character) => [c.name, ...c.aliases].some((a) => a.length > 2 && new RegExp(`\\b${escapeRe(a)}\\b`).test(sent));
+      const weak = (o: string | undefined) => o === "last-subject" || o === "recent" || o === "partner" || o === "rule" || o === "clause";
+      const outside = (c: Character, o: string | undefined) => !cast.pairings.some((pr) => pr.includes(c)) && !isNamed(c) && weak(o);
+      if (outside(top, attribution.top) || outside(bottom, attribution.bottom)) return;
+    }
     // "He lives only for Morgan, for his knot to lock them together": the knot someone longs for is the other man's.
     if (pat.id.startsWith("knot-owner") && /^(?:his|her|their)$/i.test(tTok ?? "") && /\b(?:for|want\w*|need\w*|crav\w*|beg\w*|long\w*|ach\w*)\s+$/i.test(sent.slice(0, m.index!))) [top, bottom] = [bottom, top];
     // "No matter how many times he jerks off, it does nothing": a habit in passing, not an act at this moment.
