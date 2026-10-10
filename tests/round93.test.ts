@@ -37,13 +37,12 @@ describe("round 93: a person outside every tagged pairing, reached only by fallb
   });
 });
 
-describe("round 93: a push with nothing sexual around it", () => {
-  const plain = (t: string) => { const hits: AuditHit[] = []; analyzeWithPatterns(t, META, { quiet: true, audit: (h) => hits.push(h) }); return hits.filter((h) => /^(?:push-into|pushed-in|thrust-back)/.test(h.via)); };
-  it("a crowd shoving and a shoulder pressed back, with nothing sexual in the paragraphs, are not readings", () => {
-    const text = "Morgan walked through the market and Rowan followed him. Morgan bought bread and fruit and they talked about the weather for a while.\n\nSince the news broke, Morgan could not go anywhere without someone glowering at him, shoving into him on the pavement.\n\nRowan pressed back against the wall of the shop and waited for the crowd to thin.";
-    expect(plain(text)).toEqual([]);
+describe("round 93: pushing back with nothing sexual around it", () => {
+  const back = (t: string) => { const hits: AuditHit[] = []; analyzeWithPatterns(t, META, { quiet: true, audit: (h) => hits.push(h) }); return hits.filter((h) => /^thrust-back/.test(h.via)); };
+  it("pushing back in an argument is not a reading", () => {
+    expect(back("Rowan told Morgan about the old system while they sat on the bed, hips touching. Morgan pressed back, “The old system is not so different from yours,” the table edge tight and wet against his shoulders.")).toEqual([]);
   });
-  it("a push in a sexual paragraph is still read", () => {
-    expect(plain("Morgan kissed Rowan, naked and hard. Morgan pushed into Rowan and Rowan moaned.").length).toBeGreaterThan(0);
+  it("pushing back onto a cock is still read", () => {
+    expect(back("Rowan moans into the pillow and rocks back onto Morgan’s cock, hard and aching.").length).toBeGreaterThan(0);
   });
 });

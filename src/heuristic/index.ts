@@ -1311,9 +1311,9 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
     if ((basePid === "push-into" || basePid === "pushed-in") && /\bfuck\w*\s+(?:\w+['’]s\s+|his\s+|her\s+|their\s+)(?:mouth|throat|face)\b|\b(?:parted|opened|opening|open)\s+(?:his|her|their)\s+(?:lips|mouth)\b[^.!?]{0,40}\bpush\w*\s+in/i.test(sent)) return;
     // "his presence gathers and crowds around Anakin, pushing into his mind", "reaches for the Force … pushed": the Force is not a body.
     if ((basePid === "push-into" || basePid === "pushed-in") && /\bthe\s+Force\b/.test(sent) && !/\b(?:cock|dick|prick|hole|ass|rim|fingers?|inside\s+(?:him|her|them))\b/i.test(sent)) return;
-    // "Since the news broke … someone glowering at him, shoving into him", "Steve pressed back.": with nothing sexual in this paragraph or the ones either side, and nothing in the sentence
-    // that is itself an entry, a push is just a push.
-    if ((basePid === "push-into" || basePid === "pushed-in" || basePid === "thrust-back") &&
+    // "Damen pressed back, “Vere’s own pet system is not so different…”": with nothing sexual in this paragraph or the ones either side, and nothing in the sentence that is itself an entry,
+    // pushing back is just an argument. (Not applied to push-into / pushed-in: a full-corpus comparison showed it also removed real entries such as "pushes in without preamble".)
+    if (basePid === "thrust-back" &&
         !/\b(?:cock|dick|prick|knot|ass|arse|hole|rim|slick|lube|thrust\w*|pound\w*|rammed|ramming|grind\w*|moan\w*|whimper\w*|groan\w*|gasp\w*|naked|erection|orgasm\w*|cum|come|coming|fuck\w*|prostate|stretch\w*|breed\w*|pant\w*|sweat\w*|aroused|arousal|hard|aching|desire|lust\w*|kiss\w*|clench\w*|fill\w*|full)\b/i.test([pi - 1, pi, pi + 1].map((i) => paras[i] ?? "").join(" ")) &&
         !/\b(?:inside|into\s+(?:him|her|them)|deeper|seated|sink\w*|rut\w*|hips)\b/i.test(sent)) return;
     // "Anakin drops to his knees, panting" in a fight, a rescue or a fit of fear: kneeling is oral preparation only with something sexual in this paragraph or the next.
