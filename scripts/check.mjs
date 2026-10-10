@@ -19,12 +19,16 @@ const flag = (n) => args.includes(`--${n}`);
 const opt = (n) => { const i = args.indexOf(`--${n}`); return i >= 0 ? args[i + 1] : undefined; };
 const dir = resolve(args.filter((a, i) => !a.startsWith("--") && !(i > 0 && ["--jobs", "--only", "--heap"].includes(args[i - 1])))[0] ?? "ao3-samples");
 // Reading even the longest fic takes about 1.3 GB (measured, scripts/profile.mjs), and a shard replays several fics one after another, so the
-// number of jobs is capped by memory: the unit suite runs alongside and keeps about 3 GB, and a shard's process measured about 4 GB (a 3 GB heap plus the rest);
-// with one per 3 GB on a 15 GB machine all four shards were killed and re-run one at a time. --jobs overrides it.
-const memJobs = Math.max(2, Math.floor((totalmem() / 2 ** 30 - 3) / 4));
-const jobs = Math.max(2, Number(opt("jobs") ?? Math.min(cpus().length, memJobs)));
-const heapMb = Number(opt("heap") ?? 3000); // per shard: makes V8 collect garbage between fics instead of growing to several GB
+// number of jobs is capped by memory: the unit suite runs alongside and keeps about 3 GB, and the shard that holds the largest fic needs a heap sized to it
+// (measured: the 16 MB fic needs about 4.5 GB and ran out of memory at 3 GB; roughly 300 MB per MB of html). With one shard per 3 GB on a 15 GB machine all
+// four shards were killed and re-run one at a time. --jobs overrides it.
+const heapMb = Number(opt("heap") ?? 3000); // per shard, as a floor: makes V8 collect garbage between fics instead of growing to several GB
+const MB_PER_HTML_MB = 300;
+const heapForBytes = (bytes) => Math.min(8000, Math.max(heapMb, Math.ceil((bytes / 1e6) * MB_PER_HTML_MB)));
 const hasSamples = existsSync(dir);
+const maxFicBytes = hasSamples ? Math.max(0, ...readdirSync(dir).filter((f) => f.endsWith(".html")).map((f) => statSync(join(dir, f)).size)) : 0;
+const memJobs = Math.max(2, 1 + Math.floor((0.9 * (totalmem() / 2 ** 20) - 3072 - heapForBytes(maxFicBytes)) / heapMb));
+const jobs = Math.max(2, Number(opt("jobs") ?? Math.min(cpus().length, memJobs)));
 const outDir = join(dir, ".check");
 if (hasSamples) mkdirSync(outDir, { recursive: true });
 
@@ -73,9 +77,10 @@ const shardTask = (s, i, heap) => run(`gold + right-set ${i + 1}/${shardCount}`,
   GOLD_TOTALS_FILE: join(outDir, `gold-${i}.json`),
   RIGHTSET_REPORT_FILE: join(outDir, `rightset-${i}.md`),
 });
+const sizeOf = (n) => (sizes.find((x) => x[0] === squash(n)) ?? sizes.find((x) => x[0].includes(squash(n)) || squash(n).includes(x[0])))?.[1] ?? 0;
 shards.forEach((s, i) => {
   if (!s.gold.length && !s.sets.length) return;
-  tasks.push(shardTask(s, i, heapMb));
+  tasks.push(shardTask(s, i, heapForBytes(Math.max(0, ...s.gold.map(sizeOf), ...s.sets.map((n) => sizeOf(ficOfSet(n)))))));
 });
 const t0 = Date.now();
 const results = await Promise.all(tasks);

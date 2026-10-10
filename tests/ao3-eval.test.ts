@@ -9,6 +9,7 @@ import { createHash } from "node:crypto";
 import { join } from "node:path";
 import { afterAll, describe, it } from "vitest";
 import { mergeEval } from "../scripts/eval-merge.mjs";
+import { engineFingerprint, recallCollector, writeRecallSnapshot } from "../scripts/recall-snapshot.mjs";
 import { emptyMeta } from "../src/ao3";
 import { extractFromHtml } from "../src/extract";
 import { analyzeWithPatterns, type AuditHit } from "../src/heuristic";
@@ -61,10 +62,14 @@ describe.skipIf(!dir)("AO3 evaluation", () => {
       // Same text with its real AO3 tags (what the website does).
       const hits: string[] = [];
       const snapshotHits: AuditHit[] = [];
-      const tagged = analyzeWithPatterns(work.text, work.meta, { quiet: true, audit: (h) => {
+      // The act-recall benchmark scores this same engine run (tagged, same text), so keep what it needs and write it where it looks (scripts/recall-snapshot.mjs).
+      const recall = recallCollector();
+      const tagged = analyzeWithPatterns(work.text, work.meta, { quiet: true, debug: recall.debug, audit: (h) => {
         hits.push(`${h.via}|${h.a}>${h.b ?? ""}|${h.kind}|${h.para}|${String(h.sentence).slice(0, 110)}`);
+        recall.audit(h);
         if (process.env.REVIEW_SNAPSHOT_DIR) snapshotHits.push(h);
       } });
+      if (process.env.RECALL_CACHE_DIR) writeRecallSnapshot(process.env.RECALL_CACHE_DIR, f, recall.snapshot(readFileSync(join(dir!, f), "utf8"), engineFingerprint()));
       if (process.env.REVIEW_SNAPSHOT_DIR) {
         mkdirSync(process.env.REVIEW_SNAPSHOT_DIR, { recursive: true });
         const clean = work.text.replace(/\[\[AO3_UNCERTAIN_NOTE_START\]\][\s\S]*?\[\[AO3_UNCERTAIN_NOTE_END\]\]/g, "").replace(/\[\[AO3_[A-Z_]+\]\]/g, "");

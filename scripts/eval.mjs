@@ -6,6 +6,8 @@
 // Splits the fics into N shards (longest first, by the time they took last run, else file size) and runs one vitest process
 // per shard. A fic is skipped when its result file was made by the same engine source and the same fic file (--force to
 // redo). Writes <dir>/REPORT.md (same text as before) and <dir>/eval.json (structured, for scripts/eval-compare.mjs).
+// Each fic's tagged run is also saved as the act-recall benchmark's snapshot (<dir>/.act-recall-cache, scripts/recall-snapshot.mjs), so `npm run recall` after
+// this run finds every fic cached instead of reading them all again.
 import { spawn } from "node:child_process";
 import { createHash } from "node:crypto";
 import { existsSync, mkdirSync, readFileSync, readdirSync, statSync, rmSync, writeFileSync } from "node:fs";
@@ -56,7 +58,7 @@ if (todo.length) {
   const run = (s, i) =>
     new Promise((ok) => {
       const p = spawn("npx", ["vitest", "run", "tests/ao3-eval.test.ts", "--reporter=dot"], {
-        env: { ...process.env, AO3_DIR: dir, EVAL_OUT: outDir, EVAL_FILES: s.names.join(","), EVAL_KEYS: JSON.stringify(keys), ...(quick ? { EVAL_QUICK: "1" } : {}) },
+        env: { ...process.env, AO3_DIR: dir, EVAL_OUT: outDir, EVAL_FILES: s.names.join(","), EVAL_KEYS: JSON.stringify(keys), RECALL_CACHE_DIR: join(dir, ".act-recall-cache"), ...(quick ? { EVAL_QUICK: "1" } : {}) },
         stdio: ["ignore", "pipe", "pipe"],
       });
       let log = "";
