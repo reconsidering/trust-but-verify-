@@ -1,0 +1,195 @@
+{
+  "fic": "full-spectrum",
+  "title": "the full spectrum of human emotion",
+  "entries": [
+    {
+      "kind": "hint",
+      "card": "audit-vibe",
+      "pairing": "Alex Claremont-Diaz/Henry Fox-Mountchristen-Windsor",
+      "h": "cad9c14b",
+      "via": "flustered-verb",
+      "weight": 0.9,
+      "source": "chatgpt",
+      "reviewerConfidence": 0.98,
+      "seen": [
+        "2026-10-10"
+      ],
+      "who": "Henry Fox-Mountchristen-Windsor",
+      "role": "bottom",
+      "wants": true,
+      "marks": {
+        "right": 1,
+        "wrong": 0
+      }
+    },
+    {
+      "kind": "hint",
+      "card": "audit-vibe",
+      "pairing": "Alex Claremont-Diaz/Henry Fox-Mountchristen-Windsor",
+      "h": "ae41eb1c",
+      "via": "care-bring",
+      "weight": 0.9,
+      "source": "chatgpt",
+      "reviewerConfidence": 0.999,
+      "seen": [
+        "2026-10-10"
+      ],
+      "who": "Henry Fox-Mountchristen-Windsor",
+      "role": "top",
+      "wants": true,
+      "marks": {
+        "right": 1,
+        "wrong": 0
+      }
+    },
+    {
+      "kind": "hint",
+      "card": "audit-vibe",
+      "pairing": "Alex Claremont-Diaz/Henry Fox-Mountchristen-Windsor",
+      "h": "5c5c9723",
+      "via": "dom-grip",
+      "weight": 0.9,
+      "source": "chatgpt",
+      "reviewerConfidence": 0.99,
+      "seen": [
+        "2026-10-10"
+      ],
+      "who": "Henry Fox-Mountchristen-Windsor",
+      "role": "top",
+      "wants": true,
+      "marks": {
+        "right": 1,
+        "wrong": 0
+      }
+    },
+    {
+      "kind": "hint",
+      "card": "audit-vibe",
+      "pairing": "Alex Claremont-Diaz/Henry Fox-Mountchristen-Windsor",
+      "h": "f18b1562",
+      "via": "care-bring",
+      "weight": 0.9,
+      "source": "chatgpt",
+      "reviewerConfidence": 0.99,
+      "seen": [
+        "2026-10-10"
+      ],
+      "who": "Alex Claremont-Diaz",
+      "role": "top",
+      "wants": true,
+      "marks": {
+        "right": 1,
+        "wrong": 0
+      }
+    },
+    {
+      "kind": "hint",
+      "card": "audit-vibe",
+      "pairing": "Alex Claremont-Diaz/Henry Fox-Mountchristen-Windsor",
+      "h": "90553a4",
+      "via": "dom-protect",
+      "weight": 0.9,
+      "source": "chatgpt",
+      "reviewerConfidence": 0.99,
+      "seen": [
+        "2026-10-10"
+      ],
+      "who": "Henry Fox-Mountchristen-Windsor",
+      "role": "top",
+      "wants": true,
+      "marks": {
+        "right": 1,
+        "wrong": 0
+      }
+    },
+    {
+      "kind": "hint",
+      "card": "audit-vibe",
+      "pairing": "Alex Claremont-Diaz/Henry Fox-Mountchristen-Windsor",
+      "h": "b1576b84",
+      "via": "address-endearment",
+      "weight": 0.9,
+      "source": "chatgpt",
+      "reviewerConfidence": 0.999,
+      "seen": [
+        "2026-10-10"
+      ],
+      "who": "Alex Claremont-Diaz",
+      "role": "top",
+      "wants": true,
+      "marks": {
+        "right": 1,
+        "wrong": 0
+      }
+    }
+  ],
+  "negatives": [
+    {
+      "kind": "scene",
+      "card": "anal",
+      "pairing": "Alex Claremont-Diaz/Henry Fox-Mountchristen-Windsor",
+      "h": "f501a6a8",
+      "via": "fuck",
+      "weight": 0.9,
+      "source": "chatgpt",
+      "reviewerConfidence": 0.999,
+      "seen": [
+        "2026-10-10"
+      ],
+      "top": "Henry Fox-Mountchristen-Windsor",
+      "bottom": "Alex Claremont-Diaz",
+      "misread": true
+    },
+    {
+      "kind": "hint",
+      "card": "audit-vibe",
+      "pairing": "Alex Claremont-Diaz/Henry Fox-Mountchristen-Windsor",
+      "h": "69534b63",
+      "via": "care-soothe",
+      "weight": 0.9,
+      "source": "chatgpt",
+      "reviewerConfidence": 0.999,
+      "seen": [
+        "2026-10-10"
+      ],
+      "who": "Henry Fox-Mountchristen-Windsor",
+      "role": "top",
+      "wants": true,
+      "misread": true
+    },
+    {
+      "kind": "hint",
+      "card": "audit-vibe",
+      "pairing": "Alex Claremont-Diaz/Henry Fox-Mountchristen-Windsor",
+      "h": "587d969f",
+      "via": "care-soothe",
+      "weight": 0.9,
+      "source": "chatgpt",
+      "reviewerConfidence": 0.999,
+      "seen": [
+        "2026-10-10"
+      ],
+      "who": "Henry Fox-Mountchristen-Windsor",
+      "role": "top",
+      "wants": true,
+      "misread": true
+    },
+    {
+      "kind": "hint",
+      "card": "audit-vibe",
+      "pairing": "Alex Claremont-Diaz/Henry Fox-Mountchristen-Windsor",
+      "h": "5422843c",
+      "via": "dom-grip",
+      "weight": 0.9,
+      "source": "chatgpt",
+      "reviewerConfidence": 0.999,
+      "seen": [
+        "2026-10-10"
+      ],
+      "who": "Henry Fox-Mountchristen-Windsor",
+      "role": "top",
+      "wants": true,
+      "misread": true
+    }
+  ]
+}
