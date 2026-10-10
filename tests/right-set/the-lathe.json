@@ -1,0 +1,434 @@
+{
+  "fic": "the-lathe",
+  "title": "the lathe",
+  "entries": [
+    {
+      "kind": "hint",
+      "card": "dynamic-cue",
+      "pairing": "Steve Harrington/Eddie Munson",
+      "h": "48f32a77",
+      "via": "dom-grip",
+      "weight": 0.9,
+      "source": "chatgpt",
+      "reviewerConfidence": 0.97,
+      "marks": {
+        "right": 1,
+        "wrong": 0
+      },
+      "seen": [
+        "2026-10-10"
+      ],
+      "who": "Steve Harrington",
+      "role": "top",
+      "wants": true
+    },
+    {
+      "kind": "hint",
+      "card": "dynamic-cue",
+      "pairing": "Steve Harrington/Eddie Munson",
+      "h": "ed6d43a0",
+      "via": "flustered-verb",
+      "weight": 0.9,
+      "source": "chatgpt",
+      "reviewerConfidence": 0.99,
+      "marks": {
+        "right": 1,
+        "wrong": 0
+      },
+      "seen": [
+        "2026-10-10"
+      ],
+      "who": "Steve Harrington",
+      "role": "bottom",
+      "wants": true
+    },
+    {
+      "kind": "hint",
+      "card": "dynamic-cue",
+      "pairing": "Steve Harrington/Eddie Munson",
+      "h": "693bfa45",
+      "via": "care-soothe",
+      "weight": 0.9,
+      "source": "chatgpt",
+      "reviewerConfidence": 0.99,
+      "marks": {
+        "right": 1,
+        "wrong": 0
+      },
+      "seen": [
+        "2026-10-10"
+      ],
+      "who": "Eddie Munson",
+      "role": "top",
+      "wants": true
+    },
+    {
+      "kind": "hint",
+      "card": "dynamic-cue",
+      "pairing": "Steve Harrington/Eddie Munson",
+      "h": "372b43a7",
+      "via": "dom-grip",
+      "weight": 0.9,
+      "source": "chatgpt",
+      "reviewerConfidence": 0.97,
+      "marks": {
+        "right": 1,
+        "wrong": 0
+      },
+      "seen": [
+        "2026-10-10"
+      ],
+      "who": "Steve Harrington",
+      "role": "top",
+      "wants": true
+    },
+    {
+      "kind": "hint",
+      "card": "blowjob",
+      "pairing": "Steve Harrington/Eddie Munson",
+      "h": "99ad4a27",
+      "via": "knelt-before",
+      "weight": 0.9,
+      "source": "chatgpt",
+      "reviewerConfidence": 0.99,
+      "marks": {
+        "right": 1,
+        "wrong": 0
+      },
+      "seen": [
+        "2026-10-10"
+      ],
+      "who": "Eddie Munson",
+      "role": "bottom",
+      "wants": true
+    },
+    {
+      "kind": "hint",
+      "card": "blowjob",
+      "pairing": "Steve Harrington/Eddie Munson",
+      "h": "d155ca38",
+      "via": "sucked",
+      "weight": 0.9,
+      "source": "chatgpt",
+      "reviewerConfidence": 0.99,
+      "marks": {
+        "right": 1,
+        "wrong": 0
+      },
+      "seen": [
+        "2026-10-10"
+      ],
+      "who": "Steve Harrington",
+      "role": "top",
+      "wants": true
+    },
+    {
+      "kind": "hint",
+      "card": "dynamic-cue",
+      "pairing": "Steve Harrington/Eddie Munson",
+      "h": "98ca01c2",
+      "via": "dom-grip",
+      "weight": 0.9,
+      "source": "chatgpt",
+      "reviewerConfidence": 0.99,
+      "marks": {
+        "right": 1,
+        "wrong": 0
+      },
+      "seen": [
+        "2026-10-10"
+      ],
+      "who": "Steve Harrington",
+      "role": "top",
+      "wants": true
+    },
+    {
+      "kind": "hint",
+      "card": "dynamic-cue",
+      "pairing": "Steve Harrington/Eddie Munson",
+      "h": "9c3d8a22",
+      "via": "flustered-verb",
+      "weight": 0.9,
+      "source": "chatgpt",
+      "reviewerConfidence": 0.99,
+      "marks": {
+        "right": 1,
+        "wrong": 0
+      },
+      "seen": [
+        "2026-10-10"
+      ],
+      "who": "Steve Harrington",
+      "role": "bottom",
+      "wants": true
+    },
+    {
+      "kind": "hint",
+      "card": "dynamic-cue",
+      "pairing": "Steve Harrington/Eddie Munson",
+      "h": "b779be72",
+      "via": "dom-grip",
+      "weight": 0.9,
+      "source": "chatgpt",
+      "reviewerConfidence": 0.99,
+      "marks": {
+        "right": 1,
+        "wrong": 0
+      },
+      "seen": [
+        "2026-10-10"
+      ],
+      "who": "Eddie Munson",
+      "role": "top",
+      "wants": true
+    }
+  ],
+  "negatives": [
+    {
+      "kind": "scene",
+      "card": "blowjob",
+      "pairing": "Steve Harrington/Eddie Munson",
+      "h": "e65c2442",
+      "via": "sucked",
+      "weight": 0.9,
+      "source": "chatgpt",
+      "reviewerConfidence": 0.99,
+      "marks": {
+        "right": 0,
+        "wrong": 0
+      },
+      "seen": [
+        "2026-10-10"
+      ],
+      "top": "Steve Harrington",
+      "bottom": "Dustin Henderson",
+      "misread": true
+    },
+    {
+      "kind": "scene",
+      "card": "vaginal",
+      "pairing": "Steve Harrington/Eddie Munson",
+      "h": "9a52541c",
+      "via": "inside",
+      "weight": 0.9,
+      "source": "chatgpt",
+      "reviewerConfidence": 0.99,
+      "marks": {
+        "right": 0,
+        "wrong": 0
+      },
+      "seen": [
+        "2026-10-10"
+      ],
+      "top": "Nancy Wheeler",
+      "bottom": "Eddie Munson",
+      "misread": true
+    },
+    {
+      "kind": "scene",
+      "card": "anal",
+      "pairing": "Steve Harrington/Eddie Munson",
+      "h": "aa56e477",
+      "via": "push-into",
+      "weight": 0.9,
+      "source": "chatgpt",
+      "reviewerConfidence": 0.99,
+      "marks": {
+        "right": 0,
+        "wrong": 0
+      },
+      "seen": [
+        "2026-10-10"
+      ],
+      "top": "Steve Harrington",
+      "bottom": "Eddie Munson",
+      "misread": true
+    },
+    {
+      "kind": "scene",
+      "card": "anal",
+      "pairing": "Steve Harrington/Eddie Munson",
+      "h": "79655592",
+      "via": "push-into",
+      "weight": 0.9,
+      "source": "chatgpt",
+      "reviewerConfidence": 0.99,
+      "marks": {
+        "right": 0,
+        "wrong": 0
+      },
+      "seen": [
+        "2026-10-10"
+      ],
+      "top": "Eddie Munson",
+      "bottom": "Steve Harrington",
+      "misread": true
+    },
+    {
+      "kind": "hint",
+      "card": "blowjob",
+      "pairing": "Steve Harrington/Eddie Munson",
+      "h": "8124ca14",
+      "via": "sinks-to-floor",
+      "weight": 0.9,
+      "source": "chatgpt",
+      "reviewerConfidence": 0.99,
+      "marks": {
+        "right": 0,
+        "wrong": 0
+      },
+      "seen": [
+        "2026-10-10"
+      ],
+      "who": "Steve Harrington",
+      "role": "bottom",
+      "wants": true,
+      "misread": true
+    },
+    {
+      "kind": "hint",
+      "card": "blowjob",
+      "pairing": "Steve Harrington/Eddie Munson",
+      "h": "eefc2e1f",
+      "via": "sinks-to-floor",
+      "weight": 0.9,
+      "source": "chatgpt",
+      "reviewerConfidence": 0.99,
+      "marks": {
+        "right": 0,
+        "wrong": 0
+      },
+      "seen": [
+        "2026-10-10"
+      ],
+      "who": "Steve Harrington",
+      "role": "bottom",
+      "wants": true,
+      "misread": true
+    },
+    {
+      "kind": "hint",
+      "card": "blowjob",
+      "pairing": "Steve Harrington/Eddie Munson",
+      "h": "ff63adae",
+      "via": "sinks-to-floor",
+      "weight": 0.9,
+      "source": "chatgpt",
+      "reviewerConfidence": 0.99,
+      "marks": {
+        "right": 0,
+        "wrong": 0
+      },
+      "seen": [
+        "2026-10-10"
+      ],
+      "who": "Eddie Munson",
+      "role": "bottom",
+      "wants": true,
+      "misread": true
+    },
+    {
+      "kind": "solo",
+      "card": "anal",
+      "pairing": "Steve Harrington/Eddie Munson",
+      "h": "414a38b2",
+      "via": "self-finger",
+      "weight": 0.9,
+      "source": "chatgpt",
+      "reviewerConfidence": 0.99,
+      "marks": {
+        "right": 0,
+        "wrong": 0
+      },
+      "seen": [
+        "2026-10-10"
+      ],
+      "who": "Steve Harrington",
+      "role": "bottom",
+      "misread": true
+    },
+    {
+      "kind": "hint",
+      "card": "dynamic-cue",
+      "pairing": "Steve Harrington/Eddie Munson",
+      "h": "28b7a8b",
+      "via": "care-soothe",
+      "weight": 0.9,
+      "source": "chatgpt",
+      "reviewerConfidence": 0.98,
+      "marks": {
+        "right": 0,
+        "wrong": 0
+      },
+      "seen": [
+        "2026-10-10"
+      ],
+      "who": "Steve Harrington",
+      "role": "top",
+      "wants": true,
+      "misread": true
+    },
+    {
+      "kind": "hint",
+      "card": "anal",
+      "pairing": "Steve Harrington/Eddie Munson",
+      "h": "6ef9a041",
+      "via": "thrust-back",
+      "weight": 0.9,
+      "source": "chatgpt",
+      "reviewerConfidence": 0.99,
+      "marks": {
+        "right": 0,
+        "wrong": 0
+      },
+      "seen": [
+        "2026-10-10"
+      ],
+      "who": "Eddie Munson",
+      "role": "bottom",
+      "wants": true,
+      "misread": true
+    },
+    {
+      "kind": "hint",
+      "card": "blowjob",
+      "pairing": "Steve Harrington/Eddie Munson",
+      "h": "329f41",
+      "via": "sinks-to-floor",
+      "weight": 0.9,
+      "source": "chatgpt",
+      "reviewerConfidence": 0.99,
+      "marks": {
+        "right": 0,
+        "wrong": 0
+      },
+      "seen": [
+        "2026-10-10"
+      ],
+      "who": "Dustin Henderson",
+      "role": "bottom",
+      "wants": true,
+      "misread": true
+    },
+    {
+      "kind": "solo",
+      "card": "manual-act",
+      "pairing": "Steve Harrington/Eddie Munson",
+      "h": "638bfde5",
+      "via": "mast-himself",
+      "weight": 0.9,
+      "source": "chatgpt",
+      "reviewerConfidence": 0.99,
+      "marks": {
+        "right": 0,
+        "wrong": 0
+      },
+      "seen": [
+        "2026-10-10"
+      ],
+      "who": "Eddie Munson",
+      "role": "bottom",
+      "misread": true
+    }
+  ]
+}
