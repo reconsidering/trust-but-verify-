@@ -2,7 +2,7 @@ import {readFileSync,readdirSync} from 'node:fs';
 import {join} from 'node:path';
 import {createHash} from 'node:crypto';
 import {it,expect,describe} from 'vitest';
-import {baseVia,weightOf} from '../scripts/right-set.mjs';
+import {baseVia,weightOf,slugOf} from '../scripts/right-set.mjs';
 import {claimOf,reviewedClaims,sameClaim,sameReportedPeople} from '../scripts/reviewed-claims.mjs';
 import {extractFromHtml} from '../src/extract';
 import {analyzeWithPatterns} from '../src/heuristic';
@@ -22,6 +22,7 @@ it('keeps definite adult claim judgments fractional, source-bound and separate f
  for(const fic of data.fics){
  expect(fic.safety.eligible).toBe(true);expect(fic.readCoverage).toEqual([{from:0,to:fic.paragraphs-1}]);
  const set=JSON.parse(readFileSync(join(__dirname,'right-set',fic.file.replace(/\.html$/,'.json')),'utf8'));
+ expect(set.fic).toBe(slugOf(fic.title)); // Learning looks up reports by extracted title, not upload filename.
  for(const r of fic.readings){
   if(r.training==='withheld'){expect(r.training).toBe('withheld');expect(provenance.answers.some((a:any)=>a.key===r.key)).toBe(false);continue;}
   expect(r.confidence).toBeGreaterThanOrEqual(.95);expect(['correct','wrong']).toContain(r.verdict);
