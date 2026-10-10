@@ -1,0 +1,4250 @@
+{
+  "schema": "anal-error-audit/v1",
+  "engineCommit": "4fd987ef1eafce76d2026a272f7d34cf184ae12e",
+  "corpus": "60 eligible private HTML samples; labelled anal errors occur in 27 fics",
+  "scope": "All 152 anal-category wrong-labelled rows from the fresh current-main confidence evaluation, replayed and contextually reviewed. This is not a full-corpus false-negative search or an exhaustive inventory of unlabelled errors. Oral-category rimming is outside this scope.",
+  "method": "Replay current main, match the exact pattern and sentence hash, read the cited paragraph and surrounding action; widen context where instrument, occurrence, or participants were unclear. One primary cause per reading; explanations retain overlapping problems. Counts are reading claims, not distinct sex scenes. No fic text included. No patterns, guards, labels, or generated model files changed.",
+  "summary": {
+    "readings": 152,
+    "paragraphs": 142,
+    "fics": 27,
+    "errorsSupportedByThisReview": 147,
+    "unresolved": 3,
+    "currentReadingsSupportedDespiteWrongLabel": 2,
+    "performedAnalWrongLabelled": 61,
+    "performedAnalErrorsSupported": 60,
+    "performedAnalSupportedDespiteWrongLabel": 1
+  },
+  "groups": [
+    {
+      "group": "participants",
+      "description": "Wrong participants, ownership, or roles",
+      "performedAnalSex": 18,
+      "otherAnalReadings": 23,
+      "total": 41
+    },
+    {
+      "group": "instrument",
+      "description": "Wrong instrument: penis, fingers, or toys",
+      "performedAnalSex": 15,
+      "otherAnalReadings": 9,
+      "total": 24
+    },
+    {
+      "group": "external-contact",
+      "description": "External contact or movement mistaken for insertion (or the reverse)",
+      "performedAnalSex": 10,
+      "otherAnalReadings": 10,
+      "total": 20
+    },
+    {
+      "group": "nonsexual",
+      "description": "Nonsexual wording mistaken for a sexual cue",
+      "performedAnalSex": 5,
+      "otherAnalReadings": 12,
+      "total": 17
+    },
+    {
+      "group": "occurrence",
+      "description": "Wrong occurrence: current, imagined, remembered, or anticipated",
+      "performedAnalSex": 5,
+      "otherAnalReadings": 12,
+      "total": 17
+    },
+    {
+      "group": "wrong-site",
+      "description": "Wrong site: mouth, thighs, clothing, or a masturbation sleeve",
+      "performedAnalSex": 7,
+      "otherAnalReadings": 4,
+      "total": 11
+    },
+    {
+      "group": "hint-semantics",
+      "description": "Unsupported or incorrectly typed anal-role hint",
+      "performedAnalSex": 0,
+      "otherAnalReadings": 11,
+      "total": 11
+    },
+    {
+      "group": "solo-partner",
+      "description": "Solo activity confused with partnered activity",
+      "performedAnalSex": 0,
+      "otherAnalReadings": 6,
+      "total": 6
+    },
+    {
+      "group": "act-unspecified",
+      "description": "Insufficient evidence for the specific act — unresolved",
+      "performedAnalSex": 0,
+      "otherAnalReadings": 3,
+      "total": 3
+    },
+    {
+      "group": "label-disagreement",
+      "description": "Current reading supported despite surviving wrong label",
+      "performedAnalSex": 1,
+      "otherAnalReadings": 1,
+      "total": 2
+    }
+  ],
+  "rows": [
+    {
+      "key": "spread-legs~elided#bac64c05",
+      "fic": "belonging.html",
+      "title": "Belonging is Longing is Now",
+      "paragraph": 524,
+      "pattern": "spread-legs~elided",
+      "engine": {
+        "cat": "anal",
+        "kind": "prep",
+        "act": "spreading their legs",
+        "a": "Dean Winchester",
+        "b": "Castiel",
+        "role": "bottom"
+      },
+      "scope": "other anal-category reading",
+      "pastLabel": "wrong",
+      "labelWeight": 1,
+      "labelSourceClass": null,
+      "group": "participants",
+      "assessment": "error",
+      "reviewerConfidence": 0.999,
+      "reason": "The partner spreads his own legs to sit across the viewpoint adult's thighs; the engine assigns the spreading to the viewpoint adult.",
+      "labelReferences": [
+        {
+          "file": "tests/labels/zz-owner-claude-oct4-5-current.json",
+          "source": "saved audit review",
+          "reviewerConfidence": null,
+          "hasClaimIdentity": true
+        }
+      ]
+    },
+    {
+      "key": "fuck#62d62acb",
+      "fic": "found-in-the-upside-down.html",
+      "title": "Found in the Upside Down",
+      "paragraph": 2169,
+      "pattern": "fuck",
+      "engine": {
+        "cat": "anal",
+        "kind": "hypothetical",
+        "act": "anal sex",
+        "a": "Billy Hargrove",
+        "b": "Steve Harrington",
+        "role": "top"
+      },
+      "scope": "other anal-category reading",
+      "pastLabel": "wrong",
+      "labelWeight": 1,
+      "labelSourceClass": null,
+      "group": "participants",
+      "assessment": "error",
+      "reviewerConfidence": 0.97,
+      "reason": "The contemplated permission would let the other adult penetrate the viewpoint character; the engine credits the viewpoint character as penetrator.",
+      "labelReferences": []
+    },
+    {
+      "key": "grab-ass~elided#32a49985",
+      "fic": "foxden-park.html",
+      "title": "Foxden Park",
+      "paragraph": 701,
+      "pattern": "grab-ass~elided",
+      "engine": {
+        "cat": "anal",
+        "kind": "touch",
+        "act": "grabbing an ass",
+        "a": "Alex Claremont-Diaz",
+        "b": "Henry Fox-Mountchristen-Windsor",
+        "role": "top"
+      },
+      "scope": "other anal-category reading",
+      "pastLabel": "wrong",
+      "labelWeight": 0.9,
+      "labelSourceClass": null,
+      "group": "participants",
+      "assessment": "error",
+      "reviewerConfidence": 0.999,
+      "reason": "The partner's hands grab the viewpoint adult's buttocks; the engine attributes the grab to the viewpoint adult.",
+      "labelReferences": []
+    },
+    {
+      "key": "fuck~elided#59a5f04f",
+      "fic": "foxden-park.html",
+      "title": "Foxden Park",
+      "paragraph": 1155,
+      "pattern": "fuck~elided",
+      "engine": {
+        "cat": "anal",
+        "kind": "act",
+        "act": "anal sex",
+        "a": "Catherine Fox-Mountchristen-Windsor",
+        "b": "Henry Fox-Mountchristen-Windsor",
+        "role": null
+      },
+      "scope": "performed penile anal sex",
+      "pastLabel": "wrong",
+      "labelWeight": 0.9,
+      "labelSourceClass": null,
+      "group": "participants",
+      "assessment": "error",
+      "reviewerConfidence": 0.999,
+      "reason": "The named adult partner performs the thrusts; the engine credits an absent relative.",
+      "labelReferences": []
+    },
+    {
+      "key": "fill#f0bb2108",
+      "fic": "foxden-park.html",
+      "title": "Foxden Park",
+      "paragraph": 1157,
+      "pattern": "fill",
+      "engine": {
+        "cat": "anal",
+        "kind": "act",
+        "act": "anal sex",
+        "a": "Henry Fox-Mountchristen-Windsor",
+        "b": "Alex Claremont-Diaz",
+        "role": null
+      },
+      "scope": "performed penile anal sex",
+      "pastLabel": "wrong",
+      "labelWeight": 0.9,
+      "labelSourceClass": null,
+      "group": "participants",
+      "assessment": "error",
+      "reviewerConfidence": 0.999,
+      "reason": "The penetrator ejaculates inside the receiver, but the engine assigns penetration to the receiver.",
+      "labelReferences": []
+    },
+    {
+      "key": "dd2-pulled-out-of-him#db598754",
+      "fic": "foxden-park.html",
+      "title": "Foxden Park",
+      "paragraph": 1161,
+      "pattern": "dd2-pulled-out-of-him",
+      "engine": {
+        "cat": "anal",
+        "kind": "act",
+        "act": "anal sex",
+        "a": "Henry Fox-Mountchristen-Windsor",
+        "b": "Alex Claremont-Diaz",
+        "role": null
+      },
+      "scope": "performed penile anal sex",
+      "pastLabel": "wrong",
+      "labelWeight": 0.9,
+      "labelSourceClass": null,
+      "group": "participants",
+      "assessment": "error",
+      "reviewerConfidence": 0.999,
+      "reason": "The adult penetrator withdraws from the receiver; the engine reverses their roles.",
+      "labelReferences": []
+    },
+    {
+      "key": "push-into~elided#6263de3f",
+      "fic": "foxden-park.html",
+      "title": "Foxden Park",
+      "paragraph": 1334,
+      "pattern": "push-into~elided",
+      "engine": {
+        "cat": "anal",
+        "kind": "act",
+        "act": "fingering",
+        "a": "Percy \"Pez\" Okonjo",
+        "b": "Alex Claremont-Diaz",
+        "role": null
+      },
+      "scope": "other anal-category reading",
+      "pastLabel": "wrong",
+      "labelWeight": 0.9,
+      "labelSourceClass": null,
+      "group": "participants",
+      "assessment": "error",
+      "reviewerConfidence": 0.999,
+      "reason": "The named adult inserts two fingers into his partner; the engine substitutes an absent friend and reverses the recipient.",
+      "labelReferences": []
+    },
+    {
+      "key": "lined-up#8eb959a0",
+      "fic": "hate.html",
+      "title": "Hate the Way It Feels So Good",
+      "paragraph": 1516,
+      "pattern": "lined-up",
+      "engine": {
+        "cat": "anal",
+        "kind": "prep",
+        "act": "lining up",
+        "a": "Eddie Munson",
+        "b": "Steve Harrington",
+        "role": "top"
+      },
+      "scope": "other anal-category reading",
+      "pastLabel": "wrong",
+      "labelWeight": 1,
+      "labelSourceClass": null,
+      "group": "participants",
+      "assessment": "error",
+      "reviewerConfidence": 0.99,
+      "reason": "The receiver positions himself over his partner's penis; the engine attributes the lining-up action to the penetrator instead.",
+      "labelReferences": [
+        {
+          "file": "tests/labels/zz-owner-claude-oct4-5-current.json",
+          "source": "saved audit review",
+          "reviewerConfidence": null,
+          "hasClaimIdentity": true
+        }
+      ]
+    },
+    {
+      "key": "fuck#f1f5b680",
+      "fic": "heavyweight.html",
+      "title": "Heavyweight",
+      "paragraph": 6433,
+      "pattern": "fuck",
+      "engine": {
+        "cat": "anal",
+        "kind": "hypothetical",
+        "act": "anal sex",
+        "a": "Castiel",
+        "b": "Sam Winchester",
+        "role": "bottom"
+      },
+      "scope": "other anal-category reading",
+      "pastLabel": "wrong",
+      "labelWeight": 0.9,
+      "labelSourceClass": null,
+      "group": "participants",
+      "assessment": "error",
+      "reviewerConfidence": 0.99,
+      "reason": "An adult silently wants to have sex with his partner after a visitor leaves; the engine attaches the desire to the partner and visitor instead.",
+      "labelReferences": []
+    },
+    {
+      "key": "pressure-at-hole~elided#752eeb59",
+      "fic": "icarus-burning.html",
+      "title": "Icarus, Burning",
+      "paragraph": 3242,
+      "pattern": "pressure-at-hole~elided",
+      "engine": {
+        "cat": "anal",
+        "kind": "touch",
+        "act": "teasing a hole",
+        "a": "Jay",
+        "b": "Samiel Tremark",
+        "role": "top"
+      },
+      "scope": "other anal-category reading",
+      "pastLabel": "wrong",
+      "labelWeight": 0.9,
+      "labelSourceClass": null,
+      "group": "participants",
+      "assessment": "error",
+      "reviewerConfidence": 0.999,
+      "reason": "The partner performs the external anal touch; the engine credits the receiver as the one teasing the other's anus.",
+      "labelReferences": []
+    },
+    {
+      "key": "penis-against#5cc8ed69",
+      "fic": "icarus-burning.html",
+      "title": "Icarus, Burning",
+      "paragraph": 3260,
+      "pattern": "penis-against",
+      "engine": {
+        "cat": "anal",
+        "kind": "act",
+        "act": "anal sex",
+        "a": "Jay",
+        "b": "Samiel Tremark",
+        "role": null
+      },
+      "scope": "performed penile anal sex",
+      "pastLabel": "wrong",
+      "labelWeight": 0.9,
+      "labelSourceClass": null,
+      "group": "participants",
+      "assessment": "error",
+      "reviewerConfidence": 0.999,
+      "reason": "The adult feeling contact at his anus is the receiver; the other adult moves his hips and enters. The engine reverses these roles.",
+      "labelReferences": []
+    },
+    {
+      "key": "passive-fucked#582083e8",
+      "fic": "icarus-burning.html",
+      "title": "Icarus, Burning",
+      "paragraph": 8038,
+      "pattern": "passive-fucked",
+      "engine": {
+        "cat": "anal",
+        "kind": "hypothetical",
+        "act": "anal sex",
+        "a": "Samiel Tremark",
+        "b": "Jason Lane",
+        "role": "top"
+      },
+      "scope": "other anal-category reading",
+      "pastLabel": "wrong",
+      "labelWeight": 0.9,
+      "labelSourceClass": null,
+      "group": "participants",
+      "assessment": "error",
+      "reviewerConfidence": 0.97,
+      "reason": "The comparison depicts the moving partner as if he were receptive, while the actual self-fingering belongs to the viewpoint adult. Crediting the partner with a top-directed hint misreads the comparison.",
+      "labelReferences": []
+    },
+    {
+      "key": "self-finger~elided#86c0a1ef",
+      "fic": "icarus-burning.html",
+      "title": "Icarus, Burning",
+      "paragraph": 8038,
+      "pattern": "self-finger~elided",
+      "engine": {
+        "cat": "anal",
+        "kind": "solo",
+        "act": "fingering himself",
+        "a": "Samiel Tremark",
+        "b": "Jay",
+        "role": "bottom"
+      },
+      "scope": "other anal-category reading",
+      "pastLabel": "wrong",
+      "labelWeight": 0.9,
+      "labelSourceClass": null,
+      "group": "participants",
+      "assessment": "error",
+      "reviewerConfidence": 0.999,
+      "reason": "Self-fingering is explicitly performed by the viewpoint adult; the engine assigns it to the partner moving beneath him.",
+      "labelReferences": []
+    },
+    {
+      "key": "passive-fucked~elided#dc29e",
+      "fic": "jacks.html",
+      "title": "Jack's phone.",
+      "paragraph": 1696,
+      "pattern": "passive-fucked~elided",
+      "engine": {
+        "cat": "anal",
+        "kind": "wanted",
+        "act": "anal sex",
+        "a": "Dracula",
+        "b": "Jack Seward",
+        "role": "bottom"
+      },
+      "scope": "other anal-category reading",
+      "pastLabel": "wrong",
+      "labelWeight": 1,
+      "labelSourceClass": null,
+      "group": "participants",
+      "assessment": "error",
+      "reviewerConfidence": 0.999,
+      "reason": "The viewpoint adult asks to be penetrated; the engine assigns the bottom-directed desire to his penetrating partner.",
+      "labelReferences": [
+        {
+          "file": "tests/labels/zz-owner-claude-oct4-5-current.json",
+          "source": "saved audit review",
+          "reviewerConfidence": null,
+          "hasClaimIdentity": true
+        }
+      ]
+    },
+    {
+      "key": "push-into#2f8aa1af",
+      "fic": "jacks.html",
+      "title": "Jack's phone.",
+      "paragraph": 2788,
+      "pattern": "push-into",
+      "engine": {
+        "cat": "anal",
+        "kind": "act",
+        "act": "anal sex",
+        "a": "Dracula",
+        "b": "Frank Renfield",
+        "role": null
+      },
+      "scope": "performed penile anal sex",
+      "pastLabel": "wrong",
+      "labelWeight": 1,
+      "labelSourceClass": null,
+      "group": "participants",
+      "assessment": "error",
+      "reviewerConfidence": 0.999,
+      "reason": "The named receiver in the same paragraph is replaced with an unrelated character.",
+      "labelReferences": [
+        {
+          "file": "tests/labels/batch-suspect-three-4dd3a27d25b0.json",
+          "source": "saved audit review",
+          "reviewerConfidence": null,
+          "hasClaimIdentity": true
+        }
+      ]
+    },
+    {
+      "key": "riding#15398360",
+      "fic": "jacks.html",
+      "title": "Jack's phone.",
+      "paragraph": 11598,
+      "pattern": "riding",
+      "engine": {
+        "cat": "anal",
+        "kind": "act",
+        "act": "anal sex (riding)",
+        "a": "Jack Seward",
+        "b": "Dracula",
+        "role": null
+      },
+      "scope": "performed penile anal sex",
+      "pastLabel": "wrong",
+      "labelWeight": 1,
+      "labelSourceClass": null,
+      "group": "participants",
+      "assessment": "error",
+      "reviewerConfidence": 0.999,
+      "reason": "The penetrator continues moving through the receiver's orgasm; the verb ride is interpreted as the penetrator receiving.",
+      "labelReferences": [
+        {
+          "file": "tests/labels/zz-owner-claude-oct4-5-current.json",
+          "source": "saved audit review",
+          "reviewerConfidence": null,
+          "hasClaimIdentity": true
+        }
+      ]
+    },
+    {
+      "key": "pushed-in#125f2ff0",
+      "fic": "kissed.html",
+      "title": "I know I've kissed you before (Can I try again)",
+      "paragraph": 3021,
+      "pattern": "pushed-in",
+      "engine": {
+        "cat": "anal",
+        "kind": "act",
+        "act": "anal sex",
+        "a": "Dustin Henderson",
+        "b": "Eddie Munson",
+        "role": null
+      },
+      "scope": "performed penile anal sex",
+      "pastLabel": "wrong",
+      "labelWeight": 1,
+      "labelSourceClass": null,
+      "group": "participants",
+      "assessment": "error",
+      "reviewerConfidence": 0.999,
+      "reason": "The adult viewpoint character recalls sex with his adult partner; an unrelated character is selected as penetrator.",
+      "labelReferences": [
+        {
+          "file": "tests/labels/audit-2026-10-03.json",
+          "source": "saved audit review",
+          "reviewerConfidence": null,
+          "hasClaimIdentity": false
+        }
+      ]
+    },
+    {
+      "key": "cum-enters#85809687",
+      "fic": "knock-me-up.html",
+      "title": "knock me up",
+      "paragraph": 115,
+      "pattern": "cum-enters",
+      "engine": {
+        "cat": "anal",
+        "kind": "act",
+        "act": "anal sex",
+        "a": "Henry Fox-Mountchristen-Windsor",
+        "b": "Alex Claremont-Diaz",
+        "role": null
+      },
+      "scope": "performed penile anal sex",
+      "pastLabel": "wrong",
+      "labelWeight": 1,
+      "labelSourceClass": null,
+      "group": "participants",
+      "assessment": "error",
+      "reviewerConfidence": 0.999,
+      "reason": "The named partner ejaculates while penetrating the viewpoint adult; the engine reverses who penetrates and receives.",
+      "labelReferences": [
+        {
+          "file": "tests/labels/zz-owner-claude-oct4-5-current.json",
+          "source": "saved audit review",
+          "reviewerConfidence": null,
+          "hasClaimIdentity": true
+        }
+      ]
+    },
+    {
+      "key": "fuck#6dcdb429",
+      "fic": "lover-you-cant-be-wrong.html",
+      "title": "lover, you can’t be wrong",
+      "paragraph": 222,
+      "pattern": "fuck",
+      "engine": {
+        "cat": "anal",
+        "kind": "wanted",
+        "act": "anal sex",
+        "a": "Steve Harrington",
+        "b": "Tommy Hagan",
+        "role": "bottom"
+      },
+      "scope": "other anal-category reading",
+      "pastLabel": "wrong",
+      "labelWeight": 0.9,
+      "labelSourceClass": null,
+      "group": "participants",
+      "assessment": "error",
+      "reviewerConfidence": 0.99,
+      "reason": "A third person's hostile comments concern imagined desires of unspecified men, not that third person's own desire to penetrate the viewpoint adult.",
+      "labelReferences": []
+    },
+    {
+      "key": "be-fucked#92ae002",
+      "fic": "lover-you-cant-be-wrong.html",
+      "title": "lover, you can’t be wrong",
+      "paragraph": 1126,
+      "pattern": "be-fucked",
+      "engine": {
+        "cat": "anal",
+        "kind": "wanted",
+        "act": "anal sex",
+        "a": "Eddie Munson",
+        "b": "Steve Harrington",
+        "role": "bottom"
+      },
+      "scope": "other anal-category reading",
+      "pastLabel": "wrong",
+      "labelWeight": 0.9,
+      "labelSourceClass": null,
+      "group": "participants",
+      "assessment": "error",
+      "reviewerConfidence": 0.999,
+      "reason": "The viewpoint adult wants to be penetrated; the engine credits the partner with that bottom-directed desire.",
+      "labelReferences": []
+    },
+    {
+      "key": "passive-fucked~elided#ff198d88",
+      "fic": "lover-you-cant-be-wrong.html",
+      "title": "lover, you can’t be wrong",
+      "paragraph": 1289,
+      "pattern": "passive-fucked~elided",
+      "engine": {
+        "cat": "anal",
+        "kind": "wanted",
+        "act": "anal sex",
+        "a": "Steve Harrington",
+        "b": "Eddie Munson",
+        "role": "top"
+      },
+      "scope": "other anal-category reading",
+      "pastLabel": "wrong",
+      "labelWeight": 0.9,
+      "labelSourceClass": null,
+      "group": "participants",
+      "assessment": "error",
+      "reviewerConfidence": 0.999,
+      "reason": "The viewpoint adult hopes for somewhere comfortable to receive penetration; the engine calls this a top-directed wish.",
+      "labelReferences": []
+    },
+    {
+      "key": "pushed-in#a1cfaf38",
+      "fic": "lover-you-cant-be-wrong.html",
+      "title": "lover, you can’t be wrong",
+      "paragraph": 1396,
+      "pattern": "pushed-in",
+      "engine": {
+        "cat": "anal",
+        "kind": "act",
+        "act": "fingering",
+        "a": "Steve Harrington",
+        "b": "Eddie Munson",
+        "role": null
+      },
+      "scope": "other anal-category reading",
+      "pastLabel": "wrong",
+      "labelWeight": 0.9,
+      "labelSourceClass": null,
+      "group": "participants",
+      "assessment": "error",
+      "reviewerConfidence": 0.999,
+      "reason": "The partner inserts a lubricated finger into the viewpoint adult; the engine reverses performer and receiver.",
+      "labelReferences": []
+    },
+    {
+      "key": "adds-finger#35aac9ae",
+      "fic": "lover-you-cant-be-wrong.html",
+      "title": "lover, you can’t be wrong",
+      "paragraph": 1418,
+      "pattern": "adds-finger",
+      "engine": {
+        "cat": "anal",
+        "kind": "act",
+        "act": "fingering",
+        "a": "Steve Harrington",
+        "b": "Eddie Munson",
+        "role": null
+      },
+      "scope": "other anal-category reading",
+      "pastLabel": "wrong",
+      "labelWeight": 0.9,
+      "labelSourceClass": null,
+      "group": "participants",
+      "assessment": "error",
+      "reviewerConfidence": 0.999,
+      "reason": "The partner reinserts one then two fingers into the viewpoint adult; the engine reverses these roles.",
+      "labelReferences": []
+    },
+    {
+      "key": "be-fucked~elided#7b5c82d5",
+      "fic": "lover-you-cant-be-wrong.html",
+      "title": "lover, you can’t be wrong",
+      "paragraph": 1449,
+      "pattern": "be-fucked~elided",
+      "engine": {
+        "cat": "anal",
+        "kind": "act",
+        "act": "anal sex",
+        "a": "Steve Harrington",
+        "b": "Eddie Munson",
+        "role": null
+      },
+      "scope": "performed penile anal sex",
+      "pastLabel": "wrong",
+      "labelWeight": 0.9,
+      "labelSourceClass": null,
+      "group": "participants",
+      "assessment": "error",
+      "reviewerConfidence": 0.999,
+      "reason": "The receptive viewpoint adult thinks of himself as needing to be penetrated; the engine makes him the penetrator.",
+      "labelReferences": []
+    },
+    {
+      "key": "riding~elided#f4db1441",
+      "fic": "lover-you-cant-be-wrong.html",
+      "title": "lover, you can’t be wrong",
+      "paragraph": 1490,
+      "pattern": "riding~elided",
+      "engine": {
+        "cat": "anal",
+        "kind": "act",
+        "act": "anal sex (riding)",
+        "a": "Eddie Munson",
+        "b": "Tommy Hagan",
+        "role": null
+      },
+      "scope": "performed penile anal sex",
+      "pastLabel": "wrong",
+      "labelWeight": 0.9,
+      "labelSourceClass": null,
+      "group": "participants",
+      "assessment": "error",
+      "reviewerConfidence": 0.999,
+      "reason": "The named viewpoint adult moves onto his partner's penis; the engine selects an absent former friend as receiver.",
+      "labelReferences": []
+    },
+    {
+      "key": "fill~elided#76cd0abe",
+      "fic": "lover-you-cant-be-wrong.html",
+      "title": "lover, you can’t be wrong",
+      "paragraph": 1496,
+      "pattern": "fill~elided",
+      "engine": {
+        "cat": "anal",
+        "kind": "act",
+        "act": "anal sex",
+        "a": "Steve Harrington",
+        "b": "Eddie Munson",
+        "role": null
+      },
+      "scope": "performed penile anal sex",
+      "pastLabel": "wrong",
+      "labelWeight": 0.9,
+      "labelSourceClass": null,
+      "group": "participants",
+      "assessment": "error",
+      "reviewerConfidence": 0.999,
+      "reason": "The viewpoint adult feels his partner's inserted penis filling him; the engine reverses penetration roles.",
+      "labelReferences": []
+    },
+    {
+      "key": "dd-fucks-into-him#48856870",
+      "fic": "lover-you-cant-be-wrong.html",
+      "title": "lover, you can’t be wrong",
+      "paragraph": 1508,
+      "pattern": "dd-fucks-into-him",
+      "engine": {
+        "cat": "anal",
+        "kind": "act",
+        "act": "anal sex",
+        "a": "Tommy Hagan",
+        "b": "Steve Harrington",
+        "role": null
+      },
+      "scope": "performed penile anal sex",
+      "pastLabel": "wrong",
+      "labelWeight": 0.9,
+      "labelSourceClass": null,
+      "group": "participants",
+      "assessment": "error",
+      "reviewerConfidence": 0.999,
+      "reason": "A second penetration pattern makes the same absent-friend substitution on this sentence.",
+      "labelReferences": []
+    },
+    {
+      "key": "push-into#48856870",
+      "fic": "lover-you-cant-be-wrong.html",
+      "title": "lover, you can’t be wrong",
+      "paragraph": 1508,
+      "pattern": "push-into",
+      "engine": {
+        "cat": "anal",
+        "kind": "act",
+        "act": "anal sex",
+        "a": "Tommy Hagan",
+        "b": "Steve Harrington",
+        "role": null
+      },
+      "scope": "performed penile anal sex",
+      "pastLabel": "wrong",
+      "labelWeight": 0.9,
+      "labelSourceClass": null,
+      "group": "participants",
+      "assessment": "error",
+      "reviewerConfidence": 0.999,
+      "reason": "The named partner resumes thrusting; the engine substitutes an absent former friend.",
+      "labelReferences": []
+    },
+    {
+      "key": "inside~elided#6f9305c2",
+      "fic": "lover-you-cant-be-wrong.html",
+      "title": "lover, you can’t be wrong",
+      "paragraph": 1510,
+      "pattern": "inside~elided",
+      "engine": {
+        "cat": "anal",
+        "kind": "hypothetical",
+        "act": "anal sex",
+        "a": "Steve Harrington",
+        "b": "Eddie Munson",
+        "role": "top"
+      },
+      "scope": "other anal-category reading",
+      "pastLabel": "wrong",
+      "labelWeight": 0.9,
+      "labelSourceClass": null,
+      "group": "participants",
+      "assessment": "error",
+      "reviewerConfidence": 0.99,
+      "reason": "The receptive adult imagines unprotected ejaculation from the penetrator; the engine credits the receptive adult with the penetrating role.",
+      "labelReferences": []
+    },
+    {
+      "key": "spread-legs~elided#13e26340",
+      "fic": "more-views.html",
+      "title": "More Views. More Money.",
+      "paragraph": 886,
+      "pattern": "spread-legs~elided",
+      "engine": {
+        "cat": "anal",
+        "kind": "prep",
+        "act": "spreading their legs",
+        "a": "Sam Winchester",
+        "b": "Dean Winchester",
+        "role": "bottom"
+      },
+      "scope": "other anal-category reading",
+      "pastLabel": "wrong",
+      "labelWeight": 1,
+      "labelSourceClass": null,
+      "group": "participants",
+      "assessment": "error",
+      "reviewerConfidence": 0.999,
+      "reason": "The partner spreads the receiver's legs; the engine credits a third character with the receptive preparation.",
+      "labelReferences": [
+        {
+          "file": "tests/labels/review-2026-10-03.json",
+          "source": "saved audit review",
+          "reviewerConfidence": null,
+          "hasClaimIdentity": false
+        }
+      ]
+    },
+    {
+      "key": "fuck~elided#1d5d327c",
+      "fic": "needing-the-knot.html",
+      "title": "Needing the Knot",
+      "paragraph": 19,
+      "pattern": "fuck~elided",
+      "engine": {
+        "cat": "anal",
+        "kind": "wanted",
+        "act": "anal sex",
+        "a": "Dean Winchester",
+        "b": "Castiel",
+        "role": "top"
+      },
+      "scope": "other anal-category reading",
+      "pastLabel": "wrong",
+      "labelWeight": 0.9,
+      "labelSourceClass": null,
+      "group": "participants",
+      "assessment": "error",
+      "reviewerConfidence": 0.999,
+      "reason": "The adult desires to be knotted by the visiting partner; the engine assigns him the top-directed desire.",
+      "labelReferences": []
+    },
+    {
+      "key": "fuck~elided#dd9758fc",
+      "fic": "panuelo-melody.html",
+      "title": "pañuelo melody",
+      "paragraph": 1391,
+      "pattern": "fuck~elided",
+      "engine": {
+        "cat": "anal",
+        "kind": "wanted",
+        "act": "anal sex",
+        "a": "Henry Fox-Mountchristen-Windsor",
+        "b": "Alex Claremont-Diaz",
+        "role": "top"
+      },
+      "scope": "other anal-category reading",
+      "pastLabel": "wrong",
+      "labelWeight": 0.9,
+      "labelSourceClass": null,
+      "group": "participants",
+      "assessment": "error",
+      "reviewerConfidence": 0.999,
+      "reason": "The adult moves his empty anus backward wanting to receive penetration, not to penetrate his partner.",
+      "labelReferences": []
+    },
+    {
+      "key": "rock-into#e4270918",
+      "fic": "panuelo-melody.html",
+      "title": "pañuelo melody",
+      "paragraph": 1732,
+      "pattern": "rock-into",
+      "engine": {
+        "cat": "anal",
+        "kind": "act",
+        "act": "anal sex",
+        "a": "Henry Fox-Mountchristen-Windsor",
+        "b": "Alex Claremont-Diaz",
+        "role": null
+      },
+      "scope": "performed penile anal sex",
+      "pastLabel": "wrong",
+      "labelWeight": 0.9,
+      "labelSourceClass": null,
+      "group": "participants",
+      "assessment": "error",
+      "reviewerConfidence": 0.999,
+      "reason": "The partner's arms hold the receiver while the partner drives his penis deeper; the engine reverses their roles.",
+      "labelReferences": []
+    },
+    {
+      "key": "push-into#2b157886",
+      "fic": "please.html",
+      "title": "please turn on your magic beam (mr sandman bring me a dream)",
+      "paragraph": 3849,
+      "pattern": "push-into",
+      "engine": {
+        "cat": "anal",
+        "kind": "act",
+        "act": "anal sex",
+        "a": "Will Byers",
+        "b": "Eddie Munson",
+        "role": null
+      },
+      "scope": "performed penile anal sex",
+      "pastLabel": "wrong",
+      "labelWeight": 1,
+      "labelSourceClass": null,
+      "group": "participants",
+      "assessment": "error",
+      "reviewerConfidence": 0.999,
+      "reason": "The named adult partner is penetrating the adult viewpoint character; an unrelated character is selected as penetrator and the actual penetrator becomes the receiver.",
+      "labelReferences": [
+        {
+          "file": "tests/labels/batch-suspect-three-4dd3a27d25b0.json",
+          "source": "saved audit review",
+          "reviewerConfidence": null,
+          "hasClaimIdentity": true
+        }
+      ]
+    },
+    {
+      "key": "came-inside#ff0b155e",
+      "fic": "prince-prisoner-puppy.html",
+      "title": "Prince, Prisoner, Puppy, Parent",
+      "paragraph": 507,
+      "pattern": "came-inside",
+      "engine": {
+        "cat": "anal",
+        "kind": "act",
+        "act": "anal sex",
+        "a": "Telemachus",
+        "b": "Antinous",
+        "role": null
+      },
+      "scope": "performed penile anal sex",
+      "pastLabel": "wrong",
+      "labelWeight": 1,
+      "labelSourceClass": null,
+      "group": "participants",
+      "assessment": "error",
+      "reviewerConfidence": 0.999,
+      "reason": "The king is the penetrating adult, but the smaller-man wording makes the engine credit the receptive adult with penetration.",
+      "labelReferences": [
+        {
+          "file": "tests/labels/zz-owner-claude-oct4-5-current.json",
+          "source": "saved audit review",
+          "reviewerConfidence": null,
+          "hasClaimIdentity": true
+        }
+      ]
+    },
+    {
+      "key": "dd3-slipping-second#b3c14af0",
+      "fic": "tricks-of-the-trade.html",
+      "title": "Tricks of the Trade",
+      "paragraph": 1696,
+      "pattern": "dd3-slipping-second",
+      "engine": {
+        "cat": "anal",
+        "kind": "act",
+        "act": "fingering",
+        "a": "Dean Winchester",
+        "b": "Castiel",
+        "role": null
+      },
+      "scope": "other anal-category reading",
+      "pastLabel": "wrong",
+      "labelWeight": 1,
+      "labelSourceClass": null,
+      "group": "participants",
+      "assessment": "error",
+      "reviewerConfidence": 0.999,
+      "reason": "The main couple watches a different adult Dom finger his own adult partner; their names are incorrectly substituted for the performers.",
+      "labelReferences": [
+        {
+          "file": "tests/labels/zz-owner-claude-oct4-5-current.json",
+          "source": "saved audit review",
+          "reviewerConfidence": null,
+          "hasClaimIdentity": true
+        }
+      ]
+    },
+    {
+      "key": "lined-up#785146cf",
+      "fic": "tricks-of-the-trade.html",
+      "title": "Tricks of the Trade",
+      "paragraph": 1774,
+      "pattern": "lined-up",
+      "engine": {
+        "cat": "anal",
+        "kind": "prep",
+        "act": "lining up",
+        "a": "Castiel",
+        "b": "Dean Winchester",
+        "role": "top"
+      },
+      "scope": "other anal-category reading",
+      "pastLabel": "wrong",
+      "labelWeight": 1,
+      "labelSourceClass": null,
+      "group": "participants",
+      "assessment": "error",
+      "reviewerConfidence": 0.999,
+      "reason": "The adult who prepared himself positions himself to receive his partner's penis; the engine makes his lining-up action top-directed.",
+      "labelReferences": [
+        {
+          "file": "tests/labels/zz-owner-claude-oct4-5-current.json",
+          "source": "saved audit review",
+          "reviewerConfidence": null,
+          "hasClaimIdentity": true
+        }
+      ]
+    },
+    {
+      "key": "plug-in-ass#8c3a1aed",
+      "fic": "tricks-of-the-trade.html",
+      "title": "Tricks of the Trade",
+      "paragraph": 2135,
+      "pattern": "plug-in-ass",
+      "engine": {
+        "cat": "anal",
+        "kind": "prep",
+        "act": "wearing a plug",
+        "a": "Castiel",
+        "b": "Dean Winchester",
+        "role": "bottom"
+      },
+      "scope": "other anal-category reading",
+      "pastLabel": "wrong",
+      "labelWeight": 1,
+      "labelSourceClass": null,
+      "group": "participants",
+      "assessment": "error",
+      "reviewerConfidence": 0.999,
+      "reason": "The viewpoint adult remembers the plug in his own anus; the engine assigns plug wearing to the partner whose speech prompted the thought.",
+      "labelReferences": [
+        {
+          "file": "tests/labels/zz-owner-claude-oct4-5-current.json",
+          "source": "saved audit review",
+          "reviewerConfidence": null,
+          "hasClaimIdentity": true
+        }
+      ]
+    },
+    {
+      "key": "came-inside~elided#b20bdf27",
+      "fic": "were-compeer.html",
+      "title": "A WereCompeer",
+      "paragraph": 248,
+      "pattern": "came-inside~elided",
+      "engine": {
+        "cat": "anal",
+        "kind": "act",
+        "act": "anal sex",
+        "a": "Vernon Boyd",
+        "b": "Derek Hale",
+        "role": null
+      },
+      "scope": "performed penile anal sex",
+      "pastLabel": "wrong",
+      "labelWeight": 1,
+      "labelSourceClass": null,
+      "group": "participants",
+      "assessment": "error",
+      "reviewerConfidence": 0.999,
+      "reason": "The actual pair is already having anal sex; an unrelated assistant is selected as penetrator and the actual penetrator as receiver. Ejaculation is outside, not inside.",
+      "labelReferences": [
+        {
+          "file": "tests/labels/zz-owner-claude-oct4-5-current.json",
+          "source": "saved audit review",
+          "reviewerConfidence": null,
+          "hasClaimIdentity": true
+        }
+      ]
+    },
+    {
+      "key": "prostate~elided#8672e3c3",
+      "fic": "whisper.html",
+      "title": "Whisper in my ear",
+      "paragraph": 452,
+      "pattern": "prostate~elided",
+      "engine": {
+        "cat": "anal",
+        "kind": "wanted",
+        "act": "anal sex",
+        "a": "Henry Fox-Mountchristen-Windsor",
+        "b": "Alex Claremont-Diaz",
+        "role": "top"
+      },
+      "scope": "other anal-category reading",
+      "pastLabel": "wrong",
+      "labelWeight": 1,
+      "labelSourceClass": null,
+      "group": "participants",
+      "assessment": "error",
+      "reviewerConfidence": 0.999,
+      "reason": "The receiver asks for more stimulation as his partner's thrusts reach his prostate; the engine turns that into a top-directed desire for the receiver.",
+      "labelReferences": [
+        {
+          "file": "tests/labels/zz-owner-claude-oct4-5-current.json",
+          "source": "saved audit review",
+          "reviewerConfidence": null,
+          "hasClaimIdentity": true
+        }
+      ]
+    },
+    {
+      "key": "bounce-in-lap#9874619d",
+      "fic": "wretched-rhetoric.html",
+      "title": "wretched rhetoric",
+      "paragraph": 1034,
+      "pattern": "bounce-in-lap",
+      "engine": {
+        "cat": "anal",
+        "kind": "act",
+        "act": "anal sex (riding)",
+        "a": "Anakin Skywalker",
+        "b": "Obi-Wan Kenobi",
+        "role": null
+      },
+      "scope": "performed penile anal sex",
+      "pastLabel": "wrong",
+      "labelWeight": 0.9,
+      "labelSourceClass": null,
+      "group": "participants",
+      "assessment": "error",
+      "reviewerConfidence": 0.999,
+      "reason": "The adult riding is the receiver and his partner is the penetrator; the engine reverses the two because the sentence starts with the partner's hands.",
+      "labelReferences": []
+    },
+    {
+      "key": "passive-fucked~elided#e88b92f5",
+      "fic": "belonging.html",
+      "title": "Belonging is Longing is Now",
+      "paragraph": 691,
+      "pattern": "passive-fucked~elided",
+      "engine": {
+        "cat": "anal",
+        "kind": "act",
+        "act": "anal sex",
+        "a": "Castiel",
+        "b": "Dean Winchester",
+        "role": null
+      },
+      "scope": "performed penile anal sex",
+      "pastLabel": "wrong",
+      "labelWeight": 1,
+      "labelSourceClass": null,
+      "group": "instrument",
+      "assessment": "error",
+      "reviewerConfidence": 0.999,
+      "reason": "A plug is held at the entrance and the receiver anticipates being stretched for it; the engine invents penile anal sex.",
+      "labelReferences": [
+        {
+          "file": "tests/labels/zz-owner-claude-oct4-5-current.json",
+          "source": "saved audit review",
+          "reviewerConfidence": null,
+          "hasClaimIdentity": true
+        }
+      ]
+    },
+    {
+      "key": "pushed-in~elided#76b11636",
+      "fic": "belonging.html",
+      "title": "Belonging is Longing is Now",
+      "paragraph": 1356,
+      "pattern": "pushed-in~elided",
+      "engine": {
+        "cat": "anal",
+        "kind": "act",
+        "act": "anal sex",
+        "a": "Castiel",
+        "b": "Dean Winchester",
+        "role": null
+      },
+      "scope": "performed penile anal sex",
+      "pastLabel": "wrong",
+      "labelWeight": 1,
+      "labelSourceClass": null,
+      "group": "instrument",
+      "assessment": "error",
+      "reviewerConfidence": 0.999,
+      "reason": "The adult is trying to insert an explicitly introduced plug; the engine treats it as partnered penile penetration, before successful insertion occurs.",
+      "labelReferences": [
+        {
+          "file": "tests/labels/zz-owner-claude-oct4-5-current.json",
+          "source": "saved audit review",
+          "reviewerConfidence": null,
+          "hasClaimIdentity": true
+        }
+      ]
+    },
+    {
+      "key": "push-into#d7bf8d42",
+      "fic": "belonging.html",
+      "title": "Belonging is Longing is Now",
+      "paragraph": 1460,
+      "pattern": "push-into",
+      "engine": {
+        "cat": "anal",
+        "kind": "act",
+        "act": "anal sex",
+        "a": "Castiel",
+        "b": "Dean Winchester",
+        "role": null
+      },
+      "scope": "performed penile anal sex",
+      "pastLabel": "wrong",
+      "labelWeight": 1,
+      "labelSourceClass": null,
+      "group": "instrument",
+      "assessment": "error",
+      "reviewerConfidence": 0.999,
+      "reason": "The partner drives an explicitly identified toy against the prostate, not his penis.",
+      "labelReferences": [
+        {
+          "file": "tests/labels/zz-owner-claude-oct4-5-current.json",
+          "source": "saved audit review",
+          "reviewerConfidence": null,
+          "hasClaimIdentity": true
+        }
+      ]
+    },
+    {
+      "key": "push-into~elided#e13610cb",
+      "fic": "belonging.html",
+      "title": "Belonging is Longing is Now",
+      "paragraph": 2165,
+      "pattern": "push-into~elided",
+      "engine": {
+        "cat": "anal",
+        "kind": "act",
+        "act": "anal sex",
+        "a": "Castiel",
+        "b": "Dean Winchester",
+        "role": null
+      },
+      "scope": "performed penile anal sex",
+      "pastLabel": "wrong",
+      "labelWeight": 1,
+      "labelSourceClass": null,
+      "group": "instrument",
+      "assessment": "error",
+      "reviewerConfidence": 0.999,
+      "reason": "Two fingers push semen farther into the receiver; vague fucking wording causes a false penile-penetration reading.",
+      "labelReferences": [
+        {
+          "file": "tests/labels/zz-owner-claude-oct4-5-current.json",
+          "source": "saved audit review",
+          "reviewerConfidence": null,
+          "hasClaimIdentity": true
+        }
+      ]
+    },
+    {
+      "key": "stretched-open~elided#db234e3",
+      "fic": "belonging.html",
+      "title": "Belonging is Longing is Now",
+      "paragraph": 3446,
+      "pattern": "stretched-open~elided",
+      "engine": {
+        "cat": "anal",
+        "kind": "act",
+        "act": "fingering",
+        "a": "Castiel",
+        "b": "Dean Winchester",
+        "role": null
+      },
+      "scope": "other anal-category reading",
+      "pastLabel": "wrong",
+      "labelWeight": 1,
+      "labelSourceClass": null,
+      "group": "instrument",
+      "assessment": "error",
+      "reviewerConfidence": 0.999,
+      "reason": "The receiver is stretched by an explicitly named penis; the engine calls it fingering.",
+      "labelReferences": [
+        {
+          "file": "tests/labels/zz-owner-claude-oct4-5-current.json",
+          "source": "saved audit review",
+          "reviewerConfidence": null,
+          "hasClaimIdentity": true
+        }
+      ]
+    },
+    {
+      "key": "stretched-open#23e1f1f5",
+      "fic": "belonging.html",
+      "title": "Belonging is Longing is Now",
+      "paragraph": 3867,
+      "pattern": "stretched-open",
+      "engine": {
+        "cat": "anal",
+        "kind": "act",
+        "act": "fingering",
+        "a": "Castiel",
+        "b": "Dean Winchester",
+        "role": null
+      },
+      "scope": "other anal-category reading",
+      "pastLabel": "wrong",
+      "labelWeight": 1,
+      "labelSourceClass": null,
+      "group": "instrument",
+      "assessment": "error",
+      "reviewerConfidence": 0.999,
+      "reason": "Ongoing penile thrusts and prostate contact are mistaken for finger insertion.",
+      "labelReferences": [
+        {
+          "file": "tests/labels/zz-owner-claude-oct4-5-current.json",
+          "source": "saved audit review",
+          "reviewerConfidence": null,
+          "hasClaimIdentity": true
+        }
+      ]
+    },
+    {
+      "key": "riding~elided#57c63cb5",
+      "fic": "belonging.html",
+      "title": "Belonging is Longing is Now",
+      "paragraph": 4708,
+      "pattern": "riding~elided",
+      "engine": {
+        "cat": "anal",
+        "kind": "act",
+        "act": "anal sex (riding)",
+        "a": "Castiel",
+        "b": "Dean Winchester",
+        "role": null
+      },
+      "scope": "performed penile anal sex",
+      "pastLabel": "wrong",
+      "labelWeight": 1,
+      "labelSourceClass": null,
+      "group": "instrument",
+      "assessment": "error",
+      "reviewerConfidence": 0.999,
+      "reason": "The receiver pushes back onto fingers the partner is keeping still, not onto a penis.",
+      "labelReferences": [
+        {
+          "file": "tests/labels/zz-owner-claude-oct4-5-current.json",
+          "source": "saved audit review",
+          "reviewerConfidence": null,
+          "hasClaimIdentity": true
+        }
+      ]
+    },
+    {
+      "key": "fill~elided#c9588eb8",
+      "fic": "belonging.html",
+      "title": "Belonging is Longing is Now",
+      "paragraph": 5047,
+      "pattern": "fill~elided",
+      "engine": {
+        "cat": "anal",
+        "kind": "act",
+        "act": "anal sex",
+        "a": "Castiel",
+        "b": "Dean Winchester",
+        "role": null
+      },
+      "scope": "performed penile anal sex",
+      "pastLabel": "wrong",
+      "labelWeight": 1,
+      "labelSourceClass": null,
+      "group": "instrument",
+      "assessment": "error",
+      "reviewerConfidence": 0.999,
+      "reason": "A mechanical arm inserts a dildo; the engine calls it penile penetration by the partner.",
+      "labelReferences": [
+        {
+          "file": "tests/labels/zz-owner-claude-oct4-5-current.json",
+          "source": "saved audit review",
+          "reviewerConfidence": null,
+          "hasClaimIdentity": true
+        }
+      ]
+    },
+    {
+      "key": "rock-into#4b9d076d",
+      "fic": "belonging.html",
+      "title": "Belonging is Longing is Now",
+      "paragraph": 5213,
+      "pattern": "rock-into",
+      "engine": {
+        "cat": "anal",
+        "kind": "act",
+        "act": "anal sex",
+        "a": "Castiel",
+        "b": "Dean Winchester",
+        "role": null
+      },
+      "scope": "performed penile anal sex",
+      "pastLabel": "wrong",
+      "labelWeight": 1,
+      "labelSourceClass": null,
+      "group": "instrument",
+      "assessment": "error",
+      "reviewerConfidence": 0.999,
+      "reason": "The penetrating cock is a machine-mounted dildo while the partner is elsewhere giving instructions.",
+      "labelReferences": [
+        {
+          "file": "tests/labels/zz-owner-claude-oct4-5-current.json",
+          "source": "saved audit review",
+          "reviewerConfidence": null,
+          "hasClaimIdentity": true
+        }
+      ]
+    },
+    {
+      "key": "takes-it-inside~elided#d8d15f76",
+      "fic": "belonging.html",
+      "title": "Belonging is Longing is Now",
+      "paragraph": 5235,
+      "pattern": "takes-it-inside~elided",
+      "engine": {
+        "cat": "anal",
+        "kind": "act",
+        "act": "anal sex",
+        "a": "Castiel",
+        "b": "Dean Winchester",
+        "role": null
+      },
+      "scope": "performed penile anal sex",
+      "pastLabel": "wrong",
+      "labelWeight": 1,
+      "labelSourceClass": null,
+      "group": "instrument",
+      "assessment": "error",
+      "reviewerConfidence": 0.999,
+      "reason": "The receiver moves onto an explicitly fake, machine-mounted cock; it is not the partner's penis.",
+      "labelReferences": [
+        {
+          "file": "tests/labels/zz-owner-claude-oct4-5-current.json",
+          "source": "saved audit review",
+          "reviewerConfidence": null,
+          "hasClaimIdentity": true
+        }
+      ]
+    },
+    {
+      "key": "push-into#8f6e3b8d",
+      "fic": "belonging.html",
+      "title": "Belonging is Longing is Now",
+      "paragraph": 5602,
+      "pattern": "push-into",
+      "engine": {
+        "cat": "anal",
+        "kind": "act",
+        "act": "anal sex",
+        "a": "Castiel",
+        "b": "Dean Winchester",
+        "role": null
+      },
+      "scope": "performed penile anal sex",
+      "pastLabel": "wrong",
+      "labelWeight": 1,
+      "labelSourceClass": null,
+      "group": "instrument",
+      "assessment": "error",
+      "reviewerConfidence": 0.999,
+      "reason": "The partner inserts an explicitly introduced chilled knot-shaped toy, not his penis.",
+      "labelReferences": [
+        {
+          "file": "tests/labels/zz-owner-claude-oct4-5-current.json",
+          "source": "saved audit review",
+          "reviewerConfidence": null,
+          "hasClaimIdentity": true
+        }
+      ]
+    },
+    {
+      "key": "stretched-open~elided#f6ac4163",
+      "fic": "icarus-burning.html",
+      "title": "Icarus, Burning",
+      "paragraph": 3263,
+      "pattern": "stretched-open~elided",
+      "engine": {
+        "cat": "anal",
+        "kind": "act",
+        "act": "fingering",
+        "a": "Samiel Tremark",
+        "b": "Jay",
+        "role": null
+      },
+      "scope": "other anal-category reading",
+      "pastLabel": "wrong",
+      "labelWeight": 0.9,
+      "labelSourceClass": null,
+      "group": "instrument",
+      "assessment": "error",
+      "reviewerConfidence": 0.99,
+      "reason": "The scene is continuing penile penetration; raising a leg for access does not establish inserted fingers.",
+      "labelReferences": []
+    },
+    {
+      "key": "push-into~elided#d98c1a33",
+      "fic": "lover-you-cant-be-wrong.html",
+      "title": "lover, you can’t be wrong",
+      "paragraph": 848,
+      "pattern": "push-into~elided",
+      "engine": {
+        "cat": "anal",
+        "kind": "hypothetical",
+        "act": "anal sex",
+        "a": "Steve Harrington",
+        "b": "Eddie Munson",
+        "role": "bottom"
+      },
+      "scope": "other anal-category reading",
+      "pastLabel": "wrong",
+      "labelWeight": 0.9,
+      "labelSourceClass": null,
+      "group": "instrument",
+      "assessment": "error",
+      "reviewerConfidence": 0.999,
+      "reason": "The explicitly imagined entry is with one finger, not penile penetration.",
+      "labelReferences": []
+    },
+    {
+      "key": "pushed-in#881d4aa9",
+      "fic": "lover-you-cant-be-wrong.html",
+      "title": "lover, you can’t be wrong",
+      "paragraph": 851,
+      "pattern": "pushed-in",
+      "engine": {
+        "cat": "anal",
+        "kind": "act",
+        "act": "anal sex",
+        "a": "Steve Harrington",
+        "b": "Eddie Munson",
+        "role": null
+      },
+      "scope": "performed penile anal sex",
+      "pastLabel": "wrong",
+      "labelWeight": 0.9,
+      "labelSourceClass": null,
+      "group": "instrument",
+      "assessment": "error",
+      "reviewerConfidence": 0.999,
+      "reason": "The adult pushes his own finger deeper during solo exploration, not his penis into his partner.",
+      "labelReferences": []
+    },
+    {
+      "key": "fingers-inside#45ab5ae3",
+      "fic": "lover-you-cant-be-wrong.html",
+      "title": "lover, you can’t be wrong",
+      "paragraph": 1506,
+      "pattern": "fingers-inside",
+      "engine": {
+        "cat": "anal",
+        "kind": "act",
+        "act": "fingering",
+        "a": "Eddie Munson",
+        "b": "Steve Harrington",
+        "role": null
+      },
+      "scope": "other anal-category reading",
+      "pastLabel": "wrong",
+      "labelWeight": 0.9,
+      "labelSourceClass": null,
+      "group": "instrument",
+      "assessment": "error",
+      "reviewerConfidence": 0.999,
+      "reason": "The partner withdraws his thumb and resumes forceful penile thrusts; the engine calls the new action finger insertion.",
+      "labelReferences": []
+    },
+    {
+      "key": "push-into~elided#45ab5ae3",
+      "fic": "lover-you-cant-be-wrong.html",
+      "title": "lover, you can’t be wrong",
+      "paragraph": 1506,
+      "pattern": "push-into~elided",
+      "engine": {
+        "cat": "anal",
+        "kind": "wanted",
+        "act": "fingering",
+        "a": "Eddie Munson",
+        "b": "Steve Harrington",
+        "role": "top"
+      },
+      "scope": "other anal-category reading",
+      "pastLabel": "wrong",
+      "labelWeight": 0.9,
+      "labelSourceClass": null,
+      "group": "instrument",
+      "assessment": "error",
+      "reviewerConfidence": 0.999,
+      "reason": "Withdrawal of a thumb is followed by actual penile thrusts; the engine makes this desired fingering, mixing both instrument and occurrence.",
+      "labelReferences": []
+    },
+    {
+      "key": "rock-into#19824871",
+      "fic": "needing-the-knot.html",
+      "title": "Needing the Knot",
+      "paragraph": 606,
+      "pattern": "rock-into",
+      "engine": {
+        "cat": "anal",
+        "kind": "act",
+        "act": "anal sex",
+        "a": "Castiel",
+        "b": "Dean Winchester",
+        "role": null
+      },
+      "scope": "performed penile anal sex",
+      "pastLabel": "wrong",
+      "labelWeight": 0.9,
+      "labelSourceClass": null,
+      "group": "instrument",
+      "assessment": "error",
+      "reviewerConfidence": 0.999,
+      "reason": "The penetrating instrument is a finger while the performer gives oral stimulation; vague pressing is misclassified as penile anal sex.",
+      "labelReferences": []
+    },
+    {
+      "key": "fuck#e858e9e4",
+      "fic": "needing-the-knot.html",
+      "title": "Needing the Knot",
+      "paragraph": 1133,
+      "pattern": "fuck",
+      "engine": {
+        "cat": "anal",
+        "kind": "act",
+        "act": "fingering",
+        "a": "Castiel",
+        "b": "Dean Winchester",
+        "role": null
+      },
+      "scope": "other anal-category reading",
+      "pastLabel": "wrong",
+      "labelWeight": 0.9,
+      "labelSourceClass": null,
+      "group": "instrument",
+      "assessment": "error",
+      "reviewerConfidence": 0.999,
+      "reason": "Explicit penile penetration continues; mention of fingers being licked causes the engine to call it fingering instead.",
+      "labelReferences": []
+    },
+    {
+      "key": "hole-around-name#8a328328",
+      "fic": "needing-the-knot.html",
+      "title": "Needing the Knot",
+      "paragraph": 1225,
+      "pattern": "hole-around-name",
+      "engine": {
+        "cat": "anal",
+        "kind": "act",
+        "act": "anal sex",
+        "a": "Dean Winchester",
+        "b": "Castiel",
+        "role": null
+      },
+      "scope": "performed penile anal sex",
+      "pastLabel": "wrong",
+      "labelWeight": 0.9,
+      "labelSourceClass": null,
+      "group": "instrument",
+      "assessment": "error",
+      "reviewerConfidence": 0.999,
+      "reason": "The receiver clenches around his partner's inserted fingers, not his penis.",
+      "labelReferences": []
+    },
+    {
+      "key": "clenched-around#caf612f6",
+      "fic": "panuelo-melody.html",
+      "title": "pañuelo melody",
+      "paragraph": 1572,
+      "pattern": "clenched-around",
+      "engine": {
+        "cat": "anal",
+        "kind": "act",
+        "act": "fingering",
+        "a": "Henry Fox-Mountchristen-Windsor",
+        "b": "Alex Claremont-Diaz",
+        "role": null
+      },
+      "scope": "other anal-category reading",
+      "pastLabel": "wrong",
+      "labelWeight": 0.9,
+      "labelSourceClass": null,
+      "group": "instrument",
+      "assessment": "error",
+      "reviewerConfidence": 0.999,
+      "reason": "The receiver clenches around the inserted penis; nearby fingers squeeze an external body part and are wrongly carried over as the instrument. The engine also reverses performer and receiver.",
+      "labelReferences": []
+    },
+    {
+      "key": "prostate#1ddef398",
+      "fic": "prince-prisoner-puppy.html",
+      "title": "Prince, Prisoner, Puppy, Parent",
+      "paragraph": 70,
+      "pattern": "prostate",
+      "engine": {
+        "cat": "anal",
+        "kind": "act",
+        "act": "anal sex",
+        "a": "Antinous",
+        "b": "Telemachus",
+        "role": null
+      },
+      "scope": "performed penile anal sex",
+      "pastLabel": "wrong",
+      "labelWeight": 1,
+      "labelSourceClass": null,
+      "group": "instrument",
+      "assessment": "error",
+      "reviewerConfidence": 0.999,
+      "reason": "The internal massage continues with one finger explicitly left inside earlier, not with a penis.",
+      "labelReferences": [
+        {
+          "file": "tests/labels/zz-owner-claude-oct4-5-current.json",
+          "source": "saved audit review",
+          "reviewerConfidence": null,
+          "hasClaimIdentity": true
+        }
+      ]
+    },
+    {
+      "key": "prostate#9324cc2e",
+      "fic": "tricks-of-the-trade.html",
+      "title": "Tricks of the Trade",
+      "paragraph": 415,
+      "pattern": "prostate",
+      "engine": {
+        "cat": "anal",
+        "kind": "act",
+        "act": "anal sex",
+        "a": "Castiel",
+        "b": "Dean Winchester",
+        "role": null
+      },
+      "scope": "performed penile anal sex",
+      "pastLabel": "wrong",
+      "labelWeight": 1,
+      "labelSourceClass": null,
+      "group": "instrument",
+      "assessment": "error",
+      "reviewerConfidence": 0.999,
+      "reason": "Prostate contact is explicitly produced by curled fingers, not a penis.",
+      "labelReferences": [
+        {
+          "file": "tests/labels/zz-owner-claude-oct4-5-current.json",
+          "source": "saved audit review",
+          "reviewerConfidence": null,
+          "hasClaimIdentity": true
+        }
+      ]
+    },
+    {
+      "key": "pushed-in#a9ab8ca1",
+      "fic": "tricks-of-the-trade.html",
+      "title": "Tricks of the Trade",
+      "paragraph": 456,
+      "pattern": "pushed-in",
+      "engine": {
+        "cat": "anal",
+        "kind": "act",
+        "act": "fingering",
+        "a": "Castiel",
+        "b": "Dean Winchester",
+        "role": null
+      },
+      "scope": "other anal-category reading",
+      "pastLabel": "wrong",
+      "labelWeight": 1,
+      "labelSourceClass": null,
+      "group": "instrument",
+      "assessment": "error",
+      "reviewerConfidence": 0.999,
+      "reason": "The lubricated penis enters after toy and finger preparation; the engine incorrectly carries the previous fingers forward.",
+      "labelReferences": [
+        {
+          "file": "tests/labels/zz-owner-claude-oct4-5-current.json",
+          "source": "saved audit review",
+          "reviewerConfidence": null,
+          "hasClaimIdentity": true
+        }
+      ]
+    },
+    {
+      "key": "prostate~elided#9d31dd8a",
+      "fic": "were-compeer.html",
+      "title": "A WereCompeer",
+      "paragraph": 212,
+      "pattern": "prostate~elided",
+      "engine": {
+        "cat": "anal",
+        "kind": "act",
+        "act": "anal sex",
+        "a": "Derek Hale",
+        "b": "Stiles Stilinski",
+        "role": null
+      },
+      "scope": "performed penile anal sex",
+      "pastLabel": "wrong",
+      "labelWeight": 0.9,
+      "labelSourceClass": null,
+      "group": "instrument",
+      "assessment": "error",
+      "reviewerConfidence": 0.999,
+      "reason": "The sweet spot is reached by inserted fingers during a handjob, not penile penetration.",
+      "labelReferences": []
+    },
+    {
+      "key": "fingers-to-hole#b249daf8",
+      "fic": "belonging.html",
+      "title": "Belonging is Longing is Now",
+      "paragraph": 1227,
+      "pattern": "fingers-to-hole",
+      "engine": {
+        "cat": "anal",
+        "kind": "act",
+        "act": "fingering",
+        "a": "Castiel",
+        "b": "Dean Winchester",
+        "role": null
+      },
+      "scope": "other anal-category reading",
+      "pastLabel": "wrong",
+      "labelWeight": 1,
+      "labelSourceClass": null,
+      "group": "external-contact",
+      "assessment": "error",
+      "reviewerConfidence": 0.999,
+      "reason": "Fingers press at the rim during orgasm; no finger insertion is described.",
+      "labelReferences": [
+        {
+          "file": "tests/labels/zz-owner-claude-oct4-5-current.json",
+          "source": "saved audit review",
+          "reviewerConfidence": null,
+          "hasClaimIdentity": true
+        }
+      ]
+    },
+    {
+      "key": "adds-finger#264f1fa0",
+      "fic": "belonging.html",
+      "title": "Belonging is Longing is Now",
+      "paragraph": 2439,
+      "pattern": "adds-finger",
+      "engine": {
+        "cat": "anal",
+        "kind": "act",
+        "act": "fingering",
+        "a": "Castiel",
+        "b": "Dean Winchester",
+        "role": null
+      },
+      "scope": "other anal-category reading",
+      "pastLabel": "wrong",
+      "labelWeight": 1,
+      "labelSourceClass": null,
+      "group": "external-contact",
+      "assessment": "error",
+      "reviewerConfidence": 0.999,
+      "reason": "A finger passes between the buttocks and rubs a dry rim, then withdraws externally; this is not finger insertion.",
+      "labelReferences": [
+        {
+          "file": "tests/labels/zz-owner-claude-oct4-5-current.json",
+          "source": "saved audit review",
+          "reviewerConfidence": null,
+          "hasClaimIdentity": true
+        }
+      ]
+    },
+    {
+      "key": "finger-noun-to-hole#60e2c4bd",
+      "fic": "dogbird.html",
+      "title": "like a dog with a bird at your door",
+      "paragraph": 1290,
+      "pattern": "finger-noun-to-hole",
+      "engine": {
+        "cat": "anal",
+        "kind": "act",
+        "act": "fingering",
+        "a": "Evan \"Buck\" Buckley",
+        "b": "Eddie Diaz",
+        "role": null
+      },
+      "scope": "other anal-category reading",
+      "pastLabel": "wrong",
+      "labelWeight": 0.9,
+      "labelSourceClass": null,
+      "group": "external-contact",
+      "assessment": "error",
+      "reviewerConfidence": 0.999,
+      "reason": "Initial fingertip contact circles the rim; the first insertion happens in the following paragraph.",
+      "labelReferences": []
+    },
+    {
+      "key": "dd-grinds-onto-cock#af6573df",
+      "fic": "foxden-park.html",
+      "title": "Foxden Park",
+      "paragraph": 1129,
+      "pattern": "dd-grinds-onto-cock",
+      "engine": {
+        "cat": "anal",
+        "kind": "act",
+        "act": "anal sex",
+        "a": "Alex Claremont-Diaz",
+        "b": "Henry Fox-Mountchristen-Windsor",
+        "role": null
+      },
+      "scope": "performed penile anal sex",
+      "pastLabel": "wrong",
+      "labelWeight": 0.9,
+      "labelSourceClass": null,
+      "group": "external-contact",
+      "assessment": "error",
+      "reviewerConfidence": 0.999,
+      "reason": "Grinding brings the penis up against the desired opening; insertion occurs later, not in this sentence.",
+      "labelReferences": []
+    },
+    {
+      "key": "penis-fills#dc1a78ed",
+      "fic": "hate.html",
+      "title": "Hate the Way It Feels So Good",
+      "paragraph": 1518,
+      "pattern": "penis-fills",
+      "engine": {
+        "cat": "anal",
+        "kind": "act",
+        "act": "anal sex",
+        "a": "Eddie Munson",
+        "b": "Steve Harrington",
+        "role": null
+      },
+      "scope": "performed penile anal sex",
+      "pastLabel": "wrong",
+      "labelWeight": 1,
+      "labelSourceClass": null,
+      "group": "external-contact",
+      "assessment": "error",
+      "reviewerConfidence": 0.96,
+      "reason": "The tip presses at the rim but the receiver does not yet give way; full insertion follows later. Treat this as attempted entry rather than completed penetration.",
+      "labelReferences": [
+        {
+          "file": "tests/labels/audit-2026-10-03.json",
+          "source": "saved audit review",
+          "reviewerConfidence": null,
+          "hasClaimIdentity": false
+        }
+      ]
+    },
+    {
+      "key": "pushed-in#731a8cd",
+      "fic": "heavyweight.html",
+      "title": "Heavyweight",
+      "paragraph": 2192,
+      "pattern": "pushed-in",
+      "engine": {
+        "cat": "anal",
+        "kind": "act",
+        "act": "anal sex",
+        "a": "Castiel",
+        "b": "Dean Winchester",
+        "role": null
+      },
+      "scope": "performed penile anal sex",
+      "pastLabel": "wrong",
+      "labelWeight": 0.9,
+      "labelSourceClass": null,
+      "group": "external-contact",
+      "assessment": "error",
+      "reviewerConfidence": 0.999,
+      "reason": "The adults press their bare chests together while kissing; this is not anal insertion.",
+      "labelReferences": []
+    },
+    {
+      "key": "dd-finger-slips-into#f29df6ee",
+      "fic": "heavyweight.html",
+      "title": "Heavyweight",
+      "paragraph": 4103,
+      "pattern": "dd-finger-slips-into",
+      "engine": {
+        "cat": "anal",
+        "kind": "act",
+        "act": "fingering",
+        "a": "Castiel",
+        "b": "Dean Winchester",
+        "role": null
+      },
+      "scope": "other anal-category reading",
+      "pastLabel": "wrong",
+      "labelWeight": 0.9,
+      "labelSourceClass": null,
+      "group": "external-contact",
+      "assessment": "error",
+      "reviewerConfidence": 0.99,
+      "reason": "A second pattern treats the same external rim contact as penetrative fingering, although insertion has not begun.",
+      "labelReferences": []
+    },
+    {
+      "key": "fingers-inside#f29df6ee",
+      "fic": "heavyweight.html",
+      "title": "Heavyweight",
+      "paragraph": 4103,
+      "pattern": "fingers-inside",
+      "engine": {
+        "cat": "anal",
+        "kind": "act",
+        "act": "fingering",
+        "a": "Castiel",
+        "b": "Dean Winchester",
+        "role": null
+      },
+      "scope": "other anal-category reading",
+      "pastLabel": "wrong",
+      "labelWeight": 0.9,
+      "labelSourceClass": null,
+      "group": "external-contact",
+      "assessment": "error",
+      "reviewerConfidence": 0.99,
+      "reason": "The fingers circle the anal rim; the next paragraph explicitly postpones insertion.",
+      "labelReferences": []
+    },
+    {
+      "key": "adds-finger~elided#752eeb59",
+      "fic": "icarus-burning.html",
+      "title": "Icarus, Burning",
+      "paragraph": 3242,
+      "pattern": "adds-finger~elided",
+      "engine": {
+        "cat": "anal",
+        "kind": "hypothetical",
+        "act": "fingering",
+        "a": "Samiel Tremark",
+        "b": "Jay",
+        "role": "bottom"
+      },
+      "scope": "other anal-category reading",
+      "pastLabel": "wrong",
+      "labelWeight": 0.9,
+      "labelSourceClass": null,
+      "group": "external-contact",
+      "assessment": "error",
+      "reviewerConfidence": 0.99,
+      "reason": "A finger travels externally along the cleft and rubs the rim; it is not inserted, even hypothetically.",
+      "labelReferences": []
+    },
+    {
+      "key": "push-into~elided#23733bb4",
+      "fic": "icarus-burning.html",
+      "title": "Icarus, Burning",
+      "paragraph": 8024,
+      "pattern": "push-into~elided",
+      "engine": {
+        "cat": "anal",
+        "kind": "act",
+        "act": "anal sex",
+        "a": "Samiel Tremark",
+        "b": "Jason Lane",
+        "role": null
+      },
+      "scope": "performed penile anal sex",
+      "pastLabel": "wrong",
+      "labelWeight": 0.9,
+      "labelSourceClass": null,
+      "group": "external-contact",
+      "assessment": "error",
+      "reviewerConfidence": 0.999,
+      "reason": "The partner pushes upward while still clothed, before undressing and insertion several paragraphs later.",
+      "labelReferences": []
+    },
+    {
+      "key": "stretched-open~elided#1edf3764",
+      "fic": "icarus-burning.html",
+      "title": "Icarus, Burning",
+      "paragraph": 8063,
+      "pattern": "stretched-open~elided",
+      "engine": {
+        "cat": "anal",
+        "kind": "act",
+        "act": "fingering",
+        "a": "Samiel Tremark",
+        "b": "Jay",
+        "role": null
+      },
+      "scope": "other anal-category reading",
+      "pastLabel": "wrong",
+      "labelWeight": 0.9,
+      "labelSourceClass": null,
+      "group": "external-contact",
+      "assessment": "error",
+      "reviewerConfidence": 0.99,
+      "reason": "A hand lifts a thigh during repositioning; no new finger insertion is described.",
+      "labelReferences": []
+    },
+    {
+      "key": "thrusts-filling#1edf3764",
+      "fic": "icarus-burning.html",
+      "title": "Icarus, Burning",
+      "paragraph": 8063,
+      "pattern": "thrusts-filling",
+      "engine": {
+        "cat": "anal",
+        "kind": "act",
+        "act": "anal sex",
+        "a": "Samiel Tremark",
+        "b": "Jay",
+        "role": null
+      },
+      "scope": "performed penile anal sex",
+      "pastLabel": "wrong",
+      "labelWeight": 0.9,
+      "labelSourceClass": null,
+      "group": "external-contact",
+      "assessment": "error",
+      "reviewerConfidence": 0.98,
+      "reason": "The adults briefly separate and reposition; lifting a thigh to move closer does not itself describe a new insertion.",
+      "labelReferences": []
+    },
+    {
+      "key": "sank-down#3d221efc",
+      "fic": "kissed.html",
+      "title": "I know I've kissed you before (Can I try again)",
+      "paragraph": 4318,
+      "pattern": "sank-down",
+      "engine": {
+        "cat": "anal",
+        "kind": "act",
+        "act": "anal sex (riding)",
+        "a": "Eddie Munson",
+        "b": "Steve Harrington",
+        "role": null
+      },
+      "scope": "performed penile anal sex",
+      "pastLabel": "wrong",
+      "labelWeight": 1,
+      "labelSourceClass": null,
+      "group": "external-contact",
+      "assessment": "error",
+      "reviewerConfidence": 0.99,
+      "reason": "The penetrator lowers himself into a post-orgasm embrace while remaining inside; the receiver is not riding him.",
+      "labelReferences": [
+        {
+          "file": "tests/labels/audit-2026-10-03.json",
+          "source": "saved audit review",
+          "reviewerConfidence": null,
+          "hasClaimIdentity": false
+        }
+      ]
+    },
+    {
+      "key": "fingers-into#bf21f815",
+      "fic": "lover-you-cant-be-wrong.html",
+      "title": "lover, you can’t be wrong",
+      "paragraph": 1488,
+      "pattern": "fingers-into",
+      "engine": {
+        "cat": "anal",
+        "kind": "act",
+        "act": "fingering",
+        "a": "Eddie Munson",
+        "b": "Steve Harrington",
+        "role": null
+      },
+      "scope": "other anal-category reading",
+      "pastLabel": "wrong",
+      "labelWeight": 0.9,
+      "labelSourceClass": null,
+      "group": "external-contact",
+      "assessment": "error",
+      "reviewerConfidence": 0.999,
+      "reason": "The thumb initially presses against the stretched rim beside an inserted penis; thumb insertion happens several paragraphs later.",
+      "labelReferences": []
+    },
+    {
+      "key": "hole-around#39258cd3",
+      "fic": "needing-the-knot.html",
+      "title": "Needing the Knot",
+      "paragraph": 1106,
+      "pattern": "hole-around",
+      "engine": {
+        "cat": "anal",
+        "kind": "touch",
+        "act": "penis against buttocks",
+        "a": "Castiel",
+        "b": "Dean Winchester",
+        "role": "top"
+      },
+      "scope": "other anal-category reading",
+      "pastLabel": "wrong",
+      "labelWeight": 0.9,
+      "labelSourceClass": null,
+      "group": "external-contact",
+      "assessment": "error",
+      "reviewerConfidence": 0.99,
+      "reason": "The receiver is already riding the inserted penis, confirmed by the immediately following thrust; the engine demotes this to external buttock contact.",
+      "labelReferences": []
+    },
+    {
+      "key": "passive-fucked~elided#dd9758fc",
+      "fic": "panuelo-melody.html",
+      "title": "pañuelo melody",
+      "paragraph": 1391,
+      "pattern": "passive-fucked~elided",
+      "engine": {
+        "cat": "anal",
+        "kind": "act",
+        "act": "anal sex",
+        "a": "Alex Claremont-Diaz",
+        "b": "Henry Fox-Mountchristen-Windsor",
+        "role": null
+      },
+      "scope": "performed penile anal sex",
+      "pastLabel": "wrong",
+      "labelWeight": 0.9,
+      "labelSourceClass": null,
+      "group": "external-contact",
+      "assessment": "error",
+      "reviewerConfidence": 0.999,
+      "reason": "The adult moves his buttocks against empty space and wants to be filled; no partner is penetrating him.",
+      "labelReferences": []
+    },
+    {
+      "key": "push-into#361ebba7",
+      "fic": "the-lathe.html",
+      "title": "the lathe",
+      "paragraph": 1769,
+      "pattern": "push-into",
+      "engine": {
+        "cat": "anal",
+        "kind": "act",
+        "act": "anal sex",
+        "a": "Steve Harrington",
+        "b": "Eddie Munson",
+        "role": null
+      },
+      "scope": "performed penile anal sex",
+      "pastLabel": "wrong",
+      "labelWeight": 0.9,
+      "labelSourceClass": null,
+      "group": "external-contact",
+      "assessment": "error",
+      "reviewerConfidence": 0.999,
+      "reason": "The adults press together while kissing on a couch; no anal insertion is described.",
+      "labelReferences": []
+    },
+    {
+      "key": "fuck~elided#b7ccd1ab",
+      "fic": "were-compeer.html",
+      "title": "A WereCompeer",
+      "paragraph": 694,
+      "pattern": "fuck~elided",
+      "engine": {
+        "cat": "anal",
+        "kind": "act",
+        "act": "anal sex",
+        "a": "Vernon Boyd",
+        "b": "Derek Hale",
+        "role": null
+      },
+      "scope": "performed penile anal sex",
+      "pastLabel": "wrong",
+      "labelWeight": 1,
+      "labelSourceClass": null,
+      "group": "external-contact",
+      "assessment": "error",
+      "reviewerConfidence": 0.999,
+      "reason": "The adults rub together while clothed, explicitly without penetration; the engine also assigns the scene to an unrelated assistant.",
+      "labelReferences": [
+        {
+          "file": "tests/labels/zz-owner-claude-oct4-5-current.json",
+          "source": "saved audit review",
+          "reviewerConfidence": null,
+          "hasClaimIdentity": true
+        }
+      ]
+    },
+    {
+      "key": "thrusts-falter#172a376e",
+      "fic": "were-compeer.html",
+      "title": "A WereCompeer",
+      "paragraph": 696,
+      "pattern": "thrusts-falter",
+      "engine": {
+        "cat": "anal",
+        "kind": "act",
+        "act": "anal sex",
+        "a": "Derek Hale",
+        "b": "Stiles Stilinski",
+        "role": null
+      },
+      "scope": "performed penile anal sex",
+      "pastLabel": "wrong",
+      "labelWeight": 1,
+      "labelSourceClass": null,
+      "group": "external-contact",
+      "assessment": "error",
+      "reviewerConfidence": 0.999,
+      "reason": "Erratic thrusts accompany orgasm inside clothing during body rubbing, not anal penetration.",
+      "labelReferences": [
+        {
+          "file": "tests/labels/zz-owner-claude-oct4-5-current.json",
+          "source": "saved audit review",
+          "reviewerConfidence": null,
+          "hasClaimIdentity": true
+        }
+      ]
+    },
+    {
+      "key": "adds-finger#15a77f8c",
+      "fic": "whisper.html",
+      "title": "Whisper in my ear",
+      "paragraph": 434,
+      "pattern": "adds-finger",
+      "engine": {
+        "cat": "anal",
+        "kind": "act",
+        "act": "fingering",
+        "a": "Alex Claremont-Diaz",
+        "b": "Henry Fox-Mountchristen-Windsor",
+        "role": null
+      },
+      "scope": "other anal-category reading",
+      "pastLabel": "wrong",
+      "labelWeight": 1,
+      "labelSourceClass": null,
+      "group": "external-contact",
+      "assessment": "error",
+      "reviewerConfidence": 0.999,
+      "reason": "A fingertip lightly massages dry skin at the rim; there is no finger insertion.",
+      "labelReferences": [
+        {
+          "file": "tests/labels/zz-owner-claude-oct4-5-current.json",
+          "source": "saved audit review",
+          "reviewerConfidence": null,
+          "hasClaimIdentity": true
+        }
+      ]
+    },
+    {
+      "key": "thrust-back#342fcdbe",
+      "fic": "covered.html",
+      "title": "covered in the colors—pulled apart at the seams",
+      "paragraph": 879,
+      "pattern": "thrust-back",
+      "engine": {
+        "cat": "anal",
+        "kind": "touch",
+        "act": "pushing back",
+        "a": "Asami Sato",
+        "b": "Korra",
+        "role": "bottom"
+      },
+      "scope": "other anal-category reading",
+      "pastLabel": "wrong",
+      "labelWeight": 1,
+      "labelSourceClass": null,
+      "group": "nonsexual",
+      "assessment": "error",
+      "reviewerConfidence": 0.999,
+      "reason": "Returning abruptly to reality is a figure of speech, not a receptive sexual movement.",
+      "labelReferences": [
+        {
+          "file": "tests/labels/audit-2026-10-03.json",
+          "source": "saved audit review",
+          "reviewerConfidence": null,
+          "hasClaimIdentity": false
+        }
+      ]
+    },
+    {
+      "key": "dd2-finger-shoved-into#ae9aefb9",
+      "fic": "hate.html",
+      "title": "Hate the Way It Feels So Good",
+      "paragraph": 735,
+      "pattern": "dd2-finger-shoved-into",
+      "engine": {
+        "cat": "anal",
+        "kind": "act",
+        "act": "fingering",
+        "a": "Steve Harrington",
+        "b": "Eddie Munson",
+        "role": null
+      },
+      "scope": "other anal-category reading",
+      "pastLabel": "wrong",
+      "labelWeight": 1,
+      "labelSourceClass": null,
+      "group": "nonsexual",
+      "assessment": "error",
+      "reviewerConfidence": 0.999,
+      "reason": "Fingers go under a waistband to remove underwear, not into an anus.",
+      "labelReferences": [
+        {
+          "file": "tests/labels/zz-owner-claude-oct4-5-current.json",
+          "source": "saved audit review",
+          "reviewerConfidence": null,
+          "hasClaimIdentity": true
+        }
+      ]
+    },
+    {
+      "key": "thrust-back#25733ba9",
+      "fic": "heavyweight.html",
+      "title": "Heavyweight",
+      "paragraph": 9,
+      "pattern": "thrust-back",
+      "engine": {
+        "cat": "anal",
+        "kind": "touch",
+        "act": "pushing back",
+        "a": "Dean Winchester",
+        "b": "Mick Davies",
+        "role": "bottom"
+      },
+      "scope": "other anal-category reading",
+      "pastLabel": "wrong",
+      "labelWeight": 0.9,
+      "labelSourceClass": null,
+      "group": "nonsexual",
+      "assessment": "error",
+      "reviewerConfidence": 0.999,
+      "reason": "Pushing back is resistance during a boxing exchange, not a receptive sexual movement.",
+      "labelReferences": []
+    },
+    {
+      "key": "push-into~elided#33f79b79",
+      "fic": "heavyweight.html",
+      "title": "Heavyweight",
+      "paragraph": 1332,
+      "pattern": "push-into~elided",
+      "engine": {
+        "cat": "anal",
+        "kind": "hypothetical",
+        "act": "anal sex",
+        "a": "Castiel",
+        "b": "Dean Winchester",
+        "role": "top"
+      },
+      "scope": "other anal-category reading",
+      "pastLabel": "wrong",
+      "labelWeight": 0.9,
+      "labelSourceClass": null,
+      "group": "nonsexual",
+      "assessment": "error",
+      "reviewerConfidence": 0.999,
+      "reason": "Strangers shove the adult protagonist on the street; no hypothetical sexual act is described.",
+      "labelReferences": []
+    },
+    {
+      "key": "push-into#970f5f07",
+      "fic": "heavyweight.html",
+      "title": "Heavyweight",
+      "paragraph": 1665,
+      "pattern": "push-into",
+      "engine": {
+        "cat": "anal",
+        "kind": "act",
+        "act": "anal sex",
+        "a": "Gabriel",
+        "b": "Castiel",
+        "role": null
+      },
+      "scope": "performed penile anal sex",
+      "pastLabel": "wrong",
+      "labelWeight": 0.9,
+      "labelSourceClass": null,
+      "group": "nonsexual",
+      "assessment": "error",
+      "reviewerConfidence": 0.999,
+      "reason": "A teammate collides with another adult in a celebratory embrace after a boxing match; no penetration occurs.",
+      "labelReferences": []
+    },
+    {
+      "key": "fingers-inside#50a942b4",
+      "fic": "heavyweight.html",
+      "title": "Heavyweight",
+      "paragraph": 2017,
+      "pattern": "fingers-inside",
+      "engine": {
+        "cat": "anal",
+        "kind": "hypothetical",
+        "act": "fingering",
+        "a": "Castiel",
+        "b": "Dean Winchester",
+        "role": "top"
+      },
+      "scope": "other anal-category reading",
+      "pastLabel": "wrong",
+      "labelWeight": 0.9,
+      "labelSourceClass": null,
+      "group": "nonsexual",
+      "assessment": "error",
+      "reviewerConfidence": 0.999,
+      "reason": "Knuckles driving into someone refer to a imagined punch in a boxing match, not fingering.",
+      "labelReferences": []
+    },
+    {
+      "key": "push-into#cad83edc",
+      "fic": "heavyweight.html",
+      "title": "Heavyweight",
+      "paragraph": 4024,
+      "pattern": "push-into",
+      "engine": {
+        "cat": "anal",
+        "kind": "act",
+        "act": "anal sex",
+        "a": "Dean Winchester",
+        "b": "Castiel",
+        "role": null
+      },
+      "scope": "performed penile anal sex",
+      "pastLabel": "wrong",
+      "labelWeight": 0.9,
+      "labelSourceClass": null,
+      "group": "nonsexual",
+      "assessment": "error",
+      "reviewerConfidence": 0.999,
+      "reason": "The object being entered is a boxing glove, not another person's body.",
+      "labelReferences": []
+    },
+    {
+      "key": "pushed-in#2dbee31d",
+      "fic": "heavyweight.html",
+      "title": "Heavyweight",
+      "paragraph": 4524,
+      "pattern": "pushed-in",
+      "engine": {
+        "cat": "anal",
+        "kind": "wanted",
+        "act": "anal sex",
+        "a": "Dean Winchester",
+        "b": "Castiel",
+        "role": "bottom"
+      },
+      "scope": "other anal-category reading",
+      "pastLabel": "wrong",
+      "labelWeight": 0.9,
+      "labelSourceClass": null,
+      "group": "nonsexual",
+      "assessment": "error",
+      "reviewerConfidence": 0.999,
+      "reason": "Hope breaking inside someone is an emotional metaphor, not desired penetration.",
+      "labelReferences": []
+    },
+    {
+      "key": "thrust-back~elided#29e51a7a",
+      "fic": "heavyweight.html",
+      "title": "Heavyweight",
+      "paragraph": 5595,
+      "pattern": "thrust-back~elided",
+      "engine": {
+        "cat": "anal",
+        "kind": "touch",
+        "act": "pushing back",
+        "a": "Dean Winchester",
+        "b": "Castiel",
+        "role": "bottom"
+      },
+      "scope": "other anal-category reading",
+      "pastLabel": "wrong",
+      "labelWeight": 0.9,
+      "labelSourceClass": null,
+      "group": "nonsexual",
+      "assessment": "error",
+      "reviewerConfidence": 0.999,
+      "reason": "The movement is a shoulder shove during a boxing clinch, not an anal role cue.",
+      "labelReferences": []
+    },
+    {
+      "key": "thrust-back~elided#b9c2ad9b",
+      "fic": "prince-prisoner-puppy.html",
+      "title": "Prince, Prisoner, Puppy, Parent",
+      "paragraph": 502,
+      "pattern": "thrust-back~elided",
+      "engine": {
+        "cat": "anal",
+        "kind": "touch",
+        "act": "pushing back",
+        "a": "Telemachus",
+        "b": "Antinous",
+        "role": "bottom"
+      },
+      "scope": "other anal-category reading",
+      "pastLabel": "wrong",
+      "labelWeight": 1,
+      "labelSourceClass": null,
+      "group": "nonsexual",
+      "assessment": "error",
+      "reviewerConfidence": 0.999,
+      "reason": "The adult pushes at the other adult's shoulders to resist him; this is not an anal pushing-back cue.",
+      "labelReferences": [
+        {
+          "file": "tests/labels/zz-owner-claude-oct4-5-current.json",
+          "source": "saved audit review",
+          "reviewerConfidence": null,
+          "hasClaimIdentity": true
+        }
+      ]
+    },
+    {
+      "key": "self-finger~elided#c3aefe91",
+      "fic": "the-lathe.html",
+      "title": "the lathe",
+      "paragraph": 1291,
+      "pattern": "self-finger~elided",
+      "engine": {
+        "cat": "anal",
+        "kind": "solo",
+        "act": "fingering himself",
+        "a": "Steve Harrington",
+        "b": "Eddie Munson",
+        "role": "bottom"
+      },
+      "scope": "other anal-category reading",
+      "pastLabel": "wrong",
+      "labelWeight": 0.9,
+      "labelSourceClass": null,
+      "group": "nonsexual",
+      "assessment": "error",
+      "reviewerConfidence": 0.999,
+      "reason": "Opening oneself to supernatural possession is figurative, not solo fingering.",
+      "labelReferences": []
+    },
+    {
+      "key": "push-into#1546b09a",
+      "fic": "the-lathe.html",
+      "title": "the lathe",
+      "paragraph": 1893,
+      "pattern": "push-into",
+      "engine": {
+        "cat": "anal",
+        "kind": "act",
+        "act": "anal sex",
+        "a": "Eddie Munson",
+        "b": "Steve Harrington",
+        "role": null
+      },
+      "scope": "performed penile anal sex",
+      "pastLabel": "wrong",
+      "labelWeight": 0.9,
+      "labelSourceClass": null,
+      "group": "nonsexual",
+      "assessment": "error",
+      "reviewerConfidence": 0.999,
+      "reason": "A physical assault and defensive shove are mistaken for anal penetration; the engine also substitutes the romantic partner for the attacker.",
+      "labelReferences": []
+    },
+    {
+      "key": "thrust-back#4a6628fd",
+      "fic": "the-lathe.html",
+      "title": "the lathe",
+      "paragraph": 1893,
+      "pattern": "thrust-back",
+      "engine": {
+        "cat": "anal",
+        "kind": "touch",
+        "act": "pushing back",
+        "a": "Eddie Munson",
+        "b": "Steve Harrington",
+        "role": "bottom"
+      },
+      "scope": "other anal-category reading",
+      "pastLabel": "wrong",
+      "labelWeight": 0.9,
+      "labelSourceClass": null,
+      "group": "nonsexual",
+      "assessment": "error",
+      "reviewerConfidence": 0.999,
+      "reason": "The backward shove occurs in a fight, not as an anal receptive movement.",
+      "labelReferences": []
+    },
+    {
+      "key": "penis-into#14bf2a41",
+      "fic": "were-compeer.html",
+      "title": "A WereCompeer",
+      "paragraph": 87,
+      "pattern": "penis-into",
+      "engine": {
+        "cat": "anal",
+        "kind": "fantasy",
+        "act": "anal sex",
+        "a": "Vernon Boyd",
+        "b": "Stiles Stilinski",
+        "role": "top"
+      },
+      "scope": "other anal-category reading",
+      "pastLabel": "wrong",
+      "labelWeight": 0.9,
+      "labelSourceClass": null,
+      "group": "nonsexual",
+      "assessment": "error",
+      "reviewerConfidence": 0.999,
+      "reason": "A penis and testicles imagined within a chastity device are mistaken for anal penetration involving the assistant.",
+      "labelReferences": []
+    },
+    {
+      "key": "push-into~elided#42b534fb",
+      "fic": "wicked-thing.html",
+      "title": "wicked thing",
+      "paragraph": 3121,
+      "pattern": "push-into~elided",
+      "engine": {
+        "cat": "anal",
+        "kind": "act",
+        "act": "fingering",
+        "a": "Obi-Wan Kenobi",
+        "b": "Anakin Skywalker",
+        "role": null
+      },
+      "scope": "other anal-category reading",
+      "pastLabel": "wrong",
+      "labelWeight": 0.9,
+      "labelSourceClass": null,
+      "group": "nonsexual",
+      "assessment": "error",
+      "reviewerConfidence": 0.999,
+      "reason": "Metaphorical fingers entering the adult's mind describe a supernatural connection, not anal fingering, even though actual sex surrounds it.",
+      "labelReferences": []
+    },
+    {
+      "key": "pushed-in~elided#b2682c96",
+      "fic": "wicked-thing.html",
+      "title": "wicked thing",
+      "paragraph": 3673,
+      "pattern": "pushed-in~elided",
+      "engine": {
+        "cat": "anal",
+        "kind": "act",
+        "act": "anal sex",
+        "a": "Anakin Skywalker",
+        "b": "Obi-Wan Kenobi",
+        "role": null
+      },
+      "scope": "performed penile anal sex",
+      "pastLabel": "wrong",
+      "labelWeight": 0.9,
+      "labelSourceClass": null,
+      "group": "nonsexual",
+      "assessment": "error",
+      "reviewerConfidence": 0.999,
+      "reason": "A void inside the adult's mind and his failed escape are mistaken for physical penetration.",
+      "labelReferences": []
+    },
+    {
+      "key": "topped~elided#a66f7f70",
+      "fic": "wretched-rhetoric.html",
+      "title": "wretched rhetoric",
+      "paragraph": 1224,
+      "pattern": "topped~elided",
+      "engine": {
+        "cat": "anal",
+        "kind": "act",
+        "act": "anal sex",
+        "a": "Anakin Skywalker",
+        "b": "Obi-Wan Kenobi",
+        "role": null
+      },
+      "scope": "performed penile anal sex",
+      "pastLabel": "wrong",
+      "labelWeight": 0.9,
+      "labelSourceClass": null,
+      "group": "nonsexual",
+      "assessment": "error",
+      "reviewerConfidence": 0.999,
+      "reason": "An academic ranking using the word top is mistaken for topping a partner.",
+      "labelReferences": []
+    },
+    {
+      "key": "thrusts-falter#d0f6575b",
+      "fic": "belonging.html",
+      "title": "Belonging is Longing is Now",
+      "paragraph": 3534,
+      "pattern": "thrusts-falter",
+      "engine": {
+        "cat": "anal",
+        "kind": "fantasy",
+        "act": "anal sex",
+        "a": "Castiel",
+        "b": "Dean Winchester",
+        "role": "top"
+      },
+      "scope": "other anal-category reading",
+      "pastLabel": "wrong",
+      "labelWeight": 1,
+      "labelSourceClass": null,
+      "group": "occurrence",
+      "assessment": "error",
+      "reviewerConfidence": 0.999,
+      "reason": "The penetrator is physically thrusting while discussing a fantasy; the fantasy wrongly swallows the real action.",
+      "labelReferences": [
+        {
+          "file": "tests/labels/zz-owner-claude-oct4-5-current.json",
+          "source": "saved audit review",
+          "reviewerConfidence": null,
+          "hasClaimIdentity": true
+        }
+      ]
+    },
+    {
+      "key": "push-into~elided#ce682f98",
+      "fic": "belonging.html",
+      "title": "Belonging is Longing is Now",
+      "paragraph": 4017,
+      "pattern": "push-into~elided",
+      "engine": {
+        "cat": "anal",
+        "kind": "fantasy",
+        "act": "anal sex",
+        "a": "Castiel",
+        "b": "Dean Winchester",
+        "role": "top"
+      },
+      "scope": "other anal-category reading",
+      "pastLabel": "wrong",
+      "labelWeight": 1,
+      "labelSourceClass": null,
+      "group": "occurrence",
+      "assessment": "error",
+      "reviewerConfidence": 0.999,
+      "reason": "A fantastical scenario is discussed in speech, but the adult punctuates it with real thrusting and knot insertion; the latter is wrongly demoted.",
+      "labelReferences": [
+        {
+          "file": "tests/labels/zz-owner-claude-oct4-5-current.json",
+          "source": "saved audit review",
+          "reviewerConfidence": null,
+          "hasClaimIdentity": true
+        }
+      ]
+    },
+    {
+      "key": "penis-inside#facd657",
+      "fic": "belonging.html",
+      "title": "Belonging is Longing is Now",
+      "paragraph": 5522,
+      "pattern": "penis-inside",
+      "engine": {
+        "cat": "anal",
+        "kind": "act",
+        "act": "anal sex",
+        "a": "Castiel",
+        "b": "Dean Winchester",
+        "role": null
+      },
+      "scope": "performed penile anal sex",
+      "pastLabel": "wrong",
+      "labelWeight": 1,
+      "labelSourceClass": null,
+      "group": "occurrence",
+      "assessment": "error",
+      "reviewerConfidence": 0.999,
+      "reason": "The adult tries to place the partner's penis inside but is stopped; successful insertion is counted before it happens.",
+      "labelReferences": [
+        {
+          "file": "tests/labels/zz-owner-claude-oct4-5-current.json",
+          "source": "saved audit review",
+          "reviewerConfidence": null,
+          "hasClaimIdentity": true
+        }
+      ]
+    },
+    {
+      "key": "push-into~elided#69034915",
+      "fic": "bluebells.html",
+      "title": "Bluebells and Daylillies and Wild Roses Running Rampant",
+      "paragraph": 841,
+      "pattern": "push-into~elided",
+      "engine": {
+        "cat": "anal",
+        "kind": "fantasy",
+        "act": "anal sex",
+        "a": "David Shepherd",
+        "b": "Brother Diarmuid",
+        "role": "top"
+      },
+      "scope": "other anal-category reading",
+      "pastLabel": "wrong",
+      "labelWeight": 0.9,
+      "labelSourceClass": null,
+      "group": "occurrence",
+      "assessment": "error",
+      "reviewerConfidence": 0.999,
+      "reason": "The adult actually penetrates his husband; mention of a long-held dream wrongly makes the present act fantasy.",
+      "labelReferences": []
+    },
+    {
+      "key": "push-into~elided#a5a36664",
+      "fic": "hate.html",
+      "title": "Hate the Way It Feels So Good",
+      "paragraph": 1423,
+      "pattern": "push-into~elided",
+      "engine": {
+        "cat": "anal",
+        "kind": "act",
+        "act": "anal sex",
+        "a": "Eddie Munson",
+        "b": "Steve Harrington",
+        "role": null
+      },
+      "scope": "performed penile anal sex",
+      "pastLabel": "wrong",
+      "labelWeight": 1,
+      "labelSourceClass": null,
+      "group": "occurrence",
+      "assessment": "error",
+      "reviewerConfidence": 0.999,
+      "reason": "The adult imagines pushing inside while actually rubbing externally; the text explicitly says insertion has not happened.",
+      "labelReferences": [
+        {
+          "file": "tests/labels/zz-owner-claude-oct4-5-current.json",
+          "source": "saved audit review",
+          "reviewerConfidence": null,
+          "hasClaimIdentity": true
+        }
+      ]
+    },
+    {
+      "key": "push-into#f62c18aa",
+      "fic": "hate.html",
+      "title": "Hate the Way It Feels So Good",
+      "paragraph": 1705,
+      "pattern": "push-into",
+      "engine": {
+        "cat": "anal",
+        "kind": "hypothetical",
+        "act": "anal sex",
+        "a": "Eddie Munson",
+        "b": "Steve Harrington",
+        "role": "top"
+      },
+      "scope": "other anal-category reading",
+      "pastLabel": "wrong",
+      "labelWeight": 1,
+      "labelSourceClass": null,
+      "group": "occurrence",
+      "assessment": "error",
+      "reviewerConfidence": 0.999,
+      "reason": "Pounding occurs in the present scene; a habitual-arousal comparison in the preceding paragraph wrongly demotes it to hypothetical.",
+      "labelReferences": [
+        {
+          "file": "tests/labels/zz-owner-claude-oct4-5-current.json",
+          "source": "saved audit review",
+          "reviewerConfidence": null,
+          "hasClaimIdentity": true
+        }
+      ]
+    },
+    {
+      "key": "fuck#36b99705",
+      "fic": "jacks.html",
+      "title": "Jack's phone.",
+      "paragraph": 1393,
+      "pattern": "fuck",
+      "engine": {
+        "cat": "anal",
+        "kind": "hypothetical",
+        "act": "anal sex",
+        "a": "Jack Seward",
+        "b": "Dracula",
+        "role": "bottom"
+      },
+      "scope": "other anal-category reading",
+      "pastLabel": "wrong",
+      "labelWeight": 1,
+      "labelSourceClass": null,
+      "group": "occurrence",
+      "assessment": "error",
+      "reviewerConfidence": 0.99,
+      "reason": "The adult reflects on sex already permitted and experienced; the past-perfect construction is misread as a hypothetical.",
+      "labelReferences": [
+        {
+          "file": "tests/labels/zz-owner-claude-oct4-5-current.json",
+          "source": "saved audit review",
+          "reviewerConfidence": null,
+          "hasClaimIdentity": true
+        }
+      ]
+    },
+    {
+      "key": "fuck#a8307d0f",
+      "fic": "jacks.html",
+      "title": "Jack's phone.",
+      "paragraph": 2219,
+      "pattern": "fuck",
+      "engine": {
+        "cat": "anal",
+        "kind": "act",
+        "act": "anal sex",
+        "a": "Dracula",
+        "b": "Jack Seward",
+        "role": null
+      },
+      "scope": "performed penile anal sex",
+      "pastLabel": "wrong",
+      "labelWeight": 1,
+      "labelSourceClass": null,
+      "group": "occurrence",
+      "assessment": "error",
+      "reviewerConfidence": 0.999,
+      "reason": "A description of the previous night's encounter and its recording is counted as a new current anal act.",
+      "labelReferences": [
+        {
+          "file": "tests/labels/zz-owner-claude-oct4-5-current.json",
+          "source": "saved audit review",
+          "reviewerConfidence": null,
+          "hasClaimIdentity": true
+        }
+      ]
+    },
+    {
+      "key": "push-into#8909459",
+      "fic": "jacks.html",
+      "title": "Jack's phone.",
+      "paragraph": 3750,
+      "pattern": "push-into",
+      "engine": {
+        "cat": "anal",
+        "kind": "hypothetical",
+        "act": "anal sex",
+        "a": "Jack Seward",
+        "b": "Dracula",
+        "role": "bottom"
+      },
+      "scope": "other anal-category reading",
+      "pastLabel": "wrong",
+      "labelWeight": 1,
+      "labelSourceClass": null,
+      "group": "occurrence",
+      "assessment": "error",
+      "reviewerConfidence": 0.999,
+      "reason": "The partner actually enters and continues anal penetration; the engine demotes this completed action to hypothetical.",
+      "labelReferences": [
+        {
+          "file": "tests/labels/zz-owner-claude-oct4-5-current.json",
+          "source": "saved audit review",
+          "reviewerConfidence": null,
+          "hasClaimIdentity": true
+        }
+      ]
+    },
+    {
+      "key": "bottomed-out~elided#4debe477",
+      "fic": "jacks.html",
+      "title": "Jack's phone.",
+      "paragraph": 4135,
+      "pattern": "bottomed-out~elided",
+      "engine": {
+        "cat": "anal",
+        "kind": "hypothetical",
+        "act": "anal sex",
+        "a": "Jack Seward",
+        "b": "Dracula",
+        "role": "bottom"
+      },
+      "scope": "other anal-category reading",
+      "pastLabel": "wrong",
+      "labelWeight": 1,
+      "labelSourceClass": null,
+      "group": "occurrence",
+      "assessment": "error",
+      "reviewerConfidence": 0.999,
+      "reason": "The partner is actively penetrating and reaches full depth; an earlier possibility of later soreness wrongly makes this hypothetical.",
+      "labelReferences": [
+        {
+          "file": "tests/labels/zz-owner-claude-oct4-5-current.json",
+          "source": "saved audit review",
+          "reviewerConfidence": null,
+          "hasClaimIdentity": true
+        }
+      ]
+    },
+    {
+      "key": "passive-fucked#ae35a035",
+      "fic": "jacks.html",
+      "title": "Jack's phone.",
+      "paragraph": 12006,
+      "pattern": "passive-fucked",
+      "engine": {
+        "cat": "anal",
+        "kind": "act",
+        "act": "anal sex",
+        "a": "Dracula",
+        "b": "Jack Seward",
+        "role": null
+      },
+      "scope": "performed penile anal sex",
+      "pastLabel": "wrong",
+      "labelWeight": 1,
+      "labelSourceClass": null,
+      "group": "occurrence",
+      "assessment": "error",
+      "reviewerConfidence": 0.999,
+      "reason": "The adult considers waking his sleeping partner with sex but explicitly lets him sleep; imagined penetration is counted as performed.",
+      "labelReferences": [
+        {
+          "file": "tests/labels/zz-owner-claude-oct4-5-current.json",
+          "source": "saved audit review",
+          "reviewerConfidence": null,
+          "hasClaimIdentity": true
+        }
+      ]
+    },
+    {
+      "key": "dd2-pulled-out-of-him~elided#f3872f8b",
+      "fic": "panuelo-melody.html",
+      "title": "pañuelo melody",
+      "paragraph": 1786,
+      "pattern": "dd2-pulled-out-of-him~elided",
+      "engine": {
+        "cat": "anal",
+        "kind": "fantasy",
+        "act": "anal sex",
+        "a": "Alex Claremont-Diaz",
+        "b": "Henry Fox-Mountchristen-Windsor",
+        "role": "top"
+      },
+      "scope": "other anal-category reading",
+      "pastLabel": "wrong",
+      "labelWeight": 0.9,
+      "labelSourceClass": null,
+      "group": "occurrence",
+      "assessment": "error",
+      "reviewerConfidence": 0.999,
+      "reason": "The partner actually withdraws after orgasm; a wish about retaining semen nearby wrongly demotes the withdrawal to fantasy.",
+      "labelReferences": []
+    },
+    {
+      "key": "toy-removed#196e3e17",
+      "fic": "were-compeer.html",
+      "title": "A WereCompeer",
+      "paragraph": 575,
+      "pattern": "toy-removed",
+      "engine": {
+        "cat": "anal",
+        "kind": "touch",
+        "act": "taking a toy out",
+        "a": "Derek Hale",
+        "b": "Stiles Stilinski",
+        "role": "top"
+      },
+      "scope": "other anal-category reading",
+      "pastLabel": "wrong",
+      "labelWeight": 1,
+      "labelSourceClass": null,
+      "group": "occurrence",
+      "assessment": "error",
+      "reviewerConfidence": 0.999,
+      "reason": "The plug remains inside; a predicted gush when it is removed is counted as present toy removal.",
+      "labelReferences": [
+        {
+          "file": "tests/labels/zz-owner-claude-oct4-5-current.json",
+          "source": "saved audit review",
+          "reviewerConfidence": null,
+          "hasClaimIdentity": true
+        }
+      ]
+    },
+    {
+      "key": "bent-over-furniture#60dbd648",
+      "fic": "were-compeer.html",
+      "title": "A WereCompeer",
+      "paragraph": 613,
+      "pattern": "bent-over-furniture",
+      "engine": {
+        "cat": "anal",
+        "kind": "prep",
+        "act": "bending over",
+        "a": "Stiles Stilinski",
+        "b": "Derek Hale",
+        "role": "bottom"
+      },
+      "scope": "other anal-category reading",
+      "pastLabel": "wrong",
+      "labelWeight": 1,
+      "labelSourceClass": null,
+      "group": "occurrence",
+      "assessment": "error",
+      "reviewerConfidence": 0.999,
+      "reason": "The adult recalls having been bent over earlier; this is not present preparation for another scene.",
+      "labelReferences": [
+        {
+          "file": "tests/labels/zz-owner-claude-oct4-5-current.json",
+          "source": "saved audit review",
+          "reviewerConfidence": null,
+          "hasClaimIdentity": true
+        }
+      ]
+    },
+    {
+      "key": "riding~elided#4828d05a",
+      "fic": "were-compeer.html",
+      "title": "A WereCompeer",
+      "paragraph": 1009,
+      "pattern": "riding~elided",
+      "engine": {
+        "cat": "anal",
+        "kind": "wanted",
+        "act": "anal sex (riding)",
+        "a": "Stiles Stilinski",
+        "b": "Derek Hale",
+        "role": "bottom"
+      },
+      "scope": "other anal-category reading",
+      "pastLabel": "wrong",
+      "labelWeight": 1,
+      "labelSourceClass": null,
+      "group": "occurrence",
+      "assessment": "error",
+      "reviewerConfidence": 0.999,
+      "reason": "The adult is actively riding his partner; desire for later ejaculation elsewhere in the paragraph wrongly demotes the riding to wanted.",
+      "labelReferences": [
+        {
+          "file": "tests/labels/zz-owner-claude-oct4-5-current.json",
+          "source": "saved audit review",
+          "reviewerConfidence": null,
+          "hasClaimIdentity": true
+        }
+      ]
+    },
+    {
+      "key": "fill#2add321c",
+      "fic": "were-compeer.html",
+      "title": "A WereCompeer",
+      "paragraph": 1010,
+      "pattern": "fill",
+      "engine": {
+        "cat": "anal",
+        "kind": "act",
+        "act": "anal sex",
+        "a": "Derek Hale",
+        "b": "Stiles Stilinski",
+        "role": null
+      },
+      "scope": "performed penile anal sex",
+      "pastLabel": "wrong",
+      "labelWeight": 0.9,
+      "labelSourceClass": null,
+      "group": "occurrence",
+      "assessment": "error",
+      "reviewerConfidence": 0.999,
+      "reason": "Penetration is ongoing, but the specific filling and ejaculation described here are desired future outcomes, not completed ejaculation.",
+      "labelReferences": []
+    },
+    {
+      "key": "passive-fucked#14fbd5b",
+      "fic": "wretched-rhetoric.html",
+      "title": "wretched rhetoric",
+      "paragraph": 912,
+      "pattern": "passive-fucked",
+      "engine": {
+        "cat": "anal",
+        "kind": "hypothetical",
+        "act": "anal sex",
+        "a": "Anakin Skywalker",
+        "b": "Obi-Wan Kenobi",
+        "role": "bottom"
+      },
+      "scope": "other anal-category reading",
+      "pastLabel": "wrong",
+      "labelWeight": 0.9,
+      "labelSourceClass": null,
+      "group": "occurrence",
+      "assessment": "error",
+      "reviewerConfidence": 0.99,
+      "reason": "The passage describes ongoing insertion and receptive fullness, not merely a hypothetical anal act.",
+      "labelReferences": []
+    },
+    {
+      "key": "push-into#b423fe09",
+      "fic": "belonging.html",
+      "title": "Belonging is Longing is Now",
+      "paragraph": 1054,
+      "pattern": "push-into",
+      "engine": {
+        "cat": "anal",
+        "kind": "act",
+        "act": "anal sex",
+        "a": "Castiel",
+        "b": "Dean Winchester",
+        "role": null
+      },
+      "scope": "performed penile anal sex",
+      "pastLabel": "wrong",
+      "labelWeight": 1,
+      "labelSourceClass": null,
+      "group": "wrong-site",
+      "assessment": "error",
+      "reviewerConfidence": 0.999,
+      "reason": "The penis moves between the receiver's thighs and past his testicles; this is thigh sex, not anal insertion.",
+      "labelReferences": [
+        {
+          "file": "tests/labels/zz-owner-claude-oct4-5-current.json",
+          "source": "saved audit review",
+          "reviewerConfidence": null,
+          "hasClaimIdentity": true
+        }
+      ]
+    },
+    {
+      "key": "pushed-in#8e5aacf7",
+      "fic": "belonging.html",
+      "title": "Belonging is Longing is Now",
+      "paragraph": 2462,
+      "pattern": "pushed-in",
+      "engine": {
+        "cat": "anal",
+        "kind": "act",
+        "act": "anal sex",
+        "a": "Castiel",
+        "b": "Dean Winchester",
+        "role": null
+      },
+      "scope": "performed penile anal sex",
+      "pastLabel": "wrong",
+      "labelWeight": 1,
+      "labelSourceClass": null,
+      "group": "wrong-site",
+      "assessment": "error",
+      "reviewerConfidence": 0.999,
+      "reason": "The adult inserts his penis into a masturbation sleeve, not his partner's anus; the engine also reverses ownership.",
+      "labelReferences": [
+        {
+          "file": "tests/labels/zz-owner-claude-oct4-5-current.json",
+          "source": "saved audit review",
+          "reviewerConfidence": null,
+          "hasClaimIdentity": true
+        }
+      ]
+    },
+    {
+      "key": "pushed-in~elided#6462d66e",
+      "fic": "belonging.html",
+      "title": "Belonging is Longing is Now",
+      "paragraph": 2863,
+      "pattern": "pushed-in~elided",
+      "engine": {
+        "cat": "anal",
+        "kind": "act",
+        "act": "anal sex",
+        "a": "Castiel",
+        "b": "Dean Winchester",
+        "role": null
+      },
+      "scope": "performed penile anal sex",
+      "pastLabel": "wrong",
+      "labelWeight": 1,
+      "labelSourceClass": null,
+      "group": "wrong-site",
+      "assessment": "error",
+      "reviewerConfidence": 0.999,
+      "reason": "The penile movement is through the partner's open lips, explicitly followed by deeper mouth penetration.",
+      "labelReferences": [
+        {
+          "file": "tests/labels/zz-owner-claude-oct4-5-current.json",
+          "source": "saved audit review",
+          "reviewerConfidence": null,
+          "hasClaimIdentity": true
+        }
+      ]
+    },
+    {
+      "key": "stretched-open#2210888f",
+      "fic": "hate.html",
+      "title": "Hate the Way It Feels So Good",
+      "paragraph": 1507,
+      "pattern": "stretched-open",
+      "engine": {
+        "cat": "anal",
+        "kind": "act",
+        "act": "fingering",
+        "a": "Steve Harrington",
+        "b": "Eddie Munson",
+        "role": null
+      },
+      "scope": "other anal-category reading",
+      "pastLabel": "wrong",
+      "labelWeight": 1,
+      "labelSourceClass": null,
+      "group": "wrong-site",
+      "assessment": "error",
+      "reviewerConfidence": 0.999,
+      "reason": "Working someone up describes stroking both penises together, not anal fingering.",
+      "labelReferences": [
+        {
+          "file": "tests/labels/zz-owner-claude-oct4-5-current.json",
+          "source": "saved audit review",
+          "reviewerConfidence": null,
+          "hasClaimIdentity": true
+        }
+      ]
+    },
+    {
+      "key": "pushed-in#61768a8d",
+      "fic": "heavyweight.html",
+      "title": "Heavyweight",
+      "paragraph": 4086,
+      "pattern": "pushed-in",
+      "engine": {
+        "cat": "anal",
+        "kind": "act",
+        "act": "anal sex",
+        "a": "Castiel",
+        "b": "Dean Winchester",
+        "role": null
+      },
+      "scope": "performed penile anal sex",
+      "pastLabel": "wrong",
+      "labelWeight": 0.9,
+      "labelSourceClass": null,
+      "group": "wrong-site",
+      "assessment": "error",
+      "reviewerConfidence": 0.999,
+      "reason": "The surrounding action explicitly continues oral penetration; it is incorrectly also emitted as anal sex.",
+      "labelReferences": []
+    },
+    {
+      "key": "dd2-pulled-out-of-him#129bedc7",
+      "fic": "jacks.html",
+      "title": "Jack's phone.",
+      "paragraph": 4108,
+      "pattern": "dd2-pulled-out-of-him",
+      "engine": {
+        "cat": "anal",
+        "kind": "act",
+        "act": "anal sex",
+        "a": "Dracula",
+        "b": "Jack Seward",
+        "role": null
+      },
+      "scope": "performed penile anal sex",
+      "pastLabel": "wrong",
+      "labelWeight": 1,
+      "labelSourceClass": null,
+      "group": "wrong-site",
+      "assessment": "error",
+      "reviewerConfidence": 0.999,
+      "reason": "The withdrawal follows explicit throat penetration and gagging; the engine invents an anal withdrawal.",
+      "labelReferences": [
+        {
+          "file": "tests/labels/zz-owner-claude-oct4-5-current.json",
+          "source": "saved audit review",
+          "reviewerConfidence": null,
+          "hasClaimIdentity": true
+        }
+      ]
+    },
+    {
+      "key": "body-hole-ache#bb627480",
+      "fic": "jacks.html",
+      "title": "Jack's phone.",
+      "paragraph": 9442,
+      "pattern": "body-hole-ache",
+      "engine": {
+        "cat": "anal",
+        "kind": "body",
+        "act": "aching hole",
+        "a": "Jack Seward",
+        "b": "Dracula",
+        "role": "bottom"
+      },
+      "scope": "other anal-category reading",
+      "pastLabel": "wrong",
+      "labelWeight": 1,
+      "labelSourceClass": null,
+      "group": "wrong-site",
+      "assessment": "error",
+      "reviewerConfidence": 0.99,
+      "reason": "The aching body part is the nipples; anal clenching elsewhere in the sentence does not establish anal soreness.",
+      "labelReferences": [
+        {
+          "file": "tests/labels/zz-owner-claude-oct4-5-current.json",
+          "source": "saved audit review",
+          "reviewerConfidence": null,
+          "hasClaimIdentity": true
+        }
+      ]
+    },
+    {
+      "key": "push-into~elided#ab1d26d",
+      "fic": "panuelo-melody.html",
+      "title": "pañuelo melody",
+      "paragraph": 1377,
+      "pattern": "push-into~elided",
+      "engine": {
+        "cat": "anal",
+        "kind": "hypothetical",
+        "act": "anal sex",
+        "a": "Alex Claremont-Diaz",
+        "b": "Beatrice Fox-Mountchristen-Windsor",
+        "role": "bottom"
+      },
+      "scope": "other anal-category reading",
+      "pastLabel": "wrong",
+      "labelWeight": 0.9,
+      "labelSourceClass": null,
+      "group": "wrong-site",
+      "assessment": "error",
+      "reviewerConfidence": 0.999,
+      "reason": "The explicit act is current oral penetration; the engine emits hypothetical anal penetration involving an absent relative.",
+      "labelReferences": []
+    },
+    {
+      "key": "riding#8c83589e",
+      "fic": "panuelo-melody.html",
+      "title": "pañuelo melody",
+      "paragraph": 1379,
+      "pattern": "riding",
+      "engine": {
+        "cat": "anal",
+        "kind": "act",
+        "act": "anal sex (riding)",
+        "a": "Alex Claremont-Diaz",
+        "b": "Henry Fox-Mountchristen-Windsor",
+        "role": null
+      },
+      "scope": "performed penile anal sex",
+      "pastLabel": "wrong",
+      "labelWeight": 0.9,
+      "labelSourceClass": null,
+      "group": "wrong-site",
+      "assessment": "error",
+      "reviewerConfidence": 0.999,
+      "reason": "A second riding pattern on the same oral-sex paragraph invents anal insertion.",
+      "labelReferences": []
+    },
+    {
+      "key": "sank-down#e0277c9e",
+      "fic": "panuelo-melody.html",
+      "title": "pañuelo melody",
+      "paragraph": 1379,
+      "pattern": "sank-down",
+      "engine": {
+        "cat": "anal",
+        "kind": "act",
+        "act": "anal sex (riding)",
+        "a": "Alex Claremont-Diaz",
+        "b": "Henry Fox-Mountchristen-Windsor",
+        "role": null
+      },
+      "scope": "performed penile anal sex",
+      "pastLabel": "wrong",
+      "labelWeight": 0.9,
+      "labelSourceClass": null,
+      "group": "wrong-site",
+      "assessment": "error",
+      "reviewerConfidence": 0.999,
+      "reason": "Lowering onto a penis occurs with the mouth, explicitly described as oral penetration, not anal riding.",
+      "labelReferences": []
+    },
+    {
+      "key": "hand-in-pants-poss#aa4b9921",
+      "fic": "steady-eddie.html",
+      "title": "Keep it Steady, Eddie",
+      "paragraph": 2023,
+      "pattern": "hand-in-pants-poss",
+      "engine": {
+        "cat": "anal",
+        "kind": "touch",
+        "act": "hand down the back of the pants",
+        "a": "Eddie Munson",
+        "b": "Steve Harrington",
+        "role": "top"
+      },
+      "scope": "other anal-category reading",
+      "pastLabel": "wrong",
+      "labelWeight": 1,
+      "labelSourceClass": null,
+      "group": "wrong-site",
+      "assessment": "error",
+      "reviewerConfidence": 0.999,
+      "reason": "The hand enters the front of the underwear to stroke the penis; it is not a hand down the back or anal-directed touch.",
+      "labelReferences": [
+        {
+          "file": "tests/labels/zz-owner-claude-oct4-5-current.json",
+          "source": "saved audit review",
+          "reviewerConfidence": null,
+          "hasClaimIdentity": true
+        }
+      ]
+    },
+    {
+      "key": "ogle-crotch~elided#116db755",
+      "fic": "a-la-carte.html",
+      "title": "à la carte",
+      "paragraph": 1964,
+      "pattern": "ogle-crotch~elided",
+      "engine": {
+        "cat": "anal",
+        "kind": "ogling",
+        "act": "checking out a crotch",
+        "a": "Anakin Skywalker",
+        "b": "Obi-Wan Kenobi",
+        "role": "bottom"
+      },
+      "scope": "other anal-category reading",
+      "pastLabel": "wrong",
+      "labelWeight": 1,
+      "labelSourceClass": null,
+      "group": "hint-semantics",
+      "assessment": "error",
+      "reviewerConfidence": 0.999,
+      "reason": "The adult threatens hypothetical outsiders who might look at his partner; he is not himself checking out the partner's penis.",
+      "labelReferences": [
+        {
+          "file": "tests/labels/audit-2026-10-03.json",
+          "source": "saved audit review",
+          "reviewerConfidence": null,
+          "hasClaimIdentity": false
+        }
+      ]
+    },
+    {
+      "key": "body-hole-ache#915b5f70",
+      "fic": "belonging.html",
+      "title": "Belonging is Longing is Now",
+      "paragraph": 2810,
+      "pattern": "body-hole-ache",
+      "engine": {
+        "cat": "anal",
+        "kind": "body",
+        "act": "aching hole",
+        "a": "Dean Winchester",
+        "b": "Castiel",
+        "role": "bottom"
+      },
+      "scope": "other anal-category reading",
+      "pastLabel": "wrong",
+      "labelWeight": 1,
+      "labelSourceClass": null,
+      "group": "hint-semantics",
+      "assessment": "error",
+      "reviewerConfidence": 0.99,
+      "reason": "The anus clenches during intense stimulation, but this paragraph does not describe an aching hole.",
+      "labelReferences": [
+        {
+          "file": "tests/labels/zz-owner-claude-oct4-5-current.json",
+          "source": "saved audit review",
+          "reviewerConfidence": null,
+          "hasClaimIdentity": true
+        }
+      ]
+    },
+    {
+      "key": "grab-ass#5e87c247",
+      "fic": "belonging.html",
+      "title": "Belonging is Longing is Now",
+      "paragraph": 3735,
+      "pattern": "grab-ass",
+      "engine": {
+        "cat": "anal",
+        "kind": "touch",
+        "act": "grabbing an ass",
+        "a": "Castiel",
+        "b": "Dean Winchester",
+        "role": "top"
+      },
+      "scope": "other anal-category reading",
+      "pastLabel": "wrong",
+      "labelWeight": 1,
+      "labelSourceClass": null,
+      "group": "hint-semantics",
+      "assessment": "error",
+      "reviewerConfidence": 0.999,
+      "reason": "The described action is spanking while prostate stimulation continues, not grabbing the buttocks.",
+      "labelReferences": [
+        {
+          "file": "tests/labels/zz-owner-claude-oct4-5-current.json",
+          "source": "saved audit review",
+          "reviewerConfidence": null,
+          "hasClaimIdentity": true
+        }
+      ]
+    },
+    {
+      "key": "body-hole-ache#98a64b3c",
+      "fic": "belonging.html",
+      "title": "Belonging is Longing is Now",
+      "paragraph": 5428,
+      "pattern": "body-hole-ache",
+      "engine": {
+        "cat": "anal",
+        "kind": "body",
+        "act": "aching hole",
+        "a": "Dean Winchester",
+        "b": "Castiel",
+        "role": "bottom"
+      },
+      "scope": "other anal-category reading",
+      "pastLabel": "wrong",
+      "labelWeight": 1,
+      "labelSourceClass": null,
+      "group": "hint-semantics",
+      "assessment": "error",
+      "reviewerConfidence": 0.99,
+      "reason": "The gaping anus clenches to retain semen; the text does not describe aching or pain.",
+      "labelReferences": [
+        {
+          "file": "tests/labels/zz-owner-claude-oct4-5-current.json",
+          "source": "saved audit review",
+          "reviewerConfidence": null,
+          "hasClaimIdentity": true
+        }
+      ]
+    },
+    {
+      "key": "arch-back#1adacf82",
+      "fic": "jacks.html",
+      "title": "Jack's phone.",
+      "paragraph": 2067,
+      "pattern": "arch-back",
+      "engine": {
+        "cat": "anal",
+        "kind": "touch",
+        "act": "arching their back",
+        "a": "Jack Seward",
+        "b": "Dracula",
+        "role": "bottom"
+      },
+      "scope": "other anal-category reading",
+      "pastLabel": "wrong",
+      "labelWeight": 1,
+      "labelSourceClass": null,
+      "group": "hint-semantics",
+      "assessment": "error",
+      "reviewerConfidence": 0.99,
+      "reason": "The adult arches while receiving oral stimulation, not as evidence of an anal receptive movement.",
+      "labelReferences": [
+        {
+          "file": "tests/labels/zz-owner-claude-oct4-5-current.json",
+          "source": "saved audit review",
+          "reviewerConfidence": null,
+          "hasClaimIdentity": true
+        }
+      ]
+    },
+    {
+      "key": "stated-bottom-pref~elided#dc79bcd4",
+      "fic": "kissed.html",
+      "title": "I know I've kissed you before (Can I try again)",
+      "paragraph": 2292,
+      "pattern": "stated-bottom-pref~elided",
+      "engine": {
+        "cat": "anal",
+        "kind": "stated",
+        "act": "saying they like to bottom",
+        "a": "Eddie Munson",
+        "b": "Steve Harrington",
+        "role": "bottom"
+      },
+      "scope": "other anal-category reading",
+      "pastLabel": "wrong",
+      "labelWeight": 1,
+      "labelSourceClass": null,
+      "group": "hint-semantics",
+      "assessment": "error",
+      "reviewerConfidence": 0.999,
+      "reason": "A discussion of liking someone and feeling unwanted is misread as a preference for anal bottoming.",
+      "labelReferences": [
+        {
+          "file": "tests/labels/audit-2026-10-03.json",
+          "source": "saved audit review",
+          "reviewerConfidence": null,
+          "hasClaimIdentity": false
+        }
+      ]
+    },
+    {
+      "key": "thrust-back#c03e4250",
+      "fic": "needing-the-knot.html",
+      "title": "Needing the Knot",
+      "paragraph": 439,
+      "pattern": "thrust-back",
+      "engine": {
+        "cat": "anal",
+        "kind": "touch",
+        "act": "pushing back",
+        "a": "Castiel",
+        "b": "Dean Winchester",
+        "role": "bottom"
+      },
+      "scope": "other anal-category reading",
+      "pastLabel": "wrong",
+      "labelWeight": 0.9,
+      "labelSourceClass": null,
+      "group": "hint-semantics",
+      "assessment": "error",
+      "reviewerConfidence": 0.999,
+      "reason": "Pushing back describes resisting an internal urge to dominate and letting the other adult lead, not moving the anus backward.",
+      "labelReferences": []
+    },
+    {
+      "key": "body-hole-ache#3a9a2f7f",
+      "fic": "panuelo-melody.html",
+      "title": "pañuelo melody",
+      "paragraph": 1740,
+      "pattern": "body-hole-ache",
+      "engine": {
+        "cat": "anal",
+        "kind": "body",
+        "act": "aching hole",
+        "a": "Henry Fox-Mountchristen-Windsor",
+        "b": "Alex Claremont-Diaz",
+        "role": "bottom"
+      },
+      "scope": "other anal-category reading",
+      "pastLabel": "wrong",
+      "labelWeight": 0.9,
+      "labelSourceClass": null,
+      "group": "hint-semantics",
+      "assessment": "error",
+      "reviewerConfidence": 0.999,
+      "reason": "The receiver's anus clenches during orgasm; clenching does not itself establish an aching hole.",
+      "labelReferences": []
+    },
+    {
+      "key": "body-sore-ass#1b168a0c",
+      "fic": "prince-prisoner-puppy.html",
+      "title": "Prince, Prisoner, Puppy, Parent",
+      "paragraph": 667,
+      "pattern": "body-sore-ass",
+      "engine": {
+        "cat": "anal",
+        "kind": "body",
+        "act": "loose or sore after sex",
+        "a": "Telemachus",
+        "b": "Antinous",
+        "role": "bottom"
+      },
+      "scope": "other anal-category reading",
+      "pastLabel": "wrong",
+      "labelWeight": 1,
+      "labelSourceClass": null,
+      "group": "hint-semantics",
+      "assessment": "error",
+      "reviewerConfidence": 0.999,
+      "reason": "The passage says pain has gone while the adult adapts to ongoing penetration; it does not describe residual anal soreness after sex.",
+      "labelReferences": [
+        {
+          "file": "tests/labels/zz-owner-claude-oct4-5-current.json",
+          "source": "saved audit review",
+          "reviewerConfidence": null,
+          "hasClaimIdentity": true
+        }
+      ]
+    },
+    {
+      "key": "ogle-crotch~elided#511dda45",
+      "fic": "were-compeer.html",
+      "title": "A WereCompeer",
+      "paragraph": 66,
+      "pattern": "ogle-crotch~elided",
+      "engine": {
+        "cat": "anal",
+        "kind": "ogling",
+        "act": "checking out a crotch",
+        "a": "Stiles Stilinski",
+        "b": "Derek Hale",
+        "role": "bottom"
+      },
+      "scope": "other anal-category reading",
+      "pastLabel": "wrong",
+      "labelWeight": 0.9,
+      "labelSourceClass": null,
+      "group": "hint-semantics",
+      "assessment": "error",
+      "reviewerConfidence": 0.999,
+      "reason": "The viewpoint adult looks at his own hairless penis; this is not ogling the partner as an anal bottom cue.",
+      "labelReferences": []
+    },
+    {
+      "key": "ogle-crotch-where~elided#1efc7fe6",
+      "fic": "whisper.html",
+      "title": "Whisper in my ear",
+      "paragraph": 449,
+      "pattern": "ogle-crotch-where~elided",
+      "engine": {
+        "cat": "anal",
+        "kind": "ogling",
+        "act": "staring at a bulge",
+        "a": "Alex Claremont-Diaz",
+        "b": "Henry Fox-Mountchristen-Windsor",
+        "role": "bottom"
+      },
+      "scope": "other anal-category reading",
+      "pastLabel": "wrong",
+      "labelWeight": 1,
+      "labelSourceClass": null,
+      "group": "hint-semantics",
+      "assessment": "error",
+      "reviewerConfidence": 0.99,
+      "reason": "The penetrator looks at the insertion site during actual anal sex; this is not a bulge-ogling cue making him the bottom.",
+      "labelReferences": [
+        {
+          "file": "tests/labels/audit-2026-10-03.json",
+          "source": "saved audit review",
+          "reviewerConfidence": null,
+          "hasClaimIdentity": false
+        },
+        {
+          "file": "tests/labels/zz-owner-claude-oct4-5-current.json",
+          "source": "saved audit review",
+          "reviewerConfidence": null,
+          "hasClaimIdentity": true
+        }
+      ]
+    },
+    {
+      "key": "self-toy-it~elided#5e637fee",
+      "fic": "belonging.html",
+      "title": "Belonging is Longing is Now",
+      "paragraph": 1228,
+      "pattern": "self-toy-it~elided",
+      "engine": {
+        "cat": "anal",
+        "kind": "solo",
+        "act": "using a toy on himself",
+        "a": "Castiel",
+        "b": "Dean Winchester",
+        "role": "bottom"
+      },
+      "scope": "other anal-category reading",
+      "pastLabel": "wrong",
+      "labelWeight": 1,
+      "labelSourceClass": null,
+      "group": "solo-partner",
+      "assessment": "error",
+      "reviewerConfidence": 0.999,
+      "reason": "The partner removes a plug from the receiver's mouth and puts it in the receiver's anus; the engine calls this the partner using it on himself.",
+      "labelReferences": [
+        {
+          "file": "tests/labels/zz-owner-claude-oct4-5-current.json",
+          "source": "saved audit review",
+          "reviewerConfidence": null,
+          "hasClaimIdentity": true
+        }
+      ]
+    },
+    {
+      "key": "self-own-fingers#420faba0",
+      "fic": "foxden-park.html",
+      "title": "Foxden Park",
+      "paragraph": 1331,
+      "pattern": "self-own-fingers",
+      "engine": {
+        "cat": "anal",
+        "kind": "solo",
+        "act": "fingering himself",
+        "a": "Percy \"Pez\" Okonjo",
+        "b": "Henry Fox-Mountchristen-Windsor",
+        "role": "bottom"
+      },
+      "scope": "other anal-category reading",
+      "pastLabel": "wrong",
+      "labelWeight": 0.9,
+      "labelSourceClass": null,
+      "group": "solo-partner",
+      "assessment": "error",
+      "reviewerConfidence": 0.999,
+      "reason": "Using oil on one's own fingers precedes fingering the partner; it is neither solo insertion nor an act by the absent friend.",
+      "labelReferences": []
+    },
+    {
+      "key": "pressure-at-hole#4ac67bb8",
+      "fic": "lover-you-cant-be-wrong.html",
+      "title": "lover, you can’t be wrong",
+      "paragraph": 846,
+      "pattern": "pressure-at-hole",
+      "engine": {
+        "cat": "anal",
+        "kind": "touch",
+        "act": "teasing a hole",
+        "a": "Steve Harrington",
+        "b": "Eddie Munson",
+        "role": "top"
+      },
+      "scope": "other anal-category reading",
+      "pastLabel": "wrong",
+      "labelWeight": 0.9,
+      "labelSourceClass": null,
+      "group": "solo-partner",
+      "assessment": "error",
+      "reviewerConfidence": 0.999,
+      "reason": "The actual external rim touch is self-touch while a partnered scenario is imagined; the engine makes it a touch given to the absent partner.",
+      "labelReferences": []
+    },
+    {
+      "key": "pushed-in~elided#7540a8c4",
+      "fic": "lover-you-cant-be-wrong.html",
+      "title": "lover, you can’t be wrong",
+      "paragraph": 855,
+      "pattern": "pushed-in~elided",
+      "engine": {
+        "cat": "anal",
+        "kind": "act",
+        "act": "fingering",
+        "a": "Steve Harrington",
+        "b": "Eddie Munson",
+        "role": null
+      },
+      "scope": "other anal-category reading",
+      "pastLabel": "wrong",
+      "labelWeight": 0.9,
+      "labelSourceClass": null,
+      "group": "solo-partner",
+      "assessment": "error",
+      "reviewerConfidence": 0.999,
+      "reason": "The adult inserts and moves his own finger; the absent imagined partner is not receiving actual fingering.",
+      "labelReferences": []
+    },
+    {
+      "key": "dd2-finger-shoved-into~elided#8dbd3693",
+      "fic": "lover-you-cant-be-wrong.html",
+      "title": "lover, you can’t be wrong",
+      "paragraph": 856,
+      "pattern": "dd2-finger-shoved-into~elided",
+      "engine": {
+        "cat": "anal",
+        "kind": "act",
+        "act": "fingering",
+        "a": "Steve Harrington",
+        "b": "Eddie Munson",
+        "role": null
+      },
+      "scope": "other anal-category reading",
+      "pastLabel": "wrong",
+      "labelWeight": 0.9,
+      "labelSourceClass": null,
+      "group": "solo-partner",
+      "assessment": "error",
+      "reviewerConfidence": 0.999,
+      "reason": "Adding a second finger occurs during self-fingering, not partnered fingering.",
+      "labelReferences": []
+    },
+    {
+      "key": "pushed-in~elided#8dbd3693",
+      "fic": "lover-you-cant-be-wrong.html",
+      "title": "lover, you can’t be wrong",
+      "paragraph": 856,
+      "pattern": "pushed-in~elided",
+      "engine": {
+        "cat": "anal",
+        "kind": "act",
+        "act": "fingering",
+        "a": "Steve Harrington",
+        "b": "Eddie Munson",
+        "role": null
+      },
+      "scope": "other anal-category reading",
+      "pastLabel": "wrong",
+      "labelWeight": 0.9,
+      "labelSourceClass": null,
+      "group": "solo-partner",
+      "assessment": "error",
+      "reviewerConfidence": 0.999,
+      "reason": "A second pattern on the same self-fingering paragraph invents partnered insertion.",
+      "labelReferences": []
+    },
+    {
+      "key": "push-into~elided#21b804db",
+      "fic": "belonging.html",
+      "title": "Belonging is Longing is Now",
+      "paragraph": 5558,
+      "pattern": "push-into~elided",
+      "engine": {
+        "cat": "anal",
+        "kind": "wanted",
+        "act": "anal sex",
+        "a": "Castiel",
+        "b": "Dean Winchester",
+        "role": "top"
+      },
+      "scope": "other anal-category reading",
+      "pastLabel": "wrong",
+      "labelWeight": 1,
+      "labelSourceClass": null,
+      "group": "act-unspecified",
+      "assessment": "uncertain",
+      "reviewerConfidence": 0.78,
+      "reason": "The adult wants to retain something tasted while actual anal penetration continues. The object of the wish may be saliva or another bodily fluid; the sentence does not securely establish a new top-directed anal-sex desire.",
+      "labelReferences": [
+        {
+          "file": "tests/labels/zz-owner-claude-oct4-5-current.json",
+          "source": "saved audit review",
+          "reviewerConfidence": null,
+          "hasClaimIdentity": true
+        }
+      ]
+    },
+    {
+      "key": "made-love-to~elided#cc2cf4de",
+      "fic": "jacks.html",
+      "title": "Jack's phone.",
+      "paragraph": 1276,
+      "pattern": "made-love-to~elided",
+      "engine": {
+        "cat": "anal",
+        "kind": "hypothetical",
+        "act": "anal sex",
+        "a": "Jack Seward",
+        "b": "Dracula",
+        "role": "bottom"
+      },
+      "scope": "other anal-category reading",
+      "pastLabel": "wrong",
+      "labelWeight": 1,
+      "labelSourceClass": null,
+      "group": "act-unspecified",
+      "assessment": "uncertain",
+      "reviewerConfidence": 0.75,
+      "reason": "Renewed sex is contemplated, so hypothetical status is defensible, but the phrase alone does not establish anal rather than another sexual activity.",
+      "labelReferences": [
+        {
+          "file": "tests/labels/audit-2026-10-03.json",
+          "source": "saved audit review",
+          "reviewerConfidence": null,
+          "hasClaimIdentity": false
+        }
+      ]
+    },
+    {
+      "key": "self-finger~elided#69112a1f",
+      "fic": "were-compeer.html",
+      "title": "A WereCompeer",
+      "paragraph": 975,
+      "pattern": "self-finger~elided",
+      "engine": {
+        "cat": "anal",
+        "kind": "solo",
+        "act": "fingering himself",
+        "a": "Stiles Stilinski",
+        "b": "Derek Hale",
+        "role": "bottom"
+      },
+      "scope": "other anal-category reading",
+      "pastLabel": "wrong",
+      "labelWeight": 0.9,
+      "labelSourceClass": null,
+      "group": "act-unspecified",
+      "assessment": "uncertain",
+      "reviewerConfidence": 0.8,
+      "reason": "The adult prepares himself offscreen, but the text does not say whether he uses fingers, a toy, or another method. A definite solo-fingering claim overstates the evidence.",
+      "labelReferences": []
+    },
+    {
+      "key": "fuck#51959f8b",
+      "fic": "lightning.html",
+      "title": "Held Up a Lightning Rod (Wonder Why I'm Struck)",
+      "paragraph": 2550,
+      "pattern": "fuck",
+      "engine": {
+        "cat": "anal",
+        "kind": "hypothetical",
+        "act": "anal sex",
+        "a": "Evan \"Buck\" Buckley",
+        "b": "Eddie Diaz",
+        "role": "top"
+      },
+      "scope": "other anal-category reading",
+      "pastLabel": "wrong",
+      "labelWeight": 1,
+      "labelSourceClass": null,
+      "group": "label-disagreement",
+      "assessment": "supported",
+      "reviewerConfidence": 0.98,
+      "reason": "The adult imagines the other adult penetrating him; the current hypothetical reading gets that direction right. The surviving owner wrong answer has no reason attached and should be rechecked, not silently changed.",
+      "labelReferences": [
+        {
+          "file": "tests/labels/batch-oct6-4be55d1e796d.json",
+          "source": "saved audit review",
+          "reviewerConfidence": null,
+          "hasClaimIdentity": false
+        }
+      ]
+    },
+    {
+      "key": "pushed-in#855bdcff",
+      "fic": "tricks-of-the-trade.html",
+      "title": "Tricks of the Trade",
+      "paragraph": 3773,
+      "pattern": "pushed-in",
+      "engine": {
+        "cat": "anal",
+        "kind": "act",
+        "act": "anal sex",
+        "a": "Castiel",
+        "b": "Dean Winchester",
+        "role": null
+      },
+      "scope": "performed penile anal sex",
+      "pastLabel": "wrong",
+      "labelWeight": 1,
+      "labelSourceClass": null,
+      "group": "label-disagreement",
+      "assessment": "supported",
+      "reviewerConfidence": 0.999,
+      "reason": "The current reading is explicitly supported: finger preparation ends, the partner lubricates his penis, then penetrates and thrusts. A later owner-confirmed anal range also covers this passage; the old hash-only wrong label needs reconciliation.",
+      "labelReferences": [
+        {
+          "file": "tests/labels/audit-2026-10-03.json",
+          "source": "saved audit review",
+          "reviewerConfidence": null,
+          "hasClaimIdentity": false
+        }
+      ]
+    }
+  ]
+}
