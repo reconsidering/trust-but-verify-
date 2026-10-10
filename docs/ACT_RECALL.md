@@ -1,6 +1,6 @@
 # Per-act recall
 
-[First measured baseline](ACT_RECALL_BASELINE.md) · [Baseline data](data/act-recall-baseline.json)
+[Fixed-review historical comparison](FIXED_REVIEW_PERFORMANCE.md) · [First measured baseline](ACT_RECALL_BASELINE.md) · [Baseline data](data/act-recall-baseline.json)
 
 Run `npm run recall -- ao3-samples` after detection changes. It writes `ACT_RECALL_REPORT.md`, `ACT_RECALL_REPORT.json`, and appends a summary to `ACT_RECALL_HISTORY.jsonl` with a readable `ACT_RECALL_HISTORY.md` timeline in the private fic directory. An optional second argument chooses a persistent report directory. No labels, patterns, or confidence-model files are changed.
 

@@ -1,0 +1,112 @@
+[
+  {
+    "date": "2026-10-05",
+    "engine": "ac0f469",
+    "labelled": 1856,
+    "wrong": 133,
+    "logLoss": 0.2523,
+    "auc": 0.612,
+    "recordLogLoss": 0.2686,
+    "recordAuc": 0.536
+  },
+  {
+    "date": "2026-10-05",
+    "engine": "c144b6b",
+    "labelled": 1857,
+    "wrong": 123,
+    "logLoss": 0.1914,
+    "auc": 0.676,
+    "recordLogLoss": 0.2096,
+    "recordAuc": 0.563
+  },
+  {
+    "date": "2026-10-06",
+    "engine": "dee23e0",
+    "labelled": 1848,
+    "wrong": 101,
+    "logLoss": 0.1921,
+    "auc": 0.703,
+    "recordLogLoss": 0.2103,
+    "recordAuc": 0.598
+  },
+  {
+    "date": "2026-10-06",
+    "engine": "309407d",
+    "labelled": 1841,
+    "wrong": 96,
+    "logLoss": 0.1846,
+    "auc": 0.716,
+    "recordLogLoss": 0.2039,
+    "recordAuc": 0.604
+  },
+  {
+    "date": "2026-10-07",
+    "engine": "a054ec7",
+    "labelled": 1859,
+    "wrong": 99,
+    "logLoss": 0.1869,
+    "auc": 0.74,
+    "recordLogLoss": 0.208,
+    "recordAuc": 0.603
+  },
+  {
+    "date": "2026-10-08",
+    "engine": "3ebbfdf",
+    "labelled": 1747,
+    "wrong": 75,
+    "logLoss": 0.1644,
+    "auc": 0.705,
+    "recordLogLoss": 0.1861,
+    "recordAuc": 0.566
+  },
+  {
+    "date": "2026-10-09",
+    "engine": "98c3fbe",
+    "labelled": 1890,
+    "wrong": 92,
+    "logLoss": 0.1652,
+    "auc": 0.785,
+    "recordLogLoss": 0.2001,
+    "recordAuc": 0.582
+  },
+  {
+    "date": "2026-10-09",
+    "engine": "048da76",
+    "labelled": 1882,
+    "wrong": 87,
+    "logLoss": 0.1628,
+    "auc": 0.771,
+    "recordLogLoss": 0.1948,
+    "recordAuc": 0.555
+  },
+  {
+    "date": "2026-10-10",
+    "engine": "5672f46",
+    "labelled": 1924,
+    "wrong": 162,
+    "logLoss": 0.2766,
+    "auc": 0.679,
+    "recordLogLoss": 0.2971,
+    "recordAuc": 0.573
+  },
+  {
+    "date": "2026-10-10",
+    "engine": "728bdec",
+    "labelled": 2495,
+    "wrong": 301,
+    "logLoss": 0.333,
+    "auc": 0.71,
+    "recordLogLoss": 0.3653,
+    "recordAuc": 0.593
+  },
+  {
+    "date": "2026-10-10",
+    "engine": "f16f90f",
+    "labelled": 2596,
+    "wrong": 337,
+    "logLoss": 0.3498,
+    "auc": 0.706,
+    "recordLogLoss": 0.3776,
+    "recordAuc": 0.605
+  }
+]

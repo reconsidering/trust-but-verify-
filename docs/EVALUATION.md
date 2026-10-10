@@ -114,3 +114,5 @@ explicitly. The original importer continues to skip incomplete windows.
 ## Per-act inventory recall
 
 `npm run recall -- ao3-samples` now replays independent act inventories with source and paragraph identity checks, writes per-act counts and missed-event locations, and retains a local history. Owner, AI and partial-review evidence are reported separately. See [ACT_RECALL.md](ACT_RECALL.md) for scoring rules and limitations. This measures reviewed performed-act coverage, not the precision of hints or full-corpus recall.
+
+The [fixed-review historical comparison](FIXED_REVIEW_PERFORMANCE.md) replays older detectors against one frozen denominator and splits AI evidence into Claude, ChatGPT and documented agreement between both. Independent inventory recall and survival of detection-selected claims are separate measures; Claude has no independent inventory denominator in the saved data.
