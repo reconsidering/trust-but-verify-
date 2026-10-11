@@ -10,7 +10,7 @@ import { type Analysis, type Desire, type PairingResult, type Role } from "../ty
 import { tagPriors } from "./ao3-prior";
 import { type Character, type Gender, buildCast, escapeRe } from "./characters";
 import { ANAL_CTX, type Cat, VULVA_CTX, type CompiledPattern, DIALOGUE, type DialogueDef, EPITHET_TOKEN, FINGER_CTX, PATTERNS, PENIS_CTX, SEX_CTX, compilePatterns } from "./patterns";
-import { continuationInstrument, instrumentEnded, namedActionOwner, occurrenceContext, restraintOnlyHold } from "./event-evidence";
+import { continuationInstrument, instrumentEnded, reinsertedFinger, namedActionOwner, occurrenceContext, restraintOnlyHold } from "./event-evidence";
 import { EPITHET, canonEpithet, learnEpithets } from "./epithets";
 import { readTags } from "./tags";
 import { noteContext } from "./notes";
@@ -1236,9 +1236,36 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
     if (pat.id.replace(/~elided$/, "") === "fuck" && /^\W*(?:and\s+)?fuck\b/i.test(m[0]) &&
         /^\W*(?:(?:honestly|well|oh|ugh|fine|great|yeah|and|but|so|god|christ|shit|damn|okay|ok),?\s+)*(?:fuck\b[^.!?]*?(?:\band)?\s*)?$/i.test(sent.slice(0, m.index!).replace(/[“"][^”"]*[”"]/g, " "))) return;
     const basePid = pat.id.replace(/~(?:elided|one-sided)$/, "");
-    const reviewPrior=basePid.startsWith("review-") ? paras.slice(Math.max(0,pi-3),pi) : [];
+    const reviewPrior=basePid.startsWith("review-") ? paras.slice(Math.max(0,pi-(basePid==="review-stimulator-motion"?4:3)),pi) : [];
     const reviewBoundary=reviewPrior.reduce((last,p,i)=>SCENE_BREAK.test(p)||CHAPTER_RE.test(p)?i:last,-1);
     const reviewBefore=basePid.startsWith("review-") ? [...reviewPrior.slice(reviewBoundary+1),para.slice(0,Math.max(0,para.indexOf(original))),sent.slice(0,m.index!)].join(" ").slice(-900) : "";
+
+    // Moving an internal stimulator needs local anal placement, not merely its device name.
+    if(basePid==="review-stimulator-motion" &&
+       !/\b(?:anus|asshole|rim|prostate)\b|\bstimulator[^.!?]{0,100}\bcheeks\b[^.!?]{0,35}\bpushed\s+home\b/i.test(reviewBefore+m[0]))return;
+    if(basePid==="review-self-finger-poke" && !/\b(?:reach\w*\s+(?:back|around)|arch\w*\s+(?:his|her|their)\s+back|own\s+(?:hole|anus))\b/i.test(sent))return;
+    if(basePid==="review-self-inflatable-toy") {
+      const owner=bTok && readSlot(bTok,cast,ctx)?.char;
+      if(!owner || !/\b(?:toy|dildo)\b/i.test(reviewBefore) || !/\binflatable\b/i.test(reviewBefore) ||
+         !owner.aliases.some(a=>new RegExp(`\\b${a.replace(/[.*+?^${}()|[\]\\]/g,"\\$&")}\\b[^.!?]{0,60}\\bactivat\\w*\\s+(?:the|a)\\s+toy\\b`).test(reviewBefore)))return;
+    }
+    if(basePid==="review-toy-subject-entry" && /^it\b/i.test(m[0]) && continuationInstrument(m[0],reviewBefore,"")!=="toy")return;
+    if(basePid==="review-toy-subject-entry" &&
+       (!/\b(?:plug|dildo|toy)\b/i.test(reviewBefore+m[0]) ||
+        !/\b(?:anus|ass|hole|rim|prostate)\b/i.test(reviewBefore+m[0]+sent.slice(m.index!+m[0].length)) ||
+        /^\s+(?:its|the|a|his|her|their)\s+(?:case|box|mouth|drawer|bag|sleeve)\b/i.test(sent.slice(m.index!+m[0].length)))) return;
+    if(/^review-self-toy-(?:size|pronoun)$/.test(basePid) &&
+       (!/\b(?:plug|dildo|anal toy)\b/i.test(reviewBefore) ||
+        !/\b(?:anus|ass|hole|rim|plug)\b/i.test(reviewBefore+m[0]) ||
+        /^\s+(?:(?:the|a|his|her|their|its)\s+)?(?:box|case|mouth|drawer|bag|sleeve)\b/i.test(sent.slice(m.index!+m[0].length)))) return;
+    if(basePid==="review-self-toy-pronoun" && !/\b(?:pick\w*\s+up|select\w*|lubricat\w*|slick\w*|lube\w*|coat\w*|largest|larger)\b/i.test(reviewBefore)) return;
+    // Lubricant used for earlier partner placement is not current self-insertion.
+    if(basePid==="review-self-toy-pronoun" && /\b(?:lube|lubricant)\s+(?:that\s+)?$/i.test(sent.slice(0,m.index!)) && /\bused\s+to\b/i.test(m[0])) return;
+    if(basePid==="review-self-fake-cock" && !/\b(?:dildo|silicone toy)\b/i.test(reviewBefore)) return;
+    if(basePid==="review-fingertip-entry" &&
+       (!/\b(?:anus|asshole|hole|rim|prostate)\b/i.test(reviewBefore+m[0]+sent.slice(m.index!+m[0].length)) ||
+        /^\s+(?:his|her|their|the|a)\s+(?:mouth|throat|glove|box|case|cushion)\b/i.test(sent.slice(m.index!+m[0].length)))) return;
+    if(basePid==="review-open-with-fingers" && !FINGER_CTX.test(reviewBefore+m[0])) return;
     if(basePid==="review-tongue-penetrates-person" &&
        (!ANAL_CTX.test(reviewBefore+sent) && !/\bhands and knees\b/i.test(reviewBefore+sent) || /\b(?:mouth|lips|throat)\b/i.test(m[0]))) return;
     if(/^review-(?:toy-tip-inside|inserts-named-toy)$/.test(basePid) && /^\s+(?:(?:a|the|his|her|their|its)\s+)?(?:box|case|drawer|bottle|bag|cup|cavity|sleeve)\b/i.test(sent.slice(m.index!+m[0].length))) return;
@@ -1263,7 +1290,13 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
     const contactWish = penisButtockContact && /\b(?:want\w*|wish\w*|urge|tempted)\b[^;.!?]{0,120}$/i.test(contactPrefix);
     const contactRecall = penisButtockContact && /\b(?:lingers?|lingering)\b[^;.!?]{0,90}\b(?:feeling|feel)\b/i.test(contactPrefix);
     const contactConditional = penisButtockContact && (HYPO_AUX.test(m.groups?.aux ?? "") || /\b(?:if|would|could|might|should)\b[^,;.!?]{0,65}$/i.test(contactPrefix));
-    const occurrence = (penisButtockContact || !pat.signal || ["handjob","masturbation","solo"].includes(pat.signal.kind) ? occurrenceContext(sent.slice(0,m.index!+m[0].length), original, paras[pi-1] ?? "", paras[pi+1] ?? "") : undefined) ?? (contactWish ? "wanted" : contactRecall ? "history" : undefined);
+    // An attempt explicitly stopped before contact remains wanted, never a performed finger act.
+    const interruptedFinger = /fingering/.test(pat.act) && /\b(?:stopp?\w*|halt\w*|interrupt\w*)\b[^.!?]{0,35}\bbefore\b[^.!?]{0,25}\b(?:touch\w*|contact|reach\w*)\b/i.test(sent.slice(m.index!+m[0].length));
+    // New self-use wording still describes a plan when its auxiliary is conditional or future.
+    const reviewSelfPlanned=basePid.startsWith("review-self-") &&
+      (HYPO_AUX.test(m.groups?.aux ?? "") || /\b(?:want\w*|wish\w*|need\w*|tr(?:y|ied|ies)|attempt\w*)\b/i.test(m.groups?.aux ?? "") ||
+       /\b(?:if|unless)\s*$/i.test(sent.slice(0,m.index!)));
+    const occurrence = (interruptedFinger || reviewSelfPlanned ? "wanted" : undefined) ?? (penisButtockContact || !pat.signal || ["handjob","masturbation","solo"].includes(pat.signal.kind) ? occurrenceContext(sent.slice(0,m.index!+m[0].length), original, paras[pi-1] ?? "", paras[pi+1] ?? "") : undefined) ?? (contactWish ? "wanted" : contactRecall ? "history" : undefined);
     // Adult synthetic: gripping a counter to steady oneself is not genital stimulation.
     if(pat.signal?.kind==="masturbation" &&
        (/\b(?:counter|table|chair|doorframe|railing|wall)\b/i.test(m[0]+sent.slice(m.index!+m[0].length,m.index!+m[0].length+50)) ||
@@ -1772,6 +1805,26 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
       const receiver = firstEntity(paras[pi - 1] ?? "");
       if (actor && receiver && actor !== receiver && cast.pairings.some(pair => pair.includes(actor) && pair.includes(receiver))) {bodyPair = {top:actor,bottom:receiver}; desiredReceiver = receiver;}
     }
+    // A toy can be the grammatical subject; the human actor comes from named manipulation.
+    if(basePid==="review-toy-subject-entry") {
+      const alias=namedActionOwner(reviewBefore,NAMES);
+      const performer=alias && cast.byAlias.get(alias);
+      const recipient=bTok && readSlot(bTok,cast,ctx)?.char;
+      if(performer && recipient && performer!==recipient) bodyPair={top:performer,bottom:recipient};
+      // Morgan does as Rowan asks, preparing the requested plug; names bind both roles.
+      const request=new RegExp(`\\b(${NAMES})\\s+does\\s+as\\s+(${NAMES})\\s+asks\\b[^.!?]{0,180}\\b(?:prepp?\\w*|lubricat\\w*)\\b`).exec(reviewBefore);
+      const actor=request && cast.byAlias.get(request[1]), target=request && cast.byAlias.get(request[2]);
+      if(actor && target && actor!==target)bodyPair={top:actor,bottom:target};
+      // An unowned toy with neither a recipient nor named manipulation is insufficient.
+      if(!bodyPair && !bTok)return;
+    }
+    // Turning toward Morgan does not make Morgan the person reaching into his own body.
+    if(basePid==="review-self-finger-poke" && /^(?:his|her|their)$/i.test(bTok ?? "")) {
+      const toward=new RegExp(`\\b[Tt]urning\\s+toward\\s+(${NAMES}),\\s*(?:he|she|they)\\s+shifts?\\b`).exec(sent.slice(0,m.index!));
+      const facing=toward && cast.byAlias.get(toward[1]);
+      const owner=facing && ctx.partnerOf(facing);
+      if(facing && owner && cast.pairings.filter(p=>p.includes(facing)).length===1)bodyPair={top:facing,bottom:owner};
+    }
     const ruled = asked ?? held ?? bodyPair;
     const resolved = ruled ? { ...ruled, basis: "pronoun" as Basis } : resolvePair(tTok, bTok, pat.subj, cast, ctx, subjChar, nearSubj, subjOrigin, povBody ? "pov" : watchedChar || causative ? "rule" : clauseOrigin);
     const attribution: AttributionEvidence = {
@@ -1793,6 +1846,13 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
       if (wrong(tTok, r.top) || wrong(bTok, r.bottom)) return;
     }
     let { top, bottom } = resolved as { top: Character; bottom: Character };
+    // A locally named foreign anatomical target rules out implicit self-placement.
+    if(/^review-self-toy-(?:size|pronoun)$/.test(basePid) && !/\bown\s+(?:anus|hole|ass)\b/i.test(m[0])) {
+      const target=[...reviewBefore.matchAll(new RegExp(`\\b(${NAMES})['’]s\\s+(?:anus|hole|ass|rim)\\b`,"g"))].pop();
+      const owner=target && cast.byAlias.get(target[1]);
+      if(owner && owner!==bottom)return;
+    }
+
     // "Tommy" (a former friend who is in no tagged pairing) credited only because he was the last one named: a person outside every tagged pairing, not named in this sentence and
     // reached by a fallback (last subject, recent person, inferred partner), is not who is meant.
     if (cast.pairings.length && (pat.cat === "anal" || pat.cat === "oral")) {
@@ -2121,10 +2181,14 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
     if (pat.id.startsWith("eyes-on-crotch-oral") && /\b(?:jelly|lube|lubricant|vaseline|oil|slick|condom|prep\w*|stretch\w*|fill\w*|inside)\b/i.test(sent)) return;
     // A knot is the top's only when one of them has one: with two knots it says nothing about who tops.
     if (pat.id.startsWith("knot-owner") && bothKnot) return;
+    // Explicit finger ownership wins over the receiver guiding that same hand into his body.
+    // Morgan inserts fingers; Rowan guiding Morgan's hand is not a second reversed act.
+    if(basePid==="push-into" && pat.elided && /\bguid\w*\s+it\s+(?:back\s+)?into\b/i.test(matchText) &&
+       acts.some(a=>a.para===pi && a.sentence===original && a.via==="review-fingers-residue"))return;
     // "Jason's right palm flexes, pressing in" / "can feel Eddie twitch, press in, pulse": a hand or a feeling, not a cock going in.
     if (pat.id.startsWith("pushed-in") && pat.elided) {
       const prior = sent.slice(0, m.index);
-      if (/\b(?:palm|hand|hands|fingers?|thumb|arm|knee|elbow|shoulder|foot|leg|jaw|chest|fist|claws?|nails?)\s+\w+s?,?\s*$/i.test(prior)) return;
+      if (/\b(?:palm|hand|hands|fingers?|thumb|arm|knee|elbow|shoulder|foot|leg|jaw|chest|fist|claws?|nails?)\s+\w+s?,?\s*$/i.test(prior) && !reinsertedFinger(matchText+sent.slice(m.index!+matchText.length,m.index!+matchText.length+15),prior)) return;
       if (/\b(?:can |could )?(?:feel|felt|feels)\b[^.!?]{0,50}\b(?:twitch|pulse|throb|shudder|swell|flex)\w*,?\s*$/i.test(prior)) return;
     }
     // Invented adults: Rowan is on his knees taking Morgan in his mouth; "Morgan pushes all the way in", "he rocks in deep, holding
@@ -2362,7 +2426,7 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
     const fingersBeforeOnly = FINGER_CTX.test(sent.slice(0, m.index!)) && !FINGER_CTX.test(matchText + " " + sent.slice(m.index! + matchText.length)) &&
       /[,;]|\b(?:then|and then)\b/.test(sent.slice(Math.max(0, m.index! - 14), m.index!) + matchText.slice(0, 12)) && /\b(?:fuck|pound|rail|bang|plow|plough|screw|breed|took|take)\w*/i.test(matchText)
     // "sliding his thumb out and ramming into Steve": a finger that has just come out is not the one going in.
-      || (FINGER_CTX.test(sent.slice(0, m.index!)) && !FINGER_CTX.test(matchText + " " + sent.slice(m.index! + matchText.length)) && instrumentEnded(sent.slice(0, m.index!)));
+      || (FINGER_CTX.test(sent.slice(0, m.index!)) && !FINGER_CTX.test(matchText + " " + sent.slice(m.index! + matchText.length)) && instrumentEnded(sent.slice(0, m.index!)) && !reinsertedFinger(matchText+sent.slice(m.index!+matchText.length,m.index!+matchText.length+15),sent.slice(0,m.index!)));
     if (cat === "anal" && pat.id !== "worked-open-pushed-in" && act.startsWith("anal sex") && !PENIS_CTX.test(matchText) && FINGER_CTX.test(matchText + " " + fingerSent) && !PENIS_CTX.test(sent) && !fingersBeforeOnly &&
         // Invented adults: "slicks his fingers, working a thick plug into Rowan": the plug goes in, the fingers only hold it.
         !/\b(?:plug|dildo|toy|vibrator|vibe)\b/i.test(matchText)) act = "fingering";
@@ -2379,6 +2443,7 @@ export function analyzeWithPatterns(text: string, meta: Ao3Meta, opts: PatternOp
       const prior = [...preceding.slice(boundary+1),para.slice(0,at),sent.slice(0,m.index!)].join(" ");
       const trailing=sent.slice(m.index!+matchText.length);
       const instrument=continuationInstrument(matchText,"",trailing) ??
+        (reinsertedFinger(matchText+sent.slice(m.index!+matchText.length,m.index!+matchText.length+15),sent.slice(0,m.index!)) ? "finger" : undefined) ??
         (!PENIS_CTX.test(para) ? continuationInstrument(matchText,prior,trailing) : undefined);
       const following=paras.slice(pi+1,pi+3);
       const confirmedFinger=!instrument && !PENIS_CTX.test(para) && following.some(p=>/^\s*(?:one|two|three|\d+)\s+fingers?\s+(?:in|inside)\b/i.test(p));
